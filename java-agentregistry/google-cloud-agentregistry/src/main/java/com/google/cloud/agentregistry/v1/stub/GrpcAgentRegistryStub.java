@@ -18,13 +18,22 @@ package com.google.cloud.agentregistry.v1.stub;
 
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.FetchAvailableBindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAgentsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationAgentsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationEndpointsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListBindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListEndpointsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListFindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListLocationsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListPublishersPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListServicesPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListSkillRevisionsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListSkillsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchAgentsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchSkillsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -35,38 +44,77 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.agentregistry.v1.Agent;
+import com.google.cloud.agentregistry.v1.AiApplication;
 import com.google.cloud.agentregistry.v1.Binding;
 import com.google.cloud.agentregistry.v1.CreateBindingRequest;
 import com.google.cloud.agentregistry.v1.CreateServiceRequest;
+import com.google.cloud.agentregistry.v1.CreateSkillRequest;
+import com.google.cloud.agentregistry.v1.CreateSkillRevisionRequest;
 import com.google.cloud.agentregistry.v1.DeleteBindingRequest;
 import com.google.cloud.agentregistry.v1.DeleteServiceRequest;
+import com.google.cloud.agentregistry.v1.DeleteSkillRequest;
+import com.google.cloud.agentregistry.v1.DeleteSkillRevisionRequest;
 import com.google.cloud.agentregistry.v1.Endpoint;
 import com.google.cloud.agentregistry.v1.FetchAvailableBindingsRequest;
 import com.google.cloud.agentregistry.v1.FetchAvailableBindingsResponse;
+import com.google.cloud.agentregistry.v1.Finding;
 import com.google.cloud.agentregistry.v1.GetAgentRequest;
+import com.google.cloud.agentregistry.v1.GetAiApplicationAgentRequest;
+import com.google.cloud.agentregistry.v1.GetAiApplicationEndpointRequest;
+import com.google.cloud.agentregistry.v1.GetAiApplicationMcpServerRequest;
+import com.google.cloud.agentregistry.v1.GetAiApplicationRequest;
 import com.google.cloud.agentregistry.v1.GetBindingRequest;
 import com.google.cloud.agentregistry.v1.GetEndpointRequest;
+import com.google.cloud.agentregistry.v1.GetFindingRequest;
 import com.google.cloud.agentregistry.v1.GetMcpServerRequest;
+import com.google.cloud.agentregistry.v1.GetPublisherRequest;
 import com.google.cloud.agentregistry.v1.GetServiceRequest;
+import com.google.cloud.agentregistry.v1.GetSkillEncryptionSpecRequest;
+import com.google.cloud.agentregistry.v1.GetSkillRequest;
+import com.google.cloud.agentregistry.v1.GetSkillRevisionRequest;
 import com.google.cloud.agentregistry.v1.ListAgentsRequest;
 import com.google.cloud.agentregistry.v1.ListAgentsResponse;
+import com.google.cloud.agentregistry.v1.ListAiApplicationAgentsRequest;
+import com.google.cloud.agentregistry.v1.ListAiApplicationAgentsResponse;
+import com.google.cloud.agentregistry.v1.ListAiApplicationEndpointsRequest;
+import com.google.cloud.agentregistry.v1.ListAiApplicationEndpointsResponse;
+import com.google.cloud.agentregistry.v1.ListAiApplicationMcpServersRequest;
+import com.google.cloud.agentregistry.v1.ListAiApplicationMcpServersResponse;
+import com.google.cloud.agentregistry.v1.ListAiApplicationsRequest;
+import com.google.cloud.agentregistry.v1.ListAiApplicationsResponse;
 import com.google.cloud.agentregistry.v1.ListBindingsRequest;
 import com.google.cloud.agentregistry.v1.ListBindingsResponse;
 import com.google.cloud.agentregistry.v1.ListEndpointsRequest;
 import com.google.cloud.agentregistry.v1.ListEndpointsResponse;
+import com.google.cloud.agentregistry.v1.ListFindingsRequest;
+import com.google.cloud.agentregistry.v1.ListFindingsResponse;
 import com.google.cloud.agentregistry.v1.ListMcpServersRequest;
 import com.google.cloud.agentregistry.v1.ListMcpServersResponse;
+import com.google.cloud.agentregistry.v1.ListPublishersRequest;
+import com.google.cloud.agentregistry.v1.ListPublishersResponse;
 import com.google.cloud.agentregistry.v1.ListServicesRequest;
 import com.google.cloud.agentregistry.v1.ListServicesResponse;
+import com.google.cloud.agentregistry.v1.ListSkillRevisionsRequest;
+import com.google.cloud.agentregistry.v1.ListSkillRevisionsResponse;
+import com.google.cloud.agentregistry.v1.ListSkillsRequest;
+import com.google.cloud.agentregistry.v1.ListSkillsResponse;
 import com.google.cloud.agentregistry.v1.McpServer;
 import com.google.cloud.agentregistry.v1.OperationMetadata;
+import com.google.cloud.agentregistry.v1.Publisher;
 import com.google.cloud.agentregistry.v1.SearchAgentsRequest;
 import com.google.cloud.agentregistry.v1.SearchAgentsResponse;
 import com.google.cloud.agentregistry.v1.SearchMcpServersRequest;
 import com.google.cloud.agentregistry.v1.SearchMcpServersResponse;
+import com.google.cloud.agentregistry.v1.SearchSkillsRequest;
+import com.google.cloud.agentregistry.v1.SearchSkillsResponse;
 import com.google.cloud.agentregistry.v1.Service;
+import com.google.cloud.agentregistry.v1.Skill;
+import com.google.cloud.agentregistry.v1.SkillEncryptionSpec;
+import com.google.cloud.agentregistry.v1.SkillRevision;
 import com.google.cloud.agentregistry.v1.UpdateBindingRequest;
 import com.google.cloud.agentregistry.v1.UpdateServiceRequest;
+import com.google.cloud.agentregistry.v1.UpdateSkillEncryptionSpecRequest;
+import com.google.cloud.agentregistry.v1.UpdateSkillRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -296,6 +344,279 @@ public class GrpcAgentRegistryStub extends AgentRegistryStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateSkillRequest, Operation> createSkillMethodDescriptor =
+      MethodDescriptor.<CreateSkillRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/CreateSkill")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateSkillRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetSkillRequest, Skill> getSkillMethodDescriptor =
+      MethodDescriptor.<GetSkillRequest, Skill>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/GetSkill")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSkillRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Skill.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<UpdateSkillRequest, Operation> updateSkillMethodDescriptor =
+      MethodDescriptor.<UpdateSkillRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/UpdateSkill")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateSkillRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<DeleteSkillRequest, Operation> deleteSkillMethodDescriptor =
+      MethodDescriptor.<DeleteSkillRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/DeleteSkill")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteSkillRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ListSkillsRequest, ListSkillsResponse>
+      listSkillsMethodDescriptor =
+          MethodDescriptor.<ListSkillsRequest, ListSkillsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/ListSkills")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListSkillsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListSkillsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SearchSkillsRequest, SearchSkillsResponse>
+      searchSkillsMethodDescriptor =
+          MethodDescriptor.<SearchSkillsRequest, SearchSkillsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/SearchSkills")
+              .setRequestMarshaller(ProtoUtils.marshaller(SearchSkillsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchSkillsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateSkillRevisionRequest, Operation>
+      createSkillRevisionMethodDescriptor =
+          MethodDescriptor.<CreateSkillRevisionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/CreateSkillRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSkillRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetSkillRevisionRequest, SkillRevision>
+      getSkillRevisionMethodDescriptor =
+          MethodDescriptor.<GetSkillRevisionRequest, SkillRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/GetSkillRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSkillRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SkillRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteSkillRevisionRequest, Operation>
+      deleteSkillRevisionMethodDescriptor =
+          MethodDescriptor.<DeleteSkillRevisionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/DeleteSkillRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSkillRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListSkillRevisionsRequest, ListSkillRevisionsResponse>
+      listSkillRevisionsMethodDescriptor =
+          MethodDescriptor.<ListSkillRevisionsRequest, ListSkillRevisionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/ListSkillRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSkillRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSkillRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetPublisherRequest, Publisher>
+      getPublisherMethodDescriptor =
+          MethodDescriptor.<GetPublisherRequest, Publisher>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/GetPublisher")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetPublisherRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Publisher.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListPublishersRequest, ListPublishersResponse>
+      listPublishersMethodDescriptor =
+          MethodDescriptor.<ListPublishersRequest, ListPublishersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/ListPublishers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPublishersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPublishersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAiApplicationRequest, AiApplication>
+      getAiApplicationMethodDescriptor =
+          MethodDescriptor.<GetAiApplicationRequest, AiApplication>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/GetAiApplication")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAiApplicationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AiApplication.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListAiApplicationsRequest, ListAiApplicationsResponse>
+      listAiApplicationsMethodDescriptor =
+          MethodDescriptor.<ListAiApplicationsRequest, ListAiApplicationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/ListAiApplications")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAiApplicationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAiApplicationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAiApplicationAgentRequest, Agent>
+      getAiApplicationAgentMethodDescriptor =
+          MethodDescriptor.<GetAiApplicationAgentRequest, Agent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.agentregistry.v1.AgentRegistry/GetAiApplicationAgent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAiApplicationAgentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse>
+      listAiApplicationAgentsMethodDescriptor =
+          MethodDescriptor
+              .<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.agentregistry.v1.AgentRegistry/ListAiApplicationAgents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAiApplicationAgentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAiApplicationAgentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAiApplicationMcpServerRequest, McpServer>
+      getAiApplicationMcpServerMethodDescriptor =
+          MethodDescriptor.<GetAiApplicationMcpServerRequest, McpServer>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.agentregistry.v1.AgentRegistry/GetAiApplicationMcpServer")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAiApplicationMcpServerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(McpServer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse>
+      listAiApplicationMcpServersMethodDescriptor =
+          MethodDescriptor
+              .<ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.agentregistry.v1.AgentRegistry/ListAiApplicationMcpServers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAiApplicationMcpServersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAiApplicationMcpServersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetFindingRequest, Finding> getFindingMethodDescriptor =
+      MethodDescriptor.<GetFindingRequest, Finding>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/GetFinding")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetFindingRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
+      listFindingsMethodDescriptor =
+          MethodDescriptor.<ListFindingsRequest, ListFindingsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.agentregistry.v1.AgentRegistry/ListFindings")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListFindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAiApplicationEndpointRequest, Endpoint>
+      getAiApplicationEndpointMethodDescriptor =
+          MethodDescriptor.<GetAiApplicationEndpointRequest, Endpoint>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.agentregistry.v1.AgentRegistry/GetAiApplicationEndpoint")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAiApplicationEndpointRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Endpoint.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse>
+      listAiApplicationEndpointsMethodDescriptor =
+          MethodDescriptor
+              .<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.agentregistry.v1.AgentRegistry/ListAiApplicationEndpoints")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAiApplicationEndpointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAiApplicationEndpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+      getSkillEncryptionSpecMethodDescriptor =
+          MethodDescriptor.<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.agentregistry.v1.AgentRegistry/GetSkillEncryptionSpec")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSkillEncryptionSpecRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SkillEncryptionSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateSkillEncryptionSpecRequest, Operation>
+      updateSkillEncryptionSpecMethodDescriptor =
+          MethodDescriptor.<UpdateSkillEncryptionSpecRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.agentregistry.v1.AgentRegistry/UpdateSkillEncryptionSpec")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSkillEncryptionSpecRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -365,6 +686,72 @@ public class GrpcAgentRegistryStub extends AgentRegistryStub {
       fetchAvailableBindingsCallable;
   private final UnaryCallable<FetchAvailableBindingsRequest, FetchAvailableBindingsPagedResponse>
       fetchAvailableBindingsPagedCallable;
+  private final UnaryCallable<CreateSkillRequest, Operation> createSkillCallable;
+  private final OperationCallable<CreateSkillRequest, Skill, OperationMetadata>
+      createSkillOperationCallable;
+  private final UnaryCallable<GetSkillRequest, Skill> getSkillCallable;
+  private final UnaryCallable<UpdateSkillRequest, Operation> updateSkillCallable;
+  private final OperationCallable<UpdateSkillRequest, Skill, OperationMetadata>
+      updateSkillOperationCallable;
+  private final UnaryCallable<DeleteSkillRequest, Operation> deleteSkillCallable;
+  private final OperationCallable<DeleteSkillRequest, Empty, OperationMetadata>
+      deleteSkillOperationCallable;
+  private final UnaryCallable<ListSkillsRequest, ListSkillsResponse> listSkillsCallable;
+  private final UnaryCallable<ListSkillsRequest, ListSkillsPagedResponse> listSkillsPagedCallable;
+  private final UnaryCallable<SearchSkillsRequest, SearchSkillsResponse> searchSkillsCallable;
+  private final UnaryCallable<SearchSkillsRequest, SearchSkillsPagedResponse>
+      searchSkillsPagedCallable;
+  private final UnaryCallable<CreateSkillRevisionRequest, Operation> createSkillRevisionCallable;
+  private final OperationCallable<CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+      createSkillRevisionOperationCallable;
+  private final UnaryCallable<GetSkillRevisionRequest, SkillRevision> getSkillRevisionCallable;
+  private final UnaryCallable<DeleteSkillRevisionRequest, Operation> deleteSkillRevisionCallable;
+  private final OperationCallable<DeleteSkillRevisionRequest, Empty, OperationMetadata>
+      deleteSkillRevisionOperationCallable;
+  private final UnaryCallable<ListSkillRevisionsRequest, ListSkillRevisionsResponse>
+      listSkillRevisionsCallable;
+  private final UnaryCallable<ListSkillRevisionsRequest, ListSkillRevisionsPagedResponse>
+      listSkillRevisionsPagedCallable;
+  private final UnaryCallable<GetPublisherRequest, Publisher> getPublisherCallable;
+  private final UnaryCallable<ListPublishersRequest, ListPublishersResponse> listPublishersCallable;
+  private final UnaryCallable<ListPublishersRequest, ListPublishersPagedResponse>
+      listPublishersPagedCallable;
+  private final UnaryCallable<GetAiApplicationRequest, AiApplication> getAiApplicationCallable;
+  private final UnaryCallable<ListAiApplicationsRequest, ListAiApplicationsResponse>
+      listAiApplicationsCallable;
+  private final UnaryCallable<ListAiApplicationsRequest, ListAiApplicationsPagedResponse>
+      listAiApplicationsPagedCallable;
+  private final UnaryCallable<GetAiApplicationAgentRequest, Agent> getAiApplicationAgentCallable;
+  private final UnaryCallable<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse>
+      listAiApplicationAgentsCallable;
+  private final UnaryCallable<ListAiApplicationAgentsRequest, ListAiApplicationAgentsPagedResponse>
+      listAiApplicationAgentsPagedCallable;
+  private final UnaryCallable<GetAiApplicationMcpServerRequest, McpServer>
+      getAiApplicationMcpServerCallable;
+  private final UnaryCallable<
+          ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse>
+      listAiApplicationMcpServersCallable;
+  private final UnaryCallable<
+          ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersPagedResponse>
+      listAiApplicationMcpServersPagedCallable;
+  private final UnaryCallable<GetFindingRequest, Finding> getFindingCallable;
+  private final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable;
+  private final UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse>
+      listFindingsPagedCallable;
+  private final UnaryCallable<GetAiApplicationEndpointRequest, Endpoint>
+      getAiApplicationEndpointCallable;
+  private final UnaryCallable<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse>
+      listAiApplicationEndpointsCallable;
+  private final UnaryCallable<
+          ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsPagedResponse>
+      listAiApplicationEndpointsPagedCallable;
+  private final UnaryCallable<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+      getSkillEncryptionSpecCallable;
+  private final UnaryCallable<UpdateSkillEncryptionSpecRequest, Operation>
+      updateSkillEncryptionSpecCallable;
+  private final OperationCallable<
+          UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+      updateSkillEncryptionSpecOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -623,6 +1010,284 @@ public class GrpcAgentRegistryStub extends AgentRegistryStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<CreateSkillRequest, Operation> createSkillTransportSettings =
+        GrpcCallSettings.<CreateSkillRequest, Operation>newBuilder()
+            .setMethodDescriptor(createSkillMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<GetSkillRequest, Skill> getSkillTransportSettings =
+        GrpcCallSettings.<GetSkillRequest, Skill>newBuilder()
+            .setMethodDescriptor(getSkillMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateSkillRequest, Operation> updateSkillTransportSettings =
+        GrpcCallSettings.<UpdateSkillRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateSkillMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("skill.name", String.valueOf(request.getSkill().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteSkillRequest, Operation> deleteSkillTransportSettings =
+        GrpcCallSettings.<DeleteSkillRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSkillMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListSkillsRequest, ListSkillsResponse> listSkillsTransportSettings =
+        GrpcCallSettings.<ListSkillsRequest, ListSkillsResponse>newBuilder()
+            .setMethodDescriptor(listSkillsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<SearchSkillsRequest, SearchSkillsResponse> searchSkillsTransportSettings =
+        GrpcCallSettings.<SearchSkillsRequest, SearchSkillsResponse>newBuilder()
+            .setMethodDescriptor(searchSkillsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<CreateSkillRevisionRequest, Operation> createSkillRevisionTransportSettings =
+        GrpcCallSettings.<CreateSkillRevisionRequest, Operation>newBuilder()
+            .setMethodDescriptor(createSkillRevisionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<GetSkillRevisionRequest, SkillRevision> getSkillRevisionTransportSettings =
+        GrpcCallSettings.<GetSkillRevisionRequest, SkillRevision>newBuilder()
+            .setMethodDescriptor(getSkillRevisionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<DeleteSkillRevisionRequest, Operation> deleteSkillRevisionTransportSettings =
+        GrpcCallSettings.<DeleteSkillRevisionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSkillRevisionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListSkillRevisionsRequest, ListSkillRevisionsResponse>
+        listSkillRevisionsTransportSettings =
+            GrpcCallSettings.<ListSkillRevisionsRequest, ListSkillRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listSkillRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetPublisherRequest, Publisher> getPublisherTransportSettings =
+        GrpcCallSettings.<GetPublisherRequest, Publisher>newBuilder()
+            .setMethodDescriptor(getPublisherMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListPublishersRequest, ListPublishersResponse>
+        listPublishersTransportSettings =
+            GrpcCallSettings.<ListPublishersRequest, ListPublishersResponse>newBuilder()
+                .setMethodDescriptor(listPublishersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetAiApplicationRequest, AiApplication> getAiApplicationTransportSettings =
+        GrpcCallSettings.<GetAiApplicationRequest, AiApplication>newBuilder()
+            .setMethodDescriptor(getAiApplicationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListAiApplicationsRequest, ListAiApplicationsResponse>
+        listAiApplicationsTransportSettings =
+            GrpcCallSettings.<ListAiApplicationsRequest, ListAiApplicationsResponse>newBuilder()
+                .setMethodDescriptor(listAiApplicationsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetAiApplicationAgentRequest, Agent> getAiApplicationAgentTransportSettings =
+        GrpcCallSettings.<GetAiApplicationAgentRequest, Agent>newBuilder()
+            .setMethodDescriptor(getAiApplicationAgentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse>
+        listAiApplicationAgentsTransportSettings =
+            GrpcCallSettings
+                .<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse>newBuilder()
+                .setMethodDescriptor(listAiApplicationAgentsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetAiApplicationMcpServerRequest, McpServer>
+        getAiApplicationMcpServerTransportSettings =
+            GrpcCallSettings.<GetAiApplicationMcpServerRequest, McpServer>newBuilder()
+                .setMethodDescriptor(getAiApplicationMcpServerMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse>
+        listAiApplicationMcpServersTransportSettings =
+            GrpcCallSettings
+                .<ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse>
+                    newBuilder()
+                .setMethodDescriptor(listAiApplicationMcpServersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetFindingRequest, Finding> getFindingTransportSettings =
+        GrpcCallSettings.<GetFindingRequest, Finding>newBuilder()
+            .setMethodDescriptor(getFindingMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
+        GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
+            .setMethodDescriptor(listFindingsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<GetAiApplicationEndpointRequest, Endpoint>
+        getAiApplicationEndpointTransportSettings =
+            GrpcCallSettings.<GetAiApplicationEndpointRequest, Endpoint>newBuilder()
+                .setMethodDescriptor(getAiApplicationEndpointMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse>
+        listAiApplicationEndpointsTransportSettings =
+            GrpcCallSettings
+                .<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse>newBuilder()
+                .setMethodDescriptor(listAiApplicationEndpointsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+        getSkillEncryptionSpecTransportSettings =
+            GrpcCallSettings.<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>newBuilder()
+                .setMethodDescriptor(getSkillEncryptionSpecMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<UpdateSkillEncryptionSpecRequest, Operation>
+        updateSkillEncryptionSpecTransportSettings =
+            GrpcCallSettings.<UpdateSkillEncryptionSpecRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateSkillEncryptionSpecMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "skill_encryption_spec.name",
+                          String.valueOf(request.getSkillEncryptionSpec().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -765,6 +1430,175 @@ public class GrpcAgentRegistryStub extends AgentRegistryStub {
             fetchAvailableBindingsTransportSettings,
             settings.fetchAvailableBindingsSettings(),
             clientContext);
+    this.createSkillCallable =
+        callableFactory.createUnaryCallable(
+            createSkillTransportSettings, settings.createSkillSettings(), clientContext);
+    this.createSkillOperationCallable =
+        callableFactory.createOperationCallable(
+            createSkillTransportSettings,
+            settings.createSkillOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getSkillCallable =
+        callableFactory.createUnaryCallable(
+            getSkillTransportSettings, settings.getSkillSettings(), clientContext);
+    this.updateSkillCallable =
+        callableFactory.createUnaryCallable(
+            updateSkillTransportSettings, settings.updateSkillSettings(), clientContext);
+    this.updateSkillOperationCallable =
+        callableFactory.createOperationCallable(
+            updateSkillTransportSettings,
+            settings.updateSkillOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteSkillCallable =
+        callableFactory.createUnaryCallable(
+            deleteSkillTransportSettings, settings.deleteSkillSettings(), clientContext);
+    this.deleteSkillOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSkillTransportSettings,
+            settings.deleteSkillOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listSkillsCallable =
+        callableFactory.createUnaryCallable(
+            listSkillsTransportSettings, settings.listSkillsSettings(), clientContext);
+    this.listSkillsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSkillsTransportSettings, settings.listSkillsSettings(), clientContext);
+    this.searchSkillsCallable =
+        callableFactory.createUnaryCallable(
+            searchSkillsTransportSettings, settings.searchSkillsSettings(), clientContext);
+    this.searchSkillsPagedCallable =
+        callableFactory.createPagedCallable(
+            searchSkillsTransportSettings, settings.searchSkillsSettings(), clientContext);
+    this.createSkillRevisionCallable =
+        callableFactory.createUnaryCallable(
+            createSkillRevisionTransportSettings,
+            settings.createSkillRevisionSettings(),
+            clientContext);
+    this.createSkillRevisionOperationCallable =
+        callableFactory.createOperationCallable(
+            createSkillRevisionTransportSettings,
+            settings.createSkillRevisionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getSkillRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getSkillRevisionTransportSettings, settings.getSkillRevisionSettings(), clientContext);
+    this.deleteSkillRevisionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSkillRevisionTransportSettings,
+            settings.deleteSkillRevisionSettings(),
+            clientContext);
+    this.deleteSkillRevisionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSkillRevisionTransportSettings,
+            settings.deleteSkillRevisionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listSkillRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listSkillRevisionsTransportSettings,
+            settings.listSkillRevisionsSettings(),
+            clientContext);
+    this.listSkillRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSkillRevisionsTransportSettings,
+            settings.listSkillRevisionsSettings(),
+            clientContext);
+    this.getPublisherCallable =
+        callableFactory.createUnaryCallable(
+            getPublisherTransportSettings, settings.getPublisherSettings(), clientContext);
+    this.listPublishersCallable =
+        callableFactory.createUnaryCallable(
+            listPublishersTransportSettings, settings.listPublishersSettings(), clientContext);
+    this.listPublishersPagedCallable =
+        callableFactory.createPagedCallable(
+            listPublishersTransportSettings, settings.listPublishersSettings(), clientContext);
+    this.getAiApplicationCallable =
+        callableFactory.createUnaryCallable(
+            getAiApplicationTransportSettings, settings.getAiApplicationSettings(), clientContext);
+    this.listAiApplicationsCallable =
+        callableFactory.createUnaryCallable(
+            listAiApplicationsTransportSettings,
+            settings.listAiApplicationsSettings(),
+            clientContext);
+    this.listAiApplicationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAiApplicationsTransportSettings,
+            settings.listAiApplicationsSettings(),
+            clientContext);
+    this.getAiApplicationAgentCallable =
+        callableFactory.createUnaryCallable(
+            getAiApplicationAgentTransportSettings,
+            settings.getAiApplicationAgentSettings(),
+            clientContext);
+    this.listAiApplicationAgentsCallable =
+        callableFactory.createUnaryCallable(
+            listAiApplicationAgentsTransportSettings,
+            settings.listAiApplicationAgentsSettings(),
+            clientContext);
+    this.listAiApplicationAgentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAiApplicationAgentsTransportSettings,
+            settings.listAiApplicationAgentsSettings(),
+            clientContext);
+    this.getAiApplicationMcpServerCallable =
+        callableFactory.createUnaryCallable(
+            getAiApplicationMcpServerTransportSettings,
+            settings.getAiApplicationMcpServerSettings(),
+            clientContext);
+    this.listAiApplicationMcpServersCallable =
+        callableFactory.createUnaryCallable(
+            listAiApplicationMcpServersTransportSettings,
+            settings.listAiApplicationMcpServersSettings(),
+            clientContext);
+    this.listAiApplicationMcpServersPagedCallable =
+        callableFactory.createPagedCallable(
+            listAiApplicationMcpServersTransportSettings,
+            settings.listAiApplicationMcpServersSettings(),
+            clientContext);
+    this.getFindingCallable =
+        callableFactory.createUnaryCallable(
+            getFindingTransportSettings, settings.getFindingSettings(), clientContext);
+    this.listFindingsCallable =
+        callableFactory.createUnaryCallable(
+            listFindingsTransportSettings, settings.listFindingsSettings(), clientContext);
+    this.listFindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listFindingsTransportSettings, settings.listFindingsSettings(), clientContext);
+    this.getAiApplicationEndpointCallable =
+        callableFactory.createUnaryCallable(
+            getAiApplicationEndpointTransportSettings,
+            settings.getAiApplicationEndpointSettings(),
+            clientContext);
+    this.listAiApplicationEndpointsCallable =
+        callableFactory.createUnaryCallable(
+            listAiApplicationEndpointsTransportSettings,
+            settings.listAiApplicationEndpointsSettings(),
+            clientContext);
+    this.listAiApplicationEndpointsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAiApplicationEndpointsTransportSettings,
+            settings.listAiApplicationEndpointsSettings(),
+            clientContext);
+    this.getSkillEncryptionSpecCallable =
+        callableFactory.createUnaryCallable(
+            getSkillEncryptionSpecTransportSettings,
+            settings.getSkillEncryptionSpecSettings(),
+            clientContext);
+    this.updateSkillEncryptionSpecCallable =
+        callableFactory.createUnaryCallable(
+            updateSkillEncryptionSpecTransportSettings,
+            settings.updateSkillEncryptionSpecSettings(),
+            clientContext);
+    this.updateSkillEncryptionSpecOperationCallable =
+        callableFactory.createOperationCallable(
+            updateSkillEncryptionSpecTransportSettings,
+            settings.updateSkillEncryptionSpecOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -958,6 +1792,222 @@ public class GrpcAgentRegistryStub extends AgentRegistryStub {
   public UnaryCallable<FetchAvailableBindingsRequest, FetchAvailableBindingsPagedResponse>
       fetchAvailableBindingsPagedCallable() {
     return fetchAvailableBindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSkillRequest, Operation> createSkillCallable() {
+    return createSkillCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateSkillRequest, Skill, OperationMetadata>
+      createSkillOperationCallable() {
+    return createSkillOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSkillRequest, Skill> getSkillCallable() {
+    return getSkillCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSkillRequest, Operation> updateSkillCallable() {
+    return updateSkillCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateSkillRequest, Skill, OperationMetadata>
+      updateSkillOperationCallable() {
+    return updateSkillOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSkillRequest, Operation> deleteSkillCallable() {
+    return deleteSkillCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSkillRequest, Empty, OperationMetadata>
+      deleteSkillOperationCallable() {
+    return deleteSkillOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkillsRequest, ListSkillsResponse> listSkillsCallable() {
+    return listSkillsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkillsRequest, ListSkillsPagedResponse> listSkillsPagedCallable() {
+    return listSkillsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchSkillsRequest, SearchSkillsResponse> searchSkillsCallable() {
+    return searchSkillsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchSkillsRequest, SearchSkillsPagedResponse> searchSkillsPagedCallable() {
+    return searchSkillsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSkillRevisionRequest, Operation> createSkillRevisionCallable() {
+    return createSkillRevisionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+      createSkillRevisionOperationCallable() {
+    return createSkillRevisionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSkillRevisionRequest, SkillRevision> getSkillRevisionCallable() {
+    return getSkillRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSkillRevisionRequest, Operation> deleteSkillRevisionCallable() {
+    return deleteSkillRevisionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSkillRevisionRequest, Empty, OperationMetadata>
+      deleteSkillRevisionOperationCallable() {
+    return deleteSkillRevisionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkillRevisionsRequest, ListSkillRevisionsResponse>
+      listSkillRevisionsCallable() {
+    return listSkillRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSkillRevisionsRequest, ListSkillRevisionsPagedResponse>
+      listSkillRevisionsPagedCallable() {
+    return listSkillRevisionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPublisherRequest, Publisher> getPublisherCallable() {
+    return getPublisherCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPublishersRequest, ListPublishersResponse> listPublishersCallable() {
+    return listPublishersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPublishersRequest, ListPublishersPagedResponse>
+      listPublishersPagedCallable() {
+    return listPublishersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAiApplicationRequest, AiApplication> getAiApplicationCallable() {
+    return getAiApplicationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAiApplicationsRequest, ListAiApplicationsResponse>
+      listAiApplicationsCallable() {
+    return listAiApplicationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAiApplicationsRequest, ListAiApplicationsPagedResponse>
+      listAiApplicationsPagedCallable() {
+    return listAiApplicationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAiApplicationAgentRequest, Agent> getAiApplicationAgentCallable() {
+    return getAiApplicationAgentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse>
+      listAiApplicationAgentsCallable() {
+    return listAiApplicationAgentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAiApplicationAgentsRequest, ListAiApplicationAgentsPagedResponse>
+      listAiApplicationAgentsPagedCallable() {
+    return listAiApplicationAgentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAiApplicationMcpServerRequest, McpServer>
+      getAiApplicationMcpServerCallable() {
+    return getAiApplicationMcpServerCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse>
+      listAiApplicationMcpServersCallable() {
+    return listAiApplicationMcpServersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersPagedResponse>
+      listAiApplicationMcpServersPagedCallable() {
+    return listAiApplicationMcpServersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFindingRequest, Finding> getFindingCallable() {
+    return getFindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
+    return listFindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse> listFindingsPagedCallable() {
+    return listFindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAiApplicationEndpointRequest, Endpoint>
+      getAiApplicationEndpointCallable() {
+    return getAiApplicationEndpointCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse>
+      listAiApplicationEndpointsCallable() {
+    return listAiApplicationEndpointsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsPagedResponse>
+      listAiApplicationEndpointsPagedCallable() {
+    return listAiApplicationEndpointsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+      getSkillEncryptionSpecCallable() {
+    return getSkillEncryptionSpecCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSkillEncryptionSpecRequest, Operation>
+      updateSkillEncryptionSpecCallable() {
+    return updateSkillEncryptionSpecCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+      updateSkillEncryptionSpecOperationCallable() {
+    return updateSkillEncryptionSpecOperationCallable;
   }
 
   @Override

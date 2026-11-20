@@ -82,6 +82,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1beta/{name=projects/*/locations/*}:provision")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

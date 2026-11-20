@@ -721,6 +721,17 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     return ((OracleDatabaseStubSettings) getStubSettings()).createOdbDnsZoneOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateOdbDnsZone. */
+  public UnaryCallSettings<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateOdbDnsZoneSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateOdbDnsZone. */
+  public OperationCallSettings<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).updateOdbDnsZoneOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteOdbDnsZone. */
   public UnaryCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbDnsZoneSettings();
@@ -1966,6 +1977,18 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     public OperationCallSettings.Builder<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
         createOdbDnsZoneOperationSettings() {
       return getStubSettingsBuilder().createOdbDnsZoneOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbDnsZone. */
+    public UnaryCallSettings.Builder<UpdateOdbDnsZoneRequest, Operation>
+        updateOdbDnsZoneSettings() {
+      return getStubSettingsBuilder().updateOdbDnsZoneSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateOdbDnsZone. */
+    public OperationCallSettings.Builder<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+        updateOdbDnsZoneOperationSettings() {
+      return getStubSettingsBuilder().updateOdbDnsZoneOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteOdbDnsZone. */

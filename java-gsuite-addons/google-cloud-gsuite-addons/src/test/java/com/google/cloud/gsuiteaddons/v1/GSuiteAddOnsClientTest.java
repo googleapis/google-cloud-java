@@ -29,6 +29,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.BoolValue;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -742,6 +743,138 @@ public class GSuiteAddOnsClientTest {
     try {
       String name = "name3373707";
       client.getInstallStatus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getChatAppConfigTest() throws Exception {
+    ChatAppConfig expectedResponse =
+        ChatAppConfig.newBuilder()
+            .setName(ChatAppConfigName.of("[PROJECT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setAvatarUri("avatarUri-428646061")
+            .setDescription("description-1724546052")
+            .setInteractiveFeatureConfig(InteractiveFeatureConfig.newBuilder().build())
+            .setErrorLoggingEnabled(true)
+            .build();
+    mockGSuiteAddOns.addResponse(expectedResponse);
+
+    ChatAppConfigName name = ChatAppConfigName.of("[PROJECT]");
+
+    ChatAppConfig actualResponse = client.getChatAppConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGSuiteAddOns.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetChatAppConfigRequest actualRequest = ((GetChatAppConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getChatAppConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGSuiteAddOns.addException(exception);
+
+    try {
+      ChatAppConfigName name = ChatAppConfigName.of("[PROJECT]");
+      client.getChatAppConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getChatAppConfigTest2() throws Exception {
+    ChatAppConfig expectedResponse =
+        ChatAppConfig.newBuilder()
+            .setName(ChatAppConfigName.of("[PROJECT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setAvatarUri("avatarUri-428646061")
+            .setDescription("description-1724546052")
+            .setInteractiveFeatureConfig(InteractiveFeatureConfig.newBuilder().build())
+            .setErrorLoggingEnabled(true)
+            .build();
+    mockGSuiteAddOns.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ChatAppConfig actualResponse = client.getChatAppConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGSuiteAddOns.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetChatAppConfigRequest actualRequest = ((GetChatAppConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getChatAppConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGSuiteAddOns.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getChatAppConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateChatAppConfigTest() throws Exception {
+    ChatAppConfig expectedResponse =
+        ChatAppConfig.newBuilder()
+            .setName(ChatAppConfigName.of("[PROJECT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setAvatarUri("avatarUri-428646061")
+            .setDescription("description-1724546052")
+            .setInteractiveFeatureConfig(InteractiveFeatureConfig.newBuilder().build())
+            .setErrorLoggingEnabled(true)
+            .build();
+    mockGSuiteAddOns.addResponse(expectedResponse);
+
+    ChatAppConfig chatAppConfig = ChatAppConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ChatAppConfig actualResponse = client.updateChatAppConfig(chatAppConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockGSuiteAddOns.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateChatAppConfigRequest actualRequest = ((UpdateChatAppConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(chatAppConfig, actualRequest.getChatAppConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateChatAppConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockGSuiteAddOns.addException(exception);
+
+    try {
+      ChatAppConfig chatAppConfig = ChatAppConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateChatAppConfig(chatAppConfig, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

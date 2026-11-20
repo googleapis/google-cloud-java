@@ -16,11 +16,23 @@
             "CreateService": {
               "methods": ["createServiceAsync", "createServiceAsync", "createServiceAsync", "createServiceOperationCallable", "createServiceCallable"]
             },
+            "CreateSkill": {
+              "methods": ["createSkillAsync", "createSkillAsync", "createSkillAsync", "createSkillOperationCallable", "createSkillCallable"]
+            },
+            "CreateSkillRevision": {
+              "methods": ["createSkillRevisionAsync", "createSkillRevisionAsync", "createSkillRevisionAsync", "createSkillRevisionOperationCallable", "createSkillRevisionCallable"]
+            },
             "DeleteBinding": {
               "methods": ["deleteBindingAsync", "deleteBindingAsync", "deleteBindingAsync", "deleteBindingOperationCallable", "deleteBindingCallable"]
             },
             "DeleteService": {
               "methods": ["deleteServiceAsync", "deleteServiceAsync", "deleteServiceAsync", "deleteServiceOperationCallable", "deleteServiceCallable"]
+            },
+            "DeleteSkill": {
+              "methods": ["deleteSkillAsync", "deleteSkillAsync", "deleteSkillAsync", "deleteSkillOperationCallable", "deleteSkillCallable"]
+            },
+            "DeleteSkillRevision": {
+              "methods": ["deleteSkillRevisionAsync", "deleteSkillRevisionAsync", "deleteSkillRevisionAsync", "deleteSkillRevisionOperationCallable", "deleteSkillRevisionCallable"]
             },
             "FetchAvailableBindings": {
               "methods": ["fetchAvailableBindings", "fetchAvailableBindings", "fetchAvailableBindings", "fetchAvailableBindingsPagedCallable", "fetchAvailableBindingsCallable"]
@@ -28,11 +40,26 @@
             "GetAgent": {
               "methods": ["getAgent", "getAgent", "getAgent", "getAgentCallable"]
             },
+            "GetAiApplication": {
+              "methods": ["getAiApplication", "getAiApplication", "getAiApplication", "getAiApplicationCallable"]
+            },
+            "GetAiApplicationAgent": {
+              "methods": ["getAiApplicationAgent", "getAiApplicationAgent", "getAiApplicationAgent", "getAiApplicationAgentCallable"]
+            },
+            "GetAiApplicationEndpoint": {
+              "methods": ["getAiApplicationEndpoint", "getAiApplicationEndpoint", "getAiApplicationEndpoint", "getAiApplicationEndpointCallable"]
+            },
+            "GetAiApplicationMcpServer": {
+              "methods": ["getAiApplicationMcpServer", "getAiApplicationMcpServer", "getAiApplicationMcpServer", "getAiApplicationMcpServerCallable"]
+            },
             "GetBinding": {
               "methods": ["getBinding", "getBinding", "getBinding", "getBindingCallable"]
             },
             "GetEndpoint": {
               "methods": ["getEndpoint", "getEndpoint", "getEndpoint", "getEndpointCallable"]
+            },
+            "GetFinding": {
+              "methods": ["getFinding", "getFinding", "getFinding", "getFindingCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
@@ -40,11 +67,35 @@
             "GetMcpServer": {
               "methods": ["getMcpServer", "getMcpServer", "getMcpServer", "getMcpServerCallable"]
             },
+            "GetPublisher": {
+              "methods": ["getPublisher", "getPublisher", "getPublisher", "getPublisherCallable"]
+            },
             "GetService": {
               "methods": ["getService", "getService", "getService", "getServiceCallable"]
             },
+            "GetSkill": {
+              "methods": ["getSkill", "getSkill", "getSkill", "getSkillCallable"]
+            },
+            "GetSkillEncryptionSpec": {
+              "methods": ["getSkillEncryptionSpec", "getSkillEncryptionSpec", "getSkillEncryptionSpec", "getSkillEncryptionSpecCallable"]
+            },
+            "GetSkillRevision": {
+              "methods": ["getSkillRevision", "getSkillRevision", "getSkillRevision", "getSkillRevisionCallable"]
+            },
             "ListAgents": {
               "methods": ["listAgents", "listAgents", "listAgents", "listAgentsPagedCallable", "listAgentsCallable"]
+            },
+            "ListAiApplicationAgents": {
+              "methods": ["listAiApplicationAgents", "listAiApplicationAgents", "listAiApplicationAgents", "listAiApplicationAgentsPagedCallable", "listAiApplicationAgentsCallable"]
+            },
+            "ListAiApplicationEndpoints": {
+              "methods": ["listAiApplicationEndpoints", "listAiApplicationEndpoints", "listAiApplicationEndpoints", "listAiApplicationEndpointsPagedCallable", "listAiApplicationEndpointsCallable"]
+            },
+            "ListAiApplicationMcpServers": {
+              "methods": ["listAiApplicationMcpServers", "listAiApplicationMcpServers", "listAiApplicationMcpServers", "listAiApplicationMcpServersPagedCallable", "listAiApplicationMcpServersCallable"]
+            },
+            "ListAiApplications": {
+              "methods": ["listAiApplications", "listAiApplications", "listAiApplications", "listAiApplicationsPagedCallable", "listAiApplicationsCallable"]
             },
             "ListBindings": {
               "methods": ["listBindings", "listBindings", "listBindings", "listBindingsPagedCallable", "listBindingsCallable"]
@@ -52,14 +103,26 @@
             "ListEndpoints": {
               "methods": ["listEndpoints", "listEndpoints", "listEndpoints", "listEndpointsPagedCallable", "listEndpointsCallable"]
             },
+            "ListFindings": {
+              "methods": ["listFindings", "listFindings", "listFindings", "listFindingsPagedCallable", "listFindingsCallable"]
+            },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListMcpServers": {
               "methods": ["listMcpServers", "listMcpServers", "listMcpServers", "listMcpServersPagedCallable", "listMcpServersCallable"]
             },
+            "ListPublishers": {
+              "methods": ["listPublishers", "listPublishers", "listPublishers", "listPublishersPagedCallable", "listPublishersCallable"]
+            },
             "ListServices": {
               "methods": ["listServices", "listServices", "listServices", "listServicesPagedCallable", "listServicesCallable"]
+            },
+            "ListSkillRevisions": {
+              "methods": ["listSkillRevisions", "listSkillRevisions", "listSkillRevisions", "listSkillRevisionsPagedCallable", "listSkillRevisionsCallable"]
+            },
+            "ListSkills": {
+              "methods": ["listSkills", "listSkills", "listSkills", "listSkillsPagedCallable", "listSkillsCallable"]
             },
             "SearchAgents": {
               "methods": ["searchAgents", "searchAgents", "searchAgents", "searchAgentsPagedCallable", "searchAgentsCallable"]
@@ -67,11 +130,20 @@
             "SearchMcpServers": {
               "methods": ["searchMcpServers", "searchMcpServers", "searchMcpServers", "searchMcpServersPagedCallable", "searchMcpServersCallable"]
             },
+            "SearchSkills": {
+              "methods": ["searchSkills", "searchSkillsPagedCallable", "searchSkillsCallable"]
+            },
             "UpdateBinding": {
               "methods": ["updateBindingAsync", "updateBindingAsync", "updateBindingOperationCallable", "updateBindingCallable"]
             },
             "UpdateService": {
               "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]
+            },
+            "UpdateSkill": {
+              "methods": ["updateSkillAsync", "updateSkillAsync", "updateSkillOperationCallable", "updateSkillCallable"]
+            },
+            "UpdateSkillEncryptionSpec": {
+              "methods": ["updateSkillEncryptionSpecAsync", "updateSkillEncryptionSpecAsync", "updateSkillEncryptionSpecOperationCallable", "updateSkillEncryptionSpecCallable"]
             }
           }
         }

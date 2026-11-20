@@ -41,7 +41,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>2.88.0</version>
+  <version>2.89.0</version>
 </dependency>
 ```
 
@@ -56,13 +56,13 @@ implementation 'com.google.cloud:google-cloud-bigtable'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-bigtable:2.88.0'
+implementation 'com.google.cloud:google-cloud-bigtable:2.89.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.88.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.89.0"
 ```
 
 ## Authentication
@@ -351,6 +351,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/google-cloud-java/
 | Hello World | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/bigtable/HelloWorld.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigtable/HelloWorld.java) |
 | Instance Admin Example | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/bigtable/InstanceAdminExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigtable/InstanceAdminExample.java) |
 | Key Salting | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/bigtable/KeySalting.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigtable/KeySalting.java) |
+| List Instances | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/bigtable/ListInstances.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigtable/ListInstances.java) |
 | Quickstart | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/bigtable/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigtable/Quickstart.java) |
 | Reads | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/bigtable/Reads.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigtable/Reads.java) |
 | Schema Bundle Example | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/bigtable/SchemaBundleExample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/bigtable/SchemaBundleExample.java) |
@@ -450,7 +451,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/history
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigtable.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-bigtable/2.88.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-bigtable/2.89.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

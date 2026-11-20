@@ -109,6 +109,16 @@ public final class Scope extends com.google.protobuf.GeneratedMessage
      * <code>GLOBAL = 2;</code>
      */
     GLOBAL(2),
+    /**
+     *
+     *
+     * <pre>
+     * Multi-regional type.
+     * </pre>
+     *
+     * <code>MULTI_REGIONAL = 3;</code>
+     */
+    MULTI_REGIONAL(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -155,6 +165,17 @@ public final class Scope extends com.google.protobuf.GeneratedMessage
      */
     public static final int GLOBAL_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Multi-regional type.
+     * </pre>
+     *
+     * <code>MULTI_REGIONAL = 3;</code>
+     */
+    public static final int MULTI_REGIONAL_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -185,6 +206,8 @@ public final class Scope extends com.google.protobuf.GeneratedMessage
           return REGIONAL;
         case 2:
           return GLOBAL;
+        case 3:
+          return MULTI_REGIONAL;
         default:
           return null;
       }

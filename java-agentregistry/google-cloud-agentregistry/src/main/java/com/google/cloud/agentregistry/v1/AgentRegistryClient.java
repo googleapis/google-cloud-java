@@ -47,7 +47,7 @@ import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service for managing Agents, Endpoints, McpServers, Services, and Bindings.
+ * Service Description: Service for managing Agent Registry resources.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -59,7 +59,7 @@ import org.jspecify.annotations.Nullable;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
- *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+ *   AgentName name = AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]");
  *   Agent response = agentRegistryClient.getAgent(name);
  * }
  * }</pre>
@@ -444,6 +444,473 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> fetchAvailableBindingsPagedCallable()
  *           <li><p> fetchAvailableBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSkill</td>
+ *      <td><p> ========================================================================= # Skills Collection APIs
+ * <p>  Creates a Skill resource container, optionally publishing the initial SkillRevision inline in a single, atomic CRUD roundtrip.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSkillAsync(CreateSkillRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createSkillAsync(LocationName parent, Skill skill, String skillId)
+ *           <li><p> createSkillAsync(String parent, Skill skill, String skillId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSkillOperationCallable()
+ *           <li><p> createSkillCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSkill</td>
+ *      <td><p> Fetches the active configuration and metadata of a Skill.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSkill(GetSkillRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSkill(SkillName name)
+ *           <li><p> getSkill(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSkillCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSkill</td>
+ *      <td><p> Updates Skill metadata or overrides active pointers/state using REST standard PATCH.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSkillAsync(UpdateSkillRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateSkillAsync(Skill skill, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSkillOperationCallable()
+ *           <li><p> updateSkillCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSkill</td>
+ *      <td><p> Deletes a Skill container along with all its revisions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSkillAsync(DeleteSkillRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteSkillAsync(SkillName name)
+ *           <li><p> deleteSkillAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSkillOperationCallable()
+ *           <li><p> deleteSkillCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSkills</td>
+ *      <td><p> Lists logical Skills available in a project.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSkills(ListSkillsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSkills(LocationName parent)
+ *           <li><p> listSkills(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSkillsPagedCallable()
+ *           <li><p> listSkillsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SearchSkills</td>
+ *      <td><p> Custom deep-search method to filter by frontmatter or query SKILL.md text blobs.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchSkills(SearchSkillsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchSkillsPagedCallable()
+ *           <li><p> searchSkillsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSkillRevision</td>
+ *      <td><p> Creates a new immutable revision and triggers validation pipelines.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSkillRevisionAsync(CreateSkillRevisionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createSkillRevisionAsync(SkillName parent, SkillRevision skillRevision, String skillRevisionId)
+ *           <li><p> createSkillRevisionAsync(String parent, SkillRevision skillRevision, String skillRevisionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSkillRevisionOperationCallable()
+ *           <li><p> createSkillRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSkillRevision</td>
+ *      <td><p> Gets details of a single immutable Revision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSkillRevision(GetSkillRevisionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSkillRevision(SkillRevisionName name)
+ *           <li><p> getSkillRevision(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSkillRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSkillRevision</td>
+ *      <td><p> Deletes a specific revision (restricted to admins to purge accidentally committed secrets).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSkillRevisionAsync(DeleteSkillRevisionRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteSkillRevisionAsync(SkillRevisionName name)
+ *           <li><p> deleteSkillRevisionAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSkillRevisionOperationCallable()
+ *           <li><p> deleteSkillRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSkillRevisions</td>
+ *      <td><p> Lists all revisions belonging to a parent Skill.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSkillRevisions(ListSkillRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSkillRevisions(SkillName parent)
+ *           <li><p> listSkillRevisions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSkillRevisionsPagedCallable()
+ *           <li><p> listSkillRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPublisher</td>
+ *      <td><p> Fetches details of a specific Publisher.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPublisher(GetPublisherRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPublisher(PublisherName name)
+ *           <li><p> getPublisher(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPublisherCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListPublishers</td>
+ *      <td><p> Lists all Publishers in a location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listPublishers(ListPublishersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listPublishers(LocationName parent)
+ *           <li><p> listPublishers(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listPublishersPagedCallable()
+ *           <li><p> listPublishersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAiApplication</td>
+ *      <td><p> Gets details of a single AI Application.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAiApplication(GetAiApplicationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAiApplication(AiApplicationName name)
+ *           <li><p> getAiApplication(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAiApplications</td>
+ *      <td><p> Lists AI Applications in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAiApplications(ListAiApplicationsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAiApplications(LocationName parent)
+ *           <li><p> listAiApplications(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationsPagedCallable()
+ *           <li><p> listAiApplicationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAiApplicationAgent</td>
+ *      <td><p> Gets details of a single Agent under an AI Application.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationAgent(GetAiApplicationAgentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationAgent(AgentName name)
+ *           <li><p> getAiApplicationAgent(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationAgentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAiApplicationAgents</td>
+ *      <td><p> Lists Agents under an AI Application.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationAgents(ListAiApplicationAgentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationAgents(AiApplicationName parent)
+ *           <li><p> listAiApplicationAgents(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationAgentsPagedCallable()
+ *           <li><p> listAiApplicationAgentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAiApplicationMcpServer</td>
+ *      <td><p> Gets details of a single McpServer under an AI Application.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationMcpServer(GetAiApplicationMcpServerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationMcpServer(McpServerName name)
+ *           <li><p> getAiApplicationMcpServer(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationMcpServerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAiApplicationMcpServers</td>
+ *      <td><p> Lists McpServers under an AI Application.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationMcpServers(ListAiApplicationMcpServersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationMcpServers(AiApplicationName parent)
+ *           <li><p> listAiApplicationMcpServers(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationMcpServersPagedCallable()
+ *           <li><p> listAiApplicationMcpServersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetFinding</td>
+ *      <td><p> Gets details of a single Finding.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getFinding(GetFindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getFinding(FindingName name)
+ *           <li><p> getFinding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getFindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListFindings</td>
+ *      <td><p> Lists Findings in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listFindings(ListFindingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listFindings(LocationName parent)
+ *           <li><p> listFindings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listFindingsPagedCallable()
+ *           <li><p> listFindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAiApplicationEndpoint</td>
+ *      <td><p> Gets details of a single Endpoint under an AI Application.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationEndpoint(GetAiApplicationEndpointRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationEndpoint(EndpointName name)
+ *           <li><p> getAiApplicationEndpoint(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAiApplicationEndpointCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAiApplicationEndpoints</td>
+ *      <td><p> Lists Endpoints under an AI Application.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationEndpoints(ListAiApplicationEndpointsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationEndpoints(AiApplicationName parent)
+ *           <li><p> listAiApplicationEndpoints(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAiApplicationEndpointsPagedCallable()
+ *           <li><p> listAiApplicationEndpointsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSkillEncryptionSpec</td>
+ *      <td><p> ========================================================================= # Skill Encryption Spec Service Methods
+ * <p>  Gets the customer-managed encryption key (CMEK) configuration for Skills in a specific project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSkillEncryptionSpec(GetSkillEncryptionSpecRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSkillEncryptionSpec(SkillEncryptionSpecName name)
+ *           <li><p> getSkillEncryptionSpec(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSkillEncryptionSpecCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSkillEncryptionSpec</td>
+ *      <td><p> Updates the customer-managed encryption key (CMEK) configuration for Skills in a specific project and location.
+ * <p>  This method is only allowed when no Skills exist in the target project and location. If any Skill already exists in the location, the request fails with `FAILED_PRECONDITION`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSkillEncryptionSpecAsync(UpdateSkillEncryptionSpecRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateSkillEncryptionSpecAsync(SkillEncryptionSpec skillEncryptionSpec, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSkillEncryptionSpecOperationCallable()
+ *           <li><p> updateSkillEncryptionSpecCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -952,7 +1419,7 @@ public class AgentRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
-   *   AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   AgentName name = AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]");
    *   Agent response = agentRegistryClient.getAgent(name);
    * }
    * }</pre>
@@ -979,7 +1446,8 @@ public class AgentRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
-   *   String name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
+   *   String name =
+   *       AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
    *   Agent response = agentRegistryClient.getAgent(name);
    * }
    * }</pre>
@@ -1007,7 +1475,9 @@ public class AgentRegistryClient implements BackgroundResource {
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
    *   GetAgentRequest request =
    *       GetAgentRequest.newBuilder()
-   *           .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setName(
+   *               AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]")
+   *                   .toString())
    *           .build();
    *   Agent response = agentRegistryClient.getAgent(request);
    * }
@@ -1035,7 +1505,9 @@ public class AgentRegistryClient implements BackgroundResource {
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
    *   GetAgentRequest request =
    *       GetAgentRequest.newBuilder()
-   *           .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+   *           .setName(
+   *               AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Agent> future = agentRegistryClient.getAgentCallable().futureCall(request);
    *   // Do something.
@@ -1227,7 +1699,8 @@ public class AgentRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   EndpointName name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
    *   Endpoint response = agentRegistryClient.getEndpoint(name);
    * }
    * }</pre>
@@ -1255,7 +1728,9 @@ public class AgentRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
-   *   String name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   String name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
    *   Endpoint response = agentRegistryClient.getEndpoint(name);
    * }
    * }</pre>
@@ -1284,7 +1759,10 @@ public class AgentRegistryClient implements BackgroundResource {
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
    *   GetEndpointRequest request =
    *       GetEndpointRequest.newBuilder()
-   *           .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setName(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .build();
    *   Endpoint response = agentRegistryClient.getEndpoint(request);
    * }
@@ -1312,7 +1790,10 @@ public class AgentRegistryClient implements BackgroundResource {
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
    *   GetEndpointRequest request =
    *       GetEndpointRequest.newBuilder()
-   *           .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setName(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Endpoint> future = agentRegistryClient.getEndpointCallable().futureCall(request);
    *   // Do something.
@@ -1679,7 +2160,8 @@ public class AgentRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
-   *   McpServerName name = McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]");
+   *   McpServerName name =
+   *       McpServerName.ofProjectLocationMcpServerName("[PROJECT]", "[LOCATION]", "[MCP_SERVER]");
    *   McpServer response = agentRegistryClient.getMcpServer(name);
    * }
    * }</pre>
@@ -1706,7 +2188,9 @@ public class AgentRegistryClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
-   *   String name = McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]").toString();
+   *   String name =
+   *       McpServerName.ofProjectLocationMcpServerName("[PROJECT]", "[LOCATION]", "[MCP_SERVER]")
+   *           .toString();
    *   McpServer response = agentRegistryClient.getMcpServer(name);
    * }
    * }</pre>
@@ -1734,7 +2218,10 @@ public class AgentRegistryClient implements BackgroundResource {
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
    *   GetMcpServerRequest request =
    *       GetMcpServerRequest.newBuilder()
-   *           .setName(McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]").toString())
+   *           .setName(
+   *               McpServerName.ofProjectLocationMcpServerName(
+   *                       "[PROJECT]", "[LOCATION]", "[MCP_SERVER]")
+   *                   .toString())
    *           .build();
    *   McpServer response = agentRegistryClient.getMcpServer(request);
    * }
@@ -1762,7 +2249,10 @@ public class AgentRegistryClient implements BackgroundResource {
    * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
    *   GetMcpServerRequest request =
    *       GetMcpServerRequest.newBuilder()
-   *           .setName(McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]").toString())
+   *           .setName(
+   *               McpServerName.ofProjectLocationMcpServerName(
+   *                       "[PROJECT]", "[LOCATION]", "[MCP_SERVER]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<McpServer> future = agentRegistryClient.getMcpServerCallable().futureCall(request);
    *   // Do something.
@@ -3385,6 +3875,3478 @@ public class AgentRegistryClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * ========================================================================= # Skills Collection
+   * APIs
+   *
+   * <p>Creates a Skill resource container, optionally publishing the initial SkillRevision inline
+   * in a single, atomic CRUD roundtrip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Skill skill = Skill.newBuilder().build();
+   *   String skillId = "skillId2147320652";
+   *   Skill response = agentRegistryClient.createSkillAsync(parent, skill, skillId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location location to bootstrap.
+   * @param skill Required. Skill container body config.
+   * @param skillId Required. Custom, user-defined unique container identifier. Must be unique
+   *     within the parent project and location. This value should be 4-64 characters, and valid
+   *     characters are `/[a-z][0-9]-/`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Skill, OperationMetadata> createSkillAsync(
+      @Nullable LocationName parent, Skill skill, String skillId) {
+    CreateSkillRequest request =
+        CreateSkillRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSkill(skill)
+            .setSkillId(skillId)
+            .build();
+    return createSkillAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ========================================================================= # Skills Collection
+   * APIs
+   *
+   * <p>Creates a Skill resource container, optionally publishing the initial SkillRevision inline
+   * in a single, atomic CRUD roundtrip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Skill skill = Skill.newBuilder().build();
+   *   String skillId = "skillId2147320652";
+   *   Skill response = agentRegistryClient.createSkillAsync(parent, skill, skillId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location location to bootstrap.
+   * @param skill Required. Skill container body config.
+   * @param skillId Required. Custom, user-defined unique container identifier. Must be unique
+   *     within the parent project and location. This value should be 4-64 characters, and valid
+   *     characters are `/[a-z][0-9]-/`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Skill, OperationMetadata> createSkillAsync(
+      String parent, Skill skill, String skillId) {
+    CreateSkillRequest request =
+        CreateSkillRequest.newBuilder()
+            .setParent(parent)
+            .setSkill(skill)
+            .setSkillId(skillId)
+            .build();
+    return createSkillAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ========================================================================= # Skills Collection
+   * APIs
+   *
+   * <p>Creates a Skill resource container, optionally publishing the initial SkillRevision inline
+   * in a single, atomic CRUD roundtrip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   CreateSkillRequest request =
+   *       CreateSkillRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSkillId("skillId2147320652")
+   *           .setSkill(Skill.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Skill response = agentRegistryClient.createSkillAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Skill, OperationMetadata> createSkillAsync(
+      CreateSkillRequest request) {
+    return createSkillOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ========================================================================= # Skills Collection
+   * APIs
+   *
+   * <p>Creates a Skill resource container, optionally publishing the initial SkillRevision inline
+   * in a single, atomic CRUD roundtrip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   CreateSkillRequest request =
+   *       CreateSkillRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSkillId("skillId2147320652")
+   *           .setSkill(Skill.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Skill, OperationMetadata> future =
+   *       agentRegistryClient.createSkillOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Skill response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateSkillRequest, Skill, OperationMetadata>
+      createSkillOperationCallable() {
+    return stub.createSkillOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ========================================================================= # Skills Collection
+   * APIs
+   *
+   * <p>Creates a Skill resource container, optionally publishing the initial SkillRevision inline
+   * in a single, atomic CRUD roundtrip.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   CreateSkillRequest request =
+   *       CreateSkillRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSkillId("skillId2147320652")
+   *           .setSkill(Skill.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = agentRegistryClient.createSkillCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSkillRequest, Operation> createSkillCallable() {
+    return stub.createSkillCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the active configuration and metadata of a Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SkillName name = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+   *   Skill response = agentRegistryClient.getSkill(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target resource container name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Skill getSkill(@Nullable SkillName name) {
+    GetSkillRequest request =
+        GetSkillRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSkill(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the active configuration and metadata of a Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString();
+   *   Skill response = agentRegistryClient.getSkill(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target resource container name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Skill getSkill(String name) {
+    GetSkillRequest request = GetSkillRequest.newBuilder().setName(name).build();
+    return getSkill(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the active configuration and metadata of a Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetSkillRequest request =
+   *       GetSkillRequest.newBuilder()
+   *           .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .build();
+   *   Skill response = agentRegistryClient.getSkill(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Skill getSkill(GetSkillRequest request) {
+    return getSkillCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the active configuration and metadata of a Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetSkillRequest request =
+   *       GetSkillRequest.newBuilder()
+   *           .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .build();
+   *   ApiFuture<Skill> future = agentRegistryClient.getSkillCallable().futureCall(request);
+   *   // Do something.
+   *   Skill response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSkillRequest, Skill> getSkillCallable() {
+    return stub.getSkillCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates Skill metadata or overrides active pointers/state using REST standard PATCH.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   Skill skill = Skill.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Skill response = agentRegistryClient.updateSkillAsync(skill, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param skill Required. Mutable Skill container config fields to write.
+   * @param updateMask Optional. Standard update target mask mapping relative fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Skill, OperationMetadata> updateSkillAsync(
+      Skill skill, FieldMask updateMask) {
+    UpdateSkillRequest request =
+        UpdateSkillRequest.newBuilder().setSkill(skill).setUpdateMask(updateMask).build();
+    return updateSkillAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates Skill metadata or overrides active pointers/state using REST standard PATCH.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   UpdateSkillRequest request =
+   *       UpdateSkillRequest.newBuilder()
+   *           .setSkill(Skill.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Skill response = agentRegistryClient.updateSkillAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Skill, OperationMetadata> updateSkillAsync(
+      UpdateSkillRequest request) {
+    return updateSkillOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates Skill metadata or overrides active pointers/state using REST standard PATCH.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   UpdateSkillRequest request =
+   *       UpdateSkillRequest.newBuilder()
+   *           .setSkill(Skill.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Skill, OperationMetadata> future =
+   *       agentRegistryClient.updateSkillOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Skill response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateSkillRequest, Skill, OperationMetadata>
+      updateSkillOperationCallable() {
+    return stub.updateSkillOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates Skill metadata or overrides active pointers/state using REST standard PATCH.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   UpdateSkillRequest request =
+   *       UpdateSkillRequest.newBuilder()
+   *           .setSkill(Skill.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = agentRegistryClient.updateSkillCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSkillRequest, Operation> updateSkillCallable() {
+    return stub.updateSkillCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Skill container along with all its revisions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SkillName name = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+   *   agentRegistryClient.deleteSkillAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target Skill container name to remove.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSkillAsync(
+      @Nullable SkillName name) {
+    DeleteSkillRequest request =
+        DeleteSkillRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteSkillAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Skill container along with all its revisions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString();
+   *   agentRegistryClient.deleteSkillAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target Skill container name to remove.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSkillAsync(String name) {
+    DeleteSkillRequest request = DeleteSkillRequest.newBuilder().setName(name).build();
+    return deleteSkillAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Skill container along with all its revisions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   DeleteSkillRequest request =
+   *       DeleteSkillRequest.newBuilder()
+   *           .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   agentRegistryClient.deleteSkillAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSkillAsync(
+      DeleteSkillRequest request) {
+    return deleteSkillOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Skill container along with all its revisions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   DeleteSkillRequest request =
+   *       DeleteSkillRequest.newBuilder()
+   *           .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       agentRegistryClient.deleteSkillOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSkillRequest, Empty, OperationMetadata>
+      deleteSkillOperationCallable() {
+    return stub.deleteSkillOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Skill container along with all its revisions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   DeleteSkillRequest request =
+   *       DeleteSkillRequest.newBuilder()
+   *           .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future = agentRegistryClient.deleteSkillCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSkillRequest, Operation> deleteSkillCallable() {
+    return stub.deleteSkillCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logical Skills available in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Skill element : agentRegistryClient.listSkills(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListSkillsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkillsPagedResponse listSkills(@Nullable LocationName parent) {
+    ListSkillsRequest request =
+        ListSkillsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listSkills(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logical Skills available in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Skill element : agentRegistryClient.listSkills(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListSkillsRequest
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkillsPagedResponse listSkills(String parent) {
+    ListSkillsRequest request = ListSkillsRequest.newBuilder().setParent(parent).build();
+    return listSkills(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logical Skills available in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListSkillsRequest request =
+   *       ListSkillsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Skill element : agentRegistryClient.listSkills(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkillsPagedResponse listSkills(ListSkillsRequest request) {
+    return listSkillsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logical Skills available in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListSkillsRequest request =
+   *       ListSkillsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Skill> future = agentRegistryClient.listSkillsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Skill element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkillsRequest, ListSkillsPagedResponse> listSkillsPagedCallable() {
+    return stub.listSkillsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists logical Skills available in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListSkillsRequest request =
+   *       ListSkillsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListSkillsResponse response = agentRegistryClient.listSkillsCallable().call(request);
+   *     for (Skill element : response.getSkillsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkillsRequest, ListSkillsResponse> listSkillsCallable() {
+    return stub.listSkillsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Custom deep-search method to filter by frontmatter or query SKILL.md text blobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SearchSkillsRequest request =
+   *       SearchSkillsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSearchType(SearchType.forNumber(0))
+   *           .setSearchString("searchString120312793")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Skill element : agentRegistryClient.searchSkills(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchSkillsPagedResponse searchSkills(SearchSkillsRequest request) {
+    return searchSkillsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Custom deep-search method to filter by frontmatter or query SKILL.md text blobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SearchSkillsRequest request =
+   *       SearchSkillsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSearchType(SearchType.forNumber(0))
+   *           .setSearchString("searchString120312793")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Skill> future = agentRegistryClient.searchSkillsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Skill element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchSkillsRequest, SearchSkillsPagedResponse>
+      searchSkillsPagedCallable() {
+    return stub.searchSkillsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Custom deep-search method to filter by frontmatter or query SKILL.md text blobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SearchSkillsRequest request =
+   *       SearchSkillsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSearchType(SearchType.forNumber(0))
+   *           .setSearchString("searchString120312793")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     SearchSkillsResponse response = agentRegistryClient.searchSkillsCallable().call(request);
+   *     for (Skill element : response.getSkillsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchSkillsRequest, SearchSkillsResponse> searchSkillsCallable() {
+    return stub.searchSkillsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new immutable revision and triggers validation pipelines.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SkillName parent = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+   *   SkillRevision skillRevision = SkillRevision.newBuilder().build();
+   *   String skillRevisionId = "skillRevisionId-983110777";
+   *   SkillRevision response =
+   *       agentRegistryClient
+   *           .createSkillRevisionAsync(parent, skillRevision, skillRevisionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent logical container name.
+   * @param skillRevision Required. Immutable SkillRevision snapshot definition schema.
+   * @param skillRevisionId Optional. Custom, user-defined unique revision identifier. Format: 4-63
+   *     characters, matching regex `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SkillRevision, OperationMetadata> createSkillRevisionAsync(
+      @Nullable SkillName parent, SkillRevision skillRevision, String skillRevisionId) {
+    CreateSkillRevisionRequest request =
+        CreateSkillRevisionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSkillRevision(skillRevision)
+            .setSkillRevisionId(skillRevisionId)
+            .build();
+    return createSkillRevisionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new immutable revision and triggers validation pipelines.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString();
+   *   SkillRevision skillRevision = SkillRevision.newBuilder().build();
+   *   String skillRevisionId = "skillRevisionId-983110777";
+   *   SkillRevision response =
+   *       agentRegistryClient
+   *           .createSkillRevisionAsync(parent, skillRevision, skillRevisionId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent logical container name.
+   * @param skillRevision Required. Immutable SkillRevision snapshot definition schema.
+   * @param skillRevisionId Optional. Custom, user-defined unique revision identifier. Format: 4-63
+   *     characters, matching regex `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SkillRevision, OperationMetadata> createSkillRevisionAsync(
+      String parent, SkillRevision skillRevision, String skillRevisionId) {
+    CreateSkillRevisionRequest request =
+        CreateSkillRevisionRequest.newBuilder()
+            .setParent(parent)
+            .setSkillRevision(skillRevision)
+            .setSkillRevisionId(skillRevisionId)
+            .build();
+    return createSkillRevisionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new immutable revision and triggers validation pipelines.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   CreateSkillRevisionRequest request =
+   *       CreateSkillRevisionRequest.newBuilder()
+   *           .setParent(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setSkillRevision(SkillRevision.newBuilder().build())
+   *           .setSkillRevisionId("skillRevisionId-983110777")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   SkillRevision response = agentRegistryClient.createSkillRevisionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SkillRevision, OperationMetadata> createSkillRevisionAsync(
+      CreateSkillRevisionRequest request) {
+    return createSkillRevisionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new immutable revision and triggers validation pipelines.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   CreateSkillRevisionRequest request =
+   *       CreateSkillRevisionRequest.newBuilder()
+   *           .setParent(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setSkillRevision(SkillRevision.newBuilder().build())
+   *           .setSkillRevisionId("skillRevisionId-983110777")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<SkillRevision, OperationMetadata> future =
+   *       agentRegistryClient.createSkillRevisionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SkillRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+      createSkillRevisionOperationCallable() {
+    return stub.createSkillRevisionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new immutable revision and triggers validation pipelines.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   CreateSkillRevisionRequest request =
+   *       CreateSkillRevisionRequest.newBuilder()
+   *           .setParent(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setSkillRevision(SkillRevision.newBuilder().build())
+   *           .setSkillRevisionId("skillRevisionId-983110777")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       agentRegistryClient.createSkillRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSkillRevisionRequest, Operation> createSkillRevisionCallable() {
+    return stub.createSkillRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single immutable Revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SkillRevisionName name =
+   *       SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]");
+   *   SkillRevision response = agentRegistryClient.getSkillRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target revision name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SkillRevision getSkillRevision(@Nullable SkillRevisionName name) {
+    GetSkillRevisionRequest request =
+        GetSkillRevisionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSkillRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single immutable Revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name =
+   *       SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString();
+   *   SkillRevision response = agentRegistryClient.getSkillRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target revision name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SkillRevision getSkillRevision(String name) {
+    GetSkillRevisionRequest request = GetSkillRevisionRequest.newBuilder().setName(name).build();
+    return getSkillRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single immutable Revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetSkillRevisionRequest request =
+   *       GetSkillRevisionRequest.newBuilder()
+   *           .setName(
+   *               SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   SkillRevision response = agentRegistryClient.getSkillRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SkillRevision getSkillRevision(GetSkillRevisionRequest request) {
+    return getSkillRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single immutable Revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetSkillRevisionRequest request =
+   *       GetSkillRevisionRequest.newBuilder()
+   *           .setName(
+   *               SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SkillRevision> future =
+   *       agentRegistryClient.getSkillRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   SkillRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSkillRevisionRequest, SkillRevision> getSkillRevisionCallable() {
+    return stub.getSkillRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific revision (restricted to admins to purge accidentally committed secrets).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SkillRevisionName name =
+   *       SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]");
+   *   agentRegistryClient.deleteSkillRevisionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target revision name to remove.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSkillRevisionAsync(
+      @Nullable SkillRevisionName name) {
+    DeleteSkillRevisionRequest request =
+        DeleteSkillRevisionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteSkillRevisionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific revision (restricted to admins to purge accidentally committed secrets).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name =
+   *       SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString();
+   *   agentRegistryClient.deleteSkillRevisionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target revision name to remove.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSkillRevisionAsync(String name) {
+    DeleteSkillRevisionRequest request =
+        DeleteSkillRevisionRequest.newBuilder().setName(name).build();
+    return deleteSkillRevisionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific revision (restricted to admins to purge accidentally committed secrets).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   DeleteSkillRevisionRequest request =
+   *       DeleteSkillRevisionRequest.newBuilder()
+   *           .setName(
+   *               SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   agentRegistryClient.deleteSkillRevisionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteSkillRevisionAsync(
+      DeleteSkillRevisionRequest request) {
+    return deleteSkillRevisionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific revision (restricted to admins to purge accidentally committed secrets).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   DeleteSkillRevisionRequest request =
+   *       DeleteSkillRevisionRequest.newBuilder()
+   *           .setName(
+   *               SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       agentRegistryClient.deleteSkillRevisionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSkillRevisionRequest, Empty, OperationMetadata>
+      deleteSkillRevisionOperationCallable() {
+    return stub.deleteSkillRevisionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific revision (restricted to admins to purge accidentally committed secrets).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   DeleteSkillRevisionRequest request =
+   *       DeleteSkillRevisionRequest.newBuilder()
+   *           .setName(
+   *               SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       agentRegistryClient.deleteSkillRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSkillRevisionRequest, Operation> deleteSkillRevisionCallable() {
+    return stub.deleteSkillRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions belonging to a parent Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SkillName parent = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+   *   for (SkillRevision element : agentRegistryClient.listSkillRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent logical container name to query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkillRevisionsPagedResponse listSkillRevisions(@Nullable SkillName parent) {
+    ListSkillRevisionsRequest request =
+        ListSkillRevisionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSkillRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions belonging to a parent Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString();
+   *   for (SkillRevision element : agentRegistryClient.listSkillRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent logical container name to query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkillRevisionsPagedResponse listSkillRevisions(String parent) {
+    ListSkillRevisionsRequest request =
+        ListSkillRevisionsRequest.newBuilder().setParent(parent).build();
+    return listSkillRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions belonging to a parent Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListSkillRevisionsRequest request =
+   *       ListSkillRevisionsRequest.newBuilder()
+   *           .setParent(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SkillRevision element : agentRegistryClient.listSkillRevisions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSkillRevisionsPagedResponse listSkillRevisions(
+      ListSkillRevisionsRequest request) {
+    return listSkillRevisionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions belonging to a parent Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListSkillRevisionsRequest request =
+   *       ListSkillRevisionsRequest.newBuilder()
+   *           .setParent(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SkillRevision> future =
+   *       agentRegistryClient.listSkillRevisionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SkillRevision element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkillRevisionsRequest, ListSkillRevisionsPagedResponse>
+      listSkillRevisionsPagedCallable() {
+    return stub.listSkillRevisionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all revisions belonging to a parent Skill.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListSkillRevisionsRequest request =
+   *       ListSkillRevisionsRequest.newBuilder()
+   *           .setParent(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSkillRevisionsResponse response =
+   *         agentRegistryClient.listSkillRevisionsCallable().call(request);
+   *     for (SkillRevision element : response.getSkillRevisionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSkillRevisionsRequest, ListSkillRevisionsResponse>
+      listSkillRevisionsCallable() {
+    return stub.listSkillRevisionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches details of a specific Publisher.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   PublisherName name = PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]");
+   *   Publisher response = agentRegistryClient.getPublisher(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target publisher resource name. Format:
+   *     `projects/{project}/locations/{location}/publishers/{publisher}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Publisher getPublisher(@Nullable PublisherName name) {
+    GetPublisherRequest request =
+        GetPublisherRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPublisher(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches details of a specific Publisher.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name = PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString();
+   *   Publisher response = agentRegistryClient.getPublisher(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target publisher resource name. Format:
+   *     `projects/{project}/locations/{location}/publishers/{publisher}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Publisher getPublisher(String name) {
+    GetPublisherRequest request = GetPublisherRequest.newBuilder().setName(name).build();
+    return getPublisher(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches details of a specific Publisher.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetPublisherRequest request =
+   *       GetPublisherRequest.newBuilder()
+   *           .setName(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+   *           .build();
+   *   Publisher response = agentRegistryClient.getPublisher(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Publisher getPublisher(GetPublisherRequest request) {
+    return getPublisherCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches details of a specific Publisher.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetPublisherRequest request =
+   *       GetPublisherRequest.newBuilder()
+   *           .setName(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+   *           .build();
+   *   ApiFuture<Publisher> future = agentRegistryClient.getPublisherCallable().futureCall(request);
+   *   // Do something.
+   *   Publisher response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPublisherRequest, Publisher> getPublisherCallable() {
+    return stub.getPublisherCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Publishers in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Publisher element : agentRegistryClient.listPublishers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent location to query. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPublishersPagedResponse listPublishers(@Nullable LocationName parent) {
+    ListPublishersRequest request =
+        ListPublishersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listPublishers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Publishers in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Publisher element : agentRegistryClient.listPublishers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent location to query. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPublishersPagedResponse listPublishers(String parent) {
+    ListPublishersRequest request = ListPublishersRequest.newBuilder().setParent(parent).build();
+    return listPublishers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Publishers in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListPublishersRequest request =
+   *       ListPublishersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Publisher element : agentRegistryClient.listPublishers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPublishersPagedResponse listPublishers(ListPublishersRequest request) {
+    return listPublishersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Publishers in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListPublishersRequest request =
+   *       ListPublishersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Publisher> future =
+   *       agentRegistryClient.listPublishersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Publisher element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPublishersRequest, ListPublishersPagedResponse>
+      listPublishersPagedCallable() {
+    return stub.listPublishersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all Publishers in a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListPublishersRequest request =
+   *       ListPublishersRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListPublishersResponse response =
+   *         agentRegistryClient.listPublishersCallable().call(request);
+   *     for (Publisher element : response.getPublishersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPublishersRequest, ListPublishersResponse>
+      listPublishersCallable() {
+    return stub.listPublishersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   AiApplicationName name = AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+   *   AiApplication response = agentRegistryClient.getAiApplication(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target AI Application resource name. Format:
+   *     `projects/{project}/locations/{location}/aiApplications/{ai_application}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AiApplication getAiApplication(@Nullable AiApplicationName name) {
+    GetAiApplicationRequest request =
+        GetAiApplicationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAiApplication(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name = AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString();
+   *   AiApplication response = agentRegistryClient.getAiApplication(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Target AI Application resource name. Format:
+   *     `projects/{project}/locations/{location}/aiApplications/{ai_application}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AiApplication getAiApplication(String name) {
+    GetAiApplicationRequest request = GetAiApplicationRequest.newBuilder().setName(name).build();
+    return getAiApplication(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetAiApplicationRequest request =
+   *       GetAiApplicationRequest.newBuilder()
+   *           .setName(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .build();
+   *   AiApplication response = agentRegistryClient.getAiApplication(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AiApplication getAiApplication(GetAiApplicationRequest request) {
+    return getAiApplicationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetAiApplicationRequest request =
+   *       GetAiApplicationRequest.newBuilder()
+   *           .setName(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .build();
+   *   ApiFuture<AiApplication> future =
+   *       agentRegistryClient.getAiApplicationCallable().futureCall(request);
+   *   // Do something.
+   *   AiApplication response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAiApplicationRequest, AiApplication> getAiApplicationCallable() {
+    return stub.getAiApplicationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AI Applications in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AiApplication element : agentRegistryClient.listAiApplications(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent project and location to query. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationsPagedResponse listAiApplications(@Nullable LocationName parent) {
+    ListAiApplicationsRequest request =
+        ListAiApplicationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAiApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AI Applications in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AiApplication element : agentRegistryClient.listAiApplications(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent project and location to query. Format:
+   *     `projects/{project}/locations/{location}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationsPagedResponse listAiApplications(String parent) {
+    ListAiApplicationsRequest request =
+        ListAiApplicationsRequest.newBuilder().setParent(parent).build();
+    return listAiApplications(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AI Applications in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationsRequest request =
+   *       ListAiApplicationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AiApplication element : agentRegistryClient.listAiApplications(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationsPagedResponse listAiApplications(
+      ListAiApplicationsRequest request) {
+    return listAiApplicationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AI Applications in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationsRequest request =
+   *       ListAiApplicationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AiApplication> future =
+   *       agentRegistryClient.listAiApplicationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AiApplication element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAiApplicationsRequest, ListAiApplicationsPagedResponse>
+      listAiApplicationsPagedCallable() {
+    return stub.listAiApplicationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AI Applications in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationsRequest request =
+   *       ListAiApplicationsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAiApplicationsResponse response =
+   *         agentRegistryClient.listAiApplicationsCallable().call(request);
+   *     for (AiApplication element : response.getAiApplicationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAiApplicationsRequest, ListAiApplicationsResponse>
+      listAiApplicationsCallable() {
+    return stub.listAiApplicationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Agent under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   AgentName name =
+   *       AgentName.ofProjectLocationAiApplicationAgentName(
+   *           "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[AGENT]");
+   *   Agent response = agentRegistryClient.getAiApplicationAgent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource. Format:
+   *     `projects/{project}/locations/{location}/aiApplications/{ai_application}/agents/{agent}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAiApplicationAgent(@Nullable AgentName name) {
+    GetAiApplicationAgentRequest request =
+        GetAiApplicationAgentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAiApplicationAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Agent under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name =
+   *       AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
+   *   Agent response = agentRegistryClient.getAiApplicationAgent(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource. Format:
+   *     `projects/{project}/locations/{location}/aiApplications/{ai_application}/agents/{agent}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAiApplicationAgent(String name) {
+    GetAiApplicationAgentRequest request =
+        GetAiApplicationAgentRequest.newBuilder().setName(name).build();
+    return getAiApplicationAgent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Agent under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetAiApplicationAgentRequest request =
+   *       GetAiApplicationAgentRequest.newBuilder()
+   *           .setName(
+   *               AgentName.ofProjectLocationAiApplicationAgentName(
+   *                       "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[AGENT]")
+   *                   .toString())
+   *           .build();
+   *   Agent response = agentRegistryClient.getAiApplicationAgent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Agent getAiApplicationAgent(GetAiApplicationAgentRequest request) {
+    return getAiApplicationAgentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Agent under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetAiApplicationAgentRequest request =
+   *       GetAiApplicationAgentRequest.newBuilder()
+   *           .setName(
+   *               AgentName.ofProjectLocationAiApplicationAgentName(
+   *                       "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[AGENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Agent> future =
+   *       agentRegistryClient.getAiApplicationAgentCallable().futureCall(request);
+   *   // Do something.
+   *   Agent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAiApplicationAgentRequest, Agent> getAiApplicationAgentCallable() {
+    return stub.getAiApplicationAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Agents under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   AiApplicationName parent =
+   *       AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+   *   for (Agent element : agentRegistryClient.listAiApplicationAgents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value (AI Application) for ListAiApplicationAgentsRequest.
+   *     Format: `projects/{project}/locations/{location}/aiApplications/{ai_application}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationAgentsPagedResponse listAiApplicationAgents(
+      @Nullable AiApplicationName parent) {
+    ListAiApplicationAgentsRequest request =
+        ListAiApplicationAgentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAiApplicationAgents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Agents under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent =
+   *       AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString();
+   *   for (Agent element : agentRegistryClient.listAiApplicationAgents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value (AI Application) for ListAiApplicationAgentsRequest.
+   *     Format: `projects/{project}/locations/{location}/aiApplications/{ai_application}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationAgentsPagedResponse listAiApplicationAgents(String parent) {
+    ListAiApplicationAgentsRequest request =
+        ListAiApplicationAgentsRequest.newBuilder().setParent(parent).build();
+    return listAiApplicationAgents(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Agents under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationAgentsRequest request =
+   *       ListAiApplicationAgentsRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Agent element : agentRegistryClient.listAiApplicationAgents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationAgentsPagedResponse listAiApplicationAgents(
+      ListAiApplicationAgentsRequest request) {
+    return listAiApplicationAgentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Agents under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationAgentsRequest request =
+   *       ListAiApplicationAgentsRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Agent> future =
+   *       agentRegistryClient.listAiApplicationAgentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Agent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAiApplicationAgentsRequest, ListAiApplicationAgentsPagedResponse>
+      listAiApplicationAgentsPagedCallable() {
+    return stub.listAiApplicationAgentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Agents under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationAgentsRequest request =
+   *       ListAiApplicationAgentsRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAiApplicationAgentsResponse response =
+   *         agentRegistryClient.listAiApplicationAgentsCallable().call(request);
+   *     for (Agent element : response.getAgentsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse>
+      listAiApplicationAgentsCallable() {
+    return stub.listAiApplicationAgentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single McpServer under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   McpServerName name =
+   *       McpServerName.ofProjectLocationAiApplicationMcpServerName(
+   *           "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[MCP_SERVER]");
+   *   McpServer response = agentRegistryClient.getAiApplicationMcpServer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource. Format:
+   *     `projects/{project}/locations/{location}/aiApplications/{ai_application}/mcpServers/{mcp_server}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final McpServer getAiApplicationMcpServer(@Nullable McpServerName name) {
+    GetAiApplicationMcpServerRequest request =
+        GetAiApplicationMcpServerRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAiApplicationMcpServer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single McpServer under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name =
+   *       McpServerName.ofProjectLocationMcpServerName("[PROJECT]", "[LOCATION]", "[MCP_SERVER]")
+   *           .toString();
+   *   McpServer response = agentRegistryClient.getAiApplicationMcpServer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource. Format:
+   *     `projects/{project}/locations/{location}/aiApplications/{ai_application}/mcpServers/{mcp_server}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final McpServer getAiApplicationMcpServer(String name) {
+    GetAiApplicationMcpServerRequest request =
+        GetAiApplicationMcpServerRequest.newBuilder().setName(name).build();
+    return getAiApplicationMcpServer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single McpServer under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetAiApplicationMcpServerRequest request =
+   *       GetAiApplicationMcpServerRequest.newBuilder()
+   *           .setName(
+   *               McpServerName.ofProjectLocationAiApplicationMcpServerName(
+   *                       "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[MCP_SERVER]")
+   *                   .toString())
+   *           .build();
+   *   McpServer response = agentRegistryClient.getAiApplicationMcpServer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final McpServer getAiApplicationMcpServer(GetAiApplicationMcpServerRequest request) {
+    return getAiApplicationMcpServerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single McpServer under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetAiApplicationMcpServerRequest request =
+   *       GetAiApplicationMcpServerRequest.newBuilder()
+   *           .setName(
+   *               McpServerName.ofProjectLocationAiApplicationMcpServerName(
+   *                       "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[MCP_SERVER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<McpServer> future =
+   *       agentRegistryClient.getAiApplicationMcpServerCallable().futureCall(request);
+   *   // Do something.
+   *   McpServer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAiApplicationMcpServerRequest, McpServer>
+      getAiApplicationMcpServerCallable() {
+    return stub.getAiApplicationMcpServerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists McpServers under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   AiApplicationName parent =
+   *       AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+   *   for (McpServer element :
+   *       agentRegistryClient.listAiApplicationMcpServers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value (AI Application) for ListAiApplicationMcpServersRequest.
+   *     Format: `projects/{project}/locations/{location}/aiApplications/{ai_application}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationMcpServersPagedResponse listAiApplicationMcpServers(
+      @Nullable AiApplicationName parent) {
+    ListAiApplicationMcpServersRequest request =
+        ListAiApplicationMcpServersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAiApplicationMcpServers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists McpServers under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent =
+   *       AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString();
+   *   for (McpServer element :
+   *       agentRegistryClient.listAiApplicationMcpServers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value (AI Application) for ListAiApplicationMcpServersRequest.
+   *     Format: `projects/{project}/locations/{location}/aiApplications/{ai_application}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationMcpServersPagedResponse listAiApplicationMcpServers(String parent) {
+    ListAiApplicationMcpServersRequest request =
+        ListAiApplicationMcpServersRequest.newBuilder().setParent(parent).build();
+    return listAiApplicationMcpServers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists McpServers under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationMcpServersRequest request =
+   *       ListAiApplicationMcpServersRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (McpServer element :
+   *       agentRegistryClient.listAiApplicationMcpServers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationMcpServersPagedResponse listAiApplicationMcpServers(
+      ListAiApplicationMcpServersRequest request) {
+    return listAiApplicationMcpServersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists McpServers under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationMcpServersRequest request =
+   *       ListAiApplicationMcpServersRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<McpServer> future =
+   *       agentRegistryClient.listAiApplicationMcpServersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (McpServer element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersPagedResponse>
+      listAiApplicationMcpServersPagedCallable() {
+    return stub.listAiApplicationMcpServersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists McpServers under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationMcpServersRequest request =
+   *       ListAiApplicationMcpServersRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAiApplicationMcpServersResponse response =
+   *         agentRegistryClient.listAiApplicationMcpServersCallable().call(request);
+   *     for (McpServer element : response.getMcpServersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse>
+      listAiApplicationMcpServersCallable() {
+    return stub.listAiApplicationMcpServersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   FindingName name = FindingName.of("[PROJECT]", "[LOCATION]", "[FINDING]");
+   *   Finding response = agentRegistryClient.getFinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Finding to retrieve. Format:
+   *     `projects/{project}/locations/{location}/findings/{finding}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding getFinding(@Nullable FindingName name) {
+    GetFindingRequest request =
+        GetFindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getFinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name = FindingName.of("[PROJECT]", "[LOCATION]", "[FINDING]").toString();
+   *   Finding response = agentRegistryClient.getFinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Finding to retrieve. Format:
+   *     `projects/{project}/locations/{location}/findings/{finding}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding getFinding(String name) {
+    GetFindingRequest request = GetFindingRequest.newBuilder().setName(name).build();
+    return getFinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetFindingRequest request =
+   *       GetFindingRequest.newBuilder()
+   *           .setName(FindingName.of("[PROJECT]", "[LOCATION]", "[FINDING]").toString())
+   *           .build();
+   *   Finding response = agentRegistryClient.getFinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Finding getFinding(GetFindingRequest request) {
+    return getFindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Finding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetFindingRequest request =
+   *       GetFindingRequest.newBuilder()
+   *           .setName(FindingName.of("[PROJECT]", "[LOCATION]", "[FINDING]").toString())
+   *           .build();
+   *   ApiFuture<Finding> future = agentRegistryClient.getFindingCallable().futureCall(request);
+   *   // Do something.
+   *   Finding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetFindingRequest, Finding> getFindingCallable() {
+    return stub.getFindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Findings in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Finding element : agentRegistryClient.listFindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListFindingsRequest. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFindingsPagedResponse listFindings(@Nullable LocationName parent) {
+    ListFindingsRequest request =
+        ListFindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Findings in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Finding element : agentRegistryClient.listFindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListFindingsRequest. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFindingsPagedResponse listFindings(String parent) {
+    ListFindingsRequest request = ListFindingsRequest.newBuilder().setParent(parent).build();
+    return listFindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Findings in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListFindingsRequest request =
+   *       ListFindingsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Finding element : agentRegistryClient.listFindings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFindingsPagedResponse listFindings(ListFindingsRequest request) {
+    return listFindingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Findings in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListFindingsRequest request =
+   *       ListFindingsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Finding> future =
+   *       agentRegistryClient.listFindingsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Finding element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse>
+      listFindingsPagedCallable() {
+    return stub.listFindingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Findings in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListFindingsRequest request =
+   *       ListFindingsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListFindingsResponse response = agentRegistryClient.listFindingsCallable().call(request);
+   *     for (Finding element : response.getFindingsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
+    return stub.listFindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Endpoint under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   EndpointName name =
+   *       EndpointName.ofProjectLocationAiApplicationEndpointName(
+   *           "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[ENDPOINT]");
+   *   Endpoint response = agentRegistryClient.getAiApplicationEndpoint(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource. Format:
+   *     `projects/{project}/locations/{location}/aiApplications/{ai_application}/endpoints/{endpoint}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Endpoint getAiApplicationEndpoint(@Nullable EndpointName name) {
+    GetAiApplicationEndpointRequest request =
+        GetAiApplicationEndpointRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAiApplicationEndpoint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Endpoint under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
+   *   Endpoint response = agentRegistryClient.getAiApplicationEndpoint(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource. Format:
+   *     `projects/{project}/locations/{location}/aiApplications/{ai_application}/endpoints/{endpoint}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Endpoint getAiApplicationEndpoint(String name) {
+    GetAiApplicationEndpointRequest request =
+        GetAiApplicationEndpointRequest.newBuilder().setName(name).build();
+    return getAiApplicationEndpoint(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Endpoint under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetAiApplicationEndpointRequest request =
+   *       GetAiApplicationEndpointRequest.newBuilder()
+   *           .setName(
+   *               EndpointName.ofProjectLocationAiApplicationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .build();
+   *   Endpoint response = agentRegistryClient.getAiApplicationEndpoint(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Endpoint getAiApplicationEndpoint(GetAiApplicationEndpointRequest request) {
+    return getAiApplicationEndpointCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Endpoint under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetAiApplicationEndpointRequest request =
+   *       GetAiApplicationEndpointRequest.newBuilder()
+   *           .setName(
+   *               EndpointName.ofProjectLocationAiApplicationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Endpoint> future =
+   *       agentRegistryClient.getAiApplicationEndpointCallable().futureCall(request);
+   *   // Do something.
+   *   Endpoint response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAiApplicationEndpointRequest, Endpoint>
+      getAiApplicationEndpointCallable() {
+    return stub.getAiApplicationEndpointCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Endpoints under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   AiApplicationName parent =
+   *       AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+   *   for (Endpoint element : agentRegistryClient.listAiApplicationEndpoints(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value (AI Application) for ListAiApplicationEndpointsRequest.
+   *     Format: `projects/{project}/locations/{location}/aiApplications/{ai_application}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationEndpointsPagedResponse listAiApplicationEndpoints(
+      @Nullable AiApplicationName parent) {
+    ListAiApplicationEndpointsRequest request =
+        ListAiApplicationEndpointsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAiApplicationEndpoints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Endpoints under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String parent =
+   *       AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString();
+   *   for (Endpoint element : agentRegistryClient.listAiApplicationEndpoints(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value (AI Application) for ListAiApplicationEndpointsRequest.
+   *     Format: `projects/{project}/locations/{location}/aiApplications/{ai_application}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationEndpointsPagedResponse listAiApplicationEndpoints(String parent) {
+    ListAiApplicationEndpointsRequest request =
+        ListAiApplicationEndpointsRequest.newBuilder().setParent(parent).build();
+    return listAiApplicationEndpoints(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Endpoints under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationEndpointsRequest request =
+   *       ListAiApplicationEndpointsRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Endpoint element :
+   *       agentRegistryClient.listAiApplicationEndpoints(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAiApplicationEndpointsPagedResponse listAiApplicationEndpoints(
+      ListAiApplicationEndpointsRequest request) {
+    return listAiApplicationEndpointsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Endpoints under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationEndpointsRequest request =
+   *       ListAiApplicationEndpointsRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Endpoint> future =
+   *       agentRegistryClient.listAiApplicationEndpointsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Endpoint element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsPagedResponse>
+      listAiApplicationEndpointsPagedCallable() {
+    return stub.listAiApplicationEndpointsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Endpoints under an AI Application.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   ListAiApplicationEndpointsRequest request =
+   *       ListAiApplicationEndpointsRequest.newBuilder()
+   *           .setParent(
+   *               AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAiApplicationEndpointsResponse response =
+   *         agentRegistryClient.listAiApplicationEndpointsCallable().call(request);
+   *     for (Endpoint element : response.getEndpointsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse>
+      listAiApplicationEndpointsCallable() {
+    return stub.listAiApplicationEndpointsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ========================================================================= # Skill Encryption
+   * Spec Service Methods
+   *
+   * <p>Gets the customer-managed encryption key (CMEK) configuration for Skills in a specific
+   * project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SkillEncryptionSpecName name = SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]");
+   *   SkillEncryptionSpec response = agentRegistryClient.getSkillEncryptionSpec(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SkillEncryptionSpec to retrieve. Format:
+   *     `projects/{project}/locations/{location}/skillEncryptionSpec`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SkillEncryptionSpec getSkillEncryptionSpec(@Nullable SkillEncryptionSpecName name) {
+    GetSkillEncryptionSpecRequest request =
+        GetSkillEncryptionSpecRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSkillEncryptionSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ========================================================================= # Skill Encryption
+   * Spec Service Methods
+   *
+   * <p>Gets the customer-managed encryption key (CMEK) configuration for Skills in a specific
+   * project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   String name = SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString();
+   *   SkillEncryptionSpec response = agentRegistryClient.getSkillEncryptionSpec(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SkillEncryptionSpec to retrieve. Format:
+   *     `projects/{project}/locations/{location}/skillEncryptionSpec`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SkillEncryptionSpec getSkillEncryptionSpec(String name) {
+    GetSkillEncryptionSpecRequest request =
+        GetSkillEncryptionSpecRequest.newBuilder().setName(name).build();
+    return getSkillEncryptionSpec(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ========================================================================= # Skill Encryption
+   * Spec Service Methods
+   *
+   * <p>Gets the customer-managed encryption key (CMEK) configuration for Skills in a specific
+   * project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetSkillEncryptionSpecRequest request =
+   *       GetSkillEncryptionSpecRequest.newBuilder()
+   *           .setName(SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   SkillEncryptionSpec response = agentRegistryClient.getSkillEncryptionSpec(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SkillEncryptionSpec getSkillEncryptionSpec(GetSkillEncryptionSpecRequest request) {
+    return getSkillEncryptionSpecCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * ========================================================================= # Skill Encryption
+   * Spec Service Methods
+   *
+   * <p>Gets the customer-managed encryption key (CMEK) configuration for Skills in a specific
+   * project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   GetSkillEncryptionSpecRequest request =
+   *       GetSkillEncryptionSpecRequest.newBuilder()
+   *           .setName(SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<SkillEncryptionSpec> future =
+   *       agentRegistryClient.getSkillEncryptionSpecCallable().futureCall(request);
+   *   // Do something.
+   *   SkillEncryptionSpec response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+      getSkillEncryptionSpecCallable() {
+    return stub.getSkillEncryptionSpecCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the customer-managed encryption key (CMEK) configuration for Skills in a specific
+   * project and location.
+   *
+   * <p>This method is only allowed when no Skills exist in the target project and location. If any
+   * Skill already exists in the location, the request fails with `FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   SkillEncryptionSpec skillEncryptionSpec = SkillEncryptionSpec.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SkillEncryptionSpec response =
+   *       agentRegistryClient.updateSkillEncryptionSpecAsync(skillEncryptionSpec, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param skillEncryptionSpec Required. The SkillEncryptionSpec to update.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     SkillEncryptionSpec resource by the update. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields present in the request will be
+   *     overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SkillEncryptionSpec, OperationMetadata>
+      updateSkillEncryptionSpecAsync(
+          SkillEncryptionSpec skillEncryptionSpec, FieldMask updateMask) {
+    UpdateSkillEncryptionSpecRequest request =
+        UpdateSkillEncryptionSpecRequest.newBuilder()
+            .setSkillEncryptionSpec(skillEncryptionSpec)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSkillEncryptionSpecAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the customer-managed encryption key (CMEK) configuration for Skills in a specific
+   * project and location.
+   *
+   * <p>This method is only allowed when no Skills exist in the target project and location. If any
+   * Skill already exists in the location, the request fails with `FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   UpdateSkillEncryptionSpecRequest request =
+   *       UpdateSkillEncryptionSpecRequest.newBuilder()
+   *           .setSkillEncryptionSpec(SkillEncryptionSpec.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SkillEncryptionSpec response =
+   *       agentRegistryClient.updateSkillEncryptionSpecAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SkillEncryptionSpec, OperationMetadata>
+      updateSkillEncryptionSpecAsync(UpdateSkillEncryptionSpecRequest request) {
+    return updateSkillEncryptionSpecOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the customer-managed encryption key (CMEK) configuration for Skills in a specific
+   * project and location.
+   *
+   * <p>This method is only allowed when no Skills exist in the target project and location. If any
+   * Skill already exists in the location, the request fails with `FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   UpdateSkillEncryptionSpecRequest request =
+   *       UpdateSkillEncryptionSpecRequest.newBuilder()
+   *           .setSkillEncryptionSpec(SkillEncryptionSpec.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<SkillEncryptionSpec, OperationMetadata> future =
+   *       agentRegistryClient.updateSkillEncryptionSpecOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SkillEncryptionSpec response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+      updateSkillEncryptionSpecOperationCallable() {
+    return stub.updateSkillEncryptionSpecOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the customer-managed encryption key (CMEK) configuration for Skills in a specific
+   * project and location.
+   *
+   * <p>This method is only allowed when no Skills exist in the target project and location. If any
+   * Skill already exists in the location, the request fails with `FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
+   *   UpdateSkillEncryptionSpecRequest request =
+   *       UpdateSkillEncryptionSpecRequest.newBuilder()
+   *           .setSkillEncryptionSpec(SkillEncryptionSpec.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       agentRegistryClient.updateSkillEncryptionSpecCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSkillEncryptionSpecRequest, Operation>
+      updateSkillEncryptionSpecCallable() {
+    return stub.updateSkillEncryptionSpecCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
@@ -4220,6 +8182,743 @@ public class AgentRegistryClient implements BackgroundResource {
     protected FetchAvailableBindingsFixedSizeCollection createCollection(
         @Nullable List<FetchAvailableBindingsPage> pages, int collectionSize) {
       return new FetchAvailableBindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSkillsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSkillsRequest,
+          ListSkillsResponse,
+          Skill,
+          ListSkillsPage,
+          ListSkillsFixedSizeCollection> {
+
+    public static ApiFuture<ListSkillsPagedResponse> createAsync(
+        PageContext<ListSkillsRequest, ListSkillsResponse, Skill> context,
+        ApiFuture<ListSkillsResponse> futureResponse) {
+      ApiFuture<ListSkillsPage> futurePage =
+          ListSkillsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListSkillsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListSkillsPagedResponse(ListSkillsPage page) {
+      super(page, ListSkillsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSkillsPage
+      extends AbstractPage<ListSkillsRequest, ListSkillsResponse, Skill, ListSkillsPage> {
+
+    private ListSkillsPage(
+        @Nullable PageContext<ListSkillsRequest, ListSkillsResponse, Skill> context,
+        @Nullable ListSkillsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSkillsPage createEmptyPage() {
+      return new ListSkillsPage(null, null);
+    }
+
+    @Override
+    protected ListSkillsPage createPage(
+        @Nullable PageContext<ListSkillsRequest, ListSkillsResponse, Skill> context,
+        @Nullable ListSkillsResponse response) {
+      return new ListSkillsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSkillsPage> createPageAsync(
+        @Nullable PageContext<ListSkillsRequest, ListSkillsResponse, Skill> context,
+        ApiFuture<ListSkillsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSkillsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSkillsRequest,
+          ListSkillsResponse,
+          Skill,
+          ListSkillsPage,
+          ListSkillsFixedSizeCollection> {
+
+    private ListSkillsFixedSizeCollection(
+        @Nullable List<ListSkillsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSkillsFixedSizeCollection createEmptyCollection() {
+      return new ListSkillsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSkillsFixedSizeCollection createCollection(
+        @Nullable List<ListSkillsPage> pages, int collectionSize) {
+      return new ListSkillsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchSkillsPagedResponse
+      extends AbstractPagedListResponse<
+          SearchSkillsRequest,
+          SearchSkillsResponse,
+          Skill,
+          SearchSkillsPage,
+          SearchSkillsFixedSizeCollection> {
+
+    public static ApiFuture<SearchSkillsPagedResponse> createAsync(
+        PageContext<SearchSkillsRequest, SearchSkillsResponse, Skill> context,
+        ApiFuture<SearchSkillsResponse> futureResponse) {
+      ApiFuture<SearchSkillsPage> futurePage =
+          SearchSkillsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchSkillsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchSkillsPagedResponse(SearchSkillsPage page) {
+      super(page, SearchSkillsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchSkillsPage
+      extends AbstractPage<SearchSkillsRequest, SearchSkillsResponse, Skill, SearchSkillsPage> {
+
+    private SearchSkillsPage(
+        @Nullable PageContext<SearchSkillsRequest, SearchSkillsResponse, Skill> context,
+        @Nullable SearchSkillsResponse response) {
+      super(context, response);
+    }
+
+    private static SearchSkillsPage createEmptyPage() {
+      return new SearchSkillsPage(null, null);
+    }
+
+    @Override
+    protected SearchSkillsPage createPage(
+        @Nullable PageContext<SearchSkillsRequest, SearchSkillsResponse, Skill> context,
+        @Nullable SearchSkillsResponse response) {
+      return new SearchSkillsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchSkillsPage> createPageAsync(
+        @Nullable PageContext<SearchSkillsRequest, SearchSkillsResponse, Skill> context,
+        ApiFuture<SearchSkillsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchSkillsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchSkillsRequest,
+          SearchSkillsResponse,
+          Skill,
+          SearchSkillsPage,
+          SearchSkillsFixedSizeCollection> {
+
+    private SearchSkillsFixedSizeCollection(
+        @Nullable List<SearchSkillsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchSkillsFixedSizeCollection createEmptyCollection() {
+      return new SearchSkillsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchSkillsFixedSizeCollection createCollection(
+        @Nullable List<SearchSkillsPage> pages, int collectionSize) {
+      return new SearchSkillsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSkillRevisionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSkillRevisionsRequest,
+          ListSkillRevisionsResponse,
+          SkillRevision,
+          ListSkillRevisionsPage,
+          ListSkillRevisionsFixedSizeCollection> {
+
+    public static ApiFuture<ListSkillRevisionsPagedResponse> createAsync(
+        PageContext<ListSkillRevisionsRequest, ListSkillRevisionsResponse, SkillRevision> context,
+        ApiFuture<ListSkillRevisionsResponse> futureResponse) {
+      ApiFuture<ListSkillRevisionsPage> futurePage =
+          ListSkillRevisionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSkillRevisionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSkillRevisionsPagedResponse(ListSkillRevisionsPage page) {
+      super(page, ListSkillRevisionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSkillRevisionsPage
+      extends AbstractPage<
+          ListSkillRevisionsRequest,
+          ListSkillRevisionsResponse,
+          SkillRevision,
+          ListSkillRevisionsPage> {
+
+    private ListSkillRevisionsPage(
+        @Nullable PageContext<ListSkillRevisionsRequest, ListSkillRevisionsResponse, SkillRevision>
+            context,
+        @Nullable ListSkillRevisionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSkillRevisionsPage createEmptyPage() {
+      return new ListSkillRevisionsPage(null, null);
+    }
+
+    @Override
+    protected ListSkillRevisionsPage createPage(
+        @Nullable PageContext<ListSkillRevisionsRequest, ListSkillRevisionsResponse, SkillRevision>
+            context,
+        @Nullable ListSkillRevisionsResponse response) {
+      return new ListSkillRevisionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSkillRevisionsPage> createPageAsync(
+        @Nullable PageContext<ListSkillRevisionsRequest, ListSkillRevisionsResponse, SkillRevision>
+            context,
+        ApiFuture<ListSkillRevisionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSkillRevisionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSkillRevisionsRequest,
+          ListSkillRevisionsResponse,
+          SkillRevision,
+          ListSkillRevisionsPage,
+          ListSkillRevisionsFixedSizeCollection> {
+
+    private ListSkillRevisionsFixedSizeCollection(
+        @Nullable List<ListSkillRevisionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSkillRevisionsFixedSizeCollection createEmptyCollection() {
+      return new ListSkillRevisionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSkillRevisionsFixedSizeCollection createCollection(
+        @Nullable List<ListSkillRevisionsPage> pages, int collectionSize) {
+      return new ListSkillRevisionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListPublishersPagedResponse
+      extends AbstractPagedListResponse<
+          ListPublishersRequest,
+          ListPublishersResponse,
+          Publisher,
+          ListPublishersPage,
+          ListPublishersFixedSizeCollection> {
+
+    public static ApiFuture<ListPublishersPagedResponse> createAsync(
+        PageContext<ListPublishersRequest, ListPublishersResponse, Publisher> context,
+        ApiFuture<ListPublishersResponse> futureResponse) {
+      ApiFuture<ListPublishersPage> futurePage =
+          ListPublishersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPublishersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPublishersPagedResponse(ListPublishersPage page) {
+      super(page, ListPublishersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPublishersPage
+      extends AbstractPage<
+          ListPublishersRequest, ListPublishersResponse, Publisher, ListPublishersPage> {
+
+    private ListPublishersPage(
+        @Nullable PageContext<ListPublishersRequest, ListPublishersResponse, Publisher> context,
+        @Nullable ListPublishersResponse response) {
+      super(context, response);
+    }
+
+    private static ListPublishersPage createEmptyPage() {
+      return new ListPublishersPage(null, null);
+    }
+
+    @Override
+    protected ListPublishersPage createPage(
+        @Nullable PageContext<ListPublishersRequest, ListPublishersResponse, Publisher> context,
+        @Nullable ListPublishersResponse response) {
+      return new ListPublishersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPublishersPage> createPageAsync(
+        @Nullable PageContext<ListPublishersRequest, ListPublishersResponse, Publisher> context,
+        ApiFuture<ListPublishersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPublishersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPublishersRequest,
+          ListPublishersResponse,
+          Publisher,
+          ListPublishersPage,
+          ListPublishersFixedSizeCollection> {
+
+    private ListPublishersFixedSizeCollection(
+        @Nullable List<ListPublishersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPublishersFixedSizeCollection createEmptyCollection() {
+      return new ListPublishersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPublishersFixedSizeCollection createCollection(
+        @Nullable List<ListPublishersPage> pages, int collectionSize) {
+      return new ListPublishersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAiApplicationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAiApplicationsRequest,
+          ListAiApplicationsResponse,
+          AiApplication,
+          ListAiApplicationsPage,
+          ListAiApplicationsFixedSizeCollection> {
+
+    public static ApiFuture<ListAiApplicationsPagedResponse> createAsync(
+        PageContext<ListAiApplicationsRequest, ListAiApplicationsResponse, AiApplication> context,
+        ApiFuture<ListAiApplicationsResponse> futureResponse) {
+      ApiFuture<ListAiApplicationsPage> futurePage =
+          ListAiApplicationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAiApplicationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAiApplicationsPagedResponse(ListAiApplicationsPage page) {
+      super(page, ListAiApplicationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAiApplicationsPage
+      extends AbstractPage<
+          ListAiApplicationsRequest,
+          ListAiApplicationsResponse,
+          AiApplication,
+          ListAiApplicationsPage> {
+
+    private ListAiApplicationsPage(
+        @Nullable PageContext<ListAiApplicationsRequest, ListAiApplicationsResponse, AiApplication>
+            context,
+        @Nullable ListAiApplicationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAiApplicationsPage createEmptyPage() {
+      return new ListAiApplicationsPage(null, null);
+    }
+
+    @Override
+    protected ListAiApplicationsPage createPage(
+        @Nullable PageContext<ListAiApplicationsRequest, ListAiApplicationsResponse, AiApplication>
+            context,
+        @Nullable ListAiApplicationsResponse response) {
+      return new ListAiApplicationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAiApplicationsPage> createPageAsync(
+        @Nullable PageContext<ListAiApplicationsRequest, ListAiApplicationsResponse, AiApplication>
+            context,
+        ApiFuture<ListAiApplicationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAiApplicationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAiApplicationsRequest,
+          ListAiApplicationsResponse,
+          AiApplication,
+          ListAiApplicationsPage,
+          ListAiApplicationsFixedSizeCollection> {
+
+    private ListAiApplicationsFixedSizeCollection(
+        @Nullable List<ListAiApplicationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAiApplicationsFixedSizeCollection createEmptyCollection() {
+      return new ListAiApplicationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAiApplicationsFixedSizeCollection createCollection(
+        @Nullable List<ListAiApplicationsPage> pages, int collectionSize) {
+      return new ListAiApplicationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAiApplicationAgentsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAiApplicationAgentsRequest,
+          ListAiApplicationAgentsResponse,
+          Agent,
+          ListAiApplicationAgentsPage,
+          ListAiApplicationAgentsFixedSizeCollection> {
+
+    public static ApiFuture<ListAiApplicationAgentsPagedResponse> createAsync(
+        PageContext<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse, Agent> context,
+        ApiFuture<ListAiApplicationAgentsResponse> futureResponse) {
+      ApiFuture<ListAiApplicationAgentsPage> futurePage =
+          ListAiApplicationAgentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAiApplicationAgentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAiApplicationAgentsPagedResponse(ListAiApplicationAgentsPage page) {
+      super(page, ListAiApplicationAgentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAiApplicationAgentsPage
+      extends AbstractPage<
+          ListAiApplicationAgentsRequest,
+          ListAiApplicationAgentsResponse,
+          Agent,
+          ListAiApplicationAgentsPage> {
+
+    private ListAiApplicationAgentsPage(
+        @Nullable
+            PageContext<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse, Agent>
+            context,
+        @Nullable ListAiApplicationAgentsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAiApplicationAgentsPage createEmptyPage() {
+      return new ListAiApplicationAgentsPage(null, null);
+    }
+
+    @Override
+    protected ListAiApplicationAgentsPage createPage(
+        @Nullable
+            PageContext<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse, Agent>
+            context,
+        @Nullable ListAiApplicationAgentsResponse response) {
+      return new ListAiApplicationAgentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAiApplicationAgentsPage> createPageAsync(
+        @Nullable
+            PageContext<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse, Agent>
+            context,
+        ApiFuture<ListAiApplicationAgentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAiApplicationAgentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAiApplicationAgentsRequest,
+          ListAiApplicationAgentsResponse,
+          Agent,
+          ListAiApplicationAgentsPage,
+          ListAiApplicationAgentsFixedSizeCollection> {
+
+    private ListAiApplicationAgentsFixedSizeCollection(
+        @Nullable List<ListAiApplicationAgentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAiApplicationAgentsFixedSizeCollection createEmptyCollection() {
+      return new ListAiApplicationAgentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAiApplicationAgentsFixedSizeCollection createCollection(
+        @Nullable List<ListAiApplicationAgentsPage> pages, int collectionSize) {
+      return new ListAiApplicationAgentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAiApplicationMcpServersPagedResponse
+      extends AbstractPagedListResponse<
+          ListAiApplicationMcpServersRequest,
+          ListAiApplicationMcpServersResponse,
+          McpServer,
+          ListAiApplicationMcpServersPage,
+          ListAiApplicationMcpServersFixedSizeCollection> {
+
+    public static ApiFuture<ListAiApplicationMcpServersPagedResponse> createAsync(
+        PageContext<
+                ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse, McpServer>
+            context,
+        ApiFuture<ListAiApplicationMcpServersResponse> futureResponse) {
+      ApiFuture<ListAiApplicationMcpServersPage> futurePage =
+          ListAiApplicationMcpServersPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAiApplicationMcpServersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAiApplicationMcpServersPagedResponse(ListAiApplicationMcpServersPage page) {
+      super(page, ListAiApplicationMcpServersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAiApplicationMcpServersPage
+      extends AbstractPage<
+          ListAiApplicationMcpServersRequest,
+          ListAiApplicationMcpServersResponse,
+          McpServer,
+          ListAiApplicationMcpServersPage> {
+
+    private ListAiApplicationMcpServersPage(
+        @Nullable
+            PageContext<
+                ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse, McpServer>
+            context,
+        @Nullable ListAiApplicationMcpServersResponse response) {
+      super(context, response);
+    }
+
+    private static ListAiApplicationMcpServersPage createEmptyPage() {
+      return new ListAiApplicationMcpServersPage(null, null);
+    }
+
+    @Override
+    protected ListAiApplicationMcpServersPage createPage(
+        @Nullable
+            PageContext<
+                ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse, McpServer>
+            context,
+        @Nullable ListAiApplicationMcpServersResponse response) {
+      return new ListAiApplicationMcpServersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAiApplicationMcpServersPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse, McpServer>
+            context,
+        ApiFuture<ListAiApplicationMcpServersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAiApplicationMcpServersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAiApplicationMcpServersRequest,
+          ListAiApplicationMcpServersResponse,
+          McpServer,
+          ListAiApplicationMcpServersPage,
+          ListAiApplicationMcpServersFixedSizeCollection> {
+
+    private ListAiApplicationMcpServersFixedSizeCollection(
+        @Nullable List<ListAiApplicationMcpServersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAiApplicationMcpServersFixedSizeCollection createEmptyCollection() {
+      return new ListAiApplicationMcpServersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAiApplicationMcpServersFixedSizeCollection createCollection(
+        @Nullable List<ListAiApplicationMcpServersPage> pages, int collectionSize) {
+      return new ListAiApplicationMcpServersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListFindingsPagedResponse
+      extends AbstractPagedListResponse<
+          ListFindingsRequest,
+          ListFindingsResponse,
+          Finding,
+          ListFindingsPage,
+          ListFindingsFixedSizeCollection> {
+
+    public static ApiFuture<ListFindingsPagedResponse> createAsync(
+        PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        ApiFuture<ListFindingsResponse> futureResponse) {
+      ApiFuture<ListFindingsPage> futurePage =
+          ListFindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListFindingsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListFindingsPagedResponse(ListFindingsPage page) {
+      super(page, ListFindingsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListFindingsPage
+      extends AbstractPage<ListFindingsRequest, ListFindingsResponse, Finding, ListFindingsPage> {
+
+    private ListFindingsPage(
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable ListFindingsResponse response) {
+      super(context, response);
+    }
+
+    private static ListFindingsPage createEmptyPage() {
+      return new ListFindingsPage(null, null);
+    }
+
+    @Override
+    protected ListFindingsPage createPage(
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        @Nullable ListFindingsResponse response) {
+      return new ListFindingsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListFindingsPage> createPageAsync(
+        @Nullable PageContext<ListFindingsRequest, ListFindingsResponse, Finding> context,
+        ApiFuture<ListFindingsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListFindingsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListFindingsRequest,
+          ListFindingsResponse,
+          Finding,
+          ListFindingsPage,
+          ListFindingsFixedSizeCollection> {
+
+    private ListFindingsFixedSizeCollection(
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListFindingsFixedSizeCollection createEmptyCollection() {
+      return new ListFindingsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListFindingsFixedSizeCollection createCollection(
+        @Nullable List<ListFindingsPage> pages, int collectionSize) {
+      return new ListFindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAiApplicationEndpointsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAiApplicationEndpointsRequest,
+          ListAiApplicationEndpointsResponse,
+          Endpoint,
+          ListAiApplicationEndpointsPage,
+          ListAiApplicationEndpointsFixedSizeCollection> {
+
+    public static ApiFuture<ListAiApplicationEndpointsPagedResponse> createAsync(
+        PageContext<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse, Endpoint>
+            context,
+        ApiFuture<ListAiApplicationEndpointsResponse> futureResponse) {
+      ApiFuture<ListAiApplicationEndpointsPage> futurePage =
+          ListAiApplicationEndpointsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAiApplicationEndpointsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAiApplicationEndpointsPagedResponse(ListAiApplicationEndpointsPage page) {
+      super(page, ListAiApplicationEndpointsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAiApplicationEndpointsPage
+      extends AbstractPage<
+          ListAiApplicationEndpointsRequest,
+          ListAiApplicationEndpointsResponse,
+          Endpoint,
+          ListAiApplicationEndpointsPage> {
+
+    private ListAiApplicationEndpointsPage(
+        @Nullable
+            PageContext<
+                ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse, Endpoint>
+            context,
+        @Nullable ListAiApplicationEndpointsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAiApplicationEndpointsPage createEmptyPage() {
+      return new ListAiApplicationEndpointsPage(null, null);
+    }
+
+    @Override
+    protected ListAiApplicationEndpointsPage createPage(
+        @Nullable
+            PageContext<
+                ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse, Endpoint>
+            context,
+        @Nullable ListAiApplicationEndpointsResponse response) {
+      return new ListAiApplicationEndpointsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAiApplicationEndpointsPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse, Endpoint>
+            context,
+        ApiFuture<ListAiApplicationEndpointsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAiApplicationEndpointsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAiApplicationEndpointsRequest,
+          ListAiApplicationEndpointsResponse,
+          Endpoint,
+          ListAiApplicationEndpointsPage,
+          ListAiApplicationEndpointsFixedSizeCollection> {
+
+    private ListAiApplicationEndpointsFixedSizeCollection(
+        @Nullable List<ListAiApplicationEndpointsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAiApplicationEndpointsFixedSizeCollection createEmptyCollection() {
+      return new ListAiApplicationEndpointsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAiApplicationEndpointsFixedSizeCollection createCollection(
+        @Nullable List<ListAiApplicationEndpointsPage> pages, int collectionSize) {
+      return new ListAiApplicationEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
 

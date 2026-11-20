@@ -17,6 +17,7 @@
 package com.google.cloud.agentregistry.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -35,22 +36,39 @@ public class EndpointName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_ENDPOINT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/endpoints/{endpoint}");
+  private static final PathTemplate PROJECT_LOCATION_AI_APPLICATION_ENDPOINT =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/aiApplications/{ai_application}/endpoints/{endpoint}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String endpoint;
+  private final String aiApplication;
 
   @Deprecated
   protected EndpointName() {
     project = null;
     location = null;
     endpoint = null;
+    aiApplication = null;
   }
 
   private EndpointName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     endpoint = Preconditions.checkNotNull(builder.getEndpoint());
+    aiApplication = null;
+    pathTemplate = PROJECT_LOCATION_ENDPOINT;
+  }
+
+  private EndpointName(ProjectLocationAiApplicationEndpointBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    aiApplication = Preconditions.checkNotNull(builder.getAiApplication());
+    endpoint = Preconditions.checkNotNull(builder.getEndpoint());
+    pathTemplate = PROJECT_LOCATION_AI_APPLICATION_ENDPOINT;
   }
 
   public String getProject() {
@@ -65,8 +83,21 @@ public class EndpointName implements ResourceName {
     return endpoint;
   }
 
+  public String getAiApplication() {
+    return aiApplication;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationEndpointBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationAiApplicationEndpointBuilder
+      newProjectLocationAiApplicationEndpointBuilder() {
+    return new ProjectLocationAiApplicationEndpointBuilder();
   }
 
   public Builder toBuilder() {
@@ -75,6 +106,21 @@ public class EndpointName implements ResourceName {
 
   public static EndpointName of(String project, String location, String endpoint) {
     return newBuilder().setProject(project).setLocation(location).setEndpoint(endpoint).build();
+  }
+
+  public static EndpointName ofProjectLocationEndpointName(
+      String project, String location, String endpoint) {
+    return newBuilder().setProject(project).setLocation(location).setEndpoint(endpoint).build();
+  }
+
+  public static EndpointName ofProjectLocationAiApplicationEndpointName(
+      String project, String location, String aiApplication, String endpoint) {
+    return newProjectLocationAiApplicationEndpointBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAiApplication(aiApplication)
+        .setEndpoint(endpoint)
+        .build();
   }
 
   public static String format(String project, String location, String endpoint) {
@@ -86,14 +132,45 @@ public class EndpointName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationEndpointName(
+      String project, String location, String endpoint) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setEndpoint(endpoint)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationAiApplicationEndpointName(
+      String project, String location, String aiApplication, String endpoint) {
+    return newProjectLocationAiApplicationEndpointBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAiApplication(aiApplication)
+        .setEndpoint(endpoint)
+        .build()
+        .toString();
+  }
+
   public static @Nullable EndpointName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_ENDPOINT.validatedMatch(
-            formattedString, "EndpointName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("endpoint"));
+    if (PROJECT_LOCATION_ENDPOINT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_ENDPOINT.match(formattedString);
+      return ofProjectLocationEndpointName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("endpoint"));
+    } else if (PROJECT_LOCATION_AI_APPLICATION_ENDPOINT.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_AI_APPLICATION_ENDPOINT.match(formattedString);
+      return ofProjectLocationAiApplicationEndpointName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("ai_application"),
+          matchMap.get("endpoint"));
+    }
+    throw new ValidationException("EndpointName.parse: formattedString not in valid format");
   }
 
   public static List<EndpointName> parseList(List<String> formattedStrings) {
@@ -117,7 +194,8 @@ public class EndpointName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_ENDPOINT.matches(formattedString);
+    return PROJECT_LOCATION_ENDPOINT.matches(formattedString)
+        || PROJECT_LOCATION_AI_APPLICATION_ENDPOINT.matches(formattedString);
   }
 
   @Override
@@ -135,6 +213,9 @@ public class EndpointName implements ResourceName {
           if (endpoint != null) {
             fieldMapBuilder.put("endpoint", endpoint);
           }
+          if (aiApplication != null) {
+            fieldMapBuilder.put("ai_application", aiApplication);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -148,8 +229,7 @@ public class EndpointName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_ENDPOINT.instantiate(
-        "project", project, "location", location, "endpoint", endpoint);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -161,7 +241,8 @@ public class EndpointName implements ResourceName {
       EndpointName that = ((EndpointName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.endpoint, that.endpoint);
+          && Objects.equals(this.endpoint, that.endpoint)
+          && Objects.equals(this.aiApplication, that.aiApplication);
     }
     return false;
   }
@@ -170,11 +251,15 @@ public class EndpointName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
     h ^= Objects.hashCode(endpoint);
+    h *= 1000003;
+    h ^= Objects.hashCode(aiApplication);
     return h;
   }
 
@@ -214,9 +299,66 @@ public class EndpointName implements ResourceName {
     }
 
     private Builder(EndpointName endpointName) {
+      Preconditions.checkArgument(
+          Objects.equals(endpointName.pathTemplate, PROJECT_LOCATION_ENDPOINT),
+          "toBuilder is only supported when EndpointName has the pattern of"
+              + " projects/{project}/locations/{location}/endpoints/{endpoint}");
       this.project = endpointName.project;
       this.location = endpointName.location;
       this.endpoint = endpointName.endpoint;
+    }
+
+    public EndpointName build() {
+      return new EndpointName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/aiApplications/{ai_application}/endpoints/{endpoint}.
+   */
+  public static class ProjectLocationAiApplicationEndpointBuilder {
+    private String project;
+    private String location;
+    private String aiApplication;
+    private String endpoint;
+
+    protected ProjectLocationAiApplicationEndpointBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getAiApplication() {
+      return aiApplication;
+    }
+
+    public String getEndpoint() {
+      return endpoint;
+    }
+
+    public ProjectLocationAiApplicationEndpointBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationEndpointBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationEndpointBuilder setAiApplication(String aiApplication) {
+      this.aiApplication = aiApplication;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationEndpointBuilder setEndpoint(String endpoint) {
+      this.endpoint = endpoint;
+      return this;
     }
 
     public EndpointName build() {

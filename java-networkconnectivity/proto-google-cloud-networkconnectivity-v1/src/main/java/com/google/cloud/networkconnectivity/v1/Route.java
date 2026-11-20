@@ -1002,6 +1002,65 @@ public final class Route extends com.google.protobuf.GeneratedMessage
         : nextHopInterconnectAttachment_;
   }
 
+  public static final int NEXT_HOP_SPOKE_FIELD_NUMBER = 18;
+  private com.google.cloud.networkconnectivity.v1.NextHopSpoke nextHopSpoke_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop spoke for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the nextHopSpoke field is set.
+   */
+  @java.lang.Override
+  public boolean hasNextHopSpoke() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop spoke for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The nextHopSpoke.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.NextHopSpoke getNextHopSpoke() {
+    return nextHopSpoke_ == null
+        ? com.google.cloud.networkconnectivity.v1.NextHopSpoke.getDefaultInstance()
+        : nextHopSpoke_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop spoke for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.NextHopSpokeOrBuilder getNextHopSpokeOrBuilder() {
+    return nextHopSpoke_ == null
+        ? com.google.cloud.networkconnectivity.v1.NextHopSpoke.getDefaultInstance()
+        : nextHopSpoke_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1063,6 +1122,9 @@ public final class Route extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(16, getNextHopInterconnectAttachment());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(18, getNextHopSpoke());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1133,6 +1195,9 @@ public final class Route extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, getNextHopInterconnectAttachment());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getNextHopSpoke());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1186,6 +1251,10 @@ public final class Route extends com.google.protobuf.GeneratedMessage
     if (hasNextHopInterconnectAttachment()) {
       if (!getNextHopInterconnectAttachment().equals(other.getNextHopInterconnectAttachment()))
         return false;
+    }
+    if (hasNextHopSpoke() != other.hasNextHopSpoke()) return false;
+    if (hasNextHopSpoke()) {
+      if (!getNextHopSpoke().equals(other.getNextHopSpoke())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1243,6 +1312,10 @@ public final class Route extends com.google.protobuf.GeneratedMessage
     if (hasNextHopInterconnectAttachment()) {
       hash = (37 * hash) + NEXT_HOP_INTERCONNECT_ATTACHMENT_FIELD_NUMBER;
       hash = (53 * hash) + getNextHopInterconnectAttachment().hashCode();
+    }
+    if (hasNextHopSpoke()) {
+      hash = (37 * hash) + NEXT_HOP_SPOKE_FIELD_NUMBER;
+      hash = (53 * hash) + getNextHopSpoke().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1414,6 +1487,7 @@ public final class Route extends com.google.protobuf.GeneratedMessage
         internalGetNextHopVpnTunnelFieldBuilder();
         internalGetNextHopRouterApplianceInstanceFieldBuilder();
         internalGetNextHopInterconnectAttachmentFieldBuilder();
+        internalGetNextHopSpokeFieldBuilder();
       }
     }
 
@@ -1460,6 +1534,11 @@ public final class Route extends com.google.protobuf.GeneratedMessage
       if (nextHopInterconnectAttachmentBuilder_ != null) {
         nextHopInterconnectAttachmentBuilder_.dispose();
         nextHopInterconnectAttachmentBuilder_ = null;
+      }
+      nextHopSpoke_ = null;
+      if (nextHopSpokeBuilder_ != null) {
+        nextHopSpokeBuilder_.dispose();
+        nextHopSpokeBuilder_ = null;
       }
       return this;
     }
@@ -1563,6 +1642,11 @@ public final class Route extends com.google.protobuf.GeneratedMessage
                 : nextHopInterconnectAttachmentBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.nextHopSpoke_ =
+            nextHopSpokeBuilder_ == null ? nextHopSpoke_ : nextHopSpokeBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1636,6 +1720,9 @@ public final class Route extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasNextHopInterconnectAttachment()) {
         mergeNextHopInterconnectAttachment(other.getNextHopInterconnectAttachment());
+      }
+      if (other.hasNextHopSpoke()) {
+        mergeNextHopSpoke(other.getNextHopSpoke());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1773,6 +1860,13 @@ public final class Route extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00008000;
                 break;
               } // case 130
+            case 146:
+              {
+                input.readMessage(
+                    internalGetNextHopSpokeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4288,6 +4382,221 @@ public final class Route extends com.google.protobuf.GeneratedMessage
         nextHopInterconnectAttachment_ = null;
       }
       return nextHopInterconnectAttachmentBuilder_;
+    }
+
+    private com.google.cloud.networkconnectivity.v1.NextHopSpoke nextHopSpoke_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkconnectivity.v1.NextHopSpoke,
+            com.google.cloud.networkconnectivity.v1.NextHopSpoke.Builder,
+            com.google.cloud.networkconnectivity.v1.NextHopSpokeOrBuilder>
+        nextHopSpokeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the nextHopSpoke field is set.
+     */
+    public boolean hasNextHopSpoke() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The nextHopSpoke.
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopSpoke getNextHopSpoke() {
+      if (nextHopSpokeBuilder_ == null) {
+        return nextHopSpoke_ == null
+            ? com.google.cloud.networkconnectivity.v1.NextHopSpoke.getDefaultInstance()
+            : nextHopSpoke_;
+      } else {
+        return nextHopSpokeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNextHopSpoke(com.google.cloud.networkconnectivity.v1.NextHopSpoke value) {
+      if (nextHopSpokeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nextHopSpoke_ = value;
+      } else {
+        nextHopSpokeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setNextHopSpoke(
+        com.google.cloud.networkconnectivity.v1.NextHopSpoke.Builder builderForValue) {
+      if (nextHopSpokeBuilder_ == null) {
+        nextHopSpoke_ = builderForValue.build();
+      } else {
+        nextHopSpokeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeNextHopSpoke(com.google.cloud.networkconnectivity.v1.NextHopSpoke value) {
+      if (nextHopSpokeBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && nextHopSpoke_ != null
+            && nextHopSpoke_
+                != com.google.cloud.networkconnectivity.v1.NextHopSpoke.getDefaultInstance()) {
+          getNextHopSpokeBuilder().mergeFrom(value);
+        } else {
+          nextHopSpoke_ = value;
+        }
+      } else {
+        nextHopSpokeBuilder_.mergeFrom(value);
+      }
+      if (nextHopSpoke_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearNextHopSpoke() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      nextHopSpoke_ = null;
+      if (nextHopSpokeBuilder_ != null) {
+        nextHopSpokeBuilder_.dispose();
+        nextHopSpokeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopSpoke.Builder getNextHopSpokeBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return internalGetNextHopSpokeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.NextHopSpokeOrBuilder
+        getNextHopSpokeOrBuilder() {
+      if (nextHopSpokeBuilder_ != null) {
+        return nextHopSpokeBuilder_.getMessageOrBuilder();
+      } else {
+        return nextHopSpoke_ == null
+            ? com.google.cloud.networkconnectivity.v1.NextHopSpoke.getDefaultInstance()
+            : nextHopSpoke_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The next-hop spoke for packets on this route.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkconnectivity.v1.NextHopSpoke,
+            com.google.cloud.networkconnectivity.v1.NextHopSpoke.Builder,
+            com.google.cloud.networkconnectivity.v1.NextHopSpokeOrBuilder>
+        internalGetNextHopSpokeFieldBuilder() {
+      if (nextHopSpokeBuilder_ == null) {
+        nextHopSpokeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkconnectivity.v1.NextHopSpoke,
+                com.google.cloud.networkconnectivity.v1.NextHopSpoke.Builder,
+                com.google.cloud.networkconnectivity.v1.NextHopSpokeOrBuilder>(
+                getNextHopSpoke(), getParentForChildren(), isClean());
+        nextHopSpoke_ = null;
+      }
+      return nextHopSpokeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.networkconnectivity.v1.Route)
