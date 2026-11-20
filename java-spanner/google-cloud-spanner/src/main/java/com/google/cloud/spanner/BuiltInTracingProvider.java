@@ -118,12 +118,16 @@ final class BuiltInTracingProvider {
       logger.log(
           Level.INFO,
           setInOptions
-              ? "Built-in tracing is enabled, but an OpenTelemetry instance was set with"
-                  + " SpannerOptions.Builder#setOpenTelemetry. Spanner uses that instance instead"
-                  + " of built-in tracing."
-              : "Built-in tracing is enabled, but a global OpenTelemetry instance with tracing is"
-                  + " registered, for example by the OpenTelemetry Java agent. Spanner uses that"
-                  + " instance instead of built-in tracing.");
+              ? "Built-in tracing is enabled, but the OpenTelemetry instance that was set with"
+                  + " SpannerOptions.Builder#setOpenTelemetry may have tracing. Spanner uses that"
+                  + " instance instead of built-in tracing. If that instance only has metrics, use"
+                  + " OpenTelemetry 1.67 or later, so that Spanner can detect this and use"
+                  + " built-in tracing."
+              : "Built-in tracing is enabled, but a global OpenTelemetry instance that may have"
+                  + " tracing is registered, for example by the OpenTelemetry Java agent. Spanner"
+                  + " uses that instance instead of built-in tracing. If that instance only has"
+                  + " metrics, use OpenTelemetry 1.67 or later, so that Spanner can detect this"
+                  + " and use built-in tracing.");
     }
   }
 
