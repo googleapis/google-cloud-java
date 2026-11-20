@@ -72,6 +72,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.KeyStore;
+import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.ArrayDeque;
@@ -1393,16 +1394,33 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void refreshAccessToken_extraCertificatesInChain_skipsUnparsableAndDuplicateCertificates()
+  void refreshAccessToken_extraCertificatesInChain_retainsValidAndSkipsUnparsableAndDuplicates()
       throws Exception {
     setupCertAndKeyConfig();
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
     Path certPath = tempDir.resolve("certificates.pem");
+    CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+    X509Certificate expectedLeaf;
+    try (InputStream in = Files.newInputStream(certPath)) {
+      expectedLeaf = (X509Certificate) certificateFactory.generateCertificate(in);
+    }
+    Path extraCertPath =
+        Paths.get(
+            ComputeEngineCredentialsTest.class
+                .getResource("/x509_intermediate_certificate.pem")
+                .toURI());
+    X509Certificate expectedExtra;
+    try (InputStream in = Files.newInputStream(extraCertPath)) {
+      expectedExtra = (X509Certificate) certificateFactory.generateCertificate(in);
+    }
     String leafPem = new String(Files.readAllBytes(certPath), StandardCharsets.UTF_8).trim();
+    String extraPem = new String(Files.readAllBytes(extraCertPath), StandardCharsets.UTF_8).trim();
     String chainPem =
         leafPem
             + "\n"
             + leafPem
+            + "\n-----BEGIN CERTIFICATE----------END CERTIFICATE-----\n"
+            + extraPem
             + "\n-----BEGIN CERTIFICATE-----\nbm90IGEgY2VydGlmaWNhdGU=\n-----END CERTIFICATE-----\n";
     Files.write(certPath, chainPem.getBytes(StandardCharsets.UTF_8));
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
@@ -1416,7 +1434,10 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     KeyStore keyStore = ((BoundAccessToken) token).getCertInfo().getKeyStore();
     assertNotNull(keyStore);
     String alias = keyStore.aliases().nextElement();
-    assertEquals(1, keyStore.getCertificateChain(alias).length);
+    Certificate[] chain = keyStore.getCertificateChain(alias);
+    assertEquals(2, chain.length);
+    assertEquals(expectedLeaf, chain[0]);
+    assertEquals(expectedExtra, chain[1]);
   }
 
   @Test

@@ -837,11 +837,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
     // Client Library Debug Logging via LoggingUtils is used instead.
     request.setLoggingEnabled(false);
     adapter.initialize(request);
-    if (cycleTransportFactory != null
-        && this.sourceCredentials instanceof ExternalAccountCredentials) {
-      // Disable HttpCredentialsAdapter's default 401 retry so 401 responses propagate to the
-      // caller (e.g. IdentityPoolCredentials) to re-snapshot the certificate and retry the full
-      // cycle with a newly pinned transport.
+    if ((cycleTransportFactory != null
+            && this.sourceCredentials instanceof ExternalAccountCredentials)
+        || iamEndpointDomain != null) {
+      // Disable HttpCredentialsAdapter's default 401 retry when the request uses a pinned
+      // single-token credential (whose refresh() is a no-op): for ExternalAccountCredentials so
+      // 401 responses propagate to IdentityPoolCredentials to re-snapshot the certificate and retry
+      // the full cycle, and for bound agent-identity tokens so a 401 doesn't resend the same
+      // rejected token 10 times.
       request.setUnsuccessfulResponseHandler(null);
     }
     request.setParser(parser);

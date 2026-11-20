@@ -63,6 +63,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This internal class provides shared utilities for interacting with the IAM API for common
@@ -106,16 +107,45 @@ class IamUtils {
     final Credentials credentials;
     final HttpTransportFactory transportFactory;
     final String endpointDomain;
+    private final boolean usesMtls;
 
     IamCallTarget(
-        Credentials credentials, HttpTransportFactory transportFactory, String endpointDomain) {
+        Credentials credentials,
+        HttpTransportFactory transportFactory,
+        String endpointDomain,
+        boolean usesMtls) {
       this.credentials = credentials;
       this.transportFactory = transportFactory;
       this.endpointDomain = endpointDomain;
+      this.usesMtls = usesMtls;
     }
 
     boolean usesMtls() {
-      return endpointDomain.startsWith(MTLS_DOMAIN_PREFIX);
+      return usesMtls;
+    }
+  }
+
+  /**
+   * A {@link GoogleCredentials} pinned to a single already-minted {@link AccessToken}, so the
+   * request header always uses the token bound to the presented mTLS certificate even if the source
+   * credential refreshes concurrently.
+   */
+  private static final class PinnedTokenCredentials extends GoogleCredentials {
+    private static final long serialVersionUID = 1L;
+    private final AccessToken token;
+
+    PinnedTokenCredentials(
+        AccessToken token, @Nullable String quotaProjectId, String universeDomain) {
+      super(
+          GoogleCredentials.newBuilder()
+              .setQuotaProjectId(quotaProjectId)
+              .setUniverseDomain(universeDomain));
+      this.token = token;
+    }
+
+    @Override
+    public AccessToken refreshAccessToken() {
+      return token;
     }
   }
 
@@ -141,7 +171,8 @@ class IamUtils {
       throws IOException {
     if (endpointOverridden
         || !(transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory)) {
-      return new IamCallTarget(authCredentials, transportFactory, universeDomain);
+      return new IamCallTarget(
+          authCredentials, transportFactory, universeDomain, /* usesMtls= */ false);
     }
     return resolveBoundTokenCallTarget(
         authCredentials, transportFactory, universeDomain, mtlsTransportFactoryProvider);
@@ -169,7 +200,7 @@ class IamUtils {
       Function<KeyStore, HttpTransportFactory> mtlsTransportFactory)
       throws IOException {
     IamCallTarget defaultTarget =
-        new IamCallTarget(authCredentials, transportFactory, universeDomain);
+        new IamCallTarget(authCredentials, transportFactory, universeDomain, /* usesMtls= */ false);
     if (!(authCredentials instanceof ComputeEngineCredentials)
         || !Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)) {
       return defaultTarget;
@@ -187,22 +218,18 @@ class IamUtils {
       return defaultTarget;
     }
     // Authenticate with exactly this token: the source credentials could otherwise refresh and
-    // attach a token bound to a different certificate.
-    GoogleCredentials pinnedTokenCredentials =
-        new GoogleCredentials(
-            GoogleCredentials.newBuilder()
-                .setAccessToken(token)
-                .setQuotaProjectId(computeEngineCredentials.getQuotaProjectId())
-                .setUniverseDomain(universeDomain)) {
-          @Override
-          public AccessToken refreshAccessToken() {
-            return token;
-          }
-        };
+    // attach a token bound to a different certificate. Calling refresh() populates OAuthValue in
+    // memory via getAdditionalHeaders() after quotaProjectId is initialized, so x-goog-user-project
+    // is preserved while getAccessToken() and getRequestMetadata() start ready without extra I/O.
+    PinnedTokenCredentials pinnedTokenCredentials =
+        new PinnedTokenCredentials(
+            token, computeEngineCredentials.getQuotaProjectId(), universeDomain);
+    pinnedTokenCredentials.refresh();
     return new IamCallTarget(
         pinnedTokenCredentials,
         mtlsTransportFactory.apply(keyStore),
-        MTLS_DOMAIN_PREFIX + universeDomain);
+        MTLS_DOMAIN_PREFIX + universeDomain,
+        /* usesMtls= */ true);
   }
 
   /**
@@ -400,6 +427,11 @@ class IamUtils {
     HttpCredentialsAdapter adapter = new HttpCredentialsAdapter(credentials);
     HttpRequest request =
         transport.createRequestFactory(adapter).buildPostRequest(genericUrl, idTokenContent);
+    if (credentials instanceof PinnedTokenCredentials) {
+      // PinnedTokenCredentials always returns the same token on refresh(), so disable
+      // HttpCredentialsAdapter's 401 retry to avoid resending a rejected token 10 times.
+      request.setUnsuccessfulResponseHandler(null);
+    }
 
     // Disable automatic logging by google-http-java-client to prevent leakage of sensitive tokens.
     // Client Library Debug Logging via LoggingUtils is used instead.

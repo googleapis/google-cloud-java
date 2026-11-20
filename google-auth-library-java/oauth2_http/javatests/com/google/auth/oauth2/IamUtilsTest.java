@@ -35,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -44,10 +45,12 @@ import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
+import com.google.auth.RequestMetadataCallback;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Paths;
@@ -56,6 +59,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -704,6 +708,158 @@ class IamUtilsTest {
     // A refresh (for example when the token becomes stale) keeps the same bound token.
     pinned.refresh();
     assertSame(token, pinned.getAccessToken());
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_boundTokenWithQuotaProject_preservesQuotaProjectHeader()
+      throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    ComputeEngineCredentials.Builder builder =
+        ComputeEngineCredentials.newBuilder()
+            .setHttpTransportFactory(MockMetadataServerTransport::new)
+            .setQuotaProjectId("quota-project");
+    builder.setAccessToken(new BoundAccessToken("bound-token", oneHourFromNow(), certInfo));
+    ComputeEngineCredentials source = builder.build();
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> MockHttpTransport::new);
+
+    URI uri = URI.create("https://iamcredentials.mtls.googleapis.com");
+    Map<String, List<String>> syncMetadata = target.credentials.getRequestMetadata(uri);
+    assertEquals(
+        Collections.singletonList("Bearer bound-token"), syncMetadata.get("Authorization"));
+    assertEquals(
+        Collections.singletonList("quota-project"), syncMetadata.get("x-goog-user-project"));
+
+    AtomicReference<Map<String, List<String>>> asyncMetadata = new AtomicReference<>();
+    target.credentials.getRequestMetadata(
+        uri,
+        MoreExecutors.directExecutor(),
+        new RequestMetadataCallback() {
+          @Override
+          public void onSuccess(Map<String, List<String>> metadata) {
+            asyncMetadata.set(metadata);
+          }
+
+          @Override
+          public void onFailure(Throwable exception) {
+            throw new AssertionError("Unexpected failure", exception);
+          }
+        });
+    assertNotNull(asyncMetadata.get());
+    assertEquals(
+        Collections.singletonList("Bearer bound-token"), asyncMetadata.get().get("Authorization"));
+    assertEquals(
+        Collections.singletonList("quota-project"), asyncMetadata.get().get("x-goog-user-project"));
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_nullInitialToken_refreshesAndUsesMtls() throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    BoundAccessToken mintedToken =
+        new BoundAccessToken("minted-bound-token", oneHourFromNow(), certInfo);
+    ComputeEngineCredentials source =
+        Mockito.spy(
+            ComputeEngineCredentials.newBuilder()
+                .setHttpTransportFactory(MockMetadataServerTransport::new)
+                .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+                .build());
+    AtomicInteger refreshCount = new AtomicInteger();
+    Mockito.doAnswer(
+            invocation -> {
+              refreshCount.incrementAndGet();
+              return mintedToken;
+            })
+        .when(source)
+        .refreshAccessToken();
+    assertNull(source.getAccessToken());
+    AtomicReference<KeyStore> keyStoreUsed = new AtomicReference<>();
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> {
+              keyStoreUsed.set(keyStore);
+              return MockHttpTransport::new;
+            });
+
+    assertEquals(1, refreshCount.get());
+    assertTrue(target.usesMtls());
+    assertSame(certInfo.getKeyStore(), keyStoreUsed.get());
+    Map<String, List<String>> metadata =
+        target.credentials.getRequestMetadata(
+            URI.create("https://iamcredentials.mtls.googleapis.com"));
+    assertEquals(
+        Collections.singletonList("Bearer minted-bound-token"), metadata.get("Authorization"));
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_certificateRotation_isolatesInFlightTargetAndSwitchesNextCall()
+      throws Exception {
+    AgentIdentityUtils.CertInfo certInfoA = loadAgentCertInfo();
+    KeyStore keyStoreA = certInfoA.getKeyStore();
+    assertNotNull(keyStoreA);
+    KeyStore keyStoreB = KeyStore.getInstance(keyStoreA.getType());
+    keyStoreB.load(null);
+    assertNotSame(keyStoreA, keyStoreB);
+    AgentIdentityUtils.CertInfo certInfoB =
+        new AgentIdentityUtils.CertInfo(
+            certInfoA.getCertificate(), certInfoA.getCertContent(), keyStoreB);
+    BoundAccessToken tokenA = new BoundAccessToken("bound-token-a", oneHourFromNow(), certInfoA);
+    BoundAccessToken tokenB = new BoundAccessToken("bound-token-b", oneHourFromNow(), certInfoB);
+
+    ComputeEngineCredentials source =
+        Mockito.spy(
+            ComputeEngineCredentials.newBuilder()
+                .setHttpTransportFactory(MockMetadataServerTransport::new)
+                .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+                .build());
+    AtomicInteger refreshCount = new AtomicInteger();
+    Mockito.doAnswer(invocation -> refreshCount.incrementAndGet() == 1 ? tokenA : tokenB)
+        .when(source)
+        .refreshAccessToken();
+    AtomicReference<KeyStore> keyStoreUsed = new AtomicReference<>();
+
+    IamUtils.IamCallTarget targetA =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> {
+              keyStoreUsed.set(keyStore);
+              return MockHttpTransport::new;
+            });
+    assertSame(keyStoreA, keyStoreUsed.get());
+
+    // Simulate a concurrent refresh on source rotating to Cert B before targetA sends its request.
+    source.refresh();
+    assertSame(tokenB, source.getAccessToken());
+
+    URI uri = URI.create("https://iamcredentials.mtls.googleapis.com");
+    assertEquals(
+        Collections.singletonList("Bearer bound-token-a"),
+        targetA.credentials.getRequestMetadata(uri).get("Authorization"));
+
+    // Subsequent IAM calls pick up Cert B and token B together.
+    IamUtils.IamCallTarget targetB =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> {
+              keyStoreUsed.set(keyStore);
+              return MockHttpTransport::new;
+            });
+    assertSame(keyStoreB, keyStoreUsed.get());
+    assertEquals(
+        Collections.singletonList("Bearer bound-token-b"),
+        targetB.credentials.getRequestMetadata(uri).get("Authorization"));
   }
 
   @Test

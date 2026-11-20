@@ -61,7 +61,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -123,9 +122,6 @@ final class AgentIdentityUtils {
   private static final int CERT_KEY_MATCH_RETRIES = 3;
 
   private static final long CERT_KEY_MATCH_RETRY_INTERVAL_MS = 100;
-
-  private static final Pattern PEM_CERTIFICATE_PATTERN =
-      Pattern.compile("-----BEGIN CERTIFICATE-----.+?-----END CERTIFICATE-----", Pattern.DOTALL);
 
   private static volatile EnvironmentProvider environmentProvider =
       SystemEnvironmentProvider.getInstance();
@@ -558,14 +554,14 @@ final class AgentIdentityUtils {
     CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
     List<Certificate> chain = new ArrayList<>();
     chain.add(leaf);
-    Matcher matcher = PEM_CERTIFICATE_PATTERN.matcher(certContent);
+    Matcher matcher = OAuth2Utils.PEM_CERT_PATTERN.matcher(certContent);
     while (matcher.find()) {
       Certificate certificate;
       try {
         certificate =
             certificateFactory.generateCertificate(
                 new ByteArrayInputStream(matcher.group().getBytes(StandardCharsets.UTF_8)));
-      } catch (CertificateException e) {
+      } catch (CertificateException | RuntimeException e) {
         LoggingUtils.log(
             LOGGER_PROVIDER,
             Level.FINE,
@@ -573,7 +569,7 @@ final class AgentIdentityUtils {
             "Skipping an unparsable certificate in the Agent Identity certificate chain.");
         continue;
       }
-      if (!chain.contains(certificate)) {
+      if (certificate != null && !chain.contains(certificate)) {
         chain.add(certificate);
       }
     }

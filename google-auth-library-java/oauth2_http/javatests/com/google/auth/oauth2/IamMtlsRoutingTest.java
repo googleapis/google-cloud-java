@@ -32,8 +32,12 @@ package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.Json;
@@ -41,8 +45,10 @@ import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.auth.Credentials;
+import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.security.KeyStore;
@@ -72,8 +78,21 @@ class IamMtlsRoutingTest {
 
   private final List<String> requestUrls = new ArrayList<>();
   private final List<String> authorizationHeaders = new ArrayList<>();
+  private final List<String> quotaProjectHeaders = new ArrayList<>();
   private final AtomicReference<KeyStore> keyStoreUsed = new AtomicReference<>();
+  private int responseStatusCode = HttpStatusCodes.STATUS_CODE_OK;
+  private String responseWwwAuthenticateHeader = null;
   private AgentIdentityUtils.CertInfo certInfo;
+
+  // Subclasses DefaultHttpTransportFactory so IamUtils.resolveCallTarget treats it as the default
+  // transport factory while still keeping any non-mTLS request in memory.
+  private final HttpTransportFactory defaultRecordingTransportFactory =
+      new OAuth2Utils.DefaultHttpTransportFactory() {
+        @Override
+        public HttpTransport create() {
+          return newRecordingIamTransport();
+        }
+      };
 
   @BeforeEach
   void setUp() throws Exception {
@@ -101,6 +120,13 @@ class IamMtlsRoutingTest {
     AgentIdentityUtils.resetForTest();
   }
 
+  private void resetRecordedRequests() {
+    requestUrls.clear();
+    authorizationHeaders.clear();
+    quotaProjectHeaders.clear();
+    keyStoreUsed.set(null);
+  }
+
   private MockHttpTransport newRecordingIamTransport() {
     return new MockHttpTransport() {
       @Override
@@ -111,6 +137,18 @@ class IamMtlsRoutingTest {
           public LowLevelHttpResponse execute() {
             List<String> authorization = getHeaderValues("Authorization");
             authorizationHeaders.add(authorization.isEmpty() ? null : authorization.get(0));
+            List<String> quotaProject = getHeaderValues("x-goog-user-project");
+            quotaProjectHeaders.add(quotaProject.isEmpty() ? null : quotaProject.get(0));
+            if (responseStatusCode != HttpStatusCodes.STATUS_CODE_OK) {
+              MockLowLevelHttpResponse errorResponse =
+                  new MockLowLevelHttpResponse()
+                      .setStatusCode(responseStatusCode)
+                      .setReasonPhrase("Unauthorized");
+              if (responseWwwAuthenticateHeader != null) {
+                errorResponse.addHeader("WWW-Authenticate", responseWwwAuthenticateHeader);
+              }
+              return errorResponse;
+            }
             String content;
             if (url.endsWith(":generateAccessToken")) {
               content =
@@ -133,10 +171,11 @@ class IamMtlsRoutingTest {
     };
   }
 
-  private ComputeEngineCredentials boundSource() {
+  private ComputeEngineCredentials boundSource(String quotaProjectId) {
     ComputeEngineCredentials.Builder builder =
         ComputeEngineCredentials.newBuilder()
-            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+            .setHttpTransportFactory(defaultRecordingTransportFactory)
+            .setQuotaProjectId(quotaProjectId)
             .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE);
     builder.setAccessToken(
         new BoundAccessToken(
@@ -145,12 +184,16 @@ class IamMtlsRoutingTest {
   }
 
   private ImpersonatedCredentials impersonated(String iamEndpointOverride) {
+    return impersonated(iamEndpointOverride, null);
+  }
+
+  private ImpersonatedCredentials impersonated(String iamEndpointOverride, String quotaProjectId) {
     return ImpersonatedCredentials.newBuilder()
-        .setSourceCredentials(boundSource())
+        .setSourceCredentials(boundSource(quotaProjectId))
         .setTargetPrincipal(TARGET)
         .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
         .setLifetime(300)
-        .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+        .setHttpTransportFactory(defaultRecordingTransportFactory)
         .setIamEndpointOverride(iamEndpointOverride)
         .build();
   }
@@ -186,7 +229,7 @@ class IamMtlsRoutingTest {
   }
 
   @Test
-  void impersonatedWithEndpointOverride_refreshUsesOverrideAndSignUsesMtlsEndpoint()
+  void impersonatedWithEndpointOverride_refreshUsesOverrideAndSignAndIdTokenUseMtlsEndpoint()
       throws Exception {
     String override =
         "https://us-east1-iamcredentials.example.com/v1/projects/-/serviceAccounts/"
@@ -195,29 +238,83 @@ class IamMtlsRoutingTest {
     ImpersonatedCredentials credentials = impersonated(override);
 
     credentials.sign("data".getBytes(StandardCharsets.UTF_8));
-
     assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":signBlob");
-    // refreshAccessToken() keeps using the override and the configured transport, not mTLS.
-    requestUrls.clear();
-    keyStoreUsed.set(null);
-    ImpersonatedCredentials withMockTransport =
-        credentials.toBuilder()
-            .setHttpTransportFactory((HttpTransportFactory) this::newRecordingIamTransport)
-            .build();
-    withMockTransport.refreshAccessToken();
+
+    resetRecordedRequests();
+    credentials.idTokenWithAudience("https://example.com", null);
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateIdToken");
+
+    // refreshAccessToken() keeps using the override and the default-typed transport, not mTLS.
+    resetRecordedRequests();
+    credentials.refreshAccessToken();
     assertEquals(Collections.singletonList(override), requestUrls);
-    assertEquals(null, keyStoreUsed.get());
+    assertEquals(Collections.singletonList("Bearer " + BOUND_TOKEN), authorizationHeaders);
+    assertNull(keyStoreUsed.get());
   }
 
   @Test
   void computeEngineSign_boundToken_usesMtlsEndpoint() {
-    ComputeEngineCredentials source = Mockito.spy(boundSource());
+    ComputeEngineCredentials source = Mockito.spy(boundSource(null));
     Mockito.doReturn(SOURCE_ACCOUNT).when(source).getAccount();
 
     byte[] signature = source.sign("data".getBytes(StandardCharsets.UTF_8));
 
     assertEquals("signature", new String(signature, StandardCharsets.UTF_8));
     assertSentOverMtlsWithBoundToken(MTLS_BASE + SOURCE_ACCOUNT + ":signBlob");
+  }
+
+  @Test
+  void allMtlsIamCalls_boundSourceWithQuotaProject_preserveQuotaProjectHeader() throws Exception {
+    String quotaProject = "agent-quota-project";
+    ImpersonatedCredentials credentials = impersonated(null, quotaProject);
+
+    credentials.refreshAccessToken();
+    assertEquals(Collections.singletonList(quotaProject), quotaProjectHeaders);
+
+    resetRecordedRequests();
+    credentials.sign("data".getBytes(StandardCharsets.UTF_8));
+    assertEquals(Collections.singletonList(quotaProject), quotaProjectHeaders);
+
+    resetRecordedRequests();
+    credentials.idTokenWithAudience("https://example.com", null);
+    assertEquals(Collections.singletonList(quotaProject), quotaProjectHeaders);
+
+    resetRecordedRequests();
+    ComputeEngineCredentials source = Mockito.spy(boundSource(quotaProject));
+    Mockito.doReturn(SOURCE_ACCOUNT).when(source).getAccount();
+    source.sign("data".getBytes(StandardCharsets.UTF_8));
+    assertEquals(Collections.singletonList(quotaProject), quotaProjectHeaders);
+  }
+
+  @Test
+  void allMtlsIamCalls_boundSource401_doNotRetryPinnedToken() {
+    responseStatusCode = HttpStatusCodes.STATUS_CODE_UNAUTHORIZED;
+    responseWwwAuthenticateHeader = "Bearer error=\"invalid_token\"";
+
+    assertThrows(IOException.class, () -> impersonated(null).refreshAccessToken());
+    assertEquals(1, requestUrls.size());
+
+    resetRecordedRequests();
+    assertThrows(
+        SigningException.class,
+        () -> impersonated(null).sign("data".getBytes(StandardCharsets.UTF_8)));
+    assertEquals(1, requestUrls.size());
+
+    resetRecordedRequests();
+    responseWwwAuthenticateHeader = null;
+    IOException idTokenEx =
+        assertThrows(
+            IOException.class,
+            () -> impersonated(null).idTokenWithAudience("https://example.com", null));
+    assertEquals("Error code 401 trying to getIDToken: Unauthorized", idTokenEx.getMessage());
+    assertEquals(1, requestUrls.size());
+
+    resetRecordedRequests();
+    ComputeEngineCredentials source = Mockito.spy(boundSource(null));
+    Mockito.doReturn(SOURCE_ACCOUNT).when(source).getAccount();
+    assertThrows(
+        SigningException.class, () -> source.sign("data".getBytes(StandardCharsets.UTF_8)));
+    assertEquals(1, requestUrls.size());
   }
 
   @Test
