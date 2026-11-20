@@ -28,15 +28,10 @@ import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.DynamicMessage;
 import java.math.BigDecimal;
-import java.sql.Date;
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.ResolverStyle;
 import java.time.temporal.ChronoUnit;
@@ -153,7 +148,7 @@ final class BigQueryWriteApiProtoEncoder {
                   : LocalDateTime.parse((String) val, DATETIME_STRICT);
           return CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(ldt);
         case TIMESTAMP:
-          Instant inst = extractInstant(val);
+          Instant inst = BigQueryTypeRegistry.extractInstant(val);
           if (inst == null) {
             throw new IllegalArgumentException("Unsupported TIMESTAMP value: " + val.getClass());
           }
@@ -175,24 +170,5 @@ final class BigQueryWriteApiProtoEncoder {
       throw new BigQueryJdbcException(
           "Failed to encode parameter for column " + col.fieldDescriptor.getName(), ex);
     }
-  }
-
-  static Instant extractInstant(Object value) {
-    if (value instanceof Timestamp) {
-      return ((Timestamp) value).toInstant();
-    }
-    if (value instanceof Instant) {
-      return (Instant) value;
-    }
-    if (value instanceof OffsetDateTime) {
-      return ((OffsetDateTime) value).toInstant();
-    }
-    if (value instanceof ZonedDateTime) {
-      return ((ZonedDateTime) value).toInstant();
-    }
-    if (value instanceof java.util.Date && !(value instanceof Date) && !(value instanceof Time)) {
-      return Instant.ofEpochMilli(((java.util.Date) value).getTime());
-    }
-    return null;
   }
 }

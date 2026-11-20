@@ -17,20 +17,34 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
+import com.google.gson.JsonObject;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -372,5 +386,114 @@ public class BigQueryParameterHandlerTest {
         "2025-01-01 12:00:00.123456",
         BigQueryParameterHandler.formatDateTimeDigits(
             LocalDateTime.of(2025, 1, 1, 12, 0, 0, 123_456_789)));
+  }
+
+  private static boolean singleCellCompatible(
+      Field field, Object value, StandardSQLTypeName paramSqlType) {
+    BigQueryJdbcParameter p = new BigQueryJdbcParameter();
+    p.setIndex(1);
+    p.setValue(value);
+    p.bindType(value != null ? value.getClass() : Object.class, paramSqlType);
+    Queue<ArrayList<BigQueryJdbcParameter>> rows = new LinkedList<>();
+    rows.add(new ArrayList<>(Collections.singletonList(p)));
+    return BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
+        FieldList.of(field), rows);
+  }
+
+  @Test
+  public void testWriteApiBatchCompatibilityAndExtremeBigDecimalGuard() {
+    Field num5 = Field.newBuilder("n5", StandardSQLTypeName.NUMERIC).setPrecision(5L).build();
+    Field num52 =
+        Field.newBuilder("n52", StandardSQLTypeName.NUMERIC).setPrecision(5L).setScale(2L).build();
+    Field reqStr =
+        Field.newBuilder("req", StandardSQLTypeName.STRING).setMode(Field.Mode.REQUIRED).build();
+    Object[][] cases = {
+      {Field.of("n", StandardSQLTypeName.NUMERIC), (short) 42, StandardSQLTypeName.INT64, true},
+      {Field.of("bn", StandardSQLTypeName.BIGNUMERIC), (byte) -7, StandardSQLTypeName.INT64, true},
+      {
+        Field.of("f", StandardSQLTypeName.FLOAT64),
+        new BigDecimal("12.5"),
+        StandardSQLTypeName.NUMERIC,
+        true
+      },
+      {Field.of("f", StandardSQLTypeName.FLOAT64), Double.NaN, StandardSQLTypeName.FLOAT64, false},
+      {Field.of("i", StandardSQLTypeName.INT64), BigInteger.TEN, StandardSQLTypeName.INT64, false},
+      {num5, new BigDecimal("99999.0000"), StandardSQLTypeName.NUMERIC, true},
+      {num5, new BigDecimal("99999.1"), StandardSQLTypeName.NUMERIC, false},
+      {num5, new BigDecimal("100000"), StandardSQLTypeName.NUMERIC, false},
+      {num52, new BigDecimal("999.9900"), StandardSQLTypeName.NUMERIC, true},
+      {num52, new BigDecimal("1000.00"), StandardSQLTypeName.NUMERIC, false},
+      {num52, new BigDecimal("12.345"), StandardSQLTypeName.NUMERIC, false},
+      {
+        Field.of("n", StandardSQLTypeName.NUMERIC),
+        new BigDecimal("0E+1000000"),
+        StandardSQLTypeName.NUMERIC,
+        true
+      },
+      {
+        Field.of("d", StandardSQLTypeName.DATE),
+        LocalDate.of(1500, 1, 1),
+        StandardSQLTypeName.DATE,
+        true
+      },
+      {
+        Field.of("d", StandardSQLTypeName.DATE),
+        new Date(-14825808000000L),
+        StandardSQLTypeName.DATE,
+        false
+      },
+      {
+        Field.of("d", StandardSQLTypeName.DATE),
+        LocalDate.of(0, 12, 31),
+        StandardSQLTypeName.DATE,
+        false
+      },
+      {
+        Field.of("dt", StandardSQLTypeName.DATETIME),
+        "2026-02-31 00:00:00.000000",
+        StandardSQLTypeName.STRING,
+        false
+      },
+      {
+        Field.of("ts", StandardSQLTypeName.TIMESTAMP),
+        Instant.parse("+10000-01-01T00:00:00Z"),
+        StandardSQLTypeName.TIMESTAMP,
+        false
+      },
+      {reqStr, null, StandardSQLTypeName.STRING, false},
+      {Field.of("j", StandardSQLTypeName.JSON), new JsonObject(), StandardSQLTypeName.JSON, true},
+      {
+        Field.of("bn", StandardSQLTypeName.BIGNUMERIC),
+        new BigDecimal(
+            "-578960446186580977117854925043439539266.34992332820282019728792003956564819968"),
+        StandardSQLTypeName.BIGNUMERIC,
+        true
+      },
+      {
+        Field.of("bn", StandardSQLTypeName.BIGNUMERIC),
+        new BigDecimal(
+            "-578960446186580977117854925043439539266.34992332820282019728792003956564819969"),
+        StandardSQLTypeName.BIGNUMERIC,
+        false
+      }
+    };
+    for (Object[] c : cases) {
+      assertEquals(c[3], singleCellCompatible((Field) c[0], c[1], (StandardSQLTypeName) c[2]));
+    }
+    // Extreme negative scales reject in O(1) without integer underflow or scale-alignment OOM.
+    assertTimeoutPreemptively(
+        Duration.ofSeconds(1),
+        () -> {
+          assertFalse(
+              singleCellCompatible(
+                  Field.of("n", StandardSQLTypeName.NUMERIC),
+                  BigDecimal.valueOf(1, Integer.MIN_VALUE),
+                  StandardSQLTypeName.NUMERIC));
+          assertFalse(
+              singleCellCompatible(
+                  Field.of("bn", StandardSQLTypeName.BIGNUMERIC),
+                  BigDecimal.valueOf(10, Integer.MIN_VALUE),
+                  StandardSQLTypeName.BIGNUMERIC));
+        });
   }
 }

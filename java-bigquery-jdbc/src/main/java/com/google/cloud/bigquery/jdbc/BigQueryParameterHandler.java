@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
@@ -24,6 +26,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -33,12 +36,13 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Queue;
 
 class BigQueryParameterHandler {
   private static final BigQueryJdbcCustomLogger LOG =
@@ -56,11 +60,25 @@ class BigQueryParameterHandler {
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSSSSSXXX", Locale.ROOT);
   // DATETIME is a zone-less wall clock; the validator requires six fraction digits and no offset.
   private static final DateTimeFormatter DATETIME_MICROS =
-      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT);
+      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT)
+          .withResolverStyle(ResolverStyle.STRICT);
   private static final DateTimeFormatter DATE_DIGITS =
-      DateTimeFormatter.ofPattern("uuuu-MM-dd", Locale.ROOT);
+      DateTimeFormatter.ofPattern("uuuu-MM-dd", Locale.ROOT)
+          .withResolverStyle(ResolverStyle.STRICT);
   private static final DateTimeFormatter TIME_MICROS =
       DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS", Locale.ROOT);
+  private static final BigDecimal NUMERIC_MAX =
+      new BigDecimal("99999999999999999999999999999.999999999");
+  private static final BigDecimal NUMERIC_MIN = NUMERIC_MAX.negate();
+  private static final BigDecimal BIGNUMERIC_MAX =
+      new BigDecimal(
+          "578960446186580977117854925043439539266.34992332820282019728792003956564819967");
+  private static final BigDecimal BIGNUMERIC_MIN =
+      new BigDecimal(
+          "-578960446186580977117854925043439539266.34992332820282019728792003956564819968");
+  private static final Instant MIN_WRITE_API_INSTANT = Instant.parse("0001-01-01T00:00:00Z");
+  private static final Instant MAX_WRITE_API_INSTANT =
+      Instant.parse("9999-12-31T23:59:59.999999999Z");
 
   /** Wall-clock digits for DATETIME (read as UTC if sent to TIMESTAMP). Nanos are truncated. */
   static String formatDateTimeDigits(LocalDateTime value) {
@@ -83,14 +101,9 @@ class BigQueryParameterHandler {
     if (value instanceof LocalDateTime) {
       return Tuple.of(formatDateTimeDigits((LocalDateTime) value), String.class);
     }
-    if (value instanceof OffsetDateTime) {
-      return Tuple.of(Timestamp.from(((OffsetDateTime) value).toInstant()), Timestamp.class);
-    }
-    if (value instanceof ZonedDateTime) {
-      return Tuple.of(Timestamp.from(((ZonedDateTime) value).toInstant()), Timestamp.class);
-    }
-    if (value instanceof Instant) {
-      return Tuple.of(Timestamp.from((Instant) value), Timestamp.class);
+    Instant instant = BigQueryTypeRegistry.extractInstant(value);
+    if (instant != null && !(value instanceof Timestamp)) {
+      return Tuple.of(Timestamp.from(instant), Timestamp.class);
     }
     return null;
   }
@@ -138,17 +151,22 @@ class BigQueryParameterHandler {
                 i, this.parametersArraySize));
       }
 
-      Object parameterValue = getParameter(i);
-      StandardSQLTypeName sqlType = getSqlType(i);
-      parameterValue =
-          formatValueForQueryParameter(parameterValue, sqlType, this.enableTimestampPicos);
+      QueryParameterValue queryParameter =
+          toQueryParameterValue(this.parametersList.get(arrayIndex), this.enableTimestampPicos);
       LOG.finest(
           "Parameter %s of type %s at index %s added to QueryJobConfiguration",
-          parameterValue, sqlType, i);
-      jobConfigurationBuilder.addPositionalParameter(
-          QueryParameterValue.of(parameterValue, sqlType));
+          queryParameter.getValue(), queryParameter.getType(), i);
+      jobConfigurationBuilder.addPositionalParameter(queryParameter);
     }
     return jobConfigurationBuilder;
+  }
+
+  static QueryParameterValue toQueryParameterValue(
+      BigQueryJdbcParameter parameter, boolean enableTimestampPicos) {
+    StandardSQLTypeName sqlType = parameter.getSqlType();
+    Object formatted =
+        formatValueForQueryParameter(parameter.getValue(), sqlType, enableTimestampPicos);
+    return QueryParameterValue.of(formatted, sqlType);
   }
 
   static Object formatValueForQueryParameter(
@@ -166,19 +184,9 @@ class BigQueryParameterHandler {
       return ((Number) parameterValue).doubleValue();
     }
     if (sqlType == StandardSQLTypeName.TIMESTAMP) {
-      // Reduce to an Instant and render in UTC so digits and 'Z' can never disagree.
-      if (parameterValue instanceof Timestamp) {
-        return formatInstantUtc(((Timestamp) parameterValue).toInstant(), enableTimestampPicos);
-      }
-      if (parameterValue instanceof OffsetDateTime) {
-        return formatInstantUtc(
-            ((OffsetDateTime) parameterValue).toInstant(), enableTimestampPicos);
-      }
-      if (parameterValue instanceof ZonedDateTime) {
-        return formatInstantUtc(((ZonedDateTime) parameterValue).toInstant(), enableTimestampPicos);
-      }
-      if (parameterValue instanceof Instant) {
-        return formatInstantUtc((Instant) parameterValue, enableTimestampPicos);
+      Instant instant = BigQueryTypeRegistry.extractInstant(parameterValue);
+      if (instant != null) {
+        return formatInstantUtc(instant, enableTimestampPicos);
       }
       if (parameterValue instanceof String) {
         String str = ((String) parameterValue).trim();
@@ -486,5 +494,197 @@ class BigQueryParameterHandler {
 
   int getParametersArraySize() {
     return this.parametersArraySize;
+  }
+
+  static boolean areBatchParametersCompatibleWithWriteApi(
+      FieldList fields, Queue<ArrayList<BigQueryJdbcParameter>> batchParameters) {
+    for (ArrayList<BigQueryJdbcParameter> parameterList : batchParameters) {
+      if (parameterList == null || parameterList.size() != fields.size()) {
+        return false;
+      }
+      for (int i = 0; i < fields.size(); i++) {
+        Field field = fields.get(i);
+        BigQueryJdbcParameter parameter = parameterList.get(i);
+        if (parameter == null || !parameter.isBound()) {
+          return false;
+        }
+        StandardSQLTypeName columnType = field.getType().getStandardType();
+        Object value = parameter.getValue();
+        StandardSQLTypeName paramSqlType = parameter.getSqlType();
+        if (value == null) {
+          if (field.getMode() == Field.Mode.REQUIRED
+              || !isSqlTypeAssignableForWriteApi(paramSqlType, columnType)) {
+            return false;
+          }
+        } else if (!isValueAssignableForWriteApi(value, paramSqlType, field, columnType)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  private static boolean isSqlTypeAssignableForWriteApi(
+      StandardSQLTypeName paramType, StandardSQLTypeName columnType) {
+    if (paramType == null || columnType == null) {
+      return false;
+    }
+    if (paramType == columnType) {
+      return true;
+    }
+    switch (columnType) {
+      case NUMERIC:
+        return paramType == StandardSQLTypeName.INT64;
+      case BIGNUMERIC:
+        return paramType == StandardSQLTypeName.INT64 || paramType == StandardSQLTypeName.NUMERIC;
+      case FLOAT64:
+        return paramType == StandardSQLTypeName.INT64
+            || paramType == StandardSQLTypeName.NUMERIC
+            || paramType == StandardSQLTypeName.BIGNUMERIC;
+      case DATETIME:
+        return paramType == StandardSQLTypeName.STRING;
+      default:
+        return false;
+    }
+  }
+
+  private static boolean isValueAssignableForWriteApi(
+      Object value, StandardSQLTypeName paramSqlType, Field field, StandardSQLTypeName columnType) {
+    if (!isSqlTypeAssignableForWriteApi(paramSqlType, columnType)) {
+      return false;
+    }
+    switch (columnType) {
+      case STRING:
+      case BYTES:
+      case BOOL:
+      case INT64:
+      case TIME:
+      case JSON:
+      case GEOGRAPHY:
+      case INTERVAL:
+        return BigQueryTypeRegistry.isSupportedJavaValue(columnType, value);
+      case NUMERIC:
+      case BIGNUMERIC:
+        StandardSQLTypeName effectiveType =
+            paramSqlType == StandardSQLTypeName.NUMERIC
+                    || (paramSqlType == StandardSQLTypeName.INT64
+                        && columnType == StandardSQLTypeName.NUMERIC)
+                ? StandardSQLTypeName.NUMERIC
+                : StandardSQLTypeName.BIGNUMERIC;
+        BigDecimal minVal =
+            effectiveType == StandardSQLTypeName.NUMERIC ? NUMERIC_MIN : BIGNUMERIC_MIN;
+        BigDecimal maxVal =
+            effectiveType == StandardSQLTypeName.NUMERIC ? NUMERIC_MAX : BIGNUMERIC_MAX;
+        int maxScale = BigQueryTypeRegistry.getColumnTypeInfo(effectiveType).decimalDigits;
+        if (paramSqlType == StandardSQLTypeName.INT64) {
+          return BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.INT64, value)
+              && isValidWriteApiBigDecimal(
+                  BigDecimal.valueOf(((Number) value).longValue()),
+                  maxScale,
+                  minVal,
+                  maxVal,
+                  field.getPrecision(),
+                  field.getScale());
+        }
+        return BigQueryTypeRegistry.isSupportedJavaValue(columnType, value)
+            && isValidWriteApiBigDecimal(
+                (BigDecimal) value,
+                maxScale,
+                minVal,
+                maxVal,
+                field.getPrecision(),
+                field.getScale());
+      case FLOAT64:
+        if (paramSqlType == StandardSQLTypeName.FLOAT64) {
+          return BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.FLOAT64, value)
+              && Double.isFinite(((Number) value).doubleValue());
+        }
+        if (paramSqlType == StandardSQLTypeName.INT64) {
+          return BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.INT64, value);
+        }
+        StandardSQLTypeName decType =
+            paramSqlType == StandardSQLTypeName.NUMERIC
+                ? StandardSQLTypeName.NUMERIC
+                : StandardSQLTypeName.BIGNUMERIC;
+        return BigQueryTypeRegistry.isSupportedJavaValue(paramSqlType, value)
+            && isValidWriteApiBigDecimal(
+                (BigDecimal) value,
+                BigQueryTypeRegistry.getColumnTypeInfo(decType).decimalDigits,
+                decType == StandardSQLTypeName.NUMERIC ? NUMERIC_MIN : BIGNUMERIC_MIN,
+                decType == StandardSQLTypeName.NUMERIC ? NUMERIC_MAX : BIGNUMERIC_MAX,
+                null,
+                null);
+      case DATE:
+        if (!BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.DATE, value)) {
+          return false;
+        }
+        if (value instanceof LocalDate) {
+          int year = ((LocalDate) value).getYear();
+          return year >= 1 && year <= 9999;
+        }
+        String formattedDate = value.toString();
+        if (formattedDate.length() != 10) {
+          return false;
+        }
+        try {
+          int year = LocalDate.parse(formattedDate, DATE_DIGITS).getYear();
+          return year >= 1 && year <= 9999;
+        } catch (DateTimeParseException ex) {
+          return false;
+        }
+      case DATETIME:
+        if (paramSqlType == StandardSQLTypeName.DATETIME) {
+          return value instanceof LocalDateTime
+              && ((LocalDateTime) value).getYear() >= 1
+              && ((LocalDateTime) value).getYear() <= 9999;
+        }
+        if (!(value instanceof String) || ((String) value).length() != 26) {
+          return false;
+        }
+        try {
+          int year = LocalDateTime.parse((String) value, DATETIME_MICROS).getYear();
+          return year >= 1 && year <= 9999;
+        } catch (DateTimeParseException ex) {
+          return false;
+        }
+      case TIMESTAMP:
+        Instant instant = BigQueryTypeRegistry.extractInstant(value);
+        return instant != null
+            && !instant.isBefore(MIN_WRITE_API_INSTANT)
+            && !instant.isAfter(MAX_WRITE_API_INSTANT);
+      default:
+        return false;
+    }
+  }
+
+  private static boolean isValidWriteApiBigDecimal(
+      BigDecimal value,
+      int maxScale,
+      BigDecimal minValue,
+      BigDecimal maxValue,
+      Long columnPrecision,
+      Long columnScale) {
+    // Check integer-digit count in long arithmetic before stripTrailingZeros() / compareTo() so
+    // extreme negative scales (e.g. BigDecimal.valueOf(10, Integer.MIN_VALUE)) cannot underflow or
+    // trigger huge scale-alignment allocations.
+    long intDigits =
+        value.signum() == 0 ? 0L : Math.max(0L, (long) value.precision() - (long) value.scale());
+    if (intDigits > maxValue.precision() - maxValue.scale()) {
+      return false;
+    }
+    BigDecimal normalized = value.signum() == 0 ? BigDecimal.ZERO : value.stripTrailingZeros();
+    if (normalized.scale() > maxScale) {
+      return false;
+    }
+    if (columnScale != null && normalized.scale() > columnScale) {
+      return false;
+    }
+    if (columnPrecision != null) {
+      long effectiveScale = columnScale != null ? columnScale : 0L;
+      if (normalized.scale() > effectiveScale || intDigits > columnPrecision - effectiveScale) {
+        return false;
+      }
+    }
+    return normalized.compareTo(minValue) >= 0 && normalized.compareTo(maxValue) <= 0;
   }
 }

@@ -19,8 +19,11 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.gson.JsonObject;
+import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -323,6 +326,52 @@ public class BigQueryTypeRegistryTest {
               BigQueryTypeRegistry.convert(raw, StandardSQLTypeName.DATETIME, Time.class, utc)
                   .getTime())
           .isEqualTo(Duration.ofHours(2).plusMinutes(30).toMillis());
+    }
+  }
+
+  @Test
+  public void testWriteApiFieldAndJavaValuePredicates() {
+    assertThat(BigQueryTypeRegistry.isSupportedWriteApiField(null)).isFalse();
+    for (StandardSQLTypeName type : StandardSQLTypeName.values()) {
+      if (type == StandardSQLTypeName.ARRAY || type == StandardSQLTypeName.STRUCT) {
+        continue;
+      }
+      assertThat(BigQueryTypeRegistry.isSupportedWriteApiField(Field.of("c", type)))
+          .isEqualTo(type != StandardSQLTypeName.RANGE);
+    }
+    assertThat(
+            BigQueryTypeRegistry.isSupportedWriteApiField(
+                Field.newBuilder("a", StandardSQLTypeName.STRING)
+                    .setMode(Field.Mode.REPEATED)
+                    .build()))
+        .isFalse();
+    assertThat(
+            BigQueryTypeRegistry.isSupportedWriteApiField(
+                Field.of(
+                    "rec", StandardSQLTypeName.STRUCT, Field.of("s", StandardSQLTypeName.INT64))))
+        .isFalse();
+
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(null, "x")).isFalse();
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.STRING, null))
+        .isFalse();
+    Object[][] cases = {
+      {StandardSQLTypeName.INT64, (short) 1, true},
+      {StandardSQLTypeName.INT64, (byte) 2, true},
+      {StandardSQLTypeName.INT64, BigInteger.ONE, false},
+      {StandardSQLTypeName.FLOAT64, 0.5f, true},
+      {StandardSQLTypeName.DATE, LocalDate.of(2026, 1, 1), true},
+      {StandardSQLTypeName.DATE, new java.util.Date(0L), false},
+      {StandardSQLTypeName.TIMESTAMP, new java.util.Date(1000L), true},
+      {StandardSQLTypeName.TIMESTAMP, Date.valueOf("2026-01-01"), false},
+      {StandardSQLTypeName.TIMESTAMP, Time.valueOf("12:00:00"), false},
+      {StandardSQLTypeName.JSON, new JsonObject(), true},
+      {StandardSQLTypeName.JSON, "{\"a\":1}", false},
+      {StandardSQLTypeName.GEOGRAPHY, "POINT(1 2)", true},
+      {StandardSQLTypeName.INTERVAL, "1-0 0 0:0:0.0", true}
+    };
+    for (Object[] c : cases) {
+      assertThat(BigQueryTypeRegistry.isSupportedJavaValue((StandardSQLTypeName) c[0], c[1]))
+          .isEqualTo(c[2]);
     }
   }
 }

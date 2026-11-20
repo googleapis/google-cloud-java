@@ -18,21 +18,29 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.cloud.bigquery.BigQuery;
@@ -42,6 +50,8 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
@@ -50,18 +60,55 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest;
+import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BQTableSchemaToProtoDescriptor;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
+import com.google.cloud.bigquery.storage.v1.BigDecimalByteStringEncoder;
+import com.google.cloud.bigquery.storage.v1.BigQuerySchemaUtil;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteGrpc;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
+import com.google.cloud.bigquery.storage.v1.CivilTimeEncoder;
+import com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse;
 import com.google.cloud.bigquery.storage.v1.StorageError;
 import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1.TableSchema;
+import com.google.cloud.bigquery.storage.v1.WriteStream;
+import com.google.gson.JsonObject;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.DynamicMessage;
+import com.google.protobuf.Int64Value;
+import io.grpc.ManagedChannel;
+import io.grpc.Server;
+import io.grpc.inprocess.InProcessChannelBuilder;
+import io.grpc.inprocess.InProcessServerBuilder;
+import io.grpc.stub.StreamObserver;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
+import java.util.concurrent.CopyOnWriteArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -243,5 +290,391 @@ public class BigQueryPreparedStatementWriteApiTest {
     } finally {
       Thread.interrupted();
     }
+  }
+
+  private static final class InProcessWriteServer implements AutoCloseable {
+    final List<AppendRowsRequest> appendRequests = new CopyOnWriteArrayList<>();
+    final Descriptor descriptor;
+    final Server server;
+    final ManagedChannel channel;
+    final BigQueryWriteClient client;
+
+    InProcessWriteServer(TableSchema tableSchema) throws Exception {
+      TableSchema.Builder lowerSchema = tableSchema.toBuilder().clearFields();
+      for (TableFieldSchema f : tableSchema.getFieldsList()) {
+        lowerSchema.addFields(f.toBuilder().setName(f.getName().toLowerCase(Locale.ROOT)).build());
+      }
+      this.descriptor =
+          BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(lowerSchema.build());
+      String name = InProcessServerBuilder.generateName();
+      BigQueryWriteGrpc.BigQueryWriteImplBase svc =
+          new BigQueryWriteGrpc.BigQueryWriteImplBase() {
+            @Override
+            public void createWriteStream(
+                CreateWriteStreamRequest req, StreamObserver<WriteStream> obs) {
+              obs.onNext(
+                  WriteStream.newBuilder()
+                      .setName(req.getParent() + "/streams/_p1")
+                      .setType(WriteStream.Type.PENDING)
+                      .setTableSchema(tableSchema)
+                      .build());
+              obs.onCompleted();
+            }
+
+            @Override
+            public StreamObserver<AppendRowsRequest> appendRows(
+                StreamObserver<AppendRowsResponse> responseObserver) {
+              return new StreamObserver<AppendRowsRequest>() {
+                @Override
+                public void onNext(AppendRowsRequest req) {
+                  appendRequests.add(req);
+                  responseObserver.onNext(
+                      AppendRowsResponse.newBuilder()
+                          .setAppendResult(
+                              AppendRowsResponse.AppendResult.newBuilder()
+                                  .setOffset(req.getOffset()))
+                          .build());
+                }
+
+                @Override
+                public void onError(Throwable t) {
+                  responseObserver.onError(t);
+                }
+
+                @Override
+                public void onCompleted() {
+                  responseObserver.onCompleted();
+                }
+              };
+            }
+
+            @Override
+            public void finalizeWriteStream(
+                FinalizeWriteStreamRequest req, StreamObserver<FinalizeWriteStreamResponse> obs) {
+              long rows =
+                  appendRequests.stream()
+                      .mapToLong(r -> r.getProtoRows().getRows().getSerializedRowsCount())
+                      .sum();
+              obs.onNext(FinalizeWriteStreamResponse.newBuilder().setRowCount(rows).build());
+              obs.onCompleted();
+            }
+
+            @Override
+            public void batchCommitWriteStreams(
+                BatchCommitWriteStreamsRequest req,
+                StreamObserver<BatchCommitWriteStreamsResponse> obs) {
+              BatchCommitWriteStreamsResponse.Builder res =
+                  BatchCommitWriteStreamsResponse.newBuilder();
+              res.getCommitTimeBuilder().setSeconds(1700000000L);
+              obs.onNext(res.build());
+              obs.onCompleted();
+            }
+          };
+      this.server = InProcessServerBuilder.forName(name).directExecutor().addService(svc).build();
+      this.server.start();
+      this.channel = InProcessChannelBuilder.forName(name).directExecutor().build();
+      this.client =
+          BigQueryWriteClient.create(
+              BigQueryWriteSettings.newBuilder()
+                  .setTransportChannelProvider(
+                      FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel)))
+                  .setCredentialsProvider(NoCredentialsProvider.create())
+                  .build());
+    }
+
+    List<DynamicMessage> decodedRows() throws Exception {
+      List<DynamicMessage> out = new ArrayList<>();
+      for (AppendRowsRequest req : appendRequests) {
+        for (ByteString rowBytes : req.getProtoRows().getRows().getSerializedRowsList()) {
+          out.add(DynamicMessage.parseFrom(descriptor, rowBytes));
+        }
+      }
+      return out;
+    }
+
+    @Override
+    public void close() {
+      client.close();
+      channel.shutdownNow();
+      server.shutdownNow();
+    }
+  }
+
+  private static TableFieldSchema tfs(String name, TableFieldSchema.Type type) {
+    return TableFieldSchema.newBuilder()
+        .setName(name)
+        .setType(type)
+        .setMode(TableFieldSchema.Mode.NULLABLE)
+        .build();
+  }
+
+  @Test
+  public void testAllSupportedTypesEndToEndProtoSchemaParityAcrossLocalesZonesAndPicos()
+      throws Exception {
+    Object[][] cols = {
+      {"col-é", StandardSQLTypeName.STRING, TableFieldSchema.Type.STRING, 0L},
+      {"c_bytes", StandardSQLTypeName.BYTES, TableFieldSchema.Type.BYTES, 0L},
+      {"C_INT", StandardSQLTypeName.INT64, TableFieldSchema.Type.INT64, 0L},
+      {"c_flt", StandardSQLTypeName.FLOAT64, TableFieldSchema.Type.DOUBLE, 0L},
+      {"c_num", StandardSQLTypeName.NUMERIC, TableFieldSchema.Type.NUMERIC, 0L},
+      {"c_bnum", StandardSQLTypeName.BIGNUMERIC, TableFieldSchema.Type.BIGNUMERIC, 0L},
+      {"c_bool", StandardSQLTypeName.BOOL, TableFieldSchema.Type.BOOL, 0L},
+      {"c_date", StandardSQLTypeName.DATE, TableFieldSchema.Type.DATE, 0L},
+      {"c_time", StandardSQLTypeName.TIME, TableFieldSchema.Type.TIME, 0L},
+      {"c_dt", StandardSQLTypeName.DATETIME, TableFieldSchema.Type.DATETIME, 0L},
+      {"c_ts6", StandardSQLTypeName.TIMESTAMP, TableFieldSchema.Type.TIMESTAMP, 0L},
+      {"c_ts12", StandardSQLTypeName.TIMESTAMP, TableFieldSchema.Type.TIMESTAMP, 12L},
+      {"c_json", StandardSQLTypeName.JSON, TableFieldSchema.Type.JSON, 0L},
+      {"c_geo", StandardSQLTypeName.GEOGRAPHY, TableFieldSchema.Type.GEOGRAPHY, 0L},
+      {"c_iv", StandardSQLTypeName.INTERVAL, TableFieldSchema.Type.INTERVAL, 0L}
+    };
+    List<Field> bqFields = new ArrayList<>();
+    List<QueryParameter> inferred = new ArrayList<>();
+    TableSchema.Builder storageBuilder = TableSchema.newBuilder();
+    for (Object[] col : cols) {
+      String name = (String) col[0];
+      StandardSQLTypeName sqlType = (StandardSQLTypeName) col[1];
+      bqFields.add(Field.of(name, sqlType));
+      inferred.add(queryParam(sqlType.name()));
+      TableFieldSchema.Builder fb = tfs(name, (TableFieldSchema.Type) col[2]).toBuilder();
+      if ((Long) col[3] > 0) {
+        fb.setTimestampPrecision(Int64Value.of((Long) col[3]));
+      }
+      storageBuilder.addFields(fb.build());
+    }
+    Schema bqSchema = Schema.of(bqFields);
+    TableSchema storageSchema = storageBuilder.build();
+
+    Locale savedLocale = Locale.getDefault();
+    TimeZone savedZone = TimeZone.getDefault();
+    Locale[] locales = {Locale.US, Locale.FRANCE, Locale.JAPAN, Locale.forLanguageTag("tr-TR")};
+    String[] zones = {"UTC", "America/New_York", "Asia/Tokyo", "Europe/Istanbul"};
+    try (InProcessWriteServer srv = new InProcessWriteServer(storageSchema)) {
+      doReturn(srv.client).when(connection).getBigQueryWriteClient();
+      doReturn(mockInsertDryRunJob(TableId.of("proj", "ds", "TAB"), bqSchema, inferred))
+          .when(bigQuery)
+          .create(any(JobInfo.class));
+
+      for (int idx = 0; idx < locales.length; idx++) {
+        Locale.setDefault(locales[idx]);
+        TimeZone.setDefault(TimeZone.getTimeZone(zones[idx]));
+        for (boolean picos : new boolean[] {false, true}) {
+          srv.appendRequests.clear();
+          doReturn(picos).when(connection).isEnableTimestampPicos();
+          BigQueryPreparedStatement ps =
+              new BigQueryPreparedStatement(
+                  connection, "INSERT INTO TAB VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+
+          byte[] rawBytes = new byte[] {-128, 0, 127};
+          JsonObject jsonVal = new JsonObject();
+          jsonVal.addProperty("k", 7);
+
+          // Row 0: JSR-310, pre-1582 date, pre-1970 sub-micros instant, float 0.6f, trailing zeros.
+          BigDecimal bigNumericMax =
+              new BigDecimal(
+                  "578960446186580977117854925043439539266.34992332820282019728792003956564819967");
+          ps.setString(1, "héllo");
+          ps.setBytes(2, rawBytes);
+          ps.setShort(3, (short) -42);
+          ps.setFloat(4, 0.6f);
+          ps.setBigDecimal(5, new BigDecimal("12.3400000000"));
+          ps.setBigDecimal(6, bigNumericMax);
+          ps.parameterHandler
+              .parametersList
+              .get(5)
+              .bindType(BigDecimal.class, StandardSQLTypeName.BIGNUMERIC);
+          ps.setBoolean(7, true);
+          ps.setObject(8, LocalDate.of(1500, 1, 1));
+          ps.setObject(9, LocalTime.of(14, 30, 45, 123_456_789));
+          ps.setObject(10, LocalDateTime.of(2026, 8, 24, 15, 30, 45, 987_654_321));
+          ps.setObject(11, Instant.parse("1969-12-31T23:59:59.999999900Z"));
+          ps.setTimestamp(12, Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z")));
+          ps.setObject(13, jsonVal);
+          ps.parameterHandler.setParameter(14, "POINT(-122.33 47.61)", String.class);
+          ps.parameterHandler
+              .parametersList
+              .get(13)
+              .bindType(String.class, StandardSQLTypeName.GEOGRAPHY);
+          ps.parameterHandler.setParameter(15, "1-2 3 4:5:6.000078", String.class);
+          ps.parameterHandler
+              .parametersList
+              .get(14)
+              .bindType(String.class, StandardSQLTypeName.INTERVAL);
+          List<QueryParameterValue> restRow0 = new ArrayList<>();
+          for (BigQueryJdbcParameter param : ps.parameterHandler.parametersList) {
+            restRow0.add(BigQueryParameterHandler.toQueryParameterValue(param, picos));
+          }
+          ps.addBatch();
+
+          // Row 1: Legacy java.sql types + OffsetDateTime + NUMERIC->BIGNUMERIC 0E+50 widening.
+          ps.setString(1, "legacy");
+          ps.setBytes(2, new byte[0]);
+          ps.setByte(3, (byte) 9);
+          ps.setDouble(4, -123.5d);
+          ps.setBigDecimal(5, new BigDecimal("-99999999999999999999999999999.999999999"));
+          ps.setBigDecimal(6, new BigDecimal("0E+50"));
+          ps.setBoolean(7, false);
+          ps.setDate(8, Date.valueOf("2026-08-24"));
+          ps.setTime(9, Time.valueOf("08:09:10"));
+          ps.setString(10, "2026-08-24 08:09:10.000000");
+          ps.setObject(
+              11, OffsetDateTime.of(2024, 1, 1, 18, 4, 56, 123_456_000, ZoneOffset.ofHours(5)));
+          ps.setObject(12, Instant.parse("0001-01-01T00:00:00Z"));
+          ps.setNull(13, Types.OTHER);
+          ps.setNull(14, Types.OTHER);
+          ps.setNull(15, Types.OTHER);
+          ps.addBatch();
+
+          // Row 2: All NULLs.
+          for (int c = 1; c <= 15; c++) {
+            ps.setObject(c, null);
+          }
+          ps.addBatch();
+
+          assertArrayEquals(new int[] {1, 1, 1}, ps.executeBatch());
+          List<DynamicMessage> rows = srv.decodedRows();
+          assertEquals(3, rows.size());
+
+          Descriptor d = srv.descriptor;
+          DynamicMessage r0 = rows.get(0);
+          String col0Proto = BigQuerySchemaUtil.generatePlaceholderFieldName("col-é");
+          assertEquals(restRow0.get(0).getValue(), r0.getField(d.findFieldByName(col0Proto)));
+          assertArrayEquals(
+              Base64.getDecoder().decode(restRow0.get(1).getValue()),
+              ((ByteString) r0.getField(d.findFieldByName("c_bytes"))).toByteArray());
+          assertEquals(
+              Long.parseLong(restRow0.get(2).getValue()), r0.getField(d.findFieldByName("c_int")));
+          assertEquals(
+              Double.parseDouble(restRow0.get(3).getValue()),
+              (Double) r0.getField(d.findFieldByName("c_flt")));
+          assertEquals(
+              0,
+              new BigDecimal(restRow0.get(4).getValue())
+                  .compareTo(
+                      BigDecimalByteStringEncoder.decodeNumericByteString(
+                          (ByteString) r0.getField(d.findFieldByName("c_num")))));
+          assertEquals(
+              0,
+              new BigDecimal(restRow0.get(5).getValue())
+                  .compareTo(
+                      BigDecimalByteStringEncoder.decodeBigNumericByteString(
+                          (ByteString) r0.getField(d.findFieldByName("c_bnum")))));
+          assertEquals(
+              0,
+              BigDecimal.ZERO.compareTo(
+                  BigDecimalByteStringEncoder.decodeBigNumericByteString(
+                      (ByteString) rows.get(1).getField(d.findFieldByName("c_bnum")))));
+          assertEquals(
+              Boolean.parseBoolean(restRow0.get(6).getValue()),
+              r0.getField(d.findFieldByName("c_bool")));
+          assertEquals(
+              LocalDate.parse(restRow0.get(7).getValue()),
+              LocalDate.ofEpochDay((Integer) r0.getField(d.findFieldByName("c_date"))));
+          assertEquals(
+              LocalTime.parse(restRow0.get(8).getValue()),
+              CivilTimeEncoder.decodePacked64TimeMicrosLocalTime(
+                  (Long) r0.getField(d.findFieldByName("c_time"))));
+          assertEquals(
+              LocalDateTime.parse(restRow0.get(9).getValue().replace(' ', 'T')),
+              CivilTimeEncoder.decodePacked64DatetimeMicrosLocalDateTime(
+                  (Long) r0.getField(d.findFieldByName("c_dt"))));
+          assertEquals(-1L, r0.getField(d.findFieldByName("c_ts6")));
+          assertEquals(
+              BigQueryParameterHandler.formatInstantUtc(
+                  Instant.parse("2024-01-01T12:34:56.123456789Z"), false),
+              r0.getField(d.findFieldByName("c_ts12")));
+          assertEquals(restRow0.get(12).getValue(), r0.getField(d.findFieldByName("c_json")));
+          assertEquals(restRow0.get(13).getValue(), r0.getField(d.findFieldByName("c_geo")));
+          assertEquals(restRow0.get(14).getValue(), r0.getField(d.findFieldByName("c_iv")));
+
+          DynamicMessage r2 = rows.get(2);
+          for (int f = 1; f <= 15; f++) {
+            assertFalse(r2.hasField(d.findFieldByNumber(f)));
+          }
+        }
+      }
+    } finally {
+      Locale.setDefault(savedLocale);
+      TimeZone.setDefault(savedZone);
+    }
+  }
+
+  @Test
+  public void testUnsupportedColumnsAndIncompatibleValuesFallBackToSqlBatch() throws Exception {
+    // 1. Complex column types (ARRAY, STRUCT, RANGE) leave insertSchema null.
+    for (Field unsupported :
+        Arrays.asList(
+            Field.newBuilder("a", StandardSQLTypeName.STRING).setMode(Field.Mode.REPEATED).build(),
+            Field.newBuilder(
+                    "s", StandardSQLTypeName.STRUCT, Field.of("x", StandardSQLTypeName.INT64))
+                .build(),
+            Field.of("r", StandardSQLTypeName.RANGE))) {
+      doReturn(
+              mockInsertDryRunJob(
+                  TableId.of("proj", "ds", "TAB"),
+                  Schema.of(unsupported),
+                  Collections.singletonList(queryParam(unsupported.getType().name()))))
+          .when(bigQuery)
+          .create(any(JobInfo.class));
+      BigQueryPreparedStatement ps =
+          new BigQueryPreparedStatement(connection, "INSERT INTO TAB VALUES (?)");
+      assertNull(ps.insertSchema);
+    }
+
+    // 2. Incompatible parameter values (REQUIRED null, NUMERIC(5,2) overflow, NaN, String picos)
+    // fall back cleanly to runQuery without invoking BigQueryWriteClient.
+    Schema constrained =
+        Schema.of(
+            Field.newBuilder("req", StandardSQLTypeName.STRING)
+                .setMode(Field.Mode.REQUIRED)
+                .build(),
+            Field.newBuilder("num", StandardSQLTypeName.NUMERIC)
+                .setPrecision(5L)
+                .setScale(2L)
+                .build(),
+            Field.of("flt", StandardSQLTypeName.FLOAT64),
+            Field.of("ts", StandardSQLTypeName.TIMESTAMP));
+    doReturn(
+            mockInsertDryRunJob(
+                TableId.of("proj", "ds", "TAB"),
+                constrained,
+                Arrays.asList(
+                    queryParam("STRING"),
+                    queryParam("NUMERIC"),
+                    queryParam("FLOAT64"),
+                    queryParam("TIMESTAMP"))))
+        .when(bigQuery)
+        .create(any(JobInfo.class));
+
+    // 2. Each incompatible parameter case (REQUIRED null, NUMERIC(5,2) overflow, NaN on row 1,
+    // String picosecond literal) independently triggers fallback to runQuery without WriteClient.
+    for (int badCase = 0; badCase < 4; badCase++) {
+      BigQueryPreparedStatement ps =
+          spy(new BigQueryPreparedStatement(connection, "INSERT INTO TAB VALUES (?, ?, ?, ?)"));
+      doNothing().when(ps).runQuery(anyString(), any(QueryJobConfiguration.class));
+      doReturn(1, 1, 1, 1, 1, 1, -1).when(ps).getUpdateCount();
+      doReturn(true, true, false).when(ps).getMoreResults();
+
+      for (int i = 0; i < 3; i++) {
+        if (badCase == 0 && i == 1) {
+          ps.setNull(1, Types.VARCHAR);
+        } else {
+          ps.setString(1, "ok");
+        }
+        ps.setBigDecimal(
+            2, badCase == 1 && i == 1 ? new BigDecimal("1000.00") : new BigDecimal("12.34"));
+        ps.setDouble(3, badCase == 2 && i == 1 ? Double.NaN : 1.0);
+        if (badCase == 3 && i == 1) {
+          ps.setString(4, "2024-01-01 12:34:56.123456789012Z");
+        } else {
+          ps.setTimestamp(4, Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456Z")));
+        }
+        ps.addBatch();
+      }
+      assertFalse(ps.useWriteAPI(), "badCase=" + badCase);
+      assertArrayEquals(new int[] {1, 1, 1}, ps.executeBatch());
+      verify(ps, times(1)).runQuery(anyString(), any(QueryJobConfiguration.class));
+    }
+    verify(connection, never()).getBigQueryWriteClient();
   }
 }
