@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import static com.google.cloud.storage.ByteSizeConstants._1MiB;
 import static com.google.cloud.storage.ByteSizeConstants._2MiB;
 import static com.google.cloud.storage.PackagePrivateMethodWorkarounds.maybeGetStorageDataClient;
 import static com.google.cloud.storage.TestUtils.GRPC_STATUS_DETAILS_KEY;
@@ -69,6 +70,7 @@ import com.google.storage.v2.BucketName;
 import com.google.storage.v2.ChecksummedData;
 import com.google.storage.v2.CommonObjectRequestParams;
 import com.google.storage.v2.Object;
+import com.google.storage.v2.ObjectChecksums;
 import com.google.storage.v2.ObjectRangeData;
 import com.google.storage.v2.ReadRange;
 import com.google.storage.v2.ReadRangeError;
@@ -84,6 +86,8 @@ import java.nio.channels.Channels;
 import java.nio.channels.ScatteringByteChannel;
 import java.nio.channels.WritableByteChannel;
 import java.security.Key;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -135,6 +139,91 @@ public final class ITObjectReadSessionFakeTest {
       Metadata.Key.of("x-goog-user-project", Metadata.ASCII_STRING_MARSHALLER);
   private static final Correspondence<String, UUID> IS_UUID =
       Correspondence.transforming(UUID::fromString, "is a UUID");
+
+  @Test
+  public void blobInfo_unchangedAfterReadsFromAnotherSession() throws Exception {
+    byte[] md5 = new byte[16];
+    Arrays.fill(md5, (byte) 0x11);
+    Object metaA =
+        Object.newBuilder()
+            .setBucket(BucketName.format("_", "b"))
+            .setName("a")
+            .setGeneration(1)
+            .setSize(64)
+            .setChecksums(ObjectChecksums.newBuilder().setMd5Hash(ByteString.copyFrom(md5)))
+            .build();
+    Object metaB =
+        Object.newBuilder()
+            .setBucket(BucketName.format("_", "b"))
+            .setName("b")
+            .setGeneration(1)
+            .setSize(16L * _1MiB)
+            .build();
+    byte[] fill = new byte[_1MiB];
+    Arrays.fill(fill, (byte) 'Z');
+
+    StorageImplBase fake =
+        new StorageImplBase() {
+          @Override
+          public StreamObserver<BidiReadObjectRequest> bidiReadObject(
+              StreamObserver<BidiReadObjectResponse> respond) {
+            return new StreamObserver<BidiReadObjectRequest>() {
+              @Override
+              public void onNext(BidiReadObjectRequest req) {
+                BidiReadObjectResponse.Builder b = BidiReadObjectResponse.newBuilder();
+                if (req.hasReadObjectSpec()) {
+                  String name = req.getReadObjectSpec().getObject();
+                  b.setMetadata(name.equals("a") ? metaA : metaB)
+                      .setReadHandle(
+                          BidiReadHandle.newBuilder()
+                              .setHandle(ByteString.copyFromUtf8("handle-" + name)));
+                }
+                for (ReadRange r : req.getReadRangesList()) {
+                  byte[] data = Arrays.copyOf(fill, (int) r.getReadLength());
+                  b.addObjectDataRanges(
+                      ObjectRangeData.newBuilder()
+                          .setChecksummedData(ChecksummedTestContent.of(data).asChecksummedData())
+                          .setReadRange(r)
+                          .setRangeEnd(true));
+                }
+                respond.onNext(b.build());
+              }
+
+              @Override
+              public void onError(Throwable t) {}
+
+              @Override
+              public void onCompleted() {
+                respond.onCompleted();
+              }
+            };
+          }
+        };
+
+    try (FakeServer fakeServer = FakeServer.of(fake);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      try (BlobReadSession a =
+          storage.blobReadSession(BlobId.of("b", "a")).get(5, TimeUnit.SECONDS)) {
+        String expected = a.getBlobInfo().getMd5();
+
+        try (BlobReadSession b =
+            storage.blobReadSession(BlobId.of("b", "b")).get(5, TimeUnit.SECONDS)) {
+          List<ApiFuture<byte[]>> reads = new ArrayList<>();
+          for (int i = 0; i < 16; i++) {
+            reads.add(
+                b.readAs(
+                    ReadProjectionConfigs.asFutureBytes()
+                        .withRangeSpec(RangeSpec.of((long) i * _1MiB, _1MiB))));
+          }
+          for (ApiFuture<byte[]> r : reads) {
+            r.get(30, TimeUnit.SECONDS);
+          }
+        }
+
+        assertThat(a.getBlobInfo().getMd5()).isEqualTo(expected);
+      }
+    }
+  }
 
   /**
    *
