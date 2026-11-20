@@ -114,8 +114,7 @@ public class JobStatus implements Serializable {
    * Returns the final error result of the job. If present, indicates that the job has completed and
    * was unsuccessful.
    *
-   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Troubleshooting
-   *     Errors</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">Troubleshooting Errors</a>
    */
   @Nullable
   public BigQueryError getError() {
@@ -126,8 +125,7 @@ public class JobStatus implements Serializable {
    * Returns all errors encountered during the running of the job. Errors here do not necessarily
    * mean that the job has completed or was unsuccessful.
    *
-   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Troubleshooting
-   *     Errors</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">Troubleshooting Errors</a>
    */
   public List<BigQueryError> getExecutionErrors() {
     return executionErrors;

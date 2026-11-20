@@ -30,12 +30,14 @@ import java.util.concurrent.ExecutionException;
 /**
  * BigQuery service exception.
  *
- * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud BigQuery
- *     error codes</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">Google Cloud BigQuery error
+ *     codes</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/error-messages">Google Cloud BigQuery
+ *     error messages</a>
  */
 public final class BigQueryException extends BaseHttpServiceException {
 
-  // see: https://cloud.google.com/bigquery/troubleshooting-errors
+  // see: https://docs.cloud.google.com/bigquery/docs/errors
   private static final Set<Error> RETRYABLE_ERRORS =
       ImmutableSet.of(
           new Error(500, null), new Error(502, null), new Error(503, null), new Error(504, null));
