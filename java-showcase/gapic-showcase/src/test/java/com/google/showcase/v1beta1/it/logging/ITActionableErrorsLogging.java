@@ -354,20 +354,18 @@ public class ITActionableErrorsLogging {
   }
 
   /**
-   * Builds a nested {@link CompositeTracerFactory} mirroring {@code ClientContext}: an outer {@link
-   * LoggingTracerFactory} paired with an inner {@link CompositeTracerFactory} combining
-   * OpenTelemetry metrics and tracing.
+   * Builds a {@link CompositeTracerFactory} combining OpenTelemetry metrics and tracing; when
+   * {@code GOOGLE_SDK_JAVA_LOGGING=true} is set, {@code ClientContext} wraps this in an outer
+   * {@link CompositeTracerFactory} with {@link LoggingTracerFactory}.
    *
    * @param openTelemetry the {@link OpenTelemetry} instance for metrics and tracing factories
    * @return a configured {@link ApiTracerFactory}
    */
-  private ApiTracerFactory createNestedObservabilityTracerFactory(OpenTelemetry openTelemetry) {
-    CompositeTracerFactory innerFactory =
-        new CompositeTracerFactory(
-            ImmutableList.of(
-                new OpenTelemetryMetricsFactory(openTelemetry),
-                new OpenTelemetryTracingFactory(openTelemetry)));
-    return new CompositeTracerFactory(ImmutableList.of(new LoggingTracerFactory(), innerFactory));
+  private ApiTracerFactory createObservabilityTracerFactory(OpenTelemetry openTelemetry) {
+    return new CompositeTracerFactory(
+        ImmutableList.of(
+            new OpenTelemetryMetricsFactory(openTelemetry),
+            new OpenTelemetryTracingFactory(openTelemetry)));
   }
 
   /**
@@ -490,7 +488,7 @@ public class ITActionableErrorsLogging {
       EchoStubSettings echoStubSettings =
           (EchoStubSettings)
               httpJsonEchoSettings.getStubSettings().toBuilder()
-                  .setTracerFactory(createNestedObservabilityTracerFactory(openTelemetry))
+                  .setTracerFactory(createObservabilityTracerFactory(openTelemetry))
                   .build();
 
       EchoClient client = EchoClient.create(echoStubSettings.createStub());
@@ -552,7 +550,7 @@ public class ITActionableErrorsLogging {
       EchoStubSettings echoStubSettings =
           (EchoStubSettings)
               grpcEchoSettings.getStubSettings().toBuilder()
-                  .setTracerFactory(createNestedObservabilityTracerFactory(openTelemetry))
+                  .setTracerFactory(createObservabilityTracerFactory(openTelemetry))
                   .build();
 
       EchoClient client = EchoClient.create(echoStubSettings.createStub());
