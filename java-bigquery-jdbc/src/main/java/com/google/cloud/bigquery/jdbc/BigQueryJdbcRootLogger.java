@@ -47,7 +47,12 @@ class BigQueryJdbcRootLogger {
   private static final ConcurrentHashMap<String, ConnectionLogContext> ACTIVE_CONNECTIONS =
       new ConcurrentHashMap<>();
 
+  private static ConsoleHandler testConsoleHandler = null;
+  private static volatile PerConnectionFileHandler persistentFileHandler = null;
   private static volatile Handler fileHandler = null;
+  private static volatile Level explicitGlobalLevel = Level.OFF;
+  private static Level lastDriverAppliedLevel = null;
+  private static Level externalFloorLevel = null;
 
   static final String PROCESS_ID = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
 
@@ -82,6 +87,7 @@ class BigQueryJdbcRootLogger {
       ConsoleHandler consoleHandler = new ConsoleHandler();
       consoleHandler.setLevel(Level.SEVERE);
       consoleHandler.setFormatter(getFormatter());
+      testConsoleHandler = consoleHandler;
       logger.addHandler(consoleHandler);
     }
   }
@@ -165,19 +171,114 @@ class BigQueryJdbcRootLogger {
     return logger;
   }
 
-  public static synchronized void setLevel(Level level, String logPath) throws IOException {
-    if (level != Level.OFF) {
-      if (logPath != null) {
-        setPath(logPath, level);
+  private static synchronized PerConnectionFileHandler ensurePersistentFileHandlerAttached() {
+    if (persistentFileHandler == null) {
+      persistentFileHandler = new PerConnectionFileHandler();
+    }
+    boolean attached = false;
+    for (Handler h : logger.getHandlers()) {
+      if (h == persistentFileHandler) {
+        attached = true;
+        break;
+      }
+    }
+    if (!attached) {
+      logger.addHandler(persistentFileHandler);
+      logger.setUseParentHandlers(false);
+    }
+    return persistentFileHandler;
+  }
+
+  private static boolean isDriverOwnedHandler(Handler handler) {
+    return handler instanceof PerConnectionFileHandler
+        || handler instanceof OpenTelemetryJulHandler
+        || (testConsoleHandler != null && handler == testConsoleHandler);
+  }
+
+  private static boolean hasExternalHandlerAttached() {
+    for (Handler h : logger.getHandlers()) {
+      if (!isDriverOwnedHandler(h)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private static synchronized void refreshEffectiveRootLevel() {
+    Level current = logger.getLevel();
+    if (hasExternalHandlerAttached()) {
+      if (current != lastDriverAppliedLevel) {
+        externalFloorLevel = current;
       }
     } else {
-      for (Handler h : logger.getHandlers()) {
-        h.close();
-        logger.removeHandler(h);
+      externalFloorLevel = null;
+    }
+
+    int targetValue =
+        explicitGlobalLevel != null
+            ? explicitGlobalLevel.intValue()
+            : ConnectionLogContext.OFF_VALUE;
+    String envLevelStr = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
+    if (envLevelStr != null) {
+      try {
+        targetValue =
+            Math.min(targetValue, BigQueryJdbcUrlUtility.parseLogLevel(envLevelStr).intValue());
+      } catch (RuntimeException ignored) {
+        // Invalid env level falls back to active connection levels.
       }
+    }
+    for (ConnectionLogContext ctx : ACTIVE_CONNECTIONS.values()) {
+      targetValue = Math.min(targetValue, ctx.levelValue());
+    }
+    if (externalFloorLevel != null) {
+      targetValue = Math.min(targetValue, externalFloorLevel.intValue());
+    }
+    Level applied = toJulLevel(targetValue);
+    lastDriverAppliedLevel = applied;
+    logger.setLevel(applied);
+  }
+
+  private static Level toJulLevel(int levelValue) {
+    if (levelValue <= Level.ALL.intValue()) {
+      return Level.ALL;
+    }
+    if (levelValue <= Level.FINEST.intValue()) {
+      return Level.FINEST;
+    }
+    if (levelValue <= Level.FINER.intValue()) {
+      return Level.FINER;
+    }
+    if (levelValue <= Level.FINE.intValue()) {
+      return Level.FINE;
+    }
+    if (levelValue <= Level.CONFIG.intValue()) {
+      return Level.CONFIG;
+    }
+    if (levelValue <= Level.INFO.intValue()) {
+      return Level.INFO;
+    }
+    if (levelValue <= Level.WARNING.intValue()) {
+      return Level.WARNING;
+    }
+    if (levelValue <= Level.SEVERE.intValue()) {
+      return Level.SEVERE;
+    }
+    return Level.OFF;
+  }
+
+  public static synchronized void setLevel(Level level, String logPath) throws IOException {
+    Level effective = level != null ? level : Level.OFF;
+    explicitGlobalLevel = effective;
+    if (effective != Level.OFF) {
+      if (logPath != null) {
+        setPath(logPath, effective);
+      }
+    } else if (fileHandler != null) {
+      fileHandler.close();
+      logger.removeHandler(fileHandler);
       fileHandler = null;
     }
-    logger.setLevel(level);
+    refreshEffectiveRootLevel();
   }
 
   static synchronized void setPath(String logPath, Level level) {
@@ -210,12 +311,47 @@ class BigQueryJdbcRootLogger {
     }
     ConnectionLogContext context =
         ACTIVE_CONNECTIONS.computeIfAbsent(
-            connectionId, id -> new ConnectionLogContext(id, ConnectionLogContext.ALL_VALUE));
+            connectionId, id -> new ConnectionLogContext(id, ConnectionLogContext.OFF_VALUE));
     Handler currentHandler = fileHandler;
     if (currentHandler instanceof PerConnectionFileHandler) {
       ((PerConnectionFileHandler) currentHandler).registerConnection(connectionId);
     }
     return context;
+  }
+
+  static synchronized ConnectionLogContext registerConnection(
+      String connectionId, Level level, String logPath) throws IOException {
+    if (connectionId == null || connectionId.isEmpty()) {
+      return null;
+    }
+    Level effectiveLevel = level != null ? level : Level.OFF;
+    ConnectionLogContext context =
+        ACTIVE_CONNECTIONS.compute(
+            connectionId,
+            (id, existing) -> {
+              if (existing == null) {
+                return new ConnectionLogContext(id, effectiveLevel.intValue());
+              }
+              existing.setLevelValue(effectiveLevel.intValue());
+              return existing;
+            });
+    try {
+      if (effectiveLevel != Level.OFF && logPath != null) {
+        PerConnectionFileHandler persistent = ensurePersistentFileHandlerAttached();
+        persistent.registerConnection(connectionId, effectiveLevel, logPath);
+      }
+      Handler legacy = fileHandler;
+      if (legacy instanceof PerConnectionFileHandler) {
+        ((PerConnectionFileHandler) legacy).registerConnection(connectionId);
+      }
+      refreshEffectiveRootLevel();
+      return context;
+    } catch (IOException | RuntimeException ex) {
+      ACTIVE_CONNECTIONS.remove(connectionId, context);
+      context.setLevelValue(ConnectionLogContext.OFF_VALUE);
+      refreshEffectiveRootLevel();
+      throw ex;
+    }
   }
 
   static ConnectionLogContext findActiveContext(String connectionId) {
@@ -233,7 +369,7 @@ class BigQueryJdbcRootLogger {
     return ACTIVE_CONNECTIONS.size();
   }
 
-  public static void closeConnectionHandler(String connectionId) {
+  public static synchronized void closeConnectionHandler(String connectionId) {
     if (connectionId == null) {
       return;
     }
@@ -241,9 +377,32 @@ class BigQueryJdbcRootLogger {
     if (removed != null) {
       removed.setLevelValue(ConnectionLogContext.OFF_VALUE);
     }
+    if (persistentFileHandler != null) {
+      persistentFileHandler.closeHandler(connectionId);
+    }
     Handler currentHandler = fileHandler;
     if (currentHandler instanceof PerConnectionFileHandler) {
       ((PerConnectionFileHandler) currentHandler).closeHandler(connectionId);
     }
+    refreshEffectiveRootLevel();
+  }
+
+  static synchronized void resetForTesting() {
+    for (String id : ACTIVE_CONNECTIONS.keySet()) {
+      ConnectionLogContext ctx = ACTIVE_CONNECTIONS.remove(id);
+      if (ctx != null) {
+        ctx.setLevelValue(ConnectionLogContext.OFF_VALUE);
+      }
+      if (persistentFileHandler != null) {
+        persistentFileHandler.closeHandler(id);
+      }
+    }
+    if (fileHandler != null) {
+      fileHandler.close();
+      logger.removeHandler(fileHandler);
+      fileHandler = null;
+    }
+    explicitGlobalLevel = Level.OFF;
+    refreshEffectiveRootLevel();
   }
 }

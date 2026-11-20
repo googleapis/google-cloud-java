@@ -484,9 +484,10 @@ public class PerConnectionFileHandlerTest {
 
     try {
       String connId = "dead-conn-uuid";
-      ConnectionLogContext activeCtx = BigQueryJdbcRootLogger.registerConnection(connId);
+      ConnectionLogContext activeCtx =
+          BigQueryJdbcRootLogger.registerConnection(connId, Level.FINEST, null);
       assertNotNull(activeCtx);
-      assertEquals(ConnectionLogContext.ALL_VALUE, activeCtx.levelValue());
+      assertEquals(Level.FINEST.intValue(), activeCtx.levelValue());
       finestHandler.registerConnection(connId);
 
       // Construct ResultSet and child Struct logger WHILE connection is active (covers active !=
@@ -563,6 +564,23 @@ public class PerConnectionFileHandlerTest {
       }
     } finally {
       BigQueryJdbcRootLogger.setLevel(Level.OFF, null);
+    }
+  }
+
+  @Test
+  public void testPersistentHandlerDoesNotOpenImplicitSlotsForOffConnections() throws IOException {
+    PerConnectionFileHandler persistent = new PerConnectionFileHandler();
+    String offConnId = "explicit-off-conn";
+    try {
+      BigQueryJdbcRootLogger.registerConnection(offConnId, Level.OFF, null);
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(offConnId)) {
+        persistent.publish(new LogRecord(Level.SEVERE, "Should not open implicit slot"));
+      }
+      persistent.flush();
+      assertTrue(BigQueryJdbcRootLogger.isConnectionActive(offConnId));
+    } finally {
+      BigQueryJdbcRootLogger.closeConnectionHandler(offConnId);
+      persistent.close();
     }
   }
 }

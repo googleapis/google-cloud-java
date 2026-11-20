@@ -36,12 +36,23 @@ class BigQueryJdbcMdc {
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
-  /** Sets the current connection context on the executing thread. */
+  /**
+   * Sets the current connection context on the executing thread and restores any enclosing context
+   * upon close.
+   */
   static MdcCloseable registerInstance(String connectionId) {
-    if (connectionId != null) {
-      currentConnectionId.set(connectionId);
+    if (connectionId == null) {
+      return () -> {};
     }
-    return () -> clear();
+    String previous = currentConnectionId.get();
+    currentConnectionId.set(connectionId);
+    return () -> {
+      if (previous != null) {
+        currentConnectionId.set(previous);
+      } else {
+        clear();
+      }
+    };
   }
 
   /**

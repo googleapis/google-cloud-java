@@ -139,6 +139,23 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testNestedRegisterInstanceRestoresEnclosingContext() {
+    try (BigQueryJdbcMdc.MdcCloseable outer = BigQueryJdbcMdc.registerInstance("OuterConnection")) {
+      assertEquals("OuterConnection", BigQueryJdbcMdc.getConnectionId());
+      try (BigQueryJdbcMdc.MdcCloseable inner =
+          BigQueryJdbcMdc.registerInstance("InnerConnection")) {
+        assertEquals("InnerConnection", BigQueryJdbcMdc.getConnectionId());
+        try (BigQueryJdbcMdc.MdcCloseable noopNull = BigQueryJdbcMdc.registerInstance(null)) {
+          assertEquals("InnerConnection", BigQueryJdbcMdc.getConnectionId());
+        }
+        assertEquals("InnerConnection", BigQueryJdbcMdc.getConnectionId());
+      }
+      assertEquals("OuterConnection", BigQueryJdbcMdc.getConnectionId());
+    }
+    assertNull(BigQueryJdbcMdc.getConnectionId());
+  }
+
+  @Test
   public void testExecutorPropagatesMdc() throws Exception {
     BigQueryJdbcMdc.registerInstance("JdbcConnection-Executor-Test");
     ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 2);
