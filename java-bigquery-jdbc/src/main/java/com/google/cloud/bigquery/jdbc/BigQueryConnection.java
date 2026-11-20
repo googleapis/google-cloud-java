@@ -291,8 +291,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     boolean initialized = false;
     ExecutorService createdQueryExecutor = null;
     ExecutorService createdMetadataExecutor = null;
-    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
-      BigQueryJdbcRootLogger.registerConnection(this.connectionId);
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerAndBindConnection(this.connectionId)) {
       this.connectionUrl = url;
       if (LOG.isLoggable(Level.CONFIG)) {
         Properties connectionProps = ds.createProperties();

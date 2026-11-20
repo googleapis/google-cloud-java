@@ -27,6 +27,7 @@ import java.util.logging.LogRecord;
 final class ConnectionLogContext {
   static final int OFF_VALUE = Level.OFF.intValue();
   static final int ALL_VALUE = Level.ALL.intValue();
+  static final int INHERIT_VALUE = ALL_VALUE + 1;
 
   private final String connectionId;
   private volatile int levelValue;

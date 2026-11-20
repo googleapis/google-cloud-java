@@ -35,11 +35,13 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
   private final Object target;
   private final String connectionId;
+  private final ConnectionLogContext connectionContext;
   private final Class<?> interfaceType;
 
   private BigQueryJdbcContextProxy(Object target, String connectionId, Class<?> interfaceType) {
     this.target = target;
     this.connectionId = connectionId;
+    this.connectionContext = BigQueryJdbcRootLogger.resolveContext(connectionId);
     this.interfaceType = interfaceType;
   }
 
@@ -132,7 +134,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     }
 
     // Wrap execution in the context of the active connection for all non-bypassed methods
-    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerContext(connectionContext)) {
       boolean isFinerLoggable = LOG.isLoggable(Level.FINER);
       String targetClassName = null;
       if (isFinerLoggable) {
@@ -173,7 +175,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
       // Unified Context Logger: Captures and logs every exception exactly once with the Connection
       // context
-      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerContext(connectionContext)) {
         String errMsg = cause.getMessage() != null ? cause.getMessage() : cause.toString();
         LOG.severe("Exception occurred during " + methodName + ": " + errMsg, cause);
       }
