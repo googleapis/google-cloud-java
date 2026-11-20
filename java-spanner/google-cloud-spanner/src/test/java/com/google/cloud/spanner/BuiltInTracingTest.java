@@ -39,15 +39,20 @@ import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.resources.Resource;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.net.InetSocketAddress;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -340,5 +345,53 @@ public class BuiltInTracingTest {
 
     assertThat(options.getTracingOpenTelemetry()).isNotInstanceOf(OpenTelemetrySdk.class);
     assertThat(options.isEndToEndTracingEnabled()).isFalse();
+  }
+
+  @Test
+  public void builtInTracingDoesNotChangeTheRecordedMetrics() {
+    SpannerOptions.enableOpenTelemetryTraces();
+    Set<String> metricsWithoutBuiltInTracing = recordMetrics(false);
+    Set<String> metricsWithBuiltInTracing = recordMetrics(true);
+
+    assertThat(metricsWithoutBuiltInTracing)
+        .contains(
+            BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME
+                + "/"
+                + BuiltInMetricsConstant.OPERATION_COUNT_NAME);
+    assertThat(metricsWithBuiltInTracing).isEqualTo(metricsWithoutBuiltInTracing);
+    assertThat(spanExporter.getFinishedSpanItems()).isNotEmpty();
+  }
+
+  private Set<String> recordMetrics(boolean enableBuiltInTracing) {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProviderBuilder meterProviderBuilder =
+        SdkMeterProvider.builder().registerMetricReader(metricReader);
+    SpannerMetrics.configureMeterProviderBuilder(meterProviderBuilder);
+    OpenTelemetrySdk openTelemetry =
+        OpenTelemetrySdk.builder().setMeterProvider(meterProviderBuilder.build()).build();
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(enableBuiltInTracing)
+            .setBuiltInTracingSamplingRate(1.0)
+            .setOpenTelemetry(openTelemetry)
+            .setClientMetricsProvider(CustomOpenTelemetryMetricsProvider.create(openTelemetry))
+            .setBuiltInMetricsEnabled(false)
+            .build();
+    try (Spanner spanner = options.getService()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("test-project", "test-instance", "test-db"));
+      try (ResultSet resultSet = client.singleUse().executeQuery(SELECT1)) {
+        while (resultSet.next()) {}
+      }
+    }
+    if (enableBuiltInTracing) {
+      ((OpenTelemetrySdk) options.getTracingOpenTelemetry())
+          .getSdkTracerProvider()
+          .forceFlush()
+          .join(10, TimeUnit.SECONDS);
+    }
+    return metricReader.collectAllMetrics().stream()
+        .map(MetricData::getName)
+        .collect(Collectors.toSet());
   }
 }
