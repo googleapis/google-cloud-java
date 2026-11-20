@@ -21,18 +21,21 @@
  * <p>Use {@link com.google.cloud.bigquery.BigQuery} in this package to manage datasets, tables,
  * routines, models, and jobs, run SQL queries, and read paginated results. For new streaming
  * ingestion workloads or reading large tables directly in parallel (Apache Arrow or Avro), prefer
- * {@code google-cloud-bigquerystorage}. See <a
+ * {@code com.google.cloud:google-cloud-bigquerystorage}. See <a
  * href="https://docs.cloud.google.com/bigquery/docs/loading-data">Introduction to loading data</a>,
  * <a href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc">BigQuery Storage Write API
  * (gRPC)</a>, and <a href="https://docs.cloud.google.com/bigquery/docs/reference/storage">BigQuery
  * Storage Read API</a> for guidance on choosing between APIs.
  *
- * <p>A simple usage example showing how to create a table in BigQuery. For more Java examples, see
- * <a href="https://docs.cloud.google.com/bigquery/docs/samples?language=java">BigQuery Java code
+ * <p>A simple usage example showing how to create a table in BigQuery. For the complete source
+ * code, see <a
+ * href="https://github.com/googleapis/google-cloud-java/blob/main/java-bigquery/samples/snippets/src/main/java/com/example/bigquery/CreateTable.java">
+ * CreateTable.java</a>. For additional examples, see <a
+ * href="https://docs.cloud.google.com/bigquery/docs/samples?language=java">BigQuery Java code
  * samples</a>.
  *
  * <pre>{@code
- * // Initialize a client once and reuse it across multiple requests.
+ * // Reuse a single client across requests and call close() on shutdown to release resources.
  * BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
  * TableId tableId = TableId.of(datasetName, tableName);
  * TableDefinition tableDefinition = StandardTableDefinition.of(schema);
@@ -41,7 +44,6 @@
  * }</pre>
  *
  * @see com.google.cloud.bigquery.BigQuery
- * @see <a href="https://docs.cloud.google.com/bigquery/docs">Google Cloud BigQuery
- *     Documentation</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs">BigQuery documentation</a>
  */
 package com.google.cloud.bigquery;
