@@ -366,5 +366,76 @@ public class ITGzipReadableByteChannelTest {
         assertThat(session.getResult().get()).isNotNull();
       }
     }
+
+    @Test(timeout = 10_000)
+    public void outOfRange_returnsEOF() throws IOException, InterruptedException {
+      final StorageGrpc.StorageImplBase fakeStorage =
+          new StorageGrpc.StorageImplBase() {
+            @Override
+            public void readObject(
+                ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
+              responseObserver.onError(TestUtils.apiException(Status.Code.OUT_OF_RANGE));
+            }
+          };
+
+      try (FakeServer fakeServer = FakeServer.of(fakeStorage);
+          StorageClient sc = StorageClient.create(fakeServer.storageSettings())) {
+        UnbufferedReadableByteChannelSession<Object> session =
+            ResumableMedia.gapic()
+                .read()
+                .byteChannel(
+                    new ZeroCopyServerStreamingCallable<>(
+                        sc.readObjectCallable(), ResponseContentLifecycleManager.noop()),
+                    TestUtils.retrierFromStorageOptions(fakeServer.getGrpcStorageOptions()),
+                    StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
+                .setHasher(Hasher.noop())
+                .setAutoGzipDecompression(true)
+                .unbuffered()
+                .setReadObjectRequest(reqUncompressed.toBuilder().setReadOffset(10).build())
+                .build();
+
+        try (UnbufferedReadableByteChannel c = session.open()) {
+          assertThat(c.read(ByteBuffer.allocate(16))).isEqualTo(-1);
+        }
+      }
+    }
+
+    @Test(timeout = 10_000)
+    public void emptyGzipObject_returnsEOF() throws IOException, InterruptedException {
+      final StorageGrpc.StorageImplBase fakeStorage =
+          new StorageGrpc.StorageImplBase() {
+            @Override
+            public void readObject(
+                ReadObjectRequest request, StreamObserver<ReadObjectResponse> responseObserver) {
+              responseObserver.onNext(
+                  ReadObjectResponse.newBuilder()
+                      .setMetadata(
+                          Object.newBuilder().setSize(0).setContentEncoding("gzip").build())
+                      .build());
+              responseObserver.onCompleted();
+            }
+          };
+
+      try (FakeServer fakeServer = FakeServer.of(fakeStorage);
+          StorageClient sc = StorageClient.create(fakeServer.storageSettings())) {
+        UnbufferedReadableByteChannelSession<Object> session =
+            ResumableMedia.gapic()
+                .read()
+                .byteChannel(
+                    new ZeroCopyServerStreamingCallable<>(
+                        sc.readObjectCallable(), ResponseContentLifecycleManager.noop()),
+                    TestUtils.retrierFromStorageOptions(fakeServer.getGrpcStorageOptions()),
+                    StorageRetryStrategy.getDefaultStorageRetryStrategy().getIdempotentHandler())
+                .setHasher(Hasher.noop())
+                .setAutoGzipDecompression(true)
+                .unbuffered()
+                .setReadObjectRequest(reqCompressed)
+                .build();
+
+        try (UnbufferedReadableByteChannel c = session.open()) {
+          assertThat(c.read(ByteBuffer.allocate(16))).isEqualTo(-1);
+        }
+      }
+    }
   }
 }
