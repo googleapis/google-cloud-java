@@ -31,6 +31,17 @@ import com.google.common.collect.ImmutableSet;
 import io.opentelemetry.api.trace.Tracer;
 import java.util.Set;
 
+/**
+ * Configuration options for creating a {@link BigQuery} client.
+ *
+ * <p>Configure overall retry bounds (such as maximum attempts, retry delays, and total timeout) via
+ * {@link Builder#setRetrySettings(com.google.api.gax.retrying.RetrySettings)}. Configure
+ * per-attempt HTTP connect and read timeouts via {@link
+ * Builder#setTransportOptions(TransportOptions)} with {@link HttpTransportOptions} (by default,
+ * {@link #getDefaultHttpTransportOptions()} sets a 60-second read timeout).
+ *
+ * <p>For message-based retries during query job status polling, see {@link BigQueryRetryConfig}.
+ */
 public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   private static final String API_SHORT_NAME = "BigQuery";
@@ -85,6 +96,12 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
       super(options);
     }
 
+    /**
+     * Sets the HTTP transport options, including per-attempt connect and read timeouts.
+     *
+     * <p>BigQuery supports only {@link HttpTransportOptions}. Passing any other {@link
+     * TransportOptions} implementation throws {@link IllegalArgumentException}.
+     */
     @Override
     public Builder setTransportOptions(TransportOptions transportOptions) {
       if (!(transportOptions instanceof HttpTransportOptions)) {
@@ -158,6 +175,15 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
       return this;
     }
 
+    /**
+     * Sets a custom {@link ResultRetryAlgorithm} to determine which exceptions or responses are
+     * retried on eligible RPCs.
+     *
+     * <p>If not set, {@code BigQueryOptions} uses the default BigQuery retry handler, which retries
+     * transient network exceptions and retryable errors (see {@link
+     * BigQueryException#isRetryable()}). Supplying a custom algorithm replaces that default
+     * behavior.
+     */
     public Builder setResultRetryAlgorithm(ResultRetryAlgorithm<?> resultRetryAlgorithm) {
       this.resultRetryAlgorithm = resultRetryAlgorithm;
       return this;
@@ -211,6 +237,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     }
   }
 
+  /** Returns the default {@link HttpTransportOptions} with a 60-second read timeout. */
   public static HttpTransportOptions getDefaultHttpTransportOptions() {
     return HttpTransportOptions.newBuilder().setReadTimeout(DEFAULT_READ_API_TIME_OUT).build();
   }
