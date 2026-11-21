@@ -196,8 +196,17 @@ public class Job extends JobInfo {
   }
 
   /**
-   * Checks if this job has completed its execution, either failing or succeeding. If the job does
-   * not exist this method returns {@code true}.
+   * Checks if this job has completed its execution, either failing or succeeding.
+   *
+   * <p>If this {@code Job} snapshot is already in {@link JobStatus.State#DONE}, this method returns
+   * {@code true} without making a network request. Otherwise, it issues a remote status check via
+   * {@link BigQuery#getJob(JobId, BigQuery.JobOption...)}. Because {@code Job} instances are
+   * immutable, calling {@code isDone()} does not update this object's status, error, or statistics.
+   * After {@code isDone()} returns {@code true}, call {@link #reload(JobOption...)} or {@link
+   * BigQuery#getJob(JobId, BigQuery.JobOption...)} to read the completed job's state.
+   *
+   * <p>If the job no longer exists, this method returns {@code true}. For most blocking waits,
+   * prefer {@link #waitFor(RetryOption...)}.
    *
    * <p>Example of waiting for a job until it reports that it is done.
    *
@@ -205,6 +214,7 @@ public class Job extends JobInfo {
    * while (!job.isDone()) {
    *   Thread.sleep(1000L);
    * }
+   * Job completedJob = bigquery.getJob(job.getJobId());
    * }</pre>
    *
    * @return {@code true} if this job is in {@link JobStatus.State#DONE} state or if it does not
