@@ -1398,6 +1398,106 @@ public class ConnectionOptionsTest {
 
           TransportChannelProvider provider = options.getChannelProvider();
           assertTrue(provider instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.googleapis.com:443",
+              ((InstantiatingGrpcChannelProvider) provider).getEndpoint());
+        });
+  }
+
+  @Test
+  public void testExternalChannelProvider_WithUniverseDomain() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+
+          // Custom universeDomain without explicit host should use spanner.<universeDomain>.
+          ConnectionOptions optionsWithUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithUniverseDomain =
+              optionsWithUniverseDomain.getChannelProvider();
+          assertTrue(providerWithUniverseDomain instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.abc.goog:443",
+              ((InstantiatingGrpcChannelProvider) providerWithUniverseDomain).getEndpoint());
+
+          // Empty universeDomain without explicit host should fall back to googleapis.com.
+          ConnectionOptions optionsWithEmptyUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithEmptyUniverseDomain =
+              optionsWithEmptyUniverseDomain.getChannelProvider();
+          assertTrue(providerWithEmptyUniverseDomain instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.googleapis.com:443",
+              ((InstantiatingGrpcChannelProvider) providerWithEmptyUniverseDomain).getEndpoint());
+
+          // Explicit URI host and port should take precedence over universeDomain.
+          ConnectionOptions optionsWithHostAndUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      "cloudspanner://custom.host.abc.goog:1234/projects/test-project-123/instances/test-instance/databases/test-database?universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithHost =
+              optionsWithHostAndUniverseDomain.getChannelProvider();
+          assertTrue(providerWithHost instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "custom.host.abc.goog:1234",
+              ((InstantiatingGrpcChannelProvider) providerWithHost).getEndpoint());
+
+          // Explicit endpoint property should take precedence over universeDomain.
+          ConnectionOptions optionsWithEndpointAndUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?endpoint=my.endpoint.abc.goog:5678;universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithEndpoint =
+              optionsWithEndpointAndUniverseDomain.getChannelProvider();
+          assertTrue(providerWithEndpoint instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "my.endpoint.abc.goog:5678",
+              ((InstantiatingGrpcChannelProvider) providerWithEndpoint).getEndpoint());
+
+          // Verify end-to-end SpannerPool propagates the universe-scoped channel provider.
+          ConnectionImpl connection = mock(ConnectionImpl.class);
+          AtomicBoolean executedConfigurator = new AtomicBoolean(false);
+          ConnectionOptions poolOptions =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=abc.goog;usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setConfigurator(
+                      optionsBuilder -> {
+                        executedConfigurator.set(true);
+                        SpannerOptions spannerOptions = optionsBuilder.build();
+                        assertEquals("abc.goog", spannerOptions.getUniverseDomain());
+                        assertEquals("https://spanner.abc.goog", spannerOptions.getHost());
+                        assertTrue(
+                            spannerOptions.getChannelProvider()
+                                instanceof InstantiatingGrpcChannelProvider);
+                        assertEquals(
+                            "spanner.abc.goog:443",
+                            ((InstantiatingGrpcChannelProvider) spannerOptions.getChannelProvider())
+                                .getEndpoint());
+                      })
+                  .build();
+          Spanner spanner = SpannerPool.INSTANCE.getSpanner(poolOptions, connection);
+          spanner.close();
+          SpannerPool.INSTANCE.removeConnection(poolOptions, connection);
+          assertTrue(executedConfigurator.get());
         });
   }
 

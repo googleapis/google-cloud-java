@@ -214,7 +214,7 @@ public class ConnectionOptions {
 
   private static final String PLAIN_TEXT_PROTOCOL = "http:";
   private static final String HOST_PROTOCOL = "https:";
-  private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
+  private static final String SPANNER_SERVICE_NAME = "spanner";
   private static final String SPANNER_EMULATOR_HOST_ENV_VAR = "SPANNER_EMULATOR_HOST";
   private static final String DEFAULT_EMULATOR_HOST = "http://localhost:9010";
 
@@ -1184,6 +1184,18 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(DCP_CONCURRENT_STREAMS_LOW_WATERMARK);
   }
 
+  /**
+   * Returns the default host URL derived from the configured universe domain, falling back to
+   * {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} when null or empty.
+   */
+  private String getDefaultHost() {
+    String universeDomain = getUniverseDomain();
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    }
+    return String.format("%s//%s.%s", HOST_PROTOCOL, SPANNER_SERVICE_NAME, universeDomain);
+  }
+
   /** Calls the getChannelProvider() method from the supplied class. */
   public TransportChannelProvider getChannelProvider() {
     String channelProvider = getInitialConnectionPropertyValue(CHANNEL_PROVIDER);
@@ -1191,7 +1203,7 @@ public class ConnectionOptions {
       return null;
     }
     try {
-      URL url = new URL(MoreObjects.firstNonNull(host, DEFAULT_HOST));
+      URL url = new URL(MoreObjects.firstNonNull(host, getDefaultHost()));
       ExternalChannelProvider provider =
           ClientSideStatementValueConverters.ExternalChannelProviderConverter.INSTANCE.convert(
               channelProvider);
