@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1beta.samples;
 
 // [START discoveryengine_v1beta_generated_ProjectService_ProvisionProject_sync]
+import com.google.cloud.discoveryengine.v1beta.IdpConfig;
 import com.google.cloud.discoveryengine.v1beta.Project;
 import com.google.cloud.discoveryengine.v1beta.ProjectName;
 import com.google.cloud.discoveryengine.v1beta.ProjectServiceClient;
@@ -41,6 +42,8 @@ public class SyncProvisionProject {
               .setAcceptDataUseTerms(true)
               .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
               .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
+              .setIdpConfig(IdpConfig.newBuilder().build())
+              .setPreProvisionMode(true)
               .build();
       Project response = projectServiceClient.provisionProjectAsync(request).get();
     }

@@ -611,4 +611,47 @@ public interface RouteOrBuilder
    */
   com.google.cloud.networkconnectivity.v1.NextHopInterconnectAttachmentOrBuilder
       getNextHopInterconnectAttachmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop spoke for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the nextHopSpoke field is set.
+   */
+  boolean hasNextHopSpoke();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop spoke for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The nextHopSpoke.
+   */
+  com.google.cloud.networkconnectivity.v1.NextHopSpoke getNextHopSpoke();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The next-hop spoke for packets on this route.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.NextHopSpoke next_hop_spoke = 18 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.NextHopSpokeOrBuilder getNextHopSpokeOrBuilder();
 }

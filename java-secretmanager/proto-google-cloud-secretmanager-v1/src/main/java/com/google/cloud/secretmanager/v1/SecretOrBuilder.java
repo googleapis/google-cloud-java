@@ -1054,5 +1054,35 @@ public interface SecretOrBuilder
    */
   com.google.iam.v1.ResourcePolicyMemberOrBuilder getPolicyMemberOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the Secret.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the Secret.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.secretmanager.v1.Secret.State getState();
+
   com.google.cloud.secretmanager.v1.Secret.ExpirationCase getExpirationCase();
 }

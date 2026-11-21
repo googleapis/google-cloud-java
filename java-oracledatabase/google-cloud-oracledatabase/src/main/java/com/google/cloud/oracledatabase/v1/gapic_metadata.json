@@ -328,6 +328,9 @@
             "UpdateGoldengateDeployment": {
               "methods": ["updateGoldengateDeploymentAsync", "updateGoldengateDeploymentAsync", "updateGoldengateDeploymentOperationCallable", "updateGoldengateDeploymentCallable"]
             },
+            "UpdateOdbDnsZone": {
+              "methods": ["updateOdbDnsZoneAsync", "updateOdbDnsZoneAsync", "updateOdbDnsZoneOperationCallable", "updateOdbDnsZoneCallable"]
+            },
             "UpdateOdbNetwork": {
               "methods": ["updateOdbNetworkAsync", "updateOdbNetworkAsync", "updateOdbNetworkOperationCallable", "updateOdbNetworkCallable"]
             },

@@ -18,13 +18,22 @@ package com.google.cloud.agentregistry.v1;
 
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.FetchAvailableBindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAgentsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationAgentsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationEndpointsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListBindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListEndpointsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListFindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListLocationsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListPublishersPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListServicesPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListSkillRevisionsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListSkillsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchAgentsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchSkillsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -34,6 +43,8 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloud.apphub.v1.ApplicationProperties;
+import com.google.cloud.apphub.v1.Attributes;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -283,7 +294,9 @@ public class AgentRegistryClientTest {
   public void getAgentTest() throws Exception {
     Agent expectedResponse =
         Agent.newBuilder()
-            .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setName(
+                AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]")
+                    .toString())
             .setAgentId("agentId-1060987136")
             .setLocation("location1901043637")
             .setDisplayName("displayName1714148973")
@@ -299,7 +312,7 @@ public class AgentRegistryClientTest {
             .build();
     mockAgentRegistry.addResponse(expectedResponse);
 
-    AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+    AgentName name = AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]");
 
     Agent actualResponse = client.getAgent(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -321,7 +334,7 @@ public class AgentRegistryClientTest {
     mockAgentRegistry.addException(exception);
 
     try {
-      AgentName name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+      AgentName name = AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]");
       client.getAgent(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -333,7 +346,9 @@ public class AgentRegistryClientTest {
   public void getAgentTest2() throws Exception {
     Agent expectedResponse =
         Agent.newBuilder()
-            .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setName(
+                AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]")
+                    .toString())
             .setAgentId("agentId-1060987136")
             .setLocation("location1901043637")
             .setDisplayName("displayName1714148973")
@@ -471,7 +486,9 @@ public class AgentRegistryClientTest {
   public void getEndpointTest() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setEndpointId("endpointId-1837754992")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -482,7 +499,8 @@ public class AgentRegistryClientTest {
             .build();
     mockAgentRegistry.addResponse(expectedResponse);
 
-    EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    EndpointName name =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
 
     Endpoint actualResponse = client.getEndpoint(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -504,7 +522,8 @@ public class AgentRegistryClientTest {
     mockAgentRegistry.addException(exception);
 
     try {
-      EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      EndpointName name =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       client.getEndpoint(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -516,7 +535,9 @@ public class AgentRegistryClientTest {
   public void getEndpointTest2() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setEndpointId("endpointId-1837754992")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -737,7 +758,10 @@ public class AgentRegistryClientTest {
   public void getMcpServerTest() throws Exception {
     McpServer expectedResponse =
         McpServer.newBuilder()
-            .setName(McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]").toString())
+            .setName(
+                McpServerName.ofProjectLocationMcpServerName(
+                        "[PROJECT]", "[LOCATION]", "[MCP_SERVER]")
+                    .toString())
             .setMcpServerId("mcpServerId298140536")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -749,7 +773,8 @@ public class AgentRegistryClientTest {
             .build();
     mockAgentRegistry.addResponse(expectedResponse);
 
-    McpServerName name = McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]");
+    McpServerName name =
+        McpServerName.ofProjectLocationMcpServerName("[PROJECT]", "[LOCATION]", "[MCP_SERVER]");
 
     McpServer actualResponse = client.getMcpServer(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -771,7 +796,8 @@ public class AgentRegistryClientTest {
     mockAgentRegistry.addException(exception);
 
     try {
-      McpServerName name = McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]");
+      McpServerName name =
+          McpServerName.ofProjectLocationMcpServerName("[PROJECT]", "[LOCATION]", "[MCP_SERVER]");
       client.getMcpServer(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -783,7 +809,10 @@ public class AgentRegistryClientTest {
   public void getMcpServerTest2() throws Exception {
     McpServer expectedResponse =
         McpServer.newBuilder()
-            .setName(McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]").toString())
+            .setName(
+                McpServerName.ofProjectLocationMcpServerName(
+                        "[PROJECT]", "[LOCATION]", "[MCP_SERVER]")
+                    .toString())
             .setMcpServerId("mcpServerId298140536")
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -1774,6 +1803,2179 @@ public class AgentRegistryClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSkillTest() throws Exception {
+    Skill expectedResponse =
+        Skill.newBuilder()
+            .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setDefaultRevision(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setSkillId("skillId2147320652")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPublisher(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+            .setInitialRevision(SkillRevision.newBuilder().build())
+            .setScanningConfig(ScanningConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSkillTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Skill skill = Skill.newBuilder().build();
+    String skillId = "skillId2147320652";
+
+    Skill actualResponse = client.createSkillAsync(parent, skill, skillId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSkillRequest actualRequest = ((CreateSkillRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(skill, actualRequest.getSkill());
+    Assert.assertEquals(skillId, actualRequest.getSkillId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSkillExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Skill skill = Skill.newBuilder().build();
+      String skillId = "skillId2147320652";
+      client.createSkillAsync(parent, skill, skillId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createSkillTest2() throws Exception {
+    Skill expectedResponse =
+        Skill.newBuilder()
+            .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setDefaultRevision(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setSkillId("skillId2147320652")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPublisher(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+            .setInitialRevision(SkillRevision.newBuilder().build())
+            .setScanningConfig(ScanningConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSkillTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Skill skill = Skill.newBuilder().build();
+    String skillId = "skillId2147320652";
+
+    Skill actualResponse = client.createSkillAsync(parent, skill, skillId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSkillRequest actualRequest = ((CreateSkillRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(skill, actualRequest.getSkill());
+    Assert.assertEquals(skillId, actualRequest.getSkillId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSkillExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Skill skill = Skill.newBuilder().build();
+      String skillId = "skillId2147320652";
+      client.createSkillAsync(parent, skill, skillId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getSkillTest() throws Exception {
+    Skill expectedResponse =
+        Skill.newBuilder()
+            .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setDefaultRevision(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setSkillId("skillId2147320652")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPublisher(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+            .setInitialRevision(SkillRevision.newBuilder().build())
+            .setScanningConfig(ScanningConfig.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    SkillName name = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+
+    Skill actualResponse = client.getSkill(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSkillRequest actualRequest = ((GetSkillRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSkillExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SkillName name = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+      client.getSkill(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSkillTest2() throws Exception {
+    Skill expectedResponse =
+        Skill.newBuilder()
+            .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setDefaultRevision(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setSkillId("skillId2147320652")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPublisher(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+            .setInitialRevision(SkillRevision.newBuilder().build())
+            .setScanningConfig(ScanningConfig.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Skill actualResponse = client.getSkill(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSkillRequest actualRequest = ((GetSkillRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSkillExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSkill(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSkillTest() throws Exception {
+    Skill expectedResponse =
+        Skill.newBuilder()
+            .setName(SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setDefaultRevision(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setSkillId("skillId2147320652")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPublisher(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+            .setInitialRevision(SkillRevision.newBuilder().build())
+            .setScanningConfig(ScanningConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateSkillTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    Skill skill = Skill.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Skill actualResponse = client.updateSkillAsync(skill, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSkillRequest actualRequest = ((UpdateSkillRequest) actualRequests.get(0));
+
+    Assert.assertEquals(skill, actualRequest.getSkill());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSkillExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      Skill skill = Skill.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSkillAsync(skill, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSkillTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSkillTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    SkillName name = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+
+    client.deleteSkillAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSkillRequest actualRequest = ((DeleteSkillRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSkillExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SkillName name = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+      client.deleteSkillAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSkillTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSkillTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteSkillAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSkillRequest actualRequest = ((DeleteSkillRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSkillExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSkillAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listSkillsTest() throws Exception {
+    Skill responsesElement = Skill.newBuilder().build();
+    ListSkillsResponse expectedResponse =
+        ListSkillsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkills(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListSkillsPagedResponse pagedListResponse = client.listSkills(parent);
+
+    List<Skill> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSkillsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSkillsRequest actualRequest = ((ListSkillsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSkillsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listSkills(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSkillsTest2() throws Exception {
+    Skill responsesElement = Skill.newBuilder().build();
+    ListSkillsResponse expectedResponse =
+        ListSkillsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkills(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSkillsPagedResponse pagedListResponse = client.listSkills(parent);
+
+    List<Skill> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSkillsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSkillsRequest actualRequest = ((ListSkillsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSkillsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSkills(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchSkillsTest() throws Exception {
+    Skill responsesElement = Skill.newBuilder().build();
+    SearchSkillsResponse expectedResponse =
+        SearchSkillsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkills(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    SearchSkillsRequest request =
+        SearchSkillsRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setSearchType(SearchType.forNumber(0))
+            .setSearchString("searchString120312793")
+            .setFilter("filter-1274492040")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    SearchSkillsPagedResponse pagedListResponse = client.searchSkills(request);
+
+    List<Skill> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSkillsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchSkillsRequest actualRequest = ((SearchSkillsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getSearchType(), actualRequest.getSearchType());
+    Assert.assertEquals(request.getSearchString(), actualRequest.getSearchString());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchSkillsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SearchSkillsRequest request =
+          SearchSkillsRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setSearchType(SearchType.forNumber(0))
+              .setSearchString("searchString120312793")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.searchSkills(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSkillRevisionTest() throws Exception {
+    SkillRevision expectedResponse =
+        SkillRevision.newBuilder()
+            .setName(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setSha256Hash("sha256Hash127958997")
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setSizeBytes(-1796325715)
+            .setUid("uid115792")
+            .setScanResult(SkillRevision.ScanResult.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSkillRevisionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    SkillName parent = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+    SkillRevision skillRevision = SkillRevision.newBuilder().build();
+    String skillRevisionId = "skillRevisionId-983110777";
+
+    SkillRevision actualResponse =
+        client.createSkillRevisionAsync(parent, skillRevision, skillRevisionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSkillRevisionRequest actualRequest = ((CreateSkillRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(skillRevision, actualRequest.getSkillRevision());
+    Assert.assertEquals(skillRevisionId, actualRequest.getSkillRevisionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSkillRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SkillName parent = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+      SkillRevision skillRevision = SkillRevision.newBuilder().build();
+      String skillRevisionId = "skillRevisionId-983110777";
+      client.createSkillRevisionAsync(parent, skillRevision, skillRevisionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createSkillRevisionTest2() throws Exception {
+    SkillRevision expectedResponse =
+        SkillRevision.newBuilder()
+            .setName(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setSha256Hash("sha256Hash127958997")
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setSizeBytes(-1796325715)
+            .setUid("uid115792")
+            .setScanResult(SkillRevision.ScanResult.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSkillRevisionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    SkillRevision skillRevision = SkillRevision.newBuilder().build();
+    String skillRevisionId = "skillRevisionId-983110777";
+
+    SkillRevision actualResponse =
+        client.createSkillRevisionAsync(parent, skillRevision, skillRevisionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSkillRevisionRequest actualRequest = ((CreateSkillRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(skillRevision, actualRequest.getSkillRevision());
+    Assert.assertEquals(skillRevisionId, actualRequest.getSkillRevisionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSkillRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      SkillRevision skillRevision = SkillRevision.newBuilder().build();
+      String skillRevisionId = "skillRevisionId-983110777";
+      client.createSkillRevisionAsync(parent, skillRevision, skillRevisionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getSkillRevisionTest() throws Exception {
+    SkillRevision expectedResponse =
+        SkillRevision.newBuilder()
+            .setName(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setSha256Hash("sha256Hash127958997")
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setSizeBytes(-1796325715)
+            .setUid("uid115792")
+            .setScanResult(SkillRevision.ScanResult.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    SkillRevisionName name =
+        SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]");
+
+    SkillRevision actualResponse = client.getSkillRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSkillRevisionRequest actualRequest = ((GetSkillRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSkillRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SkillRevisionName name =
+          SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]");
+      client.getSkillRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSkillRevisionTest2() throws Exception {
+    SkillRevision expectedResponse =
+        SkillRevision.newBuilder()
+            .setName(
+                SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]").toString())
+            .setSha256Hash("sha256Hash127958997")
+            .setFrontmatter(Frontmatter.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setSizeBytes(-1796325715)
+            .setUid("uid115792")
+            .setScanResult(SkillRevision.ScanResult.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SkillRevision actualResponse = client.getSkillRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSkillRevisionRequest actualRequest = ((GetSkillRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSkillRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSkillRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSkillRevisionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSkillRevisionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    SkillRevisionName name =
+        SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]");
+
+    client.deleteSkillRevisionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSkillRevisionRequest actualRequest = ((DeleteSkillRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSkillRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SkillRevisionName name =
+          SkillRevisionName.of("[PROJECT]", "[LOCATION]", "[SKILL]", "[REVISION]");
+      client.deleteSkillRevisionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSkillRevisionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSkillRevisionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteSkillRevisionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSkillRevisionRequest actualRequest = ((DeleteSkillRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSkillRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSkillRevisionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listSkillRevisionsTest() throws Exception {
+    SkillRevision responsesElement = SkillRevision.newBuilder().build();
+    ListSkillRevisionsResponse expectedResponse =
+        ListSkillRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkillRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    SkillName parent = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+
+    ListSkillRevisionsPagedResponse pagedListResponse = client.listSkillRevisions(parent);
+
+    List<SkillRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSkillRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSkillRevisionsRequest actualRequest = ((ListSkillRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSkillRevisionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SkillName parent = SkillName.of("[PROJECT]", "[LOCATION]", "[SKILL]");
+      client.listSkillRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSkillRevisionsTest2() throws Exception {
+    SkillRevision responsesElement = SkillRevision.newBuilder().build();
+    ListSkillRevisionsResponse expectedResponse =
+        ListSkillRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkillRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSkillRevisionsPagedResponse pagedListResponse = client.listSkillRevisions(parent);
+
+    List<SkillRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSkillRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSkillRevisionsRequest actualRequest = ((ListSkillRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSkillRevisionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSkillRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPublisherTest() throws Exception {
+    Publisher expectedResponse =
+        Publisher.newBuilder()
+            .setName(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+            .setVerifiedPrefix("verifiedPrefix250185594")
+            .setDisplayName("displayName1714148973")
+            .setDocumentationUri("documentationUri-1487620014")
+            .setSupportUri("supportUri-613906659")
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    PublisherName name = PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]");
+
+    Publisher actualResponse = client.getPublisher(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPublisherRequest actualRequest = ((GetPublisherRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPublisherExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      PublisherName name = PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]");
+      client.getPublisher(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPublisherTest2() throws Exception {
+    Publisher expectedResponse =
+        Publisher.newBuilder()
+            .setName(PublisherName.of("[PROJECT]", "[LOCATION]", "[PUBLISHER]").toString())
+            .setVerifiedPrefix("verifiedPrefix250185594")
+            .setDisplayName("displayName1714148973")
+            .setDocumentationUri("documentationUri-1487620014")
+            .setSupportUri("supportUri-613906659")
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Publisher actualResponse = client.getPublisher(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPublisherRequest actualRequest = ((GetPublisherRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPublisherExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getPublisher(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPublishersTest() throws Exception {
+    Publisher responsesElement = Publisher.newBuilder().build();
+    ListPublishersResponse expectedResponse =
+        ListPublishersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPublishers(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListPublishersPagedResponse pagedListResponse = client.listPublishers(parent);
+
+    List<Publisher> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPublishersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPublishersRequest actualRequest = ((ListPublishersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPublishersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listPublishers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listPublishersTest2() throws Exception {
+    Publisher responsesElement = Publisher.newBuilder().build();
+    ListPublishersResponse expectedResponse =
+        ListPublishersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPublishers(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListPublishersPagedResponse pagedListResponse = client.listPublishers(parent);
+
+    List<Publisher> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPublishersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListPublishersRequest actualRequest = ((ListPublishersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listPublishersExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listPublishers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAiApplicationTest() throws Exception {
+    AiApplication expectedResponse =
+        AiApplication.newBuilder()
+            .setName(AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAttributes(Attributes.newBuilder().build())
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    AiApplicationName name = AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+
+    AiApplication actualResponse = client.getAiApplication(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAiApplicationRequest actualRequest = ((GetAiApplicationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAiApplicationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      AiApplicationName name = AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+      client.getAiApplication(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAiApplicationTest2() throws Exception {
+    AiApplication expectedResponse =
+        AiApplication.newBuilder()
+            .setName(AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setAttributes(Attributes.newBuilder().build())
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AiApplication actualResponse = client.getAiApplication(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAiApplicationRequest actualRequest = ((GetAiApplicationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAiApplicationExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAiApplication(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAiApplicationsTest() throws Exception {
+    AiApplication responsesElement = AiApplication.newBuilder().build();
+    ListAiApplicationsResponse expectedResponse =
+        ListAiApplicationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAiApplications(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAiApplicationsPagedResponse pagedListResponse = client.listAiApplications(parent);
+
+    List<AiApplication> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAiApplicationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAiApplicationsRequest actualRequest = ((ListAiApplicationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAiApplicationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAiApplications(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAiApplicationsTest2() throws Exception {
+    AiApplication responsesElement = AiApplication.newBuilder().build();
+    ListAiApplicationsResponse expectedResponse =
+        ListAiApplicationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAiApplications(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAiApplicationsPagedResponse pagedListResponse = client.listAiApplications(parent);
+
+    List<AiApplication> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAiApplicationsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAiApplicationsRequest actualRequest = ((ListAiApplicationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAiApplicationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAiApplications(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAiApplicationAgentTest() throws Exception {
+    Agent expectedResponse =
+        Agent.newBuilder()
+            .setName(
+                AgentName.ofProjectLocationAiApplicationAgentName(
+                        "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[AGENT]")
+                    .toString())
+            .setAgentId("agentId-1060987136")
+            .setLocation("location1901043637")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setVersion("version351608024")
+            .addAllProtocols(new ArrayList<Agent.Protocol>())
+            .addAllSkills(new ArrayList<Agent.Skill>())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, Struct>())
+            .setCard(Agent.Card.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    AgentName name =
+        AgentName.ofProjectLocationAiApplicationAgentName(
+            "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[AGENT]");
+
+    Agent actualResponse = client.getAiApplicationAgent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAiApplicationAgentRequest actualRequest =
+        ((GetAiApplicationAgentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAiApplicationAgentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      AgentName name =
+          AgentName.ofProjectLocationAiApplicationAgentName(
+              "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[AGENT]");
+      client.getAiApplicationAgent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAiApplicationAgentTest2() throws Exception {
+    Agent expectedResponse =
+        Agent.newBuilder()
+            .setName(
+                AgentName.ofProjectLocationAiApplicationAgentName(
+                        "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[AGENT]")
+                    .toString())
+            .setAgentId("agentId-1060987136")
+            .setLocation("location1901043637")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setVersion("version351608024")
+            .addAllProtocols(new ArrayList<Agent.Protocol>())
+            .addAllSkills(new ArrayList<Agent.Skill>())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, Struct>())
+            .setCard(Agent.Card.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Agent actualResponse = client.getAiApplicationAgent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAiApplicationAgentRequest actualRequest =
+        ((GetAiApplicationAgentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAiApplicationAgentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAiApplicationAgent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAiApplicationAgentsTest() throws Exception {
+    Agent responsesElement = Agent.newBuilder().build();
+    ListAiApplicationAgentsResponse expectedResponse =
+        ListAiApplicationAgentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAgents(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    AiApplicationName parent = AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+
+    ListAiApplicationAgentsPagedResponse pagedListResponse = client.listAiApplicationAgents(parent);
+
+    List<Agent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAgentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAiApplicationAgentsRequest actualRequest =
+        ((ListAiApplicationAgentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAiApplicationAgentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      AiApplicationName parent =
+          AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+      client.listAiApplicationAgents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAiApplicationAgentsTest2() throws Exception {
+    Agent responsesElement = Agent.newBuilder().build();
+    ListAiApplicationAgentsResponse expectedResponse =
+        ListAiApplicationAgentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAgents(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAiApplicationAgentsPagedResponse pagedListResponse = client.listAiApplicationAgents(parent);
+
+    List<Agent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAgentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAiApplicationAgentsRequest actualRequest =
+        ((ListAiApplicationAgentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAiApplicationAgentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAiApplicationAgents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAiApplicationMcpServerTest() throws Exception {
+    McpServer expectedResponse =
+        McpServer.newBuilder()
+            .setName(
+                McpServerName.ofProjectLocationAiApplicationMcpServerName(
+                        "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[MCP_SERVER]")
+                    .toString())
+            .setMcpServerId("mcpServerId298140536")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllInterfaces(new ArrayList<Interface>())
+            .addAllTools(new ArrayList<McpServer.Tool>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, Struct>())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    McpServerName name =
+        McpServerName.ofProjectLocationAiApplicationMcpServerName(
+            "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[MCP_SERVER]");
+
+    McpServer actualResponse = client.getAiApplicationMcpServer(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAiApplicationMcpServerRequest actualRequest =
+        ((GetAiApplicationMcpServerRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAiApplicationMcpServerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      McpServerName name =
+          McpServerName.ofProjectLocationAiApplicationMcpServerName(
+              "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[MCP_SERVER]");
+      client.getAiApplicationMcpServer(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAiApplicationMcpServerTest2() throws Exception {
+    McpServer expectedResponse =
+        McpServer.newBuilder()
+            .setName(
+                McpServerName.ofProjectLocationAiApplicationMcpServerName(
+                        "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[MCP_SERVER]")
+                    .toString())
+            .setMcpServerId("mcpServerId298140536")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllInterfaces(new ArrayList<Interface>())
+            .addAllTools(new ArrayList<McpServer.Tool>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, Struct>())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    McpServer actualResponse = client.getAiApplicationMcpServer(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAiApplicationMcpServerRequest actualRequest =
+        ((GetAiApplicationMcpServerRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAiApplicationMcpServerExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAiApplicationMcpServer(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAiApplicationMcpServersTest() throws Exception {
+    McpServer responsesElement = McpServer.newBuilder().build();
+    ListAiApplicationMcpServersResponse expectedResponse =
+        ListAiApplicationMcpServersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMcpServers(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    AiApplicationName parent = AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+
+    ListAiApplicationMcpServersPagedResponse pagedListResponse =
+        client.listAiApplicationMcpServers(parent);
+
+    List<McpServer> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMcpServersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAiApplicationMcpServersRequest actualRequest =
+        ((ListAiApplicationMcpServersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAiApplicationMcpServersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      AiApplicationName parent =
+          AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+      client.listAiApplicationMcpServers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAiApplicationMcpServersTest2() throws Exception {
+    McpServer responsesElement = McpServer.newBuilder().build();
+    ListAiApplicationMcpServersResponse expectedResponse =
+        ListAiApplicationMcpServersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMcpServers(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAiApplicationMcpServersPagedResponse pagedListResponse =
+        client.listAiApplicationMcpServers(parent);
+
+    List<McpServer> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMcpServersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAiApplicationMcpServersRequest actualRequest =
+        ((ListAiApplicationMcpServersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAiApplicationMcpServersExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAiApplicationMcpServers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFindingTest() throws Exception {
+    Finding expectedResponse =
+        Finding.newBuilder()
+            .setName(FindingName.of("[PROJECT]", "[LOCATION]", "[FINDING]").toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSeverity(Severity.forNumber(0))
+            .addAllFiles(new ArrayList<Finding.File>())
+            .setDetail("detail-1335224239")
+            .setResource("resource-341064690")
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    FindingName name = FindingName.of("[PROJECT]", "[LOCATION]", "[FINDING]");
+
+    Finding actualResponse = client.getFinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFindingRequest actualRequest = ((GetFindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFindingExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      FindingName name = FindingName.of("[PROJECT]", "[LOCATION]", "[FINDING]");
+      client.getFinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFindingTest2() throws Exception {
+    Finding expectedResponse =
+        Finding.newBuilder()
+            .setName(FindingName.of("[PROJECT]", "[LOCATION]", "[FINDING]").toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSeverity(Severity.forNumber(0))
+            .addAllFiles(new ArrayList<Finding.File>())
+            .setDetail("detail-1335224239")
+            .setResource("resource-341064690")
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Finding actualResponse = client.getFinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFindingRequest actualRequest = ((GetFindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFindingExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFindingsTest() throws Exception {
+    Finding responsesElement = Finding.newBuilder().build();
+    ListFindingsResponse expectedResponse =
+        ListFindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFindings(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListFindingsPagedResponse pagedListResponse = client.listFindings(parent);
+
+    List<Finding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFindingsRequest actualRequest = ((ListFindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFindingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listFindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFindingsTest2() throws Exception {
+    Finding responsesElement = Finding.newBuilder().build();
+    ListFindingsResponse expectedResponse =
+        ListFindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFindings(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFindingsPagedResponse pagedListResponse = client.listFindings(parent);
+
+    List<Finding> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFindingsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFindingsRequest actualRequest = ((ListFindingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFindingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAiApplicationEndpointTest() throws Exception {
+    Endpoint expectedResponse =
+        Endpoint.newBuilder()
+            .setName(
+                EndpointName.ofProjectLocationAiApplicationEndpointName(
+                        "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[ENDPOINT]")
+                    .toString())
+            .setEndpointId("endpointId-1837754992")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllInterfaces(new ArrayList<Interface>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, Struct>())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    EndpointName name =
+        EndpointName.ofProjectLocationAiApplicationEndpointName(
+            "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[ENDPOINT]");
+
+    Endpoint actualResponse = client.getAiApplicationEndpoint(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAiApplicationEndpointRequest actualRequest =
+        ((GetAiApplicationEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAiApplicationEndpointExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      EndpointName name =
+          EndpointName.ofProjectLocationAiApplicationEndpointName(
+              "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[ENDPOINT]");
+      client.getAiApplicationEndpoint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAiApplicationEndpointTest2() throws Exception {
+    Endpoint expectedResponse =
+        Endpoint.newBuilder()
+            .setName(
+                EndpointName.ofProjectLocationAiApplicationEndpointName(
+                        "[PROJECT]", "[LOCATION]", "[AI_APPLICATION]", "[ENDPOINT]")
+                    .toString())
+            .setEndpointId("endpointId-1837754992")
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllInterfaces(new ArrayList<Interface>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, Struct>())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Endpoint actualResponse = client.getAiApplicationEndpoint(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAiApplicationEndpointRequest actualRequest =
+        ((GetAiApplicationEndpointRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAiApplicationEndpointExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAiApplicationEndpoint(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAiApplicationEndpointsTest() throws Exception {
+    Endpoint responsesElement = Endpoint.newBuilder().build();
+    ListAiApplicationEndpointsResponse expectedResponse =
+        ListAiApplicationEndpointsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEndpoints(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    AiApplicationName parent = AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+
+    ListAiApplicationEndpointsPagedResponse pagedListResponse =
+        client.listAiApplicationEndpoints(parent);
+
+    List<Endpoint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEndpointsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAiApplicationEndpointsRequest actualRequest =
+        ((ListAiApplicationEndpointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAiApplicationEndpointsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      AiApplicationName parent =
+          AiApplicationName.of("[PROJECT]", "[LOCATION]", "[AI_APPLICATION]");
+      client.listAiApplicationEndpoints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAiApplicationEndpointsTest2() throws Exception {
+    Endpoint responsesElement = Endpoint.newBuilder().build();
+    ListAiApplicationEndpointsResponse expectedResponse =
+        ListAiApplicationEndpointsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEndpoints(Arrays.asList(responsesElement))
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAiApplicationEndpointsPagedResponse pagedListResponse =
+        client.listAiApplicationEndpoints(parent);
+
+    List<Endpoint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEndpointsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAiApplicationEndpointsRequest actualRequest =
+        ((ListAiApplicationEndpointsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAiApplicationEndpointsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAiApplicationEndpoints(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSkillEncryptionSpecTest() throws Exception {
+    SkillEncryptionSpec expectedResponse =
+        SkillEncryptionSpec.newBuilder()
+            .setName(SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    SkillEncryptionSpecName name = SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]");
+
+    SkillEncryptionSpec actualResponse = client.getSkillEncryptionSpec(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSkillEncryptionSpecRequest actualRequest =
+        ((GetSkillEncryptionSpecRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSkillEncryptionSpecExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SkillEncryptionSpecName name = SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]");
+      client.getSkillEncryptionSpec(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSkillEncryptionSpecTest2() throws Exception {
+    SkillEncryptionSpec expectedResponse =
+        SkillEncryptionSpec.newBuilder()
+            .setName(SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAgentRegistry.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SkillEncryptionSpec actualResponse = client.getSkillEncryptionSpec(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSkillEncryptionSpecRequest actualRequest =
+        ((GetSkillEncryptionSpecRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSkillEncryptionSpecExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSkillEncryptionSpec(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSkillEncryptionSpecTest() throws Exception {
+    SkillEncryptionSpec expectedResponse =
+        SkillEncryptionSpec.newBuilder()
+            .setName(SkillEncryptionSpecName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCryptoKeyName("cryptoKeyName1447084425")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateSkillEncryptionSpecTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentRegistry.addResponse(resultOperation);
+
+    SkillEncryptionSpec skillEncryptionSpec = SkillEncryptionSpec.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SkillEncryptionSpec actualResponse =
+        client.updateSkillEncryptionSpecAsync(skillEncryptionSpec, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentRegistry.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSkillEncryptionSpecRequest actualRequest =
+        ((UpdateSkillEncryptionSpecRequest) actualRequests.get(0));
+
+    Assert.assertEquals(skillEncryptionSpec, actualRequest.getSkillEncryptionSpec());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSkillEncryptionSpecExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentRegistry.addException(exception);
+
+    try {
+      SkillEncryptionSpec skillEncryptionSpec = SkillEncryptionSpec.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSkillEncryptionSpecAsync(skillEncryptionSpec, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

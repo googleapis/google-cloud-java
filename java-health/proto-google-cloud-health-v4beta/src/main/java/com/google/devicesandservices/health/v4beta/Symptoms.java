@@ -740,6 +740,36 @@ public final class Symptoms extends com.google.protobuf.GeneratedMessage
      * <code>VOMITING = 65;</code>
      */
     VOMITING(65),
+    /**
+     *
+     *
+     * <pre>
+     * Swelling of the arms or legs.
+     * </pre>
+     *
+     * <code>LIMBS_SWELLING = 76;</code>
+     */
+    LIMBS_SWELLING(76),
+    /**
+     *
+     *
+     * <pre>
+     * Swelling of the face.
+     * </pre>
+     *
+     * <code>FACE_SWELLING = 77;</code>
+     */
+    FACE_SWELLING(77),
+    /**
+     *
+     *
+     * <pre>
+     * Nasal congestion.
+     * </pre>
+     *
+     * <code>NASAL_CONGESTION = 78;</code>
+     */
+    NASAL_CONGESTION(78),
     UNRECOGNIZED(-1),
     ;
 
@@ -1479,6 +1509,39 @@ public final class Symptoms extends com.google.protobuf.GeneratedMessage
      */
     public static final int VOMITING_VALUE = 65;
 
+    /**
+     *
+     *
+     * <pre>
+     * Swelling of the arms or legs.
+     * </pre>
+     *
+     * <code>LIMBS_SWELLING = 76;</code>
+     */
+    public static final int LIMBS_SWELLING_VALUE = 76;
+
+    /**
+     *
+     *
+     * <pre>
+     * Swelling of the face.
+     * </pre>
+     *
+     * <code>FACE_SWELLING = 77;</code>
+     */
+    public static final int FACE_SWELLING_VALUE = 77;
+
+    /**
+     *
+     *
+     * <pre>
+     * Nasal congestion.
+     * </pre>
+     *
+     * <code>NASAL_CONGESTION = 78;</code>
+     */
+    public static final int NASAL_CONGESTION_VALUE = 78;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1635,6 +1698,12 @@ public final class Symptoms extends com.google.protobuf.GeneratedMessage
           return VAGINAL_ITCHING;
         case 65:
           return VOMITING;
+        case 76:
+          return LIMBS_SWELLING;
+        case 77:
+          return FACE_SWELLING;
+        case 78:
+          return NASAL_CONGESTION;
         default:
           return null;
       }

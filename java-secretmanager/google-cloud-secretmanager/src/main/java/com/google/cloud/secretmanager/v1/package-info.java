@@ -19,6 +19,34 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= SecretOperationsServiceClient =======================
+ *
+ * <p>Service Description: Secret Operations Service
+ *
+ * <p>Manages backups of secrets. Implements a REST model with the following objects:
+ *
+ * <ul>
+ *   <li>[Backup][google.cloud.secretmanager.v1.Backup]
+ * </ul>
+ *
+ * <p>Note: `SecretOperationsService` is a regional service and must be called using regional
+ * endpoints (`secretmanager.{location}.rep.googleapis.com`).
+ *
+ * <p>Sample for SecretOperationsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SecretOperationsServiceClient secretOperationsServiceClient =
+ *     SecretOperationsServiceClient.create()) {
+ *   BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP]");
+ *   Backup response = secretOperationsServiceClient.getBackup(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= SecretManagerServiceClient =======================
  *
  * <p>Service Description: Secret Manager Service

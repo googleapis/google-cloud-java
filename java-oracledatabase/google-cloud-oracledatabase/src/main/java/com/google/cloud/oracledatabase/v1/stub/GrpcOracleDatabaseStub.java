@@ -221,6 +221,7 @@ import com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest;
 import com.google.longrunning.Operation;
@@ -897,6 +898,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/CreateOdbDnsZone")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOdbDnsZoneRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateOdbDnsZoneRequest, Operation>
+      updateOdbDnsZoneMethodDescriptor =
+          MethodDescriptor.<UpdateOdbDnsZoneRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/UpdateOdbDnsZone")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateOdbDnsZoneRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -1840,6 +1852,9 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable;
   private final OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
       createOdbDnsZoneOperationCallable;
+  private final UnaryCallable<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneCallable;
+  private final OperationCallable<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationCallable;
   private final UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable;
   private final OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
       deleteOdbDnsZoneOperationCallable;
@@ -2737,6 +2752,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneTransportSettings =
+        GrpcCallSettings.<UpdateOdbDnsZoneRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateOdbDnsZoneMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "odb_dns_zone.name", String.valueOf(request.getOdbDnsZone().getName()));
+                  return builder.build();
+                })
             .build();
     GrpcCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneTransportSettings =
         GrpcCallSettings.<DeleteOdbDnsZoneRequest, Operation>newBuilder()
@@ -3895,6 +3921,15 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.createOdbDnsZoneOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateOdbDnsZoneCallable =
+        callableFactory.createUnaryCallable(
+            updateOdbDnsZoneTransportSettings, settings.updateOdbDnsZoneSettings(), clientContext);
+    this.updateOdbDnsZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            updateOdbDnsZoneTransportSettings,
+            settings.updateOdbDnsZoneOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteOdbDnsZoneCallable =
         callableFactory.createUnaryCallable(
             deleteOdbDnsZoneTransportSettings, settings.deleteOdbDnsZoneSettings(), clientContext);
@@ -4962,6 +4997,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
       createOdbDnsZoneOperationCallable() {
     return createOdbDnsZoneOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneCallable() {
+    return updateOdbDnsZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationCallable() {
+    return updateOdbDnsZoneOperationCallable;
   }
 
   @Override

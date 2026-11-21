@@ -847,6 +847,26 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateThreadReadState</td>
+ *      <td><p> Updates a user's read state within a thread, used to identify read and unread messages. For an example, see [Update a user's thread read state](https://developers.google.com/workspace/chat/update-thread-read-state).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.readstate`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateThreadReadState(UpdateThreadReadStateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateThreadReadState(ThreadReadState threadReadState, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateThreadReadStateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetThreadReadState</td>
  *      <td><p> Returns details about a user's read state within a thread, used to identify read and unread messages. For an example, see [Get details about a user's thread read state](https://developers.google.com/workspace/chat/get-thread-read-state).
  * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
@@ -8128,6 +8148,142 @@ public class ChatServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
       updateSpaceReadStateCallable() {
     return stub.updateSpaceReadStateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user's read state within a thread, used to identify read and unread messages. For an
+   * example, see [Update a user's thread read
+   * state](https://developers.google.com/workspace/chat/update-thread-read-state).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.readstate`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ThreadReadState threadReadState = ThreadReadState.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ThreadReadState response =
+   *       chatServiceClient.updateThreadReadState(threadReadState, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param threadReadState Required. The thread read state and fields to update.
+   *     <p>Only supports updating read state for the calling user.
+   *     <p>To refer to the calling user, set one of the following:
+   *     <p>- The `me` alias. For example,
+   *     `users/me/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>- Their Workspace email address. For example,
+   *     `users/user{@literal @}example.com/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>- Their user id. For example,
+   *     `users/123456789/spaces/{space}/threads/{thread}/threadReadState`.
+   *     <p>Format: `users/{user}/spaces/{space}/threads/{thread}/threadReadState`
+   * @param updateMask Required. The field paths to update. Currently supported field paths:
+   *     <p>- `last_read_time`
+   *     <p>When `last_read_time` is before the latest message create time, the thread appears as
+   *     unread in the UI.
+   *     <p>To mark the thread as read, set `last_read_time` to a timestamp equal to or later than
+   *     the latest message create time. Future timestamps are coerced to the current request time.
+   *     Setting a negative timestamp (before `1970-01-01T00:00:00Z`) returns an `INVALID_ARGUMENT`
+   *     error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ThreadReadState updateThreadReadState(
+      ThreadReadState threadReadState, FieldMask updateMask) {
+    UpdateThreadReadStateRequest request =
+        UpdateThreadReadStateRequest.newBuilder()
+            .setThreadReadState(threadReadState)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateThreadReadState(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user's read state within a thread, used to identify read and unread messages. For an
+   * example, see [Update a user's thread read
+   * state](https://developers.google.com/workspace/chat/update-thread-read-state).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.readstate`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateThreadReadStateRequest request =
+   *       UpdateThreadReadStateRequest.newBuilder()
+   *           .setThreadReadState(ThreadReadState.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ThreadReadState response = chatServiceClient.updateThreadReadState(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ThreadReadState updateThreadReadState(UpdateThreadReadStateRequest request) {
+    return updateThreadReadStateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a user's read state within a thread, used to identify read and unread messages. For an
+   * example, see [Update a user's thread read
+   * state](https://developers.google.com/workspace/chat/update-thread-read-state).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.readstate`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateThreadReadStateRequest request =
+   *       UpdateThreadReadStateRequest.newBuilder()
+   *           .setThreadReadState(ThreadReadState.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ThreadReadState> future =
+   *       chatServiceClient.updateThreadReadStateCallable().futureCall(request);
+   *   // Do something.
+   *   ThreadReadState response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateCallable() {
+    return stub.updateThreadReadStateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

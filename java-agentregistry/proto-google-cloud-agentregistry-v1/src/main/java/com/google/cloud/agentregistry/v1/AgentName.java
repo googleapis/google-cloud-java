@@ -17,6 +17,7 @@
 package com.google.cloud.agentregistry.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -35,22 +36,39 @@ public class AgentName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_AGENT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/agents/{agent}");
+  private static final PathTemplate PROJECT_LOCATION_AI_APPLICATION_AGENT =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/aiApplications/{ai_application}/agents/{agent}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String agent;
+  private final String aiApplication;
 
   @Deprecated
   protected AgentName() {
     project = null;
     location = null;
     agent = null;
+    aiApplication = null;
   }
 
   private AgentName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     agent = Preconditions.checkNotNull(builder.getAgent());
+    aiApplication = null;
+    pathTemplate = PROJECT_LOCATION_AGENT;
+  }
+
+  private AgentName(ProjectLocationAiApplicationAgentBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    aiApplication = Preconditions.checkNotNull(builder.getAiApplication());
+    agent = Preconditions.checkNotNull(builder.getAgent());
+    pathTemplate = PROJECT_LOCATION_AI_APPLICATION_AGENT;
   }
 
   public String getProject() {
@@ -65,8 +83,21 @@ public class AgentName implements ResourceName {
     return agent;
   }
 
+  public String getAiApplication() {
+    return aiApplication;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationAgentBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationAiApplicationAgentBuilder
+      newProjectLocationAiApplicationAgentBuilder() {
+    return new ProjectLocationAiApplicationAgentBuilder();
   }
 
   public Builder toBuilder() {
@@ -75,6 +106,21 @@ public class AgentName implements ResourceName {
 
   public static AgentName of(String project, String location, String agent) {
     return newBuilder().setProject(project).setLocation(location).setAgent(agent).build();
+  }
+
+  public static AgentName ofProjectLocationAgentName(
+      String project, String location, String agent) {
+    return newBuilder().setProject(project).setLocation(location).setAgent(agent).build();
+  }
+
+  public static AgentName ofProjectLocationAiApplicationAgentName(
+      String project, String location, String aiApplication, String agent) {
+    return newProjectLocationAiApplicationAgentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAiApplication(aiApplication)
+        .setAgent(agent)
+        .build();
   }
 
   public static String format(String project, String location, String agent) {
@@ -86,14 +132,44 @@ public class AgentName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationAgentName(
+      String project, String location, String agent) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAgent(agent)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationAiApplicationAgentName(
+      String project, String location, String aiApplication, String agent) {
+    return newProjectLocationAiApplicationAgentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAiApplication(aiApplication)
+        .setAgent(agent)
+        .build()
+        .toString();
+  }
+
   public static @Nullable AgentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_AGENT.validatedMatch(
-            formattedString, "AgentName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("agent"));
+    if (PROJECT_LOCATION_AGENT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_AGENT.match(formattedString);
+      return ofProjectLocationAgentName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("agent"));
+    } else if (PROJECT_LOCATION_AI_APPLICATION_AGENT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_AI_APPLICATION_AGENT.match(formattedString);
+      return ofProjectLocationAiApplicationAgentName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("ai_application"),
+          matchMap.get("agent"));
+    }
+    throw new ValidationException("AgentName.parse: formattedString not in valid format");
   }
 
   public static List<AgentName> parseList(List<String> formattedStrings) {
@@ -117,7 +193,8 @@ public class AgentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_AGENT.matches(formattedString);
+    return PROJECT_LOCATION_AGENT.matches(formattedString)
+        || PROJECT_LOCATION_AI_APPLICATION_AGENT.matches(formattedString);
   }
 
   @Override
@@ -135,6 +212,9 @@ public class AgentName implements ResourceName {
           if (agent != null) {
             fieldMapBuilder.put("agent", agent);
           }
+          if (aiApplication != null) {
+            fieldMapBuilder.put("ai_application", aiApplication);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -148,8 +228,7 @@ public class AgentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_AGENT.instantiate(
-        "project", project, "location", location, "agent", agent);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -161,7 +240,8 @@ public class AgentName implements ResourceName {
       AgentName that = ((AgentName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.agent, that.agent);
+          && Objects.equals(this.agent, that.agent)
+          && Objects.equals(this.aiApplication, that.aiApplication);
     }
     return false;
   }
@@ -170,11 +250,15 @@ public class AgentName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
     h ^= Objects.hashCode(agent);
+    h *= 1000003;
+    h ^= Objects.hashCode(aiApplication);
     return h;
   }
 
@@ -214,9 +298,66 @@ public class AgentName implements ResourceName {
     }
 
     private Builder(AgentName agentName) {
+      Preconditions.checkArgument(
+          Objects.equals(agentName.pathTemplate, PROJECT_LOCATION_AGENT),
+          "toBuilder is only supported when AgentName has the pattern of"
+              + " projects/{project}/locations/{location}/agents/{agent}");
       this.project = agentName.project;
       this.location = agentName.location;
       this.agent = agentName.agent;
+    }
+
+    public AgentName build() {
+      return new AgentName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/aiApplications/{ai_application}/agents/{agent}.
+   */
+  public static class ProjectLocationAiApplicationAgentBuilder {
+    private String project;
+    private String location;
+    private String aiApplication;
+    private String agent;
+
+    protected ProjectLocationAiApplicationAgentBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getAiApplication() {
+      return aiApplication;
+    }
+
+    public String getAgent() {
+      return agent;
+    }
+
+    public ProjectLocationAiApplicationAgentBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationAgentBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationAgentBuilder setAiApplication(String aiApplication) {
+      this.aiApplication = aiApplication;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationAgentBuilder setAgent(String agent) {
+      this.agent = agent;
+      return this;
     }
 
     public AgentName build() {
