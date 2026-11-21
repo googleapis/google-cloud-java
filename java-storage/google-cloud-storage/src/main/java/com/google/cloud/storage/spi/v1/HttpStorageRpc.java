@@ -42,6 +42,7 @@ import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.Data;
+import com.google.api.core.InternalApi;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.Storage.BucketAccessControls;
 import com.google.api.services.storage.Storage.Buckets;
@@ -132,6 +133,7 @@ public class HttpStorageRpc implements StorageRpc {
 
   private final StorageOptions options;
   private final Storage storage;
+  private final HttpRequestFactory signedUrlRequestFactory;
   private final Tracer tracer = Tracing.getTracer();
   private final HttpRequestInitializer batchRequestInitializer;
 
@@ -184,10 +186,28 @@ public class HttpStorageRpc implements StorageRpc {
       storageBuilder.setRootUrl(host);
     }
     storage = storageBuilder.build();
+    HttpRequestInitializer timeouts =
+        request -> {
+          if (transportOptions.getConnectTimeout() >= 0) {
+            request.setConnectTimeout(transportOptions.getConnectTimeout());
+          }
+          if (transportOptions.getReadTimeout() >= 0) {
+            request.setReadTimeout(transportOptions.getReadTimeout());
+          }
+        };
+    signedUrlRequestFactory =
+        transport.createRequestFactory(
+            new InvocationIdInitializer(
+                censusHttpModule.getHttpRequestInitializer(timeouts), applicationName, tm));
   }
 
   public Storage getStorage() {
     return storage;
+  }
+
+  @InternalApi
+  public HttpRequestFactory getSignedUrlRequestFactory() {
+    return signedUrlRequestFactory;
   }
 
   private static final class InvocationIdInitializer implements HttpRequestInitializer {
@@ -1224,9 +1244,8 @@ public class HttpStorageRpc implements StorageRpc {
       url.set("uploadType", "resumable");
       String bytesArrayParameters = "";
       byte[] bytesArray = new byte[bytesArrayParameters.length()];
-      HttpRequestFactory requestFactory = storage.getRequestFactory();
       HttpRequest httpRequest =
-          requestFactory.buildPostRequest(
+          signedUrlRequestFactory.buildPostRequest(
               url, new ByteArrayContent("", bytesArray, 0, bytesArray.length));
       HttpHeaders requestHeaders = httpRequest.getHeaders();
       requestHeaders.set("X-Upload-Content-Type", "");

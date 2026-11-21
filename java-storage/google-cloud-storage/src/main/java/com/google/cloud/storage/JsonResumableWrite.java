@@ -31,6 +31,7 @@ import java.util.Objects;
 import org.checkerframework.checker.lock.qual.GuardedBy;
 import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 final class JsonResumableWrite implements Serializable {
   private static final long serialVersionUID = 7934407897802252292L;
@@ -78,6 +79,10 @@ final class JsonResumableWrite implements Serializable {
 
   public @NonNull String getUploadId() {
     return uploadId;
+  }
+
+  @Nullable String getSignedUrl() {
+    return signedUrl;
   }
 
   public long getBeginOffset() {

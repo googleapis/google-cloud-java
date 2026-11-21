@@ -85,7 +85,11 @@ final class BlobWriteChannelV2 extends BaseStorageWriteChannel<StorageObject> {
         () ->
             ResumableMedia.http()
                 .write()
-                .byteChannel(blobChannelContext.getHttpClientContext())
+                .byteChannel(
+                    start.getSignedUrl() == null
+                        ? blobChannelContext.getHttpClientContext()
+                        : HttpClientContext.forSignedUrl(
+                            blobChannelContext.getStorageOptions().getStorageRpcV1()))
                 .resumable()
                 .setCommittedBytesCallback(this::setCommittedPosition)
                 .withRetryConfig(
