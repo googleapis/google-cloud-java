@@ -42,11 +42,13 @@ import com.google.api.gax.resumable.QueryStatusRequest;
 import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.ResumableUploadErrorClassifier.Category;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Future;
@@ -75,6 +77,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private final ExponentialRetryAlgorithm recoveryAlgorithm;
   private final ScheduledExecutorService executor;
   private final ResumableUploadProgressTracker progressTracker;
+  private final @Nullable ResumableUploadStallController stallController;
   private final SettableApiFuture<ResponseT> uploadResultFuture = SettableApiFuture.create();
   private volatile @Nullable Future<?> inFlightFuture;
   private TimedAttemptSettings recoverySettings;
@@ -87,7 +90,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       InputStream payload,
       int chunkSize,
       ClientContext clientContext,
-      ResumableUploadProgressTracker progressTracker) {
+      ResumableUploadProgressTracker progressTracker,
+      @Nullable ResumableUploadStallController stallController) {
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.queryStatusCallable =
@@ -101,9 +105,21 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
         new ExponentialRetryAlgorithm(
             ResumableUploadCallableImpl.RETRY_SETTINGS, clientContext.getClock());
     this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
-    this.recoverySettings = recoveryAlgorithm.createFirstAttempt();
     this.progressTracker = checkNotNull(progressTracker, "progressTracker must not be null");
+    this.stallController = stallController;
+    this.recoverySettings = createFirstRecoveryAttempt();
     this.buffer = new RewindableStreamBuffer(payload, chunkSize);
+  }
+
+  private TimedAttemptSettings createFirstRecoveryAttempt() {
+    if (stallController != null) {
+      return recoveryAlgorithm.createFirstAttempt(
+          callContext.withRetrySettings(
+              ResumableUploadCallableImpl.RETRY_SETTINGS.toBuilder()
+                  .setTotalTimeoutDuration(Duration.ZERO)
+                  .build()));
+    }
+    return recoveryAlgorithm.createFirstAttempt();
   }
 
   ApiFuture<ResponseT> getFuture() {
@@ -149,10 +165,16 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       }
 
       ChunkUploadRequest chunkRequest = buildCurrentChunkRequest();
+      ApiCallContext chunkCallContext = callContext;
+      if (stallController != null) {
+        chunkCallContext =
+            callContext.withRetrySettings(
+                stallController.onStartChunk(chunkRequest.getPayload().length));
+      }
 
       // Dispatch the chunk upload call and register the in-flight future for cancellation.
       ApiFuture<ChunkUploadResponse<ResponseT>> chunkFuture =
-          uploadChunkCallable.futureCall(chunkRequest, callContext);
+          uploadChunkCallable.futureCall(chunkRequest, chunkCallContext);
       if (!tryRegisterInFlightFuture(chunkFuture)) {
         return;
       }
@@ -189,6 +211,9 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
               } else {
                 // Category.TRANSIENT errors reaching here have already exhausted their retry budget
                 // in the underlying RetryingCallable and become fatal per protocol specification.
+                if (stallController != null) {
+                  t = stallController.translateException(t, ResumableUploadCommand.UPLOAD);
+                }
                 uploadResultFuture.setException(t);
               }
             }
@@ -203,8 +228,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     progressTracker.onRecovering();
     try {
       if (madeProgressSinceRecovery) {
-        recoverySettings =
-            recoveryAlgorithm.createNextAttempt(recoveryAlgorithm.createFirstAttempt());
+        recoverySettings = recoveryAlgorithm.createNextAttempt(createFirstRecoveryAttempt());
       } else {
         recoverySettings = recoveryAlgorithm.createNextAttempt(recoverySettings);
       }
@@ -213,24 +237,34 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
         uploadResultFuture.setException(cause);
         return;
       }
+      Duration backoffDelay = recoverySettings.getRandomizedRetryDelayDuration();
+      RetrySettings queryRetrySettings = null;
+      if (stallController != null) {
+        queryRetrySettings = stallController.onStartQuery(backoffDelay);
+      }
+      RetrySettings finalQueryRetrySettings = queryRetrySettings;
       tryRegisterInFlightFuture(
           executor.schedule(
-              this::queryStatus,
-              recoverySettings.getRandomizedRetryDelayDuration().toNanos(),
+              () -> queryStatus(finalQueryRetrySettings),
+              backoffDelay.toNanos(),
               TimeUnit.NANOSECONDS));
     } catch (Throwable t) {
       uploadResultFuture.setException(t);
     }
   }
 
-  private void queryStatus() {
+  private void queryStatus(@Nullable RetrySettings queryRetrySettings) {
     try {
       if (uploadResultFuture.isDone()) {
         return;
       }
+      ApiCallContext queryCallContext = callContext;
+      if (queryRetrySettings != null) {
+        queryCallContext = callContext.withRetrySettings(queryRetrySettings);
+      }
       // Dispatch the query status call and register the in-flight future for cancellation.
       ApiFuture<QueryStatusResponse<ResponseT>> queryFuture =
-          queryStatusCallable.futureCall(QueryStatusRequest.create(uploadUrl), callContext);
+          queryStatusCallable.futureCall(QueryStatusRequest.create(uploadUrl), queryCallContext);
       if (!tryRegisterInFlightFuture(queryFuture)) {
         return;
       }
@@ -253,6 +287,9 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
             public void onFailure(Throwable t) {
               if (t instanceof CancellationException || uploadResultFuture.isDone()) {
                 return;
+              }
+              if (stallController != null) {
+                t = stallController.translateException(t, ResumableUploadCommand.QUERY);
               }
               uploadResultFuture.setException(t);
             }
@@ -294,6 +331,10 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       throw new IllegalStateException(
           "Incomplete query status response did not include a committed offset");
     }
+    long previousBaseOffset = buffer.getBufferBaseOffset();
+    if (stallController != null) {
+      stallController.onRecoveryOffsetReceived(committedOffset - previousBaseOffset);
+    }
     progressTracker.onOffsetReceived(committedOffset, chunkSize);
     buffer.realignTo(committedOffset);
     transmitChunk();
@@ -309,6 +350,9 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
               "Upload stream ended and final chunk was transmitted, but server returned"
                   + " incomplete status"));
     } else {
+      if (stallController != null) {
+        stallController.onChunkSuccess(buffer.getPayload().length);
+      }
       madeProgressSinceRecovery = true;
       buffer.fill();
       progressTracker.onChunkUploaded(buffer.getBufferBaseOffset());

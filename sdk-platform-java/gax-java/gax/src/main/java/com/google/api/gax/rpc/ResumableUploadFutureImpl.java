@@ -78,7 +78,9 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private final ResumableUploadOptions options;
   private final ClientContext clientContext;
   private final ScheduledExecutorService executor;
+  private final boolean isResume;
   private final ResumableUploadProgressTracker progressTracker;
+  private final @Nullable ResumableUploadStallController stallController;
   private final SettableApiFuture<ResponseT> resultFuture = SettableApiFuture.create();
 
   private volatile @Nullable InputStream payload;
@@ -157,9 +159,13 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
             sessionUrl, uploadChunkCallable, queryStatusCallable, options, clientContext);
     ApiFuture<QueryStatusResponse<ResponseT>> queryFuture;
     try {
+      ApiCallContext queryCallContext = clientContext.getDefaultCallContext();
+      if (future.stallController != null) {
+        queryCallContext =
+            queryCallContext.withRetrySettings(future.stallController.onStartQuery(Duration.ZERO));
+      }
       queryFuture =
-          queryStatusCallable.futureCall(
-              QueryStatusRequest.create(sessionUrl), clientContext.getDefaultCallContext());
+          queryStatusCallable.futureCall(QueryStatusRequest.create(sessionUrl), queryCallContext);
     } catch (Throwable t) {
       queryFuture = ApiFutures.immediateFailedFuture(t);
     }
@@ -188,6 +194,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       ResumableUploadOptions options,
       ClientContext clientContext) {
     this.uploadSessionUrl = sessionUrl;
+    this.isResume = sessionUrl != null;
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.queryStatusCallable =
@@ -196,8 +203,10 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     checkArgument(options.getChunkSize() > 0, "chunkSize must be > 0");
     this.clientContext = checkNotNull(clientContext, "clientContext must not be null");
     this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
-    if (sessionUrl != null) {
-      this.progressTracker = ResumableUploadProgressTracker.createForResume(sessionUrl);
+    this.stallController = createStallController(options, clientContext);
+    if (this.isResume) {
+      this.progressTracker =
+          ResumableUploadProgressTracker.createForResume(checkNotNull(sessionUrl));
     } else {
       this.progressTracker = ResumableUploadProgressTracker.create();
     }
@@ -205,6 +214,24 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     if (progressListener != null) {
       progressTracker.addListener(progressListener, executor);
     }
+  }
+
+  private static @Nullable ResumableUploadStallController createStallController(
+      ResumableUploadOptions options, ClientContext clientContext) {
+    if (!options.isStallControlEnabled()) {
+      return null;
+    }
+    Duration globalDeadline = null;
+    if (options.getGlobalTimeout() != null) {
+      globalDeadline =
+          Duration.ofMillis(clientContext.getClock().millisTime()).plus(options.getGlobalTimeout());
+    }
+    return new ResumableUploadStallController(
+        clientContext.getClock(),
+        checkNotNull(options.getTransferStallMinimumRate()),
+        checkNotNull(options.getTransferStallTimeout()),
+        globalDeadline,
+        ResumableUploadCallableImpl.RETRY_SETTINGS);
   }
 
   private <T> void initiate(
@@ -235,6 +262,9 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
             if (t instanceof CancellationException || resultFuture.isDone()) {
               return;
             }
+            if (isResume && stallController != null) {
+              t = stallController.translateException(t, ResumableUploadCommand.QUERY);
+            }
             fail(t);
           }
         },
@@ -242,7 +272,15 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private void setUpGlobalTimeout() {
-    Duration timeout = firstNonNull(options.getGlobalTimeout(), DEFAULT_GLOBAL_TIMEOUT);
+    Duration timeout;
+    if (options.isStallControlEnabled()) {
+      timeout = options.getGlobalTimeout();
+    } else {
+      timeout = firstNonNull(options.getGlobalTimeout(), DEFAULT_GLOBAL_TIMEOUT);
+    }
+    if (timeout == null) {
+      return;
+    }
     ScheduledFuture<?> timeoutFuture =
         executor.schedule(this::onTimeout, timeout.toMillis(), TimeUnit.MILLISECONDS);
     resultFuture.addListener(() -> timeoutFuture.cancel(false), MoreExecutors.directExecutor());
@@ -259,7 +297,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
             checkNotNull(payload),
             chunkSize,
             clientContext,
-            progressTracker);
+            progressTracker,
+            stallController);
     ApiFuture<ResponseT> uploadFuture = coordinator.getFuture();
     synchronized (lock) {
       if (inFlightFuture == null) {

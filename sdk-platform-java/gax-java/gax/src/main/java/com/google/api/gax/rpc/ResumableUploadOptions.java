@@ -62,6 +62,24 @@ public abstract class ResumableUploadOptions {
   public abstract @Nullable ResumableUploadProgressListener getProgressListener();
 
   /**
+   * Returns the minimum acceptable transfer rate in MiB/s (1 MiB = 1,048,576 bytes) for stall
+   * detection, or {@code null} if unset. Stall control is only active when both {@link
+   * #getTransferStallMinimumRate()} and {@link #getTransferStallTimeout()} are set.
+   */
+  public abstract @Nullable Double getTransferStallMinimumRate();
+
+  /**
+   * Returns the maximum duration the upload may remain below {@link #getTransferStallMinimumRate()}
+   * before being aborted as stalled, or {@code null} if unset. Stall control is only active when
+   * both {@link #getTransferStallMinimumRate()} and {@link #getTransferStallTimeout()} are set.
+   */
+  public abstract @Nullable Duration getTransferStallTimeout();
+
+  boolean isStallControlEnabled() {
+    return getTransferStallMinimumRate() != null && getTransferStallTimeout() != null;
+  }
+
+  /**
    * Merges another {@code ResumableUploadOptions} instance with this one. Fields set in {@code
    * other} override fields in this instance.
    *
@@ -76,8 +94,17 @@ public abstract class ResumableUploadOptions {
     if (other.getChunkSize() > 0) {
       builder.setChunkSize(other.getChunkSize());
     }
+    if (other.getTransferStallMinimumRate() != null) {
+      builder.setTransferStallMinimumRate(other.getTransferStallMinimumRate());
+    }
+    if (other.getTransferStallTimeout() != null) {
+      builder.setTransferStallTimeout(other.getTransferStallTimeout());
+    }
     if (other.getGlobalTimeout() != null) {
       builder.setGlobalTimeout(other.getGlobalTimeout());
+    } else if (builder.getTransferStallMinimumRate() != null
+        && builder.getTransferStallTimeout() != null) {
+      builder.setGlobalTimeout(null);
     }
     ResumableUploadProgressListener otherProgressListener = other.getProgressListener();
     if (otherProgressListener != null) {
@@ -128,6 +155,33 @@ public abstract class ResumableUploadOptions {
     public abstract Builder setProgressListener(
         @Nullable ResumableUploadProgressListener progressListener);
 
+    /**
+     * Sets the minimum acceptable transfer rate in MiB/s (1 MiB = 1,048,576 bytes) for stall
+     * detection. Must be finite and positive. Stall control is only active when both {@code
+     * transferStallMinimumRate} and {@code transferStallTimeout} are set; enabling stall control
+     * without an explicit {@link #setGlobalTimeout(Duration)} disables the default global timeout.
+     */
+    public abstract Builder setTransferStallMinimumRate(@Nullable Double transferStallMinimumRate);
+
+    /**
+     * Returns the minimum acceptable transfer rate in MiB/s, or {@code null} if unset. See {@link
+     * #setTransferStallMinimumRate(Double)}.
+     */
+    public abstract @Nullable Double getTransferStallMinimumRate();
+
+    /**
+     * Sets the maximum duration the upload may remain below {@link #getTransferStallMinimumRate()}
+     * before being aborted as stalled. Must be positive. Stall control is only active when both
+     * {@code transferStallMinimumRate} and {@code transferStallTimeout} are set.
+     */
+    public abstract Builder setTransferStallTimeout(@Nullable Duration transferStallTimeout);
+
+    /**
+     * Returns the stall timeout duration, or {@code null} if unset. See {@link
+     * #setTransferStallTimeout(Duration)}.
+     */
+    public abstract @Nullable Duration getTransferStallTimeout();
+
     abstract ResumableUploadOptions autoBuild();
 
     public ResumableUploadOptions build() {
@@ -136,6 +190,16 @@ public abstract class ResumableUploadOptions {
         Preconditions.checkArgument(
             !getGlobalTimeout().isNegative() && !getGlobalTimeout().isZero(),
             "globalTimeout must be positive");
+      }
+      if (getTransferStallMinimumRate() != null) {
+        Preconditions.checkArgument(
+            Double.isFinite(getTransferStallMinimumRate()) && getTransferStallMinimumRate() > 0.0,
+            "transferStallMinimumRate must be finite and positive");
+      }
+      if (getTransferStallTimeout() != null) {
+        Preconditions.checkArgument(
+            !getTransferStallTimeout().isNegative() && !getTransferStallTimeout().isZero(),
+            "transferStallTimeout must be positive");
       }
       return autoBuild();
     }
