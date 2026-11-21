@@ -315,6 +315,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
         InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
             DatastoreSettings.defaultGrpcTransportProviderBuilder()
                 .setChannelPoolSettings(datastoreChannelPoolSettings);
+        // Only pin the endpoint when a custom host is configured; otherwise leave it unset
+        // so GAX resolves datastore.<universeDomain>:443 automatically.
         if (getHost() != null && !DatastoreSettings.getDefaultEndpoint().equals(getHost())) {
           channelProviderBuilder.setEndpoint(getHost());
         }

@@ -121,6 +121,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
       // so we only need to set the host without any suffix.
       clientBuilder = clientBuilder.host(removeScheme(normalizedHost));
     } else if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(resolvedUniverseDomain)) {
+      // Resolve the default host using the configured universe domain (e.g. datastore.<domain>).
       clientBuilder = clientBuilder.host(DATASTORE_HOST_PREFIX + resolvedUniverseDomain);
     }
     return clientBuilder;
@@ -135,6 +136,10 @@ public class HttpDatastoreRpc implements DatastoreRpc {
     }
     try {
       String credentialsUniverseDomain = credentials.getUniverseDomain();
+      if (credentialsUniverseDomain == null) {
+        credentialsUniverseDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+      }
+      // Reject requests before sending credentials if the credential and client universes differ.
       if (!resolvedUniverseDomain.equals(credentialsUniverseDomain)) {
         String errorMessage =
             String.format(

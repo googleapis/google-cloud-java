@@ -201,9 +201,12 @@ public class GrpcDatastoreRpc implements DatastoreRpc {
     settingsBuilder.setInternalHeaderProvider(internalHeaderProvider);
     settingsBuilder.setHeaderProvider(
         datastoreOptions.getMergedHeaderProvider(new NoHeaderProvider()));
+    // Forward any explicitly configured universe domain so GAX resolves the endpoint
+    // and validates credentials against it.
     if (datastoreOptions.getUniverseDomain() != null) {
       settingsBuilder.setUniverseDomain(datastoreOptions.getUniverseDomain());
     }
+    // Preserve custom host overrides; default hosts are resolved by GAX from the universe domain.
     if (datastoreOptions.getHost() != null
         && !DatastoreSettings.getDefaultEndpoint().equals(datastoreOptions.getHost())) {
       settingsBuilder.setEndpoint(datastoreOptions.getHost());
