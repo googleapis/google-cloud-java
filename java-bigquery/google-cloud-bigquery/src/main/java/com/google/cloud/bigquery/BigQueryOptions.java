@@ -40,7 +40,8 @@ import java.util.Set;
  * Builder#setTransportOptions(TransportOptions)} with {@link HttpTransportOptions} (by default,
  * {@link #getDefaultHttpTransportOptions()} sets a 60-second read timeout).
  *
- * <p>For message-based retries during query job status polling, see {@link BigQueryRetryConfig}.
+ * <p>For message-based retries on job creation and query job status polling, see {@link
+ * BigQueryRetryConfig}.
  */
 public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
