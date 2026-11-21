@@ -283,24 +283,39 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
 
   @Test
   void refreshCredentialsIfRequired_asyncSingleThread() throws IOException {
+    int numRefresh = 3;
+    // createMockClock() counts down refreshEntryLatch on every clock.currentTimeMillis() call.
+    // The initial refreshCredentialsIfRequired() call initializes intermediateCredentials without
+    // querying the clock. Each subsequent call evaluates determineRefreshType() twice (via
+    // double-checked locking, once outside and once inside synchronized (refreshLock)), consuming
+    // 2 clock calls per iteration (numRefresh * 2 total).
+    // Adding 1 extra permit keeps the background STS request paused in
+    // MockStsTransportFactory.create() until after asserting that requestCount is still 1. The
+    // remaining permit is released in the finally block.
+    CountDownLatch refreshEntryLatch = new CountDownLatch(numRefresh * 2 + 1);
     final ClientSideCredentialAccessBoundaryFactory factory =
-        getClientSideCredentialAccessBoundaryFactory(RefreshType.ASYNC);
+        getClientSideCredentialAccessBoundaryFactory(RefreshType.ASYNC, refreshEntryLatch);
 
     // Call refreshCredentialsIfRequired() once to initialize the intermediate credentials. This
     // should make one request to the STS endpoint.
     factory.refreshCredentialsIfRequired();
     assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
 
-    // Subsequent calls to refreshCredentialsIfRequired() in an async mode should NOT
-    // immediately call the STS endpoint. They should schedule an asynchronous refresh.
-    int numRefresh = 3;
-    for (int i = 0; i < numRefresh; i++) {
-      factory.refreshCredentialsIfRequired();
-    }
+    try {
+      // Subsequent calls to refreshCredentialsIfRequired() in an async mode should NOT
+      // immediately call the STS endpoint. They should schedule an asynchronous refresh.
+      for (int i = 0; i < numRefresh; i++) {
+        factory.refreshCredentialsIfRequired();
+      }
 
-    // Verify that only the initial call resulted in an immediate STS request. The async refresh
-    // is still pending.
-    assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
+      // Verify that only the initial call resulted in an immediate STS request. The async refresh
+      // is still pending.
+      assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
+    } finally {
+      while (refreshEntryLatch.getCount() > 0) {
+        refreshEntryLatch.countDown();
+      }
+    }
 
     // Introduce a small delay to allow the asynchronous refresh task to complete.  This is
     // necessary because the async task runs on a separate thread.
