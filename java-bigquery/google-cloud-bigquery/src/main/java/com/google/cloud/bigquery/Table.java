@@ -456,11 +456,13 @@ public class Table extends TableInfo {
    * try {
    *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
    *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -492,11 +494,13 @@ public class Table extends TableInfo {
    * try {
    *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
    *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully.
+   *   if (completedJob == null) {
+   *     // Job no longer exists.
    *   } else {
-   *     // Handle error case.
+   *     // Job completed successfully.
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case.
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -525,11 +529,13 @@ public class Table extends TableInfo {
    * try {
    *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
    *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -564,11 +570,13 @@ public class Table extends TableInfo {
    * try {
    *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
    *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -599,12 +607,14 @@ public class Table extends TableInfo {
    * // Wait for the job to complete
    * try {
    *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *             RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -638,17 +648,19 @@ public class Table extends TableInfo {
    * try {
    *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
    *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
    *
-   * @param format the format of the exported data
+   * @param format the format of the data to load
    * @param sourceUris the fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path) from
    *     which to load the data
    * @param options job options
