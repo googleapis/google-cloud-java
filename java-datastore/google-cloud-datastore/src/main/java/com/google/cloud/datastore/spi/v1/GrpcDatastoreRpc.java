@@ -26,6 +26,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
@@ -37,7 +38,10 @@ import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.datastore.v1.stub.DatastoreStubSettings;
 import com.google.cloud.datastore.v1.stub.GrpcDatastoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
 import com.google.datastore.v1.BeginTransactionRequest;
@@ -46,6 +50,7 @@ import com.google.datastore.v1.CommitRequest;
 import com.google.datastore.v1.CommitResponse;
 import com.google.datastore.v1.LookupRequest;
 import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.ReadOptions;
 import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
@@ -62,10 +67,23 @@ import java.util.Collections;
 
 @InternalApi
 public class GrpcDatastoreRpc implements DatastoreRpc {
+  private static final ApiCallContext TRANSACTION_CALL_CONTEXT =
+      GrpcCallContext.createDefault()
+          .withExtraHeaders(ImmutableMap.of("x-goog-is-transaction", ImmutableList.of("true")));
+
+  private static final ApiCallContext NON_TRANSACTION_CALL_CONTEXT =
+      GrpcCallContext.createDefault()
+          .withExtraHeaders(ImmutableMap.of("x-goog-is-transaction", ImmutableList.of("false")));
 
   private final GrpcDatastoreStub datastoreStub;
   private final ClientContext clientContext;
   private boolean closed;
+
+  @VisibleForTesting
+  GrpcDatastoreRpc(GrpcDatastoreStub datastoreStub) {
+    this.datastoreStub = datastoreStub;
+    this.clientContext = null;
+  }
 
   public GrpcDatastoreRpc(DatastoreOptions datastoreOptions) throws IOException {
     try {
@@ -108,43 +126,63 @@ public class GrpcDatastoreRpc implements DatastoreRpc {
 
   @Override
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) {
-    return datastoreStub.allocateIdsCallable().call(request);
+    return datastoreStub.allocateIdsCallable().call(request, NON_TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public BeginTransactionResponse beginTransaction(BeginTransactionRequest request)
       throws DatastoreException {
-    return datastoreStub.beginTransactionCallable().call(request);
+    return datastoreStub.beginTransactionCallable().call(request, TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public CommitResponse commit(CommitRequest request) {
-    return datastoreStub.commitCallable().call(request);
+    boolean isTransaction =
+        request.getMode() == CommitRequest.Mode.TRANSACTIONAL
+            || !request.getTransaction().isEmpty()
+            || request.hasSingleUseTransaction();
+    if (isTransaction) {
+      return datastoreStub.commitCallable().call(request, TRANSACTION_CALL_CONTEXT);
+    }
+    return datastoreStub.commitCallable().call(request, NON_TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public LookupResponse lookup(LookupRequest request) {
-    return datastoreStub.lookupCallable().call(request);
+    if (request.hasReadOptions() && isTransactionalRead(request.getReadOptions())) {
+      return datastoreStub.lookupCallable().call(request, TRANSACTION_CALL_CONTEXT);
+    }
+    return datastoreStub.lookupCallable().call(request, NON_TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public ReserveIdsResponse reserveIds(ReserveIdsRequest request) {
-    return datastoreStub.reserveIdsCallable().call(request);
+    return datastoreStub.reserveIdsCallable().call(request, NON_TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public RollbackResponse rollback(RollbackRequest request) {
-    return datastoreStub.rollbackCallable().call(request);
+    return datastoreStub.rollbackCallable().call(request, TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public RunQueryResponse runQuery(RunQueryRequest request) {
-    return datastoreStub.runQueryCallable().call(request);
+    if (request.hasReadOptions() && isTransactionalRead(request.getReadOptions())) {
+      return datastoreStub.runQueryCallable().call(request, TRANSACTION_CALL_CONTEXT);
+    }
+    return datastoreStub.runQueryCallable().call(request, NON_TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public RunAggregationQueryResponse runAggregationQuery(RunAggregationQueryRequest request) {
-    return datastoreStub.runAggregationQueryCallable().call(request);
+    if (request.hasReadOptions() && isTransactionalRead(request.getReadOptions())) {
+      return datastoreStub.runAggregationQueryCallable().call(request, TRANSACTION_CALL_CONTEXT);
+    }
+    return datastoreStub.runAggregationQueryCallable().call(request, NON_TRANSACTION_CALL_CONTEXT);
+  }
+
+  private static boolean isTransactionalRead(ReadOptions readOptions) {
+    return !readOptions.getTransaction().isEmpty() || readOptions.hasNewTransaction();
   }
 
   @Override
