@@ -589,7 +589,9 @@ public final class Group extends com.google.protobuf.GeneratedMessage
    * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
    * </pre>
    *
-   * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The routeTable.
    */
@@ -615,7 +617,9 @@ public final class Group extends com.google.protobuf.GeneratedMessage
    * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
    * </pre>
    *
-   * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for routeTable.
    */
@@ -2503,7 +2507,9 @@ public final class Group extends com.google.protobuf.GeneratedMessage
      * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
      * </pre>
      *
-     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The routeTable.
      */
@@ -2528,7 +2534,9 @@ public final class Group extends com.google.protobuf.GeneratedMessage
      * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
      * </pre>
      *
-     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for routeTable.
      */
@@ -2553,7 +2561,9 @@ public final class Group extends com.google.protobuf.GeneratedMessage
      * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
      * </pre>
      *
-     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The routeTable to set.
      * @return This builder for chaining.
@@ -2577,7 +2587,9 @@ public final class Group extends com.google.protobuf.GeneratedMessage
      * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
      * </pre>
      *
-     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2597,7 +2609,9 @@ public final class Group extends com.google.protobuf.GeneratedMessage
      * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
      * </pre>
      *
-     * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for routeTable to set.
      * @return This builder for chaining.

@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkconnectivity.v1.stub;
 
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGatewayAdvertisedRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGroupsPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubSpokesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
@@ -41,10 +42,14 @@ import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
 import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
+import com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute;
+import com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.GetGroupRequest;
 import com.google.cloud.networkconnectivity.v1.GetHubRequest;
 import com.google.cloud.networkconnectivity.v1.GetRouteRequest;
@@ -52,6 +57,8 @@ import com.google.cloud.networkconnectivity.v1.GetRouteTableRequest;
 import com.google.cloud.networkconnectivity.v1.GetSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.Group;
 import com.google.cloud.networkconnectivity.v1.Hub;
+import com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest;
+import com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse;
 import com.google.cloud.networkconnectivity.v1.ListGroupsRequest;
 import com.google.cloud.networkconnectivity.v1.ListGroupsResponse;
 import com.google.cloud.networkconnectivity.v1.ListHubSpokesRequest;
@@ -74,6 +81,7 @@ import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateGroupRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
@@ -331,6 +339,70 @@ public class GrpcHubServiceStub extends HubServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<CreateGatewayAdvertisedRouteRequest, Operation>
+      createGatewayAdvertisedRouteMethodDescriptor =
+          MethodDescriptor.<CreateGatewayAdvertisedRouteRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkconnectivity.v1.HubService/CreateGatewayAdvertisedRoute")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateGatewayAdvertisedRouteRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+      getGatewayAdvertisedRouteMethodDescriptor =
+          MethodDescriptor.<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkconnectivity.v1.HubService/GetGatewayAdvertisedRoute")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGatewayAdvertisedRouteRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GatewayAdvertisedRoute.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>
+      listGatewayAdvertisedRoutesMethodDescriptor =
+          MethodDescriptor
+              .<ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkconnectivity.v1.HubService/ListGatewayAdvertisedRoutes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGatewayAdvertisedRoutesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGatewayAdvertisedRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateGatewayAdvertisedRouteRequest, Operation>
+      updateGatewayAdvertisedRouteMethodDescriptor =
+          MethodDescriptor.<UpdateGatewayAdvertisedRouteRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkconnectivity.v1.HubService/UpdateGatewayAdvertisedRoute")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateGatewayAdvertisedRouteRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteGatewayAdvertisedRouteRequest, Operation>
+      deleteGatewayAdvertisedRouteMethodDescriptor =
+          MethodDescriptor.<DeleteGatewayAdvertisedRouteRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkconnectivity.v1.HubService/DeleteGatewayAdvertisedRoute")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteGatewayAdvertisedRouteRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -440,6 +512,28 @@ public class GrpcHubServiceStub extends HubServiceStub {
   private final UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable;
   private final OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
       updateGroupOperationCallable;
+  private final UnaryCallable<CreateGatewayAdvertisedRouteRequest, Operation>
+      createGatewayAdvertisedRouteCallable;
+  private final OperationCallable<
+          CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteOperationCallable;
+  private final UnaryCallable<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+      getGatewayAdvertisedRouteCallable;
+  private final UnaryCallable<
+          ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>
+      listGatewayAdvertisedRoutesCallable;
+  private final UnaryCallable<
+          ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesPagedResponse>
+      listGatewayAdvertisedRoutesPagedCallable;
+  private final UnaryCallable<UpdateGatewayAdvertisedRouteRequest, Operation>
+      updateGatewayAdvertisedRouteCallable;
+  private final OperationCallable<
+          UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteOperationCallable;
+  private final UnaryCallable<DeleteGatewayAdvertisedRouteRequest, Operation>
+      deleteGatewayAdvertisedRouteCallable;
+  private final OperationCallable<DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+      deleteGatewayAdvertisedRouteOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -743,6 +837,69 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateGatewayAdvertisedRouteRequest, Operation>
+        createGatewayAdvertisedRouteTransportSettings =
+            GrpcCallSettings.<CreateGatewayAdvertisedRouteRequest, Operation>newBuilder()
+                .setMethodDescriptor(createGatewayAdvertisedRouteMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+        getGatewayAdvertisedRouteTransportSettings =
+            GrpcCallSettings.<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>newBuilder()
+                .setMethodDescriptor(getGatewayAdvertisedRouteMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>
+        listGatewayAdvertisedRoutesTransportSettings =
+            GrpcCallSettings
+                .<ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listGatewayAdvertisedRoutesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateGatewayAdvertisedRouteRequest, Operation>
+        updateGatewayAdvertisedRouteTransportSettings =
+            GrpcCallSettings.<UpdateGatewayAdvertisedRouteRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateGatewayAdvertisedRouteMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "gateway_advertised_route.name",
+                          String.valueOf(request.getGatewayAdvertisedRoute().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteGatewayAdvertisedRouteRequest, Operation>
+        deleteGatewayAdvertisedRouteTransportSettings =
+            GrpcCallSettings.<DeleteGatewayAdvertisedRouteRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteGatewayAdvertisedRouteMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -956,6 +1113,54 @@ public class GrpcHubServiceStub extends HubServiceStub {
         callableFactory.createOperationCallable(
             updateGroupTransportSettings,
             settings.updateGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createGatewayAdvertisedRouteCallable =
+        callableFactory.createUnaryCallable(
+            createGatewayAdvertisedRouteTransportSettings,
+            settings.createGatewayAdvertisedRouteSettings(),
+            clientContext);
+    this.createGatewayAdvertisedRouteOperationCallable =
+        callableFactory.createOperationCallable(
+            createGatewayAdvertisedRouteTransportSettings,
+            settings.createGatewayAdvertisedRouteOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getGatewayAdvertisedRouteCallable =
+        callableFactory.createUnaryCallable(
+            getGatewayAdvertisedRouteTransportSettings,
+            settings.getGatewayAdvertisedRouteSettings(),
+            clientContext);
+    this.listGatewayAdvertisedRoutesCallable =
+        callableFactory.createUnaryCallable(
+            listGatewayAdvertisedRoutesTransportSettings,
+            settings.listGatewayAdvertisedRoutesSettings(),
+            clientContext);
+    this.listGatewayAdvertisedRoutesPagedCallable =
+        callableFactory.createPagedCallable(
+            listGatewayAdvertisedRoutesTransportSettings,
+            settings.listGatewayAdvertisedRoutesSettings(),
+            clientContext);
+    this.updateGatewayAdvertisedRouteCallable =
+        callableFactory.createUnaryCallable(
+            updateGatewayAdvertisedRouteTransportSettings,
+            settings.updateGatewayAdvertisedRouteSettings(),
+            clientContext);
+    this.updateGatewayAdvertisedRouteOperationCallable =
+        callableFactory.createOperationCallable(
+            updateGatewayAdvertisedRouteTransportSettings,
+            settings.updateGatewayAdvertisedRouteOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteGatewayAdvertisedRouteCallable =
+        callableFactory.createUnaryCallable(
+            deleteGatewayAdvertisedRouteTransportSettings,
+            settings.deleteGatewayAdvertisedRouteSettings(),
+            clientContext);
+    this.deleteGatewayAdvertisedRouteOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteGatewayAdvertisedRouteTransportSettings,
+            settings.deleteGatewayAdvertisedRouteOperationSettings(),
             clientContext,
             operationsStub);
     this.listLocationsCallable =
@@ -1202,6 +1407,62 @@ public class GrpcHubServiceStub extends HubServiceStub {
   public OperationCallable<UpdateGroupRequest, Group, OperationMetadata>
       updateGroupOperationCallable() {
     return updateGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateGatewayAdvertisedRouteRequest, Operation>
+      createGatewayAdvertisedRouteCallable() {
+    return createGatewayAdvertisedRouteCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteOperationCallable() {
+    return createGatewayAdvertisedRouteOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+      getGatewayAdvertisedRouteCallable() {
+    return getGatewayAdvertisedRouteCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>
+      listGatewayAdvertisedRoutesCallable() {
+    return listGatewayAdvertisedRoutesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesPagedResponse>
+      listGatewayAdvertisedRoutesPagedCallable() {
+    return listGatewayAdvertisedRoutesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGatewayAdvertisedRouteRequest, Operation>
+      updateGatewayAdvertisedRouteCallable() {
+    return updateGatewayAdvertisedRouteCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteOperationCallable() {
+    return updateGatewayAdvertisedRouteOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteGatewayAdvertisedRouteRequest, Operation>
+      deleteGatewayAdvertisedRouteCallable() {
+    return deleteGatewayAdvertisedRouteCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+      deleteGatewayAdvertisedRouteOperationCallable() {
+    return deleteGatewayAdvertisedRouteOperationCallable;
   }
 
   @Override

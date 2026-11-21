@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkconnectivity.v1.stub;
 
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGatewayAdvertisedRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGroupsPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubSpokesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
@@ -36,10 +37,14 @@ import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
 import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
+import com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute;
+import com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.GetGroupRequest;
 import com.google.cloud.networkconnectivity.v1.GetHubRequest;
 import com.google.cloud.networkconnectivity.v1.GetRouteRequest;
@@ -47,6 +52,8 @@ import com.google.cloud.networkconnectivity.v1.GetRouteTableRequest;
 import com.google.cloud.networkconnectivity.v1.GetSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.Group;
 import com.google.cloud.networkconnectivity.v1.Hub;
+import com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest;
+import com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse;
 import com.google.cloud.networkconnectivity.v1.ListGroupsRequest;
 import com.google.cloud.networkconnectivity.v1.ListGroupsResponse;
 import com.google.cloud.networkconnectivity.v1.ListHubSpokesRequest;
@@ -69,6 +76,7 @@ import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateGroupRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
@@ -274,6 +282,61 @@ public abstract class HubServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateGroupRequest, Operation> updateGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: updateGroupCallable()");
+  }
+
+  public OperationCallable<
+          CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createGatewayAdvertisedRouteOperationCallable()");
+  }
+
+  public UnaryCallable<CreateGatewayAdvertisedRouteRequest, Operation>
+      createGatewayAdvertisedRouteCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createGatewayAdvertisedRouteCallable()");
+  }
+
+  public UnaryCallable<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+      getGatewayAdvertisedRouteCallable() {
+    throw new UnsupportedOperationException("Not implemented: getGatewayAdvertisedRouteCallable()");
+  }
+
+  public UnaryCallable<ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesPagedResponse>
+      listGatewayAdvertisedRoutesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listGatewayAdvertisedRoutesPagedCallable()");
+  }
+
+  public UnaryCallable<ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>
+      listGatewayAdvertisedRoutesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listGatewayAdvertisedRoutesCallable()");
+  }
+
+  public OperationCallable<
+          UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGatewayAdvertisedRouteOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateGatewayAdvertisedRouteRequest, Operation>
+      updateGatewayAdvertisedRouteCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateGatewayAdvertisedRouteCallable()");
+  }
+
+  public OperationCallable<DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+      deleteGatewayAdvertisedRouteOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteGatewayAdvertisedRouteOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteGatewayAdvertisedRouteRequest, Operation>
+      deleteGatewayAdvertisedRouteCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteGatewayAdvertisedRouteCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

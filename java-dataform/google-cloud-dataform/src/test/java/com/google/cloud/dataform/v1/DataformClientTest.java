@@ -2461,6 +2461,126 @@ public class DataformClientTest {
   }
 
   @Test
+  public void createWorkspaceLongRunningTest() throws Exception {
+    Workspace expectedResponse =
+        Workspace.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWorkspaceLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataform.addResponse(resultOperation);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    Workspace workspace = Workspace.newBuilder().build();
+    String workspaceId = "workspaceId466560144";
+
+    Workspace actualResponse =
+        client.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWorkspaceRequest actualRequest = ((CreateWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(workspace, actualRequest.getWorkspace());
+    Assert.assertEquals(workspaceId, actualRequest.getWorkspaceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWorkspaceLongRunningExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      Workspace workspace = Workspace.newBuilder().build();
+      String workspaceId = "workspaceId466560144";
+      client.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createWorkspaceLongRunningTest2() throws Exception {
+    Workspace expectedResponse =
+        Workspace.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setDisableMoves(true)
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createWorkspaceLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataform.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Workspace workspace = Workspace.newBuilder().build();
+    String workspaceId = "workspaceId466560144";
+
+    Workspace actualResponse =
+        client.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateWorkspaceRequest actualRequest = ((CreateWorkspaceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(workspace, actualRequest.getWorkspace());
+    Assert.assertEquals(workspaceId, actualRequest.getWorkspaceId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createWorkspaceLongRunningExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Workspace workspace = Workspace.newBuilder().build();
+      String workspaceId = "workspaceId466560144";
+      client.createWorkspaceLongRunningAsync(parent, workspace, workspaceId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void deleteWorkspaceTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockDataform.addResponse(expectedResponse);

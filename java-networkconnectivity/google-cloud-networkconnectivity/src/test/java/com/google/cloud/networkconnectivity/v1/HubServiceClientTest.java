@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkconnectivity.v1;
 
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGatewayAdvertisedRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGroupsPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubSpokesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
@@ -217,6 +218,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -267,6 +269,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -317,6 +320,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -381,6 +385,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -445,6 +450,7 @@ public class HubServiceClientTest {
             .setPolicyMode(PolicyMode.forNumber(0))
             .setPresetTopology(PresetTopology.forNumber(0))
             .setExportPsc(true)
+            .setExportPscConfig(Hub.ExportPscConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -852,6 +858,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setGateway(Gateway.newBuilder().build())
             .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
@@ -907,6 +914,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setGateway(Gateway.newBuilder().build())
             .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
@@ -962,6 +970,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setGateway(Gateway.newBuilder().build())
             .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
@@ -1031,6 +1040,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setGateway(Gateway.newBuilder().build())
             .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
@@ -1100,6 +1110,7 @@ public class HubServiceClientTest {
             .setLinkedInterconnectAttachments(LinkedInterconnectAttachments.newBuilder().build())
             .setLinkedRouterApplianceInstances(LinkedRouterApplianceInstances.newBuilder().build())
             .setLinkedVpcNetwork(LinkedVpcNetwork.newBuilder().build())
+            .setGateway(Gateway.newBuilder().build())
             .setLinkedProducerVpcNetwork(LinkedProducerVpcNetwork.newBuilder().build())
             .setUniqueId("uniqueId-294460212")
             .setState(State.forNumber(0))
@@ -2127,6 +2138,7 @@ public class HubServiceClientTest {
             .setNextHopVpnTunnel(NextHopVPNTunnel.newBuilder().build())
             .setNextHopRouterApplianceInstance(NextHopRouterApplianceInstance.newBuilder().build())
             .setNextHopInterconnectAttachment(NextHopInterconnectAttachment.newBuilder().build())
+            .setNextHopSpoke(NextHopSpoke.newBuilder().build())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -2180,6 +2192,7 @@ public class HubServiceClientTest {
             .setNextHopVpnTunnel(NextHopVPNTunnel.newBuilder().build())
             .setNextHopRouterApplianceInstance(NextHopRouterApplianceInstance.newBuilder().build())
             .setNextHopInterconnectAttachment(NextHopInterconnectAttachment.newBuilder().build())
+            .setNextHopSpoke(NextHopSpoke.newBuilder().build())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -2401,7 +2414,7 @@ public class HubServiceClientTest {
             .setUid("uid115792")
             .setState(State.forNumber(0))
             .setAutoAccept(AutoAccept.newBuilder().build())
-            .setRouteTable("routeTable902012677")
+            .setRouteTable(RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -2447,7 +2460,7 @@ public class HubServiceClientTest {
             .setUid("uid115792")
             .setState(State.forNumber(0))
             .setAutoAccept(AutoAccept.newBuilder().build())
-            .setRouteTable("routeTable902012677")
+            .setRouteTable(RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString())
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -2581,7 +2594,7 @@ public class HubServiceClientTest {
             .setUid("uid115792")
             .setState(State.forNumber(0))
             .setAutoAccept(AutoAccept.newBuilder().build())
-            .setRouteTable("routeTable902012677")
+            .setRouteTable(RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2618,6 +2631,496 @@ public class HubServiceClientTest {
       Group group = Group.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateGroupAsync(group, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createGatewayAdvertisedRouteTest() throws Exception {
+    GatewayAdvertisedRoute expectedResponse =
+        GatewayAdvertisedRoute.newBuilder()
+            .setName(
+                GatewayAdvertisedRouteName.of(
+                        "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
+            .setIpRange("ipRange1983798358")
+            .setPriority(-1165461084)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGatewayAdvertisedRouteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    SpokeName parent = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+    GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+    String gatewayAdvertisedRouteId = "gatewayAdvertisedRouteId1531070339";
+
+    GatewayAdvertisedRoute actualResponse =
+        client
+            .createGatewayAdvertisedRouteAsync(
+                parent, gatewayAdvertisedRoute, gatewayAdvertisedRouteId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGatewayAdvertisedRouteRequest actualRequest =
+        ((CreateGatewayAdvertisedRouteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(gatewayAdvertisedRoute, actualRequest.getGatewayAdvertisedRoute());
+    Assert.assertEquals(gatewayAdvertisedRouteId, actualRequest.getGatewayAdvertisedRouteId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGatewayAdvertisedRouteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      SpokeName parent = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+      GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+      String gatewayAdvertisedRouteId = "gatewayAdvertisedRouteId1531070339";
+      client
+          .createGatewayAdvertisedRouteAsync(
+              parent, gatewayAdvertisedRoute, gatewayAdvertisedRouteId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createGatewayAdvertisedRouteTest2() throws Exception {
+    GatewayAdvertisedRoute expectedResponse =
+        GatewayAdvertisedRoute.newBuilder()
+            .setName(
+                GatewayAdvertisedRouteName.of(
+                        "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
+            .setIpRange("ipRange1983798358")
+            .setPriority(-1165461084)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createGatewayAdvertisedRouteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+    String gatewayAdvertisedRouteId = "gatewayAdvertisedRouteId1531070339";
+
+    GatewayAdvertisedRoute actualResponse =
+        client
+            .createGatewayAdvertisedRouteAsync(
+                parent, gatewayAdvertisedRoute, gatewayAdvertisedRouteId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateGatewayAdvertisedRouteRequest actualRequest =
+        ((CreateGatewayAdvertisedRouteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(gatewayAdvertisedRoute, actualRequest.getGatewayAdvertisedRoute());
+    Assert.assertEquals(gatewayAdvertisedRouteId, actualRequest.getGatewayAdvertisedRouteId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createGatewayAdvertisedRouteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+      String gatewayAdvertisedRouteId = "gatewayAdvertisedRouteId1531070339";
+      client
+          .createGatewayAdvertisedRouteAsync(
+              parent, gatewayAdvertisedRoute, gatewayAdvertisedRouteId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getGatewayAdvertisedRouteTest() throws Exception {
+    GatewayAdvertisedRoute expectedResponse =
+        GatewayAdvertisedRoute.newBuilder()
+            .setName(
+                GatewayAdvertisedRouteName.of(
+                        "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
+            .setIpRange("ipRange1983798358")
+            .setPriority(-1165461084)
+            .build();
+    mockHubService.addResponse(expectedResponse);
+
+    GatewayAdvertisedRouteName name =
+        GatewayAdvertisedRouteName.of(
+            "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]");
+
+    GatewayAdvertisedRoute actualResponse = client.getGatewayAdvertisedRoute(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGatewayAdvertisedRouteRequest actualRequest =
+        ((GetGatewayAdvertisedRouteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGatewayAdvertisedRouteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      GatewayAdvertisedRouteName name =
+          GatewayAdvertisedRouteName.of(
+              "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]");
+      client.getGatewayAdvertisedRoute(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGatewayAdvertisedRouteTest2() throws Exception {
+    GatewayAdvertisedRoute expectedResponse =
+        GatewayAdvertisedRoute.newBuilder()
+            .setName(
+                GatewayAdvertisedRouteName.of(
+                        "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
+            .setIpRange("ipRange1983798358")
+            .setPriority(-1165461084)
+            .build();
+    mockHubService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GatewayAdvertisedRoute actualResponse = client.getGatewayAdvertisedRoute(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGatewayAdvertisedRouteRequest actualRequest =
+        ((GetGatewayAdvertisedRouteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGatewayAdvertisedRouteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getGatewayAdvertisedRoute(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGatewayAdvertisedRoutesTest() throws Exception {
+    GatewayAdvertisedRoute responsesElement = GatewayAdvertisedRoute.newBuilder().build();
+    ListGatewayAdvertisedRoutesResponse expectedResponse =
+        ListGatewayAdvertisedRoutesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGatewayAdvertisedRoutes(Arrays.asList(responsesElement))
+            .build();
+    mockHubService.addResponse(expectedResponse);
+
+    SpokeName parent = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+
+    ListGatewayAdvertisedRoutesPagedResponse pagedListResponse =
+        client.listGatewayAdvertisedRoutes(parent);
+
+    List<GatewayAdvertisedRoute> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGatewayAdvertisedRoutesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGatewayAdvertisedRoutesRequest actualRequest =
+        ((ListGatewayAdvertisedRoutesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGatewayAdvertisedRoutesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      SpokeName parent = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+      client.listGatewayAdvertisedRoutes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listGatewayAdvertisedRoutesTest2() throws Exception {
+    GatewayAdvertisedRoute responsesElement = GatewayAdvertisedRoute.newBuilder().build();
+    ListGatewayAdvertisedRoutesResponse expectedResponse =
+        ListGatewayAdvertisedRoutesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllGatewayAdvertisedRoutes(Arrays.asList(responsesElement))
+            .build();
+    mockHubService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListGatewayAdvertisedRoutesPagedResponse pagedListResponse =
+        client.listGatewayAdvertisedRoutes(parent);
+
+    List<GatewayAdvertisedRoute> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getGatewayAdvertisedRoutesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListGatewayAdvertisedRoutesRequest actualRequest =
+        ((ListGatewayAdvertisedRoutesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listGatewayAdvertisedRoutesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listGatewayAdvertisedRoutes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateGatewayAdvertisedRouteTest() throws Exception {
+    GatewayAdvertisedRoute expectedResponse =
+        GatewayAdvertisedRoute.newBuilder()
+            .setName(
+                GatewayAdvertisedRouteName.of(
+                        "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
+            .setIpRange("ipRange1983798358")
+            .setPriority(-1165461084)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateGatewayAdvertisedRouteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GatewayAdvertisedRoute actualResponse =
+        client.updateGatewayAdvertisedRouteAsync(gatewayAdvertisedRoute, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGatewayAdvertisedRouteRequest actualRequest =
+        ((UpdateGatewayAdvertisedRouteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(gatewayAdvertisedRoute, actualRequest.getGatewayAdvertisedRoute());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGatewayAdvertisedRouteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      GatewayAdvertisedRoute gatewayAdvertisedRoute = GatewayAdvertisedRoute.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGatewayAdvertisedRouteAsync(gatewayAdvertisedRoute, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGatewayAdvertisedRouteTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGatewayAdvertisedRouteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    GatewayAdvertisedRouteName name =
+        GatewayAdvertisedRouteName.of(
+            "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]");
+
+    client.deleteGatewayAdvertisedRouteAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGatewayAdvertisedRouteRequest actualRequest =
+        ((DeleteGatewayAdvertisedRouteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGatewayAdvertisedRouteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      GatewayAdvertisedRouteName name =
+          GatewayAdvertisedRouteName.of(
+              "[PROJECT]", "[LOCATION]", "[SPOKE]", "[GATEWAY_ADVERTISED_ROUTE]");
+      client.deleteGatewayAdvertisedRouteAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteGatewayAdvertisedRouteTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteGatewayAdvertisedRouteTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockHubService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteGatewayAdvertisedRouteAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockHubService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteGatewayAdvertisedRouteRequest actualRequest =
+        ((DeleteGatewayAdvertisedRouteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteGatewayAdvertisedRouteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHubService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteGatewayAdvertisedRouteAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

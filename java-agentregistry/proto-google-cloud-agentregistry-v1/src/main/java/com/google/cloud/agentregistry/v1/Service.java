@@ -83,11 +83,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the agent spec content.
+     * Required. Immutable. The type of the agent spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -98,11 +98,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the agent spec content.
+     * Required. Immutable. The type of the agent spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The type.
@@ -383,11 +383,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the agent spec content.
+     * Required. Immutable. The type of the agent spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -401,11 +401,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the agent spec content.
+     * Required. Immutable. The type of the agent spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The type.
@@ -837,11 +837,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the agent spec content.
+       * Required. Immutable. The type of the agent spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The enum numeric value on the wire for type.
@@ -855,11 +855,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the agent spec content.
+       * Required. Immutable. The type of the agent spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @param value The enum numeric value on the wire for type to set.
@@ -876,11 +876,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the agent spec content.
+       * Required. Immutable. The type of the agent spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The type.
@@ -898,11 +898,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the agent spec content.
+       * Required. Immutable. The type of the agent spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @param value The type to set.
@@ -922,11 +922,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the agent spec content.
+       * Required. Immutable. The type of the agent spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.AgentSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return This builder for chaining.
@@ -1207,11 +1207,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the MCP Server spec content.
+     * Required. Immutable. The type of the MCP Server spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -1222,11 +1222,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the MCP Server spec content.
+     * Required. Immutable. The type of the MCP Server spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The type.
@@ -1330,7 +1330,8 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the MCP Server spec.
+     * The type of the MCP Server spec. Additional values may be added in the
+     * future.
      * </pre>
      *
      * Protobuf enum {@code google.cloud.agentregistry.v1.Service.McpServerSpec.Type}
@@ -1507,11 +1508,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the MCP Server spec content.
+     * Required. Immutable. The type of the MCP Server spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -1525,11 +1526,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the MCP Server spec content.
+     * Required. Immutable. The type of the MCP Server spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The type.
@@ -1961,11 +1962,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the MCP Server spec content.
+       * Required. Immutable. The type of the MCP Server spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The enum numeric value on the wire for type.
@@ -1979,11 +1980,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the MCP Server spec content.
+       * Required. Immutable. The type of the MCP Server spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @param value The enum numeric value on the wire for type to set.
@@ -2000,11 +2001,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the MCP Server spec content.
+       * Required. Immutable. The type of the MCP Server spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The type.
@@ -2022,11 +2023,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the MCP Server spec content.
+       * Required. Immutable. The type of the MCP Server spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @param value The type to set.
@@ -2046,11 +2047,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the MCP Server spec content.
+       * Required. Immutable. The type of the MCP Server spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.McpServerSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return This builder for chaining.
@@ -2331,11 +2332,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the endpoint spec content.
+     * Required. Immutable. The type of the endpoint spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -2346,11 +2347,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the endpoint spec content.
+     * Required. Immutable. The type of the endpoint spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The type.
@@ -2451,7 +2452,8 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The type of the endpoint spec.
+     * The type of the endpoint spec. Additional values may be added in the
+     * future.
      * </pre>
      *
      * Protobuf enum {@code google.cloud.agentregistry.v1.Service.EndpointSpec.Type}
@@ -2603,11 +2605,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the endpoint spec content.
+     * Required. Immutable. The type of the endpoint spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -2621,11 +2623,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The type of the endpoint spec content.
+     * Required. Immutable. The type of the endpoint spec content.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The type.
@@ -3054,11 +3056,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the endpoint spec content.
+       * Required. Immutable. The type of the endpoint spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The enum numeric value on the wire for type.
@@ -3072,11 +3074,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the endpoint spec content.
+       * Required. Immutable. The type of the endpoint spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @param value The enum numeric value on the wire for type to set.
@@ -3093,11 +3095,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the endpoint spec content.
+       * Required. Immutable. The type of the endpoint spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return The type.
@@ -3115,11 +3117,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the endpoint spec content.
+       * Required. Immutable. The type of the endpoint spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @param value The type to set.
@@ -3139,11 +3141,11 @@ public final class Service extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. The type of the endpoint spec content.
+       * Required. Immutable. The type of the endpoint spec content.
        * </pre>
        *
        * <code>
-       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * .google.cloud.agentregistry.v1.Service.EndpointSpec.Type type = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
        * </code>
        *
        * @return This builder for chaining.
