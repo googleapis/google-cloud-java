@@ -430,7 +430,7 @@ public class FieldValue implements Serializable {
    *
    * <p>The parameter {@code interval} should be an interval in the canonical format: "[sign]Y-M
    * [sign]D [sign]H:M:S[.F]". More details <a href=
-   * "https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#canonical_format_3">
+   * "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types#canonical_format_3">
    * here</a>
    *
    * @throws IllegalArgumentException if the {@code interval} is not a valid interval

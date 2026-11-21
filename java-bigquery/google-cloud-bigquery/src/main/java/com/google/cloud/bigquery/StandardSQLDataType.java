@@ -34,7 +34,8 @@ public abstract class StandardSQLDataType implements Serializable {
 
     /**
      * Sets the top-level type of this data type. Can be any standard SQL data type. For more
-     * information, see https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types
+     * information, see
+     * https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types
      */
     public abstract Builder setTypeKind(String typeKind);
 
@@ -46,7 +47,7 @@ public abstract class StandardSQLDataType implements Serializable {
    * Returns the type kind of the data type.
    *
    * <p>Can be any standard SQL data type. For more information, see
-   * https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types
+   * https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types
    */
   public abstract String getTypeKind();
 

@@ -90,7 +90,7 @@ public class DatasetInfo implements Serializable {
     /**
      * Sets the dataset's access control configuration.
      *
-     * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/access-control">Access Control</a>
      */
     public abstract Builder setAcl(List<Acl> acl);
 
@@ -125,7 +125,8 @@ public class DatasetInfo implements Serializable {
      * Sets the geographic location where the dataset should reside. This property is experimental
      * and might be subject to change or removed.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#location">Dataset
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/datasets#Dataset.FIELDS.location">Dataset
      *     Location</a>
      */
     public abstract Builder setLocation(String location);
@@ -190,13 +191,13 @@ public class DatasetInfo implements Serializable {
     public abstract Builder setDefaultCollation(String defaultCollation);
 
     /**
-     * Optional. The <a href="https://cloud.google.com/bigquery/docs/tags">tags</a> attached to this
-     * dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format,
-     * for example "123456789012/environment" where 123456789012 is the ID of the parent
+     * Optional. The <a href="https://docs.cloud.google.com/bigquery/docs/tags">tags</a> attached to
+     * this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced
+     * format, for example "123456789012/environment" where 123456789012 is the ID of the parent
      * organization or project resource for this tag key. Tag value is expected to be the short
      * name, for example "Production".
      *
-     * @see <a href="https://cloud.google.com/iam/docs/tags-access-control#definitions">Tag
+     * @see <a href="https://docs.cloud.google.com/iam/docs/tags-access-control#definitions">Tag
      *     definitions</a> for more details.
      * @param resourceTags resourceTags or {@code null} for none
      */
@@ -474,8 +475,8 @@ public class DatasetInfo implements Serializable {
    * bigquery.update(builder.build());  // API request.
    * }</pre>
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/access-control">Access Control</a>
-   * @see <a href="https://cloud.google.com/bigquery/docs/conditions">Control access with IAM
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/access-control">Access Control</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/conditions">Control access with IAM
    *     Conditions</a>
    */
   public List<Acl> getAcl() {
@@ -543,9 +544,7 @@ public class DatasetInfo implements Serializable {
   /**
    * Returns the geographic location where the dataset should reside.
    *
-   * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
-   *     Dataset Location</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/locations">Dataset Location</a>
    */
   public String getLocation() {
     return location;
@@ -562,7 +561,8 @@ public class DatasetInfo implements Serializable {
   /**
    * Return a map for labels applied to the dataset.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/labeling-datasets">Labeling Datasets</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/adding-labels#adding_dataset_labels">
+   *     Labeling Datasets</a>
    */
   public Map<String, String> getLabels() {
     return labels.userMap();
@@ -593,13 +593,13 @@ public class DatasetInfo implements Serializable {
   }
 
   /**
-   * Optional. The <a href="https://cloud.google.com/bigquery/docs/tags">tags</a> attached to this
-   * dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for
-   * example "123456789012/environment" where 123456789012 is the ID of the parent organization or
-   * project resource for this tag key. Tag value is expected to be the short name, for example
+   * Optional. The <a href="https://docs.cloud.google.com/bigquery/docs/tags">tags</a> attached to
+   * this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format,
+   * for example "123456789012/environment" where 123456789012 is the ID of the parent organization
+   * or project resource for this tag key. Tag value is expected to be the short name, for example
    * "Production".
    *
-   * @see <a href="https://cloud.google.com/iam/docs/tags-access-control#definitions">Tag
+   * @see <a href="https://docs.cloud.google.com/iam/docs/tags-access-control#definitions">Tag
    *     definitions</a> for more details.
    * @return value or {@code null} for none
    */

@@ -36,7 +36,7 @@ import java.util.Objects;
  * the delay of running a load job. There are several important trade-offs to consider before
  * choosing an approach.
  *
- * @see <a href="https://cloud.google.com/bigquery/streaming-data-into-bigquery">Streaming Data into
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/write-api-rest">Streaming Data into
  *     BigQuery</a>
  */
 public final class InsertAllRequest implements Serializable {
@@ -72,7 +72,7 @@ public final class InsertAllRequest implements Serializable {
    * RowToInsert row = RowToInsert.of("rowId", rowContent);
    * }</pre>
    *
-   * @see <a href ="https://cloud.google.com/bigquery/streaming-data-into-bigquery#dataconsistency">
+   * @see <a href ="https://docs.cloud.google.com/bigquery/docs/write-api-rest#dataconsistency">
    *     Data Consistency</a>
    */
   public static class RowToInsert implements Serializable {
@@ -277,8 +277,7 @@ public final class InsertAllRequest implements Serializable {
      * }
      * }</pre>
      *
-     * @see <a
-     *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/write-api-rest#template-tables">
      *     Template Tables</a>
      */
     public Builder setTemplateSuffix(String templateSuffix) {
@@ -342,7 +341,7 @@ public final class InsertAllRequest implements Serializable {
    * }
    * }</pre>
    *
-   * @see <a href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/write-api-rest#template-tables">
    *     Template Tables</a>
    */
   public String getTemplateSuffix() {
