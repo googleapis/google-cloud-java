@@ -53,7 +53,7 @@ public abstract class Expression {
   /** Constructor is package-private to prevent extension. */
   Expression() {}
 
-  private static Expression toExprOrConstant(Object o) {
+  static Expression toExprOrConstant(Object o) {
     return o instanceof Expression ? (Expression) o : new Constant(o);
   }
 
