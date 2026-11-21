@@ -778,6 +778,79 @@ public final class BidiUploadTest {
     }
 
     @Test
+    public void onResponse_writeHandleOnly() {
+      BidiWriteHandle handle =
+          BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("new-handle")).build();
+      AppendableUploadState state = getAppendable();
+      BidiUploadTestUtils.sinkToList(state);
+      runExpectNoException(
+          state, BidiWriteObjectResponse.newBuilder().setWriteHandle(handle).build());
+      assertThat(state.writeHandle).isEqualTo(handle);
+      assertThat(state.confirmedBytes).isEqualTo(0);
+    }
+
+    @Test
+    public void awaitAck_flushWithIntermediateWriteHandleAndSmallerPersistedSize()
+        throws InterruptedException, ExecutionException, TimeoutException {
+      SettableApiFuture<BidiWriteObjectResponse> resultFuture = SettableApiFuture.create();
+      AppendableUploadState state =
+          appendableNew(
+              appendRequestNew,
+              GrpcCallContext::createDefault,
+              50_000,
+              resultFuture,
+              Crc32cValue.zero());
+      state.enqueueFirstMessageAndGetGrpcCallContext();
+      BidiUploadTestUtils.sinkToList(state);
+      assertThat(state.onResponse(resourceWithSize(0))).isNull();
+
+      assertThat(state.offer(createSegment(4))).isTrue();
+      assertThat(
+              state.offer(
+                  BidiWriteObjectRequest.newBuilder()
+                      .setWriteOffset(4)
+                      .setFlush(true)
+                      .setStateLookup(true)
+                      .build()))
+          .isTrue();
+      BidiUploadTestUtils.sinkToList(state);
+
+      BidiWriteHandle handle =
+          BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("flush-handle")).build();
+      ExecutorService exec = Executors.newSingleThreadExecutor();
+      try {
+        Future<Integer> f =
+            exec.submit(
+                () -> {
+                  try {
+                    Thread.sleep(10);
+                    assertThat(
+                            state.onResponse(
+                                BidiWriteObjectResponse.newBuilder()
+                                    .setWriteHandle(handle)
+                                    .build()))
+                        .isNull();
+                    Thread.sleep(10);
+                    assertThat(state.onResponse(incremental(2))).isNull();
+                    Thread.sleep(10);
+                    assertThat(state.onResponse(incremental(4))).isNull();
+                    return 3;
+                  } catch (Throwable t) {
+                    resultFuture.setException(t);
+                    throw new RuntimeException(t);
+                  }
+                });
+
+        state.awaitAck(4);
+        assertThat(f.get(3, TimeUnit.SECONDS)).isEqualTo(3);
+        assertThat(state.writeHandle).isEqualTo(handle);
+        assertThat(state.confirmedBytes).isEqualTo(4);
+      } finally {
+        exec.shutdownNow();
+      }
+    }
+
+    @Test
     public void onResponse_notFinalizing_incremental_ackEq() {
       AppendableUploadState state = getAppendable();
       BidiUploadTestUtils.sinkToList(state);
