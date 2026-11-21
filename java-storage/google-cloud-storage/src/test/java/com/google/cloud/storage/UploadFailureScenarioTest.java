@@ -26,8 +26,10 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.gax.grpc.GrpcCallContext;
@@ -39,6 +41,7 @@ import com.google.cloud.storage.it.ChecksummedTestContent;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
+import com.google.storage.v2.BidiWriteObjectRequest;
 import com.google.storage.v2.ChecksummedData;
 import com.google.storage.v2.Object;
 import com.google.storage.v2.ObjectChecksums;
@@ -49,6 +52,8 @@ import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import io.grpc.internal.GrpcUtil;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import org.junit.Test;
@@ -284,6 +289,81 @@ public final class UploadFailureScenarioTest {
         () -> assertThat(se).hasMessageThat().contains("upload_id: "),
         () -> assertThat(se).hasMessageThat().contains("0:262144"),
         () -> assertThat(se).hasMessageThat().doesNotContain("WriteObjectResponse"));
+  }
+
+  @Test
+  public void json_uploadIdOmitted() throws Exception {
+    String uploadId =
+        "http://localhost:80980/upload/storage/v1/b/b/o?upload_id=abc123&X-Goog-Signature=def456";
+    HttpRequest req =
+        new MockHttpTransport()
+            .createRequestFactory()
+            .buildPutRequest(new GenericUrl(uploadId), new EmptyContent());
+    req.getHeaders().setContentLength(0L);
+
+    HttpResponse resp = req.execute();
+    resp.getHeaders().set("X-GUploader-UploadID", "abc123").setContentLength(0L);
+
+    StorageException se =
+        UploadFailureScenario.SCENARIO_0.toStorageException(uploadId, resp, null, () -> null);
+
+    assertAll(
+        () -> assertThat(se).hasMessageThat().doesNotContain("abc123"),
+        () -> assertThat(se).hasMessageThat().doesNotContain("def456"),
+        () ->
+            assertThat(se)
+                .hasMessageThat()
+                .contains("PUT http://localhost:80980/upload/storage/v1/b/b/o\n"));
+  }
+
+  @Test
+  public void json_causeWithoutUploadId() throws Exception {
+    String uploadId =
+        "http://localhost:80980/upload/storage/v1/b/b/o?uploadType=resumable&upload_id=abc123";
+    HttpRequest req =
+        new MockHttpTransport()
+            .createRequestFactory()
+            .buildPutRequest(new GenericUrl(uploadId), new EmptyContent());
+    req.getHeaders().setContentLength(0L);
+    HttpResponse resp = req.execute();
+    HttpHeaders headers = new HttpHeaders().set("X-GUploader-UploadID", "abc123");
+    HttpResponseException cause =
+        new HttpResponseException.Builder(503, "Service Unavailable", headers)
+            .setMessage("503 Service Unavailable\nPUT " + uploadId)
+            .setContent("body")
+            .build();
+
+    StorageException se = UploadFailureScenario.toStorageException(resp, cause, uploadId);
+    StringWriter trace = new StringWriter();
+    se.printStackTrace(new PrintWriter(trace));
+
+    assertAll(
+        () -> assertThat(se).hasCauseThat().isInstanceOf(HttpResponseException.class),
+        () -> assertThat(((HttpResponseException) se.getCause()).getStatusCode()).isEqualTo(503),
+        () -> assertThat(((HttpResponseException) se.getCause()).getContent()).isEqualTo("body"),
+        () -> assertThat(se.getCause().getStackTrace()).isEqualTo(cause.getStackTrace()),
+        () -> assertThat(trace.toString()).doesNotContain("abc123"),
+        () ->
+            assertThat(((HttpResponseException) se.getCause()).getHeaders().toString())
+                .doesNotContain("abc123"));
+  }
+
+  @Test
+  public void grpc_uploadIdOmitted() throws Exception {
+    WriteObjectRequest req = WriteObjectRequest.newBuilder().setUploadId("abc123").build();
+    BidiWriteObjectRequest bidiReq =
+        BidiWriteObjectRequest.newBuilder().setUploadId("abc123").build();
+    GrpcCallContext context = Retrying.newCallContext();
+
+    StorageException se = SCENARIO_1.toStorageException(ImmutableList.of(req), null, context, null);
+    StorageException bidiSe =
+        SCENARIO_1.toStorageException(ImmutableList.of(bidiReq), null, context, null);
+
+    assertAll(
+        () -> assertThat(se).hasMessageThat().doesNotContain("abc123"),
+        () -> assertThat(se).hasMessageThat().contains("upload_id: <omitted>"),
+        () -> assertThat(bidiSe).hasMessageThat().doesNotContain("abc123"),
+        () -> assertThat(bidiSe).hasMessageThat().contains("upload_id: <omitted>"));
   }
 
   private static final class Cause extends RuntimeException {

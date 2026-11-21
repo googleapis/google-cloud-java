@@ -39,6 +39,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 import javax.annotation.ParametersAreNonnullByDefault;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -94,11 +95,13 @@ enum UploadFailureScenario {
           .or(startsWith("X-Goog-Stored-"))
           .or(matches("X-Goog-GCS-Idempotency-Token"))
           .or(matches("X-Goog-Hash"))
-          .or(matches("X-Goog-request-params"))
-          .or(matches("X-GUploader-UploadID"));
+          .or(matches("X-Goog-request-params"));
 
   private static final Predicate<Map.Entry<String, ?>> includeHeader =
       e -> includedHeaders.test(e.getKey());
+
+  private static final Pattern URL_QUERY = Pattern.compile("(https?://[^\\s?]*)\\?\\S*");
+  private static final String OMITTED = "<omitted>";
 
   private final int code;
   @Nullable private final String reason;
@@ -249,7 +252,7 @@ enum UploadFailureScenario {
     StringBuilder sb = new StringBuilder();
     sb.append(message);
     // add request context
-    sb.append("\n").append(PREFIX_O).append("PUT ").append(uploadId);
+    sb.append("\n").append(PREFIX_O).append("PUT ").append(withoutQuery(uploadId));
     recordHeaderTo(resp.getRequest().getHeaders(), PREFIX_O, sb);
 
     sb.append("\n").append(PREFIX_X);
@@ -286,11 +289,33 @@ enum UploadFailureScenario {
       sb.append("\n").append(PREFIX_X);
     }
     StorageException storageException =
-        new StorageException(overrideCode, sb.toString(), reason, cause);
+        new StorageException(overrideCode, sb.toString(), reason, withoutUploadId(cause));
     if (suppress != null) {
       storageException.addSuppressed(suppress);
     }
     return storageException;
+  }
+
+  private static String withoutQuery(String s) {
+    return URL_QUERY.matcher(s).replaceAll("$1");
+  }
+
+  private static @Nullable Throwable withoutUploadId(@Nullable Throwable t) {
+    if (!(t instanceof HttpResponseException)) {
+      return t;
+    }
+    HttpResponseException e = (HttpResponseException) t;
+    HttpHeaders headers = e.getHeaders().clone();
+    headers.remove(Utils.headerNameToLowerCase("X-GUploader-UploadID"));
+    String message = e.getMessage();
+    HttpResponseException copy =
+        new HttpResponseException.Builder(e.getStatusCode(), e.getStatusMessage(), headers)
+            .setMessage(message == null ? null : withoutQuery(message))
+            .setContent(e.getContent())
+            .setAttemptCount(e.getAttemptCount())
+            .build();
+    copy.setStackTrace(e.getStackTrace());
+    return copy;
   }
 
   static boolean isOk(int code) {
@@ -370,7 +395,7 @@ enum UploadFailureScenario {
     Indentation t3 = t2.indent();
     sb.append("\n").append(prefix).append(t1).append(req.getClass().getName()).append("{");
     if (req.hasUploadId()) {
-      sb.append("\n").append(prefix).append(t2).append("upload_id: ").append(req.getUploadId());
+      sb.append("\n").append(prefix).append(t2).append("upload_id: ").append(OMITTED);
     }
     long writeOffset = req.getWriteOffset();
     if (req.hasChecksummedData()) {
@@ -406,7 +431,7 @@ enum UploadFailureScenario {
     Indentation t3 = t2.indent();
     sb.append("\n").append(prefix).append(t1).append(req.getClass().getName()).append("{");
     if (req.hasUploadId()) {
-      sb.append("\n").append(prefix).append(t2).append("upload_id: ").append(req.getUploadId());
+      sb.append("\n").append(prefix).append(t2).append("upload_id: ").append(OMITTED);
     }
     long writeOffset = req.getWriteOffset();
     if (req.hasChecksummedData()) {
