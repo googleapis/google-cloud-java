@@ -247,8 +247,9 @@ public class Job extends JobInfo {
   }
 
   /**
-   * Blocks until this job completes its execution and returns the latest {@link Job} snapshot, or
-   * {@code null} if the job no longer exists.
+   * Blocks until this job completes its execution and returns the latest {@link Job} snapshot. If
+   * the job no longer exists, non-query jobs return {@code null} while query jobs throw {@link
+   * BigQueryException}.
    *
    * <p>If the job completes with an execution error, this method throws {@link BigQueryException}
    * (via {@link #reload(JobOption...)}) rather than returning a {@code Job} with a non-null {@link
@@ -260,11 +261,13 @@ public class Job extends JobInfo {
    * default total wait timeout expires. Pass {@link RetryOption} arguments (such as {@link
    * RetryOption#initialRetryDelayDuration(Duration)} and {@link
    * RetryOption#totalTimeoutDuration(Duration)}) to override polling delays or the total timeout.
-   * For query jobs, status checks can also be configured to retry on specific BigQuery error
-   * messages using {@link BigQueryRetryConfig} and constants in {@link BigQueryErrorMessages} (by
-   * default, {@link #waitFor(RetryOption...)} retries on {@link
-   * BigQueryErrorMessages#RATE_LIMIT_EXCEEDED_MSG}). This {@link BigQueryRetryConfig} configuration
-   * is not available for non-query jobs.
+   * If the total wait timeout expires before completion, non-query jobs throw {@link
+   * BigQueryException}, whereas query jobs return the current (still running) {@link Job} snapshot,
+   * so callers passing a short timeout should check {@link JobStatus#getState()}. For query jobs,
+   * status checks can also be configured to retry on specific BigQuery error messages using {@link
+   * BigQueryRetryConfig} and constants in {@link BigQueryErrorMessages} (by default, {@link
+   * #waitFor(RetryOption...)} retries on {@link BigQueryErrorMessages#RATE_LIMIT_EXCEEDED_MSG}).
+   * This {@link BigQueryRetryConfig} configuration is not available for non-query jobs.
    *
    * <p>Example usage of {@code waitFor()}.
    *
@@ -323,8 +326,8 @@ public class Job extends JobInfo {
    *
    * @param bigQueryRetryConfig configures retries for query jobs for BigQuery failures
    * @param waitOptions options to configure checking period and timeout
-   * @throws BigQueryException if the job completes with an error, polling times out, or an RPC
-   *     error occurs (inspect {@link BigQueryException#getError()}, {@link
+   * @throws BigQueryException if the job completes with an error, a non-query job polling timeout
+   *     expires, or an RPC error occurs (inspect {@link BigQueryException#getError()}, {@link
    *     BigQueryException#getErrors()}, and {@link BigQueryException#getCause()})
    * @throws InterruptedException if the current thread gets interrupted while waiting for the job
    *     to complete
