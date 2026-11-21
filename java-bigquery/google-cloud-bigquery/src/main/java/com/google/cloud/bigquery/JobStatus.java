@@ -114,6 +114,12 @@ public class JobStatus implements Serializable {
    * Returns the final error result of the job. If present, indicates that the job has completed and
    * was unsuccessful.
    *
+   * <p>Once a job reaches {@link State#DONE} with an error, it cannot be resumed or re-executed by
+   * polling again or reusing the same {@link JobId}. To retry a transient job failure, inspect
+   * {@link BigQueryError#getReason()} and submit a new job with a new {@link JobId}. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/managing-jobs#repeat_jobs">Repeating
+   * jobs</a>.
+   *
    * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">BigQuery API HTTP status and
    *     error codes</a>
    */

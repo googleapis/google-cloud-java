@@ -355,7 +355,11 @@ public class Job extends JobInfo {
    * the current {@code Job} instance is not updated. To get the new state, call {@link
    * #waitFor(RetryOption...)} or {@link #reload(JobOption...)}.
    *
-   * @throws BigQueryException upon failure
+   * @throws BigQueryException if the job completes with an error or an RPC error occurs
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the query
+   *     to complete
+   * @throws JobException declared for backwards compatibility only and never thrown by current
+   *     client implementations (job failures throw {@link BigQueryException} instead)
    */
   public TableResult getQueryResults(QueryResultsOption... options)
       throws InterruptedException, JobException {

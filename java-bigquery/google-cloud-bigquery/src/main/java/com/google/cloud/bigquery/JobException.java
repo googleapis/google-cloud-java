@@ -19,7 +19,18 @@ package com.google.cloud.bigquery;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 
-/** Exception describing a failure of a job. */
+/**
+ * Exception describing a failure of a job.
+ *
+ * <p>Although {@link BigQuery#query(QueryJobConfiguration, BigQuery.JobOption...)}, {@link
+ * BigQuery#queryArrow(QueryJobConfiguration, BigQuery.JobOption...)}, {@link
+ * BigQuery#queryWithTimeout(QueryJobConfiguration, JobId, Long, BigQuery.JobOption...)}, and {@link
+ * Job#getQueryResults(BigQuery.QueryResultsOption...)} declare {@code JobException} in their {@code
+ * throws} clauses for backwards compatibility, this exception is never thrown by current client
+ * implementations, which report failed jobs by throwing {@link BigQueryException} instead. Callers
+ * should catch {@link BigQueryException} and inspect {@link BigQueryException#getError()} or {@link
+ * BigQueryException#getErrors()} to handle job failures.
+ */
 public class JobException extends RuntimeException {
   private final JobId id;
   private final ImmutableList<BigQueryError> errors;
