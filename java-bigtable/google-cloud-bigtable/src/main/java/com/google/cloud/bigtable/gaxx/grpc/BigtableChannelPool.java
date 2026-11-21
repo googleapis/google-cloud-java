@@ -15,13 +15,18 @@
  */
 package com.google.cloud.bigtable.gaxx.grpc;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.PeerInfo;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPoolHealthChecker.ProbeResult;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.MoreExecutors;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -69,6 +74,9 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   private final Supplier<ManagedChannel> channelSupplier;
 
   private final ChannelPrimer channelPrimer;
+  private final ScheduledExecutorService executor;
+  private final ChannelPoolHealthChecker channelPoolHealthChecker;
+  private final AtomicBoolean shutdown = new AtomicBoolean(false);
   private final Object entryWriteLock = new Object();
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
   private final AtomicInteger indexTicker = new AtomicInteger();
@@ -104,16 +112,26 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     this.settings = settings;
     this.channelSupplier = channelSupplier;
     this.channelPrimer = channelPrimer;
+    this.executor = executor;
     Clock systemClock = Clock.systemUTC();
-    ChannelPoolHealthChecker channelPoolHealthChecker =
-        new ChannelPoolHealthChecker(entries::get, channelPrimer, executor, systemClock);
-    channelPoolHealthChecker.start();
+    this.channelPoolHealthChecker =
+        new ChannelPoolHealthChecker(
+            entries::get, channelPrimer, executor, systemClock, this::replaceOutlierEntryAsync);
+    this.channelPoolHealthChecker.start();
 
     ImmutableList.Builder<Entry> initialListBuilder = ImmutableList.builder();
 
     for (int i = 0; i < settings.getInitialChannelCount(); i++) {
       ManagedChannel newChannel = channelSupplier.get();
-      channelPrimer.primeChannel(newChannel);
+      try {
+        channelPrimer.primeChannel(newChannel);
+      } catch (Exception e) {
+        LOG.log(
+            Level.WARNING,
+            "Failed to prime initial channel during pool creation, continuing with unprimed"
+                + " channel",
+            e);
+      }
       initialListBuilder.add(new Entry(newChannel));
     }
 
@@ -235,6 +253,8 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   @Override
   public ManagedChannel shutdown() {
     LOG.fine("Initiating graceful shutdown due to explicit request");
+    shutdown.set(true);
+    channelPoolHealthChecker.stop();
 
     // Resize and refresh tasks can block on channel priming. We don't need
     // to wait for the channels to be ready since we're shutting down the
@@ -283,6 +303,8 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
   @Override
   public ManagedChannel shutdownNow() {
     LOG.fine("Initiating immediate shutdown due to explicit request");
+    shutdown.set(true);
+    channelPoolHealthChecker.stop();
 
     if (resizeFuture != null) {
       resizeFuture.cancel(true);
@@ -417,12 +439,16 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     ImmutableList.Builder<Entry> newEntries = ImmutableList.<Entry>builder().addAll(localEntries);
 
     for (int i = 0; i < desiredSize - localEntries.size(); i++) {
+      ManagedChannel newChannel = null;
       try {
-        ManagedChannel newChannel = channelSupplier.get();
+        newChannel = channelSupplier.get();
         this.channelPrimer.primeChannel(newChannel);
         newEntries.add(new Entry(newChannel));
       } catch (Exception e) {
         LOG.log(Level.WARNING, "Failed to add channel", e);
+        if (newChannel != null) {
+          newChannel.shutdownNow();
+        }
       }
     }
 
@@ -457,12 +483,16 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
       ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
 
       for (int i = 0; i < newEntries.size(); i++) {
+        ManagedChannel newChannel = null;
         try {
-          ManagedChannel newChannel = channelSupplier.get();
+          newChannel = channelSupplier.get();
           this.channelPrimer.primeChannel(newChannel);
           newEntries.set(i, new Entry(newChannel));
         } catch (Exception e) {
           LOG.log(Level.WARNING, "Failed to refresh channel, leaving old channel", e);
+          if (newChannel != null) {
+            newChannel.shutdownNow();
+          }
         }
       }
 
@@ -475,6 +505,93 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
         }
       }
     }
+  }
+
+  /**
+   * Asynchronously replaces a single unhealthy entry in the pool with a newly created and primed
+   * channel without blocking the periodic health checker task or starving the background executor.
+   * Falls back to {@link ManagedChannel#enterIdle()} if channel creation or priming fails.
+   */
+  @VisibleForTesting
+  void replaceOutlierEntryAsync(Entry unhealthyEntry) {
+    executor.execute(
+        () -> {
+          if (shutdown.get() || !entries.get().contains(unhealthyEntry)) {
+            return;
+          }
+
+          ManagedChannel newChannel = null;
+          ApiFuture<PingAndWarmResponse> primeFuture;
+          try {
+            newChannel = channelSupplier.get();
+            primeFuture =
+                Preconditions.checkNotNull(
+                    this.channelPrimer.sendPrimeRequestsAsync(newChannel),
+                    "sendPrimeRequestsAsync returned null");
+          } catch (Exception e) {
+            LOG.log(
+                Level.WARNING, "Failed to replace unhealthy channel, falling back to enterIdle", e);
+            if (newChannel != null) {
+              newChannel.shutdownNow();
+            }
+            if (!shutdown.get()) {
+              unhealthyEntry.getManagedChannel().enterIdle();
+            }
+            return;
+          }
+
+          final ManagedChannel candidateChannel = newChannel;
+          ApiFutures.addCallback(
+              primeFuture,
+              new ApiFutureCallback<PingAndWarmResponse>() {
+                @Override
+                public void onSuccess(PingAndWarmResponse result) {
+                  try {
+                    executor.execute(
+                        () -> completeEntryReplacement(unhealthyEntry, candidateChannel));
+                  } catch (RuntimeException e) {
+                    candidateChannel.shutdownNow();
+                  }
+                }
+
+                @Override
+                public void onFailure(Throwable t) {
+                  LOG.log(
+                      Level.WARNING,
+                      "Failed to prime replacement channel, falling back to enterIdle",
+                      t);
+                  candidateChannel.shutdownNow();
+                  if (!shutdown.get()) {
+                    unhealthyEntry.getManagedChannel().enterIdle();
+                  }
+                }
+              },
+              MoreExecutors.directExecutor());
+        });
+  }
+
+  private void completeEntryReplacement(Entry unhealthyEntry, ManagedChannel newChannel) {
+    synchronized (entryWriteLock) {
+      if (shutdown.get()) {
+        newChannel.shutdownNow();
+        return;
+      }
+      List<Entry> currentEntries = entries.get();
+      int index = currentEntries.indexOf(unhealthyEntry);
+      if (index < 0) {
+        newChannel.shutdownNow();
+        return;
+      }
+
+      ArrayList<Entry> newEntries = new ArrayList<>(currentEntries);
+      newEntries.set(index, new Entry(newChannel));
+      entries.set(ImmutableList.copyOf(newEntries));
+      if (shutdown.get()) {
+        newChannel.shutdownNow();
+      }
+    }
+
+    unhealthyEntry.requestShutdown();
   }
 
   /**
