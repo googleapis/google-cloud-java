@@ -100,7 +100,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   private final String cacheKey;
 
   // This is the quota limit from Cloud Monitoring. More details in
-  // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
+  // https://docs.cloud.google.com/monitoring/quotas#custom_metrics_quotas.
   private static final int EXPORT_BATCH_SIZE_LIMIT = 200;
 
   // Increase max metadata size to 32MB to avoid "Header size exceeded" errors

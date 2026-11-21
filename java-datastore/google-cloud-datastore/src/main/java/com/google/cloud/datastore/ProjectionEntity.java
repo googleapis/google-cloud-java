@@ -24,10 +24,11 @@ import com.google.protobuf.ByteString;
  * holds one or more properties, represented by a name (as {@link String}) and a value (as {@link
  * Value}), and may have a {@link Key}.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/projectionqueries">Google Cloud
- *     Datastore projection queries</a>
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
- *     Entities, Properties, and Keys</a>
+ * @see <a
+ *     href="https://docs.cloud.google.com/datastore/docs/concepts/queries#projection_queries">Google
+ *     Cloud Datastore projection queries</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/concepts/entities">Google Cloud
+ *     Datastore Entities, Properties, and Keys</a>
  */
 public final class ProjectionEntity extends BaseEntity<Key> {
 

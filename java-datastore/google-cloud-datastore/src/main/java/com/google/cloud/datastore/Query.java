@@ -28,11 +28,12 @@ import java.util.Map;
  * and {@link AggregationQuery}.
  *
  * <p>Note that queries require proper indexing. See <a
- * href="https://cloud.google.com/datastore/docs/tools/indexconfig">Cloud Datastore Index
+ * href="https://docs.cloud.google.com/datastore/docs/tools/indexconfig">Cloud Datastore Index
  * Configuration</a> for help configuring indexes.
  *
  * @param <V> the type of the values returned by this query.
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/queries">Datastore Queries</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/concepts/queries">Datastore
+ *     Queries</a>
  */
 public abstract class Query<V> implements Serializable {
 
@@ -184,7 +185,8 @@ public abstract class Query<V> implements Serializable {
    * // Use results
    * }</pre>
    *
-   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
+   * @see <a href="https://docs.cloud.google.com/datastore/docs/reference/gql_reference">GQL
+   *     Reference</a>
    */
   public static GqlQuery.Builder<?> newGqlQueryBuilder(String gql) {
     return newGqlQueryBuilder(ResultType.UNKNOWN, gql);
@@ -203,7 +205,8 @@ public abstract class Query<V> implements Serializable {
    * // Use results
    * }</pre>
    *
-   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
+   * @see <a href="https://docs.cloud.google.com/datastore/docs/reference/gql_reference">GQL
+   *     Reference</a>
    */
   public static <V> GqlQuery.Builder<V> newGqlQueryBuilder(ResultType<V> resultType, String gql) {
     return new GqlQuery.Builder<>(resultType, gql);
