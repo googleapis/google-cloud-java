@@ -31,25 +31,31 @@ import java.util.TreeMap;
 final class DocumentTransform {
 
   private final SortedMap<FieldPath, FieldTransform> transforms; // Sorted for testing.
+  private final boolean isIdempotent;
 
-  private DocumentTransform(SortedMap<FieldPath, FieldTransform> transforms) {
+  private DocumentTransform(SortedMap<FieldPath, FieldTransform> transforms, boolean isIdempotent) {
     this.transforms = transforms;
+    this.isIdempotent = isIdempotent;
   }
 
   static DocumentTransform fromFieldPathMap(Map<FieldPath, Object> values) {
     SortedMap<FieldPath, FieldTransform> transforms = new TreeMap<>();
+    boolean isIdempotent = true;
 
     for (Map.Entry<FieldPath, Object> entry : values.entrySet()) {
       FieldPath path = entry.getKey();
       Object value = entry.getValue();
       if (value instanceof FieldValue) {
         FieldValue fieldValue = (FieldValue) value;
+        isIdempotent &= fieldValue.isIdempotent();
         if (fieldValue.includeInDocumentTransform()) {
           transforms.put(path, fieldValue.toProto(path));
         }
       } else if (value instanceof Map) {
-        transforms.putAll(
-            extractFromMap((Map<String, Object>) value, path, /* allowTransforms= */ true));
+        DocumentTransform subTransform =
+            extractFromMap((Map<String, Object>) value, path, /* allowTransforms= */ true);
+        transforms.putAll(subTransform.transforms);
+        isIdempotent &= subTransform.isIdempotent;
       } else if (entry.getValue() instanceof List) {
         // DocumentTransforms cannot be contained in Lists. We still process the List for
         // validation.
@@ -57,12 +63,13 @@ final class DocumentTransform {
       }
     }
 
-    return new DocumentTransform(transforms);
+    return new DocumentTransform(transforms, isIdempotent);
   }
 
-  private static SortedMap<FieldPath, FieldTransform> extractFromMap(
+  private static DocumentTransform extractFromMap(
       Map<String, Object> values, FieldPath path, boolean allowTransforms) {
     SortedMap<FieldPath, FieldTransform> transforms = new TreeMap<>();
+    boolean isIdempotent = true;
 
     for (Map.Entry<String, Object> entry : values.entrySet()) {
       Object value = entry.getValue();
@@ -70,6 +77,7 @@ final class DocumentTransform {
       if (value instanceof FieldValue) {
         FieldValue fieldValue = (FieldValue) value;
         if (allowTransforms) {
+          isIdempotent &= fieldValue.isIdempotent();
           if (fieldValue.includeInDocumentTransform()) {
             transforms.put(path, fieldValue.toProto(path));
           }
@@ -78,14 +86,17 @@ final class DocumentTransform {
               fieldValue.getMethodName() + " is not supported inside of an array.");
         }
       } else if (value instanceof Map) {
-        transforms.putAll(extractFromMap((Map<String, Object>) value, path, allowTransforms));
+        DocumentTransform subTransform =
+            extractFromMap((Map<String, Object>) value, path, allowTransforms);
+        transforms.putAll(subTransform.transforms);
+        isIdempotent &= subTransform.isIdempotent;
       } else if (entry.getValue() instanceof List) {
         validateArray((List<Object>) entry.getValue(), path);
       }
       path = path.getParent();
     }
 
-    return transforms;
+    return new DocumentTransform(transforms, isIdempotent);
   }
 
   private static void validateArray(List<Object> values, FieldPath path) {
@@ -106,6 +117,10 @@ final class DocumentTransform {
 
   boolean isEmpty() {
     return transforms.isEmpty();
+  }
+
+  boolean isIdempotent() {
+    return isIdempotent;
   }
 
   Set<FieldPath> getFields() {
