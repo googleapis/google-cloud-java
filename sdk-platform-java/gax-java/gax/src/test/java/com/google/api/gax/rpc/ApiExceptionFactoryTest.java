@@ -160,6 +160,19 @@ class ApiExceptionFactoryTest {
     Truth.assertThat(createExceptionWithMessage(Code.OK)).isInstanceOf(UnknownException.class);
   }
 
+  @Test
+  void createExceptionFromStatusCodeEnum() {
+    RuntimeException cause = new RuntimeException("boom");
+    ApiException exception =
+        ApiExceptionFactory.createException("timed out", cause, Code.DEADLINE_EXCEEDED, false);
+
+    Truth.assertThat(exception).isInstanceOf(DeadlineExceededException.class);
+    Truth.assertThat(exception.getCause()).isSameInstanceAs(cause);
+    Truth.assertThat(exception.getStatusCode().getCode()).isEqualTo(Code.DEADLINE_EXCEEDED);
+    Truth.assertThat(exception.getStatusCode().getTransportCode()).isNull();
+    Truth.assertThat(exception.isRetryable()).isFalse();
+  }
+
   private ApiException createException(StatusCode.Code statusCode) {
     return ApiExceptionFactory.createException(
         new RuntimeException(), FakeStatusCode.of(statusCode), false);
