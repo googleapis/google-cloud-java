@@ -131,8 +131,8 @@ final class BigQueryJdbcOAuthUtility {
     switch (authType) {
       case GOOGLE_SERVICE_ACCOUNT:
         // For using a Google Service Account (OAuth Type 0)
-        // need: project id, OAuthServiceAcctEmail and OAuthPvtKey or OAuthPvtKeyPath that can be
-        // .p12 or json.
+        // need: project id, and OAuthPvtKey or OAuthPvtKeyPath (JSON, PKCS#8, or .p12).
+        // OAuthServiceAcctEmail is required for non-JSON keys (PKCS#8 or .p12).
         // TODO: validation if .p12 or json file can be in getPropertyInfo can be handy for user
         String serviceAccountEmail = ds.getOAuthServiceAcctEmail();
         String serviceAccountPK = ds.getOAuthPvtKey();
@@ -142,7 +142,7 @@ final class BigQueryJdbcOAuthUtility {
         oauthProperties.put(
             BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME, serviceAccountEmail);
         oauthProperties.put(BigQueryJdbcUrlUtility.OAUTH_P12_PASSWORD_PROPERTY_NAME, p12Password);
-        if (serviceAccountEmail != null && serviceAccountPK != null) {
+        if (serviceAccountPK != null && !serviceAccountPK.trim().isEmpty()) {
           oauthProperties.put(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, serviceAccountPK);
         } else {
           oauthProperties.put(
@@ -316,11 +316,14 @@ final class BigQueryJdbcOAuthUtility {
   }
 
   static boolean isJson(byte[] value) {
+    if (value == null) {
+      return false;
+    }
     try {
       // This is done this way to ensure strict Json parsing
       // https://github.com/google/gson/issues/1208#issuecomment-2120764686
       InputStream stream = new ByteArrayInputStream(value);
-      InputStreamReader reader = new InputStreamReader(stream);
+      InputStreamReader reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
       JsonReader jsonReader = new JsonReader(reader);
       jsonReader.setStrictness(Strictness.STRICT);
       JsonElement json = JsonParser.parseReader(jsonReader);
@@ -350,7 +353,7 @@ final class BigQueryJdbcOAuthUtility {
 
       final String keyPath = pvtKeyPath != null ? pvtKeyPath : pvtKey;
       PrivateKey key = null;
-      byte[] keyBytes = pvtKey != null ? pvtKey.getBytes() : null;
+      byte[] keyBytes = pvtKey != null ? pvtKey.getBytes(StandardCharsets.UTF_8) : null;
 
       if (isFileExists(keyPath)) {
         try (InputStream stream = new FileInputStream(keyPath)) {
@@ -372,7 +375,11 @@ final class BigQueryJdbcOAuthUtility {
 
       if (stream != null) {
         builder = ServiceAccountCredentials.fromStream(stream).toBuilder();
-      } else if (pvtEmail != null && key != null) {
+      } else if (key != null) {
+        if (pvtEmail == null || pvtEmail.trim().isEmpty()) {
+          throw new BigQueryJdbcRuntimeException(
+              "OAuthServiceAcctEmail is required when using a PKCS#8 or P12 private key.");
+        }
         builder =
             ServiceAccountCredentials.newBuilder().setClientEmail(pvtEmail).setPrivateKey(key);
       } else {

@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.auth.http.HttpTransportFactory;
@@ -33,7 +34,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.util.Collections;
@@ -42,10 +45,13 @@ import java.util.Map;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
   private static final int USER_AUTH_PORT = 53737;
+  private static final String TEST_PROJECT_ID = "MyBigQueryProject";
+  private static final String TEST_SA_EMAIL = "dummytest@dummytest.iam.gserviceaccount.com";
   private static final String EXPECTED_USER_AUTH_URL =
       "https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=client_id&redirect_uri=http://localhost:"
           + USER_AUTH_PORT
@@ -564,5 +570,168 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     assertThat(credentials).isInstanceOf(UserCredentials.class);
     assertThat(((UserCredentials) credentials).toBuilder().getHttpTransportFactory())
         .isEqualTo(dummyFactory);
+  }
+
+  @Test
+  public void testParseOAuthPropsForAuthType0InlineKeyWithoutEmail() {
+    String fakeJson = getFakeServiceAccountJson(TEST_SA_EMAIL);
+    String url =
+        getBaseUri(0, TEST_PROJECT_ID)
+            .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, fakeJson)
+            .toString();
+
+    Map<String, String> result =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(DataSource.fromUrl(url), null);
+
+    assertThat(result.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME))
+        .isEqualTo("GOOGLE_SERVICE_ACCOUNT");
+    assertThat(result.get(BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME)).isNull();
+    assertThat(result.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME)).isEqualTo(fakeJson);
+    assertThat(result.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME)).isNull();
+  }
+
+  @Test
+  public void testParseOAuthPropsForAuthType0BlankPvtKeyFallsBackToKeyPath() {
+    String keyPath = "/tmp/service-account.json";
+    for (String blankKey : new String[] {"", "   "}) {
+      String url =
+          getBaseUri(0, TEST_PROJECT_ID)
+              .append(BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME, TEST_SA_EMAIL)
+              .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, blankKey)
+              .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME, keyPath)
+              .toString();
+
+      Map<String, String> result =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(DataSource.fromUrl(url), null);
+
+      assertThat(result.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME)).isNull();
+      assertThat(result.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME))
+          .isEqualTo(keyPath);
+    }
+  }
+
+  @Test
+  public void testGetCredentialsForServiceAccountInlineJsonWithoutEmail() {
+    String fakeJson = getFakeServiceAccountJson(TEST_SA_EMAIL);
+
+    // Email omitted (null)
+    assertServiceAccountCredentialsFromUrl(
+        getBaseUri(0, TEST_PROJECT_ID)
+            .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, fakeJson)
+            .toString(),
+        TEST_SA_EMAIL);
+
+    // Email empty or whitespace
+    for (String blankEmail : new String[] {"", "   "}) {
+      assertServiceAccountCredentialsFromUrl(
+          getBaseUri(0, TEST_PROJECT_ID)
+              .append(BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME, blankEmail)
+              .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, fakeJson)
+              .toString(),
+          TEST_SA_EMAIL);
+    }
+  }
+
+  @Test
+  public void testGetCredentialsForServiceAccountJsonFileInPvtKeyWithoutEmail(@TempDir Path tempDir)
+      throws IOException {
+    Path keyFile = tempDir.resolve("sa-key.json");
+    Files.write(keyFile, getFakeServiceAccountJson(TEST_SA_EMAIL).getBytes(StandardCharsets.UTF_8));
+
+    assertServiceAccountCredentialsFromUrl(
+        getBaseUri(0, TEST_PROJECT_ID)
+            .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, keyFile.toString())
+            .toString(),
+        TEST_SA_EMAIL);
+  }
+
+  @Test
+  public void testGetCredentialsForServiceAccountPkcs8WithoutEmailThrows() {
+    // Email omitted (null)
+    assertMissingEmailThrows(
+        getBaseUri(0, TEST_PROJECT_ID)
+            .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, fake_pkcs8_key)
+            .toString());
+
+    // Email empty or whitespace
+    for (String blankEmail : new String[] {"", "   "}) {
+      assertMissingEmailThrows(
+          getBaseUri(0, TEST_PROJECT_ID)
+              .append(BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME, blankEmail)
+              .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, fake_pkcs8_key)
+              .toString());
+    }
+  }
+
+  @Test
+  public void testGetCredentialsForServiceAccountP12WithAndWithoutEmail()
+      throws URISyntaxException {
+    URL resource = BigQueryJdbcOAuthUtilityTest.class.getResource("/fake.p12");
+    assertNotNull(resource);
+    String p12Path = Paths.get(resource.toURI()).toString();
+
+    assertServiceAccountCredentialsFromUrl(
+        getBaseUri(0, TEST_PROJECT_ID)
+            .append(BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME, TEST_SA_EMAIL)
+            .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME, p12Path)
+            .toString(),
+        TEST_SA_EMAIL);
+
+    // Email omitted (null)
+    assertMissingEmailThrows(
+        getBaseUri(0, TEST_PROJECT_ID)
+            .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME, p12Path)
+            .toString());
+
+    // Email empty or whitespace
+    for (String blankEmail : new String[] {"", "   "}) {
+      assertMissingEmailThrows(
+          getBaseUri(0, TEST_PROJECT_ID)
+              .append(BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME, blankEmail)
+              .append(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME, p12Path)
+              .toString());
+    }
+  }
+
+  @Test
+  public void testGetCredentialsForServiceAccountMissingKeyThrows() {
+    String url = getBaseUri(0, TEST_PROJECT_ID).toString();
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(DataSource.fromUrl(url), null);
+
+    BigQueryJdbcRuntimeException ex =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.getCredentials(
+                    authProperties, Collections.emptyMap(), false, null, null));
+    assertThat(ex.getMessage()).contains("No valid credentials provided.");
+  }
+
+  private static void assertServiceAccountCredentialsFromUrl(
+      String connectionUrl, String expectedEmail) {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(DataSource.fromUrl(connectionUrl), null);
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.emptyMap(), false, null, null);
+
+    assertThat(credentials).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) credentials).getClientEmail()).isEqualTo(expectedEmail);
+  }
+
+  private static void assertMissingEmailThrows(String connectionUrl) {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(DataSource.fromUrl(connectionUrl), null);
+
+    BigQueryJdbcRuntimeException ex =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.getCredentials(
+                    authProperties, Collections.emptyMap(), false, null, null));
+    assertThat(ex.getMessage())
+        .contains("OAuthServiceAcctEmail is required when using a PKCS#8 or P12 private key.");
   }
 }

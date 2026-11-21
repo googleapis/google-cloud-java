@@ -20,6 +20,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import com.google.cloud.bigquery.jdbc.utils.URIBuilder;
+import com.google.gson.JsonObject;
 import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -47,6 +48,18 @@ public class BigQueryJdbcBaseTest {
           "2wK1Zawz/A==\n"
           + //
           "-----END PRIVATE KEY-----";
+
+  protected static String getFakeServiceAccountJson(String clientEmail) {
+    JsonObject json = new JsonObject();
+    json.addProperty("type", "service_account");
+    json.addProperty("project_id", "MyBigQueryProject");
+    json.addProperty("private_key_id", "fake-key-id");
+    json.addProperty("private_key", fake_pkcs8_key);
+    json.addProperty("client_email", clientEmail);
+    json.addProperty("client_id", "1234567890");
+    json.addProperty("token_uri", "https://oauth2.googleapis.com/token");
+    return json.toString();
+  }
 
   protected static BigQuery getBigQuery(String connectionUrl) {
     try {
