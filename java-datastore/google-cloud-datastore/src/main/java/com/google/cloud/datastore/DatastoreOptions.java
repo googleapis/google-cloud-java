@@ -314,8 +314,10 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
         InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
             DatastoreSettings.defaultGrpcTransportProviderBuilder()
-                .setChannelPoolSettings(datastoreChannelPoolSettings)
-                .setEndpoint(getHost());
+                .setChannelPoolSettings(datastoreChannelPoolSettings);
+        if (getHost() != null && !DatastoreSettings.getDefaultEndpoint().equals(getHost())) {
+          channelProviderBuilder.setEndpoint(getHost());
+        }
         if (traceUtil.getChannelConfigurator() != null) {
           // Intercept the grpc channel calls to add telemetry info.
           channelProviderBuilder.setChannelConfigurator(traceUtil.getChannelConfigurator());

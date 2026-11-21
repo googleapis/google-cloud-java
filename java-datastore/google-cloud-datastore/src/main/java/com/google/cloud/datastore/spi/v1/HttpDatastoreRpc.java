@@ -20,10 +20,13 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.core.InternalApi;
+import com.google.auth.Credentials;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.http.CensusHttpModule;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
 import com.google.datastore.v1.BeginTransactionRequest;
@@ -40,24 +43,72 @@ import com.google.datastore.v1.RunAggregationQueryRequest;
 import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
+import com.google.rpc.Code;
 import io.opencensus.trace.Tracing;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URL;
+import javax.annotation.Nullable;
 
 @InternalApi
 public class HttpDatastoreRpc implements DatastoreRpc {
 
+  private static final String GOOGLE_CLOUD_UNIVERSE_DOMAIN_ENV_VAR = "GOOGLE_CLOUD_UNIVERSE_DOMAIN";
+  private static final String DATASTORE_HOST_PREFIX = "datastore.";
+
   private final com.google.datastore.v1.client.Datastore client;
+  private final DatastoreOptions options;
+  private final String resolvedUniverseDomain;
 
   public HttpDatastoreRpc(DatastoreOptions options) {
+    this(options, System.getenv(GOOGLE_CLOUD_UNIVERSE_DOMAIN_ENV_VAR));
+  }
+
+  /** Creates an {@link HttpDatastoreRpc} with an explicit environment universe domain value. */
+  @VisibleForTesting
+  HttpDatastoreRpc(DatastoreOptions options, @Nullable String envUniverseDomain) {
+    this.options = options;
+    this.resolvedUniverseDomain = resolveUniverseDomain(options, envUniverseDomain);
     HttpTransportOptions httpTransportOptions =
         (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = httpTransportOptions.getHttpTransportFactory().create();
     com.google.datastore.v1.client.DatastoreOptions.Builder clientBuilder =
+        createClientOptionsBuilder(
+            options,
+            getHttpRequestInitializer(options, httpTransportOptions),
+            transport,
+            resolvedUniverseDomain);
+    client = com.google.datastore.v1.client.DatastoreFactory.get().create(clientBuilder.build());
+  }
+
+  /** Resolves the universe domain from options, environment variable, or default. */
+  @VisibleForTesting
+  static String resolveUniverseDomain(
+      DatastoreOptions options, @Nullable String envUniverseDomain) {
+    String universeDomain = options.getUniverseDomain();
+    if (universeDomain == null) {
+      universeDomain = envUniverseDomain;
+    }
+    if (universeDomain == null) {
+      return Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    }
+    if (universeDomain.isEmpty()) {
+      throw new IllegalArgumentException("The universe domain cannot be empty.");
+    }
+    return universeDomain;
+  }
+
+  /** Builds the underlying HTTP Datastore client options with host and universe resolution. */
+  @VisibleForTesting
+  static com.google.datastore.v1.client.DatastoreOptions.Builder createClientOptionsBuilder(
+      DatastoreOptions options,
+      HttpRequestInitializer initializer,
+      HttpTransport transport,
+      String resolvedUniverseDomain) {
+    com.google.datastore.v1.client.DatastoreOptions.Builder clientBuilder =
         new com.google.datastore.v1.client.DatastoreOptions.Builder()
             .projectId(options.getProjectId())
-            .initializer(getHttpRequestInitializer(options, httpTransportOptions))
+            .initializer(initializer)
             .transport(transport);
     String normalizedHost = options.getHost() != null ? options.getHost().toLowerCase() : "";
 
@@ -69,8 +120,40 @@ public class HttpDatastoreRpc implements DatastoreRpc {
       // DatastoreFactory.create(...) automatically builds the valid endpoint URL using the host,
       // so we only need to set the host without any suffix.
       clientBuilder = clientBuilder.host(removeScheme(normalizedHost));
+    } else if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(resolvedUniverseDomain)) {
+      clientBuilder = clientBuilder.host(DATASTORE_HOST_PREFIX + resolvedUniverseDomain);
     }
-    client = com.google.datastore.v1.client.DatastoreFactory.get().create(clientBuilder.build());
+    return clientBuilder;
+  }
+
+  /** Validates that the credentials universe domain matches the configured universe domain. */
+  @VisibleForTesting
+  void validateUniverseDomain() {
+    Credentials credentials = options.getCredentials();
+    if (credentials == null || NoCredentials.getInstance().equals(credentials)) {
+      return;
+    }
+    try {
+      String credentialsUniverseDomain = credentials.getUniverseDomain();
+      if (!resolvedUniverseDomain.equals(credentialsUniverseDomain)) {
+        String errorMessage =
+            String.format(
+                "The configured universe domain %s does not match the universe domain found in the"
+                    + " credentials %s. If you haven't configured the universe domain explicitly,"
+                    + " `%s` is the default.",
+                resolvedUniverseDomain,
+                credentialsUniverseDomain,
+                Credentials.GOOGLE_DEFAULT_UNIVERSE);
+        throw new DatastoreException(
+            Code.UNAUTHENTICATED.getNumber(),
+            errorMessage,
+            Code.UNAUTHENTICATED.name(),
+            false,
+            null);
+      }
+    } catch (IOException ex) {
+      throw new DatastoreException(ex);
+    }
   }
 
   private HttpRequestInitializer getHttpRequestInitializer(
@@ -137,6 +220,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   @Override
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) {
+    validateUniverseDomain();
     try {
       return client.allocateIds(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
@@ -146,6 +230,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   @Override
   public BeginTransactionResponse beginTransaction(BeginTransactionRequest request) {
+    validateUniverseDomain();
     try {
       return client.beginTransaction(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
@@ -155,6 +240,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   @Override
   public CommitResponse commit(CommitRequest request) {
+    validateUniverseDomain();
     try {
       return client.commit(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
@@ -164,6 +250,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   @Override
   public LookupResponse lookup(LookupRequest request) {
+    validateUniverseDomain();
     try {
       return client.lookup(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
@@ -173,6 +260,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   @Override
   public ReserveIdsResponse reserveIds(ReserveIdsRequest request) {
+    validateUniverseDomain();
     try {
       return client.reserveIds(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
@@ -182,6 +270,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   @Override
   public RollbackResponse rollback(RollbackRequest request) {
+    validateUniverseDomain();
     try {
       return client.rollback(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
@@ -191,6 +280,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   @Override
   public RunQueryResponse runQuery(RunQueryRequest request) {
+    validateUniverseDomain();
     try {
       return client.runQuery(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
@@ -200,6 +290,7 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
   @Override
   public RunAggregationQueryResponse runAggregationQuery(RunAggregationQueryRequest request) {
+    validateUniverseDomain();
     try {
       return client.runAggregationQuery(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {

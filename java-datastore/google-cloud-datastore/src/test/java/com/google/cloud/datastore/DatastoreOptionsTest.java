@@ -413,4 +413,29 @@ public class DatastoreOptionsTest {
                 .isExportBuiltinMetricsToGoogleCloudMonitoring())
         .isFalse();
   }
+
+  @Test
+  public void testGrpcDefaultChannelProviderDefersEndpointToGax() {
+    DatastoreOptions defaultOptions =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    InstantiatingGrpcChannelProvider channelProvider =
+        (InstantiatingGrpcChannelProvider) defaultOptions.getTransportChannelProvider();
+    assertTrue(channelProvider.needsEndpoint());
+    assertThat(channelProvider.getEndpoint()).isNull();
+
+    String customHost = "custom-datastore.example.com:443";
+    DatastoreOptions customHostOptions =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(NoCredentials.getInstance())
+            .setHost(customHost)
+            .build();
+    InstantiatingGrpcChannelProvider customChannelProvider =
+        (InstantiatingGrpcChannelProvider) customHostOptions.getTransportChannelProvider();
+    assertFalse(customChannelProvider.needsEndpoint());
+    assertEquals(customHost, customChannelProvider.getEndpoint());
+  }
 }

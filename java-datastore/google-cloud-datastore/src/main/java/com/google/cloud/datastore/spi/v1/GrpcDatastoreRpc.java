@@ -37,6 +37,7 @@ import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.datastore.v1.stub.DatastoreStubSettings;
 import com.google.cloud.datastore.v1.stub.GrpcDatastoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.datastore.v1.AllocateIdsRequest;
 import com.google.datastore.v1.AllocateIdsResponse;
@@ -75,18 +76,10 @@ public class GrpcDatastoreRpc implements DatastoreRpc {
               : getClientContext(datastoreOptions);
 
       /* For non-emulator, configure default gRPC Connection pool with minChannelCount = 1 */
-      DatastoreStubSettings.Builder datastoreStubSettingsBuilder =
-          DatastoreStubSettings.newBuilder(clientContext)
-              .applyToAllUnaryMethods(retrySettingSetter(datastoreOptions));
-      if (!isEmulator(datastoreOptions)) {
-        // Use the TransportChannelProvider configured in DatastoreOptions. For gRPC transport, this
-        // will
-        // be configured with a default ChannelPool configuration
-        datastoreStubSettingsBuilder.setTransportChannelProvider(
-            datastoreOptions.getTransportChannelProvider());
-      }
+      DatastoreStubSettings datastoreStubSettings =
+          createDatastoreStubSettings(datastoreOptions, clientContext);
 
-      datastoreStub = GrpcDatastoreStub.create(datastoreStubSettingsBuilder.build());
+      datastoreStub = GrpcDatastoreStub.create(datastoreStubSettings);
     } catch (IOException e) {
       throw new IOException(e);
     }
@@ -167,7 +160,31 @@ public class GrpcDatastoreRpc implements DatastoreRpc {
         .build();
   }
 
-  private ClientContext getClientContext(DatastoreOptions datastoreOptions) throws IOException {
+  /** Builds the {@link DatastoreStubSettings} from the given options and client context. */
+  @VisibleForTesting
+  static DatastoreStubSettings createDatastoreStubSettings(
+      DatastoreOptions datastoreOptions, ClientContext clientContext) throws IOException {
+    DatastoreStubSettings.Builder datastoreStubSettingsBuilder =
+        DatastoreStubSettings.newBuilder(clientContext)
+            .applyToAllUnaryMethods(retrySettingSetter(datastoreOptions));
+    if (!isEmulator(datastoreOptions)) {
+      // Use the TransportChannelProvider configured in DatastoreOptions. For gRPC transport, this
+      // will be configured with a default ChannelPool configuration.
+      datastoreStubSettingsBuilder.setTransportChannelProvider(
+          datastoreOptions.getTransportChannelProvider());
+    }
+    return datastoreStubSettingsBuilder.build();
+  }
+
+  /** Returns the {@link ClientContext} created for this RPC instance. */
+  @VisibleForTesting
+  ClientContext getClientContext() {
+    return clientContext;
+  }
+
+  /** Creates a {@link ClientContext} for non-emulator gRPC requests. */
+  @VisibleForTesting
+  ClientContext getClientContext(DatastoreOptions datastoreOptions) throws IOException {
     HeaderProvider internalHeaderProvider =
         DatastoreSettings.defaultApiClientHeaderProviderBuilder()
             .setClientLibToken(
@@ -184,6 +201,13 @@ public class GrpcDatastoreRpc implements DatastoreRpc {
     settingsBuilder.setInternalHeaderProvider(internalHeaderProvider);
     settingsBuilder.setHeaderProvider(
         datastoreOptions.getMergedHeaderProvider(new NoHeaderProvider()));
+    if (datastoreOptions.getUniverseDomain() != null) {
+      settingsBuilder.setUniverseDomain(datastoreOptions.getUniverseDomain());
+    }
+    if (datastoreOptions.getHost() != null
+        && !DatastoreSettings.getDefaultEndpoint().equals(datastoreOptions.getHost())) {
+      settingsBuilder.setEndpoint(datastoreOptions.getHost());
+    }
     return ClientContext.create(settingsBuilder.build());
   }
 
