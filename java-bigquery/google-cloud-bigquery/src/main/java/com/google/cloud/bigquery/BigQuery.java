@@ -1711,6 +1711,12 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED
    * }</pre>
    *
+   * <p>A failed {@code jobId} is terminal and cannot be reused to re-execute the query. Generate a
+   * new {@link JobId} when retrying a transient failure. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/managing-jobs#repeat_jobs">Repeating jobs</a>
+   * and <a href="https://docs.cloud.google.com/bigquery/docs/errors">BigQuery API HTTP status and
+   * error codes</a>.
+   *
    * @param configuration the query configuration
    * @param jobId the job ID to use
    * @param options query options
