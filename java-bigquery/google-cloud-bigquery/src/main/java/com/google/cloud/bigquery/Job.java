@@ -287,8 +287,8 @@ public class Job extends JobInfo {
    * try {
    *   Job completedJob =
    *       job.waitFor(
-   *           RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *           RetryOption.totalTimeout(Duration.ofMinutes(1)));
+   *           RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *           RetryOption.totalTimeoutDuration(Duration.ofMinutes(1)));
    *   if (completedJob == null) {
    *     // job no longer exists
    *   } else {

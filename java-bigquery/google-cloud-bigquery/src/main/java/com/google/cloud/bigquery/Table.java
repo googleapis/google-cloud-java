@@ -454,8 +454,8 @@ public class Table extends TableInfo {
    * Job job = table.copy(datasetName, tableName);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
    *   if (completedJob == null) {
    *     // Job no longer exists
    *   } else {
@@ -492,8 +492,8 @@ public class Table extends TableInfo {
    * Job job = table.copy(destinationId, options);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
    *   if (completedJob == null) {
    *     // Job no longer exists.
    *   } else {
@@ -527,8 +527,8 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, gcsUrl);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
    *   if (completedJob == null) {
    *     // Job no longer exists
    *   } else {
@@ -568,8 +568,8 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, destinationUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
    *   if (completedJob == null) {
    *     // Job no longer exists
    *   } else {
@@ -606,8 +606,8 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUri);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
    *   if (completedJob == null) {
    *     // Job no longer exists
    *   } else {
@@ -646,8 +646,8 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
    *   if (completedJob == null) {
    *     // Job no longer exists
    *   } else {
