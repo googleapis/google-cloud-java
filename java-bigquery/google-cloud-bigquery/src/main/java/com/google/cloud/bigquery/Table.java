@@ -454,13 +454,15 @@ public class Table extends TableInfo {
    * Job job = table.copy(datasetName, tableName);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -490,13 +492,15 @@ public class Table extends TableInfo {
    * Job job = table.copy(destinationId, options);
    * // Wait for the job to complete.
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully.
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
+   *   if (completedJob == null) {
+   *     // Job no longer exists.
    *   } else {
-   *     // Handle error case.
+   *     // Job completed successfully.
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case.
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -523,13 +527,15 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, gcsUrl);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -562,13 +568,15 @@ public class Table extends TableInfo {
    * Job job = table.extract(format, destinationUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -598,13 +606,15 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUri);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *             RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
@@ -636,19 +646,21 @@ public class Table extends TableInfo {
    * Job job = table.load(FormatOptions.csv(), sourceUris);
    * // Wait for the job to complete
    * try {
-   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelay(Duration.ofSeconds(1)),
-   *       RetryOption.totalTimeout(Duration.ofMinutes(3)));
-   *   if (completedJob != null && completedJob.getStatus().getError() == null) {
-   *     // Job completed successfully
+   *   Job completedJob = job.waitFor(RetryOption.initialRetryDelayDuration(Duration.ofSeconds(1)),
+   *       RetryOption.totalTimeoutDuration(Duration.ofMinutes(3)));
+   *   if (completedJob == null) {
+   *     // Job no longer exists
    *   } else {
-   *     // Handle error case
+   *     // Job completed successfully
    *   }
+   * } catch (BigQueryException e) {
+   *   // Handle error case
    * } catch (InterruptedException e) {
    *   // Handle interrupted wait
    * }
    * }</pre>
    *
-   * @param format the format of the exported data
+   * @param format the format of the data to load
    * @param sourceUris the fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path) from
    *     which to load the data
    * @param options job options

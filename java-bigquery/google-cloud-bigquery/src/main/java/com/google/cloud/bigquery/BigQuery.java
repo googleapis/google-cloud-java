@@ -1485,6 +1485,10 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * Returns the requested job or {@code null} if not found. If the location of the job is not "US"
    * or "EU", {@link #getJob(JobId, JobOption...)} must be used instead.
    *
+   * <p>Unlike {@link Job#reload(JobOption...)} and {@link Job#waitFor(RetryOption...)}, this method
+   * returns the {@link Job} even when {@link JobStatus#getError()} is non-null, allowing callers to
+   * inspect job errors without catching {@link BigQueryException}.
+   *
    * <p>Example of getting a job.
    *
    * <pre>{@code
@@ -1502,6 +1506,10 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Returns the requested job or {@code null} if not found. If the location of the job is not "US"
    * or "EU", the {@code jobId} must specify the job location.
+   *
+   * <p>Unlike {@link Job#reload(JobOption...)} and {@link Job#waitFor(RetryOption...)}, this method
+   * returns the {@link Job} even when {@link JobStatus#getError()} is non-null, allowing callers to
+   * inspect job errors without catching {@link BigQueryException}.
    *
    * <p>Example of getting a job.
    *
