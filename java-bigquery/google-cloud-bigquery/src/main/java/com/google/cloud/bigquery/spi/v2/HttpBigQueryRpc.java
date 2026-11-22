@@ -1975,6 +1975,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
 
   @InternalApi("internal to java-bigquery")
   public String openSkipExceptionTranslation(Job loadJob) throws IOException {
+    validateRPC();
     String builder = options.getResolvedApiaryHost("bigquery");
     if (!builder.endsWith("/")) {
       builder += "/";
@@ -2011,6 +2012,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Job writeSkipExceptionTranslation(
       String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length, boolean last)
       throws IOException {
+    validateRPC();
     if (length == 0) {
       return null;
     }
