@@ -57,7 +57,7 @@ public final class LogDestinationName extends Option {
   }
 
   /**
-   * Returns an option which sets and validates project ID resource name for log entries.
+   * Returns an option which sets and validates folder ID resource name for log entries.
    *
    * @param id corresponds to FOLDER_ID token in 'logName' field described in
    *     https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry
@@ -67,7 +67,7 @@ public final class LogDestinationName extends Option {
   }
 
   /**
-   * Returns an option which sets and validates project ID resource name for log entries.
+   * Returns an option which sets and validates organization ID resource name for log entries.
    *
    * @param id corresponds to ORGANIZATION_ID token in 'logName' field described in
    *     https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry
@@ -77,7 +77,7 @@ public final class LogDestinationName extends Option {
   }
 
   /**
-   * Returns an option which sets and validates project ID resource name for log entries.
+   * Returns an option which sets and validates billing account ID resource name for log entries.
    *
    * @param id corresponds to BILLING_ACCOUNT_ID token in 'logName' field described in
    *     https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry
@@ -86,7 +86,7 @@ public final class LogDestinationName extends Option {
     return new LogDestinationName(DestinationType.BILLINGACCOUNT, id);
   }
 
-  /** Creates a {@code LogEntry} object for given log ID. */
+  /** Creates a {@link LogName} object for the given log ID. */
   public LogName toLogName(String logId) {
     if (logId == null) {
       return null;
