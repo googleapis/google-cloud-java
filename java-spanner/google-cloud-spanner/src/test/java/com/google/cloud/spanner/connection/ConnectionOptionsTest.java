@@ -60,6 +60,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
+import org.jspecify.annotations.Nullable;
 import org.junit.Test;
 import org.junit.function.ThrowingRunnable;
 import org.junit.runner.RunWith;
@@ -2092,7 +2093,10 @@ public class ConnectionOptionsTest {
                 optionsBuilder -> {
                   executedConfigurator.set(true);
                   SpannerOptions spannerOptions = optionsBuilder.build();
-                  assertEquals("googleapis.com", spannerOptions.getUniverseDomain());
+                  assertNull(spannerOptions.getUniverseDomain());
+                  assertEquals(
+                      "googleapis.com",
+                      spannerOptions.getSpannerStubSettings().getUniverseDomain());
                   assertEquals("https://spanner.googleapis.com", spannerOptions.getHost());
                 })
             .build();
@@ -2441,6 +2445,75 @@ public class ConnectionOptionsTest {
                   .setCredentials(NoCredentials.getInstance())
                   .build();
           assertNull(lenientWithValidUri.getWarnings());
+        });
+  }
+
+  @Test
+  public void testChannelProviderUsesUniverseDomainEnvironmentVariable() throws Throwable {
+    String baseUri =
+        "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+            + "?channelProvider=com.google.cloud.spanner.connection.TestChannelProvider";
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          useUniverseDomainEnvironment("partner.example");
+          try {
+            // Plain URI without universeDomain should inherit the environment universe domain.
+            ConnectionOptions plainOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri)
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            assertNull(plainOptions.getUniverseDomain());
+            assertEquals(
+                "spanner.partner.example:443",
+                ((InstantiatingGrpcChannelProvider) plainOptions.getChannelProvider())
+                    .getEndpoint());
+
+            ConnectionOptions emptyPropOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri)
+                    .setConnectionPropertyValue(ConnectionProperties.UNIVERSE_DOMAIN, "")
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            assertEquals(
+                "spanner.partner.example:443",
+                ((InstantiatingGrpcChannelProvider) emptyPropOptions.getChannelProvider())
+                    .getEndpoint());
+          } finally {
+            SpannerOptions.useDefaultEnvironment();
+          }
+
+          useUniverseDomainEnvironment("");
+          try {
+            ConnectionOptions emptyEnvOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri)
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            assertEquals(
+                "spanner.googleapis.com:443",
+                ((InstantiatingGrpcChannelProvider) emptyEnvOptions.getChannelProvider())
+                    .getEndpoint());
+          } finally {
+            SpannerOptions.useDefaultEnvironment();
+          }
+
+          useUniverseDomainEnvironment("evil.com/path");
+          try {
+            ConnectionOptions invalidEnvOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri)
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            SpannerException exception =
+                assertThrows(SpannerException.class, invalidEnvOptions::getChannelProvider);
+            assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+            assertTrue(
+                exception.getMessage(), exception.getMessage().contains("Invalid universe domain"));
+          } finally {
+            SpannerOptions.useDefaultEnvironment();
+          }
         });
   }
 
@@ -3024,5 +3097,77 @@ public class ConnectionOptionsTest {
             .build();
     assertEquals("https://custom.host:443", omniWithUserParam.getHost());
     assertFalse(omniWithUserParam.isAutocommit());
+  }
+
+  @Test
+  public void testSpannerPoolUsesUniverseDomainEnvironmentVariable() {
+    ConnectionImpl connection = mock(ConnectionImpl.class);
+    useUniverseDomainEnvironment("partner.example");
+    try {
+      AtomicBoolean executedConfigurator = new AtomicBoolean(false);
+      ConnectionOptions plainOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  "cloudspanner:/projects/default/instances/default/databases/singers-db?usePlainText=true")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    executedConfigurator.set(true);
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    assertNull(spannerOptions.getUniverseDomain());
+                    assertEquals("https://spanner.partner.example", spannerOptions.getHost());
+                    assertEquals("spanner.partner.example:443", spannerOptions.getEndpoint());
+                    assertEquals(
+                        "partner.example",
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                    assertEquals(
+                        "partner.example",
+                        spannerOptions.getInstanceAdminStubSettings().getUniverseDomain());
+                    assertEquals(
+                        "partner.example",
+                        spannerOptions.getDatabaseAdminStubSettings().getUniverseDomain());
+                  })
+              .build();
+      Spanner spanner = SpannerPool.INSTANCE.getSpanner(plainOptions, connection);
+      spanner.close();
+      SpannerPool.INSTANCE.removeConnection(plainOptions, connection);
+      assertTrue(executedConfigurator.get());
+
+      // Explicit universeDomain in the URI takes precedence over the environment value.
+      executedConfigurator.set(false);
+      ConnectionOptions explicitOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  "cloudspanner:/projects/default/instances/default/databases/singers-db;universeDomain=explicit.example;usePlainText=true")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    executedConfigurator.set(true);
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    assertEquals("explicit.example", spannerOptions.getUniverseDomain());
+                    assertEquals("https://spanner.explicit.example", spannerOptions.getHost());
+                    assertEquals(
+                        "explicit.example",
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      spanner = SpannerPool.INSTANCE.getSpanner(explicitOptions, connection);
+      spanner.close();
+      SpannerPool.INSTANCE.removeConnection(explicitOptions, connection);
+      assertTrue(executedConfigurator.get());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+      connection.close();
+    }
+  }
+
+  private static void useUniverseDomainEnvironment(@Nullable String universeDomain) {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public @Nullable String getUniverseDomain() {
+            return universeDomain;
+          }
+        });
   }
 }

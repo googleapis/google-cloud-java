@@ -366,6 +366,7 @@ public class ConnectionPropertyTest {
           ConnectionProperties.STATEMENT_TIMEOUT,
           ConnectionProperties.AUTOCOMMIT_DML_MODE,
           ConnectionProperties.RPC_PRIORITY,
+          ConnectionProperties.UNIVERSE_DOMAIN,
         }) {
       assertTrue(nullableProperty.isNullAllowed());
       assertNull(ConnectionPropertyValue.of(nullableProperty, null).getValue());
@@ -389,7 +390,6 @@ public class ConnectionPropertyTest {
           ConnectionProperties.SAVEPOINT_SUPPORT,
           ConnectionProperties.DDL_IN_TRANSACTION_MODE,
           ConnectionProperties.TRACING_PREFIX,
-          ConnectionProperties.UNIVERSE_DOMAIN,
           ConnectionProperties.OPTIMIZER_VERSION,
           ConnectionProperties.READ_ONLY_STALENESS,
         }) {

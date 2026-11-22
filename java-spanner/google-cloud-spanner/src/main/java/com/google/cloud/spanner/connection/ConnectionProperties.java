@@ -232,11 +232,11 @@ public class ConnectionProperties {
           BooleanConverter.INSTANCE,
           Context.STARTUP);
   public static final ConnectionProperty<String> UNIVERSE_DOMAIN =
-      createNonNull(
+      createNullable(
           "universeDomain",
           "Configure the connection to try to connect to Spanner using "
               + "a different partner Google Universe than GDU (googleapis.com).",
-          "googleapis.com",
+          null,
           StringValueConverter.INSTANCE,
           Context.STARTUP);
   public static final ConnectionProperty<Boolean> USE_AUTO_SAVEPOINTS_FOR_EMULATOR =
