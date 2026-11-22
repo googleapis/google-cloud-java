@@ -41,10 +41,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
-import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.clearInvocations;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -58,7 +58,6 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.MethodDescriptor.Marshaller;
 import io.grpc.Status;
-import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -77,6 +76,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumSet;
 import java.util.List;
@@ -85,6 +85,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import javax.annotation.Nonnull;
 import org.junit.After;
@@ -153,6 +154,7 @@ public class GcpFallbackChannelTest {
   private Runnable checkErrorRatesTask;
   private Runnable primaryProbingTask;
   private Runnable fallbackProbingTask;
+  private final List<GcpFallbackChannel> channelsToShutdown = new ArrayList<>();
 
   @SuppressWarnings("unchecked")
   @Before
@@ -184,6 +186,47 @@ public class GcpFallbackChannelTest {
     if (gcpFallbackChannel != null && !gcpFallbackChannel.isShutdown()) {
       gcpFallbackChannel.shutdownNow();
     }
+    for (GcpFallbackChannel ch : channelsToShutdown) {
+      ch.shutdownNow();
+    }
+    channelsToShutdown.clear();
+  }
+
+  private GcpFallbackChannel track(GcpFallbackChannel channel) {
+    channelsToShutdown.add(channel);
+    return channel;
+  }
+
+  private GcpFallbackChannel newChannel(GcpFallbackChannelOptions options) {
+    return track(new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder));
+  }
+
+  private GcpFallbackChannelOptions.Builder sharedRecoveryOptions(GcpFallbackState sharedState) {
+    return getDefaultOptionsBuilder()
+        .setSharedState(sharedState)
+        .setEnableRecovery(true)
+        .setMinPrimaryProbeSuccessCount(1)
+        .setMinPrimaryProbeSuccessDuration(Duration.ZERO);
+  }
+
+  private List<Runnable> captureProbeTasks(
+      ScheduledExecutorService exec, Duration interval, int count) {
+    ArgumentCaptor<Runnable> captor = ArgumentCaptor.forClass(Runnable.class);
+    verify(exec, times(count))
+        .scheduleAtFixedRate(
+            captor.capture(), eq(interval.toMillis()), eq(interval.toMillis()), eq(MILLISECONDS));
+    return captor.getAllValues();
+  }
+
+  private void simulateDefaultPrimaryCall(GcpFallbackChannel ch, Status status) {
+    simulateCallOnChannel(
+        ch,
+        status,
+        mockPrimaryDelegateChannel,
+        mockFallbackDelegateChannel,
+        mockPrimaryClientCall,
+        mockFallbackClientCall,
+        false);
   }
 
   private GcpFallbackChannelOptions.Builder getDefaultOptionsBuilder() {
@@ -384,14 +427,14 @@ public class GcpFallbackChannelTest {
     }
   }
 
-  private OpenTelemetry prepareOpenTelemetry(TestMetricExporter exporter) {
+  private OpenTelemetrySdk prepareOpenTelemetry(TestMetricExporter exporter) {
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder()
             .registerMetricReader(
                 PeriodicMetricReader.builder(exporter).setInterval(Duration.ofMillis(100)).build())
             .build();
 
-    OpenTelemetry openTelemetry =
+    OpenTelemetrySdk openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
 
     return openTelemetry;
@@ -595,6 +638,8 @@ public class GcpFallbackChannelTest {
             .setErrorRateThreshold(0.1f)
             .setPrimaryProbingFunction(primaryProbe)
             .setPrimaryProbingInterval(Duration.ofSeconds(15))
+            .setMinPrimaryProbeSuccessCount(1)
+            .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
             .build();
     initializeChannelAndCaptureTasks(options);
 
@@ -629,6 +674,7 @@ public class GcpFallbackChannelTest {
     assertTrue(
         "Should remain in fallback mode even if primary is hypothetically recovered.",
         gcpFallbackChannel.isInFallbackMode());
+    assertEquals(0, gcpFallbackChannel.getPrimaryProbeSuccesses());
 
     // Verify new calls still go to fallback.
     gcpFallbackChannel.newCall(methodDescriptor, callOptions);
@@ -1094,6 +1140,14 @@ public class GcpFallbackChannelTest {
 
     fallbackProbingTask.run();
     verify(mockFallbackProber).apply(mockFallbackDelegateChannel);
+
+    // Probing tasks must be skipped after channel shutdown.
+    gcpFallbackChannel.shutdown();
+    clearInvocations(mockPrimaryProber, mockFallbackProber);
+    primaryProbingTask.run();
+    fallbackProbingTask.run();
+    verify(mockPrimaryProber, never()).apply(any());
+    verify(mockFallbackProber, never()).apply(any());
   }
 
   @Test
@@ -1402,6 +1456,8 @@ public class GcpFallbackChannelTest {
       channel1.shutdownNow();
       channel2.shutdownNow();
     }
+    verify(mockExec, never()).shutdown();
+    verify(mockExec, never()).shutdownNow();
   }
 
   @Test
@@ -1447,90 +1503,87 @@ public class GcpFallbackChannelTest {
   }
 
   @Test
-  public void testSharedState_probingRequiresBothCountAndDurationToRecover()
-      throws InterruptedException {
+  public void testSharedState_probingRequiresBothCountAndDurationToRecover() {
     ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
-    GcpFallbackState sharedState = new GcpFallbackState(mockExec);
-
     AtomicBoolean probeOk = new AtomicBoolean(true);
-    GcpFallbackChannelOptions options =
-        getDefaultOptionsBuilder()
-            .setSharedState(sharedState)
-            .setEnableRecovery(true)
-            .setPrimaryProbingFunction(channel -> probeOk.get() ? "" : "UNAVAILABLE")
-            .setMinPrimaryProbeSuccessCount(2)
-            .setMinPrimaryProbeSuccessDuration(Duration.ofMillis(50))
-            .build();
-    ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
+    AtomicLong fakeNanos = new AtomicLong(1_000_000_000L);
+    Duration minDuration = Duration.ofMinutes(9);
+    try (GcpFallbackState sharedState = new GcpFallbackState(mockExec)) {
+      GcpFallbackChannelOptions options =
+          sharedRecoveryOptions(sharedState)
+              .setPrimaryProbingFunction(channel -> probeOk.get() ? "" : "UNAVAILABLE")
+              .setMinPrimaryProbeSuccessCount(2)
+              .setMinPrimaryProbeSuccessDuration(minDuration)
+              .build();
+      GcpFallbackChannel channel1 = newChannel(options);
+      GcpFallbackChannel channel2 = newChannel(options);
+      channel1.setNanoTimeSupplier(fakeNanos::get);
+      channel2.setNanoTimeSupplier(fakeNanos::get);
 
-    GcpFallbackChannel channel1 =
-        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
-    GcpFallbackChannel channel2 =
-        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
-
-    try {
-      verify(mockExec, atLeast(2))
-          .scheduleAtFixedRate(
-              taskCaptor.capture(),
-              eq(options.getPrimaryProbingInterval().toMillis()),
-              eq(options.getPrimaryProbingInterval().toMillis()),
-              eq(MILLISECONDS));
-      Runnable probeTask1 = taskCaptor.getAllValues().get(0);
-      Runnable probeTask2 = taskCaptor.getAllValues().get(1);
+      List<Runnable> probes = captureProbeTasks(mockExec, options.getPrimaryProbingInterval(), 2);
+      Runnable probeTask1 = probes.get(0);
+      Runnable probeTask2 = probes.get(1);
 
       // Skipped when not in fallback mode
       assertFalse(channel1.isInFallbackMode());
       probeTask1.run();
-      assertEquals(0, sharedState.getPrimaryProbeSuccesses().get());
+      assertEquals(0, channel1.getPrimaryProbeSuccesses());
 
-      // Enter fallback mode across the pool
       sharedState.triggerFallback();
       assertTrue(channel1.isInFallbackMode());
       assertTrue(channel2.isInFallbackMode());
 
-      // Channel 1 probe succeeds (count = 1), then Channel 2 failing probe resets shared count to 0
+      // Channel 1 probe succeeds (count = 1); Channel 2 failing probe resets only Channel 2
       probeTask1.run();
-      assertEquals(1, sharedState.getPrimaryProbeSuccesses().get());
+      assertEquals(1, channel1.getPrimaryProbeSuccesses());
       probeOk.set(false);
       probeTask2.run();
-      assertEquals(0, sharedState.getPrimaryProbeSuccesses().get());
-      assertTrue(channel1.isInFallbackMode());
+      assertEquals(1, channel1.getPrimaryProbeSuccesses());
+      assertEquals(0, channel2.getPrimaryProbeSuccesses());
 
-      // Re-enable probe success: Channel 1 (count = 1) + Channel 2 immediately (count = 2, < 50ms)
+      // Channel 1 fails -> resets Channel 1 count to 0
+      probeTask1.run();
+      assertEquals(0, channel1.getPrimaryProbeSuccesses());
+
+      // Channel 1 probes twice with elapsed < minDuration -> stays in fallback
       probeOk.set(true);
       probeTask1.run();
-      assertEquals(1, sharedState.getPrimaryProbeSuccesses().get());
-      probeTask2.run();
+      fakeNanos.addAndGet(minDuration.toNanos() - 1);
+      probeTask1.run();
       assertTrue(channel1.isInFallbackMode());
-      assertEquals(2, sharedState.getPrimaryProbeSuccesses().get());
+      assertEquals(2, channel1.getPrimaryProbeSuccesses());
 
-      // Wait for duration window to pass, then next probe recovers the entire pool
-      Thread.sleep(60);
+      // Advance past minDuration -> Channel 1 recovers while Channel 2 stays in fallback
+      fakeNanos.addAndGet(1);
       probeTask1.run();
       assertFalse(channel1.isInFallbackMode());
+      assertFalse(sharedState.isInFallbackMode());
+      assertTrue(channel2.isInFallbackMode());
+      assertEquals(0, channel1.getPrimaryProbeSuccesses());
+
+      // Channel 2 probes and recovers independently
+      probeTask2.run();
+      assertTrue(channel2.isInFallbackMode());
+      fakeNanos.addAndGet(minDuration.toNanos());
+      probeTask2.run();
       assertFalse(channel2.isInFallbackMode());
-      assertEquals(0, sharedState.getPrimaryProbeSuccesses().get());
-    } finally {
-      channel1.shutdownNow();
-      channel2.shutdownNow();
-      sharedState.shutdown();
+      assertEquals(0, channel2.getPrimaryProbeSuccesses());
     }
   }
 
   @Test
   public void testNotifyWhenStateChangedTriggeredOnFallbackAndRecovery() {
     GcpFallbackState sharedState = new GcpFallbackState(mockScheduledExecutorService);
-    GcpFallbackChannelOptions options =
-        GcpFallbackChannelOptions.newBuilder()
-            .setSharedState(sharedState)
-            .setEnableRecovery(true)
-            .setMinPrimaryProbeSuccessCount(1)
-            .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
-            .build();
+    GcpFallbackChannelOptions options = sharedRecoveryOptions(sharedState).build();
     gcpFallbackChannel =
         new GcpFallbackChannel(options, mockPrimaryDelegateChannel, mockFallbackDelegateChannel);
+    GcpFallbackChannel sibling =
+        track(
+            new GcpFallbackChannel(
+                options, mock(ManagedChannel.class), mock(ManagedChannel.class)));
 
     AtomicLong callbackCount = new AtomicLong(0);
+    AtomicLong siblingCallbackCount = new AtomicLong(0);
     ArgumentCaptor<Runnable> primaryCallbackCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     gcpFallbackChannel.notifyWhenStateChanged(
@@ -1542,22 +1595,25 @@ public class GcpFallbackChannelTest {
 
     sharedState.triggerFallback();
     assertEquals(1, callbackCount.get());
-
     primaryCallbackCaptor.getValue().run();
     assertEquals(1, callbackCount.get());
 
     ArgumentCaptor<Runnable> fallbackCallbackCaptor = ArgumentCaptor.forClass(Runnable.class);
     gcpFallbackChannel.notifyWhenStateChanged(
         ConnectivityState.READY, callbackCount::incrementAndGet);
+    sibling.notifyWhenStateChanged(ConnectivityState.READY, siblingCallbackCount::incrementAndGet);
     verify(mockFallbackDelegateChannel)
         .notifyWhenStateChanged(eq(ConnectivityState.READY), fallbackCallbackCaptor.capture());
-    assertEquals(1, callbackCount.get());
 
-    long gen = sharedState.getGeneration();
-    sharedState.recordPrimaryProbeResult(true, gen, options);
+    // Recovering gcpFallbackChannel fires only its callback, not the sibling's.
+    gcpFallbackChannel.recordPrimaryProbeResult(true);
     assertEquals(2, callbackCount.get());
+    assertEquals(0, siblingCallbackCount.get());
     fallbackCallbackCaptor.getValue().run();
     assertEquals(2, callbackCount.get());
+
+    sibling.recordPrimaryProbeResult(true);
+    assertEquals(1, siblingCallbackCount.get());
   }
 
   @Test
@@ -1587,6 +1643,7 @@ public class GcpFallbackChannelTest {
               .setEnableRecovery(true)
               .setPrimaryProbingFunction(channel -> "")
               .setMinPrimaryProbeSuccessCount(2)
+              .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
               .build();
       ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
@@ -1596,7 +1653,7 @@ public class GcpFallbackChannelTest {
           new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
 
       try {
-        verify(mockExec, atLeast(2))
+        verify(mockExec, times(2))
             .scheduleAtFixedRate(
                 taskCaptor.capture(),
                 eq(options.getPrimaryProbingInterval().toMillis()),
@@ -1614,14 +1671,206 @@ public class GcpFallbackChannelTest {
         probeTask2.run();
 
         assertTrue(
-            "Pool should not recover after a single round of probing across channels",
+            "Channels should not recover after a single round of probing across channels",
             channel1.isInFallbackMode());
+        assertTrue(channel2.isInFallbackMode());
+        assertEquals(1, channel1.getPrimaryProbeSuccesses());
+        assertEquals(1, channel2.getPrimaryProbeSuccesses());
       } finally {
         channel1.shutdownNow();
         channel2.shutdownNow();
       }
     }
     verify(mockExec).shutdown();
+  }
+
+  @Test
+  public void testSharedState_reFailoverDuringPartialRecoveryResetsProbeCounts() {
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    TestMetricExporter exporter = new TestMetricExporter();
+    try (OpenTelemetrySdk openTelemetry = prepareOpenTelemetry(exporter);
+        GcpFallbackState sharedState = new GcpFallbackState(mockExec)) {
+      GcpFallbackChannelOptions options =
+          sharedRecoveryOptions(sharedState)
+              .setMinFailedCalls(1)
+              .setErrorRateThreshold(1.0f)
+              .setPrimaryProbingFunction(channel -> "")
+              .setMinPrimaryProbeSuccessCount(2)
+              .setGcpFallbackOpenTelemetry(
+                  GcpFallbackOpenTelemetry.newBuilder().withSdk(openTelemetry).build())
+              .build();
+      GcpFallbackChannel channel1 = newChannel(options);
+      GcpFallbackChannel channel2 = newChannel(options);
+
+      ArgumentCaptor<Runnable> evalCaptor = ArgumentCaptor.forClass(Runnable.class);
+      verify(mockExec)
+          .scheduleAtFixedRate(
+              evalCaptor.capture(),
+              eq(options.getPeriod().toMillis()),
+              eq(options.getPeriod().toMillis()),
+              eq(MILLISECONDS));
+      Runnable checkErrorRates = evalCaptor.getValue();
+      List<Runnable> probes = captureProbeTasks(mockExec, options.getPrimaryProbingInterval(), 2);
+      Runnable probeTask1 = probes.get(0);
+      Runnable probeTask2 = probes.get(1);
+
+      // Failover 1: pool transitions primary -> fallback (+1).
+      simulateDefaultPrimaryCall(channel1, Status.UNAVAILABLE);
+      checkErrorRates.run();
+      assertTrue(channel1.isInFallbackMode());
+      assertTrue(channel2.isInFallbackMode());
+
+      // Channel 1 recovers (+1 fallback -> primary); Channel 2 completes 1 of 2 probes.
+      probeTask1.run();
+      probeTask1.run();
+      probeTask2.run();
+      assertFalse(channel1.isInFallbackMode());
+      assertFalse(sharedState.isInFallbackMode());
+      assertTrue(channel2.isInFallbackMode());
+      assertEquals(1, channel2.getPrimaryProbeSuccesses());
+
+      // Re-failover during partial recovery: pool transitions primary -> fallback (+1);
+      // both channels reset their probe counts so Channel 2 cannot recover on a single probe.
+      simulateDefaultPrimaryCall(channel1, Status.UNAVAILABLE);
+      checkErrorRates.run();
+      assertTrue(channel1.isInFallbackMode());
+      assertEquals(0, channel1.getPrimaryProbeSuccesses());
+      assertTrue(channel2.isInFallbackMode());
+      assertEquals(0, channel2.getPrimaryProbeSuccesses());
+
+      // Channel 2 needs a full fresh streak (2 probes) to recover (+1 fallback -> primary),
+      // then Channel 1 recovers (pool already recovered).
+      probeTask2.run();
+      assertTrue(channel2.isInFallbackMode());
+      assertEquals(1, channel2.getPrimaryProbeSuccesses());
+      probeTask2.run();
+      assertFalse(channel2.isInFallbackMode());
+      assertFalse(sharedState.isInFallbackMode());
+      probeTask1.run();
+      probeTask1.run();
+      assertFalse(channel1.isInFallbackMode());
+
+      // Verify pool-level fallback_count: 2 failovers and 2 recoveries.
+      openTelemetry.getSdkMeterProvider().forceFlush().join(5, TimeUnit.SECONDS);
+      List<MetricData> metrics = exporter.getExportedMetrics();
+      assertSumMetrics(
+          2,
+          metrics,
+          fullMetricName(FALLBACK_COUNT_METRIC),
+          Attributes.of(FROM_CHANNEL_NAME, "primary", TO_CHANNEL_NAME, "fallback"));
+      assertSumMetrics(
+          2,
+          metrics,
+          fullMetricName(FALLBACK_COUNT_METRIC),
+          Attributes.of(FROM_CHANNEL_NAME, "fallback", TO_CHANNEL_NAME, "primary"));
+    }
+  }
+
+  @Test
+  public void testSharedState_inFlightProbeDoesNotRecoverIntoNewFallbackEpisode() {
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    AtomicReference<Runnable> duringNextProbe = new AtomicReference<>();
+    try (GcpFallbackState sharedState = new GcpFallbackState(mockExec)) {
+      GcpFallbackChannelOptions options =
+          sharedRecoveryOptions(sharedState)
+              .setMinFailedCalls(1)
+              .setErrorRateThreshold(1.0f)
+              .setPrimaryProbingFunction(
+                  channel -> {
+                    Runnable hook = duringNextProbe.getAndSet(null);
+                    if (hook != null) {
+                      hook.run();
+                    }
+                    return "";
+                  })
+              .setMinPrimaryProbeSuccessCount(2)
+              .build();
+      GcpFallbackChannel channel1 = newChannel(options);
+      GcpFallbackChannel channel2 = newChannel(options);
+
+      ArgumentCaptor<Runnable> evalCaptor = ArgumentCaptor.forClass(Runnable.class);
+      verify(mockExec)
+          .scheduleAtFixedRate(
+              evalCaptor.capture(),
+              eq(options.getPeriod().toMillis()),
+              eq(options.getPeriod().toMillis()),
+              eq(MILLISECONDS));
+      Runnable checkErrorRates = evalCaptor.getValue();
+      List<Runnable> probes = captureProbeTasks(mockExec, options.getPrimaryProbingInterval(), 2);
+      Runnable probeTask1 = probes.get(0);
+      Runnable probeTask2 = probes.get(1);
+
+      // Episode 1: both channels fall back; channel 1 recovers, channel 2 is one probe short.
+      simulateDefaultPrimaryCall(channel1, Status.UNAVAILABLE);
+      checkErrorRates.run();
+      long episode1 = sharedState.getFallbackEpoch();
+      probeTask1.run();
+      probeTask1.run();
+      probeTask2.run();
+      assertFalse(channel1.isInFallbackMode());
+      assertFalse(sharedState.isInFallbackMode());
+      assertEquals(1, channel2.getPrimaryProbeSuccesses());
+
+      // Episode 2 trips while channel 2's threshold-crossing probe is in flight.
+      duringNextProbe.set(
+          () -> {
+            simulateDefaultPrimaryCall(channel1, Status.UNAVAILABLE);
+            checkErrorRates.run();
+          });
+      probeTask2.run();
+      assertTrue(sharedState.getFallbackEpoch() > episode1);
+      assertTrue(sharedState.isInFallbackMode());
+      assertTrue(channel1.isInFallbackMode());
+      assertTrue(channel2.isInFallbackMode());
+      assertEquals(0, channel2.getPrimaryProbeSuccesses());
+
+      // Channel 2 must complete a full fresh streak of 2 probes started in Episode 2 to recover.
+      probeTask2.run();
+      assertTrue(channel2.isInFallbackMode());
+      assertEquals(1, channel2.getPrimaryProbeSuccesses());
+      probeTask2.run();
+      assertFalse(channel2.isInFallbackMode());
+      assertFalse(sharedState.isInFallbackMode());
+    }
+  }
+
+  @Test
+  public void testSharedState_registrationUnregistrationAndStaleRecovery() {
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    try (GcpFallbackState sharedState = new GcpFallbackState(mockExec)) {
+      GcpFallbackChannelOptions options = sharedRecoveryOptions(sharedState).build();
+      GcpFallbackChannel channel1 = newChannel(options);
+      assertEquals(1, sharedState.getRegisteredChannelCount());
+
+      // Episode 1: channel registered during fallback starts in fallback immediately.
+      sharedState.triggerFallback();
+      long episode1Epoch = sharedState.getFallbackEpoch();
+      GcpFallbackChannel channel2 = newChannel(options);
+      assertEquals(2, sharedState.getRegisteredChannelCount());
+      assertTrue(channel1.isInFallbackMode());
+      assertTrue(channel2.isInFallbackMode());
+
+      // Both recover -> Episode 2 increments epoch; stale Episode 1 callback is rejected (ABA).
+      channel1.recordPrimaryProbeResult(true);
+      channel2.recordPrimaryProbeResult(true);
+      assertFalse(sharedState.isInFallbackMode());
+      sharedState.triggerFallback();
+      long episode2Epoch = sharedState.getFallbackEpoch();
+      assertTrue(episode2Epoch > episode1Epoch);
+      sharedState.onChannelRecovered(channel1, episode1Epoch);
+      assertTrue(sharedState.isInFallbackMode());
+
+      // Unregistered channel cannot recover the pool even with the current epoch.
+      channel1.shutdownNow();
+      assertEquals(1, sharedState.getRegisteredChannelCount());
+      sharedState.onChannelRecovered(channel1, episode2Epoch);
+      assertTrue(sharedState.isInFallbackMode());
+
+      // Remaining registered channel recovers the pool.
+      channel2.recordPrimaryProbeResult(true);
+      assertFalse(channel2.isInFallbackMode());
+      assertFalse(sharedState.isInFallbackMode());
+    }
   }
 
   @Test
