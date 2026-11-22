@@ -110,7 +110,7 @@ public class Metric extends MetricInfo {
     return baseEquals(other) && Objects.equals(options, other.options);
   }
 
-  /** Returns the metrics's {@code Logging} object used to issue requests. */
+  /** Returns the metric's {@code Logging} object used to issue requests. */
   public Logging getLogging() {
     return logging;
   }
@@ -137,9 +137,10 @@ public class Metric extends MetricInfo {
   }
 
   /**
-   * Sends a request for deleting this metric. This method returns a {@code ApiFuture} object to
+   * Sends a request for deleting this metric. This method returns an {@code ApiFuture} object to
    * consume the result. {@link ApiFuture#get()} returns {@code true} if the metric was deleted,
-   * {@code false} if it was not found.
+   * {@code false} if it was not found, or throws {@link java.util.concurrent.ExecutionException}
+   * wrapping a {@link LoggingException} upon failure.
    *
    * <p>Example of asynchronously deleting the metric.
    *
@@ -153,8 +154,6 @@ public class Metric extends MetricInfo {
    *   // the metric was not found
    * }
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   public ApiFuture<Boolean> deleteAsync() {
     return logging.deleteMetricAsync(getName());
@@ -180,9 +179,10 @@ public class Metric extends MetricInfo {
   }
 
   /**
-   * Sends a request to fetch current metric's latest information. This method returns a {@code
+   * Sends a request to fetch current metric's latest information. This method returns an {@code
    * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a {@code Metric}
-   * object with latest information or {@code null} if not found.
+   * object with latest information or {@code null} if not found, or throws {@link
+   * java.util.concurrent.ExecutionException} wrapping a {@link LoggingException} upon failure.
    *
    * <p>Example of asynchronously getting the metric's latest information.
    *
@@ -194,8 +194,6 @@ public class Metric extends MetricInfo {
    *   // the metric was not found
    * }
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   public ApiFuture<Metric> reloadAsync() {
     return logging.getMetricAsync(getName());
@@ -222,8 +220,9 @@ public class Metric extends MetricInfo {
 
   /**
    * Sends a request to update current metric. If the metric does not exist, it is created. This
-   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()}
-   * returns a {@code Metric} object with updated information.
+   * method returns an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()}
+   * returns a {@code Metric} object with updated information, or throws {@link
+   * java.util.concurrent.ExecutionException} wrapping a {@link LoggingException} upon failure.
    *
    * <p>Example of asynchronously updating the metric's information.
    *
@@ -235,8 +234,6 @@ public class Metric extends MetricInfo {
    * // ...
    * Metric updatedMetric = future.get();
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   public ApiFuture<Metric> updateAsync() {
     return logging.updateAsync(this);
