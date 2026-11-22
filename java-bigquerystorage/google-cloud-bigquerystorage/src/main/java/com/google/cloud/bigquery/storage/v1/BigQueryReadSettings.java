@@ -51,15 +51,19 @@ import java.util.List;
  *
  * <p>For example, to set the total timeout of createReadSession to 30 seconds:
  *
- * <pre>
- * <code>
- * BigQueryReadSettings.Builder BigQueryReadSettingsBuilder =
- *     BigQueryReadSettings.newBuilder();
- * BigQueryReadSettingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
- * BigQueryReadSettings BigQueryReadSettings = BigQueryReadSettingsBuilder.build();
- * </code>
- * </pre>
+ * <pre>{@code
+ * BigQueryReadSettings.Builder bigQueryReadSettingsBuilder = BigQueryReadSettings.newBuilder();
+ * bigQueryReadSettingsBuilder
+ *     .createReadSessionSettings()
+ *     .setRetrySettings(
+ *         bigQueryReadSettingsBuilder
+ *             .createReadSessionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
+ *             .setTotalTimeoutDuration(java.time.Duration.ofSeconds(30))
+ *             .build());
+ * BigQueryReadSettings bigQueryReadSettings = bigQueryReadSettingsBuilder.build();
+ * }</pre>
  */
 @BetaApi
 public class BigQueryReadSettings extends ClientSettings<BigQueryReadSettings> {

@@ -58,14 +58,19 @@ import java.util.List;
  * build() is called, the tree of builders is called to create the complete settings object. For
  * example, to set the total timeout of createReadSession to 30 seconds:
  *
- * <pre>
- * <code>
- * BigQueryStorageSettings.Builder settingsBuilder = BaseBigQueryStorageSettings.newBuilder();
- * settingsBuilder.createReadSessionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
- * BaseBigQueryStorageSettings settings = settingsBuilder.build();
- * </code>
- * </pre>
+ * <pre>{@code
+ * BigQueryStorageSettings.Builder settingsBuilder = BigQueryStorageSettings.newBuilder();
+ * settingsBuilder
+ *     .createReadSessionSettings()
+ *     .setRetrySettings(
+ *         settingsBuilder
+ *             .createReadSessionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
+ *             .setTotalTimeoutDuration(java.time.Duration.ofSeconds(30))
+ *             .build());
+ * BigQueryStorageSettings settings = settingsBuilder.build();
+ * }</pre>
  */
 @BetaApi
 public class BigQueryStorageSettings extends ClientSettings<BigQueryStorageSettings> {
