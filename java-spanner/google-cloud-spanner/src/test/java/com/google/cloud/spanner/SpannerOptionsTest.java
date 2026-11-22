@@ -2141,4 +2141,106 @@ public class SpannerOptionsTest {
     assertEquals("spanner.universe.example:443", nonEmulatorOptions.getEndpoint());
     assertFalse(nonEmulatorOptions.isEmulatorEnabled());
   }
+
+  @Test
+  public void testUniverseDomain_ValidValues() {
+    SpannerOptions defaultOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .build();
+    assertEquals("https://spanner.googleapis.com", defaultOptions.getHost());
+    assertEquals("spanner.googleapis.com:443", defaultOptions.getEndpoint());
+
+    SpannerOptions emptyUniverseOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .setUniverseDomain("")
+            .build();
+    assertEquals("https://spanner.googleapis.com", emptyUniverseOptions.getHost());
+    assertEquals("spanner.googleapis.com:443", emptyUniverseOptions.getEndpoint());
+
+    for (String universeDomain :
+        Arrays.asList("googleapis.com", "abc.goog", "a-1.b-2.example.goog", "ABC.GOOG")) {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setUniverseDomain(universeDomain)
+              .build();
+      assertEquals("https://spanner." + universeDomain, options.getHost());
+      assertEquals("spanner." + universeDomain + ":443", options.getEndpoint());
+    }
+  }
+
+  @Test
+  public void testUniverseDomain_RejectsInvalidAndUrlInjectionValues() {
+    String overlongLabel = Strings.repeat("a", 64) + ".goog";
+    String overlongDomain =
+        Strings.repeat("a", 60)
+            + "."
+            + Strings.repeat("b", 60)
+            + "."
+            + Strings.repeat("c", 60)
+            + "."
+            + Strings.repeat("d", 63);
+    assertEquals(246, overlongDomain.length());
+
+    for (String invalidDomain :
+        Arrays.asList(
+            "ignored@attacker.com:8443",
+            "ignored@attacker.com",
+            "abc.goog:8443",
+            "abc.goog/injected#frag",
+            "abc.goog/injected?foo=bar#frag",
+            "https://attacker.com",
+            "abc.goog\\attacker.com",
+            " abc.goog",
+            "abc.goog ",
+            ".abc.goog",
+            "abc.goog.",
+            "abc..goog",
+            "-abc.goog",
+            "abc-.goog",
+            "abc_def.goog",
+            "[::1]",
+            overlongLabel,
+            overlongDomain)) {
+      IllegalArgumentException defaultHostException =
+          assertThrows(
+              "Expected SpannerOptions with universeDomain=" + invalidDomain + " to be rejected",
+              IllegalArgumentException.class,
+              () ->
+                  SpannerOptions.newBuilder()
+                      .setProjectId("test-project")
+                      .setCredentials(NoCredentials.getInstance())
+                      .setEmulatorHost(null)
+                      .setUniverseDomain(invalidDomain)
+                      .build());
+      assertTrue(
+          defaultHostException.getMessage(),
+          defaultHostException.getMessage().contains("Invalid universe domain"));
+
+      IllegalArgumentException explicitHostException =
+          assertThrows(
+              "Expected SpannerOptions with explicit host and universeDomain="
+                  + invalidDomain
+                  + " to be rejected",
+              IllegalArgumentException.class,
+              () ->
+                  SpannerOptions.newBuilder()
+                      .setProjectId("test-project")
+                      .setCredentials(NoCredentials.getInstance())
+                      .setHost("https://localhost:1234")
+                      .setUniverseDomain(invalidDomain)
+                      .build());
+      assertTrue(
+          explicitHostException.getMessage(),
+          explicitHostException.getMessage().contains("Invalid universe domain"));
+    }
+  }
 }

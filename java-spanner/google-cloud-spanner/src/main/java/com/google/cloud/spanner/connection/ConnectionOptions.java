@@ -214,7 +214,12 @@ public class ConnectionOptions {
 
   private static final String PLAIN_TEXT_PROTOCOL = "http:";
   private static final String HOST_PROTOCOL = "https:";
-  private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
+  private static final String SPANNER_SERVICE_NAME = "spanner";
+  private static final int MAX_DNS_HOSTNAME_LENGTH = 253;
+  private static final Pattern VALID_UNIVERSE_DOMAIN_PATTERN =
+      Pattern.compile(
+          "^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?"
+              + "(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
   private static final String SPANNER_EMULATOR_HOST_ENV_VAR = "SPANNER_EMULATOR_HOST";
   private static final String DEFAULT_EMULATOR_HOST = "http://localhost:9010";
 
@@ -760,6 +765,7 @@ public class ConnectionOptions {
 
     // Create the initial connection state from the parsed properties in the connection URL.
     this.initialConnectionState = new ConnectionState(connectionPropertyValues);
+    validateUniverseDomain(getUniverseDomain());
 
     checkGuardedProperty(
         getInitialConnectionPropertyValue(ENCODED_CREDENTIALS),
@@ -1184,6 +1190,36 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(DCP_CONCURRENT_STREAMS_LOW_WATERMARK);
   }
 
+  /**
+   * Validates that a non-empty universe domain is a valid RFC 1123 DNS domain name so it cannot
+   * inject URL components (such as userinfo, port, path, query, or fragment) into constructed
+   * endpoint URLs.
+   */
+  private static void validateUniverseDomain(@Nullable String universeDomain) {
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      return;
+    }
+    Preconditions.checkArgument(
+        SPANNER_SERVICE_NAME.length() + 1 + universeDomain.length() <= MAX_DNS_HOSTNAME_LENGTH
+            && VALID_UNIVERSE_DOMAIN_PATTERN.matcher(universeDomain).matches(),
+        "Invalid universe domain: %s",
+        universeDomain);
+  }
+
+  /**
+   * Returns the default host URL derived from the configured universe domain, falling back to
+   * {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} when null or empty.
+   */
+  private String getDefaultHost() {
+    String universeDomain = getUniverseDomain();
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    } else {
+      validateUniverseDomain(universeDomain);
+    }
+    return String.format("%s//%s.%s", HOST_PROTOCOL, SPANNER_SERVICE_NAME, universeDomain);
+  }
+
   /** Calls the getChannelProvider() method from the supplied class. */
   public TransportChannelProvider getChannelProvider() {
     String channelProvider = getInitialConnectionPropertyValue(CHANNEL_PROVIDER);
@@ -1191,7 +1227,7 @@ public class ConnectionOptions {
       return null;
     }
     try {
-      URL url = new URL(MoreObjects.firstNonNull(host, DEFAULT_HOST));
+      URL url = new URL(MoreObjects.firstNonNull(host, getDefaultHost()));
       ExternalChannelProvider provider =
           ClientSideStatementValueConverters.ExternalChannelProviderConverter.INSTANCE.convert(
               channelProvider);
