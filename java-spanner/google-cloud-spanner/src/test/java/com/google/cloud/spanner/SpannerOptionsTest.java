@@ -2148,6 +2148,7 @@ public class SpannerOptionsTest {
         SpannerOptions.newBuilder()
             .setProjectId("test-project")
             .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
             .build();
     assertEquals("https://spanner.googleapis.com", defaultOptions.getHost());
     assertEquals("spanner.googleapis.com:443", defaultOptions.getEndpoint());
@@ -2156,6 +2157,7 @@ public class SpannerOptionsTest {
         SpannerOptions.newBuilder()
             .setProjectId("test-project")
             .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
             .setUniverseDomain("")
             .build();
     assertEquals("https://spanner.googleapis.com", emptyUniverseOptions.getHost());
@@ -2167,6 +2169,7 @@ public class SpannerOptionsTest {
           SpannerOptions.newBuilder()
               .setProjectId("test-project")
               .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
               .setUniverseDomain(universeDomain)
               .build();
       assertEquals("https://spanner." + universeDomain, options.getHost());
@@ -2215,6 +2218,7 @@ public class SpannerOptionsTest {
                   SpannerOptions.newBuilder()
                       .setProjectId("test-project")
                       .setCredentials(NoCredentials.getInstance())
+                      .setEmulatorHost(null)
                       .setUniverseDomain(invalidDomain)
                       .build());
       assertTrue(
