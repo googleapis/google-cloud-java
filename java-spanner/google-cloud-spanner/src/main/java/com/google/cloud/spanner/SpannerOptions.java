@@ -116,6 +116,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -135,6 +136,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String SPANNER_SERVICE_NAME = "spanner";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
+  private static final int MAX_DNS_HOSTNAME_LENGTH = 253;
+  private static final Pattern VALID_UNIVERSE_DOMAIN_PATTERN =
+      Pattern.compile(
+          "^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?"
+              + "(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
   public static final String SPANNER_OMNI_PROJECT_ID = "default";
   public static final String DEFAULT_SPANNER_OMNI_INSTANCE_ID = "default";
 
@@ -1107,9 +1113,29 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     autoTaggingTracerLimit = builder.autoTaggingTracerLimit;
   }
 
+  /**
+   * Validates that a non-empty universe domain is a valid RFC 1123 DNS domain name so it cannot
+   * inject URL components (such as userinfo, port, path, query, or fragment) into constructed
+   * endpoint URLs.
+   */
+  private static void validateUniverseDomain(@Nullable String universeDomain) {
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      return;
+    }
+    Preconditions.checkArgument(
+        SPANNER_SERVICE_NAME.length() + 1 + universeDomain.length() <= MAX_DNS_HOSTNAME_LENGTH
+            && VALID_UNIVERSE_DOMAIN_PATTERN.matcher(universeDomain).matches(),
+        "Invalid universe domain: %s",
+        universeDomain);
+  }
+
   private String getResolvedUniverseDomain() {
     String universeDomain = getUniverseDomain();
-    return Strings.isNullOrEmpty(universeDomain) ? GOOGLE_DEFAULT_UNIVERSE : universeDomain;
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      return GOOGLE_DEFAULT_UNIVERSE;
+    }
+    validateUniverseDomain(universeDomain);
+    return universeDomain;
   }
 
   /** Returns the default {@link RequestOptions.ClientContext} for this {@link SpannerOptions}. */
@@ -3281,11 +3307,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   @Override
   protected String getDefaultHost() {
-    String universeDomain = getUniverseDomain();
-    if (Strings.isNullOrEmpty(universeDomain)) {
-      universeDomain = GOOGLE_DEFAULT_UNIVERSE;
-    }
-    return String.format("https://%s.%s", SPANNER_SERVICE_NAME, universeDomain);
+    return String.format("https://%s.%s", SPANNER_SERVICE_NAME, getResolvedUniverseDomain());
   }
 
   private static class SpannerDefaults implements ServiceDefaults<Spanner, SpannerOptions> {
