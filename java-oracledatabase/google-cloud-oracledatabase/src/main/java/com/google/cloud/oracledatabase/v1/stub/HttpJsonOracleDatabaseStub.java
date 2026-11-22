@@ -229,6 +229,7 @@ import com.google.cloud.oracledatabase.v1.UpdateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.UpdateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.UpdateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.UpdateOdbSubnetRequest;
 import com.google.common.collect.ImmutableMap;
@@ -2367,6 +2368,49 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       .build())
               .setOperationSnapshotFactory(
                   (CreateOdbDnsZoneRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateOdbDnsZoneRequest, Operation>
+      updateOdbDnsZoneMethodDescriptor =
+          ApiMethodDescriptor.<UpdateOdbDnsZoneRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/UpdateOdbDnsZone")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateOdbDnsZoneRequest>newBuilder()
+                      .setPath(
+                          "/v1/{odbDnsZone.name=projects/*/locations/*/odbNetworks/*/odbDnsZones/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateOdbDnsZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "odbDnsZone.name", request.getOdbDnsZone().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateOdbDnsZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("odbDnsZone", request.getOdbDnsZone(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateOdbDnsZoneRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -4869,6 +4913,9 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable;
   private final OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
       createOdbDnsZoneOperationCallable;
+  private final UnaryCallable<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneCallable;
+  private final OperationCallable<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationCallable;
   private final UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable;
   private final OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
       deleteOdbDnsZoneOperationCallable;
@@ -5855,6 +5902,18 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneTransportSettings =
+        HttpJsonCallSettings.<UpdateOdbDnsZoneRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateOdbDnsZoneMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "odb_dns_zone.name", String.valueOf(request.getOdbDnsZone().getName()));
+                  return builder.build();
+                })
             .build();
     HttpJsonCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneTransportSettings =
         HttpJsonCallSettings.<DeleteOdbDnsZoneRequest, Operation>newBuilder()
@@ -7083,6 +7142,15 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.createOdbDnsZoneOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateOdbDnsZoneCallable =
+        callableFactory.createUnaryCallable(
+            updateOdbDnsZoneTransportSettings, settings.updateOdbDnsZoneSettings(), clientContext);
+    this.updateOdbDnsZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            updateOdbDnsZoneTransportSettings,
+            settings.updateOdbDnsZoneOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteOdbDnsZoneCallable =
         callableFactory.createUnaryCallable(
             deleteOdbDnsZoneTransportSettings, settings.deleteOdbDnsZoneSettings(), clientContext);
@@ -7631,6 +7699,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(listOdbDnsZonesMethodDescriptor);
     methodDescriptors.add(getOdbDnsZoneMethodDescriptor);
     methodDescriptors.add(createOdbDnsZoneMethodDescriptor);
+    methodDescriptors.add(updateOdbDnsZoneMethodDescriptor);
     methodDescriptors.add(deleteOdbDnsZoneMethodDescriptor);
     methodDescriptors.add(listExadbVmClustersMethodDescriptor);
     methodDescriptors.add(getExadbVmClusterMethodDescriptor);
@@ -8264,6 +8333,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
       createOdbDnsZoneOperationCallable() {
     return createOdbDnsZoneOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneCallable() {
+    return updateOdbDnsZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationCallable() {
+    return updateOdbDnsZoneOperationCallable;
   }
 
   @Override

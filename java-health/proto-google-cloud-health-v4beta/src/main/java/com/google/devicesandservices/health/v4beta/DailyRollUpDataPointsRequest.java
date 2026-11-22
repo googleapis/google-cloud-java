@@ -264,9 +264,10 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Optional. The maximum number of data points to return.
-   * If unspecified, at most 1440 data points will be returned.
-   * The maximum page size is 10000; values above that will be truncated
-   * accordingly.
+   * If unspecified, at most `90` data points will be returned.
+   * The maximum page size is `90`.
+   * For `calories-in-heart-rate-zone`, `heart-rate`, `active-minutes`, and
+   * `total-calories`, the default and maximum page size is `14`.
    * </pre>
    *
    * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1436,9 +1437,10 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. The maximum number of data points to return.
-     * If unspecified, at most 1440 data points will be returned.
-     * The maximum page size is 10000; values above that will be truncated
-     * accordingly.
+     * If unspecified, at most `90` data points will be returned.
+     * The maximum page size is `90`.
+     * For `calories-in-heart-rate-zone`, `heart-rate`, `active-minutes`, and
+     * `total-calories`, the default and maximum page size is `14`.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1455,9 +1457,10 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. The maximum number of data points to return.
-     * If unspecified, at most 1440 data points will be returned.
-     * The maximum page size is 10000; values above that will be truncated
-     * accordingly.
+     * If unspecified, at most `90` data points will be returned.
+     * The maximum page size is `90`.
+     * For `calories-in-heart-rate-zone`, `heart-rate`, `active-minutes`, and
+     * `total-calories`, the default and maximum page size is `14`.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1478,9 +1481,10 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. The maximum number of data points to return.
-     * If unspecified, at most 1440 data points will be returned.
-     * The maximum page size is 10000; values above that will be truncated
-     * accordingly.
+     * If unspecified, at most `90` data points will be returned.
+     * The maximum page size is `90`.
+     * For `calories-in-heart-rate-zone`, `heart-rate`, `active-minutes`, and
+     * `total-calories`, the default and maximum page size is `14`.
      * </pre>
      *
      * <code>int32 page_size = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

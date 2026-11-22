@@ -188,7 +188,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The reason a spoke is inactive.
+   * The reason for the current state of the spoke.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1.Spoke.StateReason}
@@ -239,7 +239,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Code enum represents the various reasons a state can be `INACTIVE`.
+     * The Code enum represents the various reasons for the state of the spoke.
      * </pre>
      *
      * Protobuf enum {@code google.cloud.networkconnectivity.v1.Spoke.StateReason.Code}
@@ -857,7 +857,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The reason a spoke is inactive.
+     * The reason for the current state of the spoke.
      * </pre>
      *
      * Protobuf type {@code google.cloud.networkconnectivity.v1.Spoke.StateReason}
@@ -2092,6 +2092,68 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         : linkedVpcNetwork_;
   }
 
+  public static final int GATEWAY_FIELD_NUMBER = 24;
+  private com.google.cloud.networkconnectivity.v1.Gateway gateway_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is a gateway that can apply specialized processing to
+   * traffic going through it.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gateway field is set.
+   */
+  @java.lang.Override
+  public boolean hasGateway() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is a gateway that can apply specialized processing to
+   * traffic going through it.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gateway.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.Gateway getGateway() {
+    return gateway_ == null
+        ? com.google.cloud.networkconnectivity.v1.Gateway.getDefaultInstance()
+        : gateway_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This is a gateway that can apply specialized processing to
+   * traffic going through it.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.GatewayOrBuilder getGatewayOrBuilder() {
+    return gateway_ == null
+        ? com.google.cloud.networkconnectivity.v1.Gateway.getDefaultInstance()
+        : gateway_;
+  }
+
   public static final int LINKED_PRODUCER_VPC_NETWORK_FIELD_NUMBER = 26;
   private com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
       linkedProducerVpcNetwork_;
@@ -2111,7 +2173,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLinkedProducerVpcNetwork() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -2449,11 +2511,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The list of fields waiting for hub administration's approval.
+   * Output only. The list of fields waiting for hub administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the fieldPathsPendingUpdate.
@@ -2466,11 +2528,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The list of fields waiting for hub administration's approval.
+   * Output only. The list of fields waiting for hub administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The count of fieldPathsPendingUpdate.
@@ -2483,11 +2545,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The list of fields waiting for hub administration's approval.
+   * Output only. The list of fields waiting for hub administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -2501,11 +2563,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The list of fields waiting for hub administration's approval.
+   * Output only. The list of fields waiting for hub administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.
@@ -2575,6 +2637,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(output, 23, group_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(24, getGateway());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(26, getLinkedProducerVpcNetwork());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
@@ -2651,6 +2716,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessage.computeStringSize(23, group_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getGateway());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               26, getLinkedProducerVpcNetwork());
@@ -2715,6 +2783,10 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
     if (hasLinkedVpcNetwork()) {
       if (!getLinkedVpcNetwork().equals(other.getLinkedVpcNetwork())) return false;
     }
+    if (hasGateway() != other.hasGateway()) return false;
+    if (hasGateway()) {
+      if (!getGateway().equals(other.getGateway())) return false;
+    }
     if (hasLinkedProducerVpcNetwork() != other.hasLinkedProducerVpcNetwork()) return false;
     if (hasLinkedProducerVpcNetwork()) {
       if (!getLinkedProducerVpcNetwork().equals(other.getLinkedProducerVpcNetwork())) return false;
@@ -2772,6 +2844,10 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
     if (hasLinkedVpcNetwork()) {
       hash = (37 * hash) + LINKED_VPC_NETWORK_FIELD_NUMBER;
       hash = (53 * hash) + getLinkedVpcNetwork().hashCode();
+    }
+    if (hasGateway()) {
+      hash = (37 * hash) + GATEWAY_FIELD_NUMBER;
+      hash = (53 * hash) + getGateway().hashCode();
     }
     if (hasLinkedProducerVpcNetwork()) {
       hash = (37 * hash) + LINKED_PRODUCER_VPC_NETWORK_FIELD_NUMBER;
@@ -2971,6 +3047,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         internalGetLinkedInterconnectAttachmentsFieldBuilder();
         internalGetLinkedRouterApplianceInstancesFieldBuilder();
         internalGetLinkedVpcNetworkFieldBuilder();
+        internalGetGatewayFieldBuilder();
         internalGetLinkedProducerVpcNetworkFieldBuilder();
         internalGetReasonsFieldBuilder();
       }
@@ -3015,6 +3092,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         linkedVpcNetworkBuilder_.dispose();
         linkedVpcNetworkBuilder_ = null;
       }
+      gateway_ = null;
+      if (gatewayBuilder_ != null) {
+        gatewayBuilder_.dispose();
+        gatewayBuilder_ = null;
+      }
       linkedProducerVpcNetwork_ = null;
       if (linkedProducerVpcNetworkBuilder_ != null) {
         linkedProducerVpcNetworkBuilder_.dispose();
@@ -3028,7 +3110,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         reasons_ = null;
         reasonsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       spokeType_ = 0;
       etag_ = "";
       fieldPathsPendingUpdate_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -3069,9 +3151,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.networkconnectivity.v1.Spoke result) {
       if (reasonsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00008000) != 0)) {
           reasons_ = java.util.Collections.unmodifiableList(reasons_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.reasons_ = reasons_;
       } else {
@@ -3131,25 +3213,29 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.gateway_ = gatewayBuilder_ == null ? gateway_ : gatewayBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.linkedProducerVpcNetwork_ =
             linkedProducerVpcNetworkBuilder_ == null
                 ? linkedProducerVpcNetwork_
                 : linkedProducerVpcNetworkBuilder_.build();
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.uniqueId_ = uniqueId_;
+        to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.uniqueId_ = uniqueId_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.spokeType_ = spokeType_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         fieldPathsPendingUpdate_.makeImmutable();
         result.fieldPathsPendingUpdate_ = fieldPathsPendingUpdate_;
       }
@@ -3208,12 +3294,15 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       if (other.hasLinkedVpcNetwork()) {
         mergeLinkedVpcNetwork(other.getLinkedVpcNetwork());
       }
+      if (other.hasGateway()) {
+        mergeGateway(other.getGateway());
+      }
       if (other.hasLinkedProducerVpcNetwork()) {
         mergeLinkedProducerVpcNetwork(other.getLinkedProducerVpcNetwork());
       }
       if (!other.getUniqueId().isEmpty()) {
         uniqueId_ = other.uniqueId_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -3223,7 +3312,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         if (!other.reasons_.isEmpty()) {
           if (reasons_.isEmpty()) {
             reasons_ = other.reasons_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
           } else {
             ensureReasonsIsMutable();
             reasons_.addAll(other.reasons_);
@@ -3236,7 +3325,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
             reasonsBuilder_.dispose();
             reasonsBuilder_ = null;
             reasons_ = other.reasons_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00008000);
             reasonsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetReasonsFieldBuilder()
@@ -3251,13 +3340,13 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.fieldPathsPendingUpdate_.isEmpty()) {
         if (fieldPathsPendingUpdate_.isEmpty()) {
           fieldPathsPendingUpdate_ = other.fieldPathsPendingUpdate_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00040000;
         } else {
           ensureFieldPathsPendingUpdateIsMutable();
           fieldPathsPendingUpdate_.addAll(other.fieldPathsPendingUpdate_);
@@ -3337,13 +3426,13 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
             case 90:
               {
                 uniqueId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 90
             case 120:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             case 138:
@@ -3393,7 +3482,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
             case 176:
               {
                 spokeType_ = input.readEnum();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 176
             case 186:
@@ -3402,18 +3491,24 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 186
+            case 194:
+              {
+                input.readMessage(internalGetGatewayFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 194
             case 210:
               {
                 input.readMessage(
                     internalGetLinkedProducerVpcNetworkFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 210
             case 218:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 218
             case 226:
@@ -5410,6 +5505,228 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       return linkedVpcNetworkBuilder_;
     }
 
+    private com.google.cloud.networkconnectivity.v1.Gateway gateway_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkconnectivity.v1.Gateway,
+            com.google.cloud.networkconnectivity.v1.Gateway.Builder,
+            com.google.cloud.networkconnectivity.v1.GatewayOrBuilder>
+        gatewayBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gateway field is set.
+     */
+    public boolean hasGateway() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gateway.
+     */
+    public com.google.cloud.networkconnectivity.v1.Gateway getGateway() {
+      if (gatewayBuilder_ == null) {
+        return gateway_ == null
+            ? com.google.cloud.networkconnectivity.v1.Gateway.getDefaultInstance()
+            : gateway_;
+      } else {
+        return gatewayBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGateway(com.google.cloud.networkconnectivity.v1.Gateway value) {
+      if (gatewayBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gateway_ = value;
+      } else {
+        gatewayBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGateway(
+        com.google.cloud.networkconnectivity.v1.Gateway.Builder builderForValue) {
+      if (gatewayBuilder_ == null) {
+        gateway_ = builderForValue.build();
+      } else {
+        gatewayBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGateway(com.google.cloud.networkconnectivity.v1.Gateway value) {
+      if (gatewayBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && gateway_ != null
+            && gateway_ != com.google.cloud.networkconnectivity.v1.Gateway.getDefaultInstance()) {
+          getGatewayBuilder().mergeFrom(value);
+        } else {
+          gateway_ = value;
+        }
+      } else {
+        gatewayBuilder_.mergeFrom(value);
+      }
+      if (gateway_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGateway() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      gateway_ = null;
+      if (gatewayBuilder_ != null) {
+        gatewayBuilder_.dispose();
+        gatewayBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.Gateway.Builder getGatewayBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetGatewayFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.GatewayOrBuilder getGatewayOrBuilder() {
+      if (gatewayBuilder_ != null) {
+        return gatewayBuilder_.getMessageOrBuilder();
+      } else {
+        return gateway_ == null
+            ? com.google.cloud.networkconnectivity.v1.Gateway.getDefaultInstance()
+            : gateway_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This is a gateway that can apply specialized processing to
+     * traffic going through it.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Gateway gateway = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkconnectivity.v1.Gateway,
+            com.google.cloud.networkconnectivity.v1.Gateway.Builder,
+            com.google.cloud.networkconnectivity.v1.GatewayOrBuilder>
+        internalGetGatewayFieldBuilder() {
+      if (gatewayBuilder_ == null) {
+        gatewayBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkconnectivity.v1.Gateway,
+                com.google.cloud.networkconnectivity.v1.Gateway.Builder,
+                com.google.cloud.networkconnectivity.v1.GatewayOrBuilder>(
+                getGateway(), getParentForChildren(), isClean());
+        gateway_ = null;
+      }
+      return gatewayBuilder_;
+    }
+
     private com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
         linkedProducerVpcNetwork_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -5432,7 +5749,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      * @return Whether the linkedProducerVpcNetwork field is set.
      */
     public boolean hasLinkedProducerVpcNetwork() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -5480,7 +5797,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       } else {
         linkedProducerVpcNetworkBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5503,7 +5820,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       } else {
         linkedProducerVpcNetworkBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5522,7 +5839,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
     public Builder mergeLinkedProducerVpcNetwork(
         com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork value) {
       if (linkedProducerVpcNetworkBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && linkedProducerVpcNetwork_ != null
             && linkedProducerVpcNetwork_
                 != com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork
@@ -5535,7 +5852,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         linkedProducerVpcNetworkBuilder_.mergeFrom(value);
       }
       if (linkedProducerVpcNetwork_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -5553,7 +5870,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLinkedProducerVpcNetwork() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       linkedProducerVpcNetwork_ = null;
       if (linkedProducerVpcNetworkBuilder_ != null) {
         linkedProducerVpcNetworkBuilder_.dispose();
@@ -5576,7 +5893,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.networkconnectivity.v1.LinkedProducerVpcNetwork.Builder
         getLinkedProducerVpcNetworkBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetLinkedProducerVpcNetworkFieldBuilder().getBuilder();
     }
@@ -5702,7 +6019,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       uniqueId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5722,7 +6039,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearUniqueId() {
       uniqueId_ = getDefaultInstance().getUniqueId();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5747,7 +6064,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       uniqueId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5788,7 +6105,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5831,7 +6148,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5851,7 +6168,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       state_ = 0;
       onChanged();
       return this;
@@ -5861,11 +6178,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureReasonsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00008000) != 0)) {
         reasons_ =
             new java.util.ArrayList<com.google.cloud.networkconnectivity.v1.Spoke.StateReason>(
                 reasons_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
       }
     }
 
@@ -6119,7 +6436,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
     public Builder clearReasons() {
       if (reasonsBuilder_ == null) {
         reasons_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
       } else {
         reasonsBuilder_.clear();
@@ -6269,7 +6586,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.networkconnectivity.v1.Spoke.StateReason,
                 com.google.cloud.networkconnectivity.v1.Spoke.StateReason.Builder,
                 com.google.cloud.networkconnectivity.v1.Spoke.StateReasonOrBuilder>(
-                reasons_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                reasons_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
         reasons_ = null;
       }
       return reasonsBuilder_;
@@ -6311,7 +6628,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      */
     public Builder setSpokeTypeValue(int value) {
       spokeType_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6356,7 +6673,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       spokeType_ = value.getNumber();
       onChanged();
       return this;
@@ -6376,7 +6693,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSpokeType() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       spokeType_ = 0;
       onChanged();
       return this;
@@ -6453,7 +6770,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6473,7 +6790,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -6498,7 +6815,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6511,18 +6828,18 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
         fieldPathsPendingUpdate_ =
             new com.google.protobuf.LazyStringArrayList(fieldPathsPendingUpdate_);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
     }
 
     /**
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return A list containing the fieldPathsPendingUpdate.
@@ -6536,11 +6853,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The count of fieldPathsPendingUpdate.
@@ -6553,11 +6870,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index of the element to return.
@@ -6571,11 +6888,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index of the value to return.
@@ -6589,11 +6906,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index to set the value at.
@@ -6606,7 +6923,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       }
       ensureFieldPathsPendingUpdateIsMutable();
       fieldPathsPendingUpdate_.set(index, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6615,11 +6932,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The fieldPathsPendingUpdate to add.
@@ -6631,7 +6948,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       }
       ensureFieldPathsPendingUpdateIsMutable();
       fieldPathsPendingUpdate_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6640,11 +6957,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param values The fieldPathsPendingUpdate to add.
@@ -6653,7 +6970,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
     public Builder addAllFieldPathsPendingUpdate(java.lang.Iterable<java.lang.String> values) {
       ensureFieldPathsPendingUpdateIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fieldPathsPendingUpdate_);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6662,18 +6979,18 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFieldPathsPendingUpdate() {
       fieldPathsPendingUpdate_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       ;
       onChanged();
       return this;
@@ -6683,11 +7000,11 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The list of fields waiting for hub administration's approval.
+     * Output only. The list of fields waiting for hub administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string field_paths_pending_update = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The bytes of the fieldPathsPendingUpdate to add.
@@ -6700,7 +7017,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureFieldPathsPendingUpdateIsMutable();
       fieldPathsPendingUpdate_.add(value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

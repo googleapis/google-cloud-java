@@ -18,13 +18,22 @@ package com.google.cloud.agentregistry.v1.stub;
 
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.FetchAvailableBindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAgentsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationAgentsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationEndpointsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListBindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListEndpointsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListFindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListLocationsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListPublishersPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListServicesPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListSkillRevisionsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListSkillsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchAgentsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchSkillsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -58,38 +67,77 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.agentregistry.v1.Agent;
+import com.google.cloud.agentregistry.v1.AiApplication;
 import com.google.cloud.agentregistry.v1.Binding;
 import com.google.cloud.agentregistry.v1.CreateBindingRequest;
 import com.google.cloud.agentregistry.v1.CreateServiceRequest;
+import com.google.cloud.agentregistry.v1.CreateSkillRequest;
+import com.google.cloud.agentregistry.v1.CreateSkillRevisionRequest;
 import com.google.cloud.agentregistry.v1.DeleteBindingRequest;
 import com.google.cloud.agentregistry.v1.DeleteServiceRequest;
+import com.google.cloud.agentregistry.v1.DeleteSkillRequest;
+import com.google.cloud.agentregistry.v1.DeleteSkillRevisionRequest;
 import com.google.cloud.agentregistry.v1.Endpoint;
 import com.google.cloud.agentregistry.v1.FetchAvailableBindingsRequest;
 import com.google.cloud.agentregistry.v1.FetchAvailableBindingsResponse;
+import com.google.cloud.agentregistry.v1.Finding;
 import com.google.cloud.agentregistry.v1.GetAgentRequest;
+import com.google.cloud.agentregistry.v1.GetAiApplicationAgentRequest;
+import com.google.cloud.agentregistry.v1.GetAiApplicationEndpointRequest;
+import com.google.cloud.agentregistry.v1.GetAiApplicationMcpServerRequest;
+import com.google.cloud.agentregistry.v1.GetAiApplicationRequest;
 import com.google.cloud.agentregistry.v1.GetBindingRequest;
 import com.google.cloud.agentregistry.v1.GetEndpointRequest;
+import com.google.cloud.agentregistry.v1.GetFindingRequest;
 import com.google.cloud.agentregistry.v1.GetMcpServerRequest;
+import com.google.cloud.agentregistry.v1.GetPublisherRequest;
 import com.google.cloud.agentregistry.v1.GetServiceRequest;
+import com.google.cloud.agentregistry.v1.GetSkillEncryptionSpecRequest;
+import com.google.cloud.agentregistry.v1.GetSkillRequest;
+import com.google.cloud.agentregistry.v1.GetSkillRevisionRequest;
 import com.google.cloud.agentregistry.v1.ListAgentsRequest;
 import com.google.cloud.agentregistry.v1.ListAgentsResponse;
+import com.google.cloud.agentregistry.v1.ListAiApplicationAgentsRequest;
+import com.google.cloud.agentregistry.v1.ListAiApplicationAgentsResponse;
+import com.google.cloud.agentregistry.v1.ListAiApplicationEndpointsRequest;
+import com.google.cloud.agentregistry.v1.ListAiApplicationEndpointsResponse;
+import com.google.cloud.agentregistry.v1.ListAiApplicationMcpServersRequest;
+import com.google.cloud.agentregistry.v1.ListAiApplicationMcpServersResponse;
+import com.google.cloud.agentregistry.v1.ListAiApplicationsRequest;
+import com.google.cloud.agentregistry.v1.ListAiApplicationsResponse;
 import com.google.cloud.agentregistry.v1.ListBindingsRequest;
 import com.google.cloud.agentregistry.v1.ListBindingsResponse;
 import com.google.cloud.agentregistry.v1.ListEndpointsRequest;
 import com.google.cloud.agentregistry.v1.ListEndpointsResponse;
+import com.google.cloud.agentregistry.v1.ListFindingsRequest;
+import com.google.cloud.agentregistry.v1.ListFindingsResponse;
 import com.google.cloud.agentregistry.v1.ListMcpServersRequest;
 import com.google.cloud.agentregistry.v1.ListMcpServersResponse;
+import com.google.cloud.agentregistry.v1.ListPublishersRequest;
+import com.google.cloud.agentregistry.v1.ListPublishersResponse;
 import com.google.cloud.agentregistry.v1.ListServicesRequest;
 import com.google.cloud.agentregistry.v1.ListServicesResponse;
+import com.google.cloud.agentregistry.v1.ListSkillRevisionsRequest;
+import com.google.cloud.agentregistry.v1.ListSkillRevisionsResponse;
+import com.google.cloud.agentregistry.v1.ListSkillsRequest;
+import com.google.cloud.agentregistry.v1.ListSkillsResponse;
 import com.google.cloud.agentregistry.v1.McpServer;
 import com.google.cloud.agentregistry.v1.OperationMetadata;
+import com.google.cloud.agentregistry.v1.Publisher;
 import com.google.cloud.agentregistry.v1.SearchAgentsRequest;
 import com.google.cloud.agentregistry.v1.SearchAgentsResponse;
 import com.google.cloud.agentregistry.v1.SearchMcpServersRequest;
 import com.google.cloud.agentregistry.v1.SearchMcpServersResponse;
+import com.google.cloud.agentregistry.v1.SearchSkillsRequest;
+import com.google.cloud.agentregistry.v1.SearchSkillsResponse;
 import com.google.cloud.agentregistry.v1.Service;
+import com.google.cloud.agentregistry.v1.Skill;
+import com.google.cloud.agentregistry.v1.SkillEncryptionSpec;
+import com.google.cloud.agentregistry.v1.SkillRevision;
 import com.google.cloud.agentregistry.v1.UpdateBindingRequest;
 import com.google.cloud.agentregistry.v1.UpdateServiceRequest;
+import com.google.cloud.agentregistry.v1.UpdateSkillEncryptionSpecRequest;
+import com.google.cloud.agentregistry.v1.UpdateSkillRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -244,6 +292,73 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
           FetchAvailableBindingsResponse,
           FetchAvailableBindingsPagedResponse>
       fetchAvailableBindingsSettings;
+  private final UnaryCallSettings<CreateSkillRequest, Operation> createSkillSettings;
+  private final OperationCallSettings<CreateSkillRequest, Skill, OperationMetadata>
+      createSkillOperationSettings;
+  private final UnaryCallSettings<GetSkillRequest, Skill> getSkillSettings;
+  private final UnaryCallSettings<UpdateSkillRequest, Operation> updateSkillSettings;
+  private final OperationCallSettings<UpdateSkillRequest, Skill, OperationMetadata>
+      updateSkillOperationSettings;
+  private final UnaryCallSettings<DeleteSkillRequest, Operation> deleteSkillSettings;
+  private final OperationCallSettings<DeleteSkillRequest, Empty, OperationMetadata>
+      deleteSkillOperationSettings;
+  private final PagedCallSettings<ListSkillsRequest, ListSkillsResponse, ListSkillsPagedResponse>
+      listSkillsSettings;
+  private final PagedCallSettings<
+          SearchSkillsRequest, SearchSkillsResponse, SearchSkillsPagedResponse>
+      searchSkillsSettings;
+  private final UnaryCallSettings<CreateSkillRevisionRequest, Operation>
+      createSkillRevisionSettings;
+  private final OperationCallSettings<CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+      createSkillRevisionOperationSettings;
+  private final UnaryCallSettings<GetSkillRevisionRequest, SkillRevision> getSkillRevisionSettings;
+  private final UnaryCallSettings<DeleteSkillRevisionRequest, Operation>
+      deleteSkillRevisionSettings;
+  private final OperationCallSettings<DeleteSkillRevisionRequest, Empty, OperationMetadata>
+      deleteSkillRevisionOperationSettings;
+  private final PagedCallSettings<
+          ListSkillRevisionsRequest, ListSkillRevisionsResponse, ListSkillRevisionsPagedResponse>
+      listSkillRevisionsSettings;
+  private final UnaryCallSettings<GetPublisherRequest, Publisher> getPublisherSettings;
+  private final PagedCallSettings<
+          ListPublishersRequest, ListPublishersResponse, ListPublishersPagedResponse>
+      listPublishersSettings;
+  private final UnaryCallSettings<GetAiApplicationRequest, AiApplication> getAiApplicationSettings;
+  private final PagedCallSettings<
+          ListAiApplicationsRequest, ListAiApplicationsResponse, ListAiApplicationsPagedResponse>
+      listAiApplicationsSettings;
+  private final UnaryCallSettings<GetAiApplicationAgentRequest, Agent>
+      getAiApplicationAgentSettings;
+  private final PagedCallSettings<
+          ListAiApplicationAgentsRequest,
+          ListAiApplicationAgentsResponse,
+          ListAiApplicationAgentsPagedResponse>
+      listAiApplicationAgentsSettings;
+  private final UnaryCallSettings<GetAiApplicationMcpServerRequest, McpServer>
+      getAiApplicationMcpServerSettings;
+  private final PagedCallSettings<
+          ListAiApplicationMcpServersRequest,
+          ListAiApplicationMcpServersResponse,
+          ListAiApplicationMcpServersPagedResponse>
+      listAiApplicationMcpServersSettings;
+  private final UnaryCallSettings<GetFindingRequest, Finding> getFindingSettings;
+  private final PagedCallSettings<
+          ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
+      listFindingsSettings;
+  private final UnaryCallSettings<GetAiApplicationEndpointRequest, Endpoint>
+      getAiApplicationEndpointSettings;
+  private final PagedCallSettings<
+          ListAiApplicationEndpointsRequest,
+          ListAiApplicationEndpointsResponse,
+          ListAiApplicationEndpointsPagedResponse>
+      listAiApplicationEndpointsSettings;
+  private final UnaryCallSettings<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+      getSkillEncryptionSpecSettings;
+  private final UnaryCallSettings<UpdateSkillEncryptionSpecRequest, Operation>
+      updateSkillEncryptionSpecSettings;
+  private final OperationCallSettings<
+          UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+      updateSkillEncryptionSpecOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -531,6 +646,346 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
             }
           };
 
+  private static final PagedListDescriptor<ListSkillsRequest, ListSkillsResponse, Skill>
+      LIST_SKILLS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSkillsRequest, ListSkillsResponse, Skill>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSkillsRequest injectToken(ListSkillsRequest payload, String token) {
+              return ListSkillsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSkillsRequest injectPageSize(ListSkillsRequest payload, int pageSize) {
+              return ListSkillsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSkillsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSkillsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Skill> extractResources(ListSkillsResponse payload) {
+              return payload.getSkillsList();
+            }
+          };
+
+  private static final PagedListDescriptor<SearchSkillsRequest, SearchSkillsResponse, Skill>
+      SEARCH_SKILLS_PAGE_STR_DESC =
+          new PagedListDescriptor<SearchSkillsRequest, SearchSkillsResponse, Skill>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchSkillsRequest injectToken(SearchSkillsRequest payload, String token) {
+              return SearchSkillsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchSkillsRequest injectPageSize(SearchSkillsRequest payload, int pageSize) {
+              return SearchSkillsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchSkillsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchSkillsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Skill> extractResources(SearchSkillsResponse payload) {
+              return payload.getSkillsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSkillRevisionsRequest, ListSkillRevisionsResponse, SkillRevision>
+      LIST_SKILL_REVISIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSkillRevisionsRequest, ListSkillRevisionsResponse, SkillRevision>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSkillRevisionsRequest injectToken(
+                ListSkillRevisionsRequest payload, String token) {
+              return ListSkillRevisionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSkillRevisionsRequest injectPageSize(
+                ListSkillRevisionsRequest payload, int pageSize) {
+              return ListSkillRevisionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSkillRevisionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSkillRevisionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SkillRevision> extractResources(ListSkillRevisionsResponse payload) {
+              return payload.getSkillRevisionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListPublishersRequest, ListPublishersResponse, Publisher>
+      LIST_PUBLISHERS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListPublishersRequest, ListPublishersResponse, Publisher>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPublishersRequest injectToken(ListPublishersRequest payload, String token) {
+              return ListPublishersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPublishersRequest injectPageSize(
+                ListPublishersRequest payload, int pageSize) {
+              return ListPublishersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPublishersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPublishersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Publisher> extractResources(ListPublishersResponse payload) {
+              return payload.getPublishersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAiApplicationsRequest, ListAiApplicationsResponse, AiApplication>
+      LIST_AI_APPLICATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAiApplicationsRequest, ListAiApplicationsResponse, AiApplication>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAiApplicationsRequest injectToken(
+                ListAiApplicationsRequest payload, String token) {
+              return ListAiApplicationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAiApplicationsRequest injectPageSize(
+                ListAiApplicationsRequest payload, int pageSize) {
+              return ListAiApplicationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAiApplicationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAiApplicationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AiApplication> extractResources(ListAiApplicationsResponse payload) {
+              return payload.getAiApplicationsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse, Agent>
+      LIST_AI_APPLICATION_AGENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse, Agent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAiApplicationAgentsRequest injectToken(
+                ListAiApplicationAgentsRequest payload, String token) {
+              return ListAiApplicationAgentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAiApplicationAgentsRequest injectPageSize(
+                ListAiApplicationAgentsRequest payload, int pageSize) {
+              return ListAiApplicationAgentsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAiApplicationAgentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAiApplicationAgentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Agent> extractResources(ListAiApplicationAgentsResponse payload) {
+              return payload.getAgentsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse, McpServer>
+      LIST_AI_APPLICATION_MCP_SERVERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAiApplicationMcpServersRequest,
+              ListAiApplicationMcpServersResponse,
+              McpServer>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAiApplicationMcpServersRequest injectToken(
+                ListAiApplicationMcpServersRequest payload, String token) {
+              return ListAiApplicationMcpServersRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListAiApplicationMcpServersRequest injectPageSize(
+                ListAiApplicationMcpServersRequest payload, int pageSize) {
+              return ListAiApplicationMcpServersRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAiApplicationMcpServersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAiApplicationMcpServersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<McpServer> extractResources(
+                ListAiApplicationMcpServersResponse payload) {
+              return payload.getMcpServersList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListFindingsRequest, ListFindingsResponse, Finding>
+      LIST_FINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListFindingsRequest, ListFindingsResponse, Finding>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFindingsRequest injectToken(ListFindingsRequest payload, String token) {
+              return ListFindingsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListFindingsRequest injectPageSize(ListFindingsRequest payload, int pageSize) {
+              return ListFindingsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Finding> extractResources(ListFindingsResponse payload) {
+              return payload.getFindingsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse, Endpoint>
+      LIST_AI_APPLICATION_ENDPOINTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse, Endpoint>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAiApplicationEndpointsRequest injectToken(
+                ListAiApplicationEndpointsRequest payload, String token) {
+              return ListAiApplicationEndpointsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListAiApplicationEndpointsRequest injectPageSize(
+                ListAiApplicationEndpointsRequest payload, int pageSize) {
+              return ListAiApplicationEndpointsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAiApplicationEndpointsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAiApplicationEndpointsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Endpoint> extractResources(ListAiApplicationEndpointsResponse payload) {
+              return payload.getEndpointsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -711,6 +1166,200 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
           };
 
   private static final PagedListResponseFactory<
+          ListSkillsRequest, ListSkillsResponse, ListSkillsPagedResponse>
+      LIST_SKILLS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSkillsRequest, ListSkillsResponse, ListSkillsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSkillsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSkillsRequest, ListSkillsResponse> callable,
+                ListSkillsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSkillsResponse> futureResponse) {
+              PageContext<ListSkillsRequest, ListSkillsResponse, Skill> pageContext =
+                  PageContext.create(callable, LIST_SKILLS_PAGE_STR_DESC, request, context);
+              return ListSkillsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          SearchSkillsRequest, SearchSkillsResponse, SearchSkillsPagedResponse>
+      SEARCH_SKILLS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchSkillsRequest, SearchSkillsResponse, SearchSkillsPagedResponse>() {
+            @Override
+            public ApiFuture<SearchSkillsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchSkillsRequest, SearchSkillsResponse> callable,
+                SearchSkillsRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchSkillsResponse> futureResponse) {
+              PageContext<SearchSkillsRequest, SearchSkillsResponse, Skill> pageContext =
+                  PageContext.create(callable, SEARCH_SKILLS_PAGE_STR_DESC, request, context);
+              return SearchSkillsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSkillRevisionsRequest, ListSkillRevisionsResponse, ListSkillRevisionsPagedResponse>
+      LIST_SKILL_REVISIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSkillRevisionsRequest,
+              ListSkillRevisionsResponse,
+              ListSkillRevisionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListSkillRevisionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSkillRevisionsRequest, ListSkillRevisionsResponse> callable,
+                ListSkillRevisionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSkillRevisionsResponse> futureResponse) {
+              PageContext<ListSkillRevisionsRequest, ListSkillRevisionsResponse, SkillRevision>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SKILL_REVISIONS_PAGE_STR_DESC, request, context);
+              return ListSkillRevisionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPublishersRequest, ListPublishersResponse, ListPublishersPagedResponse>
+      LIST_PUBLISHERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPublishersRequest, ListPublishersResponse, ListPublishersPagedResponse>() {
+            @Override
+            public ApiFuture<ListPublishersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPublishersRequest, ListPublishersResponse> callable,
+                ListPublishersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPublishersResponse> futureResponse) {
+              PageContext<ListPublishersRequest, ListPublishersResponse, Publisher> pageContext =
+                  PageContext.create(callable, LIST_PUBLISHERS_PAGE_STR_DESC, request, context);
+              return ListPublishersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAiApplicationsRequest, ListAiApplicationsResponse, ListAiApplicationsPagedResponse>
+      LIST_AI_APPLICATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAiApplicationsRequest,
+              ListAiApplicationsResponse,
+              ListAiApplicationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAiApplicationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAiApplicationsRequest, ListAiApplicationsResponse> callable,
+                ListAiApplicationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAiApplicationsResponse> futureResponse) {
+              PageContext<ListAiApplicationsRequest, ListAiApplicationsResponse, AiApplication>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AI_APPLICATIONS_PAGE_STR_DESC, request, context);
+              return ListAiApplicationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAiApplicationAgentsRequest,
+          ListAiApplicationAgentsResponse,
+          ListAiApplicationAgentsPagedResponse>
+      LIST_AI_APPLICATION_AGENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAiApplicationAgentsRequest,
+              ListAiApplicationAgentsResponse,
+              ListAiApplicationAgentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAiApplicationAgentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse>
+                    callable,
+                ListAiApplicationAgentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAiApplicationAgentsResponse> futureResponse) {
+              PageContext<ListAiApplicationAgentsRequest, ListAiApplicationAgentsResponse, Agent>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AI_APPLICATION_AGENTS_PAGE_STR_DESC, request, context);
+              return ListAiApplicationAgentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAiApplicationMcpServersRequest,
+          ListAiApplicationMcpServersResponse,
+          ListAiApplicationMcpServersPagedResponse>
+      LIST_AI_APPLICATION_MCP_SERVERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAiApplicationMcpServersRequest,
+              ListAiApplicationMcpServersResponse,
+              ListAiApplicationMcpServersPagedResponse>() {
+            @Override
+            public ApiFuture<ListAiApplicationMcpServersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListAiApplicationMcpServersRequest, ListAiApplicationMcpServersResponse>
+                    callable,
+                ListAiApplicationMcpServersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAiApplicationMcpServersResponse> futureResponse) {
+              PageContext<
+                      ListAiApplicationMcpServersRequest,
+                      ListAiApplicationMcpServersResponse,
+                      McpServer>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_AI_APPLICATION_MCP_SERVERS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListAiApplicationMcpServersPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
+      LIST_FINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>() {
+            @Override
+            public ApiFuture<ListFindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFindingsRequest, ListFindingsResponse> callable,
+                ListFindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFindingsResponse> futureResponse) {
+              PageContext<ListFindingsRequest, ListFindingsResponse, Finding> pageContext =
+                  PageContext.create(callable, LIST_FINDINGS_PAGE_STR_DESC, request, context);
+              return ListFindingsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAiApplicationEndpointsRequest,
+          ListAiApplicationEndpointsResponse,
+          ListAiApplicationEndpointsPagedResponse>
+      LIST_AI_APPLICATION_ENDPOINTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAiApplicationEndpointsRequest,
+              ListAiApplicationEndpointsResponse,
+              ListAiApplicationEndpointsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAiApplicationEndpointsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAiApplicationEndpointsRequest, ListAiApplicationEndpointsResponse>
+                    callable,
+                ListAiApplicationEndpointsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAiApplicationEndpointsResponse> futureResponse) {
+              PageContext<
+                      ListAiApplicationEndpointsRequest,
+                      ListAiApplicationEndpointsResponse,
+                      Endpoint>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AI_APPLICATION_ENDPOINTS_PAGE_STR_DESC, request, context);
+              return ListAiApplicationEndpointsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -871,6 +1520,188 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
     return fetchAvailableBindingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to createSkill. */
+  public UnaryCallSettings<CreateSkillRequest, Operation> createSkillSettings() {
+    return createSkillSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSkill. */
+  public OperationCallSettings<CreateSkillRequest, Skill, OperationMetadata>
+      createSkillOperationSettings() {
+    return createSkillOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSkill. */
+  public UnaryCallSettings<GetSkillRequest, Skill> getSkillSettings() {
+    return getSkillSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSkill. */
+  public UnaryCallSettings<UpdateSkillRequest, Operation> updateSkillSettings() {
+    return updateSkillSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSkill. */
+  public OperationCallSettings<UpdateSkillRequest, Skill, OperationMetadata>
+      updateSkillOperationSettings() {
+    return updateSkillOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSkill. */
+  public UnaryCallSettings<DeleteSkillRequest, Operation> deleteSkillSettings() {
+    return deleteSkillSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSkill. */
+  public OperationCallSettings<DeleteSkillRequest, Empty, OperationMetadata>
+      deleteSkillOperationSettings() {
+    return deleteSkillOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSkills. */
+  public PagedCallSettings<ListSkillsRequest, ListSkillsResponse, ListSkillsPagedResponse>
+      listSkillsSettings() {
+    return listSkillsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchSkills. */
+  public PagedCallSettings<SearchSkillsRequest, SearchSkillsResponse, SearchSkillsPagedResponse>
+      searchSkillsSettings() {
+    return searchSkillsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSkillRevision. */
+  public UnaryCallSettings<CreateSkillRevisionRequest, Operation> createSkillRevisionSettings() {
+    return createSkillRevisionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createSkillRevision. */
+  public OperationCallSettings<CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+      createSkillRevisionOperationSettings() {
+    return createSkillRevisionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSkillRevision. */
+  public UnaryCallSettings<GetSkillRevisionRequest, SkillRevision> getSkillRevisionSettings() {
+    return getSkillRevisionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSkillRevision. */
+  public UnaryCallSettings<DeleteSkillRevisionRequest, Operation> deleteSkillRevisionSettings() {
+    return deleteSkillRevisionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSkillRevision. */
+  public OperationCallSettings<DeleteSkillRevisionRequest, Empty, OperationMetadata>
+      deleteSkillRevisionOperationSettings() {
+    return deleteSkillRevisionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSkillRevisions. */
+  public PagedCallSettings<
+          ListSkillRevisionsRequest, ListSkillRevisionsResponse, ListSkillRevisionsPagedResponse>
+      listSkillRevisionsSettings() {
+    return listSkillRevisionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPublisher. */
+  public UnaryCallSettings<GetPublisherRequest, Publisher> getPublisherSettings() {
+    return getPublisherSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPublishers. */
+  public PagedCallSettings<
+          ListPublishersRequest, ListPublishersResponse, ListPublishersPagedResponse>
+      listPublishersSettings() {
+    return listPublishersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAiApplication. */
+  public UnaryCallSettings<GetAiApplicationRequest, AiApplication> getAiApplicationSettings() {
+    return getAiApplicationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAiApplications. */
+  public PagedCallSettings<
+          ListAiApplicationsRequest, ListAiApplicationsResponse, ListAiApplicationsPagedResponse>
+      listAiApplicationsSettings() {
+    return listAiApplicationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAiApplicationAgent. */
+  public UnaryCallSettings<GetAiApplicationAgentRequest, Agent> getAiApplicationAgentSettings() {
+    return getAiApplicationAgentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAiApplicationAgents. */
+  public PagedCallSettings<
+          ListAiApplicationAgentsRequest,
+          ListAiApplicationAgentsResponse,
+          ListAiApplicationAgentsPagedResponse>
+      listAiApplicationAgentsSettings() {
+    return listAiApplicationAgentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAiApplicationMcpServer. */
+  public UnaryCallSettings<GetAiApplicationMcpServerRequest, McpServer>
+      getAiApplicationMcpServerSettings() {
+    return getAiApplicationMcpServerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAiApplicationMcpServers. */
+  public PagedCallSettings<
+          ListAiApplicationMcpServersRequest,
+          ListAiApplicationMcpServersResponse,
+          ListAiApplicationMcpServersPagedResponse>
+      listAiApplicationMcpServersSettings() {
+    return listAiApplicationMcpServersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getFinding. */
+  public UnaryCallSettings<GetFindingRequest, Finding> getFindingSettings() {
+    return getFindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listFindings. */
+  public PagedCallSettings<ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
+      listFindingsSettings() {
+    return listFindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAiApplicationEndpoint. */
+  public UnaryCallSettings<GetAiApplicationEndpointRequest, Endpoint>
+      getAiApplicationEndpointSettings() {
+    return getAiApplicationEndpointSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAiApplicationEndpoints. */
+  public PagedCallSettings<
+          ListAiApplicationEndpointsRequest,
+          ListAiApplicationEndpointsResponse,
+          ListAiApplicationEndpointsPagedResponse>
+      listAiApplicationEndpointsSettings() {
+    return listAiApplicationEndpointsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSkillEncryptionSpec. */
+  public UnaryCallSettings<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+      getSkillEncryptionSpecSettings() {
+    return getSkillEncryptionSpecSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSkillEncryptionSpec. */
+  public UnaryCallSettings<UpdateSkillEncryptionSpecRequest, Operation>
+      updateSkillEncryptionSpecSettings() {
+    return updateSkillEncryptionSpecSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSkillEncryptionSpec. */
+  public OperationCallSettings<
+          UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+      updateSkillEncryptionSpecOperationSettings() {
+    return updateSkillEncryptionSpecOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1018,6 +1849,41 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
     deleteBindingSettings = settingsBuilder.deleteBindingSettings().build();
     deleteBindingOperationSettings = settingsBuilder.deleteBindingOperationSettings().build();
     fetchAvailableBindingsSettings = settingsBuilder.fetchAvailableBindingsSettings().build();
+    createSkillSettings = settingsBuilder.createSkillSettings().build();
+    createSkillOperationSettings = settingsBuilder.createSkillOperationSettings().build();
+    getSkillSettings = settingsBuilder.getSkillSettings().build();
+    updateSkillSettings = settingsBuilder.updateSkillSettings().build();
+    updateSkillOperationSettings = settingsBuilder.updateSkillOperationSettings().build();
+    deleteSkillSettings = settingsBuilder.deleteSkillSettings().build();
+    deleteSkillOperationSettings = settingsBuilder.deleteSkillOperationSettings().build();
+    listSkillsSettings = settingsBuilder.listSkillsSettings().build();
+    searchSkillsSettings = settingsBuilder.searchSkillsSettings().build();
+    createSkillRevisionSettings = settingsBuilder.createSkillRevisionSettings().build();
+    createSkillRevisionOperationSettings =
+        settingsBuilder.createSkillRevisionOperationSettings().build();
+    getSkillRevisionSettings = settingsBuilder.getSkillRevisionSettings().build();
+    deleteSkillRevisionSettings = settingsBuilder.deleteSkillRevisionSettings().build();
+    deleteSkillRevisionOperationSettings =
+        settingsBuilder.deleteSkillRevisionOperationSettings().build();
+    listSkillRevisionsSettings = settingsBuilder.listSkillRevisionsSettings().build();
+    getPublisherSettings = settingsBuilder.getPublisherSettings().build();
+    listPublishersSettings = settingsBuilder.listPublishersSettings().build();
+    getAiApplicationSettings = settingsBuilder.getAiApplicationSettings().build();
+    listAiApplicationsSettings = settingsBuilder.listAiApplicationsSettings().build();
+    getAiApplicationAgentSettings = settingsBuilder.getAiApplicationAgentSettings().build();
+    listAiApplicationAgentsSettings = settingsBuilder.listAiApplicationAgentsSettings().build();
+    getAiApplicationMcpServerSettings = settingsBuilder.getAiApplicationMcpServerSettings().build();
+    listAiApplicationMcpServersSettings =
+        settingsBuilder.listAiApplicationMcpServersSettings().build();
+    getFindingSettings = settingsBuilder.getFindingSettings().build();
+    listFindingsSettings = settingsBuilder.listFindingsSettings().build();
+    getAiApplicationEndpointSettings = settingsBuilder.getAiApplicationEndpointSettings().build();
+    listAiApplicationEndpointsSettings =
+        settingsBuilder.listAiApplicationEndpointsSettings().build();
+    getSkillEncryptionSpecSettings = settingsBuilder.getSkillEncryptionSpecSettings().build();
+    updateSkillEncryptionSpecSettings = settingsBuilder.updateSkillEncryptionSpecSettings().build();
+    updateSkillEncryptionSpecOperationSettings =
+        settingsBuilder.updateSkillEncryptionSpecOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1083,6 +1949,78 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
             FetchAvailableBindingsResponse,
             FetchAvailableBindingsPagedResponse>
         fetchAvailableBindingsSettings;
+    private final UnaryCallSettings.Builder<CreateSkillRequest, Operation> createSkillSettings;
+    private final OperationCallSettings.Builder<CreateSkillRequest, Skill, OperationMetadata>
+        createSkillOperationSettings;
+    private final UnaryCallSettings.Builder<GetSkillRequest, Skill> getSkillSettings;
+    private final UnaryCallSettings.Builder<UpdateSkillRequest, Operation> updateSkillSettings;
+    private final OperationCallSettings.Builder<UpdateSkillRequest, Skill, OperationMetadata>
+        updateSkillOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteSkillRequest, Operation> deleteSkillSettings;
+    private final OperationCallSettings.Builder<DeleteSkillRequest, Empty, OperationMetadata>
+        deleteSkillOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListSkillsRequest, ListSkillsResponse, ListSkillsPagedResponse>
+        listSkillsSettings;
+    private final PagedCallSettings.Builder<
+            SearchSkillsRequest, SearchSkillsResponse, SearchSkillsPagedResponse>
+        searchSkillsSettings;
+    private final UnaryCallSettings.Builder<CreateSkillRevisionRequest, Operation>
+        createSkillRevisionSettings;
+    private final OperationCallSettings.Builder<
+            CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+        createSkillRevisionOperationSettings;
+    private final UnaryCallSettings.Builder<GetSkillRevisionRequest, SkillRevision>
+        getSkillRevisionSettings;
+    private final UnaryCallSettings.Builder<DeleteSkillRevisionRequest, Operation>
+        deleteSkillRevisionSettings;
+    private final OperationCallSettings.Builder<
+            DeleteSkillRevisionRequest, Empty, OperationMetadata>
+        deleteSkillRevisionOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListSkillRevisionsRequest, ListSkillRevisionsResponse, ListSkillRevisionsPagedResponse>
+        listSkillRevisionsSettings;
+    private final UnaryCallSettings.Builder<GetPublisherRequest, Publisher> getPublisherSettings;
+    private final PagedCallSettings.Builder<
+            ListPublishersRequest, ListPublishersResponse, ListPublishersPagedResponse>
+        listPublishersSettings;
+    private final UnaryCallSettings.Builder<GetAiApplicationRequest, AiApplication>
+        getAiApplicationSettings;
+    private final PagedCallSettings.Builder<
+            ListAiApplicationsRequest, ListAiApplicationsResponse, ListAiApplicationsPagedResponse>
+        listAiApplicationsSettings;
+    private final UnaryCallSettings.Builder<GetAiApplicationAgentRequest, Agent>
+        getAiApplicationAgentSettings;
+    private final PagedCallSettings.Builder<
+            ListAiApplicationAgentsRequest,
+            ListAiApplicationAgentsResponse,
+            ListAiApplicationAgentsPagedResponse>
+        listAiApplicationAgentsSettings;
+    private final UnaryCallSettings.Builder<GetAiApplicationMcpServerRequest, McpServer>
+        getAiApplicationMcpServerSettings;
+    private final PagedCallSettings.Builder<
+            ListAiApplicationMcpServersRequest,
+            ListAiApplicationMcpServersResponse,
+            ListAiApplicationMcpServersPagedResponse>
+        listAiApplicationMcpServersSettings;
+    private final UnaryCallSettings.Builder<GetFindingRequest, Finding> getFindingSettings;
+    private final PagedCallSettings.Builder<
+            ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
+        listFindingsSettings;
+    private final UnaryCallSettings.Builder<GetAiApplicationEndpointRequest, Endpoint>
+        getAiApplicationEndpointSettings;
+    private final PagedCallSettings.Builder<
+            ListAiApplicationEndpointsRequest,
+            ListAiApplicationEndpointsResponse,
+            ListAiApplicationEndpointsPagedResponse>
+        listAiApplicationEndpointsSettings;
+    private final UnaryCallSettings.Builder<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+        getSkillEncryptionSpecSettings;
+    private final UnaryCallSettings.Builder<UpdateSkillEncryptionSpecRequest, Operation>
+        updateSkillEncryptionSpecSettings;
+    private final OperationCallSettings.Builder<
+            UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+        updateSkillEncryptionSpecOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1164,6 +2102,39 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
       deleteBindingOperationSettings = OperationCallSettings.newBuilder();
       fetchAvailableBindingsSettings =
           PagedCallSettings.newBuilder(FETCH_AVAILABLE_BINDINGS_PAGE_STR_FACT);
+      createSkillSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSkillOperationSettings = OperationCallSettings.newBuilder();
+      getSkillSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSkillSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSkillOperationSettings = OperationCallSettings.newBuilder();
+      deleteSkillSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSkillOperationSettings = OperationCallSettings.newBuilder();
+      listSkillsSettings = PagedCallSettings.newBuilder(LIST_SKILLS_PAGE_STR_FACT);
+      searchSkillsSettings = PagedCallSettings.newBuilder(SEARCH_SKILLS_PAGE_STR_FACT);
+      createSkillRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createSkillRevisionOperationSettings = OperationCallSettings.newBuilder();
+      getSkillRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSkillRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSkillRevisionOperationSettings = OperationCallSettings.newBuilder();
+      listSkillRevisionsSettings = PagedCallSettings.newBuilder(LIST_SKILL_REVISIONS_PAGE_STR_FACT);
+      getPublisherSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPublishersSettings = PagedCallSettings.newBuilder(LIST_PUBLISHERS_PAGE_STR_FACT);
+      getAiApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAiApplicationsSettings = PagedCallSettings.newBuilder(LIST_AI_APPLICATIONS_PAGE_STR_FACT);
+      getAiApplicationAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAiApplicationAgentsSettings =
+          PagedCallSettings.newBuilder(LIST_AI_APPLICATION_AGENTS_PAGE_STR_FACT);
+      getAiApplicationMcpServerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAiApplicationMcpServersSettings =
+          PagedCallSettings.newBuilder(LIST_AI_APPLICATION_MCP_SERVERS_PAGE_STR_FACT);
+      getFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listFindingsSettings = PagedCallSettings.newBuilder(LIST_FINDINGS_PAGE_STR_FACT);
+      getAiApplicationEndpointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAiApplicationEndpointsSettings =
+          PagedCallSettings.newBuilder(LIST_AI_APPLICATION_ENDPOINTS_PAGE_STR_FACT);
+      getSkillEncryptionSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSkillEncryptionSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSkillEncryptionSpecOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1188,6 +2159,30 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
               updateBindingSettings,
               deleteBindingSettings,
               fetchAvailableBindingsSettings,
+              createSkillSettings,
+              getSkillSettings,
+              updateSkillSettings,
+              deleteSkillSettings,
+              listSkillsSettings,
+              searchSkillsSettings,
+              createSkillRevisionSettings,
+              getSkillRevisionSettings,
+              deleteSkillRevisionSettings,
+              listSkillRevisionsSettings,
+              getPublisherSettings,
+              listPublishersSettings,
+              getAiApplicationSettings,
+              listAiApplicationsSettings,
+              getAiApplicationAgentSettings,
+              listAiApplicationAgentsSettings,
+              getAiApplicationMcpServerSettings,
+              listAiApplicationMcpServersSettings,
+              getFindingSettings,
+              listFindingsSettings,
+              getAiApplicationEndpointSettings,
+              listAiApplicationEndpointsSettings,
+              getSkillEncryptionSpecSettings,
+              updateSkillEncryptionSpecSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1221,6 +2216,40 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
       deleteBindingSettings = settings.deleteBindingSettings.toBuilder();
       deleteBindingOperationSettings = settings.deleteBindingOperationSettings.toBuilder();
       fetchAvailableBindingsSettings = settings.fetchAvailableBindingsSettings.toBuilder();
+      createSkillSettings = settings.createSkillSettings.toBuilder();
+      createSkillOperationSettings = settings.createSkillOperationSettings.toBuilder();
+      getSkillSettings = settings.getSkillSettings.toBuilder();
+      updateSkillSettings = settings.updateSkillSettings.toBuilder();
+      updateSkillOperationSettings = settings.updateSkillOperationSettings.toBuilder();
+      deleteSkillSettings = settings.deleteSkillSettings.toBuilder();
+      deleteSkillOperationSettings = settings.deleteSkillOperationSettings.toBuilder();
+      listSkillsSettings = settings.listSkillsSettings.toBuilder();
+      searchSkillsSettings = settings.searchSkillsSettings.toBuilder();
+      createSkillRevisionSettings = settings.createSkillRevisionSettings.toBuilder();
+      createSkillRevisionOperationSettings =
+          settings.createSkillRevisionOperationSettings.toBuilder();
+      getSkillRevisionSettings = settings.getSkillRevisionSettings.toBuilder();
+      deleteSkillRevisionSettings = settings.deleteSkillRevisionSettings.toBuilder();
+      deleteSkillRevisionOperationSettings =
+          settings.deleteSkillRevisionOperationSettings.toBuilder();
+      listSkillRevisionsSettings = settings.listSkillRevisionsSettings.toBuilder();
+      getPublisherSettings = settings.getPublisherSettings.toBuilder();
+      listPublishersSettings = settings.listPublishersSettings.toBuilder();
+      getAiApplicationSettings = settings.getAiApplicationSettings.toBuilder();
+      listAiApplicationsSettings = settings.listAiApplicationsSettings.toBuilder();
+      getAiApplicationAgentSettings = settings.getAiApplicationAgentSettings.toBuilder();
+      listAiApplicationAgentsSettings = settings.listAiApplicationAgentsSettings.toBuilder();
+      getAiApplicationMcpServerSettings = settings.getAiApplicationMcpServerSettings.toBuilder();
+      listAiApplicationMcpServersSettings =
+          settings.listAiApplicationMcpServersSettings.toBuilder();
+      getFindingSettings = settings.getFindingSettings.toBuilder();
+      listFindingsSettings = settings.listFindingsSettings.toBuilder();
+      getAiApplicationEndpointSettings = settings.getAiApplicationEndpointSettings.toBuilder();
+      listAiApplicationEndpointsSettings = settings.listAiApplicationEndpointsSettings.toBuilder();
+      getSkillEncryptionSpecSettings = settings.getSkillEncryptionSpecSettings.toBuilder();
+      updateSkillEncryptionSpecSettings = settings.updateSkillEncryptionSpecSettings.toBuilder();
+      updateSkillEncryptionSpecOperationSettings =
+          settings.updateSkillEncryptionSpecOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1245,6 +2274,30 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
               updateBindingSettings,
               deleteBindingSettings,
               fetchAvailableBindingsSettings,
+              createSkillSettings,
+              getSkillSettings,
+              updateSkillSettings,
+              deleteSkillSettings,
+              listSkillsSettings,
+              searchSkillsSettings,
+              createSkillRevisionSettings,
+              getSkillRevisionSettings,
+              deleteSkillRevisionSettings,
+              listSkillRevisionsSettings,
+              getPublisherSettings,
+              listPublishersSettings,
+              getAiApplicationSettings,
+              listAiApplicationsSettings,
+              getAiApplicationAgentSettings,
+              listAiApplicationAgentsSettings,
+              getAiApplicationMcpServerSettings,
+              listAiApplicationMcpServersSettings,
+              getFindingSettings,
+              listFindingsSettings,
+              getAiApplicationEndpointSettings,
+              listAiApplicationEndpointsSettings,
+              getSkillEncryptionSpecSettings,
+              updateSkillEncryptionSpecSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1368,6 +2421,126 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
           .fetchAvailableBindingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createSkillSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getSkillSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSkillSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteSkillSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listSkillsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .searchSkillsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createSkillRevisionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getSkillRevisionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteSkillRevisionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listSkillRevisionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getPublisherSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPublishersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAiApplicationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAiApplicationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAiApplicationAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAiApplicationAgentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAiApplicationMcpServerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAiApplicationMcpServersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getFindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listFindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAiApplicationEndpointSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAiApplicationEndpointsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSkillEncryptionSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateSkillEncryptionSpecSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1509,6 +2682,148 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createSkillOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CreateSkillRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Skill.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateSkillOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<UpdateSkillRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Skill.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteSkillOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteSkillRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createSkillRevisionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateSkillRevisionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(SkillRevision.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteSkillRevisionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteSkillRevisionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateSkillEncryptionSpecOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateSkillEncryptionSpecRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(SkillEncryptionSpec.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1687,6 +3002,196 @@ public class AgentRegistryStubSettings extends StubSettings<AgentRegistryStubSet
             FetchAvailableBindingsPagedResponse>
         fetchAvailableBindingsSettings() {
       return fetchAvailableBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSkill. */
+    public UnaryCallSettings.Builder<CreateSkillRequest, Operation> createSkillSettings() {
+      return createSkillSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSkill. */
+    public OperationCallSettings.Builder<CreateSkillRequest, Skill, OperationMetadata>
+        createSkillOperationSettings() {
+      return createSkillOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSkill. */
+    public UnaryCallSettings.Builder<GetSkillRequest, Skill> getSkillSettings() {
+      return getSkillSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSkill. */
+    public UnaryCallSettings.Builder<UpdateSkillRequest, Operation> updateSkillSettings() {
+      return updateSkillSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSkill. */
+    public OperationCallSettings.Builder<UpdateSkillRequest, Skill, OperationMetadata>
+        updateSkillOperationSettings() {
+      return updateSkillOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSkill. */
+    public UnaryCallSettings.Builder<DeleteSkillRequest, Operation> deleteSkillSettings() {
+      return deleteSkillSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSkill. */
+    public OperationCallSettings.Builder<DeleteSkillRequest, Empty, OperationMetadata>
+        deleteSkillOperationSettings() {
+      return deleteSkillOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSkills. */
+    public PagedCallSettings.Builder<ListSkillsRequest, ListSkillsResponse, ListSkillsPagedResponse>
+        listSkillsSettings() {
+      return listSkillsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchSkills. */
+    public PagedCallSettings.Builder<
+            SearchSkillsRequest, SearchSkillsResponse, SearchSkillsPagedResponse>
+        searchSkillsSettings() {
+      return searchSkillsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSkillRevision. */
+    public UnaryCallSettings.Builder<CreateSkillRevisionRequest, Operation>
+        createSkillRevisionSettings() {
+      return createSkillRevisionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createSkillRevision. */
+    public OperationCallSettings.Builder<
+            CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+        createSkillRevisionOperationSettings() {
+      return createSkillRevisionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSkillRevision. */
+    public UnaryCallSettings.Builder<GetSkillRevisionRequest, SkillRevision>
+        getSkillRevisionSettings() {
+      return getSkillRevisionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSkillRevision. */
+    public UnaryCallSettings.Builder<DeleteSkillRevisionRequest, Operation>
+        deleteSkillRevisionSettings() {
+      return deleteSkillRevisionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSkillRevision. */
+    public OperationCallSettings.Builder<DeleteSkillRevisionRequest, Empty, OperationMetadata>
+        deleteSkillRevisionOperationSettings() {
+      return deleteSkillRevisionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSkillRevisions. */
+    public PagedCallSettings.Builder<
+            ListSkillRevisionsRequest, ListSkillRevisionsResponse, ListSkillRevisionsPagedResponse>
+        listSkillRevisionsSettings() {
+      return listSkillRevisionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPublisher. */
+    public UnaryCallSettings.Builder<GetPublisherRequest, Publisher> getPublisherSettings() {
+      return getPublisherSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPublishers. */
+    public PagedCallSettings.Builder<
+            ListPublishersRequest, ListPublishersResponse, ListPublishersPagedResponse>
+        listPublishersSettings() {
+      return listPublishersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAiApplication. */
+    public UnaryCallSettings.Builder<GetAiApplicationRequest, AiApplication>
+        getAiApplicationSettings() {
+      return getAiApplicationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAiApplications. */
+    public PagedCallSettings.Builder<
+            ListAiApplicationsRequest, ListAiApplicationsResponse, ListAiApplicationsPagedResponse>
+        listAiApplicationsSettings() {
+      return listAiApplicationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAiApplicationAgent. */
+    public UnaryCallSettings.Builder<GetAiApplicationAgentRequest, Agent>
+        getAiApplicationAgentSettings() {
+      return getAiApplicationAgentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAiApplicationAgents. */
+    public PagedCallSettings.Builder<
+            ListAiApplicationAgentsRequest,
+            ListAiApplicationAgentsResponse,
+            ListAiApplicationAgentsPagedResponse>
+        listAiApplicationAgentsSettings() {
+      return listAiApplicationAgentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAiApplicationMcpServer. */
+    public UnaryCallSettings.Builder<GetAiApplicationMcpServerRequest, McpServer>
+        getAiApplicationMcpServerSettings() {
+      return getAiApplicationMcpServerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAiApplicationMcpServers. */
+    public PagedCallSettings.Builder<
+            ListAiApplicationMcpServersRequest,
+            ListAiApplicationMcpServersResponse,
+            ListAiApplicationMcpServersPagedResponse>
+        listAiApplicationMcpServersSettings() {
+      return listAiApplicationMcpServersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getFinding. */
+    public UnaryCallSettings.Builder<GetFindingRequest, Finding> getFindingSettings() {
+      return getFindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listFindings. */
+    public PagedCallSettings.Builder<
+            ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
+        listFindingsSettings() {
+      return listFindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAiApplicationEndpoint. */
+    public UnaryCallSettings.Builder<GetAiApplicationEndpointRequest, Endpoint>
+        getAiApplicationEndpointSettings() {
+      return getAiApplicationEndpointSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAiApplicationEndpoints. */
+    public PagedCallSettings.Builder<
+            ListAiApplicationEndpointsRequest,
+            ListAiApplicationEndpointsResponse,
+            ListAiApplicationEndpointsPagedResponse>
+        listAiApplicationEndpointsSettings() {
+      return listAiApplicationEndpointsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSkillEncryptionSpec. */
+    public UnaryCallSettings.Builder<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+        getSkillEncryptionSpecSettings() {
+      return getSkillEncryptionSpecSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSkillEncryptionSpec. */
+    public UnaryCallSettings.Builder<UpdateSkillEncryptionSpecRequest, Operation>
+        updateSkillEncryptionSpecSettings() {
+      return updateSkillEncryptionSpecSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSkillEncryptionSpec. */
+    public OperationCallSettings.Builder<
+            UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+        updateSkillEncryptionSpecOperationSettings() {
+      return updateSkillEncryptionSpecOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -152,4 +152,110 @@ public interface ProvisionProjectRequestOrBuilder
    */
   com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.SaasParamsOrBuilder
       getSaasParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caller states whether the provisioning is for the new or the
+   * classic Gemini Enterprise experience.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for provisionIntent.
+   */
+  int getProvisionIntentValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caller states whether the provisioning is for the new or the
+   * classic Gemini Enterprise experience.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The provisionIntent.
+   */
+  com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest.ProvisionIntent
+      getProvisionIntent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity provider for this location. When provided, the
+   * location's [AclConfig][google.cloud.discoveryengine.v1beta.AclConfig] is
+   * set from it as part of provisioning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the idpConfig field is set.
+   */
+  boolean hasIdpConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity provider for this location. When provided, the
+   * location's [AclConfig][google.cloud.discoveryengine.v1beta.AclConfig] is
+   * set from it as part of provisioning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The idpConfig.
+   */
+  com.google.cloud.discoveryengine.v1beta.IdpConfig getIdpConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity provider for this location. When provided, the
+   * location's [AclConfig][google.cloud.discoveryengine.v1beta.AclConfig] is
+   * set from it as part of provisioning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.IdpConfigOrBuilder getIdpConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Runs only the common project-level pre-provisioning steps
+   * (service agents, agent identity pools, project-scoped extension bindings,
+   * App Hub registry, Sobi agent default identity, and Sobi default Model Armor
+   * template) without reading or writing the Customer, Collection, or UserStore
+   * tables, CapabilityConfig, tenant project, default engine, or trial licenses
+   * when `true`.
+   *
+   * Assumes no customer exists yet. Customer-level or non-SOBI fields
+   * (`accept_data_use_terms`, `data_use_terms_version`, `saas_params`,
+   * `idp_config`, and `PROVISION_INTENT_LEGACY`) are rejected with
+   * `INVALID_ARGUMENT`, and the returned completed `Operation` has an empty
+   * response.
+   * </pre>
+   *
+   * <code>bool pre_provision_mode = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The preProvisionMode.
+   */
+  boolean getPreProvisionMode();
 }

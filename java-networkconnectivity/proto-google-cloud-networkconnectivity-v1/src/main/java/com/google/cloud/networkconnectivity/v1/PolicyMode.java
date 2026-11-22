@@ -145,7 +145,7 @@ public enum PolicyMode implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final PolicyMode[] VALUES = values();

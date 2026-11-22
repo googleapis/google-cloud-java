@@ -307,21 +307,7 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
   public interface MemoryConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.MemoryLayer.MemoryConfig)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Reporting the current size of the memory layer in GiB.
-     * </pre>
-     *
-     * <code>int32 storage_size_gib = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The storageSizeGib.
-     */
-    int getStorageSizeGib();
-  }
+      com.google.protobuf.MessageOrBuilder {}
 
   /**
    *
@@ -370,25 +356,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
               com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig.Builder.class);
     }
 
-    public static final int STORAGE_SIZE_GIB_FIELD_NUMBER = 2;
-    private int storageSizeGib_ = 0;
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Reporting the current size of the memory layer in GiB.
-     * </pre>
-     *
-     * <code>int32 storage_size_gib = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     *
-     * @return The storageSizeGib.
-     */
-    @java.lang.Override
-    public int getStorageSizeGib() {
-      return storageSizeGib_;
-    }
-
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -403,9 +370,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (storageSizeGib_ != 0) {
-        output.writeInt32(2, storageSizeGib_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -415,9 +379,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
       if (size != -1) return size;
 
       size = 0;
-      if (storageSizeGib_ != 0) {
-        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, storageSizeGib_);
-      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -434,7 +395,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
       com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig other =
           (com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig) obj;
 
-      if (getStorageSizeGib() != other.getStorageSizeGib()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -446,8 +406,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STORAGE_SIZE_GIB_FIELD_NUMBER;
-      hash = (53 * hash) + getStorageSizeGib();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -588,8 +546,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bitField0_ = 0;
-        storageSizeGib_ = 0;
         return this;
       }
 
@@ -617,18 +573,8 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
       public com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig buildPartial() {
         com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig result =
             new com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig(this);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
         onBuilt();
         return result;
-      }
-
-      private void buildPartial0(com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.storageSizeGib_ = storageSizeGib_;
-        }
       }
 
       @java.lang.Override
@@ -644,9 +590,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
       public Builder mergeFrom(com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig other) {
         if (other == com.google.bigtable.admin.v2.MemoryLayer.MemoryConfig.getDefaultInstance())
           return this;
-        if (other.getStorageSizeGib() != 0) {
-          setStorageSizeGib(other.getStorageSizeGib());
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -673,12 +616,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
               case 0:
                 done = true;
                 break;
-              case 16:
-                {
-                  storageSizeGib_ = input.readInt32();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -693,64 +630,6 @@ public final class MemoryLayer extends com.google.protobuf.GeneratedMessage
         } finally {
           onChanged();
         } // finally
-        return this;
-      }
-
-      private int bitField0_;
-
-      private int storageSizeGib_;
-
-      /**
-       *
-       *
-       * <pre>
-       * Output only. Reporting the current size of the memory layer in GiB.
-       * </pre>
-       *
-       * <code>int32 storage_size_gib = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       *
-       * @return The storageSizeGib.
-       */
-      @java.lang.Override
-      public int getStorageSizeGib() {
-        return storageSizeGib_;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Output only. Reporting the current size of the memory layer in GiB.
-       * </pre>
-       *
-       * <code>int32 storage_size_gib = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       *
-       * @param value The storageSizeGib to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStorageSizeGib(int value) {
-
-        storageSizeGib_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Output only. Reporting the current size of the memory layer in GiB.
-       * </pre>
-       *
-       * <code>int32 storage_size_gib = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearStorageSizeGib() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        storageSizeGib_ = 0;
-        onChanged();
         return this;
       }
 

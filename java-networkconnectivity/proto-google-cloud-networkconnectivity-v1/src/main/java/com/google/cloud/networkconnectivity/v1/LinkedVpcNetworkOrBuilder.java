@@ -176,12 +176,12 @@ public interface LinkedVpcNetworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The proposed include export IP ranges waiting for hub
-   * administration's approval.
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the proposedIncludeExportRanges.
@@ -192,12 +192,12 @@ public interface LinkedVpcNetworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The proposed include export IP ranges waiting for hub
-   * administration's approval.
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The count of proposedIncludeExportRanges.
@@ -208,12 +208,12 @@ public interface LinkedVpcNetworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The proposed include export IP ranges waiting for hub
-   * administration's approval.
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -225,12 +225,12 @@ public interface LinkedVpcNetworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The proposed include export IP ranges waiting for hub
-   * administration's approval.
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.
@@ -243,7 +243,7 @@ public interface LinkedVpcNetworkOrBuilder
    *
    * <pre>
    * Output only. The proposed exclude export IP ranges waiting for hub
-   * administration's approval.
+   * administrator's approval.
    * </pre>
    *
    * <code>
@@ -259,7 +259,7 @@ public interface LinkedVpcNetworkOrBuilder
    *
    * <pre>
    * Output only. The proposed exclude export IP ranges waiting for hub
-   * administration's approval.
+   * administrator's approval.
    * </pre>
    *
    * <code>
@@ -275,7 +275,7 @@ public interface LinkedVpcNetworkOrBuilder
    *
    * <pre>
    * Output only. The proposed exclude export IP ranges waiting for hub
-   * administration's approval.
+   * administrator's approval.
    * </pre>
    *
    * <code>
@@ -292,7 +292,7 @@ public interface LinkedVpcNetworkOrBuilder
    *
    * <pre>
    * Output only. The proposed exclude export IP ranges waiting for hub
-   * administration's approval.
+   * administrator's approval.
    * </pre>
    *
    * <code>
@@ -311,7 +311,7 @@ public interface LinkedVpcNetworkOrBuilder
    * Output only. The list of Producer VPC spokes that this VPC spoke is a
    * service consumer VPC spoke for. These producer VPCs are connected through
    * VPC peering to this spoke's backing VPC network. Because they are directly
-   * connected throuh VPC peering, NCC export filters do not apply between the
+   * connected through VPC peering, NCC export filters do not apply between the
    * service consumer VPC spoke and any of its producer VPC spokes. This VPC
    * spoke cannot be deleted as long as any of these producer VPC spokes are
    * connected to the NCC Hub.
@@ -332,7 +332,7 @@ public interface LinkedVpcNetworkOrBuilder
    * Output only. The list of Producer VPC spokes that this VPC spoke is a
    * service consumer VPC spoke for. These producer VPCs are connected through
    * VPC peering to this spoke's backing VPC network. Because they are directly
-   * connected throuh VPC peering, NCC export filters do not apply between the
+   * connected through VPC peering, NCC export filters do not apply between the
    * service consumer VPC spoke and any of its producer VPC spokes. This VPC
    * spoke cannot be deleted as long as any of these producer VPC spokes are
    * connected to the NCC Hub.
@@ -353,7 +353,7 @@ public interface LinkedVpcNetworkOrBuilder
    * Output only. The list of Producer VPC spokes that this VPC spoke is a
    * service consumer VPC spoke for. These producer VPCs are connected through
    * VPC peering to this spoke's backing VPC network. Because they are directly
-   * connected throuh VPC peering, NCC export filters do not apply between the
+   * connected through VPC peering, NCC export filters do not apply between the
    * service consumer VPC spoke and any of its producer VPC spokes. This VPC
    * spoke cannot be deleted as long as any of these producer VPC spokes are
    * connected to the NCC Hub.
@@ -375,7 +375,7 @@ public interface LinkedVpcNetworkOrBuilder
    * Output only. The list of Producer VPC spokes that this VPC spoke is a
    * service consumer VPC spoke for. These producer VPCs are connected through
    * VPC peering to this spoke's backing VPC network. Because they are directly
-   * connected throuh VPC peering, NCC export filters do not apply between the
+   * connected through VPC peering, NCC export filters do not apply between the
    * service consumer VPC spoke and any of its producer VPC spokes. This VPC
    * spoke cannot be deleted as long as any of these producer VPC spokes are
    * connected to the NCC Hub.

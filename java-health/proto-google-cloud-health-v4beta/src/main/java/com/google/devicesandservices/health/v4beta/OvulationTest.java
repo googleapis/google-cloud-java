@@ -53,6 +53,7 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
 
   private OvulationTest() {
     result_ = 0;
+    testType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -68,6 +69,200 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.devicesandservices.health.v4beta.OvulationTest.class,
             com.google.devicesandservices.health.v4beta.OvulationTest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Ovulation test type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.devicesandservices.health.v4beta.OvulationTest.TestType}
+   */
+  public enum TestType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified test type.
+     * </pre>
+     *
+     * <code>TEST_TYPE_UNSPECIFIED = 0;</code>
+     */
+    TEST_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Test strip.
+     * </pre>
+     *
+     * <code>STRIP = 1;</code>
+     */
+    STRIP(1),
+    /**
+     *
+     *
+     * <pre>
+     * Digital test.
+     * </pre>
+     *
+     * <code>DIGITAL = 2;</code>
+     */
+    DIGITAL(2),
+    /**
+     *
+     *
+     * <pre>
+     * The user's own method, not a test kit.
+     * </pre>
+     *
+     * <code>OWN_METHOD = 3;</code>
+     */
+    OWN_METHOD(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "TestType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified test type.
+     * </pre>
+     *
+     * <code>TEST_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TEST_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Test strip.
+     * </pre>
+     *
+     * <code>STRIP = 1;</code>
+     */
+    public static final int STRIP_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Digital test.
+     * </pre>
+     *
+     * <code>DIGITAL = 2;</code>
+     */
+    public static final int DIGITAL_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * The user's own method, not a test kit.
+     * </pre>
+     *
+     * <code>OWN_METHOD = 3;</code>
+     */
+    public static final int OWN_METHOD_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TestType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TestType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TEST_TYPE_UNSPECIFIED;
+        case 1:
+          return STRIP;
+        case 2:
+          return DIGITAL;
+        case 3:
+          return OWN_METHOD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TestType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TestType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TestType>() {
+          public TestType findValueByNumber(int number) {
+            return TestType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.devicesandservices.health.v4beta.OvulationTest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final TestType[] VALUES = values();
+
+    public static TestType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TestType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.devicesandservices.health.v4beta.OvulationTest.TestType)
   }
 
   private int bitField0_;
@@ -174,6 +369,49 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int TEST_TYPE_FIELD_NUMBER = 4;
+  private int testType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of ovulation test.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4beta.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for testType.
+   */
+  @java.lang.Override
+  public int getTestTypeValue() {
+    return testType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of ovulation test.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4beta.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The testType.
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4beta.OvulationTest.TestType getTestType() {
+    com.google.devicesandservices.health.v4beta.OvulationTest.TestType result =
+        com.google.devicesandservices.health.v4beta.OvulationTest.TestType.forNumber(testType_);
+    return result == null
+        ? com.google.devicesandservices.health.v4beta.OvulationTest.TestType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -197,6 +435,11 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(3, result_);
     }
+    if (testType_
+        != com.google.devicesandservices.health.v4beta.OvulationTest.TestType.TEST_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, testType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -214,6 +457,11 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
             .OVULATION_TEST_RESULT_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, result_);
+    }
+    if (testType_
+        != com.google.devicesandservices.health.v4beta.OvulationTest.TestType.TEST_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, testType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -236,6 +484,7 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
       if (!getSampleTime().equals(other.getSampleTime())) return false;
     }
     if (result_ != other.result_) return false;
+    if (testType_ != other.testType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -253,6 +502,8 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + RESULT_FIELD_NUMBER;
     hash = (53 * hash) + result_;
+    hash = (37 * hash) + TEST_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + testType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -409,6 +660,7 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
         sampleTimeBuilder_ = null;
       }
       result_ = 0;
+      testType_ = 0;
       return this;
     }
 
@@ -453,6 +705,9 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.result_ = result_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.testType_ = testType_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -474,6 +729,9 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
       }
       if (other.result_ != 0) {
         setResultValue(other.getResultValue());
+      }
+      if (other.testType_ != 0) {
+        setTestTypeValue(other.getTestTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -514,6 +772,12 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+            case 32:
+              {
+                testType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -856,6 +1120,114 @@ public final class OvulationTest extends com.google.protobuf.GeneratedMessage
     public Builder clearResult() {
       bitField0_ = (bitField0_ & ~0x00000002);
       result_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int testType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of ovulation test.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4beta.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for testType.
+     */
+    @java.lang.Override
+    public int getTestTypeValue() {
+      return testType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of ovulation test.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4beta.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for testType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTestTypeValue(int value) {
+      testType_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of ovulation test.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4beta.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The testType.
+     */
+    @java.lang.Override
+    public com.google.devicesandservices.health.v4beta.OvulationTest.TestType getTestType() {
+      com.google.devicesandservices.health.v4beta.OvulationTest.TestType result =
+          com.google.devicesandservices.health.v4beta.OvulationTest.TestType.forNumber(testType_);
+      return result == null
+          ? com.google.devicesandservices.health.v4beta.OvulationTest.TestType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of ovulation test.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4beta.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The testType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTestType(
+        com.google.devicesandservices.health.v4beta.OvulationTest.TestType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      testType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of ovulation test.
+     * </pre>
+     *
+     * <code>
+     * .google.devicesandservices.health.v4beta.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTestType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      testType_ = 0;
       onChanged();
       return this;
     }

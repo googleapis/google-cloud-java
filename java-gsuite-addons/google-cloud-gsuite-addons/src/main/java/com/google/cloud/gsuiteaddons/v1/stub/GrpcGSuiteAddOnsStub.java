@@ -26,10 +26,12 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gsuiteaddons.v1.Authorization;
+import com.google.cloud.gsuiteaddons.v1.ChatAppConfig;
 import com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.Deployment;
 import com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest;
+import com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest;
 import com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest;
 import com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest;
@@ -38,6 +40,7 @@ import com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest;
 import com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse;
 import com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest;
+import com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -156,6 +159,28 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetChatAppConfigRequest, ChatAppConfig>
+      getChatAppConfigMethodDescriptor =
+          MethodDescriptor.<GetChatAppConfigRequest, ChatAppConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.gsuiteaddons.v1.GSuiteAddOns/GetChatAppConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetChatAppConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ChatAppConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateChatAppConfigRequest, ChatAppConfig>
+      updateChatAppConfigMethodDescriptor =
+          MethodDescriptor.<UpdateChatAppConfigRequest, ChatAppConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.gsuiteaddons.v1.GSuiteAddOns/UpdateChatAppConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateChatAppConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ChatAppConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<GetAuthorizationRequest, Authorization> getAuthorizationCallable;
   private final UnaryCallable<CreateDeploymentRequest, Deployment> createDeploymentCallable;
   private final UnaryCallable<ReplaceDeploymentRequest, Deployment> replaceDeploymentCallable;
@@ -168,6 +193,9 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
   private final UnaryCallable<InstallDeploymentRequest, Empty> installDeploymentCallable;
   private final UnaryCallable<UninstallDeploymentRequest, Empty> uninstallDeploymentCallable;
   private final UnaryCallable<GetInstallStatusRequest, InstallStatus> getInstallStatusCallable;
+  private final UnaryCallable<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigCallable;
+  private final UnaryCallable<UpdateChatAppConfigRequest, ChatAppConfig>
+      updateChatAppConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -310,6 +338,30 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigTransportSettings =
+        GrpcCallSettings.<GetChatAppConfigRequest, ChatAppConfig>newBuilder()
+            .setMethodDescriptor(getChatAppConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateChatAppConfigRequest, ChatAppConfig>
+        updateChatAppConfigTransportSettings =
+            GrpcCallSettings.<UpdateChatAppConfigRequest, ChatAppConfig>newBuilder()
+                .setMethodDescriptor(updateChatAppConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "chat_app_config.name",
+                          String.valueOf(request.getChatAppConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getAuthorizationCallable =
         callableFactory.createUnaryCallable(
@@ -347,6 +399,14 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
     this.getInstallStatusCallable =
         callableFactory.createUnaryCallable(
             getInstallStatusTransportSettings, settings.getInstallStatusSettings(), clientContext);
+    this.getChatAppConfigCallable =
+        callableFactory.createUnaryCallable(
+            getChatAppConfigTransportSettings, settings.getChatAppConfigSettings(), clientContext);
+    this.updateChatAppConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateChatAppConfigTransportSettings,
+            settings.updateChatAppConfigSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -405,6 +465,16 @@ public class GrpcGSuiteAddOnsStub extends GSuiteAddOnsStub {
   @Override
   public UnaryCallable<GetInstallStatusRequest, InstallStatus> getInstallStatusCallable() {
     return getInstallStatusCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigCallable() {
+    return getChatAppConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateChatAppConfigRequest, ChatAppConfig> updateChatAppConfigCallable() {
+    return updateChatAppConfigCallable;
   }
 
   @Override
