@@ -1870,4 +1870,275 @@ public class SpannerOptionsTest {
     assertEquals(SpannerOptions.InstanceType.OMNI, fromBuilder.getInstanceType());
     assertTrue(fromBuilder.isUsePlainText());
   }
+
+  @Test
+  public void testToBuilderSetUniverseDomainUpdatesDefaultHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .build();
+    assertEquals("https://spanner.googleapis.com", base.getHost());
+    assertEquals("spanner.googleapis.com:443", base.getEndpoint());
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.universe.example", rebuilt.getHost());
+    assertEquals("spanner.universe.example:443", rebuilt.getEndpoint());
+    assertEquals("universe.example", rebuilt.getSpannerStubSettings().getUniverseDomain());
+    assertEquals("spanner.universe.example:443", rebuilt.getSpannerStubSettings().getEndpoint());
+    assertEquals("universe.example", rebuilt.getInstanceAdminStubSettings().getUniverseDomain());
+    assertEquals(
+        "spanner.universe.example:443", rebuilt.getInstanceAdminStubSettings().getEndpoint());
+    assertEquals("universe.example", rebuilt.getDatabaseAdminStubSettings().getUniverseDomain());
+    assertEquals(
+        "spanner.universe.example:443", rebuilt.getDatabaseAdminStubSettings().getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderChangeUniverseDomainUpdatesDefaultHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .setUniverseDomain("domain1.example")
+            .build();
+    assertEquals("https://spanner.domain1.example", base.getHost());
+    assertEquals("spanner.domain1.example:443", base.getEndpoint());
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("domain2.example").build();
+    assertEquals("domain2.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.domain2.example", rebuilt.getHost());
+    assertEquals("spanner.domain2.example:443", rebuilt.getEndpoint());
+    assertEquals("spanner.domain2.example:443", rebuilt.getSpannerStubSettings().getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainPreservesCustomHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://custom.spanner.example:1234")
+            .build();
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+    assertEquals("https://custom.spanner.example:1234", rebuilt.getHost());
+    assertEquals("custom.spanner.example:1234", rebuilt.getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainPreservesExplicitDefaultHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://spanner.googleapis.com")
+            .build();
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.googleapis.com", rebuilt.getHost());
+    assertEquals("spanner.googleapis.com:443", rebuilt.getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderSetHostAndUniverseDomainOrderIndependent() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .build();
+
+    SpannerOptions hostThenUniverse =
+        base.toBuilder()
+            .setHost("https://custom.example:8443")
+            .setUniverseDomain("universe.example")
+            .build();
+    SpannerOptions universeThenHost =
+        base.toBuilder()
+            .setUniverseDomain("universe.example")
+            .setHost("https://custom.example:8443")
+            .build();
+
+    assertEquals("https://custom.example:8443", hostThenUniverse.getHost());
+    assertEquals("universe.example", hostThenUniverse.getUniverseDomain());
+    assertEquals("https://custom.example:8443", universeThenHost.getHost());
+    assertEquals("universe.example", universeThenHost.getUniverseDomain());
+  }
+
+  @Test
+  public void testToBuilderSetHostNullResetsToUniverseDomainDefaultHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://custom.example:1234")
+            .build();
+
+    SpannerOptions rebuilt =
+        base.toBuilder().setHost(null).setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.universe.example", rebuilt.getHost());
+    assertEquals("spanner.universe.example:443", rebuilt.getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderClearEmulatorHostAndSetUniverseDomain() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setEmulatorHost("localhost:9010")
+            .build();
+    assertEquals("http://localhost:9010", base.getHost());
+    assertTrue(base.isEmulatorEnabled());
+
+    SpannerOptions rebuiltEmulator = base.toBuilder().build();
+    assertEquals("http://localhost:9010", rebuiltEmulator.getHost());
+    assertTrue(rebuiltEmulator.isEmulatorEnabled());
+
+    SpannerOptions rebuiltNonEmulator =
+        base.toBuilder().setEmulatorHost(null).setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuiltNonEmulator.getUniverseDomain());
+    assertEquals("https://spanner.universe.example", rebuiltNonEmulator.getHost());
+    assertEquals("spanner.universe.example:443", rebuiltNonEmulator.getEndpoint());
+    assertFalse(rebuiltNonEmulator.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testToBuilderLegacyDeserializedFallbackWithoutConfiguredHost() {
+    // Default host with null configuredHost recomputes host when universe domain changes.
+    SpannerOptions legacyDefault =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .build(/* clearConfiguredHost= */ true);
+    SpannerOptions rebuiltDefault =
+        legacyDefault.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("https://spanner.universe.example", rebuiltDefault.getHost());
+    assertEquals("spanner.universe.example:443", rebuiltDefault.getEndpoint());
+
+    // Custom host with null configuredHost is preserved when universe domain changes.
+    SpannerOptions legacyCustom =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://custom.spanner.example:1234")
+            .build(/* clearConfiguredHost= */ true);
+    SpannerOptions rebuiltCustom =
+        legacyCustom.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("https://custom.spanner.example:1234", rebuiltCustom.getHost());
+    assertEquals("custom.spanner.example:1234", rebuiltCustom.getEndpoint());
+
+    // Emulator host with null configuredHost stays emulator when unchanged and recomputes default
+    // host when emulatorHost is cleared.
+    SpannerOptions legacyEmulator =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setEmulatorHost("localhost:9010")
+            .build(/* clearConfiguredHost= */ true);
+    assertEquals("http://localhost:9010", legacyEmulator.toBuilder().build().getHost());
+    SpannerOptions rebuiltClearedEmulator =
+        legacyEmulator.toBuilder()
+            .setEmulatorHost(null)
+            .setUniverseDomain("universe.example")
+            .build();
+    assertEquals("https://spanner.universe.example", rebuiltClearedEmulator.getHost());
+    assertFalse(rebuiltClearedEmulator.isEmulatorEnabled());
+
+    // OMNI instance with both explicit host and non-null emulatorHost preserves the OMNI host.
+    SpannerOptions legacyOmniWithEmulator =
+        SpannerOptions.newBuilder()
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .setHost("localhost:8080")
+            .usePlainText()
+            .setEmulatorHost("localhost:9010")
+            .build(/* clearConfiguredHost= */ true);
+    SpannerOptions rebuiltOmni =
+        legacyOmniWithEmulator.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("http://localhost:8080", rebuiltOmni.getHost());
+    assertEquals("localhost:8080", rebuiltOmni.getEndpoint());
+    assertEquals(SpannerOptions.InstanceType.OMNI, rebuiltOmni.getInstanceType());
+    assertTrue(rebuiltOmni.isUsePlainText());
+  }
+
+  @Test
+  public void testToBuilderPreservesUniverseDomainWhenUnchanged() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .setUniverseDomain("domain1.example")
+            .build();
+
+    SpannerOptions rebuilt = base.toBuilder().build();
+    assertEquals("domain1.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.domain1.example", rebuilt.getHost());
+    assertEquals("spanner.domain1.example:443", rebuilt.getEndpoint());
+    assertEquals("domain1.example", rebuilt.getSpannerStubSettings().getUniverseDomain());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainPreservesOmniHost() {
+    SpannerOptions plainTextOmni =
+        SpannerOptions.newBuilder()
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .setHost("localhost:8080")
+            .usePlainText()
+            .build();
+    SpannerOptions rebuiltPlainText =
+        plainTextOmni.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("http://localhost:8080", rebuiltPlainText.getHost());
+    assertEquals("localhost:8080", rebuiltPlainText.getEndpoint());
+    assertEquals(SpannerOptions.InstanceType.OMNI, rebuiltPlainText.getInstanceType());
+    assertTrue(rebuiltPlainText.isUsePlainText());
+
+    SpannerOptions tlsOmni =
+        SpannerOptions.newBuilder()
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .setHost("https://omni.example:15000")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    SpannerOptions rebuiltTls = tlsOmni.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("https://omni.example:15000", rebuiltTls.getHost());
+    assertEquals("omni.example:15000", rebuiltTls.getEndpoint());
+    assertEquals(SpannerOptions.InstanceType.OMNI, rebuiltTls.getInstanceType());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainKeepsEmulatorHostWhenNotCleared() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setEmulatorHost("localhost:9010")
+            .build();
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("http://localhost:9010", rebuilt.getHost());
+    assertEquals("localhost:9010", rebuilt.getEndpoint());
+    assertTrue(rebuilt.isEmulatorEnabled());
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+  }
+
+  @Test
+  public void testReuseBuilderClearEmulatorHostAndSetUniverseDomain() {
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder().setProjectId("test-project").setEmulatorHost("localhost:9010");
+
+    SpannerOptions emulatorOptions = builder.build();
+    assertEquals("http://localhost:9010", emulatorOptions.getHost());
+    assertTrue(emulatorOptions.isEmulatorEnabled());
+
+    SpannerOptions nonEmulatorOptions =
+        builder.setEmulatorHost(null).setUniverseDomain("universe.example").build();
+    assertEquals("https://spanner.universe.example", nonEmulatorOptions.getHost());
+    assertEquals("spanner.universe.example:443", nonEmulatorOptions.getEndpoint());
+    assertFalse(nonEmulatorOptions.isEmulatorEnabled());
+  }
 }
