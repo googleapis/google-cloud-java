@@ -37,10 +37,12 @@ import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.api.services.bigquery.model.TableSchema;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
 import java.io.IOException;
@@ -816,5 +818,40 @@ class ConnectionImplTest {
     com.google.api.services.bigquery.model.Job createdJob =
         connection.createQueryJob(SQL_QUERY, connectionSettings, emptyParameters, emptyLabels);
     assertEquals(JOB, createdJob.getId());
+  }
+
+  @Test
+  void testCreateBigQueryReadSettings_forwardsUniverseDomain() throws IOException {
+    BigQueryOptions customUniverseOptions =
+        BigQueryOptions.newBuilder()
+            .setProjectId(PROJECT)
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setCredentials(NoCredentials.getInstance())
+            .setUniverseDomain("custom-universe.com")
+            .build();
+    ConnectionImpl customConnection =
+        (ConnectionImpl) customUniverseOptions.getService().createConnection(connectionSettings);
+
+    BigQueryReadSettings readSettings = customConnection.createBigQueryReadSettings();
+    assertEquals("custom-universe.com", readSettings.getUniverseDomain());
+    assertEquals(
+        NoCredentials.getInstance(), readSettings.getCredentialsProvider().getCredentials());
+  }
+
+  @Test
+  void testCreateBigQueryReadSettings_leavesUniverseDomainUnsetWhenDefault() throws IOException {
+    BigQueryOptions defaultUniverseOptions =
+        BigQueryOptions.newBuilder()
+            .setProjectId(PROJECT)
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    ConnectionImpl defaultConnection =
+        (ConnectionImpl) defaultUniverseOptions.getService().createConnection(connectionSettings);
+
+    BigQueryReadSettings readSettings = defaultConnection.createBigQueryReadSettings();
+    assertEquals("googleapis.com", readSettings.getUniverseDomain());
+    assertEquals(
+        NoCredentials.getInstance(), readSettings.getCredentialsProvider().getCredentials());
   }
 }
