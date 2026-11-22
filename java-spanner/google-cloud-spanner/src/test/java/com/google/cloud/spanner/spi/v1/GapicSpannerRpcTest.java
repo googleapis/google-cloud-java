@@ -2946,6 +2946,11 @@ public class GapicSpannerRpcTest {
       GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
       assertEquals(counts.debugString(), 6, counts.gcpManagedChannels);
       assertEquals(counts.debugString(), 48, counts.channelRefs);
+      assertNull(rpc.getFallbackProber());
+      GcpFallbackChannelOptions fallbackOptions = rpc.createFallbackChannelOptions(null, 1, null);
+      assertEquals(Duration.ofMinutes(3), fallbackOptions.getPeriod());
+      assertFalse(fallbackOptions.isEnableRecovery());
+      assertNull(fallbackOptions.getPrimaryProbingFunction());
     } finally {
       if (rpc != null) {
         rpc.shutdown();
@@ -2956,32 +2961,48 @@ public class GapicSpannerRpcTest {
 
   @Test
   public void testDirectPathFallbackRecoveryWrapsFallbackChannelsInGrpcGcpPool() {
-    SpannerOptions.useEnvironment(
-        new SpannerOptions.SpannerEnvironment() {
-          @Override
-          public boolean isEnableGcpFallbackRecovery() {
-            return true;
+    withFallbackRecoveryEnabled(
+        () -> {
+          SpannerOptions options =
+              createDirectPathFallbackObjectCountOptions().disableDynamicChannelPool().build();
+          assumeTrue(
+              "GCP fallback must be enabled for this DirectPath fallback test",
+              options.isEnableGcpFallback());
+          GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
+          GapicSpannerRpc rpc = new GapicSpannerRpc(options);
+          try {
+            GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
+            assertEquals(counts.debugString(), 3, counts.gcpManagedChannels);
+            assertEquals(counts.debugString(), 24, counts.channelRefs);
+            assertEquals(3, new HashSet<>(rpc.getFallbackStates()).size());
+            assertNull(rpc.getChannelPrimer());
+            assertNotNull(rpc.getFallbackProber());
+
+            GcpFallbackChannelOptions fallbackOptions =
+                rpc.createFallbackChannelOptions(null, 1, new GcpFallbackState());
+            assertEquals(Duration.ofMinutes(1), fallbackOptions.getPeriod());
+            assertEquals(Duration.ofMinutes(1), fallbackOptions.getPrimaryProbingInterval());
+            assertEquals(10, fallbackOptions.getMinPrimaryProbeSuccessCount());
+            assertEquals(
+                Duration.ofMinutes(10), fallbackOptions.getMinPrimaryProbeSuccessDuration());
+            assertTrue(fallbackOptions.isEnableRecovery());
+            assertSame(rpc.getFallbackProber(), fallbackOptions.getPrimaryProbingFunction());
+
+            // Session sources register/unregister for fallback probing even without DCP primer.
+            SpannerRpc.ChannelPrimeSessionSource source =
+                () -> "projects/p/instances/i/databases/d/sessions/s";
+            rpc.registerChannelPrimeSessionSource(source);
+            assertEquals(
+                "projects/p/instances/i/databases/d/sessions/s",
+                rpc.getSessionRegistry().nextSessionName());
+            rpc.unregisterChannelPrimeSessionSource(source);
+            assertNull(rpc.getSessionRegistry().nextSessionName());
+          } finally {
+            if (rpc != null) {
+              rpc.shutdown();
+            }
           }
         });
-    GapicSpannerRpc rpc = null;
-    try {
-      SpannerOptions options = createDirectPathFallbackObjectCountOptions().build();
-      assumeTrue(
-          "GCP fallback must be enabled for this DirectPath fallback test",
-          options.isEnableGcpFallback());
-      GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
-      rpc = new GapicSpannerRpc(options);
-      GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
-      assertEquals(counts.debugString(), 3, counts.gcpManagedChannels);
-      assertEquals(counts.debugString(), 24, counts.channelRefs);
-      // One fallback state per pool.
-      assertEquals(3, new HashSet<>(rpc.getFallbackStates()).size());
-    } finally {
-      if (rpc != null) {
-        rpc.shutdown();
-      }
-      SpannerOptions.useDefaultEnvironment();
-    }
   }
 
   @Test
@@ -2999,10 +3020,53 @@ public class GapicSpannerRpcTest {
       GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
       assertEquals(counts.debugString(), 0, counts.gcpManagedChannels);
       assertEquals(counts.debugString(), 0, counts.channelRefs);
+      assertNull(rpc.getFallbackProber());
     } finally {
       if (rpc != null) {
         rpc.shutdown();
       }
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testDirectPathFallbackRecoveryDisabledWhenGrpcGcpExtensionDisabled() {
+    withFallbackRecoveryEnabled(
+        () -> {
+          SpannerOptions options =
+              createDirectPathFallbackObjectCountOptions().disableGrpcGcpExtension().build();
+          assumeTrue(
+              "GCP fallback must be enabled for this DirectPath fallback test",
+              options.isEnableGcpFallback());
+          GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
+          GapicSpannerRpc rpc = new GapicSpannerRpc(options);
+          try {
+            GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
+            assertEquals(counts.debugString(), 0, counts.gcpManagedChannels);
+            assertEquals(counts.debugString(), 0, counts.channelRefs);
+            assertNull(rpc.getFallbackProber());
+            GcpFallbackChannelOptions fallbackOptions =
+                rpc.createFallbackChannelOptions(null, 1, null);
+            assertEquals(Duration.ofMinutes(3), fallbackOptions.getPeriod());
+            assertFalse(fallbackOptions.isEnableRecovery());
+            assertNull(fallbackOptions.getPrimaryProbingFunction());
+          } finally {
+            rpc.shutdown();
+          }
+        });
+  }
+
+  private static void withFallbackRecoveryEnabled(Runnable action) {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGcpFallbackRecovery() {
+            return true;
+          }
+        });
+    try {
+      action.run();
+    } finally {
       SpannerOptions.useDefaultEnvironment();
     }
   }

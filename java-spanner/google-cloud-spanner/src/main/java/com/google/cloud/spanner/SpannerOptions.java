@@ -2937,9 +2937,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   /**
-   * Returns whether experimental GCP fallback behavior is enabled through the {@code
-   * GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY} environment variable. When enabled, the
-   * fallback channels are wrapped in the grpc-gcp pool, instead of wrapping one pool per path.
+   * Returns whether experimental GCP fallback recovery behavior is enabled through the {@code
+   * GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY} environment variable. When enabled (with
+   * DirectPath and GCP fallback enabled), fallback channels are wrapped in per-channel slots inside
+   * the pool with a 1-minute fallback evaluation window and periodic {@code GetSession} probing to
+   * recover back to DirectPath.
    */
   @InternalApi
   public boolean isEnableGcpFallbackRecovery() {
