@@ -935,6 +935,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   protected SpannerOptions(Builder builder) {
+    this(builder, /* clearConfiguredHost= */ false);
+  }
+
+  @VisibleForTesting
+  SpannerOptions(Builder builder, boolean clearConfiguredHost) {
     super(
         SpannerFactory.class,
         SpannerRpcFactory.class,
@@ -1050,7 +1055,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     callContextConfigurator = builder.callContextConfigurator;
     asyncExecutorProvider = builder.asyncExecutorProvider;
     compressorName = builder.compressorName;
-    configuredHost = builder.host;
+    configuredHost = clearConfiguredHost ? null : builder.host;
     emulatorHost = builder.emulatorHost;
     leaderAwareRoutingEnabled = builder.leaderAwareRoutingEnabled;
     enableDirectAccess = builder.enableDirectAccess;
@@ -1547,8 +1552,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.host =
           options.configuredHost != null
               ? options.configuredHost
-              : (options.emulatorHost == null
-                      && !Objects.equals(options.getHost(), options.getDefaultHost())
+              : (options.instanceType == InstanceType.OMNI
+                      || (options.emulatorHost == null
+                          && !Objects.equals(options.getHost(), options.getDefaultHost()))
                   ? options.getHost()
                   : null);
       super.setHost(this.host);
@@ -2608,6 +2614,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @SuppressWarnings("rawtypes")
     @Override
     public SpannerOptions build() {
+      return build(/* clearConfiguredHost= */ false);
+    }
+
+    @SuppressWarnings("rawtypes")
+    @VisibleForTesting
+    SpannerOptions build(boolean clearConfiguredHost) {
       // Set the host if emulator has been set.
       if (emulatorHost != null && this.instanceType != InstanceType.OMNI) {
         if (!emulatorHost.startsWith("http")) {
@@ -2632,7 +2644,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           activeTracingFramework = TracingFramework.OPEN_CENSUS;
         }
       }
-      return new SpannerOptions(this);
+      return new SpannerOptions(this, clearConfiguredHost);
     }
   }
 
