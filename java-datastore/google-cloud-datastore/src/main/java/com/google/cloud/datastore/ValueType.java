@@ -22,7 +22,7 @@ import com.google.common.collect.ImmutableMap;
  * The type of a Datastore property.
  *
  * @see <a
- *     href="http://cloud.google.com/datastore/docs/concepts/entities#Datastore_Properties_and_value_types">Google
+ *     href="https://docs.cloud.google.com/datastore/docs/concepts/entities#properties_and_value_types">Google
  *     Cloud Datastore types</a>
  */
 public enum ValueType {
