@@ -69,11 +69,51 @@ class PerConnectionFileHandler extends Handler {
   private final Path baseLogPath;
   private final Level level;
   private final long maxFileBytes;
+  private final boolean allowImplicitSlots;
   private final Formatter logFormatter;
   final Set<String> registeredConnections = ConcurrentHashMap.newKeySet();
   private final ConcurrentHashMap<String, ConnectionFileSlot> slots = new ConcurrentHashMap<>();
   private final BoundedLogFileWriter defaultWriter;
   volatile boolean handlerClosed = false;
+
+  PerConnectionFileHandler() {
+    this(
+        System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR),
+        System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR));
+  }
+
+  @VisibleForTesting
+  PerConnectionFileHandler(String envLogPath, String envLogLevelStr) {
+    this.level = Level.ALL;
+    this.maxFileBytes = resolveMaxLogFileBytes();
+    this.allowImplicitSlots = false;
+    this.logFormatter = BigQueryJdbcRootLogger.getFormatter();
+    setLevel(Level.ALL);
+    setFormatter(this.logFormatter);
+
+    BoundedLogFileWriter initializedDefault = null;
+    if (envLogPath != null && envLogLevelStr != null) {
+      try {
+        Level envLevel = BigQueryJdbcRootLogger.parseEnvLogLevel(envLogLevelStr);
+        if (envLevel != Level.OFF) {
+          initializedDefault =
+              createLogWriter(
+                  DEFAULT_HANDLER_ID,
+                  Paths.get(envLogPath).toAbsolutePath(),
+                  envLevel,
+                  this.maxFileBytes);
+        }
+      } catch (Exception e) {
+        reportError("Failed to initialize env default log file", e, ErrorManager.OPEN_FAILURE);
+      }
+    }
+    this.baseLogPath = null;
+    this.defaultWriter = initializedDefault;
+  }
+
+  boolean isClosed() {
+    return handlerClosed;
+  }
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
     this(baseLogPath, level, resolveMaxLogFileBytes());
@@ -83,6 +123,7 @@ class PerConnectionFileHandler extends Handler {
   PerConnectionFileHandler(String baseLogPath, Level level, long maxFileBytes) {
     this.level = level;
     this.maxFileBytes = maxFileBytes > 0 ? maxFileBytes : DEFAULT_MAX_LOG_FILE_BYTES;
+    this.allowImplicitSlots = true;
     this.logFormatter = BigQueryJdbcRootLogger.getFormatter();
     setLevel(level);
     setFormatter(this.logFormatter);
@@ -294,8 +335,7 @@ class PerConnectionFileHandler extends Handler {
         isPosix);
   }
 
-  BoundedLogFileWriter createLogWriter(
-      String id, Path logDir, Level writerLevel, long limitBytes) {
+  BoundedLogFileWriter createLogWriter(String id, Path logDir, Level writerLevel, long limitBytes) {
     if (logDir == null) {
       return null;
     }
@@ -379,11 +419,44 @@ class PerConnectionFileHandler extends Handler {
     }
   }
 
+  boolean registerConnection(String connectionId, Level connectionLevel, String connectionLogPath) {
+    if (connectionId == null
+        || connectionId.isEmpty()
+        || handlerClosed
+        || connectionLevel == null
+        || connectionLevel == Level.OFF
+        || connectionLogPath == null) {
+      return false;
+    }
+    Path verifiedDir;
+    try {
+      verifiedDir = ensureSecureDirectory(Paths.get(connectionLogPath).toAbsolutePath());
+    } catch (Exception e) {
+      registeredConnections.remove(connectionId);
+      ConnectionFileSlot stale = slots.remove(connectionId);
+      if (stale != null) {
+        stale.closeSlot();
+      }
+      reportError(
+          "Failed to initialize log directory for connection " + connectionId,
+          e,
+          ErrorManager.OPEN_FAILURE);
+      return false;
+    }
+    registeredConnections.add(connectionId);
+    ConnectionFileSlot previous =
+        slots.put(connectionId, new ConnectionFileSlot(verifiedDir, connectionLevel, maxFileBytes));
+    if (previous != null) {
+      previous.closeSlot();
+    }
+    return true;
+  }
+
   private boolean canOpenSlotFor(String connectionId) {
     return !handlerClosed
+        && allowImplicitSlots
         && baseLogPath != null
-        && (registeredConnections.contains(connectionId)
-            || BigQueryJdbcRootLogger.isConnectionActive(connectionId));
+        && registeredConnections.contains(connectionId);
   }
 
   @Override
@@ -419,6 +492,9 @@ class PerConnectionFileHandler extends Handler {
         if (slot.isClosed()) {
           slots.remove(connectionId, slot);
         }
+      }
+      if (!allowImplicitSlots) {
+        return;
       }
     }
 
@@ -684,10 +760,13 @@ class PerConnectionFileHandler extends Handler {
       if (writer == null) {
         writer = owner.createLogWriter(connectionId, logPath, level, maxFileBytes);
         if (writer == null) {
+          owner.registeredConnections.remove(connectionId);
+          closeSlot();
           return false;
         }
       }
       if (!writer.publish(record)) {
+        owner.registeredConnections.remove(connectionId);
         closeSlot();
         return false;
       }

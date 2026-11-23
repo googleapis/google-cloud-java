@@ -46,6 +46,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.ErrorManager;
 import java.util.logging.Formatter;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -625,9 +627,10 @@ public class PerConnectionFileHandlerTest {
 
     try {
       String connId = "dead-conn-uuid";
-      ConnectionLogContext activeCtx = BigQueryJdbcRootLogger.registerConnection(connId);
+      ConnectionLogContext activeCtx =
+          BigQueryJdbcRootLogger.registerConnection(connId, Level.FINEST, null);
       assertNotNull(activeCtx);
-      assertEquals(ConnectionLogContext.ALL_VALUE, activeCtx.levelValue());
+      assertEquals(Level.FINEST.intValue(), activeCtx.levelValue());
       finestHandler.registerConnection(connId);
 
       BigQueryStatement mockStmt = mock(BigQueryStatement.class);
@@ -699,6 +702,106 @@ public class PerConnectionFileHandlerTest {
       }
     } finally {
       BigQueryJdbcRootLogger.setLevel(Level.OFF, null);
+    }
+  }
+
+  @Test
+  public void testPersistentHandlerIsolationAndGracefulPathDegradation() throws IOException {
+    PerConnectionFileHandler persistent = new PerConnectionFileHandler();
+    String offConnId = "explicit-off-conn";
+    try {
+      BigQueryJdbcRootLogger.registerConnection(offConnId, Level.OFF, null);
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(offConnId)) {
+        persistent.publish(new LogRecord(Level.SEVERE, "Should not open implicit slot"));
+      }
+      persistent.flush();
+      assertTrue(BigQueryJdbcRootLogger.isConnectionActive(offConnId));
+
+      Path fileNotDir =
+          Files.write(
+              tempDir.resolve("regular_file_not_dir"), "x".getBytes(StandardCharsets.UTF_8));
+      assertNotNull(
+          BigQueryJdbcRootLogger.registerConnection(
+              "bad-path-conn", Level.INFO, fileNotDir.toString()));
+      assertTrue(BigQueryJdbcRootLogger.isConnectionActive("bad-path-conn"));
+      BigQueryJdbcRootLogger.closeConnectionHandler("bad-path-conn");
+      assertNull(BigQueryJdbcRootLogger.registerConnection("", Level.INFO, tempDir.toString()));
+
+      if (tempDir.getFileSystem().supportedFileAttributeViews().contains("posix")) {
+        Path roDir = Files.createDirectory(tempDir.resolve("ro_dir"));
+        Files.setPosixFilePermissions(roDir, PosixFilePermissions.fromString("r-x------"));
+        AtomicInteger openErrors = new AtomicInteger();
+        persistent.setErrorManager(
+            new ErrorManager() {
+              @Override
+              public synchronized void error(String msg, Exception ex, int code) {
+                openErrors.incrementAndGet();
+              }
+            });
+        try {
+          if (!Files.isWritable(roDir)) {
+            assertTrue(persistent.registerConnection("ro-conn", Level.INFO, roDir.toString()));
+            try (BigQueryJdbcMdc.MdcCloseable m = BigQueryJdbcMdc.registerInstance("ro-conn")) {
+              for (int i = 0; i < 4; i++) {
+                persistent.publish(new LogRecord(Level.INFO, "ro attempt #" + i));
+              }
+            }
+            assertEquals(1, openErrors.get());
+          }
+        } finally {
+          Files.setPosixFilePermissions(roDir, PosixFilePermissions.fromString("rwx------"));
+        }
+      }
+
+      Path envDir = tempDir.resolve("env_dir");
+      PerConnectionFileHandler envHandler = new PerConnectionFileHandler(envDir.toString(), "4");
+      try {
+        assertTrue(Files.exists(envDir.resolve("BQ-JDBC-GLOBAL.log")));
+        assertFalse(envHandler.registerConnection(null, Level.INFO, envDir.toString()));
+        assertFalse(envHandler.registerConnection("re-conn", null, envDir.toString()));
+        assertFalse(envHandler.registerConnection("re-conn", Level.OFF, envDir.toString()));
+        assertFalse(envHandler.registerConnection("re-conn", Level.INFO, null));
+        assertTrue(
+            envHandler.registerConnection("re-conn", Level.INFO, envDir.resolve("s1").toString()));
+        assertTrue(
+            envHandler.registerConnection("re-conn", Level.FINE, envDir.resolve("s2").toString()));
+        try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance("re-conn")) {
+          envHandler.publish(new LogRecord(Level.FINE, "re-conn-s2-msg"));
+        }
+        envHandler.flush();
+        assertFalse(findLogFile(envDir.resolve("s1"), "-re-c.log").isPresent());
+        assertTrue(findLogFile(envDir.resolve("s2"), "-re-c.log").isPresent());
+        assertFalse(envHandler.registerConnection("re-conn", Level.FINE, fileNotDir.toString()));
+      } finally {
+        envHandler.close();
+        assertTrue(envHandler.isClosed());
+        assertFalse(envHandler.registerConnection("re-conn", Level.FINE, envDir.toString()));
+      }
+      PerConnectionFileHandler envOff =
+          new PerConnectionFileHandler(tempDir.resolve("env_off").toString(), "0");
+      envOff.close();
+      assertFalse(Files.exists(tempDir.resolve("env_off")));
+      PerConnectionFileHandler envInvalid =
+          new PerConnectionFileHandler(tempDir.resolve("env_bad").toString(), "invalid_lvl");
+      envInvalid.close();
+      assertFalse(Files.exists(tempDir.resolve("env_bad")));
+      PerConnectionFileHandler envBadPath = new PerConnectionFileHandler("bad\0path", "4");
+      envBadPath.close();
+
+      BigQueryJdbcRootLogger.registerConnection("null-lvl-conn", null, null);
+      assertEquals(Level.OFF, BigQueryJdbcRootLogger.getRootLogger().getLevel());
+      BigQueryJdbcRootLogger.registerConnection("null-lvl-conn", Level.CONFIG, null);
+      assertEquals(Level.CONFIG, BigQueryJdbcRootLogger.getRootLogger().getLevel());
+      BigQueryJdbcRootLogger.refreshEffectiveRootLevel("6");
+      assertEquals(Level.FINER, BigQueryJdbcRootLogger.getRootLogger().getLevel());
+      BigQueryJdbcRootLogger.refreshEffectiveRootLevel("0");
+      assertEquals(Level.CONFIG, BigQueryJdbcRootLogger.getRootLogger().getLevel());
+      BigQueryJdbcRootLogger.refreshEffectiveRootLevel("invalid");
+      assertEquals(Level.CONFIG, BigQueryJdbcRootLogger.getRootLogger().getLevel());
+      BigQueryJdbcRootLogger.closeConnectionHandler("null-lvl-conn");
+    } finally {
+      BigQueryJdbcRootLogger.closeConnectionHandler(offConnId);
+      persistent.close();
     }
   }
 }

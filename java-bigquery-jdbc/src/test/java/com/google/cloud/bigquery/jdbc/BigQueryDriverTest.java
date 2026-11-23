@@ -33,11 +33,13 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -289,12 +291,12 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testConnect_ioExceptionThrowsInsteadOfReturningNull() {
-    // BigQueryJdbcRootLogger.setLevel is the only IOException source on the connect path. JDBC
-    // requires connect() to throw for an accepted URL that fails, not return null.
+    // BigQueryJdbcRootLogger.registerConnection is the IOException source on the connect path.
+    // JDBC requires connect() to throw for an accepted URL that fails, not return null.
     try (MockedStatic<BigQueryJdbcRootLogger> rootLogger =
         mockStatic(BigQueryJdbcRootLogger.class)) {
       rootLogger
-          .when(() -> BigQueryJdbcRootLogger.setLevel(any(), any()))
+          .when(() -> BigQueryJdbcRootLogger.registerConnection(any(), any(), any()))
           .thenThrow(new IOException("simulated log path failure"));
       BigQueryJdbcException thrown =
           Assertions.assertThrows(
@@ -353,16 +355,14 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
       assertThat(BigQueryJdbcMdc.getConnectionId()).isEqualTo("enclosing-caller-conn");
       assertThat(Files.exists(blockedDir)).isFalse();
 
-      // Prior PerConnectionFileHandler was closed & removed when logPath resolved to null
-      assertThat(
-              Arrays.stream(rootLogger.getHandlers())
-                  .noneMatch(h -> h instanceof PerConnectionFileHandler))
-          .isTrue();
+      // Active legacy fileHandler on priorLogDir does not open a per-connection file when
+      // connect() runs with allowUrlLogPath=false (logPath == null)
       try (Stream<Path> priorFiles = Files.list(priorLogDir)) {
         List<String> names =
             priorFiles.map(p -> p.getFileName().toString()).collect(Collectors.toList());
         assertThat(names).containsExactly("BQ-JDBC-GLOBAL.log");
       }
+      BigQueryJdbcRootLogger.setLevel(Level.FINEST, null);
 
       // Early connect logs (appendPropertiesToURL, warning, Driver info) carry createdConnId
       assertThat(
@@ -420,5 +420,177 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
         System.setProperty(propName, prev);
       }
     }
+  }
+
+  @Test
+  public void testMultiTenantIsolationHandlerPreservationAndGracefulLogPathDegradation(
+      @TempDir Path tempDir) throws Exception {
+    BigQueryJdbcOpenTelemetry.ensureGlobalHandlerAttached();
+    Path tenantADir = tempDir.resolve("tenant_a");
+    Path tenantBDir = tempDir.resolve("tenant_b");
+    Path tenantCDir = tempDir.resolve("tenant_c_off");
+    Path regularFileNotDir =
+        Files.write(tempDir.resolve("not_a_dir"), "x".getBytes(StandardCharsets.UTF_8));
+
+    String tenantAUrl =
+        getBaseUri(2, "proj-a")
+            .append("OAuthAccessToken", "token-a-secret")
+            .append("LogLevel", 7)
+            .append("LogPath", tenantADir.toString())
+            .toString();
+
+    String tenantBBaseUrl =
+        getBaseUri()
+            .append("ProjectId", "proj-b")
+            .append("LogLevel", 3)
+            .append("LogPath", tenantBDir.toString())
+            .toString();
+    Properties tenantBProps = new Properties();
+    tenantBProps.setProperty("OAuthType", "2");
+    tenantBProps.setProperty("OAuthAccessToken", "victim-tenant-b-secret-token");
+
+    String tenantCOffUrl =
+        getBaseUri(2, "proj-c")
+            .append("OAuthAccessToken", "token-c-secret")
+            .append("LogLevel", 0)
+            .append("LogPath", tenantCDir.toString())
+            .toString();
+
+    // Unwritable / non-directory / invalid LogPath must degrade gracefully without failing JDBC
+    // connect()
+    String badFileLogPathUrl =
+        getBaseUri(2, "proj-degraded")
+            .append("OAuthAccessToken", "token-degraded")
+            .append("LogLevel", 6)
+            .append("LogPath", regularFileNotDir.toString())
+            .toString();
+    try (Connection degradedConn = bigQueryDriver.connect(badFileLogPathUrl, new Properties())) {
+      assertThat(degradedConn.isClosed()).isFalse();
+    }
+    Properties invalidPathProps = new Properties();
+    invalidPathProps.setProperty("LogPath", "bad\0path");
+    try (Connection invalidPathConn =
+        bigQueryDriver.connect(
+            getUriOAuthToken()
+                .append("ProjectId", "proj-nullbyte")
+                .append("LogLevel", 6)
+                .toString(),
+            invalidPathProps)) {
+      assertThat(invalidPathConn.isClosed()).isFalse();
+    }
+    if (tempDir.getFileSystem().supportedFileAttributeViews().contains("posix")) {
+      Path symTarget = Files.createDirectory(tempDir.resolve("sym_target"));
+      Path symLinkDir = Files.createSymbolicLink(tempDir.resolve("sym_link"), symTarget);
+      String symUrl =
+          getBaseUri(2, "proj-sym")
+              .append("OAuthAccessToken", "token-sym")
+              .append("LogLevel", 6)
+              .append("LogPath", symLinkDir.toString())
+              .toString();
+      try (Connection symConn = bigQueryDriver.connect(symUrl, new Properties())) {
+        assertThat(symConn.isClosed()).isFalse();
+      }
+      try (Stream<Path> s = Files.list(symTarget)) {
+        assertThat(s.count()).isEqualTo(0L);
+      }
+    }
+
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    rootLogger.removeHandler(this.handler);
+    Handler externalWarningHandler =
+        new Handler() {
+          @Override
+          public void publish(LogRecord record) {}
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public void close() {}
+        };
+    try {
+      rootLogger.setLevel(Level.OFF);
+      Connection connA = bigQueryDriver.connect(tenantAUrl, new Properties());
+      Connection connB = bigQueryDriver.connect(tenantBBaseUrl, tenantBProps);
+      Connection connC = bigQueryDriver.connect(tenantCOffUrl, new Properties());
+      try {
+        assertThat(rootLogger.getLevel()).isEqualTo(Level.FINEST);
+        assertThat(Files.exists(tenantCDir)).isFalse();
+        List<Handler> rootHandlers = Arrays.asList(rootLogger.getHandlers());
+        assertThat(rootHandlers.stream().anyMatch(h -> h instanceof OpenTelemetryJulHandler))
+            .isTrue();
+
+        connC.close();
+        assertThat(rootLogger.getLevel()).isEqualTo(Level.FINEST);
+
+        Assertions.assertThrows(
+            SQLException.class,
+            () ->
+                connA.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE));
+
+        connA.close();
+        assertThat(rootLogger.getLevel()).isEqualTo(Level.INFO);
+
+        Assertions.assertThrows(
+            SQLException.class,
+            () ->
+                connB.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE));
+
+        connB.close();
+        assertThat(rootLogger.getLevel()).isEqualTo(Level.OFF);
+
+        Level customLevel = new Level("CUSTOM_850", 850) {};
+        rootLogger.addHandler(externalWarningHandler);
+        rootLogger.setLevel(customLevel);
+        try (Connection tempFinest = bigQueryDriver.connect(tenantAUrl, new Properties())) {
+          assertThat(rootLogger.getLevel()).isEqualTo(Level.FINEST);
+        }
+        assertThat(rootLogger.getLevel()).isSameInstanceAs(customLevel);
+
+        rootLogger.setLevel(null);
+        try (Connection standaloneOff = bigQueryDriver.connect(tenantCOffUrl, new Properties())) {
+          assertThat(rootLogger.getLevel()).isNull();
+        }
+        assertThat(rootLogger.getLevel()).isNull();
+      } finally {
+        rootLogger.removeHandler(externalWarningHandler);
+        if (connC != null) {
+          connC.close();
+        }
+        if (connB != null) {
+          connB.close();
+        }
+        if (connA != null) {
+          connA.close();
+        }
+      }
+    } finally {
+      rootLogger.addHandler(this.handler);
+      rootLogger.setLevel(Level.ALL);
+    }
+
+    String tenantALogs = readAllLogFiles(tenantADir);
+    String tenantBLogs = readAllLogFiles(tenantBDir);
+
+    assertThat(tenantALogs).contains("++entry++");
+    assertThat(tenantALogs).doesNotContain("victim-tenant-b-secret-token");
+    assertThat(tenantALogs).doesNotContain("proj-b");
+
+    assertThat(tenantBLogs).contains("Driver info");
+    assertThat(tenantBLogs).doesNotContain("++entry++");
+    assertThat(tenantBLogs).doesNotContain("victim-tenant-b-secret-token");
+    assertThat(tenantBLogs).doesNotContain("proj-a");
+  }
+
+  private static String readAllLogFiles(Path dir) throws IOException {
+    StringBuilder sb = new StringBuilder();
+    try (Stream<Path> files = Files.list(dir)) {
+      for (Path p : files.collect(Collectors.toList())) {
+        sb.append(new String(Files.readAllBytes(p), StandardCharsets.UTF_8));
+      }
+    }
+    return sb.toString();
   }
 }

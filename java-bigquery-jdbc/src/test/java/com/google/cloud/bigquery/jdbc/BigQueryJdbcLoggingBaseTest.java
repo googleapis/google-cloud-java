@@ -27,7 +27,7 @@ import org.junit.jupiter.api.BeforeEach;
 public abstract class BigQueryJdbcLoggingBaseTest extends BigQueryJdbcBaseTest {
 
   protected List<LogRecord> capturedLogs = new ArrayList<>();
-  private Handler handler;
+  protected Handler handler;
   private Logger logger;
   private long threadId;
   private java.util.logging.Level originalLevel;
@@ -63,11 +63,7 @@ public abstract class BigQueryJdbcLoggingBaseTest extends BigQueryJdbcBaseTest {
       logger.removeHandler(handler);
       logger.setLevel(originalLevel);
     }
-    try {
-      BigQueryJdbcRootLogger.setLevel(java.util.logging.Level.OFF, null);
-    } catch (Exception e) {
-      // Ignore
-    }
+    BigQueryJdbcRootLogger.resetForTesting();
   }
 
   protected boolean assertLogContains(String snippet) {
