@@ -413,7 +413,9 @@ final class BigQueryJdbcUrlUtility {
                   BigQueryConnectionProperty.newBuilder()
                       .setName(ENABLE_HTAPI_PROPERTY_NAME)
                       .setDescription(
-                          "Enables or disables Read API usage in the Driver. Disabled by default.")
+                          "Enables or disables Read API usage in the Driver. Disabled by default."
+                              + " With EnableQueryResultsArrowFormat enabled, this applies only"
+                              + " when LargeResultTable or LargeResultDataset is set.")
                       .setDefaultValue(String.valueOf(DEFAULT_ENABLE_HTAPI_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
@@ -453,7 +455,12 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "Reads query results in the Apache Arrow format: the first page of"
                               + " jobs.query and the query job's Storage Read API stream (Preview)."
-                              + " Disabled by default.")
+                              + " A result with more than one page and at least"
+                              + " HighThroughputMinTableSize rows is read from the job stream,"
+                              + " whatever EnableHighThroughputAPI and"
+                              + " HighThroughputActivationRatio are set to, unless"
+                              + " LargeResultTable or LargeResultDataset is set. Disabled by"
+                              + " default.")
                       .setDefaultValue(
                           String.valueOf(DEFAULT_ENABLE_QUERY_RESULTS_ARROW_FORMAT_VALUE))
                       .build(),
