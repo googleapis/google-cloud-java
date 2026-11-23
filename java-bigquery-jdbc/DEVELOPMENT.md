@@ -16,6 +16,7 @@ This guide details the architectural design, core abstractions, coding principle
    - [Instantiating Loggers](#instantiating-loggers)
    - [Developer Logging Rules & Conventions](#developer-logging-rules--conventions)
 5. [Pre-PR Checklist](#5-pre-pr-checklist)
+6. [Agent Rules & Skills](#6-agent-rules--skills)
 
 ---
 
@@ -32,7 +33,7 @@ graph TD
     Conn -->|Dynamic Context Proxy| Proxy[BigQueryJdbcContextProxy]
     Proxy -->|MDC Tracing| Mdc[BigQueryJdbcMdc]
     Proxy -->|Delegates Exec| DirectConn[Client Session]
-    Conn -->|Type Mapping & Coercion| Coercion[BigQueryJdbcTypeMappings & BigQueryCoercion]
+    Conn -->|Type Mapping & Coercion| Coercion[BigQueryTypeRegistry & TypeDescriptor]
     Conn -->|REST / Storage API| BQSDK[google-cloud-bigquery]
 ```
 
@@ -42,7 +43,7 @@ graph TD
 - **`BigQueryConnection`**: Represents an active BigQuery session, holding dataset defaults, connection configuration maps, and transaction/session state (`EnableSession=true`, `session_id`).
 - **`BigQueryJdbcUrlUtility`**: Parses and validates connection string parameters using a bounded LRU parse cache (`PARSE_CACHE`) to avoid heavy allocations during frequent connection creation.
 - **`BigQueryJdbcContextProxy`**: A dynamic proxy layer (`java.lang.reflect.Proxy`) wrapping JDBC statements, connections, and metadata. Intercepts calls to propagate ThreadLocal MDC parameters (`connectionId`) across execution threads and enforce state validation (`checkClosed()`).
-- **`BigQueryJdbcTypeMappings` & `BigQueryCoercion`**: Centralized mapping logic handling standard JDBC-to-BigQuery SQL type mappings (`StandardSQLTypeName`) and object coercions (`Date`, `Timestamp`, `BigDecimal`, etc.).
+- **`BigQueryTypeRegistry` & `TypeDescriptor`**: Centralized, bidirectional mapping between JDBC SQL types, Java classes and BigQuery types (`StandardSQLTypeName`), including the coercion of raw values (`Date`, `Timestamp`, `BigDecimal`, etc.) into the expected Java type.
 - **`BigQueryArrowResultSet`**: Custom result set implementation accelerating large query result retrieval via the BigQuery Storage Read API gRPC stream.
 
 ---
@@ -73,7 +74,7 @@ make install
 # Clean project target directory
 make clean
 
-# Format code and check linter compliance
+# Format code in place (google-java-format)
 make lint
 ```
 
@@ -128,11 +129,11 @@ The driver uses a custom logging subsystem built on top of `java.util.logging`: 
   ```java
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   ```
-- **For Static / Utility Components** (`BigQueryJdbcUrlUtility`, `BigQueryJdbcTypeMappings`):
+- **For Static / Utility Components** (for example `BigQueryJdbcUrlUtility`):
   Use the class name:
   ```java
   private static final BigQueryJdbcCustomLogger LOG = 
-      new BigQueryJdbcCustomLogger(BigQueryJdbcTypeMappings.class.getName());
+      new BigQueryJdbcCustomLogger(BigQueryJdbcUrlUtility.class.getName());
   ```
 
 ### Developer Logging Rules & Conventions
@@ -176,4 +177,10 @@ Before submitting a Pull Request:
 - [ ] All method changes and feature additions are covered by corresponding JUnit 5 tests.
 - [ ] Unit tests pass cleanly without Mockito `UnnecessaryStubbingException` warnings.
 - [ ] All `Statement`, `ResultSet`, or `DatabaseMetaData` objects returned by public entry points are properly wrapped via `BigQueryJdbcContextProxy.wrap()`.
-- [ ] Code formatting and linting pass via `make lint`.
+- [ ] Code is formatted with `make lint`.
+
+---
+
+## 6. Agent Rules & Skills
+
+AI coding agents that follow the `AGENTS.md` convention load [AGENTS.md](AGENTS.md) for this module. It carries the short form of the guardrails in section 2 and lists the shared agent skills in `.agents/skills/` (currently `bigquery-jdbc-testing` and `bigquery-jdbc-prepare-pr`), when each one applies, and how to add a new one.

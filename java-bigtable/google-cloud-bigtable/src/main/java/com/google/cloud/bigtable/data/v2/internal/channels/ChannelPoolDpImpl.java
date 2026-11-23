@@ -308,6 +308,21 @@ public class ChannelPoolDpImpl implements ChannelPool {
     return new SessionStreamImpl(innerCall) {
       // null until onBeforeSessionStart fires
       @Nullable AfeId afeId = null;
+      volatile boolean sessionEstablished = false;
+
+      @Override
+      public void afterSessionStart() {
+        // Only mark the session established and reset consecutiveFailures after
+        // OpenSessionResponse is processed. onBeforeSessionStart is not enough because the AFE
+        // sends initial PeerInfo response headers before completing OpenSession, so streams
+        // rejected during OpenSession (e.g. RESOURCE_EXHAUSTED) still fire
+        // onBeforeSessionStart before closing with an error.
+        sessionEstablished = true;
+        synchronized (ChannelPoolDpImpl.this) {
+          fw.consecutiveFailures = 0;
+          recycleBackoff = INITIAL_RECYCLE_BACKOFF;
+        }
+      }
 
       @Override
       public void start(Listener responseListener, Metadata headers) {
@@ -317,8 +332,6 @@ public class ChannelPoolDpImpl implements ChannelPool {
               public void onBeforeSessionStart(PeerInfo peerInfo) {
                 afeId = AfeId.extract(peerInfo);
                 synchronized (ChannelPoolDpImpl.this) {
-                  fw.consecutiveFailures = 0;
-                  recycleBackoff = INITIAL_RECYCLE_BACKOFF;
                   sessionsPerAfeId.add(afeId);
                   if (!fw.channel.isShutdown()) {
                     routeObservations.put(new RouteKey(fw.id, tenant), afeId);
@@ -333,8 +346,12 @@ public class ChannelPoolDpImpl implements ChannelPool {
                 synchronized (ChannelPoolDpImpl.this) {
                   if (afeId != null) {
                     sessionsPerAfeId.remove(afeId);
-                  } else if (!status.isOk() && status.getCode() != Code.CANCELLED) {
+                  }
+                  if (!sessionEstablished && !status.isOk() && status.getCode() != Code.CANCELLED) {
                     fw.consecutiveFailures++;
+                    if (afeId != null) {
+                      routeObservations.remove(new RouteKey(fw.id, tenant), afeId);
+                    }
                   }
                   releaseChannel(fw, status);
                 }
@@ -572,8 +589,11 @@ public class ChannelPoolDpImpl implements ChannelPool {
     final ManagedChannel channel;
     final Instant createdAt;
     volatile State state = State.ACTIVE;
+    // Guarded by the enclosing ChannelPoolDpImpl instance.
     int numOutstanding = 0;
+    // Guarded by the enclosing ChannelPoolDpImpl instance.
     int consecutiveFailures = 0;
+    // Guarded by the enclosing ChannelPoolDpImpl instance.
     Instant lastUsedAt;
 
     ChannelWrapper(long id, ManagedChannel channel, Clock clock) {

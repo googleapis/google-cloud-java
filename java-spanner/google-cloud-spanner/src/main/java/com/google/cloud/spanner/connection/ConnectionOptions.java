@@ -90,7 +90,6 @@ import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.GrpcInterceptorProviderConverter;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementExecutorType;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
@@ -99,12 +98,14 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.hash.Hashing;
 import com.google.crypto.tink.util.SecretBytes;
 import io.grpc.Deadline;
 import io.grpc.Deadline.Ticker;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -213,7 +214,12 @@ public class ConnectionOptions {
 
   private static final String PLAIN_TEXT_PROTOCOL = "http:";
   private static final String HOST_PROTOCOL = "https:";
-  private static final String DEFAULT_HOST = "https://spanner.googleapis.com";
+  private static final String SPANNER_SERVICE_NAME = "spanner";
+  private static final int MAX_DNS_HOSTNAME_LENGTH = 253;
+  private static final Pattern VALID_UNIVERSE_DOMAIN_PATTERN =
+      Pattern.compile(
+          "^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?"
+              + "(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
   private static final String SPANNER_EMULATOR_HOST_ENV_VAR = "SPANNER_EMULATOR_HOST";
   private static final String DEFAULT_EMULATOR_HOST = "http://localhost:9010";
 
@@ -337,6 +343,9 @@ public class ConnectionOptions {
   public static final String ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY =
       "ENABLE_GRPC_INTERCEPTOR_PROVIDER";
 
+  /** Name of the 'grpc_interceptor_provider' connection property. */
+  public static final String GRPC_INTERCEPTOR_PROVIDER_PROPERTY_NAME = "grpc_interceptor_provider";
+
   /** Custom user agent string is only for other Google libraries. */
   static final String USER_AGENT_PROPERTY_NAME = "userAgent";
 
@@ -395,7 +404,7 @@ public class ConnectionOptions {
       "%s can only be used if the system property %s has been set to true. "
           + "Start the application with the JVM command line option -D%s=true";
 
-  private static String generateGuardedConnectionPropertyError(
+  static String generateGuardedConnectionPropertyError(
       String systemPropertyName, String connectionPropertyName) {
     return String.format(
         GUARDED_CONNECTION_PROPERTY_ERROR_MESSAGE,
@@ -705,12 +714,15 @@ public class ConnectionOptions {
   private final boolean typeExplicitlySet;
   private final String warnings;
   private final Credentials fixedCredentials;
+  private final @Nullable String encodedCredentialsHash;
+  private final @Nullable String oAuthTokenHash;
 
   private final String host;
   private final String projectId;
   private final String instanceId;
   private final String databaseName;
   private final Credentials credentials;
+  private final CredentialsProvider credentialsProvider;
   private final StatementExecutorType statementExecutorType;
   private final SessionPoolOptions sessionPoolOptions;
 
@@ -753,15 +765,14 @@ public class ConnectionOptions {
 
     // Create the initial connection state from the parsed properties in the connection URL.
     this.initialConnectionState = new ConnectionState(connectionPropertyValues);
+    validateUniverseDomain(getUniverseDomain());
 
     checkGuardedProperty(
         getInitialConnectionPropertyValue(ENCODED_CREDENTIALS),
         ENABLE_ENCODED_CREDENTIALS_SYSTEM_PROPERTY,
         ENCODED_CREDENTIALS_PROPERTY_NAME);
     checkGuardedProperty(
-        getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) == null
-            ? null
-            : getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER).getClass().getName(),
+        getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER),
         ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
         CREDENTIALS_PROVIDER_PROPERTY_NAME);
     checkGuardedProperty(
@@ -771,7 +782,7 @@ public class ConnectionOptions {
     checkGuardedProperty(
         getInitialConnectionPropertyValue(GRPC_INTERCEPTOR_PROVIDER),
         ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
-        GRPC_INTERCEPTOR_PROVIDER.getName());
+        GRPC_INTERCEPTOR_PROVIDER_PROPERTY_NAME);
     // Check that at most one of credentials location, encoded credentials, credentials provider and
     // OUAuth token has been specified in the connection URI.
     Preconditions.checkArgument(
@@ -800,21 +811,38 @@ public class ConnectionOptions {
         SpannerOptions.getDefaultSpannerOmniCredentialsFromSysEnv();
     String username = getInitialConnectionPropertyValue(ConnectionProperties.USERNAME);
     String password = getInitialConnectionPropertyValue(ConnectionProperties.PASSWORD);
+    String credentialsProviderName = getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER);
+    if (credentialsProviderName != null) {
+      this.credentialsProvider =
+          ClientSideStatementValueConverters.CredentialsProviderConverter.INSTANCE.convert(
+              credentialsProviderName);
+    } else {
+      this.credentialsProvider = null;
+    }
+    String oAuthTokenHash = null;
+    String encodedCredentialsHash = null;
     // Using credentials on a plain text connection is not allowed, so if the user has not specified
     // any credentials and is using a plain text connection, we should not try to get the
     // credentials from the environment, but default to NoCredentials.
     if (this.fixedCredentials == null
         && getInitialConnectionPropertyValue(CREDENTIALS_URL) == null
         && getInitialConnectionPropertyValue(ENCODED_CREDENTIALS) == null
-        && getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) == null
+        && this.credentialsProvider == null
         && getInitialConnectionPropertyValue(OAUTH_TOKEN) == null
         && Strings.isNullOrEmpty(getInitialConnectionPropertyValue(ConnectionProperties.USERNAME))
         && usePlainText) {
       this.credentials = NoCredentials.getInstance();
     } else if (getInitialConnectionPropertyValue(OAUTH_TOKEN) != null) {
-      this.credentials =
-          new GoogleCredentials(
-              new AccessToken(getInitialConnectionPropertyValue(OAUTH_TOKEN), null));
+      String oAuthToken = getInitialConnectionPropertyValue(OAUTH_TOKEN);
+      oAuthTokenHash =
+          "oauth:" + Hashing.sha256().hashString(oAuthToken, StandardCharsets.UTF_8).toString();
+      this.credentials = new GoogleCredentials(new AccessToken(oAuthToken, null));
+      // Clear the OAuth token from the initial connection state to allow it to be GC'd.
+      this.initialConnectionState.setValue(
+          OAUTH_TOKEN,
+          /* value= */ null,
+          ConnectionProperty.Context.STARTUP,
+          /* inTransaction= */ false);
     } else if (isSpannerOmniPattern || isSpannerOmni()) {
       if (!Strings.isNullOrEmpty(username) && !Strings.isNullOrEmpty(password)) {
         SecretBytes secretBytes =
@@ -831,9 +859,9 @@ public class ConnectionOptions {
       } else {
         this.credentials = NoCredentials.getInstance();
       }
-    } else if (getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER) != null) {
+    } else if (this.credentialsProvider != null) {
       try {
-        this.credentials = getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER).getCredentials();
+        this.credentials = this.credentialsProvider.getCredentials();
       } catch (IOException exception) {
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.INVALID_ARGUMENT,
@@ -843,14 +871,24 @@ public class ConnectionOptions {
     } else if (this.fixedCredentials != null) {
       this.credentials = fixedCredentials;
     } else if (getInitialConnectionPropertyValue(ENCODED_CREDENTIALS) != null) {
-      this.credentials =
-          getCredentialsService()
-              .decodeCredentials(getInitialConnectionPropertyValue(ENCODED_CREDENTIALS));
+      String encodedCredentials = getInitialConnectionPropertyValue(ENCODED_CREDENTIALS);
+      encodedCredentialsHash =
+          "encoded:"
+              + Hashing.sha256().hashString(encodedCredentials, StandardCharsets.UTF_8).toString();
+      this.credentials = getCredentialsService().decodeCredentials(encodedCredentials);
+      // Clear the encoded credentials from the initial connection state to allow it to be GC'd.
+      this.initialConnectionState.setValue(
+          ENCODED_CREDENTIALS,
+          /* value= */ null,
+          ConnectionProperty.Context.STARTUP,
+          /* inTransaction= */ false);
     } else {
       this.credentials =
           getCredentialsService()
               .createCredentials(getInitialConnectionPropertyValue(CREDENTIALS_URL));
     }
+    this.oAuthTokenHash = oAuthTokenHash;
+    this.encodedCredentialsHash = encodedCredentialsHash;
 
     if (getInitialConnectionPropertyValue(MIN_SESSIONS) != null
         || getInitialConnectionPropertyValue(MAX_SESSIONS) != null
@@ -1048,8 +1086,14 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(CREDENTIALS_URL);
   }
 
-  String getOAuthToken() {
-    return getInitialConnectionPropertyValue(OAUTH_TOKEN);
+  @Nullable
+  String getEncodedCredentialsHash() {
+    return this.encodedCredentialsHash;
+  }
+
+  @Nullable
+  String getOAuthTokenHash() {
+    return this.oAuthTokenHash;
   }
 
   Credentials getFixedCredentials() {
@@ -1057,7 +1101,7 @@ public class ConnectionOptions {
   }
 
   CredentialsProvider getCredentialsProvider() {
-    return getInitialConnectionPropertyValue(CREDENTIALS_PROVIDER);
+    return this.credentialsProvider;
   }
 
   /**
@@ -1146,6 +1190,36 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(DCP_CONCURRENT_STREAMS_LOW_WATERMARK);
   }
 
+  /**
+   * Validates that a non-empty universe domain is a valid RFC 1123 DNS domain name so it cannot
+   * inject URL components (such as userinfo, port, path, query, or fragment) into constructed
+   * endpoint URLs.
+   */
+  private static void validateUniverseDomain(@Nullable String universeDomain) {
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      return;
+    }
+    Preconditions.checkArgument(
+        SPANNER_SERVICE_NAME.length() + 1 + universeDomain.length() <= MAX_DNS_HOSTNAME_LENGTH
+            && VALID_UNIVERSE_DOMAIN_PATTERN.matcher(universeDomain).matches(),
+        "Invalid universe domain: %s",
+        universeDomain);
+  }
+
+  /**
+   * Returns the default host URL derived from the configured universe domain, falling back to
+   * {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} when null or empty.
+   */
+  private String getDefaultHost() {
+    String universeDomain = getUniverseDomain();
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    } else {
+      validateUniverseDomain(universeDomain);
+    }
+    return String.format("%s//%s.%s", HOST_PROTOCOL, SPANNER_SERVICE_NAME, universeDomain);
+  }
+
   /** Calls the getChannelProvider() method from the supplied class. */
   public TransportChannelProvider getChannelProvider() {
     String channelProvider = getInitialConnectionPropertyValue(CHANNEL_PROVIDER);
@@ -1153,16 +1227,20 @@ public class ConnectionOptions {
       return null;
     }
     try {
-      URL url = new URL(MoreObjects.firstNonNull(host, DEFAULT_HOST));
+      URL url = new URL(MoreObjects.firstNonNull(host, getDefaultHost()));
       ExternalChannelProvider provider =
-          ExternalChannelProvider.class.cast(Class.forName(channelProvider).newInstance());
-      return provider.getChannelProvider(url.getHost(), url.getPort());
-    } catch (Exception e) {
+          ClientSideStatementValueConverters.ExternalChannelProviderConverter.INSTANCE.convert(
+              channelProvider);
+      return provider == null ? null : provider.getChannelProvider(url.getHost(), url.getPort());
+    } catch (SpannerException exception) {
+      throw exception;
+    } catch (Exception exception) {
       throw SpannerExceptionFactory.newSpannerException(
           ErrorCode.INVALID_ARGUMENT,
           String.format(
               "%s : Failed to create channel with external provider: %s",
-              e.toString(), channelProvider));
+              exception.toString(), channelProvider),
+          exception);
     }
   }
 
@@ -1176,7 +1254,8 @@ public class ConnectionOptions {
     if (interceptorProvider == null) {
       return null;
     }
-    return GrpcInterceptorProviderConverter.INSTANCE.convert(interceptorProvider);
+    return ClientSideStatementValueConverters.GrpcInterceptorProviderConverter.INSTANCE.convert(
+        interceptorProvider);
   }
 
   /**
