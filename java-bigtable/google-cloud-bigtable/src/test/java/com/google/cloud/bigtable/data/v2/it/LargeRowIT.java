@@ -74,8 +74,8 @@ public class LargeRowIT {
         .withMessage(
             "Skipping LargeRowIT on session path until the server supports dynamic heartbeats"
                 + " based on message payload")
-        .that(System.getProperty("bigtable.internal.client-config-override", ""))
-        .isEmpty();
+        .that(testEnvRule.env().isSessionsEnabled())
+        .isFalse();
 
     tableAdminClient = testEnvRule.env().getTableAdminClient();
     String tableId = PrefixGenerator.newPrefix("LargeRowTest");
