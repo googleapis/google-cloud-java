@@ -70,9 +70,10 @@ class PerConnectionFileHandler extends Handler {
   private final Level level;
   private final long maxFileBytes;
   private final Formatter logFormatter;
-  private final ConcurrentHashMap<String, BoundedLogFileWriter> writers = new ConcurrentHashMap<>();
+  final Set<String> registeredConnections = ConcurrentHashMap.newKeySet();
+  private final ConcurrentHashMap<String, ConnectionFileSlot> slots = new ConcurrentHashMap<>();
   private final BoundedLogFileWriter defaultWriter;
-  private volatile boolean handlerClosed = false;
+  volatile boolean handlerClosed = false;
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
     this(baseLogPath, level, resolveMaxLogFileBytes());
@@ -293,7 +294,7 @@ class PerConnectionFileHandler extends Handler {
         isPosix);
   }
 
-  private BoundedLogFileWriter createLogWriter(
+  BoundedLogFileWriter createLogWriter(
       String id, Path logDir, Level writerLevel, long limitBytes) {
     if (logDir == null) {
       return null;
@@ -372,6 +373,19 @@ class PerConnectionFileHandler extends Handler {
     return activePath.resolveSibling(backup);
   }
 
+  void registerConnection(String connectionId) {
+    if (connectionId != null && !connectionId.isEmpty() && !handlerClosed) {
+      registeredConnections.add(connectionId);
+    }
+  }
+
+  private boolean canOpenSlotFor(String connectionId) {
+    return !handlerClosed
+        && baseLogPath != null
+        && (registeredConnections.contains(connectionId)
+            || BigQueryJdbcRootLogger.isConnectionActive(connectionId));
+  }
+
   @Override
   public void publish(LogRecord record) {
     if (handlerClosed || !isLoggable(record)) {
@@ -387,23 +401,24 @@ class PerConnectionFileHandler extends Handler {
     }
 
     if (connectionId != null && !connectionId.isEmpty()) {
-      BoundedLogFileWriter writer =
-          writers.computeIfAbsent(
+      ConnectionFileSlot slot =
+          slots.compute(
               connectionId,
-              id ->
-                  handlerClosed
-                      ? null
-                      : createLogWriter(id, baseLogPath, this.level, this.maxFileBytes));
-      if (writer != null) {
-        if (handlerClosed) {
-          writers.remove(connectionId, writer);
-          writer.close();
+              (id, existing) -> {
+                if (existing != null) {
+                  return existing.isClosed() ? null : existing;
+                }
+                return canOpenSlotFor(id)
+                    ? new ConnectionFileSlot(baseLogPath, level, maxFileBytes)
+                    : null;
+              });
+      if (slot != null) {
+        if (slot.publishIfOpen(record, connectionId, this)) {
           return;
         }
-        if (writer.publish(record)) {
-          return;
+        if (slot.isClosed()) {
+          slots.remove(connectionId, slot);
         }
-        writers.remove(connectionId, writer);
       }
     }
 
@@ -417,18 +432,19 @@ class PerConnectionFileHandler extends Handler {
     if (defaultWriter != null) {
       defaultWriter.flush();
     }
-    for (BoundedLogFileWriter writer : writers.values()) {
-      writer.flush();
+    for (ConnectionFileSlot slot : slots.values()) {
+      slot.flushSlot();
     }
   }
 
   @Override
   public void close() throws SecurityException {
     handlerClosed = true;
-    for (String id : writers.keySet()) {
-      BoundedLogFileWriter removed = writers.remove(id);
+    registeredConnections.clear();
+    for (String id : slots.keySet()) {
+      ConnectionFileSlot removed = slots.remove(id);
       if (removed != null) {
-        removed.close();
+        removed.closeSlot();
       }
     }
     if (defaultWriter != null) {
@@ -438,9 +454,10 @@ class PerConnectionFileHandler extends Handler {
 
   public void closeHandler(String connectionId) {
     if (connectionId != null) {
-      BoundedLogFileWriter writer = writers.remove(connectionId);
-      if (writer != null) {
-        writer.close();
+      registeredConnections.remove(connectionId);
+      ConnectionFileSlot slot = slots.remove(connectionId);
+      if (slot != null) {
+        slot.closeSlot();
       }
     }
   }
@@ -626,6 +643,71 @@ class PerConnectionFileHandler extends Handler {
           if (claimedGlobalPath != null) {
             ACTIVE_GLOBAL_PATHS.remove(claimedGlobalPath);
             claimedGlobalPath = null;
+          }
+        }
+      }
+    }
+  }
+
+  private static final class ConnectionFileSlot {
+    private final Path logPath;
+    private final Level level;
+    private final long maxFileBytes;
+
+    @GuardedBy("this")
+    private BoundedLogFileWriter writer;
+
+    private volatile boolean closed;
+
+    ConnectionFileSlot(Path logPath, Level level, long maxFileBytes) {
+      this.logPath = logPath;
+      this.level = level;
+      this.maxFileBytes = maxFileBytes;
+    }
+
+    boolean isClosed() {
+      return closed;
+    }
+
+    synchronized boolean publishIfOpen(
+        LogRecord record, String connectionId, PerConnectionFileHandler owner) {
+      if (closed
+          || owner.handlerClosed
+          || (!owner.registeredConnections.contains(connectionId)
+              && !BigQueryJdbcRootLogger.isConnectionActive(connectionId))) {
+        closeSlot();
+        return false;
+      }
+      if (record.getLevel().intValue() < level.intValue()) {
+        return true;
+      }
+      if (writer == null) {
+        writer = owner.createLogWriter(connectionId, logPath, level, maxFileBytes);
+        if (writer == null) {
+          return false;
+        }
+      }
+      if (!writer.publish(record)) {
+        closeSlot();
+        return false;
+      }
+      return true;
+    }
+
+    synchronized void flushSlot() {
+      if (!closed && writer != null) {
+        writer.flush();
+      }
+    }
+
+    synchronized void closeSlot() {
+      if (!closed) {
+        closed = true;
+        if (writer != null) {
+          try {
+            writer.close();
+          } finally {
+            writer = null;
           }
         }
       }

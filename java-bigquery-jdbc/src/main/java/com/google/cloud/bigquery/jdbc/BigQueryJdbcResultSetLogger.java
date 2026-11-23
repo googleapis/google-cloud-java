@@ -75,7 +75,12 @@ public final class BigQueryJdbcResultSetLogger {
     if (connectionId == null || connectionId.isEmpty()) {
       return getLogger(clazz, (ConnectionLogContext) null);
     }
-    return getLogger(clazz, new ConnectionLogContext(connectionId, ConnectionLogContext.ALL_VALUE));
+    ConnectionLogContext active = BigQueryJdbcRootLogger.findActiveContext(connectionId);
+    ConnectionLogContext context =
+        active != null
+            ? active
+            : new ConnectionLogContext(connectionId, ConnectionLogContext.ALL_VALUE);
+    return getLogger(clazz, context);
   }
 
   static BigQueryJdbcResultSetLogger getLogger(
