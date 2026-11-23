@@ -342,17 +342,10 @@ public class GrpcLoggingRpc implements LoggingRpc {
     if (options.getUniverseDomain() != null) {
       settingsBuilder.setUniverseDomain(options.getUniverseDomain());
     }
+    // Preserve custom host overrides; leave the endpoint unset for the default host so GAX
+    // resolves logging.<universeDomain>:443 automatically via the default channel provider.
     if (!LoggingSettings.getDefaultEndpoint().equals(options.getHost())) {
-      // Preserve custom host overrides on both the settings and the channel provider.
       settingsBuilder.setEndpoint(options.getHost());
-      settingsBuilder.setTransportChannelProvider(
-          GrpcTransportOptions.setUpChannelProvider(
-              LoggingSettings.defaultGrpcTransportProviderBuilder(), options));
-    } else {
-      // Leave the endpoint unset on the default channel provider (setUpChannelProvider only
-      // sets the endpoint) so GAX resolves logging.<universeDomain>:443 automatically.
-      settingsBuilder.setTransportChannelProvider(
-          LoggingSettings.defaultGrpcTransportProviderBuilder().build());
     }
 
     HeaderProvider internalHeaderProvider =

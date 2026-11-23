@@ -17,7 +17,6 @@
 package com.google.cloud.logging.spi.v2;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -112,7 +111,17 @@ public class GrpcLoggingRpcTest {
     assertEquals(CUSTOM_HOST, settings.getEndpoint());
     InstantiatingGrpcChannelProvider channelProvider =
         (InstantiatingGrpcChannelProvider) settings.getTransportChannelProvider();
-    assertFalse(channelProvider.needsEndpoint());
-    assertEquals(CUSTOM_HOST, channelProvider.getEndpoint());
+    assertTrue(channelProvider.needsEndpoint());
+    assertNull(channelProvider.getEndpoint());
+
+    ClientContext clientContext = ClientContext.create(settings);
+    try {
+      assertEquals(CUSTOM_UNIVERSE, clientContext.getUniverseDomain());
+      GrpcTransportChannel transportChannel =
+          (GrpcTransportChannel) clientContext.getTransportChannel();
+      assertEquals(CUSTOM_HOST, transportChannel.getChannel().authority());
+    } finally {
+      clientContext.getTransportChannel().shutdownNow();
+    }
   }
 }
