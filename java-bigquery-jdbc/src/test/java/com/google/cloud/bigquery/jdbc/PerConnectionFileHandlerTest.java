@@ -416,4 +416,130 @@ public class PerConnectionFileHandlerTest {
           2L, files.stream().filter(p -> p.getFileName().toString().endsWith("-abcd.log")).count());
     }
   }
+
+  @Test
+  public void testOneGibDefaultAndBackupFileRotationAndTypedParams() throws IOException {
+    assertEquals(1024L * 1024L * 1024L, PerConnectionFileHandler.DEFAULT_MAX_LOG_FILE_BYTES);
+    String prop = PerConnectionFileHandler.MAX_LOG_FILE_BYTES_SYSTEM_PROPERTY;
+    String prev = System.getProperty(prop);
+    try {
+      System.setProperty(prop, "3000000000");
+      assertEquals(3_000_000_000L, PerConnectionFileHandler.resolveMaxLogFileBytes());
+      System.setProperty(prop, "-5");
+      assertEquals(
+          PerConnectionFileHandler.DEFAULT_MAX_LOG_FILE_BYTES,
+          PerConnectionFileHandler.resolveMaxLogFileBytes());
+    } finally {
+      if (prev == null) {
+        System.clearProperty(prop);
+      } else {
+        System.setProperty(prop, prev);
+      }
+    }
+
+    Path boundedDir = tempDir.resolve("bounded");
+    long maxBytes = 1024L;
+    PerConnectionFileHandler defaultMaxHandler =
+        new PerConnectionFileHandler(tempDir.resolve("def_max").toString(), Level.INFO, 0L);
+    defaultMaxHandler.close();
+
+    ConnectionLogContext connCtx =
+        new ConnectionLogContext("rotc-uuid", ConnectionLogContext.ALL_VALUE);
+    assertEquals(ConnectionLogContext.ALL_VALUE, connCtx.levelValue());
+    connCtx.setLevelValue(ConnectionLogContext.OFF_VALUE);
+    assertEquals(ConnectionLogContext.OFF_VALUE, connCtx.levelValue());
+    assertEquals("rotc-uuid", connCtx.toString());
+    assertNull(ConnectionLogContext.extractFromParameters(null));
+
+    PerConnectionFileHandler boundedHandler =
+        new PerConnectionFileHandler(boundedDir.toString(), Level.FINEST, maxBytes);
+    try {
+      for (int i = 0; i < 40; i++) {
+        boundedHandler.publish(
+            new LogRecord(Level.INFO, "Padding log line to exceed 1 KiB limit #" + i));
+      }
+      // Route via ConnectionLogContext in params[0] with empty MDC and trigger per-conn .1.log
+      BigQueryJdbcMdc.clear();
+      for (int i = 0; i < 15; i++) {
+        LogRecord ctxRec = new LogRecord(Level.INFO, "Per-conn ctx rotation line #" + i);
+        ctxRec.setParameters(new Object[] {connCtx});
+        boundedHandler.publish(ctxRec);
+      }
+      // Plain String in params[0] with empty MDC routes to global log instead of "-BigQ.log"
+      LogRecord retryRecord = new LogRecord(Level.FINEST, "Retrying RPC");
+      retryRecord.setParameters(new Object[] {"BigQuery retried method: getQueryResults"});
+      boundedHandler.publish(retryRecord);
+      assertTrue(BigQueryJdbcRootLogger.getFormatter().format(retryRecord).contains("[NO_CONN]"));
+      boundedHandler.flush();
+    } finally {
+      boundedHandler.close();
+    }
+
+    Path boundedGlobal = boundedDir.resolve("BQ-JDBC-GLOBAL.log");
+    Path boundedBackup = boundedDir.resolve("BQ-JDBC-GLOBAL.1.log");
+    assertTrue(Files.size(boundedGlobal) > 0 && Files.size(boundedGlobal) <= maxBytes);
+    assertTrue(Files.size(boundedBackup) > 0 && Files.size(boundedBackup) <= maxBytes);
+    assertFalse(Files.exists(boundedDir.resolve("BQ-JDBC-GLOBAL.2.log")));
+    assertTrue(findLogFile(boundedDir, "-rotc.log").isPresent());
+    assertTrue(findLogFile(boundedDir, "-rotc.1.log").isPresent());
+    assertFalse(findLogFile(boundedDir, "-BigQ.log").isPresent());
+    if (boundedBackup.getFileSystem().supportedFileAttributeViews().contains("posix")) {
+      assertMode(boundedBackup, "rw-------");
+      assertMode(boundedGlobal, "rw-------");
+      assertMode(findLogFile(boundedDir, "-rotc.1.log").get(), "rw-------");
+
+      // Symlink at .1.log is deleted safely without modifying target; foreign owner falls back
+      Path symDir = tempDir.resolve("sym_rot");
+      Files.createDirectories(symDir);
+      Path untouchedTarget =
+          Files.write(tempDir.resolve("untouched.txt"), "safe".getBytes(StandardCharsets.UTF_8));
+      Files.createSymbolicLink(symDir.resolve("BQ-JDBC-GLOBAL.1.log"), untouchedTarget);
+      PerConnectionFileHandler symRotHandler =
+          new PerConnectionFileHandler(symDir.toString(), Level.INFO, maxBytes);
+      String origUser = System.getProperty("user.name");
+      try {
+        for (int i = 0; i < 12; i++) {
+          symRotHandler.publish(new LogRecord(Level.INFO, "Symlink backup rotation line #" + i));
+        }
+        assertEquals("safe", readUtf8(untouchedTarget));
+        assertFalse(Files.isSymbolicLink(symDir.resolve("BQ-JDBC-GLOBAL.1.log")));
+        System.setProperty("user.name", "other_user");
+        for (int i = 0; i < 12; i++) {
+          symRotHandler.publish(new LogRecord(Level.INFO, "Foreign backup fallback line #" + i));
+        }
+        symRotHandler.flush();
+        assertTrue(readUtf8(symDir.resolve("BQ-JDBC-GLOBAL.log")).contains("fallback line #11"));
+      } finally {
+        if (origUser != null) {
+          System.setProperty("user.name", origUser);
+        } else {
+          System.clearProperty("user.name");
+        }
+        symRotHandler.close();
+      }
+    }
+    String backupContent = readUtf8(boundedBackup);
+    String activeContent = readUtf8(boundedGlobal);
+    assertFalse(backupContent.contains("limit #0") || activeContent.contains("limit #0"));
+    assertTrue(backupContent.contains("Padding log line"));
+    assertTrue(activeContent.contains("Retrying RPC"));
+
+    // Non-regular directory blocking .1.log falls back gracefully to in-place truncation
+    Path fallbackDir = tempDir.resolve("fallback_rot");
+    Files.createDirectories(fallbackDir.resolve("BQ-JDBC-GLOBAL.1.log"));
+    PerConnectionFileHandler fallbackHandler =
+        new PerConnectionFileHandler(fallbackDir.toString(), Level.INFO, maxBytes);
+    try {
+      for (int i = 0; i < 20; i++) {
+        fallbackHandler.publish(
+            new LogRecord(Level.INFO, "Fallback line exceeding 1 KiB cap #" + i));
+      }
+      fallbackHandler.flush();
+    } finally {
+      fallbackHandler.close();
+    }
+    Path fallbackGlobal = fallbackDir.resolve("BQ-JDBC-GLOBAL.log");
+    assertTrue(Files.size(fallbackGlobal) > 0 && Files.size(fallbackGlobal) <= maxBytes);
+    assertTrue(readUtf8(fallbackGlobal).contains("cap #19"));
+  }
 }

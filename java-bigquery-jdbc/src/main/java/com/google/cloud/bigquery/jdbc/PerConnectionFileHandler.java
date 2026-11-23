@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -28,6 +29,7 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.attribute.PosixFilePermission;
@@ -46,39 +48,51 @@ import javax.annotation.concurrent.GuardedBy;
 
 /**
  * Custom logging handler that dynamically creates and routes log records to per-connection log
- * files using NIO {@link SeekableByteChannel} writers with owner-only POSIX permissions and
- * graceful {@link ErrorManager} degradation.
+ * files using NIO {@link SeekableByteChannel} writers with owner-only POSIX permissions, bounded
+ * two-file ({@code .log} + {@code .1.log}) rotation, and graceful {@link ErrorManager} degradation.
  */
 class PerConnectionFileHandler extends Handler {
+  static final long DEFAULT_MAX_LOG_FILE_BYTES = 1024L * 1024L * 1024L;
+  static final String MAX_LOG_FILE_BYTES_SYSTEM_PROPERTY =
+      "com.google.cloud.bigquery.jdbc.maxLogFileBytes";
+
   private static final String DEFAULT_HANDLER_ID = "Jdbc-default";
   private static final int MAX_COLLISION_ATTEMPTS = 64;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER =
       DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
   private static final Set<PosixFilePermission> OWNER_DIR_PERMS =
       PosixFilePermissions.fromString("rwx------");
-  private static final Set<PosixFilePermission> OWNER_FILE_PERMS =
+  static final Set<PosixFilePermission> OWNER_FILE_PERMS =
       PosixFilePermissions.fromString("rw-------");
-  private static final Set<Path> ACTIVE_GLOBAL_PATHS = ConcurrentHashMap.newKeySet();
+  static final Set<Path> ACTIVE_GLOBAL_PATHS = ConcurrentHashMap.newKeySet();
 
   private final Path baseLogPath;
   private final Level level;
+  private final long maxFileBytes;
   private final Formatter logFormatter;
-  private final ConcurrentHashMap<String, ChannelLogWriter> writers = new ConcurrentHashMap<>();
-  private final ChannelLogWriter defaultWriter;
+  private final ConcurrentHashMap<String, BoundedLogFileWriter> writers = new ConcurrentHashMap<>();
+  private final BoundedLogFileWriter defaultWriter;
   private volatile boolean handlerClosed = false;
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
+    this(baseLogPath, level, resolveMaxLogFileBytes());
+  }
+
+  @VisibleForTesting
+  PerConnectionFileHandler(String baseLogPath, Level level, long maxFileBytes) {
     this.level = level;
+    this.maxFileBytes = maxFileBytes > 0 ? maxFileBytes : DEFAULT_MAX_LOG_FILE_BYTES;
     this.logFormatter = BigQueryJdbcRootLogger.getFormatter();
     setLevel(level);
     setFormatter(this.logFormatter);
 
     Path verifiedDir = null;
-    ChannelLogWriter initializedDefault = null;
+    BoundedLogFileWriter initializedDefault = null;
     try {
       verifiedDir =
           ensureSecureDirectory(Paths.get(baseLogPath != null ? baseLogPath : "").toAbsolutePath());
-      initializedDefault = createLogWriter(DEFAULT_HANDLER_ID, verifiedDir, this.level);
+      initializedDefault =
+          createLogWriter(DEFAULT_HANDLER_ID, verifiedDir, this.level, this.maxFileBytes);
     } catch (Exception e) {
       reportError("Failed to initialize default log file", e, ErrorManager.OPEN_FAILURE);
     }
@@ -86,7 +100,12 @@ class PerConnectionFileHandler extends Handler {
     this.defaultWriter = initializedDefault;
   }
 
-  private static boolean isPosixFileSystem(Path path) {
+  static long resolveMaxLogFileBytes() {
+    Long configured = Long.getLong(MAX_LOG_FILE_BYTES_SYSTEM_PROPERTY);
+    return (configured != null && configured > 0) ? configured : DEFAULT_MAX_LOG_FILE_BYTES;
+  }
+
+  static boolean isPosixFileSystem(Path path) {
     return path.getFileSystem().supportedFileAttributeViews().contains("posix");
   }
 
@@ -207,7 +226,7 @@ class PerConnectionFileHandler extends Handler {
     }
   }
 
-  private static void closeQuietlyWithSuppressed(SeekableByteChannel channel, Throwable primary) {
+  static void closeQuietlyWithSuppressed(SeekableByteChannel channel, Throwable primary) {
     try {
       channel.close();
     } catch (IOException closeEx) {
@@ -215,7 +234,7 @@ class PerConnectionFileHandler extends Handler {
     }
   }
 
-  private static OpenedChannel openLockedGlobalChannel(Path file) throws IOException {
+  static OpenedChannel openLockedGlobalChannel(Path file) throws IOException {
     Path claim = file.toAbsolutePath().normalize();
     if (!ACTIVE_GLOBAL_PATHS.add(claim)) {
       throw new FileAlreadyExistsException(
@@ -247,7 +266,7 @@ class PerConnectionFileHandler extends Handler {
       }
       channel.position(channel.size());
       transferred = true;
-      return new OpenedChannel(claim, channel);
+      return new OpenedChannel(file, claim, channel);
     } finally {
       if (!transferred) {
         ACTIVE_GLOBAL_PATHS.remove(claim);
@@ -274,14 +293,17 @@ class PerConnectionFileHandler extends Handler {
         isPosix);
   }
 
-  private ChannelLogWriter createLogWriter(String id, Path logDir, Level writerLevel) {
+  private BoundedLogFileWriter createLogWriter(
+      String id, Path logDir, Level writerLevel, long limitBytes) {
     if (logDir == null) {
       return null;
     }
     try {
-      OpenedChannel opened = allocateChannel(ensureSecureDirectory(logDir), id);
+      Path verifiedDir = ensureSecureDirectory(logDir);
+      OpenedChannel opened = allocateChannel(verifiedDir, id);
       try {
-        return new ChannelLogWriter(opened, writerLevel, logFormatter, this);
+        return new BoundedLogFileWriter(
+            id, verifiedDir, opened, writerLevel, limitBytes, logFormatter, this);
       } catch (Exception initEx) {
         opened.releaseOnFailure(initEx);
         throw initEx;
@@ -323,13 +345,31 @@ class PerConnectionFileHandler extends Handler {
           attempt == 0
               ? "BQ-JDBC-" + timestamp + "-" + shortUuid + ".log"
               : "BQ-JDBC-" + timestamp + "-" + attempt + "-" + shortUuid + ".log";
+      Path candidate = logDir.resolve(fileName);
       try {
-        return new OpenedChannel(null, openExclusiveNewChannel(logDir.resolve(fileName)));
+        return new OpenedChannel(candidate, null, openExclusiveNewChannel(candidate));
       } catch (FileAlreadyExistsException e) {
         // Same-second prefix collision or pre-existing file; retry with collision counter.
       }
     }
     throw new IOException("Unable to allocate unique log file for connection " + id);
+  }
+
+  static OpenedChannel reopenOrAllocate(Path logDir, String id, Path preferred) throws IOException {
+    try {
+      return DEFAULT_HANDLER_ID.equals(id)
+          ? openLockedGlobalChannel(preferred)
+          : new OpenedChannel(preferred, null, openExclusiveNewChannel(preferred));
+    } catch (FileAlreadyExistsException ex) {
+      return allocateChannel(logDir, id);
+    }
+  }
+
+  static Path deriveBackupPath(Path activePath) {
+    String name = activePath.getFileName().toString();
+    String backup =
+        name.endsWith(".log") ? name.substring(0, name.length() - 4) + ".1.log" : name + ".1";
+    return activePath.resolveSibling(backup);
   }
 
   @Override
@@ -340,24 +380,30 @@ class PerConnectionFileHandler extends Handler {
 
     String connectionId = BigQueryJdbcMdc.getConnectionId();
     if (connectionId == null || connectionId.isEmpty()) {
-      Object[] params = record.getParameters();
-      if (params != null && params.length > 0 && params[0] instanceof String) {
-        connectionId = (String) params[0];
+      ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
+      if (context != null) {
+        connectionId = context.connectionId();
       }
     }
 
     if (connectionId != null && !connectionId.isEmpty()) {
-      ChannelLogWriter writer =
+      BoundedLogFileWriter writer =
           writers.computeIfAbsent(
-              connectionId, id -> handlerClosed ? null : createLogWriter(id, baseLogPath, level));
+              connectionId,
+              id ->
+                  handlerClosed
+                      ? null
+                      : createLogWriter(id, baseLogPath, this.level, this.maxFileBytes));
       if (writer != null) {
         if (handlerClosed) {
           writers.remove(connectionId, writer);
           writer.close();
           return;
         }
-        writer.publish(record);
-        return;
+        if (writer.publish(record)) {
+          return;
+        }
+        writers.remove(connectionId, writer);
       }
     }
 
@@ -371,7 +417,7 @@ class PerConnectionFileHandler extends Handler {
     if (defaultWriter != null) {
       defaultWriter.flush();
     }
-    for (ChannelLogWriter writer : writers.values()) {
+    for (BoundedLogFileWriter writer : writers.values()) {
       writer.flush();
     }
   }
@@ -380,7 +426,7 @@ class PerConnectionFileHandler extends Handler {
   public void close() throws SecurityException {
     handlerClosed = true;
     for (String id : writers.keySet()) {
-      ChannelLogWriter removed = writers.remove(id);
+      BoundedLogFileWriter removed = writers.remove(id);
       if (removed != null) {
         removed.close();
       }
@@ -392,7 +438,7 @@ class PerConnectionFileHandler extends Handler {
 
   public void closeHandler(String connectionId) {
     if (connectionId != null) {
-      ChannelLogWriter writer = writers.remove(connectionId);
+      BoundedLogFileWriter writer = writers.remove(connectionId);
       if (writer != null) {
         writer.close();
       }
@@ -400,10 +446,12 @@ class PerConnectionFileHandler extends Handler {
   }
 
   private static final class OpenedChannel {
+    final Path path;
     final Path claimedGlobalPath;
     final SeekableByteChannel channel;
 
-    OpenedChannel(Path claimedGlobalPath, SeekableByteChannel channel) {
+    OpenedChannel(Path path, Path claimedGlobalPath, SeekableByteChannel channel) {
+      this.path = path;
       this.claimedGlobalPath = claimedGlobalPath;
       this.channel = channel;
     }
@@ -416,47 +464,142 @@ class PerConnectionFileHandler extends Handler {
     }
   }
 
-  private static final class ChannelLogWriter {
-    private final Path claimedGlobalPath;
-    private final SeekableByteChannel channel;
+  private static final class BoundedLogFileWriter {
+    private final String id;
+    private final Path logDir;
     private final Level writerLevel;
+    private final long maxBytes;
     private final Formatter formatter;
     private final PerConnectionFileHandler owner;
 
     @GuardedBy("this")
+    private Path activePath;
+
+    @GuardedBy("this")
+    private Path claimedGlobalPath;
+
+    @GuardedBy("this")
+    private SeekableByteChannel channel;
+
+    @GuardedBy("this")
+    private long writtenBytes;
+
+    @GuardedBy("this")
     private boolean closed;
 
-    ChannelLogWriter(
+    BoundedLogFileWriter(
+        String id,
+        Path logDir,
         OpenedChannel opened,
         Level writerLevel,
+        long maxBytes,
         Formatter formatter,
-        PerConnectionFileHandler owner) {
+        PerConnectionFileHandler owner)
+        throws IOException {
+      this.id = id;
+      this.logDir = logDir;
+      this.activePath = opened.path;
       this.claimedGlobalPath = opened.claimedGlobalPath;
       this.channel = opened.channel;
       this.writerLevel = writerLevel;
+      this.maxBytes = maxBytes;
       this.formatter = formatter;
       this.owner = owner;
+      this.writtenBytes = opened.channel.size();
     }
 
-    synchronized void publish(LogRecord record) {
-      if (closed || record.getLevel().intValue() < writerLevel.intValue()) {
-        return;
+    @GuardedBy("this")
+    private void rotate() throws IOException {
+      Path backupPath = deriveBackupPath(activePath);
+      if (Files.isSymbolicLink(backupPath)) {
+        Files.deleteIfExists(backupPath);
+      } else if (Files.exists(backupPath, LinkOption.NOFOLLOW_LINKS)) {
+        if (!Files.isRegularFile(backupPath, LinkOption.NOFOLLOW_LINKS)) {
+          throw new IOException("Refusing to rotate onto non-regular backup path: " + backupPath);
+        }
+        verifyPosixOwner(backupPath);
+      }
+      channel.close();
+      channel = null;
+      if (claimedGlobalPath != null) {
+        ACTIVE_GLOBAL_PATHS.remove(claimedGlobalPath);
+        claimedGlobalPath = null;
+      }
+      try {
+        Files.move(activePath, backupPath, StandardCopyOption.REPLACE_EXISTING);
+      } catch (Exception moveEx) {
+        try {
+          OpenedChannel recovered =
+              DEFAULT_HANDLER_ID.equals(id)
+                  ? openLockedGlobalChannel(activePath)
+                  : new OpenedChannel(activePath, null, openSecureAppendChannel(activePath));
+          activePath = recovered.path;
+          claimedGlobalPath = recovered.claimedGlobalPath;
+          channel = recovered.channel;
+          writtenBytes = channel.size();
+        } catch (Exception recoverEx) {
+          moveEx.addSuppressed(recoverEx);
+        }
+        if (moveEx instanceof IOException) {
+          throw (IOException) moveEx;
+        }
+        throw new IOException("Failed to move active log file to backup", moveEx);
+      }
+      if (isPosixFileSystem(backupPath)) {
+        try {
+          Files.setPosixFilePermissions(backupPath, OWNER_FILE_PERMS);
+        } catch (Exception permEx) {
+          owner.reportError(
+              "Failed to set permissions on rotated log file", permEx, ErrorManager.WRITE_FAILURE);
+        }
+      }
+      OpenedChannel reopened = reopenOrAllocate(logDir, id, activePath);
+      activePath = reopened.path;
+      claimedGlobalPath = reopened.claimedGlobalPath;
+      channel = reopened.channel;
+      writtenBytes = channel.size();
+    }
+
+    synchronized boolean publish(LogRecord record) {
+      if (closed || channel == null) {
+        return false;
+      }
+      if (record.getLevel().intValue() < writerLevel.intValue()) {
+        return true;
       }
       String formatted;
       try {
         formatted = formatter.format(record);
       } catch (Exception ex) {
         owner.reportError("Failed to format log record", ex, ErrorManager.FORMAT_FAILURE);
-        return;
+        return true;
       }
+      byte[] bytes = formatted.getBytes(StandardCharsets.UTF_8);
       try {
-        ByteBuffer buffer = ByteBuffer.wrap(formatted.getBytes(StandardCharsets.UTF_8));
+        if (maxBytes > 0
+            && writtenBytes > 0
+            && (writtenBytes >= maxBytes || bytes.length > maxBytes - writtenBytes)) {
+          try {
+            rotate();
+          } catch (Exception rotEx) {
+            owner.reportError("Failed to rotate log file", rotEx, ErrorManager.WRITE_FAILURE);
+            if (channel == null) {
+              closed = true;
+              return false;
+            }
+            channel.truncate(0);
+            channel.position(0);
+            writtenBytes = 0;
+          }
+        }
+        ByteBuffer buffer = ByteBuffer.wrap(bytes);
         while (buffer.hasRemaining()) {
-          channel.write(buffer);
+          writtenBytes += channel.write(buffer);
         }
       } catch (Exception ex) {
         owner.reportError("Failed to write log record", ex, ErrorManager.WRITE_FAILURE);
       }
+      return true;
     }
 
     synchronized void flush() {
@@ -473,12 +616,16 @@ class PerConnectionFileHandler extends Handler {
       if (!closed) {
         closed = true;
         try {
-          channel.close();
+          if (channel != null) {
+            channel.close();
+          }
         } catch (Exception ex) {
           owner.reportError("Failed to close log file", ex, ErrorManager.CLOSE_FAILURE);
         } finally {
+          channel = null;
           if (claimedGlobalPath != null) {
             ACTIVE_GLOBAL_PATHS.remove(claimedGlobalPath);
+            claimedGlobalPath = null;
           }
         }
       }

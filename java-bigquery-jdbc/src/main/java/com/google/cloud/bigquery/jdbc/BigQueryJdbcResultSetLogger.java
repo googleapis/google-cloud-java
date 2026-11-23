@@ -31,10 +31,11 @@ import java.util.logging.LogRecord;
  * plus the connection ID of the ResultSet it serves.
  *
  * <p>Hot-path methods ({@code finestTrace} etc.) set the source class and method explicitly, so no
- * stack-trace walking (caller inference) happens for them. The connection ID is stamped into {@code
- * LogRecord.getParameters()[0]} on every record so {@code PerConnectionFileHandler} can route the
- * record even when the thread-local MDC (mapped diagnostic context — the per-thread connection ID
- * set by the JDBC proxy) is empty, which is the normal case for un-proxied ResultSet calls.
+ * stack-trace walking (caller inference) happens for them. A typed {@link ConnectionLogContext} is
+ * stamped into {@code LogRecord.getParameters()[0]} on every record so {@code
+ * PerConnectionFileHandler} can route the record even when the thread-local MDC (mapped diagnostic
+ * context — the per-thread connection ID set by the JDBC proxy) is empty, which is the normal case
+ * for un-proxied ResultSet calls.
  */
 public final class BigQueryJdbcResultSetLogger {
 
@@ -49,6 +50,7 @@ public final class BigQueryJdbcResultSetLogger {
   private final BigQueryJdbcCustomLogger delegate;
   private final String targetClassName;
   private final String connectionId;
+  private final ConnectionLogContext connectionContext;
 
   private volatile BigQueryJdbcResultSetLogger arrowStructLogger;
   private volatile BigQueryJdbcResultSetLogger jsonStructLogger;
@@ -56,25 +58,36 @@ public final class BigQueryJdbcResultSetLogger {
   private volatile BigQueryJdbcResultSetLogger jsonArrayLogger;
 
   private BigQueryJdbcResultSetLogger(
-      BigQueryJdbcCustomLogger delegate, String targetClassName, String connectionId) {
+      BigQueryJdbcCustomLogger delegate,
+      String targetClassName,
+      ConnectionLogContext connectionContext) {
     this.delegate = delegate;
     this.targetClassName = targetClassName;
-    this.connectionId = connectionId;
+    this.connectionContext = connectionContext;
+    this.connectionId = connectionContext != null ? connectionContext.connectionId() : null;
   }
 
   public static BigQueryJdbcResultSetLogger getLogger(Class<?> clazz) {
-    return getLogger(clazz, null);
+    return getLogger(clazz, (ConnectionLogContext) null);
   }
 
   public static BigQueryJdbcResultSetLogger getLogger(Class<?> clazz, String connectionId) {
+    if (connectionId == null || connectionId.isEmpty()) {
+      return getLogger(clazz, (ConnectionLogContext) null);
+    }
+    return getLogger(clazz, new ConnectionLogContext(connectionId, ConnectionLogContext.ALL_VALUE));
+  }
+
+  static BigQueryJdbcResultSetLogger getLogger(
+      Class<?> clazz, ConnectionLogContext connectionContext) {
     String className = clazz.getName();
     BigQueryJdbcCustomLogger delegate =
         DELEGATES.computeIfAbsent(className, BigQueryJdbcCustomLogger::new);
-    if (connectionId == null) {
+    if (connectionContext == null) {
       return GLOBAL_FACADES.computeIfAbsent(
           className, k -> new BigQueryJdbcResultSetLogger(delegate, k, null));
     }
-    return new BigQueryJdbcResultSetLogger(delegate, className, connectionId);
+    return new BigQueryJdbcResultSetLogger(delegate, className, connectionContext);
   }
 
   public String getConnectionId() {
@@ -92,46 +105,49 @@ public final class BigQueryJdbcResultSetLogger {
 
   public BigQueryJdbcResultSetLogger getArrowStructLogger() {
     if (arrowStructLogger == null) {
-      arrowStructLogger = getLogger(BigQueryArrowStruct.class, connectionId);
+      arrowStructLogger = getLogger(BigQueryArrowStruct.class, connectionContext);
     }
     return arrowStructLogger;
   }
 
   public BigQueryJdbcResultSetLogger getJsonStructLogger() {
     if (jsonStructLogger == null) {
-      jsonStructLogger = getLogger(BigQueryJsonStruct.class, connectionId);
+      jsonStructLogger = getLogger(BigQueryJsonStruct.class, connectionContext);
     }
     return jsonStructLogger;
   }
 
   public BigQueryJdbcResultSetLogger getArrowArrayLogger() {
     if (arrowArrayLogger == null) {
-      arrowArrayLogger = getLogger(BigQueryArrowArray.class, connectionId);
+      arrowArrayLogger = getLogger(BigQueryArrowArray.class, connectionContext);
     }
     return arrowArrayLogger;
   }
 
   public BigQueryJdbcResultSetLogger getJsonArrayLogger() {
     if (jsonArrayLogger == null) {
-      jsonArrayLogger = getLogger(BigQueryJsonArray.class, connectionId);
+      jsonArrayLogger = getLogger(BigQueryJsonArray.class, connectionContext);
     }
     return jsonArrayLogger;
   }
 
   /**
-   * Stamps the connection ID into {@code params[0]} and forwards to the shared logger. Does not
-   * touch the record's source class/method: hot-path callers set them explicitly, and cold-path
-   * callers ({@code severe}, {@code warning}) rely on {@link
+   * Stamps the {@link ConnectionLogContext} into {@code params[0]} and forwards to the shared
+   * logger. Does not touch the record's source class/method: hot-path callers set them explicitly,
+   * and cold-path callers ({@code severe}, {@code warning}) rely on {@link
    * BigQueryJdbcCustomLogger.BigQueryJdbcLogRecord} to infer them lazily.
    */
   public void log(LogRecord record) {
-    if (connectionId != null) {
+    if (record == null) {
+      return;
+    }
+    if (connectionContext != null) {
       Object[] existingParams = record.getParameters();
       if (existingParams == null || existingParams.length == 0) {
-        record.setParameters(new Object[] {connectionId});
-      } else {
+        record.setParameters(new Object[] {connectionContext});
+      } else if (!(existingParams[0] instanceof ConnectionLogContext)) {
         Object[] newParams = new Object[existingParams.length + 1];
-        newParams[0] = connectionId;
+        newParams[0] = connectionContext;
         System.arraycopy(existingParams, 0, newParams, 1, existingParams.length);
         record.setParameters(newParams);
       }
