@@ -62,6 +62,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.Signature;
 import java.security.SignatureException;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -898,6 +899,26 @@ class ServiceAccountJwtAccessCredentialsTest extends BaseSerializationTest {
             .setUniverseDomain("example.com")
             .build();
     assertEquals("example.com", credentials.getUniverseDomain());
+  }
+
+  @Test
+  void jwtWithClaims_propagatesUniverseDomain() throws IOException {
+    PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
+    JwtClaims newClaims = JwtClaims.newBuilder().setAudience("new-audience").build();
+    for (String universeDomain : Arrays.asList(null, "example.com")) {
+      ServiceAccountJwtAccessCredentials credentials =
+          ServiceAccountJwtAccessCredentials.newBuilder()
+              .setClientId(SA_CLIENT_ID)
+              .setClientEmail(SA_CLIENT_EMAIL)
+              .setPrivateKey(privateKey)
+              .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+              .setDefaultAudience(URI.create("default-audience"))
+              .setUniverseDomain(universeDomain)
+              .build();
+
+      JwtCredentials jwtCredentials = credentials.jwtWithClaims(newClaims);
+      assertEquals(credentials.getUniverseDomain(), jwtCredentials.getUniverseDomain());
+    }
   }
 
   private void verifyJwtAccess(Map<String, List<String>> metadata, URI expectedAudience)

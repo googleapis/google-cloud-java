@@ -1773,6 +1773,32 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     verifyJwtAccess(credentials.getRequestMetadata(CALL_URI), "scope1 scope2");
   }
 
+  @Test
+  void jwtWithClaims_propagatesUniverseDomain() throws IOException {
+    JwtClaims newClaims =
+        JwtClaims.newBuilder().setAudience("https://service.example.com/").build();
+    for (String universeDomain : Arrays.asList(null, "example.com")) {
+      ServiceAccountCredentials credentials =
+          createDefaultBuilder().setUniverseDomain(universeDomain).build();
+
+      JwtCredentials jwtCredentials = credentials.jwtWithClaims(newClaims);
+      assertEquals(credentials.getUniverseDomain(), jwtCredentials.getUniverseDomain());
+    }
+  }
+
+  @Test
+  void createSelfSignedJwtCredentials_propagatesUniverseDomain() throws IOException {
+    for (String universeDomain : Arrays.asList(null, "example.com")) {
+      ServiceAccountCredentials credentials =
+          createDefaultBuilder().setUniverseDomain(universeDomain).build();
+
+      JwtCredentials jwtCredentials =
+          credentials.createSelfSignedJwtCredentials(
+              URI.create("https://service.example.com/v1/resource"));
+      assertEquals(credentials.getUniverseDomain(), jwtCredentials.getUniverseDomain());
+    }
+  }
+
   private void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)
       throws IOException {
     assertNotNull(metadata);

@@ -874,6 +874,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
         .setPrivateKeyId(privateKeyId)
         .setJwtClaims(claimsBuilder.build().merge(newClaims))
         .setClock(clock)
+        .setUniverseDomain(getUniverseDomainOrThrow())
         .build();
   }
 
@@ -1035,7 +1036,16 @@ public class ServiceAccountCredentials extends GoogleCredentials
         .setPrivateKeyId(privateKeyId)
         .setJwtClaims(claimsBuilder.build())
         .setClock(clock)
+        .setUniverseDomain(getUniverseDomainOrThrow())
         .build();
+  }
+
+  private String getUniverseDomainOrThrow() {
+    try {
+      return getUniverseDomain();
+    } catch (IOException e) {
+      throw new IllegalStateException("Failed to retrieve universe domain.", e);
+    }
   }
 
   @Override

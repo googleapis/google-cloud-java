@@ -142,13 +142,13 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
     this.privateKey = Preconditions.checkNotNull(privateKey);
     this.privateKeyId = privateKeyId;
     this.defaultAudience = defaultAudience;
-    this.credentialsCache = createCache();
     this.quotaProjectId = quotaProjectId;
     if (universeDomain == null || universeDomain.trim().isEmpty()) {
       this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
     } else {
       this.universeDomain = universeDomain;
     }
+    this.credentialsCache = createCache();
   }
 
   /**
@@ -331,6 +331,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
                     .setJwtClaims(claims)
                     .setLifeSpanSeconds(LIFE_SPAN_SECS)
                     .setClock(clock)
+                    .setUniverseDomain(universeDomain)
                     .build();
               }
             });
@@ -355,6 +356,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
         .setJwtClaims(claimsBuilder.build().merge(newClaims))
         .setLifeSpanSeconds(LIFE_SPAN_SECS)
         .setClock(clock)
+        .setUniverseDomain(universeDomain)
         .build();
   }
 
