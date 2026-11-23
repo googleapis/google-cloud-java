@@ -17,11 +17,13 @@
 package com.google.cloud.bigquery.jdbc;
 
 import java.util.function.Supplier;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 public class BigQueryJdbcCustomLogger extends Logger {
+  private volatile boolean hasOwnHandlers;
 
   protected BigQueryJdbcCustomLogger(String name, String resourceBundleName) {
     super(name, resourceBundleName);
@@ -30,6 +32,41 @@ public class BigQueryJdbcCustomLogger extends Logger {
 
   public BigQueryJdbcCustomLogger(String name) {
     this(name, null);
+  }
+
+  @Override
+  public synchronized void addHandler(Handler handler) throws SecurityException {
+    super.addHandler(handler);
+    this.hasOwnHandlers = getHandlers().length > 0;
+  }
+
+  @Override
+  public synchronized void removeHandler(Handler handler) throws SecurityException {
+    super.removeHandler(handler);
+    this.hasOwnHandlers = getHandlers().length > 0;
+  }
+
+  @Override
+  public boolean isLoggable(Level level) {
+    return isLoggableForContext(level, BigQueryJdbcMdc.getContext());
+  }
+
+  boolean isLoggableForContext(Level level, ConnectionLogContext ctx) {
+    if (level == null || !super.isLoggable(level)) {
+      return false;
+    }
+    if (this.hasOwnHandlers || BigQueryJdbcRootLogger.hasExternalHandler()) {
+      return true;
+    }
+    if (ctx != null) {
+      int rawThreshold = ctx.levelValue();
+      if (rawThreshold == ConnectionLogContext.INHERIT_VALUE) {
+        return true;
+      }
+      int threshold = Math.min(rawThreshold, BigQueryJdbcRootLogger.explicitGlobalLevelValue());
+      return threshold != ConnectionLogContext.OFF_VALUE && level.intValue() >= threshold;
+    }
+    return true;
   }
 
   private void logWithCaller(Level level, Supplier<String> msgSupplier) {

@@ -198,7 +198,8 @@ public class BigQueryDriver implements Driver {
                 logPath = envLogPath;
               }
 
-              BigQueryJdbcRootLogger.registerConnection(connectionId, logLevel, logPath);
+              BigQueryJdbcMdc.setCurrentContext(
+                  BigQueryJdbcRootLogger.registerConnection(connectionId, logLevel, logPath));
               if (ignoredUrlLogPath) {
                 LOG.warning(
                     "Ignoring URL/Properties %s because system property %s is false.",

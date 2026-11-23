@@ -30,30 +30,34 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 /** This class is used to log messages from the BigQuery JDBC Driver. */
 class BigQueryJdbcRootLogger {
 
-  /**
-   * Note: Each connection will have its own file handler with the level and logPath specified in
-   * the connection properties. But the logs will be driver logs and not connection specific.
-   */
-  private static final Logger logger = Logger.getLogger("com.google.cloud.bigquery");
-
-  private static final Logger storageLogger = Logger.getLogger("com.google.cloud.bigquery.storage");
   private static final boolean isTest = Boolean.getBoolean("JDBC_TESTS");
   private static final ConcurrentHashMap<String, ConnectionLogContext> ACTIVE_CONNECTIONS =
       new ConcurrentHashMap<>();
 
   private static ConsoleHandler testConsoleHandler = null;
+  private static volatile boolean externalHandlerAttached;
   private static volatile PerConnectionFileHandler persistentFileHandler = null;
   private static volatile Handler fileHandler = null;
   private static volatile Level explicitGlobalLevel = Level.OFF;
+  private static volatile int explicitGlobalLevelValue = ConnectionLogContext.OFF_VALUE;
   private static Level lastDriverAppliedLevel = null;
   private static boolean hasExternalFloor = false;
   private static Level externalFloorLevel = null;
+
+  /**
+   * Note: Each connection will have its own file handler with the level and logPath specified in
+   * the connection properties. But the logs will be driver logs and not connection specific.
+   */
+  private static final Logger logger = createRootLogger();
+
+  private static final Logger storageLogger = Logger.getLogger("com.google.cloud.bigquery.storage");
 
   static final String PROCESS_ID = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
 
@@ -168,6 +172,67 @@ class BigQueryJdbcRootLogger {
     };
   }
 
+  private static Logger createRootLogger() {
+    LogManager manager = LogManager.getLogManager();
+    Logger existing = manager.getLogger("com.google.cloud.bigquery");
+    if (existing != null) {
+      return existing;
+    }
+    RootDriverLogger customRoot = new RootDriverLogger("com.google.cloud.bigquery");
+    if (manager.addLogger(customRoot)) {
+      return customRoot;
+    }
+    return Logger.getLogger("com.google.cloud.bigquery");
+  }
+
+  private static final class RootDriverLogger extends Logger {
+    RootDriverLogger(String name) {
+      super(name, null);
+      super.setUseParentHandlers(false);
+    }
+
+    @Override
+    public synchronized void addHandler(Handler handler) throws SecurityException {
+      super.addHandler(handler);
+      externalHandlerAttached = scanForExternalHandler(this);
+    }
+
+    @Override
+    public synchronized void removeHandler(Handler handler) throws SecurityException {
+      super.removeHandler(handler);
+      externalHandlerAttached = scanForExternalHandler(this);
+    }
+
+    @Override
+    public synchronized void setUseParentHandlers(boolean useParentHandlers) {
+      super.setUseParentHandlers(useParentHandlers);
+      externalHandlerAttached = scanForExternalHandler(this);
+    }
+  }
+
+  static boolean scanForExternalHandler(Logger target) {
+    if (target.getUseParentHandlers()) {
+      return true;
+    }
+    for (Handler h : target.getHandlers()) {
+      if (!isDriverOwnedHandler(h)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  static boolean hasExternalHandler() {
+    if (logger instanceof RootDriverLogger) {
+      return externalHandlerAttached;
+    }
+    return scanForExternalHandler(logger);
+  }
+
+  static int explicitGlobalLevelValue() {
+    return explicitGlobalLevelValue;
+  }
+
   public static Logger getRootLogger() {
     return logger;
   }
@@ -185,7 +250,6 @@ class BigQueryJdbcRootLogger {
     }
     if (!attached) {
       logger.addHandler(persistentFileHandler);
-      logger.setUseParentHandlers(false);
     }
     return persistentFileHandler;
   }
@@ -194,15 +258,6 @@ class BigQueryJdbcRootLogger {
     return handler instanceof PerConnectionFileHandler
         || handler instanceof OpenTelemetryJulHandler
         || (testConsoleHandler != null && handler == testConsoleHandler);
-  }
-
-  private static boolean hasExternalHandlerAttached() {
-    for (Handler h : logger.getHandlers()) {
-      if (!isDriverOwnedHandler(h)) {
-        return true;
-      }
-    }
-    return false;
   }
 
   static Level parseEnvLogLevel(String envLevelStr) {
@@ -228,7 +283,7 @@ class BigQueryJdbcRootLogger {
 
   static synchronized void refreshEffectiveRootLevel(String envLevelStr) {
     Level current = logger.getLevel();
-    if (hasExternalHandlerAttached()) {
+    if (hasExternalHandler()) {
       if (!hasExternalFloor || current != lastDriverAppliedLevel) {
         hasExternalFloor = true;
         externalFloorLevel = current;
@@ -250,7 +305,10 @@ class BigQueryJdbcRootLogger {
       }
     }
     for (ConnectionLogContext ctx : ACTIVE_CONNECTIONS.values()) {
-      targetValue = Math.min(targetValue, ctx.levelValue());
+      int ctxLevel = ctx.levelValue();
+      if (ctxLevel != ConnectionLogContext.INHERIT_VALUE) {
+        targetValue = Math.min(targetValue, ctxLevel);
+      }
     }
     if (hasExternalFloor) {
       if (externalFloorLevel != null) {
@@ -303,6 +361,7 @@ class BigQueryJdbcRootLogger {
   public static synchronized void setLevel(Level level, String logPath) throws IOException {
     Level effective = level != null ? level : Level.OFF;
     explicitGlobalLevel = effective;
+    explicitGlobalLevelValue = effective.intValue();
     if (effective != Level.OFF && logPath != null) {
       setPath(logPath, effective);
     } else if (fileHandler != null) {
@@ -330,7 +389,6 @@ class BigQueryJdbcRootLogger {
       fileHandler = new PerConnectionFileHandler(logPath, level);
       fileHandler.setLevel(level);
       logger.addHandler(fileHandler);
-      logger.setUseParentHandlers(false);
 
     } catch (Exception ex) {
       logger.warning("Log File warning : " + ex);
@@ -347,7 +405,7 @@ class BigQueryJdbcRootLogger {
             connectionId,
             id -> {
               created[0] = true;
-              return new ConnectionLogContext(id, ConnectionLogContext.OFF_VALUE);
+              return new ConnectionLogContext(id, ConnectionLogContext.INHERIT_VALUE);
             });
     Handler currentHandler = fileHandler;
     if (created[0] && currentHandler instanceof PerConnectionFileHandler) {
@@ -389,11 +447,14 @@ class BigQueryJdbcRootLogger {
     return context;
   }
 
-  static ConnectionLogContext findActiveContext(String connectionId) {
+  static ConnectionLogContext resolveContext(String connectionId) {
     if (connectionId == null || connectionId.isEmpty()) {
       return null;
     }
-    return ACTIVE_CONNECTIONS.get(connectionId);
+    ConnectionLogContext active = ACTIVE_CONNECTIONS.get(connectionId);
+    return active != null
+        ? active
+        : new ConnectionLogContext(connectionId, ConnectionLogContext.INHERIT_VALUE);
   }
 
   static boolean isConnectionActive(String connectionId) {
@@ -438,6 +499,7 @@ class BigQueryJdbcRootLogger {
       fileHandler = null;
     }
     explicitGlobalLevel = Level.OFF;
+    explicitGlobalLevelValue = ConnectionLogContext.OFF_VALUE;
     refreshEffectiveRootLevel();
   }
 }
