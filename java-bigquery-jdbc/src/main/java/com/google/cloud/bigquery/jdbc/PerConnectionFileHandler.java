@@ -429,12 +429,8 @@ class PerConnectionFileHandler extends Handler {
 
   @Override
   public void flush() {
-    if (defaultWriter != null) {
-      defaultWriter.flush();
-    }
-    for (ConnectionFileSlot slot : slots.values()) {
-      slot.flushSlot();
-    }
+    // No-op: BoundedLogFileWriter writes directly to SeekableByteChannel (OS page cache)
+    // without any JVM-level buffering.
   }
 
   @Override
@@ -619,16 +615,6 @@ class PerConnectionFileHandler extends Handler {
       return true;
     }
 
-    synchronized void flush() {
-      if (!closed && channel instanceof FileChannel) {
-        try {
-          ((FileChannel) channel).force(false);
-        } catch (Exception ex) {
-          owner.reportError("Failed to flush log file", ex, ErrorManager.FLUSH_FAILURE);
-        }
-      }
-    }
-
     synchronized void close() {
       if (!closed) {
         closed = true;
@@ -692,12 +678,6 @@ class PerConnectionFileHandler extends Handler {
         return false;
       }
       return true;
-    }
-
-    synchronized void flushSlot() {
-      if (!closed && writer != null) {
-        writer.flush();
-      }
     }
 
     synchronized void closeSlot() {
