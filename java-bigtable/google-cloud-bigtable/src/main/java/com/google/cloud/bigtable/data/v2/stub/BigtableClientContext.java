@@ -75,9 +75,10 @@ public class BigtableClientContext {
   private final ExecutorProvider backgroundExecutorProvider;
   private final Shim sessionShim;
 
+  @InternalApi("Visible for testing")
   @VisibleForTesting
   @FunctionalInterface
-  interface BuiltinOtelFactory {
+  public interface BuiltinOtelFactory {
     @Nullable
     OpenTelemetrySdk create(
         MetricRegistry metricRegistry,
@@ -91,17 +92,24 @@ public class BigtableClientContext {
 
   public static BigtableClientContext create(EnhancedBigtableStubSettings settings)
       throws IOException {
-    return create(settings, Tags.getTagger(), Stats.getStatsRecorder());
+    return create(
+        settings, Tags.getTagger(), Stats.getStatsRecorder(), MetricsImpl::createBuiltinOtel);
   }
 
+  /**
+   * @deprecated This method was only intended for internal testing and was accidentally exposed.
+   *     Use {@link #create(EnhancedBigtableStubSettings)} instead.
+   */
+  @Deprecated
   public static BigtableClientContext create(
       EnhancedBigtableStubSettings settings, Tagger ocTagger, StatsRecorder ocRecorder)
       throws IOException {
     return create(settings, ocTagger, ocRecorder, MetricsImpl::createBuiltinOtel);
   }
 
+  @InternalApi("Visible for testing")
   @VisibleForTesting
-  static BigtableClientContext create(
+  public static BigtableClientContext create(
       EnhancedBigtableStubSettings settings,
       Tagger ocTagger,
       StatsRecorder ocRecorder,
