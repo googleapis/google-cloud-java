@@ -18,20 +18,36 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest;
 import com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1.ProtoRows;
+import com.google.cloud.bigquery.storage.v1.StreamWriter;
 import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.cloud.bigquery.storage.v1.TableSchema;
 import com.google.cloud.bigquery.storage.v1.WriteStream;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import java.time.Duration;
 import java.util.Locale;
 import org.junit.jupiter.api.Test;
 
@@ -70,6 +86,15 @@ public class BigQueryJdbcBulkInsertWriterTest {
     return mockClient;
   }
 
+  private static BigQueryJdbcBulkInsertWriter writerWithMockStream(StreamWriter mockStream) {
+    return new BigQueryJdbcBulkInsertWriter() {
+      @Override
+      StreamWriter buildStreamWriter(StreamWriter.Builder builder) {
+        return mockStream;
+      }
+    };
+  }
+
   @Test
   public void testInitializeBuildsProtoSchemaStreamWriterFromClient() throws Exception {
     Locale saved = Locale.getDefault();
@@ -84,6 +109,83 @@ public class BigQueryJdbcBulkInsertWriterTest {
       verify(mockClient).getSettings();
     } finally {
       Locale.setDefault(saved);
+      writer.closeQuietly();
     }
+  }
+
+  @Test
+  public void testPhaserLifecycleErrorsInterruptAndCloseQuietly() throws Exception {
+    new BigQueryJdbcBulkInsertWriter().closeQuietly();
+    BigQueryWriteClient okClient = stubWriteClient(4L);
+    StreamWriter okStream = mock(StreamWriter.class);
+    when(okStream.append(any(ProtoRows.class), anyLong()))
+        .thenReturn(ApiFutures.immediateFuture(AppendRowsResponse.getDefaultInstance()));
+    BigQueryJdbcBulkInsertWriter okWriter = writerWithMockStream(okStream);
+    okWriter.initialize(TABLE_NAME, okClient, null);
+    okWriter.append(ProtoRows.getDefaultInstance(), 0L);
+    okWriter.append(ProtoRows.getDefaultInstance(), 2L);
+    assertEquals(4L, okWriter.cleanup(okClient));
+    okWriter.closeQuietly();
+    verify(okStream, times(1)).close();
+
+    for (boolean nullFuture : new boolean[] {false, true}) {
+      BigQueryWriteClient failClient = stubWriteClient(0L);
+      StreamWriter failStream = mock(StreamWriter.class);
+      RuntimeException boom = new IllegalStateException("sync fail");
+      if (nullFuture) {
+        when(failStream.append(any(ProtoRows.class), anyLong())).thenReturn(null);
+      } else {
+        when(failStream.append(any(ProtoRows.class), anyLong())).thenThrow(boom);
+      }
+      BigQueryJdbcBulkInsertWriter failWriter = writerWithMockStream(failStream);
+      failWriter.initialize(TABLE_NAME, failClient, null);
+      if (nullFuture) {
+        assertThrows(
+            NullPointerException.class,
+            () -> failWriter.append(ProtoRows.getDefaultInstance(), 0L));
+      } else {
+        assertSame(
+            boom,
+            assertThrows(
+                IllegalStateException.class,
+                () -> failWriter.append(ProtoRows.getDefaultInstance(), 0L)));
+      }
+      assertTimeoutPreemptively(Duration.ofSeconds(2), () -> failWriter.cleanup(failClient));
+      verify(failStream, times(1)).close();
+    }
+
+    BigQueryWriteClient asyncClient = stubWriteClient(-1L);
+    StreamWriter asyncStream = mock(StreamWriter.class);
+    when(asyncStream.append(any(ProtoRows.class), anyLong()))
+        .thenReturn(ApiFutures.immediateFailedFuture(new StatusRuntimeException(Status.INTERNAL)));
+    BigQueryJdbcBulkInsertWriter asyncWriter = writerWithMockStream(asyncStream);
+    asyncWriter.initialize(TABLE_NAME, asyncClient, null);
+    asyncWriter.append(ProtoRows.getDefaultInstance(), 0L);
+    assertThrows(
+        RuntimeException.class, () -> asyncWriter.append(ProtoRows.getDefaultInstance(), 1L));
+    assertThrows(RuntimeException.class, () -> asyncWriter.cleanup(asyncClient));
+    verify(asyncStream, times(1)).close();
+    verify(asyncClient, never()).finalizeWriteStream(anyString());
+
+    BigQueryWriteClient stalledClient = stubWriteClient(-1L);
+    StreamWriter stalledStream = mock(StreamWriter.class);
+    when(stalledStream.append(any(ProtoRows.class), anyLong()))
+        .thenReturn(SettableApiFuture.create());
+    doThrow(new IllegalStateException("close boom")).when(stalledStream).close();
+    BigQueryJdbcBulkInsertWriter stalledWriter = writerWithMockStream(stalledStream);
+    stalledWriter.initialize(TABLE_NAME, stalledClient, null);
+    stalledWriter.append(ProtoRows.getDefaultInstance(), 0L);
+    assertTimeoutPreemptively(
+        Duration.ofSeconds(2),
+        () -> {
+          Thread.currentThread().interrupt();
+          try {
+            assertThrows(InterruptedException.class, () -> stalledWriter.cleanup(stalledClient));
+          } finally {
+            Thread.interrupted();
+          }
+        });
+    stalledWriter.closeQuietly();
+    verify(stalledStream, times(1)).close();
   }
 }
