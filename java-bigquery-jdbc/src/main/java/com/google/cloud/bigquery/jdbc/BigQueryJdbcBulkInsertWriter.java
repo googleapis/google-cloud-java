@@ -71,9 +71,13 @@ class BigQueryJdbcBulkInsertWriter {
             .build();
     WriteStream writeStream = client.createWriteStream(createWriteStreamRequest);
     this.streamName = writeStream.getName();
+    TableSchema streamSchema = writeStream.getTableSchema();
+    if (!isSupportedStreamTableSchema(streamSchema)) {
+      return;
+    }
     this.descriptor =
         BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(
-            normalizeTableSchemaFieldNames(writeStream.getTableSchema()));
+            normalizeTableSchemaFieldNames(streamSchema));
     ProtoSchema protoSchema = ProtoSchemaConverter.convert(this.descriptor);
 
     StreamWriter.Builder streamWriterBuilder =
@@ -90,6 +94,24 @@ class BigQueryJdbcBulkInsertWriter {
 
   Descriptor getDescriptor() {
     return this.descriptor;
+  }
+
+  private static boolean isSupportedStreamTableSchema(TableSchema schema) {
+    if (schema == null || schema.getFieldsCount() == 0) {
+      return false;
+    }
+    for (TableFieldSchema field : schema.getFieldsList()) {
+      TableFieldSchema.Type t = field.getType();
+      if (field.getMode() == TableFieldSchema.Mode.REPEATED
+          || field.getFieldsCount() > 0
+          || t == TableFieldSchema.Type.TYPE_UNSPECIFIED
+          || t == TableFieldSchema.Type.UNRECOGNIZED
+          || t == TableFieldSchema.Type.STRUCT
+          || t == TableFieldSchema.Type.RANGE) {
+        return false;
+      }
+    }
+    return true;
   }
 
   // Lowercase field names with Locale.ROOT upfront because BQTableSchemaToProtoDescriptor calls

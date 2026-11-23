@@ -1904,6 +1904,19 @@ public class BigQueryStatementTest {
         () -> bigQueryStatement.cancel(), DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL, 1);
   }
 
+  @Test
+  public void testDefaultDatasetPropagationAndNullSafeLegacySql() throws SQLException {
+    DatasetId ds = DatasetId.of("custom-proj", "custom_ds");
+    doReturn(ds).when(bigQueryConnection).getDefaultDataset();
+    doReturn(null).when(bigQueryConnection).getQueryDialect();
+    BigQueryStatement stmtNullDialect = new BigQueryStatement(bigQueryConnection);
+    assertEquals(ds, stmtNullDialect.querySettings.getDefaultDataset());
+    assertFalse(stmtNullDialect.getUseLegacySql());
+
+    doReturn("BIG_QUERY").when(bigQueryConnection).getQueryDialect();
+    assertTrue(new BigQueryStatement(bigQueryConnection).getUseLegacySql());
+  }
+
   /** Runs {@code action} and asserts how many times {@code feature} was recorded by it. */
   private static void assertFeatureRecorded(
       SqlRunnable action, DriverFeature feature, int expectedCount) throws SQLException {

@@ -28,6 +28,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.clearInvocations;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.doThrow;
@@ -39,10 +40,16 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.ConnectionProperty;
+import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
@@ -58,22 +65,41 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest;
+import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BQTableSchemaToProtoDescriptor;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteGrpc;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
+import com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse;
 import com.google.cloud.bigquery.storage.v1.StorageError;
 import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1.TableSchema;
+import com.google.cloud.bigquery.storage.v1.WriteStream;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.DynamicMessage;
+import io.grpc.ManagedChannel;
+import io.grpc.Server;
+import io.grpc.inprocess.InProcessChannelBuilder;
+import io.grpc.inprocess.InProcessServerBuilder;
+import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -456,5 +482,310 @@ public class BigQueryPreparedStatementWriteApiTest {
     assertNotNull(
         new BigQueryPreparedStatement(connection, "INSERT INTO TAB (ID, name) VALUES (?, ?)")
             .insertSchema);
+  }
+
+  private static TableFieldSchema tfs(String name, TableFieldSchema.Type type) {
+    return TableFieldSchema.newBuilder()
+        .setName(name)
+        .setType(type)
+        .setMode(TableFieldSchema.Mode.NULLABLE)
+        .build();
+  }
+
+  private void stubDryRun(TableId targetTable, Schema schema, String... paramTypes) {
+    List<QueryParameter> params = new ArrayList<>(paramTypes.length);
+    for (String t : paramTypes) {
+      params.add(queryParam(t));
+    }
+    doReturn(mockInsertDryRunJob(targetTable, schema, params))
+        .when(bigQuery)
+        .create(any(JobInfo.class));
+  }
+
+  private void stubDml() throws InterruptedException {
+    TableResult dml = mock(TableResult.class);
+    doReturn(StatementType.INSERT).when(dml).getStatementType();
+    doReturn(1L).when(dml).getNumDmlAffectedRows();
+    doReturn(dml).when(bigQuery).queryWithTimeout(any(), any(), any());
+  }
+
+  private static final class InProcessWriteServer implements AutoCloseable {
+    final List<String> createParents = new CopyOnWriteArrayList<>();
+    final List<AppendRowsRequest> appendRequests = new CopyOnWriteArrayList<>();
+    final Descriptor descriptor;
+    final Server server;
+    final ManagedChannel channel;
+    final BigQueryWriteClient client;
+
+    InProcessWriteServer(TableSchema tableSchema) throws Exception {
+      TableSchema.Builder lower = TableSchema.newBuilder();
+      boolean convertible = true;
+      for (TableFieldSchema f : tableSchema.getFieldsList()) {
+        convertible &= (f.getType() != TableFieldSchema.Type.RANGE);
+        lower.addFields(f.toBuilder().setName(f.getName().toLowerCase(Locale.ROOT)).build());
+      }
+      this.descriptor =
+          convertible
+              ? BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(lower.build())
+              : null;
+      String name = InProcessServerBuilder.generateName();
+      BigQueryWriteGrpc.BigQueryWriteImplBase svc =
+          new BigQueryWriteGrpc.BigQueryWriteImplBase() {
+            @Override
+            public void createWriteStream(
+                CreateWriteStreamRequest req, StreamObserver<WriteStream> obs) {
+              createParents.add(req.getParent());
+              obs.onNext(
+                  WriteStream.newBuilder()
+                      .setName(req.getParent() + "/streams/_p1")
+                      .setType(WriteStream.Type.PENDING)
+                      .setTableSchema(tableSchema)
+                      .build());
+              obs.onCompleted();
+            }
+
+            @Override
+            public StreamObserver<AppendRowsRequest> appendRows(
+                StreamObserver<AppendRowsResponse> obs) {
+              return new StreamObserver<AppendRowsRequest>() {
+                @Override
+                public void onNext(AppendRowsRequest req) {
+                  appendRequests.add(req);
+                  AppendRowsResponse.Builder res = AppendRowsResponse.newBuilder();
+                  res.getAppendResultBuilder().setOffset(req.getOffset());
+                  obs.onNext(res.build());
+                }
+
+                @Override
+                public void onError(Throwable t) {
+                  obs.onError(t);
+                }
+
+                @Override
+                public void onCompleted() {
+                  obs.onCompleted();
+                }
+              };
+            }
+
+            @Override
+            public void finalizeWriteStream(
+                FinalizeWriteStreamRequest req, StreamObserver<FinalizeWriteStreamResponse> obs) {
+              long rows =
+                  appendRequests.stream()
+                      .mapToLong(r -> r.getProtoRows().getRows().getSerializedRowsCount())
+                      .sum();
+              obs.onNext(FinalizeWriteStreamResponse.newBuilder().setRowCount(rows).build());
+              obs.onCompleted();
+            }
+
+            @Override
+            public void batchCommitWriteStreams(
+                BatchCommitWriteStreamsRequest req,
+                StreamObserver<BatchCommitWriteStreamsResponse> obs) {
+              BatchCommitWriteStreamsResponse.Builder res =
+                  BatchCommitWriteStreamsResponse.newBuilder();
+              res.getCommitTimeBuilder().setSeconds(1700000000L);
+              obs.onNext(res.build());
+              obs.onCompleted();
+            }
+          };
+      this.server = InProcessServerBuilder.forName(name).directExecutor().addService(svc).build();
+      this.server.start();
+      this.channel = InProcessChannelBuilder.forName(name).directExecutor().build();
+      GrpcTransportChannel ch = GrpcTransportChannel.create(channel);
+      this.client =
+          BigQueryWriteClient.create(
+              BigQueryWriteSettings.newBuilder()
+                  .setTransportChannelProvider(FixedTransportChannelProvider.create(ch))
+                  .setCredentialsProvider(NoCredentialsProvider.create())
+                  .build());
+    }
+
+    List<DynamicMessage> decodedRows() throws Exception {
+      List<DynamicMessage> out = new ArrayList<>();
+      for (AppendRowsRequest req : appendRequests) {
+        for (ByteString rowBytes : req.getProtoRows().getRows().getSerializedRowsList()) {
+          out.add(DynamicMessage.parseFrom(descriptor, rowBytes));
+        }
+      }
+      return out;
+    }
+
+    @Override
+    public void close() {
+      client.close();
+      channel.shutdownNow();
+      server.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testResolveInsertSchemaAndStreamSchemaMismatchFallback() throws Exception {
+    Schema twoCol =
+        Schema.of(
+            Field.of("id", StandardSQLTypeName.INT64),
+            Field.of("name", StandardSQLTypeName.STRING));
+    BigQueryPreparedStatement.DirectInsertShape reordered =
+        BigQueryPreparedStatement.parseDirectInsertValues(
+            "INSERT INTO TAB (NAME, id) VALUES (?, ?)");
+    Schema resolved = BigQueryPreparedStatement.resolveInsertSchema(twoCol, reordered, 2);
+    assertEquals("name", resolved.getFields().get(0).getName());
+    assertEquals("id", resolved.getFields().get(1).getName());
+    for (String bad :
+        new String[] {
+          "INSERT INTO TAB (id) VALUES (?)",
+          "INSERT INTO TAB (id, ID) VALUES (?, ?)",
+          "INSERT INTO TAB (id, _PARTITIONTIME) VALUES (?, ?)"
+        }) {
+      BigQueryPreparedStatement.DirectInsertShape s =
+          BigQueryPreparedStatement.parseDirectInsertValues(bad);
+      assertNull(BigQueryPreparedStatement.resolveInsertSchema(twoCol, s, s.placeholderCount));
+    }
+
+    TableSchema storageTwo =
+        TableSchema.newBuilder()
+            .addFields(tfs("id", TableFieldSchema.Type.INT64))
+            .addFields(tfs("name", TableFieldSchema.Type.STRING))
+            .build();
+    try (InProcessWriteServer srv = new InProcessWriteServer(storageTwo)) {
+      doReturn(srv.client).when(connection).getBigQueryWriteClient();
+      stubDryRun(TableId.of("proj", "ds", "TAB"), twoCol, "STRING", "INT64");
+      BigQueryPreparedStatement ps =
+          new BigQueryPreparedStatement(connection, "INSERT INTO TAB (name, id) VALUES (?, ?)");
+      for (int i = 0; i < 3; i++) {
+        ps.setString(1, "u-" + i);
+        ps.setInt(2, 10 + i);
+        ps.addBatch();
+      }
+      assertArrayEquals(new int[] {1, 1, 1}, ps.executeBatch());
+      DynamicMessage first = srv.decodedRows().get(0);
+      assertEquals("u-0", first.getField(srv.descriptor.findFieldByName("name")));
+      assertEquals(10L, first.getField(srv.descriptor.findFieldByName("id")));
+    }
+
+    stubDml();
+    TableSchema extraRange =
+        TableSchema.newBuilder()
+            .addFields(tfs("c1", TableFieldSchema.Type.STRING))
+            .addFields(tfs("rng", TableFieldSchema.Type.RANGE))
+            .build();
+    try (InProcessWriteServer srv = new InProcessWriteServer(extraRange)) {
+      doReturn(srv.client).when(connection).getBigQueryWriteClient();
+      stubDryRun(
+          TableId.of("proj", "ds", "TAB"),
+          Schema.of(Field.of("c1", StandardSQLTypeName.STRING)),
+          "STRING");
+      BigQueryPreparedStatement psPartial =
+          new BigQueryPreparedStatement(connection, "INSERT INTO TAB (c1) VALUES (?)");
+      addThreeStringRows(psPartial);
+      assertEquals(3, psPartial.executeBatch().length);
+      assertTrue(srv.appendRequests.isEmpty());
+      assertNull(psPartial.insertSchema);
+      verify(bigQuery, times(1)).queryWithTimeout(any(), any(), any());
+    }
+  }
+
+  @Test
+  public void testTargetProjectTransactionsSessionsLegacySqlAndRetryDryRun() throws Exception {
+    doReturn("BIG_QUERY").when(connection).getQueryDialect();
+    assertEquals(
+        1, new BigQueryPreparedStatement(connection, "SELECT ? FROM [proj:ds.tab]").parameterCount);
+    verify(bigQuery, never()).create(any(JobInfo.class));
+    doReturn("SQL").when(connection).getQueryDialect();
+
+    Schema oneStr = Schema.of(Field.of("c1", StandardSQLTypeName.STRING));
+    stubDryRun(TableId.of("proj", "_anon_ds", "TAB"), oneStr, "STRING");
+    BigQueryPreparedStatement psGate =
+        new BigQueryPreparedStatement(connection, "INSERT INTO TAB VALUES (?)");
+    addThreeStringRows(psGate);
+    assertTrue(psGate.useWriteAPI());
+    doReturn(true).when(connection).isTransactionStarted();
+    assertFalse(psGate.useWriteAPI());
+    doReturn(false).when(connection).isTransactionStarted();
+    doReturn(
+            new BigQueryConnection.SessionState(
+                ConnectionProperty.of("session_id", "s1"), Collections.emptyList(), true))
+        .when(connection)
+        .getSessionStateSnapshot();
+    assertFalse(psGate.useWriteAPI());
+    doReturn(DatasetId.of("proj", "_anon_ds")).when(connection).getDefaultDataset();
+    BigQueryPreparedStatement psExplicit =
+        new BigQueryPreparedStatement(connection, "INSERT INTO TAB VALUES (?)");
+    addThreeStringRows(psExplicit);
+    assertTrue(psExplicit.useWriteAPI());
+    doReturn(BigQueryConnection.SessionState.empty()).when(connection).getSessionStateSnapshot();
+
+    BigQueryOptions opts = mock(BigQueryOptions.class);
+    when(opts.getProjectId()).thenReturn("options-proj");
+    when(bigQuery.getOptions()).thenReturn(opts);
+    doReturn("catalog-proj").when(connection).getCatalog();
+    doReturn(DatasetId.of("default-proj", "default_ds")).when(connection).getDefaultDataset();
+    TableSchema oneStorage =
+        TableSchema.newBuilder().addFields(tfs("c1", TableFieldSchema.Type.STRING)).build();
+    try (InProcessWriteServer srv = new InProcessWriteServer(oneStorage)) {
+      doReturn(srv.client).when(connection).getBigQueryWriteClient();
+      stubDryRun(TableId.of("default_ds", "TAB"), oneStr, "STRING");
+      for (String sql :
+          new String[] {"INSERT INTO TAB VALUES (?)", "INSERT INTO default_ds.TAB VALUES (?)"}) {
+        srv.appendRequests.clear();
+        BigQueryPreparedStatement psProj = new BigQueryPreparedStatement(connection, sql);
+        addThreeStringRows(psProj);
+        assertArrayEquals(new int[] {1, 1, 1}, psProj.executeBatch());
+      }
+      srv.appendRequests.clear();
+      doReturn(null).when(connection).getCatalog();
+      stubDryRun(TableId.of("other_ds", "TAB"), oneStr, "STRING");
+      BigQueryPreparedStatement psAdc =
+          new BigQueryPreparedStatement(connection, "INSERT INTO other_ds.TAB VALUES (?)");
+      addThreeStringRows(psAdc);
+      assertArrayEquals(new int[] {1, 1, 1}, psAdc.executeBatch());
+      assertEquals(
+          Arrays.asList(
+              "projects/default-proj/datasets/default_ds/tables/TAB",
+              "projects/catalog-proj/datasets/default_ds/tables/TAB",
+              "projects/options-proj/datasets/other_ds/tables/TAB"),
+          srv.createParents);
+
+      srv.appendRequests.clear();
+      clearInvocations(bigQuery);
+      Job okJob =
+          mockInsertDryRunJob(
+              TableId.of("proj", "ds", "TAB"),
+              oneStr,
+              Collections.singletonList(queryParam("STRING")));
+      when(bigQuery.create(any(JobInfo.class)))
+          .thenThrow(new BigQueryException(404, "Not found"))
+          .thenReturn(okJob);
+      BigQueryPreparedStatement psRetry =
+          new BigQueryPreparedStatement(connection, "INSERT INTO ds.TAB (c1) VALUES (?)");
+      addThreeStringRows(psRetry);
+      assertArrayEquals(new int[] {1, 1, 1}, psRetry.executeBatch());
+      assertNotNull(psRetry.insertSchema);
+      ArgumentCaptor<JobInfo> cap = ArgumentCaptor.forClass(JobInfo.class);
+      verify(bigQuery, times(2)).create(cap.capture());
+      QueryJobConfiguration retryCfg = cap.getAllValues().get(1).getConfiguration();
+      List<?> retryParams = retryCfg.getPositionalParameters();
+      assertTrue(retryParams == null || retryParams.isEmpty());
+    }
+
+    stubDml();
+    for (boolean throwOnRetry : new boolean[] {false, true}) {
+      clearInvocations(bigQuery);
+      if (throwOnRetry) {
+        when(bigQuery.create(any(JobInfo.class))).thenThrow(new BigQueryException(403, "Denied"));
+      } else {
+        when(bigQuery.create(any(JobInfo.class)))
+            .thenThrow(new BigQueryException(404, "Not found"))
+            .thenReturn(mock(Job.class));
+      }
+      BigQueryPreparedStatement psOnce =
+          new BigQueryPreparedStatement(connection, "INSERT INTO ds.TAB (c1) VALUES (?)");
+      for (int b = 0; b < 2; b++) {
+        addThreeStringRows(psOnce);
+        psOnce.executeBatch();
+      }
+      verify(bigQuery, times(2)).create(any(JobInfo.class));
+    }
   }
 }

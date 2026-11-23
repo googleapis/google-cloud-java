@@ -80,7 +80,7 @@ class BigQueryParameterHandler {
     this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos);
   }
 
-  BigQueryParameterHandler(
+  private BigQueryParameterHandler(
       int parameterCount,
       ArrayList<BigQueryJdbcParameter> parametersList,
       boolean enableTimestampPicos) {
@@ -115,17 +115,22 @@ class BigQueryParameterHandler {
                 i, this.parametersArraySize));
       }
 
-      Object parameterValue = getParameter(i);
-      StandardSQLTypeName sqlType = getSqlType(i);
-      parameterValue =
-          formatValueForQueryParameter(parameterValue, sqlType, this.enableTimestampPicos);
+      QueryParameterValue queryParameter =
+          toQueryParameterValue(this.parametersList.get(arrayIndex), this.enableTimestampPicos);
       LOG.finest(
           "Parameter %s of type %s at index %s added to QueryJobConfiguration",
-          parameterValue, sqlType, i);
-      jobConfigurationBuilder.addPositionalParameter(
-          QueryParameterValue.of(parameterValue, sqlType));
+          queryParameter.getValue(), queryParameter.getType(), i);
+      jobConfigurationBuilder.addPositionalParameter(queryParameter);
     }
     return jobConfigurationBuilder;
+  }
+
+  static QueryParameterValue toQueryParameterValue(
+      BigQueryJdbcParameter parameter, boolean enableTimestampPicos) {
+    StandardSQLTypeName sqlType = parameter.getSqlType();
+    Object formatted =
+        formatValueForQueryParameter(parameter.getValue(), sqlType, enableTimestampPicos);
+    return QueryParameterValue.of(formatted, sqlType);
   }
 
   static Object formatValueForQueryParameter(
