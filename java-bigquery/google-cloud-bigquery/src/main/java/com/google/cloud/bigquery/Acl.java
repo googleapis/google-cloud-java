@@ -34,7 +34,7 @@ import java.util.Objects;
  * Project roles affect your ability to run jobs or manage the project, while dataset roles affect
  * how you can access or modify the data inside a project.
  *
- * @see <a href="https://cloud.google.com/bigquery/access-control">Access Control</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/access-control">Access Control</a>
  */
 public final class Acl implements Serializable {
 
@@ -47,7 +47,9 @@ public final class Acl implements Serializable {
   /**
    * Dataset roles supported by BigQuery.
    *
-   * @see <a href="https://cloud.google.com/bigquery/access-control#datasetroles">Dataset Roles</a>
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/access-control-basic-roles#dataset-basic-roles">Dataset
+   *     Roles</a>
    */
   public static final class Role extends StringEnumValue {
     private static final long serialVersionUID = -1992679397135956912L;
@@ -298,7 +300,7 @@ public final class Acl implements Serializable {
 
     /**
      * Creates a Group entity given its identifier. Identifier can be either a <a
-     * href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     * href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/datasets#Dataset.FIELDS.access">
      * special group identifier</a> or a group email.
      */
     public Group(String identifier) {
@@ -308,7 +310,7 @@ public final class Acl implements Serializable {
 
     /**
      * @return Returns group's identifier, can be either a <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/datasets#Dataset.FIELDS.access">
      *     special group identifier</a> or a group email.
      */
     public String getIdentifier() {

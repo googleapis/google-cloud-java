@@ -425,6 +425,42 @@ java-bigquery/google-cloud-bigquery/Bar.java"
   unset TEST_MODIFIED_FILES
 }
 
+# Test that the nightly GraalVM jobs can test every module in
+# graalvm_nightly_modules: each one is a module of the root pom.xml and has
+# tests that the 'native' Maven profile runs (IT*.java or *ClientTest.java).
+function test_graalvm_nightly_modules {
+  pushd "${scriptDir}/.." >/dev/null
+
+  if (( ${#graalvm_nightly_modules[@]} == 0 )); then
+    echo "graalvm_nightly_modules is empty"
+    exit 1
+  fi
+
+  local root_modules
+  root_modules=$(extract_pom_modules pom.xml)
+  local module
+  for module in "${graalvm_nightly_modules[@]}"; do
+    if [[ ! " ${root_modules} " == *" ${module} "* ]]; then
+      echo "graalvm_nightly_modules has ${module}, which is not a module of the root pom.xml"
+      exit 1
+    fi
+    if ! find "${module}" -path '*/src/test/java/*' \( -name 'IT*.java' -o -name '*ClientTest.java' \) -print -quit 2>/dev/null | grep -q .; then
+      echo "graalvm_nightly_modules has ${module}, which has no tests that the native profile runs"
+      exit 1
+    fi
+  done
+
+  generate_graalvm_nightly_modules_list
+  local expected
+  expected=$(printf '%s,' "${graalvm_nightly_modules[@]}")
+  if [[ "${module_list}" != "${expected%,}" ]]; then
+    echo "generate_graalvm_nightly_modules_list failed: got ${module_list}"
+    exit 1
+  fi
+
+  popd >/dev/null
+}
+
 test_find_all_poms_with_versioned_dependency
 test_update_pom_dependency
 test_parse_pom_version
@@ -435,3 +471,4 @@ test_should_test_all_modules
 test_is_module_modified
 test_is_upstream_module_modified
 test_generate_modified_modules_list
+test_graalvm_nightly_modules

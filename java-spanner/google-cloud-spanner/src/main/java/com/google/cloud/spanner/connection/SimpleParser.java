@@ -209,13 +209,13 @@ class SimpleParser {
       return Result.NOT_FOUND;
     }
     int startPos = pos;
-    while (pos < sql.length() && sql.charAt(pos) != '\'') {
-      if (sql.charAt(pos) == '\n') {
+    while (pos < this.length && sql.charAt(pos) != '\'') {
+      if (sql.charAt(pos) == '\n' || sql.charAt(pos) == '\r') {
         return Result.NOT_FOUND;
       }
       pos++;
     }
-    if (pos == sql.length()) {
+    if (pos == this.length) {
       return Result.NOT_FOUND;
     }
     return Result.found(sql.substring(startPos, pos++));
@@ -374,12 +374,18 @@ class SimpleParser {
    */
   @VisibleForTesting
   boolean skipSingleLineComment(int prefixLength) {
-    int endIndex = sql.indexOf('\n', pos + prefixLength);
-    if (endIndex == -1) {
-      pos = sql.length();
-      return true;
+    for (int i = pos + prefixLength; i < this.length; i++) {
+      char c = sql.charAt(i);
+      if (c == '\n') {
+        pos = i + 1;
+        return true;
+      }
+      if (c == '\r') {
+        pos = (i + 1 < this.length && sql.charAt(i + 1) == '\n') ? i + 2 : i + 1;
+        return true;
+      }
     }
-    pos = endIndex + 1;
+    pos = this.length;
     return true;
   }
 
@@ -388,23 +394,28 @@ class SimpleParser {
   boolean skipMultiLineComment() {
     int level = 1;
     pos += 2;
-    while (pos < sql.length()) {
+    while (pos < this.length) {
       if (statementParser.supportsNestedComments()
           && sql.charAt(pos) == SLASH
-          && sql.length() > (pos + 1)
+          && this.length > (pos + 1)
           && sql.charAt(pos + 1) == ASTERISK) {
         level++;
+        // Advance past both characters of '/*' so '/*/*/' cannot reuse '*' as '*/'.
+        pos += 2;
+        continue;
       }
-      if (sql.charAt(pos) == ASTERISK && sql.length() > (pos + 1) && sql.charAt(pos + 1) == SLASH) {
+      if (sql.charAt(pos) == ASTERISK && this.length > (pos + 1) && sql.charAt(pos + 1) == SLASH) {
         level--;
+        // Advance past both characters of '*/' so '*/*' cannot reuse '/' as '/*'.
+        pos += 2;
         if (level == 0) {
-          pos += 2;
           return true;
         }
+        continue;
       }
       pos++;
     }
-    pos = sql.length();
+    pos = this.length;
     return false;
   }
 }

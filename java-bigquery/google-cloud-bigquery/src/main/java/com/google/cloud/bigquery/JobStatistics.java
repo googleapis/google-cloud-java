@@ -835,7 +835,7 @@ public abstract class JobStatistics implements Serializable {
     /**
      * Returns whether the query result was fetched from the query cache.
      *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/cached-results">Query Caching</a>
      */
     public Boolean getCacheHit() {
       return cacheHit;
@@ -928,7 +928,8 @@ public abstract class JobStatistics implements Serializable {
      * transformations on the input, and emit an output to a future stage (or the final result). The
      * query plan is available for a completed query job and is retained for 7 days.
      *
-     * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation">Query Plan</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/query-plan-explanation">Query
+     *     Plan</a>
      */
     public List<QueryStage> getQueryPlan() {
       return queryPlan;

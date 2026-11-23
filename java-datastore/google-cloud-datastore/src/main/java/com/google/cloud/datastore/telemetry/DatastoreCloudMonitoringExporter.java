@@ -100,7 +100,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   private final String cacheKey;
 
   // This is the quota limit from Cloud Monitoring. More details in
-  // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
+  // https://docs.cloud.google.com/monitoring/quotas#custom_metrics_quotas.
   private static final int EXPORT_BATCH_SIZE_LIMIT = 200;
 
   // Increase max metadata size to 32MB to avoid "Header size exceeded" errors
@@ -137,9 +137,19 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       String projectId,
       String databaseId,
       Credentials credentials,
+      @Nullable String universeDomain,
       Map<String, String> clientAttributes) {
     int credHash = credentials != null ? credentials.hashCode() : 0;
-    String key = projectId + ":" + databaseId + ":" + credHash;
+    // Include universeDomain in the cache key so clients in different universes do not share
+    // a MetricServiceClient pointing at the wrong endpoint.
+    String key =
+        projectId
+            + ":"
+            + databaseId
+            + ":"
+            + credHash
+            + ":"
+            + (universeDomain != null ? universeDomain : "");
 
     // Use compute to acquire or create the client atomically with reference counting.
     // If creation fails, we log the error and return null so it's not added to the map.
@@ -149,7 +159,9 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
             (k, v) -> {
               if (v == null) {
                 try {
-                  v = new CachedMetricsClient(createMetricServiceClient(credentials));
+                  v =
+                      new CachedMetricsClient(
+                          createMetricServiceClient(credentials, universeDomain));
                 } catch (IOException e) {
                   logger.log(
                       Level.WARNING,
@@ -172,8 +184,10 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
         key, projectId, cachedMetricsClient.client, clientAttributes);
   }
 
-  private static MetricServiceClient createMetricServiceClient(Credentials credentials)
-      throws IOException {
+  /** Builds {@link MetricServiceSettings} with the given credentials and universe domain. */
+  @VisibleForTesting
+  static MetricServiceSettings createMetricServiceSettings(
+      Credentials credentials, @Nullable String universeDomain) throws IOException {
     MetricServiceSettings.Builder settingsBuilder = MetricServiceSettings.newBuilder();
 
     InstantiatingGrpcChannelProvider transportChannelProvider =
@@ -183,12 +197,20 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     settingsBuilder.setTransportChannelProvider(transportChannelProvider);
 
     settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
+    // Forward universeDomain so GAX resolves monitoring.<universeDomain>:443 and validates
+    // credentials against the same universe.
+    settingsBuilder.setUniverseDomain(universeDomain);
 
     settingsBuilder
         .createTimeSeriesSettings()
         .setSimpleTimeoutNoRetriesDuration(Duration.ofMinutes(1));
 
-    return MetricServiceClient.create(settingsBuilder.build());
+    return settingsBuilder.build();
+  }
+
+  private static MetricServiceClient createMetricServiceClient(
+      Credentials credentials, @Nullable String universeDomain) throws IOException {
+    return MetricServiceClient.create(createMetricServiceSettings(credentials, universeDomain));
   }
 
   @VisibleForTesting

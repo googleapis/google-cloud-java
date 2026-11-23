@@ -16,11 +16,18 @@
 
 package com.google.cloud.spanner.connection;
 
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.spanner.v1.SpannerSettings;
 
 public final class TestChannelProvider implements ConnectionOptions.ExternalChannelProvider {
+  @Override
   public TransportChannelProvider getChannelProvider(String host, int port) {
-    return SpannerSettings.defaultTransportChannelProvider();
+    InstantiatingGrpcChannelProvider.Builder builder =
+        SpannerSettings.defaultGrpcTransportProviderBuilder();
+    if (host != null) {
+      builder.setEndpoint(String.format("%s:%d", host, port > 0 ? port : 443));
+    }
+    return builder.build();
   }
 }

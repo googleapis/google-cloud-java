@@ -38,14 +38,26 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 /**
  * An interface for Google Cloud BigQuery.
  *
- * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
+ * <p>Provides synchronous operations to manage BigQuery resources ({@link Dataset}, {@link Table},
+ * {@link Model}, {@link Routine}), run SQL queries ({@link #query(QueryJobConfiguration,
+ * JobOption...)}), submit and monitor asynchronous {@link Job}s, and ingest data ({@link #writer},
+ * {@link #insertAll}).
+ *
+ * <p>Typically, create one {@code BigQuery} instance per application via {@link
+ * BigQueryOptions#getService()} and reuse it across threads. Call {@link #close()} on application
+ * shutdown to release cached background resources (such as Storage Read API clients used for query
+ * streaming). Operations on {@code BigQuery} are thread-safe, except for stateful helpers returned
+ * by this client such as {@link Connection} and {@link TableDataWriteChannel}.
+ *
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/introduction">Google Cloud BigQuery</a>
  */
 public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
   /**
    * Fields of a BigQuery Dataset resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/datasets#resource">Dataset
+   * @see <a href=
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/datasets#resource:-dataset">Dataset
    *     Resource</a>
    */
   enum DatasetField implements FieldSelector {
@@ -116,7 +128,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Table resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/tables#resource">Table
+   * @see <a href=
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#resource:-table">Table
    *     Resource</a>
    */
   enum TableField implements FieldSelector {
@@ -160,9 +173,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Metadata of a BigQuery Table.
    *
-   * @see <a href=
-   *     "https://cloud.google.com/bigquery/docs/reference/rest/v2/tables/get#tablemetadataview">Table
-   *     Resource</a>
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables/get#tablemetadataview">TableMetadataView</a>
    */
   enum TableMetadataView {
     BASIC,
@@ -174,7 +186,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Model resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/models#resource">Model
+   * @see <a href=
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/models#Model">Model
    *     Resource</a>
    */
   enum ModelField implements FieldSelector {
@@ -209,7 +222,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Routine resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/routines#resource">Routine
+   * @see <a href=
+   *     "https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/routines#resource:-routine">Routine
    *     Resource</a>
    */
   enum RoutineField implements FieldSelector {
@@ -242,8 +256,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Fields of a BigQuery Job resource.
    *
-   * @see <a href= "https://cloud.google.com/bigquery/docs/reference/v2/jobs#resource">Job Resource
-   *     </a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job">Job
+   *     Resource</a>
    */
   enum JobField implements FieldSelector {
     CONFIGURATION("configuration"),
@@ -281,7 +295,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
     /**
      * Returns an option to specify a label filter. @see <a href=
-     * "https://cloud.google.com/bigquery/docs/adding-using-labels#filtering_datasets_using_labels">Filtering
+     * "https://docs.cloud.google.com/bigquery/docs/filtering-labels#filtering_datasets_using_labels">Filtering
      * using labels</a>
      *
      * @param labelFilter In the form "labels.key:value"
@@ -351,11 +365,11 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
      * for conditional access policy binding in datasets must specify version 3. Datasets with no
      * conditional role bindings in access policy may specify any valid value or leave the field
      * unset. This field will be mapped to <a
-     * href="https://cloud.google.com/iam/docs/policies#versions">IAM Policy version</a> and will be
-     * used to fetch the policy from IAM. If unset or if 0 or 1 the value is used for a dataset with
-     * conditional bindings, access entry with condition will have role string appended by
-     * 'withcond' string followed by a hash value. Please refer to <a
-     * href="https://cloud.google.com/iam/docs/troubleshooting-withcond">Troubleshooting
+     * href="https://docs.cloud.google.com/iam/docs/allow-policies#versions">IAM Policy version</a>
+     * and will be used to fetch the policy from IAM. If unset or if 0 or 1 the value is used for a
+     * dataset with conditional bindings, access entry with condition will have role string appended
+     * by 'withcond' string followed by a hash value. Please refer to <a
+     * href="https://docs.cloud.google.com/iam/docs/troubleshooting-withcond">Troubleshooting
      * withcond</a> for more details.
      */
     public static DatasetOption accessPolicyVersion(Integer accessPolicyVersion) {
@@ -397,7 +411,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
   }
 
-  /** Class for specifying table list options. */
+  /** Class for specifying model list options. */
   class ModelListOption extends Option {
 
     private static final long serialVersionUID = 8660294969063322498L;
@@ -528,7 +542,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
   }
 
-  /** Class for specifying table get, create and update options. */
+  /** Class for specifying routine get, create and update options. */
   class RoutineOption extends Option {
 
     private static final long serialVersionUID = -1723870122095226772L;
@@ -538,8 +552,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
 
     /**
-     * Returns an option to specify the routines's fields to be returned by the RPC call. If this
-     * option is not provided all model's fields are returned. {@code RoutineOption.fields} can be
+     * Returns an option to specify the routine's fields to be returned by the RPC call. If this
+     * option is not provided all routine's fields are returned. {@code RoutineOption.fields} can be
      * used to specify only the fields of interest.
      */
     public static RoutineOption fields(RoutineField... fields) {
@@ -634,7 +648,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
     /**
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
-     * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
+     * is not provided all job's fields are returned. {@code JobListOption.fields()} can be used to
      * specify only the fields of interest. {@link Job#getJobId()}, {@link JobStatus#getState()},
      * {@link JobStatus#getError()} as well as type-specific configuration (e.g. {@link
      * QueryJobConfiguration#getQuery()} for Query Jobs) are always returned, even if not specified.
@@ -647,7 +661,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
     }
   }
 
-  /** Class for specifying table get and create options. */
+  /** Class for specifying job get, create, and query options. */
   class JobOption extends Option {
 
     private static final long serialVersionUID = -3111736712316353664L;
@@ -1083,7 +1097,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
-   * String tableName = "my_model_name";
+   * String modelName = "my_model_name";
    * ModelId modelId = ModelId.of(projectId, datasetName, modelName);
    * boolean deleted = bigquery.delete(modelId);
    * if (deleted) {
@@ -1106,8 +1120,8 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetId = "my_dataset_id";
-   * String routineId = "my_routine_id";
-   * RoutineId routineId = RoutineId.of(projectId, datasetId, routineId);
+   * String routineName = "my_routine_id";
+   * RoutineId routineId = RoutineId.of(projectId, datasetId, routineName);
    * boolean deleted = bigquery.delete(routineId);
    * if (deleted) {
    *   // the routine was deleted
@@ -1133,20 +1147,14 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * Updates dataset information.
    *
    * <p>Example of updating a dataset by changing its description.
-   * <!--SNIPPET
-   * bigquery_update_table_description-->
    *
    * <pre>{@code
-   * // String datasetName = "my_dataset_name";
-   * // String tableName = "my_table_name";
-   * // String newDescription = "new_description";
-   *
-   * Table beforeTable = bigquery.getTable(datasetName, tableName);
-   * TableInfo tableInfo = beforeTable.toBuilder().setDescription(newDescription).build();
-   * Table afterTable = bigquery.update(tableInfo);
+   * String datasetName = "my_dataset_name";
+   * String newDescription = "new_description";
+   * Dataset beforeDataset = bigquery.getDataset(datasetName);
+   * DatasetInfo datasetInfo = beforeDataset.toBuilder().setDescription(newDescription).build();
+   * Dataset afterDataset = bigquery.update(datasetInfo);
    * }</pre>
-   *
-   * <!--SNIPPET bigquery_update_table_description-->
    *
    * @throws BigQueryException upon failure
    */
@@ -1269,7 +1277,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
    * String modelName = "my_model_name";
-   * ModelId modelId = ModelId.of(projectId, datasetName, tableName);
+   * ModelId modelId = ModelId.of(projectId, datasetName, modelName);
    * Model model = bigquery.getModel(modelId);
    * }</pre>
    *
@@ -1600,16 +1608,6 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    *   System.out.printf("\n");
    * }
    * }</pre>
-   *
-   * This method supports query-related preview features via environmental variables (enabled by
-   * setting the {@code QUERY_PREVIEW_ENABLED} environment variable to "TRUE"). Specifically, this
-   * method supports:
-   *
-   * <ul>
-   *   <li><b>Stateless queries</b>: query execution without corresponding job metadata
-   * </ul>
-   *
-   * The behaviour of these preview features is controlled by the bigquery service as well
    *
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query

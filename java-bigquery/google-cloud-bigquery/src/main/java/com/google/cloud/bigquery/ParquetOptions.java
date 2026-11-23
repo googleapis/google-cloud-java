@@ -67,7 +67,8 @@ public class ParquetOptions extends FormatOptions {
     /**
      * [Optional] Indicates how to represent a Parquet map if present.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#maptargettype">
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/tables#maptargettype">
      *     MapTargetType</a>
      */
     public Builder setMapTargetType(String mapTargetType) {

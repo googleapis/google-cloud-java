@@ -44,6 +44,8 @@ public abstract class ITBaseTest {
    */
   private static final long PRIMING_TIMEOUT_MS = 45000;
 
+  protected static final long WRITE_TIMEOUT_SECONDS = 30;
+
   private static final Logger logger = Logger.getLogger(ITBaseTest.class.getName());
 
   protected Firestore firestore;
