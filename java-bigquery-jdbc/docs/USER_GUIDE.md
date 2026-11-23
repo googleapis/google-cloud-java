@@ -689,6 +689,7 @@ Logging can also be configured globally across all driver connections using envi
 | System Property | Default Value | Description | Example |
 | :--- | :---: | :--- | :--- |
 | **`com.google.cloud.bigquery.jdbc.maxLogFileBytes`** | `1073741824` (1 GiB) | Maximum size (in bytes) of an active `.log` file before rotating onto a `.1.log` backup file. | `-Dcom.google.cloud.bigquery.jdbc.maxLogFileBytes=536870912` |
+| **`com.google.cloud.bigquery.jdbc.allowUrlLogPath`** | `true` | Controls whether `LogPath` supplied via JDBC URL / `Properties` (and implicit current-working-directory fallback) is honored. When `false`, only `BIGQUERY_JDBC_LOG_PATH` enables local log files. | `-Dcom.google.cloud.bigquery.jdbc.allowUrlLogPath=false` |
 
 #### Log Level Reference:
 

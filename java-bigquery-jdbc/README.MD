@@ -111,6 +111,7 @@ Diagnostic logging can be configured per connection via JDBC URL or connection p
   * `BIGQUERY_JDBC_LOG_PATH`: Default directory path for driver log files when `LogPath` is not specified on the connection.
 * Java System Properties:
   * `-Dcom.google.cloud.bigquery.jdbc.maxLogFileBytes=<bytes>`: Maximum size in bytes of an active driver `.log` file before rotating onto a `.1.log` backup file (default: `1073741824`, or 1 GiB).
+  * `-Dcom.google.cloud.bigquery.jdbc.allowUrlLogPath=<true|false>`: Controls whether `LogPath` supplied via the JDBC URL or connection `Properties` (and implicit current-working-directory fallback) is honored (default: `true`). When `false`, local log files are written only if `BIGQUERY_JDBC_LOG_PATH` is set in the environment.
 
 ## Developer Guide
 
