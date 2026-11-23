@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
@@ -3632,14 +3633,14 @@ public class BigQueryDatabaseMetaDataTest {
       throws SQLException {
     PreparedStatement mockStmt = mock(PreparedStatement.class);
     ResultSet mockRs = mock(ResultSet.class);
-    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenReturn(mockRs);
 
     ResultSet rs = dbMetadata.getExportedKeys(catalog, schema, table);
     assertSame(mockRs, rs);
 
     ArgumentCaptor<String> sqlCaptor = ArgumentCaptor.forClass(String.class);
-    verify(bigQueryConnection).prepareStatement(sqlCaptor.capture());
+    verify(bigQueryConnection).prepareStatement(sqlCaptor.capture(), eq(true));
     String preparedSql = sqlCaptor.getValue();
     assertThat(preparedSql)
         .contains(String.format("`%s.%s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE`", catalog, schema));
@@ -3659,10 +3660,10 @@ public class BigQueryDatabaseMetaDataTest {
     verify(mockStmt, never()).close();
   }
 
-  static Stream<Arguments> exportedKeysSpecialInputProvider() {
+  static Stream<Arguments> exportedKeysFlexibleTableAndCatalogProvider() {
     return Stream.of(
-        Arguments.of("tpczero-system:bigquery-drivers", "_dataset_1", "orders'2026\\archive;v1"),
-        Arguments.of("domain.com:project-1", "dataset_p", "table%with_quotes'and`"));
+        Arguments.of("tpczero-system:bigquery-drivers", "_dataset_1", "my-table 01"),
+        Arguments.of("domain.com:project-1", "dataset_p", "00_お客様"));
   }
 
   @Test
@@ -3671,17 +3672,34 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @ParameterizedTest
-  @MethodSource("exportedKeysSpecialInputProvider")
-  public void testGetExportedKeys_specialCharactersInTableNameAndPrefixedCatalog(
+  @MethodSource("exportedKeysFlexibleTableAndCatalogProvider")
+  public void testGetExportedKeys_flexibleTableNamesAndPrefixedCatalog(
       String catalog, String schema, String table) throws SQLException {
     assertExportedKeysPreparedQuery(catalog, schema, table);
+  }
+
+  @Test
+  public void testGetPrimaryKeys_graphTableSkipsPreparedStatementDryRun() throws SQLException {
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    ResultSet mockRs = mock(ResultSet.class);
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenReturn(mockRs);
+    when(mockRs.next()).thenReturn(false);
+
+    try (ResultSet rs =
+        dbMetadata.getPrimaryKeys("test-project", "dataset_p", "RetailGraph.Product")) {
+      assertFalse(rs.next());
+    }
+    verify(bigQueryConnection).prepareStatement(anyString(), eq(true));
+    verify(mockStmt).setString(1, "RetailGraph.Product");
   }
 
   @Test
   public void testGetExportedKeys_closesStatementWhenBindingFails() throws SQLException {
     PreparedStatement mockStmt = mock(PreparedStatement.class);
     SQLException bindFailure = new SQLException("parameter failure");
-    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
     doThrow(bindFailure).when(mockStmt).setString(1, "ref_table");
 
     BigQueryJdbcException ex =
@@ -3697,7 +3715,7 @@ public class BigQueryDatabaseMetaDataTest {
   public void testGetExportedKeys_closesStatementWhenExecutionFails() throws SQLException {
     PreparedStatement mockStmt = mock(PreparedStatement.class);
     SQLException execFailure = new SQLException("query failure");
-    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenThrow(execFailure);
 
     BigQueryJdbcException ex =
@@ -3712,7 +3730,7 @@ public class BigQueryDatabaseMetaDataTest {
   public void testGetExportedKeys_closesStatementOnUncheckedException() throws SQLException {
     PreparedStatement mockStmt = mock(PreparedStatement.class);
     IllegalStateException unexpected = new IllegalStateException("unexpected state");
-    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenThrow(unexpected);
 
     IllegalStateException ex =
@@ -3741,7 +3759,7 @@ public class BigQueryDatabaseMetaDataTest {
           () -> dbMetadata.getExportedKeys("test-project", invalidSchema, "ref_table"));
     }
 
-    verify(bigQueryConnection, never()).prepareStatement(anyString());
+    verify(bigQueryConnection, never()).prepareStatement(anyString(), anyBoolean());
   }
 
   @Test

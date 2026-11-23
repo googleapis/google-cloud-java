@@ -562,8 +562,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public PreparedStatement prepareStatement(String sql) throws SQLException {
+    return prepareStatement(sql, false);
+  }
+
+  PreparedStatement prepareStatement(String sql, boolean skipDryRun) throws SQLException {
     checkClosed();
-    PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql);
+    PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql, skipDryRun);
     LOG.fine("Prepared Statement %s created.", currentStatement);
     addOpenStatements(currentStatement);
 

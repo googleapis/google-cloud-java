@@ -1107,7 +1107,7 @@ public class BigQueryStatementTest {
 
     // Create PreparedStatement
     BigQueryPreparedStatement preparedStatement =
-        new BigQueryPreparedStatement(bigQueryConnection, query);
+        new BigQueryPreparedStatement(bigQueryConnection, query, false);
     BigQueryPreparedStatement preparedStatementSpy = Mockito.spy(preparedStatement);
 
     TableResult result = Mockito.mock(TableResult.class);
@@ -1147,7 +1147,7 @@ public class BigQueryStatementTest {
 
     // Create PreparedStatement
     BigQueryPreparedStatement preparedStatement =
-        new BigQueryPreparedStatement(bigQueryConnection, query);
+        new BigQueryPreparedStatement(bigQueryConnection, query, false);
     BigQueryPreparedStatement preparedStatementSpy = Mockito.spy(preparedStatement);
 
     TableResult result = Mockito.mock(TableResult.class);
