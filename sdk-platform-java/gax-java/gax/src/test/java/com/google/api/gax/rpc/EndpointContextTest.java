@@ -616,6 +616,77 @@ class EndpointContextTest {
   }
 
   @Test
+  void shouldUseS2A_nonGduUniverseDomain_withGduMtlsEndpoint_throwsIllegalArgumentException() {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
+    defaultEndpointContextBuilder =
+        defaultEndpointContextBuilder
+            .setEnvProvider(envProvider)
+            .setResolvedUniverseDomain("testdomain.org")
+            .setClientSettingsEndpoint("")
+            .setTransportChannelProviderEndpoint("")
+            .setMtlsEndpoint(DEFAULT_MTLS_ENDPOINT)
+            .setUsingGDCH(false);
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class, () -> defaultEndpointContextBuilder.shouldUseS2A());
+    Truth.assertThat(exception)
+        .hasMessageThat()
+        .isEqualTo("S2A is not supported in any universe other than googleapis.com");
+  }
+
+  @Test
+  void shouldUseS2A_spoofedSubstringMtlsEndpoint_returnsFalse() {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
+    defaultEndpointContextBuilder =
+        defaultEndpointContextBuilder
+            .setEnvProvider(envProvider)
+            .setResolvedUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+            .setClientSettingsEndpoint("")
+            .setTransportChannelProviderEndpoint("")
+            .setMtlsEndpoint("test.mtls.googleapis.com.evil.com:443")
+            .setUsingGDCH(false);
+    Truth.assertThat(defaultEndpointContextBuilder.shouldUseS2A()).isFalse();
+  }
+
+  @Test
+  void endpointContextBuild_nonGduUniverseDomain_withS2AEnabled_throwsIllegalArgumentException() {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("true");
+    EndpointContext.Builder builder =
+        defaultEndpointContextBuilder
+            .setEnvProvider(envProvider)
+            .setUniverseDomain("testdomain.org")
+            .setClientSettingsEndpoint(null)
+            .setTransportChannelProviderEndpoint(null);
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, builder::build);
+    Truth.assertThat(exception)
+        .hasMessageThat()
+        .isEqualTo("S2A is not supported in any universe other than googleapis.com");
+  }
+
+  @Test
+  void endpointContextBuild_nonGduUniverseDomain_withS2ADisabled_succeeds() throws IOException {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(envProvider.getenv(EndpointContext.S2A_ENV_ENABLE_USE_S2A)).thenReturn("false");
+    EndpointContext endpointContext =
+        defaultEndpointContextBuilder
+            .setEnvProvider(envProvider)
+            .setUniverseDomain("testdomain.org")
+            .setClientSettingsEndpoint(null)
+            .setTransportChannelProviderEndpoint(null)
+            .build();
+    Truth.assertThat(endpointContext.useS2A()).isFalse();
+    Truth.assertThat(endpointContext.resolvedEndpoint()).isEqualTo("test.testdomain.org:443");
+  }
+
+  @Test
   void endpointContextBuild_resolvesServerAddress() throws IOException {
     String endpoint = "http://localhost:7469";
     EndpointContext endpointContext =

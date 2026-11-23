@@ -41,6 +41,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.net.HostAndPort;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -385,8 +386,27 @@ public abstract class EndpointContext {
         return false;
       }
 
-      // mTLS via S2A is not supported in any universe other than googleapis.com.
-      return mtlsEndpoint().contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
+      // mTLS via S2A is not supported in any universe other than googleapis.com. Check
+      // resolvedUniverseDomain() first because generated StubSettings keep mtlsEndpoint set to
+      // <service>.mtls.googleapis.com:443 even when configured for another universe.
+      if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(resolvedUniverseDomain())) {
+        throw new IllegalArgumentException(
+            "S2A is not supported in any universe other than googleapis.com");
+      }
+
+      return isGoogleDefaultUniverseEndpoint(mtlsEndpoint());
+    }
+
+    /**
+     * Checks that {@code endpoint}'s parsed host is a {@code .googleapis.com} subdomain, rather
+     * than a substring match on the raw endpoint string.
+     */
+    private boolean isGoogleDefaultUniverseEndpoint(String endpoint) {
+      String host = parseServerAddress(endpoint);
+      if (Strings.isNullOrEmpty(host)) {
+        return false;
+      }
+      return host.toLowerCase(Locale.ROOT).endsWith("." + Credentials.GOOGLE_DEFAULT_UNIVERSE);
     }
 
     private @Nullable String parseServerAddress(String endpoint) {
