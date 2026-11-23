@@ -97,6 +97,14 @@ public class DirectPathFallbackIT {
         .that(validModes.contains(testEnvRule.env().getConnectionMode()))
         .isTrue();
 
+    // Sessions do not use gRPC's DirectPath-to-CFE fallback, so skip this test when the session
+    // path is enabled.
+    assume()
+        .withMessage(
+            "Skipping DirectPathFallbackIT because sessions do not use gRPC's CFE fallback")
+        .that(System.getProperty("bigtable.internal.client-config-override", ""))
+        .isEmpty();
+
     BigtableDataSettings defaultSettings = testEnvRule.env().getDataClientSettings();
     InstantiatingGrpcChannelProvider defaultTransportProvider =
         (InstantiatingGrpcChannelProvider)
