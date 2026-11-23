@@ -33,6 +33,8 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import com.google.cloud.bigquery.jdbc.BigQueryDriver;
+import com.google.gson.JsonObject;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.Date;
@@ -46,11 +48,21 @@ import java.sql.Statement;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
@@ -1296,6 +1308,259 @@ public class ITNightlyBigQueryTest extends ITBase {
 
     } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
+    }
+  }
+
+  private static int[] executeBatchAssertingWriteApiUsed(
+      PreparedStatement ps, boolean expectWriteApi) throws SQLException {
+    Logger rootLogger = BigQueryDriver.getRegisteredDriver().getParentLogger();
+    Level savedLevel = rootLogger.getLevel();
+    Thread callerThread = Thread.currentThread();
+    List<String> messages = new ArrayList<>();
+    Handler handler =
+        new Handler() {
+          @Override
+          public void publish(LogRecord record) {
+            if (Thread.currentThread() == callerThread && record.getMessage() != null) {
+              messages.add(record.getMessage());
+            }
+          }
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public void close() {}
+        };
+    if (savedLevel == null || savedLevel.intValue() > Level.INFO.intValue()) {
+      rootLogger.setLevel(Level.INFO);
+    }
+    rootLogger.addHandler(handler);
+    try {
+      int[] counts = ps.executeBatch();
+      assertEquals(
+          expectWriteApi,
+          messages.stream().anyMatch(m -> m.contains("Using Write API for bulk INSERT operation.")),
+          () -> "Unexpected Write API log state: " + messages);
+      assertEquals(
+          !expectWriteApi,
+          messages.stream().anyMatch(m -> m.contains("Using individual INSERT query runs.")),
+          () -> "Unexpected standard SQL batch log state: " + messages);
+      return counts;
+    } finally {
+      rootLogger.removeHandler(handler);
+      rootLogger.setLevel(savedLevel);
+    }
+  }
+
+  private static void dropTableQuietly(String table) {
+    try {
+      bigQueryStatement.execute(String.format("DROP TABLE IF EXISTS %s.%s", DATASET, table));
+    } catch (SQLException ignored) {
+      // Best-effort cleanup so a drop failure never masks assertions or skips the next drop.
+    }
+  }
+
+  private static void populateAllTypesParityBatch(PreparedStatement ps) throws SQLException {
+    // Column order in INSERT is intentionally permuted (`c-str-é` before row_id) to exercise
+    // resolveInsertSchema column alignment and BigQuerySchemaUtil placeholder column names.
+    JsonObject json0 = new JsonObject();
+    json0.addProperty("k", "v0");
+    ps.setString(1, "héllo-world");
+    ps.setLong(2, 1L);
+    ps.setBytes(3, new byte[] {-128, 0, 42, 127});
+    ps.setShort(4, (short) -32000);
+    ps.setFloat(5, 0.6f);
+    ps.setBigDecimal(6, new BigDecimal("12345.678900000"));
+    ps.setBigDecimal(7, new BigDecimal("-99999999.99"));
+    ps.setBigDecimal(8, new BigDecimal("98765432109876543210.123456789"));
+    ps.setBoolean(9, true);
+    ps.setObject(10, LocalDate.of(1582, 10, 10));
+    ps.setObject(11, LocalTime.of(14, 30, 45, 123_456_789));
+    ps.setObject(12, LocalDateTime.of(2025, 3, 9, 2, 30, 45, 987_654_321));
+    ps.setObject(13, Instant.parse("1969-12-31T23:59:59.999999900Z"));
+    ps.setObject(14, json0);
+    ps.setNull(15, Types.OTHER);
+    ps.setNull(16, Types.OTHER);
+    ps.addBatch();
+
+    JsonObject json1 = new JsonObject();
+    json1.addProperty("n", 42);
+    ps.setString(1, "legacy-row");
+    ps.setLong(2, 2L);
+    ps.setBytes(3, "abc".getBytes(StandardCharsets.UTF_8));
+    ps.setByte(4, (byte) 12);
+    ps.setDouble(5, -42.125d);
+    ps.setBigDecimal(6, BigDecimal.ZERO);
+    ps.setInt(7, 123);
+    ps.setLong(8, -999999999999L);
+    ps.setBoolean(9, false);
+    ps.setDate(10, Date.valueOf("2026-08-24"));
+    ps.setTime(11, Time.valueOf("08:09:10"));
+    ps.setString(12, "2026-08-24 08:09:10.000000");
+    ps.setTimestamp(13, Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456Z")));
+    ps.setObject(14, json1);
+    ps.setNull(15, Types.OTHER);
+    ps.setNull(16, Types.OTHER);
+    ps.addBatch();
+
+    ps.setObject(1, null);
+    ps.setLong(2, 3L);
+    for (int col = 3; col <= 16; col++) {
+      ps.setObject(col, null);
+    }
+    ps.addBatch();
+  }
+
+  @Test
+  public void testBulkInsertWriteApiAllTypesParityWithStandardSql() throws SQLException {
+    String suffix = System.currentTimeMillis() + "_" + random.nextInt(9999);
+    String swaTable = "JDBC_SWA_ALL_TYPES_" + suffix;
+    String sqlTable = "JDBC_SQL_ALL_TYPES_" + suffix;
+    String ddlTemplate =
+        "CREATE OR REPLACE TABLE %s.%s ("
+            + "row_id INT64 NOT NULL, `c-str-é` STRING, c_bytes BYTES, c_int INT64, "
+            + "c_flt FLOAT64, c_num NUMERIC, c_num_ps NUMERIC(10, 2), c_bnum BIGNUMERIC, "
+            + "c_bool BOOL, c_date DATE, c_time TIME, c_dt DATETIME, c_ts TIMESTAMP, "
+            + "c_json JSON, c_geo GEOGRAPHY, c_iv INTERVAL)";
+    String insertTemplate =
+        "INSERT INTO %s.%s ("
+            + "`c-str-é`, row_id, c_bytes, c_int, c_flt, c_num, c_num_ps, c_bnum, "
+            + "c_bool, c_date, c_time, c_dt, c_ts, c_json, c_geo, c_iv"
+            + ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    String swaUri =
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableWriteAPI=1;SWA_ActivationRowCount=3;SWA_AppendRowCount=2;";
+    String sqlUri = ITNightlyBigQueryTest.connection_uri + "EnableWriteAPI=0;";
+
+    bigQueryStatement.execute(String.format(ddlTemplate, DATASET, swaTable));
+    bigQueryStatement.execute(String.format(ddlTemplate, DATASET, sqlTable));
+    try {
+      try (Connection swaConn = DriverManager.getConnection(swaUri);
+          PreparedStatement swaPs =
+              swaConn.prepareStatement(String.format(insertTemplate, DATASET, swaTable))) {
+        populateAllTypesParityBatch(swaPs);
+        assertArrayEquals(new int[] {1, 1, 1}, executeBatchAssertingWriteApiUsed(swaPs, true));
+      }
+      try (Connection sqlConn = DriverManager.getConnection(sqlUri);
+          PreparedStatement sqlPs =
+              sqlConn.prepareStatement(String.format(insertTemplate, DATASET, sqlTable))) {
+        populateAllTypesParityBatch(sqlPs);
+        assertArrayEquals(new int[] {1, 1, 1}, executeBatchAssertingWriteApiUsed(sqlPs, false));
+      }
+
+      try (Statement sqlStmt = bigQueryConnection.createStatement();
+          ResultSet rsSwa =
+              bigQueryStatement.executeQuery(
+                  String.format("SELECT * FROM %s.%s ORDER BY row_id", DATASET, swaTable));
+          ResultSet rsSql =
+              sqlStmt.executeQuery(
+                  String.format("SELECT * FROM %s.%s ORDER BY row_id", DATASET, sqlTable))) {
+        ResultSetMetaData meta = rsSwa.getMetaData();
+        int cols = meta.getColumnCount();
+        int rowCount = 0;
+        while (rsSwa.next()) {
+          assertTrue(rsSql.next());
+          if (rowCount == 0) {
+            assertEquals(LocalDate.of(1582, 10, 10), rsSwa.getObject("c_date", LocalDate.class));
+            assertEquals(
+                LocalTime.of(14, 30, 45, 123_456_000), rsSwa.getObject("c_time", LocalTime.class));
+            assertEquals(
+                LocalDateTime.of(2025, 3, 9, 2, 30, 45, 987_654_000),
+                rsSwa.getObject("c_dt", LocalDateTime.class));
+            assertEquals(
+                Instant.parse("1969-12-31T23:59:59.999999Z"),
+                rsSwa.getObject("c_ts", Instant.class));
+          }
+          for (int c = 1; c <= cols; c++) {
+            if (meta.getColumnType(c) == Types.VARBINARY) {
+              assertArrayEquals(rsSql.getBytes(c), rsSwa.getBytes(c), "col=" + c);
+            } else {
+              assertEquals(rsSql.getString(c), rsSwa.getString(c), "col=" + c);
+            }
+            assertEquals(rsSql.wasNull(), rsSwa.wasNull(), "wasNull col=" + c);
+          }
+          rowCount++;
+        }
+        assertFalse(rsSql.next());
+        assertEquals(3, rowCount);
+      }
+    } finally {
+      dropTableQuietly(swaTable);
+      dropTableQuietly(sqlTable);
+    }
+  }
+
+  @Test
+  public void testBulkInsertWriteApiSqlExpressionAndComplexTypeFallback() throws SQLException {
+    String suffix = System.currentTimeMillis() + "_" + random.nextInt(9999);
+    String exprTable = "JDBC_SWA_EXPR_FALLBACK_" + suffix;
+    String complexTable = "JDBC_SWA_COMPLEX_FALLBACK_" + suffix;
+    String swaUri =
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableWriteAPI=1;SWA_ActivationRowCount=3;SWA_AppendRowCount=2;";
+
+    bigQueryStatement.execute(
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s ("
+                + "id INT64, masked STRING, digest BYTES, geo GEOGRAPHY, iv INTERVAL, j JSON)",
+            DATASET, exprTable));
+    bigQueryStatement.execute(
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s ("
+                + "id INT64, arr ARRAY<STRING>, rec STRUCT<v INT64>, rng RANGE<DATE>)",
+            DATASET, complexTable));
+    try (Connection swaConn = DriverManager.getConnection(swaUri)) {
+      String exprInsert =
+          String.format(
+              "INSERT INTO %s.%s (id, masked, digest, geo, iv, j) "
+                  + "VALUES (?, UPPER(?), SHA256(?), ST_GEOGFROMTEXT(?), "
+                  + "MAKE_INTERVAL(year => ?), PARSE_JSON(?))",
+              DATASET, exprTable);
+      try (PreparedStatement ps = swaConn.prepareStatement(exprInsert)) {
+        for (int i = 0; i < 3; i++) {
+          ps.setLong(1, i);
+          ps.setString(2, "secret-" + i);
+          ps.setString(3, "payload-" + i);
+          ps.setString(4, "POINT(-122 47)");
+          ps.setInt(5, i + 1);
+          ps.setString(6, "{\"x\":" + i + "}");
+          ps.addBatch();
+        }
+        assertArrayEquals(new int[] {1, 1, 1}, executeBatchAssertingWriteApiUsed(ps, false));
+      }
+      try (ResultSet rs =
+          bigQueryStatement.executeQuery(
+              String.format(
+                  "SELECT masked, LENGTH(digest), ST_ASTEXT(geo), TO_JSON_STRING(j) "
+                      + "FROM %s.%s ORDER BY id LIMIT 1",
+                  DATASET, exprTable))) {
+        assertTrue(rs.next());
+        assertEquals("SECRET-0", rs.getString(1));
+        assertEquals(32, rs.getInt(2));
+        assertEquals("POINT(-122 47)", rs.getString(3));
+        assertEquals("{\"x\":0}", rs.getString(4));
+      }
+
+      String complexInsert =
+          String.format("INSERT INTO %s.%s (id) VALUES (?)", DATASET, complexTable);
+      try (PreparedStatement ps = swaConn.prepareStatement(complexInsert)) {
+        for (int i = 0; i < 3; i++) {
+          ps.setLong(1, 100L + i);
+          ps.addBatch();
+        }
+        assertArrayEquals(new int[] {1, 1, 1}, executeBatchAssertingWriteApiUsed(ps, false));
+      }
+      try (ResultSet rs =
+          bigQueryStatement.executeQuery(
+              String.format("SELECT COUNT(*) FROM %s.%s", DATASET, complexTable))) {
+        assertTrue(rs.next());
+        assertEquals(3, rs.getInt(1));
+      }
+    } finally {
+      dropTableQuietly(exprTable);
+      dropTableQuietly(complexTable);
     }
   }
 
