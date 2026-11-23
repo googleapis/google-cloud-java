@@ -71,6 +71,7 @@ public class MockTokenServerTransport extends MockHttpTransport {
   final Map<String, Map<String, String>> additionalParameters =
       new HashMap<String, Map<String, String>>();
   URI tokenServerUri = OAuth2Utils.TOKEN_SERVER_URI;
+  URI tokenRevokeUri = OAuth2Utils.TOKEN_REVOKE_URI;
   private IOException error;
   private final Queue<Future<LowLevelHttpResponse>> responseSequence = new ArrayDeque<>();
   private int expiresInSeconds = 3600;
@@ -85,6 +86,14 @@ public class MockTokenServerTransport extends MockHttpTransport {
 
   public void setTokenServerUri(URI tokenServerUri) {
     this.tokenServerUri = tokenServerUri;
+  }
+
+  public URI getTokenRevokeUri() {
+    return tokenRevokeUri;
+  }
+
+  public void setTokenRevokeUri(URI tokenRevokeUri) {
+    this.tokenRevokeUri = tokenRevokeUri;
   }
 
   public void setClientAuthType(ClientAuthenticationType type) {}
@@ -322,7 +331,7 @@ public class MockTokenServerTransport extends MockHttpTransport {
             }
           };
       return request;
-    } else if (urlWithoutQuery.equals(OAuth2Utils.TOKEN_REVOKE_URI.toString())) {
+    } else if (urlWithoutQuery.equals(tokenRevokeUri.toString())) {
       request =
           new MockLowLevelHttpRequest(url) {
             @Override
