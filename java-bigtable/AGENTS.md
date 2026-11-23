@@ -24,3 +24,5 @@ When developing or modifying code within the `java-bigtable` directory, you must
   mvn com.spotify.fmt:fmt-maven-plugin:format
   ```
 - **Troubleshooting**: If the formatting command fails, it is usually because of an incompatible JDK version. Ensure you are running it in an environment with the correct JDK version for the project (typically 17+, depending on the project configuration).
+
+<!-- temporary no-op change to verify parallel Bigtable Kokoro presubmits (DO NOT MERGE) -->
