@@ -2091,7 +2091,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void enqueueEndOfStream(BlockingQueue<BigQueryArrowBatchWrapper> queue) {
-    enqueueMarker(queue, BigQueryArrowBatchWrapper.of(null, true));
+    enqueueMarker(queue, BigQueryArrowBatchWrapper.ofEndOfStream());
   }
 
   private void enqueueBufferError(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable e) {
