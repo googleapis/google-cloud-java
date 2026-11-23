@@ -33,9 +33,12 @@ package com.google.auth.oauth2;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.auth.Credentials;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
+import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A refreshable alternative to {@link OAuth2Credentials}.
@@ -51,6 +54,7 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
   }
 
   private final OAuth2RefreshHandler refreshHandler;
+  private final String universeDomain;
 
   protected OAuth2CredentialsWithRefresh(Builder builder) {
     super(builder.getAccessToken(), builder.getRefreshMargin(), builder.getExpirationMargin());
@@ -60,6 +64,11 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
           "The provided access token must contain the expiration time.");
     }
     this.refreshHandler = checkNotNull(builder.refreshHandler);
+    if (builder.universeDomain == null || builder.universeDomain.trim().isEmpty()) {
+      this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    } else {
+      this.universeDomain = builder.universeDomain;
+    }
   }
 
   protected OAuth2CredentialsWithRefresh(
@@ -73,6 +82,7 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
     }
 
     this.refreshHandler = checkNotNull(refreshHandler);
+    this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
   }
 
   /** Refreshes the access token using the provided {@link OAuth2RefreshHandler}. */
@@ -87,6 +97,34 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
     return refreshHandler;
   }
 
+  /**
+   * Returns the universe domain for this credential.
+   *
+   * @return the configured universe domain, or {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} if none
+   *     was explicitly configured
+   * @throws IOException if retrieving the universe domain fails
+   */
+  @Override
+  public String getUniverseDomain() throws IOException {
+    return this.universeDomain;
+  }
+
+  @Override
+  public boolean equals(@Nullable Object obj) {
+    if (!(obj instanceof OAuth2CredentialsWithRefresh)) {
+      return false;
+    }
+    OAuth2CredentialsWithRefresh other = (OAuth2CredentialsWithRefresh) obj;
+    return super.equals(other)
+        && Objects.equals(this.refreshHandler, other.refreshHandler)
+        && Objects.equals(this.universeDomain, other.universeDomain);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), this.refreshHandler, this.universeDomain);
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -94,6 +132,7 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
   public static class Builder extends OAuth2Credentials.Builder {
 
     private OAuth2RefreshHandler refreshHandler;
+    private @Nullable String universeDomain;
 
     private Builder() {}
 
@@ -113,6 +152,24 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
     public Builder setRefreshHandler(OAuth2RefreshHandler handler) {
       this.refreshHandler = handler;
       return this;
+    }
+
+    /**
+     * Sets the universe domain for the credential. If null or blank, defaults to {@link
+     * Credentials#GOOGLE_DEFAULT_UNIVERSE}.
+     *
+     * @param universeDomain the universe domain (for example, {@code googleapis.com})
+     * @return this builder
+     */
+    @CanIgnoreReturnValue
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
+      this.universeDomain = universeDomain;
+      return this;
+    }
+
+    /** Returns the configured universe domain, or {@code null} if not explicitly set. */
+    public @Nullable String getUniverseDomain() {
+      return universeDomain;
     }
 
     @Override

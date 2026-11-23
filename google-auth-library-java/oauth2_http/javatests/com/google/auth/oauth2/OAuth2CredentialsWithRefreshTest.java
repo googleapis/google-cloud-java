@@ -35,16 +35,22 @@ import static com.google.auth.oauth2.OAuth2Credentials.DEFAULT_EXPIRATION_MARGIN
 import static com.google.auth.oauth2.OAuth2Credentials.DEFAULT_REFRESH_MARGIN;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.auth.Credentials;
 import com.google.auth.TestUtils;
 import java.io.IOException;
 import java.net.URI;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link OAuth2CredentialsWithRefresh}. */
@@ -198,5 +204,81 @@ class OAuth2CredentialsWithRefreshTest {
     Map<String, List<String>> metadata = credentials.getRequestMetadata(uri);
 
     TestUtils.assertContainsBearerToken(metadata, refreshedToken.getTokenValue());
+  }
+
+  private static OAuth2CredentialsWithRefresh.Builder createTestBuilder(
+      OAuth2CredentialsWithRefresh.OAuth2RefreshHandler handler) {
+    return OAuth2CredentialsWithRefresh.newBuilder()
+        .setAccessToken(ACCESS_TOKEN)
+        .setRefreshHandler(handler);
+  }
+
+  @Test
+  void builder_universeDomain() {
+    OAuth2CredentialsWithRefresh.Builder builder = createTestBuilder(() -> ACCESS_TOKEN);
+    assertNull(builder.getUniverseDomain());
+
+    builder.setUniverseDomain("example.com");
+    assertEquals("example.com", builder.getUniverseDomain());
+  }
+
+  @Test
+  void getUniverseDomain() throws IOException {
+    OAuth2CredentialsWithRefresh protectedCredentials =
+        new OAuth2CredentialsWithRefresh(ACCESS_TOKEN, () -> ACCESS_TOKEN);
+    assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, protectedCredentials.getUniverseDomain());
+
+    Map<String, String> testCases = new LinkedHashMap<>();
+    testCases.put(null, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    testCases.put("", Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    testCases.put("   ", Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    testCases.put("example.com", "example.com");
+
+    for (Map.Entry<String, String> testCase : testCases.entrySet()) {
+      OAuth2CredentialsWithRefresh credentials =
+          createTestBuilder(() -> ACCESS_TOKEN).setUniverseDomain(testCase.getKey()).build();
+      assertEquals(testCase.getValue(), credentials.getUniverseDomain());
+    }
+  }
+
+  @Test
+  void equals_true() {
+    OAuth2CredentialsWithRefresh.OAuth2RefreshHandler handler = () -> ACCESS_TOKEN;
+    OAuth2CredentialsWithRefresh credentials =
+        createTestBuilder(handler).setUniverseDomain("example.com").build();
+    OAuth2CredentialsWithRefresh other =
+        createTestBuilder(handler).setUniverseDomain("example.com").build();
+
+    assertEquals(credentials, credentials);
+    assertEquals(credentials, other);
+    assertEquals(other, credentials);
+    assertEquals(credentials.hashCode(), other.hashCode());
+  }
+
+  @Test
+  void equals_false() {
+    OAuth2CredentialsWithRefresh.OAuth2RefreshHandler handler = () -> ACCESS_TOKEN;
+    OAuth2CredentialsWithRefresh.OAuth2RefreshHandler otherHandler = () -> ACCESS_TOKEN;
+    AccessToken otherToken =
+        new AccessToken("otherAccessToken", new Date(ACCESS_TOKEN.getExpirationTime().getTime()));
+    OAuth2CredentialsWithRefresh baseline =
+        createTestBuilder(handler).setUniverseDomain("example.com").build();
+
+    List<Consumer<OAuth2CredentialsWithRefresh.Builder>> mutations =
+        Arrays.asList(
+            b -> b.setAccessToken(otherToken),
+            b -> b.setRefreshHandler(otherHandler),
+            b -> b.setUniverseDomain("other.example.com"));
+
+    assertNotEquals(baseline, null);
+    assertNotEquals(baseline, "not-a-credential");
+    for (Consumer<OAuth2CredentialsWithRefresh.Builder> mutation : mutations) {
+      OAuth2CredentialsWithRefresh.Builder builder =
+          createTestBuilder(handler).setUniverseDomain("example.com");
+      mutation.accept(builder);
+      OAuth2CredentialsWithRefresh other = builder.build();
+      assertNotEquals(baseline, other);
+      assertNotEquals(other, baseline);
+    }
   }
 }

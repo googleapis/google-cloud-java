@@ -93,6 +93,10 @@ public class OAuth2Credentials extends Credentials {
   /**
    * Returns the credentials instance from the given access token.
    *
+   * <p>The returned credentials default to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}. To create
+   * access-token credentials for a custom universe domain, use {@link
+   * GoogleCredentials#create(String, AccessToken)}.
+   *
    * @param accessToken the access token
    * @return the credentials instance
    */
