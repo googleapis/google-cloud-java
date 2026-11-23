@@ -54,7 +54,7 @@ public class StaleResourceCleaner {
 
   public static void main(String[] args) throws Exception {
     CloudEnv cloudEnv = CloudEnv.fromSystemProperties();
-    cloudEnv.start();
+    cloudEnv.startAdminClients();
     try {
       new StaleResourceCleaner(cloudEnv).cleanUp();
     } finally {
@@ -362,8 +362,6 @@ public class StaleResourceCleaner {
     try (BigtableTableAdminClient tableAdmin = testEnv.getTableAdminClientForInstance(instanceId)) {
       List<Cluster> clusters = instanceAdmin.listClusters(instanceId);
 
-      boolean isFirstCluster = true;
-
       for (Cluster cluster : clusters) {
         try {
           deleteAllBackups(tableAdmin, cluster.getId());
@@ -375,21 +373,9 @@ public class StaleResourceCleaner {
                   + instanceId,
               e);
         }
-        // Skip the first cluster so that it can be deleted by deleteInstance (instances can't exist
-        // without clusters)
-        if (!isFirstCluster) {
-          try {
-            instanceAdmin.deleteCluster(instanceId, cluster.getId());
-          } catch (Exception e) {
-            recordError(
-                "Failed to delete cluster " + cluster.getId() + " of stale instance " + instanceId,
-                e);
-          }
-        }
-        isFirstCluster = false;
       }
     } catch (Exception e) {
-      recordError("Failed to clean up clusters/backups in stale instance: " + instanceId, e);
+      recordError("Failed to clean up backups in stale instance: " + instanceId, e);
     }
 
     try {

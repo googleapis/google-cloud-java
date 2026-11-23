@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.test_helpers.env;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -618,7 +619,8 @@ class StaleResourceCleanerTest {
                 .setName(NameUtil.formatLogicalViewName(PROJECT_ID, staleInstance, lvOnStaleInst))
                 .build());
 
-    // Backups in both clusters deleted, only secondary cluster1 deleted before deleteInstance
+    // Backups in both clusters deleted; clusters are deleted by deleteInstance rather than
+    // individual deleteCluster calls
     verify(mockDeleteBackupCallable)
         .futureCall(
             DeleteBackupRequest.newBuilder()
@@ -629,16 +631,7 @@ class StaleResourceCleanerTest {
             DeleteBackupRequest.newBuilder()
                 .setName(NameUtil.formatBackupName(PROJECT_ID, staleInstance, cluster1, "b1"))
                 .build());
-    verify(mockDeleteClusterCallable, never())
-        .futureCall(
-            DeleteClusterRequest.newBuilder()
-                .setName(NameUtil.formatClusterName(PROJECT_ID, staleInstance, cluster0))
-                .build());
-    verify(mockDeleteClusterCallable)
-        .futureCall(
-            DeleteClusterRequest.newBuilder()
-                .setName(NameUtil.formatClusterName(PROJECT_ID, staleInstance, cluster1))
-                .build());
+    verify(mockDeleteClusterCallable, never()).futureCall(any());
     verify(mockDeleteInstanceCallable)
         .futureCall(
             DeleteInstanceRequest.newBuilder()
@@ -763,11 +756,7 @@ class StaleResourceCleanerTest {
             DeleteBackupRequest.newBuilder()
                 .setName(NameUtil.formatBackupName(PROJECT_ID, remainingStaleInst, "c1", "b1"))
                 .build());
-    verify(mockDeleteClusterCallable)
-        .futureCall(
-            DeleteClusterRequest.newBuilder()
-                .setName(NameUtil.formatClusterName(PROJECT_ID, remainingStaleInst, "c1"))
-                .build());
+    verify(mockDeleteClusterCallable, never()).futureCall(any());
     verify(mockDeleteInstanceCallable)
         .futureCall(
             DeleteInstanceRequest.newBuilder()
@@ -863,7 +852,79 @@ class StaleResourceCleanerTest {
                 .build());
   }
 
+  @Test
+  void testCleanUp_neverUsesDataClient() throws Exception {
+    EnhancedBigtableTableAdminStub sharedTableStub = createTableStubForInstance(SHARED_INSTANCE_ID);
+    mockMaterializedViews(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockLogicalViews(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockListTables(sharedTableStub, SHARED_INSTANCE_ID, ImmutableList.of());
+    mockAppProfiles(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockClusters(SHARED_INSTANCE_ID, ImmutableList.of());
+    mockInstances(ImmutableList.of());
+
+    AbstractTestEnv mockEnv = createMockEnv();
+    new StaleResourceCleaner(mockEnv).cleanUp(STALE_PREFIX);
+
+    verify(mockEnv, never()).getDataClient();
+  }
+
+  @Test
+  void testCloudEnvStop_nullSafeWhenClientsNotStarted() throws Exception {
+    String prevProject = System.getProperty("bigtable.project");
+    String prevInstance = System.getProperty("bigtable.instance");
+    String prevTable = System.getProperty("bigtable.table");
+    String prevConnectionMode = System.getProperty("bigtable.connection-mode");
+    try {
+      System.setProperty("bigtable.project", PROJECT_ID);
+      System.setProperty("bigtable.instance", SHARED_INSTANCE_ID);
+      System.setProperty("bigtable.table", "test-table");
+      System.clearProperty("bigtable.connection-mode");
+
+      CloudEnv cloudEnv = CloudEnv.fromSystemProperties();
+      assertDoesNotThrow(cloudEnv::stop);
+
+      EnhancedBigtableTableAdminStub mockTableStub =
+          mock(EnhancedBigtableTableAdminStub.class, withSettings().withoutAnnotations());
+      BackgroundResource mockBackgroundResources =
+          mock(BackgroundResource.class, withSettings().withoutAnnotations());
+      Field backgroundResourcesField =
+          GrpcBigtableTableAdminStub.class.getDeclaredField("backgroundResources");
+      backgroundResourcesField.setAccessible(true);
+      backgroundResourcesField.set(mockTableStub, mockBackgroundResources);
+
+      BigtableTableAdminClient tableAdmin =
+          BigtableTableAdminClient.create(PROJECT_ID, SHARED_INSTANCE_ID, mockTableStub);
+      Field tableAdminField = CloudEnv.class.getDeclaredField("tableAdminClient");
+      tableAdminField.setAccessible(true);
+      tableAdminField.set(cloudEnv, tableAdmin);
+      Field instanceAdminField = CloudEnv.class.getDeclaredField("instanceAdminClient");
+      instanceAdminField.setAccessible(true);
+      instanceAdminField.set(cloudEnv, instanceAdmin);
+
+      assertDoesNotThrow(cloudEnv::stop);
+      verify(mockBackgroundResources).close();
+      verify(mockInstanceStub).close();
+    } finally {
+      restoreProperty("bigtable.project", prevProject);
+      restoreProperty("bigtable.instance", prevInstance);
+      restoreProperty("bigtable.table", prevTable);
+      restoreProperty("bigtable.connection-mode", prevConnectionMode);
+    }
+  }
+
+  private static void restoreProperty(String key, String previousValue) {
+    if (previousValue == null) {
+      System.clearProperty(key);
+    } else {
+      System.setProperty(key, previousValue);
+    }
+  }
+
   private StaleResourceCleaner createCleaner() throws Exception {
+    return new StaleResourceCleaner(createMockEnv());
+  }
+
+  private AbstractTestEnv createMockEnv() throws Exception {
     AbstractTestEnv mockEnv = mock(AbstractTestEnv.class, withSettings().withoutAnnotations());
     when(mockEnv.getInstanceId()).thenReturn(SHARED_INSTANCE_ID);
     when(mockEnv.getInstanceAdminClient()).thenReturn(instanceAdmin);
@@ -878,7 +939,7 @@ class StaleResourceCleanerTest {
               return BigtableTableAdminClient.create(
                   PROJECT_ID, instanceId, tableStubsByInstance.get(instanceId));
             });
-    return new StaleResourceCleaner(mockEnv);
+    return mockEnv;
   }
 
   private EnhancedBigtableTableAdminStub createTableStubForInstance(String instanceId)
