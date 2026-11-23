@@ -44,12 +44,11 @@ import java.net.URISyntaxException;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -58,12 +57,22 @@ class BigtableClientContextTest {
 
   private static final URI MONITORING_URI =
       URI.create("https://monitoring.googleapis.com/google.monitoring.v3.MetricService");
+  private static final URI BIGTABLE_DATA_URI =
+      URI.create("https://bigtable.googleapis.com/google.bigtable.v2.Bigtable");
 
   private ScheduledExecutorService executor;
+  private List<Credentials> capturedMetricsCredentials;
+  private BuiltinOtelFactory capturingOtelFactory;
 
   @BeforeEach
   void setUp() {
     executor = Executors.newSingleThreadScheduledExecutor();
+    capturedMetricsCredentials = new ArrayList<>();
+    capturingOtelFactory =
+        (metricRegistry, clientInfo, defaultCredentials, metricsEndpoint, universeDomain, exec) -> {
+          capturedMetricsCredentials.add(defaultCredentials);
+          return null;
+        };
   }
 
   @AfterEach
@@ -81,32 +90,25 @@ class BigtableClientContextTest {
     EnhancedBigtableStubSettings settings =
         baseSettingsBuilder().setCredentialsProvider(credentialsProvider).build();
 
-    AtomicBoolean builtinOtelCalled = new AtomicBoolean(false);
-    AtomicReference<Credentials> metricsCredentialsRef = new AtomicReference<>();
-    BuiltinOtelFactory capturingFactory =
-        (metricRegistry, clientInfo, defaultCredentials, metricsEndpoint, universeDomain, exec) -> {
-          builtinOtelCalled.set(true);
-          metricsCredentialsRef.set(defaultCredentials);
-          return null;
-        };
-
     BigtableClientContext ctx =
         BigtableClientContext.create(
-            settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingFactory);
+            settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingOtelFactory);
     try {
       verify(credentialsProvider, times(1)).getCredentials();
-      assertThat(builtinOtelCalled.get()).isTrue();
+      assertThat(capturedMetricsCredentials).hasSize(1);
 
-      Credentials metricsCredentials = metricsCredentialsRef.get();
+      Credentials metricsCredentials = capturedMetricsCredentials.get(0);
       assertThat(metricsCredentials).isSameInstanceAs(jwtCreds);
       assertThat(metricsCredentials).isNotInstanceOf(JwtCredentialsWithAudience.class);
-      assertThat(extractJwtAudience(metricsCredentials, MONITORING_URI))
-          .isEqualTo(MONITORING_URI.toString());
+      Map<String, List<String>> metricsAuthHeaders =
+          metricsCredentials.getRequestMetadata(MONITORING_URI);
+      assertThat(extractJwtAudience(metricsAuthHeaders)).isEqualTo(MONITORING_URI.toString());
 
       Credentials dataCredentials = ctx.getClientContext().getCredentials();
       assertThat(dataCredentials).isInstanceOf(JwtCredentialsWithAudience.class);
-      assertThat(extractJwtAudience(dataCredentials, MONITORING_URI))
-          .isEqualTo("https://bigtable.googleapis.com/");
+      Map<String, List<String>> dataAuthHeaders =
+          dataCredentials.getRequestMetadata(BIGTABLE_DATA_URI);
+      assertThat(extractJwtAudience(dataAuthHeaders)).isEqualTo("https://bigtable.googleapis.com/");
     } finally {
       ctx.close();
     }
@@ -126,31 +128,25 @@ class BigtableClientContextTest {
             .setJwtAudience(customAudience)
             .build();
 
-    AtomicBoolean builtinOtelCalled = new AtomicBoolean(false);
-    AtomicReference<Credentials> metricsCredentialsRef = new AtomicReference<>();
-    BuiltinOtelFactory capturingFactory =
-        (metricRegistry, clientInfo, defaultCredentials, metricsEndpoint, universeDomain, exec) -> {
-          builtinOtelCalled.set(true);
-          metricsCredentialsRef.set(defaultCredentials);
-          return null;
-        };
-
     BigtableClientContext ctx =
         BigtableClientContext.create(
-            settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingFactory);
+            settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingOtelFactory);
     try {
       verify(credentialsProvider, times(1)).getCredentials();
-      assertThat(builtinOtelCalled.get()).isTrue();
+      assertThat(capturedMetricsCredentials).hasSize(1);
 
-      Credentials metricsCredentials = metricsCredentialsRef.get();
+      Credentials metricsCredentials = capturedMetricsCredentials.get(0);
       assertThat(metricsCredentials).isSameInstanceAs(jwtCreds);
       assertThat(metricsCredentials).isNotInstanceOf(JwtCredentialsWithAudience.class);
-      assertThat(extractJwtAudience(metricsCredentials, MONITORING_URI))
-          .isEqualTo(MONITORING_URI.toString());
+      Map<String, List<String>> metricsAuthHeaders =
+          metricsCredentials.getRequestMetadata(MONITORING_URI);
+      assertThat(extractJwtAudience(metricsAuthHeaders)).isEqualTo(MONITORING_URI.toString());
 
       Credentials dataCredentials = ctx.getClientContext().getCredentials();
       assertThat(dataCredentials).isInstanceOf(JwtCredentialsWithAudience.class);
-      assertThat(extractJwtAudience(dataCredentials, MONITORING_URI)).isEqualTo(customAudience);
+      Map<String, List<String>> dataAuthHeaders =
+          dataCredentials.getRequestMetadata(BIGTABLE_DATA_URI);
+      assertThat(extractJwtAudience(dataAuthHeaders)).isEqualTo(customAudience);
     } finally {
       ctx.close();
     }
@@ -167,22 +163,13 @@ class BigtableClientContextTest {
     EnhancedBigtableStubSettings settings =
         baseSettingsBuilder().setCredentialsProvider(credentialsProvider).build();
 
-    AtomicBoolean builtinOtelCalled = new AtomicBoolean(false);
-    AtomicReference<Credentials> metricsCredentialsRef = new AtomicReference<>();
-    BuiltinOtelFactory capturingFactory =
-        (metricRegistry, clientInfo, defaultCredentials, metricsEndpoint, universeDomain, exec) -> {
-          builtinOtelCalled.set(true);
-          metricsCredentialsRef.set(defaultCredentials);
-          return null;
-        };
-
     BigtableClientContext ctx =
         BigtableClientContext.create(
-            settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingFactory);
+            settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingOtelFactory);
     try {
       verify(credentialsProvider, times(1)).getCredentials();
-      assertThat(builtinOtelCalled.get()).isTrue();
-      assertThat(metricsCredentialsRef.get()).isSameInstanceAs(nonJwtCreds);
+      assertThat(capturedMetricsCredentials).hasSize(1);
+      assertThat(capturedMetricsCredentials.get(0)).isSameInstanceAs(nonJwtCreds);
       assertThat(ctx.getClientContext().getCredentials()).isSameInstanceAs(nonJwtCreds);
     } finally {
       ctx.close();
@@ -194,22 +181,11 @@ class BigtableClientContextTest {
     EnhancedBigtableStubSettings settings =
         baseSettingsBuilder().setCredentialsProvider(NoCredentialsProvider.create()).build();
 
-    AtomicBoolean builtinOtelCalled = new AtomicBoolean(false);
-    AtomicReference<Credentials> metricsCredentialsRef =
-        new AtomicReference<>(mock(Credentials.class, withSettings().withoutAnnotations()));
-    BuiltinOtelFactory capturingFactory =
-        (metricRegistry, clientInfo, defaultCredentials, metricsEndpoint, universeDomain, exec) -> {
-          builtinOtelCalled.set(true);
-          metricsCredentialsRef.set(defaultCredentials);
-          return null;
-        };
-
     BigtableClientContext ctx =
         BigtableClientContext.create(
-            settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingFactory);
+            settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingOtelFactory);
     try {
-      assertThat(builtinOtelCalled.get()).isTrue();
-      assertThat(metricsCredentialsRef.get()).isNull();
+      assertThat(capturedMetricsCredentials).containsExactly((Credentials) null);
       assertThat(ctx.getClientContext().getCredentials()).isNull();
     } finally {
       ctx.close();
@@ -224,22 +200,15 @@ class BigtableClientContextTest {
             .setJwtAudience("not a valid uri")
             .build();
 
-    AtomicBoolean builtinOtelCalled = new AtomicBoolean(false);
-    BuiltinOtelFactory capturingFactory =
-        (metricRegistry, clientInfo, defaultCredentials, metricsEndpoint, universeDomain, exec) -> {
-          builtinOtelCalled.set(true);
-          return null;
-        };
-
     IllegalStateException ex =
         assertThrows(
             IllegalStateException.class,
             () ->
                 BigtableClientContext.create(
-                    settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingFactory));
+                    settings, Tags.getTagger(), Stats.getStatsRecorder(), capturingOtelFactory));
     assertThat(ex).hasMessageThat().contains("invalid JWT audience");
     assertThat(ex).hasCauseThat().isInstanceOf(URISyntaxException.class);
-    assertThat(builtinOtelCalled.get()).isFalse();
+    assertThat(capturedMetricsCredentials).isEmpty();
   }
 
   @SuppressWarnings("deprecation")
@@ -268,10 +237,9 @@ class BigtableClientContextTest {
         .build();
   }
 
-  private static Object extractJwtAudience(Credentials credentials, URI targetUri)
+  private static Object extractJwtAudience(Map<String, List<String>> requestMetadata)
       throws IOException {
-    Map<String, List<String>> metadata = credentials.getRequestMetadata(targetUri);
-    List<String> authHeaders = metadata.get("Authorization");
+    List<String> authHeaders = requestMetadata.get("Authorization");
     assertThat(authHeaders).isNotNull();
     assertThat(authHeaders).hasSize(1);
     String authValue = authHeaders.get(0);
