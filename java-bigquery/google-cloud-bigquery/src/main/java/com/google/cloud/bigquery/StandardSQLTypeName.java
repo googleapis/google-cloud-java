@@ -21,7 +21,7 @@ package com.google.cloud.bigquery;
  * parameters, which requires usage of standard SQL.
  *
  * @see <a
- *     href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types</a>
+ *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types">https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types</a>
  */
 public enum StandardSQLTypeName {
   /** A Boolean value (true or false). */

@@ -102,6 +102,17 @@ To configure these properties, you can use the following keys:
   * Environment Variable: `BIGQUERY_JDBC_TELEMETRY_ENABLED=false`
   * System Property: `-DBIGQUERY_JDBC_TELEMETRY_ENABLED=false`
 
+## Diagnostic logging configuration
+
+Diagnostic logging can be configured per connection via JDBC URL or connection properties (`LogLevel`, `LogPath`), globally via environment variables, or tuned at the JVM level via Java system properties:
+
+* Environment Variables:
+  * `BIGQUERY_JDBC_LOG_LEVEL`: Default log verbosity level (`0` = `OFF` to `7` = `FINEST`, or `8` = `ALL`) when `LogLevel` is not specified on the connection.
+  * `BIGQUERY_JDBC_LOG_PATH`: Default directory path for driver log files when `LogPath` is not specified on the connection.
+* Java System Properties:
+  * `-Dcom.google.cloud.bigquery.jdbc.maxLogFileBytes=<bytes>`: Maximum size in bytes of an active driver `.log` file before rotating onto a `.1.log` backup file (default: `1073741824`, or 1 GiB).
+  * `-Dcom.google.cloud.bigquery.jdbc.allowUrlLogPath=<true|false>`: Controls whether `LogPath` supplied via the JDBC URL or connection `Properties` (and implicit current-working-directory fallback) is honored (default: `true`). When `false`, local log files are written only if `BIGQUERY_JDBC_LOG_PATH` is set in the environment.
+
 ## Developer Guide
 
 ### Prerequisites

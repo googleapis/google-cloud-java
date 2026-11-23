@@ -458,7 +458,9 @@ class ITBigQueryStorageTest {
     assertEquals(1_333, rowCount);
   }
 
-  @Disabled("Flaky test: b/576746567")
+  @Disabled(
+      "Disabled on non-GA v1beta1 to avoid overloading BigQuery Storage CreateReadSession quota"
+          + " across versions; covered on v1 (b/576746567)")
   @Test
   void testColumnSelection() throws IOException {
     TableReference tableReference =
@@ -1088,7 +1090,9 @@ class ITBigQueryStorageTest {
     localClient.close();
   }
 
-  @Disabled("Flaky test: b/575538723")
+  @Disabled(
+      "Disabled on non-GA v1beta1 to avoid overloading BigQuery Storage CreateReadSession quota"
+          + " across versions; covered on v1 (b/575538723)")
   @Test
   void testUniverseDomainWithMatchingDomain() throws IOException {
     // Test a valid domain using the default credentials and Google default universe domain.

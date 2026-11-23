@@ -46,8 +46,8 @@ import java.util.Set;
  * and a value (as {@link com.google.cloud.datastore.Value}), and may be associated with a key. For
  * a list of possible values see {@link ValueType}.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
- *     Entities, Properties, and Keys</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/concepts/entities">Google Cloud
+ *     Datastore Entities, Properties, and Keys</a>
  */
 public abstract class BaseEntity<K extends IncompleteKey> implements Serializable {
 

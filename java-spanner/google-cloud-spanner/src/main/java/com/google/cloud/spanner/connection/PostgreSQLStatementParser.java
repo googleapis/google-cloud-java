@@ -26,13 +26,16 @@ import com.google.cloud.spanner.connection.ClientSideStatementImpl.CompileExcept
 import com.google.common.base.Preconditions;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 import java.util.regex.Pattern;
 
 @InternalApi
 public class PostgreSQLStatementParser extends AbstractStatementParser {
-  private static final Pattern RETURNING_PATTERN = Pattern.compile("returning[ '(\"*]");
-  private static final Pattern AS_RETURNING_PATTERN = Pattern.compile("[ ')\"]as returning[ '(\"]");
+  private static final Pattern RETURNING_PATTERN =
+      Pattern.compile("returning[ '(\"*]", Pattern.CASE_INSENSITIVE);
+  private static final Pattern AS_RETURNING_PATTERN =
+      Pattern.compile("[ ')\"]as returning[ '(\"]", Pattern.CASE_INSENSITIVE);
   private static final String RETURNING_STRING = "returning";
 
   PostgreSQLStatementParser() throws CompileException {
@@ -74,6 +77,11 @@ public class PostgreSQLStatementParser extends AbstractStatementParser {
   @Override
   boolean supportsBackslashEscape() {
     return false;
+  }
+
+  @Override
+  boolean supportsEscapeStringConstants() {
+    return true;
   }
 
   @Override
@@ -120,9 +128,9 @@ public class PostgreSQLStatementParser extends AbstractStatementParser {
     while (index < length) {
       char c = sql.charAt(index);
       if (isInSingleLineComment) {
-        if (c == '\n') {
+        if (c == '\n' || c == '\r') {
           isInSingleLineComment = false;
-          // Include the line feed in the result.
+          // Include the line break in the result.
           res.append(c);
         }
       } else if (multiLineCommentLevel > 0) {
@@ -272,13 +280,13 @@ public class PostgreSQLStatementParser extends AbstractStatementParser {
   @Override
   protected boolean checkReturningClauseInternal(String rawSql) {
     Preconditions.checkNotNull(rawSql);
-    String sql = rawSql.toLowerCase();
     // Do a pre-check to check if the SQL string definitely does not have a returning clause.
     // If this check fails, do a more involved check to check for a returning clause.
-    if (!sql.contains(RETURNING_STRING)) {
+    if (!rawSql.toLowerCase(Locale.ROOT).contains(RETURNING_STRING)) {
       return false;
     }
-    sql = sql.replaceAll("\\s+", " ");
+    // Preserve original casing so dollar-quoted tags remain case-sensitive (e.g. $Tag$ != $tag$).
+    String sql = rawSql.replaceAll("\\s+", " ");
     int index = 0;
     while (index < sql.length()) {
       if (isReturning(sql, index)) {
