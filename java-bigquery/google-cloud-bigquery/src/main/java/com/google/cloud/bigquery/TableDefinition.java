@@ -53,7 +53,7 @@ public abstract class TableDefinition implements Serializable {
      * A virtual table defined by a SQL query. Instances of {@code TableDefinition} for this type
      * are implemented by {@link ViewDefinition}.
      *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/views-intro">Views</a>
      */
     public static final Type VIEW = type.createAndRegister("VIEW");
 
@@ -61,7 +61,8 @@ public abstract class TableDefinition implements Serializable {
      * SQL query whose result is persisted. Instances of {@code MaterializedViewDefinition} for this
      * type are implemented by {@link MaterializedViewDefinition}.
      *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/materialized-views-intro">
+     *     Materialized Views</a>
      */
     public static final Type MATERIALIZED_VIEW = type.createAndRegister("MATERIALIZED_VIEW");
 
@@ -69,17 +70,16 @@ public abstract class TableDefinition implements Serializable {
      * A BigQuery table backed by external data. Instances of {@code TableDefinition} for this type
      * are implemented by {@link ExternalTableDefinition}.
      *
-     * @see <a href="https://cloud.google.com/bigquery/federated-data-sources">Federated Data
-     *     Sources</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/external-data-sources">Federated
+     *     Data Sources</a>
      */
     public static final Type EXTERNAL = type.createAndRegister("EXTERNAL");
 
     /**
      * A BigQuery table representing BigQuery ML Model.
      *
-     * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">
-     *     BigQuery ML Model</a>
+     * @see <a href="https://docs.cloud.google.com/bigquery/docs/bqml-introduction">BigQuery ML
+     *     Model</a>
      */
     public static final Type MODEL = type.createAndRegister("MODEL");
 

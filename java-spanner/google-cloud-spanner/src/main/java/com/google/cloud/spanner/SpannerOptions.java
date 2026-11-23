@@ -116,6 +116,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -135,6 +136,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String SPANNER_SERVICE_NAME = "spanner";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
+  private static final int MAX_DNS_HOSTNAME_LENGTH = 253;
+  private static final Pattern VALID_UNIVERSE_DOMAIN_PATTERN =
+      Pattern.compile(
+          "^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?"
+              + "(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
   public static final String SPANNER_OMNI_PROJECT_ID = "default";
   public static final String DEFAULT_SPANNER_OMNI_INSTANCE_ID = "default";
 
@@ -339,6 +345,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final CallContextConfigurator callContextConfigurator;
   private final CloseableExecutorProvider asyncExecutorProvider;
   private final String compressorName;
+  private final String configuredHost;
   private final String emulatorHost;
   private final boolean leaderAwareRoutingEnabled;
   private final boolean enableDirectAccess;
@@ -934,6 +941,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   protected SpannerOptions(Builder builder) {
+    this(builder, /* clearConfiguredHost= */ false);
+  }
+
+  @VisibleForTesting
+  SpannerOptions(Builder builder, boolean clearConfiguredHost) {
     super(
         SpannerFactory.class,
         SpannerRpcFactory.class,
@@ -1049,6 +1061,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     callContextConfigurator = builder.callContextConfigurator;
     asyncExecutorProvider = builder.asyncExecutorProvider;
     compressorName = builder.compressorName;
+    configuredHost = clearConfiguredHost ? null : builder.host;
     emulatorHost = builder.emulatorHost;
     leaderAwareRoutingEnabled = builder.leaderAwareRoutingEnabled;
     enableDirectAccess = builder.enableDirectAccess;
@@ -1100,9 +1113,29 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     autoTaggingTracerLimit = builder.autoTaggingTracerLimit;
   }
 
+  /**
+   * Validates that a non-empty universe domain is a valid RFC 1123 DNS domain name so it cannot
+   * inject URL components (such as userinfo, port, path, query, or fragment) into constructed
+   * endpoint URLs.
+   */
+  private static void validateUniverseDomain(@Nullable String universeDomain) {
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      return;
+    }
+    Preconditions.checkArgument(
+        SPANNER_SERVICE_NAME.length() + 1 + universeDomain.length() <= MAX_DNS_HOSTNAME_LENGTH
+            && VALID_UNIVERSE_DOMAIN_PATTERN.matcher(universeDomain).matches(),
+        "Invalid universe domain: %s",
+        universeDomain);
+  }
+
   private String getResolvedUniverseDomain() {
     String universeDomain = getUniverseDomain();
-    return Strings.isNullOrEmpty(universeDomain) ? GOOGLE_DEFAULT_UNIVERSE : universeDomain;
+    if (Strings.isNullOrEmpty(universeDomain)) {
+      return GOOGLE_DEFAULT_UNIVERSE;
+    }
+    validateUniverseDomain(universeDomain);
+    return universeDomain;
   }
 
   /** Returns the default {@link RequestOptions.ClientContext} for this {@link SpannerOptions}. */
@@ -1538,7 +1571,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     Builder(SpannerOptions options) {
       super(options);
-      this.host = options.getHost();
+      // Restore only an explicitly configured host (not a materialized default host), so
+      // subsequent setUniverseDomain() calls recompute the default host via getDefaultHost().
+      // Fallback preserves a custom host on options deserialized from older versions where
+      // configuredHost was not present.
+      this.host =
+          options.configuredHost != null
+              ? options.configuredHost
+              : (options.instanceType == InstanceType.OMNI
+                      || (options.emulatorHost == null
+                          && !Objects.equals(options.getHost(), options.getDefaultHost()))
+                  ? options.getHost()
+                  : null);
+      super.setHost(this.host);
       this.emulatorHost = options.emulatorHost;
       this.numChannels = options.numChannels;
       this.transportChannelExecutorThreadNameFormat =
@@ -2595,18 +2640,25 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @SuppressWarnings("rawtypes")
     @Override
     public SpannerOptions build() {
-      // Set the host of emulator has been set.
+      return build(/* clearConfiguredHost= */ false);
+    }
+
+    @SuppressWarnings("rawtypes")
+    @VisibleForTesting
+    SpannerOptions build(boolean clearConfiguredHost) {
+      // Set the host if emulator has been set.
       if (emulatorHost != null && this.instanceType != InstanceType.OMNI) {
         if (!emulatorHost.startsWith("http")) {
           emulatorHost = "http://" + emulatorHost;
         }
-        this.host = emulatorHost;
-        super.setHost(this.host);
+        super.setHost(emulatorHost);
         // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
         // needing certificates.
         this.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
         // As we are using plain text, we should never send any credentials.
         this.setCredentials(NoCredentials.getInstance());
+      } else {
+        super.setHost(this.host);
       }
       if (this.numChannels == null) {
         this.numChannels =
@@ -2618,7 +2670,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           activeTracingFramework = TracingFramework.OPEN_CENSUS;
         }
       }
-      return new SpannerOptions(this);
+      return new SpannerOptions(this, clearConfiguredHost);
     }
   }
 
@@ -3255,11 +3307,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   @Override
   protected String getDefaultHost() {
-    String universeDomain = getUniverseDomain();
-    if (Strings.isNullOrEmpty(universeDomain)) {
-      universeDomain = GOOGLE_DEFAULT_UNIVERSE;
-    }
-    return String.format("https://%s.%s", SPANNER_SERVICE_NAME, universeDomain);
+    return String.format("https://%s.%s", SPANNER_SERVICE_NAME, getResolvedUniverseDomain());
   }
 
   private static class SpannerDefaults implements ServiceDefaults<Spanner, SpannerOptions> {

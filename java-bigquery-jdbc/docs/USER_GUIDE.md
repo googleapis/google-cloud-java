@@ -684,6 +684,12 @@ Logging can also be configured globally across all driver connections using envi
 | **`BIGQUERY_JDBC_LOG_LEVEL`** | `LogLevel` | Global default log verbosity level (`0`–`7` or `OFF`–`FINEST`). Overridden by `LogLevel` URL parameter. | `export BIGQUERY_JDBC_LOG_LEVEL=5` |
 | **`BIGQUERY_JDBC_LOG_PATH`** | `LogPath` | Global output directory for driver log files. Overridden by `LogPath` URL parameter. | `export BIGQUERY_JDBC_LOG_PATH=/var/log/bigquery-jdbc` |
 
+#### JVM System Properties for Logging:
+
+| System Property | Default Value | Description | Example |
+| :--- | :---: | :--- | :--- |
+| **`com.google.cloud.bigquery.jdbc.maxLogFileBytes`** | `1073741824` (1 GiB) | Maximum size (in bytes) of an active `.log` file before rotating onto a `.1.log` backup file. | `-Dcom.google.cloud.bigquery.jdbc.maxLogFileBytes=536870912` |
+
 #### Log Level Reference:
 
 | Integer Value | String Constant | `java.util.logging` Level | Description |
