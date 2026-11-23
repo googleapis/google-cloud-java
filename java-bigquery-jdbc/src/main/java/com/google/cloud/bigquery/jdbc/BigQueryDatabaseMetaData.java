@@ -1559,7 +1559,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       validateCatalogIdentifier(project);
       String formattedSql = replaceSqlParameters(getGraphTablesSqlContent(), project, scope);
 
-      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
+      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql, true)) {
         statement.setString(1, effectiveSchemaPattern == null ? "%" : effectiveSchemaPattern);
         statement.setString(2, effectiveTablePattern);
 
@@ -1855,7 +1855,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
 
       String formattedSql = replaceSqlParameters(getGraphColumnsSqlContent(), project, scope);
-      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
+      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql, true)) {
         statement.setString(1, effectiveSchemaLike);
         statement.setString(2, effectiveTableLike);
         statement.setString(3, effectiveColumnLike);
@@ -2447,7 +2447,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       validateCatalogIdentifier(project);
       String formattedSql = replaceSqlParameters(getGraphPrimaryKeysSqlContent(), project, scope);
 
-      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
+      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql, true)) {
         statement.setString(1, table); // exact "<graph>.<element>"
         try (ResultSet rs = statement.executeQuery()) {
           while (rs.next()) {
@@ -2609,17 +2609,24 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     validateCatalogIdentifier(catalog);
     validateSchemaIdentifier(schema);
     String sql = getExportedKeysSqlContent();
-    String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-    PreparedStatement stmt = this.connection.prepareStatement(formattedSql);
+    String formattedSql = replaceSqlParameters(sql, catalog, schema);
+    PreparedStatement stmt = this.connection.prepareStatement(formattedSql, true);
     if (stmt == null) {
       throw new BigQueryJdbcException("Failed to prepare statement for getExportedKeys");
     }
+    boolean succeeded = false;
     try {
       stmt.closeOnCompletion();
-      return stmt.executeQuery();
+      stmt.setString(1, table);
+      ResultSet rs = stmt.executeQuery();
+      succeeded = true;
+      return rs;
     } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getExportedKeys", e);
+    } finally {
+      if (!succeeded) {
+        closeStatementIgnoreException(stmt);
+      }
     }
   }
 
@@ -5304,8 +5311,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  String replaceSqlParameters(String sql, String... params) throws SQLException {
-    return String.format(sql, (Object[]) params);
+  static String replaceSqlParameters(String sql, String catalog, String scope) {
+    return String.format(sql, catalog, scope);
   }
 
   private void closeStatementIgnoreException(Statement stmt) {

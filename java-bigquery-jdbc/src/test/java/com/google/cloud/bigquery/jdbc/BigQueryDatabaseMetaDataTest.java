@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
@@ -63,6 +64,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.ArgumentCaptor;
+import org.mockito.InOrder;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BigQueryDatabaseMetaDataTest {
@@ -3626,17 +3629,137 @@ public class BigQueryDatabaseMetaDataTest {
     }
   }
 
-  @Test
-  public void testGetExportedKeys_infoSchema() throws SQLException {
+  private void assertExportedKeysPreparedQuery(String catalog, String schema, String table)
+      throws SQLException {
     PreparedStatement mockStmt = mock(PreparedStatement.class);
     ResultSet mockRs = mock(ResultSet.class);
-    when(bigQueryConnection.prepareStatement(anyString())).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenReturn(mockRs);
 
-    ResultSet rs = dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table");
-    assertEquals(mockRs, rs);
-    verify(mockStmt).closeOnCompletion();
-    verify(mockStmt).executeQuery();
+    ResultSet rs = dbMetadata.getExportedKeys(catalog, schema, table);
+    assertSame(mockRs, rs);
+
+    ArgumentCaptor<String> sqlCaptor = ArgumentCaptor.forClass(String.class);
+    verify(bigQueryConnection).prepareStatement(sqlCaptor.capture(), eq(true));
+    String preparedSql = sqlCaptor.getValue();
+    assertThat(preparedSql)
+        .contains(String.format("`%s.%s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE`", catalog, schema));
+    assertThat(preparedSql)
+        .contains(
+            String.format("`%s.%s.INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE`", catalog, schema));
+    assertThat(preparedSql)
+        .contains(String.format("`%s.%s.INFORMATION_SCHEMA.TABLE_CONSTRAINTS`", catalog, schema));
+    assertThat(preparedSql).contains("WHERE CASE WHEN pk.table_name = ? THEN 1 ELSE 0 END = 1");
+    assertEquals(1L, preparedSql.chars().filter(ch -> ch == '?').count());
+    assertThat(preparedSql).doesNotContain(table);
+
+    InOrder inOrder = inOrder(mockStmt);
+    inOrder.verify(mockStmt).closeOnCompletion();
+    inOrder.verify(mockStmt).setString(1, table);
+    inOrder.verify(mockStmt).executeQuery();
+    verify(mockStmt, never()).close();
+  }
+
+  static Stream<Arguments> exportedKeysFlexibleTableAndCatalogProvider() {
+    return Stream.of(
+        Arguments.of("tpczero-system:bigquery-drivers", "_dataset_1", "my-table 01"),
+        Arguments.of("domain.com:project-1", "dataset_p", "00_お客様"));
+  }
+
+  @Test
+  public void testGetExportedKeys_infoSchema() throws SQLException {
+    assertExportedKeysPreparedQuery("test-project", "dataset_p", "ref_table");
+  }
+
+  @ParameterizedTest
+  @MethodSource("exportedKeysFlexibleTableAndCatalogProvider")
+  public void testGetExportedKeys_flexibleTableNamesAndPrefixedCatalog(
+      String catalog, String schema, String table) throws SQLException {
+    assertExportedKeysPreparedQuery(catalog, schema, table);
+  }
+
+  @Test
+  public void testGetPrimaryKeys_graphTableSkipsPreparedStatementDryRun() throws SQLException {
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    ResultSet mockRs = mock(ResultSet.class);
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenReturn(mockRs);
+    when(mockRs.next()).thenReturn(false);
+
+    try (ResultSet rs =
+        dbMetadata.getPrimaryKeys("test-project", "dataset_p", "RetailGraph.Product")) {
+      assertFalse(rs.next());
+    }
+    verify(bigQueryConnection).prepareStatement(anyString(), eq(true));
+    verify(mockStmt).setString(1, "RetailGraph.Product");
+  }
+
+  @Test
+  public void testGetExportedKeys_closesStatementWhenBindingFails() throws SQLException {
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    SQLException bindFailure = new SQLException("parameter failure");
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    doThrow(bindFailure).when(mockStmt).setString(1, "ref_table");
+
+    BigQueryJdbcException ex =
+        assertThrows(
+            BigQueryJdbcException.class,
+            () -> dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table"));
+    assertSame(bindFailure, ex.getCause());
+    verify(mockStmt, never()).executeQuery();
+    verify(mockStmt).close();
+  }
+
+  @Test
+  public void testGetExportedKeys_closesStatementWhenExecutionFails() throws SQLException {
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    SQLException execFailure = new SQLException("query failure");
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenThrow(execFailure);
+
+    BigQueryJdbcException ex =
+        assertThrows(
+            BigQueryJdbcException.class,
+            () -> dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table"));
+    assertSame(execFailure, ex.getCause());
+    verify(mockStmt).close();
+  }
+
+  @Test
+  public void testGetExportedKeys_closesStatementOnUncheckedException() throws SQLException {
+    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    IllegalStateException unexpected = new IllegalStateException("unexpected state");
+    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(mockStmt.executeQuery()).thenThrow(unexpected);
+
+    IllegalStateException ex =
+        assertThrows(
+            IllegalStateException.class,
+            () -> dbMetadata.getExportedKeys("test-project", "dataset_p", "ref_table"));
+    assertSame(unexpected, ex);
+    verify(mockStmt).close();
+  }
+
+  @Test
+  public void testGetExportedKeys_invalidIdentifiersThrowException() throws SQLException {
+    List<String> invalidCatalogs =
+        Arrays.asList("bad`project", "bad'project", "bad project", "-leading-hyphen", "proj\nname");
+    for (String invalidCatalog : invalidCatalogs) {
+      assertThrows(
+          BigQueryJdbcException.class,
+          () -> dbMetadata.getExportedKeys(invalidCatalog, "dataset_p", "ref_table"));
+    }
+
+    List<String> invalidSchemas =
+        Arrays.asList("bad`schema", "bad'schema", "bad schema", "region-us", "schema\nname");
+    for (String invalidSchema : invalidSchemas) {
+      assertThrows(
+          BigQueryJdbcException.class,
+          () -> dbMetadata.getExportedKeys("test-project", invalidSchema, "ref_table"));
+    }
+
+    verify(bigQueryConnection, never()).prepareStatement(anyString(), anyBoolean());
   }
 
   @Test
@@ -4015,27 +4138,27 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGraphTablesSqlContent() throws SQLException {
+  public void testGraphTablesSqlContent() {
     String datasetSql =
-        dbMetadata.replaceSqlParameters(
+        BigQueryDatabaseMetaData.replaceSqlParameters(
             BigQueryDatabaseMetaData.getGraphTablesSqlContent(), "my-project", "my_dataset");
     assertThat(datasetSql).contains("`my-project.my_dataset.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
 
     String regionSql =
-        dbMetadata.replaceSqlParameters(
+        BigQueryDatabaseMetaData.replaceSqlParameters(
             BigQueryDatabaseMetaData.getGraphTablesSqlContent(), "my-project", "region-us");
     assertThat(regionSql).contains("`my-project.region-us.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
   }
 
   @Test
-  public void testGraphPrimaryKeysSqlContent() throws SQLException {
+  public void testGraphPrimaryKeysSqlContent() {
     String datasetSql =
-        dbMetadata.replaceSqlParameters(
+        BigQueryDatabaseMetaData.replaceSqlParameters(
             BigQueryDatabaseMetaData.getGraphPrimaryKeysSqlContent(), "my-project", "my_dataset");
     assertThat(datasetSql).contains("`my-project.my_dataset.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
 
     String regionSql =
-        dbMetadata.replaceSqlParameters(
+        BigQueryDatabaseMetaData.replaceSqlParameters(
             BigQueryDatabaseMetaData.getGraphPrimaryKeysSqlContent(), "my-project", "region-us");
     assertThat(regionSql).contains("`my-project.region-us.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
 
