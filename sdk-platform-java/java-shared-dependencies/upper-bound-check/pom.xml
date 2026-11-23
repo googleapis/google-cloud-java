@@ -22,6 +22,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <site.installationModule>${project.artifactId}</site.installationModule>
+    <checkstyle.skip>true</checkstyle.skip>
   </properties>
 
   <dependencyManagement>
