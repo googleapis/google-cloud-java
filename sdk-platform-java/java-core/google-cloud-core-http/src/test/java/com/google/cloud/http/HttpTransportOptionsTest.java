@@ -45,7 +45,11 @@ import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.http.HttpTransportOptions.DefaultHttpTransportFactory;
 import com.google.cloud.spi.ServiceRpcFactory;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -341,5 +345,20 @@ class HttpTransportOptionsTest {
     public int hashCode() {
       return baseHashCode();
     }
+  }
+
+  @Test
+  void testSerializationRoundTrip() throws Exception {
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(DEFAULT_OPTIONS);
+    }
+    HttpTransportOptions deserialized;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserialized = (HttpTransportOptions) ois.readObject();
+    }
+    assertEquals(DEFAULT_OPTIONS, deserialized);
+    assertTrue(deserialized.getHttpTransportFactory() instanceof DefaultHttpTransportFactory);
   }
 }

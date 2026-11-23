@@ -783,16 +783,22 @@ public abstract class ServiceOptions<
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    serviceFactory = newInstance(serviceFactoryClassName);
-    serviceRpcFactory = newInstance(serviceRpcFactoryClassName);
+    serviceFactory = newInstance(serviceFactoryClassName, ServiceFactory.class);
+    serviceRpcFactory = newInstance(serviceRpcFactoryClassName, ServiceRpcFactory.class);
   }
 
   @SuppressWarnings("unchecked")
   @InternalApi
-  public static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
+  public static <T> T newInstance(String className, Class<?> expected)
+      throws IOException, ClassNotFoundException {
+    // Avoid running static initializers before verifying the class type.
+    Class<?> clazz = Class.forName(className, false, ServiceOptions.class.getClassLoader());
+    if (!expected.isAssignableFrom(clazz)) {
+      throw new IOException("Class " + className + " is not assignable to " + expected.getName());
+    }
     try {
-      return (T) Class.forName(className).newInstance();
-    } catch (InstantiationException | IllegalAccessException e) {
+      return (T) clazz.getDeclaredConstructor().newInstance();
+    } catch (ReflectiveOperationException e) {
       throw new IOException(e);
     }
   }
