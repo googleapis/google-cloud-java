@@ -29,7 +29,7 @@ import java.util.Objects;
 /**
  * A Google BigQuery ML Model.
  *
- * <p>Objects of this class are immutable. Operations that modify the table like {@link #update}
+ * <p>Objects of this class are immutable. Operations that modify the model like {@link #update}
  * return a new object. To get a {@code Model} object with the most recent information use {@link
  * #reload}.
  */
@@ -152,7 +152,7 @@ public class Model extends ModelInfo {
   /**
    * Check if this model exists.
    *
-   * @return {@code true} if this table exists, {@code false} otherwise
+   * @return {@code true} if this model exists, {@code false} otherwise
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
@@ -175,7 +175,7 @@ public class Model extends ModelInfo {
    * Updates the model's information with this model's information. Dataset and model identifiers
    * cannot be updated. A new {@code Model} object is returned.
    *
-   * @param options dataset options
+   * @param options model options
    * @return a {@code Model} object with updated information
    * @throws BigQueryException upon failure
    */

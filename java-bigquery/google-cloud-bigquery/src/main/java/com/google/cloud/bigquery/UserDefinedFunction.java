@@ -28,8 +28,8 @@ import java.util.Objects;
  * and produces zero or more rows as output. The output can potentially have a different schema than
  * the input.
  *
- * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
- *     </a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/user-defined-functions">User-Defined
+ *     Functions </a>
  */
 public abstract class UserDefinedFunction implements Serializable {
 

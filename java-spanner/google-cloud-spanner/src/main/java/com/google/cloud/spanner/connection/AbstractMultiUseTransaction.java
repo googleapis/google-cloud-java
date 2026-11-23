@@ -174,6 +174,11 @@ abstract class AbstractMultiUseTransaction extends AbstractBaseUnitOfWork {
     return ImmutableList.copyOf(savepoints);
   }
 
+  /** Clears all in-memory savepoints recorded during the current transaction attempt. */
+  void clearSavepoints() {
+    savepoints.clear();
+  }
+
   @Override
   public void savepoint(@Nonnull String name, @Nonnull Dialect dialect) {
     if (dialect != Dialect.POSTGRESQL) {

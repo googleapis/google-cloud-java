@@ -267,12 +267,6 @@ If the service is not listed, [google-api-java-client][google-api-java-client-se
 
 *When building Java applications, preference should be given to the libraries listed in the table.*
 
-## Testing
-
-This library provides tools to help write tests for code that uses google-cloud services.
-
-See [TESTING] to read more about using our testing helpers.
-
 ## Versioning
 
 This library follows [Semantic Versioning](http://semver.org/), with some
@@ -345,7 +339,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
 [code-of-conduct]:https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
-[TESTING]: https://github.com/googleapis/google-cloud-java/blob/main/TESTING.md
 [cloud-platform]: https://cloud.google.com/
 [cloud-platform-docs]: https://cloud.google.com/docs/
 [client-lib-docs]: https://cloud.google.com/java/docs/reference

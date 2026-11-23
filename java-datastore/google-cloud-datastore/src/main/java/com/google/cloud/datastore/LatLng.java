@@ -25,8 +25,8 @@ import java.util.Objects;
  * A Google Cloud Datastore LatLng (represented by latitude and longitude in degrees). This class is
  * immutable.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
- *     Entities, Properties, and Keys</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/concepts/entities">Google Cloud
+ *     Datastore Entities, Properties, and Keys</a>
  */
 public final class LatLng implements Serializable {
 

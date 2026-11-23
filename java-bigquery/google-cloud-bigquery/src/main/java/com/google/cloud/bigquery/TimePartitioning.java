@@ -29,7 +29,8 @@ import javax.annotation.Nullable;
  * table into smaller partitions, you can improve query performance and reduce the number of bytes
  * billed by restricting the amount of data scanned.
  *
- * @see <a href="https://cloud.google.com/bigquery/docs/partitioned-tables">Partitioned Tables</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/partitioned-tables">Partitioned
+ *     Tables</a>
  */
 @AutoValue
 public abstract class TimePartitioning implements Serializable {

@@ -64,8 +64,8 @@ import java.util.Set;
  * }
  * }</pre>
  *
- * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore
- *     queries</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/aggregation-queries">Datastore
+ *     aggregation queries</a>
  */
 public class AggregationQuery extends Query<AggregationResults> {
 

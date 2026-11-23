@@ -146,7 +146,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      * Sets the exported file format. If not set table is exported in CSV format.
      *
      * <p><a
-     * href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.extract.destinationFormat">
+     * href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationExtract.FIELDS.destination_format">
      * Destination Format</a>
      */
     public Builder setFormat(String format) {
@@ -159,7 +159,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      * compressed.
      *
      * <p><a
-     * href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.extract.compression">
+     * href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationExtract.FIELDS.compression">
      * Compression</a>
      */
     public Builder setCompression(String compression) {
@@ -252,7 +252,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    * be written.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/exporting-data-from-bigquery#exportingmultiple">
+   *     href="https://docs.cloud.google.com/bigquery/docs/exporting-data#exporting_data_into_one_or_more_files">
    *     Exporting Data Into One or More Files</a>
    */
   public List<String> getDestinationUris() {
