@@ -25,6 +25,7 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.Context;
@@ -44,8 +45,11 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiFunction;
 import java.util.function.BooleanSupplier;
 import java.util.logging.Level;
@@ -71,8 +75,10 @@ final class BuiltInTracingProvider {
   private static final AttributeKey<String> SERVICE_NAME_KEY =
       AttributeKey.stringKey("service.name");
   private static final String OTEL_SERVICE_NAME = "OTEL_SERVICE_NAME";
+  private static final AtomicBoolean credentialsWarningLogged = new AtomicBoolean();
 
   private final Map<List<Object>, OpenTelemetrySdk> openTelemetries = new HashMap<>();
+  private final Set<List<Object>> failedKeys = new HashSet<>();
   private BiFunction<String, Credentials, SpanExporter> spanExporterFactory =
       BuiltInTracingProvider::createTelemetryApiExporter;
   private BooleanSupplier contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
@@ -80,6 +86,8 @@ final class BuiltInTracingProvider {
   private Thread shutdownHook;
   private boolean openCensusWarningLogged;
   private boolean customTracingInfoLogged;
+  private boolean notUsedInfoLogged;
+  private boolean invalidSamplingRateWarningLogged;
 
   private BuiltInTracingProvider() {}
 
@@ -90,6 +98,9 @@ final class BuiltInTracingProvider {
       return null;
     }
     List<Object> key = ImmutableList.of(projectId, samplingRate);
+    if (failedKeys.contains(key)) {
+      return null;
+    }
     OpenTelemetrySdk openTelemetry = openTelemetries.get(key);
     if (openTelemetry == null) {
       try {
@@ -97,17 +108,24 @@ final class BuiltInTracingProvider {
             createOpenTelemetry(
                 projectId, spanExporterFactory.apply(projectId, credentials), samplingRate);
       } catch (Throwable throwable) {
+        failedKeys.add(key);
         logger.log(
             Level.WARNING,
             "Unable to create the exporter for built-in tracing, built-in tracing is disabled",
             throwable);
         return null;
       }
-      openTelemetries.put(key, openTelemetry);
       if (shutdownHook == null) {
-        shutdownHook = new Thread(this::shutdown);
-        Runtime.getRuntime().addShutdownHook(shutdownHook);
+        Thread hook = new Thread(this::shutdown);
+        try {
+          Runtime.getRuntime().addShutdownHook(hook);
+        } catch (IllegalStateException exception) {
+          openTelemetry.close();
+          return null;
+        }
+        shutdownHook = hook;
       }
+      openTelemetries.put(key, openTelemetry);
     }
     return openTelemetry;
   }
@@ -169,10 +187,34 @@ final class BuiltInTracingProvider {
       openCensusWarningLogged = true;
       logger.log(
           Level.WARNING,
-          "Built-in tracing is enabled, but this application uses OpenCensus tracing. Built-in"
-              + " tracing requires OpenTelemetry and is not used. Call"
+          "Built-in tracing is enabled, but OpenCensus is the tracing framework of this"
+              + " application, because SpannerOptions.enableOpenCensusTraces() was called or a"
+              + " Spanner client without built-in tracing was created first. Built-in tracing"
+              + " requires OpenTelemetry and is not used. Call"
               + " SpannerOptions.enableOpenTelemetryTraces() before creating any Spanner client to"
               + " use built-in tracing.");
+    }
+  }
+
+  synchronized void logNotUsedOnce(String reason) {
+    if (!notUsedInfoLogged) {
+      notUsedInfoLogged = true;
+      logger.log(
+          Level.INFO, "Built-in tracing is enabled, but it is not used with " + reason + ".");
+    }
+  }
+
+  synchronized void logInvalidSamplingRateOnce(String value) {
+    if (!invalidSamplingRateWarningLogged) {
+      invalidSamplingRateWarningLogged = true;
+      logger.log(
+          Level.WARNING,
+          "The value of OTEL_TRACES_SAMPLER_ARG ("
+              + value
+              + ") is not a number between 0.0 and 1.0, so built-in tracing uses a sampling rate"
+              + " of "
+              + SpannerOptions.DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE
+              + ".");
     }
   }
 
@@ -210,11 +252,22 @@ final class BuiltInTracingProvider {
   synchronized void reset() {
     shutdown();
     openTelemetries.clear();
+    failedKeys.clear();
+    if (shutdownHook != null) {
+      try {
+        Runtime.getRuntime().removeShutdownHook(shutdownHook);
+      } catch (IllegalStateException ignore) {
+      }
+      shutdownHook = null;
+    }
     spanExporterFactory = BuiltInTracingProvider::createTelemetryApiExporter;
     contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
     contextCanHoldSpans = null;
     openCensusWarningLogged = false;
     customTracingInfoLogged = false;
+    notUsedInfoLogged = false;
+    invalidSamplingRateWarningLogged = false;
+    credentialsWarningLogged.set(false);
   }
 
   private synchronized void shutdown() {
@@ -248,14 +301,20 @@ final class BuiltInTracingProvider {
 
   private static SpanExporter createTelemetryApiExporter(
       String projectId, Credentials credentials) {
+    return createOtlpExporter(TELEMETRY_API_ENDPOINT, credentials);
+  }
+
+  @VisibleForTesting
+  static SpanExporter createOtlpExporter(String endpoint, Credentials credentials) {
     Credentials scopedCredentials =
         credentials instanceof GoogleCredentials
                 && ((GoogleCredentials) credentials).createScopedRequired()
             ? ((GoogleCredentials) credentials).createScoped(CLOUD_PLATFORM_SCOPE)
             : credentials;
     return OtlpGrpcSpanExporter.builder()
-        .setEndpoint(TELEMETRY_API_ENDPOINT)
+        .setEndpoint(endpoint)
         .setHeaders(() -> getRequestHeaders(scopedCredentials))
+        .setMeterProvider(MeterProvider.noop())
         .build();
   }
 
@@ -269,9 +328,12 @@ final class BuiltInTracingProvider {
           headers.put(header.getKey(), header.getValue().get(0));
         }
       }
+      credentialsWarningLogged.set(false);
       return headers;
     } catch (IOException exception) {
-      logger.log(Level.WARNING, "Unable to get credentials for built-in tracing", exception);
+      if (credentialsWarningLogged.compareAndSet(false, true)) {
+        logger.log(Level.WARNING, "Unable to get credentials for built-in tracing", exception);
+      }
       return Collections.emptyMap();
     }
   }

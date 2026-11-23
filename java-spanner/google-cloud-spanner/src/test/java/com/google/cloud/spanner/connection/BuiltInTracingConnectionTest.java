@@ -16,7 +16,7 @@
 
 package com.google.cloud.spanner.connection;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
@@ -82,7 +82,7 @@ public class BuiltInTracingConnectionTest extends AbstractMockServerTest {
         spanExporter.getFinishedSpanItems().stream()
             .map(SpanData::getName)
             .collect(Collectors.toList());
-    assertThat(spanNames).contains("CloudSpanner.SingleUseTransaction");
-    assertThat(spanNames).contains("CloudSpannerOperation.ExecuteStreamingQuery");
+    assertTrue(spanNames.contains("CloudSpanner.SingleUseTransaction"));
+    assertTrue(spanNames.contains("CloudSpannerOperation.ExecuteStreamingQuery"));
   }
 }

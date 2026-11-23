@@ -18,9 +18,16 @@ package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.MockSpannerTestUtil.SELECT1;
 import static com.google.cloud.spanner.MockSpannerTestUtil.SELECT1_RESULTSET;
-import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 
+import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.cloud.NoCredentials;
@@ -47,11 +54,23 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import io.opentelemetry.sdk.trace.export.SpanExporter;
+import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -155,32 +174,34 @@ public class BuiltInTracingTest {
   public void builtInTracingIsDisabledByDefault() {
     SpannerOptions options = createOptionsBuilder().build();
 
-    assertThat(options.isEnableBuiltInTracing()).isFalse();
-    assertThat(options.getBuiltInTracingSamplingRate()).isEqualTo(0.1);
-    assertThat(options.isEndToEndTracingEnabled()).isFalse();
-    assertThat(options.getTracingOpenTelemetry().getTracerProvider())
-        .isSameInstanceAs(TracerProvider.noop());
+    assertFalse(options.isEnableBuiltInTracing());
+    assertEquals(0.1, options.getBuiltInTracingSamplingRate(), 0.0);
+    assertFalse(options.isEndToEndTracingEnabled());
+    assertSame(TracerProvider.noop(), options.getTracingOpenTelemetry().getTracerProvider());
   }
 
   @Test
   public void builtInTracingIsConfiguredFromTheEnvironment() {
-    SpannerOptions.useEnvironment(
-        new SpannerOptions.SpannerEnvironment() {
-          @Override
-          public boolean isEnableBuiltInTracing() {
-            return true;
-          }
-
-          @Override
-          public double getBuiltInTracingSamplingRate() {
-            return 0.5;
-          }
-        });
+    useBuiltInTracingEnvironment();
 
     SpannerOptions options = createOptionsBuilder().build();
 
-    assertThat(options.isEnableBuiltInTracing()).isTrue();
-    assertThat(options.getBuiltInTracingSamplingRate()).isEqualTo(0.5);
+    assertTrue(options.isEnableBuiltInTracing());
+    assertEquals(0.5, options.getBuiltInTracingSamplingRate(), 0.0);
+  }
+
+  @Test
+  public void builderSettingsWinOverTheEnvironment() {
+    useBuiltInTracingEnvironment();
+
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(false)
+            .setBuiltInTracingSamplingRate(0.2)
+            .build();
+
+    assertFalse(options.isEnableBuiltInTracing());
+    assertEquals(0.2, options.getBuiltInTracingSamplingRate(), 0.0);
   }
 
   @Test
@@ -194,13 +215,25 @@ public class BuiltInTracingTest {
   }
 
   @Test
+  public void samplingRateOfTheEnvironmentIsParsed() {
+    assertEquals(0.25, SpannerOptions.parseBuiltInTracingSamplingRate("0.25"), 0.0);
+    assertEquals(0.0, SpannerOptions.parseBuiltInTracingSamplingRate("0"), 0.0);
+    assertEquals(1.0, SpannerOptions.parseBuiltInTracingSamplingRate("1"), 0.0);
+    assertNull(SpannerOptions.parseBuiltInTracingSamplingRate(null));
+    assertNull(SpannerOptions.parseBuiltInTracingSamplingRate(""));
+    assertNull(SpannerOptions.parseBuiltInTracingSamplingRate("abc"));
+    assertNull(SpannerOptions.parseBuiltInTracingSamplingRate("-0.1"));
+    assertNull(SpannerOptions.parseBuiltInTracingSamplingRate("1.5"));
+  }
+
+  @Test
   public void builtInTracingSendsTheTraceOfTheRequestToSpanner() {
     SpannerOptions options =
         createOptionsBuilder()
             .setEnableBuiltInTracing(true)
             .setBuiltInTracingSamplingRate(1.0)
             .build();
-    assertThat(options.isEndToEndTracingEnabled()).isTrue();
+    assertTrue(options.isEndToEndTracingEnabled());
 
     try (Spanner spanner = options.getService()) {
       DatabaseClient client =
@@ -215,37 +248,88 @@ public class BuiltInTracingTest {
         .join(10, TimeUnit.SECONDS);
 
     Metadata headers = lastExecuteSqlHeaders.get();
-    assertThat(headers).isNotNull();
-    assertThat(headers.get(END_TO_END_TRACING_KEY)).isEqualTo("true");
+    assertNotNull(headers);
+    assertEquals("true", headers.get(END_TO_END_TRACING_KEY));
     String traceParent = headers.get(TRACE_PARENT_KEY);
-    assertThat(traceParent).isNotNull();
+    assertNotNull(traceParent);
     String[] traceParentParts = traceParent.split("-");
-    assertThat(Integer.parseInt(traceParentParts[3], 16) & 1).isEqualTo(1);
-    List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertThat(spans).isNotEmpty();
-    assertThat(spans.stream().map(SpanData::getTraceId)).contains(traceParentParts[1]);
-    assertThat(spans.get(0).getResource().getAttribute(AttributeKey.stringKey("gcp.project_id")))
-        .isEqualTo("test-project");
+    assertEquals(1, Integer.parseInt(traceParentParts[3], 16) & 1);
+    Optional<SpanData> querySpan =
+        spanExporter.getFinishedSpanItems().stream()
+            .filter(span -> span.getName().equals("CloudSpannerOperation.ExecuteStreamingQuery"))
+            .findFirst();
+    assertTrue(querySpan.isPresent());
+    assertEquals(traceParentParts[1], querySpan.get().getTraceId());
+    assertEquals(traceParentParts[2], querySpan.get().getSpanId());
+    assertEquals(
+        "test-project",
+        querySpan.get().getResource().getAttribute(AttributeKey.stringKey("gcp.project_id")));
   }
 
   @Test
   public void resourceUsesTheServiceNameWhenSet() {
     Resource resource = BuiltInTracingProvider.createResource("test-project", "my-service");
 
-    assertThat(resource.getAttribute(AttributeKey.stringKey("gcp.project_id")))
-        .isEqualTo("test-project");
-    assertThat(resource.getAttribute(AttributeKey.stringKey("service.name")))
-        .isEqualTo("my-service");
-    assertThat(
-            BuiltInTracingProvider.createResource("test-project", null)
-                .getAttribute(AttributeKey.stringKey("service.name")))
-        .isEqualTo(Resource.getDefault().getAttribute(AttributeKey.stringKey("service.name")));
+    assertEquals("test-project", resource.getAttribute(AttributeKey.stringKey("gcp.project_id")));
+    assertEquals("my-service", resource.getAttribute(AttributeKey.stringKey("service.name")));
+    assertEquals(
+        Resource.getDefault().getAttribute(AttributeKey.stringKey("service.name")),
+        BuiltInTracingProvider.createResource("test-project", null)
+            .getAttribute(AttributeKey.stringKey("service.name")));
   }
 
   @Test
   public void requestHeadersContainTheCredentials() {
-    assertThat(BuiltInTracingProvider.getRequestHeaders(CREDENTIALS))
-        .containsEntry("Authorization", "Bearer token");
+    assertEquals(
+        "Bearer token", BuiltInTracingProvider.getRequestHeaders(CREDENTIALS).get("Authorization"));
+  }
+
+  @Test
+  public void credentialsWarningIsLoggedOnceUntilCredentialsWorkAgain() throws IOException {
+    AtomicBoolean failing = new AtomicBoolean(true);
+    Credentials credentials =
+        new OAuth2Credentials() {
+          @Override
+          public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+            if (failing.get()) {
+              throw new IOException("test");
+            }
+            return CREDENTIALS.getRequestMetadata(uri);
+          }
+        };
+    List<LogRecord> warnings = new ArrayList<>();
+    Handler handler =
+        new Handler() {
+          @Override
+          public void publish(LogRecord record) {
+            if (record.getLevel() == Level.WARNING) {
+              warnings.add(record);
+            }
+          }
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public void close() {}
+        };
+    Logger logger = Logger.getLogger(BuiltInTracingProvider.class.getName());
+    logger.addHandler(handler);
+    try {
+      BuiltInTracingProvider.getRequestHeaders(credentials);
+      BuiltInTracingProvider.getRequestHeaders(credentials);
+      assertEquals(1, warnings.size());
+
+      failing.set(false);
+      assertEquals(
+          "Bearer token",
+          BuiltInTracingProvider.getRequestHeaders(credentials).get("Authorization"));
+      failing.set(true);
+      BuiltInTracingProvider.getRequestHeaders(credentials);
+      assertEquals(2, warnings.size());
+    } finally {
+      logger.removeHandler(handler);
+    }
   }
 
   @Test
@@ -257,10 +341,50 @@ public class BuiltInTracingTest {
 
     OpenTelemetry openTelemetry = options.getTracingOpenTelemetry();
 
-    assertThat(openTelemetry).isInstanceOf(OpenTelemetrySdk.class);
-    assertThat(sameProject.getTracingOpenTelemetry()).isSameInstanceAs(openTelemetry);
-    assertThat(otherProject.getTracingOpenTelemetry()).isNotSameInstanceAs(openTelemetry);
-    assertThat(options.getOpenTelemetry()).isNotSameInstanceAs(openTelemetry);
+    assertTrue(openTelemetry instanceof OpenTelemetrySdk);
+    assertSame(openTelemetry, sameProject.getTracingOpenTelemetry());
+    assertNotSame(openTelemetry, otherProject.getTracingOpenTelemetry());
+    assertNotSame(openTelemetry, options.getOpenTelemetry());
+  }
+
+  @Test
+  public void exporterIsOnlyCreatedOnceWhenItFails() {
+    AtomicInteger attempts = new AtomicInteger();
+    BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
+        (projectId, credentials) -> {
+          attempts.incrementAndGet();
+          throw new IllegalStateException("test");
+        });
+
+    SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
+
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertEquals(1, attempts.get());
+  }
+
+  @Test
+  public void exporterDoesNotRecordMetricsInTheGlobalOpenTelemetry() {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    GlobalOpenTelemetry.set(
+        OpenTelemetrySdk.builder()
+            .setMeterProvider(SdkMeterProvider.builder().registerMetricReader(metricReader).build())
+            .build());
+    InMemorySpanExporter finishedSpans = InMemorySpanExporter.create();
+    try (SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(finishedSpans))
+            .build()) {
+      tracerProvider.get("test").spanBuilder("test").startSpan().end();
+    }
+    SpanExporter exporter =
+        BuiltInTracingProvider.createOtlpExporter(
+            "http://localhost:" + server.getPort(), CREDENTIALS);
+
+    exporter.export(finishedSpans.getFinishedSpanItems()).join(10, TimeUnit.SECONDS);
+    exporter.shutdown().join(10, TimeUnit.SECONDS);
+
+    assertTrue(metricReader.collectAllMetrics().isEmpty());
   }
 
   @Test
@@ -272,8 +396,8 @@ public class BuiltInTracingTest {
             .setOpenTelemetry(openTelemetry)
             .build();
 
-    assertThat(options.getTracingOpenTelemetry()).isSameInstanceAs(openTelemetry);
-    assertThat(options.isEndToEndTracingEnabled()).isTrue();
+    assertSame(openTelemetry, options.getTracingOpenTelemetry());
+    assertTrue(options.isEndToEndTracingEnabled());
   }
 
   @Test
@@ -281,8 +405,8 @@ public class BuiltInTracingTest {
     GlobalOpenTelemetry.set(createOpenTelemetryWithTracing());
     SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
 
-    assertThat(options.getTracingOpenTelemetry()).isSameInstanceAs(GlobalOpenTelemetry.get());
-    assertThat(options.isEndToEndTracingEnabled()).isTrue();
+    assertSame(GlobalOpenTelemetry.get(), options.getTracingOpenTelemetry());
+    assertTrue(options.isEndToEndTracingEnabled());
   }
 
   @Test
@@ -294,9 +418,9 @@ public class BuiltInTracingTest {
             .setOpenTelemetry(openTelemetry)
             .build();
 
-    assertThat(options.getTracingOpenTelemetry()).isInstanceOf(OpenTelemetrySdk.class);
-    assertThat(options.getTracingOpenTelemetry()).isNotSameInstanceAs(openTelemetry);
-    assertThat(options.getOpenTelemetry()).isSameInstanceAs(openTelemetry);
+    assertTrue(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertNotSame(openTelemetry, options.getTracingOpenTelemetry());
+    assertSame(openTelemetry, options.getOpenTelemetry());
   }
 
   @Test
@@ -304,8 +428,8 @@ public class BuiltInTracingTest {
     GlobalOpenTelemetry.set(createMetricsOnlyOpenTelemetry());
     SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
 
-    assertThat(options.getTracingOpenTelemetry()).isInstanceOf(OpenTelemetrySdk.class);
-    assertThat(options.getOpenTelemetry()).isSameInstanceAs(GlobalOpenTelemetry.get());
+    assertTrue(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertSame(GlobalOpenTelemetry.get(), options.getOpenTelemetry());
   }
 
   @Test
@@ -313,7 +437,7 @@ public class BuiltInTracingTest {
     GlobalOpenTelemetry.get();
     SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
 
-    assertThat(options.getTracingOpenTelemetry()).isInstanceOf(OpenTelemetrySdk.class);
+    assertTrue(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
   }
 
   @Test
@@ -324,7 +448,7 @@ public class BuiltInTracingTest {
             .setCredentials(NoCredentials.getInstance())
             .build();
 
-    assertThat(options.getTracingOpenTelemetry()).isNotInstanceOf(OpenTelemetrySdk.class);
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
   }
 
   @Test
@@ -335,7 +459,29 @@ public class BuiltInTracingTest {
             .setUniverseDomain("example.com")
             .build();
 
-    assertThat(options.getTracingOpenTelemetry()).isNotInstanceOf(OpenTelemetrySdk.class);
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+  }
+
+  @Test
+  public void builtInTracingIsNotUsedWithTheEmulator() {
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setEmulatorHost("localhost:" + server.getPort())
+            .build();
+
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+  }
+
+  @Test
+  public void builtInTracingIsNotUsedWithSpannerOmni() {
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .build();
+
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
   }
 
   @Test
@@ -343,8 +489,15 @@ public class BuiltInTracingTest {
     createOptionsBuilder().build();
     SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
 
-    assertThat(options.getTracingOpenTelemetry()).isNotInstanceOf(OpenTelemetrySdk.class);
-    assertThat(options.isEndToEndTracingEnabled()).isFalse();
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertFalse(options.isEndToEndTracingEnabled());
+  }
+
+  @Test
+  public void openCensusCannotBeEnabledAfterAClientWithBuiltInTracing() {
+    createOptionsBuilder().setEnableBuiltInTracing(true).build();
+
+    assertThrows(IllegalStateException.class, SpannerOptions::enableOpenCensusTraces);
   }
 
   @Test
@@ -352,12 +505,12 @@ public class BuiltInTracingTest {
     BuiltInTracingProvider.INSTANCE.setContextCheck(() -> false);
     SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
 
-    assertThat(options.getTracingOpenTelemetry()).isNotInstanceOf(OpenTelemetrySdk.class);
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
   }
 
   @Test
   public void spansOfBuiltInTracingCanBeCurrent() {
-    assertThat(BuiltInTracingProvider.contextCanHoldSpans()).isTrue();
+    assertTrue(BuiltInTracingProvider.contextCanHoldSpans());
   }
 
   @Test
@@ -366,13 +519,28 @@ public class BuiltInTracingTest {
     Set<String> metricsWithoutBuiltInTracing = recordMetrics(false);
     Set<String> metricsWithBuiltInTracing = recordMetrics(true);
 
-    assertThat(metricsWithoutBuiltInTracing)
-        .contains(
+    assertTrue(
+        metricsWithoutBuiltInTracing.contains(
             BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME
                 + "/"
-                + BuiltInMetricsConstant.OPERATION_COUNT_NAME);
-    assertThat(metricsWithBuiltInTracing).isEqualTo(metricsWithoutBuiltInTracing);
-    assertThat(spanExporter.getFinishedSpanItems()).isNotEmpty();
+                + BuiltInMetricsConstant.OPERATION_COUNT_NAME));
+    assertEquals(metricsWithoutBuiltInTracing, metricsWithBuiltInTracing);
+    assertFalse(spanExporter.getFinishedSpanItems().isEmpty());
+  }
+
+  private static void useBuiltInTracingEnvironment() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableBuiltInTracing() {
+            return true;
+          }
+
+          @Override
+          public double getBuiltInTracingSamplingRate() {
+            return 0.5;
+          }
+        });
   }
 
   private Set<String> recordMetrics(boolean enableBuiltInTracing) {

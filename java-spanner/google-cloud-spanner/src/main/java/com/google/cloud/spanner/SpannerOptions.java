@@ -390,6 +390,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   static final double DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE = 0.1;
 
+  @Nullable
+  static Double parseBuiltInTracingSamplingRate(@Nullable String value) {
+    if (Strings.isNullOrEmpty(value)) {
+      return null;
+    }
+    try {
+      double samplingRate = Double.parseDouble(value);
+      return samplingRate >= 0.0 && samplingRate <= 1.0 ? samplingRate : null;
+    } catch (NumberFormatException exception) {
+      return null;
+    }
+  }
+
   /** Interface that can be used to provide {@link CallCredentials} to {@link SpannerOptions}. */
   public interface CallCredentialsProvider {
     /** Return the {@link CallCredentials} to use for a gRPC call. */
@@ -1330,18 +1343,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public double getBuiltInTracingSamplingRate() {
-      String samplingRate = System.getenv(OTEL_TRACES_SAMPLER_ARG);
-      if (samplingRate != null) {
-        try {
-          double value = Double.parseDouble(samplingRate);
-          if (value >= 0.0 && value <= 1.0) {
-            return value;
-          }
-        } catch (NumberFormatException exception) {
-          return DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE;
-        }
+      String value = System.getenv(OTEL_TRACES_SAMPLER_ARG);
+      Double samplingRate = parseBuiltInTracingSamplingRate(value);
+      if (samplingRate == null && !Strings.isNullOrEmpty(value) && isEnableBuiltInTracing()) {
+        BuiltInTracingProvider.INSTANCE.logInvalidSamplingRateOnce(value);
       }
-      return DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE;
+      return samplingRate == null ? DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE : samplingRate;
     }
 
     @Override
@@ -2557,6 +2564,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * application, then that configuration is used instead, and only end to end tracing is enabled.
      * Built-in tracing is disabled by default, and can also be enabled by setting the environment
      * variable SPANNER_ENABLE_TRACING to true. Cloud Trace charges for the spans that are exported.
+     *
+     * <p>Built-in tracing requires the Telemetry API and the Cloud Trace API to be enabled in the
+     * project of the client, and the credentials of the client need the telemetry.traces.write
+     * permission, for example through the roles/cloudtrace.agent role. User credentials also need a
+     * quota project.
      */
     public Builder setEnableBuiltInTracing(boolean enableBuiltInTracing) {
       this.enableBuiltInTracing = enableBuiltInTracing;
@@ -3060,16 +3072,33 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       BuiltInTracingProvider.INSTANCE.logCustomTracingInfoOnce(this.openTelemetry != null);
       return openTelemetry;
     }
-    if (usesNoCredentials()
-        || emulatorHost != null
-        || instanceType == InstanceType.OMNI
-        || !GOOGLE_DEFAULT_UNIVERSE.equals(getResolvedUniverseDomain())) {
+    String notUsedReason = getBuiltInTracingNotUsedReason();
+    if (notUsedReason != null) {
+      BuiltInTracingProvider.INSTANCE.logNotUsedOnce(notUsedReason);
       return openTelemetry;
     }
     OpenTelemetry builtInOpenTelemetry =
         BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
             getProjectId(), getCredentials(), builtInTracingSamplingRate);
     return builtInOpenTelemetry == null ? openTelemetry : builtInOpenTelemetry;
+  }
+
+  @Nullable
+  private String getBuiltInTracingNotUsedReason() {
+    if (emulatorHost != null) {
+      return "the emulator";
+    }
+    if (instanceType == InstanceType.OMNI) {
+      return "Spanner Omni";
+    }
+    if (usesNoCredentials()) {
+      return "a client without credentials";
+    }
+    String universeDomain = getResolvedUniverseDomain();
+    if (!GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)) {
+      return "universe domain " + universeDomain;
+    }
+    return null;
   }
 
   private boolean isTracingEnabled(OpenTelemetry openTelemetry) {
