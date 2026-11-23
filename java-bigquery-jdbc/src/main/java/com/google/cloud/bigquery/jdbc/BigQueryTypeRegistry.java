@@ -16,11 +16,20 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.storage.v1.BigDecimalByteStringEncoder;
+import com.google.cloud.bigquery.storage.v1.BigQuerySchemaUtil;
+import com.google.cloud.bigquery.storage.v1.CivilTimeEncoder;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.Descriptors.FieldDescriptor;
+import com.google.protobuf.DynamicMessage;
 import java.math.BigDecimal;
 import java.sql.Array;
 import java.sql.Date;
@@ -39,9 +48,17 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collections;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import org.apache.arrow.vector.PeriodDuration;
 
@@ -57,6 +74,26 @@ final class BigQueryTypeRegistry {
 
   private static final DateTimeFormatter TIMESTAMP_FORMATTER =
       DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+  static final DateTimeFormatter DATE_DIGITS = strictFormatter("uuuu-MM-dd");
+  static final DateTimeFormatter TIME_MICROS = strictFormatter("HH:mm:ss.SSSSSS");
+  static final DateTimeFormatter DATETIME_MICROS = strictFormatter("uuuu-MM-dd HH:mm:ss.SSSSSS");
+  private static final DateTimeFormatter TIMESTAMP_MICROS_UTC =
+      strictFormatter("uuuu-MM-dd HH:mm:ss.SSSSSSXXX");
+  private static final DateTimeFormatter TIMESTAMP_NANOS_UTC =
+      strictFormatter("uuuu-MM-dd HH:mm:ss.SSSSSSSSSXXX");
+  private static final BigDecimal NUMERIC_MAX =
+      new BigDecimal("99999999999999999999999999999.999999999");
+  private static final BigDecimal NUMERIC_MIN = NUMERIC_MAX.negate();
+  private static final BigDecimal BIGNUMERIC_MAX =
+      new BigDecimal(
+          "578960446186580977117854925043439539266.34992332820282019728792003956564819967");
+  private static final BigDecimal BIGNUMERIC_MIN =
+      new BigDecimal(
+          "-578960446186580977117854925043439539266.34992332820282019728792003956564819968");
+  private static final Instant MIN_INSTANT = Instant.parse("0001-01-01T00:00:00Z");
+  private static final Instant MAX_INSTANT = Instant.parse("9999-12-31T23:59:59.999999999Z");
+  private static final TypeDescriptor.ProtoFieldEncoder TO_STRING_PROTO_ENCODER =
+      (val, fd) -> val.toString();
 
   static {
     DESCRIPTORS_BY_ORDINAL = new TypeDescriptor<?>[StandardSQLTypeName.values().length];
@@ -99,7 +136,8 @@ final class BigQueryTypeRegistry {
             return Boolean.parseBoolean((String) val);
           }
           throw new BigQueryJdbcException("Cannot convert to BOOL: " + val);
-        });
+        },
+        (val, fd) -> (Boolean) val);
   }
 
   static TypeDescriptor<?> createStringDescriptor() {
@@ -125,7 +163,8 @@ final class BigQueryTypeRegistry {
                     .toLocalTime());
           }
           return String.valueOf(val);
-        });
+        },
+        TO_STRING_PROTO_ENCODER);
   }
 
   static TypeDescriptor<?> createInt64Descriptor() {
@@ -172,7 +211,8 @@ final class BigQueryTypeRegistry {
             return (byte) longVal;
           }
           return longVal;
-        });
+        },
+        (val, fd) -> ((Number) val).longValue());
   }
 
   static TypeDescriptor<?> createFloat64Descriptor() {
@@ -192,7 +232,11 @@ final class BigQueryTypeRegistry {
             return (float) doubleVal;
           }
           return doubleVal;
-        });
+        },
+        EnumSet.of(
+            StandardSQLTypeName.INT64, StandardSQLTypeName.NUMERIC, StandardSQLTypeName.BIGNUMERIC),
+        BigQueryTypeRegistry::isValidWriteApiFloat64,
+        (val, fd) -> ((Number) val).doubleValue());
   }
 
   static TypeDescriptor<?> createNumericDescriptor() {
@@ -205,6 +249,9 @@ final class BigQueryTypeRegistry {
           if (val instanceof BigDecimal) {
             return val;
           }
+          if (val instanceof ByteString) {
+            return decodeDecimalByteString((ByteString) val, false);
+          }
           if (val instanceof Number) {
             return new BigDecimal(val.toString());
           }
@@ -215,7 +262,10 @@ final class BigQueryTypeRegistry {
             return (Boolean) val ? BigDecimal.ONE : BigDecimal.ZERO;
           }
           throw new BigQueryJdbcException("Cannot convert to NUMERIC: " + val);
-        });
+        },
+        Collections.singleton(StandardSQLTypeName.INT64),
+        (val, pt, f) -> isValidWriteApiDecimal(val, pt, f, StandardSQLTypeName.NUMERIC),
+        (val, fd) -> encodeDecimalByteString(val, false));
   }
 
   static TypeDescriptor<?> createDateDescriptor() {
@@ -288,7 +338,10 @@ final class BigQueryTypeRegistry {
           }
 
           return sqlDate;
-        });
+        },
+        Collections.emptySet(),
+        (val, pt, f) -> toWriteApiLocalDate(val) != null,
+        (val, fd) -> (int) Objects.requireNonNull(toWriteApiLocalDate(val)).toEpochDay());
   }
 
   static TypeDescriptor<?> createDatetimeDescriptor() {
@@ -317,6 +370,8 @@ final class BigQueryTypeRegistry {
             localDateTime =
                 BigQueryTemporalUtility.unboxDateTime(
                     new Timestamp(((java.util.Date) val).getTime()), zone);
+          } else if (val instanceof Long) {
+            localDateTime = CivilTimeEncoder.decodePacked64DatetimeMicrosLocalDateTime((Long) val);
           } else if (val instanceof String) {
             String isoString =
                 BigQueryTemporalUtility.truncateFractionalSeconds(
@@ -348,7 +403,10 @@ final class BigQueryTypeRegistry {
             return anchorCivil(localDateTime, targetClass, zone);
           }
           return BigQueryTemporalUtility.boxDateTime(localDateTime, zone);
-        });
+        },
+        Collections.singleton(StandardSQLTypeName.STRING),
+        (val, pt, f) -> toWriteApiLocalDateTime(val, pt) != null,
+        BigQueryTypeRegistry::encodeDatetimeProto);
   }
 
   static TypeDescriptor<?> createTimestampDescriptor() {
@@ -435,7 +493,13 @@ final class BigQueryTypeRegistry {
           }
 
           return ts;
-        });
+        },
+        Collections.emptySet(),
+        (val, pt, f) -> {
+          Instant inst = extractInstant(val);
+          return inst != null && !inst.isBefore(MIN_INSTANT) && !inst.isAfter(MAX_INSTANT);
+        },
+        BigQueryTypeRegistry::encodeTimestampProto);
   }
 
   static TypeDescriptor<?> createTimeDescriptor() {
@@ -503,7 +567,12 @@ final class BigQueryTypeRegistry {
             return Instant.ofEpochMilli(epochMillis).atZone(ZoneId.systemDefault()).toLocalTime();
           }
           return sqlTime;
-        });
+        },
+        (val, fd) ->
+            CivilTimeEncoder.encodePacked64TimeMicrosLocalTime(
+                val instanceof LocalTime
+                    ? ((LocalTime) val).truncatedTo(ChronoUnit.MICROS)
+                    : LocalTime.parse(val.toString())));
   }
 
   static TypeDescriptor<?> createBytesDescriptor() {
@@ -515,11 +584,14 @@ final class BigQueryTypeRegistry {
         (val, targetClass, zone) -> {
           if (val instanceof byte[]) {
             return val;
+          } else if (val instanceof ByteString) {
+            return ((ByteString) val).toByteArray();
           } else if (val instanceof String) {
             return Base64.getDecoder().decode((String) val);
           }
           throw new BigQueryJdbcException("Cannot convert to BYTES: " + val);
-        });
+        },
+        (val, fd) -> ByteString.copyFrom((byte[]) val));
   }
 
   static TypeDescriptor<?> createArrayDescriptor() {
@@ -556,7 +628,8 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.JSON,
         Arrays.asList(com.google.gson.JsonObject.class),
-        (val, targetClass, zone) -> String.valueOf(val));
+        (val, targetClass, zone) -> String.valueOf(val),
+        TO_STRING_PROTO_ENCODER);
   }
 
   static TypeDescriptor<?> createBignumericDescriptor() {
@@ -569,6 +642,9 @@ final class BigQueryTypeRegistry {
           if (val instanceof BigDecimal) {
             return val;
           }
+          if (val instanceof ByteString) {
+            return decodeDecimalByteString((ByteString) val, true);
+          }
           if (val instanceof Number) {
             return new BigDecimal(val.toString());
           }
@@ -576,7 +652,10 @@ final class BigQueryTypeRegistry {
             return new BigDecimal((String) val);
           }
           throw new BigQueryJdbcException("Cannot convert to BIGNUMERIC: " + val);
-        });
+        },
+        EnumSet.of(StandardSQLTypeName.INT64, StandardSQLTypeName.NUMERIC),
+        (val, pt, f) -> isValidWriteApiDecimal(val, pt, f, StandardSQLTypeName.BIGNUMERIC),
+        (val, fd) -> encodeDecimalByteString(val, true));
   }
 
   static TypeDescriptor<?> createGeographyDescriptor() {
@@ -585,7 +664,8 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.GEOGRAPHY,
         Arrays.asList(String.class),
-        (val, targetClass, zone) -> String.valueOf(val));
+        (val, targetClass, zone) -> String.valueOf(val),
+        TO_STRING_PROTO_ENCODER);
   }
 
   static TypeDescriptor<?> createIntervalDescriptor() {
@@ -645,7 +725,8 @@ final class BigQueryTypeRegistry {
             return builder.toString().replaceFirst("--", "-");
           }
           return String.valueOf(val);
-        });
+        },
+        TO_STRING_PROTO_ENCODER);
   }
 
   static TypeDescriptor<?> createRangeDescriptor() {
@@ -997,5 +1078,262 @@ final class BigQueryTypeRegistry {
 
   public static ColumnTypeInfo getColumnTypeInfo(StandardSQLTypeName bqType) {
     return STANDARD_TYPE_INFO.get(bqType);
+  }
+
+  static final class ResolvedWriteColumn {
+    final FieldDescriptor fieldDescriptor;
+    final TypeDescriptor<?> typeDescriptor;
+
+    private ResolvedWriteColumn(FieldDescriptor fieldDescriptor, TypeDescriptor<?> typeDescriptor) {
+      this.fieldDescriptor = fieldDescriptor;
+      this.typeDescriptor = typeDescriptor;
+    }
+  }
+
+  private static DateTimeFormatter strictFormatter(String pattern) {
+    return DateTimeFormatter.ofPattern(pattern, Locale.ROOT)
+        .withResolverStyle(ResolverStyle.STRICT);
+  }
+
+  private static TypeDescriptor<?> descriptorFor(StandardSQLTypeName bqType) {
+    return bqType != null && bqType.ordinal() < DESCRIPTORS_BY_ORDINAL.length
+        ? DESCRIPTORS_BY_ORDINAL[bqType.ordinal()]
+        : null;
+  }
+
+  static String formatInstantUtc(Instant instant, boolean enableTimestampPicos) {
+    return (enableTimestampPicos ? TIMESTAMP_NANOS_UTC : TIMESTAMP_MICROS_UTC)
+        .format(instant.atOffset(ZoneOffset.UTC));
+  }
+
+  static Instant extractInstant(Object value) {
+    if (value instanceof Timestamp) {
+      return ((Timestamp) value).toInstant();
+    }
+    if (value instanceof Instant) {
+      return (Instant) value;
+    }
+    if (value instanceof OffsetDateTime) {
+      return ((OffsetDateTime) value).toInstant();
+    }
+    if (value instanceof ZonedDateTime) {
+      return ((ZonedDateTime) value).toInstant();
+    }
+    return null;
+  }
+
+  static boolean isSupportedWriteApiField(Field field) {
+    if (field == null
+        || field.getMode() == Field.Mode.REPEATED
+        || field.getType() == null
+        || (field.getSubFields() != null && !field.getSubFields().isEmpty())) {
+      return false;
+    }
+    TypeDescriptor<?> descriptor = descriptorFor(field.getType().getStandardType());
+    return descriptor != null && descriptor.supportsWriteApi();
+  }
+
+  static boolean isSupportedJavaValue(StandardSQLTypeName targetType, Object value) {
+    if (targetType == null || value == null) {
+      return false;
+    }
+    if (targetType == StandardSQLTypeName.TIMESTAMP) {
+      return extractInstant(value) != null;
+    }
+    TypeDescriptor<?> descriptor = descriptorFor(targetType);
+    return descriptor != null && descriptor.isSupportedJavaInstance(value);
+  }
+
+  static boolean isCompatibleWithWriteApi(Field field, BigQueryJdbcParameter parameter) {
+    if (field == null || field.getType() == null || parameter == null || !parameter.isBound()) {
+      return false;
+    }
+    TypeDescriptor<?> descriptor = descriptorFor(field.getType().getStandardType());
+    if (descriptor == null || !descriptor.supportsWriteApi()) {
+      return false;
+    }
+    Object value = parameter.getValue();
+    StandardSQLTypeName paramType = parameter.getSqlType();
+    if (value == null) {
+      return field.getMode() != Field.Mode.REQUIRED && descriptor.isSqlTypeAssignable(paramType);
+    }
+    return descriptor.isValidWriteApiValue(value, paramType, field);
+  }
+
+  static String toProtoFieldName(String columnName) {
+    String lower = columnName.toLowerCase(Locale.ROOT);
+    return BigQuerySchemaUtil.isProtoCompatible(lower)
+        ? lower
+        : BigQuerySchemaUtil.generatePlaceholderFieldName(lower);
+  }
+
+  static ResolvedWriteColumn[] resolveWriteApiColumns(Descriptor descriptor, FieldList insertFields)
+      throws BigQueryJdbcException {
+    if (descriptor == null
+        || insertFields == null
+        || descriptor.getFields().size() != insertFields.size()) {
+      throw new BigQueryJdbcException("Mismatched ProtoSchema descriptor for Storage Write API.");
+    }
+    ResolvedWriteColumn[] resolved = new ResolvedWriteColumn[insertFields.size()];
+    for (int i = 0; i < insertFields.size(); i++) {
+      Field field = insertFields.get(i);
+      FieldDescriptor fd = descriptor.findFieldByName(toProtoFieldName(field.getName()));
+      TypeDescriptor<?> td =
+          field.getType() == null ? null : descriptorFor(field.getType().getStandardType());
+      if (fd == null || td == null || !td.supportsWriteApi()) {
+        throw new BigQueryJdbcException(
+            "Missing or unsupported ProtoSchema field descriptor for column: " + field.getName());
+      }
+      resolved[i] = new ResolvedWriteColumn(fd, td);
+    }
+    return resolved;
+  }
+
+  static ByteString encodeWriteApiRow(
+      Descriptor descriptor, ResolvedWriteColumn[] columns, List<BigQueryJdbcParameter> params)
+      throws BigQueryJdbcException {
+    DynamicMessage.Builder row = DynamicMessage.newBuilder(descriptor);
+    for (int j = 0; j < params.size(); j++) {
+      ResolvedWriteColumn col = columns[j];
+      Object val = params.get(j).getValue();
+      if (val == null) {
+        if (col.fieldDescriptor.isRequired()) {
+          throw new BigQueryJdbcException(
+              "Null value for REQUIRED Storage Write API column: " + col.fieldDescriptor.getName());
+        }
+        continue;
+      }
+      row.setField(col.fieldDescriptor, col.typeDescriptor.toProtoValue(val, col.fieldDescriptor));
+    }
+    return row.build().toByteString();
+  }
+
+  private static BigDecimal toWriteApiBigDecimal(Object val) {
+    if (val instanceof BigDecimal) {
+      return (BigDecimal) val;
+    }
+    return isSupportedJavaValue(StandardSQLTypeName.INT64, val)
+        ? BigDecimal.valueOf(((Number) val).longValue())
+        : null;
+  }
+
+  private static boolean isValidWriteApiFloat64(
+      Object val, StandardSQLTypeName paramType, Field field) {
+    if (paramType == StandardSQLTypeName.FLOAT64) {
+      return isSupportedJavaValue(StandardSQLTypeName.FLOAT64, val)
+          && Double.isFinite(((Number) val).doubleValue());
+    }
+    if (paramType == StandardSQLTypeName.INT64) {
+      return isSupportedJavaValue(StandardSQLTypeName.INT64, val);
+    }
+    return val instanceof BigDecimal
+        && isValidBigDecimalBounds(
+            (BigDecimal) val, paramType == StandardSQLTypeName.NUMERIC, null, null);
+  }
+
+  private static boolean isValidWriteApiDecimal(
+      Object val, StandardSQLTypeName paramType, Field field, StandardSQLTypeName columnType) {
+    if (paramType != StandardSQLTypeName.INT64 && !(val instanceof BigDecimal)) {
+      return false;
+    }
+    BigDecimal bd = toWriteApiBigDecimal(val);
+    boolean useNumeric =
+        paramType == StandardSQLTypeName.NUMERIC
+            || (paramType == StandardSQLTypeName.INT64
+                && columnType == StandardSQLTypeName.NUMERIC);
+    return bd != null
+        && isValidBigDecimalBounds(bd, useNumeric, field.getPrecision(), field.getScale());
+  }
+
+  private static boolean isValidBigDecimalBounds(
+      BigDecimal value, boolean numeric, Long columnPrecision, Long columnScale) {
+    BigDecimal minValue = numeric ? NUMERIC_MIN : BIGNUMERIC_MIN;
+    BigDecimal maxValue = numeric ? NUMERIC_MAX : BIGNUMERIC_MAX;
+    int maxScale =
+        getColumnTypeInfo(numeric ? StandardSQLTypeName.NUMERIC : StandardSQLTypeName.BIGNUMERIC)
+            .decimalDigits;
+    long intDigits =
+        value.signum() == 0 ? 0L : Math.max(0L, (long) value.precision() - (long) value.scale());
+    if (intDigits > maxValue.precision() - maxValue.scale()) {
+      return false;
+    }
+    BigDecimal normalized = value.signum() == 0 ? BigDecimal.ZERO : value.stripTrailingZeros();
+    if (normalized.scale() > maxScale
+        || (columnScale != null && normalized.scale() > columnScale)) {
+      return false;
+    }
+    if (columnPrecision != null) {
+      long effectiveScale = columnScale != null ? columnScale : 0L;
+      if (normalized.scale() > effectiveScale || intDigits > columnPrecision - effectiveScale) {
+        return false;
+      }
+    }
+    return normalized.compareTo(minValue) >= 0 && normalized.compareTo(maxValue) <= 0;
+  }
+
+  private static ByteString encodeDecimalByteString(Object val, boolean bigNumeric) {
+    BigDecimal bd = Objects.requireNonNull(toWriteApiBigDecimal(val));
+    BigDecimal norm = bd.signum() == 0 ? BigDecimal.ZERO : bd.stripTrailingZeros();
+    return bigNumeric
+        ? BigDecimalByteStringEncoder.encodeToBigNumericByteString(norm)
+        : BigDecimalByteStringEncoder.encodeToNumericByteString(norm);
+  }
+
+  private static BigDecimal decodeDecimalByteString(ByteString bytes, boolean bigNumeric) {
+    BigDecimal stripped =
+        (bigNumeric
+                ? BigDecimalByteStringEncoder.decodeBigNumericByteString(bytes)
+                : BigDecimalByteStringEncoder.decodeNumericByteString(bytes))
+            .stripTrailingZeros();
+    return stripped.scale() < 0 ? stripped.setScale(0) : stripped;
+  }
+
+  private static LocalDate toWriteApiLocalDate(Object val) {
+    LocalDate ld = null;
+    if (val instanceof LocalDate) {
+      ld = (LocalDate) val;
+    } else if (val instanceof Date && val.toString().length() == 10) {
+      try {
+        ld = LocalDate.parse(val.toString(), DATE_DIGITS);
+      } catch (DateTimeParseException ignored) {
+        return null;
+      }
+    }
+    return ld != null && ld.getYear() >= 1 && ld.getYear() <= 9999 ? ld : null;
+  }
+
+  private static LocalDateTime toWriteApiLocalDateTime(
+      Object val, StandardSQLTypeName paramSqlType) {
+    LocalDateTime ldt = null;
+    if (paramSqlType == StandardSQLTypeName.DATETIME && val instanceof LocalDateTime) {
+      ldt = ((LocalDateTime) val).truncatedTo(ChronoUnit.MICROS);
+    } else if (paramSqlType == StandardSQLTypeName.STRING
+        && val instanceof String
+        && ((String) val).length() == 26) {
+      try {
+        ldt = LocalDateTime.parse((String) val, DATETIME_MICROS);
+      } catch (DateTimeParseException ignored) {
+        return null;
+      }
+    }
+    return ldt != null && ldt.getYear() >= 1 && ldt.getYear() <= 9999 ? ldt : null;
+  }
+
+  private static Object encodeDatetimeProto(Object val, FieldDescriptor fd) {
+    StandardSQLTypeName pt =
+        val instanceof LocalDateTime ? StandardSQLTypeName.DATETIME : StandardSQLTypeName.STRING;
+    return CivilTimeEncoder.encodePacked64DatetimeMicrosLocalDateTime(
+        Objects.requireNonNull(toWriteApiLocalDateTime(val, pt)));
+  }
+
+  private static Object encodeTimestampProto(Object val, FieldDescriptor fd) {
+    Instant inst = Objects.requireNonNull(extractInstant(val));
+    if (fd.getType() == FieldDescriptor.Type.STRING) {
+      // BigQuery's SQL backend truncates TIMESTAMP query parameters to microseconds even on
+      // TIMESTAMP(12) columns (b/419328655; see ITJdbcTimestampPicosTest).
+      return formatInstantUtc(inst, false);
+    }
+    return Math.addExact(
+        Math.multiplyExact(inst.getEpochSecond(), 1_000_000L), inst.getNano() / 1_000L);
   }
 }

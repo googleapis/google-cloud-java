@@ -16,15 +16,18 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.protobuf.Descriptors.FieldDescriptor;
 import java.time.ZoneId;
+import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 /**
- * Defines the bidirectional mapping between a JDBC SQL type, a default Java class, and a BigQuery
- * StandardSQLTypeName. It also contains the coercion logic to convert raw values into the expected
- * Java type.
+ * Bidirectional mapping between a JDBC SQL type, default Java class, and BigQuery type, including
+ * ResultSet coercion and Storage Write API ProtoSchema encoding.
  */
 final class TypeDescriptor<T> {
 
@@ -33,11 +36,24 @@ final class TypeDescriptor<T> {
     Object coerce(Object value, Class<?> targetClass, ZoneId zoneId) throws BigQueryJdbcException;
   }
 
+  @FunctionalInterface
+  interface WriteApiValidator {
+    boolean isValid(Object value, StandardSQLTypeName paramSqlType, Field columnField);
+  }
+
+  @FunctionalInterface
+  interface ProtoFieldEncoder {
+    Object encode(Object value, FieldDescriptor fieldDescriptor);
+  }
+
   private final int jdbcType;
   private final Class<T> defaultJavaClass;
   private final StandardSQLTypeName bqType;
   private final List<Class<?>> supportedJavaTypes;
   private final TypeCoercer coercer;
+  private final Set<StandardSQLTypeName> writeApiParamTypes;
+  private final WriteApiValidator writeApiValidator;
+  private final ProtoFieldEncoder protoEncoder;
 
   TypeDescriptor(
       int jdbcType,
@@ -45,11 +61,44 @@ final class TypeDescriptor<T> {
       StandardSQLTypeName bqType,
       List<Class<?>> supportedJavaTypes,
       TypeCoercer coercer) {
+    this(jdbcType, defaultJavaClass, bqType, supportedJavaTypes, coercer, null);
+  }
+
+  TypeDescriptor(
+      int jdbcType,
+      Class<T> defaultJavaClass,
+      StandardSQLTypeName bqType,
+      List<Class<?>> supportedJavaTypes,
+      TypeCoercer coercer,
+      ProtoFieldEncoder protoEncoder) {
+    this(
+        jdbcType,
+        defaultJavaClass,
+        bqType,
+        supportedJavaTypes,
+        coercer,
+        Collections.emptySet(),
+        null,
+        protoEncoder);
+  }
+
+  TypeDescriptor(
+      int jdbcType,
+      Class<T> defaultJavaClass,
+      StandardSQLTypeName bqType,
+      List<Class<?>> supportedJavaTypes,
+      TypeCoercer coercer,
+      Set<StandardSQLTypeName> writeApiParamTypes,
+      WriteApiValidator writeApiValidator,
+      ProtoFieldEncoder protoEncoder) {
     this.jdbcType = jdbcType;
     this.defaultJavaClass = defaultJavaClass;
     this.bqType = bqType;
     this.supportedJavaTypes = supportedJavaTypes;
     this.coercer = coercer;
+    this.writeApiParamTypes = writeApiParamTypes;
+    this.writeApiValidator = writeApiValidator;
+    this.protoEncoder = protoEncoder;
   }
 
   public int getJdbcType() {
@@ -66,6 +115,45 @@ final class TypeDescriptor<T> {
 
   public List<Class<?>> getSupportedJavaTypes() {
     return supportedJavaTypes;
+  }
+
+  boolean supportsWriteApi() {
+    return protoEncoder != null;
+  }
+
+  boolean isSupportedJavaInstance(Object value) {
+    for (Class<?> supportedClass : supportedJavaTypes) {
+      if (supportedClass.isInstance(value)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  boolean isSqlTypeAssignable(StandardSQLTypeName paramSqlType) {
+    return paramSqlType != null
+        && (paramSqlType == bqType || writeApiParamTypes.contains(paramSqlType));
+  }
+
+  boolean isValidWriteApiValue(Object value, StandardSQLTypeName paramSqlType, Field columnField) {
+    if (!supportsWriteApi() || value == null || !isSqlTypeAssignable(paramSqlType)) {
+      return false;
+    }
+    return writeApiValidator != null
+        ? writeApiValidator.isValid(value, paramSqlType, columnField)
+        : isSupportedJavaInstance(value);
+  }
+
+  Object toProtoValue(Object value, FieldDescriptor fieldDescriptor) throws BigQueryJdbcException {
+    if (protoEncoder == null) {
+      throw new BigQueryJdbcException("Unsupported Storage Write API column type: " + bqType);
+    }
+    try {
+      return protoEncoder.encode(value, fieldDescriptor);
+    } catch (RuntimeException ex) {
+      throw new BigQueryJdbcException(
+          "Failed to encode parameter for column " + fieldDescriptor.getName(), ex);
+    }
   }
 
   public Object convert(Object value, Class<?> targetClass, ZoneId zoneId)
