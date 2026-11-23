@@ -121,6 +121,7 @@ import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
@@ -652,7 +653,7 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
             : getConnection().getDefaultIsolationLevel();
     return resultSet(
         "transaction_isolation",
-        formatIsolationLevel(getEffectiveIsolationLevel(isolationLevel)),
+        getEffectiveIsolationLevel(isolationLevel),
         SHOW_TRANSACTION_ISOLATION_LEVEL);
   }
 
@@ -660,44 +661,20 @@ class ConnectionStatementExecutorImpl implements ConnectionStatementExecutor {
   public StatementResult statementShowDefaultTransactionIsolation() {
     return resultSet(
         "default_transaction_isolation",
-        formatIsolationLevel(
-            getEffectiveIsolationLevel(getConnection().getDefaultIsolationLevel())),
+        getEffectiveIsolationLevel(getConnection().getDefaultIsolationLevel()),
         SHOW_DEFAULT_TRANSACTION_ISOLATION);
   }
 
-  /** Resolves an unspecified isolation level to the database default. */
-  private TransactionOptions.IsolationLevel getEffectiveIsolationLevel(
-      TransactionOptions.IsolationLevel isolationLevel) {
-    TransactionOptions.IsolationLevel configuredIsolationLevel =
+  /** Resolves an unspecified isolation level to the database default and formats it. */
+  private String getEffectiveIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
+    String effectiveIsolationLevel =
         isolationLevel == TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
-            ? getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevel()
-            : isolationLevel;
-    switch (configuredIsolationLevel) {
-      case ISOLATION_LEVEL_UNSPECIFIED:
-        return TransactionOptions.IsolationLevel.SERIALIZABLE;
-      case UNRECOGNIZED:
-        throw SpannerExceptionFactory.newSpannerException(
-            ErrorCode.FAILED_PRECONDITION,
-            "The default isolation level of the database is not supported by this version of the"
-                + " client.");
-      default:
-        return configuredIsolationLevel;
+            ? getConnection().getDatabaseClient().getDatabaseDefaultIsolationLevelValue()
+            : isolationLevel.name();
+    if (effectiveIsolationLevel == null || effectiveIsolationLevel.trim().isEmpty()) {
+      effectiveIsolationLevel = TransactionOptions.IsolationLevel.SERIALIZABLE.name();
     }
-  }
-
-  private String formatIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
-    if (getConnection().getDialect() != Dialect.POSTGRESQL) {
-      return isolationLevel.name();
-    }
-    switch (isolationLevel) {
-      case SERIALIZABLE:
-        return "serializable";
-      case REPEATABLE_READ:
-        return "repeatable read";
-      default:
-        throw SpannerExceptionFactory.newSpannerException(
-            ErrorCode.INVALID_ARGUMENT, "Unknown isolation level: " + isolationLevel);
-    }
+    return effectiveIsolationLevel.toLowerCase(Locale.ROOT).replace('_', ' ');
   }
 
   @Override

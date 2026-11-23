@@ -275,7 +275,11 @@ public class EndpointLifecycleManagerTest {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
     manager =
         new EndpointLifecycleManager(
-            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
+            cache,
+            /* probeIntervalSeconds= */ 60,
+            Duration.ofMinutes(30),
+            Clock.systemUTC(),
+            /* enableBackgroundProbing= */ false);
 
     registerAddresses(manager, "server1");
     awaitCondition(
@@ -310,7 +314,11 @@ public class EndpointLifecycleManagerTest {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
     manager =
         new EndpointLifecycleManager(
-            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
+            cache,
+            /* probeIntervalSeconds= */ 60,
+            Duration.ofMinutes(30),
+            Clock.systemUTC(),
+            /* enableBackgroundProbing= */ false);
 
     registerAddresses(manager, "server1");
     awaitCondition(

@@ -38,7 +38,7 @@ import java.util.Objects;
  * a CREATE MODEL query.
  *
  * @see <a
- *     href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create">CREATE
+ *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create">CREATE
  *     MODEL statement</a>
  */
 public class ModelInfo implements Serializable {

@@ -49,12 +49,18 @@ import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
+import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.TraceFlags;
+import io.opentelemetry.api.trace.TraceState;
 import io.opentelemetry.api.trace.Tracer;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -782,5 +788,87 @@ class OpenTelemetryTracingTracerTest {
 
     verify(tracer)
         .spanBuilder("google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion");
+  }
+
+  @Test
+  void testInScope_withAttemptSpan_activatesAttemptSpanAndFallsBackToOperationSpan() {
+    SpanContext opContext =
+        SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000010",
+            TraceFlags.getSampled(),
+            TraceState.getDefault());
+    SpanContext attemptContext =
+        SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000020",
+            TraceFlags.getSampled(),
+            TraceState.getDefault());
+    Span realOpSpan = Span.wrap(opContext);
+    Span realAttemptSpan = Span.wrap(attemptContext);
+    when(operationSpanBuilder.startSpan()).thenReturn(realOpSpan);
+    when(spanBuilder.startSpan()).thenReturn(realAttemptSpan);
+
+    openTelemetryTracingTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+    openTelemetryTracingTracer.attemptStarted(new Object(), 0);
+
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    // While attempt is active, inScope() activates attemptSpan
+    try (ApiTracer.Scope ignored = openTelemetryTracingTracer.inScope()) {
+      assertThat(Span.current()).isEqualTo(realAttemptSpan);
+      assertThat(Span.current().getSpanContext().getSpanId()).isEqualTo("0000000000000020");
+    }
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    // After attempt ends, inScope() falls back to operationSpan
+    openTelemetryTracingTracer.attemptSucceeded();
+    try (ApiTracer.Scope ignored = openTelemetryTracingTracer.inScope()) {
+      assertThat(Span.current()).isEqualTo(realOpSpan);
+      assertThat(Span.current().getSpanContext().getSpanId()).isEqualTo("0000000000000010");
+    }
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    // After operation ends, inScope() is a no-op
+    openTelemetryTracingTracer.operationSucceeded();
+    try (ApiTracer.Scope ignored = openTelemetryTracingTracer.inScope()) {
+      assertThat(Span.current().getSpanContext().isValid()).isFalse();
+    }
+  }
+
+  @Test
+  void testInScope_multithreadedExecution_noLeakAcrossThreads() throws Exception {
+    SpanContext attemptContext =
+        SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            TraceFlags.getSampled(),
+            TraceState.getDefault());
+    Span realAttemptSpan = Span.wrap(attemptContext);
+    when(spanBuilder.startSpan()).thenReturn(realAttemptSpan);
+
+    openTelemetryTracingTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+
+    openTelemetryTracingTracer.attemptStarted(new Object(), 0);
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      executor
+          .submit(
+              () -> {
+                try (ApiTracer.Scope ignored = openTelemetryTracingTracer.inScope()) {
+                  assertThat(Span.current()).isEqualTo(realAttemptSpan);
+                }
+                assertThat(Span.current().getSpanContext().isValid()).isFalse();
+              })
+          .get(5, TimeUnit.SECONDS);
+    } finally {
+      executor.shutdownNow();
+    }
+
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
   }
 }

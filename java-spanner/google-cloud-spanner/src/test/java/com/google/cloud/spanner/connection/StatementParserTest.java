@@ -275,23 +275,224 @@ public class StatementParserTest {
   public void testPostgresSQLDialectDollarQuoted() {
     assumeTrue(dialect == Dialect.POSTGRESQL);
 
-    assertThat(parser.removeCommentsAndTrim("$$foo$$")).isEqualTo("$$foo$$");
-    assertThat(parser.removeCommentsAndTrim("$$--foo$$")).isEqualTo("$$--foo$$");
-    assertThat(parser.removeCommentsAndTrim("$$\nline 1\n--line2$$"))
-        .isEqualTo("$$\nline 1\n--line2$$");
-    assertThat(parser.removeCommentsAndTrim("$bar$--foo$bar$")).isEqualTo("$bar$--foo$bar$");
-    assertThat(
-            parser.removeCommentsAndTrim(
-                "$bar$\nThis is a valid string\n -- That could contain special characters$bar$"))
-        .isEqualTo("$bar$\nThis is a valid string\n -- That could contain special characters$bar$");
+    assertEquals("$$foo$$", parser.removeCommentsAndTrim("$$foo$$"));
+    assertEquals("$$--foo$$", parser.removeCommentsAndTrim("$$--foo$$"));
+    assertEquals("$$\nline 1\n--line2$$", parser.removeCommentsAndTrim("$$\nline 1\n--line2$$"));
+    assertEquals("$bar$--foo$bar$", parser.removeCommentsAndTrim("$bar$--foo$bar$"));
+    assertEquals(
+        "$bar$\nThis is a valid string\n -- That could contain special characters$bar$",
+        parser.removeCommentsAndTrim(
+            "$bar$\nThis is a valid string\n -- That could contain special characters$bar$"));
 
-    assertThat(parser.removeCommentsAndTrim("SELECT FOO$BAR FROM SOME_TABLE"))
-        .isEqualTo("SELECT FOO$BAR FROM SOME_TABLE");
-    assertThat(parser.removeCommentsAndTrim("SELECT FOO$BAR -- This is a comment\nFROM SOME_TABLE"))
-        .isEqualTo("SELECT FOO$BAR \nFROM SOME_TABLE");
-    assertThat(
-            parser.removeCommentsAndTrim("SELECT FOO, $BAR -- This is a comment\nFROM SOME_TABLE"))
-        .isEqualTo("SELECT FOO, $BAR \nFROM SOME_TABLE");
+    assertEquals(
+        "SELECT FOO$BAR FROM SOME_TABLE",
+        parser.removeCommentsAndTrim("SELECT FOO$BAR FROM SOME_TABLE"));
+    assertEquals(
+        "SELECT FOO$BAR \nFROM SOME_TABLE",
+        parser.removeCommentsAndTrim("SELECT FOO$BAR -- This is a comment\nFROM SOME_TABLE"));
+    assertEquals(
+        "SELECT FOO, $BAR \nFROM SOME_TABLE",
+        parser.removeCommentsAndTrim("SELECT FOO, $BAR -- This is a comment\nFROM SOME_TABLE"));
+
+    // Mid-identifier $tag$ is part of an unquoted identifier, not a dollar-quote opener.
+    ParametersInfo midIdentifierParams =
+        parser.convertPositionalParametersToNamedParameters(
+            '?', "SELECT col$tag$a, ?, col$tag$b FROM t");
+    assertEquals(1, midIdentifierParams.numberOfParameters);
+    assertEquals(
+        "SELECT col$tag$a, $1, col$tag$b FROM t", midIdentifierParams.sqlWithNamedParameters);
+    ParametersInfo singleMidIdentifierParam =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT col$tag$a WHERE x = ?");
+    assertEquals(1, singleMidIdentifierParam.numberOfParameters);
+    assertEquals("SELECT col$tag$a WHERE x = $1", singleMidIdentifierParam.sqlWithNamedParameters);
+
+    // Mid-identifier $$ and chained/digit-preceded $ tags strip comments and detect RETURNING.
+    assertEquals(
+        "SELECT col$$ \nFROM t", parser.removeCommentsAndTrim("SELECT col$$ -- comment\nFROM t"));
+    assertEquals(
+        "SELECT col$$tag$a \nFROM t",
+        parser.removeCommentsAndTrim("SELECT col$$tag$a -- comment\nFROM t"));
+    assertEquals(
+        "SELECT col1$tag$a \nFROM t",
+        parser.removeCommentsAndTrim("SELECT col1$tag$a -- comment\nFROM t"));
+    assertEquals(
+        "SELECT $$foo$$col$tag$a \nFROM t",
+        parser.removeCommentsAndTrim("SELECT $$foo$$col$tag$a -- comment\nFROM t"));
+    assertTrue(
+        parser.parse(Statement.of("UPDATE t SET a = col$$ RETURNING col$$")).hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("UPDATE t SET a = col$tag$a RETURNING col$tag$b"))
+            .hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("UPDATE t SET a = col1$tag$a RETURNING col1$tag$b"))
+            .hasReturningClause());
+
+    // Numeric-leading tags ($1$, $10$, $12$, $1a$, and non-ASCII digit $١$) are rejected.
+    assertEquals(
+        "SELECT $1$ \nFROM t", parser.removeCommentsAndTrim("SELECT $1$ -- comment\nFROM t"));
+    assertEquals("SELECT $10$11", parser.removeCommentsAndTrim("SELECT $10$11"));
+    assertEquals(
+        "SELECT $12$ \nFROM t", parser.removeCommentsAndTrim("SELECT $12$ -- comment\nFROM t"));
+    assertEquals(
+        "SELECT $1a$ \nFROM t", parser.removeCommentsAndTrim("SELECT $1a$ -- comment\nFROM t"));
+    assertEquals(
+        "SELECT $\u0661$ \nFROM t",
+        parser.removeCommentsAndTrim("SELECT $\u0661$ -- comment\nFROM t"));
+    assertEquals("SELECT $1$  $1$", parser.removeCommentsAndTrim("SELECT $1$ /* comment */ $1$"));
+
+    for (String invalidNumericTag : new String[] {"$1$", "$10$", "$12$", "$1a$", "$\u0661$"}) {
+      ParametersInfo numericTagParams =
+          parser.convertPositionalParametersToNamedParameters(
+              '?', "SELECT " + invalidNumericTag + " + ? + " + invalidNumericTag);
+      assertEquals(1, numericTagParams.numberOfParameters);
+      assertEquals(
+          "SELECT " + invalidNumericTag + " + $1 + " + invalidNumericTag,
+          numericTagParams.sqlWithNamedParameters);
+      assertTrue(
+          parser
+              .parse(
+                  Statement.of(
+                      "UPDATE t SET a = " + invalidNumericTag + " RETURNING " + invalidNumericTag))
+              .hasReturningClause());
+    }
+
+    // Valid tags ($$, $tag$, $_1$, $tag_1$, $tag10$, $ø1$, and $a$price $$a$) preserve interior
+    // ?, --, /*, and RETURNING tokens while still converting/stripping/detecting outer tokens.
+    for (String validTag :
+        new String[] {"$$", "$tag$", "$_1$", "$tag_1$", "$tag10$", "$\u00f81$"}) {
+      String literalWithTokens =
+          validTag + " ? -- not a comment /* block */ RETURNING * " + validTag;
+      ParametersInfo validTagParams =
+          parser.convertPositionalParametersToNamedParameters(
+              '?', "SELECT " + literalWithTokens + " WHERE id = ?");
+      assertEquals(1, validTagParams.numberOfParameters);
+      assertEquals(
+          "SELECT " + literalWithTokens + " WHERE id = $1", validTagParams.sqlWithNamedParameters);
+      assertEquals(
+          "SELECT " + literalWithTokens,
+          parser.removeCommentsAndTrim("SELECT " + literalWithTokens + " -- outer comment"));
+      assertFalse(
+          parser
+              .parse(Statement.of("UPDATE t SET x = " + literalWithTokens + " WHERE id = 1"))
+              .hasReturningClause());
+    }
+
+    // Closing delimiter preceded by '$' inside literal content ($a$price $$a$) still closes.
+    ParametersInfo dollarBeforeCloseParams =
+        parser.convertPositionalParametersToNamedParameters(
+            '?', "SELECT $a$price ? $$a$ WHERE id = ?");
+    assertEquals(1, dollarBeforeCloseParams.numberOfParameters);
+    assertEquals(
+        "SELECT $a$price ? $$a$ WHERE id = $1", dollarBeforeCloseParams.sqlWithNamedParameters);
+    assertEquals(
+        "SELECT $a$-- price $$a$",
+        parser.removeCommentsAndTrim("SELECT $a$-- price $$a$ -- outer comment"));
+    assertFalse(
+        parser
+            .parse(Statement.of("UPDATE t SET x = $a$ RETURNING price $$a$ WHERE id = 1"))
+            .hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("UPDATE t SET x = $a$price $$a$ WHERE id = 1 RETURNING *"))
+            .hasReturningClause());
+
+    assertUnclosedLiteral(parser, "SELECT $$unclosed");
+    assertUnclosedLiteral(parser, "SELECT $_1$unclosed");
+  }
+
+  @Test
+  public void testPostgreSQLDollarQuotedRegressions() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+
+    // Adjacent dollar-quoted literals.
+    assertEquals(
+        "SELECT $$a$$$$--comment\n$$", parser.removeCommentsAndTrim("SELECT $$a$$$$--comment\n$$"));
+    assertEquals("SELECT $$a$$$$it's$$", parser.removeCommentsAndTrim("SELECT $$a$$$$it's$$"));
+
+    ParametersInfo adjacentParams =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT $$a$$$$?$$");
+    assertEquals(0, adjacentParams.numberOfParameters);
+    assertEquals("SELECT $$a$$$$?$$", adjacentParams.sqlWithNamedParameters);
+
+    assertFalse(
+        parser.parse(Statement.of("UPDATE t SET a = $$a$$$$ RETURNING $$")).hasReturningClause());
+
+    PostgreSQLStatementParser pgParser = (PostgreSQLStatementParser) parser;
+    assertEquals(ImmutableSet.of(), pgParser.getQueryParameters("SELECT $$a$$$$1$$"));
+
+    // Dollar-quoted literal immediately following a numeric literal or positional parameter.
+    assertEquals(
+        "SELECT 1$$--comment\n$$", parser.removeCommentsAndTrim("SELECT 1$$--comment\n$$"));
+    assertEquals("SELECT 1$$it's$$", parser.removeCommentsAndTrim("SELECT 1$$it's$$"));
+    assertEquals(ImmutableSet.of("$1"), pgParser.getQueryParameters("SELECT $1$$2$$"));
+
+    // Dollar-quoted literal immediately following a scientific-notation numeric literal.
+    assertEquals(
+        "SELECT 10e2$$--comment\n$$", parser.removeCommentsAndTrim("SELECT 10e2$$--comment\n$$"));
+    assertEquals("SELECT 10e2$$it's$$", parser.removeCommentsAndTrim("SELECT 10e2$$it's$$"));
+    assertFalse(
+        parser.parse(Statement.of("UPDATE t SET a = 10e2$$ RETURNING $$")).hasReturningClause());
+    assertEquals(ImmutableSet.of(), pgParser.getQueryParameters("SELECT 10e2$$1$$"));
+  }
+
+  @Test
+  public void testPostgreSQLDollarQuotedPreExistingGaps() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+    PostgreSQLStatementParser pgParser = (PostgreSQLStatementParser) parser;
+
+    // Dollar-quoted literal immediately after a positional parameter.
+    assertEquals(
+        "SELECT $1$tag$--comment\n$tag$",
+        parser.removeCommentsAndTrim("SELECT $1$tag$--comment\n$tag$"));
+
+    // Unquoted identifier containing $1 is not extracted as a query parameter.
+    assertEquals(ImmutableSet.of("$2"), pgParser.getQueryParameters("SELECT col$1, $2 FROM t"));
+
+    // Unquoted identifier col$returning does not trigger hasReturningClause().
+    assertFalse(
+        parser.parse(Statement.of("UPDATE t SET a = col$returning *")).hasReturningClause());
+
+    // Dollar-quote tags remain case-sensitive in checkReturningClauseInternal ($Tag$ != $tag$).
+    assertFalse(
+        parser
+            .parse(Statement.of("UPDATE t SET x = $Tag$ $tag$ RETURNING * $Tag$"))
+            .hasReturningClause());
+  }
+
+  @Test
+  public void testPostgreSQLSkipDollarQuoted() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+
+    // Valid dollar-quoted literals at index 0 and after non-identifier delimiters.
+    assertEquals("$$foo$$", skipPostgreSQL("$$foo$$ bar", 0));
+    assertEquals("$tag$foo$tag$", skipPostgreSQL("$tag$foo$tag$ bar", 0));
+    assertEquals("$_1$foo$_1$", skipPostgreSQL("$_1$foo$_1$ bar", 0));
+    assertEquals("$\u00f81$foo$\u00f81$", skipPostgreSQL("$\u00f81$foo$\u00f81$ bar", 0));
+    assertEquals("$a$price $$a$", skipPostgreSQL("$a$price $$a$ bar", 0));
+    assertEquals("$$foo$$", skipPostgreSQL("SELECT $$foo$$", 7));
+
+    // Unquoted identifiers containing '$' are skipped as complete identifier tokens.
+    assertEquals("col$tag$a$tag$", skipPostgreSQL("col$tag$a$tag$ bar", 0));
+    assertEquals("col$$foo$$", skipPostgreSQL("col$$foo$$ bar", 0));
+    assertEquals("col1$tag$a$tag$", skipPostgreSQL("col1$tag$a$tag$ bar", 0));
+    assertEquals("col$", skipPostgreSQL("col$ bar", 0));
+
+    // Numeric-leading tags, unterminated tags, and trailing '$' advance exactly 1 character.
+    assertEquals("$", skipPostgreSQL("$1$foo$1$", 0));
+    assertEquals("$", skipPostgreSQL("SELECT $12$foo$12$", 7));
+    assertEquals("$", skipPostgreSQL("SELECT $\u0661$foo$\u0661$", 7));
+    assertEquals("$", skipPostgreSQL("SELECT $tag", 7));
+    assertEquals("$", skipPostgreSQL("SELECT $", 7));
+  }
+
+  private String skipPostgreSQL(String sql, int currentIndex) {
+    StringBuilder result = new StringBuilder();
+    int nextIndex = parser.skip(sql, currentIndex, result);
+    String skipped = sql.substring(currentIndex, nextIndex);
+    assertEquals(skipped, result.toString());
+    return skipped;
   }
 
   @Test
@@ -1538,6 +1739,18 @@ public class StatementParserTest {
             "/* @lock_scanned_ranges = exclusive */ select -- random comment\n"
                 + " '$2' from foo /* comment /* with nested comment */ outside of nested comment */"
                 + " where bar=$1 and baz=$foo"));
+    assertEquals(ImmutableSet.of("$1", "$2"), parser.getQueryParameters("SELECT $1$2"));
+    assertEquals(ImmutableSet.of("$10", "$11"), parser.getQueryParameters("SELECT $10$11"));
+    assertEquals(ImmutableSet.of("$1", "$2"), parser.getQueryParameters("SELECT $1$, $2"));
+    assertEquals(
+        ImmutableSet.of("$1"), parser.getQueryParameters("SELECT col$tag$a, $1, col$tag$b"));
+    assertEquals(
+        ImmutableSet.of("$1", "$2"),
+        parser.getQueryParameters("SELECT col$tag$a, $1, col$tag$b, $2"));
+    assertEquals(ImmutableSet.of("$1"), parser.getQueryParameters("SELECT $_1$$2$_1$, $1"));
+    assertEquals(
+        ImmutableSet.of("$4"), parser.getQueryParameters("SELECT col$1$2, _$3, $4 FROM t"));
+    assertEquals(ImmutableSet.of(), parser.getQueryParameters("SELECT $tag"));
   }
 
   @Test
@@ -1748,6 +1961,16 @@ public class StatementParserTest {
         parser.parse(Statement.of("insert into t select 2,3returning*")).hasReturningClause());
     assertTrue(
         parser.parse(Statement.of("insert into t1 select 10.returning*")).hasReturningClause());
+    assertFalse(
+        parser
+            .parse(Statement.of("INSERT INTO t1 SELECT 1 AS RETURNING FROM t2"))
+            .hasReturningClause());
+    assertFalse(
+        parser.parse(Statement.of("INSERT INTO t1 SELECT 1 AS RETURNING(a)")).hasReturningClause());
+    assertTrue(
+        parser
+            .parse(Statement.of("INSERT INTO t1 SELECT 1 AS RETURNING RETURNING *"))
+            .hasReturningClause());
   }
 
   int skipSingleLineComment(String sql, int prefixLength, int startIndex) {
@@ -1924,6 +2147,103 @@ public class StatementParserTest {
     assertEquals(
         ClientSideStatementType.SET_STATEMENT_TIMEOUT,
         parsedStatement.getClientSideStatementType());
+  }
+
+  @Test
+  public void testPostgreSQLEscapeStrings() {
+    assumeTrue(dialect == Dialect.POSTGRESQL);
+
+    ParametersInfo upperEscape =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT E'it\\'s ?', ?");
+    assertEquals(1, upperEscape.numberOfParameters);
+    assertEquals("SELECT E'it\\'s ?', $1", upperEscape.sqlWithNamedParameters);
+
+    ParametersInfo lowerEscape =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT e'a\\' ? b\\'', ?");
+    assertEquals(1, lowerEscape.numberOfParameters);
+    assertEquals("SELECT e'a\\' ? b\\'', $1", lowerEscape.sqlWithNamedParameters);
+
+    ParametersInfo trailingBackslash =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT E'path\\\\', ?");
+    assertEquals(1, trailingBackslash.numberOfParameters);
+    assertEquals("SELECT E'path\\\\', $1", trailingBackslash.sqlWithNamedParameters);
+
+    ParametersInfo doubledQuoteAndDelimiters =
+        parser.convertPositionalParametersToNamedParameters(
+            '?', "SELECT E'doubled''quote?', (?, E'\\'?')");
+    assertEquals(1, doubledQuoteAndDelimiters.numberOfParameters);
+    assertEquals(
+        "SELECT E'doubled''quote?', ($1, E'\\'?')",
+        doubledQuoteAndDelimiters.sqlWithNamedParameters);
+
+    // An identifier ending in 'e' or 'E' before a quote is a standard string literal, not E'...'.
+    ParametersInfo identifierEndingWithE =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT cole'\\', ?");
+    assertEquals(1, identifierEndingWithE.numberOfParameters);
+    assertEquals("SELECT cole'\\', $1", identifierEndingWithE.sqlWithNamedParameters);
+
+    assertEquals(
+        "SELECT E'\\' -- not a comment' \nFROM t",
+        parser.removeCommentsAndTrim("SELECT E'\\' -- not a comment' -- real comment\nFROM t"));
+    assertEquals(
+        ImmutableSet.of("$2"),
+        ((PostgreSQLStatementParser) parser).getQueryParameters("SELECT E'\\' $1', $2"));
+    assertFalse(parser.checkReturningClause("INSERT INTO t VALUES (E'\\' RETURNING *')"));
+  }
+
+  @Test
+  public void testCommentAndCarriageReturnEdgeCases() {
+    String firstParam = dialect == Dialect.POSTGRESQL ? "$1" : "@p1";
+
+    ParametersInfo unterminatedComment =
+        parser.convertPositionalParametersToNamedParameters('?', "SELECT ?, /* unterminated ?");
+    assertEquals(1, unterminatedComment.numberOfParameters);
+    assertEquals(
+        "SELECT " + firstParam + ", /* unterminated ?", unterminatedComment.sqlWithNamedParameters);
+
+    ParametersInfo crSingleLineComment =
+        parser.convertPositionalParametersToNamedParameters('?', "-- comment ?\rSELECT ?");
+    assertEquals(1, crSingleLineComment.numberOfParameters);
+    assertEquals("-- comment ?\rSELECT " + firstParam, crSingleLineComment.sqlWithNamedParameters);
+    assertEquals("SELECT 1", parser.removeCommentsAndTrim("-- comment\rSELECT 1"));
+    assertEquals("SELECT 1 \rFROM t", parser.removeCommentsAndTrim("SELECT 1 -- comment\rFROM t"));
+    assertTrue(parser.parse(Statement.of("-- comment\rSELECT 1")).isQuery());
+
+    if (dialect == Dialect.POSTGRESQL) {
+      ParametersInfo slashStarSlash =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT /*/*/ ? */ ? */ ?");
+      assertEquals(1, slashStarSlash.numberOfParameters);
+      assertEquals("SELECT /*/*/ ? */ ? */ $1", slashStarSlash.sqlWithNamedParameters);
+
+      ParametersInfo starSlashStar =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT /* /* inner */* ? */ ?");
+      assertEquals(1, starSlashStar.numberOfParameters);
+      assertEquals("SELECT /* /* inner */* ? */ $1", starSlashStar.sqlWithNamedParameters);
+
+      ParametersInfo pgCrLiteral =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT 'line1\r?line2', ?");
+      assertEquals(1, pgCrLiteral.numberOfParameters);
+      assertEquals("SELECT 'line1\r?line2', $1", pgCrLiteral.sqlWithNamedParameters);
+    } else {
+      ParametersInfo hashCrComment =
+          parser.convertPositionalParametersToNamedParameters('?', "# comment ?\rSELECT ?");
+      assertEquals(1, hashCrComment.numberOfParameters);
+      assertEquals("# comment ?\rSELECT @p1", hashCrComment.sqlWithNamedParameters);
+      assertEquals("SELECT 1", parser.removeCommentsAndTrim("# comment\rSELECT 1"));
+      assertTrue(parser.parse(Statement.of("# comment\rSELECT 1")).isQuery());
+
+      assertUnclosedLiteral(parser, "SELECT 'line1\rline2', ?");
+
+      ParametersInfo tripleQuotedCr =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT '''line1\r?line2''', ?");
+      assertEquals(1, tripleQuotedCr.numberOfParameters);
+      assertEquals("SELECT '''line1\r?line2''', @p1", tripleQuotedCr.sqlWithNamedParameters);
+
+      ParametersInfo nonNestedSlashStarSlash =
+          parser.convertPositionalParametersToNamedParameters('?', "SELECT /*/*/ ?");
+      assertEquals(1, nonNestedSlashStarSlash.numberOfParameters);
+      assertEquals("SELECT /*/*/ @p1", nonNestedSlashStarSlash.sqlWithNamedParameters);
+    }
   }
 
   static void assertUnclosedLiteral(AbstractStatementParser parser, String sql) {
