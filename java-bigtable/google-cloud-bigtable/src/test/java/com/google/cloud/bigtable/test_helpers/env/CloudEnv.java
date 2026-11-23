@@ -321,25 +321,15 @@ public class CloudEnv extends AbstractTestEnv {
   @Override
   void start() throws IOException {
     dataClient = BigtableDataClient.create(dataSettings.build());
-    startAdminClients();
-  }
-
-  void startAdminClients() throws IOException {
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
     instanceAdminClient = BigtableInstanceAdminClient.create(instanceAdminSettings.build());
   }
 
   @Override
   void stop() {
-    if (dataClient != null) {
-      dataClient.close();
-    }
-    if (tableAdminClient != null) {
-      tableAdminClient.close();
-    }
-    if (instanceAdminClient != null) {
-      instanceAdminClient.close();
-    }
+    dataClient.close();
+    tableAdminClient.close();
+    instanceAdminClient.close();
   }
 
   @Override

@@ -16,10 +16,8 @@
 package com.google.cloud.bigtable.test_helpers.env;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -585,6 +583,62 @@ class StaleResourceCleanerTest {
     mockClusters(staleInstance, ImmutableList.of(cluster0, cluster1));
 
     EnhancedBigtableTableAdminStub staleInstTableStub = createTableStubForInstance(staleInstance);
+    String tableOnStaleInst = "table-1";
+    String avOnStaleInstTable = "av-1";
+    mockListTables(staleInstTableStub, staleInstance, ImmutableList.of(tableOnStaleInst));
+
+    UnaryCallable<GetTableRequest, Table> mockGetTableCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    OperationCallable<UpdateTableRequest, Table, UpdateTableMetadata> mockUpdateTableCallable =
+        mock(OperationCallable.class, withSettings().withoutAnnotations());
+    UnaryCallable<ListAuthorizedViewsRequest, ListAuthorizedViewsPagedResponse>
+        mockListAuthorizedViewsCallable =
+            mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    OperationCallable<UpdateAuthorizedViewRequest, AuthorizedView, UpdateAuthorizedViewMetadata>
+        mockUpdateAuthorizedViewCallable =
+            mock(OperationCallable.class, withSettings().withoutAnnotations());
+    when(staleInstTableStub.getTableCallable()).thenReturn(mockGetTableCallable);
+    when(staleInstTableStub.updateTableOperationCallable()).thenReturn(mockUpdateTableCallable);
+    when(staleInstTableStub.listAuthorizedViewsPagedCallable())
+        .thenReturn(mockListAuthorizedViewsCallable);
+    when(staleInstTableStub.updateAuthorizedViewOperationCallable())
+        .thenReturn(mockUpdateAuthorizedViewCallable);
+
+    Table staleInstTableProto =
+        Table.newBuilder()
+            .setName(NameUtil.formatTableName(PROJECT_ID, staleInstance, tableOnStaleInst))
+            .setDeletionProtection(true)
+            .setChangeStreamConfig(
+                ChangeStreamConfig.newBuilder()
+                    .setRetentionPeriod(Duration.newBuilder().setSeconds(86400)))
+            .build();
+    when(mockGetTableCallable.futureCall(
+            GetTableRequest.newBuilder()
+                .setName(NameUtil.formatTableName(PROJECT_ID, staleInstance, tableOnStaleInst))
+                .setView(View.SCHEMA_VIEW)
+                .build()))
+        .thenReturn(ApiFutures.immediateFuture(staleInstTableProto));
+    mockOperationFuture(
+        mockUpdateTableCallable,
+        Table.newBuilder()
+            .setName(NameUtil.formatTableName(PROJECT_ID, staleInstance, tableOnStaleInst))
+            .setDeletionProtection(false)
+            .build());
+    mockAuthorizedViews(
+        mockListAuthorizedViewsCallable,
+        staleInstance,
+        tableOnStaleInst,
+        ImmutableList.of(avOnStaleInstTable));
+    mockOperationFuture(
+        mockUpdateAuthorizedViewCallable,
+        AuthorizedView.newBuilder()
+            .setName(
+                NameUtil.formatAuthorizedViewName(
+                    PROJECT_ID, staleInstance, tableOnStaleInst, avOnStaleInstTable))
+            .setSubsetView(AuthorizedView.SubsetView.getDefaultInstance())
+            .setDeletionProtection(false)
+            .build());
+
     UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> mockListBackupsCallable =
         mock(UnaryCallable.class, withSettings().withoutAnnotations());
     UnaryCallable<DeleteBackupRequest, Empty> mockDeleteBackupCallable =
@@ -619,24 +673,60 @@ class StaleResourceCleanerTest {
                 .setName(NameUtil.formatLogicalViewName(PROJECT_ID, staleInstance, lvOnStaleInst))
                 .build());
 
-    // Backups in both clusters deleted; clusters are deleted by deleteInstance rather than
-    // individual deleteCluster calls
-    verify(mockDeleteBackupCallable)
+    // Tables inside stale instance are unprotected (including change streams and authorized views)
+    // and backups in both clusters are deleted before deleteInstance; clusters are deleted by
+    // deleteInstance rather than individual deleteCluster calls
+    InOrder inOrder =
+        inOrder(
+            mockUpdateTableCallable,
+            mockUpdateAuthorizedViewCallable,
+            mockDeleteBackupCallable,
+            mockDeleteInstanceCallable);
+    inOrder
+        .verify(mockUpdateTableCallable)
+        .futureCall(
+            UpdateTableRequest.newBuilder()
+                .setTable(
+                    Table.newBuilder()
+                        .setName(
+                            NameUtil.formatTableName(PROJECT_ID, staleInstance, tableOnStaleInst))
+                        .setDeletionProtection(false))
+                .setUpdateMask(
+                    FieldMask.newBuilder()
+                        .addPaths("deletion_protection")
+                        .addPaths("change_stream_config"))
+                .build());
+    inOrder
+        .verify(mockUpdateAuthorizedViewCallable)
+        .futureCall(
+            UpdateAuthorizedViewRequest.newBuilder()
+                .setAuthorizedView(
+                    AuthorizedView.newBuilder()
+                        .setName(
+                            NameUtil.formatAuthorizedViewName(
+                                PROJECT_ID, staleInstance, tableOnStaleInst, avOnStaleInstTable))
+                        .setDeletionProtection(false))
+                .setUpdateMask(FieldMask.newBuilder().addPaths("deletion_protection"))
+                .build());
+    inOrder
+        .verify(mockDeleteBackupCallable)
         .futureCall(
             DeleteBackupRequest.newBuilder()
                 .setName(NameUtil.formatBackupName(PROJECT_ID, staleInstance, cluster0, "b0"))
                 .build());
-    verify(mockDeleteBackupCallable)
+    inOrder
+        .verify(mockDeleteBackupCallable)
         .futureCall(
             DeleteBackupRequest.newBuilder()
                 .setName(NameUtil.formatBackupName(PROJECT_ID, staleInstance, cluster1, "b1"))
                 .build());
-    verify(mockDeleteClusterCallable, never()).futureCall(any());
-    verify(mockDeleteInstanceCallable)
+    inOrder
+        .verify(mockDeleteInstanceCallable)
         .futureCall(
             DeleteInstanceRequest.newBuilder()
                 .setName(NameUtil.formatInstanceName(PROJECT_ID, staleInstance))
                 .build());
+    verify(mockDeleteClusterCallable, never()).futureCall(any());
     verify(mockDeleteInstanceCallable, never())
         .futureCall(
             DeleteInstanceRequest.newBuilder()
@@ -707,15 +797,32 @@ class StaleResourceCleanerTest {
     when(mockDeleteAuthorizedViewCallable.futureCall(any()))
         .thenReturn(ApiFutures.immediateFuture(Empty.getDefaultInstance()));
 
-    // Stale instances: first one throws NotFoundException in prepInstanceForDelete, second one has
-    // cluster0 throw NotFoundException in deleteAllBackups but continues to cluster1 and deletes
+    // Stale instances: first one throws NotFoundException in prepInstanceForDelete, second one
+    // throws NotFoundException on listTables in deleteInstance, third one has cluster0 throw
+    // NotFoundException in deleteAllBackups but continues to cluster1 and deletes
     String concurrentlyDeletedInst = STALE_ID_PREFIX + "deleted-inst";
+    String deletedBeforeListTablesInst = STALE_ID_PREFIX + "deleted-before-list-tables-inst";
     String remainingStaleInst = STALE_ID_PREFIX + "remaining-inst";
-    mockInstances(ImmutableList.of(concurrentlyDeletedInst, remainingStaleInst));
+    mockInstances(
+        ImmutableList.of(concurrentlyDeletedInst, deletedBeforeListTablesInst, remainingStaleInst));
 
     when(mockListMaterializedViewsCallable.futureCall(
             ListMaterializedViewsRequest.newBuilder()
                 .setParent(NameUtil.formatInstanceName(PROJECT_ID, concurrentlyDeletedInst))
+                .build()))
+        .thenReturn(ApiFutures.immediateFailedFuture(notFound));
+
+    mockMaterializedViews(deletedBeforeListTablesInst, ImmutableList.of());
+    mockLogicalViews(deletedBeforeListTablesInst, ImmutableList.of());
+    EnhancedBigtableTableAdminStub deletedBeforeListTablesStub =
+        createTableStubForInstance(deletedBeforeListTablesInst);
+    UnaryCallable<ListTablesRequest, ListTablesPagedResponse> mockFailingListTablesCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    when(deletedBeforeListTablesStub.listTablesPagedCallable())
+        .thenReturn(mockFailingListTablesCallable);
+    when(mockFailingListTablesCallable.futureCall(
+            ListTablesRequest.newBuilder()
+                .setParent(NameUtil.formatInstanceName(PROJECT_ID, deletedBeforeListTablesInst))
                 .build()))
         .thenReturn(ApiFutures.immediateFailedFuture(notFound));
 
@@ -725,6 +832,7 @@ class StaleResourceCleanerTest {
 
     EnhancedBigtableTableAdminStub remainingInstTableStub =
         createTableStubForInstance(remainingStaleInst);
+    mockListTables(remainingInstTableStub, remainingStaleInst, ImmutableList.of());
     UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> mockListBackupsCallable =
         mock(UnaryCallable.class, withSettings().withoutAnnotations());
     UnaryCallable<DeleteBackupRequest, Empty> mockDeleteBackupCallable =
@@ -757,6 +865,11 @@ class StaleResourceCleanerTest {
                 .setName(NameUtil.formatBackupName(PROJECT_ID, remainingStaleInst, "c1", "b1"))
                 .build());
     verify(mockDeleteClusterCallable, never()).futureCall(any());
+    verify(mockDeleteInstanceCallable, never())
+        .futureCall(
+            DeleteInstanceRequest.newBuilder()
+                .setName(NameUtil.formatInstanceName(PROJECT_ID, deletedBeforeListTablesInst))
+                .build());
     verify(mockDeleteInstanceCallable)
         .futureCall(
             DeleteInstanceRequest.newBuilder()
@@ -810,7 +923,8 @@ class StaleResourceCleanerTest {
     mockMaterializedViews(failingInst, ImmutableList.of());
     mockLogicalViews(failingInst, ImmutableList.of());
     mockClusters(failingInst, ImmutableList.of());
-    createTableStubForInstance(failingInst);
+    EnhancedBigtableTableAdminStub failingInstTableStub = createTableStubForInstance(failingInst);
+    mockListTables(failingInstTableStub, failingInst, ImmutableList.of());
     when(mockDeleteInstanceCallable.futureCall(
             DeleteInstanceRequest.newBuilder()
                 .setName(NameUtil.formatInstanceName(PROJECT_ID, failingInst))
@@ -820,7 +934,9 @@ class StaleResourceCleanerTest {
     mockMaterializedViews(succeedingInst, ImmutableList.of());
     mockLogicalViews(succeedingInst, ImmutableList.of());
     mockClusters(succeedingInst, ImmutableList.of());
-    createTableStubForInstance(succeedingInst);
+    EnhancedBigtableTableAdminStub succeedingInstTableStub =
+        createTableStubForInstance(succeedingInst);
+    mockListTables(succeedingInstTableStub, succeedingInst, ImmutableList.of());
 
     StaleResourceCleaner cleaner = createCleaner();
     RuntimeException thrown =
@@ -852,94 +968,16 @@ class StaleResourceCleanerTest {
                 .build());
   }
 
-  @Test
-  void testCleanUp_neverUsesDataClient() throws Exception {
-    EnhancedBigtableTableAdminStub sharedTableStub = createTableStubForInstance(SHARED_INSTANCE_ID);
-    mockMaterializedViews(SHARED_INSTANCE_ID, ImmutableList.of());
-    mockLogicalViews(SHARED_INSTANCE_ID, ImmutableList.of());
-    mockListTables(sharedTableStub, SHARED_INSTANCE_ID, ImmutableList.of());
-    mockAppProfiles(SHARED_INSTANCE_ID, ImmutableList.of());
-    mockClusters(SHARED_INSTANCE_ID, ImmutableList.of());
-    mockInstances(ImmutableList.of());
-
-    AbstractTestEnv mockEnv = createMockEnv();
-    new StaleResourceCleaner(mockEnv).cleanUp(STALE_PREFIX);
-
-    verify(mockEnv, never()).getDataClient();
-  }
-
-  @Test
-  void testCloudEnvStop_nullSafeWhenClientsNotStarted() throws Exception {
-    String prevProject = System.getProperty("bigtable.project");
-    String prevInstance = System.getProperty("bigtable.instance");
-    String prevTable = System.getProperty("bigtable.table");
-    String prevConnectionMode = System.getProperty("bigtable.connection-mode");
-    try {
-      System.setProperty("bigtable.project", PROJECT_ID);
-      System.setProperty("bigtable.instance", SHARED_INSTANCE_ID);
-      System.setProperty("bigtable.table", "test-table");
-      System.clearProperty("bigtable.connection-mode");
-
-      CloudEnv cloudEnv = CloudEnv.fromSystemProperties();
-      assertDoesNotThrow(cloudEnv::stop);
-
-      EnhancedBigtableTableAdminStub mockTableStub =
-          mock(EnhancedBigtableTableAdminStub.class, withSettings().withoutAnnotations());
-      BackgroundResource mockBackgroundResources =
-          mock(BackgroundResource.class, withSettings().withoutAnnotations());
-      Field backgroundResourcesField =
-          GrpcBigtableTableAdminStub.class.getDeclaredField("backgroundResources");
-      backgroundResourcesField.setAccessible(true);
-      backgroundResourcesField.set(mockTableStub, mockBackgroundResources);
-
-      BigtableTableAdminClient tableAdmin =
-          BigtableTableAdminClient.create(PROJECT_ID, SHARED_INSTANCE_ID, mockTableStub);
-      Field tableAdminField = CloudEnv.class.getDeclaredField("tableAdminClient");
-      tableAdminField.setAccessible(true);
-      tableAdminField.set(cloudEnv, tableAdmin);
-      Field instanceAdminField = CloudEnv.class.getDeclaredField("instanceAdminClient");
-      instanceAdminField.setAccessible(true);
-      instanceAdminField.set(cloudEnv, instanceAdmin);
-
-      assertDoesNotThrow(cloudEnv::stop);
-      verify(mockBackgroundResources).close();
-      verify(mockInstanceStub).close();
-    } finally {
-      restoreProperty("bigtable.project", prevProject);
-      restoreProperty("bigtable.instance", prevInstance);
-      restoreProperty("bigtable.table", prevTable);
-      restoreProperty("bigtable.connection-mode", prevConnectionMode);
-    }
-  }
-
-  private static void restoreProperty(String key, String previousValue) {
-    if (previousValue == null) {
-      System.clearProperty(key);
-    } else {
-      System.setProperty(key, previousValue);
-    }
-  }
-
-  private StaleResourceCleaner createCleaner() throws Exception {
-    return new StaleResourceCleaner(createMockEnv());
-  }
-
-  private AbstractTestEnv createMockEnv() throws Exception {
-    AbstractTestEnv mockEnv = mock(AbstractTestEnv.class, withSettings().withoutAnnotations());
-    when(mockEnv.getInstanceId()).thenReturn(SHARED_INSTANCE_ID);
-    when(mockEnv.getInstanceAdminClient()).thenReturn(instanceAdmin);
-    when(mockEnv.getTableAdminClient())
-        .thenReturn(
-            BigtableTableAdminClient.create(
-                PROJECT_ID, SHARED_INSTANCE_ID, tableStubsByInstance.get(SHARED_INSTANCE_ID)));
-    when(mockEnv.getTableAdminClientForInstance(anyString()))
-        .thenAnswer(
-            invocation -> {
-              String instanceId = invocation.getArgument(0);
-              return BigtableTableAdminClient.create(
-                  PROJECT_ID, instanceId, tableStubsByInstance.get(instanceId));
-            });
-    return mockEnv;
+  private StaleResourceCleaner createCleaner() {
+    BigtableTableAdminClient sharedTableAdmin =
+        BigtableTableAdminClient.create(
+            PROJECT_ID, SHARED_INSTANCE_ID, tableStubsByInstance.get(SHARED_INSTANCE_ID));
+    return new StaleResourceCleaner(
+        SHARED_INSTANCE_ID,
+        sharedTableAdmin,
+        instanceAdmin,
+        instId ->
+            BigtableTableAdminClient.create(PROJECT_ID, instId, tableStubsByInstance.get(instId)));
   }
 
   private EnhancedBigtableTableAdminStub createTableStubForInstance(String instanceId)
