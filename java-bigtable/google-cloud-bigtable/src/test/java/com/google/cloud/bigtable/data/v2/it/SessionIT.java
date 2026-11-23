@@ -98,8 +98,8 @@ public class SessionIT {
         .withMessage(
             "SessionIT requires the session path to be enabled. "
                 + "Run with the bigtable-session-it Maven profile.")
-        .that(System.getProperty("bigtable.internal.client-config-override", ""))
-        .isNotEmpty();
+        .that(testEnvRule.env().isSessionsEnabled())
+        .isTrue();
 
     assume()
         .withMessage("SessionIT requires a cloud environment, not the emulator")

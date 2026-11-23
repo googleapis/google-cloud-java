@@ -812,6 +812,126 @@ class UserAuthorizerTest {
   }
 
   @Test
+  void revokeAuthorization_customTokenServerAndRevokeUri_revokesAtCustomEndpoint()
+      throws IOException {
+    URI customTokenServerUri = URI.create("https://oauth2.example.com/token");
+    URI customTokenRevokeUri = URI.create("https://oauth2.example.com/revoke");
+    TokenStore tokenStore = new MemoryTokensStorage();
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    transportFactory.transport.setTokenServerUri(customTokenServerUri);
+    transportFactory.transport.setTokenRevokeUri(customTokenRevokeUri);
+    transportFactory.transport.addClient(CLIENT_ID_VALUE, CLIENT_SECRET);
+    transportFactory.transport.addRefreshToken(
+        REFRESH_TOKEN, ACCESS_TOKEN_VALUE, GRANTED_SCOPES_STRING);
+    UserCredentials initialCredentials =
+        UserCredentials.newBuilder()
+            .setClientId(CLIENT_ID_VALUE)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setAccessToken(ACCESS_TOKEN)
+            .setTokenServerUri(customTokenServerUri)
+            .build();
+
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setTokenStore(tokenStore)
+            .setTokenServerUri(customTokenServerUri)
+            .setTokenRevokeUri(customTokenRevokeUri)
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    authorizer.storeCredentials(USER_ID, initialCredentials);
+
+    UserCredentials credentials1 = authorizer.getCredentials(USER_ID);
+    credentials1.refresh();
+    assertEquals(ACCESS_TOKEN_VALUE, credentials1.getAccessToken().getTokenValue());
+
+    authorizer.revokeAuthorization(USER_ID);
+
+    assertEquals(customTokenRevokeUri.toString(), transportFactory.transport.getRequest().getUrl());
+    assertThrows(IOException.class, credentials1::refresh);
+    assertNull(authorizer.getCredentials(USER_ID));
+  }
+
+  @Test
+  void revokeAuthorization_customTokenServerWithUnsetRevokeUri_throwsAndPreservesTokens()
+      throws IOException {
+    URI customTokenServerUri = URI.create("https://oauth2.example.com/token");
+    TokenStore tokenStore = new MemoryTokensStorage();
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    UserCredentials initialCredentials =
+        UserCredentials.newBuilder()
+            .setClientId(CLIENT_ID_VALUE)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setAccessToken(ACCESS_TOKEN)
+            .setTokenServerUri(customTokenServerUri)
+            .build();
+
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setTokenStore(tokenStore)
+            .setTokenServerUri(customTokenServerUri)
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    authorizer.storeCredentials(USER_ID, initialCredentials);
+
+    assertThrows(IllegalStateException.class, () -> authorizer.revokeAuthorization(USER_ID));
+    assertEquals(0, transportFactory.transport.buildRequestCount);
+    assertNotNull(authorizer.getCredentials(USER_ID));
+  }
+
+  @Test
+  void revokeAuthorization_customTokenServerWithExplicitDefaultRevokeUri_revokesAtDefault()
+      throws IOException {
+    URI customTokenServerUri = URI.create("https://oauth2.example.com/token");
+    TokenStore tokenStore = new MemoryTokensStorage();
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    UserCredentials initialCredentials =
+        UserCredentials.newBuilder()
+            .setClientId(CLIENT_ID_VALUE)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setAccessToken(ACCESS_TOKEN)
+            .setTokenServerUri(customTokenServerUri)
+            .build();
+
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setTokenStore(tokenStore)
+            .setTokenServerUri(customTokenServerUri)
+            .setTokenRevokeUri(OAuth2Utils.TOKEN_REVOKE_URI)
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    authorizer.storeCredentials(USER_ID, initialCredentials);
+    authorizer.revokeAuthorization(USER_ID);
+
+    assertEquals(
+        OAuth2Utils.TOKEN_REVOKE_URI.toString(), transportFactory.transport.getRequest().getUrl());
+    assertNull(authorizer.getCredentials(USER_ID));
+  }
+
+  @Test
+  void toBuilder_preservesTokenRevokeUri() {
+    URI customTokenRevokeUri = URI.create("https://oauth2.example.com/revoke");
+    UserAuthorizer defaultAuthorizer =
+        UserAuthorizer.newBuilder().setClientId(CLIENT_ID).setScopes(DUMMY_SCOPES).build();
+    UserAuthorizer customAuthorizer =
+        defaultAuthorizer.toBuilder().setTokenRevokeUri(customTokenRevokeUri).build();
+
+    assertNull(defaultAuthorizer.toBuilder().getTokenRevokeUri());
+    assertEquals(customTokenRevokeUri, customAuthorizer.toBuilder().getTokenRevokeUri());
+  }
+
+  @Test
   void nullCodeVerifierPKCEProvider() {
     PKCEProvider pkceProvider =
         new PKCEProvider() {

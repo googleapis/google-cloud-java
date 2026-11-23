@@ -20,15 +20,23 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StubSettings;
+import com.google.bigtable.v2.ClientConfiguration;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataClientTestHelpers;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.internal.compat.Shim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
+import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
 import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.base.Strings;
@@ -101,6 +109,7 @@ public class CloudEnv extends AbstractTestEnv {
   @Nullable private final String appProfileId;
 
   private BigtableDataClient dataClient;
+  @Nullable private Shim sessionShim;
   private BigtableTableAdminClient tableAdminClient;
   private BigtableInstanceAdminClient instanceAdminClient;
 
@@ -320,16 +329,48 @@ public class CloudEnv extends AbstractTestEnv {
 
   @Override
   void start() throws IOException {
-    dataClient = BigtableDataClient.create(dataSettings.build());
+    BigtableDataSettings builtDataSettings = dataSettings.build();
+    BigtableClientContext clientContext =
+        BigtableClientContext.create(builtDataSettings.getStubSettings());
+    try {
+      EnhancedBigtableStub stub =
+          new EnhancedBigtableStub(
+              builtDataSettings.getStubSettings().getPerOpSettings(), clientContext);
+      dataClient = BigtableDataClientTestHelpers.createWithStub(stub);
+    } catch (RuntimeException e) {
+      try {
+        clientContext.close();
+      } catch (Exception closeError) {
+        e.addSuppressed(closeError);
+      }
+      throw e;
+    }
+    sessionShim = clientContext.getSessionShim();
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
     instanceAdminClient = BigtableInstanceAdminClient.create(instanceAdminSettings.build());
   }
 
   @Override
   void stop() {
+    sessionShim = null;
     dataClient.close();
     tableAdminClient.close();
     instanceAdminClient.close();
+  }
+
+  @Override
+  public boolean isSessionsEnabled() {
+    Preconditions.checkState(
+        sessionShim != null, "CloudEnv must be started before calling isSessionsEnabled()");
+    return isSessionsEnabled(sessionShim);
+  }
+
+  static boolean isSessionsEnabled(Shim shim) {
+    if (!(shim instanceof ShimImpl)) {
+      return false;
+    }
+    ClientConfiguration config = ((ShimImpl) shim).getConfigManager().getClientConfiguration();
+    return SessionScope.divertsAnyTraffic(config.getSessionConfiguration());
   }
 
   @Override

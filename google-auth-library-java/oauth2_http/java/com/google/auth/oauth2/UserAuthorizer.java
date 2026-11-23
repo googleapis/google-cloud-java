@@ -56,7 +56,14 @@ import java.util.Map;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
-/** Handles an interactive 3-Legged-OAuth2 (3LO) user consent authorization. */
+/**
+ * Handles an interactive 3-Legged-OAuth2 (3LO) user consent authorization.
+ *
+ * <p>The authorization, token, and revocation endpoints default to Google's. To use a different
+ * authorization server, set {@link Builder#setUserAuthUri}, {@link Builder#setTokenServerUri}, and
+ * {@link Builder#setTokenRevokeUri} together. {@link #revokeAuthorization} throws if a custom token
+ * server URI is set without a revoke URI.
+ */
 @NullMarked
 public class UserAuthorizer {
 
@@ -86,6 +93,7 @@ public class UserAuthorizer {
 
   private final HttpTransportFactory transportFactory;
   private final URI tokenServerUri;
+  private final @Nullable URI tokenRevokeUri;
   private final URI userAuthUri;
   private final @Nullable PKCEProvider pkce;
   private final ClientAuthenticationType clientAuthenticationType;
@@ -101,6 +109,8 @@ public class UserAuthorizer {
             : builder.transportFactory;
     this.tokenServerUri =
         (builder.tokenServerUri == null) ? OAuth2Utils.TOKEN_SERVER_URI : builder.tokenServerUri;
+    // Left null when unset so revokeAuthorization() can tell it apart from an explicit default.
+    this.tokenRevokeUri = builder.tokenRevokeUri;
     this.userAuthUri =
         (builder.userAuthUri == null) ? OAuth2Utils.USER_AUTH_URI : builder.userAuthUri;
     this.tokenStore = (builder.tokenStore == null) ? new MemoryTokensStorage() : builder.tokenStore;
@@ -360,9 +370,17 @@ public class UserAuthorizer {
    *
    * @param userId Application's identifier for the end user.
    * @throws IOException An error calling the revoke API or deleting the state.
+   * @throws IllegalStateException If a custom {@code tokenServerUri} is configured and {@code
+   *     tokenRevokeUri} is not set.
    */
   public void revokeAuthorization(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
+    if (tokenRevokeUri == null && !OAuth2Utils.TOKEN_SERVER_URI.equals(tokenServerUri)) {
+      throw new IllegalStateException(
+          "Cannot revoke authorization against the default token revoke URI when a custom"
+              + " tokenServerUri is configured. Set tokenRevokeUri explicitly via"
+              + " UserAuthorizer.Builder.setTokenRevokeUri(URI).");
+    }
     String tokenData = tokenStore.load(userId);
     if (tokenData == null) {
       return;
@@ -384,7 +402,8 @@ public class UserAuthorizer {
     // If both tokens are present, either can be used
     String revokeToken = (refreshToken != null) ? refreshToken : accessTokenValue;
 
-    GenericUrl revokeUrl = new GenericUrl(OAuth2Utils.TOKEN_REVOKE_URI);
+    GenericUrl revokeUrl =
+        new GenericUrl((tokenRevokeUri == null) ? OAuth2Utils.TOKEN_REVOKE_URI : tokenRevokeUri);
     GenericData genericData = new GenericData();
     genericData.put("token", revokeToken);
     UrlEncodedContent content = new UrlEncodedContent(genericData);
@@ -557,6 +576,7 @@ public class UserAuthorizer {
     private @Nullable TokenStore tokenStore;
     private @Nullable URI callbackUri;
     private @Nullable URI tokenServerUri;
+    private @Nullable URI tokenRevokeUri;
     private @Nullable URI userAuthUri;
     private @Nullable Collection<String> scopes;
     private @Nullable HttpTransportFactory transportFactory;
@@ -570,6 +590,7 @@ public class UserAuthorizer {
       this.scopes = authorizer.scopes;
       this.transportFactory = authorizer.transportFactory;
       this.tokenServerUri = authorizer.tokenServerUri;
+      this.tokenRevokeUri = authorizer.tokenRevokeUri;
       this.tokenStore = authorizer.tokenStore;
       this.callbackUri = authorizer.callbackUri;
       this.userAuthUri = authorizer.userAuthUri;
@@ -622,6 +643,18 @@ public class UserAuthorizer {
     @CanIgnoreReturnValue
     public Builder setTokenServerUri(URI tokenServerUri) {
       this.tokenServerUri = tokenServerUri;
+      return this;
+    }
+
+    /**
+     * Sets the token revocation endpoint.
+     *
+     * @param tokenRevokeUri the token revocation endpoint to use
+     * @return this {@code Builder} object
+     */
+    @CanIgnoreReturnValue
+    public Builder setTokenRevokeUri(URI tokenRevokeUri) {
+      this.tokenRevokeUri = tokenRevokeUri;
       return this;
     }
 
@@ -713,6 +746,11 @@ public class UserAuthorizer {
 
     public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
+    }
+
+    /** Returns the token revocation endpoint, or {@code null} if it was not set. */
+    public @Nullable URI getTokenRevokeUri() {
+      return tokenRevokeUri;
     }
 
     public @Nullable URI getCallbackUri() {
