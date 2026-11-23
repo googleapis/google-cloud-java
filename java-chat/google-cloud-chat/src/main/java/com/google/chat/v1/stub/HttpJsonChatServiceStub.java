@@ -122,6 +122,7 @@ import com.google.chat.v1.UpdateSectionRequest;
 import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
+import com.google.chat.v1.UpdateThreadReadStateRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
 import com.google.protobuf.Empty;
@@ -1440,6 +1441,47 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateThreadReadStateRequest, ThreadReadState>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateThreadReadState")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateThreadReadStateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{threadReadState.name=users/*/spaces/*/threads/*/threadReadState}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateThreadReadStateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "threadReadState.name",
+                                request.getThreadReadState().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateThreadReadStateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("threadReadState", request.getThreadReadState(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ThreadReadState>newBuilder()
+                      .setDefaultInstance(ThreadReadState.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateMethodDescriptor =
           ApiMethodDescriptor.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
@@ -2163,6 +2205,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<GetSpaceReadStateRequest, SpaceReadState> getSpaceReadStateCallable;
   private final UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState>
       updateSpaceReadStateCallable;
+  private final UnaryCallable<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateCallable;
   private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateCallable;
   private final UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable;
@@ -2611,6 +2655,20 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<UpdateThreadReadStateRequest, ThreadReadState>
+        updateThreadReadStateTransportSettings =
+            HttpJsonCallSettings.<UpdateThreadReadStateRequest, ThreadReadState>newBuilder()
+                .setMethodDescriptor(updateThreadReadStateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "thread_read_state.name",
+                          String.valueOf(request.getThreadReadState().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateTransportSettings =
             HttpJsonCallSettings.<GetThreadReadStateRequest, ThreadReadState>newBuilder()
@@ -2985,6 +3043,11 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
             updateSpaceReadStateTransportSettings,
             settings.updateSpaceReadStateSettings(),
             clientContext);
+    this.updateThreadReadStateCallable =
+        callableFactory.createUnaryCallable(
+            updateThreadReadStateTransportSettings,
+            settings.updateThreadReadStateSettings(),
+            clientContext);
     this.getThreadReadStateCallable =
         callableFactory.createUnaryCallable(
             getThreadReadStateTransportSettings,
@@ -3103,6 +3166,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(deleteCustomEmojiMethodDescriptor);
     methodDescriptors.add(getSpaceReadStateMethodDescriptor);
     methodDescriptors.add(updateSpaceReadStateMethodDescriptor);
+    methodDescriptors.add(updateThreadReadStateMethodDescriptor);
     methodDescriptors.add(getThreadReadStateMethodDescriptor);
     methodDescriptors.add(getAvailabilityMethodDescriptor);
     methodDescriptors.add(markAsActiveMethodDescriptor);
@@ -3351,6 +3415,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState> updateSpaceReadStateCallable() {
     return updateSpaceReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateCallable() {
+    return updateThreadReadStateCallable;
   }
 
   @Override

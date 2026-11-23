@@ -1081,6 +1081,266 @@ public final class HubServiceGrpc {
     return getUpdateGroupMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest,
+          com.google.longrunning.Operation>
+      getCreateGatewayAdvertisedRouteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateGatewayAdvertisedRoute",
+      requestType =
+          com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest,
+          com.google.longrunning.Operation>
+      getCreateGatewayAdvertisedRouteMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest,
+            com.google.longrunning.Operation>
+        getCreateGatewayAdvertisedRouteMethod;
+    if ((getCreateGatewayAdvertisedRouteMethod =
+            HubServiceGrpc.getCreateGatewayAdvertisedRouteMethod)
+        == null) {
+      synchronized (HubServiceGrpc.class) {
+        if ((getCreateGatewayAdvertisedRouteMethod =
+                HubServiceGrpc.getCreateGatewayAdvertisedRouteMethod)
+            == null) {
+          HubServiceGrpc.getCreateGatewayAdvertisedRouteMethod =
+              getCreateGatewayAdvertisedRouteMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateGatewayAdvertisedRoute"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1
+                                  .CreateGatewayAdvertisedRouteRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HubServiceMethodDescriptorSupplier("CreateGatewayAdvertisedRoute"))
+                      .build();
+        }
+      }
+    }
+    return getCreateGatewayAdvertisedRouteMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest,
+          com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>
+      getGetGatewayAdvertisedRouteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetGatewayAdvertisedRoute",
+      requestType = com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest.class,
+      responseType = com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest,
+          com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>
+      getGetGatewayAdvertisedRouteMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest,
+            com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>
+        getGetGatewayAdvertisedRouteMethod;
+    if ((getGetGatewayAdvertisedRouteMethod = HubServiceGrpc.getGetGatewayAdvertisedRouteMethod)
+        == null) {
+      synchronized (HubServiceGrpc.class) {
+        if ((getGetGatewayAdvertisedRouteMethod = HubServiceGrpc.getGetGatewayAdvertisedRouteMethod)
+            == null) {
+          HubServiceGrpc.getGetGatewayAdvertisedRouteMethod =
+              getGetGatewayAdvertisedRouteMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest,
+                          com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetGatewayAdvertisedRoute"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1
+                                  .GetGatewayAdvertisedRouteRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HubServiceMethodDescriptorSupplier("GetGatewayAdvertisedRoute"))
+                      .build();
+        }
+      }
+    }
+    return getGetGatewayAdvertisedRouteMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest,
+          com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse>
+      getListGatewayAdvertisedRoutesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListGatewayAdvertisedRoutes",
+      requestType =
+          com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest.class,
+      responseType =
+          com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest,
+          com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse>
+      getListGatewayAdvertisedRoutesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest,
+            com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse>
+        getListGatewayAdvertisedRoutesMethod;
+    if ((getListGatewayAdvertisedRoutesMethod = HubServiceGrpc.getListGatewayAdvertisedRoutesMethod)
+        == null) {
+      synchronized (HubServiceGrpc.class) {
+        if ((getListGatewayAdvertisedRoutesMethod =
+                HubServiceGrpc.getListGatewayAdvertisedRoutesMethod)
+            == null) {
+          HubServiceGrpc.getListGatewayAdvertisedRoutesMethod =
+              getListGatewayAdvertisedRoutesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest,
+                          com.google.cloud.networkconnectivity.v1
+                              .ListGatewayAdvertisedRoutesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListGatewayAdvertisedRoutes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1
+                                  .ListGatewayAdvertisedRoutesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1
+                                  .ListGatewayAdvertisedRoutesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HubServiceMethodDescriptorSupplier("ListGatewayAdvertisedRoutes"))
+                      .build();
+        }
+      }
+    }
+    return getListGatewayAdvertisedRoutesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest,
+          com.google.longrunning.Operation>
+      getUpdateGatewayAdvertisedRouteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGatewayAdvertisedRoute",
+      requestType =
+          com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest,
+          com.google.longrunning.Operation>
+      getUpdateGatewayAdvertisedRouteMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest,
+            com.google.longrunning.Operation>
+        getUpdateGatewayAdvertisedRouteMethod;
+    if ((getUpdateGatewayAdvertisedRouteMethod =
+            HubServiceGrpc.getUpdateGatewayAdvertisedRouteMethod)
+        == null) {
+      synchronized (HubServiceGrpc.class) {
+        if ((getUpdateGatewayAdvertisedRouteMethod =
+                HubServiceGrpc.getUpdateGatewayAdvertisedRouteMethod)
+            == null) {
+          HubServiceGrpc.getUpdateGatewayAdvertisedRouteMethod =
+              getUpdateGatewayAdvertisedRouteMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateGatewayAdvertisedRoute"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1
+                                  .UpdateGatewayAdvertisedRouteRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HubServiceMethodDescriptorSupplier("UpdateGatewayAdvertisedRoute"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateGatewayAdvertisedRouteMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest,
+          com.google.longrunning.Operation>
+      getDeleteGatewayAdvertisedRouteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteGatewayAdvertisedRoute",
+      requestType =
+          com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest,
+          com.google.longrunning.Operation>
+      getDeleteGatewayAdvertisedRouteMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest,
+            com.google.longrunning.Operation>
+        getDeleteGatewayAdvertisedRouteMethod;
+    if ((getDeleteGatewayAdvertisedRouteMethod =
+            HubServiceGrpc.getDeleteGatewayAdvertisedRouteMethod)
+        == null) {
+      synchronized (HubServiceGrpc.class) {
+        if ((getDeleteGatewayAdvertisedRouteMethod =
+                HubServiceGrpc.getDeleteGatewayAdvertisedRouteMethod)
+            == null) {
+          HubServiceGrpc.getDeleteGatewayAdvertisedRouteMethod =
+              getDeleteGatewayAdvertisedRouteMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteGatewayAdvertisedRoute"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1
+                                  .DeleteGatewayAdvertisedRouteRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HubServiceMethodDescriptorSupplier("DeleteGatewayAdvertisedRoute"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteGatewayAdvertisedRouteMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static HubServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<HubServiceStub> factory =
@@ -1474,6 +1734,79 @@ public final class HubServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a GatewayAdvertisedRoute
+     * </pre>
+     */
+    default void createGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateGatewayAdvertisedRouteMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GatewayAdvertisedRoute
+     * </pre>
+     */
+    default void getGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGatewayAdvertisedRouteMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GatewayAdvertisedRoutes
+     * </pre>
+     */
+    default void listGatewayAdvertisedRoutes(
+        com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListGatewayAdvertisedRoutesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a GatewayAdvertisedRoute
+     * </pre>
+     */
+    default void updateGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGatewayAdvertisedRouteMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a GatewayAdvertisedRoute
+     * </pre>
+     */
+    default void deleteGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteGatewayAdvertisedRouteMethod(), responseObserver);
     }
   }
 
@@ -1878,6 +2211,89 @@ public final class HubServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public void createGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateGatewayAdvertisedRouteMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public void getGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetGatewayAdvertisedRouteMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GatewayAdvertisedRoutes
+     * </pre>
+     */
+    public void listGatewayAdvertisedRoutes(
+        com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListGatewayAdvertisedRoutesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public void updateGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGatewayAdvertisedRouteMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public void deleteGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteGatewayAdvertisedRouteMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2231,6 +2647,77 @@ public final class HubServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateGatewayAdvertisedRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute getGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetGatewayAdvertisedRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GatewayAdvertisedRoutes
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse
+        listGatewayAdvertisedRoutes(
+            com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListGatewayAdvertisedRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateGatewayAdvertisedRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteGatewayAdvertisedRouteMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2560,6 +3047,72 @@ public final class HubServiceGrpc {
         com.google.cloud.networkconnectivity.v1.UpdateGroupRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGatewayAdvertisedRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute getGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGatewayAdvertisedRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GatewayAdvertisedRoutes
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse
+        listGatewayAdvertisedRoutes(
+            com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGatewayAdvertisedRoutesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGatewayAdvertisedRouteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGatewayAdvertisedRoute(
+        com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGatewayAdvertisedRouteMethod(), getCallOptions(), request);
     }
   }
 
@@ -2904,6 +3457,78 @@ public final class HubServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateGroupMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createGatewayAdvertisedRoute(
+            com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateGatewayAdvertisedRouteMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>
+        getGatewayAdvertisedRoute(
+            com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetGatewayAdvertisedRouteMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GatewayAdvertisedRoutes
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse>
+        listGatewayAdvertisedRoutes(
+            com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListGatewayAdvertisedRoutesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateGatewayAdvertisedRoute(
+            com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGatewayAdvertisedRouteMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a GatewayAdvertisedRoute
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteGatewayAdvertisedRoute(
+            com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteGatewayAdvertisedRouteMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_HUBS = 0;
@@ -2929,6 +3554,11 @@ public final class HubServiceGrpc {
   private static final int METHODID_GET_GROUP = 20;
   private static final int METHODID_LIST_GROUPS = 21;
   private static final int METHODID_UPDATE_GROUP = 22;
+  private static final int METHODID_CREATE_GATEWAY_ADVERTISED_ROUTE = 23;
+  private static final int METHODID_GET_GATEWAY_ADVERTISED_ROUTE = 24;
+  private static final int METHODID_LIST_GATEWAY_ADVERTISED_ROUTES = 25;
+  private static final int METHODID_UPDATE_GATEWAY_ADVERTISED_ROUTE = 26;
+  private static final int METHODID_DELETE_GATEWAY_ADVERTISED_ROUTE = 27;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3079,6 +3709,35 @@ public final class HubServiceGrpc {
         case METHODID_UPDATE_GROUP:
           serviceImpl.updateGroup(
               (com.google.cloud.networkconnectivity.v1.UpdateGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_GATEWAY_ADVERTISED_ROUTE:
+          serviceImpl.createGatewayAdvertisedRoute(
+              (com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_GATEWAY_ADVERTISED_ROUTE:
+          serviceImpl.getGatewayAdvertisedRoute(
+              (com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_GATEWAY_ADVERTISED_ROUTES:
+          serviceImpl.listGatewayAdvertisedRoutes(
+              (com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_GATEWAY_ADVERTISED_ROUTE:
+          serviceImpl.updateGatewayAdvertisedRoute(
+              (com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_GATEWAY_ADVERTISED_ROUTE:
+          serviceImpl.deleteGatewayAdvertisedRoute(
+              (com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -3245,6 +3904,41 @@ public final class HubServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.networkconnectivity.v1.UpdateGroupRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_GROUP)))
+        .addMethod(
+            getCreateGatewayAdvertisedRouteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_GATEWAY_ADVERTISED_ROUTE)))
+        .addMethod(
+            getGetGatewayAdvertisedRouteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest,
+                    com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute>(
+                    service, METHODID_GET_GATEWAY_ADVERTISED_ROUTE)))
+        .addMethod(
+            getListGatewayAdvertisedRoutesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest,
+                    com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse>(
+                    service, METHODID_LIST_GATEWAY_ADVERTISED_ROUTES)))
+        .addMethod(
+            getUpdateGatewayAdvertisedRouteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_GATEWAY_ADVERTISED_ROUTE)))
+        .addMethod(
+            getDeleteGatewayAdvertisedRouteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_GATEWAY_ADVERTISED_ROUTE)))
         .build();
   }
 
@@ -3319,6 +4013,11 @@ public final class HubServiceGrpc {
                       .addMethod(getGetGroupMethod())
                       .addMethod(getListGroupsMethod())
                       .addMethod(getUpdateGroupMethod())
+                      .addMethod(getCreateGatewayAdvertisedRouteMethod())
+                      .addMethod(getGetGatewayAdvertisedRouteMethod())
+                      .addMethod(getListGatewayAdvertisedRoutesMethod())
+                      .addMethod(getUpdateGatewayAdvertisedRouteMethod())
+                      .addMethod(getDeleteGatewayAdvertisedRouteMethod())
                       .build();
         }
       }

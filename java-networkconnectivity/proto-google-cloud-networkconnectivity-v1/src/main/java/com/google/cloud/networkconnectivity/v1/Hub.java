@@ -94,6 +94,785 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
             com.google.cloud.networkconnectivity.v1.Hub.Builder.class);
   }
 
+  public interface ExportPscConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkconnectivity.v1.Hub.ExportPscConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether Private Service Connect endpoints for regional
+     * ILBs and regional Google APIs should be propagated. Default value is true
+     * if export_psc is true. Otherwise, the default value is false.
+     * </pre>
+     *
+     * <code>
+     * optional bool published_services_and_regional_google_apis = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the publishedServicesAndRegionalGoogleApis field is set.
+     */
+    boolean hasPublishedServicesAndRegionalGoogleApis();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether Private Service Connect endpoints for regional
+     * ILBs and regional Google APIs should be propagated. Default value is true
+     * if export_psc is true. Otherwise, the default value is false.
+     * </pre>
+     *
+     * <code>
+     * optional bool published_services_and_regional_google_apis = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The publishedServicesAndRegionalGoogleApis.
+     */
+    boolean getPublishedServicesAndRegionalGoogleApis();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether Private Service Connect endpoints for global
+     * Google APIs should be propagated. The default value is false.
+     * </pre>
+     *
+     * <code>optional bool global_google_apis = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the globalGoogleApis field is set.
+     */
+    boolean hasGlobalGoogleApis();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether Private Service Connect endpoints for global
+     * Google APIs should be propagated. The default value is false.
+     * </pre>
+     *
+     * <code>optional bool global_google_apis = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The globalGoogleApis.
+     */
+    boolean getGlobalGoogleApis();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for more granular control of Private Service Connect
+   * connection propagation.
+   * This allows enabling or disabling connection propagation for specific types
+   * of Private Service Connect endpoints.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkconnectivity.v1.Hub.ExportPscConfig}
+   */
+  public static final class ExportPscConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.Hub.ExportPscConfig)
+      ExportPscConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ExportPscConfig");
+    }
+
+    // Use ExportPscConfig.newBuilder() to construct.
+    private ExportPscConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ExportPscConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.networkconnectivity.v1.HubProto
+          .internal_static_google_cloud_networkconnectivity_v1_Hub_ExportPscConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkconnectivity.v1.HubProto
+          .internal_static_google_cloud_networkconnectivity_v1_Hub_ExportPscConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.class,
+              com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PUBLISHED_SERVICES_AND_REGIONAL_GOOGLE_APIS_FIELD_NUMBER = 1;
+    private boolean publishedServicesAndRegionalGoogleApis_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether Private Service Connect endpoints for regional
+     * ILBs and regional Google APIs should be propagated. Default value is true
+     * if export_psc is true. Otherwise, the default value is false.
+     * </pre>
+     *
+     * <code>
+     * optional bool published_services_and_regional_google_apis = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the publishedServicesAndRegionalGoogleApis field is set.
+     */
+    @java.lang.Override
+    public boolean hasPublishedServicesAndRegionalGoogleApis() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether Private Service Connect endpoints for regional
+     * ILBs and regional Google APIs should be propagated. Default value is true
+     * if export_psc is true. Otherwise, the default value is false.
+     * </pre>
+     *
+     * <code>
+     * optional bool published_services_and_regional_google_apis = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The publishedServicesAndRegionalGoogleApis.
+     */
+    @java.lang.Override
+    public boolean getPublishedServicesAndRegionalGoogleApis() {
+      return publishedServicesAndRegionalGoogleApis_;
+    }
+
+    public static final int GLOBAL_GOOGLE_APIS_FIELD_NUMBER = 2;
+    private boolean globalGoogleApis_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether Private Service Connect endpoints for global
+     * Google APIs should be propagated. The default value is false.
+     * </pre>
+     *
+     * <code>optional bool global_google_apis = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the globalGoogleApis field is set.
+     */
+    @java.lang.Override
+    public boolean hasGlobalGoogleApis() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether Private Service Connect endpoints for global
+     * Google APIs should be propagated. The default value is false.
+     * </pre>
+     *
+     * <code>optional bool global_google_apis = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The globalGoogleApis.
+     */
+    @java.lang.Override
+    public boolean getGlobalGoogleApis() {
+      return globalGoogleApis_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(1, publishedServicesAndRegionalGoogleApis_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeBool(2, globalGoogleApis_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                1, publishedServicesAndRegionalGoogleApis_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, globalGoogleApis_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig other =
+          (com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig) obj;
+
+      if (hasPublishedServicesAndRegionalGoogleApis()
+          != other.hasPublishedServicesAndRegionalGoogleApis()) return false;
+      if (hasPublishedServicesAndRegionalGoogleApis()) {
+        if (getPublishedServicesAndRegionalGoogleApis()
+            != other.getPublishedServicesAndRegionalGoogleApis()) return false;
+      }
+      if (hasGlobalGoogleApis() != other.hasGlobalGoogleApis()) return false;
+      if (hasGlobalGoogleApis()) {
+        if (getGlobalGoogleApis() != other.getGlobalGoogleApis()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPublishedServicesAndRegionalGoogleApis()) {
+        hash = (37 * hash) + PUBLISHED_SERVICES_AND_REGIONAL_GOOGLE_APIS_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(
+                    getPublishedServicesAndRegionalGoogleApis());
+      }
+      if (hasGlobalGoogleApis()) {
+        hash = (37 * hash) + GLOBAL_GOOGLE_APIS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGlobalGoogleApis());
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for more granular control of Private Service Connect
+     * connection propagation.
+     * This allows enabling or disabling connection propagation for specific types
+     * of Private Service Connect endpoints.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkconnectivity.v1.Hub.ExportPscConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkconnectivity.v1.Hub.ExportPscConfig)
+        com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.networkconnectivity.v1.HubProto
+            .internal_static_google_cloud_networkconnectivity_v1_Hub_ExportPscConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkconnectivity.v1.HubProto
+            .internal_static_google_cloud_networkconnectivity_v1_Hub_ExportPscConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.class,
+                com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        publishedServicesAndRegionalGoogleApis_ = false;
+        globalGoogleApis_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.networkconnectivity.v1.HubProto
+            .internal_static_google_cloud_networkconnectivity_v1_Hub_ExportPscConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig build() {
+        com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig buildPartial() {
+        com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig result =
+            new com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.publishedServicesAndRegionalGoogleApis_ = publishedServicesAndRegionalGoogleApis_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.globalGoogleApis_ = globalGoogleApis_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig) {
+          return mergeFrom((com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig other) {
+        if (other
+            == com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.getDefaultInstance())
+          return this;
+        if (other.hasPublishedServicesAndRegionalGoogleApis()) {
+          setPublishedServicesAndRegionalGoogleApis(
+              other.getPublishedServicesAndRegionalGoogleApis());
+        }
+        if (other.hasGlobalGoogleApis()) {
+          setGlobalGoogleApis(other.getGlobalGoogleApis());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  publishedServicesAndRegionalGoogleApis_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  globalGoogleApis_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean publishedServicesAndRegionalGoogleApis_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Controls whether Private Service Connect endpoints for regional
+       * ILBs and regional Google APIs should be propagated. Default value is true
+       * if export_psc is true. Otherwise, the default value is false.
+       * </pre>
+       *
+       * <code>
+       * optional bool published_services_and_regional_google_apis = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the publishedServicesAndRegionalGoogleApis field is set.
+       */
+      @java.lang.Override
+      public boolean hasPublishedServicesAndRegionalGoogleApis() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Controls whether Private Service Connect endpoints for regional
+       * ILBs and regional Google APIs should be propagated. Default value is true
+       * if export_psc is true. Otherwise, the default value is false.
+       * </pre>
+       *
+       * <code>
+       * optional bool published_services_and_regional_google_apis = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The publishedServicesAndRegionalGoogleApis.
+       */
+      @java.lang.Override
+      public boolean getPublishedServicesAndRegionalGoogleApis() {
+        return publishedServicesAndRegionalGoogleApis_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Controls whether Private Service Connect endpoints for regional
+       * ILBs and regional Google APIs should be propagated. Default value is true
+       * if export_psc is true. Otherwise, the default value is false.
+       * </pre>
+       *
+       * <code>
+       * optional bool published_services_and_regional_google_apis = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The publishedServicesAndRegionalGoogleApis to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPublishedServicesAndRegionalGoogleApis(boolean value) {
+
+        publishedServicesAndRegionalGoogleApis_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Controls whether Private Service Connect endpoints for regional
+       * ILBs and regional Google APIs should be propagated. Default value is true
+       * if export_psc is true. Otherwise, the default value is false.
+       * </pre>
+       *
+       * <code>
+       * optional bool published_services_and_regional_google_apis = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPublishedServicesAndRegionalGoogleApis() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        publishedServicesAndRegionalGoogleApis_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean globalGoogleApis_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Controls whether Private Service Connect endpoints for global
+       * Google APIs should be propagated. The default value is false.
+       * </pre>
+       *
+       * <code>optional bool global_google_apis = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the globalGoogleApis field is set.
+       */
+      @java.lang.Override
+      public boolean hasGlobalGoogleApis() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Controls whether Private Service Connect endpoints for global
+       * Google APIs should be propagated. The default value is false.
+       * </pre>
+       *
+       * <code>optional bool global_google_apis = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The globalGoogleApis.
+       */
+      @java.lang.Override
+      public boolean getGlobalGoogleApis() {
+        return globalGoogleApis_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Controls whether Private Service Connect endpoints for global
+       * Google APIs should be propagated. The default value is false.
+       * </pre>
+       *
+       * <code>optional bool global_google_apis = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The globalGoogleApis to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGlobalGoogleApis(boolean value) {
+
+        globalGoogleApis_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Controls whether Private Service Connect endpoints for global
+       * Google APIs should be propagated. The default value is false.
+       * </pre>
+       *
+       * <code>optional bool global_google_apis = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGlobalGoogleApis() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        globalGoogleApis_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkconnectivity.v1.Hub.ExportPscConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkconnectivity.v1.Hub.ExportPscConfig)
+    private static final com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig();
+    }
+
+    public static com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExportPscConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ExportPscConfig>() {
+          @java.lang.Override
+          public ExportPscConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ExportPscConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExportPscConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -531,13 +1310,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.networkconnectivity.v1.RoutingVPC> getRoutingVpcsList() {
@@ -548,13 +1329,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder>
@@ -566,13 +1349,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getRoutingVpcsCount() {
@@ -583,13 +1368,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.networkconnectivity.v1.RoutingVPC getRoutingVpcs(int index) {
@@ -600,13 +1387,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder getRoutingVpcsOrBuilder(
@@ -912,6 +1701,69 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
     return exportPsc_;
   }
 
+  public static final int EXPORT_PSC_CONFIG_FIELD_NUMBER = 17;
+  private com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig exportPscConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the exportPscConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasExportPscConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The exportPscConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig getExportPscConfig() {
+    return exportPscConfig_ == null
+        ? com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.getDefaultInstance()
+        : exportPscConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfigOrBuilder
+      getExportPscConfigOrBuilder() {
+    return exportPscConfig_ == null
+        ? com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.getDefaultInstance()
+        : exportPscConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -966,6 +1818,9 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(15, exportPsc_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(17, getExportPscConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1030,6 +1885,9 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, exportPsc_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getExportPscConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1070,6 +1928,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
     if (hasExportPsc() != other.hasExportPsc()) return false;
     if (hasExportPsc()) {
       if (getExportPsc() != other.getExportPsc()) return false;
+    }
+    if (hasExportPscConfig() != other.hasExportPscConfig()) return false;
+    if (hasExportPscConfig()) {
+      if (!getExportPscConfig().equals(other.getExportPscConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1121,6 +1983,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
     if (hasExportPsc()) {
       hash = (37 * hash) + EXPORT_PSC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExportPsc());
+    }
+    if (hasExportPscConfig()) {
+      hash = (37 * hash) + EXPORT_PSC_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getExportPscConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1294,6 +2160,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
         internalGetUpdateTimeFieldBuilder();
         internalGetRoutingVpcsFieldBuilder();
         internalGetSpokeSummaryFieldBuilder();
+        internalGetExportPscConfigFieldBuilder();
       }
     }
 
@@ -1332,6 +2199,11 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
       policyMode_ = 0;
       presetTopology_ = 0;
       exportPsc_ = false;
+      exportPscConfig_ = null;
+      if (exportPscConfigBuilder_ != null) {
+        exportPscConfigBuilder_.dispose();
+        exportPscConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1425,6 +2297,11 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
         result.exportPsc_ = exportPsc_;
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.exportPscConfig_ =
+            exportPscConfigBuilder_ == null ? exportPscConfig_ : exportPscConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1514,6 +2391,9 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasExportPsc()) {
         setExportPsc(other.getExportPsc());
+      }
+      if (other.hasExportPscConfig()) {
+        mergeExportPscConfig(other.getExportPscConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1637,6 +2517,13 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00001000;
                 break;
               } // case 120
+            case 138:
+              {
+                input.readMessage(
+                    internalGetExportPscConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2746,13 +3633,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.networkconnectivity.v1.RoutingVPC> getRoutingVpcsList() {
       if (routingVpcsBuilder_ == null) {
@@ -2766,13 +3655,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getRoutingVpcsCount() {
       if (routingVpcsBuilder_ == null) {
@@ -2786,13 +3677,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.networkconnectivity.v1.RoutingVPC getRoutingVpcs(int index) {
       if (routingVpcsBuilder_ == null) {
@@ -2806,13 +3699,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setRoutingVpcs(
         int index, com.google.cloud.networkconnectivity.v1.RoutingVPC value) {
@@ -2833,13 +3728,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setRoutingVpcs(
         int index, com.google.cloud.networkconnectivity.v1.RoutingVPC.Builder builderForValue) {
@@ -2857,13 +3754,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addRoutingVpcs(com.google.cloud.networkconnectivity.v1.RoutingVPC value) {
       if (routingVpcsBuilder_ == null) {
@@ -2883,13 +3782,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addRoutingVpcs(
         int index, com.google.cloud.networkconnectivity.v1.RoutingVPC value) {
@@ -2910,13 +3811,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addRoutingVpcs(
         com.google.cloud.networkconnectivity.v1.RoutingVPC.Builder builderForValue) {
@@ -2934,13 +3837,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addRoutingVpcs(
         int index, com.google.cloud.networkconnectivity.v1.RoutingVPC.Builder builderForValue) {
@@ -2958,13 +3863,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllRoutingVpcs(
         java.lang.Iterable<? extends com.google.cloud.networkconnectivity.v1.RoutingVPC> values) {
@@ -2982,13 +3889,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearRoutingVpcs() {
       if (routingVpcsBuilder_ == null) {
@@ -3005,13 +3914,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeRoutingVpcs(int index) {
       if (routingVpcsBuilder_ == null) {
@@ -3028,13 +3939,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.networkconnectivity.v1.RoutingVPC.Builder getRoutingVpcsBuilder(
         int index) {
@@ -3045,13 +3958,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder getRoutingVpcsOrBuilder(
         int index) {
@@ -3066,13 +3981,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder>
         getRoutingVpcsOrBuilderList() {
@@ -3087,13 +4004,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.networkconnectivity.v1.RoutingVPC.Builder addRoutingVpcsBuilder() {
       return internalGetRoutingVpcsFieldBuilder()
@@ -3104,13 +4023,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.networkconnectivity.v1.RoutingVPC.Builder addRoutingVpcsBuilder(
         int index) {
@@ -3123,13 +4044,15 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The VPC networks associated with this hub's spokes.
+     * Output only. The VPC networks associated with this hub's spokes.
      *
      * This field is read-only. Network Connectivity Center automatically
      * populates it based on the set of spokes attached to the hub.
      * </pre>
      *
-     * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+     * <code>
+     * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.cloud.networkconnectivity.v1.RoutingVPC.Builder>
         getRoutingVpcsBuilderList() {
@@ -3958,6 +4881,234 @@ public final class Hub extends com.google.protobuf.GeneratedMessage
       exportPsc_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig exportPscConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig,
+            com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.Builder,
+            com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfigOrBuilder>
+        exportPscConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the exportPscConfig field is set.
+     */
+    public boolean hasExportPscConfig() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The exportPscConfig.
+     */
+    public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig getExportPscConfig() {
+      if (exportPscConfigBuilder_ == null) {
+        return exportPscConfig_ == null
+            ? com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.getDefaultInstance()
+            : exportPscConfig_;
+      } else {
+        return exportPscConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExportPscConfig(
+        com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig value) {
+      if (exportPscConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exportPscConfig_ = value;
+      } else {
+        exportPscConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExportPscConfig(
+        com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.Builder builderForValue) {
+      if (exportPscConfigBuilder_ == null) {
+        exportPscConfig_ = builderForValue.build();
+      } else {
+        exportPscConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExportPscConfig(
+        com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig value) {
+      if (exportPscConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && exportPscConfig_ != null
+            && exportPscConfig_
+                != com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig
+                    .getDefaultInstance()) {
+          getExportPscConfigBuilder().mergeFrom(value);
+        } else {
+          exportPscConfig_ = value;
+        }
+      } else {
+        exportPscConfigBuilder_.mergeFrom(value);
+      }
+      if (exportPscConfig_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExportPscConfig() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      exportPscConfig_ = null;
+      if (exportPscConfigBuilder_ != null) {
+        exportPscConfigBuilder_.dispose();
+        exportPscConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.Builder
+        getExportPscConfigBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return internalGetExportPscConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfigOrBuilder
+        getExportPscConfigOrBuilder() {
+      if (exportPscConfigBuilder_ != null) {
+        return exportPscConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return exportPscConfig_ == null
+            ? com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.getDefaultInstance()
+            : exportPscConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for more granular control of Private Service Connect
+     * transitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig,
+            com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.Builder,
+            com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfigOrBuilder>
+        internalGetExportPscConfigFieldBuilder() {
+      if (exportPscConfigBuilder_ == null) {
+        exportPscConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig,
+                com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig.Builder,
+                com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfigOrBuilder>(
+                getExportPscConfig(), getParentForChildren(), isClean());
+        exportPscConfig_ = null;
+      }
+      return exportPscConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.networkconnectivity.v1.Hub)

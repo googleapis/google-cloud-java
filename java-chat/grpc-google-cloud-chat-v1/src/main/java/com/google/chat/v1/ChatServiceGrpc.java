@@ -1452,6 +1452,50 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateThreadReadStateRequest, com.google.chat.v1.ThreadReadState>
+      getUpdateThreadReadStateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateThreadReadState",
+      requestType = com.google.chat.v1.UpdateThreadReadStateRequest.class,
+      responseType = com.google.chat.v1.ThreadReadState.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.UpdateThreadReadStateRequest, com.google.chat.v1.ThreadReadState>
+      getUpdateThreadReadStateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.UpdateThreadReadStateRequest, com.google.chat.v1.ThreadReadState>
+        getUpdateThreadReadStateMethod;
+    if ((getUpdateThreadReadStateMethod = ChatServiceGrpc.getUpdateThreadReadStateMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getUpdateThreadReadStateMethod = ChatServiceGrpc.getUpdateThreadReadStateMethod)
+            == null) {
+          ChatServiceGrpc.getUpdateThreadReadStateMethod =
+              getUpdateThreadReadStateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.UpdateThreadReadStateRequest,
+                          com.google.chat.v1.ThreadReadState>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateThreadReadState"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.UpdateThreadReadStateRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ThreadReadState.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("UpdateThreadReadState"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateThreadReadStateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.GetThreadReadStateRequest, com.google.chat.v1.ThreadReadState>
       getGetThreadReadStateMethod;
 
@@ -3413,6 +3457,27 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Updates a user's read state within a thread, used to identify read and
+     * unread messages. For an example, see [Update a user's thread read
+     * state](https://developers.google.com/workspace/chat/update-thread-read-state).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.readstate`
+     * </pre>
+     */
+    default void updateThreadReadState(
+        com.google.chat.v1.UpdateThreadReadStateRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ThreadReadState> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateThreadReadStateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a user's read state within a thread, used to identify
      * read and unread messages. For an example, see [Get details about a user's
      * thread read
@@ -5109,6 +5174,29 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Updates a user's read state within a thread, used to identify read and
+     * unread messages. For an example, see [Update a user's thread read
+     * state](https://developers.google.com/workspace/chat/update-thread-read-state).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.readstate`
+     * </pre>
+     */
+    public void updateThreadReadState(
+        com.google.chat.v1.UpdateThreadReadStateRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ThreadReadState> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateThreadReadStateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a user's read state within a thread, used to identify
      * read and unread messages. For an example, see [Get details about a user's
      * thread read
@@ -6726,6 +6814,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Updates a user's read state within a thread, used to identify read and
+     * unread messages. For an example, see [Update a user's thread read
+     * state](https://developers.google.com/workspace/chat/update-thread-read-state).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.readstate`
+     * </pre>
+     */
+    public com.google.chat.v1.ThreadReadState updateThreadReadState(
+        com.google.chat.v1.UpdateThreadReadStateRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateThreadReadStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a user's read state within a thread, used to identify
      * read and unread messages. For an example, see [Get details about a user's
      * thread read
@@ -8280,6 +8388,26 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.UpdateSpaceReadStateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateSpaceReadStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user's read state within a thread, used to identify read and
+     * unread messages. For an example, see [Update a user's thread read
+     * state](https://developers.google.com/workspace/chat/update-thread-read-state).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.readstate`
+     * </pre>
+     */
+    public com.google.chat.v1.ThreadReadState updateThreadReadState(
+        com.google.chat.v1.UpdateThreadReadStateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateThreadReadStateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -9860,6 +9988,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Updates a user's read state within a thread, used to identify read and
+     * unread messages. For an example, see [Update a user's thread read
+     * state](https://developers.google.com/workspace/chat/update-thread-read-state).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.users.readstate`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.ThreadReadState>
+        updateThreadReadState(com.google.chat.v1.UpdateThreadReadStateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateThreadReadStateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns details about a user's read state within a thread, used to identify
      * read and unread messages. For an example, see [Get details about a user's
      * thread read
@@ -10341,24 +10489,25 @@ public final class ChatServiceGrpc {
   private static final int METHODID_DELETE_CUSTOM_EMOJI = 32;
   private static final int METHODID_GET_SPACE_READ_STATE = 33;
   private static final int METHODID_UPDATE_SPACE_READ_STATE = 34;
-  private static final int METHODID_GET_THREAD_READ_STATE = 35;
-  private static final int METHODID_GET_AVAILABILITY = 36;
-  private static final int METHODID_MARK_AS_ACTIVE = 37;
-  private static final int METHODID_MARK_AS_AWAY = 38;
-  private static final int METHODID_MARK_AS_DO_NOT_DISTURB = 39;
-  private static final int METHODID_UPDATE_AVAILABILITY = 40;
-  private static final int METHODID_GET_SPACE_EVENT = 41;
-  private static final int METHODID_LIST_SPACE_EVENTS = 42;
-  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 43;
-  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 44;
-  private static final int METHODID_CREATE_SECTION = 45;
-  private static final int METHODID_DELETE_SECTION = 46;
-  private static final int METHODID_UPDATE_SECTION = 47;
-  private static final int METHODID_LIST_SECTIONS = 48;
-  private static final int METHODID_POSITION_SECTION = 49;
-  private static final int METHODID_LIST_SECTION_ITEMS = 50;
-  private static final int METHODID_MOVE_SECTION_ITEM = 51;
-  private static final int METHODID_REPLACE_MESSAGE_CARDS = 52;
+  private static final int METHODID_UPDATE_THREAD_READ_STATE = 35;
+  private static final int METHODID_GET_THREAD_READ_STATE = 36;
+  private static final int METHODID_GET_AVAILABILITY = 37;
+  private static final int METHODID_MARK_AS_ACTIVE = 38;
+  private static final int METHODID_MARK_AS_AWAY = 39;
+  private static final int METHODID_MARK_AS_DO_NOT_DISTURB = 40;
+  private static final int METHODID_UPDATE_AVAILABILITY = 41;
+  private static final int METHODID_GET_SPACE_EVENT = 42;
+  private static final int METHODID_LIST_SPACE_EVENTS = 43;
+  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 44;
+  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 45;
+  private static final int METHODID_CREATE_SECTION = 46;
+  private static final int METHODID_DELETE_SECTION = 47;
+  private static final int METHODID_UPDATE_SECTION = 48;
+  private static final int METHODID_LIST_SECTIONS = 49;
+  private static final int METHODID_POSITION_SECTION = 50;
+  private static final int METHODID_LIST_SECTION_ITEMS = 51;
+  private static final int METHODID_MOVE_SECTION_ITEM = 52;
+  private static final int METHODID_REPLACE_MESSAGE_CARDS = 53;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10562,6 +10711,11 @@ public final class ChatServiceGrpc {
           serviceImpl.updateSpaceReadState(
               (com.google.chat.v1.UpdateSpaceReadStateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.SpaceReadState>) responseObserver);
+          break;
+        case METHODID_UPDATE_THREAD_READ_STATE:
+          serviceImpl.updateThreadReadState(
+              (com.google.chat.v1.UpdateThreadReadStateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.ThreadReadState>) responseObserver);
           break;
         case METHODID_GET_THREAD_READ_STATE:
           serviceImpl.getThreadReadState(
@@ -10891,6 +11045,13 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.UpdateSpaceReadStateRequest,
                     com.google.chat.v1.SpaceReadState>(service, METHODID_UPDATE_SPACE_READ_STATE)))
         .addMethod(
+            getUpdateThreadReadStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.UpdateThreadReadStateRequest,
+                    com.google.chat.v1.ThreadReadState>(
+                    service, METHODID_UPDATE_THREAD_READ_STATE)))
+        .addMethod(
             getGetThreadReadStateMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -11091,6 +11252,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getDeleteCustomEmojiMethod())
                       .addMethod(getGetSpaceReadStateMethod())
                       .addMethod(getUpdateSpaceReadStateMethod())
+                      .addMethod(getUpdateThreadReadStateMethod())
                       .addMethod(getGetThreadReadStateMethod())
                       .addMethod(getGetAvailabilityMethod())
                       .addMethod(getMarkAsActiveMethod())

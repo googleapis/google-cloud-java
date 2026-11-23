@@ -294,6 +294,12 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).updateSpaceReadStateSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateThreadReadState. */
+  public UnaryCallSettings<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateThreadReadStateSettings();
+  }
+
   /** Returns the object with the settings used for calls to getThreadReadState. */
   public UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateSettings() {
@@ -705,6 +711,12 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     public UnaryCallSettings.Builder<UpdateSpaceReadStateRequest, SpaceReadState>
         updateSpaceReadStateSettings() {
       return getStubSettingsBuilder().updateSpaceReadStateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateThreadReadState. */
+    public UnaryCallSettings.Builder<UpdateThreadReadStateRequest, ThreadReadState>
+        updateThreadReadStateSettings() {
+      return getStubSettingsBuilder().updateThreadReadStateSettings();
     }
 
     /** Returns the builder for the settings used for calls to getThreadReadState. */

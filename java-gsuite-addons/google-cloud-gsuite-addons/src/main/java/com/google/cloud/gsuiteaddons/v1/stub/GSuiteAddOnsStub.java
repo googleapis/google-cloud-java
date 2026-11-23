@@ -21,10 +21,12 @@ import static com.google.cloud.gsuiteaddons.v1.GSuiteAddOnsClient.ListDeployment
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gsuiteaddons.v1.Authorization;
+import com.google.cloud.gsuiteaddons.v1.ChatAppConfig;
 import com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.Deployment;
 import com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest;
+import com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest;
 import com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest;
 import com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest;
@@ -33,6 +35,7 @@ import com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest;
 import com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse;
 import com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest;
+import com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
@@ -86,6 +89,14 @@ public abstract class GSuiteAddOnsStub implements BackgroundResource {
 
   public UnaryCallable<GetInstallStatusRequest, InstallStatus> getInstallStatusCallable() {
     throw new UnsupportedOperationException("Not implemented: getInstallStatusCallable()");
+  }
+
+  public UnaryCallable<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getChatAppConfigCallable()");
+  }
+
+  public UnaryCallable<UpdateChatAppConfigRequest, ChatAppConfig> updateChatAppConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateChatAppConfigCallable()");
   }
 
   @Override

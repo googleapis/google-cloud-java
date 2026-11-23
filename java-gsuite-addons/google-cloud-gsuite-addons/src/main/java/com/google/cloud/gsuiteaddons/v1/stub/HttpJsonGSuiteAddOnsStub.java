@@ -31,10 +31,12 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gsuiteaddons.v1.Authorization;
+import com.google.cloud.gsuiteaddons.v1.ChatAppConfig;
 import com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.Deployment;
 import com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest;
+import com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest;
 import com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest;
 import com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest;
@@ -43,6 +45,7 @@ import com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest;
 import com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse;
 import com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest;
+import com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -389,6 +392,80 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetChatAppConfigRequest, ChatAppConfig>
+      getChatAppConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetChatAppConfigRequest, ChatAppConfig>newBuilder()
+              .setFullMethodName("google.cloud.gsuiteaddons.v1.GSuiteAddOns/GetChatAppConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetChatAppConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/chatAppConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetChatAppConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetChatAppConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ChatAppConfig>newBuilder()
+                      .setDefaultInstance(ChatAppConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateChatAppConfigRequest, ChatAppConfig>
+      updateChatAppConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateChatAppConfigRequest, ChatAppConfig>newBuilder()
+              .setFullMethodName("google.cloud.gsuiteaddons.v1.GSuiteAddOns/UpdateChatAppConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateChatAppConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{chatAppConfig.name=projects/*/chatAppConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateChatAppConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "chatAppConfig.name", request.getChatAppConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateChatAppConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("chatAppConfig", request.getChatAppConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ChatAppConfig>newBuilder()
+                      .setDefaultInstance(ChatAppConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAuthorizationRequest, Authorization> getAuthorizationCallable;
   private final UnaryCallable<CreateDeploymentRequest, Deployment> createDeploymentCallable;
   private final UnaryCallable<ReplaceDeploymentRequest, Deployment> replaceDeploymentCallable;
@@ -401,6 +478,9 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
   private final UnaryCallable<InstallDeploymentRequest, Empty> installDeploymentCallable;
   private final UnaryCallable<UninstallDeploymentRequest, Empty> uninstallDeploymentCallable;
   private final UnaryCallable<GetInstallStatusRequest, InstallStatus> getInstallStatusCallable;
+  private final UnaryCallable<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigCallable;
+  private final UnaryCallable<UpdateChatAppConfigRequest, ChatAppConfig>
+      updateChatAppConfigCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -552,6 +632,32 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigTransportSettings =
+        HttpJsonCallSettings.<GetChatAppConfigRequest, ChatAppConfig>newBuilder()
+            .setMethodDescriptor(getChatAppConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateChatAppConfigRequest, ChatAppConfig>
+        updateChatAppConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateChatAppConfigRequest, ChatAppConfig>newBuilder()
+                .setMethodDescriptor(updateChatAppConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "chat_app_config.name",
+                          String.valueOf(request.getChatAppConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getAuthorizationCallable =
         callableFactory.createUnaryCallable(
@@ -589,6 +695,14 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
     this.getInstallStatusCallable =
         callableFactory.createUnaryCallable(
             getInstallStatusTransportSettings, settings.getInstallStatusSettings(), clientContext);
+    this.getChatAppConfigCallable =
+        callableFactory.createUnaryCallable(
+            getChatAppConfigTransportSettings, settings.getChatAppConfigSettings(), clientContext);
+    this.updateChatAppConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateChatAppConfigTransportSettings,
+            settings.updateChatAppConfigSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -606,6 +720,8 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
     methodDescriptors.add(installDeploymentMethodDescriptor);
     methodDescriptors.add(uninstallDeploymentMethodDescriptor);
     methodDescriptors.add(getInstallStatusMethodDescriptor);
+    methodDescriptors.add(getChatAppConfigMethodDescriptor);
+    methodDescriptors.add(updateChatAppConfigMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -658,6 +774,16 @@ public class HttpJsonGSuiteAddOnsStub extends GSuiteAddOnsStub {
   @Override
   public UnaryCallable<GetInstallStatusRequest, InstallStatus> getInstallStatusCallable() {
     return getInstallStatusCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigCallable() {
+    return getChatAppConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateChatAppConfigRequest, ChatAppConfig> updateChatAppConfigCallable() {
+    return updateChatAppConfigCallable;
   }
 
   @Override
