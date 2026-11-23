@@ -112,7 +112,7 @@ public final class StorageClass extends StringEnumValue {
       type.createAndRegister("STANDARD_ENTERPRISE");
 
   /**
-   * Local Region Standard Enterprise storage class.
+   * Locally Redundant Standard Enterprise storage class.
    *
    * @see <a
    *     href="https://cloud.google.com/storage/docs/storage-classes">https://cloud.google.com/storage/docs/storage-classes</a>
