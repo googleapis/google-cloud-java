@@ -1254,7 +1254,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         "GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY";
     private static final String SPANNER_ENABLE_END_TO_END_TRACING =
         "SPANNER_ENABLE_END_TO_END_TRACING";
-    private static final String SPANNER_ENABLE_TRACING = "SPANNER_ENABLE_TRACING";
+    private static final String SPANNER_ENABLE_BUILTIN_TRACING = "SPANNER_ENABLE_BUILTIN_TRACING";
     private static final String OTEL_TRACES_SAMPLER_ARG = "OTEL_TRACES_SAMPLER_ARG";
     private static final String SPANNER_DISABLE_BUILTIN_METRICS = "SPANNER_DISABLE_BUILTIN_METRICS";
     private static final String SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS =
@@ -1338,7 +1338,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public boolean isEnableBuiltInTracing() {
-      return Boolean.parseBoolean(System.getenv(SPANNER_ENABLE_TRACING));
+      return Boolean.parseBoolean(System.getenv(SPANNER_ENABLE_BUILTIN_TRACING));
     }
 
     @Override
@@ -2563,7 +2563,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * OpenTelemetry. If OpenTelemetry tracing has already been configured for the client or the
      * application, then that configuration is used instead, and only end to end tracing is enabled.
      * Built-in tracing is disabled by default, and can also be enabled by setting the environment
-     * variable SPANNER_ENABLE_TRACING to true. Cloud Trace charges for the spans that are exported.
+     * variable SPANNER_ENABLE_BUILTIN_TRACING to true. Cloud Trace charges for the spans that are
+     * exported.
      *
      * <p>Built-in tracing requires the Telemetry API and the Cloud Trace API to be enabled in the
      * project of the client, and the credentials of the client need the telemetry.traces.write
