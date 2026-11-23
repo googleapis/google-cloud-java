@@ -113,6 +113,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
@@ -714,6 +715,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   private int maxNumSessionsInOneBatch = 100;
   private int maxTotalSessions = Integer.MAX_VALUE;
   private Iterable<BatchWriteResponse> batchWriteResult = new ArrayList<>();
+  private volatile BiConsumer<BatchWriteRequest, StreamObserver<BatchWriteResponse>>
+      batchWriteHandler;
   private AtomicInteger numSessionsCreated = new AtomicInteger();
   private SimulatedExecutionTime beginTransactionExecutionTime = NO_EXECUTION_TIME;
   private SimulatedExecutionTime commitExecutionTime = NO_EXECUTION_TIME;
@@ -797,6 +800,13 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   public void setBatchWriteResult(final Iterable<BatchWriteResponse> responses) {
     synchronized (lock) {
       this.batchWriteResult = responses;
+    }
+  }
+
+  public void setBatchWriteHandler(
+      final BiConsumer<BatchWriteRequest, StreamObserver<BatchWriteResponse>> handler) {
+    synchronized (lock) {
+      this.batchWriteHandler = handler;
     }
   }
 
@@ -2267,6 +2277,11 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     }
     sessionLastUsed.put(session.getName(), Instant.now());
     try {
+      BiConsumer<BatchWriteRequest, StreamObserver<BatchWriteResponse>> handler = batchWriteHandler;
+      if (handler != null) {
+        handler.accept(request, responseObserver);
+        return;
+      }
       for (BatchWriteResponse response : batchWriteResult) {
         responseObserver.onNext(response);
       }
@@ -2544,6 +2559,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       freezeAfterReturningNumRows.set(0);
       stickyGlobalExceptions = false;
       freezeLock.countDown();
+      batchWriteHandler = null;
     }
   }
 

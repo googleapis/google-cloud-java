@@ -1871,6 +1871,13 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
             MutationGroup.of(
                 Mutation.newInsertBuilder("FOO3").set("ID").to(3L).set("NAME").to("Bar3").build(),
                 Mutation.newInsertBuilder("FOO4").set("ID").to(4L).set("NAME").to("Bar4").build()));
+    mockSpanner.setBatchWriteResult(
+        ImmutableList.of(
+            BatchWriteResponse.newBuilder()
+                .setStatus(
+                    com.google.rpc.Status.newBuilder().setCode(com.google.rpc.Code.OK_VALUE).build())
+                .addAllIndexes(ImmutableList.of(0, 1))
+                .build()));
 
     ServerStream<BatchWriteResponse> responseStream = client.batchWriteAtLeastOnce(MUTATION_GROUPS);
     int idx = 0;

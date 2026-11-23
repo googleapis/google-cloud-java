@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.cloud.spanner.v1.stub.GrpcSpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
@@ -33,8 +34,25 @@ class GrpcSpannerStubWithStubSettingsAndClientContext extends GrpcSpannerStub {
     return new GrpcSpannerStubWithStubSettingsAndClientContext(settings, clientContext);
   }
 
+  static final GrpcSpannerStubWithStubSettingsAndClientContext create(
+      SpannerStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    return new GrpcSpannerStubWithStubSettingsAndClientContext(
+        settings, clientContext, callableFactory);
+  }
+
   protected GrpcSpannerStubWithStubSettingsAndClientContext(
       SpannerStubSettings settings, ClientContext clientContext) throws IOException {
     super(settings, clientContext);
+  }
+
+  protected GrpcSpannerStubWithStubSettingsAndClientContext(
+      SpannerStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    super(settings, clientContext, callableFactory);
   }
 }

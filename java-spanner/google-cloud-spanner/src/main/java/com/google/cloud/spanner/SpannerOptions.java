@@ -32,6 +32,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
@@ -509,6 +510,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         return method == SpannerGrpc.getExecuteBatchDmlMethod();
       }
     },
+    BATCH_WRITE {
+      @Override
+      <ReqT, RespT> boolean isMethod(ReqT request, MethodDescriptor<ReqT, RespT> method) {
+        return method == SpannerGrpc.getBatchWriteMethod();
+      }
+    },
 
     PARTITION_QUERY {
       @Override
@@ -578,6 +585,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private Duration executeQueryTimeout;
     private Duration executeUpdateTimeout;
     private Duration batchUpdateTimeout;
+    private Duration batchWriteTimeout;
     private Duration readTimeout;
 
     private Duration partitionQueryTimeout;
@@ -602,6 +610,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           return batchUpdateTimeout == null
               ? null
               : callContext.withTimeoutDuration(batchUpdateTimeout);
+        case BATCH_WRITE:
+          return batchWriteTimeout == null
+              ? null
+              : callContext
+                  .withTimeoutDuration(batchWriteTimeout)
+                  .withStreamWaitTimeoutDuration(batchWriteTimeout);
         case COMMIT:
           return commitTimeout == null ? null : callContext.withTimeoutDuration(commitTimeout);
         case EXECUTE_QUERY:
@@ -816,6 +830,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     public SpannerCallContextTimeoutConfigurator withPartitionReadTimeoutDuration(
         Duration partitionReadTimeout) {
       this.partitionReadTimeout = partitionReadTimeout;
+      return this;
+    }
+
+    public Duration getBatchWriteTimeoutDuration() {
+      return batchWriteTimeout;
+    }
+
+    public SpannerCallContextTimeoutConfigurator withBatchWriteTimeoutDuration(
+        Duration batchWriteTimeout) {
+      this.batchWriteTimeout = batchWriteTimeout;
       return this;
     }
   }
@@ -1431,6 +1455,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             .setMaxRetryDelayDuration(Duration.ofSeconds(60L))
             .setMaxAttempts(10)
             .build();
+    static final RetrySettings DEFAULT_BATCH_WRITE_RETRY_SETTINGS =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(Duration.ofMillis(100L))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelayDuration(Duration.ofSeconds(60L))
+            .setMaxAttempts(10)
+            .setInitialRpcTimeoutDuration(Duration.ofHours(1L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeoutDuration(Duration.ofHours(1L))
+            .setTotalTimeoutDuration(Duration.ofHours(1L))
+            .build();
+    static final ImmutableSet<Code> DEFAULT_BATCH_WRITE_RETRYABLE_CODES =
+        ImmutableSet.of(Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED);
     private final ImmutableSet<String> allowedClientLibTokens =
         ImmutableSet.of(
             ServiceOptions.getGoogApiClientLibName(),
@@ -1516,6 +1553,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     protected Builder() {
+      // Configure BatchWrite retry defaults directly on the stub settings builder so callers can
+      // partially override individual fields via getRetrySettings().toBuilder() or explicitly
+      // disable retries via setRetryableCodes(Collections.emptySet()).
+      spannerStubSettingsBuilder
+          .batchWriteSettings()
+          .setRetrySettings(DEFAULT_BATCH_WRITE_RETRY_SETTINGS)
+          .setRetryableCodes(DEFAULT_BATCH_WRITE_RETRYABLE_CODES);
+
       // Manually set retry and polling settings that work.
       RetrySettings baseRetrySettings =
           RetrySettings.newBuilder()
@@ -1798,6 +1843,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * GAPIC's generated one-hour {@code totalTimeout}; set it to zero explicitly for unlimited
      * resumes. Limits apply to consecutive failures and reset when the stream makes progress by
      * returning a new resume token.
+     *
+     * <p>For {@code BatchWrite}, configure {@code batchWriteSettings()}. By default, transient
+     * errors ({@code UNAVAILABLE}, {@code RESOURCE_EXHAUSTED}, retryable {@code INTERNAL} errors)
+     * and premature stream closures are retried with exponential backoff (initial 100ms, multiplier
+     * 1.3, max 60s, up to 10 attempts and 1 hour total timeout), sending only unacknowledged
+     * mutation groups. Set {@code maxAttempts=1} to disable {@code BatchWrite} retries.
      *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *

@@ -21,9 +21,9 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.MethodName;
 import com.google.api.gax.tracing.MetricsTracer;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.ConcurrentHashMap;
 import javax.annotation.Nullable;
 
 /**
@@ -36,13 +36,13 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
 
   private final BuiltInMetricsRecorder builtInOpenTelemetryMetricsRecorder;
   // These are RPC specific attributes and pertain to a specific API Trace
-  private final Map<String, String> attributes = new HashMap<>();
-  private Float gfeLatency = null;
-  private Float afeLatency = null;
+  private final Map<String, String> attributes = new ConcurrentHashMap<>();
+  private volatile Float gfeLatency = null;
+  private volatile Float afeLatency = null;
   private final TraceWrapper traceWrapper;
   private final ISpan currentSpan;
-  private boolean isDirectPathUsed;
-  private boolean isAfeEnabled;
+  private volatile boolean isDirectPathUsed;
+  private volatile boolean isAfeEnabled;
 
   BuiltInMetricsTracer(
       MethodName methodName,
@@ -54,6 +54,21 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
     this.attributes.put(METHOD_ATTRIBUTE, methodName.toString());
     this.traceWrapper = traceWrapper;
     this.currentSpan = currentSpan;
+  }
+
+  @Override
+  public void attemptStarted(Object request, int attemptNumber) {
+    this.gfeLatency = null;
+    this.afeLatency = null;
+    super.attemptStarted(request, attemptNumber);
+  }
+
+  @Override
+  @SuppressWarnings("deprecation")
+  public void attemptStarted(int attemptNumber) {
+    this.gfeLatency = null;
+    this.afeLatency = null;
+    super.attemptStarted(attemptNumber);
   }
 
   /**
