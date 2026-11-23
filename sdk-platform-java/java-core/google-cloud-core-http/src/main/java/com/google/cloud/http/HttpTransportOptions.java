@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnauthenticatedException;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
@@ -177,19 +178,20 @@ public class HttpTransportOptions implements TransportOptions {
         return universeDomain == null ? Credentials.GOOGLE_DEFAULT_UNIVERSE : universeDomain;
       }
 
-      @Override
-      public void initialize(HttpRequest httpRequest) throws IOException {
-        String configuredUniverseDomain = determineUniverseDomain();
+      private void validateUniverseDomain() throws IOException {
         // Default to the GDU. Override with value in the Credentials if needed
         String credentialsUniverseDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
 
         // delegate is always HttpCredentialsAdapter or null (NoCredentials)
         if (delegate != null) {
-          HttpCredentialsAdapter httpCredentialsAdapter = (HttpCredentialsAdapter) delegate;
-          credentialsUniverseDomain = httpCredentialsAdapter.getCredentials().getUniverseDomain();
+          Credentials credentials = ((HttpCredentialsAdapter) delegate).getCredentials();
+          if (credentials instanceof ApiKeyCredentials) {
+            return;
+          }
+          credentialsUniverseDomain = credentials.getUniverseDomain();
         }
 
-        // Validate the universe domain before initializing the request
+        String configuredUniverseDomain = determineUniverseDomain();
         if (!configuredUniverseDomain.equals(credentialsUniverseDomain)) {
           throw new UnauthenticatedException(
               new Throwable(
@@ -200,6 +202,11 @@ public class HttpTransportOptions implements TransportOptions {
               HttpJsonStatusCode.of(StatusCode.Code.UNAUTHENTICATED),
               false);
         }
+      }
+
+      @Override
+      public void initialize(HttpRequest httpRequest) throws IOException {
+        validateUniverseDomain();
 
         if (delegate != null) {
           delegate.initialize(httpRequest);

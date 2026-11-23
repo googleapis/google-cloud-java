@@ -35,8 +35,10 @@ import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
+import com.google.api.gax.rpc.internal.QuotaProjectIdHidingCredentials;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
 import com.google.api.gax.rpc.testing.FakeMtlsProvider;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsProvider;
@@ -490,6 +492,43 @@ class EndpointContextTest {
             .setUniverseDomain("test.com")
             .build();
     assertDoesNotThrow(() -> endpointContext.validateUniverseDomain(credentials, statusCode));
+  }
+
+  @Test
+  void hasValidUniverseDomain_apiKeyCredentials_skipsValidation() throws IOException {
+    Credentials apiKeyCredentials = ApiKeyCredentials.create("test-api-key");
+    EndpointContext defaultEndpointContext = defaultEndpointContextBuilder.build();
+    EndpointContext customEndpointContext =
+        defaultEndpointContextBuilder.setUniverseDomain("test.com").build();
+
+    assertDoesNotThrow(
+        () -> defaultEndpointContext.validateUniverseDomain(apiKeyCredentials, statusCode));
+    assertDoesNotThrow(
+        () -> customEndpointContext.validateUniverseDomain(apiKeyCredentials, statusCode));
+  }
+
+  @Test
+  void hasValidUniverseDomain_wrappedApiKeyCredentials_skipsValidation() throws IOException {
+    Credentials wrappedApiKeyCredentials =
+        new QuotaProjectIdHidingCredentials(ApiKeyCredentials.create("test-api-key"));
+    EndpointContext customEndpointContext =
+        defaultEndpointContextBuilder.setUniverseDomain("test.com").build();
+
+    assertDoesNotThrow(
+        () -> customEndpointContext.validateUniverseDomain(wrappedApiKeyCredentials, statusCode));
+  }
+
+  @Test
+  void hasValidUniverseDomain_wrappedNonApiKeyCredentials_mismatchThrows() throws IOException {
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(credentials.getUniverseDomain()).thenReturn(Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    Credentials wrappedCredentials = new QuotaProjectIdHidingCredentials(credentials);
+    EndpointContext customEndpointContext =
+        defaultEndpointContextBuilder.setUniverseDomain("test.com").build();
+
+    assertThrows(
+        UnauthenticatedException.class,
+        () -> customEndpointContext.validateUniverseDomain(wrappedCredentials, statusCode));
   }
 
   @Test

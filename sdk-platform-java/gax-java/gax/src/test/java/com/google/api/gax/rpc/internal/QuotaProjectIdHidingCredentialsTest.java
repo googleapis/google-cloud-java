@@ -117,4 +117,15 @@ class QuotaProjectIdHidingCredentialsTest {
 
     assertEquals(quotaProjectIdHidingCredentials.getUniverseDomain(), "example.com");
   }
+
+  @Test
+  void quotaProjectIdHidingCredentials_getWrappedCredentials() {
+    Credentials credentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
+
+    QuotaProjectIdHidingCredentials quotaProjectIdHidingCredentials =
+        new QuotaProjectIdHidingCredentials(credentials);
+
+    assertEquals(credentials, quotaProjectIdHidingCredentials.getWrappedCredentials());
+  }
 }

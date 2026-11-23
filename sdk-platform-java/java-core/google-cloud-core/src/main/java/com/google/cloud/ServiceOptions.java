@@ -42,6 +42,7 @@ import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.QuotaProjectIdProvider;
@@ -909,12 +910,17 @@ public abstract class ServiceOptions<
    * this is only intended for BigQuery and Storage Apiary Wrapped Libraries.
    *
    * <p>This validation call should be made prior to any RPC invocation. This call is used to gate
-   * the RPC invocation if there is no valid universe domain.
+   * the RPC invocation if there is no valid universe domain. Validation is skipped for {@link
+   * ApiKeyCredentials} because API keys do not carry universe domain metadata.
    */
   @InternalApi
   public boolean hasValidUniverseDomain() throws IOException {
+    Credentials credentials = getCredentials();
+    if (credentials instanceof ApiKeyCredentials) {
+      return true;
+    }
     String resolvedUniverseDomain =
         universeDomain != null ? universeDomain : Credentials.GOOGLE_DEFAULT_UNIVERSE;
-    return resolvedUniverseDomain.equals(getCredentials().getUniverseDomain());
+    return resolvedUniverseDomain.equals(credentials.getUniverseDomain());
   }
 }

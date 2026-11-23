@@ -33,6 +33,7 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.UnauthenticatedException;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.BaseService;
@@ -221,6 +222,20 @@ class HttpTransportOptionsTest {
     assertEquals(
         "The configured universe domain (random.com) does not match the universe domain found in the credentials (googleapis.com). If you haven't configured the universe domain explicitly, `googleapis.com` is the default.",
         exception.getCause().getMessage());
+  }
+
+  @Test
+  void testHttpRequestInitializer_customUniverseDomainSettings_apiKeyCredentials()
+      throws IOException {
+    ApiKeyCredentials apiKeyCredentials = ApiKeyCredentials.create("test-api-key");
+    TestServiceOptions testServiceOptions =
+        generateTestServiceOptions(CUSTOM_UNIVERSE_DOMAIN, apiKeyCredentials);
+    HttpRequestInitializer httpRequestInitializer =
+        DEFAULT_OPTIONS.getHttpRequestInitializer(testServiceOptions);
+    // Does not throw a validation exception
+    httpRequestInitializer.initialize(defaultHttpRequest);
+    assertEquals(
+        "test-api-key", defaultHttpRequest.getHeaders().getFirstHeaderStringValue("x-goog-api-key"));
   }
 
   private TestServiceOptions generateTestServiceOptions(

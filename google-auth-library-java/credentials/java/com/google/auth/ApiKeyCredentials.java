@@ -47,6 +47,10 @@ import org.jspecify.annotations.Nullable;
  * GoogleCredentials/OAuth2Credentials, as it does not provide an access token and is not considered
  * an OAuth2 credential.
  *
+ * <p>API keys do not carry universe domain metadata. Callers are expected to supply an API key
+ * created in the universe domain configured on the client. Client libraries do not validate the
+ * universe domain for {@code ApiKeyCredentials}.
+ *
  * <pre><code>
  * Credentials credentials = ApiKeyCredentials.create("your api key");
  * </code></pre>
@@ -60,6 +64,16 @@ public class ApiKeyCredentials extends Credentials {
     this.apiKey = apiKey;
   }
 
+  /**
+   * Creates an {@link ApiKeyCredentials} instance for the given API key.
+   *
+   * <p>Callers are expected to provide an API key created in the universe domain configured on the
+   * client. No universe domain validation is performed for API keys.
+   *
+   * @param apiKey the API key string
+   * @return the credentials instance
+   * @throws IllegalArgumentException if {@code apiKey} is null or empty
+   */
   public static ApiKeyCredentials create(String apiKey) {
     if (apiKey == null || apiKey.isEmpty()) {
       throw new IllegalArgumentException("API key cannot be null or blank");

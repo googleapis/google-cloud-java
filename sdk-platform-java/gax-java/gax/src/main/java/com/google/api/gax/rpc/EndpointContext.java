@@ -31,7 +31,9 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
+import com.google.api.gax.rpc.internal.QuotaProjectIdHidingCredentials;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsProvider;
@@ -163,6 +165,9 @@ public abstract class EndpointContext {
    * implementation of the StatusCode). This method is scoped to be internal and should be not be
    * accessed by users.
    *
+   * <p>Universe domain validation is skipped for {@link ApiKeyCredentials} because API keys do not
+   * carry universe domain metadata and are expected to match the configured universe domain.
+   *
    * @param credentials Auth Library Credentials
    * @param invalidUniverseDomainStatusCode Transport-specific Status Code to be returned if the
    *     Universe Domain is invalid. For both transports, this is defined to be Unauthorized.
@@ -174,6 +179,9 @@ public abstract class EndpointContext {
       throws IOException {
     if (usingGDCH()) {
       // GDC-H has no universe domain, return
+      return;
+    }
+    if (isApiKeyCredentials(credentials)) {
       return;
     }
     // (TODO: b/349488459) - Disable automatic requests to MDS until 01/2025
@@ -196,6 +204,14 @@ public abstract class EndpointContext {
           invalidUniverseDomainStatusCode,
           false);
     }
+  }
+
+  private static boolean isApiKeyCredentials(@Nullable Credentials credentials) {
+    Credentials current = credentials;
+    while (current instanceof QuotaProjectIdHidingCredentials) {
+      current = ((QuotaProjectIdHidingCredentials) current).getWrappedCredentials();
+    }
+    return current instanceof ApiKeyCredentials;
   }
 
   @AutoValue.Builder
