@@ -188,6 +188,11 @@
       <artifactId>exporter-metrics</artifactId>
     </dependency>
     <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-monitoring</artifactId>
+      <version>3.104.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+    </dependency>
+    <dependency>
       <groupId>com.google.cloud.opentelemetry</groupId>
       <artifactId>exporter-trace</artifactId>
       <version>0.36.0</version>

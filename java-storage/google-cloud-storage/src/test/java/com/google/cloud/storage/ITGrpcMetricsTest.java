@@ -18,12 +18,14 @@ package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.cloud.storage.it.runner.StorageITRunner;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.SingleBackend;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.contrib.gcp.resource.GCPResourceProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import java.io.IOException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -31,21 +33,21 @@ import org.junit.runner.RunWith;
 @SingleBackend(Backend.PROD)
 public class ITGrpcMetricsTest {
   @Test
-  public void testGrpcMetrics() {
+  public void testGrpcMetrics() throws IOException {
     GrpcStorageOptions grpcStorageOptions = StorageOptions.grpc().build();
     assertThat(
             OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
-                "storage.googleapis.com:443", "storage.googleapis.com"))
+                "storage.googleapis.com:443", "googleapis.com"))
         .isEqualTo("monitoring.googleapis.com:443");
 
     GCPResourceProvider resourceProvider = new GCPResourceProvider();
     Attributes detectedAttributes = resourceProvider.getAttributes();
+    MetricServiceSettings metricServiceSettings =
+        OpenTelemetryBootstrappingUtils.buildMetricServiceSettings(
+            "monitoring.googleapis.com:443", "googleapis.com", grpcStorageOptions.getCredentials());
     SdkMeterProvider provider =
         OpenTelemetryBootstrappingUtils.createMeterProvider(
-            "monitoring.googleapis.com:443",
-            grpcStorageOptions.getProjectId(),
-            detectedAttributes,
-            false);
+            metricServiceSettings, grpcStorageOptions.getProjectId(), detectedAttributes, false);
 
     /*
      * SDKMeterProvider doesn't expose the relevant fields we want to test, but they are present in
