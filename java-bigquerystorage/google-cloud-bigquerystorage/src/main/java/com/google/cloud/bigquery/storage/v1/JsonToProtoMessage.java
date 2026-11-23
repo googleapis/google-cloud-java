@@ -247,8 +247,13 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
    * share the same table schema.
    *
    * @param protoSchema
-   * @param tableSchema bigquery table schema is needed for type conversion of DATETIME, TIME,
-   *     NUMERIC, BIGNUMERIC
+   * @param tableSchema bigquery table schema is needed for type conversion of DATE, DATETIME, TIME,
+   *     TIMESTAMP, NUMERIC, BIGNUMERIC, and RANGE (see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/supported-data-types">BigQuery supported
+   *     data types</a> for expected BigQuery SQL type formats and <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1#google.cloud.bigquery.storage.v1.TableFieldSchema">TableFieldSchema
+   *     RPC reference</a> for the schema {@code type} and {@code range_element_type} fields used to
+   *     drive conversion)
    * @param json
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
    */
@@ -270,8 +275,13 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
    * share the same table schema.
    *
    * @param protoSchema
-   * @param tableSchema bigquery table schema is needed for type conversion of DATETIME, TIME,
-   *     NUMERIC, BIGNUMERIC
+   * @param tableSchema bigquery table schema is needed for type conversion of DATE, DATETIME, TIME,
+   *     TIMESTAMP, NUMERIC, BIGNUMERIC, and RANGE (see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/supported-data-types">BigQuery supported
+   *     data types</a> for expected BigQuery SQL type formats and <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1#google.cloud.bigquery.storage.v1.TableFieldSchema">TableFieldSchema
+   *     RPC reference</a> for the schema {@code type} and {@code range_element_type} fields used to
+   *     drive conversion)
    * @param json
    * @param ignoreUnknownFields allows unknown fields in JSON input to be ignored.
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.
@@ -291,8 +301,13 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
    * Converts Json array to list of protocol buffer messages given the protocol buffer descriptor.
    *
    * @param protoSchema
-   * @param tableSchema bigquery table schema is needed for type conversion of DATETIME, TIME,
-   *     NUMERIC, BIGNUMERIC
+   * @param tableSchema bigquery table schema is needed for type conversion of DATE, DATETIME, TIME,
+   *     TIMESTAMP, NUMERIC, BIGNUMERIC, and RANGE (see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/supported-data-types">BigQuery supported
+   *     data types</a> for expected BigQuery SQL type formats and <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1#google.cloud.bigquery.storage.v1.TableFieldSchema">TableFieldSchema
+   *     RPC reference</a> for the schema {@code type} and {@code range_element_type} fields used to
+   *     drive conversion)
    * @param jsonArray
    * @param ignoreUnknownFields allows unknown fields in JSON input to be ignored.
    * @throws IllegalArgumentException when JSON data is not compatible with proto descriptor.

@@ -533,6 +533,38 @@ function generate_graalvm_modules_list() {
   module_list="${modules_assigned_list[*]}"
 }
 
+# Modules that the nightly GraalVM jobs build and test as native images.
+#
+# Generated modules share one generator and one build setup, so the nightly
+# tests a few of them instead of all of them:
+# - java-aiplatform (gRPC) and java-compute (REST) are the two largest generated
+#   modules. Their native image builds need the most memory.
+# - java-ftp is a small REST client with google.longrunning operations, numeric
+#   enums and the Locations mixin. java-compute has none of these.
+#
+# The remaining modules contain handwritten code with integration tests. They
+# have no GraalVM job of their own, so the nightly is their only regular native
+# image run.
+graalvm_nightly_modules=(
+  'java-aiplatform'
+  'java-compute'
+  'java-ftp'
+  'java-containeranalysis'
+  'java-dns'
+  'java-notification'
+  'java-resourcemanager'
+  'java-samples'
+  'java-translate'
+)
+
+# Assigns the variable 'module_list' to a comma-delimited list of the modules
+# in graalvm_nightly_modules.
+function generate_graalvm_nightly_modules_list() {
+  # Join array into comma-delimited string without subshell:
+  local IFS=,
+  module_list="${graalvm_nightly_modules[*]}"
+}
+
 function install_modules() {
   if [ -z "$1" ]; then
     retry_with_backoff 3 10 \

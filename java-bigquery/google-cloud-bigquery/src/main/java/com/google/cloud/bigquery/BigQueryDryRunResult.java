@@ -28,7 +28,7 @@ public interface BigQueryDryRunResult {
   /**
    * Returns query parameters for standard SQL queries by extracting undeclare query parameters from
    * the dry run job. See more information:
-   * https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/JobStatistics2.html#getUndeclaredQueryParameters--
+   * https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobStatistics2.FIELDS.undeclared_query_parameters
    */
   @BetaApi
   List<Parameter> getQueryParameters() throws BigQuerySQLException;

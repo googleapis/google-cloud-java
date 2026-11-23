@@ -42,7 +42,7 @@ public interface LoadConfiguration {
      * Sets whether the job is allowed to create new tables.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.createDisposition">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad.FIELDS.create_disposition">
      *     Create Disposition</a>
      */
     Builder setCreateDisposition(CreateDisposition createDisposition);
@@ -51,7 +51,7 @@ public interface LoadConfiguration {
      * Sets the action that should occur if the destination table already exists.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.writeDisposition">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad.FIELDS.write_disposition">
      *     Write Disposition</a>
      */
     Builder setWriteDisposition(WriteDisposition writeDisposition);
@@ -62,7 +62,7 @@ public interface LoadConfiguration {
      * specified, {@code CSV} format is assumed.
      *
      * <p><a
-     * href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+     * href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad.FIELDS.source_format">
      * Source Format</a>
      */
     Builder setFormatOptions(FormatOptions formatOptions);
@@ -95,7 +95,7 @@ public interface LoadConfiguration {
      * Sets whether BigQuery should allow extra values that are not represented in the table schema.
      * If {@code true}, the extra values are ignored. If {@code false}, records with extra columns
      * are treated as bad records, and if there are too many bad records, an invalid error is
-     * returned in the job result. By default unknown values are not allowed.
+     * returned in the job result. Defaults to {@code false} (unknown values are not allowed).
      */
     Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues);
 
@@ -149,7 +149,7 @@ public interface LoadConfiguration {
    * Returns whether the job is allowed to create new tables.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.createDisposition">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad.FIELDS.create_disposition">
    *     Create Disposition</a>
    */
   CreateDisposition getCreateDisposition();
@@ -158,7 +158,7 @@ public interface LoadConfiguration {
    * Returns the action that should occur if the destination table already exists.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.writeDisposition">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad.FIELDS.write_disposition">
    *     Write Disposition</a>
    */
   WriteDisposition getWriteDisposition();
@@ -167,7 +167,7 @@ public interface LoadConfiguration {
    * Returns the string that represents a null value in a CSV file.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.nullMarker">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#JobConfigurationLoad.FIELDS.null_marker">
    *     Null Marker</a>
    */
   String getNullMarker();
@@ -193,9 +193,9 @@ public interface LoadConfiguration {
 
   /**
    * Returns whether BigQuery should allow extra values that are not represented in the table
-   * schema. If {@code true}, the extra values are ignored. If {@code true}, records with extra
+   * schema. If {@code true}, the extra values are ignored. If {@code false}, records with extra
    * columns are treated as bad records, and if there are too many bad records, an invalid error is
-   * returned in the job result. By default unknown values are not allowed.
+   * returned in the job result. Defaults to {@code false} (unknown values are not allowed).
    */
   Boolean ignoreUnknownValues();
 

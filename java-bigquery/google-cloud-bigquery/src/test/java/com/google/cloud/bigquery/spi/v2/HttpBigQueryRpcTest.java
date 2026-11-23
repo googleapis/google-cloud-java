@@ -46,6 +46,7 @@ import com.google.api.services.bigquery.model.Table;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DataFormatOptions;
 import com.google.cloud.bigquery.DataFormatOptions.TimestampFormatOptions;
@@ -1812,6 +1813,90 @@ public class HttpBigQueryRpcTest {
       }
 
       verifyNoSpans();
+    }
+  }
+
+  @Nested
+  class UniverseDomainValidationTests {
+
+    private HttpBigQueryRpc rpcWithMismatchedUniverseDomain;
+
+    /** Initializes an {@link HttpBigQueryRpc} with a mismatched universe domain configuration. */
+    @BeforeEach
+    public void setUp() {
+      setUpServer();
+      BigQueryOptions options =
+          BigQueryOptions.newBuilder()
+              .setProjectId(PROJECT_ID)
+              .setUniverseDomain("custom-universe.com")
+              .setCredentials(NoCredentials.getInstance())
+              .setTransportOptions(
+                  BigQueryOptions.getDefaultHttpTransportOptions().toBuilder()
+                      .setHttpTransportFactory(() -> mockTransport)
+                      .build())
+              .build();
+      rpcWithMismatchedUniverseDomain = new HttpBigQueryRpc(options);
+    }
+
+    @Test
+    public void testOpenFailsOnMismatchedUniverseDomain() {
+      BigQueryException exception =
+          assertThrows(
+              BigQueryException.class, () -> rpcWithMismatchedUniverseDomain.open(new Job()));
+
+      assertEquals(401, exception.getCode());
+      assertNull(lastRequestUrl);
+    }
+
+    @Test
+    public void testOpenSkipExceptionTranslationFailsOnMismatchedUniverseDomain() {
+      BigQueryException exception =
+          assertThrows(
+              BigQueryException.class,
+              () -> rpcWithMismatchedUniverseDomain.openSkipExceptionTranslation(new Job()));
+
+      assertEquals(401, exception.getCode());
+      assertNull(lastRequestUrl);
+    }
+
+    @Test
+    public void testWriteFailsOnMismatchedUniverseDomain() {
+      BigQueryException exception =
+          assertThrows(
+              BigQueryException.class,
+              () ->
+                  rpcWithMismatchedUniverseDomain.write(
+                      "https://bigquery.googleapis.com/upload/bigquery/v2/projects/"
+                          + PROJECT_ID
+                          + "/jobs?uploadType=resumable",
+                      new byte[] {1, 2, 3},
+                      0,
+                      0,
+                      3,
+                      true));
+
+      assertEquals(401, exception.getCode());
+      assertNull(lastRequestUrl);
+    }
+
+    @Test
+    public void testWriteSkipExceptionTranslationFailsOnMismatchedUniverseDomain() {
+      BigQueryException exception =
+          assertThrows(
+              BigQueryException.class,
+              () ->
+                  rpcWithMismatchedUniverseDomain.writeSkipExceptionTranslation(
+                      "https://bigquery.googleapis.com/upload/bigquery/v2/projects/"
+                          + PROJECT_ID
+                          + "/jobs?uploadType=resumable",
+                      new byte[] {1, 2, 3},
+                      0,
+                      0,
+                      3,
+                      true));
+
+      assertEquals(401, exception.getCode());
+      assertNull(lastRequestUrl);
     }
   }
 }

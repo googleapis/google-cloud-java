@@ -297,7 +297,7 @@ public class Dataset extends DatasetInfo {
    * <p>Example of getting a table in the dataset.
    *
    * <pre>{@code
-   * String tableName = “my_table”;
+   * String tableName = "my_table";
    * Table table = dataset.get(tableName);
    * }</pre>
    *
@@ -321,8 +321,8 @@ public class Dataset extends DatasetInfo {
    * <p>Example of creating a table in the dataset with schema and time partitioning.
    *
    * <pre>{@code
-   * String tableName = “my_table”;
-   * String fieldName = “my_field”;
+   * String tableName = "my_table";
+   * String fieldName = "my_field";
    * Schema schema = Schema.of(Field.of(fieldName, LegacySQLTypeName.STRING));
    * StandardTableDefinition definition = StandardTableDefinition.newBuilder()
    *     .setSchema(schema)

@@ -237,9 +237,8 @@ public class FieldValue implements Serializable {
   }
 
   /**
-   * Returns this field's value as a {@code String}, representing a timestamp as an Instant. This
-   * method should only be used if the corresponding field has {@link LegacySQLTypeName#TIMESTAMP}
-   * type.
+   * Returns this field's value as an {@link Instant}. This method should only be used if the
+   * corresponding field has {@link LegacySQLTypeName#TIMESTAMP} type.
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Long}
@@ -431,7 +430,7 @@ public class FieldValue implements Serializable {
    *
    * <p>The parameter {@code interval} should be an interval in the canonical format: "[sign]Y-M
    * [sign]D [sign]H:M:S[.F]". More details <a href=
-   * "https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#canonical_format_3">
+   * "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types#canonical_format_3">
    * here</a>
    *
    * @throws IllegalArgumentException if the {@code interval} is not a valid interval

@@ -58,7 +58,7 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
   }
 
   /**
-   * Gets field value by index.
+   * Gets field value by name.
    *
    * @param name field name (defined in schema)
    * @throws IllegalArgumentException if schema is not provided or if {@code name} was not found in
