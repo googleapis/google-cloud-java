@@ -53,8 +53,8 @@ public class CheckAndMutateIT {
     // TODO: Remove this skip once CheckAndMutateRow is enabled on the session test backend.
     assume()
         .withMessage("CheckAndMutateRow is not yet enabled on the session test backend")
-        .that(System.getProperty("bigtable.internal.client-config-override", ""))
-        .isEmpty();
+        .that(testEnvRule.env().isSessionsEnabled())
+        .isFalse();
   }
 
   @Test
