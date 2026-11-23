@@ -40,6 +40,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.client.util.Joiner;
+import com.google.auth.Credentials;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -52,6 +53,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -86,9 +88,12 @@ public class UserAuthorizer {
 
   private final HttpTransportFactory transportFactory;
   private final URI tokenServerUri;
+  private final @Nullable URI tokenRevokeUri;
   private final URI userAuthUri;
   private final @Nullable PKCEProvider pkce;
   private final ClientAuthenticationType clientAuthenticationType;
+  private final String universeDomain;
+  private final boolean isExplicitUniverseDomain;
 
   /** Internal constructor. See {@link Builder}. */
   private UserAuthorizer(Builder builder) {
@@ -99,8 +104,29 @@ public class UserAuthorizer {
         (builder.transportFactory == null)
             ? OAuth2Utils.HTTP_TRANSPORT_FACTORY
             : builder.transportFactory;
+    if (builder.universeDomain == null || builder.universeDomain.trim().isEmpty()) {
+      this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+      this.isExplicitUniverseDomain = false;
+    } else {
+      this.universeDomain = builder.universeDomain;
+      this.isExplicitUniverseDomain = true;
+    }
     this.tokenServerUri =
         (builder.tokenServerUri == null) ? OAuth2Utils.TOKEN_SERVER_URI : builder.tokenServerUri;
+    if (builder.tokenRevokeUri != null) {
+      if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(this.universeDomain)
+          && isGoogleDefaultUniverseUri(builder.tokenRevokeUri)) {
+        throw new IllegalArgumentException(
+            "tokenRevokeUri cannot use googleapis.com when universeDomain is "
+                + this.universeDomain);
+      }
+      this.tokenRevokeUri = builder.tokenRevokeUri;
+    } else if (Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(this.universeDomain)
+        && OAuth2Utils.TOKEN_SERVER_URI.equals(this.tokenServerUri)) {
+      this.tokenRevokeUri = OAuth2Utils.TOKEN_REVOKE_URI;
+    } else {
+      this.tokenRevokeUri = null;
+    }
     this.userAuthUri =
         (builder.userAuthUri == null) ? OAuth2Utils.USER_AUTH_URI : builder.userAuthUri;
     this.tokenStore = (builder.tokenStore == null) ? new MemoryTokensStorage() : builder.tokenStore;
@@ -175,6 +201,25 @@ public class UserAuthorizer {
    */
   public ClientAuthenticationType getClientAuthenticationType() {
     return clientAuthenticationType;
+  }
+
+  /**
+   * Returns the token revocation endpoint URI, or {@code null} if no revocation endpoint is
+   * configured.
+   *
+   * @return The token revocation endpoint URI, or {@code null}.
+   */
+  public @Nullable URI getTokenRevokeUri() {
+    return tokenRevokeUri;
+  }
+
+  /**
+   * Returns the universe domain configured for this authorizer.
+   *
+   * @return The universe domain, defaulting to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}.
+   */
+  public String getUniverseDomain() {
+    return universeDomain;
   }
 
   /**
@@ -263,15 +308,18 @@ public class UserAuthorizer {
             .build();
     String refreshToken =
         OAuth2Utils.validateOptionalString(tokenJson, "refresh_token", TOKEN_STORE_ERROR);
-    UserCredentials credentials =
+    UserCredentials.Builder credentialsBuilder =
         UserCredentials.newBuilder()
             .setClientId(clientId.getClientId())
             .setClientSecret(clientId.getClientSecret())
             .setRefreshToken(refreshToken)
             .setAccessToken(accessToken)
             .setHttpTransportFactory(transportFactory)
-            .setTokenServerUri(tokenServerUri)
-            .build();
+            .setTokenServerUri(tokenServerUri);
+    if (isExplicitUniverseDomain) {
+      credentialsBuilder.setUniverseDomain(universeDomain);
+    }
+    UserCredentials credentials = credentialsBuilder.build();
     monitorCredentials(userId, credentials);
     return credentials;
   }
@@ -306,14 +354,18 @@ public class UserAuthorizer {
         additionalParameters != null ? additionalParameters : Collections.emptyMap();
     TokenResponseWithConfig tokenResponseWithConfig =
         getCredentialsFromCodeInternal(code, baseUri, effectiveAdditionalParameters);
-    return UserCredentials.newBuilder()
-        .setClientId(tokenResponseWithConfig.getClientId())
-        .setClientSecret(tokenResponseWithConfig.getClientSecret())
-        .setAccessToken(tokenResponseWithConfig.getAccessToken())
-        .setRefreshToken(tokenResponseWithConfig.getRefreshToken())
-        .setHttpTransportFactory(tokenResponseWithConfig.getHttpTransportFactory())
-        .setTokenServerUri(tokenResponseWithConfig.getTokenServerUri())
-        .build();
+    UserCredentials.Builder credentialsBuilder =
+        UserCredentials.newBuilder()
+            .setClientId(tokenResponseWithConfig.getClientId())
+            .setClientSecret(tokenResponseWithConfig.getClientSecret())
+            .setAccessToken(tokenResponseWithConfig.getAccessToken())
+            .setRefreshToken(tokenResponseWithConfig.getRefreshToken())
+            .setHttpTransportFactory(tokenResponseWithConfig.getHttpTransportFactory())
+            .setTokenServerUri(tokenResponseWithConfig.getTokenServerUri());
+    if (isExplicitUniverseDomain) {
+      credentialsBuilder.setUniverseDomain(universeDomain);
+    }
+    return credentialsBuilder.build();
   }
 
   /**
@@ -363,6 +415,11 @@ public class UserAuthorizer {
    */
   public void revokeAuthorization(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
+    if (tokenRevokeUri == null) {
+      throw new IllegalStateException(
+          "tokenRevokeUri must be explicitly set when using a custom tokenServerUri or"
+              + " non-default universeDomain");
+    }
     String tokenData = tokenStore.load(userId);
     if (tokenData == null) {
       return;
@@ -384,7 +441,7 @@ public class UserAuthorizer {
     // If both tokens are present, either can be used
     String revokeToken = (refreshToken != null) ? refreshToken : accessTokenValue;
 
-    GenericUrl revokeUrl = new GenericUrl(OAuth2Utils.TOKEN_REVOKE_URI);
+    GenericUrl revokeUrl = new GenericUrl(tokenRevokeUri);
     GenericData genericData = new GenericData();
     genericData.put("token", revokeToken);
     UrlEncodedContent content = new UrlEncodedContent(genericData);
@@ -543,6 +600,19 @@ public class UserAuthorizer {
     }
   }
 
+  private static boolean isGoogleDefaultUniverseUri(URI uri) {
+    String host = uri.getHost();
+    if (host == null || host.isEmpty()) {
+      return false;
+    }
+    String normalizedHost = host.toLowerCase(Locale.ROOT);
+    while (normalizedHost.endsWith(".")) {
+      normalizedHost = normalizedHost.substring(0, normalizedHost.length() - 1);
+    }
+    return normalizedHost.equals(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+        || normalizedHost.endsWith("." + Credentials.GOOGLE_DEFAULT_UNIVERSE);
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -557,11 +627,13 @@ public class UserAuthorizer {
     private @Nullable TokenStore tokenStore;
     private @Nullable URI callbackUri;
     private @Nullable URI tokenServerUri;
+    private @Nullable URI tokenRevokeUri;
     private @Nullable URI userAuthUri;
     private @Nullable Collection<String> scopes;
     private @Nullable HttpTransportFactory transportFactory;
     private @Nullable PKCEProvider pkce;
     private @Nullable ClientAuthenticationType clientAuthenticationType;
+    private @Nullable String universeDomain;
 
     protected Builder() {}
 
@@ -570,11 +642,20 @@ public class UserAuthorizer {
       this.scopes = authorizer.scopes;
       this.transportFactory = authorizer.transportFactory;
       this.tokenServerUri = authorizer.tokenServerUri;
+      this.tokenRevokeUri =
+          (Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(authorizer.universeDomain)
+                  && OAuth2Utils.TOKEN_SERVER_URI.equals(authorizer.tokenServerUri)
+                  && OAuth2Utils.TOKEN_REVOKE_URI.equals(authorizer.tokenRevokeUri))
+              ? null
+              : authorizer.tokenRevokeUri;
       this.tokenStore = authorizer.tokenStore;
       this.callbackUri = authorizer.callbackUri;
       this.userAuthUri = authorizer.userAuthUri;
       this.pkce = new DefaultPKCEProvider();
       this.clientAuthenticationType = authorizer.clientAuthenticationType;
+      if (authorizer.isExplicitUniverseDomain) {
+        this.universeDomain = authorizer.universeDomain;
+      }
     }
 
     /**
@@ -622,6 +703,37 @@ public class UserAuthorizer {
     @CanIgnoreReturnValue
     public Builder setTokenServerUri(URI tokenServerUri) {
       this.tokenServerUri = tokenServerUri;
+      return this;
+    }
+
+    /**
+     * Sets the token revocation endpoint.
+     *
+     * <p>Defaults to {@code https://oauth2.googleapis.com/revoke} only when both {@code
+     * universeDomain} is {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} and {@code tokenServerUri} is
+     * the default Google token server URI. When using a custom {@code tokenServerUri} or
+     * non-default {@code universeDomain}, this must be set before calling {@link
+     * UserAuthorizer#revokeAuthorization(String)}.
+     *
+     * @param tokenRevokeUri the token revocation endpoint to use
+     * @return this {@code Builder} object
+     */
+    @CanIgnoreReturnValue
+    public Builder setTokenRevokeUri(@Nullable URI tokenRevokeUri) {
+      this.tokenRevokeUri = tokenRevokeUri;
+      return this;
+    }
+
+    /**
+     * Sets the optional universe domain. Defaults to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}
+     * when {@code null} or blank.
+     *
+     * @param universeDomain the universe domain to set
+     * @return this {@code Builder} object
+     */
+    @CanIgnoreReturnValue
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
+      this.universeDomain = universeDomain;
       return this;
     }
 
@@ -713,6 +825,14 @@ public class UserAuthorizer {
 
     public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
+    }
+
+    public @Nullable URI getTokenRevokeUri() {
+      return tokenRevokeUri;
+    }
+
+    public @Nullable String getUniverseDomain() {
+      return universeDomain;
     }
 
     public @Nullable URI getCallbackUri() {
