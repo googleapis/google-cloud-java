@@ -25,9 +25,8 @@ import javax.annotation.Nullable;
  * A Google BigQuery Model table definition. This definition is used to represent a BigQuery ML
  * model.
  *
- * @see <a
- *     href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">BigQuery
- *     ML Model</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/bqml-introduction">BigQuery ML
+ *     Model</a>
  */
 @AutoValue
 @BetaApi
@@ -57,9 +56,7 @@ public abstract class ModelTableDefinition extends TableDefinition {
    * Returns the geographic location where the table should reside. This value is inherited from the
    * dataset.
    *
-   * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
-   *     Dataset Location</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/locations">Dataset Location</a>
    */
   @Nullable
   public abstract String getLocation();
