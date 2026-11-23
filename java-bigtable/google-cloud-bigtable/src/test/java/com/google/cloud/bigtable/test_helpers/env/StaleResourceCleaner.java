@@ -51,34 +51,26 @@ public class StaleResourceCleaner {
     BigtableTableAdminClient create(String instanceId) throws IOException;
   }
 
-  private final String instanceId;
-  private final BigtableTableAdminClient tableAdmin;
+  private final String sharedInstanceId;
   private final BigtableInstanceAdminClient instanceAdmin;
   private final TableAdminClientFactory tableAdminClientFactory;
   private final List<Throwable> errors = new ArrayList<>();
 
   StaleResourceCleaner(
-      String instanceId,
-      BigtableTableAdminClient tableAdmin,
+      String sharedInstanceId,
       BigtableInstanceAdminClient instanceAdmin,
       TableAdminClientFactory tableAdminClientFactory) {
-    this.instanceId = instanceId;
-    this.tableAdmin = tableAdmin;
+    this.sharedInstanceId = sharedInstanceId;
     this.instanceAdmin = instanceAdmin;
     this.tableAdminClientFactory = tableAdminClientFactory;
   }
 
   public static void main(String[] args) throws Exception {
     CloudEnv cloudEnv = CloudEnv.fromSystemProperties();
-    try (BigtableTableAdminClient tableAdmin =
-            BigtableTableAdminClient.create(cloudEnv.getTableAdminSettings());
-        BigtableInstanceAdminClient instanceAdmin =
-            BigtableInstanceAdminClient.create(cloudEnv.getInstanceAdminClientSettings())) {
+    try (BigtableInstanceAdminClient instanceAdmin =
+        BigtableInstanceAdminClient.create(cloudEnv.getInstanceAdminClientSettings())) {
       new StaleResourceCleaner(
-              cloudEnv.getInstanceId(),
-              tableAdmin,
-              instanceAdmin,
-              cloudEnv::getTableAdminClientForInstance)
+              cloudEnv.getInstanceId(), instanceAdmin, cloudEnv::getTableAdminClientForInstance)
           .cleanUp();
     }
   }
@@ -98,8 +90,8 @@ public class StaleResourceCleaner {
         "Starting stale resource cleanup with stalePrefix="
             + stalePrefix
             + " for shared instance="
-            + instanceId);
-    cleanUpSharedInstance(stalePrefix);
+            + sharedInstanceId);
+    cleanUpSharedInstance(sharedInstanceId, stalePrefix);
     cleanUpStaleInstances(stalePrefix);
 
     if (!errors.isEmpty()) {
@@ -113,16 +105,20 @@ public class StaleResourceCleaner {
     }
   }
 
-  void cleanUpSharedInstance(String stalePrefix) {
+  void cleanUpSharedInstance(String instanceId, String stalePrefix) {
     LOGGER.info("Cleaning up shared instance: " + instanceId);
-    cleanUpStaleMaterializedViews(stalePrefix);
-    cleanUpStaleLogicalViews(stalePrefix);
-    cleanUpTablesAndAuthorizedViews(stalePrefix);
-    cleanUpStaleAppProfiles(stalePrefix);
-    cleanUpClustersAndBackups(stalePrefix);
+    try (BigtableTableAdminClient tableAdmin = tableAdminClientFactory.create(instanceId)) {
+      cleanUpStaleMaterializedViews(instanceId, stalePrefix);
+      cleanUpStaleLogicalViews(instanceId, stalePrefix);
+      cleanUpTablesAndAuthorizedViews(tableAdmin, stalePrefix);
+      cleanUpStaleAppProfiles(instanceId, stalePrefix);
+      cleanUpClustersAndBackups(instanceId, tableAdmin, stalePrefix);
+    } catch (Exception e) {
+      recordError("Failed to clean up shared instance: " + instanceId, e);
+    }
   }
 
-  private void cleanUpStaleMaterializedViews(String stalePrefix) {
+  private void cleanUpStaleMaterializedViews(String instanceId, String stalePrefix) {
     List<MaterializedView> views;
     try {
       views = instanceAdmin.listMaterializedViews(instanceId);
@@ -140,25 +136,25 @@ public class StaleResourceCleaner {
     }
   }
 
-  private void unprotectAndDeleteMaterializedView(String targetInstanceId, MaterializedView view) {
+  private void unprotectAndDeleteMaterializedView(String instanceId, MaterializedView view) {
     try {
       if (view.isDeletionProtected()) {
         instanceAdmin.updateMaterializedView(
-            UpdateMaterializedViewRequest.of(targetInstanceId, view.getId())
+            UpdateMaterializedViewRequest.of(instanceId, view.getId())
                 .setDeletionProtection(false));
       }
-      instanceAdmin.deleteMaterializedView(targetInstanceId, view.getId());
+      instanceAdmin.deleteMaterializedView(instanceId, view.getId());
     } catch (Exception e) {
       recordError(
           "Failed to delete stale materialized view: "
               + view.getId()
               + " in instance "
-              + targetInstanceId,
+              + instanceId,
           e);
     }
   }
 
-  private void cleanUpStaleLogicalViews(String stalePrefix) {
+  private void cleanUpStaleLogicalViews(String instanceId, String stalePrefix) {
     List<LogicalView> views;
     try {
       views = instanceAdmin.listLogicalViews(instanceId);
@@ -175,25 +171,21 @@ public class StaleResourceCleaner {
     }
   }
 
-  private void unprotectAndDeleteLogicalView(String targetInstanceId, LogicalView view) {
+  private void unprotectAndDeleteLogicalView(String instanceId, LogicalView view) {
     try {
       if (view.isDeletionProtected()) {
         instanceAdmin.updateLogicalView(
-            UpdateLogicalViewRequest.of(targetInstanceId, view.getId())
-                .setDeletionProtection(false));
+            UpdateLogicalViewRequest.of(instanceId, view.getId()).setDeletionProtection(false));
       }
-      instanceAdmin.deleteLogicalView(targetInstanceId, view.getId());
+      instanceAdmin.deleteLogicalView(instanceId, view.getId());
     } catch (Exception e) {
       recordError(
-          "Failed to delete stale logical view: "
-              + view.getId()
-              + " in instance "
-              + targetInstanceId,
-          e);
+          "Failed to delete stale logical view: " + view.getId() + " in instance " + instanceId, e);
     }
   }
 
-  private void cleanUpTablesAndAuthorizedViews(String stalePrefix) {
+  private void cleanUpTablesAndAuthorizedViews(
+      BigtableTableAdminClient tableAdmin, String stalePrefix) {
     LOGGER.info("Start cleaning up stale tables with stalePrefix=" + stalePrefix);
     List<String> tableIds;
     try {
@@ -204,7 +196,7 @@ public class StaleResourceCleaner {
     }
     for (String tableId : tableIds) {
       if (!tableId.startsWith(PrefixGenerator.PREFIX)) {
-        cleanUpStaleAuthorizedViewsOnPersistentTable(tableId, stalePrefix);
+        cleanUpStaleAuthorizedViewsOnPersistentTable(tableAdmin, tableId, stalePrefix);
         continue;
       }
       if (isStale(tableId, stalePrefix)) {
@@ -220,18 +212,18 @@ public class StaleResourceCleaner {
     }
   }
 
-  private void prepTableForDelete(BigtableTableAdminClient targetTableAdmin, String tableId) {
-    Table table = targetTableAdmin.getTable(tableId);
+  private void prepTableForDelete(BigtableTableAdminClient tableAdmin, String tableId) {
+    Table table = tableAdmin.getTable(tableId);
     if (table.isDeletionProtected() || table.getChangeStreamRetention() != null) {
-      targetTableAdmin.updateTable(
+      tableAdmin.updateTable(
           UpdateTableRequest.of(tableId)
               .setDeletionProtection(false)
               .disableChangeStreamRetention());
     }
 
-    for (String viewId : targetTableAdmin.listAuthorizedViews(tableId)) {
+    for (String viewId : tableAdmin.listAuthorizedViews(tableId)) {
       try {
-        targetTableAdmin.updateAuthorizedView(
+        tableAdmin.updateAuthorizedView(
             UpdateAuthorizedViewRequest.of(tableId, viewId).setDeletionProtection(false));
       } catch (Exception e) {
         recordError(
@@ -240,7 +232,8 @@ public class StaleResourceCleaner {
     }
   }
 
-  private void cleanUpStaleAuthorizedViewsOnPersistentTable(String tableId, String stalePrefix) {
+  private void cleanUpStaleAuthorizedViewsOnPersistentTable(
+      BigtableTableAdminClient tableAdmin, String tableId, String stalePrefix) {
     List<String> viewIds;
     try {
       viewIds = tableAdmin.listAuthorizedViews(tableId);
@@ -268,7 +261,7 @@ public class StaleResourceCleaner {
     }
   }
 
-  private void cleanUpStaleAppProfiles(String stalePrefix) {
+  private void cleanUpStaleAppProfiles(String instanceId, String stalePrefix) {
     List<AppProfile> appProfiles;
     try {
       appProfiles = instanceAdmin.listAppProfiles(instanceId);
@@ -293,7 +286,8 @@ public class StaleResourceCleaner {
     }
   }
 
-  private void cleanUpClustersAndBackups(String stalePrefix) {
+  private void cleanUpClustersAndBackups(
+      String instanceId, BigtableTableAdminClient tableAdmin, String stalePrefix) {
     List<Cluster> clusters;
     try {
       clusters = instanceAdmin.listClusters(instanceId);
@@ -304,7 +298,7 @@ public class StaleResourceCleaner {
     for (Cluster cluster : clusters) {
       if (!cluster.getId().startsWith(PrefixGenerator.PREFIX)) {
         try {
-          deleteStaleBackups(cluster.getId(), stalePrefix);
+          deleteStaleBackups(tableAdmin, cluster.getId(), stalePrefix);
         } catch (Exception e) {
           recordError("Failed to delete stale backups in cluster: " + cluster.getId(), e);
         }
@@ -349,81 +343,80 @@ public class StaleResourceCleaner {
     }
   }
 
-  private void prepInstanceForDelete(String targetInstanceId) {
+  private void prepInstanceForDelete(String instanceId) {
     try {
-      for (MaterializedView materializedView :
-          instanceAdmin.listMaterializedViews(targetInstanceId)) {
-        unprotectAndDeleteMaterializedView(targetInstanceId, materializedView);
+      for (MaterializedView materializedView : instanceAdmin.listMaterializedViews(instanceId)) {
+        unprotectAndDeleteMaterializedView(instanceId, materializedView);
       }
     } catch (NotFoundException e) {
       throw e;
     } catch (Exception e) {
-      recordError("Failed to list materialized views in stale instance: " + targetInstanceId, e);
+      recordError("Failed to list materialized views in stale instance: " + instanceId, e);
     }
     try {
-      for (LogicalView logicalView : instanceAdmin.listLogicalViews(targetInstanceId)) {
-        unprotectAndDeleteLogicalView(targetInstanceId, logicalView);
+      for (LogicalView logicalView : instanceAdmin.listLogicalViews(instanceId)) {
+        unprotectAndDeleteLogicalView(instanceId, logicalView);
       }
     } catch (NotFoundException e) {
       throw e;
     } catch (Exception e) {
-      recordError("Failed to list logical views in stale instance: " + targetInstanceId, e);
+      recordError("Failed to list logical views in stale instance: " + instanceId, e);
     }
   }
 
-  private void deleteInstance(String targetInstanceId) {
-    try (BigtableTableAdminClient instanceTableAdmin =
-        tableAdminClientFactory.create(targetInstanceId)) {
+  private void deleteInstance(String instanceId) {
+    try (BigtableTableAdminClient tableAdmin = tableAdminClientFactory.create(instanceId)) {
       try {
-        for (String tableId : instanceTableAdmin.listTables()) {
+        for (String tableId : tableAdmin.listTables()) {
           try {
-            prepTableForDelete(instanceTableAdmin, tableId);
+            prepTableForDelete(tableAdmin, tableId);
           } catch (Exception e) {
             recordError(
-                "Failed to prepare table " + tableId + " in stale instance " + targetInstanceId, e);
+                "Failed to prepare table " + tableId + " in stale instance " + instanceId, e);
           }
         }
       } catch (NotFoundException e) {
         return;
       } catch (Exception e) {
-        recordError("Failed to list tables in stale instance: " + targetInstanceId, e);
+        recordError("Failed to list tables in stale instance: " + instanceId, e);
       }
 
-      for (Cluster cluster : instanceAdmin.listClusters(targetInstanceId)) {
+      for (Cluster cluster : instanceAdmin.listClusters(instanceId)) {
         try {
-          deleteAllBackups(instanceTableAdmin, cluster.getId());
+          deleteAllBackups(tableAdmin, cluster.getId());
         } catch (Exception e) {
           recordError(
               "Failed to delete backups in cluster "
                   + cluster.getId()
                   + " of stale instance "
-                  + targetInstanceId,
+                  + instanceId,
               e);
         }
       }
     } catch (Exception e) {
-      recordError("Failed to clean up tables/backups in stale instance: " + targetInstanceId, e);
+      recordError("Failed to clean up tables/backups in stale instance: " + instanceId, e);
     }
 
     try {
-      instanceAdmin.deleteInstance(targetInstanceId);
+      instanceAdmin.deleteInstance(instanceId);
     } catch (Exception e) {
-      recordError("Failed to delete stale instance: " + targetInstanceId, e);
+      recordError("Failed to delete stale instance: " + instanceId, e);
     }
   }
 
-  private void deleteAllBackups(BigtableTableAdminClient targetTableAdmin, String clusterId) {
+  private void deleteAllBackups(BigtableTableAdminClient tableAdmin, String clusterId) {
     List<ApiFuture<?>> futures = new ArrayList<>();
 
-    for (String backupId : targetTableAdmin.listBackups(clusterId)) {
-      ApiFuture<Void> f = targetTableAdmin.deleteBackupAsync(clusterId, backupId);
+    for (String backupId : tableAdmin.listBackups(clusterId)) {
+      ApiFuture<Void> f = tableAdmin.deleteBackupAsync(clusterId, backupId);
       futures.add(f);
     }
 
     awaitBackupDeletions(futures, clusterId);
   }
 
-  private void deleteStaleBackups(String clusterId, String stalePrefix) {
+  private void deleteStaleBackups(
+      BigtableTableAdminClient tableAdmin, String clusterId, String stalePrefix) {
     List<ApiFuture<?>> futures = new ArrayList<>();
 
     for (String backupId : tableAdmin.listBackups(clusterId)) {

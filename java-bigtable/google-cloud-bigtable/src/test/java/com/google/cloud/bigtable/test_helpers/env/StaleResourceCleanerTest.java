@@ -969,12 +969,8 @@ class StaleResourceCleanerTest {
   }
 
   private StaleResourceCleaner createCleaner() {
-    BigtableTableAdminClient sharedTableAdmin =
-        BigtableTableAdminClient.create(
-            PROJECT_ID, SHARED_INSTANCE_ID, tableStubsByInstance.get(SHARED_INSTANCE_ID));
     return new StaleResourceCleaner(
         SHARED_INSTANCE_ID,
-        sharedTableAdmin,
         instanceAdmin,
         instId ->
             BigtableTableAdminClient.create(PROJECT_ID, instId, tableStubsByInstance.get(instId)));
