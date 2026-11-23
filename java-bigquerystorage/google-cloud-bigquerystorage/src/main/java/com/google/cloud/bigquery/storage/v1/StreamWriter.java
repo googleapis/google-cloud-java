@@ -496,18 +496,23 @@ public class StreamWriter implements AutoCloseable {
    * ApiFuture<AppendRowsResponse> future = writer.append(rows, 0);
    * ApiFutures.addCallback(future, new ApiFutureCallback<AppendRowsResponse>() {
    *   public void onSuccess(AppendRowsResponse response) {
-   *     if (!response.hasError()) {
-   *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
-   *     } else {
-   *       System.out.println("received an in stream error: " + response.getError().toString());
-   *     }
+   *     System.out.println("written with offset: " + response.getAppendResult().getOffset());
    *   }
    *
    *   public void onFailure(Throwable t) {
+   *     // Server-side in-stream errors and RPC errors are delivered to onFailure.
    *     System.out.println("failed to write: " + t);
    *   }
    * }, MoreExecutors.directExecutor());
    * }</pre>
+   *
+   * <p>Server-side in-stream errors and RPC errors always complete the returned {@link ApiFuture}
+   * exceptionally rather than arriving in {@code onSuccess}. See the <a
+   * href="https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1#google.cloud.bigquery.storage.v1.AppendRowsResponse">AppendRowsResponse
+   * RPC reference</a> for the mutually exclusive {@code append_result} and {@code error} fields,
+   * and <a href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc#error_handling">Storage
+   * Write API error handling</a> for how backend {@code google.rpc.Status} and {@code StorageError}
+   * details are reported.
    *
    * @param rows the rows in serialized format to write to BigQuery.
    * @param offset the offset of the first row. Provide -1 to write at the current end of stream.
@@ -530,18 +535,23 @@ public class StreamWriter implements AutoCloseable {
    * ApiFuture<AppendRowsResponse> future = writer.append(recordBatch, 0);
    * ApiFutures.addCallback(future, new ApiFutureCallback<AppendRowsResponse>() {
    *   public void onSuccess(AppendRowsResponse response) {
-   *     if (!response.hasError()) {
-   *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
-   *     } else {
-   *       System.out.println("received an in stream error: " + response.getError().toString());
-   *     }
+   *     System.out.println("written with offset: " + response.getAppendResult().getOffset());
    *   }
    *
    *   public void onFailure(Throwable t) {
+   *     // Server-side in-stream errors and RPC errors are delivered to onFailure.
    *     System.out.println("failed to write: " + t);
    *   }
    * }, MoreExecutors.directExecutor());
    * }</pre>
+   *
+   * <p>Server-side in-stream errors and RPC errors always complete the returned {@link ApiFuture}
+   * exceptionally rather than arriving in {@code onSuccess}. See the <a
+   * href="https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1#google.cloud.bigquery.storage.v1.AppendRowsResponse">AppendRowsResponse
+   * RPC reference</a> for the mutually exclusive {@code append_result} and {@code error} fields,
+   * and <a href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc#error_handling">Storage
+   * Write API error handling</a> for how backend {@code google.rpc.Status} and {@code StorageError}
+   * details are reported.
    *
    * @param recordBatch the ArrowRecordBatch in serialized format to write to BigQuery.
    * @param offset the offset of the first row. Provide -1 to write at the current end of stream.
@@ -775,10 +785,15 @@ public class StreamWriter implements AutoCloseable {
   }
 
   /**
-   * Sets the maximum time a request is allowed to be waiting in request waiting queue. Under very
-   * low chance, it's possible for append request to be waiting indefintely for request callback
-   * when Google networking SDK does not detect the networking breakage. The default timeout is 15
-   * minutes. We are investigating the root cause for callback not triggered by networking SDK.
+   * Sets the maximum time a request is allowed to wait in the request waiting queue. Under rare
+   * conditions, an append request may wait indefinitely for a callback when the underlying network
+   * layer does not detect a broken connection. The default timeout is 5 minutes (lowered from 15
+   * minutes in <a
+   * href="https://github.com/googleapis/java-bigquerystorage/pull/2084">java-bigquerystorage#2084</a>);
+   * when exceeded, the connection closes with {@link
+   * Exceptions.MaximumRequestCallbackWaitTimeExceededException}. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc#connections">Storage Write API
+   * connections</a> for how client connections handle failures and reconnect.
    */
   public static void setMaxRequestCallbackWaitTime(Duration waitTime) {
     ConnectionWorker.MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
