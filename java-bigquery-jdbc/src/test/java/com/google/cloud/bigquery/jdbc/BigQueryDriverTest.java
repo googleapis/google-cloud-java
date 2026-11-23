@@ -33,16 +33,27 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
+import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 import org.mockito.MockedStatic;
 
 public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
@@ -290,6 +301,124 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
               BigQueryJdbcException.class,
               () -> bigQueryDriver.connect(VALID_TOKEN_URL, new Properties()));
       assertThat(thrown.getCause()).isInstanceOf(IOException.class);
+    }
+  }
+
+  @Test
+  public void testAllowUrlLogPathFalseAndEarlyConnectMdcBinding(@TempDir Path tempDir)
+      throws Exception {
+    Path priorLogDir = tempDir.resolve("prior_dir");
+    BigQueryJdbcRootLogger.setLevel(Level.FINEST, priorLogDir.toString());
+    Path blockedDir = tempDir.resolve("blocked_url_dir");
+    Path blockedPropsDir = tempDir.resolve("blocked_props_dir");
+    String propName = BigQueryJdbcUrlUtility.ALLOW_URL_LOG_PATH_SYSTEM_PROPERTY;
+    String prev = System.getProperty(propName);
+    System.setProperty(propName, " false ");
+
+    List<String> formattedConnectLogs = new ArrayList<>();
+    Handler mdcFormattingHandler =
+        new Handler() {
+          @Override
+          public void publish(LogRecord record) {
+            formattedConnectLogs.add(BigQueryJdbcRootLogger.getFormatter().format(record));
+          }
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public void close() {}
+        };
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    rootLogger.addHandler(mdcFormattingHandler);
+
+    try (BigQueryJdbcMdc.MdcCloseable outerMdc =
+        BigQueryJdbcMdc.registerInstance("enclosing-caller-conn")) {
+      Properties connectProps = new Properties();
+      connectProps.setProperty("OAuthAccessToken", "connect-secret-token");
+      String url =
+          getBaseUri()
+              .append("OAuthType", 2)
+              .append("ProjectId", "proj-locked")
+              .append("LogLevel", 7)
+              .append("LogPath", blockedDir.toString())
+              .toString();
+      capturedLogs.clear();
+      String createdConnId;
+      try (Connection conn = bigQueryDriver.connect(url, connectProps)) {
+        assertThat(conn.isClosed()).isFalse();
+        createdConnId = conn.unwrap(BigQueryConnection.class).getConnectionId();
+      }
+      // Enclosing MDC context is restored after connect() returns
+      assertThat(BigQueryJdbcMdc.getConnectionId()).isEqualTo("enclosing-caller-conn");
+      assertThat(Files.exists(blockedDir)).isFalse();
+
+      // Prior PerConnectionFileHandler was closed & removed when logPath resolved to null
+      assertThat(
+              Arrays.stream(rootLogger.getHandlers())
+                  .noneMatch(h -> h instanceof PerConnectionFileHandler))
+          .isTrue();
+      try (Stream<Path> priorFiles = Files.list(priorLogDir)) {
+        List<String> names =
+            priorFiles.map(p -> p.getFileName().toString()).collect(Collectors.toList());
+        assertThat(names).containsExactly("BQ-JDBC-GLOBAL.log");
+      }
+
+      // Early connect logs (appendPropertiesToURL, warning, Driver info) carry createdConnId
+      assertThat(
+              formattedConnectLogs.stream()
+                  .anyMatch(
+                      s ->
+                          s.contains("[" + createdConnId + "]")
+                              && s.contains("Appending OAuthAccessToken with value ***** to URL")))
+          .isTrue();
+      assertThat(
+              formattedConnectLogs.stream()
+                  .anyMatch(
+                      s ->
+                          s.contains("[" + createdConnId + "]")
+                              && s.contains("Ignoring URL/Properties LogPath")))
+          .isTrue();
+      assertThat(assertLogContains("connect-secret-token")).isFalse();
+
+      // LogPath supplied via Properties is also ignored when allowUrlLogPath=false
+      Properties propsWithLogPath = new Properties();
+      propsWithLogPath.setProperty("LogPath", blockedPropsDir.toString());
+      String baseLogUrl =
+          getUriOAuthToken().append("ProjectId", "proj-props").append("LogLevel", 7).toString();
+      try (Connection conn = bigQueryDriver.connect(baseLogUrl, propsWithLogPath)) {
+        assertThat(conn.isClosed()).isFalse();
+      }
+      assertThat(Files.exists(blockedPropsDir)).isFalse();
+
+      // Failed connect() also restores enclosing MDC
+      String invalidLogLevelUrl =
+          getUriOAuthToken().append("ProjectId", "proj-fail").append("LogLevel", "bad").toString();
+      Assertions.assertThrows(
+          SQLException.class, () -> bigQueryDriver.connect(invalidLogLevelUrl, new Properties()));
+      assertThat(BigQueryJdbcMdc.getConnectionId()).isEqualTo("enclosing-caller-conn");
+
+      // Omitting LogPath when allowUrlLogPath=false does NOT fall back to CWD
+      Path cwd = Paths.get("").toAbsolutePath();
+      long cwdLogsBefore;
+      try (Stream<Path> s = Files.list(cwd)) {
+        cwdLogsBefore = s.filter(p -> p.getFileName().toString().startsWith("BQ-JDBC-")).count();
+      }
+      try (Connection conn = bigQueryDriver.connect(baseLogUrl, new Properties())) {
+        assertThat(conn.isClosed()).isFalse();
+      }
+      try (Stream<Path> s = Files.list(cwd)) {
+        long cwdLogsAfter =
+            s.filter(p -> p.getFileName().toString().startsWith("BQ-JDBC-")).count();
+        assertThat(cwdLogsAfter).isEqualTo(cwdLogsBefore);
+      }
+    } finally {
+      rootLogger.removeHandler(mdcFormattingHandler);
+      if (prev == null) {
+        System.clearProperty(propName);
+      } else {
+        System.setProperty(propName, prev);
+      }
     }
   }
 }

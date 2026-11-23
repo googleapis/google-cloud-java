@@ -169,6 +169,10 @@ class BigQueryJdbcRootLogger {
     if (level != Level.OFF) {
       if (logPath != null) {
         setPath(logPath, level);
+      } else if (fileHandler != null) {
+        fileHandler.close();
+        logger.removeHandler(fileHandler);
+        fileHandler = null;
       }
     } else {
       for (Handler h : logger.getHandlers()) {
