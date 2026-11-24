@@ -40,6 +40,7 @@ import java.time.Instant;
 import java.util.BitSet;
 import java.util.EnumSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -429,6 +430,18 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     return this.numSessionsReleased;
   }
 
+  @VisibleForTesting
+  int getChannelUsageCardinality() {
+    synchronized (this.channelUsage) {
+      return this.channelUsage.cardinality();
+    }
+  }
+
+  @VisibleForTesting
+  int getNumCurrentSingleUseTransactions() {
+    return this.numCurrentSingleUseTransactions.get();
+  }
+
   @Override
   @Nullable
   public String getChannelPrimeSessionName() {
@@ -650,8 +663,9 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   public ServerStream<BatchWriteResponse> batchWriteAtLeastOnce(
       Iterable<MutationGroup> mutationGroups, TransactionOption... options)
       throws SpannerException {
-    return createMultiplexedSessionTransaction(/* singleUse= */ true)
-        .batchWriteAtLeastOnce(mutationGroups, options);
+    List<MutationGroup> materializedGroups = SessionImpl.materializeMutationGroups(mutationGroups);
+    return createMultiplexedSessionTransaction(/* singleUse= */ false)
+        .batchWriteAtLeastOnce(materializedGroups, options);
   }
 
   @Override

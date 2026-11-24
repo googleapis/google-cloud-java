@@ -509,6 +509,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         return method == SpannerGrpc.getExecuteBatchDmlMethod();
       }
     },
+    BATCH_WRITE {
+      @Override
+      <ReqT, RespT> boolean isMethod(ReqT request, MethodDescriptor<ReqT, RespT> method) {
+        return method == SpannerGrpc.getBatchWriteMethod();
+      }
+    },
 
     PARTITION_QUERY {
       @Override
@@ -578,6 +584,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private Duration executeQueryTimeout;
     private Duration executeUpdateTimeout;
     private Duration batchUpdateTimeout;
+    private Duration batchWriteTimeout;
     private Duration readTimeout;
 
     private Duration partitionQueryTimeout;
@@ -602,6 +609,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           return batchUpdateTimeout == null
               ? null
               : callContext.withTimeoutDuration(batchUpdateTimeout);
+        case BATCH_WRITE:
+          return batchWriteTimeout == null
+              ? null
+              : callContext
+                  .withTimeoutDuration(batchWriteTimeout)
+                  .withStreamWaitTimeoutDuration(batchWriteTimeout);
         case COMMIT:
           return commitTimeout == null ? null : callContext.withTimeoutDuration(commitTimeout);
         case EXECUTE_QUERY:
@@ -816,6 +829,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     public SpannerCallContextTimeoutConfigurator withPartitionReadTimeoutDuration(
         Duration partitionReadTimeout) {
       this.partitionReadTimeout = partitionReadTimeout;
+      return this;
+    }
+
+    public Duration getBatchWriteTimeoutDuration() {
+      return batchWriteTimeout;
+    }
+
+    public SpannerCallContextTimeoutConfigurator withBatchWriteTimeoutDuration(
+        Duration batchWriteTimeout) {
+      this.batchWriteTimeout = batchWriteTimeout;
       return this;
     }
   }

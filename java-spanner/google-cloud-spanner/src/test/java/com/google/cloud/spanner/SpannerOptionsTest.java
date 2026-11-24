@@ -53,6 +53,7 @@ import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Strings;
 import com.google.common.util.concurrent.Futures;
 import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CreateSessionRequest;
@@ -937,6 +938,11 @@ public class SpannerOptionsTest {
             inputCallContext,
             PartitionReadRequest.getDefaultInstance(),
             SpannerGrpc.getPartitionReadMethod()));
+    assertNull(
+        configurator.configure(
+            inputCallContext,
+            BatchWriteRequest.getDefaultInstance(),
+            SpannerGrpc.getBatchWriteMethod()));
   }
 
   @Test
@@ -951,6 +957,8 @@ public class SpannerOptionsTest {
     configurator.withPartitionReadTimeoutDuration(Duration.ofSeconds(6L));
     configurator.withReadTimeoutDuration(Duration.ofSeconds(7L));
     configurator.withRollbackTimeoutDuration(Duration.ofSeconds(8L));
+    configurator.withBatchWriteTimeoutDuration(Duration.ofSeconds(9L));
+    assertEquals(Duration.ofSeconds(9L), configurator.getBatchWriteTimeoutDuration());
 
     ApiCallContext inputCallContext = GrpcCallContext.createDefault();
 
@@ -1056,6 +1064,14 @@ public class SpannerOptionsTest {
                     SpannerGrpc.getPartitionReadMethod())
                 .getTimeoutDuration())
         .isEqualTo(Duration.ofSeconds(6L));
+    ApiCallContext batchWriteCallContext =
+        configurator.configure(
+            inputCallContext,
+            BatchWriteRequest.getDefaultInstance(),
+            SpannerGrpc.getBatchWriteMethod());
+    assertThat(batchWriteCallContext.getTimeoutDuration()).isEqualTo(Duration.ofSeconds(9L));
+    assertThat(batchWriteCallContext.getStreamWaitTimeoutDuration())
+        .isEqualTo(Duration.ofSeconds(9L));
   }
 
   @Test
