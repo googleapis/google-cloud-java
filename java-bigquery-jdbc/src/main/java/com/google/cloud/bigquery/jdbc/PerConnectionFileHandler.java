@@ -32,6 +32,8 @@ import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.attribute.PosixFilePermission;
 import java.nio.file.attribute.PosixFilePermissions;
+import java.nio.file.attribute.UserPrincipal;
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.EnumSet;
@@ -93,10 +95,21 @@ class PerConnectionFileHandler extends Handler {
   static void verifyPosixOwner(Path file) throws IOException {
     if (isPosixFileSystem(file)) {
       String currentUser = System.getProperty("user.name");
-      String ownerName = Files.getOwner(file, LinkOption.NOFOLLOW_LINKS).getName();
-      if (currentUser == null || currentUser.isEmpty() || !currentUser.equals(ownerName)) {
+      UserPrincipal fileOwner = Files.getOwner(file, LinkOption.NOFOLLOW_LINKS);
+      UserPrincipal currentOwner = null;
+      if (currentUser != null && !currentUser.isEmpty()) {
+        try {
+          currentOwner =
+              file.getFileSystem()
+                  .getUserPrincipalLookupService()
+                  .lookupPrincipalByName(currentUser);
+        } catch (UserPrincipalNotFoundException ignored) {
+          // Leave currentOwner null so FileAlreadyExistsException is thrown below.
+        }
+      }
+      if (!fileOwner.equals(currentOwner)) {
         throw new FileAlreadyExistsException(
-            file.toString(), null, "Log file owner could not be verified: " + ownerName);
+            file.toString(), null, "Log file owner could not be verified: " + fileOwner.getName());
       }
     }
   }
@@ -208,6 +221,9 @@ class PerConnectionFileHandler extends Handler {
   }
 
   private static void closeQuietlyWithSuppressed(SeekableByteChannel channel, Throwable primary) {
+    if (channel == null) {
+      return;
+    }
     try {
       channel.close();
     } catch (IOException closeEx) {
