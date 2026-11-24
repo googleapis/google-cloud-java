@@ -3567,7 +3567,7 @@ public class BigQueryDatabaseMetaDataTest {
 
   static Stream<Arguments> exportedKeysFlexibleTableAndCatalogProvider() {
     return Stream.of(
-        Arguments.of("tpczero-system:bigquery-drivers", "_dataset_1", "my-table 01"),
+        Arguments.of("custom-universe:my-project", "_dataset_1", "my-table 01"),
         Arguments.of("domain.com:project-1", "dataset_p", "00_お客様"));
   }
 
