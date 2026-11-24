@@ -33,8 +33,7 @@
  * helper.stop();
  * }</pre>
  *
- * @see <a
- *     href="https://github.com/googleapis/google-cloud-java/main/master/TESTING.md#testing-code-that-uses-datastore">
- *     Google Cloud Java tools for testing</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator">Google Cloud
+ *     Datastore emulator</a>
  */
 package com.google.cloud.datastore.testing;

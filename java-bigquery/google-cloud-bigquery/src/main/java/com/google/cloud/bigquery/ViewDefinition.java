@@ -28,7 +28,7 @@ import javax.annotation.Nullable;
  * views, which means that the query that defines the view is re-executed every time the view is
  * queried.
  *
- * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/views-intro">Views</a>
  */
 @AutoValue
 public abstract class ViewDefinition extends TableDefinition {
@@ -43,7 +43,8 @@ public abstract class ViewDefinition extends TableDefinition {
     /**
      * Sets user defined functions that can be used by {@link #getQuery()}.
      *
-     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/user-defined-functions">User-Defined
      *     Functions</a>
      */
     public Builder setUserDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
@@ -53,7 +54,8 @@ public abstract class ViewDefinition extends TableDefinition {
     /**
      * Sets user defined functions that can be used by {@link #getQuery()}.
      *
-     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/user-defined-functions">User-Defined
      *     Functions</a>
      */
     public Builder setUserDefinedFunctions(UserDefinedFunction... userDefinedFunctions) {
@@ -66,7 +68,7 @@ public abstract class ViewDefinition extends TableDefinition {
     /**
      * Sets whether to use BigQuery's legacy SQL dialect for this query. By default this property is
      * set to {@code false}. If set to {@code false}, the query will use BigQuery's <a
-     * href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>.
+     * href="https://docs.cloud.google.com/bigquery/docs/introduction-sql">Standard SQL</a>.
      *
      * <p>If set to {@code null} or {@code true}, legacy SQL dialect is used. This property is
      * experimental and might be subject to change.
@@ -91,8 +93,8 @@ public abstract class ViewDefinition extends TableDefinition {
    * Returns user defined functions that can be used by {@link #getQuery()}. Returns {@code null} if
    * not set.
    *
-   * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
-   *     </a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/user-defined-functions">User-Defined
+   *     Functions </a>
    */
   public List<UserDefinedFunction> getUserDefinedFunctions() {
     return getUserDefinedFunctionsImmut();
@@ -104,9 +106,9 @@ public abstract class ViewDefinition extends TableDefinition {
   /**
    * Returns whether to use BigQuery's legacy SQL dialect for this query. By default this property
    * is set to {@code false}. If set to {@code false}, the query will use BigQuery's <a
-   * href="https://cloud.google.com/bigquery/sql-reference/">Standard SQL</a>. If set to {@code
-   * null} or {@code true}, legacy SQL dialect is used. This property is experimental and might be
-   * subject to change.
+   * href="https://docs.cloud.google.com/bigquery/docs/introduction-sql">Standard SQL</a>. If set to
+   * {@code null} or {@code true}, legacy SQL dialect is used. This property is experimental and
+   * might be subject to change.
    */
   @Nullable
   public Boolean useLegacySql() {

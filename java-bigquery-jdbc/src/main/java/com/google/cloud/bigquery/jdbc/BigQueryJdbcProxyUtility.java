@@ -89,7 +89,7 @@ final class BigQueryJdbcProxyUtility {
     return new SSLConnectionSocketFactory(sslContext) {
       @Override
       protected void prepareSocket(SSLSocket socket) throws IOException {
-        if (Conscrypt.isConscrypt(socket)) {
+        if (CONSCRYPT_PROVIDER != null && Conscrypt.isConscrypt(socket)) {
           try {
             Conscrypt.setNamedGroups(socket, DEFAULT_CONSCRYPT_NAMED_GROUPS);
           } catch (Exception e) {

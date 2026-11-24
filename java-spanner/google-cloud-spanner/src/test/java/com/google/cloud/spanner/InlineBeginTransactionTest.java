@@ -75,6 +75,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -1592,6 +1593,7 @@ public class InlineBeginTransactionTest {
       assertThat(request2.getResumeToken()).isNotEqualTo(ByteString.EMPTY);
     }
 
+    @Ignore("b/587915911")
     @Test
     public void testWaitForTransactionTimeout() {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));

@@ -48,7 +48,10 @@ public class ITQueryToPipelineTest extends ITBaseTest {
       throws ExecutionException, InterruptedException, TimeoutException {
     CollectionReference collection = firestore.collection(LocalFirestoreHelper.autoId());
     for (Map.Entry<String, Map<String, Object>> doc : docs.entrySet()) {
-      collection.document(doc.getKey()).set(doc.getValue()).get(5, TimeUnit.SECONDS);
+      collection
+          .document(doc.getKey())
+          .set(doc.getValue())
+          .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     }
     return collection;
   }

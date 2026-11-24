@@ -2,9 +2,6 @@ permissions:
   contents: read
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
 name: sdk-platform-java
 jobs:
@@ -387,7 +384,7 @@ jobs:
     - run: mvn -version
     - name: Unit Tests
       run: |
-        mvn test --batch-mode --no-transfer-progress
+        mvn test -U -Dmaven.wagon.http.retryHandler.count=5 --batch-mode --no-transfer-progress
       working-directory: sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
     - name: Install Maven modules
       shell: bash

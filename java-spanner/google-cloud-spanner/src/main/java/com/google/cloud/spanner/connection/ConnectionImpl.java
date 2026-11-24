@@ -91,6 +91,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Suppliers;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
 import com.google.spanner.v1.RequestOptions;
@@ -1397,9 +1398,96 @@ class ConnectionImpl implements Connection {
     }
   }
 
+  private static final EndTransactionCallback NO_OP_END_TRANSACTION_CALLBACK =
+      new EndTransactionCallback() {
+        @Override
+        public void onSuccess() {}
+
+        @Override
+        public void onFailure() {}
+      };
+
+  /**
+   * Restores active transaction state on this connection and resets {@code retryUnitOfWork} before
+   * {@link TransactionRunnerImpl} executes a retry attempt.
+   */
   void resetForRetry(UnitOfWork retryUnitOfWork) {
-    retryUnitOfWork.resetForRetry();
-    this.currentUnitOfWork = retryUnitOfWork;
+    if (isBatchActive()) {
+      abortBatch();
+    }
+    if (this.currentUnitOfWork != null && this.currentUnitOfWork != retryUnitOfWork) {
+      closeUnitOfWorkAfterRunnerFailure(this.currentUnitOfWork);
+    }
+    this.connectionState.rollback();
+    this.statementTag = null;
+    this.transactionBeginMarked = true;
+    clearLastTransactionAndSetDefaultTransactionOptions(getDefaultIsolationLevel());
+    if (isAutocommit()) {
+      this.inTransaction = true;
+    }
+    // Re-apply local RETRY_ABORTS_INTERNALLY = false while currentUnitOfWork is null (cleared
+    // above) and isInTransaction() is true, before re-attaching retryUnitOfWork.
+    setLocalConnectionPropertyValue(RETRY_ABORTS_INTERNALLY, false);
+    try {
+      retryUnitOfWork.resetForRetry();
+    } finally {
+      this.currentUnitOfWork = retryUnitOfWork;
+    }
+  }
+
+  /**
+   * Cleans up connection transaction state and closes any active or kept-open aborted unit of work
+   * when {@link TransactionRunnerImpl} exits with a non-retryable failure or interruption.
+   */
+  void rollbackAfterAbort(UnitOfWork transaction) {
+    if (isBatchActive()) {
+      try {
+        abortBatch();
+      } catch (Throwable ignored) {
+        // Best-effort batch cleanup so the primary failure is never masked.
+      }
+    }
+    UnitOfWork current = this.currentUnitOfWork;
+    this.connectionState.rollback();
+    this.statementTag = null;
+    this.transactionBeginMarked = false;
+    clearLastTransactionAndSetDefaultTransactionOptions(getDefaultIsolationLevel());
+    if (isAutocommit()) {
+      this.inTransaction = false;
+    }
+    closeUnitOfWorkAfterRunnerFailure(transaction);
+    if (current != null && current != transaction) {
+      closeUnitOfWorkAfterRunnerFailure(current);
+    }
+  }
+
+  private void closeUnitOfWorkAfterRunnerFailure(@Nullable UnitOfWork uow) {
+    if (uow instanceof AbstractMultiUseTransaction) {
+      boolean wasInterrupted = Thread.interrupted();
+      try {
+        // Drain any in-flight statement or commit task on the single-threaded statementExecutor so
+        // COMMITTING settles to COMMITTED, COMMIT_FAILED, or ABORTED before inspecting state.
+        try {
+          Uninterruptibles.getUninterruptibly(
+              ((AbstractBaseUnitOfWork) uow).getStatementExecutor().submit(() -> null));
+        } catch (Throwable ignored) {
+          // Best-effort barrier; proceed to state check.
+        }
+        UnitOfWorkState state = uow.getState();
+        if (state == UnitOfWorkState.STARTED || state == UnitOfWorkState.ABORTED) {
+          try {
+            Uninterruptibles.getUninterruptibly(
+                uow.rollbackAsync(CallType.SYNC, NO_OP_END_TRANSACTION_CALLBACK));
+          } catch (Throwable ignored) {
+            // Best-effort rollback/close so the caller's primary exception is never masked.
+          }
+        }
+      } finally {
+        if (wasInterrupted) {
+          Thread.currentThread().interrupt();
+        }
+      }
+    }
   }
 
   @Override
@@ -1756,16 +1844,6 @@ class ConnectionImpl implements Connection {
           return internalExecuteQuery(callType, parsedStatement, analyzeMode, options);
         case UPDATE:
           if (parsedStatement.hasReturningClause()) {
-            // Cannot execute DML statement with returning clause in read-only mode or in
-            // READ_ONLY_TRANSACTION transaction mode.
-            if (this.isReadOnly()
-                || (this.isInTransaction()
-                    && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.FAILED_PRECONDITION,
-                  "DML statement with returning clause cannot be executed in read-only mode: "
-                      + parsedStatement.getSql());
-            }
             return internalExecuteQuery(callType, parsedStatement, analyzeMode, options);
           }
         case DDL:
@@ -1797,16 +1875,6 @@ class ConnectionImpl implements Connection {
               CallType.ASYNC, parsedStatement, AnalyzeMode.NONE, options);
         case UPDATE:
           if (parsedStatement.hasReturningClause()) {
-            // Cannot execute DML statement with returning clause in read-only mode or in
-            // READ_ONLY_TRANSACTION transaction mode.
-            if (this.isReadOnly()
-                || (this.isInTransaction()
-                    && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
-              throw SpannerExceptionFactory.newSpannerException(
-                  ErrorCode.FAILED_PRECONDITION,
-                  "DML statement with returning clause cannot be executed in read-only mode: "
-                      + parsedStatement.getSql());
-            }
             return internalExecuteQueryAsync(
                 CallType.ASYNC, parsedStatement, AnalyzeMode.NONE, options);
           }
@@ -2075,6 +2143,24 @@ class ConnectionImpl implements Connection {
     return options;
   }
 
+  /**
+   * Throws a {@link SpannerException} with {@link ErrorCode#FAILED_PRECONDITION} if this connection
+   * is in read-only mode or in a {@link TransactionMode#READ_ONLY_TRANSACTION}, since DML
+   * statements mutate data and require a read/write transaction.
+   */
+  private void checkDmlReturningAllowed(ParsedStatement parsedStatement) {
+    if (this.isReadOnly()
+        || (this.isInTransaction()
+            && this.getTransactionMode() == TransactionMode.READ_ONLY_TRANSACTION)) {
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.FAILED_PRECONDITION,
+          parsedStatement.hasReturningClause()
+              ? "DML statement with returning clause cannot be executed in read-only mode: "
+                  + parsedStatement.getSql()
+              : "Update statements are not allowed in read-only mode");
+    }
+  }
+
   private ResultSet internalExecuteQuery(
       final CallType callType,
       final ParsedStatement statement,
@@ -2086,6 +2172,10 @@ class ConnectionImpl implements Connection {
                 && (analyzeMode != AnalyzeMode.NONE || statement.hasReturningClause())),
         "Statement must either be a query or a DML mode with analyzeMode!=NONE or returning"
             + " clause");
+    // Enforce read-only restrictions before allocating a UnitOfWork or consuming statementTag.
+    if (statement.isUpdate()) {
+      checkDmlReturningAllowed(statement);
+    }
     boolean isInternalMetadataQuery = isInternalMetadataQuery(options);
     QueryOption[] combinedOptions = concat(statement.getOptionsFromHints(), options);
     UnitOfWork transaction =
@@ -2113,6 +2203,10 @@ class ConnectionImpl implements Connection {
         (statement.getType() == StatementType.QUERY)
             || (statement.getType() == StatementType.UPDATE && statement.hasReturningClause()),
         "Statement must be a query or DML with returning clause.");
+    // Enforce read-only restrictions before allocating a UnitOfWork or consuming statementTag.
+    if (statement.isUpdate()) {
+      checkDmlReturningAllowed(statement);
+    }
     ConnectionPreconditions.checkState(
         !(isAutoPartitionMode() && statement.getType() == StatementType.QUERY),
         "Partitioned queries cannot be executed asynchronously");
@@ -2334,6 +2428,7 @@ class ConnectionImpl implements Connection {
                   getConnectionPropertyValue(DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE))
               .setKeepTransactionAlive(getConnectionPropertyValue(KEEP_TRANSACTION_ALIVE))
               .setRetryAbortsInternally(getConnectionPropertyValue(RETRY_ABORTS_INTERNALLY))
+              .setKeepAbortedTransactionOpen(this.transactionRunnerActive)
               .setSavepointSupport(getConnectionPropertyValue(SAVEPOINT_SUPPORT))
               .setReturnCommitStats(getConnectionPropertyValue(RETURN_COMMIT_STATS))
               .setMaxCommitDelay(getConnectionPropertyValue(MAX_COMMIT_DELAY))

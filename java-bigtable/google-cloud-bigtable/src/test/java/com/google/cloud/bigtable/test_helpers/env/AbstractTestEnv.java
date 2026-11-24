@@ -112,6 +112,13 @@ public abstract class AbstractTestEnv {
     return true;
   }
 
+  /**
+   * Returns true if the test environment's data client is configured to divert traffic to sessions.
+   */
+  public boolean isSessionsEnabled() {
+    return false;
+  }
+
   public ConnectionMode getConnectionMode() {
     String modeStr =
         MoreObjects.firstNonNull(

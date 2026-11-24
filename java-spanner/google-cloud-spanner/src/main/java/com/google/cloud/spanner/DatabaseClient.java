@@ -27,6 +27,7 @@ import com.google.cloud.spanner.Statement.StatementFactory;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Interface for all the APIs that are used to read/write data into a Cloud Spanner database. An
@@ -57,6 +58,15 @@ public interface DatabaseClient {
    */
   @InternalApi
   default IsolationLevel getDatabaseDefaultIsolationLevel() {
+    throw new UnsupportedOperationException("method should be overwritten");
+  }
+
+  /**
+   * Returns the value of the {@code default_transaction_isolation} database option as returned by
+   * Spanner, or {@code null} if the option has not been set.
+   */
+  @InternalApi
+  default @Nullable String getDatabaseDefaultIsolationLevelValue() {
     throw new UnsupportedOperationException("method should be overwritten");
   }
 

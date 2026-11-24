@@ -24,12 +24,14 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyList;
 import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
@@ -64,6 +66,7 @@ import com.google.cloud.spanner.connection.AbstractStatementParser.StatementType
 import com.google.cloud.spanner.connection.ConnectionProperty.Context;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementTimeout;
 import com.google.cloud.spanner.connection.UnitOfWork.CallType;
+import com.google.cloud.spanner.connection.UnitOfWork.UnitOfWorkState;
 import com.google.common.base.Preconditions;
 import com.google.common.io.ByteStreams;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
@@ -893,5 +896,222 @@ public class SingleUseTransactionTest {
       assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
     }
     assertNull(transaction.getCommitResponseOrNull());
+  }
+
+  /**
+   * Creates a {@link SingleUseTransaction} backed by {@code dbClient} configured for {@code
+   * dialect} and {@code readOnly} mode so tests can verify write-transaction invocations and state
+   * transitions directly.
+   */
+  private SingleUseTransaction createDmlReturningSubject(
+      DatabaseClient dbClient, Dialect dialect, boolean readOnly) {
+    when(dbClient.getDialect()).thenReturn(dialect);
+    when(dbClient.singleUseReadOnlyTransaction(TimestampBound.strong()))
+        .thenReturn(new SimpleReadOnlyTransaction(TimestampBound.strong()));
+    when(dbClient.readWriteTransaction())
+        .thenAnswer(
+            invocation ->
+                new TransactionRunner() {
+                  private CommitResponse commitResponse;
+
+                  @Override
+                  public <T> T run(TransactionCallable<T> callable) {
+                    TransactionContext txContext = mock(TransactionContext.class);
+                    ResultSet returningRs = mock(ResultSet.class);
+                    when(returningRs.next()).thenReturn(true, false);
+                    when(returningRs.getLong(0)).thenReturn(1L);
+                    when(txContext.executeQuery(any(Statement.class), any()))
+                        .thenReturn(returningRs);
+                    ResultSet analyzeRs = mock(ResultSet.class);
+                    when(analyzeRs.next()).thenReturn(false);
+                    when(analyzeRs.getStats()).thenReturn(ResultSetStats.getDefaultInstance());
+                    when(txContext.analyzeQuery(any(Statement.class), any())).thenReturn(analyzeRs);
+                    try {
+                      T result = callable.run(txContext);
+                      commitResponse = new CommitResponse(Timestamp.ofTimeSecondsAndNanos(1, 1));
+                      return result;
+                    } catch (Exception e) {
+                      throw SpannerExceptionFactory.newSpannerException(e);
+                    }
+                  }
+
+                  @Override
+                  public Timestamp getCommitTimestamp() {
+                    return commitResponse.getCommitTimestamp();
+                  }
+
+                  @Override
+                  public CommitResponse getCommitResponse() {
+                    return commitResponse;
+                  }
+
+                  @Override
+                  public TransactionRunner allowNestedTransaction() {
+                    return this;
+                  }
+                });
+
+    ConnectionState connectionState = new ConnectionState(new HashMap<>());
+    connectionState.setValue(
+        AUTOCOMMIT_DML_MODE, AutocommitDmlMode.TRANSACTIONAL, Context.STARTUP, false);
+    connectionState.setValue(READONLY, readOnly, Context.STARTUP, false);
+    connectionState.setValue(READ_ONLY_STALENESS, TimestampBound.strong(), Context.STARTUP, false);
+
+    return SingleUseTransaction.newBuilder()
+        .setDatabaseClient(dbClient)
+        .setBatchClient(mock(BatchClient.class))
+        .setDdlClient(createDefaultMockDdlClient())
+        .setConnectionState(connectionState)
+        .setStatementTimeout(nullTimeout())
+        .withStatementExecutor(executor)
+        .setSpan(Span.getInvalid())
+        .build();
+  }
+
+  /**
+   * Verifies that a read-only {@link SingleUseTransaction} synchronously rejects GoogleSQL {@code
+   * THEN RETURN} and PostgreSQL {@code RETURNING} DML statements with {@link
+   * ErrorCode#FAILED_PRECONDITION} before marking the transaction used or opening a read-write
+   * transaction.
+   */
+  @Test
+  public void testExecuteQueryAsyncDmlReturningReadOnly() {
+    for (Dialect dialect : Dialect.values()) {
+      List<String> statements =
+          dialect == Dialect.POSTGRESQL
+              ? Arrays.asList(
+                  "INSERT INTO foo (id, name) VALUES (1, 'bar') RETURNING id",
+                  "UPDATE foo SET bar=1 WHERE id=1 RETURNING bar",
+                  "DELETE FROM foo WHERE id=1 RETURNING id")
+              : Arrays.asList(
+                  "INSERT INTO FOO (ID, NAME) VALUES (1, 'bar') THEN RETURN ID",
+                  "UPDATE FOO SET BAR=1 WHERE ID=1 THEN RETURN BAR",
+                  "DELETE FROM FOO WHERE ID=1 THEN RETURN ID");
+      AbstractStatementParser parser = AbstractStatementParser.getInstance(dialect);
+      for (String sql : statements) {
+        ParsedStatement parsed = parser.parse(Statement.of(sql));
+        assertThat(parsed.isUpdate()).isTrue();
+        assertThat(parsed.hasReturningClause()).isTrue();
+        for (CallType callType : CallType.values()) {
+          DatabaseClient dbClient = mock(DatabaseClient.class);
+          SingleUseTransaction subject =
+              createDmlReturningSubject(dbClient, dialect, /* readOnly= */ true);
+
+          SpannerException ex =
+              assertThrows(
+                  SpannerException.class,
+                  () -> subject.executeQueryAsync(callType, parsed, AnalyzeMode.NONE));
+          assertThat(ex.getErrorCode()).isEqualTo(ErrorCode.FAILED_PRECONDITION);
+          assertThat(ex.getMessage())
+              .contains(
+                  "DML statement with returning clause cannot be executed in read-only mode: "
+                      + sql);
+          verify(dbClient, never()).readWriteTransaction();
+          verify(dbClient, never()).readWriteTransaction(any());
+          assertThat(subject.getState()).isEqualTo(UnitOfWorkState.STARTED);
+
+          // Because the read-only guard precedes checkAndMarkUsed(), the single-use transaction
+          // remains unused and can still execute a valid read query.
+          assertThat(
+                  get(
+                      subject.executeQueryAsync(
+                          CallType.SYNC, createParsedQuery(VALID_QUERY), AnalyzeMode.NONE)))
+              .isNotNull();
+          assertThat(subject.getState()).isEqualTo(UnitOfWorkState.COMMITTED);
+        }
+      }
+    }
+  }
+
+  /**
+   * Verifies that a read-only {@link SingleUseTransaction} synchronously rejects update statements
+   * under {@link AnalyzeMode#PLAN} and {@link AnalyzeMode#PROFILE} (both with and without returning
+   * clauses) with {@link ErrorCode#FAILED_PRECONDITION} before {@code checkAndMarkUsed()}.
+   */
+  @Test
+  public void testExecuteQueryAsyncAnalyzeUpdateReadOnly() {
+    for (Dialect dialect : Dialect.values()) {
+      AbstractStatementParser parser = AbstractStatementParser.getInstance(dialect);
+      String plainDml =
+          dialect == Dialect.POSTGRESQL ? "UPDATE foo SET bar=1" : "UPDATE FOO SET BAR=1";
+      String returningDml =
+          dialect == Dialect.POSTGRESQL
+              ? "UPDATE foo SET bar=1 RETURNING bar"
+              : "UPDATE FOO SET BAR=1 THEN RETURN BAR";
+      ParsedStatement parsedPlain = parser.parse(Statement.of(plainDml));
+      ParsedStatement parsedReturning = parser.parse(Statement.of(returningDml));
+
+      for (AnalyzeMode analyzeMode : new AnalyzeMode[] {AnalyzeMode.PLAN, AnalyzeMode.PROFILE}) {
+        for (CallType callType : CallType.values()) {
+          DatabaseClient plainDbClient = mock(DatabaseClient.class);
+          SingleUseTransaction plainSubject =
+              createDmlReturningSubject(plainDbClient, dialect, /* readOnly= */ true);
+          SpannerException plainEx =
+              assertThrows(
+                  SpannerException.class,
+                  () -> plainSubject.executeQueryAsync(callType, parsedPlain, analyzeMode));
+          assertThat(plainEx.getErrorCode()).isEqualTo(ErrorCode.FAILED_PRECONDITION);
+          assertThat(plainEx.getMessage())
+              .contains("Update statements are not allowed in read-only mode");
+          verify(plainDbClient, never()).readWriteTransaction();
+          assertThat(plainSubject.getState()).isEqualTo(UnitOfWorkState.STARTED);
+          assertThat(
+                  get(
+                      plainSubject.executeQueryAsync(
+                          CallType.SYNC, createParsedQuery(VALID_QUERY), AnalyzeMode.NONE)))
+              .isNotNull();
+
+          DatabaseClient returningDbClient = mock(DatabaseClient.class);
+          SingleUseTransaction returningSubject =
+              createDmlReturningSubject(returningDbClient, dialect, /* readOnly= */ true);
+          SpannerException returningEx =
+              assertThrows(
+                  SpannerException.class,
+                  () -> returningSubject.executeQueryAsync(callType, parsedReturning, analyzeMode));
+          assertThat(returningEx.getErrorCode()).isEqualTo(ErrorCode.FAILED_PRECONDITION);
+          assertThat(returningEx.getMessage())
+              .contains(
+                  "DML statement with returning clause cannot be executed in read-only mode: "
+                      + returningDml);
+          verify(returningDbClient, never()).readWriteTransaction();
+          assertThat(returningSubject.getState()).isEqualTo(UnitOfWorkState.STARTED);
+          assertThat(
+                  get(
+                      returningSubject.executeQueryAsync(
+                          CallType.SYNC, createParsedQuery(VALID_QUERY), AnalyzeMode.NONE)))
+              .isNotNull();
+        }
+      }
+    }
+  }
+
+  /**
+   * Verifies that a writable {@link SingleUseTransaction} executes GoogleSQL {@code THEN RETURN}
+   * and PostgreSQL {@code RETURNING} DML statements via {@code readWriteTransaction()}, returns the
+   * resulting {@link ResultSet}, and transitions to {@link UnitOfWorkState#COMMITTED}.
+   */
+  @Test
+  public void testExecuteQueryAsyncDmlReturningReadWrite() {
+    for (Dialect dialect : Dialect.values()) {
+      String sql =
+          dialect == Dialect.POSTGRESQL
+              ? "INSERT INTO foo (id, name) VALUES (1, 'bar') RETURNING id"
+              : "INSERT INTO FOO (ID, NAME) VALUES (1, 'bar') THEN RETURN ID";
+      ParsedStatement parsed =
+          AbstractStatementParser.getInstance(dialect).parse(Statement.of(sql));
+      for (CallType callType : CallType.values()) {
+        DatabaseClient dbClient = mock(DatabaseClient.class);
+        SingleUseTransaction subject =
+            createDmlReturningSubject(dbClient, dialect, /* readOnly= */ false);
+
+        ResultSet rs = get(subject.executeQueryAsync(callType, parsed, AnalyzeMode.NONE));
+        verify(dbClient).readWriteTransaction();
+        assertThat(rs.next()).isTrue();
+        assertThat(rs.getLong(0)).isEqualTo(1L);
+        assertThat(rs.next()).isFalse();
+        assertThat(subject.getState()).isEqualTo(UnitOfWorkState.COMMITTED);
+        assertThat(subject.getCommitTimestamp()).isNotNull();
+      }
+    }
   }
 }
