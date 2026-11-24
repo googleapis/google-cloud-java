@@ -46,23 +46,22 @@ public interface Connection {
    *
    * <p>Example of running a query.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *   ConnectionSettings connectionSettings =
-   *        ConnectionSettings.newBuilder()
-   *            .setRequestTimeout(10L)
-   *            .setMaxResults(100L)
-   *            .setUseQueryCache(true)
-   *            .build();
-   *   Connection connection = bigquery.createConnection(connectionSettings);
-   *   String selectQuery = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
-   *   BigQueryResult bqResultSet = connection.executeSelect(selectQuery)
-   *   ResultSet rs = bqResultSet.getResultSet();
-   *   while (rs.next()) {
-   *       System.out.printf("%s,", rs.getString("corpus"));
-   *   }
-   * </pre>
+   * <pre>{@code
+   * ConnectionSettings connectionSettings =
+   *     ConnectionSettings.newBuilder()
+   *         .setRequestTimeout(10000L)
+   *         .setMaxResults(100L)
+   *         .setUseQueryCache(true)
+   *         .build();
+   * Connection connection = bigquery.createConnection(connectionSettings);
+   * String selectQuery =
+   *     "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+   * BigQueryResult bqResultSet = connection.executeSelect(selectQuery);
+   * ResultSet rs = bqResultSet.getResultSet();
+   * while (rs.next()) {
+   *   System.out.printf("%s,", rs.getString("corpus"));
+   * }
+   * }</pre>
    *
    * @param sql a static SQL SELECT statement
    * @return a ResultSet that contains the data produced by the query
@@ -97,29 +96,28 @@ public interface Connection {
    *
    * <p>Example of running a query.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *  ConnectionSettings connectionSettings =
-   *        ConnectionSettings.newBuilder()
-   *            .setUseReadAPI(true)
-   *            .build();
-   *   Connection connection = bigquery.createConnection(connectionSettings);
-   *   String selectQuery = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
-   * ListenableFuture&lt;ExecuteSelectResponse&gt; executeSelectFuture = connection.executeSelectAsync(selectQuery);
+   * <pre>{@code
+   * ConnectionSettings connectionSettings =
+   *     ConnectionSettings.newBuilder()
+   *         .setUseReadAPI(true)
+   *         .build();
+   * Connection connection = bigquery.createConnection(connectionSettings);
+   * String selectQuery =
+   *     "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+   * ListenableFuture<ExecuteSelectResponse> executeSelectFuture =
+   *     connection.executeSelectAsync(selectQuery);
    * ExecuteSelectResponse executeSelectRes = executeSelectFuture.get();
    *
-   *  if(!executeSelectRes.getIsSuccessful()){
-   * throw executeSelectRes.getBigQuerySQLException();
+   * if (!executeSelectRes.getIsSuccessful()) {
+   *   throw executeSelectRes.getBigQuerySQLException();
    * }
    *
-   *  BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * BigQueryResult bigQueryResult = executeSelectRes.getResultSet();
    * ResultSet rs = bigQueryResult.getResultSet();
    * while (rs.next()) {
-   * System.out.println(rs.getString(1));
+   *   System.out.println(rs.getString("corpus"));
    * }
-   *
-   * </pre>
+   * }</pre>
    *
    * @param sql a static SQL SELECT statement
    * @return a ListenableFuture that is used to get the data produced by the query
@@ -135,43 +133,40 @@ public interface Connection {
    *
    * <p>Example of running a query.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *  ConnectionSettings connectionSettings =
-   *        ConnectionSettings.newBuilder()
-   *            .setUseReadAPI(true)
-   *            .build();
-   *   Connection connection = bigquery.createConnection(connectionSettings);
-   *     String selectQuery =
-   *         "SELECT TimestampField, StringField, BooleanField FROM "
-   *             + MY_TABLE
-   *             + " WHERE StringField = @stringParam"
-   *             + " AND IntegerField IN UNNEST(@integerList)";
-   *     QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
-   *     QueryParameterValue intArrayParameter =
-   *         QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
-   *     Parameter stringParam =
-   *         Parameter.newBuilder().setName("stringParam").setValue(stringParameter).build();
-   *     Parameter intArrayParam =
-   *         Parameter.newBuilder().setName("integerList").setValue(intArrayParameter).build();
-   *     List&lt;Parameter&gt; parameters = ImmutableList.of(stringParam, intArrayParam);
+   * <pre>{@code
+   * ConnectionSettings connectionSettings =
+   *     ConnectionSettings.newBuilder()
+   *         .setUseReadAPI(true)
+   *         .build();
+   * Connection connection = bigquery.createConnection(connectionSettings);
+   * String selectQuery =
+   *     "SELECT TimestampField, StringField, BooleanField FROM "
+   *         + MY_TABLE
+   *         + " WHERE StringField = @stringParam"
+   *         + " AND IntegerField IN UNNEST(@integerList)";
+   * QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
+   * QueryParameterValue intArrayParameter =
+   *     QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
+   * Parameter stringParam =
+   *     Parameter.newBuilder().setName("stringParam").setValue(stringParameter).build();
+   * Parameter intArrayParam =
+   *     Parameter.newBuilder().setName("integerList").setValue(intArrayParameter).build();
+   * List<Parameter> parameters = ImmutableList.of(stringParam, intArrayParam);
    *
-   *     ListenableFuture&lt;ExecuteSelectResponse&gt; executeSelectFut =
-   *         connection.executeSelectAsync(selectQuery, parameters);
+   * ListenableFuture<ExecuteSelectResponse> executeSelectFuture =
+   *     connection.executeSelectAsync(selectQuery, parameters);
    * ExecuteSelectResponse executeSelectRes = executeSelectFuture.get();
    *
-   *  if(!executeSelectRes.getIsSuccessful()){
-   * throw executeSelectRes.getBigQuerySQLException();
+   * if (!executeSelectRes.getIsSuccessful()) {
+   *   throw executeSelectRes.getBigQuerySQLException();
    * }
    *
-   *  BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * BigQueryResult bigQueryResult = executeSelectRes.getResultSet();
    * ResultSet rs = bigQueryResult.getResultSet();
    * while (rs.next()) {
-   * System.out.println(rs.getString(1));
+   *   System.out.println(rs.getString("StringField"));
    * }
-   *
-   * </pre>
+   * }</pre>
    *
    * @param sql SQL SELECT query
    * @param parameters named or positional parameters. The set of query parameters must either be

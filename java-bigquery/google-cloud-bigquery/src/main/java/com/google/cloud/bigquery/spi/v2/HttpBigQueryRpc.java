@@ -93,7 +93,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   private static final String BASE_RESUMABLE_URI = "upload/bigquery/v2/projects/";
   static final String RESOURCE_PROJECT_PREFIX = "//bigquery.googleapis.com/projects/";
   // see:
-  // https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
+  // https://docs.cloud.google.com/bigquery/docs/reference/api-uploads#resume-upload
   private static final int HTTP_RESUME_INCOMPLETE = 308;
   private final BigQueryOptions options;
   private final Bigquery bigquery;
@@ -1975,6 +1975,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
 
   @InternalApi("internal to java-bigquery")
   public String openSkipExceptionTranslation(Job loadJob) throws IOException {
+    validateRPC();
     String builder = options.getResolvedApiaryHost("bigquery");
     if (!builder.endsWith("/")) {
       builder += "/";
@@ -2011,6 +2012,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
   public Job writeSkipExceptionTranslation(
       String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length, boolean last)
       throws IOException {
+    validateRPC();
     if (length == 0) {
       return null;
     }

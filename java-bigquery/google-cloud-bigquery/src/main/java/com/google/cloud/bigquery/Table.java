@@ -288,7 +288,7 @@ public class Table extends TableInfo {
    * Table updatedTable = table.toBuilder().setDescription("new description").build().update();
    * }</pre>
    *
-   * @param options dataset options
+   * @param options table options
    * @return a {@code Table} object with updated information
    * @throws BigQueryException upon failure
    */

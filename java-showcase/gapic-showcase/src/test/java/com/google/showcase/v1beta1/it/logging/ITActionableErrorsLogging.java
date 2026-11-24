@@ -29,8 +29,13 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.api.gax.tracing.CompositeTracerFactory;
 import com.google.api.gax.tracing.LoggingTracerFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
+import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
+import com.google.api.gax.tracing.OpenTelemetryTracingFactory;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Any;
 import com.google.rpc.ErrorInfo;
 import com.google.rpc.Status;
@@ -38,10 +43,33 @@ import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
+import com.google.showcase.v1beta1.stub.EchoStubSettings;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.MethodDescriptor;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.ExemplarData;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.data.SpanData;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterAll;
@@ -322,6 +350,221 @@ public class ITActionableErrorsLogging {
     } finally {
       client.shutdownNow();
       client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+    }
+  }
+
+  /**
+   * Builds a {@link CompositeTracerFactory} combining OpenTelemetry metrics and tracing; when
+   * {@code GOOGLE_SDK_JAVA_LOGGING=true} is set, {@code ClientContext} wraps this in an outer
+   * {@link CompositeTracerFactory} with {@link LoggingTracerFactory}.
+   *
+   * @param openTelemetry the {@link OpenTelemetry} instance for metrics and tracing factories
+   * @return a configured {@link ApiTracerFactory}
+   */
+  private ApiTracerFactory createObservabilityTracerFactory(OpenTelemetry openTelemetry) {
+    return new CompositeTracerFactory(
+        ImmutableList.of(
+            new OpenTelemetryMetricsFactory(openTelemetry),
+            new OpenTelemetryTracingFactory(openTelemetry)));
+  }
+
+  /**
+   * Asserts that attempt-level DEBUG logs correlate with the CLIENT attempt span, operation-level
+   * ERROR logs and metric exemplars correlate with the INTERNAL operation span, and no active span
+   * leaks onto the calling thread.
+   *
+   * @param spanExporter the exporter holding finished spans
+   * @param metricReader the reader holding recorded golden signal metrics
+   * @return the {@link SpanContext} of the exported attempt span
+   */
+  private SpanContext assertObservabilitySpanCorrelation(
+      InMemorySpanExporter spanExporter, InMemoryMetricReader metricReader) {
+    Awaitility.await()
+        .atMost(Duration.ofSeconds(5))
+        .until(
+            () ->
+                testAppender.events.stream().anyMatch(e -> e.getLevel() == Level.DEBUG)
+                    && testAppender.events.stream().anyMatch(e -> e.getLevel() == Level.ERROR)
+                    && spanExporter.getFinishedSpanItems().size() >= 2);
+
+    List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
+    SpanData attemptSpanData =
+        finishedSpans.stream()
+            .filter(span -> span.getKind() == SpanKind.CLIENT)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Expected CLIENT attempt span"));
+    SpanData operationSpanData =
+        finishedSpans.stream()
+            .filter(span -> span.getKind() == SpanKind.INTERNAL)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Expected INTERNAL operation span"));
+    assertThat(attemptSpanData.getParentSpanId()).isEqualTo(operationSpanData.getSpanId());
+
+    ILoggingEvent debugEvent =
+        testAppender.events.stream()
+            .filter(event -> event.getLevel() == Level.DEBUG)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Expected DEBUG attempt failure log"));
+    ILoggingEvent errorEvent =
+        testAppender.events.stream()
+            .filter(event -> event.getLevel() == Level.ERROR)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Expected ERROR operation failure log"));
+
+    assertThat(testAppender.eventSpanContexts.get(debugEvent))
+        .isEqualTo(attemptSpanData.getSpanContext());
+    assertThat(testAppender.eventSpanContexts.get(errorEvent))
+        .isEqualTo(operationSpanData.getSpanContext());
+
+    // Collect metrics once after Awaitility completes because InMemoryMetricReader resets its
+    // ExemplarReservoir on each collection.
+    MetricData durationMetric =
+        metricReader.collectAllMetrics().stream()
+            .filter(metric -> metric.getName().equals("gcp.client.request.duration"))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Expected gcp.client.request.duration metric"));
+    HistogramPointData point =
+        durationMetric.getHistogramData().getPoints().stream()
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Expected histogram data point"));
+    assertThat(point.getExemplars()).isNotEmpty();
+    ExemplarData exemplar = point.getExemplars().get(0);
+    assertThat(exemplar.getSpanContext()).isEqualTo(operationSpanData.getSpanContext());
+
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+    return attemptSpanData.getSpanContext();
+  }
+
+  /**
+   * Verifies that for a failing HTTP/JSON RPC, attempt DEBUG logs capture the attempt span and
+   * operation ERROR logs and metric exemplars capture the operation span without leaking an active
+   * scope onto the calling thread.
+   */
+  @Test
+  void testHttpJson_spanContextCapturedInScopeDuringErrorLog() throws Exception {
+    InMemorySpanExporter spanExporter = InMemorySpanExporter.create();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+
+    try (SdkTracerProvider tracerProvider =
+            SdkTracerProvider.builder()
+                .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+                .build();
+        SdkMeterProvider meterProvider =
+            SdkMeterProvider.builder().registerMetricReader(metricReader).build()) {
+      OpenTelemetry openTelemetry =
+          OpenTelemetrySdk.builder()
+              .setTracerProvider(tracerProvider)
+              .setMeterProvider(meterProvider)
+              .build();
+
+      EchoSettings httpJsonEchoSettings =
+          EchoSettings.newHttpJsonBuilder()
+              .setCredentialsProvider(NoCredentialsProvider.create())
+              .setTransportChannelProvider(
+                  EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                      .setHttpTransport(
+                          new MockHttpTransport() {
+                            @Override
+                            public LowLevelHttpRequest buildRequest(String method, String url) {
+                              return new MockLowLevelHttpRequest() {
+                                @Override
+                                public LowLevelHttpResponse execute() {
+                                  MockLowLevelHttpResponse response =
+                                      new MockLowLevelHttpResponse();
+                                  response.setStatusCode(409);
+                                  response.setContentType("application/json");
+                                  response.setContent(
+                                      "{\"error\": {\"code\": 409, \"message\": \"Aborted"
+                                          + " failure\", \"status\": \"ABORTED\"}}");
+                                  return response;
+                                }
+                              };
+                            }
+                          })
+                      .setEndpoint(TestClientInitializer.DEFAULT_HTTPJSON_ENDPOINT)
+                      .build())
+              .build();
+
+      EchoStubSettings echoStubSettings =
+          (EchoStubSettings)
+              httpJsonEchoSettings.getStubSettings().toBuilder()
+                  .setTracerFactory(createObservabilityTracerFactory(openTelemetry))
+                  .build();
+
+      EchoClient client = EchoClient.create(echoStubSettings.createStub());
+      try {
+        assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
+        assertObservabilitySpanCorrelation(spanExporter, metricReader);
+      } finally {
+        client.shutdownNow();
+        client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+      }
+    }
+  }
+
+  /**
+   * Verifies that for a failing gRPC RPC, downstream gRPC {@link ClientInterceptor}s and attempt
+   * DEBUG logs capture the attempt span, while operation ERROR logs and metric exemplars capture
+   * the operation span.
+   */
+  @Test
+  void testGrpc_spanContextCapturedInScopeDuringErrorLogAndDownstreamInterceptor()
+      throws Exception {
+    InMemorySpanExporter spanExporter = InMemorySpanExporter.create();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    List<SpanContext> downstreamGrpcContexts = new CopyOnWriteArrayList<>();
+
+    ClientInterceptor contextCapturingInterceptor =
+        new ClientInterceptor() {
+          @Override
+          public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+              MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+            downstreamGrpcContexts.add(Span.current().getSpanContext());
+            return next.newCall(method, callOptions);
+          }
+        };
+
+    try (SdkTracerProvider tracerProvider =
+            SdkTracerProvider.builder()
+                .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
+                .build();
+        SdkMeterProvider meterProvider =
+            SdkMeterProvider.builder().registerMetricReader(metricReader).build()) {
+      OpenTelemetry openTelemetry =
+          OpenTelemetrySdk.builder()
+              .setTracerProvider(tracerProvider)
+              .setMeterProvider(meterProvider)
+              .build();
+
+      EchoSettings grpcEchoSettings =
+          EchoSettings.newBuilder()
+              .setCredentialsProvider(NoCredentialsProvider.create())
+              .setTransportChannelProvider(
+                  EchoSettings.defaultGrpcTransportProviderBuilder()
+                      .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                      .setInterceptorProvider(() -> ImmutableList.of(contextCapturingInterceptor))
+                      .build())
+              .setEndpoint(TestClientInitializer.DEFAULT_GRPC_ENDPOINT)
+              .build();
+
+      EchoStubSettings echoStubSettings =
+          (EchoStubSettings)
+              grpcEchoSettings.getStubSettings().toBuilder()
+                  .setTracerFactory(createObservabilityTracerFactory(openTelemetry))
+                  .build();
+
+      EchoClient client = EchoClient.create(echoStubSettings.createStub());
+      try {
+        EchoRequest request = buildErrorRequest();
+        assertThrows(ApiException.class, () -> client.echo(request));
+
+        SpanContext attemptSpanContext =
+            assertObservabilitySpanCorrelation(spanExporter, metricReader);
+        assertThat(downstreamGrpcContexts).contains(attemptSpanContext);
+      } finally {
+        client.shutdownNow();
+        client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+      }
     }
   }
 }
