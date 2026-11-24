@@ -31,6 +31,8 @@
 package com.google.auth.oauth2;
 
 import com.google.auth.oauth2.AgentIdentityUtils.CertInfo;
+import java.io.InvalidObjectException;
+import java.io.ObjectInputStream;
 import java.io.ObjectStreamException;
 import java.util.Date;
 import org.jspecify.annotations.NullMarked;
@@ -66,5 +68,9 @@ final class BoundAccessToken extends AccessToken {
 
   private Object writeReplace() throws ObjectStreamException {
     return new AccessToken(getTokenValue(), new Date(0));
+  }
+
+  private void readObject(ObjectInputStream in) throws InvalidObjectException {
+    throw new InvalidObjectException("BoundAccessToken cannot be deserialized directly");
   }
 }

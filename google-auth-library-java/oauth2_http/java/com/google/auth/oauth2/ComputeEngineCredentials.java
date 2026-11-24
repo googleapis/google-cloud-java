@@ -894,9 +894,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
       }
       IamUtils.IamCallTarget target;
       try {
-        target =
-            IamUtils.resolveCallTarget(
-                this, transportFactory, universeDomain, /* endpointOverridden= */ false);
+        target = IamUtils.resolveCallTarget(this, transportFactory, universeDomain);
       } catch (IOException ex) {
         throw new SigningException("Failed to sign: Error refreshing credentials", ex);
       }

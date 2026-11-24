@@ -32,14 +32,18 @@ package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.Json;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
@@ -50,18 +54,25 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.KeyStore;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Deque;
+import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.junit.jupiter.api.io.TempDir;
 
 /**
  * Tests that IAM Credentials calls authenticated with a certificate-bound agent identity token go
@@ -76,42 +87,45 @@ class IamMtlsRoutingTest {
   private static final String MTLS_BASE =
       "https://iamcredentials.mtls.googleapis.com/v1/projects/-/serviceAccounts/";
 
+  @TempDir Path tempDir;
+
   private final List<String> requestUrls = new ArrayList<>();
   private final List<String> authorizationHeaders = new ArrayList<>();
   private final List<String> quotaProjectHeaders = new ArrayList<>();
-  private final AtomicReference<KeyStore> keyStoreUsed = new AtomicReference<>();
-  private int responseStatusCode = HttpStatusCodes.STATUS_CODE_OK;
-  private String responseWwwAuthenticateHeader = null;
+  // KeyStore of the transport that actually executed each IAM request (null for default transport).
+  private final List<KeyStore> requestKeyStores = new ArrayList<>();
+  private final Deque<MockLowLevelHttpResponse> queuedIamResponses = new ArrayDeque<>();
+  private final AtomicInteger metadataTokenRequests = new AtomicInteger();
+  private String nextMetadataAccessToken = "refreshed-bound-token";
+  private int metadataTokenStatusCode = HttpStatusCodes.STATUS_CODE_OK;
   private AgentIdentityUtils.CertInfo certInfo;
 
   // Subclasses DefaultHttpTransportFactory so IamUtils.resolveCallTarget treats it as the default
-  // transport factory while still keeping any non-mTLS request in memory.
+  // transport factory while still keeping metadata and non-mTLS IAM requests in memory.
   private final HttpTransportFactory defaultRecordingTransportFactory =
       new OAuth2Utils.DefaultHttpTransportFactory() {
         @Override
         public HttpTransport create() {
-          return newRecordingIamTransport();
+          return newDefaultTransport();
         }
       };
 
   @BeforeEach
   void setUp() throws Exception {
-    String certPath =
-        Paths.get(IamMtlsRoutingTest.class.getResource("/agent/agent_spiffe_cert.pem").toURI())
-            .toString();
-    String keyPath =
-        Paths.get(IamMtlsRoutingTest.class.getResource("/agent/agent_spiffe_key.pem").toURI())
-            .toString();
+    String certPath = resourcePath("/agent/agent_spiffe_cert.pem");
+    String keyPath = resourcePath("/agent/agent_spiffe_key.pem");
     AgentIdentityUtils.resetForTest();
     certInfo = AgentIdentityUtils.loadAndVerifyCredentials(certPath, keyPath);
     AgentIdentityUtils.resetForTest();
+    AgentIdentityUtils.setEnvironmentProvider(new TestEnvironmentProvider());
+    AgentIdentityUtils.setPropertyProvider(new TestPropertyProvider());
+    AgentIdentityUtils.setWellKnownDir(tempDir.resolve("no-spiffe").toString());
     assertNotNull(certInfo.getKeyStore());
 
+    // Record keyStore only when a request actually executes on the returned mTLS transport, not
+    // when the factory is created.
     IamUtils.setMtlsTransportFactoryProvider(
-        keyStore -> {
-          keyStoreUsed.set(keyStore);
-          return (HttpTransportFactory) this::newRecordingIamTransport;
-        });
+        keyStore -> (HttpTransportFactory) () -> newRecordingIamTransport(keyStore));
   }
 
   @AfterEach
@@ -120,34 +134,106 @@ class IamMtlsRoutingTest {
     AgentIdentityUtils.resetForTest();
   }
 
+  private static String resourcePath(String resource) throws Exception {
+    return Paths.get(IamMtlsRoutingTest.class.getResource(resource).toURI()).toString();
+  }
+
+  private void configureAgentCertConfig(String certResource, String keyResource) throws Exception {
+    Path configPath = tempDir.resolve("certificate_config.json");
+    Map<String, Object> workload = new HashMap<>();
+    workload.put("cert_path", resourcePath(certResource));
+    workload.put("key_path", resourcePath(keyResource));
+    Map<String, Object> certConfigs = new HashMap<>();
+    certConfigs.put("workload", workload);
+    Map<String, Object> config = new HashMap<>();
+    config.put("cert_configs", certConfigs);
+    Files.write(
+        configPath, OAuth2Utils.JSON_FACTORY.toString(config).getBytes(StandardCharsets.UTF_8));
+
+    TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configPath.toString());
+    AgentIdentityUtils.resetForTest();
+    AgentIdentityUtils.setEnvironmentProvider(envProvider);
+    AgentIdentityUtils.setPropertyProvider(new TestPropertyProvider());
+    AgentIdentityUtils.setWellKnownDir(tempDir.resolve("no-spiffe").toString());
+  }
+
   private void resetRecordedRequests() {
     requestUrls.clear();
     authorizationHeaders.clear();
     quotaProjectHeaders.clear();
-    keyStoreUsed.set(null);
+    requestKeyStores.clear();
+    queuedIamResponses.clear();
+    metadataTokenRequests.set(0);
   }
 
-  private MockHttpTransport newRecordingIamTransport() {
+  private void enqueueIamError(int statusCode, String reasonPhrase, String wwwAuthenticateHeader) {
+    MockLowLevelHttpResponse errorResponse =
+        new MockLowLevelHttpResponse().setStatusCode(statusCode).setReasonPhrase(reasonPhrase);
+    if (wwwAuthenticateHeader != null) {
+      errorResponse.addHeader("WWW-Authenticate", wwwAuthenticateHeader);
+    }
+    queuedIamResponses.add(errorResponse);
+  }
+
+  private MockHttpTransport newDefaultTransport() {
+    MockHttpTransport nonMtlsIamTransport = newRecordingIamTransport(/* mtlsKeyStore= */ null);
+    return new MockHttpTransport() {
+      @Override
+      public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+        if (url.equals(ComputeEngineCredentials.getDefaultServiceAccountUrl())) {
+          return new MockLowLevelHttpRequest(url) {
+            @Override
+            public LowLevelHttpResponse execute() {
+              return new MockLowLevelHttpResponse()
+                  .setContentType(Json.MEDIA_TYPE)
+                  .setContent(SOURCE_ACCOUNT);
+            }
+          };
+        }
+        if (url.startsWith(ComputeEngineCredentials.getTokenServerEncodedUrl())) {
+          return new MockLowLevelHttpRequest(url) {
+            @Override
+            public LowLevelHttpResponse execute() throws IOException {
+              metadataTokenRequests.incrementAndGet();
+              if (metadataTokenStatusCode != HttpStatusCodes.STATUS_CODE_OK) {
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(metadataTokenStatusCode)
+                    .setContent("Metadata token error");
+              }
+              GenericJson refreshContents = new GenericJson();
+              refreshContents.setFactory(OAuth2Utils.JSON_FACTORY);
+              refreshContents.put("access_token", nextMetadataAccessToken);
+              refreshContents.put("expires_in", 3600);
+              refreshContents.put("token_type", "Bearer");
+              return new MockLowLevelHttpResponse()
+                  .setContentType(Json.MEDIA_TYPE)
+                  .setStatusCode(HttpStatusCodes.STATUS_CODE_OK)
+                  .setContent(refreshContents.toPrettyString());
+            }
+          };
+        }
+        return nonMtlsIamTransport.buildRequest(method, url);
+      }
+    };
+  }
+
+  private MockHttpTransport newRecordingIamTransport(KeyStore mtlsKeyStore) {
     return new MockHttpTransport() {
       @Override
       public LowLevelHttpRequest buildRequest(String method, String url) {
-        requestUrls.add(url);
         return new MockLowLevelHttpRequest(url) {
           @Override
           public LowLevelHttpResponse execute() {
+            requestUrls.add(url);
+            requestKeyStores.add(mtlsKeyStore);
             List<String> authorization = getHeaderValues("Authorization");
             authorizationHeaders.add(authorization.isEmpty() ? null : authorization.get(0));
             List<String> quotaProject = getHeaderValues("x-goog-user-project");
             quotaProjectHeaders.add(quotaProject.isEmpty() ? null : quotaProject.get(0));
-            if (responseStatusCode != HttpStatusCodes.STATUS_CODE_OK) {
-              MockLowLevelHttpResponse errorResponse =
-                  new MockLowLevelHttpResponse()
-                      .setStatusCode(responseStatusCode)
-                      .setReasonPhrase("Unauthorized");
-              if (responseWwwAuthenticateHeader != null) {
-                errorResponse.addHeader("WWW-Authenticate", responseWwwAuthenticateHeader);
-              }
-              return errorResponse;
+            MockLowLevelHttpResponse queued = queuedIamResponses.poll();
+            if (queued != null) {
+              return queued;
             }
             String content;
             if (url.endsWith(":generateAccessToken")) {
@@ -201,7 +287,8 @@ class IamMtlsRoutingTest {
   private void assertSentOverMtlsWithBoundToken(String expectedUrl) {
     assertEquals(Collections.singletonList(expectedUrl), requestUrls);
     assertEquals(Collections.singletonList("Bearer " + BOUND_TOKEN), authorizationHeaders);
-    assertSame(certInfo.getKeyStore(), keyStoreUsed.get());
+    assertEquals(1, requestKeyStores.size());
+    assertSame(certInfo.getKeyStore(), requestKeyStores.get(0));
   }
 
   @Test
@@ -249,15 +336,12 @@ class IamMtlsRoutingTest {
     credentials.refreshAccessToken();
     assertEquals(Collections.singletonList(override), requestUrls);
     assertEquals(Collections.singletonList("Bearer " + BOUND_TOKEN), authorizationHeaders);
-    assertNull(keyStoreUsed.get());
+    assertEquals(Collections.singletonList(null), requestKeyStores);
   }
 
   @Test
   void computeEngineSign_boundToken_usesMtlsEndpoint() {
-    ComputeEngineCredentials source = Mockito.spy(boundSource(null));
-    Mockito.doReturn(SOURCE_ACCOUNT).when(source).getAccount();
-
-    byte[] signature = source.sign("data".getBytes(StandardCharsets.UTF_8));
+    byte[] signature = boundSource(null).sign("data".getBytes(StandardCharsets.UTF_8));
 
     assertEquals("signature", new String(signature, StandardCharsets.UTF_8));
     assertSentOverMtlsWithBoundToken(MTLS_BASE + SOURCE_ACCOUNT + ":signBlob");
@@ -269,52 +353,249 @@ class IamMtlsRoutingTest {
     ImpersonatedCredentials credentials = impersonated(null, quotaProject);
 
     credentials.refreshAccessToken();
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateAccessToken");
     assertEquals(Collections.singletonList(quotaProject), quotaProjectHeaders);
 
     resetRecordedRequests();
     credentials.sign("data".getBytes(StandardCharsets.UTF_8));
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":signBlob");
     assertEquals(Collections.singletonList(quotaProject), quotaProjectHeaders);
 
     resetRecordedRequests();
     credentials.idTokenWithAudience("https://example.com", null);
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateIdToken");
     assertEquals(Collections.singletonList(quotaProject), quotaProjectHeaders);
 
     resetRecordedRequests();
-    ComputeEngineCredentials source = Mockito.spy(boundSource(quotaProject));
-    Mockito.doReturn(SOURCE_ACCOUNT).when(source).getAccount();
-    source.sign("data".getBytes(StandardCharsets.UTF_8));
+    boundSource(quotaProject).sign("data".getBytes(StandardCharsets.UTF_8));
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + SOURCE_ACCOUNT + ":signBlob");
     assertEquals(Collections.singletonList(quotaProject), quotaProjectHeaders);
   }
 
   @Test
-  void allMtlsIamCalls_boundSource401_doNotRetryPinnedToken() {
-    responseStatusCode = HttpStatusCodes.STATUS_CODE_UNAUTHORIZED;
-    responseWwwAuthenticateHeader = "Bearer error=\"invalid_token\"";
+  void refreshAccessToken_boundSource401_refreshesAndRetriesOnceOverRotatedCert() throws Exception {
+    configureAgentCertConfig("/agent/agent_spiffe_cert_chain.pem", "/agent/agent_spiffe_key.pem");
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", "Bearer error=\"invalid_token\"");
 
-    assertThrows(IOException.class, () -> impersonated(null).refreshAccessToken());
-    assertEquals(1, requestUrls.size());
+    AccessToken token = impersonated(null).refreshAccessToken();
+
+    assertEquals("impersonated", token.getTokenValue());
+    assertEquals(1, metadataTokenRequests.get());
+    String expectedUrl = MTLS_BASE + TARGET + ":generateAccessToken";
+    assertEquals(Arrays.asList(expectedUrl, expectedUrl), requestUrls);
+    assertEquals(
+        Arrays.asList("Bearer " + BOUND_TOKEN, "Bearer " + nextMetadataAccessToken),
+        authorizationHeaders);
+    assertEquals(2, requestKeyStores.size());
+    assertSame(certInfo.getKeyStore(), requestKeyStores.get(0));
+    assertNotNull(requestKeyStores.get(1));
+    assertNotSame(certInfo.getKeyStore(), requestKeyStores.get(1));
+    assertEquals(2, requestKeyStores.get(1).getCertificateChain("alias").length);
+  }
+
+  @Test
+  void idTokenWithAudience_boundSource401_refreshesAndRetriesOnceOverRotatedCert()
+      throws Exception {
+    configureAgentCertConfig("/agent/agent_spiffe_cert_chain.pem", "/agent/agent_spiffe_key.pem");
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED,
+        "Unauthorized",
+        "Bearer realm=\"https://accounts.google.com/\"");
+
+    IdToken idToken = impersonated(null).idTokenWithAudience("https://example.com", null);
+
+    assertNotNull(idToken);
+    assertEquals(1, metadataTokenRequests.get());
+    String expectedUrl = MTLS_BASE + TARGET + ":generateIdToken";
+    assertEquals(Arrays.asList(expectedUrl, expectedUrl), requestUrls);
+    assertEquals(
+        Arrays.asList("Bearer " + BOUND_TOKEN, "Bearer " + nextMetadataAccessToken),
+        authorizationHeaders);
+    assertEquals(2, requestKeyStores.size());
+    assertSame(certInfo.getKeyStore(), requestKeyStores.get(0));
+    assertNotNull(requestKeyStores.get(1));
+    assertNotSame(certInfo.getKeyStore(), requestKeyStores.get(1));
+    assertEquals(2, requestKeyStores.get(1).getCertificateChain("alias").length);
+  }
+
+  @Test
+  void refreshAccessTokenAndIdToken_boundSource401WithUnchangedToken_failsFastAfterSingleRefresh()
+      throws Exception {
+    configureAgentCertConfig("/agent/agent_spiffe_cert.pem", "/agent/agent_spiffe_key.pem");
+    nextMetadataAccessToken = BOUND_TOKEN;
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", "Bearer error=\"invalid_token\"");
+
+    IOException refreshEx =
+        assertThrows(IOException.class, () -> impersonated(null).refreshAccessToken());
+    assertTrue(refreshEx.getCause() instanceof HttpResponseException);
+    assertEquals(1, metadataTokenRequests.get());
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateAccessToken");
 
     resetRecordedRequests();
-    assertThrows(
-        SigningException.class,
-        () -> impersonated(null).sign("data".getBytes(StandardCharsets.UTF_8)));
-    assertEquals(1, requestUrls.size());
-
-    resetRecordedRequests();
-    responseWwwAuthenticateHeader = null;
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", null);
     IOException idTokenEx =
         assertThrows(
             IOException.class,
             () -> impersonated(null).idTokenWithAudience("https://example.com", null));
     assertEquals("Error code 401 trying to getIDToken: Unauthorized", idTokenEx.getMessage());
-    assertEquals(1, requestUrls.size());
+    assertEquals(1, metadataTokenRequests.get());
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateIdToken");
+  }
+
+  @Test
+  void refreshAccessTokenAndIdToken_boundSource403_doesNotRefreshOrRetry() {
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_FORBIDDEN, "Forbidden", null);
+
+    assertThrows(IOException.class, () -> impersonated(null).refreshAccessToken());
+    assertEquals(0, metadataTokenRequests.get());
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateAccessToken");
 
     resetRecordedRequests();
-    ComputeEngineCredentials source = Mockito.spy(boundSource(null));
-    Mockito.doReturn(SOURCE_ACCOUNT).when(source).getAccount();
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_FORBIDDEN, "Forbidden", null);
+    IOException idTokenEx =
+        assertThrows(
+            IOException.class,
+            () -> impersonated(null).idTokenWithAudience("https://example.com", null));
+    assertEquals("Error code 403 trying to getIDToken: Forbidden", idTokenEx.getMessage());
+    assertEquals(0, metadataTokenRequests.get());
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateIdToken");
+  }
+
+  @Test
+  void refreshAccessTokenAndIdToken_boundSource401Twice_retriesAtMostOnce() throws Exception {
+    configureAgentCertConfig("/agent/agent_spiffe_cert.pem", "/agent/agent_spiffe_key.pem");
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", "Bearer error=\"invalid_token\"");
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", "Bearer error=\"invalid_token\"");
+
+    IOException refreshEx =
+        assertThrows(IOException.class, () -> impersonated(null).refreshAccessToken());
+    assertTrue(refreshEx.getCause() instanceof HttpResponseException);
+    assertEquals(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED,
+        ((HttpResponseException) refreshEx.getCause()).getStatusCode());
+    assertEquals(1, refreshEx.getSuppressed().length);
+    assertEquals(1, metadataTokenRequests.get());
+    String refreshUrl = MTLS_BASE + TARGET + ":generateAccessToken";
+    assertEquals(Arrays.asList(refreshUrl, refreshUrl), requestUrls);
+    assertEquals(
+        Arrays.asList("Bearer " + BOUND_TOKEN, "Bearer " + nextMetadataAccessToken),
+        authorizationHeaders);
+    assertEquals(2, requestKeyStores.size());
+    assertSame(certInfo.getKeyStore(), requestKeyStores.get(0));
+    assertNotNull(requestKeyStores.get(1));
+
+    resetRecordedRequests();
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", null);
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", null);
+    IOException idTokenEx =
+        assertThrows(
+            IOException.class,
+            () -> impersonated(null).idTokenWithAudience("https://example.com", null));
+    assertEquals("Error code 401 trying to getIDToken: Unauthorized", idTokenEx.getMessage());
+    assertEquals(1, metadataTokenRequests.get());
+    String idTokenUrl = MTLS_BASE + TARGET + ":generateIdToken";
+    assertEquals(Arrays.asList(idTokenUrl, idTokenUrl), requestUrls);
+    assertEquals(
+        Arrays.asList("Bearer " + BOUND_TOKEN, "Bearer " + nextMetadataAccessToken),
+        authorizationHeaders);
+    assertEquals(2, requestKeyStores.size());
+    assertSame(certInfo.getKeyStore(), requestKeyStores.get(0));
+    assertNotNull(requestKeyStores.get(1));
+  }
+
+  @Test
+  void refreshAccessTokenAndIdToken_boundSource401ToUnboundToken_retriesOnceOnDefaultEndpoint() {
+    // setUp leaves agent cert configuration absent, so source.refresh() mints an unbound token.
+    String defaultBase = "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/";
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", "Bearer error=\"invalid_token\"");
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", "Bearer error=\"invalid_token\"");
+
+    assertThrows(IOException.class, () -> impersonated(null).refreshAccessToken());
+    assertEquals(1, metadataTokenRequests.get());
+    assertEquals(
+        Arrays.asList(
+            MTLS_BASE + TARGET + ":generateAccessToken",
+            defaultBase + TARGET + ":generateAccessToken"),
+        requestUrls);
+    assertEquals(
+        Arrays.asList("Bearer " + BOUND_TOKEN, "Bearer " + nextMetadataAccessToken),
+        authorizationHeaders);
+    assertEquals(2, requestKeyStores.size());
+    assertSame(certInfo.getKeyStore(), requestKeyStores.get(0));
+    assertNull(requestKeyStores.get(1));
+
+    resetRecordedRequests();
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", null);
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", null);
+    IOException idTokenEx =
+        assertThrows(
+            IOException.class,
+            () -> impersonated(null).idTokenWithAudience("https://example.com", null));
+    assertEquals("Error code 401 trying to getIDToken: Unauthorized", idTokenEx.getMessage());
+    assertEquals(1, metadataTokenRequests.get());
+    assertEquals(
+        Arrays.asList(
+            MTLS_BASE + TARGET + ":generateIdToken", defaultBase + TARGET + ":generateIdToken"),
+        requestUrls);
+    assertEquals(
+        Arrays.asList("Bearer " + BOUND_TOKEN, "Bearer " + nextMetadataAccessToken),
+        authorizationHeaders);
+    assertEquals(2, requestKeyStores.size());
+    assertSame(certInfo.getKeyStore(), requestKeyStores.get(0));
+    assertNull(requestKeyStores.get(1));
+  }
+
+  @Test
+  void refreshAccessTokenAndIdToken_boundSource401WhenRefreshFails_surfacesOriginal401()
+      throws Exception {
+    configureAgentCertConfig("/agent/agent_spiffe_cert.pem", "/agent/agent_spiffe_key.pem");
+    metadataTokenStatusCode = HttpStatusCodes.STATUS_CODE_SERVER_ERROR;
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", "Bearer error=\"invalid_token\"");
+
+    IOException refreshEx =
+        assertThrows(IOException.class, () -> impersonated(null).refreshAccessToken());
+    assertTrue(refreshEx.getCause() instanceof HttpResponseException);
+    assertEquals(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED,
+        ((HttpResponseException) refreshEx.getCause()).getStatusCode());
+    assertEquals(1, metadataTokenRequests.get());
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateAccessToken");
+
+    resetRecordedRequests();
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", null);
+    IOException idTokenEx =
+        assertThrows(
+            IOException.class,
+            () -> impersonated(null).idTokenWithAudience("https://example.com", null));
+    assertEquals("Error code 401 trying to getIDToken: Unauthorized", idTokenEx.getMessage());
+    assertEquals(1, metadataTokenRequests.get());
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":generateIdToken");
+  }
+
+  @Test
+  void sign_boundSource401_doesNotRetryPinnedToken() {
+    enqueueIamError(
+        HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", "Bearer error=\"invalid_token\"");
     assertThrows(
-        SigningException.class, () -> source.sign("data".getBytes(StandardCharsets.UTF_8)));
-    assertEquals(1, requestUrls.size());
+        SigningException.class,
+        () -> impersonated(null).sign("data".getBytes(StandardCharsets.UTF_8)));
+    assertEquals(0, metadataTokenRequests.get());
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + TARGET + ":signBlob");
+
+    resetRecordedRequests();
+    enqueueIamError(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized", null);
+    assertThrows(
+        SigningException.class,
+        () -> boundSource(null).sign("data".getBytes(StandardCharsets.UTF_8)));
+    assertEquals(0, metadataTokenRequests.get());
+    assertSentOverMtlsWithBoundToken(MTLS_BASE + SOURCE_ACCOUNT + ":signBlob");
   }
 
   @Test

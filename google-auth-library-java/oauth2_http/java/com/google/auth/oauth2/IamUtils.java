@@ -56,12 +56,19 @@ import com.google.common.base.Strings;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InvalidObjectException;
+import java.io.NotSerializableException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.security.KeyStore;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.logging.Level;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -126,16 +133,16 @@ class IamUtils {
   }
 
   /**
-   * A {@link GoogleCredentials} pinned to a single already-minted {@link AccessToken}, so the
+   * A {@link GoogleCredentials} pinned to a single already-minted {@link BoundAccessToken}, so the
    * request header always uses the token bound to the presented mTLS certificate even if the source
    * credential refreshes concurrently.
    */
   private static final class PinnedTokenCredentials extends GoogleCredentials {
     private static final long serialVersionUID = 1L;
-    private final AccessToken token;
+    private final transient BoundAccessToken token;
 
     PinnedTokenCredentials(
-        AccessToken token, @Nullable String quotaProjectId, String universeDomain) {
+        BoundAccessToken token, @Nullable String quotaProjectId, String universeDomain) {
       super(
           GoogleCredentials.newBuilder()
               .setQuotaProjectId(quotaProjectId)
@@ -146,6 +153,14 @@ class IamUtils {
     @Override
     public AccessToken refreshAccessToken() {
       return token;
+    }
+
+    private void writeObject(ObjectOutputStream out) throws IOException {
+      throw new NotSerializableException("PinnedTokenCredentials cannot be serialized");
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException {
+      throw new InvalidObjectException("PinnedTokenCredentials cannot be deserialized");
     }
   }
 
@@ -159,23 +174,74 @@ class IamUtils {
    * iamcredentials.mtls.<universe domain>} over an mTLS transport that presents the certificate the
    * token was bound to, authenticated with that same token.
    *
-   * <p>Otherwise, and whenever the caller customized the endpoint or the transport, or the universe
-   * domain isn't the default one, the call goes to {@code iamcredentials.<universe domain>} with
-   * {@code authCredentials} and {@code transportFactory}, as before.
+   * <p>Otherwise, and whenever the caller customized the transport or the universe domain isn't the
+   * default one, the call goes to {@code iamcredentials.<universe domain>} with {@code
+   * authCredentials} and {@code transportFactory}, as before.
    */
   static IamCallTarget resolveCallTarget(
-      Credentials authCredentials,
-      HttpTransportFactory transportFactory,
-      String universeDomain,
-      boolean endpointOverridden)
+      Credentials authCredentials, HttpTransportFactory transportFactory, String universeDomain)
       throws IOException {
-    if (endpointOverridden
-        || !(transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory)) {
+    if (!(transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory)) {
       return new IamCallTarget(
           authCredentials, transportFactory, universeDomain, /* usesMtls= */ false);
     }
     return resolveBoundTokenCallTarget(
         authCredentials, transportFactory, universeDomain, mtlsTransportFactoryProvider);
+  }
+
+  /**
+   * Refreshes {@code authCredentials} after a 401 response on a bound-token mTLS call and resolves
+   * a fresh {@link IamCallTarget} for a single retry.
+   *
+   * <p>Skips forcing a refresh when another thread has already refreshed {@code authCredentials} to
+   * a different token or certificate. Returns {@code null} if the refresh fails or produces the
+   * same bound token value and certificate as {@code previousTarget}, so the caller surfaces the
+   * original 401 instead of resending an identical rejected request.
+   */
+  static @Nullable IamCallTarget refreshAndResolveRetryTarget(
+      Credentials authCredentials,
+      HttpTransportFactory transportFactory,
+      String universeDomain,
+      IamCallTarget previousTarget) {
+    if (!previousTarget.usesMtls()
+        || !(previousTarget.credentials instanceof PinnedTokenCredentials)
+        || !(authCredentials instanceof ComputeEngineCredentials)) {
+      return null;
+    }
+    BoundAccessToken previousToken = ((PinnedTokenCredentials) previousTarget.credentials).token;
+    ComputeEngineCredentials computeEngineCredentials = (ComputeEngineCredentials) authCredentials;
+    try {
+      AccessToken currentToken = computeEngineCredentials.getAccessToken();
+      if (currentToken == null || isSameBoundToken(previousToken, currentToken)) {
+        computeEngineCredentials.refresh();
+      }
+      IamCallTarget retryTarget =
+          resolveCallTarget(authCredentials, transportFactory, universeDomain);
+      if (retryTarget.credentials instanceof PinnedTokenCredentials
+          && isSameBoundToken(
+              previousToken, ((PinnedTokenCredentials) retryTarget.credentials).token)) {
+        return null;
+      }
+      return retryTarget;
+    } catch (IOException e) {
+      LoggingUtils.log(
+          LOGGER_PROVIDER,
+          Level.WARNING,
+          Collections.emptyMap(),
+          "Unable to refresh credentials after 401 response: " + e.getMessage());
+      return null;
+    }
+  }
+
+  private static boolean isSameBoundToken(
+      BoundAccessToken previousToken, @Nullable AccessToken candidateToken) {
+    if (!(candidateToken instanceof BoundAccessToken)) {
+      return false;
+    }
+    BoundAccessToken candidate = (BoundAccessToken) candidateToken;
+    return Objects.equals(previousToken.getTokenValue(), candidate.getTokenValue())
+        && !OAuth2Utils.hasCertificateChanged(
+            previousToken.getCertInfo().getKeyStore(), candidate.getCertInfo().getKeyStore());
   }
 
   @VisibleForTesting
@@ -189,8 +255,8 @@ class IamUtils {
   }
 
   /**
-   * Like {@link #resolveCallTarget}, without the endpoint and transport checks, and with the mTLS
-   * transport factory supplied by the caller.
+   * Like {@link #resolveCallTarget}, without the transport check, and with the mTLS transport
+   * factory supplied by the caller.
    */
   @VisibleForTesting
   static IamCallTarget resolveBoundTokenCallTarget(
@@ -213,7 +279,8 @@ class IamUtils {
     if (!(token instanceof BoundAccessToken)) {
       return defaultTarget;
     }
-    KeyStore keyStore = ((BoundAccessToken) token).getCertInfo().getKeyStore();
+    BoundAccessToken boundToken = (BoundAccessToken) token;
+    KeyStore keyStore = boundToken.getCertInfo().getKeyStore();
     if (keyStore == null) {
       return defaultTarget;
     }
@@ -223,7 +290,7 @@ class IamUtils {
     // is preserved while getAccessToken() and getRequestMetadata() start ready without extra I/O.
     PinnedTokenCredentials pinnedTokenCredentials =
         new PinnedTokenCredentials(
-            token, computeEngineCredentials.getQuotaProjectId(), universeDomain);
+            boundToken, computeEngineCredentials.getQuotaProjectId(), universeDomain);
     pinnedTokenCredentials.refresh();
     return new IamCallTarget(
         pinnedTokenCredentials,
@@ -388,6 +455,58 @@ class IamUtils {
   }
 
   /**
+   * Resolves the IAM call target (routing bound agent-identity tokens over mTLS) and requests an ID
+   * token, performing a single source-credential refresh and retry if IAM rejects a bound token
+   * with HTTP 401.
+   */
+  static IdToken getIdToken(
+      String serviceAccountEmail,
+      Credentials authCredentials,
+      HttpTransportFactory transportFactory,
+      String targetAudience,
+      boolean includeEmail,
+      Map<String, ?> additionalFields,
+      CredentialTypeForMetrics credentialTypeForMetrics,
+      String universeDomain)
+      throws IOException {
+    IamCallTarget target = resolveCallTarget(authCredentials, transportFactory, universeDomain);
+    HttpResponse response =
+        executeIdTokenRequest(
+            serviceAccountEmail,
+            target.credentials,
+            target.transportFactory.create(),
+            targetAudience,
+            includeEmail,
+            additionalFields,
+            credentialTypeForMetrics,
+            target.endpointDomain,
+            /* disableAdapterRetry= */ target.usesMtls());
+    if (target.usesMtls() && response.getStatusCode() == HttpStatusCodes.STATUS_CODE_UNAUTHORIZED) {
+      IamCallTarget retryTarget =
+          refreshAndResolveRetryTarget(authCredentials, transportFactory, universeDomain, target);
+      if (retryTarget != null) {
+        try {
+          response.ignore();
+        } catch (IOException ignored) {
+          // Best-effort cleanup of the rejected 401 response before retrying.
+        }
+        response =
+            executeIdTokenRequest(
+                serviceAccountEmail,
+                retryTarget.credentials,
+                retryTarget.transportFactory.create(),
+                targetAudience,
+                includeEmail,
+                additionalFields,
+                credentialTypeForMetrics,
+                retryTarget.endpointDomain,
+                /* disableAdapterRetry= */ true);
+      }
+    }
+    return parseIdTokenResponse(response);
+  }
+
+  /**
    * Returns an IdToken issued to the serviceAccount with a specified targetAudience
    *
    * @param serviceAccountEmail the email address for the service account to get an ID Token for
@@ -411,7 +530,31 @@ class IamUtils {
       CredentialTypeForMetrics credentialTypeForMetrics,
       String universeDomain)
       throws IOException {
+    HttpResponse response =
+        executeIdTokenRequest(
+            serviceAccountEmail,
+            credentials,
+            transport,
+            targetAudience,
+            includeEmail,
+            additionalFields,
+            credentialTypeForMetrics,
+            universeDomain,
+            /* disableAdapterRetry= */ credentials instanceof PinnedTokenCredentials);
+    return parseIdTokenResponse(response);
+  }
 
+  private static HttpResponse executeIdTokenRequest(
+      String serviceAccountEmail,
+      Credentials credentials,
+      HttpTransport transport,
+      String targetAudience,
+      boolean includeEmail,
+      Map<String, ?> additionalFields,
+      CredentialTypeForMetrics credentialTypeForMetrics,
+      String universeDomain,
+      boolean disableAdapterRetry)
+      throws IOException {
     String idTokenUrl =
         String.format(IAM_ID_TOKEN_ENDPOINT_FORMAT, universeDomain, serviceAccountEmail);
     GenericUrl genericUrl = new GenericUrl(idTokenUrl);
@@ -427,9 +570,10 @@ class IamUtils {
     HttpCredentialsAdapter adapter = new HttpCredentialsAdapter(credentials);
     HttpRequest request =
         transport.createRequestFactory(adapter).buildPostRequest(genericUrl, idTokenContent);
-    if (credentials instanceof PinnedTokenCredentials) {
+    if (disableAdapterRetry) {
       // PinnedTokenCredentials always returns the same token on refresh(), so disable
-      // HttpCredentialsAdapter's 401 retry to avoid resending a rejected token 10 times.
+      // HttpCredentialsAdapter's 401 retry to avoid resending a rejected token 10 times; the
+      // caller performs at most one outer refresh-and-retry pairing the new token and certificate.
       request.setUnsuccessfulResponseHandler(null);
     }
 
@@ -450,6 +594,10 @@ class IamUtils {
     HttpResponse response = request.execute();
 
     LoggingUtils.logResponse(response, LOGGER_PROVIDER, "Received response for ID token request");
+    return response;
+  }
+
+  private static IdToken parseIdTokenResponse(HttpResponse response) throws IOException {
     int statusCode = response.getStatusCode();
     if (statusCode >= 400 && statusCode < HttpStatusCodes.STATUS_CODE_SERVER_ERROR) {
       String errorMessage = parseErrorMessage(response);
