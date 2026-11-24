@@ -130,10 +130,19 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testMdcCloseableClearsContext() {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance("JdbcConnection-789")) {
-      assertEquals("JdbcConnection-789", BigQueryJdbcMdc.getConnectionId());
+  public void testMdcCloseableClearsContextAndRestoresOuterContext() {
+    try (BigQueryJdbcMdc.MdcCloseable outer =
+        BigQueryJdbcMdc.registerInstance("JdbcConnection-outer")) {
+      assertEquals("JdbcConnection-outer", BigQueryJdbcMdc.getConnectionId());
+      try (BigQueryJdbcMdc.MdcCloseable inner =
+          BigQueryJdbcMdc.registerInstance("JdbcConnection-789")) {
+        assertEquals("JdbcConnection-789", BigQueryJdbcMdc.getConnectionId());
+      }
+      assertEquals("JdbcConnection-outer", BigQueryJdbcMdc.getConnectionId());
+      try (BigQueryJdbcMdc.MdcCloseable nullScope = BigQueryJdbcMdc.registerInstance(null)) {
+        assertNull(BigQueryJdbcMdc.getConnectionId());
+      }
+      assertEquals("JdbcConnection-outer", BigQueryJdbcMdc.getConnectionId());
     }
     assertNull(BigQueryJdbcMdc.getConnectionId());
   }

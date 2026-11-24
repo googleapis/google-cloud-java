@@ -30,6 +30,9 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
 import static org.mockito.Mockito.CALLS_REAL_METHODS;
 import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.never;
@@ -45,17 +48,21 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.DataFormatOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics.SessionInfo;
+import com.google.cloud.bigquery.JobStatus;
 import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.jdbc.utils.URIBuilder;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
@@ -72,13 +79,29 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLWarning;
+import java.sql.Statement;
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -1279,5 +1302,637 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
     String payloadJson =
         new String(Base64.getUrlDecoder().decode(parts[1]), StandardCharsets.UTF_8);
     return JsonParser.parseString(payloadJson).getAsJsonObject();
+  }
+
+  private static URIBuilder sessionEnabledUri() {
+    return getUriOAuthToken().append("ProjectId", "test-project").append("EnableSession", 1);
+  }
+
+  @Test
+  public void testResetForReuse_rollsBackActiveTransactionWithoutStartingNewOne() throws Exception {
+    try (BigQueryConnection conn = new BigQueryConnection(sessionEnabledUri().toString())) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      conn.bigQuery = mockBigQuery;
+
+      SessionInfo sessionInfo = mock(SessionInfo.class);
+      when(sessionInfo.getSessionId()).thenReturn("driver_tx_session");
+      TableResult beginResult = mock(TableResult.class);
+      when(beginResult.getSessionInfo()).thenReturn(sessionInfo);
+      when(mockBigQuery.query(any(QueryJobConfiguration.class))).thenReturn(beginResult);
+
+      Job rollbackJob = mock(Job.class);
+      when(mockBigQuery.create(any(JobInfo.class))).thenReturn(rollbackJob);
+      when(rollbackJob.waitFor()).thenReturn(rollbackJob);
+
+      conn.setAutoCommit(false);
+      assertTrue(conn.isTransactionStarted());
+      assertFalse(conn.getAutoCommit());
+
+      conn.resetForReuse();
+
+      assertFalse(conn.isTransactionStarted());
+      assertTrue(conn.getAutoCommit());
+      assertNull(conn.getSessionInfoConnectionProperty());
+
+      ArgumentCaptor<JobInfo> jobCaptor = ArgumentCaptor.forClass(JobInfo.class);
+      verify(mockBigQuery, times(1)).create(jobCaptor.capture());
+      QueryJobConfiguration rollbackConfig = jobCaptor.getValue().getConfiguration();
+      assertEquals("ROLLBACK TRANSACTION;", rollbackConfig.getQuery());
+
+      ArgumentCaptor<QueryJobConfiguration> queryCaptor =
+          ArgumentCaptor.forClass(QueryJobConfiguration.class);
+      verify(mockBigQuery, atLeastOnce()).query(queryCaptor.capture());
+      List<QueryJobConfiguration> executedQueries = queryCaptor.getAllValues();
+      long beginCount =
+          executedQueries.stream()
+              .filter(cfg -> "BEGIN TRANSACTION;".equals(cfg.getQuery()))
+              .count();
+      assertEquals(1L, beginCount, "Reset must not start a follow-up transaction after rollback");
+      assertTrue(
+          executedQueries.stream()
+              .anyMatch(cfg -> "CALL BQ.ABORT_SESSION();".equals(cfg.getQuery())));
+      assertFalse(
+          executedQueries.stream().anyMatch(cfg -> "COMMIT TRANSACTION;".equals(cfg.getQuery())));
+    }
+  }
+
+  @Test
+  public void testResetForReuse_abortsDriverCreatedSessionAndPreservesQueryProperties()
+      throws Exception {
+    String url =
+        sessionEnabledUri().append("QueryProperties", "time_zone=America/Los_Angeles").toString();
+    try (BigQueryConnection conn = new BigQueryConnection(url)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      conn.bigQuery = mockBigQuery;
+      when(mockBigQuery.query(any(QueryJobConfiguration.class)))
+          .thenReturn(mock(TableResult.class));
+
+      conn.markSessionCreatedByDriver();
+      conn.initSessionInfo("driver_query_session_1");
+      assertEquals("driver_query_session_1", conn.getSessionInfoConnectionProperty().getValue());
+      assertTrue(conn.isSessionCreatedByDriver());
+
+      conn.resetForReuse();
+
+      assertNull(conn.getSessionInfoConnectionProperty());
+      assertFalse(conn.isSessionCreatedByDriver());
+      assertTrue(
+          conn.getQueryProperties().stream()
+              .anyMatch(
+                  cp ->
+                      "time_zone".equals(cp.getKey())
+                          && "America/Los_Angeles".equals(cp.getValue())));
+      assertFalse(
+          conn.getQueryProperties().stream()
+              .anyMatch(cp -> "session_id".equalsIgnoreCase(cp.getKey())));
+
+      ArgumentCaptor<QueryJobConfiguration> queryCaptor =
+          ArgumentCaptor.forClass(QueryJobConfiguration.class);
+      verify(mockBigQuery).query(queryCaptor.capture());
+      assertEquals("CALL BQ.ABORT_SESSION();", queryCaptor.getValue().getQuery());
+    }
+  }
+
+  @Test
+  public void testResetForReuse_preservesUserConfiguredSessionIdWhileRollingBackTransaction()
+      throws Exception {
+    String url =
+        sessionEnabledUri().append("QueryProperties", "session_id=caller_owned_77").toString();
+    try (BigQueryConnection conn = new BigQueryConnection(url)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      conn.bigQuery = mockBigQuery;
+
+      SessionInfo sessionInfo = mock(SessionInfo.class);
+      when(sessionInfo.getSessionId()).thenReturn("caller_owned_77");
+      TableResult beginResult = mock(TableResult.class);
+      when(beginResult.getSessionInfo()).thenReturn(sessionInfo);
+      when(mockBigQuery.query(any(QueryJobConfiguration.class))).thenReturn(beginResult);
+
+      Job rollbackJob = mock(Job.class);
+      when(mockBigQuery.create(any(JobInfo.class))).thenReturn(rollbackJob);
+      when(rollbackJob.waitFor()).thenReturn(rollbackJob);
+
+      conn.setAutoCommit(false);
+      conn.resetForReuse();
+
+      assertFalse(conn.isTransactionStarted());
+      assertTrue(conn.getAutoCommit());
+      assertFalse(conn.isSessionCreatedByDriver());
+      assertNotNull(conn.getSessionInfoConnectionProperty());
+      assertEquals("caller_owned_77", conn.getSessionInfoConnectionProperty().getValue());
+
+      ArgumentCaptor<QueryJobConfiguration> queryCaptor =
+          ArgumentCaptor.forClass(QueryJobConfiguration.class);
+      verify(mockBigQuery, atLeastOnce()).query(queryCaptor.capture());
+      assertFalse(
+          queryCaptor.getAllValues().stream()
+              .anyMatch(cfg -> "CALL BQ.ABORT_SESSION();".equals(cfg.getQuery())));
+    }
+  }
+
+  @Test
+  public void testResetForReuse_resetsClientInfoWarningsHoldabilityAndClosesOpenStatements()
+      throws Exception {
+    String url = getUriOAuthToken().append("ProjectId", "test-project").toString();
+    BigQueryConnection closedConn;
+    try (BigQueryConnection conn = new BigQueryConnection(url)) {
+      closedConn = conn;
+      assertEquals(ResultSet.CLOSE_CURSORS_AT_COMMIT, conn.getHoldability());
+      Statement stmt = conn.createStatement();
+      PreparedStatement pstmt = conn.prepareStatement("SELECT 1");
+
+      conn.setClientInfo("ApplicationName", "BillingReport");
+      conn.sqlWarnings.add(new SQLWarning("sample warning"));
+      conn.holdability = ResultSet.HOLD_CURSORS_OVER_COMMIT;
+      assertEquals(2, conn.openStatements.size());
+
+      conn.resetForReuse();
+
+      assertTrue(stmt.isClosed());
+      assertTrue(pstmt.isClosed());
+      assertTrue(conn.openStatements.isEmpty());
+      assertTrue(conn.getClientInfo().isEmpty());
+      assertNull(conn.getWarnings());
+      assertEquals(ResultSet.CLOSE_CURSORS_AT_COMMIT, conn.getHoldability());
+    }
+    assertThrows(BigQueryJdbcException.class, closedConn::resetForReuse);
+  }
+
+  @Test
+  public void testResetForReuse_abortsDriverSessionEvenWhenCallingThreadIsInterrupted()
+      throws Exception {
+    try (BigQueryConnection conn = new BigQueryConnection(sessionEnabledUri().toString())) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      conn.bigQuery = mockBigQuery;
+      // Simulate real BigQueryImpl / AbstractFuture.get(), which throws immediately if the calling
+      // thread enters the RPC with its interrupt flag still set.
+      when(mockBigQuery.query(any(QueryJobConfiguration.class)))
+          .thenAnswer(
+              invocation -> {
+                if (Thread.interrupted()) {
+                  throw new BigQueryException(0, "interrupted before RPC");
+                }
+                return mock(TableResult.class);
+              });
+
+      conn.markSessionCreatedByDriver();
+      conn.initSessionInfo("interrupted_caller_session");
+
+      Thread.currentThread().interrupt();
+      try {
+        conn.resetForReuse();
+        assertTrue(Thread.currentThread().isInterrupted());
+        assertNull(conn.getSessionInfoConnectionProperty());
+        assertFalse(conn.isSessionCreatedByDriver());
+
+        ArgumentCaptor<QueryJobConfiguration> queryCaptor =
+            ArgumentCaptor.forClass(QueryJobConfiguration.class);
+        verify(mockBigQuery).query(queryCaptor.capture());
+        assertEquals("CALL BQ.ABORT_SESSION();", queryCaptor.getValue().getQuery());
+      } finally {
+        Thread.interrupted();
+      }
+    }
+  }
+
+  @Test
+  public void testResetForReuse_preservesSessionAndTransactionForPhysicalCloseWhenInterrupted()
+      throws Exception {
+    BigQueryConnection conn = new BigQueryConnection(sessionEnabledUri().toString());
+    BigQuery mockBigQuery = mock(BigQuery.class);
+    conn.bigQuery = mockBigQuery;
+
+    SessionInfo sessionInfo = mock(SessionInfo.class);
+    when(sessionInfo.getSessionId()).thenReturn("driver_tx_session");
+    TableResult beginResult = mock(TableResult.class);
+    when(beginResult.getSessionInfo()).thenReturn(sessionInfo);
+    when(mockBigQuery.query(any(QueryJobConfiguration.class)))
+        .thenAnswer(
+            invocation -> {
+              QueryJobConfiguration cfg = invocation.getArgument(0);
+              if ("BEGIN TRANSACTION;".equals(cfg.getQuery())) {
+                return beginResult;
+              }
+              throw new InterruptedException("interrupted session abort");
+            });
+
+    Job rollbackJob = mock(Job.class);
+    when(mockBigQuery.create(any(JobInfo.class))).thenReturn(rollbackJob);
+    when(rollbackJob.waitFor()).thenThrow(new InterruptedException("interrupted rollback"));
+
+    conn.setAutoCommit(false);
+    Statement failingStmt = mock(Statement.class);
+    SQLException stmtCloseEx = new SQLException("statement close failed");
+    doThrow(stmtCloseEx).when(failingStmt).close();
+    conn.openStatements.add(failingStmt);
+
+    try {
+      SQLException thrown = assertThrows(SQLException.class, conn::resetForReuse);
+      assertSame(stmtCloseEx, thrown);
+      assertEquals(2, thrown.getSuppressed().length);
+      assertTrue(Thread.currentThread().isInterrupted());
+      assertTrue(conn.isTransactionStarted());
+      assertNotNull(conn.getSessionInfoConnectionProperty());
+      assertEquals("driver_tx_session", conn.getSessionInfoConnectionProperty().getValue());
+    } finally {
+      Thread.interrupted();
+    }
+
+    // Subsequent physical close must still see the active transaction and session and clean up.
+    doReturn(rollbackJob).when(rollbackJob).waitFor();
+    when(mockBigQuery.query(any(QueryJobConfiguration.class))).thenReturn(mock(TableResult.class));
+    conn.close();
+
+    assertFalse(conn.isTransactionStarted());
+    assertNull(conn.getSessionInfoConnectionProperty());
+    verify(mockBigQuery, times(2)).create(any(JobInfo.class));
+    ArgumentCaptor<QueryJobConfiguration> queryCaptor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(mockBigQuery, times(3)).query(queryCaptor.capture());
+    long abortCount =
+        queryCaptor.getAllValues().stream()
+            .filter(cfg -> "CALL BQ.ABORT_SESSION();".equals(cfg.getQuery()))
+            .count();
+    assertEquals(2L, abortCount);
+  }
+
+  @Test
+  public void testClose_rollsBackActiveTransactionWithoutStartingFollowUpTransaction()
+      throws Exception {
+    String url =
+        sessionEnabledUri().append("QueryProperties", "session_id=caller_owned_close").toString();
+    BigQueryConnection conn = new BigQueryConnection(url);
+    BigQuery mockBigQuery = mock(BigQuery.class);
+    conn.bigQuery = mockBigQuery;
+
+    SessionInfo sessionInfo = mock(SessionInfo.class);
+    when(sessionInfo.getSessionId()).thenReturn("caller_owned_close");
+    TableResult beginResult = mock(TableResult.class);
+    when(beginResult.getSessionInfo()).thenReturn(sessionInfo);
+    when(mockBigQuery.query(any(QueryJobConfiguration.class))).thenReturn(beginResult);
+
+    Job rollbackJob = mock(Job.class);
+    when(mockBigQuery.create(any(JobInfo.class))).thenReturn(rollbackJob);
+    when(rollbackJob.waitFor()).thenReturn(rollbackJob);
+
+    conn.setAutoCommit(false);
+    conn.close();
+
+    verify(mockBigQuery, times(1)).create(any(JobInfo.class));
+    ArgumentCaptor<QueryJobConfiguration> queryCaptor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(mockBigQuery, times(1)).query(queryCaptor.capture());
+    assertEquals("BEGIN TRANSACTION;", queryCaptor.getValue().getQuery());
+  }
+
+  @Test
+  public void
+      testAbort_marksClosedSynchronouslyAndExecutesTeardownViaExecutorWithConfiguredTimeout()
+          throws Exception {
+    String url = sessionEnabledUri().append("Timeout", 15).toString();
+    BigQueryConnection conn = new BigQueryConnection(url);
+    BigQuery mockBigQuery = mock(BigQuery.class);
+    conn.bigQuery = mockBigQuery;
+
+    SessionInfo sessionInfo = mock(SessionInfo.class);
+    when(sessionInfo.getSessionId()).thenReturn("abort_tx_session");
+    TableResult beginResult = mock(TableResult.class);
+    when(beginResult.getSessionInfo()).thenReturn(sessionInfo);
+    when(mockBigQuery.query(any(QueryJobConfiguration.class))).thenReturn(beginResult);
+
+    Job rollbackJob = mock(Job.class);
+    when(mockBigQuery.create(any(JobInfo.class))).thenReturn(rollbackJob);
+    when(rollbackJob.waitFor(any(RetryOption.class))).thenReturn(rollbackJob);
+
+    conn.setAutoCommit(false);
+    Statement openStmt = conn.createStatement();
+    Connection logicalProxy = mock(Connection.class);
+    Statement stmtProxy = mock(Statement.class);
+    assertSame(conn, openStmt.getConnection());
+    assertNull(((BigQueryStatement) openStmt).getLogicalStatementProxy());
+    ((BigQueryStatement) openStmt).attachPooledProxies(logicalProxy, stmtProxy);
+    assertSame(logicalProxy, openStmt.getConnection());
+    assertSame(stmtProxy, ((BigQueryStatement) openStmt).getLogicalStatementProxy());
+
+    assertThrows(BigQueryJdbcException.class, () -> conn.abort(null));
+    assertFalse(conn.isClosed());
+
+    // A rejecting Executor must roll back closeInitiated/isClosed so fallback close() can clean up.
+    assertThrows(
+        RejectedExecutionException.class,
+        () ->
+            conn.abort(
+                task -> {
+                  throw new RejectedExecutionException("executor shut down");
+                }));
+    assertFalse(conn.isClosed());
+
+    List<Runnable> scheduledTasks = new ArrayList<>();
+    conn.abort(scheduledTasks::add);
+
+    assertTrue(conn.isClosed());
+    assertEquals(1, scheduledTasks.size());
+    assertFalse(openStmt.isClosed(), "Resource teardown must be deferred to the executor");
+
+    // Second abort or close is a no-op once abort has claimed teardown.
+    conn.abort(scheduledTasks::add);
+    conn.close();
+    assertEquals(1, scheduledTasks.size());
+
+    scheduledTasks.get(0).run();
+    assertTrue(openStmt.isClosed());
+    assertNull(openStmt.getConnection());
+    verify(rollbackJob).waitFor(RetryOption.totalTimeoutDuration(Duration.ofSeconds(15)));
+  }
+
+  @Test
+  public void testCommitAndRollback_surfaceTimedOutFailedAndExceptionTransactionJobs()
+      throws Exception {
+    String url =
+        sessionEnabledUri()
+            .append("Timeout", 10)
+            .append("QueryProperties", "session_id=tx_status_session")
+            .toString();
+    try (BigQueryConnection conn = new BigQueryConnection(url)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      conn.bigQuery = mockBigQuery;
+
+      SessionInfo sessionInfo = mock(SessionInfo.class);
+      when(sessionInfo.getSessionId()).thenReturn("tx_status_session");
+      TableResult beginResult = mock(TableResult.class);
+      when(beginResult.getSessionInfo()).thenReturn(sessionInfo);
+      when(mockBigQuery.query(any(QueryJobConfiguration.class))).thenReturn(beginResult);
+
+      conn.setAutoCommit(false);
+
+      // 1. Timed-out commit wait (JobStatus.State.RUNNING) throws and keeps transactionStarted.
+      Job runningCommitJob = mock(Job.class);
+      JobStatus runningStatus = mock(JobStatus.class);
+      when(runningStatus.getState()).thenReturn(JobStatus.State.RUNNING);
+      when(runningCommitJob.getStatus()).thenReturn(runningStatus);
+      when(runningCommitJob.waitFor(any(RetryOption.class))).thenReturn(runningCommitJob);
+      when(mockBigQuery.create(any(JobInfo.class))).thenReturn(runningCommitJob);
+
+      assertThrows(BigQueryJdbcException.class, conn::commit);
+      assertTrue(conn.isTransactionStarted());
+      verify(runningCommitJob).waitFor(RetryOption.totalTimeoutDuration(Duration.ofSeconds(10)));
+
+      // 2. BigQueryException during commit is wrapped in BigQueryJdbcException.
+      when(mockBigQuery.create(any(JobInfo.class)))
+          .thenThrow(new BigQueryException(503, "commit unavailable"));
+      assertThrows(BigQueryJdbcException.class, conn::commit);
+      assertTrue(conn.isTransactionStarted());
+
+      // 3. Rollback job completing with a JobStatus error throws and keeps transactionStarted.
+      Job erroredRollbackJob = mock(Job.class);
+      JobStatus erroredStatus = mock(JobStatus.class);
+      when(erroredStatus.getState()).thenReturn(JobStatus.State.DONE);
+      when(erroredStatus.getError())
+          .thenReturn(new BigQueryError("backendError", "server", "rollback failed"));
+      when(erroredRollbackJob.getStatus()).thenReturn(erroredStatus);
+      when(erroredRollbackJob.waitFor(any(RetryOption.class))).thenReturn(erroredRollbackJob);
+      doReturn(erroredRollbackJob).when(mockBigQuery).create(any(JobInfo.class));
+
+      assertThrows(BigQueryJdbcException.class, conn::resetForReuse);
+      assertTrue(conn.isTransactionStarted());
+
+      // Allow try-with-resources close() to succeed cleanly.
+      Job okRollbackJob = mock(Job.class);
+      when(okRollbackJob.waitFor(any(RetryOption.class))).thenReturn(okRollbackJob);
+      doReturn(okRollbackJob).when(mockBigQuery).create(any(JobInfo.class));
+    }
+  }
+
+  @Test
+  public void testConcurrentCloseDuringRejectingAbort_waitsForRollbackAndClosesConnection()
+      throws Exception {
+    String url = getUriOAuthToken().append("ProjectId", "test-project").toString();
+    BigQueryConnection conn = new BigQueryConnection(url);
+    Statement openStmt = conn.createStatement();
+
+    CountDownLatch enteredExecute = new CountDownLatch(1);
+    CountDownLatch releaseRejection = new CountDownLatch(1);
+    AtomicBoolean isClosedDuringRejectingExecute = new AtomicBoolean(true);
+    AtomicReference<Thread> closeThread = new AtomicReference<>();
+    CountDownLatch closeStarted = new CountDownLatch(1);
+
+    ExecutorService workers = Executors.newFixedThreadPool(2);
+    try {
+      Future<?> abortFuture =
+          workers.submit(
+              () -> {
+                assertThrows(
+                    RejectedExecutionException.class,
+                    () ->
+                        conn.abort(
+                            task -> {
+                              isClosedDuringRejectingExecute.set(conn.isClosed());
+                              enteredExecute.countDown();
+                              try {
+                                assertTrue(releaseRejection.await(5, TimeUnit.SECONDS));
+                              } catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                              }
+                              throw new RejectedExecutionException("executor rejected");
+                            }));
+                return null;
+              });
+      assertTrue(enteredExecute.await(5, TimeUnit.SECONDS));
+      assertFalse(
+          isClosedDuringRejectingExecute.get(),
+          "isClosed() must remain false until executor accepts the abort task");
+
+      Future<?> closeFuture =
+          workers.submit(
+              () -> {
+                closeThread.set(Thread.currentThread());
+                closeStarted.countDown();
+                conn.close();
+                return null;
+              });
+      assertTrue(closeStarted.await(5, TimeUnit.SECONDS));
+      long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
+      while (closeThread.get().getState() != Thread.State.BLOCKED && System.nanoTime() < deadline) {
+        LockSupport.parkNanos(TimeUnit.MILLISECONDS.toNanos(1));
+      }
+      assertEquals(Thread.State.BLOCKED, closeThread.get().getState());
+
+      releaseRejection.countDown();
+      abortFuture.get(5, TimeUnit.SECONDS);
+      closeFuture.get(5, TimeUnit.SECONDS);
+
+      assertTrue(conn.isClosed());
+      assertTrue(openStmt.isClosed());
+    } finally {
+      workers.shutdownNow();
+    }
+
+    BigQueryConnection abortMdcConn =
+        new BigQueryConnection(getUriOAuthToken().append("ProjectId", "test-project").toString());
+    try (BigQueryJdbcMdc.MdcCloseable outerMdc =
+        BigQueryJdbcMdc.registerInstance("outer-caller-conn")) {
+      abortMdcConn.abort(Runnable::run);
+      assertTrue(abortMdcConn.isClosed());
+      assertEquals("outer-caller-conn", BigQueryJdbcMdc.getConnectionId());
+    }
+  }
+
+  @Test
+  public void testResetForReuse_surfacesBigQueryExceptionFromAbortSessionAndPreservesStateForClose()
+      throws Exception {
+    BigQueryConnection conn = new BigQueryConnection(sessionEnabledUri().toString());
+    BigQuery mockBigQuery = mock(BigQuery.class);
+    conn.bigQuery = mockBigQuery;
+    when(mockBigQuery.query(any(QueryJobConfiguration.class)))
+        .thenThrow(new BigQueryException(503, "session abort unavailable"));
+
+    conn.markSessionCreatedByDriver();
+    conn.initSessionInfo("driver_session_503");
+
+    BigQueryJdbcException resetEx = assertThrows(BigQueryJdbcException.class, conn::resetForReuse);
+    assertTrue(resetEx.getCause() instanceof BigQueryException);
+    assertNotNull(conn.getSessionInfoConnectionProperty());
+    assertEquals("driver_session_503", conn.getSessionInfoConnectionProperty().getValue());
+    assertTrue(conn.isSessionCreatedByDriver());
+
+    // Physical close retries session abort with throwOnError=false, logs warning, and clears state.
+    try (BigQueryJdbcMdc.MdcCloseable outerMdc =
+        BigQueryJdbcMdc.registerInstance("outer-caller-conn")) {
+      conn.close();
+      assertEquals("outer-caller-conn", BigQueryJdbcMdc.getConnectionId());
+    }
+    assertTrue(conn.isClosed());
+    assertNull(conn.getSessionInfoConnectionProperty());
+    verify(mockBigQuery, times(2)).query(any(QueryJobConfiguration.class));
+  }
+
+  @Test
+  public void testAsyncAbortSerializesCloseImplBehindInFlightResetForReuse() throws Exception {
+    BigQueryConnection conn = new BigQueryConnection(sessionEnabledUri().toString());
+    BigQuery mockBigQuery = mock(BigQuery.class);
+    conn.bigQuery = mockBigQuery;
+
+    SessionInfo sessionInfo = mock(SessionInfo.class);
+    when(sessionInfo.getSessionId()).thenReturn("serialized_reset_abort_session");
+    TableResult beginResult = mock(TableResult.class);
+    when(beginResult.getSessionInfo()).thenReturn(sessionInfo);
+
+    CountDownLatch enteredAbortSessionRpc = new CountDownLatch(1);
+    CountDownLatch releaseAbortSessionRpc = new CountDownLatch(1);
+    AtomicBoolean resetStillInFlight = new AtomicBoolean(false);
+    AtomicBoolean closeOverlappedReset = new AtomicBoolean(false);
+
+    when(mockBigQuery.query(any(QueryJobConfiguration.class)))
+        .thenAnswer(
+            invocation -> {
+              QueryJobConfiguration cfg = invocation.getArgument(0);
+              if ("BEGIN TRANSACTION;".equals(cfg.getQuery())) {
+                return beginResult;
+              }
+              resetStillInFlight.set(true);
+              enteredAbortSessionRpc.countDown();
+              try {
+                assertTrue(releaseAbortSessionRpc.await(5, TimeUnit.SECONDS));
+              } finally {
+                resetStillInFlight.set(false);
+              }
+              return mock(TableResult.class);
+            });
+
+    Job rollbackJob = mock(Job.class);
+    when(mockBigQuery.create(any(JobInfo.class))).thenReturn(rollbackJob);
+    when(rollbackJob.waitFor()).thenReturn(rollbackJob);
+
+    conn.setAutoCommit(false);
+    Statement checkOverlapStmt = mock(Statement.class);
+    when(checkOverlapStmt.isClosed()).thenReturn(false);
+
+    ExecutorService resetExecutor = Executors.newSingleThreadExecutor();
+    ExecutorService abortExecutor = Executors.newSingleThreadExecutor();
+    try {
+      Future<?> resetFuture =
+          resetExecutor.submit(
+              () -> {
+                conn.resetForReuse();
+                return null;
+              });
+      assertTrue(enteredAbortSessionRpc.await(5, TimeUnit.SECONDS));
+
+      // Add a sentinel statement while reset is paused inside ABORT_SESSION; closeImpl() closes
+      // openStatements, so if closeImpl() ran concurrently before reset exited lifecycleLock,
+      // resetStillInFlight would be true when checkOverlapStmt.close() is invoked.
+      doAnswer(
+              inv -> {
+                if (resetStillInFlight.get()) {
+                  closeOverlappedReset.set(true);
+                }
+                return null;
+              })
+          .when(checkOverlapStmt)
+          .close();
+      conn.openStatements.add(checkOverlapStmt);
+
+      conn.abort(abortExecutor);
+      assertTrue(conn.isClosed(), "abort(Executor) must return non-blockingly with isClosed=true");
+      LockSupport.parkNanos(TimeUnit.MILLISECONDS.toNanos(15));
+      verify(checkOverlapStmt, never()).close();
+
+      releaseAbortSessionRpc.countDown();
+      resetFuture.get(5, TimeUnit.SECONDS);
+
+      abortExecutor.shutdown();
+      assertTrue(abortExecutor.awaitTermination(5, TimeUnit.SECONDS));
+
+      assertFalse(closeOverlappedReset.get(), "closeImpl() must serialize behind resetForReuse()");
+      verify(checkOverlapStmt, times(1)).close();
+      verify(mockBigQuery, times(1)).create(any(JobInfo.class));
+      ArgumentCaptor<QueryJobConfiguration> queryCaptor =
+          ArgumentCaptor.forClass(QueryJobConfiguration.class);
+      verify(mockBigQuery, times(2)).query(queryCaptor.capture());
+    } finally {
+      resetExecutor.shutdownNow();
+      abortExecutor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testConcurrentGetWarningsAndReset_neverThrowsIndexOutOfBounds() throws Exception {
+    String url = getUriOAuthToken().append("ProjectId", "test-project").toString();
+    try (BigQueryConnection conn = new BigQueryConnection(url)) {
+      SQLWarning warning = new SQLWarning("sample warning");
+      CountDownLatch startGate = new CountDownLatch(1);
+      ExecutorService workers = Executors.newFixedThreadPool(2);
+      try {
+        Future<?> mutator =
+            workers.submit(
+                () -> {
+                  assertTrue(startGate.await(5, TimeUnit.SECONDS));
+                  for (int i = 0; i < 1000; i++) {
+                    conn.sqlWarnings.add(warning);
+                    conn.resetForReuse();
+                  }
+                  return null;
+                });
+        Future<?> reader =
+            workers.submit(
+                () -> {
+                  assertTrue(startGate.await(5, TimeUnit.SECONDS));
+                  for (int i = 0; i < 1000; i++) {
+                    SQLWarning observed = conn.getWarnings();
+                    if (observed != null) {
+                      assertSame(warning, observed);
+                    }
+                  }
+                  return null;
+                });
+        startGate.countDown();
+        mutator.get(5, TimeUnit.SECONDS);
+        reader.get(5, TimeUnit.SECONDS);
+        conn.resetForReuse();
+        assertNull(conn.getWarnings());
+      } finally {
+        workers.shutdownNow();
+      }
+    }
   }
 }
