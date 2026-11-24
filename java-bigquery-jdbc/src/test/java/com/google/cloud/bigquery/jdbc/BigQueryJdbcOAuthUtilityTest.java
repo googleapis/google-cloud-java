@@ -21,19 +21,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.mockStatic;
 
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.oauth2.ExternalAccountCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ImpersonatedCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.auth.oauth2.UserAuthorizer;
 import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.util.Collections;
@@ -42,6 +48,7 @@ import java.util.Map;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
 
 public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
@@ -564,5 +571,202 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     assertThat(credentials).isInstanceOf(UserCredentials.class);
     assertThat(((UserCredentials) credentials).toBuilder().getHttpTransportFactory())
         .isEqualTo(dummyFactory);
+  }
+
+  @Test
+  public void testServiceAccountJsonPreservesUniverseDomainUnlessExplicitlyOverridden()
+      throws Exception {
+    JsonObject saJson = new JsonObject();
+    saJson.addProperty("type", "service_account");
+    saJson.addProperty("project_id", "tpc-project");
+    saJson.addProperty("private_key_id", "key-id-1");
+    saJson.addProperty("private_key", fake_pkcs8_key);
+    saJson.addProperty("client_email", "sa@tpc-project.iam.gserviceaccount.com");
+    saJson.addProperty("client_id", "123456");
+    saJson.addProperty("universe_domain", "apis-tpczero.goog");
+
+    Path tempKeyFile = Files.createTempFile("tpc-sa-", ".json");
+    try {
+      Files.write(tempKeyFile, saJson.toString().getBytes(StandardCharsets.UTF_8));
+      String url =
+          "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+              + "ProjectId=tpc-project;OAuthType=0;OAuthPvtKeyPath="
+              + tempKeyFile;
+      DataSource ds = DataSource.fromUrl(url);
+      Map<String, String> authProps = BigQueryJdbcOAuthUtility.parseOAuthProperties(ds, null);
+
+      // 1. Omitted universeDomain (even when GOOGLE_CLOUD_UNIVERSE_DOMAIN is set to another domain)
+      // must NOT overwrite a JSON credential's parsed universe_domain.
+      try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+          mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+        urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn("other-tpc.goog");
+        GoogleCredentials preserved =
+            BigQueryJdbcOAuthUtility.getCredentials(
+                authProps, Collections.emptyMap(), false, null, null);
+        assertEquals("apis-tpczero.goog", preserved.getUniverseDomain());
+      }
+
+      // 2. Explicit universeDomain in overrideProperties DOES override JSON credential.
+      Map<String, String> explicitOverrides =
+          Collections.singletonMap(
+              BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, "explicit-tpc.goog");
+      GoogleCredentials overridden =
+          BigQueryJdbcOAuthUtility.getCredentials(authProps, explicitOverrides, false, null, null);
+      assertEquals("explicit-tpc.goog", overridden.getUniverseDomain());
+    } finally {
+      Files.deleteIfExists(tempKeyFile);
+    }
+  }
+
+  @Test
+  public void testNonJsonCredentialsUseEnvUniverseDomainFallback() throws Exception {
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn("apis-tpczero.goog");
+
+      // PKCS#8 Service Account
+      Map<String, String> saProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(getUriOAuthServiceAccount().toString()), null);
+      GoogleCredentials saCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              saProps, Collections.emptyMap(), false, null, null);
+      assertEquals("apis-tpczero.goog", saCreds.getUniverseDomain());
+
+      // Pre-generated Access Token
+      Map<String, String> accessProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(getUriOAuthToken().toString()), null);
+      GoogleCredentials accessCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              accessProps, Collections.emptyMap(), false, null, null);
+      assertEquals("apis-tpczero.goog", accessCreds.getUniverseDomain());
+
+      // Pre-generated Refresh Token
+      Map<String, String> refreshProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(
+                  "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                      + "ProjectId=MyProject;OAuthType=2;OAuthRefreshToken=rt;"
+                      + "OAuthClientId=cid;OAuthClientSecret=csecret;"),
+              null);
+      GoogleCredentials refreshCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              refreshProps, Collections.emptyMap(), false, null, null);
+      assertEquals("apis-tpczero.goog", refreshCreds.getUniverseDomain());
+    }
+  }
+
+  @Test
+  public void testByoidPropertyCredentialsDeriveStsTokenUriFromUniverseDomain() throws Exception {
+    String baseByoidUrl =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=4;ProjectId=p;"
+            + "BYOID_AudienceUri=//iam.googleapis.com/locations/global/workforcePools/pool/providers/prov;"
+            + "BYOID_CredentialSource={\"file\":\"/tmp/token.txt\"};";
+
+    // 1. Explicit universeDomain in URL with BYOID_TokenUri omitted
+    DataSource explicitTpcDs =
+        DataSource.fromUrl(baseByoidUrl + "universeDomain=apis-tpczero.goog;");
+    Map<String, String> explicitAuthProps =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(explicitTpcDs, null);
+    assertEquals(
+        "https://sts.apis-tpczero.goog/v1/token",
+        explicitAuthProps.get(BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME));
+    GoogleCredentials explicitByoidCreds =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            explicitAuthProps, Collections.emptyMap(), false, null, null);
+    assertThat(explicitByoidCreds).isInstanceOf(ExternalAccountCredentials.class);
+    assertEquals(
+        "https://sts.apis-tpczero.goog/v1/token",
+        ((ExternalAccountCredentials) explicitByoidCreds).getTokenUrl());
+    assertEquals("apis-tpczero.goog", explicitByoidCreds.getUniverseDomain());
+
+    // 2. GOOGLE_CLOUD_UNIVERSE_DOMAIN env var fallback with universeDomain and BYOID_TokenUri
+    // omitted
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn("env-tpc.goog");
+      DataSource envTpcDs = DataSource.fromUrl(baseByoidUrl);
+      Map<String, String> envAuthProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(envTpcDs, null);
+      GoogleCredentials envByoidCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              envAuthProps, Collections.emptyMap(), false, null, null);
+      assertEquals(
+          "https://sts.env-tpc.goog/v1/token",
+          ((ExternalAccountCredentials) envByoidCreds).getTokenUrl());
+      assertEquals("env-tpc.goog", envByoidCreds.getUniverseDomain());
+    }
+
+    // 3. Explicit BYOID_TokenUri in URL overrides universeDomain derivation
+    DataSource customTokenDs =
+        DataSource.fromUrl(
+            baseByoidUrl
+                + "universeDomain=apis-tpczero.goog;"
+                + "BYOID_TokenUri=https://custom-sts.example.com/v1/token;");
+    Map<String, String> customTokenAuthProps =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(customTokenDs, null);
+    assertEquals(
+        "https://custom-sts.example.com/v1/token",
+        customTokenAuthProps.get(BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME));
+    GoogleCredentials customTokenCreds =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            customTokenAuthProps, Collections.emptyMap(), false, null, null);
+    assertEquals(
+        "https://custom-sts.example.com/v1/token",
+        ((ExternalAccountCredentials) customTokenCreds).getTokenUrl());
+    assertEquals("apis-tpczero.goog", customTokenCreds.getUniverseDomain());
+
+    // 4. Default GDU (no universeDomain, no env var, no BYOID_TokenUri) resolves sts.googleapis.com
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(null);
+      DataSource defaultGduDs = DataSource.fromUrl(baseByoidUrl);
+      Map<String, String> defaultGduProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(defaultGduDs, null);
+      GoogleCredentials defaultGduCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              defaultGduProps, Collections.emptyMap(), false, null, null);
+      assertEquals(
+          "https://sts.googleapis.com/v1/token",
+          ((ExternalAccountCredentials) defaultGduCreds).getTokenUrl());
+      assertEquals("googleapis.com", defaultGduCreds.getUniverseDomain());
+    }
+  }
+
+  @Test
+  public void testNullOverridePropertiesHandledSafelyAcrossAuthTypes() throws Exception {
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(null);
+
+      // Service Account PKCS#8 with null overrideProperties
+      Map<String, String> saProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(getUriOAuthServiceAccount().toString()), null);
+      GoogleCredentials saCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(saProps, null, false, null, null);
+      assertEquals("googleapis.com", saCreds.getUniverseDomain());
+
+      // Pre-generated Access Token with null overrideProperties
+      Map<String, String> tokenProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(getUriOAuthToken().toString()), null);
+      GoogleCredentials tokenCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(tokenProps, null, false, null, null);
+      assertEquals("googleapis.com", tokenCreds.getUniverseDomain());
+
+      // Pre-generated Refresh Token with null overrideProperties
+      Map<String, String> refreshProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(
+                  "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                      + "ProjectId=MyProject;OAuthType=2;OAuthRefreshToken=rt;"
+                      + "OAuthClientId=cid;OAuthClientSecret=csecret;"),
+              null);
+      GoogleCredentials refreshCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(refreshProps, null, false, null, null);
+      assertEquals("googleapis.com", refreshCreds.getUniverseDomain());
+    }
   }
 }

@@ -313,9 +313,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.universeDomain = ds.getUniverseDomain();
 
       this.overrideProperties = ds.getOverrideProperties();
-      if (this.universeDomain != null) {
+      // Only record an explicit URL/DataSource universeDomain in overrideProperties so JSON
+      // credentials keep their own parsed universe_domain unless explicitly overridden.
+      String explicitUniverseDomain = ds.getExplicitUniverseDomain();
+      if (explicitUniverseDomain != null) {
         this.overrideProperties.put(
-            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, this.universeDomain);
+            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, explicitUniverseDomain);
       }
 
       this.reqGoogleDriveScope =

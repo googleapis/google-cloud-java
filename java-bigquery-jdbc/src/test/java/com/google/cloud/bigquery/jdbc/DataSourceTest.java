@@ -18,14 +18,18 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.mockStatic;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.sql.SQLException;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
 
 public class DataSourceTest {
 
@@ -82,5 +86,43 @@ public class DataSourceTest {
             .getMessage()
             .contains(
                 "Invalid value for MetaDataFetchThreadCount. It must be greater than or equal to 1"));
+  }
+
+  @Test
+  public void testUniverseDomainAndByoidTokenUriResolution() {
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      // 1. Neither URL/setter nor GOOGLE_CLOUD_UNIVERSE_DOMAIN is set -> null universeDomain
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(null);
+      DataSource ds = new DataSource();
+      assertNull(ds.getUniverseDomain());
+      assertNull(ds.getExplicitUniverseDomain());
+      assertEquals("https://sts.googleapis.com/v1/token", ds.getByoidTokenUri());
+
+      // 2. GOOGLE_CLOUD_UNIVERSE_DOMAIN is set, explicit universeDomain is omitted
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn("apis-tpczero.goog");
+      assertEquals("apis-tpczero.goog", ds.getUniverseDomain());
+      assertNull(ds.getExplicitUniverseDomain());
+      assertEquals("https://sts.apis-tpczero.goog/v1/token", ds.getByoidTokenUri());
+
+      // 3. Explicit universeDomain takes precedence over GOOGLE_CLOUD_UNIVERSE_DOMAIN
+      ds.setUniverseDomain("explicit-tpc.goog");
+      assertEquals("explicit-tpc.goog", ds.getUniverseDomain());
+      assertEquals("explicit-tpc.goog", ds.getExplicitUniverseDomain());
+      assertEquals("https://sts.explicit-tpc.goog/v1/token", ds.getByoidTokenUri());
+
+      // 4. Explicit BYOID_TokenUri takes precedence over universeDomain derivation
+      ds.setByoidTokenUri("https://custom-sts.internal/v1/token");
+      assertEquals("https://custom-sts.internal/v1/token", ds.getByoidTokenUri());
+    }
+  }
+
+  @Test
+  public void testNormalizeUniverseDomain() {
+    assertNull(BigQueryJdbcUrlUtility.normalizeUniverseDomain(null));
+    assertNull(BigQueryJdbcUrlUtility.normalizeUniverseDomain(""));
+    assertNull(BigQueryJdbcUrlUtility.normalizeUniverseDomain("   "));
+    assertEquals(
+        "apis-tpczero.goog", BigQueryJdbcUrlUtility.normalizeUniverseDomain(" apis-tpczero.goog "));
   }
 }
