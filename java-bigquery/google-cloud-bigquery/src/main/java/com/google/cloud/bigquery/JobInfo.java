@@ -29,7 +29,7 @@ import java.util.Objects;
  * Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads data from Google Cloud
  * Storage into a table. Use {@link QueryJobConfiguration} for a job that runs a query.
  *
- * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs">Jobs</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job">Job</a>
  */
 public class JobInfo implements Serializable {
 

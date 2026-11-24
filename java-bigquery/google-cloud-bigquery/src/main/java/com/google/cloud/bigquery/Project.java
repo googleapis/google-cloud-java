@@ -30,7 +30,8 @@ import javax.annotation.Nullable;
  * <p>Objects of this class can be obtained by listing projects accessible to the caller using
  * {@link BigQuery#listProjects(BigQuery.ProjectListOption...)}.
  *
- * @see <a href="https://cloud.google.com/bigquery/docs/reference/rest/v2/projects/list">Projects:
+ * @see <a
+ *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/projects/list">Projects:
  *     list</a>
  */
 @BetaApi

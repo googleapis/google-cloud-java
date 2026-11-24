@@ -44,6 +44,7 @@ import com.google.cloud.logging.v2.LoggingClient;
 import com.google.cloud.logging.v2.LoggingSettings;
 import com.google.cloud.logging.v2.MetricsClient;
 import com.google.cloud.logging.v2.MetricsSettings;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.logging.v2.CreateExclusionRequest;
@@ -128,26 +129,8 @@ public class GrpcLoggingRpc implements LoggingRpc {
           throw new IOException(ex);
         }
       } else {
-        LoggingSettingsBuilder settingsBuilder =
-            new LoggingSettingsBuilder(LoggingSettings.newBuilder().build());
-
-        settingsBuilder.setCredentialsProvider(
-            GrpcTransportOptions.setUpCredentialsProvider(options));
-        settingsBuilder.setTransportChannelProvider(
-            GrpcTransportOptions.setUpChannelProvider(
-                LoggingSettings.defaultGrpcTransportProviderBuilder(), options));
-
-        HeaderProvider internalHeaderProvider =
-            LoggingSettings.defaultApiClientHeaderProviderBuilder()
-                .setClientLibToken(
-                    ServiceOptions.getGoogApiClientLibName(),
-                    GaxProperties.getLibraryVersion(options.getClass()))
-                .build();
-        HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider);
-        settingsBuilder.setInternalHeaderProvider(headerProvider);
-        settingsBuilder.setQuotaProjectId(options.getQuotaProjectId());
-
-        clientContext = ClientContext.create(settingsBuilder.build());
+        LoggingSettings loggingSettings = createLoggingSettings(options);
+        clientContext = ClientContext.create(loggingSettings);
       }
       ApiFunction<UnaryCallSettings.Builder<?, ?>, Void> retrySettingsSetter =
           new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
@@ -341,6 +324,41 @@ public class GrpcLoggingRpc implements LoggingRpc {
       resource.close();
     }
     executorFactory.release(executor);
+  }
+
+  /**
+   * Builds {@link LoggingSettings} from {@link LoggingOptions}, propagating {@code universeDomain}
+   * and leaving the transport endpoint unset when the default host is used so GAX resolves the
+   * endpoint from the universe domain.
+   */
+  @VisibleForTesting
+  static LoggingSettings createLoggingSettings(LoggingOptions options) throws IOException {
+    LoggingSettingsBuilder settingsBuilder =
+        new LoggingSettingsBuilder(LoggingSettings.newBuilder().build());
+
+    settingsBuilder.setCredentialsProvider(GrpcTransportOptions.setUpCredentialsProvider(options));
+    // Forward any explicitly configured universe domain so GAX can resolve the endpoint
+    // and validate credentials against it.
+    if (options.getUniverseDomain() != null) {
+      settingsBuilder.setUniverseDomain(options.getUniverseDomain());
+    }
+    // Preserve custom host overrides; leave the endpoint unset for the default host so GAX
+    // resolves logging.<universeDomain>:443 automatically via the default channel provider.
+    if (!LoggingSettings.getDefaultEndpoint().equals(options.getHost())) {
+      settingsBuilder.setEndpoint(options.getHost());
+    }
+
+    HeaderProvider internalHeaderProvider =
+        LoggingSettings.defaultApiClientHeaderProviderBuilder()
+            .setClientLibToken(
+                ServiceOptions.getGoogApiClientLibName(),
+                GaxProperties.getLibraryVersion(options.getClass()))
+            .build();
+    HeaderProvider headerProvider = options.getMergedHeaderProvider(internalHeaderProvider);
+    settingsBuilder.setInternalHeaderProvider(headerProvider);
+    settingsBuilder.setQuotaProjectId(options.getQuotaProjectId());
+
+    return settingsBuilder.build();
   }
 
   // This class is needed solely to get access to protected method

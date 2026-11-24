@@ -57,6 +57,56 @@ public class GrpcInterceptorProviderTest extends AbstractMockServerTest {
     }
   }
 
+  public static final class InterceptorProviderWithoutNoArgConstructor
+      implements GrpcInterceptorProvider {
+    public InterceptorProviderWithoutNoArgConstructor(String ignored) {}
+
+    @Override
+    public List<ClientInterceptor> getInterceptors() {
+      return ImmutableList.of();
+    }
+  }
+
+  public static final class InterceptorProviderWithFailingConstructor
+      implements GrpcInterceptorProvider {
+    public InterceptorProviderWithFailingConstructor() {
+      throw new IllegalArgumentException("Simulated interceptor failure");
+    }
+
+    @Override
+    public List<ClientInterceptor> getInterceptors() {
+      return ImmutableList.of();
+    }
+  }
+
+  public static final class InterceptorProviderWithPrivateConstructor
+      implements GrpcInterceptorProvider {
+    private InterceptorProviderWithPrivateConstructor() {}
+
+    @Override
+    public List<ClientInterceptor> getInterceptors() {
+      return ImmutableList.of();
+    }
+  }
+
+  public abstract static class AbstractInterceptorProvider implements GrpcInterceptorProvider {
+    public AbstractInterceptorProvider() {}
+  }
+
+  public static final class InterceptorProviderWithFailingStaticInitializer
+      implements GrpcInterceptorProvider {
+    static {
+      if (true) {
+        throw new RuntimeException("Simulated static init failure");
+      }
+    }
+
+    @Override
+    public List<ClientInterceptor> getInterceptors() {
+      return ImmutableList.of();
+    }
+  }
+
   @Before
   public void clearInterceptorUsedFlag() {
     INTERCEPTOR_CALLED.set(false);
@@ -76,42 +126,212 @@ public class GrpcInterceptorProviderTest extends AbstractMockServerTest {
   }
 
   @Test
-  public void testGrpcInterceptorProviderIsUsedWhenConfigured() {
-    System.setProperty("ENABLE_GRPC_INTERCEPTOR_PROVIDER", "true");
-    assertFalse(INTERCEPTOR_CALLED.get());
-    try (Connection connection =
-        createConnection(
-            ";grpc_interceptor_provider=" + TestGrpcInterceptorProvider.class.getName())) {
-      try (ResultSet resultSet = connection.executeQuery(SELECT1_STATEMENT)) {
-        while (resultSet.next()) {
-          // ignore
-        }
-      }
-    } finally {
-      System.clearProperty("ENABLE_GRPC_INTERCEPTOR_PROVIDER");
-    }
-    assertTrue(INTERCEPTOR_CALLED.get());
+  public void testGrpcInterceptorProviderIsUsedWhenConfigured() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          assertFalse(INTERCEPTOR_CALLED.get());
+          try (Connection connection =
+              createConnection(
+                  ";grpc_interceptor_provider=" + TestGrpcInterceptorProvider.class.getName())) {
+            try (ResultSet resultSet = connection.executeQuery(SELECT1_STATEMENT)) {
+              while (resultSet.next()) {
+                // ignore
+              }
+            }
+          }
+          assertTrue(INTERCEPTOR_CALLED.get());
+        });
   }
 
   @Test
-  public void testGrpcInterceptorProviderRequiresSystemProperty() {
-    assertFalse(INTERCEPTOR_CALLED.get());
-    SpannerException exception =
-        assertThrows(
-            SpannerException.class,
-            () ->
-                createConnection(
-                    ";grpc_interceptor_provider=" + TestGrpcInterceptorProvider.class.getName()));
-    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
-    assertTrue(
-        exception.getMessage(),
-        exception
-            .getMessage()
-            .contains(
-                "grpc_interceptor_provider can only be used if the system property"
-                    + " ENABLE_GRPC_INTERCEPTOR_PROVIDER has been set to true. Start the"
-                    + " application with the JVM command line option"
-                    + " -DENABLE_GRPC_INTERCEPTOR_PROVIDER=true"));
-    assertFalse(INTERCEPTOR_CALLED.get());
+  public void testGrpcInterceptorProviderRequiresSystemProperty() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyDisabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          assertFalse(INTERCEPTOR_CALLED.get());
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      createConnection(
+                          ";grpc_interceptor_provider="
+                              + TestGrpcInterceptorProvider.class.getName()));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      "grpc_interceptor_provider can only be used if the system property"
+                          + " ENABLE_GRPC_INTERCEPTOR_PROVIDER has been set to true. Start the"
+                          + " application with the JVM command line option"
+                          + " -DENABLE_GRPC_INTERCEPTOR_PROVIDER=true"));
+          assertFalse(INTERCEPTOR_CALLED.get());
+        });
+  }
+
+  @Test
+  public void testGrpcInterceptorProviderConverter_DirectCallWithoutSystemProperty()
+      throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyDisabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      ClientSideStatementValueConverters.GrpcInterceptorProviderConverter.INSTANCE
+                          .convert(TestGrpcInterceptorProvider.class.getName()));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        });
+  }
+
+  @Test
+  public void testGrpcInterceptorProvider_ClassDoesNotImplementInterface() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () -> createConnection(";grpc_interceptor_provider=" + String.class.getName()));
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      String.format(
+                          "Class %s does not implement %s",
+                          String.class.getName(), GrpcInterceptorProvider.class.getName())));
+        });
+  }
+
+  @Test
+  public void testGrpcInterceptorProvider_NonExistentClass() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      createConnection(
+                          ";grpc_interceptor_provider=com.google.cloud.spanner.connection.NonExistentClass"));
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      "Unknown or invalid GrpcInterceptorProvider class name: com.google.cloud.spanner.connection.NonExistentClass"));
+        });
+  }
+
+  @Test
+  public void testGrpcInterceptorProvider_NoPublicNoArgConstructor() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      createConnection(
+                          ";grpc_interceptor_provider="
+                              + InterceptorProviderWithoutNoArgConstructor.class.getName()));
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      "GrpcInterceptorProvider "
+                          + InterceptorProviderWithoutNoArgConstructor.class.getName()
+                          + " does not have a public no-arg constructor."));
+        });
+  }
+
+  @Test
+  public void testGrpcInterceptorProvider_ConstructorThrowsException() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      createConnection(
+                          ";grpc_interceptor_provider="
+                              + InterceptorProviderWithFailingConstructor.class.getName()));
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception.getMessage().contains("Simulated interceptor failure"));
+        });
+  }
+
+  @Test
+  public void testGrpcInterceptorProvider_PrivateNoArgConstructor() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      createConnection(
+                          ";grpc_interceptor_provider="
+                              + InterceptorProviderWithPrivateConstructor.class.getName()));
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception.getMessage().contains("does not have a public no-arg constructor"));
+        });
+  }
+
+  @Test
+  public void testGrpcInterceptorProvider_AbstractClass() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      createConnection(
+                          ";grpc_interceptor_provider="
+                              + AbstractInterceptorProvider.class.getName()));
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception.getMessage().contains("is abstract and cannot be instantiated"));
+        });
+  }
+
+  @Test
+  public void testGrpcInterceptorProvider_StaticInitializerThrowsException() throws Throwable {
+    ConnectionOptionsTest.runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      createConnection(
+                          ";grpc_interceptor_provider="
+                              + InterceptorProviderWithFailingStaticInitializer.class.getName()));
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                      .getMessage()
+                      .contains(
+                          "Failed to create an instance of "
+                              + InterceptorProviderWithFailingStaticInitializer.class.getName())
+                  && (exception.getMessage().contains("Simulated static init failure")
+                      || exception.getMessage().contains("Could not initialize class")));
+        });
   }
 }

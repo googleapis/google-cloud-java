@@ -18,20 +18,32 @@
  * A client for BigQuery – A fully managed, petabyte scale, low cost enterprise data warehouse for
  * analytics.
  *
- * <p>A simple usage example showing how to create a table in Bigquery. For the complete source code
- * see <a
- * href="https://github.com/googleapis/java-bigquery/blob/main/samples/snippets/src/main/java/com/example/bigquery/CreateTable.java">
- * CreateTable.java</a>.
+ * <p>Use {@link com.google.cloud.bigquery.BigQuery} in this package to manage datasets, tables,
+ * routines, models, and jobs, run SQL queries, and read paginated results. For new streaming
+ * ingestion workloads or reading large tables directly in parallel (Apache Arrow or Avro), prefer
+ * {@code com.google.cloud:google-cloud-bigquerystorage}. See <a
+ * href="https://docs.cloud.google.com/bigquery/docs/loading-data">Introduction to loading data</a>,
+ * <a href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc">BigQuery Storage Write API
+ * (gRPC)</a>, and <a href="https://docs.cloud.google.com/bigquery/docs/reference/storage">BigQuery
+ * Storage Read API</a> for guidance on choosing between APIs.
+ *
+ * <p>A simple usage example showing how to create a table in BigQuery. For the complete source
+ * code, see <a
+ * href="https://github.com/googleapis/google-cloud-java/blob/main/java-bigquery/samples/snippets/src/main/java/com/example/bigquery/CreateTable.java">
+ * CreateTable.java</a>. For additional examples, see <a
+ * href="https://docs.cloud.google.com/bigquery/docs/samples?language=java">BigQuery Java code
+ * samples</a>.
  *
  * <pre>{@code
- * BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService(); *
+ * // Reuse a single client across requests and call close() on shutdown to release resources.
+ * BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
  * TableId tableId = TableId.of(datasetName, tableName);
  * TableDefinition tableDefinition = StandardTableDefinition.of(schema);
- * TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build(); *
+ * TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
  * bigquery.create(tableInfo);
- * System.out.println("Table created successfully");
  * }</pre>
  *
- * @see <a href="https://cloud.google.com/bigquery/">Google Cloud BigQuery</a>
+ * @see com.google.cloud.bigquery.BigQuery
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs">BigQuery documentation</a>
  */
 package com.google.cloud.bigquery;

@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.spanner.Type.StructField;
@@ -49,6 +50,7 @@ public class DatabaseMetadataTest {
 
     assertEquals(Dialect.GOOGLE_STANDARD_SQL, metadata.getDialect());
     assertEquals(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED, metadata.getDefaultIsolationLevel());
+    assertNull(metadata.getDefaultIsolationLevelValue());
   }
 
   @Test
@@ -60,6 +62,7 @@ public class DatabaseMetadataTest {
 
     assertEquals(Dialect.POSTGRESQL, metadata.getDialect());
     assertEquals(IsolationLevel.REPEATABLE_READ, metadata.getDefaultIsolationLevel());
+    assertEquals("repeatable read", metadata.getDefaultIsolationLevelValue());
   }
 
   @Test
@@ -76,6 +79,7 @@ public class DatabaseMetadataTest {
         fromOptions(option(DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION, null));
 
     assertEquals(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED, metadata.getDefaultIsolationLevel());
+    assertNull(metadata.getDefaultIsolationLevelValue());
   }
 
   @Test
@@ -85,6 +89,7 @@ public class DatabaseMetadataTest {
             option(DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION, "read committed"));
 
     assertEquals(IsolationLevel.UNRECOGNIZED, metadata.getDefaultIsolationLevel());
+    assertEquals("read committed", metadata.getDefaultIsolationLevelValue());
   }
 
   @Test

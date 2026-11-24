@@ -23,6 +23,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.determineHos
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
@@ -41,10 +42,13 @@ import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.Files;
 import java.io.File;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.Arrays;
@@ -970,23 +974,45 @@ public class ConnectionOptionsTest {
 
           ConnectionOptions options = ConnectionOptions.newBuilder().setUri(uri).build();
           assertEquals(
+              "encoded:" + Hashing.sha256().hashString(encoded, StandardCharsets.UTF_8).toString(),
+              options.getEncodedCredentialsHash());
+          assertNull(
+              options.getInitialConnectionPropertyValue(ConnectionProperties.ENCODED_CREDENTIALS));
+          assertEquals(
               new CredentialsService().createCredentials(FILE_TEST_PATH), options.getCredentials());
         });
   }
 
   @Test
-  public void testValidEncodedCredentials_WithoutEnablingProperty() throws Throwable {
-    String encoded =
-        BaseEncoding.base64Url().encode(Files.asByteSource(new File(FILE_TEST_PATH)).read());
+  public void testOAuthTokenCredentials() {
     String uri =
-        String.format(
-            "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?encodedCredentials=%s",
-            encoded);
+        "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?oauthToken=my-secret-token";
+    ConnectionOptions options = ConnectionOptions.newBuilder().setUri(uri).build();
+    assertEquals(
+        "oauth:"
+            + Hashing.sha256().hashString("my-secret-token", StandardCharsets.UTF_8).toString(),
+        options.getOAuthTokenHash());
+    assertNull(options.getInitialConnectionPropertyValue(ConnectionProperties.OAUTH_TOKEN));
+    assertNotNull(options.getCredentials());
+  }
 
-    SpannerException exception =
-        assertThrows(
-            SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
-    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+  @Test
+  public void testValidEncodedCredentials_WithoutEnablingProperty() throws Throwable {
+    runWithSystemPropertyDisabled(
+        ConnectionOptions.ENABLE_ENCODED_CREDENTIALS_SYSTEM_PROPERTY,
+        () -> {
+          String encoded =
+              BaseEncoding.base64Url().encode(Files.asByteSource(new File(FILE_TEST_PATH)).read());
+          String uri =
+              String.format(
+                  "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?encodedCredentials=%s",
+                  encoded);
+
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
+          assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        });
   }
 
   @Test
@@ -1021,6 +1047,57 @@ public class ConnectionOptionsTest {
     }
   }
 
+  public static class CredentialsProviderWithoutNoArgConstructor implements CredentialsProvider {
+    public CredentialsProviderWithoutNoArgConstructor(String argument) {}
+
+    @Override
+    public Credentials getCredentials() {
+      return NoCredentials.getInstance();
+    }
+  }
+
+  public static class ChannelProviderWithoutNoArgConstructor
+      implements ConnectionOptions.ExternalChannelProvider {
+    public ChannelProviderWithoutNoArgConstructor(String argument) {}
+
+    @Override
+    public com.google.api.gax.rpc.TransportChannelProvider getChannelProvider(
+        String host, int port) {
+      return null;
+    }
+  }
+
+  public static class ProviderWithFailingConstructor implements CredentialsProvider {
+    public ProviderWithFailingConstructor() {
+      throw new IllegalArgumentException("Simulated constructor failure");
+    }
+
+    @Override
+    public Credentials getCredentials() {
+      return NoCredentials.getInstance();
+    }
+  }
+
+  public static class ProviderWithPrivateConstructor implements CredentialsProvider {
+    private ProviderWithPrivateConstructor() {}
+
+    @Override
+    public Credentials getCredentials() {
+      return NoCredentials.getInstance();
+    }
+  }
+
+  public abstract static class AbstractTestCredentialsProvider implements CredentialsProvider {
+    public AbstractTestCredentialsProvider() {}
+  }
+
+  public static class ProviderThrowingIOException implements CredentialsProvider {
+    @Override
+    public Credentials getCredentials() throws IOException {
+      throw new IOException("Simulated IO failure");
+    }
+  }
+
   static void runWithSystemPropertyEnabled(String systemPropertyName, ThrowingRunnable runnable)
       throws Throwable {
     String originalValue = System.getProperty(systemPropertyName);
@@ -1031,6 +1108,19 @@ public class ConnectionOptionsTest {
       if (originalValue == null) {
         System.clearProperty(systemPropertyName);
       } else {
+        System.setProperty(systemPropertyName, originalValue);
+      }
+    }
+  }
+
+  static void runWithSystemPropertyDisabled(String systemPropertyName, ThrowingRunnable runnable)
+      throws Throwable {
+    String originalValue = System.getProperty(systemPropertyName);
+    System.clearProperty(systemPropertyName);
+    try {
+      runnable.run();
+    } finally {
+      if (originalValue != null) {
         System.setProperty(systemPropertyName, originalValue);
       }
     }
@@ -1052,20 +1142,24 @@ public class ConnectionOptionsTest {
   }
 
   @Test
-  public void testValidCredentialsProvider_WithoutEnablingSystemProperty() {
-    String uri =
-        String.format(
-            "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=%s",
-            TestCredentialsProvider.class.getName());
-    SpannerException exception =
-        assertThrows(
-            SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
-    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
-    assertEquals(
-        "FAILED_PRECONDITION: credentialsProvider can only be used if the system property"
-            + " ENABLE_CREDENTIALS_PROVIDER has been set to true. Start the application with the"
-            + " JVM command line option -DENABLE_CREDENTIALS_PROVIDER=true",
-        exception.getMessage());
+  public void testValidCredentialsProvider_WithoutEnablingSystemProperty() throws Throwable {
+    runWithSystemPropertyDisabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              String.format(
+                  "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=%s",
+                  TestCredentialsProvider.class.getName());
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
+          assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+          assertEquals(
+              "FAILED_PRECONDITION: credentialsProvider can only be used if the system property"
+                  + " ENABLE_CREDENTIALS_PROVIDER has been set to true. Start the application with the"
+                  + " JVM command line option -DENABLE_CREDENTIALS_PROVIDER=true",
+              exception.getMessage());
+        });
   }
 
   @Test
@@ -1092,6 +1186,202 @@ public class ConnectionOptionsTest {
   }
 
   @Test
+  public void testCredentialsProvider_NotLoadedWithoutSystemProperty() throws Throwable {
+    runWithSystemPropertyDisabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=com.google.cloud.spanner.connection.NonExistentClass";
+
+          // Setting the URI must NOT load the class. If it attempted reflection, it would throw
+          // INVALID_ARGUMENT.
+          ConnectionOptions.Builder builder = ConnectionOptions.newBuilder().setUri(uri);
+
+          // Building options without the system property must fail with FAILED_PRECONDITION
+          // (guarded property check), NOT INVALID_ARGUMENT (unknown class), proving that
+          // the system property guard is checked before any class loading is attempted.
+          SpannerException exception = assertThrows(SpannerException.class, builder::build);
+          assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+          assertEquals(
+              "FAILED_PRECONDITION: credentialsProvider can only be used if the system property"
+                  + " ENABLE_CREDENTIALS_PROVIDER has been set to true. Start the application with the"
+                  + " JVM command line option -DENABLE_CREDENTIALS_PROVIDER=true",
+              exception.getMessage());
+        });
+  }
+
+  @Test
+  public void testCredentialsProvider_ClassDoesNotImplementCredentialsProvider() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              String.format(
+                  "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=%s",
+                  String.class.getName());
+
+          ConnectionOptions.Builder builder = ConnectionOptions.newBuilder().setUri(uri);
+
+          SpannerException exception = assertThrows(SpannerException.class, builder::build);
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertEquals(
+              String.format(
+                  "INVALID_ARGUMENT: Class %s does not implement %s",
+                  String.class.getName(), CredentialsProvider.class.getName()),
+              exception.getMessage());
+        });
+  }
+
+  @Test
+  public void testCredentialsProviderConverter_DirectCallWithoutSystemProperty() throws Throwable {
+    runWithSystemPropertyDisabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      ClientSideStatementValueConverters.CredentialsProviderConverter.INSTANCE
+                          .convert(TestCredentialsProvider.class.getName()));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        });
+  }
+
+  @Test
+  public void testCredentialsProvider_NonExistentClass() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=com.google.cloud.spanner.connection.NonExistentClass";
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      "Unknown or invalid CredentialsProvider class name: com.google.cloud.spanner.connection.NonExistentClass"));
+        });
+  }
+
+  @Test
+  public void testCredentialsProvider_NoPublicNoArgConstructor() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              String.format(
+                  "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=%s",
+                  CredentialsProviderWithoutNoArgConstructor.class.getName());
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception.getMessage().contains("does not have a public no-arg constructor"));
+        });
+  }
+
+  @Test
+  public void testCredentialsProvider_ConstructorThrowsException() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              String.format(
+                  "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=%s",
+                  ProviderWithFailingConstructor.class.getName());
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception.getMessage().contains("Simulated constructor failure"));
+        });
+  }
+
+  @Test
+  public void testCredentialsProvider_PrivateNoArgConstructor() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              String.format(
+                  "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=%s",
+                  ProviderWithPrivateConstructor.class.getName());
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception.getMessage().contains("does not have a public no-arg constructor"));
+        });
+  }
+
+  @Test
+  public void testCredentialsProvider_AbstractClass() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              String.format(
+                  "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=%s",
+                  AbstractTestCredentialsProvider.class.getName());
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception.getMessage().contains("is abstract and cannot be instantiated"));
+        });
+  }
+
+  @Test
+  public void testCredentialsProvider_NullAndEmptyInput() {
+    assertNull(
+        ClientSideStatementValueConverters.CredentialsProviderConverter.INSTANCE.convert(null));
+    assertNull(
+        ClientSideStatementValueConverters.CredentialsProviderConverter.INSTANCE.convert(""));
+    assertNull(
+        ClientSideStatementValueConverters.ExternalChannelProviderConverter.INSTANCE.convert(null));
+    assertNull(
+        ClientSideStatementValueConverters.ExternalChannelProviderConverter.INSTANCE.convert(""));
+    assertNull(
+        ClientSideStatementValueConverters.GrpcInterceptorProviderConverter.INSTANCE.convert(null));
+    assertNull(
+        ClientSideStatementValueConverters.GrpcInterceptorProviderConverter.INSTANCE.convert(""));
+  }
+
+  @Test
+  public void testCredentialsProvider_GetCredentialsThrowsIOException() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String uri =
+              String.format(
+                  "cloudspanner:/projects/test-project/instances/test-instance/databases/test-database?credentialsProvider=%s",
+                  ProviderThrowingIOException.class.getName());
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class, () -> ConnectionOptions.newBuilder().setUri(uri).build());
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      "Failed to get credentials from CredentialsProvider: Simulated IO failure"));
+        });
+  }
+
+  @Test
   public void testExternalChannelProvider() throws Throwable {
     runWithSystemPropertyEnabled(
         ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
@@ -1109,24 +1399,395 @@ public class ConnectionOptionsTest {
 
           TransportChannelProvider provider = options.getChannelProvider();
           assertTrue(provider instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.googleapis.com:443",
+              ((InstantiatingGrpcChannelProvider) provider).getEndpoint());
+        });
+  }
+
+  @Test
+  public void testExternalChannelProvider_WithUniverseDomain() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+
+          // Custom universeDomain without explicit host should use spanner.<universeDomain>.
+          ConnectionOptions optionsWithUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithUniverseDomain =
+              optionsWithUniverseDomain.getChannelProvider();
+          assertTrue(providerWithUniverseDomain instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.abc.goog:443",
+              ((InstantiatingGrpcChannelProvider) providerWithUniverseDomain).getEndpoint());
+
+          // Empty universeDomain without explicit host should fall back to googleapis.com.
+          ConnectionOptions optionsWithEmptyUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithEmptyUniverseDomain =
+              optionsWithEmptyUniverseDomain.getChannelProvider();
+          assertTrue(providerWithEmptyUniverseDomain instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.googleapis.com:443",
+              ((InstantiatingGrpcChannelProvider) providerWithEmptyUniverseDomain).getEndpoint());
+
+          // Explicit URI host and port should take precedence over universeDomain.
+          ConnectionOptions optionsWithHostAndUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      "cloudspanner://custom.host.abc.goog:1234/projects/test-project-123/instances/test-instance/databases/test-database?universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithHost =
+              optionsWithHostAndUniverseDomain.getChannelProvider();
+          assertTrue(providerWithHost instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "custom.host.abc.goog:1234",
+              ((InstantiatingGrpcChannelProvider) providerWithHost).getEndpoint());
+
+          // Explicit endpoint property should take precedence over universeDomain.
+          ConnectionOptions optionsWithEndpointAndUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?endpoint=my.endpoint.abc.goog:5678;universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithEndpoint =
+              optionsWithEndpointAndUniverseDomain.getChannelProvider();
+          assertTrue(providerWithEndpoint instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "my.endpoint.abc.goog:5678",
+              ((InstantiatingGrpcChannelProvider) providerWithEndpoint).getEndpoint());
+
+          // Verify end-to-end SpannerPool propagates the universe-scoped channel provider.
+          ConnectionImpl connection = mock(ConnectionImpl.class);
+          AtomicBoolean executedConfigurator = new AtomicBoolean(false);
+          ConnectionOptions poolOptions =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=abc.goog;usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .setConfigurator(
+                      optionsBuilder -> {
+                        executedConfigurator.set(true);
+                        SpannerOptions spannerOptions = optionsBuilder.build();
+                        assertEquals("abc.goog", spannerOptions.getUniverseDomain());
+                        assertEquals("https://spanner.abc.goog", spannerOptions.getHost());
+                        assertTrue(
+                            spannerOptions.getChannelProvider()
+                                instanceof InstantiatingGrpcChannelProvider);
+                        assertEquals(
+                            "spanner.abc.goog:443",
+                            ((InstantiatingGrpcChannelProvider) spannerOptions.getChannelProvider())
+                                .getEndpoint());
+                      })
+                  .build();
+          Spanner spanner = SpannerPool.INSTANCE.getSpanner(poolOptions, connection);
+          spanner.close();
+          SpannerPool.INSTANCE.removeConnection(poolOptions, connection);
+          assertTrue(executedConfigurator.get());
+        });
+  }
+
+  @Test
+  public void testExternalChannelProvider_WithValidUniverseDomains() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+          String maxLabel = Strings.repeat("a", 63);
+          String maxLengthDomain =
+              Strings.repeat("a", 60)
+                  + "."
+                  + Strings.repeat("b", 60)
+                  + "."
+                  + Strings.repeat("c", 60)
+                  + "."
+                  + Strings.repeat("d", 62);
+          assertEquals(245, maxLengthDomain.length());
+
+          for (String universeDomain :
+              Arrays.asList(
+                  "googleapis.com",
+                  "abc.goog",
+                  "a.b",
+                  "a-1.b-2.example-3.goog",
+                  "ABC.GOOG",
+                  "localhost",
+                  maxLabel + ".goog",
+                  maxLengthDomain)) {
+            ConnectionOptions options =
+                ConnectionOptions.newBuilder()
+                    .setUri(
+                        baseUri
+                            + "?universeDomain="
+                            + universeDomain
+                            + ";channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            TransportChannelProvider provider = options.getChannelProvider();
+            assertTrue(provider instanceof InstantiatingGrpcChannelProvider);
+            assertEquals(
+                "spanner." + universeDomain + ":443",
+                ((InstantiatingGrpcChannelProvider) provider).getEndpoint());
+          }
+        });
+  }
+
+  @Test
+  public void testUniverseDomain_RejectsInvalidAndUrlInjectionValues() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+          String overlongLabel = Strings.repeat("a", 64) + ".goog";
+          String overlongDomain =
+              Strings.repeat("a", 60)
+                  + "."
+                  + Strings.repeat("b", 60)
+                  + "."
+                  + Strings.repeat("c", 60)
+                  + "."
+                  + Strings.repeat("d", 63);
+          assertEquals(246, overlongDomain.length());
+
+          // Test URL-injection and malformed domain payloads passed via connection URI.
+          for (String invalidDomain :
+              Arrays.asList(
+                  "ignored@attacker.com:8443",
+                  "ignored@attacker.com",
+                  "abc.goog:8443",
+                  "abc.goog:443",
+                  "abc.goog/injected",
+                  "abc.goog/",
+                  "abc.goog#frag",
+                  "abc.goog/injected#frag",
+                  "https://attacker.com",
+                  "abc.goog\\attacker.com",
+                  "ignored%40attacker.com",
+                  "abc%2egoog",
+                  " abc.goog",
+                  "abc.goog ",
+                  "abc .goog",
+                  "abc.goog\t",
+                  "[::1]",
+                  "abc_def.goog",
+                  "abc$def.goog",
+                  ".abc.goog",
+                  "abc.goog.",
+                  "abc..goog",
+                  "-abc.goog",
+                  "abc-.goog",
+                  "abc.-goog",
+                  "abc.goog-",
+                  overlongLabel,
+                  overlongDomain)) {
+            IllegalArgumentException uriException =
+                assertThrows(
+                    "Expected URI with universeDomain=" + invalidDomain + " to be rejected",
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(
+                                baseUri
+                                    + "?universeDomain="
+                                    + invalidDomain
+                                    + ";channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                uriException.getMessage(),
+                uriException.getMessage().contains("Invalid universe domain"));
+
+            // Also verify rejection when set programmatically via setConnectionPropertyValue.
+            IllegalArgumentException propException =
+                assertThrows(
+                    "Expected property universeDomain=" + invalidDomain + " to be rejected",
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(
+                                baseUri
+                                    + "?channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                            .setConnectionPropertyValue(
+                                ConnectionProperties.UNIVERSE_DOMAIN, invalidDomain)
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                propException.getMessage(),
+                propException.getMessage().contains("Invalid universe domain"));
+          }
+
+          // Query/control-character smuggling via setConnectionPropertyValue (characters that
+          // would otherwise be split by URI parsing).
+          for (String smuggledDomain :
+              Arrays.asList(
+                  "abc.goog?foo=bar",
+                  "abc.goog/injected?foo=bar#frag",
+                  "abc.goog;evil=true",
+                  "abc.goog\r\nHost: attacker.com")) {
+            IllegalArgumentException exception =
+                assertThrows(
+                    "Expected smuggled universeDomain=" + smuggledDomain + " to be rejected",
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(
+                                baseUri
+                                    + "?channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                            .setConnectionPropertyValue(
+                                ConnectionProperties.UNIVERSE_DOMAIN, smuggledDomain)
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                exception.getMessage(), exception.getMessage().contains("Invalid universe domain"));
+          }
+
+          // Rejection should apply even when an explicit host is configured.
+          assertThrows(
+              IllegalArgumentException.class,
+              () ->
+                  ConnectionOptions.newBuilder()
+                      .setUri(
+                          "cloudspanner://custom.host:443/projects/test-project-123/instances/test-instance/databases/test-database?universeDomain=ignored@attacker.com:8443")
+                      .setCredentials(NoCredentials.getInstance())
+                      .build());
         });
   }
 
   @Test
   public void testExternalChannelProvider_WithoutEnablingProperty() throws Throwable {
-    String baseUri =
-        "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
-    SpannerException exception =
-        assertThrows(
-            SpannerException.class,
-            () ->
-                ConnectionOptions.newBuilder()
-                    .setUri(
-                        baseUri
-                            + "?channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
-                    .setCredentials(NoCredentials.getInstance())
-                    .build());
-    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+    runWithSystemPropertyDisabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      ConnectionOptions.newBuilder()
+                          .setUri(
+                              baseUri
+                                  + "?channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                          .setCredentials(NoCredentials.getInstance())
+                          .build());
+          assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        });
+  }
+
+  @Test
+  public void testExternalChannelProviderConverter_DirectCallWithoutSystemProperty()
+      throws Throwable {
+    runWithSystemPropertyDisabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          SpannerException exception =
+              assertThrows(
+                  SpannerException.class,
+                  () ->
+                      ClientSideStatementValueConverters.ExternalChannelProviderConverter.INSTANCE
+                          .convert(TestChannelProvider.class.getName()));
+          assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        });
+  }
+
+  @Test
+  public void testExternalChannelProvider_ClassDoesNotImplementInterface() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+          ConnectionOptions options =
+              ConnectionOptions.newBuilder()
+                  .setUri(baseUri + "?channelProvider=" + String.class.getName())
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          SpannerException exception =
+              assertThrows(SpannerException.class, options::getChannelProvider);
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      String.format(
+                          "Class %s does not implement %s",
+                          String.class.getName(),
+                          ConnectionOptions.ExternalChannelProvider.class.getName())));
+        });
+  }
+
+  @Test
+  public void testExternalChannelProvider_NonExistentClass() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+          ConnectionOptions options =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?channelProvider=com.google.cloud.spanner.connection.NonExistentClass")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          SpannerException exception =
+              assertThrows(SpannerException.class, options::getChannelProvider);
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      "Unknown or invalid ExternalChannelProvider class name: com.google.cloud.spanner.connection.NonExistentClass"));
+        });
+  }
+
+  @Test
+  public void testExternalChannelProvider_NoPublicNoArgConstructor() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+          ConnectionOptions options =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?channelProvider="
+                          + ChannelProviderWithoutNoArgConstructor.class.getName())
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          SpannerException exception =
+              assertThrows(SpannerException.class, options::getChannelProvider);
+          assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+          assertTrue(
+              exception.getMessage(),
+              exception
+                  .getMessage()
+                  .contains(
+                      "ExternalChannelProvider "
+                          + ChannelProviderWithoutNoArgConstructor.class.getName()
+                          + " does not have a public no-arg constructor."));
+        });
   }
 
   @Test

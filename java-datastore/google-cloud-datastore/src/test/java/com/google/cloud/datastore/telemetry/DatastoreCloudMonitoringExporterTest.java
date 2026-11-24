@@ -35,7 +35,9 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
+import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStub;
 import com.google.common.collect.ImmutableList;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
@@ -51,6 +53,7 @@ import io.opentelemetry.sdk.metrics.internal.data.ImmutableLongPointData;
 import io.opentelemetry.sdk.metrics.internal.data.ImmutableMetricData;
 import io.opentelemetry.sdk.metrics.internal.data.ImmutableSumData;
 import io.opentelemetry.sdk.resources.Resource;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 import org.easymock.Capture;
@@ -218,6 +221,17 @@ public class DatastoreCloudMonitoringExporterTest {
     assertThat(result.isSuccess()).isTrue();
 
     verify(mockMetricServiceStub);
+  }
+
+  @Test
+  public void testCreateMetricServiceSettings_propagatesUniverseDomain() throws IOException {
+    String customUniverseDomain = "s3nsapis.fr";
+    MetricServiceSettings settings =
+        DatastoreCloudMonitoringExporter.createMetricServiceSettings(
+            NoCredentials.getInstance(), customUniverseDomain);
+
+    assertThat(settings.getUniverseDomain()).isEqualTo(customUniverseDomain);
+    assertThat(settings.getEndpoint()).isEqualTo("monitoring." + customUniverseDomain + ":443");
   }
 
   private static class FakeMetricServiceClient extends MetricServiceClient {

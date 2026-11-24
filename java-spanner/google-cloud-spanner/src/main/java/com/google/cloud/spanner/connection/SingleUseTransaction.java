@@ -222,6 +222,16 @@ class SingleUseTransaction extends AbstractBaseUnitOfWork {
                 && (analyzeMode != AnalyzeMode.NONE || statement.hasReturningClause())),
         "The statement must be a query, or the statement must be DML and AnalyzeMode must be PLAN"
             + " or PROFILE");
+    // Enforce read-only mode before checkAndMarkUsed() so a rejected DML statement leaves this
+    // single-use transaction unused in STARTED state without opening a write transaction.
+    if (statement.isUpdate() && isReadOnly()) {
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.FAILED_PRECONDITION,
+          statement.hasReturningClause()
+              ? "DML statement with returning clause cannot be executed in read-only mode: "
+                  + statement.getSql()
+              : "Update statements are not allowed in read-only mode");
+    }
     try (Scope ignore = span.makeCurrent()) {
       checkAndMarkUsed();
 

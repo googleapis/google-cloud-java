@@ -25,6 +25,7 @@ import com.google.cloud.spanner.connection.AbstractStatementParser;
 import com.google.cloud.spanner.connection.AbstractStatementParser.ParametersInfo;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
 import java.io.Serializable;
@@ -331,7 +332,7 @@ public final class Statement implements Serializable {
     private final Dialect dialect;
 
     StatementFactory(Dialect dialect) {
-      this.dialect = dialect;
+      this.dialect = checkNotNull(dialect);
     }
 
     public Statement of(String sql) {
@@ -364,26 +365,45 @@ public final class Statement implements Serializable {
      *
      * <p>
      *
-     * @param sql SQL statement with unnamed parameters denoted as ?
+     * @param sql SQL statement with unnamed parameters denoted as {@code ?}
      * @param values positional list of values for the unnamed parameters in the SQL string
      * @return Statement a statement that can be executed on Spanner
+     * @throws NullPointerException if {@code sql} or {@code values} is {@code null}
+     * @throws SpannerException with {@link ErrorCode#INVALID_ARGUMENT} if the number of {@code ?}
+     *     positional parameters in {@code sql} does not match {@code values.length} (only {@code ?}
+     *     placeholders outside string literals, quoted identifiers, and comments are counted;
+     *     dialect-native placeholders such as {@code @p1} or {@code $1} are not counted) or if
+     *     {@code sql} contains an unclosed literal
      * @see DatabaseClient#getStatementFactory
      */
     public Statement withUnnamedParameters(String sql, Object... values) {
-      Map<String, Value> parameters = getUnnamedParametersMap(values);
+      checkNotNull(sql);
+      checkNotNull(values);
       AbstractStatementParser statementParser = AbstractStatementParser.getInstance(this.dialect);
       ParametersInfo parametersInfo =
           statementParser.convertPositionalParametersToNamedParameters('?', sql);
-      return new Statement(parametersInfo.sqlWithNamedParameters, parameters, null);
+      if (parametersInfo.numberOfParameters != values.length) {
+        throw SpannerExceptionFactory.newSpannerException(
+            ErrorCode.INVALID_ARGUMENT,
+            String.format(
+                "The number of positional parameters (?) in the SQL statement (%d) does not match"
+                    + " the number of provided values (%d).",
+                parametersInfo.numberOfParameters, values.length));
+      }
+      if (values.length == 0) {
+        return Statement.of(parametersInfo.sqlWithNamedParameters);
+      }
+      return new Statement(
+          parametersInfo.sqlWithNamedParameters, getUnnamedParametersMap(values), null);
     }
 
     private Map<String, Value> getUnnamedParametersMap(Object[] values) {
-      Map<String, Value> parameters = new HashMap<>();
+      Map<String, Value> parameters = Maps.newHashMapWithExpectedSize(values.length);
       int index = 1;
       for (Object value : values) {
         parameters.put(getParameterName(index++), Value.toValue(value));
       }
-      return parameters;
+      return Collections.unmodifiableMap(parameters);
     }
   }
 }

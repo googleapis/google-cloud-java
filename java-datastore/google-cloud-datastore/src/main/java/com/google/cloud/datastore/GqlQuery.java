@@ -69,7 +69,8 @@ import java.util.TreeMap;
  * }</pre>
  *
  * @param <V> the type of the result values this query will produce
- * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/reference/gql_reference">GQL
+ *     Reference</a>
  */
 public final class GqlQuery<V> extends Query<V> implements RecordQuery<V> {
 
