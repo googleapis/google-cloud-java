@@ -16,13 +16,31 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.common.annotations.VisibleForTesting;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.sql.CallableStatement;
+import java.sql.ClientInfoStatus;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLClientInfoException;
 import java.sql.SQLException;
-import java.util.UUID;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.Executor;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.sql.ConnectionEvent;
 import javax.sql.ConnectionEventListener;
 import javax.sql.PooledConnection;
@@ -32,113 +50,414 @@ class BigQueryPooledConnection implements PooledConnection {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryPooledConnection.class.getName());
 
-  private String id; // Mainly for internal use
-  private Connection bqConnection;
-  private boolean inUse = false;
-  private Long listenerPoolSize = 10L;
-  private LinkedBlockingDeque<ConnectionEventListener> listeners;
+  enum State {
+    IDLE,
+    IN_USE,
+    CLOSED
+  }
+
+  private final BigQueryConnection bqConnection;
+  private final String connectionId;
+  private final Connection proxiedConnection;
+  private final Long listenerPoolSize;
+  private final int maxListenerCapacity;
+  private final List<ConnectionEventListener> listeners;
+  private final Object physicalLock = new Object();
+  private final Object stateLock = new Object();
+  private PooledConnectionInvocationHandler activeHandle;
+  private PooledConnectionInvocationHandler resettingHandle;
+  private volatile State state = State.IDLE;
 
   BigQueryPooledConnection(BigQueryConnection bqConnection) {
     this.bqConnection = bqConnection;
-    this.id = UUID.randomUUID().toString();
-    this.listenerPoolSize = bqConnection.getListenerPoolSize();
-    if (getListenerPoolSize() > 0L) {
-      listeners = new LinkedBlockingDeque<>(getListenerPoolSize().intValue());
-    } else {
-      listeners = new LinkedBlockingDeque<>();
+    this.connectionId = bqConnection.getConnectionId();
+    this.proxiedConnection = BigQueryJdbcContextProxy.wrap(bqConnection, Connection.class);
+    Long configuredListenerPoolSize = bqConnection.getListenerPoolSize();
+    this.listenerPoolSize =
+        configuredListenerPoolSize != null
+            ? configuredListenerPoolSize
+            : BigQueryJdbcUrlUtility.DEFAULT_LISTENER_POOL_SIZE_VALUE;
+    this.maxListenerCapacity = clampCapacity(this.listenerPoolSize);
+    this.listeners = new ArrayList<>();
+  }
+
+  static int clampCapacity(long configuredSize) {
+    if (configuredSize <= 0L) {
+      return Integer.MAX_VALUE;
     }
+    return (int) Math.min(configuredSize, Integer.MAX_VALUE);
   }
 
   Long getListenerPoolSize() {
     return listenerPoolSize;
   }
 
-  @VisibleForTesting
   boolean inUse() {
-    return inUse;
+    return this.state == State.IN_USE;
+  }
+
+  boolean isClosed() {
+    return this.state == State.CLOSED || this.bqConnection.isClosed();
   }
 
   @VisibleForTesting
-  boolean isListenerPooled(ConnectionEventListener l) {
-    return listeners.contains(l);
+  boolean isListenerPooled(ConnectionEventListener listener) {
+    synchronized (stateLock) {
+      return listeners.contains(listener);
+    }
+  }
+
+  @VisibleForTesting
+  PooledConnectionInvocationHandler getActiveHandleForTesting() {
+    synchronized (stateLock) {
+      return this.activeHandle;
+    }
+  }
+
+  private boolean isHolderTerminalLocked() {
+    return this.state == State.CLOSED;
+  }
+
+  private void checkHolderOpenLocked() throws BigQueryJdbcException {
+    if (this.state == State.CLOSED || this.bqConnection.isClosed()) {
+      throw new BigQueryJdbcException("PooledConnection is closed.");
+    }
   }
 
   @Override
-  public synchronized Connection getConnection() throws SQLException {
-    LOG.finest("++enter++");
-    if (inUse) {
-      SQLException ex = new SQLException("PooledConnection is already in use.");
-      LOG.severe(ex.getMessage(), ex);
+  public Connection getConnection() throws SQLException {
+    SQLException resetFailure = null;
+    SQLException outOfBandClosedError = null;
+    Connection handleProxy = null;
+
+    synchronized (physicalLock) {
+      PooledConnectionInvocationHandler previousHandle = null;
+      boolean needsReset = false;
+      synchronized (stateLock) {
+        if (isHolderTerminalLocked()) {
+          throw new BigQueryJdbcException("PooledConnection is closed.");
+        }
+        if (this.bqConnection.isClosed()) {
+          outOfBandClosedError =
+              new BigQueryJdbcException("Underlying physical connection was closed.");
+        } else {
+          // Per javax.sql.PooledConnection#getConnection() (JDBC 4.3 section 11.1), calling
+          // getConnection() while a logical handle is open invalidates the prior handle and
+          // resets connection state without notifying ConnectionEventListeners.
+          previousHandle = this.activeHandle;
+          if (previousHandle != null) {
+            previousHandle.markClosed();
+          }
+          // Keep state == State.IN_USE in needsReset so a prior reset aborted by an Error
+          // still forces a clean reset on a subsequent checkout attempt.
+          needsReset = (this.state == State.IN_USE) || (previousHandle != null);
+          this.activeHandle = null;
+          this.resettingHandle = previousHandle;
+          this.state = State.IN_USE;
+        }
+      }
+
+      if (outOfBandClosedError == null) {
+        try (BigQueryJdbcMdc.MdcCloseable mdc =
+            BigQueryJdbcMdc.registerInstance(this.connectionId)) {
+          LOG.finer("++enter++");
+          if (previousHandle != null) {
+            previousHandle.awaitQuiescence();
+          }
+          if (needsReset) {
+            resetFailure = runResetCapturingException();
+          }
+          synchronized (stateLock) {
+            this.resettingHandle = null;
+            if (resetFailure == null) {
+              checkHolderOpenLocked();
+              PooledConnectionInvocationHandler handler =
+                  new PooledConnectionInvocationHandler(
+                      this.bqConnection, this.proxiedConnection, this);
+              handleProxy = handler.createConnectionProxy();
+              this.activeHandle = handler;
+            }
+          }
+          if (resetFailure == null) {
+            LOG.finer("++exit++");
+            return handleProxy;
+          }
+        }
+      }
+    }
+
+    if (outOfBandClosedError != null) {
+      fireConnectionError(outOfBandClosedError);
+      throw new BigQueryJdbcException("PooledConnection is closed.");
+    }
+    fireConnectionError(resetFailure);
+    throw resetFailure;
+  }
+
+  @Override
+  public void close() throws SQLException {
+    TerminalTransition transition = transitionToClosedAndMarkActiveHandle();
+    if (transition == null) {
+      return;
+    }
+    for (ConnectionEventListener listener : transition.listeners) {
+      if (listener instanceof PooledConnectionListener) {
+        ((PooledConnectionListener) listener).removeConnection(this);
+      }
+    }
+    synchronized (physicalLock) {
+      if (!this.bqConnection.isClosed()) {
+        try (BigQueryJdbcMdc.MdcCloseable mdc =
+            BigQueryJdbcMdc.registerInstance(this.connectionId)) {
+          LOG.finer("++enter++");
+          if (transition.previousHandle != null) {
+            transition.previousHandle.awaitQuiescence();
+          }
+        }
+      } else if (transition.previousHandle != null) {
+        transition.previousHandle.awaitQuiescence();
+      }
+      // Omit ++exit++ after bqConnection.close() since physical close unmounts the per-connection
+      // file handler.
+      this.bqConnection.close();
+    }
+  }
+
+  @Override
+  public void addConnectionEventListener(ConnectionEventListener listener) {
+    if (listener == null) {
+      return;
+    }
+    synchronized (stateLock) {
+      if (isHolderTerminalLocked()
+          || this.bqConnection.isClosed()
+          || this.listeners.contains(listener)) {
+        return;
+      }
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
+        LOG.finer("++enter++");
+        try {
+          if (this.listeners.size() >= maxListenerCapacity) {
+            throw new BigQueryJdbcRuntimeException(
+                "Listener pool capacity exceeded: " + listenerPoolSize);
+          }
+          this.listeners.add(listener);
+        } finally {
+          LOG.finer("++exit++");
+        }
+      }
+    }
+  }
+
+  @Override
+  public void removeConnectionEventListener(ConnectionEventListener listener) {
+    if (listener == null) {
+      return;
+    }
+    synchronized (stateLock) {
+      this.listeners.remove(listener);
+    }
+  }
+
+  void connectionHandleClosed(PooledConnectionInvocationHandler handle) throws SQLException {
+    SQLException resetFailure = null;
+    SQLException outOfBandClosedError = null;
+    List<ConnectionEventListener> listenersToNotify = null;
+
+    synchronized (physicalLock) {
+      synchronized (stateLock) {
+        if (isHolderTerminalLocked() || handle != this.activeHandle) {
+          return;
+        }
+        this.activeHandle = null;
+        if (this.bqConnection.isClosed()) {
+          outOfBandClosedError =
+              new BigQueryJdbcException("Underlying physical connection was closed.");
+        } else {
+          this.resettingHandle = handle;
+        }
+      }
+
+      if (outOfBandClosedError == null) {
+        try (BigQueryJdbcMdc.MdcCloseable mdc =
+            BigQueryJdbcMdc.registerInstance(this.connectionId)) {
+          LOG.finer("++enter++");
+          resetFailure = runResetCapturingException();
+          synchronized (stateLock) {
+            this.resettingHandle = null;
+            if (resetFailure == null) {
+              if (isHolderTerminalLocked()) {
+                return;
+              }
+              if (this.bqConnection.isClosed()) {
+                outOfBandClosedError =
+                    new BigQueryJdbcException("Underlying physical connection was closed.");
+              } else {
+                this.state = State.IDLE;
+                listenersToNotify = new ArrayList<>(this.listeners);
+              }
+            }
+          }
+          if (outOfBandClosedError == null && resetFailure == null && listenersToNotify != null) {
+            LOG.finer(
+                "Logical connection handle returned to pool [connectionId=%s]", this.connectionId);
+            LOG.finer("++exit++");
+          }
+        }
+      }
+    }
+
+    if (outOfBandClosedError != null) {
+      fireConnectionError(outOfBandClosedError);
+      return;
+    }
+    if (resetFailure != null) {
+      fireConnectionError(resetFailure);
+      throw resetFailure;
+    }
+    if (listenersToNotify != null) {
+      notifyConnectionClosedListeners(listenersToNotify);
+    }
+  }
+
+  void abortHandle(PooledConnectionInvocationHandler handle, Executor executor)
+      throws SQLException {
+    List<ConnectionEventListener> snapshot;
+    synchronized (stateLock) {
+      if (isHolderTerminalLocked()
+          || (handle != this.activeHandle && handle != this.resettingHandle)) {
+        return;
+      }
+      this.state = State.CLOSED;
+      this.activeHandle = null;
+      this.resettingHandle = null;
+      snapshot = new ArrayList<>(this.listeners);
+      this.listeners.clear();
+    }
+
+    SQLException abortError =
+        new BigQueryJdbcException("Connection is being terminated and aborted.");
+    try {
+      this.proxiedConnection.abort(executor);
+    } catch (SQLException ex) {
+      abortError.addSuppressed(ex);
+      scheduleFallbackClose(executor, abortError);
       throw ex;
+    } catch (RuntimeException ex) {
+      abortError.addSuppressed(ex);
+      scheduleFallbackClose(executor, abortError);
+      throw ex;
+    } finally {
+      notifyConnectionErrorListeners(snapshot, abortError);
     }
-    inUse = true;
-    // Return a wrapper around the underlying physical connection.
-    return new BigQueryPooledConnectionWrapper(bqConnection, this);
   }
 
-  @Override
-  public synchronized void close() throws SQLException {
-    LOG.finest("++enter++");
-    // Notify listeners that the *PooledConnection* is being closed.
+  private void scheduleFallbackClose(Executor executor, SQLException abortError) {
+    try {
+      executor.execute(() -> closePhysicalQuietly(abortError));
+    } catch (RuntimeException rejectedEx) {
+      abortError.addSuppressed(rejectedEx);
+      closePhysicalQuietly(abortError);
+    }
+  }
+
+  void fireConnectionError(SQLException error) {
+    TerminalTransition transition = transitionToClosedAndMarkActiveHandle();
+    if (transition == null) {
+      return;
+    }
+    synchronized (physicalLock) {
+      if (transition.previousHandle != null) {
+        transition.previousHandle.awaitQuiescence();
+      }
+      closePhysicalQuietly(error);
+    }
+    notifyConnectionErrorListeners(transition.listeners, error);
+  }
+
+  private void closePhysicalQuietly(SQLException primaryError) {
+    try {
+      this.bqConnection.close();
+    } catch (SQLException closeEx) {
+      if (primaryError != null && closeEx != primaryError) {
+        primaryError.addSuppressed(closeEx);
+      } else {
+        LOG.warning(closeEx, "Failed to close physical connection after error");
+      }
+    }
+  }
+
+  private void notifyConnectionClosedListeners(List<ConnectionEventListener> snapshot) {
+    if (snapshot.isEmpty()) {
+      return;
+    }
     ConnectionEvent event = new ConnectionEvent(this);
-    for (ConnectionEventListener listener : listeners) {
-      listener.connectionClosed(event); // This is likely not the intended event for this action
+    for (ConnectionEventListener listener : snapshot) {
+      try {
+        listener.connectionClosed(event);
+      } catch (RuntimeException ex) {
+        LOG.warning(ex, "ConnectionEventListener threw an exception during connectionClosed");
+      }
     }
-    // Marks the pooled connection to be not in use.
-    inUse = false;
   }
 
-  @Override
-  public synchronized void addConnectionEventListener(ConnectionEventListener listener) {
-    LOG.finest("++enter++");
-    if (listener == null) {
+  private void notifyConnectionErrorListeners(
+      List<ConnectionEventListener> snapshot, SQLException error) {
+    if (snapshot.isEmpty()) {
       return;
     }
-    if (this.listeners.contains(listener)) {
-      return;
+    ConnectionEvent event = new ConnectionEvent(this, error);
+    for (ConnectionEventListener listener : snapshot) {
+      try {
+        listener.connectionErrorOccurred(event);
+      } catch (RuntimeException ex) {
+        LOG.warning(
+            ex, "ConnectionEventListener threw an exception during connectionErrorOccurred");
+      }
     }
-    this.listeners.add(listener);
+    String message = error != null ? error.getMessage() : "Connection error occurred";
+    LOG.finer(
+        "Pooled connection removed from pool due to error [connectionId=%s]: %s",
+        this.connectionId, message);
   }
 
-  @Override
-  public synchronized void removeConnectionEventListener(ConnectionEventListener listener) {
-    LOG.finest("++enter++");
-    if (listener == null) {
-      return;
+  private SQLException runResetCapturingException() {
+    try {
+      this.bqConnection.resetForReuse();
+      return null;
+    } catch (SQLException ex) {
+      return ex;
+    } catch (RuntimeException ex) {
+      return new BigQueryJdbcException("Failed to reset pooled connection state", ex);
     }
-    if (!this.listeners.contains(listener)) {
-      return;
-    }
-    this.listeners.remove(listener);
   }
 
-  // Method called by the BigQueryPooledConnectionWrapper when the logical
-  // Connection is closed.
-  public synchronized void connectionHandleClosed(BigQueryPooledConnectionWrapper handle) {
-    LOG.finest("++enter++");
-    inUse = false;
-    ConnectionEvent event = new ConnectionEvent(this);
-    for (ConnectionEventListener listener : listeners) {
-      listener.connectionClosed(event);
+  private static final class TerminalTransition {
+    final List<ConnectionEventListener> listeners;
+    final PooledConnectionInvocationHandler previousHandle;
+
+    TerminalTransition(
+        List<ConnectionEventListener> listeners, PooledConnectionInvocationHandler previousHandle) {
+      this.listeners = listeners;
+      this.previousHandle = previousHandle;
     }
-    LOG.finest("Connection handle returned to the pool.");
   }
 
-  // Method to notify listeners about a connection error. This can be called
-  // by the application if they are using PooledConnection directly or by the
-  // BigQueryPooledConnectionWrapper when a connection is aborted.
-  public synchronized void fireConnectionError(SQLException e) {
-    LOG.finest("++enter++");
-    inUse = false;
-    ConnectionEvent event = new ConnectionEvent(this, e);
-    for (ConnectionEventListener listener : listeners) {
-      listener.connectionErrorOccurred(event);
-    }
-    LOG.finest("Connection handle removed from the pool due to error: %s", e.getMessage());
-    // Listners no longer need to listen for this connection since it has been removed from the
-    // pool.
-    for (ConnectionEventListener listener : listeners) {
-      removeConnectionEventListener(listener);
+  private TerminalTransition transitionToClosedAndMarkActiveHandle() {
+    synchronized (stateLock) {
+      if (isHolderTerminalLocked()) {
+        return null;
+      }
+      this.state = State.CLOSED;
+      PooledConnectionInvocationHandler previous = this.activeHandle;
+      if (previous != null) {
+        previous.markClosed();
+        this.activeHandle = null;
+      }
+      this.resettingHandle = null;
+      List<ConnectionEventListener> snapshot = new ArrayList<>(this.listeners);
+      this.listeners.clear();
+      return new TerminalTransition(snapshot, previous);
     }
   }
 
@@ -160,344 +479,434 @@ class BigQueryPooledConnection implements PooledConnection {
     throw ex;
   }
 
-  // Inner class: Connection Wrapper around the actual physical Connection
-  // This class notifies the listeners or calls the listner notification methods
-  // provided by the pooled connection.
-  static class BigQueryPooledConnectionWrapper implements Connection {
+  static final class PooledConnectionInvocationHandler implements InvocationHandler {
     private static final BigQueryJdbcCustomLogger LOG =
-        new BigQueryJdbcCustomLogger(BigQueryPooledConnectionWrapper.class.getName());
-    private Connection bqConnectionDelegate;
-    private BigQueryPooledConnection pooledConnection;
-    private boolean closed = false;
+        new BigQueryJdbcCustomLogger(PooledConnectionInvocationHandler.class.getName());
 
-    public BigQueryPooledConnectionWrapper(
-        Connection bqConnectionDelegate, BigQueryPooledConnection pooledConnection) {
-      this.bqConnectionDelegate = bqConnectionDelegate;
+    private final BigQueryConnection bqConnection;
+    private final Connection proxiedDelegate;
+    private final BigQueryPooledConnection pooledConnection;
+    private final AtomicBoolean closed = new AtomicBoolean(false);
+    private final ReentrantReadWriteLock handleLock = new ReentrantReadWriteLock();
+
+    PooledConnectionInvocationHandler(
+        BigQueryConnection bqConnection,
+        Connection proxiedDelegate,
+        BigQueryPooledConnection pooledConnection) {
+      this.bqConnection = bqConnection;
+      this.proxiedDelegate = proxiedDelegate;
       this.pooledConnection = pooledConnection;
     }
 
-    @Override
-    public void close() throws SQLException {
-      LOG.finest("++enter++");
-      if (!closed) {
-        // Instead of physically closing, we notify the PooledConnection
-        // that this handle is no longer in use.
-        pooledConnection.connectionHandleClosed(this);
-        closed = true;
-        LOG.finest("Logical connection closed (returned to pool).");
+    Connection createConnectionProxy() {
+      return (Connection)
+          Proxy.newProxyInstance(
+              Connection.class.getClassLoader(), new Class<?>[] {Connection.class}, this);
+    }
+
+    void markClosed() {
+      this.closed.set(true);
+    }
+
+    void awaitQuiescence() {
+      this.handleLock.writeLock().lock();
+      this.handleLock.writeLock().unlock();
+    }
+
+    boolean isClosed() {
+      return this.closed.get() || this.bqConnection.isClosed();
+    }
+
+    void checkClosed() throws BigQueryJdbcException {
+      if (isClosed()) {
+        throw new BigQueryJdbcException("Connection is closed.");
       }
     }
 
-    @Override
-    public boolean isClosed() throws SQLException {
-      return closed || bqConnectionDelegate.isClosed();
-    }
-
-    @Override
-    public java.sql.Statement createStatement() throws SQLException {
-      return bqConnectionDelegate.createStatement();
-    }
-
-    @Override
-    public java.sql.PreparedStatement prepareStatement(String sql) throws SQLException {
-      return bqConnectionDelegate.prepareStatement(sql);
-    }
-
-    @Override
-    public java.sql.CallableStatement prepareCall(String sql) throws SQLException {
-      return bqConnectionDelegate.prepareCall(sql);
-    }
-
-    @Override
-    public String nativeSQL(String sql) throws SQLException {
-      return bqConnectionDelegate.nativeSQL(sql);
-    }
-
-    @Override
-    public void setAutoCommit(boolean autoCommit) throws SQLException {
-      bqConnectionDelegate.setAutoCommit(autoCommit);
-    }
-
-    @Override
-    public boolean getAutoCommit() throws SQLException {
-      return bqConnectionDelegate.getAutoCommit();
-    }
-
-    @Override
-    public void commit() throws SQLException {
-      bqConnectionDelegate.commit();
-    }
-
-    @Override
-    public void rollback() throws SQLException {
-      bqConnectionDelegate.rollback();
-    }
-
-    @Override
-    public DatabaseMetaData getMetaData() throws SQLException {
-      return bqConnectionDelegate.getMetaData();
-    }
-
-    @Override
-    public void setReadOnly(boolean readOnly) throws SQLException {
-      bqConnectionDelegate.setReadOnly(readOnly);
-    }
-
-    @Override
-    public boolean isReadOnly() throws SQLException {
-      return bqConnectionDelegate.isReadOnly();
-    }
-
-    @Override
-    public void setCatalog(String catalog) throws SQLException {
-      bqConnectionDelegate.setCatalog(catalog);
-    }
-
-    @Override
-    public String getCatalog() throws SQLException {
-      return bqConnectionDelegate.getCatalog();
-    }
-
-    @Override
-    public void setTransactionIsolation(int level) throws SQLException {
-      bqConnectionDelegate.setTransactionIsolation(level);
-    }
-
-    @Override
-    public int getTransactionIsolation() throws SQLException {
-      return bqConnectionDelegate.getTransactionIsolation();
-    }
-
-    @Override
-    public java.sql.SQLWarning getWarnings() throws SQLException {
-      return bqConnectionDelegate.getWarnings();
-    }
-
-    @Override
-    public void clearWarnings() throws SQLException {
-      bqConnectionDelegate.clearWarnings();
-    }
-
-    @Override
-    public java.sql.Statement createStatement(int resultSetType, int resultSetConcurrency)
-        throws SQLException {
-      return bqConnectionDelegate.createStatement(resultSetType, resultSetConcurrency);
-    }
-
-    @Override
-    public java.sql.PreparedStatement prepareStatement(
-        String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
-      return bqConnectionDelegate.prepareStatement(sql, resultSetType, resultSetConcurrency);
-    }
-
-    @Override
-    public java.sql.CallableStatement prepareCall(
-        String sql, int resultSetType, int resultSetConcurrency) throws SQLException {
-      return bqConnectionDelegate.prepareCall(sql, resultSetType, resultSetConcurrency);
-    }
-
-    @Override
-    public java.util.Map<String, Class<?>> getTypeMap() throws SQLException {
-      return bqConnectionDelegate.getTypeMap();
-    }
-
-    @Override
-    public void setTypeMap(java.util.Map<String, Class<?>> map) throws SQLException {
-      bqConnectionDelegate.setTypeMap(map);
-    }
-
-    @Override
-    public void setHoldability(int holdability) throws SQLException {
-      bqConnectionDelegate.setHoldability(holdability);
-    }
-
-    @Override
-    public int getHoldability() throws SQLException {
-      return bqConnectionDelegate.getHoldability();
-    }
-
-    @Override
-    public java.sql.Savepoint setSavepoint() throws SQLException {
-      return bqConnectionDelegate.setSavepoint();
-    }
-
-    @Override
-    public java.sql.Savepoint setSavepoint(String name) throws SQLException {
-      return bqConnectionDelegate.setSavepoint(name);
-    }
-
-    @Override
-    public void rollback(java.sql.Savepoint savepoint) throws SQLException {
-      bqConnectionDelegate.rollback(savepoint);
-    }
-
-    @Override
-    public void releaseSavepoint(java.sql.Savepoint savepoint) throws SQLException {
-      bqConnectionDelegate.releaseSavepoint(savepoint);
-    }
-
-    @Override
-    public java.sql.Statement createStatement(
-        int resultSetType, int resultSetConcurrency, int resultSetHoldability) throws SQLException {
-      return bqConnectionDelegate.createStatement(
-          resultSetType, resultSetConcurrency, resultSetHoldability);
-    }
-
-    @Override
-    public java.sql.PreparedStatement prepareStatement(
-        String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
-        throws SQLException {
-      return bqConnectionDelegate.prepareStatement(
-          sql, resultSetType, resultSetConcurrency, resultSetHoldability);
-    }
-
-    @Override
-    public java.sql.CallableStatement prepareCall(
-        String sql, int resultSetType, int resultSetConcurrency, int resultSetHoldability)
-        throws SQLException {
-      return bqConnectionDelegate.prepareCall(
-          sql, resultSetType, resultSetConcurrency, resultSetHoldability);
-    }
-
-    @Override
-    public java.sql.PreparedStatement prepareStatement(String sql, int autoGeneratedKeys)
-        throws SQLException {
-      return bqConnectionDelegate.prepareStatement(sql, autoGeneratedKeys);
-    }
-
-    @Override
-    public java.sql.PreparedStatement prepareStatement(String sql, int[] columnIndices)
-        throws SQLException {
-      return bqConnectionDelegate.prepareStatement(sql, columnIndices);
-    }
-
-    @Override
-    public java.sql.PreparedStatement prepareStatement(String sql, String[] columnNames)
-        throws SQLException {
-      return bqConnectionDelegate.prepareStatement(sql, columnNames);
-    }
-
-    @Override
-    public java.sql.Clob createClob() throws SQLException {
-      return bqConnectionDelegate.createClob();
-    }
-
-    @Override
-    public java.sql.Blob createBlob() throws SQLException {
-      return bqConnectionDelegate.createBlob();
-    }
-
-    @Override
-    public java.sql.NClob createNClob() throws SQLException {
-      return bqConnectionDelegate.createNClob();
-    }
-
-    @Override
-    public java.sql.SQLXML createSQLXML() throws SQLException {
-      return bqConnectionDelegate.createSQLXML();
-    }
-
-    @Override
-    public boolean isValid(int timeout) throws SQLException {
-      return bqConnectionDelegate.isValid(timeout);
-    }
-
-    @Override
-    public void setClientInfo(String name, String value) throws java.sql.SQLClientInfoException {
-      bqConnectionDelegate.setClientInfo(name, value);
-    }
-
-    @Override
-    public void setClientInfo(java.util.Properties properties)
-        throws java.sql.SQLClientInfoException {
-      bqConnectionDelegate.setClientInfo(properties);
-    }
-
-    @Override
-    public String getClientInfo(String name) throws SQLException {
-      return bqConnectionDelegate.getClientInfo(name);
-    }
-
-    @Override
-    public java.util.Properties getClientInfo() throws SQLException {
-      return bqConnectionDelegate.getClientInfo();
-    }
-
-    @Override
-    public java.sql.Array createArrayOf(String typeName, Object[] elements) throws SQLException {
-      return bqConnectionDelegate.createArrayOf(typeName, elements);
-    }
-
-    @Override
-    public java.sql.Struct createStruct(String typeName, Object[] attributes) throws SQLException {
-      return bqConnectionDelegate.createStruct(typeName, attributes);
-    }
-
-    @Override
-    public <T> T unwrap(Class<T> iface) throws SQLException {
-      return bqConnectionDelegate.unwrap(iface);
-    }
-
-    @Override
-    public boolean isWrapperFor(Class<?> iface) throws SQLException {
-      return bqConnectionDelegate.isWrapperFor(iface);
-    }
-
-    @Override
-    public void setSchema(String schema) throws SQLException {
-      bqConnectionDelegate.setSchema(schema);
-    }
-
-    @Override
-    public String getSchema() throws SQLException {
-      return bqConnectionDelegate.getSchema();
-    }
-
-    @Override
-    public void setNetworkTimeout(java.util.concurrent.Executor executor, int milliseconds)
-        throws SQLException {
-      bqConnectionDelegate.setNetworkTimeout(executor, milliseconds);
-    }
-
-    @Override
-    public int getNetworkTimeout() throws SQLException {
-      return bqConnectionDelegate.getNetworkTimeout();
-    }
-
-    @Override
-    public void abort(Executor arg0) throws SQLException {
-      LOG.finest("++enter++");
-      if (!closed) {
-        // We notify the pooled connection that physical connection
-        // is being aborted. We assume here that abort() is called for
-        // error cases.
-        SQLException e = new SQLException("Connection is being terminated and aborted");
-        pooledConnection.fireConnectionError(e);
-        closed = true;
-        LOG.finest("Logical connection aborted (removed from pool).");
+    private void checkClosedForClientInfo(Object[] args) throws SQLClientInfoException {
+      if (isClosed()) {
+        throw buildClosedClientInfoException(args);
       }
-      // Call the delate abort to actually close the undelying connection.
-      bqConnectionDelegate.abort(arg0);
+    }
+
+    private static SQLClientInfoException buildClosedClientInfoException(Object[] args) {
+      if (args == null || args.length == 0 || args[0] == null) {
+        return new SQLClientInfoException("Connection is closed.", Collections.emptyMap());
+      }
+      if (args.length == 2 && args[0] instanceof String) {
+        return new SQLClientInfoException(
+            "Connection is closed.",
+            Collections.singletonMap((String) args[0], ClientInfoStatus.REASON_UNKNOWN));
+      }
+      if (args.length == 1 && args[0] instanceof Properties) {
+        Properties props = (Properties) args[0];
+        Map<String, ClientInfoStatus> failed = new HashMap<>();
+        for (String name : props.stringPropertyNames()) {
+          failed.put(name, ClientInfoStatus.REASON_UNKNOWN);
+        }
+        return new SQLClientInfoException("Connection is closed.", failed);
+      }
+      return new SQLClientInfoException("Connection is closed.", Collections.emptyMap());
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+      String methodName = method.getName();
+
+      if (method.getDeclaringClass() == Object.class) {
+        return invokeObjectMethod(proxy, methodName, args);
+      }
+
+      if ("close".equals(methodName) && (args == null || args.length == 0)) {
+        if (!this.closed.compareAndSet(false, true)) {
+          return null;
+        }
+        if (!this.bqConnection.isClosed()) {
+          try (BigQueryJdbcMdc.MdcCloseable mdc =
+              BigQueryJdbcMdc.registerInstance(this.bqConnection.getConnectionId())) {
+            LOG.finer("Closing logical connection handle.");
+          }
+        }
+        awaitQuiescence();
+        this.pooledConnection.connectionHandleClosed(this);
+        return null;
+      }
+
+      if ("isClosed".equals(methodName) && (args == null || args.length == 0)) {
+        return isClosed();
+      }
+
+      if ("abort".equals(methodName) && args != null && args.length == 1) {
+        Executor executor = (Executor) args[0];
+        if (executor == null) {
+          throw new BigQueryJdbcException("Executor cannot be null.");
+        }
+        this.closed.set(true);
+        this.pooledConnection.abortHandle(this, executor);
+        return null;
+      }
+
+      if ("isValid".equals(methodName) && args != null && args.length == 1) {
+        int timeout = (Integer) args[0];
+        if (timeout < 0) {
+          throw new BigQueryJdbcException("timeout must be >= 0");
+        }
+        this.handleLock.readLock().lock();
+        try {
+          if (isClosed()) {
+            return false;
+          }
+          return invokeDelegate(this.proxiedDelegate, method, args);
+        } finally {
+          this.handleLock.readLock().unlock();
+        }
+      }
+
+      if ("isWrapperFor".equals(methodName) && args != null && args.length == 1) {
+        Class<?> iface = (Class<?>) args[0];
+        if (iface == null) {
+          return false;
+        }
+        this.handleLock.readLock().lock();
+        try {
+          if (isClosed()) {
+            return false;
+          }
+          if (iface.isInstance(proxy)) {
+            return true;
+          }
+          return invokeDelegate(this.proxiedDelegate, method, args);
+        } finally {
+          this.handleLock.readLock().unlock();
+        }
+      }
+
+      if ("unwrap".equals(methodName) && args != null && args.length == 1) {
+        Class<?> iface = (Class<?>) args[0];
+        this.handleLock.readLock().lock();
+        try {
+          checkClosed();
+          if (iface == null) {
+            throw new BigQueryJdbcException("Unable to unwrap to null interface.");
+          }
+          if (iface.isInstance(proxy)) {
+            return iface.cast(proxy);
+          }
+          return invokeDelegate(this.proxiedDelegate, method, args);
+        } finally {
+          this.handleLock.readLock().unlock();
+        }
+      }
+
+      if ("setClientInfo".equals(methodName)) {
+        this.handleLock.readLock().lock();
+        try {
+          checkClosedForClientInfo(args);
+          Object result = invokeDelegate(this.proxiedDelegate, method, args);
+          checkClosedForClientInfo(args);
+          return result;
+        } finally {
+          this.handleLock.readLock().unlock();
+        }
+      }
+
+      this.handleLock.readLock().lock();
+      try {
+        checkClosed();
+        Object result = invokeDelegate(this.proxiedDelegate, method, args);
+        if (isClosed()) {
+          if (result instanceof Statement) {
+            closeStatementQuietly((Statement) result);
+          }
+          throw new BigQueryJdbcException("Connection is closed.");
+        }
+        return wrapChildObject((Connection) proxy, result);
+      } finally {
+        this.handleLock.readLock().unlock();
+      }
+    }
+
+    private Object wrapChildObject(Connection connectionProxy, Object result) throws SQLException {
+      if (result == null) {
+        return null;
+      }
+      if (result instanceof Statement) {
+        Statement stmt = (Statement) result;
+        Class<? extends Statement> stmtInterface = resolveStatementInterface(stmt);
+        Statement stmtProxy =
+            (Statement)
+                Proxy.newProxyInstance(
+                    stmtInterface.getClassLoader(),
+                    new Class<?>[] {stmtInterface},
+                    new PooledStatementInvocationHandler(stmt, connectionProxy, this));
+        if (stmt.isWrapperFor(BigQueryStatement.class)) {
+          stmt.unwrap(BigQueryStatement.class).attachPooledProxies(connectionProxy, stmtProxy);
+        }
+        return stmtProxy;
+      }
+      if (result instanceof DatabaseMetaData) {
+        return Proxy.newProxyInstance(
+            DatabaseMetaData.class.getClassLoader(),
+            new Class<?>[] {DatabaseMetaData.class},
+            new PooledDatabaseMetaDataInvocationHandler(
+                (DatabaseMetaData) result, connectionProxy, this));
+      }
+      return result;
+    }
+
+    private static Class<? extends Statement> resolveStatementInterface(Statement stmt) {
+      if (stmt instanceof CallableStatement) {
+        return CallableStatement.class;
+      }
+      if (stmt instanceof PreparedStatement) {
+        return PreparedStatement.class;
+      }
+      return Statement.class;
     }
   }
 
-  @Override
-  public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + ((id == null) ? 0 : id.hashCode());
-    return result;
+  private static final class PooledStatementInvocationHandler implements InvocationHandler {
+    private final Statement delegate;
+    private final Connection connectionProxy;
+    private final PooledConnectionInvocationHandler parentHandler;
+
+    PooledStatementInvocationHandler(
+        Statement delegate,
+        Connection connectionProxy,
+        PooledConnectionInvocationHandler parentHandler) {
+      this.delegate = delegate;
+      this.connectionProxy = connectionProxy;
+      this.parentHandler = parentHandler;
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+      String methodName = method.getName();
+      if (method.getDeclaringClass() == Object.class) {
+        return invokeObjectMethod(proxy, methodName, args);
+      }
+      if (("close".equals(methodName)
+              || "isClosed".equals(methodName)
+              || "cancel".equals(methodName))
+          && (args == null || args.length == 0)) {
+        return invokeDelegate(this.delegate, method, args);
+      }
+      if ("getConnection".equals(methodName) && (args == null || args.length == 0)) {
+        if (this.delegate.isClosed()) {
+          throw new BigQueryJdbcException("Statement is closed.");
+        }
+        this.parentHandler.checkClosed();
+        return this.connectionProxy;
+      }
+      if ("isWrapperFor".equals(methodName) && args != null && args.length == 1) {
+        Class<?> iface = (Class<?>) args[0];
+        if (iface == null) {
+          return false;
+        }
+        this.parentHandler.handleLock.readLock().lock();
+        try {
+          if (this.delegate.isClosed() || this.parentHandler.isClosed()) {
+            return false;
+          }
+          if (iface.isInstance(proxy)) {
+            return true;
+          }
+          return invokeDelegate(this.delegate, method, args);
+        } finally {
+          this.parentHandler.handleLock.readLock().unlock();
+        }
+      }
+      if ("unwrap".equals(methodName) && args != null && args.length == 1) {
+        Class<?> iface = (Class<?>) args[0];
+        this.parentHandler.handleLock.readLock().lock();
+        try {
+          if (this.delegate.isClosed()) {
+            throw new BigQueryJdbcException("Statement is closed.");
+          }
+          this.parentHandler.checkClosed();
+          if (iface == null) {
+            throw new BigQueryJdbcException("Unable to unwrap to null interface.");
+          }
+          if (iface.isInstance(proxy)) {
+            return iface.cast(proxy);
+          }
+          return invokeDelegate(this.delegate, method, args);
+        } finally {
+          this.parentHandler.handleLock.readLock().unlock();
+        }
+      }
+
+      this.parentHandler.handleLock.readLock().lock();
+      try {
+        if (this.delegate.isClosed()) {
+          throw new BigQueryJdbcException("Statement is closed.");
+        }
+        this.parentHandler.checkClosed();
+        Object result = invokeDelegate(this.delegate, method, args);
+        if (this.parentHandler.isClosed()) {
+          if (result instanceof ResultSet) {
+            closeResultSetQuietly((ResultSet) result);
+          }
+          closeStatementQuietly(this.delegate);
+          throw new BigQueryJdbcException("Connection is closed.");
+        }
+        return result;
+      } finally {
+        this.parentHandler.handleLock.readLock().unlock();
+      }
+    }
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null) return false;
-    if (getClass() != obj.getClass()) return false;
-    BigQueryPooledConnection other = (BigQueryPooledConnection) obj;
-    if (id == null) {
-      if (other.id != null) return false;
-    } else if (!id.equals(other.id)) return false;
-    return true;
+  private static final class PooledDatabaseMetaDataInvocationHandler implements InvocationHandler {
+    private final DatabaseMetaData delegate;
+    private final Connection connectionProxy;
+    private final PooledConnectionInvocationHandler parentHandler;
+
+    PooledDatabaseMetaDataInvocationHandler(
+        DatabaseMetaData delegate,
+        Connection connectionProxy,
+        PooledConnectionInvocationHandler parentHandler) {
+      this.delegate = delegate;
+      this.connectionProxy = connectionProxy;
+      this.parentHandler = parentHandler;
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+      String methodName = method.getName();
+      if (method.getDeclaringClass() == Object.class) {
+        return invokeObjectMethod(proxy, methodName, args);
+      }
+      if ("getConnection".equals(methodName) && (args == null || args.length == 0)) {
+        this.parentHandler.checkClosed();
+        return this.connectionProxy;
+      }
+      if ("isWrapperFor".equals(methodName) && args != null && args.length == 1) {
+        Class<?> iface = (Class<?>) args[0];
+        if (iface == null) {
+          return false;
+        }
+        this.parentHandler.handleLock.readLock().lock();
+        try {
+          if (this.parentHandler.isClosed()) {
+            return false;
+          }
+          if (iface.isInstance(proxy)) {
+            return true;
+          }
+          return invokeDelegate(this.delegate, method, args);
+        } finally {
+          this.parentHandler.handleLock.readLock().unlock();
+        }
+      }
+      if ("unwrap".equals(methodName) && args != null && args.length == 1) {
+        Class<?> iface = (Class<?>) args[0];
+        this.parentHandler.handleLock.readLock().lock();
+        try {
+          this.parentHandler.checkClosed();
+          if (iface == null) {
+            throw new BigQueryJdbcException("Unable to unwrap to null interface.");
+          }
+          if (iface.isInstance(proxy)) {
+            return iface.cast(proxy);
+          }
+          return invokeDelegate(this.delegate, method, args);
+        } finally {
+          this.parentHandler.handleLock.readLock().unlock();
+        }
+      }
+      this.parentHandler.handleLock.readLock().lock();
+      try {
+        this.parentHandler.checkClosed();
+        Object result = invokeDelegate(this.delegate, method, args);
+        if (this.parentHandler.isClosed()) {
+          if (result instanceof ResultSet) {
+            closeResultSetQuietly((ResultSet) result);
+          }
+          throw new BigQueryJdbcException("Connection is closed.");
+        }
+        return result;
+      } finally {
+        this.parentHandler.handleLock.readLock().unlock();
+      }
+    }
+  }
+
+  private static void closeStatementQuietly(Statement statement) {
+    try {
+      statement.close();
+    } catch (SQLException ignored) {
+      // Primary closed-connection exception takes precedence.
+    }
+  }
+
+  private static void closeResultSetQuietly(ResultSet resultSet) {
+    try {
+      resultSet.close();
+    } catch (SQLException ignored) {
+      // Primary closed-connection exception takes precedence.
+    }
+  }
+
+  private static Object invokeObjectMethod(Object proxy, String methodName, Object[] args) {
+    if ("equals".equals(methodName)) {
+      return proxy == args[0];
+    }
+    if ("hashCode".equals(methodName)) {
+      return System.identityHashCode(proxy);
+    }
+    if ("toString".equals(methodName)) {
+      return proxy.getClass().getName() + "@" + Integer.toHexString(System.identityHashCode(proxy));
+    }
+    throw new AssertionError("Unexpected Object method: " + methodName);
+  }
+
+  private static Object invokeDelegate(Object target, Method method, Object[] args)
+      throws Throwable {
+    try {
+      return method.invoke(target, args);
+    } catch (InvocationTargetException e) {
+      throw e.getCause();
+    }
   }
 }

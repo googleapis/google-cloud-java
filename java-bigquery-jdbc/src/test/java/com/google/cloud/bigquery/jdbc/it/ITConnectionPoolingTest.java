@@ -32,6 +32,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import javax.sql.PooledConnection;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -50,6 +51,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
     PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
     assertNotNull(pooledConnection);
+    pooledConnection.close();
   }
 
   @Test
@@ -76,11 +78,15 @@ public class ITConnectionPoolingTest extends ITBase {
     pooledDataSource.setURL(connectionUrl);
 
     PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.addConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
+    try {
+      assertNotNull(pooledConnection);
+      TestConnectionListener listener = new TestConnectionListener();
+      pooledConnection.addConnectionEventListener(listener);
+      assertEquals(0, listener.getConnectionClosedCount());
+      assertEquals(0, listener.getConnectionErrorCount());
+    } finally {
+      pooledConnection.close();
+    }
   }
 
   @Test
@@ -91,11 +97,15 @@ public class ITConnectionPoolingTest extends ITBase {
     pooledDataSource.setURL(connectionUrl);
 
     PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.removeConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
+    try {
+      assertNotNull(pooledConnection);
+      TestConnectionListener listener = new TestConnectionListener();
+      pooledConnection.removeConnectionEventListener(listener);
+      assertEquals(0, listener.getConnectionClosedCount());
+      assertEquals(0, listener.getConnectionErrorCount());
+    } finally {
+      pooledConnection.close();
+    }
   }
 
   @Test
@@ -106,19 +116,23 @@ public class ITConnectionPoolingTest extends ITBase {
     pooledDataSource.setURL(connectionUrl);
 
     PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.addConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
+    try {
+      assertNotNull(pooledConnection);
+      TestConnectionListener listener = new TestConnectionListener();
+      pooledConnection.addConnectionEventListener(listener);
+      assertEquals(0, listener.getConnectionClosedCount());
+      assertEquals(0, listener.getConnectionErrorCount());
 
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
+      Connection connection = pooledConnection.getConnection();
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
 
-    connection.close();
-    assertEquals(1, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
+      connection.close();
+      assertEquals(1, listener.getConnectionClosedCount());
+      assertEquals(0, listener.getConnectionErrorCount());
+    } finally {
+      pooledConnection.close();
+    }
   }
 
   @Test
@@ -136,36 +150,39 @@ public class ITConnectionPoolingTest extends ITBase {
     assertEquals(0, listener.getConnectionErrorCount());
 
     pooledConnection.close();
-    assertEquals(1, listener.getConnectionClosedCount());
+    assertEquals(0, listener.getConnectionClosedCount());
     assertEquals(0, listener.getConnectionErrorCount());
   }
 
   @Test
-  public void testPooledConnectionConnectionError() throws SQLException {
+  public void testPooledConnectionConnectionError() throws Exception {
     String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
 
     PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.addConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
-
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-
     ExecutorService executor = Executors.newFixedThreadPool(3);
-    connection.abort(executor);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(1, listener.getConnectionErrorCount());
+    try {
+      assertNotNull(pooledConnection);
+      TestConnectionListener listener = new TestConnectionListener();
+      pooledConnection.addConnectionEventListener(listener);
+      assertEquals(0, listener.getConnectionClosedCount());
+      assertEquals(0, listener.getConnectionErrorCount());
 
-    executor.shutdown();
-    connection.close();
-    pooledConnection.close();
+      Connection connection = pooledConnection.getConnection();
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+
+      connection.abort(executor);
+      assertEquals(0, listener.getConnectionClosedCount());
+      assertEquals(1, listener.getConnectionErrorCount());
+      connection.close();
+    } finally {
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(30, TimeUnit.SECONDS));
+      pooledConnection.close();
+    }
   }
 
   @Test
@@ -237,33 +254,36 @@ public class ITConnectionPoolingTest extends ITBase {
     assertTrue(listener.isConnectionPoolEmpty());
 
     pooledConnection.close();
-    assertFalse(listener.isConnectionPoolEmpty());
+    assertTrue(listener.isConnectionPoolEmpty());
   }
 
   @Test
-  public void testPooledConnectionListenerConnectionError() throws SQLException {
+  public void testPooledConnectionListenerConnectionError() throws Exception {
     String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
 
     PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    PooledConnectionListener listener = new PooledConnectionListener(DEFAULT_CONN_POOL_SIZE);
-    pooledConnection.addConnectionEventListener(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
-
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-
     ExecutorService executor = Executors.newFixedThreadPool(3);
-    connection.abort(executor);
-    assertTrue(listener.isConnectionPoolEmpty());
+    try {
+      assertNotNull(pooledConnection);
+      PooledConnectionListener listener = new PooledConnectionListener(DEFAULT_CONN_POOL_SIZE);
+      pooledConnection.addConnectionEventListener(listener);
+      assertTrue(listener.isConnectionPoolEmpty());
 
-    executor.shutdown();
-    connection.close();
-    pooledConnection.close();
+      Connection connection = pooledConnection.getConnection();
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+
+      connection.abort(executor);
+      assertTrue(listener.isConnectionPoolEmpty());
+      connection.close();
+    } finally {
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(30, TimeUnit.SECONDS));
+      pooledConnection.close();
+    }
   }
 
   @Test
@@ -288,46 +308,51 @@ public class ITConnectionPoolingTest extends ITBase {
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionURL);
 
-    // Get pooled connection and ensure listner was added with default connection pool size.
+    // Get pooled connection and ensure listener was added with expected connection pool size.
     PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
     assertNotNull(pooledConnection);
-    PooledConnectionListener listener = pooledDataSource.getConnectionPoolManager();
-    assertNotNull(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
+    try {
+      PooledConnectionListener listener = pooledDataSource.getConnectionPoolManager();
+      assertNotNull(listener);
+      assertTrue(listener.isConnectionPoolEmpty());
 
-    // Get Underlying physical connection
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
+      // Get logical connection handle
+      Connection connection = pooledConnection.getConnection();
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
 
-    // Execute query with physical connection
-    Statement statement = connection.createStatement();
-    ITBase.validateStatement(statement, 850);
+      // Execute query with logical connection
+      try (Statement statement = connection.createStatement()) {
+        ITBase.validateStatement(statement, 850);
+      }
 
-    // Close physical connection
-    connection.close();
-    assertFalse(listener.isConnectionPoolEmpty());
-    assertEquals(1, listener.getConnectionPoolCurrentCapacity());
-    assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
+      // Close logical connection to return PooledConnection to the pool
+      connection.close();
+      assertFalse(listener.isConnectionPoolEmpty());
+      assertEquals(1, listener.getConnectionPoolCurrentCapacity());
+      assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
 
-    // Reuse same physical connection.
-    connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-    assertFalse(listener.isConnectionPoolEmpty());
-    assertEquals(1, listener.getConnectionPoolCurrentCapacity());
-    assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
+      // Reuse same physical connection on a new Statement.
+      connection = pooledConnection.getConnection();
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      assertFalse(listener.isConnectionPoolEmpty());
+      assertEquals(1, listener.getConnectionPoolCurrentCapacity());
+      assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
 
-    // Execute query with reusable physical connection
-    ITBase.validateStatement(statement, 850);
+      try (Statement statement = connection.createStatement()) {
+        ITBase.validateStatement(statement, 850);
+      }
 
-    // Return connection back to the pool.
-    connection.close();
-    assertFalse(listener.isConnectionPoolEmpty());
-    assertEquals(1, listener.getConnectionPoolCurrentCapacity());
-    assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
-    pooledConnection.close();
-    statement.close();
-    connection.close();
+      // Return connection back to the pool, then physically close.
+      connection.close();
+      assertFalse(listener.isConnectionPoolEmpty());
+      assertEquals(1, listener.getConnectionPoolCurrentCapacity());
+      assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
+      pooledConnection.close();
+      assertTrue(listener.isConnectionPoolEmpty());
+    } finally {
+      pooledConnection.close();
+    }
   }
 }

@@ -23,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -91,7 +92,8 @@ public class PooledConnectionListenerTest {
   }
 
   @Test
-  public void testConnectionHandleClosedByPooledConnection() throws SQLException {
+  public void testPooledConnectionClose_closesPhysicalConnectionWithoutRequeuing()
+      throws SQLException {
     BigQueryPooledConnection pooledConnection = new BigQueryPooledConnection(bigQueryConnection);
     assertFalse(pooledConnection.inUse());
     Connection connection = pooledConnection.getConnection();
@@ -107,9 +109,11 @@ public class PooledConnectionListenerTest {
 
     pooledConnection.close();
     assertFalse(pooledConnection.inUse());
-    assertFalse(listener.isConnectionPoolEmpty());
-    assertEquals(1, listener.getConnectionPoolCurrentCapacity());
-    assertTrue(pooledConnection.isListenerPooled(listener));
+    assertTrue(connection.isClosed());
+    assertTrue(listener.isConnectionPoolEmpty());
+    assertEquals(0, listener.getConnectionPoolCurrentCapacity());
+    assertFalse(pooledConnection.isListenerPooled(listener));
+    verify(bigQueryConnection).close();
   }
 
   @Test
