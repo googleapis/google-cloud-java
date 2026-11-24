@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -28,6 +29,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryParameterType;
@@ -834,6 +836,7 @@ class ConnectionImplTest {
 
     BigQueryReadSettings readSettings = customConnection.createBigQueryReadSettings();
     assertEquals("custom-universe.com", readSettings.getUniverseDomain());
+    assertEquals("bigquerystorage.custom-universe.com:443", readSettings.getEndpoint());
     assertEquals(
         NoCredentials.getInstance(), readSettings.getCredentialsProvider().getCredentials());
   }
@@ -851,7 +854,28 @@ class ConnectionImplTest {
 
     BigQueryReadSettings readSettings = defaultConnection.createBigQueryReadSettings();
     assertEquals("googleapis.com", readSettings.getUniverseDomain());
+    assertEquals("bigquerystorage.googleapis.com:443", readSettings.getEndpoint());
     assertEquals(
         NoCredentials.getInstance(), readSettings.getCredentialsProvider().getCredentials());
+  }
+
+  @Test
+  void testCreateBigQueryReadSettings_usesNoCredentialsProviderWhenCredentialsNull()
+      throws IOException {
+    BigQueryOptions nullCredentialsOptions = mock(BigQueryOptions.class);
+    when(nullCredentialsOptions.getCredentials()).thenReturn(null);
+    when(nullCredentialsOptions.getUniverseDomain()).thenReturn(null);
+    ConnectionImpl nullCredentialsConnection =
+        new ConnectionImpl(
+            connectionSettings,
+            nullCredentialsOptions,
+            bigqueryRpcMock,
+            BigQueryRetryConfig.newBuilder().build());
+
+    BigQueryReadSettings readSettings = nullCredentialsConnection.createBigQueryReadSettings();
+    assertInstanceOf(NoCredentialsProvider.class, readSettings.getCredentialsProvider());
+    assertNull(readSettings.getCredentialsProvider().getCredentials());
+    assertEquals("googleapis.com", readSettings.getUniverseDomain());
+    assertEquals("bigquerystorage.googleapis.com:443", readSettings.getEndpoint());
   }
 }
