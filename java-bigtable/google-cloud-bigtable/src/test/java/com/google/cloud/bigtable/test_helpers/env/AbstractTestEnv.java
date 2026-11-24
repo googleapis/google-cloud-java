@@ -29,6 +29,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -142,7 +143,7 @@ public abstract class AbstractTestEnv {
     if (protocolStr == null || protocolStr.trim().isEmpty()) {
       return ExpectedProtocol.ANY;
     }
-    return ExpectedProtocol.valueOf(protocolStr.trim());
+    return ExpectedProtocol.valueOf(protocolStr.trim().toUpperCase(Locale.US));
   }
 
   public boolean shouldWaitForCmekKeyStatusUpdate() {

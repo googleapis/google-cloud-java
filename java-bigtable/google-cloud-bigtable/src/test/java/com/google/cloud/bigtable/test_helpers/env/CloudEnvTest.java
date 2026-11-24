@@ -177,7 +177,9 @@ class CloudEnvTest {
     assertThat(AbstractTestEnv.parseExpectedProtocol("ANY")).isEqualTo(ExpectedProtocol.ANY);
     assertThat(AbstractTestEnv.parseExpectedProtocol("CLASSIC"))
         .isEqualTo(ExpectedProtocol.CLASSIC);
-    assertThat(AbstractTestEnv.parseExpectedProtocol(" SESSION "))
+    assertThat(AbstractTestEnv.parseExpectedProtocol("classic"))
+        .isEqualTo(ExpectedProtocol.CLASSIC);
+    assertThat(AbstractTestEnv.parseExpectedProtocol(" Session "))
         .isEqualTo(ExpectedProtocol.SESSION);
   }
 
