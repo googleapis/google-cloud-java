@@ -1117,42 +1117,6 @@ class ITBigQueryStorageTest {
     localClient.close();
   }
 
-  void testUniverseDomain() throws IOException {
-    // This test is not yet part presubmit integration test as it requires the apis-tpclp.goog
-    // universe domain credentials.
-    // Test a valid domain using the default credentials and Google default universe domain.
-    BigQueryReadSettings bigQueryReadSettings =
-        BigQueryReadSettings.newBuilder().setUniverseDomain("apis-tpclp.goog").build();
-    BigQueryReadClient localClient = BigQueryReadClient.create(bigQueryReadSettings);
-
-    String table =
-        BigQueryResource.FormatTableResource(
-            /* projectId= */ "google-tpc-testing-environment:cloudsdk-test-project",
-            /* datasetId= */ "tpc_demo_dataset",
-            /* tableId= */ "new_table");
-
-    ReadSession session =
-        localClient.createReadSession(
-            /* parent= */ parentProjectId,
-            /* readSession= */ ReadSession.newBuilder()
-                .setTable(table)
-                .setDataFormat(DataFormat.AVRO)
-                .build(),
-            /* maxStreamCount= */ 1);
-
-    ReadRowsRequest readRowsRequest =
-        ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
-
-    long rowCount = 0;
-    ServerStream<ReadRowsResponse> stream = localClient.readRowsCallable().call(readRowsRequest);
-    for (ReadRowsResponse response : stream) {
-      rowCount += response.getRowCount();
-    }
-
-    assertEquals(1, rowCount);
-    localClient.close();
-  }
-
   /**
    * Reads to the specified row offset within the stream. If the stream does not have the desired
    * rows to read, it will read all of them.
