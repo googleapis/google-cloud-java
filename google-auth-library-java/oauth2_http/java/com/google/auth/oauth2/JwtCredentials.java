@@ -82,6 +82,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   private final String privateKeyId;
   private final JwtClaims jwtClaims;
   private final Long lifeSpanSeconds;
+  private final String universeDomain;
   @VisibleForTesting transient Clock clock;
 
   private transient String jwt;
@@ -95,6 +96,11 @@ public class JwtCredentials extends Credentials implements JwtProvider {
     Preconditions.checkState(jwtClaims.isComplete(), JWT_INCOMPLETE_ERROR_MESSAGE);
     this.lifeSpanSeconds = Preconditions.checkNotNull(builder.getLifeSpanSeconds());
     this.clock = Preconditions.checkNotNull(builder.getClock());
+    if (builder.universeDomain == null || builder.universeDomain.trim().isEmpty()) {
+      this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    } else {
+      this.universeDomain = builder.universeDomain;
+    }
   }
 
   public static Builder newBuilder() {
@@ -152,7 +158,20 @@ public class JwtCredentials extends Credentials implements JwtProvider {
         .setPrivateKey(privateKey)
         .setPrivateKeyId(privateKeyId)
         .setJwtClaims(jwtClaims.merge(newClaims))
+        .setUniverseDomain(this.universeDomain)
         .build();
+  }
+
+  /**
+   * Returns the universe domain for the credential.
+   *
+   * @return the configured universe domain, or {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} if none
+   *     was explicitly configured
+   * @throws IOException if retrieving the universe domain fails
+   */
+  @Override
+  public String getUniverseDomain() throws IOException {
+    return this.universeDomain;
   }
 
   @Override
@@ -190,12 +209,18 @@ public class JwtCredentials extends Credentials implements JwtProvider {
     return Objects.equals(this.privateKey, other.privateKey)
         && Objects.equals(this.privateKeyId, other.privateKeyId)
         && Objects.equals(this.jwtClaims, other.jwtClaims)
-        && Objects.equals(this.lifeSpanSeconds, other.lifeSpanSeconds);
+        && Objects.equals(this.lifeSpanSeconds, other.lifeSpanSeconds)
+        && Objects.equals(this.universeDomain, other.universeDomain);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(this.privateKey, this.privateKeyId, this.jwtClaims, this.lifeSpanSeconds);
+    return Objects.hash(
+        this.privateKey,
+        this.privateKeyId,
+        this.jwtClaims,
+        this.lifeSpanSeconds,
+        this.universeDomain);
   }
 
   Clock getClock() {
@@ -211,6 +236,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
     private JwtClaims jwtClaims;
     private Clock clock = Clock.SYSTEM;
     private Long lifeSpanSeconds = TimeUnit.HOURS.toSeconds(1);
+    private @Nullable String universeDomain;
 
     protected Builder() {}
 
@@ -252,6 +278,24 @@ public class JwtCredentials extends Credentials implements JwtProvider {
 
     public Long getLifeSpanSeconds() {
       return lifeSpanSeconds;
+    }
+
+    /**
+     * Sets the universe domain for the credential. If null or blank, defaults to {@link
+     * Credentials#GOOGLE_DEFAULT_UNIVERSE}.
+     *
+     * @param universeDomain the universe domain (for example, {@code googleapis.com})
+     * @return this builder
+     */
+    @CanIgnoreReturnValue
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
+      this.universeDomain = universeDomain;
+      return this;
+    }
+
+    /** Returns the configured universe domain, or {@code null} if not explicitly set. */
+    public @Nullable String getUniverseDomain() {
+      return universeDomain;
     }
 
     @CanIgnoreReturnValue
