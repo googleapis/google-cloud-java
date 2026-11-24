@@ -46,20 +46,29 @@ final class SqlLikePattern {
     this.minRemaining = minRemaining;
   }
 
-  static void validatePatternLength(@Nullable String sqlLikePattern) throws BigQueryJdbcException {
-    if (sqlLikePattern != null && sqlLikePattern.length() > MAX_SQL_LIKE_PATTERN_LENGTH) {
+  private static void validate(String sqlLikePattern) throws BigQueryJdbcException {
+    if (sqlLikePattern.length() > MAX_SQL_LIKE_PATTERN_LENGTH) {
       throw new BigQueryJdbcException(
           String.format(
               "Search pattern length (%d) exceeds maximum allowed length (%d).",
               sqlLikePattern.length(), MAX_SQL_LIKE_PATTERN_LENGTH));
     }
+    int trailingBackslashes = 0;
+    for (int i = sqlLikePattern.length() - 1; i >= 0 && sqlLikePattern.charAt(i) == '\\'; i--) {
+      trailingBackslashes++;
+    }
+    if ((trailingBackslashes & 1) != 0) {
+      throw new BigQueryJdbcException(
+          "Search pattern must not end with an unescaped '\\' escape character.");
+    }
   }
 
   @Nullable
-  static SqlLikePattern compile(@Nullable String sqlLikePattern) {
+  static SqlLikePattern compile(@Nullable String sqlLikePattern) throws BigQueryJdbcException {
     if (sqlLikePattern == null) {
       return null;
     }
+    validate(sqlLikePattern);
 
     int maxTokens = sqlLikePattern.length();
     TokenKind[] tmpKinds = new TokenKind[maxTokens];
@@ -81,6 +90,7 @@ final class SqlLikePattern {
           count++;
         }
       } else if (!escaped && cp == '_') {
+        // '%_' and '_%' both match >= 1 character; moving '%' right collapses '%_%_' into '__%'.
         if (count > 0 && tmpKinds[count - 1] == TokenKind.ANY_SEQ) {
           tmpKinds[count - 1] = TokenKind.ANY_ONE;
           tmpKinds[count] = TokenKind.ANY_SEQ;
@@ -94,12 +104,6 @@ final class SqlLikePattern {
         count++;
         escaped = false;
       }
-    }
-
-    if (escaped) {
-      tmpKinds[count] = TokenKind.LITERAL;
-      tmpLiterals[count] = '\\';
-      count++;
     }
 
     TokenKind[] normalizedKinds = new TokenKind[count];
@@ -122,10 +126,11 @@ final class SqlLikePattern {
    * matching is required.
    */
   @Nullable
-  static String literalOrNull(@Nullable String sqlLikePattern) {
+  static String literalOrNull(@Nullable String sqlLikePattern) throws BigQueryJdbcException {
     if (sqlLikePattern == null) {
       return null;
     }
+    validate(sqlLikePattern);
     StringBuilder unescaped = null;
     boolean escaped = false;
     for (int i = 0; i < sqlLikePattern.length(); i++) {
@@ -144,9 +149,6 @@ final class SqlLikePattern {
         }
         escaped = false;
       }
-    }
-    if (escaped) {
-      unescaped.append('\\');
     }
     return (unescaped == null) ? sqlLikePattern : unescaped.toString();
   }

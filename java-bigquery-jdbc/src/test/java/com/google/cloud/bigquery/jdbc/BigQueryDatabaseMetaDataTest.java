@@ -1024,6 +1024,8 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
+            null,
+            SqlLikePattern.compile(pattern),
             false);
 
     verify(bigqueryClient, times(1))
@@ -1064,6 +1066,8 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
+            null,
+            SqlLikePattern.compile(pattern),
             false);
 
     verify(bigqueryClient, times(1))
@@ -1097,6 +1101,8 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             procNameExact,
+            procNameExact,
+            null,
             false);
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
@@ -1111,6 +1117,8 @@ public class BigQueryDatabaseMetaDataTest {
 
   private List<Table> invokeFindMatchingObjectsWithException(
       BigQueryException bqe, String pattern, boolean throwOn404) throws Exception {
+    String literal = SqlLikePattern.literalOrNull(pattern);
+    SqlLikePattern matcher = (literal == null) ? SqlLikePattern.compile(pattern) : null;
     return dbMetadata.findMatchingBigQueryObjects(
         "Table",
         () -> {
@@ -1121,6 +1129,8 @@ public class BigQueryDatabaseMetaDataTest {
         },
         (table) -> "name",
         pattern,
+        literal,
+        matcher,
         throwOn404);
   }
 
@@ -1412,7 +1422,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testProcessProcedureArguments_WithColumnNameFilter() {
+  public void testProcessProcedureArguments_WithColumnNameFilter() throws SQLException {
     Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
     FieldList resultFields = resultSchema.getFields();
     List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
@@ -2729,7 +2739,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testProcessFunctionParametersAndReturnValue_ColumnNameFilter() {
+  public void testProcessFunctionParametersAndReturnValue_ColumnNameFilter() throws SQLException {
     Schema resultSchema = dbMetadata.defineGetFunctionColumnsSchema();
     FieldList resultFields = resultSchema.getFields();
     List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
@@ -4171,26 +4181,41 @@ public class BigQueryDatabaseMetaDataTest {
             "getSchemas.schemaPattern",
             (MetadataResultSetSupplier) m -> m.getSchemas("test-project", tooLong)),
         Arguments.of(
+            "getSchemas.schemaPattern(nullCatalog)",
+            (MetadataResultSetSupplier) m -> m.getSchemas(null, tooLong)),
+        Arguments.of(
             "getTables.schemaPattern",
             (MetadataResultSetSupplier) m -> m.getTables("test-project", tooLong, "%", null)),
         Arguments.of(
             "getTables.tableNamePattern",
-            (MetadataResultSetSupplier) m -> m.getTables("test-project", "ds", tooLong, null)),
+            (MetadataResultSetSupplier) m -> m.getTables("test-project", "%", tooLong, null)),
+        Arguments.of(
+            "getTables.tableNamePattern(graphOnly)",
+            (MetadataResultSetSupplier)
+                m -> m.getTables("test-project", "%", tooLong, new String[] {"GRAPH TABLE"})),
+        Arguments.of(
+            "getTables.tableNamePattern(dotQualified)",
+            (MetadataResultSetSupplier)
+                m -> m.getTables("test-project", "%", "g." + tooLong, null)),
         Arguments.of(
             "getColumns.schemaPattern",
             (MetadataResultSetSupplier) m -> m.getColumns("test-project", tooLong, "%", "%")),
         Arguments.of(
             "getColumns.tableNamePattern",
-            (MetadataResultSetSupplier) m -> m.getColumns("test-project", "ds", tooLong, "%")),
+            (MetadataResultSetSupplier) m -> m.getColumns("test-project", "%", tooLong, "%")),
+        Arguments.of(
+            "getColumns.tableNamePattern(dotQualified)",
+            (MetadataResultSetSupplier)
+                m -> m.getColumns("test-project", "%", "g." + tooLong, "%")),
         Arguments.of(
             "getColumns.columnNamePattern",
-            (MetadataResultSetSupplier) m -> m.getColumns("test-project", "ds", "tbl", tooLong)),
+            (MetadataResultSetSupplier) m -> m.getColumns("test-project", "%", "tbl", tooLong)),
         Arguments.of(
             "getProcedures.schemaPattern",
             (MetadataResultSetSupplier) m -> m.getProcedures("test-project", tooLong, "%")),
         Arguments.of(
             "getProcedures.procedureNamePattern",
-            (MetadataResultSetSupplier) m -> m.getProcedures("test-project", "ds", tooLong)),
+            (MetadataResultSetSupplier) m -> m.getProcedures("test-project", "%", tooLong)),
         Arguments.of(
             "getProcedureColumns.schemaPattern",
             (MetadataResultSetSupplier)
@@ -4198,17 +4223,17 @@ public class BigQueryDatabaseMetaDataTest {
         Arguments.of(
             "getProcedureColumns.procedureNamePattern",
             (MetadataResultSetSupplier)
-                m -> m.getProcedureColumns("test-project", "ds", tooLong, "%")),
+                m -> m.getProcedureColumns("test-project", "%", tooLong, "%")),
         Arguments.of(
             "getProcedureColumns.columnNamePattern",
             (MetadataResultSetSupplier)
-                m -> m.getProcedureColumns("test-project", "ds", "proc", tooLong)),
+                m -> m.getProcedureColumns("test-project", "%", "proc", tooLong)),
         Arguments.of(
             "getFunctions.schemaPattern",
             (MetadataResultSetSupplier) m -> m.getFunctions("test-project", tooLong, "%")),
         Arguments.of(
             "getFunctions.functionNamePattern",
-            (MetadataResultSetSupplier) m -> m.getFunctions("test-project", "ds", tooLong)),
+            (MetadataResultSetSupplier) m -> m.getFunctions("test-project", "%", tooLong)),
         Arguments.of(
             "getFunctionColumns.schemaPattern",
             (MetadataResultSetSupplier)
@@ -4216,11 +4241,11 @@ public class BigQueryDatabaseMetaDataTest {
         Arguments.of(
             "getFunctionColumns.functionNamePattern",
             (MetadataResultSetSupplier)
-                m -> m.getFunctionColumns("test-project", "ds", tooLong, "%")),
+                m -> m.getFunctionColumns("test-project", "%", tooLong, "%")),
         Arguments.of(
             "getFunctionColumns.columnNamePattern",
             (MetadataResultSetSupplier)
-                m -> m.getFunctionColumns("test-project", "ds", "fn", tooLong)));
+                m -> m.getFunctionColumns("test-project", "%", "fn", tooLong)));
   }
 
   @ParameterizedTest(name = "{0}")
@@ -4228,6 +4253,47 @@ public class BigQueryDatabaseMetaDataTest {
   public void testPatternMethodsRejectOverlyLongPatternsBeforeApiCalls(
       String caseName, MetadataResultSetSupplier call) {
     assertThrows(BigQueryJdbcException.class, () -> call.get(dbMetadata), caseName);
+    verifyNoInteractions(bigqueryClient);
+  }
+
+  @Test
+  public void testPatternMethodsRejectTrailingUnescapedBackslash() {
+    assertThrows(BigQueryJdbcException.class, () -> dbMetadata.getSchemas("test-project", "ds\\"));
+    assertThrows(BigQueryJdbcException.class, () -> dbMetadata.getSchemas(null, "ds\\"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getTables("test-project", "%", "tbl\\", null));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getTables("test-project", "%", "%tbl\\", null));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getTables("test-project", "%", "v1.0\\", null));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getTables("test-project", "%", "tbl\\", new String[] {"GRAPH TABLE"}));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getColumns("test-project", "%", "v1.0\\", "%"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getColumns("test-project", "%", "tbl", "col\\"));
+    assertThrows(
+        BigQueryJdbcException.class, () -> dbMetadata.getProcedures("test-project", "%", "proc\\"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getProcedureColumns("test-project", "%", "proc\\", "%"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getProcedureColumns("test-project", "%", "proc", "col\\"));
+    assertThrows(
+        BigQueryJdbcException.class, () -> dbMetadata.getFunctions("test-project", "%", "fn\\"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getFunctionColumns("test-project", "%", "fn\\", "%"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getFunctionColumns("test-project", "%", "fn", "col\\"));
     verifyNoInteractions(bigqueryClient);
   }
 

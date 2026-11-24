@@ -38,7 +38,7 @@ class SqlLikePatternTest {
   }
 
   @Test
-  void testCompileNullEmptyAndExact() {
+  void testCompileNullEmptyAndExact() throws BigQueryJdbcException {
     assertNull(SqlLikePattern.compile(null));
 
     SqlLikePattern empty = SqlLikePattern.compile("");
@@ -56,7 +56,7 @@ class SqlLikePatternTest {
   }
 
   @Test
-  void testMatchesNullInput() {
+  void testMatchesNullInput() throws BigQueryJdbcException {
     SqlLikePattern matchAll = SqlLikePattern.compile("%");
     assertNotNull(matchAll);
     assertFalse(matchAll.matches(null));
@@ -65,7 +65,7 @@ class SqlLikePatternTest {
   }
 
   @Test
-  void testPercentUnderscoreAndMixedWildcards() {
+  void testPercentUnderscoreAndMixedWildcards() throws BigQueryJdbcException {
     SqlLikePattern prefixPercent = SqlLikePattern.compile("table%");
     assertTrue(prefixPercent.matches("table"));
     assertTrue(prefixPercent.matches("tableName"));
@@ -122,7 +122,7 @@ class SqlLikePatternTest {
   }
 
   @Test
-  void testEscapesRegexMetacharactersAndTrailingBackslash() {
+  void testEscapesRegexMetacharactersAndTrailingBackslash() throws BigQueryJdbcException {
     SqlLikePattern dotPattern = SqlLikePattern.compile("version_1.0");
     assertTrue(dotPattern.matches("version_1.0"));
     assertFalse(dotPattern.matches("version_1X0"));
@@ -152,13 +152,17 @@ class SqlLikePatternTest {
     assertTrue(escapedBackslashAndEscapedPercent.matches("a\\%b"));
     assertFalse(escapedBackslashAndEscapedPercent.matches("a\\XYZb"));
 
-    SqlLikePattern trailingBackslash = SqlLikePattern.compile("test\\");
-    assertTrue(trailingBackslash.matches("test\\"));
-    assertFalse(trailingBackslash.matches("test"));
+    SqlLikePattern escapedTrailingBackslash = SqlLikePattern.compile("test\\\\");
+    assertTrue(escapedTrailingBackslash.matches("test\\"));
+    assertFalse(escapedTrailingBackslash.matches("test"));
+
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.compile("\\"));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.compile("test\\"));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.compile("test\\\\\\"));
   }
 
   @Test
-  void testAsciiOnlyCaseFoldingAndLocaleIndependence() {
+  void testAsciiOnlyCaseFoldingAndLocaleIndependence() throws BigQueryJdbcException {
     Locale previous = Locale.getDefault();
     try {
       Locale.setDefault(Locale.forLanguageTag("tr-TR"));
@@ -175,7 +179,7 @@ class SqlLikePatternTest {
   }
 
   @Test
-  void testSupplementaryUnicodeCodePoints() {
+  void testSupplementaryUnicodeCodePoints() throws BigQueryJdbcException {
     String emoji = "\uD83D\uDE00"; // U+1F600 (1 Unicode code point, 2 UTF-16 chars)
     SqlLikePattern singleUnderscore = SqlLikePattern.compile("tbl_end");
     assertTrue(singleUnderscore.matches("tbl" + emoji + "end"));
@@ -189,7 +193,7 @@ class SqlLikePatternTest {
   }
 
   @Test
-  void testLiteralOrNull() {
+  void testLiteralOrNull() throws BigQueryJdbcException {
     assertNull(SqlLikePattern.literalOrNull(null));
     assertNull(SqlLikePattern.literalOrNull("%"));
     assertNull(SqlLikePattern.literalOrNull("_"));
@@ -204,20 +208,33 @@ class SqlLikePatternTest {
     assertSame(plain, SqlLikePattern.literalOrNull(plain));
     assertEquals("my_dataset", SqlLikePattern.literalOrNull("my\\_dataset"));
     assertEquals("100%discount", SqlLikePattern.literalOrNull("100\\%discount"));
+    assertEquals("abc%_", SqlLikePattern.literalOrNull("abc\\%\\_"));
     assertEquals("a\\%b", SqlLikePattern.literalOrNull("a\\\\\\%b"));
     assertEquals("a\\b", SqlLikePattern.literalOrNull("a\\\\b"));
-    assertEquals("trailing\\", SqlLikePattern.literalOrNull("trailing\\"));
+    assertEquals("trailing\\", SqlLikePattern.literalOrNull("trailing\\\\"));
+
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.literalOrNull("\\"));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.literalOrNull("trailing\\"));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.literalOrNull("trailing\\\\\\"));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.literalOrNull("%\\"));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.literalOrNull("_\\"));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.literalOrNull("%ds\\"));
   }
 
   @Test
   void testValidatePatternLength() throws BigQueryJdbcException {
-    SqlLikePattern.validatePatternLength(null);
-    String atLimit = repeatChar('a', SqlLikePattern.MAX_SQL_LIKE_PATTERN_LENGTH);
-    SqlLikePattern.validatePatternLength(atLimit);
+    String atLimitLiteral = repeatChar('a', SqlLikePattern.MAX_SQL_LIKE_PATTERN_LENGTH);
+    assertEquals(atLimitLiteral, SqlLikePattern.literalOrNull(atLimitLiteral));
+    assertNotNull(SqlLikePattern.compile(atLimitLiteral));
 
-    String overLimit = repeatChar('a', SqlLikePattern.MAX_SQL_LIKE_PATTERN_LENGTH + 1);
+    String overLimitLiteral = repeatChar('a', SqlLikePattern.MAX_SQL_LIKE_PATTERN_LENGTH + 1);
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.literalOrNull(overLimitLiteral));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.compile(overLimitLiteral));
+
+    String overLimitWildcard = repeatChar('%', SqlLikePattern.MAX_SQL_LIKE_PATTERN_LENGTH + 1);
     assertThrows(
-        BigQueryJdbcException.class, () -> SqlLikePattern.validatePatternLength(overLimit));
+        BigQueryJdbcException.class, () -> SqlLikePattern.literalOrNull(overLimitWildcard));
+    assertThrows(BigQueryJdbcException.class, () -> SqlLikePattern.compile(overLimitWildcard));
   }
 
   @Test
