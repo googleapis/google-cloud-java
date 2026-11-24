@@ -616,6 +616,7 @@
       <properties>
         <bigtable.internal.client-config-override-use-default>true</bigtable.internal.client-config-override-use-default>
         <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 0.0 } } }</bigtable.internal.client-config-override>
+        <bigtable.expected-protocol>CLASSIC</bigtable.expected-protocol>
       </properties>
     </profile>
 
