@@ -85,7 +85,7 @@ class IamUtils {
   /**
    * Returns a signature for the provided bytes.
    *
-   * @param serviceAccountEmail the email address for the service account used for signing
+   * @param signBlobUrl the IAM signBlob endpoint for the service account used for signing
    * @param credentials credentials required for making the IAM call
    * @param transport transport used for building the HTTP request
    * @param toSign bytes to sign
@@ -94,9 +94,8 @@ class IamUtils {
    * @throws ServiceAccountSigner.SigningException if signing fails
    */
   static byte[] sign(
-      String serviceAccountEmail,
+      String signBlobUrl,
       Credentials credentials,
-      String universeDomain,
       HttpTransport transport,
       byte[] toSign,
       Map<String, ?> additionalFields) {
@@ -105,13 +104,7 @@ class IamUtils {
         transport.createRequestFactory(new HttpCredentialsAdapter(credentials));
     String signature;
     try {
-      signature =
-          getSignature(
-              serviceAccountEmail,
-              universeDomain,
-              base64.encode(toSign),
-              additionalFields,
-              factory);
+      signature = getSignature(signBlobUrl, base64.encode(toSign), additionalFields, factory);
     } catch (IOException ex) {
       throw new ServiceAccountSigner.SigningException("Failed to sign the provided bytes", ex);
     }
@@ -119,14 +112,8 @@ class IamUtils {
   }
 
   private static String getSignature(
-      String serviceAccountEmail,
-      String universeDomain,
-      String bytes,
-      Map<String, ?> additionalFields,
-      HttpRequestFactory factory)
+      String signBlobUrl, String bytes, Map<String, ?> additionalFields, HttpRequestFactory factory)
       throws IOException {
-    String signBlobUrl =
-        String.format(IAM_SIGN_BLOB_ENDPOINT_FORMAT, universeDomain, serviceAccountEmail);
     GenericUrl genericUrl = new GenericUrl(signBlobUrl);
 
     GenericData signRequest = new GenericData();
@@ -240,7 +227,8 @@ class IamUtils {
   /**
    * Returns an IdToken issued to the serviceAccount with a specified targetAudience
    *
-   * @param serviceAccountEmail the email address for the service account to get an ID Token for
+   * @param idTokenUrl the IAM generateIdToken endpoint for the service account to get an ID Token
+   *     for
    * @param credentials credentials required for making the IAM call
    * @param transport transport used for building the HTTP request
    * @param targetAudience the audience the issued ID token should include
@@ -252,18 +240,14 @@ class IamUtils {
    *     href="https://cloud.google.com/iam/credentials/reference/rest/v1/projects.serviceAccounts/generateIdToken">...</a>
    */
   static IdToken getIdToken(
-      String serviceAccountEmail,
+      String idTokenUrl,
       Credentials credentials,
       HttpTransport transport,
       String targetAudience,
       boolean includeEmail,
       Map<String, ?> additionalFields,
-      CredentialTypeForMetrics credentialTypeForMetrics,
-      String universeDomain)
+      CredentialTypeForMetrics credentialTypeForMetrics)
       throws IOException {
-
-    String idTokenUrl =
-        String.format(IAM_ID_TOKEN_ENDPOINT_FORMAT, universeDomain, serviceAccountEmail);
     GenericUrl genericUrl = new GenericUrl(idTokenUrl);
 
     GenericData idTokenRequest = new GenericData();
