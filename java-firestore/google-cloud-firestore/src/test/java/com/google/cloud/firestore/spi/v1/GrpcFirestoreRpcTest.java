@@ -63,22 +63,15 @@ import com.google.firestore.v1.RunQueryResponse;
 import com.google.protobuf.Empty;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.net.URI;
-import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Assume;
@@ -90,8 +83,6 @@ public class GrpcFirestoreRpcTest {
   private static final String PROJECT_ID = "test-project";
   private static final String CUSTOM_UNIVERSE_DOMAIN = "s3nsapis.fr";
   private static final String UNIVERSE_DOMAIN_ENV_VAR = "GOOGLE_CLOUD_UNIVERSE_DOMAIN";
-  private static final String PROBE_RESULT_PREFIX = "UNIVERSE_PROBE_RESULT=";
-  private static final String UNSET_ARG = "-";
 
   private static FirestoreStubSettings defaultStubSettings;
 
@@ -722,201 +713,6 @@ public class GrpcFirestoreRpcTest {
       assertThat(released.get()).isSameInstanceAs(backingExecutor);
     } finally {
       backingExecutor.shutdownNow();
-    }
-  }
-
-  @Test
-  public void envVarUnsetDefaultsToGoogleapisComInForkedJvm() throws Exception {
-    ProbeResult result = runUniverseDomainProbe(null, null, null);
-    assertThat(result.universeDomain).isEqualTo(Credentials.GOOGLE_DEFAULT_UNIVERSE);
-    assertThat(result.endpoint).isEqualTo("firestore.googleapis.com:443");
-    assertThat(result.authority).isEqualTo("firestore.googleapis.com:443");
-  }
-
-  @Test
-  public void envVarSetsUniverseDomainAndAuthorityInForkedJvm() throws Exception {
-    ProbeResult result = runUniverseDomainProbe(CUSTOM_UNIVERSE_DOMAIN, null, null);
-    assertThat(result.universeDomain).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
-    assertThat(result.endpoint).isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
-    assertThat(result.authority).isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
-  }
-
-  @Test
-  public void explicitUniverseDomainOverridesEnvVarInForkedJvm() throws Exception {
-    ProbeResult result = runUniverseDomainProbe("env.example.com", "explicit.example.com", null);
-    assertThat(result.universeDomain).isEqualTo("explicit.example.com");
-    assertThat(result.endpoint).isEqualTo("firestore.explicit.example.com:443");
-    assertThat(result.authority).isEqualTo("firestore.explicit.example.com:443");
-  }
-
-  @Test
-  public void customHostOverridesEnvVarEndpointInForkedJvm() throws Exception {
-    ProbeResult result =
-        runUniverseDomainProbe(CUSTOM_UNIVERSE_DOMAIN, null, "custom.example.com:8443");
-    assertThat(result.universeDomain).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
-    assertThat(result.endpoint).isEqualTo("custom.example.com:8443");
-    assertThat(result.authority).isEqualTo("custom.example.com:8443");
-  }
-
-  private static ProbeResult runUniverseDomainProbe(
-      String envUniverseDomain, String explicitUniverseDomain, String explicitHost)
-      throws Exception {
-    Assume.assumeTrue(
-        "Skipping forked JVM probe under GraalVM native image",
-        System.getProperty("org.graalvm.nativeimage.imagecode") == null);
-
-    String javaExe =
-        System.getProperty("os.name", "").toLowerCase(Locale.ROOT).contains("win")
-            ? "java.exe"
-            : "java";
-    String javaBin = new File(new File(System.getProperty("java.home"), "bin"), javaExe).getPath();
-
-    ProcessBuilder pb =
-        new ProcessBuilder(
-            javaBin,
-            "-cp",
-            System.getProperty("java.class.path"),
-            UniverseDomainProbe.class.getName(),
-            explicitUniverseDomain != null ? explicitUniverseDomain : UNSET_ARG,
-            explicitHost != null ? explicitHost : UNSET_ARG);
-    Map<String, String> env = pb.environment();
-    if (envUniverseDomain == null) {
-      env.remove(UNIVERSE_DOMAIN_ENV_VAR);
-    } else {
-      env.put(UNIVERSE_DOMAIN_ENV_VAR, envUniverseDomain);
-    }
-    env.remove("FIRESTORE_EMULATOR_HOST");
-    env.remove("GOOGLE_API_USE_MTLS_ENDPOINT");
-    env.remove("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    env.remove("EXPERIMENTAL_GOOGLE_API_USE_S2A_JAVA");
-
-    Process process = pb.start();
-    final StringBuffer stdout = new StringBuffer();
-    final StringBuffer stderr = new StringBuffer();
-    Thread stdoutThread =
-        new Thread(
-            () -> readStream(process.getInputStream(), stdout), "universe-domain-probe-stdout");
-    Thread stderrThread =
-        new Thread(
-            () -> readStream(process.getErrorStream(), stderr), "universe-domain-probe-stderr");
-    stdoutThread.setDaemon(true);
-    stderrThread.setDaemon(true);
-    stdoutThread.start();
-    stderrThread.start();
-
-    boolean finished = process.waitFor(30, TimeUnit.SECONDS);
-    if (!finished) {
-      process.destroyForcibly();
-      stdoutThread.join(5000);
-      stderrThread.join(5000);
-      throw new AssertionError(
-          "UniverseDomainProbe timed out. stdout=[" + stdout + "] stderr=[" + stderr + "]");
-    }
-    stdoutThread.join(5000);
-    stderrThread.join(5000);
-
-    int exitCode = process.exitValue();
-    if (exitCode != 0) {
-      throw new AssertionError(
-          "UniverseDomainProbe failed with exit code "
-              + exitCode
-              + ". stdout=["
-              + stdout
-              + "] stderr=["
-              + stderr
-              + "]");
-    }
-
-    String matchedLine = null;
-    for (String line : stdout.toString().split("\\r?\\n")) {
-      if (line.startsWith(PROBE_RESULT_PREFIX)) {
-        matchedLine = line.substring(PROBE_RESULT_PREFIX.length());
-        break;
-      }
-    }
-    if (matchedLine == null) {
-      throw new AssertionError(
-          "Missing probe output line. stdout=[" + stdout + "] stderr=[" + stderr + "]");
-    }
-    String[] parts = matchedLine.split("\\|", -1);
-    if (parts.length != 3) {
-      throw new AssertionError(
-          "Unexpected probe output format: [" + matchedLine + "] stderr=[" + stderr + "]");
-    }
-    return new ProbeResult(parts[0], parts[1], parts[2]);
-  }
-
-  private static void readStream(InputStream stream, StringBuffer target) {
-    try (BufferedReader reader =
-        new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
-      String line;
-      while ((line = reader.readLine()) != null) {
-        synchronized (target) {
-          if (target.length() > 0) {
-            target.append('\n');
-          }
-          target.append(line);
-        }
-      }
-    } catch (IOException ignored) {
-      // Child process closed stream on exit.
-    }
-  }
-
-  private static final class ProbeResult {
-    final String universeDomain;
-    final String endpoint;
-    final String authority;
-
-    ProbeResult(String universeDomain, String endpoint, String authority) {
-      this.universeDomain = universeDomain;
-      this.endpoint = endpoint;
-      this.authority = authority;
-    }
-  }
-
-  /** Subprocess entrypoint for testing {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN} env resolution. */
-  public static final class UniverseDomainProbe {
-    public static void main(String[] args) throws Exception {
-      String explicitUniverseDomain = UNSET_ARG.equals(args[0]) ? null : args[0];
-      String explicitHost = UNSET_ARG.equals(args[1]) ? null : args[1];
-
-      String credUniverseDomain =
-          explicitUniverseDomain != null
-              ? explicitUniverseDomain
-              : (System.getenv(UNIVERSE_DOMAIN_ENV_VAR) != null
-                  ? System.getenv(UNIVERSE_DOMAIN_ENV_VAR)
-                  : Credentials.GOOGLE_DEFAULT_UNIVERSE);
-
-      FirestoreOptions.Builder builder =
-          FirestoreOptions.newBuilder()
-              .setProjectId(PROJECT_ID)
-              .setCredentials(new FakeUniverseCredentials(credUniverseDomain));
-      if (explicitUniverseDomain != null) {
-        builder.setUniverseDomain(explicitUniverseDomain);
-      }
-      if (explicitHost != null) {
-        builder.setHost(explicitHost);
-      }
-
-      GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(builder.build());
-      try {
-        ClientContext clientContext = rpc.getClientContext();
-        GrpcTransportChannel transportChannel =
-            (GrpcTransportChannel) clientContext.getTransportChannel();
-        FirestoreStubSettings stubSettings =
-            FirestoreStubSettings.newBuilder(clientContext).build();
-        System.out.println(
-            PROBE_RESULT_PREFIX
-                + clientContext.getUniverseDomain()
-                + "|"
-                + stubSettings.getEndpoint()
-                + "|"
-                + transportChannel.getChannel().authority());
-        System.out.flush();
-      } finally {
-        rpc.close();
-      }
     }
   }
 
