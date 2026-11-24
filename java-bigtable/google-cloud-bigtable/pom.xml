@@ -41,6 +41,7 @@
     <bigtable.directpath-admin-endpoint/>
     <bigtable.internal.client-config-override-use-default>false</bigtable.internal.client-config-override-use-default>
     <bigtable.internal.client-config-override/>
+    <bigtable.expected-protocol/>
 
     <!-- Number of JVMs used to run the integration tests concurrently. The ITs are almost entirely
      RPC bound, so this can be raised well above the core count. Override on the commandline via
@@ -623,6 +624,7 @@
       <properties>
         <bigtable.internal.client-config-override-use-default>true</bigtable.internal.client-config-override-use-default>
         <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 1.0 } } }</bigtable.internal.client-config-override>
+        <bigtable.expected-protocol>SESSION</bigtable.expected-protocol>
       </properties>
     </profile>
 
@@ -827,6 +829,7 @@
             <java.util.logging.config.file>${java-log-config}</java.util.logging.config.file>
             <bigtable.internal.client-config-override-use-default>${bigtable.internal.client-config-override-use-default}</bigtable.internal.client-config-override-use-default>
             <bigtable.internal.client-config-override>${bigtable.internal.client-config-override}</bigtable.internal.client-config-override>
+            <bigtable.expected-protocol>${bigtable.expected-protocol}</bigtable.expected-protocol>
           </systemPropertyVariables>
         </configuration>
       </plugin>
