@@ -32,8 +32,18 @@
 package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.auth.Credentials;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -125,5 +135,136 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
     tokenCredential.refresh();
     IdTokenCredentials deserializedCredentials = serializeAndDeserialize(tokenCredential);
     assertEquals(tokenCredential, deserializedCredentials);
+  }
+
+  @Test
+  void getUniverseDomain_serviceAccountProvider_defaultUniverse() throws IOException {
+    ServiceAccountCredentials serviceAccountCredentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail("client@example.com")
+            .setPrivateKey(JwtCredentialsTest.getPrivateKey())
+            .build();
+    IdTokenCredentials tokenCredential =
+        IdTokenCredentials.newBuilder()
+            .setIdTokenProvider(serviceAccountCredentials)
+            .setTargetAudience("https://foo.bar")
+            .build();
+
+    assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, tokenCredential.getUniverseDomain());
+  }
+
+  @Test
+  void getUniverseDomain_serviceAccountProvider_customUniverse() throws IOException {
+    ServiceAccountCredentials serviceAccountCredentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail("client@example.com")
+            .setPrivateKey(JwtCredentialsTest.getPrivateKey())
+            .setUniverseDomain("example.com")
+            .build();
+    IdTokenCredentials tokenCredential =
+        IdTokenCredentials.newBuilder()
+            .setIdTokenProvider(serviceAccountCredentials)
+            .setTargetAudience("https://foo.bar")
+            .build();
+
+    assertEquals("example.com", tokenCredential.getUniverseDomain());
+  }
+
+  @Test
+  void getUniverseDomain_impersonatedProvider_delegatesToSource() throws IOException {
+    ServiceAccountCredentials sourceCredentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail("source@example.com")
+            .setPrivateKey(JwtCredentialsTest.getPrivateKey())
+            .setUniverseDomain("example.com")
+            .build();
+    ImpersonatedCredentials impersonatedCredentials =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceCredentials)
+            .setTargetPrincipal("target@example.com")
+            .setScopes(Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"))
+            .build();
+    IdTokenCredentials tokenCredential =
+        IdTokenCredentials.newBuilder()
+            .setIdTokenProvider(impersonatedCredentials)
+            .setTargetAudience("https://foo.bar")
+            .build();
+
+    assertEquals("example.com", tokenCredential.getUniverseDomain());
+  }
+
+  @Test
+  void getUniverseDomain_computeEngineProvider_lazyLookup() throws IOException {
+    AtomicInteger universeDomainRequests = new AtomicInteger();
+    ComputeEngineCredentialsTest.MockMetadataServerTransportFactory transportFactory =
+        new ComputeEngineCredentialsTest.MockMetadataServerTransportFactory();
+    transportFactory.transport =
+        new MockMetadataServerTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+            if (url.equals(ComputeEngineCredentials.getUniverseDomainUrl())) {
+              universeDomainRequests.incrementAndGet();
+              return new MockLowLevelHttpRequest(url) {
+                @Override
+                public LowLevelHttpResponse execute() {
+                  return new MockLowLevelHttpResponse()
+                      .setStatusCode(HttpStatusCodes.STATUS_CODE_OK)
+                      .setContent("example.com");
+                }
+              };
+            }
+            return super.buildRequest(method, url);
+          }
+        };
+    ComputeEngineCredentials computeCredentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    IdTokenCredentials tokenCredential =
+        IdTokenCredentials.newBuilder()
+            .setIdTokenProvider(computeCredentials)
+            .setTargetAudience("https://foo.bar")
+            .build();
+
+    assertEquals(0, universeDomainRequests.get());
+    assertEquals("example.com", tokenCredential.getUniverseDomain());
+    assertEquals(1, universeDomainRequests.get());
+    assertEquals("example.com", tokenCredential.getUniverseDomain());
+    assertEquals(1, universeDomainRequests.get());
+  }
+
+  @Test
+  void getUniverseDomain_computeEngineProvider_propagatesIoException() {
+    ComputeEngineCredentialsTest.MockMetadataServerTransportFactory transportFactory =
+        new ComputeEngineCredentialsTest.MockMetadataServerTransportFactory();
+    transportFactory.transport.setStatusCode(501);
+    ComputeEngineCredentials computeCredentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    IdTokenCredentials tokenCredential =
+        IdTokenCredentials.newBuilder()
+            .setIdTokenProvider(computeCredentials)
+            .setTargetAudience("https://foo.bar")
+            .build();
+
+    assertThrows(IOException.class, tokenCredential::getUniverseDomain);
+  }
+
+  @Test
+  void getUniverseDomain_nonCredentialsProvider_defaultsToGoogleDefaultUniverse()
+      throws IOException {
+    IdTokenProvider customProvider =
+        new IdTokenProvider() {
+          @Override
+          public IdToken idTokenWithAudience(String targetAudience, List<Option> options) {
+            return null;
+          }
+        };
+    IdTokenCredentials tokenCredential =
+        IdTokenCredentials.newBuilder()
+            .setIdTokenProvider(customProvider)
+            .setTargetAudience("https://foo.bar")
+            .build();
+
+    assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, tokenCredential.getUniverseDomain());
   }
 }

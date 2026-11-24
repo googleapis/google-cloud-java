@@ -56,7 +56,10 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
       throws ExecutionException, InterruptedException, TimeoutException {
     CollectionReference collection = firestore.collection(LocalFirestoreHelper.autoId());
     for (Map.Entry<String, Map<String, Object>> doc : docs.entrySet()) {
-      collection.document(doc.getKey()).set(doc.getValue()).get(5, TimeUnit.SECONDS);
+      collection
+          .document(doc.getKey())
+          .set(doc.getValue())
+          .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     }
     return collection;
   }
@@ -82,7 +85,10 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
     Map<String, Map<String, Object>> testDocs = map("book1", map("title", "A Book Title"));
 
     for (Map.Entry<String, Map<String, Object>> doc : testDocs.entrySet()) {
-      collection.document(doc.getKey()).set(doc.getValue()).get(5, TimeUnit.SECONDS);
+      collection
+          .document(doc.getKey())
+          .set(doc.getValue())
+          .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     }
 
     Pipeline emptyScalar =
@@ -119,7 +125,7 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
           .collection(reviewsCollName)
           .document(doc.getKey())
           .set(doc.getValue())
-          .get(5, TimeUnit.SECONDS);
+          .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     }
 
     Pipeline reviewsSub =
@@ -166,13 +172,13 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookTitle", "1984", "rating", 5))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(authorsCollName)
         .document("a1")
         .set(map("authorName", "George Orwell", "nationality", "British"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -218,13 +224,13 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookTitle", "1984", "reviewer", "Alice", "rating", 5))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(reviewsCollName)
         .document("r2")
         .set(map("bookTitle", "1984", "reviewer", "Bob", "rating", 4))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -264,13 +270,13 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookTitle", "Dune", "reviewer", "Paul"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(reviewsCollName)
         .document("r2")
         .set(map("bookTitle", "Foundation", "reviewer", "Hari"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -302,13 +308,13 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookTitle", "1984", "rating", 4))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(reviewsCollName)
         .document("r2")
         .set(map("bookTitle", "1984", "rating", 5))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -340,13 +346,13 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookTitle", "1984", "rating", 4))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(reviewsCollName)
         .document("r2")
         .set(map("bookTitle", "1984", "rating", 5))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -409,13 +415,13 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookTitle", "1984", "rating", 4))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(reviewsCollName)
         .document("r2")
         .set(map("bookTitle", "1984", "rating", 5))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     // This subquery will return 2 documents, which is invalid for
     // toScalarExpression()
@@ -453,12 +459,12 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookTitle", "1984", "reviewer", "Alice", "rating", 4))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     firestore
         .collection(reviewsCollName)
         .document("r2")
         .set(map("bookTitle", "1984", "reviewer", "Bob", "rating", 5))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     // Array subquery for all reviewers
     Pipeline arraySub =
@@ -505,7 +511,11 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
   @Test
   public void testSingleScopeVariableUsage() throws Exception {
     String collName = "single_scope_" + UUID.randomUUID().toString();
-    firestore.collection(collName).document("doc1").set(map("price", 100)).get(5, TimeUnit.SECONDS);
+    firestore
+        .collection(collName)
+        .document("doc1")
+        .set(map("price", 100))
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     List<PipelineResult> results =
         firestore
@@ -520,7 +530,11 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
 
     assertThat(data(results)).isEmpty();
 
-    firestore.collection(collName).document("doc2").set(map("price", 50)).get(5, TimeUnit.SECONDS);
+    firestore
+        .collection(collName)
+        .document("doc2")
+        .set(map("price", 50))
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     results =
         firestore
@@ -543,14 +557,14 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(outerCollName)
         .document("doc1")
         .set(map("title", "1984", "id", "1"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     String reviewsCollName = "reviews_scope_" + UUID.randomUUID().toString();
     firestore
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookId", "1", "reviewer", "Alice"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -582,14 +596,14 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(outerCollName)
         .document("doc1")
         .set(map("title", "1984", "id", "1", "category", "sci-fi"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     String reviewsCollName = "reviews_multi_" + UUID.randomUUID().toString();
     firestore
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookId", "1", "category", "sci-fi", "reviewer", "Alice"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -621,14 +635,14 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(outerCollName)
         .document("doc1")
         .set(map("title", "1984", "author", "George Orwell"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     String reviewsCollName = "reviews_currentdoc_" + UUID.randomUUID().toString();
     firestore
         .collection(reviewsCollName)
         .document("r1")
         .set(map("authorName", "George Orwell", "reviewer", "Alice"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -680,14 +694,14 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(outerCollName)
         .document("doc1")
         .set(map("title", "1984"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     String innerCollName = "inner_shadow_" + UUID.randomUUID().toString();
     firestore
         .collection(innerCollName)
         .document("i1")
         .set(map("id", "test"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     // Inner subquery re-defines variable "x" to be "inner_val"
     Pipeline sub =
@@ -723,14 +737,14 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(outerCollName)
         .document("doc1")
         .set(map("title", "1984"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     String reviewsCollName = "reviews_missing_" + UUID.randomUUID().toString();
     firestore
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookId", "1", "reviewer", "Alice"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         firestore
@@ -766,19 +780,19 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(publishersCollName)
         .document("p1")
         .set(map("publisherId", "pub1", "name", "Penguin"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(booksCollName)
         .document("b1")
         .set(map("bookId", "book1", "publisherId", "pub1", "title", "1984"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(reviewsCollName)
         .document("r1")
         .set(map("bookId", "book1", "reviewer", "Alice"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     // reviews need to know if the publisher is Penguin
     Pipeline reviewsSub =
@@ -827,24 +841,32 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
     String outerColl = "outer_agg_" + UUID.randomUUID().toString();
     String innerColl = "inner_agg_" + UUID.randomUUID().toString();
 
-    firestore.collection(outerColl).document("doc1").set(map("id", "1")).get(5, TimeUnit.SECONDS);
-    firestore.collection(outerColl).document("doc2").set(map("id", "2")).get(5, TimeUnit.SECONDS);
+    firestore
+        .collection(outerColl)
+        .document("doc1")
+        .set(map("id", "1"))
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+    firestore
+        .collection(outerColl)
+        .document("doc2")
+        .set(map("id", "2"))
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(innerColl)
         .document("i1")
         .set(map("outer_id", "1", "score", 10))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     firestore
         .collection(innerColl)
         .document("i2")
         .set(map("outer_id", "2", "score", 20))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     firestore
         .collection(innerColl)
         .document("i3")
         .set(map("outer_id", "1", "score", 30))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     // subquery calculates the score for the outer doc
     Pipeline innerSub =
@@ -876,7 +898,7 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(collName)
         .document("doc1")
         .set(map("val", "hello"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     // Create a nested pipeline of depth 10
     Pipeline currentSubquery =
@@ -904,7 +926,7 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(collName)
         .document("doc1")
         .set(map("title", "1984"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     firestore
         .collection(collName)
@@ -912,7 +934,7 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection("reviews")
         .document("r1")
         .set(map("reviewer", "Alice"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     Pipeline reviewsSub =
         PipelineSource.subcollection("reviews").select(field("reviewer").as("reviewer"));
@@ -940,7 +962,7 @@ public class ITPipelineSubqueryTest extends ITBaseTest {
         .collection(collName)
         .document("doc1")
         .set(map("id", "no_subcollection_here"))
-        .get(5, TimeUnit.SECONDS);
+        .get(WRITE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
     // Notably NO subcollections are added to doc1
 

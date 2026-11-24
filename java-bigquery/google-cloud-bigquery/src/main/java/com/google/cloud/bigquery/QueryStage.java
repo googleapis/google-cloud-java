@@ -33,7 +33,7 @@ import java.util.Objects;
  * and emit an output to a future stage (or the final result). This class contains information on a
  * query stage.
  *
- * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation">Query Plan</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/query-plan-explanation">Query Plan</a>
  */
 public class QueryStage implements Serializable {
 
@@ -56,7 +56,8 @@ public class QueryStage implements Serializable {
   /**
    * Each query stage is made of a number of steps. This class contains information on a query step.
    *
-   * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation#steps_metadata">Steps
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/query-plan-explanation#step_details">Steps
    *     Metadata</a>
    */
   public static class QueryStep implements Serializable {
@@ -88,7 +89,8 @@ public class QueryStage implements Serializable {
     /**
      * Returns a machine-readable name for the operation.
      *
-     * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation#steps_metadata">Steps
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/query-plan-explanation#step_details">Steps
      *     Metadata</a>
      */
     public String getName() {

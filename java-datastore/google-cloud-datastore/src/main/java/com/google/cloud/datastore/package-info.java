@@ -18,9 +18,9 @@
  * A client for Cloud Datastore – A highly-scalable NoSQL database for web and mobile applications.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
- * shows how to create a Datastore entity. For the complete source code see <a
- * href="https://github.com/googleapis/google-cloud-java/tree/main/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java">
- * CreateEntity.java</a>.
+ * shows how to create a Datastore entity. For a complete runnable example, see <a
+ * href="https://github.com/googleapis/google-cloud-java/blob/main/java-datastore/samples/snippets/src/main/java/com/example/datastore/QuickstartSample.java">
+ * QuickstartSample.java</a>.
  *
  * <pre>{@code
  * Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
@@ -34,10 +34,10 @@
  * datastore.put(entity);
  * }</pre>
  *
- * <p>This second example shows how to get and update a Datastore entity if it exists. For the
- * complete source code see <a
- * href="https://github.com/googleapis/google-cloud-java/blob/4f9e98b21264028901878b8a11204868eca858ce/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java">
- * UpdateEntity.java</a>.
+ * <p>This second example shows how to get and update a Datastore entity if it exists. For
+ * additional Java examples, see <a
+ * href="https://docs.cloud.google.com/datastore/docs/samples?language=java">Datastore Java code
+ * samples</a>.
  *
  * <pre>{@code
  * Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
@@ -58,6 +58,6 @@
  * ID</a> and <a href="https://github.com/googleapis/google-cloud-java#authentication">provide
  * credentials</a>.
  *
- * @see <a href="https://cloud.google.com/datastore/">Google Cloud Datastore</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs">Google Cloud Datastore</a>
  */
 package com.google.cloud.datastore;
