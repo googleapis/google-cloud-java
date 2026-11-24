@@ -41,6 +41,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.GenericJson;
@@ -65,6 +66,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.KeyStore;
 import java.util.Collections;
 import java.util.Date;
@@ -73,6 +75,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -94,6 +97,12 @@ class IamUtilsTest {
         Mockito.mock(ServiceAccountCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentials.getRequestMetadata(Mockito.any())).thenReturn(ImmutableMap.of());
     Mockito.when(credentials.getUniverseDomain()).thenReturn("googleapis.com");
+  }
+
+  @AfterEach
+  void tearDown() {
+    IamUtils.resetForTest();
+    AgentIdentityUtils.resetForTest();
   }
 
   @Test
@@ -1107,5 +1116,248 @@ class IamUtilsTest {
     try (ObjectOutputStream out = new ObjectOutputStream(new ByteArrayOutputStream())) {
       assertThrows(NotSerializableException.class, () -> out.writeObject(target.credentials));
     }
+  }
+
+  @Test
+  void certInfo_withoutKeyStore_hasNullMtlsTransportFactory() throws Exception {
+    AgentIdentityUtils.CertInfo loaded = loadAgentCertInfo();
+    assertNotNull(loaded.getMtlsTransportFactory());
+    assertSame(loaded.getKeyStore(), loaded.getMtlsTransportFactory().getKeyStore());
+
+    AgentIdentityUtils.CertInfo withoutKey =
+        new AgentIdentityUtils.CertInfo(loaded.getCertificate(), loaded.getCertContent());
+    assertNull(withoutKey.getMtlsTransportFactory());
+  }
+
+  @Test
+  void resolveCallTarget_repeatedCallsWithSameCertInfo_reusesTransportFactoryAndTransport()
+      throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    ComputeEngineCredentials source1 =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token-1", oneHourFromNow(), certInfo));
+    ComputeEngineCredentials source2 =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token-2", oneHourFromNow(), certInfo));
+
+    IamUtils.IamCallTarget target1 =
+        IamUtils.resolveCallTarget(
+            source1, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    IamUtils.IamCallTarget target2 =
+        IamUtils.resolveCallTarget(
+            source1, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    IamUtils.IamCallTarget target3 =
+        IamUtils.resolveCallTarget(
+            source2, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+
+    assertSame(certInfo.getMtlsTransportFactory(), target1.transportFactory);
+    assertSame(target1.transportFactory, target2.transportFactory);
+    assertSame(target1.transportFactory, target3.transportFactory);
+
+    HttpTransport transport1 = target1.transportFactory.create();
+    assertNotNull(transport1);
+    assertSame(transport1, target2.transportFactory.create());
+    assertSame(transport1, target3.transportFactory.create());
+  }
+
+  @Test
+  void
+      resolveBoundTokenCallTarget_nullOverrideUsesCertInfoFactory_providerReturningNullUsesDefault()
+          throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    ComputeEngineCredentials source =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token", oneHourFromNow(), certInfo));
+    HttpTransportFactory defaultFactory = MockHttpTransport::new;
+
+    IamUtils.IamCallTarget defaultMtlsTarget =
+        IamUtils.resolveBoundTokenCallTarget(
+            source, defaultFactory, Credentials.GOOGLE_DEFAULT_UNIVERSE, null);
+    assertTrue(defaultMtlsTarget.usesMtls());
+    assertSame(certInfo.getMtlsTransportFactory(), defaultMtlsTarget.transportFactory);
+
+    IamUtils.IamCallTarget nullProviderTarget =
+        IamUtils.resolveBoundTokenCallTarget(
+            source, defaultFactory, Credentials.GOOGLE_DEFAULT_UNIVERSE, keyStore -> null);
+    assertFalse(nullProviderTarget.usesMtls());
+    assertSame(source, nullProviderTarget.credentials);
+    assertSame(defaultFactory, nullProviderTarget.transportFactory);
+    assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, nullProviderTarget.endpointDomain);
+  }
+
+  private static Path configureMutableAgentCertEnv(
+      Path tempDir, String initialCertResource, String keyResource) throws Exception {
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.copy(
+        Paths.get(IamUtilsTest.class.getResource(initialCertResource).toURI()),
+        certFile,
+        StandardCopyOption.REPLACE_EXISTING);
+    Files.copy(
+        Paths.get(IamUtilsTest.class.getResource(keyResource).toURI()),
+        keyFile,
+        StandardCopyOption.REPLACE_EXISTING);
+
+    Path configPath = tempDir.resolve("certificate_config.json");
+    Map<String, Object> workload = new HashMap<>();
+    workload.put("cert_path", certFile.toString());
+    workload.put("key_path", keyFile.toString());
+    Map<String, Object> certConfigs = new HashMap<>();
+    certConfigs.put("workload", workload);
+    Map<String, Object> config = new HashMap<>();
+    config.put("cert_configs", certConfigs);
+    Files.write(
+        configPath, OAuth2Utils.JSON_FACTORY.toString(config).getBytes(StandardCharsets.UTF_8));
+
+    TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configPath.toString());
+    AgentIdentityUtils.resetForTest();
+    AgentIdentityUtils.setEnvironmentProvider(envProvider);
+    AgentIdentityUtils.setPropertyProvider(new TestPropertyProvider());
+    AgentIdentityUtils.setWellKnownDir(tempDir.resolve("no-spiffe").toString());
+    return certFile;
+  }
+
+  private static void rotateCertFileInPlace(Path certFile, String rotatedCertResource)
+      throws Exception {
+    Path tmpCert = certFile.resolveSibling("cert.pem.tmp");
+    Files.copy(
+        Paths.get(IamUtilsTest.class.getResource(rotatedCertResource).toURI()),
+        tmpCert,
+        StandardCopyOption.REPLACE_EXISTING);
+    Files.move(tmpCert, certFile, StandardCopyOption.REPLACE_EXISTING);
+  }
+
+  @Test
+  void resolveCallTarget_certificateRotation_usesNewTransportFactoryAndTransport(
+      @TempDir Path tempDir) throws Exception {
+    Path certFile =
+        configureMutableAgentCertEnv(
+            tempDir, "/agent/agent_spiffe_cert.pem", "/agent/agent_spiffe_key.pem");
+    AtomicReference<String> nextToken = new AtomicReference<>("bound-token-a1");
+    AtomicInteger metadataRequests = new AtomicInteger();
+    MockHttpTransport metadataTransport = newMetadataTokenTransport(nextToken, metadataRequests);
+    ComputeEngineCredentials source =
+        ComputeEngineCredentials.newBuilder()
+            .setHttpTransportFactory(() -> metadataTransport)
+            .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+            .build();
+
+    IamUtils.IamCallTarget targetA1 =
+        IamUtils.resolveCallTarget(
+            source, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    assertEquals(1, metadataRequests.get());
+    assertTrue(targetA1.usesMtls());
+    assertTrue(targetA1.transportFactory instanceof MtlsHttpTransportFactory);
+    assertEquals(
+        1,
+        ((MtlsHttpTransportFactory) targetA1.transportFactory)
+            .getKeyStore()
+            .getCertificateChain("alias")
+            .length);
+    HttpTransport transportA = targetA1.transportFactory.create();
+    assertNotNull(transportA);
+
+    // Refresh the access token while the on-disk certificate is unchanged: CertInfo cache hit
+    // must keep reusing the same MtlsHttpTransportFactory and NetHttpTransport.
+    nextToken.set("bound-token-a2");
+    source.refresh();
+    IamUtils.IamCallTarget targetA2 =
+        IamUtils.resolveCallTarget(
+            source, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    assertEquals(2, metadataRequests.get());
+    assertTrue(targetA2.usesMtls());
+    assertSame(targetA1.transportFactory, targetA2.transportFactory);
+    assertSame(transportA, targetA2.transportFactory.create());
+
+    // Rotate the certificate file on disk without clearing AgentIdentityUtils static caches.
+    rotateCertFileInPlace(certFile, "/agent/agent_spiffe_cert_chain.pem");
+    nextToken.set("bound-token-b");
+    source.refresh();
+
+    IamUtils.IamCallTarget targetB1 =
+        IamUtils.resolveCallTarget(
+            source, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    IamUtils.IamCallTarget targetB2 =
+        IamUtils.resolveCallTarget(
+            source, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+
+    assertEquals(3, metadataRequests.get());
+    assertTrue(targetB1.usesMtls());
+    assertTrue(targetB1.transportFactory instanceof MtlsHttpTransportFactory);
+    assertEquals(
+        2,
+        ((MtlsHttpTransportFactory) targetB1.transportFactory)
+            .getKeyStore()
+            .getCertificateChain("alias")
+            .length);
+    assertNotSame(targetA1.transportFactory, targetB1.transportFactory);
+    assertSame(targetB1.transportFactory, targetB2.transportFactory);
+    HttpTransport transportB = targetB1.transportFactory.create();
+    assertNotNull(transportB);
+    assertNotSame(transportA, transportB);
+    assertSame(transportB, targetB2.transportFactory.create());
+    // Any in-flight target from before rotation keeps using Cert A's transport.
+    assertSame(transportA, targetA1.transportFactory.create());
+  }
+
+  @Test
+  void refreshAndResolveRetryTarget_tokenRefreshReusesTransport_certRotationReplacesTransport(
+      @TempDir Path tempDir) throws Exception {
+    Path certFile =
+        configureMutableAgentCertEnv(
+            tempDir, "/agent/agent_spiffe_cert.pem", "/agent/agent_spiffe_key.pem");
+    AtomicReference<String> nextToken = new AtomicReference<>("bound-token-1");
+    AtomicInteger metadataRequests = new AtomicInteger();
+    MockHttpTransport metadataTransport = newMetadataTokenTransport(nextToken, metadataRequests);
+    ComputeEngineCredentials source =
+        ComputeEngineCredentials.newBuilder()
+            .setHttpTransportFactory(() -> metadataTransport)
+            .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+            .build();
+
+    IamUtils.IamCallTarget initialTarget =
+        IamUtils.resolveCallTarget(
+            source, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    assertTrue(initialTarget.usesMtls());
+    HttpTransport transportA = initialTarget.transportFactory.create();
+    assertNotNull(transportA);
+
+    // 401 retry when only the token changes (same on-disk cert) reuses the cached transport.
+    nextToken.set("bound-token-2");
+    IamUtils.IamCallTarget tokenOnlyRetry =
+        IamUtils.refreshAndResolveRetryTarget(
+            source,
+            OAuth2Utils.HTTP_TRANSPORT_FACTORY,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            initialTarget);
+    assertNotNull(tokenOnlyRetry);
+    assertTrue(tokenOnlyRetry.usesMtls());
+    assertEquals(2, metadataRequests.get());
+    assertSame(initialTarget.transportFactory, tokenOnlyRetry.transportFactory);
+    assertSame(transportA, tokenOnlyRetry.transportFactory.create());
+
+    // 401 retry after on-disk certificate rotation switches to the new CertInfo's transport.
+    rotateCertFileInPlace(certFile, "/agent/agent_spiffe_cert_chain.pem");
+    nextToken.set("bound-token-3");
+    IamUtils.IamCallTarget rotatedRetry =
+        IamUtils.refreshAndResolveRetryTarget(
+            source,
+            OAuth2Utils.HTTP_TRANSPORT_FACTORY,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            tokenOnlyRetry);
+    assertNotNull(rotatedRetry);
+    assertTrue(rotatedRetry.usesMtls());
+    assertEquals(3, metadataRequests.get());
+    assertNotSame(initialTarget.transportFactory, rotatedRetry.transportFactory);
+    HttpTransport transportB = rotatedRetry.transportFactory.create();
+    assertNotNull(transportB);
+    assertNotSame(transportA, transportB);
+    assertEquals(
+        2,
+        ((MtlsHttpTransportFactory) rotatedRetry.transportFactory)
+            .getKeyStore()
+            .getCertificateChain("alias")
+            .length);
   }
 }

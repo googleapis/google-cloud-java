@@ -34,6 +34,8 @@ package com.google.auth.mtls;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
@@ -45,9 +47,16 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
- * An HttpTransportFactory that creates {@link NetHttpTransport} instances configured for mTLS
- * (mutual TLS) using a specific {@link KeyStore} containing the client's certificate and private
- * key.
+ * An HttpTransportFactory that lazily creates and caches a {@link NetHttpTransport} instance
+ * configured for mTLS (mutual TLS) using a specific {@link KeyStore} containing the client's
+ * certificate and private key.
+ *
+ * <p>Repeated {@link #create()} calls on the same factory instance reuse the same {@link
+ * NetHttpTransport} so connections share the same {@link javax.net.ssl.SSLContext} and {@link
+ * javax.net.ssl.SSLSocketFactory} for TLS session resumption and HTTP keep-alive reuse. Callers
+ * rotating client certificates must construct a new {@link MtlsHttpTransportFactory} with the
+ * updated {@link KeyStore}. The cached transport is {@code transient} and is lazily recreated after
+ * deserialization.
  *
  * <p><b>Warning:</b> This class is considered internal and is not intended for direct use by
  * library consumers. Its API and behavior may change without notice.
@@ -58,6 +67,8 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory, Serializa
   private static final long serialVersionUID = 1L;
   private final transient @Nullable KeyStore mtlsKeyStore;
   private final transient boolean hasKeyStore;
+  private transient volatile Object transportLock = new Object();
+  private transient volatile @Nullable NetHttpTransport cachedTransport;
 
   /**
    * Default no-arg constructor creating an instance without a KeyStore ({@code hasKeyStore() ==
@@ -125,15 +136,37 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory, Serializa
     }
   }
 
+  /**
+   * Returns the lazily initialized {@link NetHttpTransport} for this factory, creating it once on
+   * first call and reusing the same immutable instance on subsequent calls.
+   */
   @Override
   public NetHttpTransport create() {
-    try {
-      // Build the mTLS transport using the provided KeyStore.
-      return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
-    } catch (GeneralSecurityException e) {
-      // Wrap the checked exception in a RuntimeException because the HttpTransportFactory
-      // interface's create() method doesn't allow throwing checked exceptions.
-      throw new RuntimeException("Failed to initialize mTLS transport.", e);
+    NetHttpTransport transport = cachedTransport;
+    if (transport != null) {
+      return transport;
     }
+    synchronized (transportLock) {
+      transport = cachedTransport;
+      if (transport == null) {
+        try {
+          // Build the mTLS transport once per factory so repeated calls share the same
+          // SSLContext and SSLSocketFactory for TLS session resumption and keep-alive reuse.
+          transport =
+              new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
+        } catch (GeneralSecurityException e) {
+          // Wrap the checked exception in a RuntimeException because the HttpTransportFactory
+          // interface's create() method doesn't allow throwing checked exceptions.
+          throw new RuntimeException("Failed to initialize mTLS transport.", e);
+        }
+        cachedTransport = transport;
+      }
+    }
+    return transport;
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    this.transportLock = new Object();
   }
 }

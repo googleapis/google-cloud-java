@@ -49,7 +49,6 @@ import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
-import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.oauth2.MetricsUtils.RequestType;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
@@ -99,9 +98,10 @@ class IamUtils {
   // for example iamcredentials.mtls.googleapis.com.
   private static final String MTLS_DOMAIN_PREFIX = "mtls.";
 
-  // Creates the mTLS transport factory for a bound token's key store. Replaced only in tests.
-  private static volatile Function<KeyStore, HttpTransportFactory> mtlsTransportFactoryProvider =
-      MtlsHttpTransportFactory::new;
+  // Overrides the per-CertInfo mTLS transport factory in tests; null uses CertInfo's shared
+  // MtlsHttpTransportFactory.
+  private static volatile @Nullable Function<KeyStore, HttpTransportFactory>
+      mtlsTransportFactoryProvider;
 
   /**
    * The credentials, transport and endpoint domain to use for one IAM Credentials call.
@@ -245,25 +245,28 @@ class IamUtils {
   }
 
   @VisibleForTesting
-  static void setMtlsTransportFactoryProvider(Function<KeyStore, HttpTransportFactory> provider) {
+  static void setMtlsTransportFactoryProvider(
+      @Nullable Function<KeyStore, HttpTransportFactory> provider) {
     mtlsTransportFactoryProvider = provider;
   }
 
   @VisibleForTesting
   static void resetForTest() {
-    mtlsTransportFactoryProvider = MtlsHttpTransportFactory::new;
+    mtlsTransportFactoryProvider = null;
   }
 
   /**
-   * Like {@link #resolveCallTarget}, without the transport check, and with the mTLS transport
-   * factory supplied by the caller.
+   * Like {@link #resolveCallTarget}, without the transport check, and with an optional mTLS
+   * transport factory override supplied by the caller (when {@code null}, uses the shared {@link
+   * com.google.auth.mtls.MtlsHttpTransportFactory} on the token's {@link
+   * AgentIdentityUtils.CertInfo}).
    */
   @VisibleForTesting
   static IamCallTarget resolveBoundTokenCallTarget(
       Credentials authCredentials,
       HttpTransportFactory transportFactory,
       String universeDomain,
-      Function<KeyStore, HttpTransportFactory> mtlsTransportFactory)
+      @Nullable Function<KeyStore, HttpTransportFactory> mtlsTransportFactory)
       throws IOException {
     IamCallTarget defaultTarget =
         new IamCallTarget(authCredentials, transportFactory, universeDomain, /* usesMtls= */ false);
@@ -280,8 +283,16 @@ class IamUtils {
       return defaultTarget;
     }
     BoundAccessToken boundToken = (BoundAccessToken) token;
-    KeyStore keyStore = boundToken.getCertInfo().getKeyStore();
+    AgentIdentityUtils.CertInfo certInfo = boundToken.getCertInfo();
+    KeyStore keyStore = certInfo.getKeyStore();
     if (keyStore == null) {
+      return defaultTarget;
+    }
+    HttpTransportFactory resolvedTransportFactory =
+        mtlsTransportFactory != null
+            ? mtlsTransportFactory.apply(keyStore)
+            : certInfo.getMtlsTransportFactory();
+    if (resolvedTransportFactory == null) {
       return defaultTarget;
     }
     // Authenticate with exactly this token: the source credentials could otherwise refresh and
@@ -294,7 +305,7 @@ class IamUtils {
     pinnedTokenCredentials.refresh();
     return new IamCallTarget(
         pinnedTokenCredentials,
-        mtlsTransportFactory.apply(keyStore),
+        resolvedTransportFactory,
         MTLS_DOMAIN_PREFIX + universeDomain,
         /* usesMtls= */ true);
   }

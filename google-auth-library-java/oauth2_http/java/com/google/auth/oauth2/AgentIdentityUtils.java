@@ -32,6 +32,7 @@ package com.google.auth.oauth2;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.MtlsUtils;
 import com.google.auth.oauth2.AgentIdentityCacheUtils.CachedAgentIdentityInfo;
 import com.google.auth.oauth2.AgentIdentityCacheUtils.FileMetadata;
@@ -169,6 +170,7 @@ final class AgentIdentityUtils {
     private final X509Certificate certificate;
     private final String certContent;
     private final @Nullable KeyStore keyStore;
+    private final @Nullable MtlsHttpTransportFactory mtlsTransportFactory;
 
     CertInfo(final X509Certificate certificate, final String certContent) {
       this(certificate, certContent, null);
@@ -181,6 +183,7 @@ final class AgentIdentityUtils {
       this.certificate = certificate;
       this.certContent = certContent;
       this.keyStore = keyStore;
+      this.mtlsTransportFactory = keyStore != null ? new MtlsHttpTransportFactory(keyStore) : null;
     }
 
     /** Returns the parsed {@link X509Certificate}. */
@@ -199,6 +202,18 @@ final class AgentIdentityUtils {
      */
     @Nullable KeyStore getKeyStore() {
       return keyStore;
+    }
+
+    /**
+     * Returns the shared {@link MtlsHttpTransportFactory} for this certificate snapshot, or {@code
+     * null} if no {@link KeyStore} is available.
+     *
+     * <p>The underlying {@link com.google.api.client.http.javanet.NetHttpTransport} is created
+     * lazily on first use and reused across calls bound to this snapshot for TLS session resumption
+     * and HTTP keep-alive reuse, and is replaced automatically on rotation.
+     */
+    @Nullable MtlsHttpTransportFactory getMtlsTransportFactory() {
+      return mtlsTransportFactory;
     }
   }
 

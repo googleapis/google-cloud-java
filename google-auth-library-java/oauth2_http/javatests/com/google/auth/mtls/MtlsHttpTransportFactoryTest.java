@@ -34,6 +34,9 @@ package com.google.auth.mtls;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -47,10 +50,18 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.SequenceInputStream;
+import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
+import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 
 class MtlsHttpTransportFactoryTest {
@@ -174,5 +185,99 @@ class MtlsHttpTransportFactoryTest {
 
     // hasKeyStore() should still return the cached true value evaluated at construction
     assertTrue(factory.hasKeyStore());
+  }
+
+  private static KeyStore loadTestMtlsKeyStore() throws Exception {
+    try (InputStream certStream = new FileInputStream(new File(TEST_CERT_PATH));
+        InputStream keyStream = new FileInputStream(new File(TEST_KEY_PATH));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      return SecurityUtils.createMtlsKeyStore(combined);
+    }
+  }
+
+  @Test
+  void create_reusesSameNetHttpTransportInstance() throws Exception {
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(loadTestMtlsKeyStore());
+
+    NetHttpTransport first = factory.create();
+    NetHttpTransport second = factory.create();
+
+    assertNotNull(first);
+    assertSame(first, second);
+  }
+
+  @Test
+  void create_concurrentCalls_returnSameNetHttpTransportInstance() throws Exception {
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(loadTestMtlsKeyStore());
+    int threadCount = 8;
+    ExecutorService executor = Executors.newFixedThreadPool(threadCount);
+    CountDownLatch readyLatch = new CountDownLatch(threadCount);
+    CountDownLatch startLatch = new CountDownLatch(1);
+    try {
+      List<Future<NetHttpTransport>> futures = new ArrayList<>();
+      for (int i = 0; i < threadCount; i++) {
+        futures.add(
+            executor.submit(
+                () -> {
+                  readyLatch.countDown();
+                  assertTrue(startLatch.await(10, TimeUnit.SECONDS));
+                  return factory.create();
+                }));
+      }
+      assertTrue(readyLatch.await(10, TimeUnit.SECONDS));
+      startLatch.countDown();
+
+      NetHttpTransport first = futures.get(0).get(30, TimeUnit.SECONDS);
+      assertNotNull(first);
+      for (Future<NetHttpTransport> future : futures) {
+        assertSame(first, future.get(30, TimeUnit.SECONDS));
+      }
+    } finally {
+      executor.shutdownNow();
+      executor.awaitTermination(5, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  void create_uninitializedKeyStore_throwsAndDoesNotCacheFailure() throws Exception {
+    KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(keyStore);
+
+    RuntimeException exception = assertThrows(RuntimeException.class, factory::create);
+    assertTrue(exception.getCause() instanceof GeneralSecurityException);
+
+    keyStore.load(null, null);
+    NetHttpTransport first = factory.create();
+    NetHttpTransport second = factory.create();
+    assertNotNull(first);
+    assertSame(first, second);
+  }
+
+  @Test
+  void serialization_roundTripAfterCreate_succeedsAndCachesNewTransport() throws Exception {
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(loadTestMtlsKeyStore());
+    NetHttpTransport beforeSerialization = factory.create();
+    assertNotNull(beforeSerialization);
+    assertTrue(beforeSerialization.isMtls());
+
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(factory);
+    }
+
+    MtlsHttpTransportFactory deserialized;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserialized = (MtlsHttpTransportFactory) ois.readObject();
+    }
+
+    assertNotNull(deserialized);
+    assertFalse(deserialized.hasKeyStore());
+    assertNull(deserialized.getKeyStore());
+    NetHttpTransport afterDeserialization = deserialized.create();
+    assertNotNull(afterDeserialization);
+    assertFalse(afterDeserialization.isMtls());
+    assertNotSame(beforeSerialization, afterDeserialization);
+    assertSame(afterDeserialization, deserialized.create());
   }
 }
