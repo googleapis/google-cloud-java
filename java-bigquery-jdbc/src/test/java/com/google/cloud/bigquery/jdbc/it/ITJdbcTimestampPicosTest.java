@@ -56,7 +56,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-@Tag("disable_tpc")
+@Tag("disable_universe_domain")
 public class ITJdbcTimestampPicosTest extends ITBase {
 
   private static final Random RANDOM = new Random();

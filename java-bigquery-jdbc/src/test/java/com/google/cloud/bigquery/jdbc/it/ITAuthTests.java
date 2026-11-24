@@ -251,7 +251,7 @@ public class ITAuthTests extends ITBase {
     "https://www.googleapis.com/auth/bigquery, false"
   })
   @Tag("advanced")
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidPreGeneratedAccessTokenAuthentication(String scope, boolean isReadOnly)
       throws Exception {
     final JsonObject authJson = getAuthJson();

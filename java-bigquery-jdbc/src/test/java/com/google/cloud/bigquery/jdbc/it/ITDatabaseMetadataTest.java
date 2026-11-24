@@ -721,7 +721,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testDatabaseMetadataGetTables() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -822,7 +822,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   @Tag("advanced")
   public void testDatabaseMetadataGetTables_PropertyGraph() throws SQLException {
     String nodeTable = "GRAPH_NODE_TABLE_" + randomNumber;
@@ -921,7 +921,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   @Tag("advanced")
   public void testDatabaseMetadataGetColumns_PropertyGraph() throws SQLException {
     String nodeTable = "GRAPH_COL_NODE_TABLE_" + randomNumber;
@@ -1049,7 +1049,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testDatabaseMetadataGetSchemas() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -1122,7 +1122,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testDatabaseMetaDataGetFunctions() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -1362,7 +1362,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testAdditionalProjectsInMetadata() throws SQLException {
     String additionalProjectsValue = "bigquery-public-data";
     String datasetInAdditionalProject = "baseball";
@@ -1419,7 +1419,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("advanced")
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testFilterTablesOnDefaultDataset_getTables() throws SQLException {
 
     String defaultDatasetValue = CONSTRAINTS_DATASET;
@@ -1491,7 +1491,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("advanced")
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testFilterTablesOnDefaultDataset_getColumns() throws SQLException {
     String defaultDatasetValue = CONSTRAINTS_DATASET;
     String tableInDefaultDataset = CONSTRAINTS_TABLE_NAME;
