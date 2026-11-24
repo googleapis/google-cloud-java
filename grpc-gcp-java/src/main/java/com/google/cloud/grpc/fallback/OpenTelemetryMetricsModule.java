@@ -175,9 +175,9 @@ final class OpenTelemetryMetricsModule {
       firstFailure.remove(channelName);
       downtimeGauge.set(0, attributes);
     } else {
-      firstFailure.putIfAbsent(channelName, System.nanoTime());
-      downtimeGauge.set(
-          (double) (System.nanoTime() - firstFailure.get(channelName)) / 1_000_000_000, attributes);
+      long now = System.nanoTime();
+      long firstFailureNanos = firstFailure.computeIfAbsent(channelName, key -> now);
+      downtimeGauge.set((double) (now - firstFailureNanos) / 1_000_000_000, attributes);
     }
   }
 
