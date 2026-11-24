@@ -229,10 +229,6 @@ final class OpenTelemetryBootstrappingUtils {
       return null;
     }
     if (!hasUniverseDomain(credentials, resolvedUniverseDomain)) {
-      log.warning(
-          "The credentials of the storage client are not for the universe domain "
-              + resolvedUniverseDomain
-              + ". No metrics will be reported.");
       return null;
     }
     try {
@@ -290,15 +286,25 @@ final class OpenTelemetryBootstrappingUtils {
   }
 
   /**
-   * Returns whether the credentials are for the universe domain. For Compute Engine credentials
-   * this takes a request to the metadata server.
+   * Returns whether the credentials are for the universe domain, and logs the reason if they are
+   * not. For Compute Engine credentials this takes a request to the metadata server.
    */
   private static boolean hasUniverseDomain(Credentials credentials, String universeDomain) {
     try {
-      return Ascii.equalsIgnoreCase(universeDomain, credentials.getUniverseDomain());
+      if (Ascii.equalsIgnoreCase(universeDomain, credentials.getUniverseDomain())) {
+        return true;
+      }
+      log.warning(
+          "The credentials of the storage client are not for the universe domain "
+              + universeDomain
+              + ". No metrics will be reported.");
     } catch (IOException | RuntimeException e) {
-      return false;
+      log.warning(
+          "Unable to determine the universe domain of the credentials of the storage client: "
+              + e.getMessage()
+              + ". No metrics will be reported.");
     }
+    return false;
   }
 
   private static String getCloudMonitoringEndpoint(HostAndPort storage, String universeDomain) {
@@ -336,14 +342,6 @@ final class OpenTelemetryBootstrappingUtils {
     } catch (IllegalArgumentException e) {
       return null;
     }
-  }
-
-  static String formatStorageEndpoint(@Nullable String host) {
-    HostAndPort parsed = parseHostAndPort(host);
-    if (parsed == null) {
-      return "storage.googleapis.com:443";
-    }
-    return parsed.withDefaultPort(443).toString();
   }
 
   @Nullable
@@ -400,16 +398,15 @@ final class OpenTelemetryBootstrappingUtils {
       @Nullable Duration metricInterval,
       String api) {
     try {
+      MetricServiceSettings metricServiceSettings =
+          createMetricServiceSettings(host, universeDomain, credentials);
+      if (metricServiceSettings == null) {
+        return null;
+      }
       GCPResourceProvider resourceProvider = new GCPResourceProvider();
       Attributes detectedAttributes = resourceProvider.getAttributes();
       return createDefaultClientMeterProvider(
-          host,
-          configuredProjectId,
-          universeDomain,
-          credentials,
-          metricInterval,
-          api,
-          detectedAttributes);
+          metricServiceSettings, configuredProjectId, metricInterval, api, detectedAttributes);
     } catch (Exception e) {
       log.warning("Failed to create default client MeterProvider: " + e.getMessage());
       return null;
@@ -419,10 +416,8 @@ final class OpenTelemetryBootstrappingUtils {
   @VisibleForTesting
   @Nullable
   static SdkMeterProvider createDefaultClientMeterProvider(
-      @Nullable String host,
+      MetricServiceSettings metricServiceSettings,
       @Nullable String configuredProjectId,
-      @Nullable String universeDomain,
-      @Nullable Credentials credentials,
       @Nullable Duration metricInterval,
       String api,
       Attributes detectedAttributes) {
@@ -438,11 +433,6 @@ final class OpenTelemetryBootstrappingUtils {
               .putAll(detectedAttributes)
               .put(AttributeKey.stringKey("cloud.account.id"), projectIdToUse)
               .build();
-      MetricServiceSettings metricServiceSettings =
-          createMetricServiceSettings(host, universeDomain, credentials);
-      if (metricServiceSettings == null) {
-        return null;
-      }
       return createClientMeterProvider(
           metricServiceSettings,
           projectIdToUse,

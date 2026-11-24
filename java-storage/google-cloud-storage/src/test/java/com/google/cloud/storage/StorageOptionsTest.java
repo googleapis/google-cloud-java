@@ -20,6 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertThrows;
 
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.GoogleCredentials;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -32,6 +34,7 @@ import java.lang.reflect.Field;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Test;
 
@@ -485,6 +488,32 @@ public final class StorageOptionsTest {
           assertThat(options.isCustomOpenTelemetryConfigured()).isTrue();
           StorageClientMetrics metrics = options.getStorageClientMetrics();
           assertThat(metrics).isNotNull();
+        });
+  }
+
+  @Test
+  public void getStorageClientMetrics_initializedOnceWhenMetricsAreNotExported() throws Exception {
+    forEachTransport(
+        builder -> {
+          AtomicInteger universeDomainRequests = new AtomicInteger();
+          Credentials credentials =
+              new GoogleCredentials() {
+                @Override
+                public String getUniverseDomain() {
+                  universeDomainRequests.incrementAndGet();
+                  return "another-universe.com";
+                }
+              };
+          StorageOptions options =
+              builder
+                  .setProjectId("project")
+                  .setCredentials(credentials)
+                  .setEnableOtelMetrics(true)
+                  .build();
+
+          assertThat(options.getStorageClientMetrics()).isNull();
+          assertThat(options.getStorageClientMetrics()).isNull();
+          assertThat(universeDomainRequests.get()).isEqualTo(1);
         });
   }
 

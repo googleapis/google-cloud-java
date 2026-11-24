@@ -264,6 +264,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   private final boolean customMeterProviderConfigured;
   private final boolean customOpenTelemetryConfigured;
   @Nullable private transient StorageClientMetrics storageClientMetrics;
+  private transient boolean storageClientMetricsInitialized;
   private transient boolean storageClientMetricsClosed;
 
   StorageOptions(Builder builder, StorageDefaults serviceDefaults) {
@@ -385,8 +386,9 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     if (!isEnableOtelMetrics() || storageClientMetricsClosed) {
       return null;
     }
-    if (storageClientMetrics == null) {
+    if (storageClientMetrics == null && !storageClientMetricsInitialized) {
       storageClientMetrics = StorageClientMetrics.fromOptions(this);
+      storageClientMetricsInitialized = true;
     }
     return storageClientMetrics;
   }

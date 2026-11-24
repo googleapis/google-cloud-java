@@ -266,29 +266,6 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   }
 
   @Test
-  public void formatStorageEndpoint_formatsVariousHostFormats() {
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint(null))
-        .isEqualTo("storage.googleapis.com:443");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("   "))
-        .isEqualTo("storage.googleapis.com:443");
-    assertThat(
-            OpenTelemetryBootstrappingUtils.formatStorageEndpoint("https://storage.googleapis.com"))
-        .isEqualTo("storage.googleapis.com:443");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://localhost:8080/"))
-        .isEqualTo("localhost:8080");
-    assertThat(
-            OpenTelemetryBootstrappingUtils.formatStorageEndpoint(
-                "google-c2p:///storage.googleapis.com"))
-        .isEqualTo("storage.googleapis.com:443");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://[::1]:8080"))
-        .isEqualTo("[::1]:8080");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("[::1]"))
-        .isEqualTo("[::1]:443");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://host:invalid"))
-        .isEqualTo("storage.googleapis.com:443");
-  }
-
-  @Test
   public void metricServiceEndpoint_keepsPortOfStorageEndpoint() {
     assertThat(metricServiceEndpoint("storage.googleapis.com:443", "googleapis.com", null))
         .isEqualTo("monitoring.googleapis.com:443");
@@ -402,10 +379,12 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
   @Test
   public void noMetrics_universeDomainOfCredentialsUnavailable() {
+    AtomicBoolean universeDomainRequested = new AtomicBoolean(false);
     Credentials credentials =
         new GoogleCredentials() {
           @Override
           public String getUniverseDomain() throws IOException {
+            universeDomainRequested.set(true);
             throw new IOException("metadata server unavailable");
           }
         };
@@ -414,6 +393,17 @@ public final class OpenTelemetryBootstrappingUtilsTest {
             OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
                 "storage.googleapis.com:443", null, null, credentials))
         .isNull();
+    assertThat(universeDomainRequested.get()).isTrue();
+  }
+
+  @Test
+  public void createMetricServiceSettings_credentialsSubclassWithoutAccessToken() {
+    Credentials credentials = new GoogleCredentials() {};
+
+    assertThat(
+            OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+                "storage.googleapis.com:443", null, null, credentials))
+        .isNotNull();
   }
 
   @Test
@@ -445,8 +435,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
                   "googleapis.com",
                   credentials,
                   Duration.ofSeconds(60),
-                  "json",
-                  Attributes.empty()))
+                  "json"))
           .isNull();
     }
   }
@@ -458,10 +447,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
     try (SdkMeterProvider provider =
         OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
-            "https://storage.googleapis.com",
+            METRIC_SERVICE_SETTINGS,
             "configured-project",
-            "googleapis.com",
-            CREDENTIALS,
             Duration.ofSeconds(60),
             "json",
             detectedWithProject)) {
@@ -476,10 +463,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   public void createDefaultClientMeterProvider_fallsBackToConfiguredProjectId() {
     try (SdkMeterProvider fallbackProvider =
         OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
-            "https://storage.googleapis.com",
+            METRIC_SERVICE_SETTINGS,
             "configured-project",
-            "googleapis.com",
-            CREDENTIALS,
             Duration.ofSeconds(60),
             "grpc",
             Attributes.empty())) {
@@ -493,13 +478,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   public void createDefaultClientMeterProvider_returnsNullWhenProjectIdCannotBeDetermined() {
     SdkMeterProvider nullProvider =
         OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
-            "https://storage.googleapis.com",
-            null,
-            "googleapis.com",
-            CREDENTIALS,
-            Duration.ofSeconds(60),
-            "json",
-            Attributes.empty());
+            METRIC_SERVICE_SETTINGS, null, Duration.ofSeconds(60), "json", Attributes.empty());
     assertThat(nullProvider).isNull();
   }
 
