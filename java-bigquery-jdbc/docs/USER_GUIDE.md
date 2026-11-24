@@ -272,8 +272,8 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `RetryInitialDelay` | `0` | Initial delay (in seconds) before executing the first retry attempt. |
 | `RetryMaxDelay` | `0` | Maximum delay limit (in seconds) between retry attempts. |
 | `MetaDataFetchThreadCount` | `32` | Thread pool size used to parallelize `DatabaseMetaData` catalog RPC calls. |
-| `ConnectionPoolSize` | `10` | Maximum size of the internal connection pool when connection pooling is enabled. |
-| `ListenerPoolSize` | `10` | Maximum size of the listener thread pool when connection pooling is enabled. |
+| `ConnectionPoolSize` | `10` | Maximum number of idle physical connections retained in `PooledConnectionDataSource`'s built-in pool (`0` = unbounded). Latched from the first physical connection checkout; changing it on the same `PooledConnectionDataSource` afterward has no effect. |
+| `ListenerPoolSize` | `10` | Maximum number of `ConnectionEventListener` instances that can be registered on a single `PooledConnection` (`0` = unbounded). |
 | `RequestReason` | `null` | Reason string passed in the `x-goog-request-reason` HTTP header for auditing. |
 
 ### OpenTelemetry & Cloud Observability Exporters

@@ -53,6 +53,7 @@ class BigQueryPooledConnection implements PooledConnection {
   enum State {
     IDLE,
     IN_USE,
+    RETIRED,
     CLOSED
   }
 
@@ -64,6 +65,9 @@ class BigQueryPooledConnection implements PooledConnection {
   private final List<ConnectionEventListener> listeners;
   private final Object physicalLock = new Object();
   private final Object stateLock = new Object();
+  private PooledConnectionListener internalPoolListener;
+  private boolean detachedFromInternalPool = false;
+  private boolean nonPoolListenerAttached = false;
   private PooledConnectionInvocationHandler activeHandle;
   private PooledConnectionInvocationHandler resettingHandle;
   private volatile State state = State.IDLE;
@@ -96,14 +100,76 @@ class BigQueryPooledConnection implements PooledConnection {
     return this.state == State.IN_USE;
   }
 
+  boolean isAvailableForPool() {
+    return this.state == State.IDLE && !this.bqConnection.isClosed();
+  }
+
   boolean isClosed() {
-    return this.state == State.CLOSED || this.bqConnection.isClosed();
+    return this.state == State.CLOSED
+        || this.state == State.RETIRED
+        || this.bqConnection.isClosed();
   }
 
   @VisibleForTesting
   boolean isListenerPooled(ConnectionEventListener listener) {
     synchronized (stateLock) {
-      return listeners.contains(listener);
+      return this.internalPoolListener == listener || this.listeners.contains(listener);
+    }
+  }
+
+  void registerInternalPoolListener(PooledConnectionListener poolManager) {
+    if (poolManager == null) {
+      return;
+    }
+    synchronized (stateLock) {
+      if (isHolderTerminalLocked()
+          || this.bqConnection.isClosed()
+          || this.detachedFromInternalPool) {
+        return;
+      }
+      this.internalPoolListener = poolManager;
+    }
+  }
+
+  BigQueryConnection claimPhysicalForReuse(PooledConnectionListener poolManager) {
+    synchronized (stateLock) {
+      if (this.state != State.IDLE
+          || this.bqConnection.isClosed()
+          || this.activeHandle != null
+          || this.resettingHandle != null
+          || this.detachedFromInternalPool
+          || this.nonPoolListenerAttached
+          || poolManager == null
+          || this.internalPoolListener != poolManager
+          || !this.listeners.isEmpty()) {
+        return null;
+      }
+      this.state = State.RETIRED;
+      this.internalPoolListener = null;
+      this.listeners.clear();
+      return this.bqConnection;
+    }
+  }
+
+  void closeIfIdleAndSoleListener(ConnectionEventListener expectedListener) {
+    synchronized (physicalLock) {
+      synchronized (stateLock) {
+        if (this.state != State.IDLE
+            || this.bqConnection.isClosed()
+            || this.activeHandle != null
+            || this.resettingHandle != null
+            || !isSolelyOwnedByPoolListenerLocked(expectedListener)) {
+          return;
+        }
+        this.state = State.CLOSED;
+        this.internalPoolListener = null;
+        this.listeners.clear();
+      }
+      try {
+        this.bqConnection.close();
+      } catch (SQLException ex) {
+        LOG.warning(ex, "Failed to close excess pooled connection");
+      }
     }
   }
 
@@ -114,11 +180,37 @@ class BigQueryPooledConnection implements PooledConnection {
     }
   }
 
+  private boolean isSolelyOwnedByPoolListenerLocked(ConnectionEventListener expectedListener) {
+    if (this.nonPoolListenerAttached || expectedListener == null) {
+      return false;
+    }
+    if (!this.detachedFromInternalPool && this.internalPoolListener != null) {
+      return this.internalPoolListener == expectedListener && this.listeners.isEmpty();
+    }
+    return this.internalPoolListener == null
+        && this.listeners.size() == 1
+        && this.listeners.get(0) == expectedListener;
+  }
+
+  private List<ConnectionEventListener> snapshotAllListenersLocked() {
+    List<ConnectionEventListener> snapshot =
+        new ArrayList<>(this.listeners.size() + (this.internalPoolListener != null ? 1 : 0));
+    if (this.internalPoolListener != null) {
+      snapshot.add(this.internalPoolListener);
+    }
+    snapshot.addAll(this.listeners);
+    return snapshot;
+  }
+
   private boolean isHolderTerminalLocked() {
-    return this.state == State.CLOSED;
+    return this.state == State.CLOSED || this.state == State.RETIRED;
   }
 
   private void checkHolderOpenLocked() throws BigQueryJdbcException {
+    if (this.state == State.RETIRED) {
+      throw new BigQueryJdbcException(
+          "PooledConnection was retired and recycled by PooledConnectionDataSource.");
+    }
     if (this.state == State.CLOSED || this.bqConnection.isClosed()) {
       throw new BigQueryJdbcException("PooledConnection is closed.");
     }
@@ -134,6 +226,10 @@ class BigQueryPooledConnection implements PooledConnection {
       PooledConnectionInvocationHandler previousHandle = null;
       boolean needsReset = false;
       synchronized (stateLock) {
+        if (this.state == State.RETIRED) {
+          throw new BigQueryJdbcException(
+              "PooledConnection was retired and recycled by PooledConnectionDataSource.");
+        }
         if (isHolderTerminalLocked()) {
           throw new BigQueryJdbcException("PooledConnection is closed.");
         }
@@ -228,6 +324,7 @@ class BigQueryPooledConnection implements PooledConnection {
     if (listener == null) {
       return;
     }
+    PooledConnectionListener detachedInternal = null;
     synchronized (stateLock) {
       if (isHolderTerminalLocked()
           || this.bqConnection.isClosed()
@@ -242,10 +339,22 @@ class BigQueryPooledConnection implements PooledConnection {
                 "Listener pool capacity exceeded: " + listenerPoolSize);
           }
           this.listeners.add(listener);
+          if (!(listener instanceof PooledConnectionListener) || this.listeners.size() > 1) {
+            this.nonPoolListenerAttached = true;
+          }
+          if (this.nonPoolListenerAttached
+              || (this.internalPoolListener != null && listener != this.internalPoolListener)) {
+            this.detachedFromInternalPool = true;
+            detachedInternal = this.internalPoolListener;
+            this.internalPoolListener = null;
+          }
         } finally {
           LOG.finer("++exit++");
         }
       }
+    }
+    if (detachedInternal != null) {
+      detachedInternal.removeConnection(this);
     }
   }
 
@@ -294,7 +403,7 @@ class BigQueryPooledConnection implements PooledConnection {
                     new BigQueryJdbcException("Underlying physical connection was closed.");
               } else {
                 this.state = State.IDLE;
-                listenersToNotify = new ArrayList<>(this.listeners);
+                listenersToNotify = snapshotAllListenersLocked();
               }
             }
           }
@@ -331,7 +440,8 @@ class BigQueryPooledConnection implements PooledConnection {
       this.state = State.CLOSED;
       this.activeHandle = null;
       this.resettingHandle = null;
-      snapshot = new ArrayList<>(this.listeners);
+      snapshot = snapshotAllListenersLocked();
+      this.internalPoolListener = null;
       this.listeners.clear();
     }
 
@@ -455,7 +565,8 @@ class BigQueryPooledConnection implements PooledConnection {
         this.activeHandle = null;
       }
       this.resettingHandle = null;
-      List<ConnectionEventListener> snapshot = new ArrayList<>(this.listeners);
+      List<ConnectionEventListener> snapshot = snapshotAllListenersLocked();
+      this.internalPoolListener = null;
       this.listeners.clear();
       return new TerminalTransition(snapshot, previous);
     }
