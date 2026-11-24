@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assume.assumeNotNull;
 
 import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.cloud.storage.it.runner.StorageITRunner;
@@ -35,6 +36,8 @@ public class ITGrpcMetricsTest {
   @Test
   public void testGrpcMetrics() throws IOException {
     GrpcStorageOptions grpcStorageOptions = StorageOptions.grpc().build();
+    assumeNotNull(
+        "Skipping because ADC credentials are unavailable", grpcStorageOptions.getCredentials());
     assertThat(
             OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
                 "storage.googleapis.com:443", "googleapis.com"))
@@ -45,38 +48,40 @@ public class ITGrpcMetricsTest {
     MetricServiceSettings metricServiceSettings =
         OpenTelemetryBootstrappingUtils.buildMetricServiceSettings(
             "monitoring.googleapis.com:443", "googleapis.com", grpcStorageOptions.getCredentials());
-    SdkMeterProvider provider =
+    try (SdkMeterProvider provider =
         OpenTelemetryBootstrappingUtils.createMeterProvider(
-            metricServiceSettings, grpcStorageOptions.getProjectId(), detectedAttributes, false);
+            metricServiceSettings, grpcStorageOptions.getProjectId(), detectedAttributes, false)) {
 
-    /*
-     * SDKMeterProvider doesn't expose the relevant fields we want to test, but they are present in
-     * the String representation, so we'll check that instead. Most of the resources are auto-set,
-     * and will depend on environment, which could cause flakes to check. We're only responsible for
-     * setting the project ID, endpoint, and Histogram boundaries, so we'll just check those
-     */
-    String result = provider.toString();
+      /*
+       * SDKMeterProvider doesn't expose the relevant fields we want to test, but they are present in
+       * the String representation, so we'll check that instead. Most of the resources are auto-set,
+       * and will depend on environment, which could cause flakes to check. We're only responsible for
+       * setting the project ID, endpoint, and Histogram boundaries, so we'll just check those
+       */
+      String result = provider.toString();
 
-    // What the project ID will be will depend on the environment, so we just make sure it's present
-    // and not null/empty
-    assertThat(result).doesNotContain("project_id=\"\"");
-    assertThat(result).doesNotContain("project_id=null");
-    assertThat(result).contains("project_id");
-    assertThat(result).contains("host_id");
-    assertThat(result).contains("cloud_platform");
-    assertThat(result).contains("location");
-    assertThat(result).contains("instance_id");
-    assertThat(result).contains("gcp.resource_type");
-    assertThat(result).contains("api");
+      // What the project ID will be will depend on the environment, so we just make sure it's
+      // present
+      // and not null/empty
+      assertThat(result).doesNotContain("project_id=\"\"");
+      assertThat(result).doesNotContain("project_id=null");
+      assertThat(result).contains("project_id");
+      assertThat(result).contains("host_id");
+      assertThat(result).contains("cloud_platform");
+      assertThat(result).contains("location");
+      assertThat(result).contains("instance_id");
+      assertThat(result).contains("gcp.resource_type");
+      assertThat(result).contains("api");
 
-    // This is the check for the Seconds histogram boundary. We can't practically check for every
-    // boundary,
-    // but if *any* are present, that means they're different from the results and we successfully
-    // set them
-    assertThat(result).contains("1.2");
+      // This is the check for the Seconds histogram boundary. We can't practically check for every
+      // boundary,
+      // but if *any* are present, that means they're different from the results and we successfully
+      // set them
+      assertThat(result).contains("1.2");
 
-    // This is the check for the Size boundary
-    assertThat(result).contains("131072");
+      // This is the check for the Size boundary
+      assertThat(result).contains("131072");
+    }
   }
 
   @Test

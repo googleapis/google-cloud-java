@@ -346,7 +346,7 @@ public final class GrpcStorageOptions extends StorageOptions
       channelProviderBuilder.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
     }
 
-    if (enableGrpcClientMetrics) {
+    if (enableGrpcClientMetrics && !"http".equalsIgnoreCase(scheme)) {
       ChannelConfigurator channelConfigurator =
           OpenTelemetryBootstrappingUtils.enableGrpcMetrics(
               ChannelConfigurator.lift(channelProviderBuilder.getChannelConfigurator()),

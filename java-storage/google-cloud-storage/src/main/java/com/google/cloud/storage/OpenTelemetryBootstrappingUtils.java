@@ -21,7 +21,11 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.api.gax.rpc.UnavailableException;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
+import com.google.auth.oauth2.GdchCredentials;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.cloud.opentelemetry.metric.GoogleCloudMetricExporter;
@@ -33,6 +37,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.net.HostAndPort;
+import com.google.common.net.InetAddresses;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
@@ -69,6 +74,7 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -131,19 +137,70 @@ final class OpenTelemetryBootstrappingUtils {
       @Nullable Credentials credentials,
       boolean shouldSuppressExceptions,
       Function<String, String> envProvider) {
+    return enableGrpcMetrics(
+        channelConfigurator,
+        endpoint,
+        projectId,
+        universeDomain,
+        credentials,
+        shouldSuppressExceptions,
+        () -> new GCPResourceProvider().getAttributes(),
+        envProvider);
+  }
+
+  @VisibleForTesting
+  @NonNull
+  static ChannelConfigurator enableGrpcMetrics(
+      @Nullable ChannelConfigurator channelConfigurator,
+      String endpoint,
+      @Nullable String projectId,
+      @Nullable String universeDomain,
+      @Nullable Credentials credentials,
+      boolean shouldSuppressExceptions,
+      Attributes detectedAttributes,
+      Function<String, String> envProvider) {
+    return enableGrpcMetrics(
+        channelConfigurator,
+        endpoint,
+        projectId,
+        universeDomain,
+        credentials,
+        shouldSuppressExceptions,
+        () -> detectedAttributes,
+        envProvider);
+  }
+
+  @NonNull
+  private static ChannelConfigurator enableGrpcMetrics(
+      @Nullable ChannelConfigurator channelConfigurator,
+      String endpoint,
+      @Nullable String projectId,
+      @Nullable String universeDomain,
+      @Nullable Credentials credentials,
+      boolean shouldSuppressExceptions,
+      Supplier<Attributes> detectedAttributesSupplier,
+      Function<String, String> envProvider) {
     ChannelConfigurator fallback =
         channelConfigurator != null ? channelConfigurator : ChannelConfigurator.identity();
-    if (credentials == null || credentials instanceof NoCredentials) {
+    if (!isSupportedCredentialsForMetrics(credentials) || isPlaintextOrLoopbackEndpoint(endpoint)) {
       return fallback;
     }
-    if (shouldSkipMetricsForUnconfiguredUniverse(endpoint, universeDomain, envProvider)) {
+    String resolvedUniverseDomain;
+    try {
+      resolvedUniverseDomain = resolveUniverseDomain(universeDomain, envProvider);
+    } catch (IllegalArgumentException e) {
+      log.log(
+          Level.WARNING,
+          "Invalid universe domain for gRPC client metrics. Skipping metrics export: "
+              + e.getMessage(),
+          e);
       return fallback;
     }
-    String resolvedUniverseDomain = resolveUniverseDomain(universeDomain, envProvider);
+    if (!credentialsMatchUniverseDomain(credentials, resolvedUniverseDomain)) {
+      return fallback;
+    }
 
-    GCPResourceProvider resourceProvider = new GCPResourceProvider();
-    Attributes detectedAttributes = resourceProvider.getAttributes();
-
+    Attributes detectedAttributes = detectedAttributesSupplier.get();
     String projectIdToUse =
         resolveProjectIdForMetrics(detectedAttributes, projectId, "gRPC client metrics");
     if (projectIdToUse == null) {
@@ -156,7 +213,7 @@ final class OpenTelemetryBootstrappingUtils {
     try {
       metricServiceSettings =
           buildMetricServiceSettings(metricServiceEndpoint, resolvedUniverseDomain, credentials);
-    } catch (IOException e) {
+    } catch (Exception e) {
       log.log(
           Level.WARNING,
           "Failed to configure Cloud Monitoring settings for gRPC client metrics: "
@@ -220,41 +277,128 @@ final class OpenTelemetryBootstrappingUtils {
     }
   }
 
+  private static final ImmutableList<String> STRIPPED_ENDPOINT_SCHEMES =
+      ImmutableList.of(
+          "google-c2p-experimental:///", "google-c2p:///", "dns:///", "https://", "http://");
+
+  private static final ImmutableList<String> AUTHORITY_ENDPOINT_SCHEMES =
+      ImmutableList.of("google-c2p-experimental://", "google-c2p://", "dns://");
+
+  private static boolean isSupportedCredentialsForMetrics(@Nullable Credentials credentials) {
+    if (credentials == null
+        || credentials instanceof NoCredentials
+        || credentials instanceof GdchCredentials
+        || credentials instanceof ApiKeyCredentials) {
+      return false;
+    }
+    if ((credentials.getClass() == OAuth2Credentials.class
+            || credentials.getClass() == GoogleCredentials.class)
+        && ((OAuth2Credentials) credentials).getAccessToken() == null) {
+      return false;
+    }
+    return true;
+  }
+
+  private static String normalizeUniverseDomain(String universeDomain) {
+    String normalized = universeDomain.trim();
+    if (normalized.endsWith(".")) {
+      normalized = normalized.substring(0, normalized.length() - 1);
+    }
+    return normalized.toLowerCase(Locale.ROOT);
+  }
+
+  @Nullable
+  private static String normalizeHost(@Nullable String host) {
+    if (host == null) {
+      return null;
+    }
+    String normalized = host.toLowerCase(Locale.ROOT);
+    if (normalized.endsWith(".")) {
+      normalized = normalized.substring(0, normalized.length() - 1);
+    }
+    return normalized;
+  }
+
   @VisibleForTesting
   static String resolveUniverseDomain(
       @Nullable String universeDomain, Function<String, String> envProvider) {
     if (universeDomain != null) {
-      if (universeDomain.trim().isEmpty()) {
+      String normalized = normalizeUniverseDomain(universeDomain);
+      if (normalized.isEmpty()) {
         throw new IllegalArgumentException("The universe domain value cannot be empty.");
       }
-      return universeDomain;
+      return normalized;
     }
     String envUniverseDomain = envProvider.apply(EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN);
-    if (envUniverseDomain != null && !envUniverseDomain.trim().isEmpty()) {
-      return envUniverseDomain;
+    if (envUniverseDomain != null) {
+      String normalized = normalizeUniverseDomain(envUniverseDomain);
+      if (normalized.isEmpty()) {
+        throw new IllegalArgumentException(
+            "The " + EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN + " value cannot be empty.");
+      }
+      return normalized;
     }
     return Credentials.GOOGLE_DEFAULT_UNIVERSE;
   }
 
   @VisibleForTesting
-  static boolean shouldSkipMetricsForUnconfiguredUniverse(
-      @Nullable String endpoint,
-      @Nullable String configuredUniverseDomain,
-      Function<String, String> envProvider) {
-    if (configuredUniverseDomain != null) {
+  static boolean credentialsMatchUniverseDomain(
+      Credentials credentials, String resolvedUniverseDomain) {
+    try {
+      String credentialsUniverseDomain = credentials.getUniverseDomain();
+      if (credentialsUniverseDomain == null) {
+        log.warning(
+            "Unable to determine credentials universe domain for Cloud Monitoring metrics."
+                + " Skipping metrics export.");
+        return false;
+      }
+      String normalizedCredUniverse = normalizeUniverseDomain(credentialsUniverseDomain);
+      if (normalizedCredUniverse.isEmpty()
+          || !resolvedUniverseDomain.equals(normalizedCredUniverse)) {
+        log.warning(
+            "Configured universe domain ("
+                + resolvedUniverseDomain
+                + ") does not match credentials universe domain ("
+                + credentialsUniverseDomain
+                + "). Skipping Cloud Monitoring metrics export.");
+        return false;
+      }
+      return true;
+    } catch (IOException | RuntimeException e) {
+      log.log(
+          Level.WARNING,
+          "Failed to validate credentials universe domain for Cloud Monitoring metrics."
+              + " Skipping metrics export: "
+              + e.getMessage(),
+          e);
       return false;
     }
-    String envUniverseDomain = envProvider.apply(EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN);
-    if (envUniverseDomain != null && !envUniverseDomain.trim().isEmpty()) {
+  }
+
+  @VisibleForTesting
+  static boolean isPlaintextOrLoopbackEndpoint(@Nullable String endpoint) {
+    if (endpoint == null) {
       return false;
     }
-    HostAndPort parsed = parseHostAndPort(endpoint);
+    String trimmed = endpoint.trim();
+    if (trimmed.isEmpty()) {
+      return false;
+    }
+    if (trimmed.toLowerCase(Locale.ROOT).startsWith("http://")) {
+      return true;
+    }
+    HostAndPort parsed = parseHostAndPort(trimmed);
     if (parsed == null) {
       return false;
     }
-    String host = parsed.getHost().toLowerCase(Locale.ROOT);
-    return !host.equals(Credentials.GOOGLE_DEFAULT_UNIVERSE)
-        && !host.endsWith("." + Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    String host = normalizeHost(parsed.getHost());
+    if ("localhost".equals(host) || "0.0.0.0".equals(host)) {
+      return true;
+    }
+    if (host != null && InetAddresses.isInetAddress(host)) {
+      return InetAddresses.forString(host).isLoopbackAddress();
+    }
+    return false;
   }
 
   @VisibleForTesting
@@ -270,16 +414,16 @@ final class OpenTelemetryBootstrappingUtils {
       Function<String, String> envProvider) {
     String resolvedUniverseDomain = resolveUniverseDomain(universeDomain, envProvider);
     HostAndPort parsed = parseHostAndPort(endpoint);
-    String host = parsed != null ? parsed.getHost().toLowerCase(Locale.ROOT) : null;
+    String host = parsed != null ? normalizeHost(parsed.getHost()) : null;
     int port = parsed != null ? parsed.getPortOrDefault(443) : 443;
 
     String privateHost = "private." + resolvedUniverseDomain;
     String restrictedHost = "restricted." + resolvedUniverseDomain;
 
     String metricServiceHost;
-    if (privateHost.equalsIgnoreCase(host)) {
+    if (privateHost.equals(host)) {
       metricServiceHost = privateHost;
-    } else if (restrictedHost.equalsIgnoreCase(host)) {
+    } else if (restrictedHost.equals(host)) {
       metricServiceHost = restrictedHost;
     } else {
       metricServiceHost = "monitoring." + resolvedUniverseDomain;
@@ -292,15 +436,18 @@ final class OpenTelemetryBootstrappingUtils {
       String metricServiceEndpoint, String resolvedUniverseDomain, Credentials credentials)
       throws IOException {
     Preconditions.checkArgument(
-        credentials != null && !(credentials instanceof NoCredentials),
+        isSupportedCredentialsForMetrics(credentials),
         "Authenticated credentials are required for Cloud Monitoring export.");
+    String normalizedUniverseDomain = normalizeUniverseDomain(resolvedUniverseDomain);
+    Preconditions.checkArgument(
+        !normalizedUniverseDomain.isEmpty(), "The universe domain value cannot be empty.");
     MetricServiceSettings.Builder settingsBuilder =
         MetricServiceSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
-            .setUniverseDomain(resolvedUniverseDomain);
-    String defaultMonitoringEndpoint = "monitoring." + resolvedUniverseDomain + ":443";
-    if (!defaultMonitoringEndpoint.equals(metricServiceEndpoint)) {
-      settingsBuilder.setEndpoint(metricServiceEndpoint);
+            .setUniverseDomain(normalizedUniverseDomain)
+            .setEndpoint(metricServiceEndpoint);
+    if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(normalizedUniverseDomain)) {
+      settingsBuilder.getStubSettingsBuilder().setMtlsEndpoint(null);
     }
     settingsBuilder
         .createMetricDescriptorSettings()
@@ -314,16 +461,35 @@ final class OpenTelemetryBootstrappingUtils {
       return null;
     }
     String s = host.trim();
-    if (s.startsWith("google-c2p:///")) {
-      s = s.substring("google-c2p:///".length());
-    } else if (s.startsWith("https://")) {
-      s = s.substring("https://".length());
-    } else if (s.startsWith("http://")) {
-      s = s.substring("http://".length());
+    String lower = s.toLowerCase(Locale.ROOT);
+    boolean schemeStripped = false;
+    for (String prefix : STRIPPED_ENDPOINT_SCHEMES) {
+      if (lower.startsWith(prefix)) {
+        s = s.substring(prefix.length());
+        schemeStripped = true;
+        break;
+      }
     }
-    int slashIdx = s.indexOf('/');
-    if (slashIdx >= 0) {
-      s = s.substring(0, slashIdx);
+    if (!schemeStripped) {
+      for (String authorityPrefix : AUTHORITY_ENDPOINT_SCHEMES) {
+        if (lower.startsWith(authorityPrefix)) {
+          int slashAfterAuthority = s.indexOf('/', authorityPrefix.length());
+          if (slashAfterAuthority >= 0) {
+            s = s.substring(slashAfterAuthority + 1);
+          } else {
+            return null;
+          }
+          break;
+        }
+      }
+    }
+    int delimiterIdx = findFirstDelimiter(s);
+    if (delimiterIdx >= 0) {
+      s = s.substring(0, delimiterIdx);
+    }
+    int atIdx = s.lastIndexOf('@');
+    if (atIdx >= 0) {
+      s = s.substring(atIdx + 1);
     }
     if (s.isEmpty()) {
       return null;
@@ -333,6 +499,16 @@ final class OpenTelemetryBootstrappingUtils {
     } catch (IllegalArgumentException e) {
       return null;
     }
+  }
+
+  private static int findFirstDelimiter(String s) {
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      if (c == '/' || c == '?' || c == '#') {
+        return i;
+      }
+    }
+    return -1;
   }
 
   static String formatStorageEndpoint(@Nullable String host) {
@@ -396,30 +572,15 @@ final class OpenTelemetryBootstrappingUtils {
       @Nullable Credentials credentials,
       @Nullable Duration metricInterval,
       String api) {
-    if (credentials == null || credentials instanceof NoCredentials) {
-      return null;
-    }
-    String formattedEndpoint = formatStorageEndpoint(host);
-    if (shouldSkipMetricsForUnconfiguredUniverse(
-        formattedEndpoint, universeDomain, System::getenv)) {
-      return null;
-    }
-    try {
-      GCPResourceProvider resourceProvider = new GCPResourceProvider();
-      Attributes detectedAttributes = resourceProvider.getAttributes();
-      return createDefaultClientMeterProvider(
-          host,
-          configuredProjectId,
-          universeDomain,
-          credentials,
-          metricInterval,
-          api,
-          detectedAttributes,
-          System::getenv);
-    } catch (Exception e) {
-      log.warning("Failed to create default client MeterProvider: " + e.getMessage());
-      return null;
-    }
+    return createDefaultClientMeterProvider(
+        host,
+        configuredProjectId,
+        universeDomain,
+        credentials,
+        metricInterval,
+        api,
+        () -> new GCPResourceProvider().getAttributes(),
+        System::getenv);
   }
 
   @VisibleForTesting
@@ -439,7 +600,7 @@ final class OpenTelemetryBootstrappingUtils {
         credentials,
         metricInterval,
         api,
-        detectedAttributes,
+        () -> detectedAttributes,
         System::getenv);
   }
 
@@ -454,16 +615,36 @@ final class OpenTelemetryBootstrappingUtils {
       String api,
       Attributes detectedAttributes,
       Function<String, String> envProvider) {
+    return createDefaultClientMeterProvider(
+        host,
+        configuredProjectId,
+        universeDomain,
+        credentials,
+        metricInterval,
+        api,
+        () -> detectedAttributes,
+        envProvider);
+  }
+
+  @Nullable
+  private static SdkMeterProvider createDefaultClientMeterProvider(
+      @Nullable String host,
+      @Nullable String configuredProjectId,
+      @Nullable String universeDomain,
+      @Nullable Credentials credentials,
+      @Nullable Duration metricInterval,
+      String api,
+      Supplier<Attributes> detectedAttributesSupplier,
+      Function<String, String> envProvider) {
     try {
-      if (credentials == null || credentials instanceof NoCredentials) {
-        return null;
-      }
-      String formattedEndpoint = formatStorageEndpoint(host);
-      if (shouldSkipMetricsForUnconfiguredUniverse(
-          formattedEndpoint, universeDomain, envProvider)) {
+      if (!isSupportedCredentialsForMetrics(credentials) || isPlaintextOrLoopbackEndpoint(host)) {
         return null;
       }
       String resolvedUniverseDomain = resolveUniverseDomain(universeDomain, envProvider);
+      if (!credentialsMatchUniverseDomain(credentials, resolvedUniverseDomain)) {
+        return null;
+      }
+      Attributes detectedAttributes = detectedAttributesSupplier.get();
       String projectIdToUse =
           resolveProjectIdForMetrics(
               detectedAttributes, configuredProjectId, "storage client metrics");
@@ -475,6 +656,7 @@ final class OpenTelemetryBootstrappingUtils {
               .putAll(detectedAttributes)
               .put(AttributeKey.stringKey("cloud.account.id"), projectIdToUse)
               .build();
+      String formattedEndpoint = formatStorageEndpoint(host);
       String metricServiceEndpoint =
           getCloudMonitoringEndpoint(formattedEndpoint, resolvedUniverseDomain, envProvider);
       MetricServiceSettings metricServiceSettings =
@@ -517,28 +699,46 @@ final class OpenTelemetryBootstrappingUtils {
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
 
   @VisibleForTesting
-  static SdkMeterProvider createMeterProvider(
-      MetricServiceSettings metricServiceSettings,
-      String projectIdToUse,
-      Attributes detectedAttributes,
-      boolean shouldSuppressExceptions) {
-
+  static MetricConfiguration createGrpcMetricConfiguration(
+      MetricServiceSettings metricServiceSettings, String projectIdToUse) {
     MonitoredResourceDescription monitoredResourceDescription =
         new MonitoredResourceDescription(
             "storage.googleapis.com/Client",
             ImmutableSet.of(
                 "project_id", "location", "cloud_platform", "host_id", "instance_id", "api"));
 
+    return MetricConfiguration.builder()
+        .setMonitoredResourceDescription(monitoredResourceDescription)
+        .setInstrumentationLibraryLabelsEnabled(false)
+        .setMetricServiceSettings(metricServiceSettings)
+        .setPrefix("storage.googleapis.com/client")
+        .setUseServiceTimeSeries(true)
+        .setProjectId(projectIdToUse)
+        .build();
+  }
+
+  @VisibleForTesting
+  static MetricConfiguration createClientMetricConfiguration(
+      MetricServiceSettings metricServiceSettings, String projectIdToUse) {
+    return MetricConfiguration.builder()
+        .setInstrumentationLibraryLabelsEnabled(false)
+        .setMetricServiceSettings(metricServiceSettings)
+        .setPrefix("custom.googleapis.com")
+        .setUseServiceTimeSeries(false)
+        .setProjectId(projectIdToUse)
+        .build();
+  }
+
+  @VisibleForTesting
+  static SdkMeterProvider createMeterProvider(
+      MetricServiceSettings metricServiceSettings,
+      String projectIdToUse,
+      Attributes detectedAttributes,
+      boolean shouldSuppressExceptions) {
+
     MetricExporter cloudMonitoringExporter =
         GoogleCloudMetricExporter.createWithConfiguration(
-            MetricConfiguration.builder()
-                .setMonitoredResourceDescription(monitoredResourceDescription)
-                .setInstrumentationLibraryLabelsEnabled(false)
-                .setMetricServiceSettings(metricServiceSettings)
-                .setPrefix("storage.googleapis.com/client")
-                .setUseServiceTimeSeries(true)
-                .setProjectId(projectIdToUse)
-                .build());
+            createGrpcMetricConfiguration(metricServiceSettings, projectIdToUse));
 
     SdkMeterProviderBuilder providerBuilder = SdkMeterProvider.builder();
 
@@ -654,13 +854,7 @@ final class OpenTelemetryBootstrappingUtils {
 
     MetricExporter cloudMonitoringExporter =
         GoogleCloudMetricExporter.createWithConfiguration(
-            MetricConfiguration.builder()
-                .setInstrumentationLibraryLabelsEnabled(false)
-                .setMetricServiceSettings(metricServiceSettings)
-                .setPrefix("custom.googleapis.com")
-                .setUseServiceTimeSeries(false)
-                .setProjectId(projectIdToUse)
-                .build());
+            createClientMetricConfiguration(metricServiceSettings, projectIdToUse));
 
     SdkMeterProviderBuilder providerBuilder = SdkMeterProvider.builder();
 
