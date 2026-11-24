@@ -30,9 +30,12 @@ import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SessionClient.SessionOption;
 import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
+import com.google.cloud.spanner.spi.v1.BatchWriteResumingServerStreamingCallable;
+import com.google.cloud.spanner.spi.v1.BatchWriteResumingServerStreamingCallable.StreamLifecycleListener;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Ticker;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
@@ -50,7 +53,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nullable;
 
 /**
@@ -350,6 +355,14 @@ class SessionImpl implements Session {
     setActive(null);
     List<BatchWriteRequest.MutationGroup> mutationGroupsProto =
         MutationGroup.toListProto(mutationGroups);
+    if (mutationGroupsProto.isEmpty()) {
+      ISpan parentSpan = getCurrentSpan();
+      if (parentSpan != null) {
+        parentSpan.end();
+      }
+      onTransactionDone();
+      return BatchWriteResumingServerStreamingCallable.emptyServerStream();
+    }
     final BatchWriteRequest.Builder requestBuilder =
         BatchWriteRequest.newBuilder()
             .setSession(getName())
@@ -364,15 +377,62 @@ class SessionImpl implements Session {
             && defaultTransactionOptions().getExcludeTxnFromChangeStreams())) {
       requestBuilder.setExcludeTxnFromChangeStreams(true);
     }
-    ISpan span = tracer.spanBuilder(SpannerImpl.BATCH_WRITE);
-    try (IScope s = tracer.withSpan(span)) {
-      return spanner.getRpc().batchWriteAtLeastOnce(requestBuilder.build(), getOptions());
+    ISpan parentSpan = getCurrentSpan();
+    ISpan batchWriteSpan = tracer.spanBuilder(SpannerImpl.BATCH_WRITE);
+    AtomicBoolean completed = new AtomicBoolean(false);
+    StreamLifecycleListener lifecycleListener =
+        new StreamLifecycleListener() {
+          @Override
+          public void onResume(int oneBasedAttempt, int remainingMutationGroups) {
+            batchWriteSpan.addAnnotation(
+                "Resuming BatchWrite stream",
+                ImmutableMap.of(
+                    "attempt", (long) oneBasedAttempt,
+                    "remaining_mutation_groups", (long) remainingMutationGroups));
+          }
+
+          @Override
+          public void onComplete(@Nullable Throwable error) {
+            if (!completed.compareAndSet(false, true)) {
+              return;
+            }
+            try {
+              if (error != null && !(error instanceof CancellationException)) {
+                SpannerException spannerError = SpannerExceptionFactory.newSpannerException(error);
+                batchWriteSpan.setStatus(spannerError);
+                if (parentSpan != null) {
+                  parentSpan.setStatus(spannerError);
+                }
+              }
+            } finally {
+              batchWriteSpan.end();
+              if (parentSpan != null) {
+                parentSpan.end();
+              }
+              onTransactionDone();
+            }
+          }
+        };
+    try (IScope s = tracer.withSpan(batchWriteSpan)) {
+      // In grpc-gcp mode, attach a ChannelAffinityRef so attempt 0 records its selected channel
+      // and retries can call useDifferentChannelOnNextCall() to exclude the failed channel.
+      // In non-grpc-gcp mode, pass null so BatchWrite is not pinned to a session channel hint and
+      // freely balances / rotates channels across retries.
+      Map<SpannerRpc.Option, ?> options =
+          spanner.getOptions().isGrpcGcpExtensionEnabled()
+              ? getSingleUseWriteChannelHintOptions()
+              : null;
+      return spanner
+          .getRpc()
+          .batchWriteAtLeastOnce(requestBuilder.build(), options, lifecycleListener);
     } catch (Throwable e) {
-      span.setStatus(e);
-      throw SpannerExceptionFactory.newSpannerException(e);
-    } finally {
-      span.end();
-      onTransactionDone();
+      SpannerException spannerException = SpannerExceptionFactory.newSpannerException(e);
+      if (completed.compareAndSet(false, true)) {
+        batchWriteSpan.setStatus(spannerException);
+        batchWriteSpan.end();
+        onTransactionDone();
+      }
+      throw spannerException;
     }
   }
 

@@ -241,6 +241,14 @@ public interface DatabaseClient {
    * #write(Iterable)} instead. However, {@code batchWriteAtLeastOnce()} method may be appropriate
    * for non-atomically committing multiple mutation groups in a single RPC with low latency.
    *
+   * <p>If the stream fails with a retryable error (such as {@link ErrorCode#UNAVAILABLE} or {@link
+   * ErrorCode#RESOURCE_EXHAUSTED}) or closes prematurely before all mutation groups have been
+   * acknowledged, the client automatically retries and resumes the request with only the remaining
+   * unacknowledged mutation groups. The {@code indexes} field in each returned {@link
+   * BatchWriteResponse} always corresponds to the original positions in {@code mutationGroups}.
+   * Mutation groups that have already received a response (including non-OK per-group statuses such
+   * as {@code ABORTED} or {@code ALREADY_EXISTS}) are never resent.
+   *
    * <p>Example of BatchWriteAtLeastOnce
    *
    * <pre>{@code

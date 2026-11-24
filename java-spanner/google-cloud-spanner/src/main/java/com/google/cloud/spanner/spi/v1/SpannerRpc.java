@@ -462,6 +462,17 @@ public interface SpannerRpc extends ServiceRpc {
   ServerStream<BatchWriteResponse> batchWriteAtLeastOnce(
       BatchWriteRequest request, @Nullable Map<Option, ?> options);
 
+  default ServerStream<BatchWriteResponse> batchWriteAtLeastOnce(
+      BatchWriteRequest request,
+      @Nullable Map<Option, ?> options,
+      @Nullable BatchWriteResumingServerStreamingCallable.StreamLifecycleListener listener) {
+    ServerStream<BatchWriteResponse> stream = batchWriteAtLeastOnce(request, options);
+    if (listener != null) {
+      listener.onComplete(null);
+    }
+    return stream;
+  }
+
   /**
    * Executes a query with streaming result.
    *

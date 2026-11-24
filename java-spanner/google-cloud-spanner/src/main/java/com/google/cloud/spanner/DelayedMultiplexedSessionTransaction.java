@@ -27,6 +27,7 @@ import com.google.cloud.spanner.MultiplexedSessionDatabaseClient.MultiplexedSess
 import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
+import com.google.cloud.spanner.spi.v1.BatchWriteResumingServerStreamingCallable;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.spanner.v1.BatchWriteResponse;
 import java.util.List;
@@ -187,6 +188,9 @@ class DelayedMultiplexedSessionTransaction extends AbstractMultiplexedSessionDat
       Iterable<MutationGroup> mutationGroups, TransactionOption... options)
       throws SpannerException {
     List<MutationGroup> materializedGroups = SessionImpl.materializeMutationGroups(mutationGroups);
+    if (materializedGroups.isEmpty()) {
+      return BatchWriteResumingServerStreamingCallable.emptyServerStream();
+    }
     SessionReference sessionReference = getSessionReference();
     try (MultiplexedSessionTransaction transaction =
         new MultiplexedSessionTransaction(
