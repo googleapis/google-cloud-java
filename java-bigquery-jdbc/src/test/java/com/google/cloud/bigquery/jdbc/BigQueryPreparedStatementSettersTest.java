@@ -59,7 +59,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
@@ -354,9 +353,8 @@ public class BigQueryPreparedStatementSettersTest {
     preparedStatement.setBoolean(5, true);
     preparedStatement.addBatch();
 
-    ArrayList<BigQueryJdbcParameter> batchParams =
-        preparedStatement.parameterHandler.parametersList;
-    QueryJobConfiguration config = preparedStatement.getWriteBatchJobConfiguration(batchParams);
+    QueryJobConfiguration config =
+        preparedStatement.getStandardBatchJobConfiguration("INSERT INTO t VALUES (?, ?, ?, ?, ?);");
     assertNotNull(config);
     assertEquals(5, config.getPositionalParameters().size());
     assertNull(config.getPositionalParameters().get(0).getValue());

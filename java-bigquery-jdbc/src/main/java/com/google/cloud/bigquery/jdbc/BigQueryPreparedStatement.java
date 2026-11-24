@@ -19,6 +19,8 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
@@ -42,6 +44,7 @@ import com.google.cloud.bigquery.storage.v1.ProtoRows;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
+import com.google.protobuf.Descriptors.FieldDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -84,6 +87,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   protected final int parameterCount;
   protected final String currentQuery;
   private final DirectInsertShape directInsertShape;
+  private boolean insertMetadataEvaluated = false;
   private Queue<ArrayList<BigQueryJdbcParameter>> batchParameters = new LinkedList<>();
   // Both hold statistics.getSchema(), which reports different things per statement type: the rows
   // a SELECT returns, versus the columns an INSERT writes.
@@ -124,7 +128,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
    * of the query text, so a statement stays usable against a service that refuses the dry run.
    */
   private QueryStatistics describeQueryQuietly() {
-    if (this.currentQuery.indexOf(POSITIONAL_PARAMETER_CHAR) == -1) {
+    if (this.currentQuery.indexOf(POSITIONAL_PARAMETER_CHAR) == -1 || getUseLegacySql()) {
       return null;
     }
     try {
@@ -172,12 +176,20 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   // for the Storage Write API. Statements with SQL expressions, partial column lists, or
   // unsupported column types leave insertSchema null so executeBatch uses standard SQL execution.
   private void captureInsertMetadata(QueryStatistics statistics) {
-    if (statistics == null
-        || this.directInsertShape == null
+    if (statistics == null) {
+      return;
+    }
+    this.insertMetadataEvaluated = true;
+    if (this.directInsertShape == null
         || !QueryStatistics.StatementType.INSERT.equals(statistics.getStatementType())
         || statistics.getSchema() == null
         || statistics.getReferencedTables() == null
         || statistics.getReferencedTables().stream().distinct().count() != 1) {
+      return;
+    }
+    TableId tableId = statistics.getReferencedTables().get(0);
+    String project = resolveTargetProject(tableId);
+    if (project == null || tableId.getDataset() == null || tableId.getTable() == null) {
       return;
     }
     Schema resolvedSchema =
@@ -186,10 +198,27 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       return;
     }
     this.insertSchema = resolvedSchema;
-    TableId tableId = statistics.getReferencedTables().get(0);
-    this.insertTableName =
-        TableName.of(tableId.getProject(), tableId.getDataset(), tableId.getTable());
+    this.insertTableName = TableName.of(project, tableId.getDataset(), tableId.getTable());
     LOG.finer("insertTableName: %s, insertSchema: %s", this.insertTableName, this.insertSchema);
+  }
+
+  private String resolveTargetProject(TableId tableId) {
+    if (tableId.getProject() != null) {
+      return tableId.getProject();
+    }
+    DatasetId defaultDataset = this.querySettings.getDefaultDataset();
+    if (this.directInsertShape != null
+        && this.directInsertShape.unqualifiedTable
+        && defaultDataset != null
+        && defaultDataset.getProject() != null) {
+      return defaultDataset.getProject();
+    }
+    String catalog = this.connection != null ? this.connection.getCatalog() : null;
+    if (catalog != null) {
+      return catalog;
+    }
+    BigQuery bq = this.connection != null ? this.connection.getBigQuery() : null;
+    return bq != null && bq.getOptions() != null ? bq.getOptions().getProjectId() : null;
   }
 
   static Schema resolveInsertSchema(
@@ -800,13 +829,19 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   private int[] executeBatchInternal(int[] result) throws SQLException {
     // The constructor's dry run may have happened before the target table existed.
-    if (this.insertSchema == null
+    if (!this.insertMetadataEvaluated
         && this.directInsertShape != null
         && this.querySettings.isUseWriteAPI()
+        && !getUseLegacySql()
+        && (this.connection == null || !this.connection.isTransactionStarted())
         && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()) {
+      this.insertMetadataEvaluated = true;
       try {
-        captureInsertMetadata(
-            getQueryStatistics(getWriteBatchJobConfiguration(this.batchParameters.peek())));
+        QueryStatistics statistics = describePositionalParameterQuery(this.currentQuery);
+        if (statistics != null) {
+          applyInferredParameterTypes(statistics);
+          captureInsertMetadata(statistics);
+        }
       } catch (SQLException | RuntimeException ex) {
         LOG.warning(ex, "Could not describe INSERT target; using the standard batch path.");
       }
@@ -815,6 +850,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (useWriteAPI()) {
       long startTime = System.currentTimeMillis();
       int fallbackErrorCode = 1000;
+      boolean recordWriteApiTelemetry = true;
       StatementExecution.Builder writeApiExecutionBuilder =
           StatementExecution.newBuilder()
               .setStatementType(StatementType.STATEMENT_TYPE_INSERT)
@@ -822,15 +858,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       try {
         // Lifecycle of the cached BigQueryWriteClient belongs to BigQueryConnection.close().
         BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient();
-        LOG.info("Using Write API for bulk INSERT operation.");
 
         long rowCount = bulkInsertWithWriteAPI(writeClient);
-        int[] insertArray = new int[Math.toIntExact(rowCount)];
-        Arrays.fill(insertArray, 1);
-
-        writeApiExecutionBuilder.setStatus(Status.STATUS_SUCCESS);
-
-        return insertArray;
+        if (rowCount >= 0) {
+          int[] insertArray = new int[Math.toIntExact(rowCount)];
+          Arrays.fill(insertArray, 1);
+          writeApiExecutionBuilder.setStatus(Status.STATUS_SUCCESS);
+          return insertArray;
+        }
+        recordWriteApiTelemetry = false;
 
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
@@ -846,15 +882,17 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
         throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
       } finally {
-        if (writeApiExecutionBuilder.getStatus() == Status.STATUS_UNSPECIFIED) {
-          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
+        if (recordWriteApiTelemetry) {
+          if (writeApiExecutionBuilder.getStatus() == Status.STATUS_UNSPECIFIED) {
+            writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(fallbackErrorCode);
+          }
+          long durationMs = System.currentTimeMillis() - startTime;
+          TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
+          TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
         }
-        long durationMs = System.currentTimeMillis() - startTime;
-        TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
-        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
-
-    } else {
+    }
+    if (!useWriteAPI()) {
       try {
         LOG.info("Using individual INSERT query runs.");
         int count = this.batchParameters.size();
@@ -884,6 +922,31 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
     }
+    return result;
+  }
+
+  private boolean isWriteStreamCompatible(BigQueryJdbcBulkInsertWriter writer) {
+    Descriptor descriptor = writer.getDescriptor();
+    FieldList insertFields = this.insertSchema.getFields();
+    if (descriptor == null || descriptor.getFields().size() != insertFields.size()) {
+      return false;
+    }
+    for (int colIdx = 0; colIdx < insertFields.size(); colIdx++) {
+      FieldDescriptor fd =
+          descriptor.findFieldByName(
+              BigQueryTypeRegistry.toProtoFieldName(insertFields.get(colIdx).getName()));
+      if (fd == null) {
+        return false;
+      }
+      if (fd.isRequired()) {
+        for (ArrayList<BigQueryJdbcParameter> row : this.batchParameters) {
+          if (row.get(colIdx).getValue() == null) {
+            return false;
+          }
+        }
+      }
+    }
+    return true;
   }
 
   BigQueryJdbcBulkInsertWriter createBulkInsertWriter() {
@@ -902,6 +965,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     long rowCount;
     try {
       bulkInsertWriter.initialize(this.insertTableName, bigQueryWriteClient, retrySettings);
+      if (!isWriteStreamCompatible(bulkInsertWriter)) {
+        this.insertSchema = null;
+        return -1L;
+      }
+      LOG.info("Using Write API for bulk INSERT operation.");
       long offset = 0;
       ProtoRows.Builder protoRowsBuilder = ProtoRows.newBuilder();
       FieldList fieldLists = this.insertSchema.getFields();
@@ -948,36 +1016,24 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     return rowCount;
   }
 
-  QueryJobConfiguration getWriteBatchJobConfiguration(
-      ArrayList<BigQueryJdbcParameter> currentParameterList) throws SQLException {
-    LOG.finer("++enter++");
-    BigQueryParameterHandler batchHandler =
-        new BigQueryParameterHandler(
-            this.parameterCount, currentParameterList, this.isEnableTimestampPicos());
-    QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
-    jobConfiguration.setParameterMode("POSITIONAL");
-    jobConfiguration = batchHandler.configureParameters(jobConfiguration);
-    return jobConfiguration.build();
-  }
-
   QueryJobConfiguration getStandardBatchJobConfiguration(String query) throws SQLException {
     LOG.finer("++enter++");
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(query);
     jobConfiguration.setParameterMode("POSITIONAL");
     jobConfiguration.setPriority(QueryJobConfiguration.Priority.BATCH);
+    boolean enableTimestampPicos = this.isEnableTimestampPicos();
     int index = 0;
     while (!this.batchParameters.isEmpty()) {
       ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
 
-      for (BigQueryJdbcParameter parameter : parameterList) {
-        Object parameterValue =
-            BigQueryParameterHandler.formatValueForQueryParameter(
-                parameter.getValue(), parameter.getSqlType(), this.isEnableTimestampPicos());
-        StandardSQLTypeName sqlType = parameter.getSqlType();
+      for (int i = 0; i < this.parameterCount; i++) {
+        BigQueryJdbcParameter parameter = parameterList.get(i);
+        QueryParameterValue queryParameter =
+            BigQueryParameterHandler.toQueryParameterValue(parameter, enableTimestampPicos);
         LOG.finer(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
-            parameterValue, sqlType, index++);
-        jobConfiguration.addPositionalParameter(QueryParameterValue.of(parameterValue, sqlType));
+            queryParameter.getValue(), queryParameter.getType(), index++);
+        jobConfiguration.addPositionalParameter(queryParameter);
       }
     }
     return jobConfiguration.build();
@@ -988,8 +1044,30 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     return this.querySettings.isUseWriteAPI()
         && this.insertSchema != null
         && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()
+        && isWriteApiAllowedBySessionAndTransaction()
         && BigQueryParameterHandler.areBatchParametersCompatibleWithWriteApi(
             this.insertSchema.getFields(), this.batchParameters);
+  }
+
+  private boolean isWriteApiAllowedBySessionAndTransaction() {
+    if (this.connection == null) {
+      return true;
+    }
+    if (this.connection.isTransactionStarted()) {
+      return false;
+    }
+    if (this.insertTableName != null && this.insertTableName.getDataset().startsWith("_")) {
+      BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+      boolean sessionActive =
+          this.connection.isSessionEnabled() || (snapshot != null && snapshot.sessionInfo != null);
+      DatasetId defaultDataset = this.querySettings.getDefaultDataset();
+      if (sessionActive
+          && (defaultDataset == null
+              || !this.insertTableName.getDataset().equals(defaultDataset.getDataset()))) {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override
