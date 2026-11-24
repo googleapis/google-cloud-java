@@ -119,6 +119,9 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   private transient HttpTransportFactory transportFactory;
 
+  // Lazily cached self-signed JWT credentials for scope-based requests, where the claims are
+  // identical across requests. Reused across calls so the RSA key only signs once per expiry
+  // window (JwtCredentials handles re-signing near expiration).
   private transient @Nullable JwtCredentials selfSignedJwtCredentialsWithScope = null;
 
   /**
@@ -861,6 +864,8 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   /**
    * Returns a new JwtCredentials instance with modified claims.
+   *
+   * <p>The returned credentials use the same universe domain as these credentials.
    *
    * @param newClaims new claims. Any unspecified claim fields will default to the current values.
    * @return new credentials

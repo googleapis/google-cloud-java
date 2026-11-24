@@ -93,6 +93,8 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   private final String quotaProjectId;
   @VisibleForTesting String universeDomain;
 
+  // Caches one JwtCredentials per audience (JwtClaims) so each target URI signs a JWT once per
+  // token lifetime instead of re-signing with the RSA private key on every request.
   @VisibleForTesting transient LoadingCache<JwtClaims, JwtCredentials> credentialsCache;
 
   // Until we expose this to the users it can remain transient and non-serializable
@@ -311,6 +313,10 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   }
 
   private LoadingCache<JwtClaims, JwtCredentials> createCache() {
+    // Bound entries to 100 audiences and expire them after LIFE_SPAN_SECS - CLOCK_SKEW (55 minutes)
+    // so idle audiences are evicted around the same time JwtCredentials would re-sign. The custom
+    // ticker reads clock (and the loader reads fields from the enclosing instance lazily on each
+    // cache miss) so tests can advance time with a fake clock.
     return CacheBuilder.newBuilder()
         .maximumSize(100)
         .expireAfterWrite(LIFE_SPAN_SECS - CLOCK_SKEW, TimeUnit.SECONDS)
@@ -339,6 +345,8 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
 
   /**
    * Returns a new JwtCredentials instance with modified claims.
+   *
+   * <p>The returned credentials use the same universe domain as these credentials.
    *
    * @param newClaims new claims. Any unspecified claim fields will default to the current values.
    * @return new credentials
@@ -506,9 +514,13 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
     clock = Clock.SYSTEM;
+    // Java deserialization bypasses the constructor and leaves fields absent from older serialized
+    // streams as null. Normalize universeDomain here so getUniverseDomain(), equals(), and
+    // hashCode() stay consistent with newly constructed default instances.
     if (this.universeDomain == null || this.universeDomain.trim().isEmpty()) {
       this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
     }
+    // LoadingCache is transient (not serializable), so recreate an empty cache.
     credentialsCache = createCache();
   }
 
