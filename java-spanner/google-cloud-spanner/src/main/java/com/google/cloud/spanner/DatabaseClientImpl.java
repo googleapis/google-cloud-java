@@ -30,6 +30,7 @@ import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import io.opentelemetry.api.common.Attributes;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
@@ -169,7 +170,9 @@ class DatabaseClientImpl implements DatabaseClient {
       throws SpannerException {
     ISpan span = tracer.spanBuilder(READ_WRITE_TRANSACTION, databaseAttributes, options);
     try (IScope s = tracer.withSpan(span)) {
-      return multiplexedSessionDatabaseClient.batchWriteAtLeastOnce(mutationGroups, options);
+      List<MutationGroup> materializedGroups =
+          SessionImpl.materializeMutationGroups(mutationGroups);
+      return multiplexedSessionDatabaseClient.batchWriteAtLeastOnce(materializedGroups, options);
     } catch (RuntimeException e) {
       span.setStatus(e);
       throw e;
