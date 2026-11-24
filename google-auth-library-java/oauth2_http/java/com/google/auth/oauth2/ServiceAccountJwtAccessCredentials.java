@@ -91,9 +91,9 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   private final String privateKeyId;
   private final URI defaultAudience;
   private final String quotaProjectId;
-  private final String universeDomain;
+  @VisibleForTesting String universeDomain;
 
-  private transient LoadingCache<JwtClaims, JwtCredentials> credentialsCache;
+  @VisibleForTesting transient LoadingCache<JwtClaims, JwtCredentials> credentialsCache;
 
   // Until we expose this to the users it can remain transient and non-serializable
   @VisibleForTesting transient Clock clock = Clock.SYSTEM;
@@ -467,7 +467,13 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   @Override
   public int hashCode() {
     return Objects.hash(
-        clientId, clientEmail, privateKey, privateKeyId, defaultAudience, quotaProjectId);
+        clientId,
+        clientEmail,
+        privateKey,
+        privateKeyId,
+        defaultAudience,
+        quotaProjectId,
+        universeDomain);
   }
 
   @Override
@@ -478,6 +484,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
         .add("privateKeyId", privateKeyId)
         .add("defaultAudience", defaultAudience)
         .add("quotaProjectId", quotaProjectId)
+        .add("universeDomain", universeDomain)
         .toString();
   }
 
@@ -492,12 +499,16 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
         && Objects.equals(this.privateKey, other.privateKey)
         && Objects.equals(this.privateKeyId, other.privateKeyId)
         && Objects.equals(this.defaultAudience, other.defaultAudience)
-        && Objects.equals(this.quotaProjectId, other.quotaProjectId);
+        && Objects.equals(this.quotaProjectId, other.quotaProjectId)
+        && Objects.equals(this.universeDomain, other.universeDomain);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
     clock = Clock.SYSTEM;
+    if (this.universeDomain == null || this.universeDomain.trim().isEmpty()) {
+      this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    }
     credentialsCache = createCache();
   }
 

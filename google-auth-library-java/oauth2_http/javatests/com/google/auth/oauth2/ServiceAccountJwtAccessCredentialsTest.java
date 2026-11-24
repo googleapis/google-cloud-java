@@ -563,27 +563,7 @@ class ServiceAccountJwtAccessCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void toString_containsFields() throws IOException {
-    PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
-    ServiceAccountJwtAccessCredentials credentials =
-        ServiceAccountJwtAccessCredentials.newBuilder()
-            .setClientId(SA_CLIENT_ID)
-            .setClientEmail(SA_CLIENT_EMAIL)
-            .setPrivateKey(privateKey)
-            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
-            .setDefaultAudience(CALL_URI)
-            .setQuotaProjectId(QUOTA_PROJECT)
-            .build();
-    String expectedToString =
-        String.format(
-            "ServiceAccountJwtAccessCredentials{clientId=%s, clientEmail=%s, privateKeyId=%s, "
-                + "defaultAudience=%s, quotaProjectId=%s}",
-            SA_CLIENT_ID, SA_CLIENT_EMAIL, SA_PRIVATE_KEY_ID, CALL_URI, QUOTA_PROJECT);
-    assertEquals(expectedToString, credentials.toString());
-  }
-
-  @Test
-  void hashCode_equals() throws IOException {
+  void equals_false_universeDomain() throws IOException {
     PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
     ServiceAccountJwtAccessCredentials credentials =
         ServiceAccountJwtAccessCredentials.newBuilder()
@@ -600,12 +580,14 @@ class ServiceAccountJwtAccessCredentialsTest extends BaseSerializationTest {
             .setPrivateKey(privateKey)
             .setPrivateKeyId(SA_PRIVATE_KEY_ID)
             .setDefaultAudience(CALL_URI)
+            .setUniverseDomain("example.com")
             .build();
-    assertEquals(credentials.hashCode(), otherCredentials.hashCode());
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
   }
 
   @Test
-  void serialize() throws IOException, ClassNotFoundException {
+  void toString_containsFields() throws IOException {
     PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
     ServiceAccountJwtAccessCredentials credentials =
         ServiceAccountJwtAccessCredentials.newBuilder()
@@ -614,14 +596,121 @@ class ServiceAccountJwtAccessCredentialsTest extends BaseSerializationTest {
             .setPrivateKey(privateKey)
             .setPrivateKeyId(SA_PRIVATE_KEY_ID)
             .setDefaultAudience(CALL_URI)
+            .setQuotaProjectId(QUOTA_PROJECT)
             .build();
-    ServiceAccountJwtAccessCredentials deserializedCredentials =
-        serializeAndDeserialize(credentials);
-    verifyJwtAccess(deserializedCredentials.getRequestMetadata(), CALL_URI);
-    assertEquals(credentials, deserializedCredentials);
-    assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
-    assertEquals(credentials.toString(), deserializedCredentials.toString());
-    assertSame(Clock.SYSTEM, deserializedCredentials.clock);
+    String expectedToString =
+        String.format(
+            "ServiceAccountJwtAccessCredentials{clientId=%s, clientEmail=%s, privateKeyId=%s, "
+                + "defaultAudience=%s, quotaProjectId=%s, universeDomain=%s}",
+            SA_CLIENT_ID,
+            SA_CLIENT_EMAIL,
+            SA_PRIVATE_KEY_ID,
+            CALL_URI,
+            QUOTA_PROJECT,
+            GOOGLE_DEFAULT_UNIVERSE);
+    assertEquals(expectedToString, credentials.toString());
+  }
+
+  @Test
+  void hashCode_equals() throws IOException {
+    PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
+    ServiceAccountJwtAccessCredentials credentials =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId(SA_CLIENT_ID)
+            .setClientEmail(SA_CLIENT_EMAIL)
+            .setPrivateKey(privateKey)
+            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+            .setDefaultAudience(CALL_URI)
+            .setUniverseDomain("example.com")
+            .build();
+    ServiceAccountJwtAccessCredentials otherCredentials =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId(SA_CLIENT_ID)
+            .setClientEmail(SA_CLIENT_EMAIL)
+            .setPrivateKey(privateKey)
+            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+            .setDefaultAudience(CALL_URI)
+            .setUniverseDomain("example.com")
+            .build();
+    assertEquals(credentials, otherCredentials);
+    assertEquals(credentials.hashCode(), otherCredentials.hashCode());
+  }
+
+  @Test
+  void serialize() throws IOException, ClassNotFoundException {
+    PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
+    JwtClaims expectedClaims =
+        JwtClaims.newBuilder()
+            .setAudience(CALL_URI.toString())
+            .setIssuer(SA_CLIENT_EMAIL)
+            .setSubject(SA_CLIENT_EMAIL)
+            .build();
+
+    for (String universeDomain : Arrays.asList(GOOGLE_DEFAULT_UNIVERSE, "example.com")) {
+      ServiceAccountJwtAccessCredentials credentials =
+          ServiceAccountJwtAccessCredentials.newBuilder()
+              .setClientId(SA_CLIENT_ID)
+              .setClientEmail(SA_CLIENT_EMAIL)
+              .setPrivateKey(privateKey)
+              .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+              .setDefaultAudience(CALL_URI)
+              .setUniverseDomain(universeDomain)
+              .build();
+      ServiceAccountJwtAccessCredentials deserializedCredentials =
+          serializeAndDeserialize(credentials);
+      verifyJwtAccess(deserializedCredentials.getRequestMetadata(), CALL_URI);
+      assertEquals(credentials, deserializedCredentials);
+      assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
+      assertEquals(credentials.toString(), deserializedCredentials.toString());
+      assertEquals(universeDomain, deserializedCredentials.getUniverseDomain());
+      assertSame(Clock.SYSTEM, deserializedCredentials.clock);
+      JwtCredentials cached = deserializedCredentials.credentialsCache.getIfPresent(expectedClaims);
+      assertNotNull(cached);
+      assertEquals(universeDomain, cached.getUniverseDomain());
+    }
+  }
+
+  @Test
+  void deserialize_missingOrBlankUniverseDomain_defaultsToGoogleDefaultUniverse()
+      throws IOException, ClassNotFoundException {
+    PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
+    ServiceAccountJwtAccessCredentials expected =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId(SA_CLIENT_ID)
+            .setClientEmail(SA_CLIENT_EMAIL)
+            .setPrivateKey(privateKey)
+            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+            .setDefaultAudience(CALL_URI)
+            .build();
+    JwtClaims expectedClaims =
+        JwtClaims.newBuilder()
+            .setAudience(CALL_URI.toString())
+            .setIssuer(SA_CLIENT_EMAIL)
+            .setSubject(SA_CLIENT_EMAIL)
+            .build();
+
+    for (String serializedUniverseDomain : Arrays.asList(null, "", "   ")) {
+      ServiceAccountJwtAccessCredentials credentials =
+          ServiceAccountJwtAccessCredentials.newBuilder()
+              .setClientId(SA_CLIENT_ID)
+              .setClientEmail(SA_CLIENT_EMAIL)
+              .setPrivateKey(privateKey)
+              .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+              .setDefaultAudience(CALL_URI)
+              .build();
+      credentials.universeDomain = serializedUniverseDomain;
+
+      ServiceAccountJwtAccessCredentials deserialized = serializeAndDeserialize(credentials);
+      assertEquals(GOOGLE_DEFAULT_UNIVERSE, deserialized.getUniverseDomain());
+      assertEquals(expected, deserialized);
+      assertEquals(deserialized, expected);
+      assertEquals(expected.hashCode(), deserialized.hashCode());
+      assertEquals(expected.toString(), deserialized.toString());
+      verifyJwtAccess(deserialized.getRequestMetadata(), CALL_URI);
+      JwtCredentials cached = deserialized.credentialsCache.getIfPresent(expectedClaims);
+      assertNotNull(cached);
+      assertEquals(GOOGLE_DEFAULT_UNIVERSE, cached.getUniverseDomain());
+    }
   }
 
   @Test
@@ -905,20 +994,69 @@ class ServiceAccountJwtAccessCredentialsTest extends BaseSerializationTest {
   void jwtWithClaims_propagatesUniverseDomain() throws IOException {
     PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
     JwtClaims newClaims = JwtClaims.newBuilder().setAudience("new-audience").build();
-    for (String universeDomain : Arrays.asList(null, "example.com")) {
-      ServiceAccountJwtAccessCredentials credentials =
-          ServiceAccountJwtAccessCredentials.newBuilder()
-              .setClientId(SA_CLIENT_ID)
-              .setClientEmail(SA_CLIENT_EMAIL)
-              .setPrivateKey(privateKey)
-              .setPrivateKeyId(SA_PRIVATE_KEY_ID)
-              .setDefaultAudience(URI.create("default-audience"))
-              .setUniverseDomain(universeDomain)
-              .build();
 
-      JwtCredentials jwtCredentials = credentials.jwtWithClaims(newClaims);
-      assertEquals(credentials.getUniverseDomain(), jwtCredentials.getUniverseDomain());
-    }
+    ServiceAccountJwtAccessCredentials defaultCredentials =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId(SA_CLIENT_ID)
+            .setClientEmail(SA_CLIENT_EMAIL)
+            .setPrivateKey(privateKey)
+            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+            .setDefaultAudience(URI.create("default-audience"))
+            .build();
+    assertEquals(
+        GOOGLE_DEFAULT_UNIVERSE, defaultCredentials.jwtWithClaims(newClaims).getUniverseDomain());
+
+    ServiceAccountJwtAccessCredentials customCredentials =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId(SA_CLIENT_ID)
+            .setClientEmail(SA_CLIENT_EMAIL)
+            .setPrivateKey(privateKey)
+            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+            .setDefaultAudience(URI.create("default-audience"))
+            .setUniverseDomain("example.com")
+            .build();
+    assertEquals("example.com", customCredentials.jwtWithClaims(newClaims).getUniverseDomain());
+
+    ServiceAccountJwtAccessCredentials jsonCredentials =
+        ServiceAccountJwtAccessCredentials.fromJson(
+            writeServiceAccountJson("example.com"), CALL_URI);
+    assertEquals("example.com", jsonCredentials.jwtWithClaims(newClaims).getUniverseDomain());
+  }
+
+  @Test
+  void getRequestMetadata_propagatesUniverseDomainToCachedJwtCredentials() throws IOException {
+    PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
+    JwtClaims expectedClaims =
+        JwtClaims.newBuilder()
+            .setAudience(CALL_URI.toString())
+            .setIssuer(SA_CLIENT_EMAIL)
+            .setSubject(SA_CLIENT_EMAIL)
+            .build();
+
+    ServiceAccountJwtAccessCredentials defaultCredentials =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId(SA_CLIENT_ID)
+            .setClientEmail(SA_CLIENT_EMAIL)
+            .setPrivateKey(privateKey)
+            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+            .build();
+    defaultCredentials.getRequestMetadata(CALL_URI);
+    JwtCredentials defaultCached = defaultCredentials.credentialsCache.getIfPresent(expectedClaims);
+    assertNotNull(defaultCached);
+    assertEquals(GOOGLE_DEFAULT_UNIVERSE, defaultCached.getUniverseDomain());
+
+    ServiceAccountJwtAccessCredentials customCredentials =
+        ServiceAccountJwtAccessCredentials.newBuilder()
+            .setClientId(SA_CLIENT_ID)
+            .setClientEmail(SA_CLIENT_EMAIL)
+            .setPrivateKey(privateKey)
+            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
+            .setUniverseDomain("example.com")
+            .build();
+    customCredentials.getRequestMetadata(CALL_URI);
+    JwtCredentials customCached = customCredentials.credentialsCache.getIfPresent(expectedClaims);
+    assertNotNull(customCached);
+    assertEquals("example.com", customCached.getUniverseDomain());
   }
 
   private void verifyJwtAccess(Map<String, List<String>> metadata, URI expectedAudience)

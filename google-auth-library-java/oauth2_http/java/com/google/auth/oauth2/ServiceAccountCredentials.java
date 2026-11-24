@@ -1040,6 +1040,9 @@ public class ServiceAccountCredentials extends GoogleCredentials
         .build();
   }
 
+  // Helper only to catch the checked IOException from getUniverseDomain().
+  // ServiceAccountCredentials reads universeDomain from the key file or builder, so it should not
+  // throw IOException.
   private String getUniverseDomainOrThrow() {
     try {
       return getUniverseDomain();
