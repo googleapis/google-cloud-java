@@ -57,6 +57,7 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -348,7 +349,23 @@ public class CloudEnv extends AbstractTestEnv {
                         + fullMethodName));
           }
           if (BigtableGrpc.getReadRowsMethod().getFullMethodName().equals(fullMethodName)) {
-            return new SinglePointReadRowsBlockingClientCall<>(next.newCall(method, callOptions));
+            return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
+              @Override
+              public void sendMessage(ReqT message) {
+                if (message instanceof ReadRowsRequest
+                    && isSinglePointReadRows((ReadRowsRequest) message)) {
+                  StatusRuntimeException error =
+                      Status.FAILED_PRECONDITION
+                          .withDescription(
+                              "Expected protocol SESSION (-Dbigtable.expected-protocol=SESSION), "
+                                  + "but attempted single-point classic ReadRows RPC")
+                          .asRuntimeException();
+                  cancel(error.getMessage(), error);
+                  throw error;
+                }
+                super.sendMessage(message);
+              }
+            };
           }
         }
 
@@ -406,114 +423,6 @@ public class CloudEnv extends AbstractTestEnv {
 
     @Override
     public void sendMessage(ReqT message) {}
-  }
-
-  private static final class SinglePointReadRowsBlockingClientCall<ReqT, RespT>
-      extends SimpleForwardingClientCall<ReqT, RespT> {
-    @Nullable private Listener<RespT> listener;
-    @Nullable private Metadata headers;
-    private int pendingRequests;
-    private boolean started;
-    private boolean aborted;
-
-    SinglePointReadRowsBlockingClientCall(ClientCall<ReqT, RespT> delegate) {
-      super(delegate);
-    }
-
-    @Override
-    public synchronized void start(Listener<RespT> responseListener, Metadata headers) {
-      this.listener = responseListener;
-      this.headers = headers;
-    }
-
-    @Override
-    public synchronized void request(int numMessages) {
-      if (aborted) {
-        return;
-      }
-      if (started) {
-        super.request(numMessages);
-      } else {
-        pendingRequests = (int) Math.min(Integer.MAX_VALUE, (long) pendingRequests + numMessages);
-      }
-    }
-
-    @Override
-    public void sendMessage(ReqT message) {
-      Listener<RespT> abortListener = null;
-      synchronized (this) {
-        if (aborted) {
-          return;
-        }
-        if (!started) {
-          if (message instanceof ReadRowsRequest
-              && isSinglePointReadRows((ReadRowsRequest) message)) {
-            aborted = true;
-            abortListener = listener;
-          } else {
-            started = true;
-            super.start(listener, headers);
-            if (pendingRequests > 0) {
-              super.request(pendingRequests);
-              pendingRequests = 0;
-            }
-          }
-        }
-        if (!aborted) {
-          super.sendMessage(message);
-        }
-      }
-      if (abortListener != null) {
-        abortListener.onClose(
-            Status.FAILED_PRECONDITION.withDescription(
-                "Expected protocol SESSION (-Dbigtable.expected-protocol=SESSION), "
-                    + "but attempted single-point classic ReadRows RPC"),
-            new Metadata());
-      }
-    }
-
-    @Override
-    public synchronized void halfClose() {
-      if (aborted) {
-        return;
-      }
-      if (!started) {
-        started = true;
-        super.start(listener, headers);
-        if (pendingRequests > 0) {
-          super.request(pendingRequests);
-          pendingRequests = 0;
-        }
-      }
-      super.halfClose();
-    }
-
-    @Override
-    public void cancel(@Nullable String message, @Nullable Throwable cause) {
-      Listener<RespT> cancelListener = null;
-      synchronized (this) {
-        if (aborted) {
-          return;
-        }
-        if (started) {
-          super.cancel(message, cause);
-        } else {
-          aborted = true;
-          cancelListener = listener;
-        }
-      }
-      if (cancelListener != null) {
-        cancelListener.onClose(
-            Status.CANCELLED.withDescription(message).withCause(cause), new Metadata());
-      }
-    }
-
-    @Override
-    public synchronized void setMessageCompression(boolean enabled) {
-      if (started) {
-        super.setMessageCompression(enabled);
-      }
-    }
   }
 
   private class AppProfileInterceptor implements ClientInterceptor {

@@ -28,7 +28,6 @@ import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
 import com.google.bigtable.v2.SessionClientConfiguration;
@@ -54,10 +53,11 @@ import io.grpc.Grpc;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.net.InetSocketAddress;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import org.junit.jupiter.api.Test;
 
 class CloudEnvTest {
@@ -326,16 +326,14 @@ class CloudEnvTest {
 
     // Single-point ReadRows (rows_limit=1 + single row key or closed-closed equal range) blocked.
     ByteString key = ByteString.copyFromUtf8("row-1");
-    assertBlockedBySession(
+    assertSinglePointReadRowsBlockedBySession(
         interceptor,
-        BigtableGrpc.getReadRowsMethod(),
         ReadRowsRequest.newBuilder()
             .setRowsLimit(1)
             .setRows(RowSet.newBuilder().addRowKeys(key))
             .build());
-    assertBlockedBySession(
+    assertSinglePointReadRowsBlockedBySession(
         interceptor,
-        BigtableGrpc.getReadRowsMethod(),
         ReadRowsRequest.newBuilder()
             .setRowsLimit(1)
             .setRows(
@@ -399,27 +397,17 @@ class CloudEnvTest {
         GetClientConfigurationRequest.getDefaultInstance());
   }
 
-  @Test
-  void protocolEnforcementInterceptor_sessionCancelBeforeSendMessageDeliversCancelled() {
-    ClientInterceptor interceptor =
-        CloudEnv.buildProtocolEnforcementInterceptor(ExpectedProtocol.SESSION);
+  private static void assertSinglePointReadRowsBlockedBySession(
+      ClientInterceptor interceptor, ReadRowsRequest request) {
     FakeChannel channel = new FakeChannel(null);
-    ClientCall<ReadRowsRequest, ReadRowsResponse> call =
-        interceptor.interceptCall(BigtableGrpc.getReadRowsMethod(), CallOptions.DEFAULT, channel);
-    AtomicReference<Status> closedStatus = new AtomicReference<>();
-    call.start(
-        new ClientCall.Listener<ReadRowsResponse>() {
-          @Override
-          public void onClose(Status status, Metadata trailers) {
-            closedStatus.set(status);
-          }
-        },
-        new Metadata());
-    call.cancel("caller cancelled", null);
-
-    assertThat(channel.forwarded.get()).isFalse();
-    assertThat(closedStatus.get().getCode()).isEqualTo(Status.Code.CANCELLED);
-    assertThat(closedStatus.get().getDescription()).isEqualTo("caller cancelled");
+    StatusRuntimeException error =
+        assertThrows(
+            StatusRuntimeException.class,
+            () -> invokeCall(interceptor, channel, BigtableGrpc.getReadRowsMethod(), request));
+    assertThat(error.getStatus().getCode()).isEqualTo(Status.Code.FAILED_PRECONDITION);
+    assertThat(error.getStatus().getDescription()).contains("Expected protocol SESSION");
+    assertThat(channel.sentMessage.get()).isFalse();
+    assertThat(channel.cancelled.get()).isTrue();
   }
 
   private static <ReqT, RespT> void assertBlockedBySession(
@@ -437,6 +425,7 @@ class CloudEnvTest {
     Status status = invokeCall(interceptor, channel, method, request);
     assertThat(status.getCode()).isEqualTo(Status.Code.OK);
     assertThat(channel.forwarded.get()).isTrue();
+    assertThat(channel.sentMessage.get()).isTrue();
   }
 
   private static <ReqT, RespT> Status invokeCall(
@@ -463,6 +452,8 @@ class CloudEnvTest {
   private static final class FakeChannel extends Channel {
     @Nullable private final InetSocketAddress remoteAddr;
     private final AtomicBoolean forwarded = new AtomicBoolean();
+    private final AtomicBoolean sentMessage = new AtomicBoolean();
+    private final AtomicBoolean cancelled = new AtomicBoolean();
 
     FakeChannel(@Nullable InetSocketAddress remoteAddr) {
       this.remoteAddr = remoteAddr;
@@ -484,7 +475,9 @@ class CloudEnvTest {
         public void request(int numMessages) {}
 
         @Override
-        public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+        public void cancel(@Nullable String message, @Nullable Throwable cause) {
+          cancelled.set(true);
+        }
 
         @Override
         public void halfClose() {
@@ -493,7 +486,9 @@ class CloudEnvTest {
         }
 
         @Override
-        public void sendMessage(RequestT message) {}
+        public void sendMessage(RequestT message) {
+          sentMessage.set(true);
+        }
 
         @Override
         public Attributes getAttributes() {
