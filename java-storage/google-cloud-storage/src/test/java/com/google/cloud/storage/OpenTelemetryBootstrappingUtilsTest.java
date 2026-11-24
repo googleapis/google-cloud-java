@@ -21,6 +21,7 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assume.assumeFalse;
 import static org.mockito.Mockito.mock;
 
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
@@ -35,6 +36,8 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import java.io.IOException;
+import java.net.URI;
+import java.security.PrivateKey;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -420,7 +423,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
           null,
           NoCredentials.getInstance(),
           ApiKeyCredentials.create("key"),
-          mock(GdchCredentials.class),
+          gdchCredentials(),
           OAuth2Credentials.create(null),
           GoogleCredentials.create(null)
         }) {
@@ -517,6 +520,17 @@ public final class OpenTelemetryBootstrappingUtilsTest {
     return GoogleCredentials.newBuilder()
         .setAccessToken(new AccessToken("token", null))
         .setUniverseDomain(universeDomain)
+        .build();
+  }
+
+  private static GdchCredentials gdchCredentials() {
+    return GdchCredentials.newBuilder()
+        .setProjectId("project")
+        .setPrivateKeyId("key-id")
+        .setPrivateKey(mock(PrivateKey.class))
+        .setServiceIdentityName("service-identity")
+        .setTokenServerUri(URI.create("https://localhost/token"))
+        .setHttpTransportFactory(NetHttpTransport::new)
         .build();
   }
 }
