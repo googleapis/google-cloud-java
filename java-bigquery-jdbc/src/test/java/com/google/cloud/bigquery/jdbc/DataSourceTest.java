@@ -100,16 +100,18 @@ public class DataSourceTest {
       assertEquals("https://sts.googleapis.com/v1/token", ds.getByoidTokenUri());
 
       // 2. GOOGLE_CLOUD_UNIVERSE_DOMAIN is set, explicit universeDomain is omitted
-      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn("apis-tpczero.goog");
-      assertEquals("apis-tpczero.goog", ds.getUniverseDomain());
+      urlUtil
+          .when(BigQueryJdbcUrlUtility::getEnvUniverseDomain)
+          .thenReturn("custom-universe.example.com");
+      assertEquals("custom-universe.example.com", ds.getUniverseDomain());
       assertNull(ds.getExplicitUniverseDomain());
-      assertEquals("https://sts.apis-tpczero.goog/v1/token", ds.getByoidTokenUri());
+      assertEquals("https://sts.custom-universe.example.com/v1/token", ds.getByoidTokenUri());
 
       // 3. Explicit universeDomain takes precedence over GOOGLE_CLOUD_UNIVERSE_DOMAIN
-      ds.setUniverseDomain("explicit-tpc.goog");
-      assertEquals("explicit-tpc.goog", ds.getUniverseDomain());
-      assertEquals("explicit-tpc.goog", ds.getExplicitUniverseDomain());
-      assertEquals("https://sts.explicit-tpc.goog/v1/token", ds.getByoidTokenUri());
+      ds.setUniverseDomain("explicit-universe.example.com");
+      assertEquals("explicit-universe.example.com", ds.getUniverseDomain());
+      assertEquals("explicit-universe.example.com", ds.getExplicitUniverseDomain());
+      assertEquals("https://sts.explicit-universe.example.com/v1/token", ds.getByoidTokenUri());
 
       // 4. Explicit BYOID_TokenUri takes precedence over universeDomain derivation
       ds.setByoidTokenUri("https://custom-sts.internal/v1/token");
@@ -123,6 +125,7 @@ public class DataSourceTest {
     assertNull(BigQueryJdbcUrlUtility.normalizeUniverseDomain(""));
     assertNull(BigQueryJdbcUrlUtility.normalizeUniverseDomain("   "));
     assertEquals(
-        "apis-tpczero.goog", BigQueryJdbcUrlUtility.normalizeUniverseDomain(" apis-tpczero.goog "));
+        "custom-universe.example.com",
+        BigQueryJdbcUrlUtility.normalizeUniverseDomain(" custom-universe.example.com "));
   }
 }

@@ -253,7 +253,7 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `ProxyPwd` | `null` | Password for proxy server authentication. |
 | `EndpointOverrides` | `null` | Semicolon or comma-separated list of custom service endpoint overrides. Supported keys: `BIGQUERY`, `READ_API`, `OAUTH2`, `STS`, `ACCOUNTS`. |
 | `PrivateServiceConnectUris` | `null` | Alias for `EndpointOverrides`. Accepts the same custom service endpoint override format and supported keys. |
-| `universeDomain` | `null` (falls back to `GOOGLE_CLOUD_UNIVERSE_DOMAIN`, then `googleapis.com`) | Domain name for Trusted Partner Cloud (TPC), Google Cloud Dedicated (GCD), or custom Google universe instances. |
+| `universeDomain` | `null` (falls back to `GOOGLE_CLOUD_UNIVERSE_DOMAIN`, then `googleapis.com`) | Domain name for Google Cloud Dedicated (GCD) or custom universe domain instances. |
 | `SSLTrustStore` | `null` | Path to custom Java TrustStore file containing trusted server certificates for SSL. |
 | `SSLTrustStorePwd` | `null` | Password for accessing the custom Java TrustStore file. |
 | `SSLTrustStoreType` | *System Default* (`JKS`/`PKCS12`) | Type of the custom Java TrustStore file. |
@@ -627,7 +627,7 @@ jdbc:bigquery://https://bigquery.googleapis.com:443
 
 #### 3. Custom Universe Domains (`universeDomain` / `GOOGLE_CLOUD_UNIVERSE_DOMAIN`)
 
-To target Trusted Partner Cloud (TPC), Google Cloud Dedicated (GCD), or non-default Universe Domain instances, specify `universeDomain` in the connection URL (or set the `GOOGLE_CLOUD_UNIVERSE_DOMAIN` environment variable):
+To target Google Cloud Dedicated (GCD) or custom universe domain instances, specify `universeDomain` in the connection URL (or set the `GOOGLE_CLOUD_UNIVERSE_DOMAIN` environment variable):
 
 ```
 jdbc:bigquery://https://www.my-universe.cloud:443

@@ -1079,21 +1079,21 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testTpcServiceAccountJsonKeyNotOverwrittenWhenUniverseDomainOmitted()
+  public void testCustomUniverseDomainServiceAccountJsonKeyNotOverwrittenWhenUniverseDomainOmitted()
       throws Exception {
     JsonObject saJson = new JsonObject();
     saJson.addProperty("type", "service_account");
-    saJson.addProperty("project_id", "tpc-project");
+    saJson.addProperty("project_id", "custom-universe-project");
     saJson.addProperty("private_key_id", "key-id-1");
     saJson.addProperty("private_key", fake_pkcs8_key);
-    saJson.addProperty("client_email", "sa@tpc-project.iam.gserviceaccount.com");
+    saJson.addProperty("client_email", "sa@custom-universe-project.iam.gserviceaccount.com");
     saJson.addProperty("client_id", "123456");
-    saJson.addProperty("universe_domain", TPC_UNIVERSE);
+    saJson.addProperty("universe_domain", CUSTOM_UNIVERSE);
 
     String url =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=tpc-project;OAuthType=0;EnableDiagnosticTelemetry=0;"
-            + "OAuthServiceAcctEmail=sa@tpc-project.iam.gserviceaccount.com;OAuthPvtKey="
+            + "ProjectId=custom-universe-project;OAuthType=0;EnableDiagnosticTelemetry=0;"
+            + "OAuthServiceAcctEmail=sa@custom-universe-project.iam.gserviceaccount.com;OAuthPvtKey="
             + saJson;
 
     try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
@@ -1104,7 +1104,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
         assertFalse(
             connection.overrideProperties.containsKey(
                 BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
-        assertEquals(TPC_UNIVERSE, connection.credentials.getUniverseDomain());
+        assertEquals(CUSTOM_UNIVERSE, connection.credentials.getUniverseDomain());
         // Client-side universe validation must fail-closed before any network RPC is sent to GDU.
         BigQueryException ex =
             assertThrows(
@@ -1137,16 +1137,16 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
     try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
         mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
-      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(TPC_UNIVERSE);
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(CUSTOM_UNIVERSE);
       try (BigQueryConnection connection = new BigQueryConnection(url)) {
         // Clients honor GOOGLE_CLOUD_UNIVERSE_DOMAIN, while GDU JSON credential stays
         // googleapis.com
-        assertEquals(TPC_UNIVERSE, connection.universeDomain);
-        assertEquals(TPC_UNIVERSE, connection.getBigQuery().getOptions().getUniverseDomain());
+        assertEquals(CUSTOM_UNIVERSE, connection.universeDomain);
+        assertEquals(CUSTOM_UNIVERSE, connection.getBigQuery().getOptions().getUniverseDomain());
         assertEquals(
-            TPC_UNIVERSE, connection.getBigQueryReadClient().getSettings().getUniverseDomain());
+            CUSTOM_UNIVERSE, connection.getBigQueryReadClient().getSettings().getUniverseDomain());
         assertEquals(
-            TPC_UNIVERSE, connection.getBigQueryWriteClient().getSettings().getUniverseDomain());
+            CUSTOM_UNIVERSE, connection.getBigQueryWriteClient().getSettings().getUniverseDomain());
         assertFalse(
             connection.overrideProperties.containsKey(
                 BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
@@ -1156,29 +1156,30 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testConnectionTpcJsonKeyMatchesEnvUniverseDomainAcrossAllThreeClients()
-      throws Exception {
-    JsonObject tpcSaJson = new JsonObject();
-    tpcSaJson.addProperty("type", "service_account");
-    tpcSaJson.addProperty("project_id", "tpc-project");
-    tpcSaJson.addProperty("private_key_id", "key-id-3");
-    tpcSaJson.addProperty("private_key", fake_pkcs8_key);
-    tpcSaJson.addProperty("client_email", "sa@tpc-project.iam.gserviceaccount.com");
-    tpcSaJson.addProperty("client_id", "999999");
-    tpcSaJson.addProperty("universe_domain", TPC_UNIVERSE);
+  public void
+      testConnectionCustomUniverseDomainJsonKeyMatchesEnvUniverseDomainAcrossAllThreeClients()
+          throws Exception {
+    JsonObject customSaJson = new JsonObject();
+    customSaJson.addProperty("type", "service_account");
+    customSaJson.addProperty("project_id", "custom-universe-project");
+    customSaJson.addProperty("private_key_id", "key-id-3");
+    customSaJson.addProperty("private_key", fake_pkcs8_key);
+    customSaJson.addProperty("client_email", "sa@custom-universe-project.iam.gserviceaccount.com");
+    customSaJson.addProperty("client_id", "999999");
+    customSaJson.addProperty("universe_domain", CUSTOM_UNIVERSE);
 
     String url =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId=tpc-project;OAuthType=0;EnableDiagnosticTelemetry=0;"
-            + "OAuthServiceAcctEmail=sa@tpc-project.iam.gserviceaccount.com;OAuthPvtKey="
-            + tpcSaJson;
+            + "ProjectId=custom-universe-project;OAuthType=0;EnableDiagnosticTelemetry=0;"
+            + "OAuthServiceAcctEmail=sa@custom-universe-project.iam.gserviceaccount.com;OAuthPvtKey="
+            + customSaJson;
 
     try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
         mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
-      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(TPC_UNIVERSE);
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(CUSTOM_UNIVERSE);
       try (BigQueryConnection connection = new BigQueryConnection(url)) {
-        assertEquals(TPC_UNIVERSE, connection.universeDomain);
-        assertEquals(TPC_UNIVERSE, connection.credentials.getUniverseDomain());
+        assertEquals(CUSTOM_UNIVERSE, connection.universeDomain);
+        assertEquals(CUSTOM_UNIVERSE, connection.credentials.getUniverseDomain());
         assertTrue(connection.getBigQuery().getOptions().hasValidUniverseDomain());
         assertStorageCredentialsScoped(
             connection
@@ -1186,8 +1187,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                 .getSettings()
                 .getCredentialsProvider()
                 .getCredentials(),
-            TPC_UNIVERSE,
-            storageUri(TPC_UNIVERSE, "BigQueryRead"),
+            CUSTOM_UNIVERSE,
+            storageUri(CUSTOM_UNIVERSE, "BigQueryRead"),
             BigQueryReadSettings.getDefaultServiceScopes());
         assertStorageCredentialsScoped(
             connection
@@ -1195,8 +1196,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                 .getSettings()
                 .getCredentialsProvider()
                 .getCredentials(),
-            TPC_UNIVERSE,
-            storageUri(TPC_UNIVERSE, "BigQueryWrite"),
+            CUSTOM_UNIVERSE,
+            storageUri(CUSTOM_UNIVERSE, "BigQueryWrite"),
             BigQueryWriteSettings.getDefaultServiceScopes());
       }
     }
