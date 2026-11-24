@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
@@ -26,35 +27,63 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.cloud.bigquery.storage.v1.TableSchema;
 import com.google.cloud.bigquery.storage.v1.WriteStream;
+import java.util.Locale;
 import org.junit.jupiter.api.Test;
 
 public class BigQueryJdbcBulkInsertWriterTest {
 
-  @Test
-  public void testInitializePassesClientToJsonStreamWriter() throws Exception {
-    BigQueryWriteClient mockClient = mock(BigQueryWriteClient.class);
-    BigQueryWriteSettings mockSettings =
-        BigQueryWriteSettings.newBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .build();
-    when(mockClient.getSettings()).thenReturn(mockSettings);
+  private static final String STREAM_NAME =
+      "projects/test-project/datasets/test_dataset/tables/test_table/streams/_default";
+  private static final TableName TABLE_NAME =
+      TableName.of("test-project", "test_dataset", "test_table");
 
+  private static BigQueryWriteClient stubWriteClient(long finalizedRows) throws Exception {
+    BigQueryWriteClient mockClient = mock(BigQueryWriteClient.class);
+    when(mockClient.getSettings())
+        .thenReturn(
+            BigQueryWriteSettings.newBuilder()
+                .setCredentialsProvider(NoCredentialsProvider.create())
+                .build());
     WriteStream stream =
         WriteStream.newBuilder()
-            .setName(
-                "projects/test-project/datasets/test_dataset/tables/test_table/streams/_default")
-            .setTableSchema(TableSchema.newBuilder().build())
+            .setName(STREAM_NAME)
+            .setTableSchema(
+                TableSchema.newBuilder()
+                    .addFields(
+                        TableFieldSchema.newBuilder()
+                            .setName("ID")
+                            .setType(TableFieldSchema.Type.STRING)
+                            .setMode(TableFieldSchema.Mode.NULLABLE)
+                            .build())
+                    .build())
             .build();
     when(mockClient.createWriteStream(any(CreateWriteStreamRequest.class))).thenReturn(stream);
+    if (finalizedRows >= 0) {
+      when(mockClient.finalizeWriteStream(STREAM_NAME))
+          .thenReturn(FinalizeWriteStreamResponse.newBuilder().setRowCount(finalizedRows).build());
+    }
+    return mockClient;
+  }
 
-    TableName tableName = TableName.of("test-project", "test_dataset", "test_table");
+  @Test
+  public void testInitializeBuildsProtoSchemaStreamWriterFromClient() throws Exception {
+    Locale saved = Locale.getDefault();
+    BigQueryWriteClient mockClient = stubWriteClient(-1L);
     BigQueryJdbcBulkInsertWriter writer = new BigQueryJdbcBulkInsertWriter();
-    writer.initialize(tableName, mockClient, null);
-
-    assertNotNull(writer.getStreamName());
-    verify(mockClient).getSettings();
+    try {
+      Locale.setDefault(Locale.forLanguageTag("tr-TR"));
+      writer.initialize(TABLE_NAME, mockClient, null);
+      assertEquals(STREAM_NAME, writer.getStreamName());
+      assertNotNull(writer.getDescriptor());
+      assertNotNull(writer.getDescriptor().findFieldByName("id"));
+      verify(mockClient).getSettings();
+    } finally {
+      Locale.setDefault(saved);
+    }
   }
 }

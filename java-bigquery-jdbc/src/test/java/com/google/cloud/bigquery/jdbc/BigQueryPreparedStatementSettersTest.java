@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -38,9 +39,12 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
-import com.google.gson.Gson;
-import com.google.gson.JsonNull;
-import com.google.gson.JsonObject;
+import com.google.cloud.bigquery.storage.v1.BQTableSchemaToProtoDescriptor;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
+import com.google.cloud.bigquery.storage.v1.TableSchema;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.DynamicMessage;
 import java.sql.Array;
 import java.sql.Date;
 import java.sql.ParameterMetaData;
@@ -359,10 +363,10 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(StandardSQLTypeName.STRING, config.getPositionalParameters().get(0).getType());
   }
 
-  // Verifies Storage Write API JSON row serialization maps null parameter values to
-  // JsonNull.INSTANCE.
+  // Verifies PreparedStatement setters encode ProtoSchema rows symmetrically via
+  // BigQueryTypeRegistry while omitting optional null fields.
   @Test
-  public void testCreateJsonRowWithSetObjectNull() throws Exception {
+  public void testEncodeWriteApiRowFromPreparedStatementSettersWithNull() throws Exception {
     preparedStatement.setObject(1, null);
     preparedStatement.setInt(2, 42);
     preparedStatement.setString(3, "test");
@@ -376,14 +380,36 @@ public class BigQueryPreparedStatementSettersTest {
             Field.of("col3", StandardSQLTypeName.STRING),
             Field.of("col4", StandardSQLTypeName.FLOAT64),
             Field.of("col5", StandardSQLTypeName.BOOL));
+    TableFieldSchema.Type[] protoTypes = {
+      TableFieldSchema.Type.STRING,
+      TableFieldSchema.Type.INT64,
+      TableFieldSchema.Type.STRING,
+      TableFieldSchema.Type.DOUBLE,
+      TableFieldSchema.Type.BOOL
+    };
+    TableSchema.Builder schemaBuilder = TableSchema.newBuilder();
+    for (int i = 0; i < protoTypes.length; i++) {
+      schemaBuilder.addFields(
+          TableFieldSchema.newBuilder()
+              .setName("col" + (i + 1))
+              .setType(protoTypes[i])
+              .setMode(TableFieldSchema.Mode.NULLABLE)
+              .build());
+    }
+    Descriptor desc =
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(schemaBuilder.build());
+    BigQueryTypeRegistry.ResolvedWriteColumn[] cols =
+        BigQueryTypeRegistry.resolveWriteApiColumns(desc, fieldList);
+    ByteString bytes =
+        BigQueryTypeRegistry.encodeWriteApiRow(
+            desc, cols, preparedStatement.parameterHandler.parametersList);
+    DynamicMessage row = DynamicMessage.parseFrom(desc, bytes);
 
-    ArrayList<BigQueryJdbcParameter> params = preparedStatement.parameterHandler.parametersList;
-    JsonObject jsonRow = BigQueryPreparedStatement.createJsonRow(fieldList, params, new Gson());
-
-    assertNotNull(jsonRow);
-    assertEquals(JsonNull.INSTANCE, jsonRow.get("col1"));
-    assertTrue(jsonRow.get("col1").isJsonNull());
-    assertEquals("42", jsonRow.get("col2").getAsString());
+    assertFalse(row.hasField(cols[0].fieldDescriptor));
+    assertEquals(42L, row.getField(cols[1].fieldDescriptor));
+    assertEquals("test", row.getField(cols[2].fieldDescriptor));
+    assertEquals(3.14d, row.getField(cols[3].fieldDescriptor));
+    assertEquals(true, row.getField(cols[4].fieldDescriptor));
   }
 
   @Test
