@@ -21,6 +21,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.QueryParameter;
@@ -989,18 +990,37 @@ class ConnectionImpl implements Connection {
     }
   }
 
+  /**
+   * Builds {@link BigQueryReadSettings} for the BigQuery Storage Read API client from {@link
+   * BigQueryOptions}, propagating credentials and universe domain configuration.
+   */
+  @VisibleForTesting
+  BigQueryReadSettings createBigQueryReadSettings() throws IOException {
+    // ServiceOptions leaves credentials null if none were configured and ADC lookup failed.
+    // Use NoCredentialsProvider in that case instead of passing null to FixedCredentialsProvider.
+    BigQueryReadSettings.Builder settingsBuilder =
+        BigQueryReadSettings.newBuilder()
+            .setCredentialsProvider(
+                bigQueryOptions.getCredentials() != null
+                    ? FixedCredentialsProvider.create(bigQueryOptions.getCredentials())
+                    : NoCredentialsProvider.create());
+    // Forward an explicitly configured universe domain so the Read API client resolves
+    // bigquerystorage.<universeDomain>:443 and validates credentials against the same universe.
+    // Leave it unset when null so GAX still checks GOOGLE_CLOUD_UNIVERSE_DOMAIN before defaulting
+    // to googleapis.com.
+    if (bigQueryOptions.getUniverseDomain() != null) {
+      settingsBuilder.setUniverseDomain(bigQueryOptions.getUniverseDomain());
+    }
+    return settingsBuilder.build();
+  }
+
   @VisibleForTesting
   BigQueryResult highThroughPutRead(
       TableId destinationTable, long totalRows, Schema schema, BigQueryResultStats stats) {
 
     try {
       if (bqReadClient == null) { // if the read client isn't already initialized. Not thread safe.
-        BigQueryReadSettings settings =
-            BigQueryReadSettings.newBuilder()
-                .setCredentialsProvider(
-                    FixedCredentialsProvider.create(bigQueryOptions.getCredentials()))
-                .build();
-        bqReadClient = BigQueryReadClient.create(settings);
+        bqReadClient = BigQueryReadClient.create(createBigQueryReadSettings());
       }
       String parent = String.format("projects/%s", destinationTable.getProject());
       String srcTable =
