@@ -118,6 +118,7 @@ final class StorageClientMetrics implements AutoCloseable {
               options.getHost(),
               options.getProjectId(),
               options.getUniverseDomain(),
+              options.getCredentials(),
               options.getMetricInterval(),
               options instanceof GrpcStorageOptions ? "grpc" : "json");
       mp = ownedMeterProvider;
