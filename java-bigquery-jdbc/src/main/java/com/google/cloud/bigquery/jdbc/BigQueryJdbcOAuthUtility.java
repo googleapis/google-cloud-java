@@ -655,10 +655,11 @@ final class BigQueryJdbcOAuthUtility {
           }
         }
         String byoidUniverseDomain =
-            authProperties.containsKey(
-                    BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)
-                ? authProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)
-                : BigQueryJdbcUrlUtility.getEnvUniverseDomain();
+            BigQueryJdbcUrlUtility.normalizeUniverseDomain(
+                authProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
+        if (byoidUniverseDomain == null) {
+          byoidUniverseDomain = BigQueryJdbcUrlUtility.getEnvUniverseDomain();
+        }
         if (byoidUniverseDomain != null) {
           jsonObject.addProperty("universe_domain", byoidUniverseDomain);
         }
