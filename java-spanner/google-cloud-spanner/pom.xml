@@ -180,7 +180,7 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
           <configuration>
-            <ignoredDependencies>io.grpc:grpc-protobuf-lite,org.hamcrest:hamcrest,org.hamcrest:hamcrest-core,com.google.errorprone:error_prone_annotations,org.openjdk.jmh:jmh-generator-annprocess,com.google.api.grpc:grpc-google-cloud-spanner-v1,com.google.api.grpc:grpc-google-cloud-spanner-admin-instance-v1,com.google.api.grpc:grpc-google-cloud-spanner-admin-database-v1,javax.annotation:javax.annotation-api,io.opencensus:opencensus-impl,org.graalvm.sdk:graal-sdk,io.grpc:grpc-googleapis,io.grpc:grpc-rls,com.google.api.grpc:proto-google-cloud-spanner-executor-v1,com.google.api.grpc:grpc-google-cloud-spanner-executor-v1,io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi,io.opentelemetry:opentelemetry-exporter-sender-grpc-managed-channel</ignoredDependencies>
+            <ignoredDependencies>io.grpc:grpc-protobuf-lite,org.hamcrest:hamcrest,org.hamcrest:hamcrest-core,com.google.errorprone:error_prone_annotations,org.openjdk.jmh:jmh-generator-annprocess,com.google.api.grpc:grpc-google-cloud-spanner-v1,com.google.api.grpc:grpc-google-cloud-spanner-admin-instance-v1,com.google.api.grpc:grpc-google-cloud-spanner-admin-database-v1,javax.annotation:javax.annotation-api,io.opencensus:opencensus-impl,org.graalvm.sdk:graal-sdk,io.grpc:grpc-googleapis,io.grpc:grpc-rls,com.google.api.grpc:proto-google-cloud-spanner-executor-v1,com.google.api.grpc:grpc-google-cloud-spanner-executor-v1,io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi</ignoredDependencies>
           </configuration>
         </plugin>
       </plugins>
@@ -299,6 +299,10 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-common</artifactId>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>
@@ -528,11 +532,6 @@
           <artifactId>opentelemetry-exporter-sender-okhttp</artifactId>
         </exclusion>
       </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>io.opentelemetry</groupId>
-      <artifactId>opentelemetry-exporter-sender-grpc-managed-channel</artifactId>
-      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>

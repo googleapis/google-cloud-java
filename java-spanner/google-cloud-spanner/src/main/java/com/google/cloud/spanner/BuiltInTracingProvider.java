@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Equivalence;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.OpenTelemetry;
@@ -33,6 +34,7 @@ import io.opentelemetry.context.Scope;
 import io.opentelemetry.context.propagation.ContextPropagators;
 import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.common.CompletableResultCode;
 import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.ReadWriteSpan;
 import io.opentelemetry.sdk.trace.ReadableSpan;
@@ -43,12 +45,14 @@ import io.opentelemetry.sdk.trace.export.SpanExporter;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiFunction;
 import java.util.function.BooleanSupplier;
@@ -58,8 +62,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Creates and caches the OpenTelemetry instances that are used for built-in tracing. One instance
- * is created per project and sampling rate, so that spans are always exported to the project of the
- * client that created them.
+ * is created per project, sampling rate and credentials object, so that spans are always exported
+ * to the project of the client that created them, with the credentials of that client.
  */
 final class BuiltInTracingProvider {
 
@@ -75,6 +79,8 @@ final class BuiltInTracingProvider {
   private static final AttributeKey<String> SERVICE_NAME_KEY =
       AttributeKey.stringKey("service.name");
   private static final String OTEL_SERVICE_NAME = "OTEL_SERVICE_NAME";
+  private static final long SHUTDOWN_TIMEOUT_SECONDS = 10;
+  @VisibleForTesting static final int MAX_OPEN_TELEMETRY_INSTANCES = 10;
   private static final AtomicBoolean credentialsWarningLogged = new AtomicBoolean();
 
   private final Map<List<Object>, OpenTelemetrySdk> openTelemetries = new HashMap<>();
@@ -84,25 +90,32 @@ final class BuiltInTracingProvider {
   private BooleanSupplier contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
   private Boolean contextCanHoldSpans;
   private Thread shutdownHook;
+  private boolean shutDown;
   private boolean openCensusWarningLogged;
   private boolean customTracingInfoLogged;
   private boolean notUsedInfoLogged;
   private boolean invalidSamplingRateWarningLogged;
+  private boolean instanceLimitWarningLogged;
 
   private BuiltInTracingProvider() {}
 
   @Nullable
   synchronized OpenTelemetry getOrCreateOpenTelemetry(
       String projectId, Credentials credentials, double samplingRate) {
-    if (!isContextUsable()) {
+    if (shutDown || !isContextUsable()) {
       return null;
     }
-    List<Object> key = ImmutableList.of(projectId, samplingRate);
+    List<Object> key =
+        ImmutableList.of(projectId, samplingRate, Equivalence.identity().wrap(credentials));
     if (failedKeys.contains(key)) {
       return null;
     }
     OpenTelemetrySdk openTelemetry = openTelemetries.get(key);
     if (openTelemetry == null) {
+      if (openTelemetries.size() + failedKeys.size() >= MAX_OPEN_TELEMETRY_INSTANCES) {
+        logInstanceLimitWarningOnce();
+        return null;
+      }
       try {
         openTelemetry =
             createOpenTelemetry(
@@ -204,12 +217,26 @@ final class BuiltInTracingProvider {
     }
   }
 
+  private void logInstanceLimitWarningOnce() {
+    if (!instanceLimitWarningLogged) {
+      instanceLimitWarningLogged = true;
+      logger.log(
+          Level.WARNING,
+          "Built-in tracing already uses "
+              + MAX_OPEN_TELEMETRY_INSTANCES
+              + " OpenTelemetry instances, one for each combination of project, sampling rate and"
+              + " credentials object. Built-in tracing is not used for new Spanner clients with"
+              + " another combination. Use the same credentials object for clients that use the"
+              + " same credentials.");
+    }
+  }
+
   synchronized void logInvalidSamplingRateOnce(String value) {
     if (!invalidSamplingRateWarningLogged) {
       invalidSamplingRateWarningLogged = true;
       logger.log(
           Level.WARNING,
-          "The value of OTEL_TRACES_SAMPLER_ARG ("
+          "The value of SPANNER_BUILTIN_TRACING_SAMPLING_RATE ("
               + value
               + ") is not a number between 0.0 and 1.0, so built-in tracing uses a sampling rate"
               + " of "
@@ -251,6 +278,7 @@ final class BuiltInTracingProvider {
   @VisibleForTesting
   synchronized void reset() {
     shutdown();
+    shutDown = false;
     openTelemetries.clear();
     failedKeys.clear();
     if (shutdownHook != null) {
@@ -267,13 +295,25 @@ final class BuiltInTracingProvider {
     customTracingInfoLogged = false;
     notUsedInfoLogged = false;
     invalidSamplingRateWarningLogged = false;
+    instanceLimitWarningLogged = false;
     credentialsWarningLogged.set(false);
   }
 
-  private synchronized void shutdown() {
-    for (OpenTelemetrySdk openTelemetry : openTelemetries.values()) {
-      openTelemetry.close();
+  @VisibleForTesting
+  void shutdown() {
+    List<OpenTelemetrySdk> instances;
+    synchronized (this) {
+      shutDown = true;
+      instances = new ArrayList<>(openTelemetries.values());
     }
+    List<CompletableResultCode> results = new ArrayList<>();
+    for (OpenTelemetrySdk openTelemetry : instances) {
+      try {
+        results.add(openTelemetry.shutdown());
+      } catch (Throwable ignore) {
+      }
+    }
+    CompletableResultCode.ofAll(results).join(SHUTDOWN_TIMEOUT_SECONDS, TimeUnit.SECONDS);
   }
 
   private static OpenTelemetrySdk createOpenTelemetry(
@@ -315,6 +355,7 @@ final class BuiltInTracingProvider {
         .setEndpoint(endpoint)
         .setHeaders(() -> getRequestHeaders(scopedCredentials))
         .setMeterProvider(MeterProvider.noop())
+        .setComponentLoader(BuiltInTracingGrpcSender.componentLoader())
         .build();
   }
 

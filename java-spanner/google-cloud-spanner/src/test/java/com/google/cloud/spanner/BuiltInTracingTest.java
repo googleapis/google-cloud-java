@@ -32,19 +32,25 @@ import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
+import com.google.common.io.ByteStreams;
 import com.google.spanner.v1.SpannerGrpc;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
 import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
+import io.grpc.ServerServiceDefinition;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
+import io.grpc.stub.ServerCalls;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.common.CompletableResultCode;
+import io.opentelemetry.sdk.common.export.GrpcSenderProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.data.MetricData;
@@ -55,14 +61,24 @@ import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import io.opentelemetry.sdk.trace.export.SpanExporter;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.UncheckedIOException;
 import java.net.InetSocketAddress;
 import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.ServiceLoader;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -175,7 +191,7 @@ public class BuiltInTracingTest {
     SpannerOptions options = createOptionsBuilder().build();
 
     assertFalse(options.isEnableBuiltInTracing());
-    assertEquals(0.1, options.getBuiltInTracingSamplingRate(), 0.0);
+    assertEquals(0.01, options.getBuiltInTracingSamplingRate(), 0.0);
     assertFalse(options.isEndToEndTracingEnabled());
     assertSame(TracerProvider.noop(), options.getTracingOpenTelemetry().getTracerProvider());
   }
@@ -348,6 +364,60 @@ public class BuiltInTracingTest {
   }
 
   @Test
+  public void clientsWithDifferentCredentialsObjectsUseDifferentBuiltInOpenTelemetry() {
+    OAuth2Credentials otherCredentials = OAuth2Credentials.create(new AccessToken("token", null));
+    SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
+    SpannerOptions otherCredentialsOptions =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setCredentials(otherCredentials)
+            .build();
+
+    assertEquals(CREDENTIALS, otherCredentials);
+    assertNotSame(
+        options.getTracingOpenTelemetry(), otherCredentialsOptions.getTracingOpenTelemetry());
+  }
+
+  @Test
+  public void builtInOpenTelemetryIsKeptWhenTheTokenIsRefreshed() throws IOException {
+    AtomicInteger refreshes = new AtomicInteger();
+    OAuth2Credentials credentials =
+        new OAuth2Credentials() {
+          @Override
+          public AccessToken refreshAccessToken() {
+            return new AccessToken("token-" + refreshes.incrementAndGet(), null);
+          }
+        };
+    credentials.refresh();
+    OpenTelemetry openTelemetry =
+        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry("test-project", credentials, 1.0);
+
+    credentials.refresh();
+
+    assertSame(
+        openTelemetry,
+        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry("test-project", credentials, 1.0));
+  }
+
+  @Test
+  public void builtInTracingIsNotUsedForNewCredentialsAfterTheInstanceLimit() {
+    List<Credentials> credentials = new ArrayList<>();
+    for (int i = 0; i < BuiltInTracingProvider.MAX_OPEN_TELEMETRY_INSTANCES; i++) {
+      credentials.add(OAuth2Credentials.create(new AccessToken("token", null)));
+      assertNotNull(
+          BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
+              "test-project", credentials.get(i), 1.0));
+    }
+
+    assertNull(
+        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
+            "test-project", OAuth2Credentials.create(new AccessToken("token", null)), 1.0));
+    assertNotNull(
+        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
+            "test-project", credentials.get(0), 1.0));
+  }
+
+  @Test
   public void exporterIsOnlyCreatedOnceWhenItFails() {
     AtomicInteger attempts = new AtomicInteger();
     BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
@@ -371,20 +441,181 @@ public class BuiltInTracingTest {
             .setMeterProvider(SdkMeterProvider.builder().registerMetricReader(metricReader).build())
             .build());
     InMemorySpanExporter finishedSpans = InMemorySpanExporter.create();
+    List<SpanData> spans;
     try (SdkTracerProvider tracerProvider =
         SdkTracerProvider.builder()
             .addSpanProcessor(SimpleSpanProcessor.create(finishedSpans))
             .build()) {
       tracerProvider.get("test").spanBuilder("test").startSpan().end();
+      spans = finishedSpans.getFinishedSpanItems();
     }
     SpanExporter exporter =
         BuiltInTracingProvider.createOtlpExporter(
             "http://localhost:" + server.getPort(), CREDENTIALS);
 
-    exporter.export(finishedSpans.getFinishedSpanItems()).join(10, TimeUnit.SECONDS);
+    exporter.export(spans).join(10, TimeUnit.SECONDS);
     exporter.shutdown().join(10, TimeUnit.SECONDS);
 
     assertTrue(metricReader.collectAllMetrics().isEmpty());
+  }
+
+  @Test
+  public void exporterSendsSpansWithTheBuiltInSender() throws Exception {
+    AtomicReference<Metadata> exportHeaders = new AtomicReference<>();
+    AtomicReference<byte[]> exportRequest = new AtomicReference<>();
+    MethodDescriptor.Marshaller<byte[]> bytesMarshaller =
+        new MethodDescriptor.Marshaller<byte[]>() {
+          @Override
+          public InputStream stream(byte[] value) {
+            return new ByteArrayInputStream(value);
+          }
+
+          @Override
+          public byte[] parse(InputStream stream) {
+            try {
+              return ByteStreams.toByteArray(stream);
+            } catch (IOException exception) {
+              throw new UncheckedIOException(exception);
+            }
+          }
+        };
+    MethodDescriptor<byte[], byte[]> exportMethod =
+        MethodDescriptor.<byte[], byte[]>newBuilder()
+            .setType(MethodDescriptor.MethodType.UNARY)
+            .setFullMethodName("opentelemetry.proto.collector.trace.v1.TraceService/Export")
+            .setRequestMarshaller(bytesMarshaller)
+            .setResponseMarshaller(bytesMarshaller)
+            .build();
+    Server traceServer =
+        NettyServerBuilder.forAddress(new InetSocketAddress("localhost", 0))
+            .addService(
+                ServerServiceDefinition.builder(
+                        "opentelemetry.proto.collector.trace.v1.TraceService")
+                    .addMethod(
+                        exportMethod,
+                        ServerCalls.asyncUnaryCall(
+                            (request, responseObserver) -> {
+                              exportRequest.set(request);
+                              responseObserver.onNext(new byte[0]);
+                              responseObserver.onCompleted();
+                            }))
+                    .build())
+            .intercept(
+                new ServerInterceptor() {
+                  @Override
+                  public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+                      ServerCall<ReqT, RespT> call,
+                      Metadata headers,
+                      ServerCallHandler<ReqT, RespT> next) {
+                    exportHeaders.set(headers);
+                    return next.startCall(call, headers);
+                  }
+                })
+            .build()
+            .start();
+    try {
+      InMemorySpanExporter finishedSpans = InMemorySpanExporter.create();
+      List<SpanData> spans;
+      try (SdkTracerProvider tracerProvider =
+          SdkTracerProvider.builder()
+              .addSpanProcessor(SimpleSpanProcessor.create(finishedSpans))
+              .build()) {
+        tracerProvider.get("test").spanBuilder("built-in-sender-test").startSpan().end();
+        spans = finishedSpans.getFinishedSpanItems();
+      }
+      SpanExporter exporter =
+          BuiltInTracingProvider.createOtlpExporter(
+              "http://localhost:" + traceServer.getPort(), CREDENTIALS);
+
+      CompletableResultCode result = exporter.export(spans).join(10, TimeUnit.SECONDS);
+      exporter.shutdown().join(10, TimeUnit.SECONDS);
+
+      assertTrue(result.isSuccess());
+      assertEquals(
+          "Bearer token",
+          exportHeaders
+              .get()
+              .get(Metadata.Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER)));
+      assertTrue(
+          new String(exportRequest.get(), StandardCharsets.UTF_8).contains("built-in-sender-test"));
+    } finally {
+      traceServer.shutdownNow();
+    }
+  }
+
+  @Test
+  public void noGrpcSenderIsRegisteredAsAService() {
+    assertFalse(ServiceLoader.load(GrpcSenderProvider.class).iterator().hasNext());
+  }
+
+  @Test
+  public void shutdownFlushesAllInstancesWithoutHoldingTheLock() throws Exception {
+    CountDownLatch exportStarted = new CountDownLatch(1);
+    CountDownLatch releaseExport = new CountDownLatch(1);
+    List<SpanData> otherSpans = new CopyOnWriteArrayList<>();
+    BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
+        (projectId, credentials) ->
+            new SpanExporter() {
+              @Override
+              public CompletableResultCode export(Collection<SpanData> spans) {
+                if (projectId.equals("slow-project")) {
+                  exportStarted.countDown();
+                  try {
+                    releaseExport.await();
+                  } catch (InterruptedException exception) {
+                    Thread.currentThread().interrupt();
+                  }
+                } else {
+                  otherSpans.addAll(spans);
+                }
+                return CompletableResultCode.ofSuccess();
+              }
+
+              @Override
+              public CompletableResultCode flush() {
+                return CompletableResultCode.ofSuccess();
+              }
+
+              @Override
+              public CompletableResultCode shutdown() {
+                return CompletableResultCode.ofSuccess();
+              }
+            });
+    BuiltInTracingProvider.INSTANCE
+        .getOrCreateOpenTelemetry("slow-project", CREDENTIALS, 1.0)
+        .getTracer("test")
+        .spanBuilder("slow")
+        .startSpan()
+        .end();
+    BuiltInTracingProvider.INSTANCE
+        .getOrCreateOpenTelemetry("other-project", CREDENTIALS, 1.0)
+        .getTracer("test")
+        .spanBuilder("other")
+        .startSpan()
+        .end();
+
+    Thread shutdown = new Thread(BuiltInTracingProvider.INSTANCE::shutdown);
+    shutdown.start();
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      assertTrue(exportStarted.await(10, TimeUnit.SECONDS));
+      assertNull(
+          executor
+              .submit(
+                  () ->
+                      BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
+                          "new-project", CREDENTIALS, 1.0))
+              .get(5, TimeUnit.SECONDS));
+      long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
+      while (otherSpans.isEmpty() && System.nanoTime() < deadline) {
+        Thread.sleep(10L);
+      }
+      assertEquals(1, otherSpans.size());
+    } finally {
+      executor.shutdownNow();
+      releaseExport.countDown();
+      shutdown.join(TimeUnit.SECONDS.toMillis(15));
+    }
   }
 
   @Test
@@ -460,6 +691,21 @@ public class BuiltInTracingTest {
             .build();
 
     assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+  }
+
+  @Test
+  public void universeDomainOfTheEnvironmentIsUsedWhenNotSetInTheOptions() {
+    assertEquals("googleapis.com", SpannerOptions.resolveBuiltInTracingUniverseDomain(null, null));
+    assertEquals("googleapis.com", SpannerOptions.resolveBuiltInTracingUniverseDomain("", ""));
+    assertEquals(
+        "example.com", SpannerOptions.resolveBuiltInTracingUniverseDomain(null, "example.com"));
+    assertEquals(
+        "example.com", SpannerOptions.resolveBuiltInTracingUniverseDomain("", "example.com"));
+    assertEquals(
+        "googleapis.com",
+        SpannerOptions.resolveBuiltInTracingUniverseDomain("googleapis.com", "example.com"));
+    assertEquals(
+        "example.com", SpannerOptions.resolveBuiltInTracingUniverseDomain("example.com", null));
   }
 
   @Test

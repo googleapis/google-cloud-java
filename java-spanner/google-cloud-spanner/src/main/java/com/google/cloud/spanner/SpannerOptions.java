@@ -136,6 +136,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String SPANNER_SERVICE_NAME = "spanner";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
+  private static final String GOOGLE_CLOUD_UNIVERSE_DOMAIN = "GOOGLE_CLOUD_UNIVERSE_DOMAIN";
   public static final String SPANNER_OMNI_PROJECT_ID = "default";
   public static final String DEFAULT_SPANNER_OMNI_INSTANCE_ID = "default";
 
@@ -388,7 +389,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   private static volatile TracingFramework activeTracingFramework;
 
-  static final double DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE = 0.1;
+  static final double DEFAULT_BUILT_IN_TRACING_SAMPLING_RATE = 0.01;
 
   @Nullable
   static Double parseBuiltInTracingSamplingRate(@Nullable String value) {
@@ -1255,7 +1256,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private static final String SPANNER_ENABLE_END_TO_END_TRACING =
         "SPANNER_ENABLE_END_TO_END_TRACING";
     private static final String SPANNER_ENABLE_BUILTIN_TRACING = "SPANNER_ENABLE_BUILTIN_TRACING";
-    private static final String OTEL_TRACES_SAMPLER_ARG = "OTEL_TRACES_SAMPLER_ARG";
+    private static final String SPANNER_BUILTIN_TRACING_SAMPLING_RATE =
+        "SPANNER_BUILTIN_TRACING_SAMPLING_RATE";
     private static final String SPANNER_DISABLE_BUILTIN_METRICS = "SPANNER_DISABLE_BUILTIN_METRICS";
     private static final String SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS =
         "SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS";
@@ -1343,7 +1345,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public double getBuiltInTracingSamplingRate() {
-      String value = System.getenv(OTEL_TRACES_SAMPLER_ARG);
+      String value = System.getenv(SPANNER_BUILTIN_TRACING_SAMPLING_RATE);
       Double samplingRate = parseBuiltInTracingSamplingRate(value);
       if (samplingRate == null && !Strings.isNullOrEmpty(value) && isEnableBuiltInTracing()) {
         BuiltInTracingProvider.INSTANCE.logInvalidSamplingRateOnce(value);
@@ -2578,8 +2580,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     /**
      * Sets the fraction of requests that are traced by built-in tracing. The value must be between
-     * 0.0 and 1.0. The default is the value of the environment variable OTEL_TRACES_SAMPLER_ARG if
-     * that is set, and otherwise 0.1.
+     * 0.0 and 1.0. The default is the value of the environment variable
+     * SPANNER_BUILTIN_TRACING_SAMPLING_RATE if that is set, and otherwise 0.01.
      */
     public Builder setBuiltInTracingSamplingRate(double builtInTracingSamplingRate) {
       Preconditions.checkArgument(
@@ -3095,11 +3097,24 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     if (usesNoCredentials()) {
       return "a client without credentials";
     }
-    String universeDomain = getResolvedUniverseDomain();
+    String universeDomain =
+        resolveBuiltInTracingUniverseDomain(
+            getUniverseDomain(), System.getenv(GOOGLE_CLOUD_UNIVERSE_DOMAIN));
     if (!GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)) {
       return "universe domain " + universeDomain;
     }
     return null;
+  }
+
+  @VisibleForTesting
+  static String resolveBuiltInTracingUniverseDomain(
+      @Nullable String configuredUniverseDomain, @Nullable String environmentUniverseDomain) {
+    if (!Strings.isNullOrEmpty(configuredUniverseDomain)) {
+      return configuredUniverseDomain;
+    }
+    return Strings.isNullOrEmpty(environmentUniverseDomain)
+        ? GOOGLE_DEFAULT_UNIVERSE
+        : environmentUniverseDomain;
   }
 
   private boolean isTracingEnabled(OpenTelemetry openTelemetry) {
