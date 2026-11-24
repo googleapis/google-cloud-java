@@ -42,6 +42,7 @@ import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.ServerServiceDefinition;
+import io.grpc.Status;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import io.grpc.stub.ServerCalls;
 import io.opentelemetry.api.GlobalOpenTelemetry;
@@ -88,6 +89,7 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.Nullable;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -463,56 +465,7 @@ public class BuiltInTracingTest {
   public void exporterSendsSpansWithTheBuiltInSender() throws Exception {
     AtomicReference<Metadata> exportHeaders = new AtomicReference<>();
     AtomicReference<byte[]> exportRequest = new AtomicReference<>();
-    MethodDescriptor.Marshaller<byte[]> bytesMarshaller =
-        new MethodDescriptor.Marshaller<byte[]>() {
-          @Override
-          public InputStream stream(byte[] value) {
-            return new ByteArrayInputStream(value);
-          }
-
-          @Override
-          public byte[] parse(InputStream stream) {
-            try {
-              return ByteStreams.toByteArray(stream);
-            } catch (IOException exception) {
-              throw new UncheckedIOException(exception);
-            }
-          }
-        };
-    MethodDescriptor<byte[], byte[]> exportMethod =
-        MethodDescriptor.<byte[], byte[]>newBuilder()
-            .setType(MethodDescriptor.MethodType.UNARY)
-            .setFullMethodName("opentelemetry.proto.collector.trace.v1.TraceService/Export")
-            .setRequestMarshaller(bytesMarshaller)
-            .setResponseMarshaller(bytesMarshaller)
-            .build();
-    Server traceServer =
-        NettyServerBuilder.forAddress(new InetSocketAddress("localhost", 0))
-            .addService(
-                ServerServiceDefinition.builder(
-                        "opentelemetry.proto.collector.trace.v1.TraceService")
-                    .addMethod(
-                        exportMethod,
-                        ServerCalls.asyncUnaryCall(
-                            (request, responseObserver) -> {
-                              exportRequest.set(request);
-                              responseObserver.onNext(new byte[0]);
-                              responseObserver.onCompleted();
-                            }))
-                    .build())
-            .intercept(
-                new ServerInterceptor() {
-                  @Override
-                  public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
-                      ServerCall<ReqT, RespT> call,
-                      Metadata headers,
-                      ServerCallHandler<ReqT, RespT> next) {
-                    exportHeaders.set(headers);
-                    return next.startCall(call, headers);
-                  }
-                })
-            .build()
-            .start();
+    Server traceServer = startTraceServer(null, exportHeaders, exportRequest);
     try {
       InMemorySpanExporter finishedSpans = InMemorySpanExporter.create();
       List<SpanData> spans;
@@ -541,6 +494,118 @@ public class BuiltInTracingTest {
     } finally {
       traceServer.shutdownNow();
     }
+  }
+
+  @Test
+  public void queriesWorkWhenExportingTracesIsDenied() throws Exception {
+    AtomicReference<byte[]> exportRequest = new AtomicReference<>();
+    Server traceServer =
+        startTraceServer(Status.PERMISSION_DENIED, new AtomicReference<>(), exportRequest);
+    try {
+      String endpoint = "http://localhost:" + traceServer.getPort();
+      InMemorySpanExporter finishedSpans = InMemorySpanExporter.create();
+      List<SpanData> spans;
+      try (SdkTracerProvider tracerProvider =
+          SdkTracerProvider.builder()
+              .addSpanProcessor(SimpleSpanProcessor.create(finishedSpans))
+              .build()) {
+        tracerProvider.get("test").spanBuilder("denied").startSpan().end();
+        spans = finishedSpans.getFinishedSpanItems();
+      }
+      SpanExporter exporter = BuiltInTracingProvider.createOtlpExporter(endpoint, CREDENTIALS);
+      CompletableResultCode result = exporter.export(spans).join(10, TimeUnit.SECONDS);
+      exporter.shutdown().join(10, TimeUnit.SECONDS);
+      assertTrue(result.isDone());
+      assertFalse(result.isSuccess());
+
+      exportRequest.set(null);
+      BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
+          (projectId, credentials) ->
+              BuiltInTracingProvider.createOtlpExporter(endpoint, credentials));
+      SpannerOptions options =
+          createOptionsBuilder()
+              .setEnableBuiltInTracing(true)
+              .setBuiltInTracingSamplingRate(1.0)
+              .build();
+      long rows = 0;
+      try (Spanner spanner = options.getService()) {
+        DatabaseClient client =
+            spanner.getDatabaseClient(DatabaseId.of("test-project", "test-instance", "test-db"));
+        try (ResultSet resultSet = client.singleUse().executeQuery(SELECT1)) {
+          while (resultSet.next()) {
+            rows++;
+          }
+        }
+      }
+      ((OpenTelemetrySdk) options.getTracingOpenTelemetry())
+          .getSdkTracerProvider()
+          .forceFlush()
+          .join(10, TimeUnit.SECONDS);
+
+      assertEquals(1, rows);
+      assertNotNull(exportRequest.get());
+    } finally {
+      traceServer.shutdownNow();
+    }
+  }
+
+  private static Server startTraceServer(
+      @Nullable Status failure,
+      AtomicReference<Metadata> exportHeaders,
+      AtomicReference<byte[]> exportRequest)
+      throws IOException {
+    MethodDescriptor.Marshaller<byte[]> bytesMarshaller =
+        new MethodDescriptor.Marshaller<byte[]>() {
+          @Override
+          public InputStream stream(byte[] value) {
+            return new ByteArrayInputStream(value);
+          }
+
+          @Override
+          public byte[] parse(InputStream stream) {
+            try {
+              return ByteStreams.toByteArray(stream);
+            } catch (IOException exception) {
+              throw new UncheckedIOException(exception);
+            }
+          }
+        };
+    MethodDescriptor<byte[], byte[]> exportMethod =
+        MethodDescriptor.<byte[], byte[]>newBuilder()
+            .setType(MethodDescriptor.MethodType.UNARY)
+            .setFullMethodName("opentelemetry.proto.collector.trace.v1.TraceService/Export")
+            .setRequestMarshaller(bytesMarshaller)
+            .setResponseMarshaller(bytesMarshaller)
+            .build();
+    return NettyServerBuilder.forAddress(new InetSocketAddress("localhost", 0))
+        .addService(
+            ServerServiceDefinition.builder("opentelemetry.proto.collector.trace.v1.TraceService")
+                .addMethod(
+                    exportMethod,
+                    ServerCalls.asyncUnaryCall(
+                        (request, responseObserver) -> {
+                          exportRequest.set(request);
+                          if (failure != null) {
+                            responseObserver.onError(failure.asRuntimeException());
+                            return;
+                          }
+                          responseObserver.onNext(new byte[0]);
+                          responseObserver.onCompleted();
+                        }))
+                .build())
+        .intercept(
+            new ServerInterceptor() {
+              @Override
+              public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+                  ServerCall<ReqT, RespT> call,
+                  Metadata headers,
+                  ServerCallHandler<ReqT, RespT> next) {
+                exportHeaders.set(headers);
+                return next.startCall(call, headers);
+              }
+            })
+        .build()
+        .start();
   }
 
   @Test
