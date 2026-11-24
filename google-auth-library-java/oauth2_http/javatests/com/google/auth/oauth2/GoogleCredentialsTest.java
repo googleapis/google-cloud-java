@@ -98,7 +98,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   private static final Collection<String> DEFAULT_SCOPES =
       Collections.unmodifiableCollection(Arrays.asList("scope3"));
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
-  private static final String TPC_UNIVERSE = "foo.bar";
+  private static final String CUSTOM_UNIVERSE = "foo.bar";
 
   @Test
   void getApplicationDefault_nullTransport_throws() {
@@ -190,13 +190,17 @@ class GoogleCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
     InputStream serviceAccountStream =
         ServiceAccountCredentialsTest.writeServiceAccountStream(
-            SA_CLIENT_ID, SA_CLIENT_EMAIL, SA_PRIVATE_KEY_PKCS8, SA_PRIVATE_KEY_ID, TPC_UNIVERSE);
+            SA_CLIENT_ID,
+            SA_CLIENT_EMAIL,
+            SA_PRIVATE_KEY_PKCS8,
+            SA_PRIVATE_KEY_ID,
+            CUSTOM_UNIVERSE);
 
     GoogleCredentials credentials =
         GoogleCredentials.fromStream(serviceAccountStream, transportFactory);
 
     assertNotNull(credentials);
-    assertEquals(TPC_UNIVERSE, credentials.getUniverseDomain());
+    assertEquals(CUSTOM_UNIVERSE, credentials.getUniverseDomain());
     assertTrue(credentials.isExplicitUniverseDomain());
     credentials = credentials.createScoped(SCOPES);
     credentials.getRequestMetadata(CALL_URI);
