@@ -23,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -50,10 +51,10 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
+import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -189,105 +190,6 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals("Dataset", dbMetadata.getSchemaTerm());
     assertEquals("Procedure", dbMetadata.getProcedureTerm());
     assertEquals("Project", dbMetadata.getCatalogTerm());
-  }
-
-  @Test
-  public void testNeedsListing() {
-    assertTrue(dbMetadata.needsListing(null), "Null pattern should require listing");
-    assertTrue(dbMetadata.needsListing("abc%def"), "Pattern with % should require listing");
-    assertTrue(dbMetadata.needsListing("abc_def"), "Pattern with _ should require listing");
-    assertTrue(dbMetadata.needsListing("a%c_d%f"), "Pattern with both wildcards");
-    assertFalse(dbMetadata.needsListing(""), "Empty pattern should not require listing");
-    assertFalse(dbMetadata.needsListing("exactName"), "Pattern without wildcards");
-  }
-
-  @Test
-  public void testCompileSqlLikePattern() {
-    // Null input -> Null pattern
-    assertNull(dbMetadata.compileSqlLikePattern(null));
-
-    // Empty input -> Pattern matching nothing ($^)
-    Pattern emptyPattern = dbMetadata.compileSqlLikePattern("");
-    assertNotNull(emptyPattern);
-    assertFalse(emptyPattern.matcher("").matches());
-    assertFalse(emptyPattern.matcher("a").matches());
-    assertEquals("(?!)", emptyPattern.pattern());
-
-    // Exact match
-    Pattern exactPattern = dbMetadata.compileSqlLikePattern("tableName");
-    assertNotNull(exactPattern);
-    assertTrue(exactPattern.matcher("tableName").matches());
-    assertTrue(exactPattern.matcher("TABLENAME").matches());
-    assertFalse(exactPattern.matcher("tableNameX").matches());
-    assertFalse(exactPattern.matcher("XtableName").matches());
-
-    // Percent wildcard (%) -> .*
-    Pattern percentPattern = dbMetadata.compileSqlLikePattern("table%");
-    assertNotNull(percentPattern);
-    assertTrue(percentPattern.matcher("table").matches());
-    assertTrue(percentPattern.matcher("tableName").matches());
-    assertTrue(percentPattern.matcher("TABLE_123").matches());
-    assertFalse(percentPattern.matcher("myTable").matches());
-
-    Pattern percentPattern2 = dbMetadata.compileSqlLikePattern("%Name");
-    assertNotNull(percentPattern2);
-    assertTrue(percentPattern2.matcher("Name").matches());
-    assertTrue(percentPattern2.matcher("tableName").matches());
-    assertTrue(percentPattern2.matcher("VIEW_NAME").matches());
-    assertFalse(percentPattern2.matcher("NameSuffix").matches());
-
-    Pattern percentPattern3 = dbMetadata.compileSqlLikePattern("ta%le");
-    assertNotNull(percentPattern3);
-    assertTrue(percentPattern3.matcher("table").matches());
-    assertTrue(percentPattern3.matcher("TALLE").matches());
-    assertTrue(percentPattern3.matcher("tale").matches());
-    assertFalse(percentPattern3.matcher("table123").matches());
-
-    // Underscore wildcard (_) -> .
-    Pattern underscorePattern = dbMetadata.compileSqlLikePattern("t_ble");
-    assertNotNull(underscorePattern);
-    assertTrue(underscorePattern.matcher("table").matches());
-    assertTrue(underscorePattern.matcher("tAble").matches());
-    assertTrue(underscorePattern.matcher("tXble").matches());
-    assertFalse(underscorePattern.matcher("tble").matches());
-    assertFalse(underscorePattern.matcher("taable").matches());
-
-    // Mixed wildcards
-    Pattern mixedPattern = dbMetadata.compileSqlLikePattern("data_%_set%");
-    assertNotNull(mixedPattern);
-    assertTrue(mixedPattern.matcher("data_1_set").matches());
-    assertTrue(mixedPattern.matcher("data_foo_set_bar").matches());
-    assertTrue(mixedPattern.matcher("DATA_X_SET").matches());
-    assertFalse(mixedPattern.matcher("dataset").matches());
-    assertFalse(mixedPattern.matcher("data_set").matches());
-
-    // Escaping regex metacharacters
-    Pattern dotPattern = dbMetadata.compileSqlLikePattern("version_1.0");
-    assertNotNull(dotPattern);
-    assertTrue(dotPattern.matcher("version_1.0").matches());
-    assertFalse(dotPattern.matcher("version_1X0").matches());
-
-    Pattern bracketPattern = dbMetadata.compileSqlLikePattern("array[0]");
-    assertNotNull(bracketPattern);
-    assertTrue(bracketPattern.matcher("array[0]").matches());
-    assertFalse(bracketPattern.matcher("array_0_").matches());
-
-    // Escaped wildcards
-    Pattern escapedUnderscore = dbMetadata.compileSqlLikePattern("test\\_table");
-    assertNotNull(escapedUnderscore);
-    assertTrue(escapedUnderscore.matcher("test_table").matches());
-    assertFalse(escapedUnderscore.matcher("test1table").matches());
-
-    Pattern escapedPercent = dbMetadata.compileSqlLikePattern("100\\%discount");
-    assertNotNull(escapedPercent);
-    assertTrue(escapedPercent.matcher("100%discount").matches());
-    assertFalse(escapedPercent.matcher("100PERCENTdiscount").matches());
-
-    // Escape character at the end
-    Pattern escapeLast = dbMetadata.compileSqlLikePattern("test\\");
-    assertNotNull(escapeLast);
-    assertTrue(escapeLast.matcher("test\\").matches());
-    assertFalse(escapeLast.matcher("test").matches());
   }
 
   @Test
@@ -1116,9 +1018,6 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
 
-    Pattern regex = dbMetadata.compileSqlLikePattern(pattern);
-    assertNotNull(regex);
-
     List<Routine> results =
         dbMetadata.findMatchingBigQueryObjects(
             "Routine",
@@ -1128,7 +1027,8 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
-            regex,
+            null,
+            SqlLikePattern.compile(pattern),
             false);
 
     verify(bigqueryClient, times(1))
@@ -1160,7 +1060,6 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigqueryClient.listRoutines(eq(datasetId), any(BigQuery.RoutineListOption[].class)))
         .thenReturn(page);
 
-    Pattern regex = dbMetadata.compileSqlLikePattern(pattern);
     List<Routine> results =
         dbMetadata.findMatchingBigQueryObjects(
             "Routine",
@@ -1170,7 +1069,8 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
-            regex,
+            null,
+            SqlLikePattern.compile(pattern),
             false);
 
     verify(bigqueryClient, times(1))
@@ -1194,7 +1094,6 @@ public class BigQueryDatabaseMetaDataTest {
     Routine mockRoutine = mockBigQueryRoutine(catalog, schema, procNameExact, "PROCEDURE", "desc");
 
     when(bigqueryClient.getRoutine(eq(routineId))).thenReturn(mockRoutine);
-    Pattern regex = dbMetadata.compileSqlLikePattern(procNameExact);
 
     List<Routine> results =
         dbMetadata.findMatchingBigQueryObjects(
@@ -1205,7 +1104,8 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             procNameExact,
-            regex,
+            procNameExact,
+            null,
             false);
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
@@ -1220,6 +1120,8 @@ public class BigQueryDatabaseMetaDataTest {
 
   private List<Table> invokeFindMatchingObjectsWithException(
       BigQueryException bqe, String pattern, boolean throwOn404) throws Exception {
+    String literal = SqlLikePattern.literalOrNull(pattern);
+    SqlLikePattern matcher = (literal == null) ? SqlLikePattern.compile(pattern) : null;
     return dbMetadata.findMatchingBigQueryObjects(
         "Table",
         () -> {
@@ -1230,7 +1132,8 @@ public class BigQueryDatabaseMetaDataTest {
         },
         (table) -> "name",
         pattern,
-        dbMetadata.compileSqlLikePattern(pattern),
+        literal,
+        matcher,
         throwOn404);
   }
 
@@ -1486,7 +1389,7 @@ public class BigQueryDatabaseMetaDataTest {
     Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
     FieldList resultFields = resultSchema.getFields();
     List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    Pattern noColumnNamePattern = null; // Match all columns
+    SqlLikePattern noColumnNamePattern = null; // Match all columns
 
     Routine routine =
         mockBigQueryRoutineWithArgs(
@@ -1502,7 +1405,7 @@ public class BigQueryDatabaseMetaDataTest {
     Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
     FieldList resultFields = resultSchema.getFields();
     List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    Pattern noColumnNamePattern = null;
+    SqlLikePattern noColumnNamePattern = null;
 
     RoutineArgument arg1 = mockRoutineArgument("param1", StandardSQLTypeName.INT64, "IN");
     RoutineArgument arg2 = mockRoutineArgument("param2", StandardSQLTypeName.STRING, "OUT");
@@ -1522,11 +1425,12 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testProcessProcedureArguments_WithColumnNameFilter() {
+  public void testProcessProcedureArguments_WithColumnNameFilter() throws SQLException {
     Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
     FieldList resultFields = resultSchema.getFields();
     List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    Pattern columnNamePattern = Pattern.compile(".*_id"); // Match columns ending with _id
+    SqlLikePattern columnNamePattern =
+        SqlLikePattern.compile("%\\_id"); // Match columns ending with _id
 
     RoutineArgument arg1 = mockRoutineArgument("user_id", StandardSQLTypeName.INT64, "IN");
     RoutineArgument arg2 = mockRoutineArgument("user_name", StandardSQLTypeName.STRING, "IN");
@@ -1548,7 +1452,7 @@ public class BigQueryDatabaseMetaDataTest {
     Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
     FieldList resultFields = resultSchema.getFields();
     List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    Pattern noColumnNamePattern = null;
+    SqlLikePattern noColumnNamePattern = null;
 
     RoutineArgument arg1 = mockRoutineArgument("valid_arg", StandardSQLTypeName.INT64, "IN");
     List<RoutineArgument> argsWithNull = new ArrayList<>();
@@ -2838,11 +2742,12 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testProcessFunctionParametersAndReturnValue_ColumnNameFilter() {
+  public void testProcessFunctionParametersAndReturnValue_ColumnNameFilter() throws SQLException {
     Schema resultSchema = dbMetadata.defineGetFunctionColumnsSchema();
     FieldList resultFields = resultSchema.getFields();
     List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    Pattern columnNamePattern = Pattern.compile("id_.*"); // Match columns starting with "id_"
+    SqlLikePattern columnNamePattern =
+        SqlLikePattern.compile("id\\_%"); // Match columns starting with "id_"
 
     RoutineArgument arg1 = mockRoutineArgument("id_arg", StandardSQLTypeName.INT64, "IN");
     RoutineArgument arg2 = mockRoutineArgument("name_arg", StandardSQLTypeName.STRING, "IN");
@@ -4295,5 +4200,264 @@ public class BigQueryDatabaseMetaDataTest {
         assertFalse(rs.next(), "ResultSet should have 0 rows");
       }
     }
+  }
+
+  @Test
+  public void testGetTables_escapedUnderscoreUsesDirectLookup() throws SQLException {
+    TableId expectedTableId = TableId.of("test-project", "my_dataset", "my_table");
+    Table matchingTable =
+        mockBigQueryTable(
+            "test-project", "my_dataset", "my_table", TableDefinition.Type.TABLE, "desc");
+    when(bigqueryClient.getTable(eq(expectedTableId), any(BigQuery.TableOption[].class)))
+        .thenReturn(matchingTable);
+
+    try (ResultSet rs =
+        dbMetadata.getTables(
+            "test-project", "my\\_dataset", "my\\_table", new String[] {"TABLE"})) {
+      assertTrue(rs.next());
+      assertEquals("my_dataset", rs.getString("TABLE_SCHEM"));
+      assertEquals("my_table", rs.getString("TABLE_NAME"));
+      assertFalse(rs.next());
+    }
+
+    verify(bigqueryClient, never())
+        .listDatasets(anyString(), any(BigQuery.DatasetListOption[].class));
+    verify(bigqueryClient, never())
+        .listTables(any(DatasetId.class), any(BigQuery.TableListOption[].class));
+  }
+
+  @Test
+  public void testGetTables_unescapedUnderscoreListsAndMatchesCaseInsensitively()
+      throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "my_dataset");
+    Table exactCaseTable =
+        mockBigQueryTable(
+            "test-project", "my_dataset", "my_table", TableDefinition.Type.TABLE, "desc");
+    Table wildcardMatchTable =
+        mockBigQueryTable(
+            "test-project", "my_dataset", "MYXTABLE", TableDefinition.Type.TABLE, "desc2");
+    Table otherTable =
+        mockBigQueryTable(
+            "test-project", "my_dataset", "other_table", TableDefinition.Type.TABLE, "desc3");
+    mockDatasetIteration(datasetId);
+    mockTableIteration(datasetId, exactCaseTable, wildcardMatchTable, otherTable);
+
+    try (ResultSet rs =
+        dbMetadata.getTables("test-project", "MY_DATASET", "my_table", new String[] {"TABLE"})) {
+      List<String> matchedNames = new ArrayList<>();
+      while (rs.next()) {
+        matchedNames.add(rs.getString("TABLE_NAME"));
+      }
+      assertThat(matchedNames).containsExactly("MYXTABLE", "my_table").inOrder();
+    }
+  }
+
+  @Test
+  public void testGetSchemasAndProcedures_escapedUnderscoreUsesDirectLookup() throws SQLException {
+    DatasetId datasetId = DatasetId.of("test-project", "my_dataset");
+    Dataset mockDataset = mock(Dataset.class);
+    when(mockDataset.getDatasetId()).thenReturn(datasetId);
+    when(bigqueryClient.getDataset(eq(datasetId))).thenReturn(mockDataset);
+
+    try (ResultSet schemasRs = dbMetadata.getSchemas("test-project", "my\\_dataset")) {
+      assertTrue(schemasRs.next());
+      assertEquals("my_dataset", schemasRs.getString("TABLE_SCHEM"));
+      assertFalse(schemasRs.next());
+    }
+    verify(bigqueryClient, never())
+        .listDatasets(anyString(), any(BigQuery.DatasetListOption[].class));
+
+    RoutineId routineId = RoutineId.of("test-project", "my_dataset", "my_proc");
+    Routine mockProc =
+        mockBigQueryRoutineWithArgs(
+            "test-project", "my_dataset", "my_proc", "PROCEDURE", "desc", Collections.emptyList());
+    when(bigqueryClient.getRoutine(eq(routineId), any(BigQuery.RoutineOption[].class)))
+        .thenReturn(mockProc);
+
+    try (ResultSet procRs = dbMetadata.getProcedures("test-project", "my\\_dataset", "my\\_proc")) {
+      assertTrue(procRs.next());
+      assertEquals("my_proc", procRs.getString("PROCEDURE_NAME"));
+      assertFalse(procRs.next());
+    }
+    verify(bigqueryClient, never())
+        .listRoutines(any(DatasetId.class), any(BigQuery.RoutineListOption[].class));
+  }
+
+  @Test
+  public void testGetPrimaryKeys_exactIdentifierDoesNotUnescapeBackslash() throws SQLException {
+    String rawSchema = "raw\\_schema";
+    String rawTable = "raw\\_table";
+    TableId exactTableId = TableId.of("test-project", rawSchema, rawTable);
+    mockTableWithConstraints(exactTableId, null);
+
+    try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", rawSchema, rawTable)) {
+      assertFalse(rs.next());
+    }
+    verify(bigqueryClient).getTable(eq(exactTableId), any(BigQuery.TableOption[].class));
+  }
+
+  static Stream<Arguments> overMaxPatternLengthProvider() {
+    String tooLong =
+        String.join("", Collections.nCopies(SqlLikePattern.MAX_SQL_LIKE_PATTERN_LENGTH + 1, "a"));
+    return Stream.of(
+        Arguments.of(
+            "getSchemas.schemaPattern",
+            (MetadataResultSetSupplier) m -> m.getSchemas("test-project", tooLong)),
+        Arguments.of(
+            "getSchemas.schemaPattern(nullCatalog)",
+            (MetadataResultSetSupplier) m -> m.getSchemas(null, tooLong)),
+        Arguments.of(
+            "getTables.schemaPattern",
+            (MetadataResultSetSupplier) m -> m.getTables("test-project", tooLong, "%", null)),
+        Arguments.of(
+            "getTables.tableNamePattern",
+            (MetadataResultSetSupplier) m -> m.getTables("test-project", "%", tooLong, null)),
+        Arguments.of(
+            "getTables.tableNamePattern(graphOnly)",
+            (MetadataResultSetSupplier)
+                m -> m.getTables("test-project", "%", tooLong, new String[] {"GRAPH TABLE"})),
+        Arguments.of(
+            "getTables.tableNamePattern(dotQualified)",
+            (MetadataResultSetSupplier)
+                m -> m.getTables("test-project", "%", "g." + tooLong, null)),
+        Arguments.of(
+            "getColumns.schemaPattern",
+            (MetadataResultSetSupplier) m -> m.getColumns("test-project", tooLong, "%", "%")),
+        Arguments.of(
+            "getColumns.tableNamePattern",
+            (MetadataResultSetSupplier) m -> m.getColumns("test-project", "%", tooLong, "%")),
+        Arguments.of(
+            "getColumns.tableNamePattern(dotQualified)",
+            (MetadataResultSetSupplier)
+                m -> m.getColumns("test-project", "%", "g." + tooLong, "%")),
+        Arguments.of(
+            "getColumns.columnNamePattern",
+            (MetadataResultSetSupplier) m -> m.getColumns("test-project", "%", "tbl", tooLong)),
+        Arguments.of(
+            "getProcedures.schemaPattern",
+            (MetadataResultSetSupplier) m -> m.getProcedures("test-project", tooLong, "%")),
+        Arguments.of(
+            "getProcedures.procedureNamePattern",
+            (MetadataResultSetSupplier) m -> m.getProcedures("test-project", "%", tooLong)),
+        Arguments.of(
+            "getProcedureColumns.schemaPattern",
+            (MetadataResultSetSupplier)
+                m -> m.getProcedureColumns("test-project", tooLong, "%", "%")),
+        Arguments.of(
+            "getProcedureColumns.procedureNamePattern",
+            (MetadataResultSetSupplier)
+                m -> m.getProcedureColumns("test-project", "%", tooLong, "%")),
+        Arguments.of(
+            "getProcedureColumns.columnNamePattern",
+            (MetadataResultSetSupplier)
+                m -> m.getProcedureColumns("test-project", "%", "proc", tooLong)),
+        Arguments.of(
+            "getFunctions.schemaPattern",
+            (MetadataResultSetSupplier) m -> m.getFunctions("test-project", tooLong, "%")),
+        Arguments.of(
+            "getFunctions.functionNamePattern",
+            (MetadataResultSetSupplier) m -> m.getFunctions("test-project", "%", tooLong)),
+        Arguments.of(
+            "getFunctionColumns.schemaPattern",
+            (MetadataResultSetSupplier)
+                m -> m.getFunctionColumns("test-project", tooLong, "%", "%")),
+        Arguments.of(
+            "getFunctionColumns.functionNamePattern",
+            (MetadataResultSetSupplier)
+                m -> m.getFunctionColumns("test-project", "%", tooLong, "%")),
+        Arguments.of(
+            "getFunctionColumns.columnNamePattern",
+            (MetadataResultSetSupplier)
+                m -> m.getFunctionColumns("test-project", "%", "fn", tooLong)));
+  }
+
+  @ParameterizedTest(name = "{0}")
+  @MethodSource("overMaxPatternLengthProvider")
+  public void testPatternMethodsRejectOverlyLongPatternsBeforeApiCalls(
+      String caseName, MetadataResultSetSupplier call) {
+    assertThrows(BigQueryJdbcException.class, () -> call.get(dbMetadata), caseName);
+    verifyNoInteractions(bigqueryClient);
+  }
+
+  @Test
+  public void testPatternMethodsRejectTrailingUnescapedBackslash() {
+    assertThrows(BigQueryJdbcException.class, () -> dbMetadata.getSchemas("test-project", "ds\\"));
+    assertThrows(BigQueryJdbcException.class, () -> dbMetadata.getSchemas(null, "ds\\"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getTables("test-project", "%", "tbl\\", null));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getTables("test-project", "%", "%tbl\\", null));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getTables("test-project", "%", "v1.0\\", null));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getTables("test-project", "%", "tbl\\", new String[] {"GRAPH TABLE"}));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getColumns("test-project", "%", "v1.0\\", "%"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getColumns("test-project", "%", "tbl", "col\\"));
+    assertThrows(
+        BigQueryJdbcException.class, () -> dbMetadata.getProcedures("test-project", "%", "proc\\"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getProcedureColumns("test-project", "%", "proc\\", "%"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getProcedureColumns("test-project", "%", "proc", "col\\"));
+    assertThrows(
+        BigQueryJdbcException.class, () -> dbMetadata.getFunctions("test-project", "%", "fn\\"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getFunctionColumns("test-project", "%", "fn\\", "%"));
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> dbMetadata.getFunctionColumns("test-project", "%", "fn", "col\\"));
+    verifyNoInteractions(bigqueryClient);
+  }
+
+  @Test
+  public void testGetTables_complexWildcardPatternsCompletePromptly() {
+    DatasetId datasetId = DatasetId.of("test-project", "analytics_dataset");
+    Table nonMatchingLongTable =
+        mockBigQueryTable(
+            "test-project",
+            "analytics_dataset",
+            "enterprise_ecommerce_event_revenue_ledger_segmented_archive",
+            TableDefinition.Type.TABLE,
+            "summary");
+    Table matchingTable =
+        mockBigQueryTable(
+            "test-project",
+            "analytics_dataset",
+            "enterprise_ecommerce_event_revenue_ledger_segmented_archive!",
+            TableDefinition.Type.TABLE,
+            "matching");
+    mockTableIteration(datasetId, nonMatchingLongTable, matchingTable);
+
+    List<String> patterns =
+        Arrays.asList(
+            "%%%%%%%%%%%%%%%%%%%%%!",
+            "%_%_%_%_%_%_%_%_%_%_%_%_%_%_%!", "%e%e%e%e%e%e%e%e%e%e%e%e!");
+
+    assertTimeoutPreemptively(
+        Duration.ofSeconds(10),
+        () -> {
+          for (String pattern : patterns) {
+            try (ResultSet rs =
+                dbMetadata.getTables(
+                    "test-project", "analytics\\_dataset", pattern, new String[] {"TABLE"})) {
+              assertTrue(rs.next(), "Expected matching table for pattern: " + pattern);
+              assertEquals(
+                  "enterprise_ecommerce_event_revenue_ledger_segmented_archive!",
+                  rs.getString("TABLE_NAME"));
+              assertFalse(rs.next());
+            }
+          }
+        });
   }
 }
