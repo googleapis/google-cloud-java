@@ -173,7 +173,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
-  public void testGetCredentialsForPreGeneratedTokenTPC() throws IOException {
+  public void testGetCredentialsForPreGeneratedTokenCustomUniverseDomain() throws IOException {
     Map<String, String> authProperties =
         BigQueryJdbcOAuthUtility.parseOAuthProperties(
             DataSource.fromUrl(
