@@ -20,7 +20,11 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StubSettings;
+import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.ClientConfiguration;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.RowRange;
+import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
@@ -41,6 +45,7 @@ import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -55,9 +60,12 @@ import io.grpc.Status;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import javax.annotation.Nullable;
 
 /**
@@ -85,6 +93,12 @@ public class CloudEnv extends AbstractTestEnv {
           return input.toString().startsWith("34.126");
         }
       };
+
+  private static final Set<String> SESSION_DIVERTED_CLASSIC_METHODS =
+      ImmutableSet.of(
+          BigtableGrpc.getMutateRowMethod().getFullMethodName(),
+          BigtableGrpc.getCheckAndMutateRowMethod().getFullMethodName(),
+          BigtableGrpc.getReadModifyWriteRowMethod().getFullMethodName());
 
   private static final String DATA_ENDPOINT_PROPERTY_NAME = "bigtable.data-endpoint";
   private static final String ADMIN_ENDPOINT_PROPERTY_NAME = "bigtable.admin-endpoint";
@@ -186,37 +200,50 @@ public class CloudEnv extends AbstractTestEnv {
   }
 
   private void configureConnection(StubSettings.Builder<?, ?> stubSettings) {
-    // Build an remote address restricting interceptor
-    final ClientInterceptor interceptor;
+    final List<ClientInterceptor> interceptors = new ArrayList<>();
 
     switch (getConnectionMode()) {
       case DEFAULT:
-        // nothing special
-        return;
+        break;
       case REQUIRE_DIRECT_PATH:
-        interceptor =
+        interceptors.add(
             buildRemoteAddrInterceptor(
                 "DirectPath IPv4 or IPv6",
-                Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER));
+                Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER),
+                /* skipGetClientConfiguration= */ true));
         break;
       case REQUIRE_DIRECT_PATH_IPV4:
-        interceptor =
-            buildRemoteAddrInterceptor("DirectPath IPv4", Predicates.or(DIRECT_PATH_IPV4_MATCHER));
+        interceptors.add(
+            buildRemoteAddrInterceptor(
+                "DirectPath IPv4",
+                Predicates.or(DIRECT_PATH_IPV4_MATCHER),
+                /* skipGetClientConfiguration= */ true));
         break;
       case REQUIRE_CFE:
-        interceptor =
+        interceptors.add(
             buildRemoteAddrInterceptor(
                 "a CFE ip",
-                Predicates.not(Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER)));
+                Predicates.not(Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER)),
+                /* skipGetClientConfiguration= */ false));
         break;
       default:
         throw new IllegalStateException("Unexpected ConnectionMode: " + getConnectionMode());
     }
 
-    final ClientInterceptor appProfileInterceptor =
-        appProfileId != null ? new AppProfileInterceptor() : null;
+    ExpectedProtocol expectedProtocol = getExpectedProtocol();
+    if (expectedProtocol != ExpectedProtocol.ANY) {
+      interceptors.add(buildProtocolEnforcementInterceptor(expectedProtocol));
+    }
 
-    // Inject the interceptor into the channel provider, taking care to preserve existing channel
+    if (appProfileId != null) {
+      interceptors.add(new AppProfileInterceptor());
+    }
+
+    if (interceptors.isEmpty()) {
+      return;
+    }
+
+    // Inject the interceptors into the channel provider, taking care to preserve existing channel
     // configurator
     InstantiatingGrpcChannelProvider.Builder channelProvider =
         ((InstantiatingGrpcChannelProvider) stubSettings.getTransportChannelProvider()).toBuilder();
@@ -234,9 +261,8 @@ public class CloudEnv extends AbstractTestEnv {
             if (oldConfigurator != null) {
               builder = oldConfigurator.apply(builder);
             }
-            builder = builder.intercept(interceptor);
-            if (appProfileInterceptor != null) {
-              builder = builder.intercept(appProfileInterceptor);
+            for (ClientInterceptor interceptor : interceptors) {
+              builder = builder.intercept(interceptor);
             }
             return builder;
           }
@@ -245,12 +271,25 @@ public class CloudEnv extends AbstractTestEnv {
     stubSettings.setTransportChannelProvider(channelProvider.build());
   }
 
-  private ClientInterceptor buildRemoteAddrInterceptor(
-      final String msg, final Predicate<InetSocketAddress> predicate) {
+  static ClientInterceptor buildRemoteAddrInterceptor(
+      final String msg,
+      final Predicate<InetSocketAddress> predicate,
+      final boolean skipGetClientConfiguration) {
     return new ClientInterceptor() {
       @Override
       public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
           MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+        if (skipGetClientConfiguration
+            && BigtableGrpc.getGetClientConfigurationMethod()
+                .getFullMethodName()
+                .equals(method.getFullMethodName())) {
+          // Regardless of data transport, GetClientConfiguration always goes over CloudPath
+          // (ClientConfigurationManager polls over a CFE channel even when data traffic uses
+          // DirectPath), so skip the DirectPath IP check for it. Under REQUIRE_CFE we keep
+          // checking it so ShimImpl's DirectAccess probe over DirectPath is rejected and forces
+          // CFE.
+          return next.newCall(method, callOptions);
+        }
         final ClientCall<ReqT, RespT> clientCall = next.newCall(method, callOptions);
 
         return new SimpleForwardingClientCall<ReqT, RespT>(clientCall) {
@@ -280,6 +319,201 @@ public class CloudEnv extends AbstractTestEnv {
         };
       }
     };
+  }
+
+  static ClientInterceptor buildProtocolEnforcementInterceptor(
+      final ExpectedProtocol expectedProtocol) {
+    return new ClientInterceptor() {
+      @Override
+      public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+          MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+        if (expectedProtocol == ExpectedProtocol.CLASSIC) {
+          if (isSessionOpenMethod(method)) {
+            return new FailingClientCall<>(
+                Status.FAILED_PRECONDITION.withDescription(
+                    "Expected protocol CLASSIC (-Dbigtable.expected-protocol=CLASSIC), "
+                        + "but attempted session RPC: "
+                        + method.getFullMethodName()));
+          }
+          return next.newCall(method, callOptions);
+        }
+
+        if (expectedProtocol == ExpectedProtocol.SESSION) {
+          String fullMethodName = method.getFullMethodName();
+          if (SESSION_DIVERTED_CLASSIC_METHODS.contains(fullMethodName)) {
+            return new FailingClientCall<>(
+                Status.FAILED_PRECONDITION.withDescription(
+                    "Expected protocol SESSION (-Dbigtable.expected-protocol=SESSION), "
+                        + "but attempted classic RPC: "
+                        + fullMethodName));
+          }
+          if (BigtableGrpc.getReadRowsMethod().getFullMethodName().equals(fullMethodName)) {
+            return new SinglePointReadRowsBlockingClientCall<>(next.newCall(method, callOptions));
+          }
+        }
+
+        return next.newCall(method, callOptions);
+      }
+    };
+  }
+
+  private static boolean isSessionOpenMethod(MethodDescriptor<?, ?> method) {
+    String bareMethodName = method.getBareMethodName();
+    return BigtableGrpc.SERVICE_NAME.equals(method.getServiceName())
+        && bareMethodName != null
+        && bareMethodName.startsWith("Open");
+  }
+
+  static boolean isSinglePointReadRows(ReadRowsRequest req) {
+    if (req.getRowsLimit() != 1) {
+      return false;
+    }
+    RowSet rows = req.getRows();
+    int keyCount = rows.getRowKeysCount();
+    int rangeCount = rows.getRowRangesCount();
+    if (keyCount == 1 && rangeCount == 0) {
+      return true;
+    }
+    if (keyCount == 0 && rangeCount == 1) {
+      RowRange range = rows.getRowRanges(0);
+      return range.hasStartKeyClosed()
+          && range.hasEndKeyClosed()
+          && range.getStartKeyClosed().equals(range.getEndKeyClosed());
+    }
+    return false;
+  }
+
+  private static final class FailingClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
+    private final Status status;
+
+    FailingClientCall(Status status) {
+      this.status = status;
+    }
+
+    @Override
+    public void start(Listener<RespT> responseListener, Metadata headers) {
+      responseListener.onClose(status, new Metadata());
+    }
+
+    @Override
+    public void request(int numMessages) {}
+
+    @Override
+    public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+
+    @Override
+    public void halfClose() {}
+
+    @Override
+    public void sendMessage(ReqT message) {}
+  }
+
+  private static final class SinglePointReadRowsBlockingClientCall<ReqT, RespT>
+      extends SimpleForwardingClientCall<ReqT, RespT> {
+    @Nullable private Listener<RespT> listener;
+    @Nullable private Metadata headers;
+    private int pendingRequests;
+    private boolean started;
+    private boolean aborted;
+
+    SinglePointReadRowsBlockingClientCall(ClientCall<ReqT, RespT> delegate) {
+      super(delegate);
+    }
+
+    @Override
+    public synchronized void start(Listener<RespT> responseListener, Metadata headers) {
+      this.listener = responseListener;
+      this.headers = headers;
+    }
+
+    @Override
+    public synchronized void request(int numMessages) {
+      if (aborted) {
+        return;
+      }
+      if (started) {
+        super.request(numMessages);
+      } else {
+        pendingRequests = (int) Math.min(Integer.MAX_VALUE, (long) pendingRequests + numMessages);
+      }
+    }
+
+    @Override
+    public void sendMessage(ReqT message) {
+      Listener<RespT> abortListener = null;
+      synchronized (this) {
+        if (aborted) {
+          return;
+        }
+        if (!started) {
+          if (message instanceof ReadRowsRequest
+              && isSinglePointReadRows((ReadRowsRequest) message)) {
+            aborted = true;
+            abortListener = listener;
+          } else {
+            started = true;
+            super.start(listener, headers);
+            if (pendingRequests > 0) {
+              super.request(pendingRequests);
+              pendingRequests = 0;
+            }
+          }
+        }
+        if (!aborted) {
+          super.sendMessage(message);
+        }
+      }
+      if (abortListener != null) {
+        abortListener.onClose(
+            Status.FAILED_PRECONDITION.withDescription(
+                "Expected protocol SESSION (-Dbigtable.expected-protocol=SESSION), "
+                    + "but attempted single-point classic ReadRows RPC"),
+            new Metadata());
+      }
+    }
+
+    @Override
+    public synchronized void halfClose() {
+      if (aborted) {
+        return;
+      }
+      if (!started) {
+        started = true;
+        super.start(listener, headers);
+        if (pendingRequests > 0) {
+          super.request(pendingRequests);
+          pendingRequests = 0;
+        }
+      }
+      super.halfClose();
+    }
+
+    @Override
+    public void cancel(@Nullable String message, @Nullable Throwable cause) {
+      Listener<RespT> cancelListener = null;
+      synchronized (this) {
+        if (aborted) {
+          return;
+        }
+        if (started) {
+          super.cancel(message, cause);
+        } else {
+          aborted = true;
+          cancelListener = listener;
+        }
+      }
+      if (cancelListener != null) {
+        cancelListener.onClose(
+            Status.CANCELLED.withDescription(message).withCause(cause), new Metadata());
+      }
+    }
+
+    @Override
+    public synchronized void setMessageCompression(boolean enabled) {
+      if (started) {
+        super.setMessageCompression(enabled);
+      }
+    }
   }
 
   private class AppProfileInterceptor implements ClientInterceptor {
@@ -346,8 +580,37 @@ public class CloudEnv extends AbstractTestEnv {
       throw e;
     }
     sessionShim = clientContext.getSessionShim();
+    try {
+      verifyExpectedProtocol(getExpectedProtocol(), sessionShim);
+    } catch (RuntimeException e) {
+      sessionShim = null;
+      dataClient.close();
+      dataClient = null;
+      throw e;
+    }
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
     instanceAdminClient = BigtableInstanceAdminClient.create(instanceAdminSettings.build());
+  }
+
+  static void verifyExpectedProtocol(ExpectedProtocol expectedProtocol, Shim shim) {
+    switch (expectedProtocol) {
+      case ANY:
+        return;
+      case CLASSIC:
+        Preconditions.checkState(
+            !isSessionsEnabled(shim),
+            "Expected protocol CLASSIC (-Dbigtable.expected-protocol=CLASSIC), "
+                + "but sessions are enabled in the resolved ClientConfiguration");
+        return;
+      case SESSION:
+        Preconditions.checkState(
+            isSessionsEnabled(shim),
+            "Expected protocol SESSION (-Dbigtable.expected-protocol=SESSION), "
+                + "but sessions are disabled in the resolved ClientConfiguration");
+        return;
+      default:
+        throw new IllegalStateException("Unexpected ExpectedProtocol: " + expectedProtocol);
+    }
   }
 
   @Override
