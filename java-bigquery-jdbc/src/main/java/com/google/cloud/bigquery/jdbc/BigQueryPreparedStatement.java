@@ -66,9 +66,15 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Queue;
+import java.util.Set;
 
 class BigQueryPreparedStatement extends BigQueryStatement implements PreparedStatement {
   private static final BigQueryJdbcCustomLogger LOG =
@@ -77,6 +83,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   // parameterHandler is inherited from BigQueryStatement
   protected final int parameterCount;
   protected final String currentQuery;
+  private final DirectInsertShape directInsertShape;
   private Queue<ArrayList<BigQueryJdbcParameter>> batchParameters = new LinkedList<>();
   // Both hold statistics.getSchema(), which reports different things per statement type: the rows
   // a SELECT returns, versus the columns an INSERT writes.
@@ -90,6 +97,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       throw new BigQueryJdbcException("SQL query cannot be null.");
     }
     this.currentQuery = query;
+    this.directInsertShape = parseDirectInsertValues(query);
     QueryStatistics queryStatistics = describeQueryQuietly();
     this.parameterCount = resolveParameterCount(query, queryStatistics);
     this.parameterHandler =
@@ -160,26 +168,371 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     }
   }
 
-  // Remembers the table and schema of single-table INSERT targets, for the Storage Write API.
-  // Failure is delegated to executeBatch instead of the constructor.
+  // Remembers the table and schema of direct single-table INSERT ... VALUES (?, ...) statements
+  // for the Storage Write API. Statements with SQL expressions, partial column lists, or
+  // unsupported column types leave insertSchema null so executeBatch uses standard SQL execution.
   private void captureInsertMetadata(QueryStatistics statistics) {
-    if (!QueryStatistics.StatementType.INSERT.equals(statistics.getStatementType())
+    if (statistics == null
+        || this.directInsertShape == null
+        || !QueryStatistics.StatementType.INSERT.equals(statistics.getStatementType())
         || statistics.getSchema() == null
-        || statistics.getSchema().getFields() == null
         || statistics.getReferencedTables() == null
         || statistics.getReferencedTables().stream().distinct().count() != 1) {
       return;
     }
-    for (Field field : statistics.getSchema().getFields()) {
-      if (!BigQueryTypeRegistry.isSupportedWriteApiField(field)) {
-        return;
-      }
+    Schema resolvedSchema =
+        resolveInsertSchema(statistics.getSchema(), this.directInsertShape, this.parameterCount);
+    if (resolvedSchema == null) {
+      return;
     }
-    this.insertSchema = statistics.getSchema();
+    this.insertSchema = resolvedSchema;
     TableId tableId = statistics.getReferencedTables().get(0);
     this.insertTableName =
         TableName.of(tableId.getProject(), tableId.getDataset(), tableId.getTable());
     LOG.finer("insertTableName: %s, insertSchema: %s", this.insertTableName, this.insertSchema);
+  }
+
+  static Schema resolveInsertSchema(
+      Schema tableSchema, DirectInsertShape shape, int parameterCount) {
+    if (tableSchema == null || shape == null) {
+      return null;
+    }
+    FieldList tableFields = tableSchema.getFields();
+    if (tableFields == null
+        || shape.placeholderCount == 0
+        || shape.placeholderCount != parameterCount
+        || tableFields.size() != shape.placeholderCount) {
+      return null;
+    }
+    for (Field field : tableFields) {
+      if (!BigQueryTypeRegistry.isSupportedWriteApiField(field)) {
+        return null;
+      }
+    }
+    if (shape.columnNames == null) {
+      return tableSchema;
+    }
+    if (shape.columnNames.size() != tableFields.size()) {
+      return null;
+    }
+    Map<String, Field> fieldsByLowerName = new HashMap<>(tableFields.size() * 2);
+    for (Field field : tableFields) {
+      fieldsByLowerName.put(field.getName().toLowerCase(Locale.ROOT), field);
+    }
+    List<Field> orderedFields = new ArrayList<>(shape.columnNames.size());
+    Set<String> seenColumns = new HashSet<>(shape.columnNames.size() * 2);
+    for (String columnName : shape.columnNames) {
+      String normalized = columnName.toLowerCase(Locale.ROOT);
+      if (!seenColumns.add(normalized)) {
+        return null;
+      }
+      Field matched = fieldsByLowerName.get(normalized);
+      if (matched == null) {
+        return null;
+      }
+      orderedFields.add(matched);
+    }
+    return Schema.of(orderedFields);
+  }
+
+  static final class DirectInsertShape {
+    final boolean unqualifiedTable;
+    final int placeholderCount;
+    final List<String> columnNames;
+
+    DirectInsertShape(boolean unqualifiedTable, int placeholderCount, List<String> columnNames) {
+      this.unqualifiedTable = unqualifiedTable;
+      this.placeholderCount = placeholderCount;
+      this.columnNames =
+          columnNames == null ? null : Collections.unmodifiableList(new ArrayList<>(columnNames));
+    }
+  }
+
+  /**
+   * Recognizes single-row {@code INSERT [INTO] <table> [(<col1>, ...)] VALUES (?, ...) [;]}
+   * statements whose {@code VALUES} tuple consists strictly of bare positional {@code ?}
+   * placeholders. Returns {@code null} for any SQL expression, function/UDF call, cast, literal,
+   * {@code DEFAULT}, {@code SELECT}, multi-row tuple list, or {@code _SESSION}-qualified temporary
+   * table so the statement executes on BigQuery's SQL engine instead of the Storage Write API.
+   */
+  static DirectInsertShape parseDirectInsertValues(String sql) {
+    if (sql == null) {
+      return null;
+    }
+    int pos = skipTrivia(sql, 0);
+    if (pos < 0) {
+      return null;
+    }
+    pos = matchKeyword(sql, pos, "INSERT");
+    if (pos < 0) {
+      return null;
+    }
+    pos = skipTrivia(sql, pos);
+    if (pos < 0) {
+      return null;
+    }
+    int afterInto = matchKeyword(sql, pos, "INTO");
+    if (afterInto >= 0) {
+      pos = skipTrivia(sql, afterInto);
+      if (pos < 0) {
+        return null;
+      }
+    }
+    Tuple<Boolean, Integer> tablePath = consumeTablePath(sql, pos);
+    if (tablePath == null || tablePath.y() >= sql.length()) {
+      return null;
+    }
+    boolean unqualifiedTable = tablePath.x();
+    pos = tablePath.y();
+
+    List<String> columnNames = null;
+    if (sql.charAt(pos) == '(') {
+      columnNames = new ArrayList<>();
+      pos++;
+      while (true) {
+        pos = skipTrivia(sql, pos);
+        if (pos < 0 || pos >= sql.length()) {
+          return null;
+        }
+        Tuple<String, Integer> column = readColumnIdentifier(sql, pos);
+        if (column == null) {
+          return null;
+        }
+        columnNames.add(column.x());
+        pos = skipTrivia(sql, column.y());
+        if (pos < 0 || pos >= sql.length()) {
+          return null;
+        }
+        char sep = sql.charAt(pos);
+        if (sep == ',') {
+          pos++;
+        } else if (sep == ')') {
+          pos++;
+          break;
+        } else {
+          return null;
+        }
+      }
+    }
+
+    pos = skipTrivia(sql, pos);
+    if (pos < 0) {
+      return null;
+    }
+    pos = matchKeyword(sql, pos, "VALUES");
+    if (pos < 0) {
+      return null;
+    }
+    pos = skipTrivia(sql, pos);
+    if (pos < 0 || pos >= sql.length() || sql.charAt(pos) != '(') {
+      return null;
+    }
+    pos++;
+
+    int placeholderCount = 0;
+    while (true) {
+      pos = skipTrivia(sql, pos);
+      if (pos < 0 || pos >= sql.length() || sql.charAt(pos) != POSITIONAL_PARAMETER_CHAR) {
+        return null;
+      }
+      placeholderCount++;
+      pos = skipTrivia(sql, pos + 1);
+      if (pos < 0 || pos >= sql.length()) {
+        return null;
+      }
+      char sep = sql.charAt(pos);
+      if (sep == ',') {
+        pos++;
+      } else if (sep == ')') {
+        pos++;
+        break;
+      } else {
+        return null;
+      }
+    }
+
+    pos = skipTrivia(sql, pos);
+    if (pos < 0) {
+      return null;
+    }
+    if (pos < sql.length() && sql.charAt(pos) == ';') {
+      pos = skipTrivia(sql, pos + 1);
+      if (pos < 0) {
+        return null;
+      }
+    }
+    if (pos != sql.length()) {
+      return null;
+    }
+    return new DirectInsertShape(unqualifiedTable, placeholderCount, columnNames);
+  }
+
+  private static Tuple<Boolean, Integer> consumeTablePath(String sql, int pos) {
+    Tuple<String, Integer> firstSegment = readTableSegment(sql, pos);
+    if (firstSegment == null) {
+      return null;
+    }
+    String firstName = firstSegment.x();
+    pos = firstSegment.y();
+    int segmentCount = 1;
+    while (true) {
+      int next = skipTrivia(sql, pos);
+      if (next < 0) {
+        return null;
+      }
+      if (next < sql.length() && (sql.charAt(next) == '.' || sql.charAt(next) == ':')) {
+        pos = skipTrivia(sql, next + 1);
+        if (pos < 0) {
+          return null;
+        }
+        Tuple<String, Integer> segment = readTableSegment(sql, pos);
+        if (segment == null) {
+          return null;
+        }
+        pos = segment.y();
+        segmentCount++;
+      } else {
+        pos = next;
+        break;
+      }
+    }
+    if (segmentCount == 2 && "_session".equalsIgnoreCase(firstName)) {
+      return null;
+    }
+    if (segmentCount == 1
+        && firstName.length() > 9
+        && firstName.regionMatches(true, 0, "_session.", 0, 9)) {
+      return null;
+    }
+    boolean unqualified =
+        segmentCount == 1 && firstName.indexOf('.') < 0 && firstName.indexOf(':') < 0;
+    return Tuple.of(unqualified, pos);
+  }
+
+  private static Tuple<String, Integer> readTableSegment(String sql, int pos) {
+    if (pos >= sql.length()) {
+      return null;
+    }
+    char first = sql.charAt(pos);
+    if (first == '`') {
+      return readBacktickIdentifier(sql, pos);
+    }
+    if (!isUnquotedTableStart(first)) {
+      return null;
+    }
+    int i = pos + 1;
+    while (i < sql.length() && isUnquotedTablePart(sql.charAt(i))) {
+      i++;
+    }
+    return Tuple.of(sql.substring(pos, i), i);
+  }
+
+  private static Tuple<String, Integer> readColumnIdentifier(String sql, int pos) {
+    if (pos >= sql.length()) {
+      return null;
+    }
+    char first = sql.charAt(pos);
+    if (first == '`') {
+      return readBacktickIdentifier(sql, pos);
+    }
+    if (!isIdentifierStart(first)) {
+      return null;
+    }
+    int i = pos + 1;
+    while (i < sql.length() && isIdentifierPart(sql.charAt(i))) {
+      i++;
+    }
+    return Tuple.of(sql.substring(pos, i), i);
+  }
+
+  private static Tuple<String, Integer> readBacktickIdentifier(String sql, int pos) {
+    StringBuilder sb = new StringBuilder();
+    int i = pos + 1;
+    while (i < sql.length()) {
+      char c = sql.charAt(i);
+      if (c == '\\') {
+        if (i + 1 >= sql.length()) {
+          return null;
+        }
+        char escaped = sql.charAt(i + 1);
+        if (escaped != '\\' && escaped != '`') {
+          return null;
+        }
+        sb.append(escaped);
+        i += 2;
+      } else if (c == '`') {
+        if (sb.length() == 0) {
+          return null;
+        }
+        return Tuple.of(sb.toString(), i + 1);
+      } else {
+        sb.append(c);
+        i++;
+      }
+    }
+    return null;
+  }
+
+  private static int matchKeyword(String sql, int pos, String keyword) {
+    int end = pos + keyword.length();
+    if (end > sql.length() || !sql.regionMatches(true, pos, keyword, 0, keyword.length())) {
+      return -1;
+    }
+    if (end < sql.length() && isIdentifierPart(sql.charAt(end))) {
+      return -1;
+    }
+    return end;
+  }
+
+  private static int skipTrivia(String sql, int pos) {
+    int len = sql.length();
+    while (pos < len) {
+      char ch = sql.charAt(pos);
+      if (Character.isWhitespace(ch)) {
+        pos++;
+      } else if (ch == '#') {
+        pos = skipToEndOfLine(sql, pos + 1);
+      } else if (ch == '-' && pos + 1 < len && sql.charAt(pos + 1) == '-') {
+        pos = skipToEndOfLine(sql, pos + 2);
+      } else if (ch == '/' && pos + 1 < len && sql.charAt(pos + 1) == '*') {
+        int closeIdx = sql.indexOf("*/", pos + 2);
+        if (closeIdx < 0) {
+          return -1;
+        }
+        pos = closeIdx + 2;
+      } else {
+        break;
+      }
+    }
+    return pos;
+  }
+
+  private static int skipToEndOfLine(String sql, int pos) {
+    int len = sql.length();
+    while (pos < len) {
+      char ch = sql.charAt(pos);
+      if (ch == '\n' || ch == '\r') {
+        return pos + 1;
+      }
+      pos++;
+    }
+    return len;
+  }
+
+  private static boolean isIdentifierStart(char ch) {
+    return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || ch == '_';
+  }
+
+  private static boolean isIdentifierPart(char ch) {
+    return isIdentifierStart(ch) || (ch >= '0' && ch <= '9');
+  }
+
+  private static boolean isUnquotedTableStart(char ch) {
+    return isIdentifierPart(ch);
+  }
+
+  private static boolean isUnquotedTablePart(char ch) {
+    return isIdentifierPart(ch) || ch == '-';
   }
 
   // This populates the schema of the ResultSet that is being returned by the query.
@@ -448,6 +801,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   private int[] executeBatchInternal(int[] result) throws SQLException {
     // The constructor's dry run may have happened before the target table existed.
     if (this.insertSchema == null
+        && this.directInsertShape != null
         && this.querySettings.isUseWriteAPI()
         && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()) {
       try {

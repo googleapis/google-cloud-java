@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -51,6 +52,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
@@ -72,8 +74,13 @@ import java.time.Instant;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.MockedStatic;
 
@@ -310,5 +317,144 @@ public class BigQueryPreparedStatementWriteApiTest {
       verify(ps, times(1)).runQuery(anyString(), any(QueryJobConfiguration.class));
     }
     verify(connection, never()).getBigQueryWriteClient();
+  }
+
+  private static Stream<Arguments> validDirectInsertQueries() {
+    return Stream.of(
+        Arguments.of("INSERT INTO TAB VALUES (?)", true, 1, null),
+        Arguments.of(
+            "insert tab (TARG_FIELD) values (?);",
+            true,
+            1,
+            Collections.singletonList("TARG_FIELD")),
+        Arguments.of(
+            "/* header */ INSERT INTO `my-proj.my_ds.TAB` (`col_b`, col_a) -- comment\n"
+                + "VALUES ( ? , ? ) ; # trailing",
+            false,
+            2,
+            Arrays.asList("col_b", "col_a")),
+        Arguments.of(
+            "INSERT INTO proj:123_ds.tab (c1) -- mac line ending\rVALUES (?)",
+            false,
+            1,
+            Collections.singletonList("c1")),
+        Arguments.of(
+            "INSERT INTO `my\\`tab` (`col\\\\1`, `col\\`2`) VALUES (?, ?)",
+            true,
+            2,
+            Arrays.asList("col\\1", "col`2")));
+  }
+
+  @ParameterizedTest
+  @MethodSource("validDirectInsertQueries")
+  public void testParseDirectInsertValuesAcceptsValidForms(
+      String sql, boolean unqualified, int expectedPlaceholders, List<String> expectedCols) {
+    BigQueryPreparedStatement.DirectInsertShape shape =
+        BigQueryPreparedStatement.parseDirectInsertValues(sql);
+    assertNotNull(shape);
+    assertEquals(unqualified, shape.unqualifiedTable);
+    assertEquals(expectedPlaceholders, shape.placeholderCount);
+    assertEquals(expectedCols, shape.columnNames);
+  }
+
+  @ParameterizedTest
+  @ValueSource(
+      strings = {
+        "",
+        "   ",
+        "SELECT ?",
+        "UPDATE TAB SET a = ? WHERE b = ?",
+        "MERGE INTO TAB USING (SELECT ? AS v) ON FALSE WHEN NOT MATCHED THEN INSERT (a) VALUES (v)",
+        "INSERT INTO TAB (TARG_FIELD) VALUES (UDF(CAST(? AS STRING), 'XXXXXX'))",
+        "INSERT INTO TAB (STR_FIELD) VALUES (MASK_UDF(?))",
+        "INSERT INTO TAB (a) VALUES ((?))",
+        "INSERT INTO TAB (a, b) VALUES (?, 'constant')",
+        "INSERT INTO TAB (a, b) VALUES (?, DEFAULT)",
+        "INSERT INTO TAB (a, b) VALUES (?, NULL)",
+        "INSERT INTO TAB (a) VALUES (?), (?)",
+        "INSERT INTO TAB (a) SELECT a FROM TAB WHERE a = ?",
+        "INSERT INTO _SESSION.temp_tab (a) VALUES (?)",
+        "INSERT INTO `_SESSION.temp_tab` (a) VALUES (?)",
+        "INSERT INTO `\\u005fSESSION.temp_tab` (a) VALUES (?)",
+        "INSERT INTO TAB () VALUES (?)",
+        "INSERT INTO TAB (s.a) VALUES (?)",
+        "INSERT INTO TAB (1col) VALUES (?)",
+        "INSERT INTO TAB (`bad\\nescape`) VALUES (?)",
+        "INSERT INTO `` VALUES (?)",
+        "INSERT INTO TAB (a) VALUES (?); INSERT INTO TAB (a) VALUES (?)",
+        "/* unclosed comment INSERT INTO TAB VALUES (?)"
+      })
+  public void testParseDirectInsertValuesRejectsIneligibleSql(String sql) {
+    assertNull(BigQueryPreparedStatement.parseDirectInsertValues(null));
+    assertNull(BigQueryPreparedStatement.parseDirectInsertValues(sql));
+  }
+
+  private static Stream<Arguments> expressionFallbackQueries() {
+    return Stream.of(
+        Arguments.of(
+            "INSERT INTO TAB (STR_FIELD) VALUES (MASK_UDF(?));", StandardSQLTypeName.STRING),
+        Arguments.of(
+            "INSERT INTO TAB (TARG_FIELD) VALUES (UDF(CAST(? AS STRING), 'XXXXXX'));",
+            StandardSQLTypeName.BYTES));
+  }
+
+  @ParameterizedTest
+  @MethodSource("expressionFallbackQueries")
+  public void testExpressionInValuesFallsBackToStandardSqlBatch(
+      String sql, StandardSQLTypeName targetColType) throws Exception {
+    doReturn(
+            mockInsertDryRunJob(
+                TableId.of("proj", "ds", "TAB"),
+                Schema.of(Field.of("COL", targetColType)),
+                Collections.singletonList(queryParam("STRING"))))
+        .when(bigQuery)
+        .create(any(JobInfo.class));
+
+    TableResult dmlResult = mock(TableResult.class);
+    doReturn(StatementType.INSERT).when(dmlResult).getStatementType();
+    doReturn(1L).when(dmlResult).getNumDmlAffectedRows();
+    doReturn(dmlResult).when(bigQuery).queryWithTimeout(any(), any(), any());
+
+    BigQueryPreparedStatement ps = new BigQueryPreparedStatement(connection, sql);
+    assertNull(ps.insertSchema);
+    for (int i = 0; i < 3; i++) {
+      ps.setString(1, "val-" + i);
+      ps.addBatch();
+    }
+    assertFalse(ps.useWriteAPI());
+    assertEquals(3, ps.executeBatch().length);
+    verify(connection, never()).getBigQueryWriteClient();
+    verify(bigQuery, times(1)).create(any(JobInfo.class));
+
+    ArgumentCaptor<QueryJobConfiguration> jobCaptor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigQuery).queryWithTimeout(jobCaptor.capture(), any(), any());
+    assertEquals(3, jobCaptor.getValue().getPositionalParameters().size());
+    assertEquals("val-0", jobCaptor.getValue().getPositionalParameters().get(0).getValue());
+
+    // Partial column subset on a multi-column table leaves insertSchema null so DDL DEFAULTs run.
+    Schema twoCols =
+        Schema.of(
+            Field.of("id", StandardSQLTypeName.INT64),
+            Field.of("name", StandardSQLTypeName.STRING));
+    doReturn(
+            mockInsertDryRunJob(
+                TableId.of("proj", "ds", "TAB"),
+                twoCols,
+                Collections.singletonList(queryParam("INT64"))))
+        .when(bigQuery)
+        .create(any(JobInfo.class));
+    assertNull(
+        new BigQueryPreparedStatement(connection, "INSERT INTO TAB (id) VALUES (?)").insertSchema);
+    doReturn(
+            mockInsertDryRunJob(
+                TableId.of("proj", "ds", "TAB"),
+                twoCols,
+                Arrays.asList(queryParam("INT64"), queryParam("STRING"))))
+        .when(bigQuery)
+        .create(any(JobInfo.class));
+    assertNotNull(
+        new BigQueryPreparedStatement(connection, "INSERT INTO TAB (ID, name) VALUES (?, ?)")
+            .insertSchema);
   }
 }
