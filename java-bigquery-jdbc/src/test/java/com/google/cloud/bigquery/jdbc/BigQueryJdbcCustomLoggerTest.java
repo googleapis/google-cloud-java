@@ -644,12 +644,12 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
 
     Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
     // Warm up so that any one-time, class-level logger is registered before we measure.
-    new BigQueryPreparedStatement(connection, "SELECT 1");
+    new BigQueryPreparedStatement(connection, "SELECT 1", false);
     new BigQueryCallableStatement(connection, "CALL my_proc()");
     int childrenBefore = childLoggerCount(rootLogger);
 
     for (int i = 0; i < OBJECT_COUNT; i++) {
-      new BigQueryPreparedStatement(connection, "SELECT 1");
+      new BigQueryPreparedStatement(connection, "SELECT 1", false);
       new BigQueryCallableStatement(connection, "CALL my_proc()");
     }
 

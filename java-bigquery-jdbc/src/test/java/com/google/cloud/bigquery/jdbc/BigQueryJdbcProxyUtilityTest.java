@@ -22,10 +22,14 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.common.io.ByteStreams;
+import com.sun.net.httpserver.HttpsConfigurator;
+import com.sun.net.httpserver.HttpsServer;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,7 +37,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URISyntaxException;
@@ -509,6 +516,120 @@ public class BigQueryJdbcProxyUtilityTest {
       // whereas falling back to JDK's SunJSSE X509TrustManagerImpl reports "PKIX path building
       // failed" (and fails TLS 1.3 handshakes with "Unknown authType: GENERIC").
       assertThat(ex.getMessage()).contains("Trust anchor for certification path not found");
+    }
+  }
+
+  @Test
+  public void testGetHttpTransportOptions_withSslTrustStore_worksWithoutConscrypt()
+      throws Exception {
+    KeyStore serverKeyStore = KeyStore.getInstance("JKS");
+    try (InputStream ksStream = getClass().getResourceAsStream("/localhost-keystore.jks")) {
+      serverKeyStore.load(ksStream, "changeit".toCharArray());
+    }
+    KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+    kmf.init(serverKeyStore, "changeit".toCharArray());
+    SSLContext serverSslContext = SSLContext.getInstance("TLS");
+    serverSslContext.init(kmf.getKeyManagers(), null, null);
+
+    HttpsServer server = HttpsServer.create(new InetSocketAddress("localhost", 0), 0);
+    server.setHttpsConfigurator(new HttpsConfigurator(serverSslContext));
+    server.createContext(
+        "/",
+        exchange -> {
+          exchange.sendResponseHeaders(200, -1);
+          exchange.close();
+        });
+    server.start();
+    try {
+      // Load the driver classes the way they are loaded when conscrypt-openjdk-uber is excluded.
+      Class<?> utilityClass =
+          Class.forName(
+              BigQueryJdbcProxyUtility.class.getName(),
+              true,
+              new ConscryptHidingClassLoader(getClass().getClassLoader()));
+      Field conscryptProvider = utilityClass.getDeclaredField("CONSCRYPT_PROVIDER");
+      conscryptProvider.setAccessible(true);
+      assertNull(conscryptProvider.get(null));
+      Method getHttpTransportOptions =
+          utilityClass.getDeclaredMethod(
+              "getHttpTransportOptions",
+              Map.class,
+              String.class,
+              String.class,
+              String.class,
+              String.class,
+              Integer.class,
+              Integer.class,
+              String.class);
+      getHttpTransportOptions.setAccessible(true);
+      HttpTransportOptions options =
+          (HttpTransportOptions)
+              getHttpTransportOptions.invoke(
+                  null,
+                  Collections.<String, String>emptyMap(),
+                  getTestResourcePath("localhost-truststore.jks"),
+                  "changeit",
+                  "JKS",
+                  null,
+                  null,
+                  null,
+                  "TestClass");
+      HttpTransport transport = options.getHttpTransportFactory().create();
+
+      HttpResponse response =
+          transport
+              .createRequestFactory()
+              .buildGetRequest(
+                  new GenericUrl("https://localhost:" + server.getAddress().getPort() + "/"))
+              .setConnectTimeout(10_000)
+              .setReadTimeout(10_000)
+              .execute();
+      try {
+        assertThat(response.getStatusCode()).isEqualTo(200);
+      } finally {
+        response.disconnect();
+      }
+    } finally {
+      server.stop(0);
+    }
+  }
+
+  /**
+   * Defines the driver's classes itself and reports Conscrypt as missing, as on a classpath without
+   * conscrypt-openjdk-uber. All other classes come from the parent class loader.
+   */
+  private static final class ConscryptHidingClassLoader extends ClassLoader {
+    ConscryptHidingClassLoader(ClassLoader parent) {
+      super(parent);
+    }
+
+    @Override
+    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+      if (name.startsWith("org.conscrypt.")) {
+        throw new ClassNotFoundException(name);
+      }
+      if (!name.startsWith("com.google.cloud.bigquery.jdbc.")) {
+        return super.loadClass(name, resolve);
+      }
+      synchronized (getClassLoadingLock(name)) {
+        Class<?> loadedClass = findLoadedClass(name);
+        if (loadedClass == null) {
+          try (InputStream classStream =
+              getParent().getResourceAsStream(name.replace('.', '/') + ".class")) {
+            if (classStream == null) {
+              throw new ClassNotFoundException(name);
+            }
+            byte[] classBytes = ByteStreams.toByteArray(classStream);
+            loadedClass = defineClass(name, classBytes, 0, classBytes.length);
+          } catch (IOException e) {
+            throw new ClassNotFoundException(name, e);
+          }
+        }
+        if (resolve) {
+          resolveClass(loadedClass);
+        }
+        return loadedClass;
+      }
     }
   }
 }
