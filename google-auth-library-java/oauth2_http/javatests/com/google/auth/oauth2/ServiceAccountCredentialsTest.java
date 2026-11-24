@@ -1773,6 +1773,74 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     verifyJwtAccess(credentials.getRequestMetadata(CALL_URI), "scope1 scope2");
   }
 
+  @Test
+  void jwtWithClaims_propagatesUniverseDomain() throws IOException {
+    JwtClaims newClaims =
+        JwtClaims.newBuilder().setAudience("https://service.example.com/").build();
+
+    ServiceAccountCredentials defaultCredentials = createDefaultBuilder().build();
+    assertEquals(
+        Credentials.GOOGLE_DEFAULT_UNIVERSE,
+        defaultCredentials.jwtWithClaims(newClaims).getUniverseDomain());
+
+    ServiceAccountCredentials customCredentials =
+        createDefaultBuilder().setUniverseDomain("example.com").build();
+    assertEquals("example.com", customCredentials.jwtWithClaims(newClaims).getUniverseDomain());
+
+    InputStream stream =
+        writeServiceAccountStream(
+            CLIENT_ID, CLIENT_EMAIL, PRIVATE_KEY_PKCS8, PRIVATE_KEY_ID, "example.com");
+    ServiceAccountCredentials jsonCredentials = ServiceAccountCredentials.fromStream(stream);
+    assertEquals("example.com", jsonCredentials.jwtWithClaims(newClaims).getUniverseDomain());
+  }
+
+  @Test
+  void jwtWithClaims_getUniverseDomainIOException_throwsIllegalStateException() throws IOException {
+    IOException expectedCause = new IOException("universe lookup failed");
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(createDefaultBuilder()) {
+          @Override
+          public String getUniverseDomain() throws IOException {
+            throw expectedCause;
+          }
+        };
+    JwtClaims newClaims =
+        JwtClaims.newBuilder().setAudience("https://service.example.com/").build();
+
+    IllegalStateException exception =
+        assertThrows(IllegalStateException.class, () -> credentials.jwtWithClaims(newClaims));
+    assertSame(expectedCause, exception.getCause());
+  }
+
+  @Test
+  void createSelfSignedJwtCredentials_propagatesUniverseDomain() throws IOException {
+    URI audienceUri = URI.create("https://service.example.com/v1/resource");
+
+    ServiceAccountCredentials defaultCredentials = createDefaultBuilder().build();
+    assertEquals(
+        Credentials.GOOGLE_DEFAULT_UNIVERSE,
+        defaultCredentials.createSelfSignedJwtCredentials(audienceUri).getUniverseDomain());
+
+    ServiceAccountCredentials customCredentials =
+        createDefaultBuilder().setUniverseDomain("example.com").build();
+    assertEquals(
+        "example.com",
+        customCredentials.createSelfSignedJwtCredentials(audienceUri).getUniverseDomain());
+  }
+
+  @Test
+  void getRequestMetadata_withScopesAndCustomUniverseDomain_propagatesUniverseDomainToCachedJwt()
+      throws IOException {
+    ServiceAccountCredentials credentials =
+        createDefaultBuilder().setScopes(SCOPES).setUniverseDomain("example.com").build();
+
+    credentials.getRequestMetadata(null);
+
+    JwtCredentials cachedJwt = credentials.getSelfSignedJwtCredentialsWithScope();
+    assertNotNull(cachedJwt);
+    assertEquals("example.com", cachedJwt.getUniverseDomain());
+  }
+
   private void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)
       throws IOException {
     assertNotNull(metadata);

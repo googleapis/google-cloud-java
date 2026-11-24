@@ -354,6 +354,35 @@ class ClientConfigurationManagerTest {
   }
 
   @Test
+  void testBlankSysPropOverrideIsIgnoredAndPollsServer() throws Exception {
+    for (String blankValue : new String[] {"", "   \t\n "}) {
+      for (boolean useDefault : new boolean[] {false, true}) {
+        manager.close();
+        service.requestCount.set(0);
+
+        Properties sysProps = new Properties();
+        sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, blankValue);
+        if (useDefault) {
+          sysProps.setProperty(
+              ClientConfigurationManager.OVERRIDE_USE_DEFAULT_SYS_PROP_KEY, "true");
+        }
+        manager =
+            new ClientConfigurationManager(
+                sysProps,
+                FEATURE_FLAGS,
+                CLIENT_INFO,
+                channelProvider,
+                noopDebugTracer,
+                mockExecutor);
+
+        ClientConfiguration serverConfig = manager.start().get();
+        assertThat(serverConfig).isEqualTo(service.config.get());
+        assertThat(service.requestCount.get()).isEqualTo(1);
+      }
+    }
+  }
+
+  @Test
   void testPerScopeDiversionWithNonZeroLoadEnablesSessions() throws Exception {
     ClientConfiguration resolvedConfig =
         startWithSessionOverride(

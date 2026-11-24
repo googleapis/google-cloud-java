@@ -119,8 +119,8 @@ class LoggingConfig {
 
   /**
    * Returns boolean value of the property {@code
-   * com.google.cloud.logging.context.ContextHandler.useInheritedContext}. If no value is defined or
-   * the property does not represent a valid boolean value returns {@code false}.
+   * com.google.cloud.logging.ContextHandler.useInheritedContext}. If no value is defined or the
+   * property does not represent a valid boolean value returns {@code false}.
    *
    * @return {@code true} or {@code false}
    */

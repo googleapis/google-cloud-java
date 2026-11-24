@@ -40,6 +40,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.net.URI;
 import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
@@ -71,6 +72,9 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 public class JwtCredentials extends Credentials implements JwtProvider {
+  // Matches the default computed serialVersionUID from released versions before universeDomain was
+  // added, so previously serialized JwtCredentials instances still deserialize.
+  private static final long serialVersionUID = 287345113251030847L;
   private static final String JWT_ACCESS_PREFIX = OAuth2Utils.BEARER_PREFIX;
   private static final String JWT_INCOMPLETE_ERROR_MESSAGE =
       "JWT claims must contain audience, " + "issuer, and subject.";
@@ -82,7 +86,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   private final String privateKeyId;
   private final JwtClaims jwtClaims;
   private final Long lifeSpanSeconds;
-  private final String universeDomain;
+  @VisibleForTesting String universeDomain;
   @VisibleForTesting transient Clock clock;
 
   private transient String jwt;
@@ -228,6 +232,17 @@ public class JwtCredentials extends Credentials implements JwtProvider {
       clock = Clock.SYSTEM;
     }
     return clock;
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    clock = Clock.SYSTEM;
+    // Java deserialization bypasses the constructor and leaves fields absent from older serialized
+    // streams as null. Normalize universeDomain here so getUniverseDomain(), equals(), and
+    // hashCode() stay consistent with newly constructed default instances.
+    if (this.universeDomain == null || this.universeDomain.trim().isEmpty()) {
+      this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    }
   }
 
   public static class Builder {

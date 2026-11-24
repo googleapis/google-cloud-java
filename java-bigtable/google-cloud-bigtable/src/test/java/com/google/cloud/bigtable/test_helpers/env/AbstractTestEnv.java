@@ -29,7 +29,9 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import javax.annotation.Nullable;
 
 /**
  * Defines the interface of a target environment.
@@ -44,6 +46,12 @@ public abstract class AbstractTestEnv {
     REQUIRE_CFE,
     REQUIRE_DIRECT_PATH,
     REQUIRE_DIRECT_PATH_IPV4
+  }
+
+  public enum ExpectedProtocol {
+    ANY,
+    CLASSIC,
+    SESSION
   }
 
   abstract void start() throws Exception;
@@ -125,6 +133,17 @@ public abstract class AbstractTestEnv {
             System.getProperty("bigtable.connection-mode"), ConnectionMode.DEFAULT.name());
 
     return ConnectionMode.valueOf(modeStr);
+  }
+
+  public ExpectedProtocol getExpectedProtocol() {
+    return parseExpectedProtocol(System.getProperty("bigtable.expected-protocol"));
+  }
+
+  static ExpectedProtocol parseExpectedProtocol(@Nullable String protocolStr) {
+    if (protocolStr == null || protocolStr.trim().isEmpty()) {
+      return ExpectedProtocol.ANY;
+    }
+    return ExpectedProtocol.valueOf(protocolStr.trim().toUpperCase(Locale.US));
   }
 
   public boolean shouldWaitForCmekKeyStatusUpdate() {

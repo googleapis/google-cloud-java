@@ -93,7 +93,31 @@ class JwtCredentialsTest extends BaseSerializationTest {
       assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
       assertEquals(credentials.toString(), deserializedCredentials.toString());
       assertEquals(credentials.getUniverseDomain(), deserializedCredentials.getUniverseDomain());
+      verifyJwtAccess(
+          deserializedCredentials.getRequestMetadata(),
+          "some-audience",
+          "some-issuer",
+          "some-subject",
+          PRIVATE_KEY_ID);
       assertSame(Clock.SYSTEM, deserializedCredentials.getClock());
+    }
+  }
+
+  @Test
+  void deserialize_missingOrBlankUniverseDomain_defaultsToGoogleDefaultUniverse()
+      throws IOException, ClassNotFoundException {
+    JwtCredentials expected = createTestBuilder().build();
+
+    for (String serializedUniverseDomain : Arrays.asList(null, "", "   ")) {
+      JwtCredentials credentials = createTestBuilder().build();
+      credentials.universeDomain = serializedUniverseDomain;
+
+      JwtCredentials deserialized = serializeAndDeserialize(credentials);
+      assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, deserialized.getUniverseDomain());
+      assertEquals(expected, deserialized);
+      assertEquals(deserialized, expected);
+      assertEquals(expected.hashCode(), deserialized.hashCode());
+      assertEquals(expected.toString(), deserialized.toString());
     }
   }
 

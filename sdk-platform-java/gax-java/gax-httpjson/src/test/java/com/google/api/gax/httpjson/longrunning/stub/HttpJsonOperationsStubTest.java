@@ -177,4 +177,26 @@ class HttpJsonOperationsStubTest {
                 .toRawString())
         .isEqualTo(operationCancelAdditionalBindingURI);
   }
+
+  @Test
+  void testCreateWithClientContext_preservesOperationCallables() throws IOException {
+    HttpJsonOperationsStub stub =
+        HttpJsonOperationsStub.create(
+            ClientContext.newBuilder()
+                .setCredentials(NoCredentialsProvider.create().getCredentials())
+                .setDefaultCallContext(FakeCallContext.createDefault())
+                .setUniverseDomain("example.com")
+                .setEndpoint("myservice.example.com:443")
+                .build());
+    try {
+      assertThat(stub.listOperationsCallable()).isNotNull();
+      assertThat(stub.listOperationsPagedCallable()).isNotNull();
+      assertThat(stub.getOperationCallable()).isNotNull();
+      assertThat(stub.deleteOperationCallable()).isNotNull();
+      assertThat(stub.cancelOperationCallable()).isNotNull();
+      assertThat(stub.longRunningClient()).isNotNull();
+    } finally {
+      stub.close();
+    }
+  }
 }
