@@ -339,6 +339,17 @@ public class JsonStreamWriter implements AutoCloseable {
     }
 
     /**
+     * Setter for the underlying StreamWriter's universe domain.
+     *
+     * @param universeDomain the universe domain to use
+     * @return Builder
+     */
+    public Builder setUniverseDomain(String universeDomain) {
+      this.schemaAwareStreamWriterBuilder.setUniverseDomain(universeDomain);
+      return this;
+    }
+
+    /**
      * Setter for a traceId to help identify traffic origin.
      *
      * @param traceId

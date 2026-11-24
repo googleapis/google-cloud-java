@@ -2611,4 +2611,46 @@ class StreamWriterTest {
             .build();
     assertEquals(2, testBigQueryWrite.getWriteStreamRequests().size());
   }
+
+  @Test
+  void testGetBigQueryWriteSettingsResolvesUniverseDomainEndpoint() throws Exception {
+    StreamWriter.Builder builder =
+        StreamWriter.newBuilder(TEST_STREAM_1)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setUniverseDomain("custom.example.com");
+
+    BigQueryWriteSettings settings = StreamWriter.getBigQueryWriteSettings(builder);
+
+    assertEquals("custom.example.com", settings.getUniverseDomain());
+    assertEquals("bigquerystorage.custom.example.com:443", settings.getEndpoint());
+  }
+
+  @Test
+  void testGetBigQueryWriteSettingsRespectsExplicitEndpoint() throws Exception {
+    StreamWriter.Builder builder =
+        StreamWriter.newBuilder(TEST_STREAM_1)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setEndpoint("custom-endpoint.example.com:443");
+
+    BigQueryWriteSettings settings = StreamWriter.getBigQueryWriteSettings(builder);
+
+    assertEquals("custom-endpoint.example.com:443", settings.getEndpoint());
+  }
+
+  @Test
+  void testConnectionPoolKeyDistinguishesEndpointAndUniverseDomain() {
+    StreamWriter.ConnectionPoolKey defaultKey =
+        StreamWriter.ConnectionPoolKey.create(
+            "us", null, "bigquerystorage.googleapis.com:443", "googleapis.com");
+    StreamWriter.ConnectionPoolKey customUniverseKey =
+        StreamWriter.ConnectionPoolKey.create(
+            "us", null, "bigquerystorage.custom.example.com:443", "custom.example.com");
+    StreamWriter.ConnectionPoolKey customEndpointKey =
+        StreamWriter.ConnectionPoolKey.create(
+            "us", null, "custom.example.com:443", "googleapis.com");
+
+    assertNotEquals(defaultKey, customUniverseKey);
+    assertNotEquals(defaultKey, customEndpointKey);
+    assertNotEquals(customUniverseKey, customEndpointKey);
+  }
 }
