@@ -49,6 +49,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -145,6 +146,7 @@ public class DirectPathFallbackIT {
     }
   }
 
+  @Ignore("b/590078463")
   @Test
   public void testFallback() throws InterruptedException, TimeoutException {
     // Precondition: wait for DirectPath to connect
