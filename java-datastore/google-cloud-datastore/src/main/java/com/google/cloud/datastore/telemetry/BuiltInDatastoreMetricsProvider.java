@@ -150,7 +150,7 @@ public class BuiltInDatastoreMetricsProvider {
     Map<String, String> clientAttributes = buildClientAttributes();
     DatastoreCloudMonitoringExporter exporter =
         DatastoreCloudMonitoringExporter.create(
-            projectId, databaseId, credentials, clientAttributes);
+            projectId, databaseId, credentials, options.getUniverseDomain(), clientAttributes);
     if (exporter == null) {
       logger.log(
           Level.WARNING,

@@ -45,6 +45,6 @@ JOIN `%1$s.%2$s.INFORMATION_SCHEMA.TABLE_CONSTRAINTS` AS tc
  AND tc.constraint_schema  = fk.constraint_schema
  AND tc.constraint_name    = fk.constraint_name
  AND tc.constraint_type    = 'FOREIGN KEY'
-WHERE CASE WHEN pk.table_name = '%3$s' THEN 1 ELSE 0 END = 1
+WHERE CASE WHEN pk.table_name = ? THEN 1 ELSE 0 END = 1
   AND pk.position_in_unique_constraint IS NULL
 ORDER BY fk.table_schema, fk.table_name, fk.ordinal_position
