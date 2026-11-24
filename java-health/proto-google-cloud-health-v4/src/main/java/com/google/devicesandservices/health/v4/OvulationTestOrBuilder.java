@@ -98,4 +98,34 @@ public interface OvulationTestOrBuilder
    * @return The result.
    */
   com.google.devicesandservices.health.v4.OvulationTestResult getResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of ovulation test.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for testType.
+   */
+  int getTestTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of ovulation test.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.OvulationTest.TestType test_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The testType.
+   */
+  com.google.devicesandservices.health.v4.OvulationTest.TestType getTestType();
 }

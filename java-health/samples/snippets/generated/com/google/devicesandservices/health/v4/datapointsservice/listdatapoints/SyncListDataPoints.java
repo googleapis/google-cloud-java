@@ -41,6 +41,7 @@ public class SyncListDataPoints {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
+              .setDataSourceFamily("dataSourceFamily586548265")
               .build();
       for (DataPoint element : dataPointsServiceClient.listDataPoints(request).iterateAll()) {
         // doThingsWith(element);

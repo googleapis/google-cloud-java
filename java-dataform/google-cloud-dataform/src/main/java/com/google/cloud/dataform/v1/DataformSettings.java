@@ -346,6 +346,17 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     return ((DataformStubSettings) getStubSettings()).createWorkspaceSettings();
   }
 
+  /** Returns the object with the settings used for calls to createWorkspaceLongRunning. */
+  public UnaryCallSettings<CreateWorkspaceRequest, Operation> createWorkspaceLongRunningSettings() {
+    return ((DataformStubSettings) getStubSettings()).createWorkspaceLongRunningSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createWorkspaceLongRunning. */
+  public OperationCallSettings<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationSettings() {
+    return ((DataformStubSettings) getStubSettings()).createWorkspaceLongRunningOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteWorkspace. */
   public UnaryCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceSettings() {
     return ((DataformStubSettings) getStubSettings()).deleteWorkspaceSettings();
@@ -952,6 +963,18 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     /** Returns the builder for the settings used for calls to createWorkspace. */
     public UnaryCallSettings.Builder<CreateWorkspaceRequest, Workspace> createWorkspaceSettings() {
       return getStubSettingsBuilder().createWorkspaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkspaceLongRunning. */
+    public UnaryCallSettings.Builder<CreateWorkspaceRequest, Operation>
+        createWorkspaceLongRunningSettings() {
+      return getStubSettingsBuilder().createWorkspaceLongRunningSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkspaceLongRunning. */
+    public OperationCallSettings.Builder<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+        createWorkspaceLongRunningOperationSettings() {
+      return getStubSettingsBuilder().createWorkspaceLongRunningOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkspace. */

@@ -38,7 +38,10 @@ public class AsyncGetEndpoint {
     try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
       GetEndpointRequest request =
           GetEndpointRequest.newBuilder()
-              .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+              .setName(
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                      .toString())
               .build();
       ApiFuture<Endpoint> future = agentRegistryClient.getEndpointCallable().futureCall(request);
       // Do something.
