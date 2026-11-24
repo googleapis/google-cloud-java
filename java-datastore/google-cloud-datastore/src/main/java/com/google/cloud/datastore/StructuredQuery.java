@@ -85,7 +85,7 @@ import java.util.Objects;
  * }</pre>
  *
  * @param <V> the type of the result values this query will produce
- * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/concepts/queries">Datastore
  *     queries</a>
  */
 public abstract class StructuredQuery<V> extends Query<V> implements RecordQuery<V> {

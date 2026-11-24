@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * BigQuery service exception.
  *
- * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud BigQuery
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">BigQuery API HTTP status and
  *     error codes</a>
  */
 public final class BigQuerySQLException extends SQLException {

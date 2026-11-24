@@ -379,8 +379,8 @@ final class BigQueryJdbcUrlUtility {
                   BigQueryConnectionProperty.newBuilder()
                       .setName(UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)
                       .setDescription(
-                          "The name of the partner-operated cloud which is a new instance of Google"
-                              + " production, known as a Trusted Partner Cloud universe.")
+                          "The universe domain for the target cloud environment. Defaults to"
+                              + " googleapis.com.")
                       .setDefaultValue(DEFAULT_UNIVERSE_DOMAIN_VALUE)
                       .build(),
                   BigQueryConnectionProperty.newBuilder()

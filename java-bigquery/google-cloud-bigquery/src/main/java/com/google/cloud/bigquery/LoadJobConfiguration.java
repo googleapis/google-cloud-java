@@ -433,7 +433,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
      * formats will result in an error.
      *
      * @see <a
-     *     href="https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#columnnamecharactermap">
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#columnnamecharactermap">
      *     ColumnNameCharacterMap</a>
      */
     public Builder setColumnNameCharacterMap(String columnNameCharacterMap) {
@@ -719,7 +719,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    * Returns the column name character map used in CSV/Parquet loads.
    *
    * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#columnnamecharactermap">
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/rest/v2/Job#columnnamecharactermap">
    *     ColumnNameCharacterMap</a>
    */
   public String getColumnNameCharacterMap() {

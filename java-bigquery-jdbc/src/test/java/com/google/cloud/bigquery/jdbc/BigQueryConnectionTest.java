@@ -97,7 +97,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   private static final String DEFAULT_VERSION = "0.0.0";
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
-  private static final String TPC_UNIVERSE = "apis-tpczero.goog";
+  private static final String CUSTOM_UNIVERSE = "example.com";
   private static final String DEFAULT_UNIVERSE = "googleapis.com";
   private static final String BASE_URL =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
@@ -975,28 +975,29 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testReadAndWriteClientsScopeServiceAccountCredentialsForTpc() throws Exception {
+  public void testReadAndWriteClientsScopeServiceAccountCredentialsForCustomUniverse()
+      throws Exception {
     String url =
         getUriOAuthServiceAccount()
             .append("ProjectId", "project")
-            .append("universeDomain", TPC_UNIVERSE)
+            .append("universeDomain", CUSTOM_UNIVERSE)
             .toString();
 
     try (BigQueryConnection connection = new BigQueryConnection(url)) {
       BigQueryReadClient readClient = connection.getBigQueryReadClient();
-      assertEquals(TPC_UNIVERSE, readClient.getSettings().getUniverseDomain());
+      assertEquals(CUSTOM_UNIVERSE, readClient.getSettings().getUniverseDomain());
       assertStorageCredentialsScoped(
           readClient.getSettings().getCredentialsProvider().getCredentials(),
-          TPC_UNIVERSE,
-          storageUri(TPC_UNIVERSE, "BigQueryRead"),
+          CUSTOM_UNIVERSE,
+          storageUri(CUSTOM_UNIVERSE, "BigQueryRead"),
           BigQueryReadSettings.getDefaultServiceScopes());
 
       BigQueryWriteClient writeClient = connection.getBigQueryWriteClient();
-      assertEquals(TPC_UNIVERSE, writeClient.getSettings().getUniverseDomain());
+      assertEquals(CUSTOM_UNIVERSE, writeClient.getSettings().getUniverseDomain());
       assertStorageCredentialsScoped(
           writeClient.getSettings().getCredentialsProvider().getCredentials(),
-          TPC_UNIVERSE,
-          storageUri(TPC_UNIVERSE, "BigQueryWrite"),
+          CUSTOM_UNIVERSE,
+          storageUri(CUSTOM_UNIVERSE, "BigQueryWrite"),
           BigQueryWriteSettings.getDefaultServiceScopes());
     }
   }
@@ -1065,7 +1066,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
         ServiceAccountCredentials.newBuilder()
             .setClientEmail("service@account")
             .setPrivateKeyString(fake_pkcs8_key)
-            .setUniverseDomain(TPC_UNIVERSE)
+            .setUniverseDomain(CUSTOM_UNIVERSE)
             .build()
             .createScoped(explicitScopes);
 
@@ -1074,7 +1075,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
             alreadyScoped, BigQueryReadSettings.getDefaultServiceScopes());
 
     assertStorageCredentialsScoped(
-        result, TPC_UNIVERSE, storageUri(TPC_UNIVERSE, "BigQueryRead"), explicitScopes);
+        result, CUSTOM_UNIVERSE, storageUri(CUSTOM_UNIVERSE, "BigQueryRead"), explicitScopes);
   }
 
   @Test
