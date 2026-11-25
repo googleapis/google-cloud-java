@@ -608,12 +608,11 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
      * for each product to confirm if it is supported.
      *
      * <p><b>WARNING:</b> API keys do not carry universe domain metadata and <b>are not
-     * validated</b> against the client's universe domain. If no universe domain is configured on
-     * the client (or via {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN}), requests default to {@code
-     * googleapis.com}. <b>Callers are solely responsible for ensuring the API key belongs to the
-     * configured universe domain.</b> Using an API key from a non-default universe domain without
-     * explicitly configuring the client's universe domain will send that API key to {@code
-     * googleapis.com}.
+     * validated</b> against the client's configured universe domain or endpoint. If no universe
+     * domain is configured on the client (or via {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN}), requests
+     * default to {@code googleapis.com}. <b>Callers are solely responsible for ensuring the API key
+     * matches the configured universe domain</b>, as the client will not prevent sending an API key
+     * to an unintended universe domain.
      *
      * <p>Note: If you set an API key and {@link CredentialsProvider} in the same ClientSettings the
      * API key will override any credentials provided.
