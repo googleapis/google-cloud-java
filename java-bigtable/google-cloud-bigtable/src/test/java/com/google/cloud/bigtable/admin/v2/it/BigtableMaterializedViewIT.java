@@ -32,9 +32,11 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
+import com.google.common.truth.Correspondence;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
@@ -56,6 +58,16 @@ public class BigtableMaterializedViewIT {
   // sleeping for minutes past that point.
   private static final long DELETE_POLL_INTERVAL_SECONDS = 2;
   private static final int DELETE_POLL_ATTEMPTS = 60;
+  private static final Correspondence<MaterializedView, MaterializedView>
+      MATERIALIZED_VIEW_CORRESPONDENCE =
+          Correspondence.from(
+              (MaterializedView actual, MaterializedView expected) ->
+                  actual != null
+                      && expected != null
+                      && Objects.equals(actual.getId(), expected.getId())
+                      && actual.isDeletionProtected() == expected.isDeletionProtected()
+                      && Objects.equals(actual.getQuery(), expected.getQuery()),
+              "has same id, deletionProtection, and query as");
 
   private BigtableInstanceAdminClient client;
   private Table testTable;
@@ -130,6 +142,7 @@ public class BigtableMaterializedViewIT {
       List<MaterializedView> response = client.listMaterializedViews(instanceId);
       assertWithMessage("Got wrong materialized view Ids in listMaterializedViews")
           .that(response)
+          .comparingElementsUsing(MATERIALIZED_VIEW_CORRESPONDENCE)
           .contains(materializedView);
     } finally {
       client.deleteMaterializedView(instanceId, materializedViewId);

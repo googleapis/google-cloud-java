@@ -105,4 +105,9 @@ public final class LogicalView {
   public int hashCode() {
     return Objects.hashCode(proto);
   }
+
+  @Override
+  public String toString() {
+    return proto.toString();
+  }
 }
