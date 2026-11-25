@@ -36,6 +36,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -124,13 +125,26 @@ public class BigtableMaterializedViewIT {
     String materializedViewId = prefixGenerator.newPrefix();
 
     try {
-      MaterializedView materializedView =
+      MaterializedView created =
           client.createMaterializedView(createMaterializedViewRequest(materializedViewId));
 
       List<MaterializedView> response = client.listMaterializedViews(instanceId);
-      assertWithMessage("Got wrong materialized view Ids in listMaterializedViews")
-          .that(response)
-          .contains(materializedView);
+      MaterializedView listed =
+          response.stream()
+              .filter(view -> view.getId().equals(created.getId()))
+              .findFirst()
+              .orElse(null);
+      assertWithMessage(
+              "Got wrong materialized view Ids in listMaterializedViews: %s",
+              response.stream().map(MaterializedView::getId).collect(Collectors.toList()))
+          .that(listed)
+          .isNotNull();
+      assertWithMessage("Got wrong deletion protection in listMaterializedViews")
+          .that(listed.isDeletionProtected())
+          .isEqualTo(created.isDeletionProtected());
+      assertWithMessage("Got wrong query in listMaterializedViews")
+          .that(listed.getQuery())
+          .isEqualTo(created.getQuery());
     } finally {
       client.deleteMaterializedView(instanceId, materializedViewId);
     }

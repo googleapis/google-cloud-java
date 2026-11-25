@@ -35,6 +35,7 @@ import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import io.grpc.StatusRuntimeException;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -123,12 +124,25 @@ public class BigtableLogicalViewIT {
     String logicalViewId = prefixGenerator.newPrefix();
 
     try {
-      LogicalView logicalView = client.createLogicalView(createLogicalViewRequest(logicalViewId));
+      LogicalView created = client.createLogicalView(createLogicalViewRequest(logicalViewId));
 
       List<LogicalView> response = client.listLogicalViews(instanceId);
-      assertWithMessage("Got wrong logical view Ids in listLogicalViews")
-          .that(response)
-          .contains(logicalView);
+      LogicalView listed =
+          response.stream()
+              .filter(view -> view.getId().equals(created.getId()))
+              .findFirst()
+              .orElse(null);
+      assertWithMessage(
+              "Got wrong logical view Ids in listLogicalViews: %s",
+              response.stream().map(LogicalView::getId).collect(Collectors.toList()))
+          .that(listed)
+          .isNotNull();
+      assertWithMessage("Got wrong deletion protection in listLogicalViews")
+          .that(listed.isDeletionProtected())
+          .isEqualTo(created.isDeletionProtected());
+      assertWithMessage("Got wrong query in listLogicalViews")
+          .that(listed.getQuery())
+          .isEqualTo(created.getQuery());
     } finally {
       client.deleteLogicalView(instanceId, logicalViewId);
     }
