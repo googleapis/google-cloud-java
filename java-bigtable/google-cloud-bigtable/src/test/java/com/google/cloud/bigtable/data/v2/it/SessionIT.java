@@ -29,6 +29,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv.ConnectionMode;
+import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv.ExpectedProtocol;
 import com.google.cloud.bigtable.test_helpers.env.CloudEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
@@ -59,10 +60,9 @@ import org.junit.runners.JUnit4;
  * Verifies that the Bigtable client routes traffic through the session path when sessions are
  * enabled.
  *
- * <p>This test runs when the {@code bigtable-session-it} Maven profile is active (composed with
- * {@code bigtable-cfe-it}, {@code bigtable-directpath-it}, or {@code bigtable-prod-it}), which sets
- * {@code bigtable.internal.client-config-override} to force {@code global_diversion { session_load:
- * 1.0 }}.
+ * <p>This test runs when {@code -Dbigtable.expected-protocol=SESSION} is set (for example via the
+ * {@code bigtable-session-it} Maven profile composed with {@code bigtable-cfe-it}, {@code
+ * bigtable-directpath-it}, or {@code bigtable-prod-it}).
  *
  * <p>Session path activity is verified by observing:
  *
@@ -96,10 +96,10 @@ public class SessionIT {
   public void setUp() throws IOException {
     assume()
         .withMessage(
-            "SessionIT requires the session path to be enabled. "
-                + "Run with the bigtable-session-it Maven profile.")
-        .that(testEnvRule.env().isSessionsEnabled())
-        .isTrue();
+            "SessionIT requires -Dbigtable.expected-protocol=SESSION "
+                + "(set automatically by the bigtable-session-it Maven profile).")
+        .that(testEnvRule.env().getExpectedProtocol())
+        .isEqualTo(ExpectedProtocol.SESSION);
 
     assume()
         .withMessage("SessionIT requires a cloud environment, not the emulator")

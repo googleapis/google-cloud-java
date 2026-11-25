@@ -91,9 +91,11 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   private final String privateKeyId;
   private final URI defaultAudience;
   private final String quotaProjectId;
-  private final String universeDomain;
+  @VisibleForTesting String universeDomain;
 
-  private transient LoadingCache<JwtClaims, JwtCredentials> credentialsCache;
+  // Caches one JwtCredentials per audience (JwtClaims) so each target URI signs a JWT once per
+  // token lifetime instead of re-signing with the RSA private key on every request.
+  @VisibleForTesting transient LoadingCache<JwtClaims, JwtCredentials> credentialsCache;
 
   // Until we expose this to the users it can remain transient and non-serializable
   @VisibleForTesting transient Clock clock = Clock.SYSTEM;
@@ -142,13 +144,13 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
     this.privateKey = Preconditions.checkNotNull(privateKey);
     this.privateKeyId = privateKeyId;
     this.defaultAudience = defaultAudience;
-    this.credentialsCache = createCache();
     this.quotaProjectId = quotaProjectId;
     if (universeDomain == null || universeDomain.trim().isEmpty()) {
       this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
     } else {
       this.universeDomain = universeDomain;
     }
+    this.credentialsCache = createCache();
   }
 
   /**
@@ -311,6 +313,10 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   }
 
   private LoadingCache<JwtClaims, JwtCredentials> createCache() {
+    // Bound entries to 100 audiences and expire them after LIFE_SPAN_SECS - CLOCK_SKEW (55 minutes)
+    // so idle audiences are evicted around the same time JwtCredentials would re-sign. The custom
+    // ticker reads clock (and the loader reads fields from the enclosing instance lazily on each
+    // cache miss) so tests can advance time with a fake clock.
     return CacheBuilder.newBuilder()
         .maximumSize(100)
         .expireAfterWrite(LIFE_SPAN_SECS - CLOCK_SKEW, TimeUnit.SECONDS)
@@ -331,6 +337,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
                     .setJwtClaims(claims)
                     .setLifeSpanSeconds(LIFE_SPAN_SECS)
                     .setClock(clock)
+                    .setUniverseDomain(universeDomain)
                     .build();
               }
             });
@@ -338,6 +345,8 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
 
   /**
    * Returns a new JwtCredentials instance with modified claims.
+   *
+   * <p>The returned credentials use the same universe domain as these credentials.
    *
    * @param newClaims new claims. Any unspecified claim fields will default to the current values.
    * @return new credentials
@@ -355,6 +364,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
         .setJwtClaims(claimsBuilder.build().merge(newClaims))
         .setLifeSpanSeconds(LIFE_SPAN_SECS)
         .setClock(clock)
+        .setUniverseDomain(universeDomain)
         .build();
   }
 
@@ -465,7 +475,13 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   @Override
   public int hashCode() {
     return Objects.hash(
-        clientId, clientEmail, privateKey, privateKeyId, defaultAudience, quotaProjectId);
+        clientId,
+        clientEmail,
+        privateKey,
+        privateKeyId,
+        defaultAudience,
+        quotaProjectId,
+        universeDomain);
   }
 
   @Override
@@ -476,6 +492,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
         .add("privateKeyId", privateKeyId)
         .add("defaultAudience", defaultAudience)
         .add("quotaProjectId", quotaProjectId)
+        .add("universeDomain", universeDomain)
         .toString();
   }
 
@@ -490,12 +507,20 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
         && Objects.equals(this.privateKey, other.privateKey)
         && Objects.equals(this.privateKeyId, other.privateKeyId)
         && Objects.equals(this.defaultAudience, other.defaultAudience)
-        && Objects.equals(this.quotaProjectId, other.quotaProjectId);
+        && Objects.equals(this.quotaProjectId, other.quotaProjectId)
+        && Objects.equals(this.universeDomain, other.universeDomain);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
     clock = Clock.SYSTEM;
+    // Java deserialization bypasses the constructor and leaves fields absent from older serialized
+    // streams as null. Normalize universeDomain here so getUniverseDomain(), equals(), and
+    // hashCode() stay consistent with newly constructed default instances.
+    if (this.universeDomain == null || this.universeDomain.trim().isEmpty()) {
+      this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    }
+    // LoadingCache is transient (not serializable), so recreate an empty cache.
     credentialsCache = createCache();
   }
 

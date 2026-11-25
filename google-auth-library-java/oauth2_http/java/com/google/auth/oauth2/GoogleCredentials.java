@@ -115,25 +115,34 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   /**
    * Returns the credentials instance from the given access token.
    *
+   * <p>The returned credentials default to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} ({@code
+   * googleapis.com}). Callers with an access token for a non-default universe domain should use
+   * {@link #create(String, AccessToken)} to specify the universe domain explicitly.
+   *
    * @param accessToken the access token
    * @return the credentials instance
    */
   public static GoogleCredentials create(AccessToken accessToken) {
-    return GoogleCredentials.newBuilder().setAccessToken(accessToken).build();
+    return create(null, accessToken);
   }
 
   /**
    * Returns the credentials instance from the given access token and universe domain.
    *
-   * @param universeDomain the universe domain
+   * <p>If {@code universeDomain} is {@code null} or blank, the returned credentials default to
+   * {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} ({@code googleapis.com}).
+   *
+   * @param universeDomain the universe domain, or {@code null} or blank to default to {@link
+   *     Credentials#GOOGLE_DEFAULT_UNIVERSE} ({@code googleapis.com})
    * @param accessToken the access token
    * @return the credentials instance
    */
-  public static GoogleCredentials create(String universeDomain, AccessToken accessToken) {
-    return GoogleCredentials.newBuilder()
-        .setAccessToken(accessToken)
-        .setUniverseDomain(universeDomain)
-        .build();
+  public static GoogleCredentials create(@Nullable String universeDomain, AccessToken accessToken) {
+    Builder builder = GoogleCredentials.newBuilder().setAccessToken(accessToken);
+    if (universeDomain != null && !universeDomain.trim().isEmpty()) {
+      builder.setUniverseDomain(universeDomain);
+    }
+    return builder.build();
   }
 
   /**
@@ -419,11 +428,17 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   /**
    * Constructor with an explicit access token and quotaProjectId.
    *
-   * <p>Deprecated, please use the {@link GoogleCredentials#GoogleCredentials(Builder)} constructor
-   * whenever possible.
+   * <p>Defaults to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} ({@code googleapis.com}). Callers
+   * with an access token for a non-default universe domain should use {@link #create(String,
+   * AccessToken)} (or {@link #newBuilder()} with {@link Builder#setAccessToken(AccessToken)} and
+   * {@link Builder#setUniverseDomain(String)}) to specify the universe domain explicitly.
    *
    * @param accessToken initial or temporary access token
    * @param quotaProjectId a quotaProjectId, a project id to be used for billing purposes
+   * @deprecated Use {@link #GoogleCredentials(Builder)} for subclasses, or {@link #newBuilder()}
+   *     with {@link Builder#setAccessToken(AccessToken)} and {@link
+   *     Builder#setQuotaProjectId(String)} (and {@link Builder#setUniverseDomain(String)} for a
+   *     non-default universe domain).
    */
   @Deprecated
   protected GoogleCredentials(@Nullable AccessToken accessToken, @Nullable String quotaProjectId) {
@@ -436,7 +451,13 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   /**
    * Constructor with explicit access token.
    *
+   * <p>Defaults to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} ({@code googleapis.com}). Callers
+   * with an access token for a non-default universe domain should use {@link #create(String,
+   * AccessToken)} to specify the universe domain explicitly.
+   *
    * @param accessToken initial or temporary access token
+   * @deprecated Use {@link #create(AccessToken)} for {@code googleapis.com}, or {@link
+   *     #create(String, AccessToken)} to specify a universe domain explicitly.
    */
   @Deprecated
   public GoogleCredentials(AccessToken accessToken) {
@@ -467,10 +488,15 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   /**
    * Constructor with explicit access token and refresh margins.
    *
-   * <p>Deprecated, please use the {@link GoogleCredentials#GoogleCredentials(Builder)} constructor
-   * whenever possible.
+   * <p>Defaults to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} ({@code googleapis.com}). Callers
+   * with an access token for a non-default universe domain should use {@link #create(String,
+   * AccessToken)} (or {@link #newBuilder()} with {@link Builder#setAccessToken(AccessToken)} and
+   * {@link Builder#setUniverseDomain(String)}) to specify the universe domain explicitly.
    *
    * @param accessToken initial or temporary access token
+   * @deprecated Use {@link #GoogleCredentials(Builder)} for subclasses, or {@link #newBuilder()}
+   *     with {@link Builder#setAccessToken(AccessToken)} and {@link
+   *     Builder#setUniverseDomain(String)} for a non-default universe domain.
    */
   @Deprecated
   protected GoogleCredentials(
@@ -686,6 +712,15 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       return this;
     }
 
+    /**
+     * Sets the universe domain for the credential.
+     *
+     * <p>If unset, {@code null}, or blank, defaults to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}
+     * ({@code googleapis.com}).
+     *
+     * @param universeDomain the universe domain (for example, {@code googleapis.com})
+     * @return this builder
+     */
     public Builder setUniverseDomain(String universeDomain) {
       this.universeDomain = universeDomain;
       return this;

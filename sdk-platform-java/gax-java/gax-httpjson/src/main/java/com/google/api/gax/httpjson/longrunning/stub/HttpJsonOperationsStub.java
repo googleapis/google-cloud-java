@@ -209,13 +209,14 @@ public class HttpJsonOperationsStub extends OperationsStub {
 
   public static final HttpJsonOperationsStub create(ClientContext clientContext)
       throws IOException {
-    return new HttpJsonOperationsStub(OperationsStubSettings.newBuilder().build(), clientContext);
+    return new HttpJsonOperationsStub(
+        OperationsStubSettings.newBuilder((ClientContext) null).build(), clientContext);
   }
 
   public static final HttpJsonOperationsStub create(
       ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
     return new HttpJsonOperationsStub(
-        OperationsStubSettings.newBuilder().build(),
+        OperationsStubSettings.newBuilder((ClientContext) null).build(),
         clientContext,
         callableFactory,
         TypeRegistry.getEmptyTypeRegistry());
@@ -227,7 +228,10 @@ public class HttpJsonOperationsStub extends OperationsStub {
       TypeRegistry typeRegistry)
       throws IOException {
     return new HttpJsonOperationsStub(
-        OperationsStubSettings.newBuilder().build(), clientContext, callableFactory, typeRegistry);
+        OperationsStubSettings.newBuilder((ClientContext) null).build(),
+        clientContext,
+        callableFactory,
+        typeRegistry);
   }
 
   public static final HttpJsonOperationsStub create(
@@ -237,7 +241,7 @@ public class HttpJsonOperationsStub extends OperationsStub {
       Map<String, HttpRule> customHttpBindings)
       throws IOException {
     return new HttpJsonOperationsStub(
-        OperationsStubSettings.newBuilder().build(),
+        OperationsStubSettings.newBuilder((ClientContext) null).build(),
         clientContext,
         callableFactory,
         typeRegistry,

@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -28,6 +29,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryParameterType;
@@ -37,10 +39,12 @@ import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.api.services.bigquery.model.TableSchema;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
 import java.io.IOException;
@@ -816,5 +820,62 @@ class ConnectionImplTest {
     com.google.api.services.bigquery.model.Job createdJob =
         connection.createQueryJob(SQL_QUERY, connectionSettings, emptyParameters, emptyLabels);
     assertEquals(JOB, createdJob.getId());
+  }
+
+  @Test
+  void testCreateBigQueryReadSettings_forwardsUniverseDomain() throws IOException {
+    BigQueryOptions customUniverseOptions =
+        BigQueryOptions.newBuilder()
+            .setProjectId(PROJECT)
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setCredentials(NoCredentials.getInstance())
+            .setUniverseDomain("custom-universe.com")
+            .build();
+    ConnectionImpl customConnection =
+        (ConnectionImpl) customUniverseOptions.getService().createConnection(connectionSettings);
+
+    BigQueryReadSettings readSettings = customConnection.createBigQueryReadSettings();
+    assertEquals("custom-universe.com", readSettings.getUniverseDomain());
+    assertEquals("bigquerystorage.custom-universe.com:443", readSettings.getEndpoint());
+    assertEquals(
+        NoCredentials.getInstance(), readSettings.getCredentialsProvider().getCredentials());
+  }
+
+  @Test
+  void testCreateBigQueryReadSettings_leavesUniverseDomainUnsetWhenDefault() throws IOException {
+    BigQueryOptions defaultUniverseOptions =
+        BigQueryOptions.newBuilder()
+            .setProjectId(PROJECT)
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    ConnectionImpl defaultConnection =
+        (ConnectionImpl) defaultUniverseOptions.getService().createConnection(connectionSettings);
+
+    BigQueryReadSettings readSettings = defaultConnection.createBigQueryReadSettings();
+    assertEquals("googleapis.com", readSettings.getUniverseDomain());
+    assertEquals("bigquerystorage.googleapis.com:443", readSettings.getEndpoint());
+    assertEquals(
+        NoCredentials.getInstance(), readSettings.getCredentialsProvider().getCredentials());
+  }
+
+  @Test
+  void testCreateBigQueryReadSettings_usesNoCredentialsProviderWhenCredentialsNull()
+      throws IOException {
+    BigQueryOptions nullCredentialsOptions = mock(BigQueryOptions.class);
+    when(nullCredentialsOptions.getCredentials()).thenReturn(null);
+    when(nullCredentialsOptions.getUniverseDomain()).thenReturn(null);
+    ConnectionImpl nullCredentialsConnection =
+        new ConnectionImpl(
+            connectionSettings,
+            nullCredentialsOptions,
+            bigqueryRpcMock,
+            BigQueryRetryConfig.newBuilder().build());
+
+    BigQueryReadSettings readSettings = nullCredentialsConnection.createBigQueryReadSettings();
+    assertInstanceOf(NoCredentialsProvider.class, readSettings.getCredentialsProvider());
+    assertNull(readSettings.getCredentialsProvider().getCredentials());
+    assertEquals("googleapis.com", readSettings.getUniverseDomain());
+    assertEquals("bigquerystorage.googleapis.com:443", readSettings.getEndpoint());
   }
 }
