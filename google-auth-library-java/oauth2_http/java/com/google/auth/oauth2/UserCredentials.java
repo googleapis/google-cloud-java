@@ -44,6 +44,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.auth.CredentialTypeForMetrics;
+import com.google.auth.Credentials;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.MetricsUtils.RequestType;
 import com.google.common.base.MoreObjects;
@@ -137,20 +138,34 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
     // currently "token_uri" is not a default field and needs to be added to json file manually
     String tokenUrl = (String) json.get("token_uri");
     URI tokenUri = (tokenUrl == null || tokenUrl.isEmpty()) ? null : URI.create(tokenUrl);
+    String universeDomain = (String) json.get("universe_domain");
+    if (universeDomain != null
+        && !universeDomain.trim().isEmpty()
+        && !Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)) {
+      throw new IOException(
+          String.format(
+              "UserCredentials are not supported in universes other than %s (configured"
+                  + " universe_domain: %s).",
+              Credentials.GOOGLE_DEFAULT_UNIVERSE, universeDomain));
+    }
     String account = null;
     if (json.containsKey("account")) {
       account = (String) json.get("account");
     }
-    return UserCredentials.newBuilder()
-        .setClientId(clientId)
-        .setClientSecret(clientSecret)
-        .setRefreshToken(refreshToken)
-        .setAccessToken(null)
-        .setHttpTransportFactory(transportFactory)
-        .setTokenServerUri(tokenUri)
-        .setQuotaProjectId(quotaProjectId)
-        .setAccount(account)
-        .build();
+    UserCredentials.Builder builder =
+        UserCredentials.newBuilder()
+            .setClientId(clientId)
+            .setClientSecret(clientSecret)
+            .setRefreshToken(refreshToken)
+            .setAccessToken(null)
+            .setHttpTransportFactory(transportFactory)
+            .setTokenServerUri(tokenUri)
+            .setQuotaProjectId(quotaProjectId)
+            .setAccount(account);
+    if (universeDomain != null && !universeDomain.trim().isEmpty()) {
+      builder.setUniverseDomain(universeDomain);
+    }
+    return builder.build();
   }
 
   /**
@@ -270,6 +285,13 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
     if (refreshToken == null) {
       throw new IllegalStateException(
           "UserCredentials instance cannot refresh because there is no refresh token.");
+    }
+    String universeDomain = getUniverseDomain();
+    if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)) {
+      throw new IOException(
+          String.format(
+              "UserCredentials refresh is only supported in %s (configured universe domain: %s).",
+              Credentials.GOOGLE_DEFAULT_UNIVERSE, universeDomain));
     }
     GenericData tokenRequest = new GenericData();
     tokenRequest.set("client_id", clientId);

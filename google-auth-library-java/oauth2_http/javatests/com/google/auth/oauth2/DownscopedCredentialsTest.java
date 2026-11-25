@@ -165,10 +165,7 @@ class DownscopedCredentialsTest extends BaseSerializationTest {
   void refreshAccessToken_withCustomUniverseDomain() throws IOException {
     MockStsTransportFactory transportFactory = new MockStsTransportFactory();
     String universeDomain = "foobar";
-    GoogleCredentials sourceCredentials =
-        getServiceAccountSourceCredentials(/* canRefresh= */ true).toBuilder()
-            .setUniverseDomain(universeDomain)
-            .build();
+    GoogleCredentials sourceCredentials = getCustomUniverseSourceCredentials(universeDomain);
 
     DownscopedCredentials downscopedCredentials =
         DownscopedCredentials.newBuilder()
@@ -192,7 +189,7 @@ class DownscopedCredentialsTest extends BaseSerializationTest {
 
     // Verify domain.
     String url = transportFactory.transport.getRequest().getUrl();
-    assertEquals(url, String.format(TOKEN_EXCHANGE_URL_FORMAT, universeDomain));
+    assertEquals(String.format(TOKEN_EXCHANGE_URL_FORMAT, universeDomain), url);
   }
 
   @Test
@@ -348,6 +345,17 @@ class DownscopedCredentialsTest extends BaseSerializationTest {
     }
 
     return sourceCredentials.createScoped(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
+  }
+
+  private static GoogleCredentials getCustomUniverseSourceCredentials(String universeDomain) {
+    return new GoogleCredentials(GoogleCredentials.newBuilder().setUniverseDomain(universeDomain)) {
+      @Override
+      public AccessToken refreshAccessToken() {
+        return new AccessToken(
+            "customUniverseAccessToken",
+            new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(1)));
+      }
+    };
   }
 
   private static GoogleCredentials getUserSourceCredentials() {

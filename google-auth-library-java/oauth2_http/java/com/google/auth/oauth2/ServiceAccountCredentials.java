@@ -525,10 +525,30 @@ public class ServiceAccountCredentials extends GoogleCredentials
   }
 
   /**
-   * Refreshes the OAuth2 access token by getting a new access token using a JSON Web Token (JWT).
+   * Refreshes the OAuth2 access token by exchanging a signed JWT assertion at {@code
+   * tokenServerUri}.
+   *
+   * <p>This method is only used for the OAuth2 access token flow (not self-signed JWT
+   * authentication, which is handled directly by {@link #getRequestMetadata(URI)} without calling
+   * this method).
+   *
+   * <p>OAuth2 token exchange is only supported in {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}. In
+   * non-default universe domains, this method throws {@link IOException}. Use {@link
+   * #getRequestMetadata(URI)} for self-signed JWT authentication, or wrap this credential in {@link
+   * ImpersonatedCredentials} if an OAuth2 access token is required.
    */
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    String universeDomain = getUniverseDomain();
+    if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)) {
+      throw new IOException(
+          String.format(
+              "OAuth2 access token refresh is not supported for ServiceAccountCredentials in"
+                  + " universe domain %s. Use self-signed JWT authentication via"
+                  + " getRequestMetadata() or wrap this credential in ImpersonatedCredentials to"
+                  + " obtain short-lived OAuth2 access tokens.",
+              universeDomain));
+    }
     JsonFactory jsonFactory = OAuth2Utils.JSON_FACTORY;
     long currentTime = clock.currentTimeMillis();
     String assertion = createAssertion(jsonFactory, currentTime);

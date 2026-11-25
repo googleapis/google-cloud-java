@@ -43,14 +43,21 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.webtoken.JsonWebSignature;
 import com.google.api.client.json.webtoken.JsonWebToken;
 import com.google.api.client.testing.http.FixedClock;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.Clock;
 import com.google.api.client.util.Joiner;
@@ -59,6 +66,7 @@ import com.google.auth.Credentials;
 import com.google.auth.RequestMetadataCallback;
 import com.google.auth.TestUtils;
 import com.google.auth.http.AuthHttpConstants;
+import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials.GoogleCredentialsInfo;
 import com.google.common.collect.ImmutableSet;
@@ -81,6 +89,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link ServiceAccountCredentials}. */
@@ -642,6 +652,108 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     accessToken = credentials.refreshAccessToken();
     assertEquals(ACCESS_TOKEN, accessToken.getTokenValue());
     assertEquals(3600 * 1000 * 1000L, accessToken.getExpirationTimeMillis().longValue());
+  }
+
+  @Test
+  void refreshAccessToken_nonDefaultUniverse_throwsIOExceptionWithoutNetworkCall()
+      throws IOException {
+    URI customTokenUri = URI.create("https://oauth2.example.com/token");
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    transportFactory.transport.addServiceAccount(CLIENT_EMAIL, ACCESS_TOKEN);
+
+    GoogleCredentials[] cases = {
+      createDefaultBuilder()
+          .setScopes(SCOPES)
+          .setHttpTransportFactory(transportFactory)
+          .setUniverseDomain("example.com")
+          .build(),
+      createDefaultBuilder()
+          .setScopes(SCOPES)
+          .setHttpTransportFactory(transportFactory)
+          .setTokenServerUri(customTokenUri)
+          .setUniverseDomain("example.com")
+          .build(),
+      createDefaultBuilder()
+          .setScopes(SCOPES)
+          .setHttpTransportFactory(transportFactory)
+          .setUniverseDomain("example.com")
+          .build()
+          .createDelegated("user@example.com")
+    };
+
+    for (GoogleCredentials credentials : cases) {
+      IOException error = assertThrows(IOException.class, credentials::refreshAccessToken);
+      assertTrue(error.getMessage().contains("example.com"));
+    }
+    assertThrows(IOException.class, cases[0]::refresh);
+    assertThrows(IOException.class, cases[0]::refreshIfExpired);
+    assertEquals(0, transportFactory.transport.buildRequestCount);
+    assertNull(transportFactory.transport.getRequest());
+  }
+
+  @Test
+  void refreshAccessToken_nonDefaultUniverseFromJson_throwsIOException() throws IOException {
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    transportFactory.transport.addServiceAccount(CLIENT_EMAIL, ACCESS_TOKEN);
+    GenericJson json = writeServiceAccountJson(PROJECT_ID, null, "example.com");
+    json.put("token_uri", OAuth2Utils.TOKEN_SERVER_URI.toString());
+
+    GoogleCredentials credentials =
+        ServiceAccountCredentials.fromJson(json, transportFactory).createScoped(SCOPES);
+
+    IOException error = assertThrows(IOException.class, credentials::refreshAccessToken);
+    assertTrue(error.getMessage().contains("example.com"));
+    assertEquals(0, transportFactory.transport.buildRequestCount);
+    assertNull(transportFactory.transport.getRequest());
+  }
+
+  @Test
+  void httpCredentialsAdapter_401WithNonDefaultUniverseServiceAccount_doesNotCallTokenServer()
+      throws IOException {
+    MockTokenServerTransportFactory tokenTransportFactory = new MockTokenServerTransportFactory();
+    tokenTransportFactory.transport.addServiceAccount(CLIENT_EMAIL, ACCESS_TOKEN);
+    ServiceAccountCredentials credentials =
+        createDefaultBuilder()
+            .setScopes(SCOPES)
+            .setHttpTransportFactory(tokenTransportFactory)
+            .setUniverseDomain("example.com")
+            .build();
+
+    AtomicInteger apiRequestCount = new AtomicInteger();
+    AtomicReference<String> authorizationHeader = new AtomicReference<>();
+    MockHttpTransport apiTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                apiRequestCount.incrementAndGet();
+                authorizationHeader.set(getFirstHeaderValue(AuthHttpConstants.AUTHORIZATION));
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED);
+                response.addHeader("WWW-Authenticate", "Bearer error=\"invalid_token\"");
+                return response;
+              }
+            };
+          }
+        };
+
+    HttpCredentialsAdapter adapter = new HttpCredentialsAdapter(credentials);
+    HttpRequest request =
+        apiTransport
+            .createRequestFactory(adapter)
+            .buildGetRequest(new GenericUrl("https://storage.example.com/test"));
+    request.setThrowExceptionOnExecuteError(false);
+
+    HttpResponse response = request.execute();
+
+    assertEquals(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, response.getStatusCode());
+    assertEquals(1, apiRequestCount.get());
+    assertNotNull(authorizationHeader.get());
+    assertTrue(authorizationHeader.get().startsWith("Bearer "));
+    assertEquals(0, tokenTransportFactory.transport.buildRequestCount);
+    assertNull(tokenTransportFactory.transport.getRequest());
   }
 
   @Test

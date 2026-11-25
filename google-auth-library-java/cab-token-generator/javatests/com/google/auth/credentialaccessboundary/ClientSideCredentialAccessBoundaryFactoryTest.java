@@ -67,6 +67,7 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.time.Duration;
 import java.util.Base64;
+import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -158,10 +159,7 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
   @Test
   void fetchIntermediateCredentials_withCustomUniverseDomain() throws IOException {
     String universeDomain = "foobar";
-    GoogleCredentials sourceCredentials =
-        getServiceAccountSourceCredentials(mockTokenServerTransportFactory).toBuilder()
-            .setUniverseDomain(universeDomain)
-            .build();
+    GoogleCredentials sourceCredentials = getCustomUniverseSourceCredentials(universeDomain);
 
     ClientSideCredentialAccessBoundaryFactory factory =
         ClientSideCredentialAccessBoundaryFactory.newBuilder()
@@ -174,7 +172,7 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
 
     // Verify domain.
     String url = mockStsTransportFactory.transport.getRequest().getUrl();
-    assertEquals(url, String.format(TOKEN_EXCHANGE_URL_FORMAT, universeDomain));
+    assertEquals(String.format(TOKEN_EXCHANGE_URL_FORMAT, universeDomain), url);
   }
 
   @Test
@@ -609,6 +607,17 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
             .build();
 
     return sourceCredentials.createScoped("https://www.googleapis.com/auth/cloud-platform");
+  }
+
+  private static GoogleCredentials getCustomUniverseSourceCredentials(String universeDomain) {
+    return new GoogleCredentials(GoogleCredentials.newBuilder().setUniverseDomain(universeDomain)) {
+      @Override
+      public AccessToken refreshAccessToken() {
+        return new AccessToken(
+            "customUniverseAccessToken",
+            new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(1)));
+      }
+    };
   }
 
   private ClientSideCredentialAccessBoundaryFactory getClientSideCredentialAccessBoundaryFactory(
