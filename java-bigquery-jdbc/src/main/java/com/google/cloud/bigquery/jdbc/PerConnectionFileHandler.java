@@ -18,7 +18,10 @@ package com.google.cloud.bigquery.jdbc;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.channels.ClosedByInterruptException;
 import java.nio.channels.FileChannel;
+import java.nio.channels.FileLock;
+import java.nio.channels.OverlappingFileLockException;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
@@ -40,6 +43,7 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.ErrorManager;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
@@ -54,7 +58,10 @@ import java.util.regex.Pattern;
 class PerConnectionFileHandler extends Handler {
   private static final String DEFAULT_HANDLER_ID = "Jdbc-default";
   private static final String GLOBAL_LOG_FILE_NAME = "BQ-JDBC-GLOBAL.log";
+  private static final long GLOBAL_LOCK_POSITION = Long.MAX_VALUE - 1;
   private static final int MAX_CREATE_ATTEMPTS = 16;
+  private static final int MAX_REOPEN_ATTEMPTS = 3;
+  private static final Set<Path> ACTIVE_GLOBAL_PATHS = ConcurrentHashMap.newKeySet();
   private static final DateTimeFormatter FILE_TIMESTAMP_FORMAT =
       DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
   private static final Pattern UNSAFE_ID_CHARS = Pattern.compile("[^A-Za-z0-9_-]");
@@ -68,6 +75,7 @@ class PerConnectionFileHandler extends Handler {
       PosixFilePermissions.asFileAttribute(FILE_PERMS_0600);
   private static final int PROCESS_UID = resolveProcessUid();
   private static final UserPrincipal PROCESS_PRINCIPAL = resolveProcessPrincipal();
+  static volatile Integer overrideUidForTesting;
 
   private final Path baseLogPath;
   private final Level level;
@@ -137,7 +145,19 @@ class PerConnectionFileHandler extends Handler {
   }
 
   private static int effectiveProcessUid() {
-    return PROCESS_UID;
+    Integer override = overrideUidForTesting;
+    return override != null ? override : PROCESS_UID;
+  }
+
+  private static void verifySingleLinkCount(Path path) throws IOException {
+    try {
+      Object nlinkAttr = Files.getAttribute(path, "unix:nlink", LinkOption.NOFOLLOW_LINKS);
+      if (nlinkAttr instanceof Number && ((Number) nlinkAttr).intValue() > 1) {
+        throw new IOException("Refusing hard-linked log file (nlink > 1): " + path);
+      }
+    } catch (UnsupportedOperationException | IllegalArgumentException ignored) {
+      // Non-Unix filesystems do not expose unix:nlink.
+    }
   }
 
   private static void verifyPosixOwner(Path path, boolean allowRootOwner) throws IOException {
@@ -241,29 +261,108 @@ class PerConnectionFileHandler extends Handler {
     return FileChannel.open(path, opts);
   }
 
-  private static FileChannel openSecureGlobalChannel(Path globalPath, boolean isPosix)
-      throws IOException {
+  private static FileChannel openAppendValidated(Path path, boolean isPosix) throws IOException {
+    BasicFileAttributes attrs =
+        Files.readAttributes(path, BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
+    if (attrs.isSymbolicLink() || !attrs.isRegularFile() || attrs.isOther()) {
+      throw new IOException("Refusing non-regular log file: " + path);
+    }
+    if (isPosix) {
+      verifyPosixOwner(path, false);
+      verifySingleLinkCount(path);
+      Files.setPosixFilePermissions(path, FILE_PERMS_0600);
+    }
+    FileChannel fc =
+        FileChannel.open(
+            path, StandardOpenOption.WRITE, StandardOpenOption.APPEND, LinkOption.NOFOLLOW_LINKS);
     try {
-      return openExclusiveNewChannel(globalPath, isPosix);
-    } catch (FileAlreadyExistsException existing) {
-      BasicFileAttributes attrs =
-          Files.readAttributes(globalPath, BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
-      if (attrs.isSymbolicLink() || !attrs.isRegularFile() || attrs.isOther()) {
-        throw new IOException("Refusing non-regular global log file: " + globalPath);
+      BasicFileAttributes postAttrs =
+          Files.readAttributes(path, BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
+      if (postAttrs.isSymbolicLink() || !postAttrs.isRegularFile() || postAttrs.isOther()) {
+        throw new IOException("Log file changed to non-regular file during open: " + path);
       }
       if (isPosix) {
-        verifyPosixOwner(globalPath, false);
-        Files.setPosixFilePermissions(globalPath, FILE_PERMS_0600);
+        verifyPosixOwner(path, false);
+        verifySingleLinkCount(path);
       }
-      return FileChannel.open(
-          globalPath,
-          StandardOpenOption.WRITE,
-          StandardOpenOption.APPEND,
-          LinkOption.NOFOLLOW_LINKS);
+      return fc;
+    } catch (IOException | RuntimeException e) {
+      try {
+        fc.close();
+      } catch (IOException suppressed) {
+        e.addSuppressed(suppressed);
+      }
+      throw e;
     }
   }
 
-  private static FileChannel openConnectionChannel(Path logDir, String id, boolean isPosix)
+  private static FileLock tryAcquireSentinelLock(FileChannel fc) throws IOException {
+    try {
+      return fc.tryLock(GLOBAL_LOCK_POSITION, 1L, false);
+    } catch (OverlappingFileLockException contendedInJvm) {
+      return null;
+    }
+  }
+
+  private static OpenedLogFile openFallbackGlobalChannel(Path logDir, boolean isPosix)
+      throws IOException {
+    String timestamp = LocalDateTime.now().format(FILE_TIMESTAMP_FORMAT);
+    for (int attempt = 0; attempt < MAX_CREATE_ATTEMPTS; attempt++) {
+      String suffix = String.format("%04x", ThreadLocalRandom.current().nextInt(0x10000));
+      Path candidate = logDir.resolve("BQ-JDBC-GLOBAL-" + timestamp + "-" + suffix + ".log");
+      try {
+        FileChannel fc = openExclusiveNewChannel(candidate, isPosix);
+        FileLock lock = null;
+        try {
+          lock = tryAcquireSentinelLock(fc);
+        } catch (IOException ignored) {
+          // Exclusive CREATE_NEW already guarantees uniqueness if locking is unsupported.
+        }
+        return new OpenedLogFile(candidate, fc, lock, null);
+      } catch (FileAlreadyExistsException collision) {
+        // Retry with fresh random suffix.
+      }
+    }
+    throw new IOException("Unable to allocate fallback global log file in " + logDir);
+  }
+
+  private static OpenedLogFile openGlobalChannel(Path logDir, boolean isPosix) throws IOException {
+    Path realLogDir = logDir.toRealPath();
+    Path globalPath = realLogDir.resolve(GLOBAL_LOG_FILE_NAME);
+    Path claimKey = globalPath;
+    if (ACTIVE_GLOBAL_PATHS.add(claimKey)) {
+      boolean keepClaim = false;
+      try {
+        FileChannel fc;
+        try {
+          fc = openExclusiveNewChannel(globalPath, isPosix);
+        } catch (FileAlreadyExistsException existing) {
+          fc = openAppendValidated(globalPath, isPosix);
+        }
+        FileLock lock = null;
+        boolean lockSupported = true;
+        try {
+          lock = tryAcquireSentinelLock(fc);
+        } catch (IOException lockUnsupported) {
+          lockSupported = false;
+        }
+        if (lock != null || !lockSupported) {
+          keepClaim = true;
+          return new OpenedLogFile(globalPath, fc, lock, claimKey);
+        }
+        fc.close();
+      } catch (IOException | RuntimeException primaryFailure) {
+        // Fall through to unique per-process global log file when primary is foreign-owned/locked.
+      } finally {
+        if (!keepClaim) {
+          ACTIVE_GLOBAL_PATHS.remove(claimKey);
+        }
+      }
+    }
+    return openFallbackGlobalChannel(realLogDir, isPosix);
+  }
+
+  private static OpenedLogFile openConnectionChannel(Path logDir, String id, boolean isPosix)
       throws IOException {
     String shortUuid = sanitizeIdSegment(id);
     String timestamp = LocalDateTime.now().format(FILE_TIMESTAMP_FORMAT);
@@ -272,8 +371,10 @@ class PerConnectionFileHandler extends Handler {
           attempt == 0
               ? "BQ-JDBC-" + timestamp + "-" + shortUuid + ".log"
               : "BQ-JDBC-" + timestamp + "-" + attempt + "-" + shortUuid + ".log";
+      Path candidate = logDir.resolve(fileName);
       try {
-        return openExclusiveNewChannel(logDir.resolve(fileName), isPosix);
+        FileChannel fc = openExclusiveNewChannel(candidate, isPosix);
+        return new OpenedLogFile(candidate, fc, null, null);
       } catch (FileAlreadyExistsException collision) {
         // Retry with collision counter when two connections share timestamp + 4-char prefix.
       }
@@ -288,11 +389,11 @@ class PerConnectionFileHandler extends Handler {
     try {
       Path verifiedDir = ensureSecureDirectory(logDir);
       boolean isPosix = supportsPosix(verifiedDir);
-      SeekableByteChannel channel =
+      OpenedLogFile opened =
           DEFAULT_HANDLER_ID.equals(id)
-              ? openSecureGlobalChannel(verifiedDir.resolve(GLOBAL_LOG_FILE_NAME), isPosix)
+              ? openGlobalChannel(verifiedDir, isPosix)
               : openConnectionChannel(verifiedDir, id, isPosix);
-      return new ChannelLogWriter(channel, writerLevel, logFormatter, this);
+      return new ChannelLogWriter(opened, isPosix, writerLevel, logFormatter, this);
     } catch (Exception e) {
       reportError("Failed to create log file for connection " + id, e, ErrorManager.OPEN_FAILURE);
       return null;
@@ -358,23 +459,70 @@ class PerConnectionFileHandler extends Handler {
     }
   }
 
+  static final class OpenedLogFile {
+    final Path path;
+    final FileChannel channel;
+    final FileLock lock;
+    final Path globalClaimKey;
+
+    OpenedLogFile(Path path, FileChannel channel, FileLock lock, Path globalClaimKey) {
+      this.path = path;
+      this.channel = channel;
+      this.lock = lock;
+      this.globalClaimKey = globalClaimKey;
+    }
+  }
+
   static final class ChannelLogWriter {
     private final Object lock = new Object();
+    private final Path filePath;
+    private final boolean isPosix;
+    private final Path globalClaimKey;
     private final Level writerLevel;
     private final Formatter formatter;
     private final PerConnectionFileHandler owner;
     private SeekableByteChannel channel;
+    private FileLock fileLock;
     private boolean closed;
 
     ChannelLogWriter(
-        SeekableByteChannel channel,
+        OpenedLogFile opened,
+        boolean isPosix,
         Level writerLevel,
         Formatter formatter,
         PerConnectionFileHandler owner) {
-      this.channel = channel;
+      this.filePath = opened.path;
+      this.channel = opened.channel;
+      this.fileLock = opened.lock;
+      this.globalClaimKey = opened.globalClaimKey;
+      this.isPosix = isPosix;
       this.writerLevel = writerLevel;
       this.formatter = formatter;
       this.owner = owner;
+    }
+
+    private void reopenAfterInterrupt() throws IOException {
+      FileChannel reopened = openAppendValidated(filePath, isPosix);
+      FileLock reacquired = null;
+      if (globalClaimKey != null) {
+        try {
+          reacquired = tryAcquireSentinelLock(reopened);
+          if (reacquired == null) {
+            reopened.close();
+            throw new IOException(
+                "Lost global log file lock during interrupt recovery: " + filePath);
+          }
+        } catch (IOException e) {
+          try {
+            reopened.close();
+          } catch (IOException suppressed) {
+            e.addSuppressed(suppressed);
+          }
+          throw e;
+        }
+      }
+      this.channel = reopened;
+      this.fileLock = reacquired;
     }
 
     void publish(LogRecord record) {
@@ -393,13 +541,35 @@ class PerConnectionFileHandler extends Handler {
         if (closed || channel == null) {
           return;
         }
+        boolean interrupted = false;
         try {
-          ByteBuffer buf = ByteBuffer.wrap(bytes);
-          while (buf.hasRemaining()) {
-            channel.write(buf);
+          for (int attempt = 0; attempt < MAX_REOPEN_ATTEMPTS; attempt++) {
+            interrupted |= Thread.interrupted();
+            try {
+              if (!channel.isOpen()) {
+                reopenAfterInterrupt();
+              }
+              ByteBuffer buf = ByteBuffer.wrap(bytes);
+              while (buf.hasRemaining()) {
+                channel.write(buf);
+              }
+              return;
+            } catch (ClosedByInterruptException cbie) {
+              interrupted = true;
+              Thread.interrupted();
+              if (attempt + 1 >= MAX_REOPEN_ATTEMPTS) {
+                owner.reportError(
+                    "Failed to write log record after interrupt", cbie, ErrorManager.WRITE_FAILURE);
+                return;
+              }
+            }
           }
         } catch (IOException e) {
           owner.reportError("Failed to write log record", e, ErrorManager.WRITE_FAILURE);
+        } finally {
+          if (interrupted) {
+            Thread.currentThread().interrupt();
+          }
         }
       }
     }
@@ -410,13 +580,26 @@ class PerConnectionFileHandler extends Handler {
           return;
         }
         closed = true;
-        if (channel != null) {
-          try {
-            channel.close();
-          } catch (IOException e) {
-            owner.reportError("Failed to close log file", e, ErrorManager.CLOSE_FAILURE);
+        try {
+          if (fileLock != null && fileLock.isValid()) {
+            try {
+              fileLock.release();
+            } catch (IOException ignored) {
+            }
           }
+          if (channel != null) {
+            try {
+              channel.close();
+            } catch (IOException e) {
+              owner.reportError("Failed to close log file", e, ErrorManager.CLOSE_FAILURE);
+            }
+          }
+        } finally {
+          fileLock = null;
           channel = null;
+          if (globalClaimKey != null) {
+            ACTIVE_GLOBAL_PATHS.remove(globalClaimKey);
+          }
         }
       }
     }
