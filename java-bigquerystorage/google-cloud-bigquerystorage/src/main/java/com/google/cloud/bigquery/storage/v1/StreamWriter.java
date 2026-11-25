@@ -168,22 +168,16 @@ public class StreamWriter implements AutoCloseable {
 
     abstract int credentialsHashcode();
 
-    @Nullable
     abstract String endpoint();
 
-    @Nullable
     abstract String universeDomain();
-
-    public static ConnectionPoolKey create(String location, @Nullable Credentials credentials) {
-      return create(location, credentials, null, null);
-    }
 
     /** Creates a connection pool key scoped by location, credentials, endpoint, and universe. */
     public static ConnectionPoolKey create(
         String location,
         @Nullable Credentials credentials,
-        @Nullable String endpoint,
-        @Nullable String universeDomain) {
+        String endpoint,
+        String universeDomain) {
       return new AutoValue_StreamWriter_ConnectionPoolKey(
           location, credentials != null ? credentials.hashCode() : 0, endpoint, universeDomain);
     }
