@@ -187,6 +187,14 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     @GuardedBy("precommitTokenLock")
     private MultiplexedSessionPrecommitToken latestPrecommitToken;
 
+    private final Object commitCancellationLock = new Object();
+
+    @GuardedBy("commitCancellationLock")
+    private boolean commitCancelled;
+
+    @GuardedBy("commitCancellationLock")
+    private ApiFuture<com.google.spanner.v1.CommitResponse> inFlightCommitFuture;
+
     @GuardedBy("lock")
     private volatile SettableApiFuture<Void> finishedAsyncOperations = SettableApiFuture.create();
 
@@ -365,9 +373,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                     rpc.getCommitRetrySettings().getTotalTimeout().getSeconds() + 5,
                     TimeUnit.SECONDS);
       } catch (InterruptedException | TimeoutException e) {
-        if (commitFuture != null) {
-          commitFuture.cancel(true);
-        }
+        cancelInFlightCommit();
         if (e instanceof InterruptedException) {
           throw SpannerExceptionFactory.propagateInterrupt((InterruptedException) e);
         } else {
@@ -378,7 +384,36 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       }
     }
 
-    volatile ApiFuture<CommitResponse> commitFuture;
+    private void cancelInFlightCommit() {
+      ApiFuture<com.google.spanner.v1.CommitResponse> commitFuture;
+      synchronized (commitCancellationLock) {
+        commitCancelled = true;
+        commitFuture = inFlightCommitFuture;
+      }
+      if (commitFuture != null) {
+        commitFuture.cancel(true);
+      }
+    }
+
+    private void publishOrCancelInFlightCommit(
+        ApiFuture<com.google.spanner.v1.CommitResponse> commitFuture) {
+      boolean cancelled;
+      synchronized (commitCancellationLock) {
+        cancelled = commitCancelled;
+        if (!cancelled) {
+          inFlightCommitFuture = commitFuture;
+        }
+      }
+      if (cancelled) {
+        commitFuture.cancel(true);
+      }
+    }
+
+    private boolean isCommitCancelled() {
+      synchronized (commitCancellationLock) {
+        return commitCancelled;
+      }
+    }
 
     ApiFuture<CommitResponse> commitAsync() {
       close();
@@ -429,6 +464,13 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       finishOps.addListener(
           new CommitRunnable(
               res, finishOps, builder, /* retryAttemptDueToCommitProtocolExtension= */ false),
+          MoreExecutors.directExecutor());
+      res.addListener(
+          () -> {
+            if (res.isCancelled()) {
+              cancelInFlightCommit();
+            }
+          },
           MoreExecutors.directExecutor());
       return res;
     }
@@ -484,6 +526,13 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                 "Retrying commit operation with a new precommit token obtained from the previous"
                     + " CommitResponse");
           }
+          if (isCommitCancelled()) {
+            res.setException(
+                newSpannerException(
+                    ErrorCode.CANCELLED,
+                    "The commit was cancelled before the Commit RPC was sent"));
+            return;
+          }
           final CommitRequest commitRequest = requestBuilder.build();
           span.addAnnotation("Starting Commit");
           final ApiFuture<com.google.spanner.v1.CommitResponse> commitFuture;
@@ -491,6 +540,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
           try (IScope ignore = tracer.withSpan(opSpan)) {
             commitFuture = rpc.commitAsync(commitRequest, getTransactionChannelHint());
           }
+          publishOrCancelInFlightCommit(commitFuture);
           session.markUsed(clock.instant());
           commitFuture.addListener(
               () -> {
