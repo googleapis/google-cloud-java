@@ -19,7 +19,9 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
+import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.logging.Logging;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
@@ -140,5 +142,37 @@ public class BigQueryJdbcOpenTelemetryTest {
             true, false, false, null, null, null, null, null);
 
     assertThat(result).isSameInstanceAs(GlobalOpenTelemetry.get());
+  }
+
+  @Test
+  public void testCreateLoggingClient_propagatesUniverseDomain() throws Exception {
+    mockedCredentials.close();
+    try {
+      GoogleCredentials customCreds =
+          GoogleCredentials.newBuilder()
+              .setAccessToken(new AccessToken("test-token", null))
+              .setUniverseDomain("custom-universe.example.com")
+              .build();
+      try (Logging logging =
+          BigQueryJdbcOpenTelemetry.createLoggingClient(
+              true, null, null, "test-project", customCreds, null, "custom-universe.example.com")) {
+        assertThat(logging).isNotNull();
+        assertThat(logging.getOptions().getUniverseDomain())
+            .isEqualTo("custom-universe.example.com");
+      }
+
+      GoogleCredentials defaultCreds =
+          GoogleCredentials.newBuilder()
+              .setAccessToken(new AccessToken("test-token", null))
+              .build();
+      try (Logging defaultLogging =
+          BigQueryJdbcOpenTelemetry.createLoggingClient(
+              true, null, null, "test-project", defaultCreds, null, null)) {
+        assertThat(defaultLogging).isNotNull();
+        assertThat(defaultLogging.getOptions().getUniverseDomain()).isNull();
+      }
+    } finally {
+      mockedCredentials = Mockito.mockStatic(GoogleCredentials.class);
+    }
   }
 }

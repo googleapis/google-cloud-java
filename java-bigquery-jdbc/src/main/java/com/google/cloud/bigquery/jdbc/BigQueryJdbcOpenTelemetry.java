@@ -204,6 +204,24 @@ class BigQueryJdbcOpenTelemetry {
       String effectiveProjectId,
       Credentials fallbackCredentials,
       HeaderProvider headerProvider) {
+    return createLoggingClient(
+        enableGcpLogExporter,
+        customOpenTelemetry,
+        effectiveCredentials,
+        effectiveProjectId,
+        fallbackCredentials,
+        headerProvider,
+        null);
+  }
+
+  static Logging createLoggingClient(
+      boolean enableGcpLogExporter,
+      OpenTelemetry customOpenTelemetry,
+      String effectiveCredentials,
+      String effectiveProjectId,
+      Credentials fallbackCredentials,
+      HeaderProvider headerProvider,
+      String universeDomain) {
 
     if (!enableGcpLogExporter || customOpenTelemetry != null) {
       return null;
@@ -224,6 +242,9 @@ class BigQueryJdbcOpenTelemetry {
       }
       if (headerProvider != null) {
         loggingOptionsBuilder.setHeaderProvider(headerProvider);
+      }
+      if (universeDomain != null) {
+        loggingOptionsBuilder.setUniverseDomain(universeDomain);
       }
       return loggingOptionsBuilder.build().getService();
     } catch (Exception e) {
