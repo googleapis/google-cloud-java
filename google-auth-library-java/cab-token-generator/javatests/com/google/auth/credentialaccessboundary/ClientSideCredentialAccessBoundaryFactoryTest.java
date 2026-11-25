@@ -36,10 +36,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.util.Clock;
 import com.google.auth.Credentials;
 import com.google.auth.TestUtils;
@@ -92,16 +94,22 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
   static class MockStsTransportFactory implements HttpTransportFactory {
     MockStsTransport transport = new MockStsTransport();
     private CountDownLatch refreshEntryLatch = new CountDownLatch(0);
+    private CountDownLatch refreshRequestLatch = new CountDownLatch(0);
 
     void setRefreshEntryLatch(CountDownLatch refreshEntryLatch) {
       this.refreshEntryLatch = refreshEntryLatch;
     }
 
+    /** Sets a latch counted down once a refresh request has been issued to the mock transport. */
+    void setRefreshRequestLatch(CountDownLatch refreshRequestLatch) {
+      this.refreshRequestLatch = refreshRequestLatch;
+    }
+
     @Override
     public HttpTransport create() {
       // Request 0 is the initial token fetch. On subsequent refresh requests (requestCount >= 1)
-      // in multi-threaded tests, pause the in-flight STS request until all concurrent threads have
-      // evaluated determineRefreshType() and attached to the existing refreshTask.
+      // in concurrent/async tests, pause the in-flight STS request until the test releases
+      // refreshEntryLatch, then signal refreshRequestLatch once buildRequest() has recorded it.
       if (transport.getRequestCount() >= 1) {
         try {
           if (!refreshEntryLatch.await(5, TimeUnit.SECONDS)) {
@@ -111,6 +119,14 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
           Thread.currentThread().interrupt();
           throw new RuntimeException(e);
         }
+        return new HttpTransport() {
+          @Override
+          protected LowLevelHttpRequest buildRequest(String method, String url) {
+            LowLevelHttpRequest request = transport.buildRequest(method, url);
+            refreshRequestLatch.countDown();
+            return request;
+          }
+        };
       }
       return transport;
     }
@@ -282,37 +298,41 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
   }
 
   @Test
-  void refreshCredentialsIfRequired_asyncSingleThread() throws IOException {
+  void refreshCredentialsIfRequired_asyncSingleThread() throws IOException, InterruptedException {
     final ClientSideCredentialAccessBoundaryFactory factory =
         getClientSideCredentialAccessBoundaryFactory(RefreshType.ASYNC);
+    CountDownLatch allowAsyncRefresh = new CountDownLatch(1);
+    CountDownLatch refreshCompleted = new CountDownLatch(1);
+    mockStsTransportFactory.setRefreshEntryLatch(allowAsyncRefresh);
+    mockStsTransportFactory.setRefreshRequestLatch(refreshCompleted);
 
     // Call refreshCredentialsIfRequired() once to initialize the intermediate credentials. This
     // should make one request to the STS endpoint.
     factory.refreshCredentialsIfRequired();
     assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
 
-    // Subsequent calls to refreshCredentialsIfRequired() in an async mode should NOT
-    // immediately call the STS endpoint. They should schedule an asynchronous refresh.
-    int numRefresh = 3;
-    for (int i = 0; i < numRefresh; i++) {
-      factory.refreshCredentialsIfRequired();
-    }
-
-    // Verify that only the initial call resulted in an immediate STS request. The async refresh
-    // is still pending.
-    assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
-
-    // Introduce a small delay to allow the asynchronous refresh task to complete.  This is
-    // necessary because the async task runs on a separate thread.
     try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      throw new IOException(e);
+      // Subsequent calls to refreshCredentialsIfRequired() in an async mode should NOT
+      // immediately call the STS endpoint. They should schedule an asynchronous refresh.
+      int numRefresh = 3;
+      for (int i = 0; i < numRefresh; i++) {
+        factory.refreshCredentialsIfRequired();
+      }
+
+      // Verify that only the initial call resulted in an immediate STS request. The async refresh
+      // is still paused behind allowAsyncRefresh.
+      assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
+    } finally {
+      allowAsyncRefresh.countDown();
     }
 
-    // After the delay, the request count should be 2 (initial fetch + one async refresh).
-    // Subsequent calls to refreshCredentialsIfRequired() in ASYNC mode re-use the in-progress
-    // refresh task, so they don't trigger additional STS requests.
+    assertTrue(
+        refreshCompleted.await(5, TimeUnit.SECONDS),
+        "Timed out waiting for asynchronous refresh request");
+
+    // After the async refresh executes, the request count should be 2 (initial fetch + one async
+    // refresh). Subsequent calls to refreshCredentialsIfRequired() in ASYNC mode re-use the
+    // in-progress refresh task, so they don't trigger additional STS requests.
     assertEquals(2, mockStsTransportFactory.transport.getRequestCount());
   }
 
@@ -354,8 +374,10 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
     // Wait for all 5 threads to make both clock.currentTimeMillis() calls (outside and inside
     // synchronized (refreshLock)) before the background STS refresh completes.
     CountDownLatch refreshEntryLatch = new CountDownLatch(numThreads * 2);
+    CountDownLatch refreshCompleted = new CountDownLatch(1);
     final ClientSideCredentialAccessBoundaryFactory factory =
         getClientSideCredentialAccessBoundaryFactory(RefreshType.ASYNC, refreshEntryLatch);
+    mockStsTransportFactory.setRefreshRequestLatch(refreshCompleted);
 
     // Call refreshCredentialsIfRequired() once to initialize the intermediate credentials. This
     // should make one request to the STS endpoint.
@@ -367,15 +389,12 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
     // trigger additional refreshes while the background refresh is still pending.
     triggerConcurrentRefresh(factory, numThreads, refreshEntryLatch);
 
-    // Introduce a small delay to allow the asynchronous refresh task to complete.
-    try {
-      Thread.sleep(100);
-    } catch (InterruptedException e) {
-      throw new IOException(e);
-    }
+    assertTrue(
+        refreshCompleted.await(5, TimeUnit.SECONDS),
+        "Timed out waiting for asynchronous refresh request");
 
-    // After the delay, the request count should be 2, indicating that the initial fetch and a
-    // single async refresh occurred (not one per thread).
+    // After the async refresh executes, the request count should be 2, indicating that the initial
+    // fetch and a single async refresh occurred (not one per thread).
     assertEquals(2, mockStsTransportFactory.transport.getRequestCount());
   }
 
