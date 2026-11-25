@@ -45,6 +45,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,10 +79,10 @@ final class BuiltInTracingProvider {
       AttributeKey.stringKey("service.name");
   private static final String OTEL_SERVICE_NAME = "OTEL_SERVICE_NAME";
   private static final long SHUTDOWN_TIMEOUT_SECONDS = 10;
-  private static final AtomicBoolean credentialsWarningLogged = new AtomicBoolean();
 
   private final Set<OpenTelemetrySdk> inUse = Collections.newSetFromMap(new IdentityHashMap<>());
   private final Map<OpenTelemetrySdk, CompletableResultCode> closing = new IdentityHashMap<>();
+  private final Set<String> notUsedReasonsLogged = new HashSet<>();
   private BiFunction<String, Credentials, SpanExporter> spanExporterFactory =
       BuiltInTracingProvider::createTelemetryApiExporter;
   private BooleanSupplier contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
@@ -91,7 +92,6 @@ final class BuiltInTracingProvider {
   private boolean creationFailureLogged;
   private boolean openCensusWarningLogged;
   private boolean customTracingInfoLogged;
-  private boolean notUsedInfoLogged;
   private boolean invalidSamplingRateWarningLogged;
 
   private BuiltInTracingProvider() {}
@@ -221,8 +221,7 @@ final class BuiltInTracingProvider {
   }
 
   synchronized void logNotUsedOnce(String reason) {
-    if (!notUsedInfoLogged) {
-      notUsedInfoLogged = true;
+    if (notUsedReasonsLogged.add(reason)) {
       logger.log(
           Level.INFO, "Built-in tracing is enabled, but it is not used with " + reason + ".");
     }
@@ -292,9 +291,8 @@ final class BuiltInTracingProvider {
       creationFailureLogged = false;
       openCensusWarningLogged = false;
       customTracingInfoLogged = false;
-      notUsedInfoLogged = false;
+      notUsedReasonsLogged.clear();
       invalidSamplingRateWarningLogged = false;
-      credentialsWarningLogged.set(false);
     }
   }
 
@@ -351,16 +349,18 @@ final class BuiltInTracingProvider {
                 && ((GoogleCredentials) credentials).createScopedRequired()
             ? ((GoogleCredentials) credentials).createScoped(CLOUD_PLATFORM_SCOPE)
             : credentials;
+    AtomicBoolean credentialsWarningLogged = new AtomicBoolean();
     return OtlpGrpcSpanExporter.builder()
         .setEndpoint(endpoint)
-        .setHeaders(() -> getRequestHeaders(scopedCredentials))
+        .setHeaders(() -> getRequestHeaders(scopedCredentials, credentialsWarningLogged))
         .setMeterProvider(MeterProvider.noop())
         .setComponentLoader(BuiltInTracingGrpcSender.componentLoader())
         .build();
   }
 
   @VisibleForTesting
-  static Map<String, String> getRequestHeaders(Credentials credentials) {
+  static Map<String, String> getRequestHeaders(
+      Credentials credentials, AtomicBoolean credentialsWarningLogged) {
     try {
       Map<String, String> headers = new HashMap<>();
       for (Map.Entry<String, List<String>> header :
@@ -371,7 +371,7 @@ final class BuiltInTracingProvider {
       }
       credentialsWarningLogged.set(false);
       return headers;
-    } catch (IOException exception) {
+    } catch (IOException | RuntimeException exception) {
       if (credentialsWarningLogged.compareAndSet(false, true)) {
         logger.log(Level.WARNING, "Unable to get credentials for built-in tracing", exception);
       }

@@ -70,6 +70,7 @@ import java.net.InetSocketAddress;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -294,29 +295,97 @@ public class BuiltInTracingTest {
   @Test
   public void requestHeadersContainTheCredentials() {
     assertEquals(
-        "Bearer token", BuiltInTracingProvider.getRequestHeaders(CREDENTIALS).get("Authorization"));
+        "Bearer token",
+        BuiltInTracingProvider.getRequestHeaders(CREDENTIALS, new AtomicBoolean())
+            .get("Authorization"));
   }
 
   @Test
-  public void credentialsWarningIsLoggedOnceUntilCredentialsWorkAgain() throws IOException {
+  public void credentialsWarningIsLoggedOnceUntilCredentialsWorkAgain() {
     AtomicBoolean failing = new AtomicBoolean(true);
+    Credentials credentials = createFailingCredentials(failing, new IOException("test"));
+    AtomicBoolean warningLogged = new AtomicBoolean();
+
+    List<String> warnings =
+        captureLogs(
+            Level.WARNING,
+            () -> {
+              BuiltInTracingProvider.getRequestHeaders(credentials, warningLogged);
+              BuiltInTracingProvider.getRequestHeaders(credentials, warningLogged);
+            });
+    assertEquals(1, warnings.size());
+
+    failing.set(false);
+    assertEquals(
+        "Bearer token",
+        BuiltInTracingProvider.getRequestHeaders(credentials, warningLogged).get("Authorization"));
+    failing.set(true);
+    warnings =
+        captureLogs(
+            Level.WARNING,
+            () -> BuiltInTracingProvider.getRequestHeaders(credentials, warningLogged));
+    assertEquals(1, warnings.size());
+  }
+
+  @Test
+  public void credentialsWarningOfOneExporterIsNotResetByAnotherExporter() {
+    Credentials failingCredentials =
+        createFailingCredentials(new AtomicBoolean(true), new IOException("test"));
+    AtomicBoolean failingWarningLogged = new AtomicBoolean();
+    AtomicBoolean workingWarningLogged = new AtomicBoolean();
+
+    List<String> warnings =
+        captureLogs(
+            Level.WARNING,
+            () -> {
+              BuiltInTracingProvider.getRequestHeaders(failingCredentials, failingWarningLogged);
+              BuiltInTracingProvider.getRequestHeaders(CREDENTIALS, workingWarningLogged);
+              BuiltInTracingProvider.getRequestHeaders(failingCredentials, failingWarningLogged);
+            });
+
+    assertEquals(1, warnings.size());
+  }
+
+  @Test
+  public void requestHeadersAreEmptyWhenTheCredentialsThrowARuntimeException() {
     Credentials credentials =
-        new OAuth2Credentials() {
-          @Override
-          public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
-            if (failing.get()) {
-              throw new IOException("test");
-            }
-            return CREDENTIALS.getRequestMetadata(uri);
+        createFailingCredentials(new AtomicBoolean(true), new IllegalStateException("test"));
+    List<Map<String, String>> headers = new ArrayList<>();
+
+    List<String> warnings =
+        captureLogs(
+            Level.WARNING,
+            () ->
+                headers.add(
+                    BuiltInTracingProvider.getRequestHeaders(credentials, new AtomicBoolean())));
+
+    assertTrue(headers.get(0).isEmpty());
+    assertEquals(1, warnings.size());
+  }
+
+  private static Credentials createFailingCredentials(AtomicBoolean failing, Exception failure) {
+    return new OAuth2Credentials() {
+      @Override
+      public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+        if (failing.get()) {
+          if (failure instanceof IOException) {
+            throw (IOException) failure;
           }
-        };
-    List<LogRecord> warnings = new ArrayList<>();
+          throw (RuntimeException) failure;
+        }
+        return CREDENTIALS.getRequestMetadata(uri);
+      }
+    };
+  }
+
+  private static List<String> captureLogs(Level level, Runnable action) {
+    List<String> messages = new CopyOnWriteArrayList<>();
     Handler handler =
         new Handler() {
           @Override
           public void publish(LogRecord record) {
-            if (record.getLevel() == Level.WARNING) {
-              warnings.add(record);
+            if (record.getLevel() == level) {
+              messages.add(record.getMessage());
             }
           }
 
@@ -329,20 +398,11 @@ public class BuiltInTracingTest {
     Logger logger = Logger.getLogger(BuiltInTracingProvider.class.getName());
     logger.addHandler(handler);
     try {
-      BuiltInTracingProvider.getRequestHeaders(credentials);
-      BuiltInTracingProvider.getRequestHeaders(credentials);
-      assertEquals(1, warnings.size());
-
-      failing.set(false);
-      assertEquals(
-          "Bearer token",
-          BuiltInTracingProvider.getRequestHeaders(credentials).get("Authorization"));
-      failing.set(true);
-      BuiltInTracingProvider.getRequestHeaders(credentials);
-      assertEquals(2, warnings.size());
+      action.run();
     } finally {
       logger.removeHandler(handler);
     }
+    return messages;
   }
 
   @Test
@@ -845,7 +905,7 @@ public class BuiltInTracingTest {
             .setCredentials(NoCredentials.getInstance())
             .build();
 
-    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertBuiltInTracingIsNotUsed(options, "a client without credentials");
   }
 
   @Test
@@ -856,7 +916,7 @@ public class BuiltInTracingTest {
             .setUniverseDomain("example.com")
             .build();
 
-    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertBuiltInTracingIsNotUsed(options, "universe domain example.com");
   }
 
   @Test
@@ -882,7 +942,7 @@ public class BuiltInTracingTest {
             .setEmulatorHost("localhost:" + server.getPort())
             .build();
 
-    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertBuiltInTracingIsNotUsed(options, "the emulator");
   }
 
   @Test
@@ -893,7 +953,99 @@ public class BuiltInTracingTest {
             .setType(SpannerOptions.InstanceType.OMNI)
             .build();
 
-    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertBuiltInTracingIsNotUsed(options, "Spanner Omni");
+  }
+
+  @Test
+  public void endToEndTracingIsNotEnabledWhenBuiltInTracingIsNotUsedWithOpenTelemetry() {
+    SpannerOptions.enableOpenTelemetryTraces();
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setEmulatorHost("localhost:" + server.getPort())
+            .build();
+
+    assertFalse(options.isEndToEndTracingEnabled());
+  }
+
+  @Test
+  public void eachReasonForNotUsingBuiltInTracingIsLoggedOnce() {
+    SpannerOptions emulator =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setEmulatorHost("localhost:" + server.getPort())
+            .build();
+    SpannerOptions omni =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .build();
+
+    List<String> messages =
+        captureLogs(
+            Level.INFO,
+            () -> {
+              emulator.getTracingOpenTelemetry();
+              omni.getTracingOpenTelemetry();
+              emulator.getTracingOpenTelemetry();
+              omni.getTracingOpenTelemetry();
+            });
+
+    assertEquals(
+        Arrays.asList(
+            "Built-in tracing is enabled, but it is not used with the emulator.",
+            "Built-in tracing is enabled, but it is not used with Spanner Omni."),
+        messages);
+  }
+
+  private static void assertBuiltInTracingIsNotUsed(SpannerOptions options, String reason) {
+    List<String> messages =
+        captureLogs(
+            Level.INFO,
+            () -> assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk));
+
+    assertEquals(
+        Collections.singletonList(
+            "Built-in tracing is enabled, but it is not used with " + reason + "."),
+        messages);
+    assertFalse(options.isEndToEndTracingEnabled());
+    assertEquals(
+        SpannerOptions.TracingFramework.OPEN_CENSUS, SpannerOptions.getActiveTracingFramework());
+  }
+
+  @Test
+  public void invalidSamplingRateOfTheEnvironmentIsLoggedWhenTheBuilderEnablesBuiltInTracing() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public String getBuiltInTracingSamplingRate() {
+            return "abc";
+          }
+        });
+    List<SpannerOptions> options = new ArrayList<>();
+
+    List<String> warnings =
+        captureLogs(
+            Level.WARNING,
+            () -> {
+              options.add(createOptionsBuilder().build());
+              options.add(
+                  createOptionsBuilder()
+                      .setEnableBuiltInTracing(true)
+                      .setBuiltInTracingSamplingRate(0.2)
+                      .build());
+            });
+    assertEquals(0, warnings.size());
+    warnings =
+        captureLogs(
+            Level.WARNING,
+            () -> options.add(createOptionsBuilder().setEnableBuiltInTracing(true).build()));
+
+    assertEquals(1, warnings.size());
+    assertTrue(warnings.get(0).contains("(abc)"));
+    assertEquals(0.01, options.get(0).getBuiltInTracingSamplingRate(), 0.0);
+    assertEquals(0.2, options.get(1).getBuiltInTracingSamplingRate(), 0.0);
+    assertEquals(0.01, options.get(2).getBuiltInTracingSamplingRate(), 0.0);
   }
 
   @Test
@@ -949,8 +1101,8 @@ public class BuiltInTracingTest {
           }
 
           @Override
-          public double getBuiltInTracingSamplingRate() {
-            return 0.5;
+          public String getBuiltInTracingSamplingRate() {
+            return "0.5";
           }
         });
   }
