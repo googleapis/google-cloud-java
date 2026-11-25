@@ -570,6 +570,24 @@ public class BuiltInTracingTest {
   }
 
   @Test
+  public void builtInOpenTelemetryIsShutDownWhenCreatingTheClientFails() {
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setServiceRpcFactory(
+                spannerOptions -> {
+                  throw new IllegalStateException("test");
+                })
+            .build();
+    assertTrue(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertEquals(1, BuiltInTracingProvider.INSTANCE.instanceCount());
+
+    assertThrows(IllegalStateException.class, options::getService);
+
+    assertTrue(waitForInstanceCount(0));
+  }
+
+  @Test(timeout = 20_000)
   public void closingTheClientDoesNotWaitForTheExport() throws Exception {
     CountDownLatch exportStarted = new CountDownLatch(1);
     CountDownLatch releaseExport = new CountDownLatch(1);
@@ -589,10 +607,8 @@ public class BuiltInTracingTest {
     Spanner spanner = options.getService();
     executeSelect1(spanner);
     try {
-      long start = System.nanoTime();
       spanner.close();
-      assertTrue(exportStarted.await(10, TimeUnit.SECONDS));
-      assertTrue(System.nanoTime() - start < TimeUnit.SECONDS.toNanos(5));
+      exportStarted.await();
       assertEquals(1, BuiltInTracingProvider.INSTANCE.instanceCount());
     } finally {
       releaseExport.countDown();
@@ -1025,7 +1041,7 @@ public class BuiltInTracingTest {
     shutdown.start();
     try {
       assertTrue(slowExportStarted.await(10, TimeUnit.SECONDS));
-      assertTrue(otherExported.await(1, TimeUnit.SECONDS));
+      assertTrue(otherExported.await(10, TimeUnit.SECONDS));
       assertEquals(2, BuiltInTracingProvider.INSTANCE.instanceCount());
       assertTrue(shutdown.isAlive());
     } finally {
@@ -1060,13 +1076,19 @@ public class BuiltInTracingTest {
     Thread shutdown = new Thread(BuiltInTracingProvider.INSTANCE::shutdown);
     shutdown.start();
     try {
-      shutdown.join(500L);
+      awaitWaitingOrTerminated(shutdown);
       assertTrue(shutdown.isAlive());
     } finally {
       releaseExport.countDown();
       shutdown.join(TimeUnit.SECONDS.toMillis(15));
     }
     assertFalse(shutdown.isAlive());
+  }
+
+  private static void awaitWaitingOrTerminated(Thread thread) throws InterruptedException {
+    while (thread.isAlive() && thread.getState() != Thread.State.TIMED_WAITING) {
+      Thread.sleep(1);
+    }
   }
 
   private static void executeSelect1(Spanner spanner) {

@@ -876,7 +876,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public Spanner create(SpannerOptions serviceOptions) {
-      return new SpannerImpl(serviceOptions);
+      try {
+        return new SpannerImpl(serviceOptions);
+      } catch (RuntimeException exception) {
+        serviceOptions.closeBuiltInTracing();
+        throw exception;
+      }
     }
   }
 
