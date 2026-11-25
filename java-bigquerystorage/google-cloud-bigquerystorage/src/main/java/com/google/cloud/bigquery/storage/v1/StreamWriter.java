@@ -994,7 +994,7 @@ public class StreamWriter implements AutoCloseable {
 
     /** Gives the ability to override the universe domain. */
     public Builder setUniverseDomain(String universeDomain) {
-      this.universeDomain = Preconditions.checkNotNull(universeDomain, "UniverseDomain is null.");
+      this.universeDomain = universeDomain;
       return this;
     }
 

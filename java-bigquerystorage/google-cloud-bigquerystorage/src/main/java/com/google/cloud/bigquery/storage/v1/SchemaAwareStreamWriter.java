@@ -625,7 +625,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
      * @return Builder
      */
     public Builder<T> setUniverseDomain(String universeDomain) {
-      this.universeDomain = Preconditions.checkNotNull(universeDomain, "UniverseDomain is null.");
+      this.universeDomain = universeDomain;
       return this;
     }
 
