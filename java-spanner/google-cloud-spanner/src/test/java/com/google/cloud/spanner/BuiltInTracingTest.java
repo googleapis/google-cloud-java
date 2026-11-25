@@ -51,7 +51,14 @@ import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.common.CompletableResultCode;
+import io.opentelemetry.sdk.common.export.Compressor;
+import io.opentelemetry.sdk.common.export.GrpcResponse;
+import io.opentelemetry.sdk.common.export.GrpcSender;
+import io.opentelemetry.sdk.common.export.GrpcSenderConfig;
 import io.opentelemetry.sdk.common.export.GrpcSenderProvider;
+import io.opentelemetry.sdk.common.export.GrpcStatusCode;
+import io.opentelemetry.sdk.common.export.MessageWriter;
+import io.opentelemetry.sdk.common.export.RetryPolicy;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.data.MetricData;
@@ -65,10 +72,12 @@ import io.opentelemetry.sdk.trace.export.SpanExporter;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.UncheckedIOException;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -78,17 +87,23 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.ServiceLoader;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.IntFunction;
+import java.util.function.Supplier;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.X509TrustManager;
 import org.jspecify.annotations.Nullable;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -559,7 +574,7 @@ public class BuiltInTracingTest {
   public void exporterSendsSpansWithTheBuiltInSender() throws Exception {
     AtomicReference<Metadata> exportHeaders = new AtomicReference<>();
     AtomicReference<byte[]> exportRequest = new AtomicReference<>();
-    Server traceServer = startTraceServer(null, exportHeaders, exportRequest);
+    Server traceServer = startTraceServer((Status) null, exportHeaders, exportRequest);
     try {
       InMemorySpanExporter finishedSpans = InMemorySpanExporter.create();
       List<SpanData> spans;
@@ -645,6 +660,15 @@ public class BuiltInTracingTest {
       AtomicReference<Metadata> exportHeaders,
       AtomicReference<byte[]> exportRequest)
       throws IOException {
+    return startTraceServer(call -> failure, exportHeaders, exportRequest);
+  }
+
+  private static Server startTraceServer(
+      IntFunction<Status> failureOfCall,
+      AtomicReference<Metadata> exportHeaders,
+      AtomicReference<byte[]> exportRequest)
+      throws IOException {
+    AtomicInteger calls = new AtomicInteger();
     MethodDescriptor.Marshaller<byte[]> bytesMarshaller =
         new MethodDescriptor.Marshaller<byte[]>() {
           @Override
@@ -676,6 +700,7 @@ public class BuiltInTracingTest {
                     ServerCalls.asyncUnaryCall(
                         (request, responseObserver) -> {
                           exportRequest.set(request);
+                          Status failure = failureOfCall.apply(calls.incrementAndGet());
                           if (failure != null) {
                             responseObserver.onError(failure.asRuntimeException());
                             return;
@@ -702,6 +727,190 @@ public class BuiltInTracingTest {
   @Test
   public void noGrpcSenderIsRegisteredAsAService() {
     assertFalse(ServiceLoader.load(GrpcSenderProvider.class).iterator().hasNext());
+  }
+
+  @Test
+  public void exporterRetriesWhenTheServerIsUnavailable() throws Exception {
+    AtomicInteger calls = new AtomicInteger();
+    Server traceServer =
+        startTraceServer(
+            call -> {
+              calls.set(call);
+              return call == 1 ? Status.UNAVAILABLE : null;
+            },
+            new AtomicReference<>(),
+            new AtomicReference<>());
+    try {
+      SpanExporter exporter =
+          BuiltInTracingProvider.createOtlpExporter(
+              "http://localhost:" + traceServer.getPort(), CREDENTIALS);
+      CompletableResultCode result =
+          exporter.export(createFinishedSpans()).join(10, TimeUnit.SECONDS);
+      exporter.shutdown().join(10, TimeUnit.SECONDS);
+
+      assertTrue(result.isSuccess());
+      assertEquals(2, calls.get());
+    } finally {
+      traceServer.shutdownNow();
+    }
+  }
+
+  @Test
+  public void senderRetriesWithTheRetryPolicyOfTheExporter() throws Exception {
+    AtomicInteger calls = new AtomicInteger();
+    Server traceServer =
+        startTraceServer(
+            call -> {
+              calls.set(call);
+              return call < 3 ? Status.UNAVAILABLE : null;
+            },
+            new AtomicReference<>(),
+            new AtomicReference<>());
+    try {
+      RetryPolicy retryPolicy =
+          RetryPolicy.builder()
+              .setMaxAttempts(3)
+              .setInitialBackoff(Duration.ofMillis(10))
+              .setMaxBackoff(Duration.ofMillis(10))
+              .build();
+
+      assertEquals(GrpcStatusCode.OK, send(traceServer, retryPolicy).getStatusCode());
+      assertEquals(3, calls.get());
+    } finally {
+      traceServer.shutdownNow();
+    }
+  }
+
+  @Test
+  public void senderDoesNotRetryWithoutARetryPolicy() throws Exception {
+    AtomicInteger calls = new AtomicInteger();
+    Server traceServer =
+        startTraceServer(
+            call -> {
+              calls.set(call);
+              return Status.UNAVAILABLE;
+            },
+            new AtomicReference<>(),
+            new AtomicReference<>());
+    try {
+      assertEquals(GrpcStatusCode.UNAVAILABLE, send(traceServer, null).getStatusCode());
+      assertEquals(1, calls.get());
+    } finally {
+      traceServer.shutdownNow();
+    }
+  }
+
+  @Test
+  public void senderReportsTheStatusOfAFailedExport() throws Exception {
+    AtomicInteger calls = new AtomicInteger();
+    Server traceServer =
+        startTraceServer(
+            call -> {
+              calls.set(call);
+              return Status.PERMISSION_DENIED.withDescription("denied");
+            },
+            new AtomicReference<>(),
+            new AtomicReference<>());
+    try {
+      GrpcResponse response = send(traceServer, RetryPolicy.getDefault());
+
+      assertEquals(GrpcStatusCode.PERMISSION_DENIED, response.getStatusCode());
+      assertEquals("denied", response.getStatusDescription());
+      assertEquals(1, calls.get());
+    } finally {
+      traceServer.shutdownNow();
+    }
+  }
+
+  private static List<SpanData> createFinishedSpans() {
+    InMemorySpanExporter finishedSpans = InMemorySpanExporter.create();
+    try (SdkTracerProvider tracerProvider =
+        SdkTracerProvider.builder()
+            .addSpanProcessor(SimpleSpanProcessor.create(finishedSpans))
+            .build()) {
+      tracerProvider.get("test").spanBuilder("test").startSpan().end();
+      return finishedSpans.getFinishedSpanItems();
+    }
+  }
+
+  private static GrpcResponse send(Server traceServer, @Nullable RetryPolicy retryPolicy)
+      throws Exception {
+    GrpcSenderConfig config =
+        new GrpcSenderConfig() {
+          @Override
+          public URI getEndpoint() {
+            return URI.create("http://localhost:" + traceServer.getPort());
+          }
+
+          @Override
+          public String getFullMethodName() {
+            return "opentelemetry.proto.collector.trace.v1.TraceService/Export";
+          }
+
+          @Override
+          public @Nullable Compressor getCompressor() {
+            return null;
+          }
+
+          @Override
+          public Duration getTimeout() {
+            return Duration.ofSeconds(10);
+          }
+
+          @Override
+          public Duration getConnectTimeout() {
+            return Duration.ofSeconds(10);
+          }
+
+          @Override
+          public Supplier<Map<String, List<String>>> getHeadersSupplier() {
+            return Collections::emptyMap;
+          }
+
+          @Override
+          public @Nullable RetryPolicy getRetryPolicy() {
+            return retryPolicy;
+          }
+
+          @Override
+          public @Nullable SSLContext getSslContext() {
+            return null;
+          }
+
+          @Override
+          public @Nullable X509TrustManager getTrustManager() {
+            return null;
+          }
+
+          @Override
+          public @Nullable ExecutorService getExecutorService() {
+            return null;
+          }
+        };
+    GrpcSender sender =
+        BuiltInTracingGrpcSender.componentLoader()
+            .load(GrpcSenderProvider.class)
+            .iterator()
+            .next()
+            .createSender(config);
+    try {
+      CompletableFuture<GrpcResponse> response = new CompletableFuture<>();
+      sender.send(
+          new MessageWriter() {
+            @Override
+            public void writeMessage(OutputStream output) {}
+
+            @Override
+            public int getContentLength() {
+              return 0;
+            }
+          },
+          response::complete,
+          response::completeExceptionally);
+      return response.get(10, TimeUnit.SECONDS);
+    } finally {
+      sender.shutdown();
+    }
   }
 
   @Test

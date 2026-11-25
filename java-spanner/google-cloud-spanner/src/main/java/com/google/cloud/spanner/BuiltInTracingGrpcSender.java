@@ -39,14 +39,18 @@ import io.opentelemetry.sdk.common.export.GrpcSenderConfig;
 import io.opentelemetry.sdk.common.export.GrpcSenderProvider;
 import io.opentelemetry.sdk.common.export.GrpcStatusCode;
 import io.opentelemetry.sdk.common.export.MessageWriter;
+import io.opentelemetry.sdk.common.export.RetryPolicy;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
+import java.math.BigDecimal;
 import java.net.URI;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executor;
@@ -60,6 +64,16 @@ import org.jspecify.annotations.Nullable;
  * never picked by other OpenTelemetry exporters of the application.
  */
 final class BuiltInTracingGrpcSender implements GrpcSender {
+
+  private static final List<String> RETRYABLE_STATUS_CODES =
+      Arrays.asList(
+          "CANCELLED",
+          "DEADLINE_EXCEEDED",
+          "RESOURCE_EXHAUSTED",
+          "ABORTED",
+          "OUT_OF_RANGE",
+          "UNAVAILABLE",
+          "DATA_LOSS");
 
   private static final MethodDescriptor.Marshaller<byte[]> BYTES_MARSHALLER =
       new MethodDescriptor.Marshaller<byte[]>() {
@@ -90,6 +104,12 @@ final class BuiltInTracingGrpcSender implements GrpcSender {
     if (!"https".equals(endpoint.getScheme())) {
       channelBuilder.usePlaintext();
     }
+    RetryPolicy retryPolicy = config.getRetryPolicy();
+    if (retryPolicy != null) {
+      channelBuilder
+          .defaultServiceConfig(createServiceConfig(config.getFullMethodName(), retryPolicy))
+          .enableRetry();
+    }
     this.channel = channelBuilder.build();
     this.method =
         MethodDescriptor.<byte[], byte[]>newBuilder()
@@ -107,6 +127,28 @@ final class BuiltInTracingGrpcSender implements GrpcSender {
 
   static ComponentLoader componentLoader() {
     return new SenderComponentLoader();
+  }
+
+  private static Map<String, ?> createServiceConfig(
+      String fullMethodName, RetryPolicy retryPolicy) {
+    Map<String, Object> retry = new HashMap<>();
+    retry.put("maxAttempts", (double) retryPolicy.getMaxAttempts());
+    retry.put("initialBackoff", toServiceConfigDuration(retryPolicy.getInitialBackoff()));
+    retry.put("maxBackoff", toServiceConfigDuration(retryPolicy.getMaxBackoff()));
+    retry.put("backoffMultiplier", retryPolicy.getBackoffMultiplier());
+    retry.put("retryableStatusCodes", RETRYABLE_STATUS_CODES);
+    Map<String, Object> methodConfig = new HashMap<>();
+    methodConfig.put(
+        "name",
+        Collections.singletonList(
+            Collections.singletonMap(
+                "service", MethodDescriptor.extractFullServiceName(fullMethodName))));
+    methodConfig.put("retryPolicy", retry);
+    return Collections.singletonMap("methodConfig", Collections.singletonList(methodConfig));
+  }
+
+  private static String toServiceConfigDuration(Duration duration) {
+    return BigDecimal.valueOf(duration.toNanos(), 9).toPlainString() + "s";
   }
 
   @Override
