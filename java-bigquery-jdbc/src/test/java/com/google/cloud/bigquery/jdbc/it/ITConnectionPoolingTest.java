@@ -267,7 +267,7 @@ public class ITConnectionPoolingTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testExecuteQueryWithConnectionPoolingEnabledDefaultPoolSize() throws SQLException {
     String connectionURL = ITBase.connectionUrl;
 
@@ -275,7 +275,7 @@ public class ITConnectionPoolingTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testExecuteQueryWithConnectionPoolingEnabledCustomPoolSize() throws SQLException {
     String connectionURL =
         ITBase.connectionUrl + "ConnectionPoolSize=" + CUSTOM_CONN_POOL_SIZE + ";";
