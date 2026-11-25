@@ -32,19 +32,50 @@ package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.json.GenericJson;
+import com.google.api.client.json.Json;
 import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
+import com.google.auth.RequestMetadataCallback;
 import com.google.auth.ServiceAccountSigner;
+import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.NotSerializableException;
+import java.io.ObjectOutputStream;
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.security.KeyStore;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 import org.mockito.Mockito;
 
 class IamUtilsTest {
@@ -609,5 +640,472 @@ class IamUtilsTest {
                     CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
                     Credentials.GOOGLE_DEFAULT_UNIVERSE));
     assertEquals("Error code 403 trying to getIDToken: Forbidden", exception.getMessage());
+  }
+
+  private static AgentIdentityUtils.CertInfo loadAgentCertInfo() throws Exception {
+    String certPath =
+        Paths.get(IamUtilsTest.class.getResource("/agent/agent_spiffe_cert.pem").toURI())
+            .toString();
+    String keyPath =
+        Paths.get(IamUtilsTest.class.getResource("/agent/agent_spiffe_key.pem").toURI()).toString();
+    AgentIdentityUtils.resetForTest();
+    try {
+      return AgentIdentityUtils.loadAndVerifyCredentials(certPath, keyPath);
+    } finally {
+      AgentIdentityUtils.resetForTest();
+    }
+  }
+
+  private static ComputeEngineCredentials computeEngineCredentialsWithToken(AccessToken token) {
+    ComputeEngineCredentials.Builder builder =
+        ComputeEngineCredentials.newBuilder()
+            .setHttpTransportFactory(MockMetadataServerTransport::new);
+    builder.setAccessToken(token);
+    return builder.build();
+  }
+
+  private static Date oneHourFromNow() {
+    return new Date(System.currentTimeMillis() + 3_600_000L);
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_boundToken_usesMtlsEndpointCertificateAndToken()
+      throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    assertNotNull(certInfo.getKeyStore());
+    ComputeEngineCredentials source =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token", oneHourFromNow(), certInfo));
+    HttpTransportFactory defaultFactory = MockHttpTransport::new;
+    HttpTransportFactory mtlsFactory = MockHttpTransport::new;
+    AtomicReference<KeyStore> keyStoreUsed = new AtomicReference<>();
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            defaultFactory,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> {
+              keyStoreUsed.set(keyStore);
+              return mtlsFactory;
+            });
+
+    assertTrue(target.usesMtls());
+    assertEquals("mtls.googleapis.com", target.endpointDomain);
+    assertSame(mtlsFactory, target.transportFactory);
+    assertSame(certInfo.getKeyStore(), keyStoreUsed.get());
+    Map<String, List<String>> metadata =
+        target.credentials.getRequestMetadata(
+            URI.create("https://iamcredentials.mtls.googleapis.com"));
+    assertEquals(Collections.singletonList("Bearer bound-token"), metadata.get("Authorization"));
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_boundToken_pinnedCredentialsStartWithTokenAndKeepIt()
+      throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    BoundAccessToken token = new BoundAccessToken("bound-token", oneHourFromNow(), certInfo);
+    ComputeEngineCredentials source = computeEngineCredentialsWithToken(token);
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> MockHttpTransport::new);
+
+    GoogleCredentials pinned = (GoogleCredentials) target.credentials;
+    assertNotSame(source, pinned);
+    // Seeded with the bound token, so the first use doesn't go through a refresh.
+    assertSame(token, pinned.getAccessToken());
+    // A refresh (for example when the token becomes stale) keeps the same bound token.
+    pinned.refresh();
+    assertSame(token, pinned.getAccessToken());
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_boundTokenWithQuotaProject_preservesQuotaProjectHeader()
+      throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    ComputeEngineCredentials.Builder builder =
+        ComputeEngineCredentials.newBuilder()
+            .setHttpTransportFactory(MockMetadataServerTransport::new)
+            .setQuotaProjectId("quota-project");
+    builder.setAccessToken(new BoundAccessToken("bound-token", oneHourFromNow(), certInfo));
+    ComputeEngineCredentials source = builder.build();
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> MockHttpTransport::new);
+
+    URI uri = URI.create("https://iamcredentials.mtls.googleapis.com");
+    Map<String, List<String>> syncMetadata = target.credentials.getRequestMetadata(uri);
+    assertEquals(
+        Collections.singletonList("Bearer bound-token"), syncMetadata.get("Authorization"));
+    assertEquals(
+        Collections.singletonList("quota-project"), syncMetadata.get("x-goog-user-project"));
+
+    AtomicReference<Map<String, List<String>>> asyncMetadata = new AtomicReference<>();
+    target.credentials.getRequestMetadata(
+        uri,
+        MoreExecutors.directExecutor(),
+        new RequestMetadataCallback() {
+          @Override
+          public void onSuccess(Map<String, List<String>> metadata) {
+            asyncMetadata.set(metadata);
+          }
+
+          @Override
+          public void onFailure(Throwable exception) {
+            throw new AssertionError("Unexpected failure", exception);
+          }
+        });
+    assertNotNull(asyncMetadata.get());
+    assertEquals(
+        Collections.singletonList("Bearer bound-token"), asyncMetadata.get().get("Authorization"));
+    assertEquals(
+        Collections.singletonList("quota-project"), asyncMetadata.get().get("x-goog-user-project"));
+  }
+
+  private static String writeAgentCertConfig(Path tempDir, String certResource, String keyResource)
+      throws Exception {
+    Path configPath = tempDir.resolve("certificate_config.json");
+    Map<String, Object> workload = new HashMap<>();
+    workload.put(
+        "cert_path", Paths.get(IamUtilsTest.class.getResource(certResource).toURI()).toString());
+    workload.put(
+        "key_path", Paths.get(IamUtilsTest.class.getResource(keyResource).toURI()).toString());
+    Map<String, Object> certConfigs = new HashMap<>();
+    certConfigs.put("workload", workload);
+    Map<String, Object> config = new HashMap<>();
+    config.put("cert_configs", certConfigs);
+    Files.write(
+        configPath, OAuth2Utils.JSON_FACTORY.toString(config).getBytes(StandardCharsets.UTF_8));
+    return configPath.toString();
+  }
+
+  private static void configureAgentCertEnv(Path tempDir, String certResource, String keyResource)
+      throws Exception {
+    String configPath = writeAgentCertConfig(tempDir, certResource, keyResource);
+    TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configPath);
+    AgentIdentityUtils.resetForTest();
+    AgentIdentityUtils.setEnvironmentProvider(envProvider);
+    AgentIdentityUtils.setPropertyProvider(new TestPropertyProvider());
+    AgentIdentityUtils.setWellKnownDir(tempDir.resolve("no-spiffe").toString());
+  }
+
+  private static MockHttpTransport newMetadataTokenTransport(
+      AtomicReference<String> nextToken, AtomicInteger requestCount) {
+    return new MockHttpTransport() {
+      @Override
+      public LowLevelHttpRequest buildRequest(String method, String url) {
+        return new MockLowLevelHttpRequest(url) {
+          @Override
+          public LowLevelHttpResponse execute() throws IOException {
+            requestCount.incrementAndGet();
+            GenericJson refreshContents = new GenericJson();
+            refreshContents.setFactory(OAuth2Utils.JSON_FACTORY);
+            refreshContents.put("access_token", nextToken.get());
+            refreshContents.put("expires_in", 3600);
+            refreshContents.put("token_type", "Bearer");
+            return new MockLowLevelHttpResponse()
+                .setContentType(Json.MEDIA_TYPE)
+                .setStatusCode(HttpStatusCodes.STATUS_CODE_OK)
+                .setContent(refreshContents.toPrettyString());
+          }
+        };
+      }
+    };
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_nullInitialToken_refreshesAndUsesMtls(@TempDir Path tempDir)
+      throws Exception {
+    configureAgentCertEnv(tempDir, "/agent/agent_spiffe_cert.pem", "/agent/agent_spiffe_key.pem");
+    try {
+      AtomicInteger metadataRequests = new AtomicInteger();
+      MockHttpTransport metadataTransport =
+          newMetadataTokenTransport(new AtomicReference<>("minted-bound-token"), metadataRequests);
+      ComputeEngineCredentials source =
+          ComputeEngineCredentials.newBuilder()
+              .setHttpTransportFactory(() -> metadataTransport)
+              .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+              .build();
+      assertNull(source.getAccessToken());
+      AtomicReference<KeyStore> keyStoreUsed = new AtomicReference<>();
+
+      IamUtils.IamCallTarget target =
+          IamUtils.resolveBoundTokenCallTarget(
+              source,
+              MockHttpTransport::new,
+              Credentials.GOOGLE_DEFAULT_UNIVERSE,
+              keyStore -> {
+                keyStoreUsed.set(keyStore);
+                return MockHttpTransport::new;
+              });
+
+      assertEquals(1, metadataRequests.get());
+      assertTrue(target.usesMtls());
+      assertNotNull(keyStoreUsed.get());
+      assertSame(
+          ((BoundAccessToken) source.getAccessToken()).getCertInfo().getKeyStore(),
+          keyStoreUsed.get());
+      Map<String, List<String>> metadata =
+          target.credentials.getRequestMetadata(
+              URI.create("https://iamcredentials.mtls.googleapis.com"));
+      assertEquals(
+          Collections.singletonList("Bearer minted-bound-token"), metadata.get("Authorization"));
+    } finally {
+      AgentIdentityUtils.resetForTest();
+    }
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_certificateRotation_isolatesInFlightTargetAndSwitchesNextCall(
+      @TempDir Path tempDir) throws Exception {
+    configureAgentCertEnv(tempDir, "/agent/agent_spiffe_cert.pem", "/agent/agent_spiffe_key.pem");
+    try {
+      AtomicReference<String> nextToken = new AtomicReference<>("bound-token-a");
+      AtomicInteger metadataRequests = new AtomicInteger();
+      MockHttpTransport metadataTransport = newMetadataTokenTransport(nextToken, metadataRequests);
+      ComputeEngineCredentials source =
+          ComputeEngineCredentials.newBuilder()
+              .setHttpTransportFactory(() -> metadataTransport)
+              .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+              .build();
+      AtomicReference<KeyStore> keyStoreUsed = new AtomicReference<>();
+
+      IamUtils.IamCallTarget targetA =
+          IamUtils.resolveBoundTokenCallTarget(
+              source,
+              MockHttpTransport::new,
+              Credentials.GOOGLE_DEFAULT_UNIVERSE,
+              keyStore -> {
+                keyStoreUsed.set(keyStore);
+                return MockHttpTransport::new;
+              });
+      KeyStore keyStoreA = keyStoreUsed.get();
+      assertNotNull(keyStoreA);
+      assertEquals(1, keyStoreA.getCertificateChain("alias").length);
+      assertEquals(1, metadataRequests.get());
+
+      // Rotate the certificate on disk and simulate a concurrent refresh on source before targetA
+      // sends its request.
+      configureAgentCertEnv(
+          tempDir, "/agent/agent_spiffe_cert_chain.pem", "/agent/agent_spiffe_key.pem");
+      nextToken.set("bound-token-b");
+      source.refresh();
+      assertEquals("bound-token-b", source.getAccessToken().getTokenValue());
+      assertEquals(2, metadataRequests.get());
+
+      URI uri = URI.create("https://iamcredentials.mtls.googleapis.com");
+      assertEquals(
+          Collections.singletonList("Bearer bound-token-a"),
+          targetA.credentials.getRequestMetadata(uri).get("Authorization"));
+
+      // Subsequent IAM calls pick up Cert B and token B together without extra refreshes.
+      IamUtils.IamCallTarget targetB =
+          IamUtils.resolveBoundTokenCallTarget(
+              source,
+              MockHttpTransport::new,
+              Credentials.GOOGLE_DEFAULT_UNIVERSE,
+              keyStore -> {
+                keyStoreUsed.set(keyStore);
+                return MockHttpTransport::new;
+              });
+      assertEquals(2, metadataRequests.get());
+      KeyStore keyStoreB = keyStoreUsed.get();
+      assertNotNull(keyStoreB);
+      assertNotSame(keyStoreA, keyStoreB);
+      assertEquals(2, keyStoreB.getCertificateChain("alias").length);
+      assertEquals(
+          Collections.singletonList("Bearer bound-token-b"),
+          targetB.credentials.getRequestMetadata(uri).get("Authorization"));
+    } finally {
+      AgentIdentityUtils.resetForTest();
+    }
+  }
+
+  @Test
+  void refreshAndResolveRetryTarget_concurrentRefreshAlreadyCompleted_reusesRefreshedToken(
+      @TempDir Path tempDir) throws Exception {
+    configureAgentCertEnv(tempDir, "/agent/agent_spiffe_cert.pem", "/agent/agent_spiffe_key.pem");
+    try {
+      AtomicReference<String> nextToken = new AtomicReference<>("bound-token-a");
+      AtomicInteger metadataRequests = new AtomicInteger();
+      MockHttpTransport metadataTransport = newMetadataTokenTransport(nextToken, metadataRequests);
+      ComputeEngineCredentials source =
+          ComputeEngineCredentials.newBuilder()
+              .setHttpTransportFactory(() -> metadataTransport)
+              .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
+              .build();
+
+      IamUtils.IamCallTarget targetA =
+          IamUtils.resolveCallTarget(
+              source, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+      assertTrue(targetA.usesMtls());
+      assertEquals(1, metadataRequests.get());
+
+      // Another thread rotates and refreshes source to token B before this thread enters 401 retry.
+      configureAgentCertEnv(
+          tempDir, "/agent/agent_spiffe_cert_chain.pem", "/agent/agent_spiffe_key.pem");
+      nextToken.set("bound-token-b");
+      source.refresh();
+      assertEquals(2, metadataRequests.get());
+
+      IamUtils.IamCallTarget retryTarget =
+          IamUtils.refreshAndResolveRetryTarget(
+              source,
+              OAuth2Utils.HTTP_TRANSPORT_FACTORY,
+              Credentials.GOOGLE_DEFAULT_UNIVERSE,
+              targetA);
+
+      assertNotNull(retryTarget);
+      assertTrue(retryTarget.usesMtls());
+      // Reused the already-refreshed token without making a third metadata request.
+      assertEquals(2, metadataRequests.get());
+      assertEquals(
+          Collections.singletonList("Bearer bound-token-b"),
+          retryTarget
+              .credentials
+              .getRequestMetadata(URI.create("https://iamcredentials.mtls.googleapis.com"))
+              .get("Authorization"));
+      assertEquals(
+          2,
+          ((MtlsHttpTransportFactory) retryTarget.transportFactory)
+              .getKeyStore()
+              .getCertificateChain("alias")
+              .length);
+    } finally {
+      AgentIdentityUtils.resetForTest();
+    }
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_unboundToken_usesDefaultTarget() throws Exception {
+    ComputeEngineCredentials source =
+        computeEngineCredentialsWithToken(new AccessToken("unbound-token", oneHourFromNow()));
+    HttpTransportFactory defaultFactory = MockHttpTransport::new;
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            defaultFactory,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> {
+              throw new AssertionError("mTLS transport must not be created");
+            });
+
+    assertFalse(target.usesMtls());
+    assertSame(source, target.credentials);
+    assertSame(defaultFactory, target.transportFactory);
+    assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, target.endpointDomain);
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_boundTokenWithoutKeyStore_usesDefaultTarget() throws Exception {
+    AgentIdentityUtils.CertInfo loaded = loadAgentCertInfo();
+    AgentIdentityUtils.CertInfo withoutKey =
+        new AgentIdentityUtils.CertInfo(loaded.getCertificate(), loaded.getCertContent());
+    ComputeEngineCredentials source =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token", oneHourFromNow(), withoutKey));
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> {
+              throw new AssertionError("mTLS transport must not be created");
+            });
+
+    assertFalse(target.usesMtls());
+    assertSame(source, target.credentials);
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_nonDefaultUniverse_usesDefaultTarget() throws Exception {
+    ComputeEngineCredentials source =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token", oneHourFromNow(), loadAgentCertInfo()));
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            source,
+            MockHttpTransport::new,
+            "example.com",
+            keyStore -> {
+              throw new AssertionError("mTLS transport must not be created");
+            });
+
+    assertFalse(target.usesMtls());
+    assertEquals("example.com", target.endpointDomain);
+  }
+
+  @Test
+  void resolveBoundTokenCallTarget_notComputeEngineCredentials_usesDefaultTarget()
+      throws Exception {
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveBoundTokenCallTarget(
+            credentials,
+            MockHttpTransport::new,
+            Credentials.GOOGLE_DEFAULT_UNIVERSE,
+            keyStore -> {
+              throw new AssertionError("mTLS transport must not be created");
+            });
+
+    assertFalse(target.usesMtls());
+    assertSame(credentials, target.credentials);
+  }
+
+  @Test
+  void resolveCallTarget_defaultTransportAndBoundToken_usesMtlsTransportFactory() throws Exception {
+    AgentIdentityUtils.CertInfo certInfo = loadAgentCertInfo();
+    ComputeEngineCredentials source =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token", oneHourFromNow(), certInfo));
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveCallTarget(
+            source, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+
+    assertTrue(target.usesMtls());
+    assertTrue(target.transportFactory instanceof MtlsHttpTransportFactory);
+    assertSame(
+        certInfo.getKeyStore(), ((MtlsHttpTransportFactory) target.transportFactory).getKeyStore());
+  }
+
+  @Test
+  void resolveCallTarget_customTransportFactory_usesDefaultTarget() throws Exception {
+    ComputeEngineCredentials source =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token", oneHourFromNow(), loadAgentCertInfo()));
+    HttpTransportFactory customFactory = MockHttpTransport::new;
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveCallTarget(source, customFactory, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+
+    assertFalse(target.usesMtls());
+    assertSame(customFactory, target.transportFactory);
+  }
+
+  @Test
+  void resolveCallTarget_pinnedTokenCredentials_isNotSerializable() throws Exception {
+    ComputeEngineCredentials source =
+        computeEngineCredentialsWithToken(
+            new BoundAccessToken("bound-token", oneHourFromNow(), loadAgentCertInfo()));
+
+    IamUtils.IamCallTarget target =
+        IamUtils.resolveCallTarget(
+            source, OAuth2Utils.HTTP_TRANSPORT_FACTORY, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+
+    try (ObjectOutputStream out = new ObjectOutputStream(new ByteArrayOutputStream())) {
+      assertThrows(NotSerializableException.class, () -> out.writeObject(target.credentials));
+    }
   }
 }
