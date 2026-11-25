@@ -45,13 +45,25 @@ import org.jspecify.annotations.Nullable;
 /**
  * A refreshable alternative to {@link OAuth2Credentials}.
  *
- * <p>To enable automatic token refreshes, you must provide an {@link OAuth2RefreshHandler}.
+ * <p>Wraps an expiring {@link AccessToken} and automatically invokes the configured {@link
+ * OAuth2RefreshHandler} to fetch a new token when the current token nears expiry (for example, from
+ * a token broker issuing downscoped tokens).
  *
  * <p>Because {@link OAuth2RefreshHandler} returns {@link AccessToken} values without universe
  * domain metadata, credentials default to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}. Callers
  * refreshing tokens for a custom universe domain should configure it explicitly via {@link
- * Builder#setUniverseDomain(String)}. If lazy or delegated universe domain resolution is needed,
- * subclass this class and override {@link #getUniverseDomain()}.
+ * Builder#setUniverseDomain(String)}.
+ *
+ * <p>Usage:
+ *
+ * <pre>{@code
+ * OAuth2CredentialsWithRefresh credentials =
+ *     OAuth2CredentialsWithRefresh.newBuilder()
+ *         .setAccessToken(accessToken)
+ *         .setUniverseDomain(universeDomain) // optional, defaults to googleapis.com
+ *         .setRefreshHandler(this::fetchRefreshedAccessToken)
+ *         .build();
+ * }</pre>
  */
 @NullMarked
 public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {

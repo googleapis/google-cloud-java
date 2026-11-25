@@ -94,9 +94,16 @@ import org.jspecify.annotations.Nullable;
  * System.out.printf("Blob %s retrieved.", blob.getBlobId());
  * </code></pre>
  *
- * Note that {@link OAuth2CredentialsWithRefresh} can instead be used to consume the downscoped
- * token, allowing for automatic token refreshes by providing a {@link
- * OAuth2CredentialsWithRefresh.OAuth2RefreshHandler}.
+ * <p>When passing downscoped tokens from a token broker to a separate consumer that needs automatic
+ * refreshes, consume the token with {@link OAuth2CredentialsWithRefresh} and an {@link
+ * OAuth2CredentialsWithRefresh.OAuth2RefreshHandler} that requests a fresh token from the broker
+ * (backed by {@link #refreshAccessToken()}). When operating in a non-default universe domain,
+ * configure {@link OAuth2CredentialsWithRefresh.Builder#setUniverseDomain(String)} for automatic
+ * refreshes, or wrap a single token with {@link GoogleCredentials#create(String, AccessToken)}
+ * (which does not auto-refresh and throws {@link IllegalStateException} from {@code
+ * refreshAccessToken()}, so callers must obtain a new token and create a new credential before
+ * expiry). Callers running in the same process can also use {@code DownscopedCredentials} directly,
+ * as it automatically refreshes tokens and preserves the configured universe domain.
  */
 @NullMarked
 public final class DownscopedCredentials extends OAuth2Credentials {
@@ -140,6 +147,21 @@ public final class DownscopedCredentials extends OAuth2Credentials {
       // Throwing an IOException would be a breaking change, so wrap it here.
       throw new IllegalStateException(
           "Error occurred when attempting to retrieve source credential universe domain.", e);
+    }
+
+    // Credential Access Boundaries require a Google-issued OAuth 2.0 access token, not a
+    // self-signed JWT
+    // (https://cloud.google.com/iam/docs/create-downscoped-short-lived-credentials#before-you-begin).
+    if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(this.universeDomain)
+        && this.sourceCredential instanceof ServiceAccountCredentials) {
+      throw new IllegalArgumentException(
+          String.format(
+              "ServiceAccountCredentials cannot be used directly as a source credential for"
+                  + " DownscopedCredentials in universe domain %s because OAuth2 access token"
+                  + " refresh is only supported in %s. Wrap the service account in"
+                  + " ImpersonatedCredentials, or use credentials such as ComputeEngineCredentials"
+                  + " or ExternalAccountCredentials instead.",
+              this.universeDomain, Credentials.GOOGLE_DEFAULT_UNIVERSE));
     }
     this.tokenExchangeEndpoint = String.format(TOKEN_EXCHANGE_URL_FORMAT, universeDomain);
   }
@@ -250,6 +272,14 @@ public final class DownscopedCredentials extends OAuth2Credentials {
 
     /**
      * Sets the required source credential used to acquire the downscoped credential.
+     *
+     * <p>In non-default universe domains, {@link ServiceAccountCredentials} cannot be used directly
+     * because Credential Access Boundaries require an OAuth 2.0 access token (see <a
+     * href="https://cloud.google.com/iam/docs/create-downscoped-short-lived-credentials#before-you-begin">Create
+     * a downscoped short-lived credential</a>) and service account OAuth2 token refresh is only
+     * supported in {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}. Wrap the service account in {@link
+     * ImpersonatedCredentials}, or use credentials such as {@link ComputeEngineCredentials} or
+     * {@link ExternalAccountCredentials}.
      *
      * @param sourceCredential the {@code GoogleCredentials} to set
      * @return this {@code Builder} object

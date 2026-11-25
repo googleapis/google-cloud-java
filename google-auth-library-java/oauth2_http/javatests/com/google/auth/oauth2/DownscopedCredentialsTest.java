@@ -35,12 +35,18 @@ import static com.google.auth.Credentials.GOOGLE_DEFAULT_UNIVERSE;
 import static com.google.auth.oauth2.OAuth2Utils.TOKEN_EXCHANGE_URL_FORMAT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import java.io.IOException;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -193,6 +199,148 @@ class DownscopedCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void refreshAccessToken_impersonatedNonDefaultUniverseServiceAccount_succeeds()
+      throws IOException {
+    String universeDomain = "example.com";
+    String targetPrincipal = "target@example.iam.gserviceaccount.com";
+    MockTokenServerTransportFactory tokenTransportFactory = new MockTokenServerTransportFactory();
+    MockStsTransportFactory stsTransportFactory = new MockStsTransportFactory();
+
+    MockIAMCredentialsServiceTransportFactory iamTransportFactory =
+        new MockIAMCredentialsServiceTransportFactory(universeDomain);
+    iamTransportFactory.getTransport().setTargetPrincipal(targetPrincipal);
+    iamTransportFactory.getTransport().setAccessToken("impersonated-access-token");
+    iamTransportFactory
+        .getTransport()
+        .setExpireTime(Instant.now().plusSeconds(3600).truncatedTo(ChronoUnit.SECONDS).toString());
+    iamTransportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    GoogleCredentials sourceSa =
+        getServiceAccountSourceCredentials(tokenTransportFactory).toBuilder()
+            .setUniverseDomain(universeDomain)
+            .build();
+    ImpersonatedCredentials impersonatedCredentials =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceSa)
+            .setTargetPrincipal(targetPrincipal)
+            .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+            .setHttpTransportFactory(iamTransportFactory)
+            .build();
+
+    DownscopedCredentials downscopedCredentials =
+        DownscopedCredentials.newBuilder()
+            .setSourceCredential(impersonatedCredentials)
+            .setCredentialAccessBoundary(CREDENTIAL_ACCESS_BOUNDARY)
+            .setHttpTransportFactory(stsTransportFactory)
+            .setUniverseDomain(universeDomain)
+            .build();
+
+    AccessToken accessToken = downscopedCredentials.refreshAccessToken();
+
+    assertEquals(stsTransportFactory.transport.getAccessToken(), accessToken.getTokenValue());
+    assertEquals(
+        String.format(TOKEN_EXCHANGE_URL_FORMAT, universeDomain),
+        stsTransportFactory.transport.getRequest().getUrl());
+    assertNotNull(iamTransportFactory.getTransport().getRequest());
+    assertTrue(
+        iamTransportFactory
+            .getTransport()
+            .getRequest()
+            .getUrl()
+            .startsWith("https://iamcredentials." + universeDomain + "/"));
+    assertEquals(0, tokenTransportFactory.transport.buildRequestCount);
+    assertNull(tokenTransportFactory.transport.getRequest());
+  }
+
+  @Test
+  void builder_nonDefaultUniverseServiceAccount_throws() throws IOException {
+    MockTokenServerTransportFactory tokenTransportFactory = new MockTokenServerTransportFactory();
+    GoogleCredentials sourceCredentials =
+        getServiceAccountSourceCredentials(tokenTransportFactory).toBuilder()
+            .setUniverseDomain("example.com")
+            .build();
+
+    DownscopedCredentials.Builder builder =
+        DownscopedCredentials.newBuilder()
+            .setSourceCredential(sourceCredentials)
+            .setCredentialAccessBoundary(CREDENTIAL_ACCESS_BOUNDARY)
+            .setUniverseDomain("example.com");
+
+    IllegalArgumentException error = assertThrows(IllegalArgumentException.class, builder::build);
+    assertTrue(error.getMessage().contains("ServiceAccountCredentials"));
+    assertTrue(error.getMessage().contains("ImpersonatedCredentials"));
+    assertEquals(0, tokenTransportFactory.transport.buildRequestCount);
+    assertNull(tokenTransportFactory.transport.getRequest());
+  }
+
+  @Test
+  void refreshAccessToken_wrappedNonDefaultUniverseServiceAccount_failsClosed() throws IOException {
+    MockStsTransportFactory stsTransportFactory = new MockStsTransportFactory();
+    MockTokenServerTransportFactory tokenTransportFactory = new MockTokenServerTransportFactory();
+    String universeDomain = "example.com";
+    GoogleCredentials delegate =
+        getServiceAccountSourceCredentials(tokenTransportFactory).toBuilder()
+            .setUniverseDomain(universeDomain)
+            .build();
+    GoogleCredentials wrapped =
+        new GoogleCredentials(GoogleCredentials.newBuilder().setUniverseDomain(universeDomain)) {
+          @Override
+          public AccessToken refreshAccessToken() throws IOException {
+            return delegate.refreshAccessToken();
+          }
+        };
+
+    DownscopedCredentials downscopedCredentials =
+        DownscopedCredentials.newBuilder()
+            .setSourceCredential(wrapped)
+            .setCredentialAccessBoundary(CREDENTIAL_ACCESS_BOUNDARY)
+            .setHttpTransportFactory(stsTransportFactory)
+            .setUniverseDomain(universeDomain)
+            .build();
+
+    IOException error = assertThrows(IOException.class, downscopedCredentials::refreshAccessToken);
+    assertEquals("Unable to refresh the provided source credential.", error.getMessage());
+    assertNotNull(error.getCause());
+    assertTrue(error.getCause().getMessage().contains(universeDomain));
+    assertEquals(0, tokenTransportFactory.transport.buildRequestCount);
+    assertNull(tokenTransportFactory.transport.getRequest());
+    assertEquals(0, stsTransportFactory.transport.getRequestCount());
+  }
+
+  @Test
+  void refreshAccessToken_nonDefaultUniverseUserCredentials_failsClosed() {
+    MockStsTransportFactory stsTransportFactory = new MockStsTransportFactory();
+    MockTokenServerTransportFactory tokenTransportFactory = new MockTokenServerTransportFactory();
+    tokenTransportFactory.transport.addClient("test-client-id", "test-client-secret");
+    tokenTransportFactory.transport.addRefreshToken("test-refresh-token", "test-access-token");
+
+    GoogleCredentials sourceCredentials =
+        UserCredentials.newBuilder()
+            .setClientId("test-client-id")
+            .setClientSecret("test-client-secret")
+            .setRefreshToken("test-refresh-token")
+            .setHttpTransportFactory(tokenTransportFactory)
+            .setUniverseDomain("example.com")
+            .build();
+
+    DownscopedCredentials downscopedCredentials =
+        DownscopedCredentials.newBuilder()
+            .setSourceCredential(sourceCredentials)
+            .setCredentialAccessBoundary(CREDENTIAL_ACCESS_BOUNDARY)
+            .setHttpTransportFactory(stsTransportFactory)
+            .setUniverseDomain("example.com")
+            .build();
+
+    IOException error = assertThrows(IOException.class, downscopedCredentials::refreshAccessToken);
+    assertEquals("Unable to refresh the provided source credential.", error.getMessage());
+    assertNotNull(error.getCause());
+    assertTrue(error.getCause().getMessage().contains("example.com"));
+    assertEquals(0, tokenTransportFactory.transport.buildRequestCount);
+    assertNull(tokenTransportFactory.transport.getRequest());
+    assertEquals(0, stsTransportFactory.transport.getRequestCount());
+  }
+
+  @Test
   void refreshAccessToken_userCredentials_expectExpiresInCopied() throws IOException {
     // STS only returns expires_in if the source access token belongs to a service account.
     // For other source credential types, we can copy the source credentials expiration as
@@ -326,7 +474,14 @@ class DownscopedCredentialsTest extends BaseSerializationTest {
   private static GoogleCredentials getServiceAccountSourceCredentials(boolean canRefresh)
       throws IOException {
     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    if (!canRefresh) {
+      transportFactory.transport.setError(new IOException());
+    }
+    return getServiceAccountSourceCredentials(transportFactory);
+  }
 
+  private static GoogleCredentials getServiceAccountSourceCredentials(
+      MockTokenServerTransportFactory transportFactory) throws IOException {
     String email = "service-account@google.com";
 
     ServiceAccountCredentials sourceCredentials =
@@ -339,10 +494,6 @@ class DownscopedCredentialsTest extends BaseSerializationTest {
             .build();
 
     transportFactory.transport.addServiceAccount(email, "accessToken");
-
-    if (!canRefresh) {
-      transportFactory.transport.setError(new IOException());
-    }
 
     return sourceCredentials.createScoped(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
   }
