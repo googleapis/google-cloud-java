@@ -977,11 +977,25 @@ final class BigQueryJdbcUrlUtility {
   }
 
   /**
-   * Reads {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN} from the environment, returning {@code null} when
-   * unset or blank so downstream clients use their own defaults.
+   * Reads {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN} from the environment. Returns {@code null} when the
+   * variable is unset, or {@code googleapis.com} when set to an empty/whitespace string so callers
+   * override GAX EndpointContext's raw {@code System.getenv} read instead of producing an empty
+   * host.
    */
   static String getEnvUniverseDomain() {
-    return normalizeUniverseDomain(System.getenv(GOOGLE_CLOUD_UNIVERSE_DOMAIN_ENV_VAR));
+    return resolveEnvUniverseDomain(readRawEnvUniverseDomain());
+  }
+
+  static String readRawEnvUniverseDomain() {
+    return System.getenv(GOOGLE_CLOUD_UNIVERSE_DOMAIN_ENV_VAR);
+  }
+
+  static String resolveEnvUniverseDomain(String rawEnvValue) {
+    if (rawEnvValue == null) {
+      return null;
+    }
+    String trimmed = rawEnvValue.trim();
+    return trimmed.isEmpty() ? DEFAULT_UNIVERSE_DOMAIN_VALUE : trimmed;
   }
 
   /** Trims a universe domain string and normalizes empty/whitespace values to {@code null}. */

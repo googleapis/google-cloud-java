@@ -218,12 +218,10 @@ final class BigQueryJdbcOAuthUtility {
                 BigQueryJdbcUrlUtility.BYOID_SUBJECT_TOKEN_TYPE_PROPERTY_NAME,
                 ds.getByoidSubjectTokenType());
           }
-          if (ds.getByoidTokenUri() != null) {
-            oauthProperties.put(
-                BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME, ds.getByoidTokenUri());
-          }
+          oauthProperties.put(
+              BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME, ds.getByoidTokenUri());
 
-          String universeDomain = ds.getExplicitUniverseDomain();
+          String universeDomain = ds.getUniverseDomain();
           if (universeDomain != null) {
             oauthProperties.put(
                 BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, universeDomain);
@@ -384,14 +382,11 @@ final class BigQueryJdbcOAuthUtility {
         builder.setHttpTransportFactory(httpTransportFactory);
       }
 
-      if (overrideProperties != null
-          && overrideProperties.containsKey(
-              BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
+      if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
         builder.setTokenServerUri(
             new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
       }
       if (stream == null
-          && overrideProperties != null
           && overrideProperties.containsKey(
               BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
         builder.setUniverseDomain(
@@ -514,9 +509,8 @@ final class BigQueryJdbcOAuthUtility {
       String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
     GoogleCredentials.Builder builder = GoogleCredentials.newBuilder();
-    if (overrideProperties != null
-        && overrideProperties.containsKey(
-            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
+    if (overrideProperties.containsKey(
+        BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
       builder.setUniverseDomain(
           overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
     }
@@ -574,14 +568,12 @@ final class BigQueryJdbcOAuthUtility {
       userCredentialsBuilder.setHttpTransportFactory(httpTransportFactory);
     }
 
-    if (overrideProperties != null
-        && overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
+    if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
       userCredentialsBuilder.setTokenServerUri(
           new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
     }
-    if (overrideProperties != null
-        && overrideProperties.containsKey(
-            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
+    if (overrideProperties.containsKey(
+        BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
       userCredentialsBuilder.setUniverseDomain(
           overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
     }
@@ -638,12 +630,13 @@ final class BigQueryJdbcOAuthUtility {
         credentialsPath =
             authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME);
       } else {
-        // Synthesize an external_account JSON payload; omitting token_url when unset lets
-        // ExternalAccountCredentials derive https://sts.{UNIVERSE_DOMAIN}/v1/token natively.
+        // Synthesize an external_account JSON payload. token_url is always present here:
+        // DataSource.getByoidTokenUri() derives https://sts.<universeDomain>/v1/token from an
+        // explicit universeDomain when BYOID_TokenUri is omitted.
         jsonObject = new JsonObject();
         jsonObject.addProperty("type", EXTERNAL_ACCOUNT_TYPE);
         for (String property : BigQueryJdbcUrlUtility.BYOID_PROPERTIES) {
-          if (!authProperties.containsKey(property) || authProperties.get(property) == null) {
+          if (authProperties.get(property) == null) {
             continue;
           }
           if (Objects.equals(

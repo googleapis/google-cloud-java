@@ -96,21 +96,23 @@ public class DataSourceTest {
       urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(null);
       DataSource ds = new DataSource();
       assertNull(ds.getUniverseDomain());
-      assertNull(ds.getExplicitUniverseDomain());
+      assertNull(ds.resolveUniverseDomain());
       assertEquals("https://sts.googleapis.com/v1/token", ds.getByoidTokenUri());
 
-      // 2. GOOGLE_CLOUD_UNIVERSE_DOMAIN is set, explicit universeDomain is omitted
+      // 2. GOOGLE_CLOUD_UNIVERSE_DOMAIN is set, explicit universeDomain is omitted:
+      // getUniverseDomain() stays null (preserving setter symmetry), resolveUniverseDomain() uses
+      // env
       urlUtil
           .when(BigQueryJdbcUrlUtility::getEnvUniverseDomain)
           .thenReturn("custom-universe.example.com");
-      assertEquals("custom-universe.example.com", ds.getUniverseDomain());
-      assertNull(ds.getExplicitUniverseDomain());
+      assertNull(ds.getUniverseDomain());
+      assertEquals("custom-universe.example.com", ds.resolveUniverseDomain());
       assertEquals("https://sts.googleapis.com/v1/token", ds.getByoidTokenUri());
 
       // 3. Explicit universeDomain takes precedence over GOOGLE_CLOUD_UNIVERSE_DOMAIN
       ds.setUniverseDomain("explicit-universe.example.com");
       assertEquals("explicit-universe.example.com", ds.getUniverseDomain());
-      assertEquals("explicit-universe.example.com", ds.getExplicitUniverseDomain());
+      assertEquals("explicit-universe.example.com", ds.resolveUniverseDomain());
       assertEquals("https://sts.explicit-universe.example.com/v1/token", ds.getByoidTokenUri());
 
       // 4. Explicit BYOID_TokenUri takes precedence over universeDomain derivation
@@ -127,5 +129,11 @@ public class DataSourceTest {
     assertEquals(
         "custom-universe.example.com",
         BigQueryJdbcUrlUtility.normalizeUniverseDomain(" custom-universe.example.com "));
+    assertNull(BigQueryJdbcUrlUtility.resolveEnvUniverseDomain(null));
+    assertEquals("googleapis.com", BigQueryJdbcUrlUtility.resolveEnvUniverseDomain(""));
+    assertEquals("googleapis.com", BigQueryJdbcUrlUtility.resolveEnvUniverseDomain("   "));
+    assertEquals(
+        "custom-universe.example.com",
+        BigQueryJdbcUrlUtility.resolveEnvUniverseDomain(" custom-universe.example.com "));
   }
 }

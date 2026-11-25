@@ -1013,19 +1013,18 @@ public class DataSource implements javax.sql.DataSource {
     this.gcpTelemetryCredentials = gcpTelemetryCredentials;
   }
 
-  /**
-   * Returns the configured universe domain from the DataSource/URL or {@code
-   * GOOGLE_CLOUD_UNIVERSE_DOMAIN}, or {@code null} when neither is set so underlying clients apply
-   * their own defaults without overwriting credential-embedded universe domains.
-   */
+  /** Returns the universe domain explicitly set via URL or setter, or {@code null} if omitted. */
   public String getUniverseDomain() {
-    String explicit = getExplicitUniverseDomain();
-    return explicit != null ? explicit : BigQueryJdbcUrlUtility.getEnvUniverseDomain();
+    return BigQueryJdbcUrlUtility.normalizeUniverseDomain(universeDomain);
   }
 
-  /** Returns the universe domain explicitly set via URL or setter, or {@code null} if omitted. */
-  String getExplicitUniverseDomain() {
-    return BigQueryJdbcUrlUtility.normalizeUniverseDomain(universeDomain);
+  /**
+   * Resolves the client-endpoint universe domain from the explicit URL/DataSource setting or {@code
+   * GOOGLE_CLOUD_UNIVERSE_DOMAIN}, returning {@code null} when neither is set.
+   */
+  String resolveUniverseDomain() {
+    String explicit = getUniverseDomain();
+    return explicit != null ? explicit : BigQueryJdbcUrlUtility.getEnvUniverseDomain();
   }
 
   public void setUniverseDomain(String universeDomain) {
@@ -1539,7 +1538,7 @@ public class DataSource implements javax.sql.DataSource {
   public String getByoidTokenUri() {
     return byoidTokenUri != null
         ? byoidTokenUri
-        : BigQueryJdbcUrlUtility.formatByoidTokenUri(getExplicitUniverseDomain());
+        : BigQueryJdbcUrlUtility.formatByoidTokenUri(getUniverseDomain());
   }
 
   public void setByoidTokenUri(String byoidTokenUri) {

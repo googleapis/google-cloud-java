@@ -750,40 +750,4 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
       assertEquals("googleapis.com", defaultGduCreds.getUniverseDomain());
     }
   }
-
-  @Test
-  public void testNullOverridePropertiesHandledSafelyAcrossAuthTypes() throws Exception {
-    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
-        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
-      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(null);
-
-      // Service Account PKCS#8 with null overrideProperties
-      Map<String, String> saProps =
-          BigQueryJdbcOAuthUtility.parseOAuthProperties(
-              DataSource.fromUrl(getUriOAuthServiceAccount().toString()), null);
-      GoogleCredentials saCreds =
-          BigQueryJdbcOAuthUtility.getCredentials(saProps, null, false, null, null);
-      assertEquals("googleapis.com", saCreds.getUniverseDomain());
-
-      // Pre-generated Access Token with null overrideProperties
-      Map<String, String> tokenProps =
-          BigQueryJdbcOAuthUtility.parseOAuthProperties(
-              DataSource.fromUrl(getUriOAuthToken().toString()), null);
-      GoogleCredentials tokenCreds =
-          BigQueryJdbcOAuthUtility.getCredentials(tokenProps, null, false, null, null);
-      assertEquals("googleapis.com", tokenCreds.getUniverseDomain());
-
-      // Pre-generated Refresh Token with null overrideProperties
-      Map<String, String> refreshProps =
-          BigQueryJdbcOAuthUtility.parseOAuthProperties(
-              DataSource.fromUrl(
-                  "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                      + "ProjectId=MyProject;OAuthType=2;OAuthRefreshToken=rt;"
-                      + "OAuthClientId=cid;OAuthClientSecret=csecret;"),
-              null);
-      GoogleCredentials refreshCreds =
-          BigQueryJdbcOAuthUtility.getCredentials(refreshProps, null, false, null, null);
-      assertEquals("googleapis.com", refreshCreds.getUniverseDomain());
-    }
-  }
 }

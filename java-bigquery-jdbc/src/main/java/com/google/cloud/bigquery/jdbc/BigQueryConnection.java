@@ -310,12 +310,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           BigQueryJdbcOAuthUtility.parseOAuthProperties(ds, this.connectionClassName);
       this.isReadOnlyTokenUsed = checkIsReadOnlyTokenUsed(this.authProperties);
       this.catalog = ds.getProjectId();
-      this.universeDomain = ds.getUniverseDomain();
+      this.universeDomain = ds.resolveUniverseDomain();
 
       this.overrideProperties = ds.getOverrideProperties();
       // Only record an explicit URL/DataSource universeDomain in overrideProperties for non-JSON
       // credentials; JSON credentials always keep their own parsed universe_domain.
-      String explicitUniverseDomain = ds.getExplicitUniverseDomain();
+      String explicitUniverseDomain = ds.getUniverseDomain();
       if (explicitUniverseDomain != null) {
         this.overrideProperties.put(
             BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, explicitUniverseDomain);

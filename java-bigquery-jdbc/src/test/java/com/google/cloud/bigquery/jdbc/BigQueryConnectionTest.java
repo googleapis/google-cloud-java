@@ -1168,6 +1168,26 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
         assertEquals(DEFAULT_UNIVERSE, connection.credentials.getUniverseDomain());
       }
     }
+
+    // Blank/whitespace GOOGLE_CLOUD_UNIVERSE_DOMAIN resolves to googleapis.com so GAX clients
+    // do not re-read the raw empty env var and construct an invalid host.
+    try (MockedStatic<BigQueryJdbcUrlUtility> blankEnvUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      blankEnvUtil.when(BigQueryJdbcUrlUtility::readRawEnvUniverseDomain).thenReturn("");
+      try (BigQueryConnection blankEnvConn = new BigQueryConnection(url)) {
+        assertEquals(DEFAULT_UNIVERSE, blankEnvConn.universeDomain);
+        assertEquals(DEFAULT_UNIVERSE, blankEnvConn.getBigQuery().getOptions().getUniverseDomain());
+        assertEquals(
+            DEFAULT_UNIVERSE,
+            blankEnvConn.getBigQueryReadClient().getSettings().getUniverseDomain());
+        assertEquals(
+            DEFAULT_UNIVERSE,
+            blankEnvConn.getBigQueryWriteClient().getSettings().getUniverseDomain());
+        assertFalse(
+            blankEnvConn.overrideProperties.containsKey(
+                BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
+      }
+    }
   }
 
   @Test
