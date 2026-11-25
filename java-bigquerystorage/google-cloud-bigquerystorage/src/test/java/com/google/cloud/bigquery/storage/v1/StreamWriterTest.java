@@ -2653,4 +2653,41 @@ class StreamWriterTest {
     assertNotEquals(defaultKey, customEndpointKey);
     assertNotEquals(customUniverseKey, customEndpointKey);
   }
+
+  @Test
+  void testGetBigQueryWriteSettingsThrowsOnMismatchedClientUniverseDomain() throws Exception {
+    BigQueryWriteSettings clientSettings =
+        BigQueryWriteSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setUniverseDomain("googleapis.com")
+            .build();
+    try (BigQueryWriteClient writeClient = BigQueryWriteClient.create(clientSettings)) {
+      StreamWriter.Builder builder =
+          StreamWriter.newBuilder(TEST_STREAM_1, writeClient)
+              .setUniverseDomain("custom.example.com");
+
+      IllegalArgumentException ex =
+          assertThrows(
+              IllegalArgumentException.class, () -> StreamWriter.getBigQueryWriteSettings(builder));
+      assertTrue(ex.getMessage().contains("custom.example.com"));
+      assertTrue(ex.getMessage().contains("googleapis.com"));
+    }
+  }
+
+  @Test
+  void testGetBigQueryWriteSettingsAllowsMatchingClientUniverseDomain() throws Exception {
+    BigQueryWriteSettings clientSettings =
+        BigQueryWriteSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setUniverseDomain("custom.example.com")
+            .build();
+    try (BigQueryWriteClient writeClient = BigQueryWriteClient.create(clientSettings)) {
+      StreamWriter.Builder builder =
+          StreamWriter.newBuilder(TEST_STREAM_1, writeClient)
+              .setUniverseDomain("custom.example.com");
+
+      BigQueryWriteSettings settings = StreamWriter.getBigQueryWriteSettings(builder);
+      assertEquals("custom.example.com", settings.getUniverseDomain());
+    }
+  }
 }

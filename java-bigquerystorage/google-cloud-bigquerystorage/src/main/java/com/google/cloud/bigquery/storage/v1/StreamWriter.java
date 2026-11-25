@@ -431,6 +431,18 @@ public class StreamWriter implements AutoCloseable {
   static BigQueryWriteSettings getBigQueryWriteSettings(Builder builder) throws IOException {
     BigQueryWriteSettings.Builder settingsBuilder = null;
     if (builder.client != null) {
+      // Fail fast if setUniverseDomain() conflicts with the provided BigQueryWriteClient to avoid
+      // split-brain routing between metadata calls and streaming connections.
+      String clientUniverseDomain = builder.client.getSettings().getUniverseDomain();
+      if (builder.universeDomain != null
+          && clientUniverseDomain != null
+          && !builder.universeDomain.equals(clientUniverseDomain)) {
+        throw new IllegalArgumentException(
+            String.format(
+                "The configured universe domain (%s) does not match the universe domain on the"
+                    + " provided BigQueryWriteClient (%s).",
+                builder.universeDomain, clientUniverseDomain));
+      }
       settingsBuilder = builder.client.getSettings().toBuilder();
     } else {
       settingsBuilder =

@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery.storage.v1beta2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import org.junit.jupiter.api.Test;
@@ -49,5 +51,41 @@ class StreamWriterV2Test {
     BigQueryWriteSettings settings = StreamWriterV2.getBigQueryWriteSettings(builder, TEST_STREAM);
 
     assertEquals("custom-endpoint.example.com:443", settings.getEndpoint());
+  }
+
+  @Test
+  void testValidateUniverseDomainThrowsOnMismatchedClientUniverseDomain() throws Exception {
+    BigQueryWriteSettings clientSettings =
+        BigQueryWriteSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setUniverseDomain("googleapis.com")
+            .build();
+    try (BigQueryWriteClient writeClient = BigQueryWriteClient.create(clientSettings)) {
+      StreamWriterV2.Builder builder =
+          StreamWriterV2.newBuilder(TEST_STREAM, writeClient)
+              .setUniverseDomain("custom.example.com");
+
+      IllegalArgumentException ex =
+          assertThrows(
+              IllegalArgumentException.class, () -> StreamWriterV2.validateUniverseDomain(builder));
+      assertTrue(ex.getMessage().contains("custom.example.com"));
+      assertTrue(ex.getMessage().contains("googleapis.com"));
+    }
+  }
+
+  @Test
+  void testValidateUniverseDomainAllowsMatchingClientUniverseDomain() throws Exception {
+    BigQueryWriteSettings clientSettings =
+        BigQueryWriteSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setUniverseDomain("custom.example.com")
+            .build();
+    try (BigQueryWriteClient writeClient = BigQueryWriteClient.create(clientSettings)) {
+      StreamWriterV2.Builder builder =
+          StreamWriterV2.newBuilder(TEST_STREAM, writeClient)
+              .setUniverseDomain("custom.example.com");
+
+      StreamWriterV2.validateUniverseDomain(builder);
+    }
   }
 }

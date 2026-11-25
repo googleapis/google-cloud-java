@@ -162,6 +162,7 @@ public class StreamWriterV2 implements AutoCloseable {
       this.client = BigQueryWriteClient.create(getBigQueryWriteSettings(builder, this.streamName));
       this.ownsBigQueryWriteClient = true;
     } else {
+      validateUniverseDomain(builder);
       this.client = builder.client;
       this.ownsBigQueryWriteClient = false;
     }
@@ -190,6 +191,23 @@ public class StreamWriterV2 implements AutoCloseable {
               }
             });
     this.appendThread.start();
+  }
+
+  /**
+   * Validates that an explicitly configured universe domain matches the provided {@link
+   * BigQueryWriteClient}'s universe domain.
+   */
+  static void validateUniverseDomain(Builder builder) {
+    if (builder.client != null && builder.universeDomain != null) {
+      String clientUniverseDomain = builder.client.getSettings().getUniverseDomain();
+      if (clientUniverseDomain != null && !builder.universeDomain.equals(clientUniverseDomain)) {
+        throw new IllegalArgumentException(
+            String.format(
+                "The configured universe domain (%s) does not match the universe domain on the"
+                    + " provided BigQueryWriteClient (%s).",
+                builder.universeDomain, clientUniverseDomain));
+      }
+    }
   }
 
   /** Builds {@link BigQueryWriteSettings} from the builder without pinning the default endpoint. */
