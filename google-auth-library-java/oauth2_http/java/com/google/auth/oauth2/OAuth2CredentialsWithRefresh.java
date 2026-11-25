@@ -69,7 +69,7 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
 
   protected OAuth2CredentialsWithRefresh(Builder builder) {
     super(builder.getAccessToken(), builder.getRefreshMargin(), builder.getExpirationMargin());
-    // An expiration time must be provided.
+    // If no expirationTime is provided, the token will never be refreshed.
     if (builder.getAccessToken() != null && builder.getAccessToken().getExpirationTime() == null) {
       throw new IllegalArgumentException(
           "The provided access token must contain the expiration time.");
@@ -84,16 +84,7 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
 
   protected OAuth2CredentialsWithRefresh(
       AccessToken accessToken, OAuth2RefreshHandler refreshHandler) {
-    super(accessToken);
-
-    // If no expirationTime is provided, the token will never be refreshed.
-    if (accessToken != null && accessToken.getExpirationTime() == null) {
-      throw new IllegalArgumentException(
-          "The provided access token must contain the expiration time.");
-    }
-
-    this.refreshHandler = checkNotNull(refreshHandler);
-    this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    this(newBuilder().setAccessToken(accessToken).setRefreshHandler(refreshHandler));
   }
 
   /** Refreshes the access token using the provided {@link OAuth2RefreshHandler}. */
