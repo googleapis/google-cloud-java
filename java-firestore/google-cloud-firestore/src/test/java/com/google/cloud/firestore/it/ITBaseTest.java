@@ -118,9 +118,10 @@ public abstract class ITBaseTest {
   @Before
   public void before() throws Exception {
     firestoreOptions = getOptionsBuilder().build();
+    String endpoint = firestoreOptions.getTransportChannelProvider().getEndpoint();
     logger.log(
         Level.INFO,
-        "Integration test against " + firestoreOptions.getTransportChannelProvider().getEndpoint());
+        "Integration test against " + (endpoint != null ? endpoint : firestoreOptions.getHost()));
     firestore = firestoreOptions.getService();
     primeBackend();
   }

@@ -180,6 +180,11 @@ class ClientSideStatementValueConverters {
         return null;
       }
     }
+
+    @Override
+    public boolean isValid(Integer value) {
+      return value != null && value >= 0;
+    }
   }
 
   /** Converter from string to a long. */
@@ -208,6 +213,12 @@ class ClientSideStatementValueConverters {
       } catch (Exception ignore) {
         return null;
       }
+    }
+
+    @Override
+    public boolean isValid(Long value) {
+      // Match convert(String), which only accepts non-negative values.
+      return value != null && value >= 0;
     }
   }
 
@@ -264,6 +275,12 @@ class ClientSideStatementValueConverters {
         }
       }
       return null;
+    }
+
+    @Override
+    public boolean isValid(Duration value) {
+      // Match convert(String), which only accepts non-negative durations.
+      return value != null && !value.isNegative();
     }
   }
 

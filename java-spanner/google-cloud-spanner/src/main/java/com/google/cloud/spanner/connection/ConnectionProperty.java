@@ -16,10 +16,12 @@
 
 package com.google.cloud.spanner.connection;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.common.base.Strings;
 import java.util.Locale;
+import java.util.Objects;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -36,6 +38,7 @@ import javax.annotation.Nullable;
  * the default for PostgreSQL-dialect databases. For GoogleSQL-dialect databases, transactional
  * connection state is an opt-in.
  */
+@InternalApi
 public class ConnectionProperty<T> {
 
   /**
@@ -78,9 +81,10 @@ public class ConnectionProperty<T> {
       @Nonnull String name,
       String description,
       T defaultValue,
+      boolean nullAllowed,
       ClientSideStatementValueConverter<T> converter,
       Context context) {
-    return create(name, description, defaultValue, null, converter, context);
+    return create(name, description, defaultValue, null, nullAllowed, converter, context);
   }
 
   /** Utility method for creating a typed {@link ConnectionProperty}. */
@@ -90,10 +94,11 @@ public class ConnectionProperty<T> {
       String description,
       T defaultValue,
       T[] validValues,
+      boolean nullAllowed,
       ClientSideStatementValueConverter<T> converter,
       Context context) {
     return new ConnectionProperty<>(
-        null, name, description, defaultValue, validValues, converter, context);
+        null, name, description, defaultValue, validValues, nullAllowed, converter, context);
   }
 
   /**
@@ -116,18 +121,24 @@ public class ConnectionProperty<T> {
 
   private final Context context;
 
+  private final boolean nullAllowed;
+
   ConnectionProperty(
       String extension,
       @Nonnull String name,
       @Nonnull String description,
       T defaultValue,
       T[] validValues,
+      boolean nullAllowed,
       ClientSideStatementValueConverter<T> converter,
       Context context) {
     ConnectionPreconditions.checkArgument(
         !Strings.isNullOrEmpty(name), "property name must be a non-empty string");
     ConnectionPreconditions.checkArgument(
         !Strings.isNullOrEmpty(description), "property description must be a non-empty string");
+    ConnectionPreconditions.checkArgument(
+        defaultValue != null || nullAllowed,
+        "defaultValue cannot be null when null is not allowed");
     this.extension = extension == null ? null : extension.toLowerCase(Locale.ENGLISH);
     this.name = name.toLowerCase(Locale.ENGLISH);
     this.description = description;
@@ -136,6 +147,7 @@ public class ConnectionProperty<T> {
     this.converter = converter;
     this.context = context;
     this.key = createKey(this.extension, this.name);
+    this.nullAllowed = nullAllowed;
   }
 
   @Override
@@ -161,6 +173,24 @@ public class ConnectionProperty<T> {
     return initialValue == null
         ? new ConnectionPropertyValue<>(this, this.defaultValue, this.defaultValue)
         : initialValue.copy();
+  }
+
+  boolean isValidValue(@Nullable T value) {
+    if (value == null) {
+      return this.nullAllowed;
+    }
+    if (!this.converter.isValid(value)) {
+      return false;
+    }
+    if (this.validValues != null) {
+      for (T validValue : this.validValues) {
+        if (Objects.equals(validValue, value)) {
+          return true;
+        }
+      }
+      return false;
+    }
+    return true;
   }
 
   @Nullable
@@ -209,5 +239,10 @@ public class ConnectionProperty<T> {
 
   public Context getContext() {
     return this.context;
+  }
+
+  /** Returns {@code true} if {@code null} is a valid value for this property. */
+  public boolean isNullAllowed() {
+    return this.nullAllowed;
   }
 }
