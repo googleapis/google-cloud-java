@@ -699,7 +699,10 @@ Logging can also be configured globally across all driver connections using envi
 
 #### Log File Naming & Format
 
-Log files are generated inside the specified `LogPath` directory with per-connection log isolation.
+Log files are generated inside the specified `LogPath` directory with per-connection log isolation:
+- **Global log file**: `BQ-JDBC-GLOBAL.log` (or `BQ-JDBC-GLOBAL-<timestamp>-<rand>.log` when another process or handler already holds the global log lock, or when `BQ-JDBC-GLOBAL.log` is owned by a different OS user).
+- **Per-connection log file**: `BQ-JDBC-<yyyyMMddHHmmss>-<shortId>.log` (with a numeric collision suffix if needed).
+- **File permissions**: Created directories and log files enforce owner-only permissions (`0700` on directories, `0600` on files) on POSIX filesystems and reject symbolic links.
 
 **Standard Log Record Format**:
 ```text
