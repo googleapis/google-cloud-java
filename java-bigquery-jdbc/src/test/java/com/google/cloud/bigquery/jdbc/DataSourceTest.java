@@ -105,7 +105,7 @@ public class DataSourceTest {
           .thenReturn("custom-universe.example.com");
       assertEquals("custom-universe.example.com", ds.getUniverseDomain());
       assertNull(ds.getExplicitUniverseDomain());
-      assertEquals("https://sts.custom-universe.example.com/v1/token", ds.getByoidTokenUri());
+      assertEquals("https://sts.googleapis.com/v1/token", ds.getByoidTokenUri());
 
       // 3. Explicit universeDomain takes precedence over GOOGLE_CLOUD_UNIVERSE_DOMAIN
       ds.setUniverseDomain("explicit-universe.example.com");

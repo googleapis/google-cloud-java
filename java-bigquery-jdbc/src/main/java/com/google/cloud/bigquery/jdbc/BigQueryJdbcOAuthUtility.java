@@ -223,7 +223,7 @@ final class BigQueryJdbcOAuthUtility {
                 BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME, ds.getByoidTokenUri());
           }
 
-          String universeDomain = ds.getUniverseDomain();
+          String universeDomain = ds.getExplicitUniverseDomain();
           if (universeDomain != null) {
             oauthProperties.put(
                 BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, universeDomain);
@@ -384,20 +384,18 @@ final class BigQueryJdbcOAuthUtility {
         builder.setHttpTransportFactory(httpTransportFactory);
       }
 
-      String tokenUriOverride =
-          getOverrideProperty(
-              overrideProperties, BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME);
-      if (tokenUriOverride != null) {
-        builder.setTokenServerUri(new URI(tokenUriOverride));
+      if (overrideProperties != null
+          && overrideProperties.containsKey(
+              BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
+        builder.setTokenServerUri(
+            new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
       }
-      // Preserve a JSON key's parsed universe_domain unless universeDomain was explicitly set;
-      // non-JSON keys (PKCS#8 / P12) carry no domain metadata and also fall back to env var.
-      String universeDomainToSet =
-          stream != null
-              ? getExplicitUniverseDomain(overrideProperties)
-              : resolveNonJsonUniverseDomain(overrideProperties);
-      if (universeDomainToSet != null) {
-        builder.setUniverseDomain(universeDomainToSet);
+      if (stream == null
+          && overrideProperties != null
+          && overrideProperties.containsKey(
+              BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
+        builder.setUniverseDomain(
+            overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
       }
     } catch (URISyntaxException | IOException e) {
       throw new BigQueryJdbcRuntimeException(
@@ -516,9 +514,11 @@ final class BigQueryJdbcOAuthUtility {
       String callerClassName) {
     LOG.finer("++enter++\t" + callerClassName);
     GoogleCredentials.Builder builder = GoogleCredentials.newBuilder();
-    String universeDomain = resolveNonJsonUniverseDomain(overrideProperties);
-    if (universeDomain != null) {
-      builder.setUniverseDomain(universeDomain);
+    if (overrideProperties != null
+        && overrideProperties.containsKey(
+            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
+      builder.setUniverseDomain(
+          overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
     }
 
     LOG.info("Connection established. Auth Method: Pre-generated Access Token.");
@@ -574,15 +574,16 @@ final class BigQueryJdbcOAuthUtility {
       userCredentialsBuilder.setHttpTransportFactory(httpTransportFactory);
     }
 
-    String tokenUriOverride =
-        getOverrideProperty(
-            overrideProperties, BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME);
-    if (tokenUriOverride != null) {
-      userCredentialsBuilder.setTokenServerUri(new URI(tokenUriOverride));
+    if (overrideProperties != null
+        && overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
+      userCredentialsBuilder.setTokenServerUri(
+          new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
     }
-    String universeDomain = resolveNonJsonUniverseDomain(overrideProperties);
-    if (universeDomain != null) {
-      userCredentialsBuilder.setUniverseDomain(universeDomain);
+    if (overrideProperties != null
+        && overrideProperties.containsKey(
+            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
+      userCredentialsBuilder.setUniverseDomain(
+          overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
     }
 
     LOG.info("Connection established. Auth Method: Pre-generated Refresh Token.");
@@ -657,9 +658,6 @@ final class BigQueryJdbcOAuthUtility {
         String byoidUniverseDomain =
             BigQueryJdbcUrlUtility.normalizeUniverseDomain(
                 authProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
-        if (byoidUniverseDomain == null) {
-          byoidUniverseDomain = BigQueryJdbcUrlUtility.getEnvUniverseDomain();
-        }
         if (byoidUniverseDomain != null) {
           jsonObject.addProperty("universe_domain", byoidUniverseDomain);
         }
@@ -766,21 +764,6 @@ final class BigQueryJdbcOAuthUtility {
         impersonationChain,
         impersonationScopes,
         impersonationLifetimeInt);
-  }
-
-  private static String getOverrideProperty(Map<String, String> overrideProperties, String key) {
-    return overrideProperties != null ? overrideProperties.get(key) : null;
-  }
-
-  private static String getExplicitUniverseDomain(Map<String, String> overrideProperties) {
-    return BigQueryJdbcUrlUtility.normalizeUniverseDomain(
-        getOverrideProperty(
-            overrideProperties, BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
-  }
-
-  private static String resolveNonJsonUniverseDomain(Map<String, String> overrideProperties) {
-    String explicit = getExplicitUniverseDomain(overrideProperties);
-    return explicit != null ? explicit : BigQueryJdbcUrlUtility.getEnvUniverseDomain();
   }
 
   static PrivateKey privateKeyFromP12Bytes(byte[] privateKey, String password) {

@@ -657,7 +657,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           .when(
               () ->
                   BigQueryJdbcOpenTelemetry.createLoggingClient(
-                      anyBoolean(), any(), any(), any(), any(), any()))
+                      anyBoolean(), any(), any(), any(), any(), any(), any()))
           .thenReturn(mockLogging);
 
       // Stub getOpenTelemetry to return the expected mock based on inputs
@@ -1111,6 +1111,21 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                 BigQueryException.class,
                 () ->
                     connection
+                        .getBigQuery()
+                        .query(QueryJobConfiguration.newBuilder("SELECT 1").build()));
+        assertTrue(ex.getMessage().contains("does not match the universe domain"));
+      }
+
+      // Explicit universeDomain in URL must also NOT overwrite the JSON key's universe_domain.
+      try (BigQueryConnection explicitMismatchConn =
+          new BigQueryConnection(url + ";universeDomain=other-universe.example.com")) {
+        assertEquals("other-universe.example.com", explicitMismatchConn.universeDomain);
+        assertEquals(CUSTOM_UNIVERSE, explicitMismatchConn.credentials.getUniverseDomain());
+        BigQueryException ex =
+            assertThrows(
+                BigQueryException.class,
+                () ->
+                    explicitMismatchConn
                         .getBigQuery()
                         .query(QueryJobConfiguration.newBuilder("SELECT 1").build()));
         assertTrue(ex.getMessage().contains("does not match the universe domain"));

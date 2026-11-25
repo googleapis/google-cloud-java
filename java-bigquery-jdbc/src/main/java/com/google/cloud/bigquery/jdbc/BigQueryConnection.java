@@ -313,8 +313,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.universeDomain = ds.getUniverseDomain();
 
       this.overrideProperties = ds.getOverrideProperties();
-      // Only record an explicit URL/DataSource universeDomain in overrideProperties so JSON
-      // credentials keep their own parsed universe_domain unless explicitly overridden.
+      // Only record an explicit URL/DataSource universeDomain in overrideProperties for non-JSON
+      // credentials; JSON credentials always keep their own parsed universe_domain.
       String explicitUniverseDomain = ds.getExplicitUniverseDomain();
       if (explicitUniverseDomain != null) {
         this.overrideProperties.put(
@@ -1347,7 +1347,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               this.gcpTelemetryCredentials,
               effectiveProjectId,
               this.credentials,
-              this.headerProvider);
+              this.headerProvider,
+              this.universeDomain);
     }
 
     if (this.enableGcpLogExporter || hasExternalOtel) {

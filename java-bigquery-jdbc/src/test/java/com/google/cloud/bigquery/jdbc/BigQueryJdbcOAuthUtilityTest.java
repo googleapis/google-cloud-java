@@ -574,7 +574,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
-  public void testServiceAccountJsonPreservesUniverseDomainUnlessExplicitlyOverridden()
+  public void testServiceAccountJsonNeverOverriddenByEnvOrExplicitUniverseDomain()
       throws Exception {
     JsonObject saJson = new JsonObject();
     saJson.addProperty("type", "service_account");
@@ -608,21 +608,21 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         assertEquals("custom-universe.example.com", preserved.getUniverseDomain());
       }
 
-      // 2. Explicit universeDomain in overrideProperties DOES override JSON credential.
+      // 2. Explicit universeDomain in overrideProperties also does NOT override JSON credential.
       Map<String, String> explicitOverrides =
           Collections.singletonMap(
               BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME,
               "explicit-universe.example.com");
       GoogleCredentials overridden =
           BigQueryJdbcOAuthUtility.getCredentials(authProps, explicitOverrides, false, null, null);
-      assertEquals("explicit-universe.example.com", overridden.getUniverseDomain());
+      assertEquals("custom-universe.example.com", overridden.getUniverseDomain());
     } finally {
       Files.deleteIfExists(tempKeyFile);
     }
   }
 
   @Test
-  public void testNonJsonCredentialsUseEnvUniverseDomainFallback() throws Exception {
+  public void testNonJsonCredentialsIgnoreEnvUniverseDomainAndUseExplicitOnly() throws Exception {
     try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
         mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
       urlUtil
@@ -636,7 +636,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
       GoogleCredentials saCreds =
           BigQueryJdbcOAuthUtility.getCredentials(
               saProps, Collections.emptyMap(), false, null, null);
-      assertEquals("custom-universe.example.com", saCreds.getUniverseDomain());
+      assertEquals("googleapis.com", saCreds.getUniverseDomain());
 
       // Pre-generated Access Token
       Map<String, String> accessProps =
@@ -645,7 +645,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
       GoogleCredentials accessCreds =
           BigQueryJdbcOAuthUtility.getCredentials(
               accessProps, Collections.emptyMap(), false, null, null);
-      assertEquals("custom-universe.example.com", accessCreds.getUniverseDomain());
+      assertEquals("googleapis.com", accessCreds.getUniverseDomain());
 
       // Pre-generated Refresh Token
       Map<String, String> refreshProps =
@@ -658,7 +658,17 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
       GoogleCredentials refreshCreds =
           BigQueryJdbcOAuthUtility.getCredentials(
               refreshProps, Collections.emptyMap(), false, null, null);
-      assertEquals("custom-universe.example.com", refreshCreds.getUniverseDomain());
+      assertEquals("googleapis.com", refreshCreds.getUniverseDomain());
+
+      // Explicit overrideProperties applies to non-JSON credentials
+      Map<String, String> explicitOverrides =
+          Collections.singletonMap(
+              BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME,
+              "explicit-universe.example.com");
+      assertEquals(
+          "explicit-universe.example.com",
+          BigQueryJdbcOAuthUtility.getCredentials(saProps, explicitOverrides, false, null, null)
+              .getUniverseDomain());
     }
   }
 
@@ -686,8 +696,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         ((ExternalAccountCredentials) explicitByoidCreds).getTokenUrl());
     assertEquals("custom-universe.example.com", explicitByoidCreds.getUniverseDomain());
 
-    // 2. GOOGLE_CLOUD_UNIVERSE_DOMAIN env var fallback with universeDomain and BYOID_TokenUri
-    // omitted
+    // 2. GOOGLE_CLOUD_UNIVERSE_DOMAIN env var does NOT affect synthesized BYOID credentials when
+    // universeDomain and BYOID_TokenUri are omitted
     try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
         mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
       urlUtil
@@ -700,9 +710,9 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
           BigQueryJdbcOAuthUtility.getCredentials(
               envAuthProps, Collections.emptyMap(), false, null, null);
       assertEquals(
-          "https://sts.env-universe.example.com/v1/token",
+          "https://sts.googleapis.com/v1/token",
           ((ExternalAccountCredentials) envByoidCreds).getTokenUrl());
-      assertEquals("env-universe.example.com", envByoidCreds.getUniverseDomain());
+      assertEquals("googleapis.com", envByoidCreds.getUniverseDomain());
     }
 
     // 3. Explicit BYOID_TokenUri in URL overrides universeDomain derivation

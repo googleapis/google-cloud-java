@@ -177,7 +177,7 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `BYOID_PoolUserProject` | `null` | Google Cloud project number associated with the workforce pool. |
 | `BYOID_SA_Impersonation_Uri` | `null` | Service Account impersonation URL for Workload Identity Federation. |
 | `BYOID_SubjectTokenType` | `urn:ietf:params:oauth:tokentype:id_token` | Type of subject token provided (e.g., `urn:ietf:params:oauth:tokentype:jwt`). |
-| `BYOID_TokenUri` | `https://sts.<universeDomain>/v1/token` (`https://sts.googleapis.com/v1/token`) | Security Token Service (STS) token exchange endpoint URI. Derived from `universeDomain` or `GOOGLE_CLOUD_UNIVERSE_DOMAIN` when omitted. |
+| `BYOID_TokenUri` | `https://sts.<universeDomain>/v1/token` (`https://sts.googleapis.com/v1/token`) | Security Token Service (STS) token exchange endpoint URI. Derived from explicit `universeDomain` when omitted (defaults to `https://sts.googleapis.com/v1/token`). |
 
 ### Core Query & Catalog Properties
 
@@ -253,7 +253,7 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `ProxyPwd` | `null` | Password for proxy server authentication. |
 | `EndpointOverrides` | `null` | Semicolon or comma-separated list of custom service endpoint overrides. Supported keys: `BIGQUERY`, `READ_API`, `OAUTH2`, `STS`, `ACCOUNTS`. |
 | `PrivateServiceConnectUris` | `null` | Alias for `EndpointOverrides`. Accepts the same custom service endpoint override format and supported keys. |
-| `universeDomain` | `null` (falls back to `GOOGLE_CLOUD_UNIVERSE_DOMAIN`, then `googleapis.com`) | Domain name for Google Cloud Dedicated (GCD) or custom universe domain instances. |
+| `universeDomain` | `null` (falls back to `GOOGLE_CLOUD_UNIVERSE_DOMAIN`, then `googleapis.com`) | Domain name for Google Cloud Dedicated (GCD) or custom universe domain instances. Configures BigQuery, Storage Read/Write, and Cloud Logging client endpoints. Explicit `universeDomain` also applies to non-JSON credentials (PKCS#8/P12 keys, pre-generated tokens, and inline `BYOID_*` properties), while `GOOGLE_CLOUD_UNIVERSE_DOMAIN` applies to client endpoints only and JSON credentials always preserve their own `universe_domain`. |
 | `SSLTrustStore` | `null` | Path to custom Java TrustStore file containing trusted server certificates for SSL. |
 | `SSLTrustStorePwd` | `null` | Password for accessing the custom Java TrustStore file. |
 | `SSLTrustStoreType` | *System Default* (`JKS`/`PKCS12`) | Type of the custom Java TrustStore file. |

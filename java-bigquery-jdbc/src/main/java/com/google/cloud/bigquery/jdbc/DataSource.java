@@ -1534,12 +1534,12 @@ public class DataSource implements javax.sql.DataSource {
 
   /**
    * Returns the explicit BYOID token URI if configured; otherwise derives {@code
-   * https://sts.<universeDomain>/v1/token} from the resolved universe domain.
+   * https://sts.<universeDomain>/v1/token} from the explicit universe domain.
    */
   public String getByoidTokenUri() {
     return byoidTokenUri != null
         ? byoidTokenUri
-        : BigQueryJdbcUrlUtility.formatByoidTokenUri(getUniverseDomain());
+        : BigQueryJdbcUrlUtility.formatByoidTokenUri(getExplicitUniverseDomain());
   }
 
   public void setByoidTokenUri(String byoidTokenUri) {
