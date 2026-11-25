@@ -30,6 +30,10 @@ import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.Bu
 import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.ExecutorSupplier;
 import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.PartNamingStrategy;
 import com.google.storage.v2.StorageSettings;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -158,6 +162,103 @@ public final class StorageOptionsBuilderTest {
 
     assertThat(httpOptions.getUseJwtAccessWithScope()).isFalse();
     assertThat(grpcOptions.getUseJwtAccessWithScope()).isFalse();
+  }
+
+  @Test
+  public void grpcExplicitHostPreservedWhenUniverseDomainSet() throws Exception {
+    String customHost = "http://localhost:9000";
+    String universeDomain = "s3nsapis.fr";
+
+    GrpcStorageOptions hostFirst =
+        GrpcStorageOptions.newBuilder()
+            .setHost(customHost)
+            .setUniverseDomain(universeDomain)
+            .build();
+    GrpcStorageOptions universeFirst =
+        GrpcStorageOptions.newBuilder()
+            .setUniverseDomain(universeDomain)
+            .setHost(customHost)
+            .build();
+    GrpcStorageOptions viaToBuilder =
+        GrpcStorageOptions.newBuilder().setHost(customHost).build().toBuilder()
+            .setUniverseDomain(universeDomain)
+            .build();
+
+    assertAll(
+        () -> assertThat(hostFirst.getHost()).isEqualTo(customHost),
+        () -> assertThat(hostFirst.getUniverseDomain()).isEqualTo(universeDomain),
+        () -> assertThat(universeFirst.getHost()).isEqualTo(customHost),
+        () -> assertThat(universeFirst.getUniverseDomain()).isEqualTo(universeDomain),
+        () -> assertThat(viaToBuilder.getHost()).isEqualTo(customHost),
+        () -> assertThat(viaToBuilder.getUniverseDomain()).isEqualTo(universeDomain));
+  }
+
+  @Test
+  public void grpcDefaultHostResolvedFromUniverseDomainAndChainedToBuilder() throws Exception {
+    GrpcStorageOptions first =
+        GrpcStorageOptions.getDefaultInstance().toBuilder()
+            .setUniverseDomain("s3nsapis.fr")
+            .build();
+    GrpcStorageOptions second = first.toBuilder().setUniverseDomain("domain2.com").build();
+
+    assertAll(
+        () -> assertThat(first.getHost()).isEqualTo("https://storage.s3nsapis.fr"),
+        () -> assertThat(second.getHost()).isEqualTo("https://storage.domain2.com"));
+  }
+
+  @Test
+  public void grpcResetHostToNullResolvesFromUniverseDomainOrDefault() throws Exception {
+    GrpcStorageOptions withUniverse =
+        GrpcStorageOptions.newBuilder().setHost("http://localhost:9000").build().toBuilder()
+            .setHost(null)
+            .setUniverseDomain("s3nsapis.fr")
+            .build();
+    GrpcStorageOptions withDefault =
+        GrpcStorageOptions.newBuilder().setHost("http://localhost:9000").build().toBuilder()
+            .setHost(null)
+            .build();
+
+    assertAll(
+        () -> assertThat(withUniverse.getHost()).isEqualTo("https://storage.s3nsapis.fr"),
+        () -> assertThat(withDefault.getHost()).isEqualTo("https://storage.googleapis.com"));
+  }
+
+  @Test
+  public void grpcSerializationRoundTripPreservesCustomHostFlag() throws Exception {
+    GrpcStorageOptions customHostOptions =
+        GrpcStorageOptions.newBuilder().setHost("http://localhost:9000").build();
+    GrpcStorageOptions defaultOptions = GrpcStorageOptions.getDefaultInstance();
+
+    GrpcStorageOptions deserializedCustom = roundTripSerialize(customHostOptions);
+    GrpcStorageOptions deserializedDefault = roundTripSerialize(defaultOptions);
+
+    assertAll(
+        () ->
+            assertThat(
+                    deserializedCustom.toBuilder()
+                        .setUniverseDomain("s3nsapis.fr")
+                        .build()
+                        .getHost())
+                .isEqualTo("http://localhost:9000"),
+        () ->
+            assertThat(
+                    deserializedDefault.toBuilder()
+                        .setUniverseDomain("s3nsapis.fr")
+                        .build()
+                        .getHost())
+                .isEqualTo("https://storage.s3nsapis.fr"));
+  }
+
+  private static GrpcStorageOptions roundTripSerialize(GrpcStorageOptions options)
+      throws Exception {
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(options);
+    }
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      return (GrpcStorageOptions) ois.readObject();
+    }
   }
 
   private static class MyStorageRetryStrategy implements StorageRetryStrategy {

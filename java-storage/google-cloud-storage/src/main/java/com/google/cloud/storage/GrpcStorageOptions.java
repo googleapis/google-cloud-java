@@ -150,6 +150,7 @@ public final class GrpcStorageOptions extends StorageOptions
   private final boolean grpcClientMetricsManuallyEnabled;
   private final GrpcInterceptorProvider grpcInterceptorProvider;
   private final BlobWriteSessionConfig blobWriteSessionConfig;
+  private final boolean customHostConfigured;
   private transient OpenTelemetry openTelemetry;
 
   private GrpcStorageOptions(Builder builder, GrpcStorageDefaults serviceDefaults) {
@@ -168,7 +169,13 @@ public final class GrpcStorageOptions extends StorageOptions
     this.grpcClientMetricsManuallyEnabled = builder.grpcMetricsManuallyEnabled;
     this.grpcInterceptorProvider = builder.grpcInterceptorProvider;
     this.blobWriteSessionConfig = builder.blobWriteSessionConfig;
+    this.customHostConfigured = builder.customHostConfigured;
     this.openTelemetry = builder.openTelemetry;
+  }
+
+  @Override
+  protected String getDefaultHost() {
+    return DEFAULT_HOST;
   }
 
   @Override
@@ -473,7 +480,7 @@ public final class GrpcStorageOptions extends StorageOptions
    * @since 2.14.0
    */
   public static GrpcStorageOptions.Builder newBuilder() {
-    return new GrpcStorageOptions.Builder().setHost(DEFAULT_HOST);
+    return new GrpcStorageOptions.Builder();
   }
 
   /**
@@ -519,6 +526,7 @@ public final class GrpcStorageOptions extends StorageOptions
     private OpenTelemetry openTelemetry = GrpcStorageDefaults.INSTANCE.getDefaultOpenTelemetry();
 
     private boolean grpcMetricsManuallyEnabled = false;
+    private boolean customHostConfigured = false;
 
     Builder() {}
 
@@ -532,6 +540,7 @@ public final class GrpcStorageOptions extends StorageOptions
       this.enableGrpcClientMetrics = gso.enableGrpcClientMetrics;
       this.grpcInterceptorProvider = gso.grpcInterceptorProvider;
       this.blobWriteSessionConfig = gso.blobWriteSessionConfig;
+      this.customHostConfigured = gso.customHostConfigured;
       this.openTelemetry = gso.openTelemetry;
     }
 
@@ -676,6 +685,7 @@ public final class GrpcStorageOptions extends StorageOptions
     @Override
     public GrpcStorageOptions.Builder setHost(String host) {
       super.setHost(host);
+      this.customHostConfigured = host != null;
       return this;
     }
 
@@ -854,8 +864,12 @@ public final class GrpcStorageOptions extends StorageOptions
     public GrpcStorageOptions build() {
       GrpcStorageOptions options = new GrpcStorageOptions(this, defaults());
       // TODO: Remove when https://github.com/googleapis/sdk-platform-java/issues/2911 is resolved
-      if (options.getUniverseDomain() != null) {
-        this.setHost("https://storage." + options.getUniverseDomain());
+      if (!this.customHostConfigured) {
+        if (options.getUniverseDomain() != null) {
+          super.setHost("https://storage." + options.getUniverseDomain());
+        } else {
+          super.setHost(DEFAULT_HOST);
+        }
         return new GrpcStorageOptions(this, defaults());
       }
       return options;
