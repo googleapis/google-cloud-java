@@ -865,12 +865,14 @@ public final class GrpcStorageOptions extends StorageOptions
       GrpcStorageOptions options = new GrpcStorageOptions(this, defaults());
       // TODO: Remove when https://github.com/googleapis/sdk-platform-java/issues/2911 is resolved
       if (!this.customHostConfigured) {
-        if (options.getUniverseDomain() != null) {
-          super.setHost("https://storage." + options.getUniverseDomain());
-        } else {
-          super.setHost(DEFAULT_HOST);
+        String resolvedHost =
+            options.getUniverseDomain() != null
+                ? "https://storage." + options.getUniverseDomain()
+                : DEFAULT_HOST;
+        if (!resolvedHost.equals(options.getHost())) {
+          super.setHost(resolvedHost);
+          return new GrpcStorageOptions(this, defaults());
         }
-        return new GrpcStorageOptions(this, defaults());
       }
       return options;
     }
