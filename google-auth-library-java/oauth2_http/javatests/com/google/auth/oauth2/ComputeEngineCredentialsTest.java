@@ -71,10 +71,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.KeyStore;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -1357,6 +1362,134 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8)
             .trim();
     assertEquals(expectedCert, ((String) bodyJson.get("certificate_chain")).trim());
+  }
+
+  @Test
+  void refreshAccessToken_withValidCertAndKey_returnsTokenWithBoundCertificateAndKey()
+      throws Exception {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    AccessToken token = credentials.refreshAccessToken();
+
+    assertTrue(token instanceof BoundAccessToken);
+    AgentIdentityUtils.CertInfo certInfo = ((BoundAccessToken) token).getCertInfo();
+    X509Certificate expectedLeaf;
+    try (InputStream in = Files.newInputStream(tempDir.resolve("certificates.pem"))) {
+      expectedLeaf =
+          (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(in);
+    }
+    assertEquals(expectedLeaf, certInfo.getCertificate());
+    KeyStore keyStore = certInfo.getKeyStore();
+    assertNotNull(keyStore);
+    String alias = keyStore.aliases().nextElement();
+    assertTrue(keyStore.isKeyEntry(alias));
+    // MtlsHttpTransportFactory unlocks the key with an empty password.
+    assertNotNull(keyStore.getKey(alias, new char[0]));
+    assertEquals(expectedLeaf, keyStore.getCertificateChain(alias)[0]);
+  }
+
+  @Test
+  void refreshAccessToken_extraCertificatesInChain_retainsValidAndSkipsUnparsableAndDuplicates()
+      throws Exception {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    Path certPath = tempDir.resolve("certificates.pem");
+    CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+    X509Certificate expectedLeaf;
+    try (InputStream in = Files.newInputStream(certPath)) {
+      expectedLeaf = (X509Certificate) certificateFactory.generateCertificate(in);
+    }
+    Path extraCertPath =
+        Paths.get(
+            ComputeEngineCredentialsTest.class
+                .getResource("/x509_intermediate_certificate.pem")
+                .toURI());
+    X509Certificate expectedExtra;
+    try (InputStream in = Files.newInputStream(extraCertPath)) {
+      expectedExtra = (X509Certificate) certificateFactory.generateCertificate(in);
+    }
+    String leafPem = new String(Files.readAllBytes(certPath), StandardCharsets.UTF_8).trim();
+    String extraPem = new String(Files.readAllBytes(extraCertPath), StandardCharsets.UTF_8).trim();
+    String chainPem =
+        leafPem
+            + "\n"
+            + leafPem
+            + "\n-----BEGIN CERTIFICATE----------END CERTIFICATE-----\n"
+            + extraPem
+            + "\n-----BEGIN CERTIFICATE-----\nbm90IGEgY2VydGlmaWNhdGU=\n-----END CERTIFICATE-----\n";
+    Files.write(certPath, chainPem.getBytes(StandardCharsets.UTF_8));
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    AccessToken token = credentials.refreshAccessToken();
+
+    assertTrue(token instanceof BoundAccessToken);
+    KeyStore keyStore = ((BoundAccessToken) token).getCertInfo().getKeyStore();
+    assertNotNull(keyStore);
+    String alias = keyStore.aliases().nextElement();
+    Certificate[] chain = keyStore.getCertificateChain(alias);
+    assertEquals(2, chain.length);
+    assertEquals(expectedLeaf, chain[0]);
+    assertEquals(expectedExtra, chain[1]);
+  }
+
+  @Test
+  void refreshAccessToken_boundTokensOptedOut_returnsPlainAccessToken() throws IOException {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    AccessToken token = credentials.refreshAccessToken();
+
+    assertFalse(token instanceof BoundAccessToken);
+    assertEquals("GET", transportFactory.transport.getRequestMethod());
+  }
+
+  @Test
+  void boundAccessToken_serializesAsPlainAccessToken() throws Exception {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    AccessToken token = credentials.refreshAccessToken();
+    assertTrue(token instanceof BoundAccessToken);
+
+    AccessToken deserialized = serializeAndDeserialize(token);
+
+    assertEquals(AccessToken.class, deserialized.getClass());
+    assertEquals(token.getTokenValue(), deserialized.getTokenValue());
+    // Serialized as expired, so deserialized credentials mint a new bound token on first use.
+    assertEquals(new Date(0), deserialized.getExpirationTime());
+  }
+
+  @Test
+  void deserializedCredentialsWithBoundToken_mintNewBoundTokenOnFirstUse() throws Exception {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.refresh();
+    assertTrue(credentials.getAccessToken() instanceof BoundAccessToken);
+
+    ComputeEngineCredentials deserialized = serializeAndDeserialize(credentials);
+    assertFalse(deserialized.getAccessToken() instanceof BoundAccessToken);
+
+    deserialized.getRequestMetadata(CALL_URI);
+
+    assertTrue(deserialized.getAccessToken() instanceof BoundAccessToken);
   }
 
   @Test
