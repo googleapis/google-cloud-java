@@ -46,6 +46,12 @@ import org.jspecify.annotations.Nullable;
  * A refreshable alternative to {@link OAuth2Credentials}.
  *
  * <p>To enable automatic token refreshes, you must provide an {@link OAuth2RefreshHandler}.
+ *
+ * <p>Because {@link OAuth2RefreshHandler} returns {@link AccessToken} values without universe
+ * domain metadata, credentials default to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}. Callers
+ * refreshing tokens for a custom universe domain should configure it explicitly via {@link
+ * Builder#setUniverseDomain(String)}. If lazy or delegated universe domain resolution is needed,
+ * subclass this class and override {@link #getUniverseDomain()}.
  */
 @NullMarked
 public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
@@ -105,9 +111,13 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
   /**
    * Returns the universe domain for this credential.
    *
+   * <p>Returns the fixed universe domain configured via {@link Builder#setUniverseDomain(String)},
+   * or {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} if none was configured. Subclasses may override
+   * this method if lazy or delegated resolution is required.
+   *
    * @return the configured universe domain, or {@link Credentials#GOOGLE_DEFAULT_UNIVERSE} if none
    *     was explicitly configured
-   * @throws IOException if retrieving the universe domain fails
+   * @throws IOException if a subclass fails while resolving the universe domain
    */
   @Override
   public String getUniverseDomain() throws IOException {
@@ -168,8 +178,12 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
     }
 
     /**
-     * Sets the universe domain for the credential. If null or blank, defaults to {@link
+     * Sets the fixed universe domain for this credential. If null or blank, defaults to {@link
      * Credentials#GOOGLE_DEFAULT_UNIVERSE}.
+     *
+     * <p>Because {@link OAuth2RefreshHandler} returns {@link AccessToken} values without universe
+     * domain metadata, callers refreshing tokens for a custom universe domain must set this
+     * explicitly.
      *
      * @param universeDomain the universe domain (for example, {@code googleapis.com})
      * @return this builder
