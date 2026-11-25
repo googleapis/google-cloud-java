@@ -32,10 +32,11 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateLogicalViewRequest;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
+import com.google.common.truth.Correspondence;
 import io.grpc.StatusRuntimeException;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -55,6 +56,26 @@ public class BigtableLogicalViewIT {
   // sleeping for minutes past that point.
   private static final long DELETE_POLL_INTERVAL_SECONDS = 2;
   private static final int DELETE_POLL_ATTEMPTS = 60;
+  private static final Correspondence<LogicalView, LogicalView> LOGICAL_VIEW_CORRESPONDENCE =
+      Correspondence.from(
+              (LogicalView actual, LogicalView expected) ->
+                  actual != null
+                      && expected != null
+                      && Objects.equals(actual.getId(), expected.getId())
+                      && actual.isDeletionProtected() == expected.isDeletionProtected()
+                      && Objects.equals(actual.getQuery(), expected.getQuery()),
+              "has same id, deletionProtection, and query as")
+          .formattingDiffsUsing(
+              (actual, expected) ->
+                  String.format(
+                      "actual={id=%s, deletionProtected=%s, query=%s},"
+                          + " expected={id=%s, deletionProtected=%s, query=%s}",
+                      actual == null ? null : actual.getId(),
+                      actual == null ? null : actual.isDeletionProtected(),
+                      actual == null ? null : actual.getQuery(),
+                      expected == null ? null : expected.getId(),
+                      expected == null ? null : expected.isDeletionProtected(),
+                      expected == null ? null : expected.getQuery()));
 
   private static BigtableInstanceAdminClient client;
   private static Table testTable;
@@ -124,25 +145,13 @@ public class BigtableLogicalViewIT {
     String logicalViewId = prefixGenerator.newPrefix();
 
     try {
-      LogicalView created = client.createLogicalView(createLogicalViewRequest(logicalViewId));
+      LogicalView logicalView = client.createLogicalView(createLogicalViewRequest(logicalViewId));
 
       List<LogicalView> response = client.listLogicalViews(instanceId);
-      LogicalView listed =
-          response.stream()
-              .filter(view -> view.getId().equals(created.getId()))
-              .findFirst()
-              .orElse(null);
-      assertWithMessage(
-              "Got wrong logical view Ids in listLogicalViews: %s",
-              response.stream().map(LogicalView::getId).collect(Collectors.toList()))
-          .that(listed)
-          .isNotNull();
-      assertWithMessage("Got wrong deletion protection in listLogicalViews")
-          .that(listed.isDeletionProtected())
-          .isEqualTo(created.isDeletionProtected());
-      assertWithMessage("Got wrong query in listLogicalViews")
-          .that(listed.getQuery())
-          .isEqualTo(created.getQuery());
+      assertWithMessage("Got wrong logical view Ids in listLogicalViews")
+          .that(response)
+          .comparingElementsUsing(LOGICAL_VIEW_CORRESPONDENCE)
+          .contains(logicalView);
     } finally {
       client.deleteLogicalView(instanceId, logicalViewId);
     }

@@ -32,11 +32,12 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateMaterializedViewRequest;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
+import com.google.common.truth.Correspondence;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -57,6 +58,27 @@ public class BigtableMaterializedViewIT {
   // sleeping for minutes past that point.
   private static final long DELETE_POLL_INTERVAL_SECONDS = 2;
   private static final int DELETE_POLL_ATTEMPTS = 60;
+  private static final Correspondence<MaterializedView, MaterializedView>
+      MATERIALIZED_VIEW_CORRESPONDENCE =
+          Correspondence.from(
+                  (MaterializedView actual, MaterializedView expected) ->
+                      actual != null
+                          && expected != null
+                          && Objects.equals(actual.getId(), expected.getId())
+                          && actual.isDeletionProtected() == expected.isDeletionProtected()
+                          && Objects.equals(actual.getQuery(), expected.getQuery()),
+                  "has same id, deletionProtection, and query as")
+              .formattingDiffsUsing(
+                  (actual, expected) ->
+                      String.format(
+                          "actual={id=%s, deletionProtected=%s, query=%s},"
+                              + " expected={id=%s, deletionProtected=%s, query=%s}",
+                          actual == null ? null : actual.getId(),
+                          actual == null ? null : actual.isDeletionProtected(),
+                          actual == null ? null : actual.getQuery(),
+                          expected == null ? null : expected.getId(),
+                          expected == null ? null : expected.isDeletionProtected(),
+                          expected == null ? null : expected.getQuery()));
 
   private BigtableInstanceAdminClient client;
   private Table testTable;
@@ -125,26 +147,14 @@ public class BigtableMaterializedViewIT {
     String materializedViewId = prefixGenerator.newPrefix();
 
     try {
-      MaterializedView created =
+      MaterializedView materializedView =
           client.createMaterializedView(createMaterializedViewRequest(materializedViewId));
 
       List<MaterializedView> response = client.listMaterializedViews(instanceId);
-      MaterializedView listed =
-          response.stream()
-              .filter(view -> view.getId().equals(created.getId()))
-              .findFirst()
-              .orElse(null);
-      assertWithMessage(
-              "Got wrong materialized view Ids in listMaterializedViews: %s",
-              response.stream().map(MaterializedView::getId).collect(Collectors.toList()))
-          .that(listed)
-          .isNotNull();
-      assertWithMessage("Got wrong deletion protection in listMaterializedViews")
-          .that(listed.isDeletionProtected())
-          .isEqualTo(created.isDeletionProtected());
-      assertWithMessage("Got wrong query in listMaterializedViews")
-          .that(listed.getQuery())
-          .isEqualTo(created.getQuery());
+      assertWithMessage("Got wrong materialized view Ids in listMaterializedViews")
+          .that(response)
+          .comparingElementsUsing(MATERIALIZED_VIEW_CORRESPONDENCE)
+          .contains(materializedView);
     } finally {
       client.deleteMaterializedView(instanceId, materializedViewId);
     }
