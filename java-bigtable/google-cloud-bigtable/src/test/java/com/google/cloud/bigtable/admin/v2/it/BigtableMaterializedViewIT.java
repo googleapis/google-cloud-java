@@ -61,24 +61,13 @@ public class BigtableMaterializedViewIT {
   private static final Correspondence<MaterializedView, MaterializedView>
       MATERIALIZED_VIEW_CORRESPONDENCE =
           Correspondence.from(
-                  (MaterializedView actual, MaterializedView expected) ->
-                      actual != null
-                          && expected != null
-                          && Objects.equals(actual.getId(), expected.getId())
-                          && actual.isDeletionProtected() == expected.isDeletionProtected()
-                          && Objects.equals(actual.getQuery(), expected.getQuery()),
-                  "has same id, deletionProtection, and query as")
-              .formattingDiffsUsing(
-                  (actual, expected) ->
-                      String.format(
-                          "actual={id=%s, deletionProtected=%s, query=%s},"
-                              + " expected={id=%s, deletionProtected=%s, query=%s}",
-                          actual == null ? null : actual.getId(),
-                          actual == null ? null : actual.isDeletionProtected(),
-                          actual == null ? null : actual.getQuery(),
-                          expected == null ? null : expected.getId(),
-                          expected == null ? null : expected.isDeletionProtected(),
-                          expected == null ? null : expected.getQuery()));
+              (MaterializedView actual, MaterializedView expected) ->
+                  actual != null
+                      && expected != null
+                      && Objects.equals(actual.getId(), expected.getId())
+                      && actual.isDeletionProtected() == expected.isDeletionProtected()
+                      && Objects.equals(actual.getQuery(), expected.getQuery()),
+              "has same id, deletionProtection, and query as");
 
   private BigtableInstanceAdminClient client;
   private Table testTable;

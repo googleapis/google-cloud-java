@@ -58,24 +58,13 @@ public class BigtableLogicalViewIT {
   private static final int DELETE_POLL_ATTEMPTS = 60;
   private static final Correspondence<LogicalView, LogicalView> LOGICAL_VIEW_CORRESPONDENCE =
       Correspondence.from(
-              (LogicalView actual, LogicalView expected) ->
-                  actual != null
-                      && expected != null
-                      && Objects.equals(actual.getId(), expected.getId())
-                      && actual.isDeletionProtected() == expected.isDeletionProtected()
-                      && Objects.equals(actual.getQuery(), expected.getQuery()),
-              "has same id, deletionProtection, and query as")
-          .formattingDiffsUsing(
-              (actual, expected) ->
-                  String.format(
-                      "actual={id=%s, deletionProtected=%s, query=%s},"
-                          + " expected={id=%s, deletionProtected=%s, query=%s}",
-                      actual == null ? null : actual.getId(),
-                      actual == null ? null : actual.isDeletionProtected(),
-                      actual == null ? null : actual.getQuery(),
-                      expected == null ? null : expected.getId(),
-                      expected == null ? null : expected.isDeletionProtected(),
-                      expected == null ? null : expected.getQuery()));
+          (LogicalView actual, LogicalView expected) ->
+              actual != null
+                  && expected != null
+                  && Objects.equals(actual.getId(), expected.getId())
+                  && actual.isDeletionProtected() == expected.isDeletionProtected()
+                  && Objects.equals(actual.getQuery(), expected.getQuery()),
+          "has same id, deletionProtection, and query as");
 
   private static BigtableInstanceAdminClient client;
   private static Table testTable;
