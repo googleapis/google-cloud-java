@@ -29,10 +29,6 @@ import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
-import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.CreateMaterializedViewRequest;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
@@ -46,7 +42,6 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
-import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -203,46 +198,28 @@ public class ReadIT {
         .isNotInstanceOf(EmulatorEnv.class);
 
     BigtableDataClient dataClient = testEnvRule.env().getDataClient();
-    BigtableTableAdminClient tableAdmin = testEnvRule.env().getTableAdminClient();
-    BigtableInstanceAdminClient instanceAdmin = testEnvRule.env().getInstanceAdminClient();
-    String instanceId = testEnvRule.env().getInstanceId();
-
-    String tableId = PrefixGenerator.newPrefix("ReadIT#readFromMaterializedView");
-    String materializedViewId = PrefixGenerator.newPrefix("ReadIT#readFromMaterializedView");
+    TableId tableId = testEnvRule.env().getTableId();
+    String familyId = testEnvRule.env().getFamilyId();
+    MaterializedViewId materializedViewId = testEnvRule.env().getMaterializedViewId();
     String rowKey = prefix + "-readFromMaterializedView";
 
-    tableAdmin.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));
-    try {
-      dataClient.mutateRow(
-          RowMutation.create(TableId.of(tableId), rowKey).setCell("cf1", "column", "value"));
+    dataClient.mutateRow(RowMutation.create(tableId, rowKey).setCell(familyId, "column", "value"));
 
-      instanceAdmin.createMaterializedView(
-          CreateMaterializedViewRequest.of(instanceId, materializedViewId)
-              .setQuery(
-                  "SELECT _key, MAX(cf1['column']) as column FROM `" + tableId + "` GROUP BY _key")
-              .setDeletionProtection(false));
-      try {
-        Row row = null;
-        long[] backoffSeconds = {5, 10, 15, 30, 30, 30};
-        for (long backoff : backoffSeconds) {
-          List<Row> rows =
-              Lists.newArrayList(
-                  dataClient.readRows(Query.create(MaterializedViewId.of(materializedViewId))));
-          if (!rows.isEmpty()) {
-            row = rows.get(0);
-            break;
-          }
-          Thread.sleep(backoff * 1000);
-        }
-
-        assertThat(row).isNotNull();
-        assertThat(row.getKey()).isEqualTo(ByteString.copyFromUtf8(rowKey));
-      } finally {
-        instanceAdmin.deleteMaterializedView(instanceId, materializedViewId);
+    Row row = null;
+    long[] backoffSeconds = {1, 2, 5, 10, 15, 30, 30};
+    for (long backoff : backoffSeconds) {
+      List<Row> rows =
+          Lists.newArrayList(dataClient.readRows(Query.create(materializedViewId).rowKey(rowKey)));
+      if (!rows.isEmpty()) {
+        row = rows.get(0);
+        break;
       }
-    } finally {
-      tableAdmin.deleteTable(tableId);
+      Thread.sleep(backoff * 1000);
     }
+
+    assertThat(row).isNotNull();
+    assertThat(row.getKey()).isEqualTo(ByteString.copyFromUtf8(rowKey));
+    assertThat(row.getCells().get(0).getValue()).isEqualTo(ByteString.copyFromUtf8("value"));
   }
 
   @Test

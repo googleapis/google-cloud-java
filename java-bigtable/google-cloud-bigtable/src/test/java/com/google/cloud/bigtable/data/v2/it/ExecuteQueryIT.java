@@ -19,12 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.assertThrows;
 
-import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.Date;
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.CreateSchemaBundleRequest;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement;
@@ -34,23 +29,16 @@ import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.Struct;
 import com.google.cloud.bigtable.data.v2.test.AlbumProto.Album;
 import com.google.cloud.bigtable.data.v2.test.SingerProto.Genre;
-import com.google.cloud.bigtable.data.v2.test.SingerProto.Singer;
 import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
-import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.DescriptorProtos.FileDescriptorSet;
-import java.io.IOException;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -62,16 +50,15 @@ public class ExecuteQueryIT {
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
   private static BigtableDataClient dataClient;
-  private static BigtableTableAdminClient adminClient;
   private static String tableId;
-  private static Table table;
   private static String schemaBundleId;
   private static String cf;
   private static String uniquePrefix;
-  private static final Logger logger = Logger.getLogger(ExecuteQueryIT.class.getName());
+  private static long oldTimestampMillis;
+  private static long newTimestampMillis;
 
   @BeforeClass
-  public static void setUpAll() throws IOException {
+  public static void setUpAll() {
     assume()
         .withMessage("ExecuteQuery is not supported on Emulator")
         .that(testEnvRule.env())
@@ -83,46 +70,58 @@ public class ExecuteQueryIT {
             AbstractTestEnv.ConnectionMode.REQUIRE_DIRECT_PATH,
             AbstractTestEnv.ConnectionMode.REQUIRE_DIRECT_PATH_IPV4);
 
-    tableId = PrefixGenerator.newPrefix("ExecuteQueryIT");
+    tableId = testEnvRule.env().getTableId().getTableId();
     dataClient = testEnvRule.env().getDataClient();
-    adminClient = testEnvRule.env().getTableAdminClient();
-    cf = testEnvRule.env().getFamilyId();
+    cf = testEnvRule.env().getHistoryFamilyId();
     uniquePrefix = UUID.randomUUID() + "-execute-query-it-";
-    schemaBundleId = PrefixGenerator.newPrefix("ExecuteQueryIT#bundle");
-
-    table = adminClient.createTable(CreateTableRequest.of(tableId).addFamily(cf));
-    FileDescriptorSet fileDescriptorSet =
-        FileDescriptorSet.newBuilder()
-            .addFile(Singer.getDescriptor().getFile().toProto())
-            .addFile(Album.getDescriptor().getFile().toProto())
-            .build();
-    adminClient.createSchemaBundle(
-        CreateSchemaBundleRequest.of(tableId, schemaBundleId)
-            .setProtoSchema(fileDescriptorSet.toByteString()));
+    schemaBundleId = testEnvRule.env().getSchemaBundleId();
+    newTimestampMillis = System.currentTimeMillis();
+    oldTimestampMillis = newTimestampMillis - 1_000;
+    long oldTimestampMicros = oldTimestampMillis * 1_000;
+    long newTimestampMicros = newTimestampMillis * 1_000;
 
     dataClient.mutateRow(
         RowMutation.create(tableId, uniquePrefix + "a")
-            .setCell(cf, ByteString.copyFromUtf8("qual"), 1000, ByteString.copyFromUtf8("old"))
-            .setCell(cf, ByteString.copyFromUtf8("qual2"), 1000, ByteString.copyFromUtf8("old2")));
+            .setCell(
+                cf,
+                ByteString.copyFromUtf8("qual"),
+                oldTimestampMicros,
+                ByteString.copyFromUtf8("old"))
+            .setCell(
+                cf,
+                ByteString.copyFromUtf8("qual2"),
+                oldTimestampMicros,
+                ByteString.copyFromUtf8("old2")));
     // Overwrite the previous values. Used for testing with_history
     dataClient.mutateRow(
         RowMutation.create(tableId, uniquePrefix + "a")
-            .setCell(cf, ByteString.copyFromUtf8("qual"), 10000, ByteString.copyFromUtf8("val"))
-            .setCell(cf, ByteString.copyFromUtf8("qual2"), 10000, ByteString.copyFromUtf8("val2"))
-            .setCell(cf, ByteString.copyFromUtf8("qual3"), 10000, ByteString.copyFromUtf8("val3")));
+            .setCell(
+                cf,
+                ByteString.copyFromUtf8("qual"),
+                newTimestampMicros,
+                ByteString.copyFromUtf8("val"))
+            .setCell(
+                cf,
+                ByteString.copyFromUtf8("qual2"),
+                newTimestampMicros,
+                ByteString.copyFromUtf8("val2"))
+            .setCell(
+                cf,
+                ByteString.copyFromUtf8("qual3"),
+                newTimestampMicros,
+                ByteString.copyFromUtf8("val3")));
     dataClient.mutateRow(
         RowMutation.create(tableId, uniquePrefix + "b")
-            .setCell(cf, ByteString.copyFromUtf8("qual"), 10000, ByteString.copyFromUtf8("bval"))
             .setCell(
-                cf, ByteString.copyFromUtf8("qual2"), 10000, ByteString.copyFromUtf8("bval2")));
-  }
-
-  @AfterClass
-  public static void tearDownAll() {
-    if (table != null) {
-      // Deleting the table will also clean up all the schema bundles under it.
-      adminClient.deleteTable(tableId);
-    }
+                cf,
+                ByteString.copyFromUtf8("qual"),
+                newTimestampMicros,
+                ByteString.copyFromUtf8("bval"))
+            .setCell(
+                cf,
+                ByteString.copyFromUtf8("qual2"),
+                newTimestampMicros,
+                ByteString.copyFromUtf8("bval2")));
   }
 
   @Test
@@ -170,11 +169,12 @@ public class ExecuteQueryIT {
       assertThat(rowAQual.size()).isEqualTo(2);
       Struct rowAQual_0 = rowAQual.get(0);
       assertThat(rowAQual_0.getBytes("value")).isEqualTo(ByteString.copyFromUtf8("val"));
-      // timestamp in micros above so we divide by 1000
-      assertThat(rowAQual_0.getTimestamp("timestamp")).isEqualTo(Instant.ofEpochMilli(10));
+      assertThat(rowAQual_0.getTimestamp("timestamp"))
+          .isEqualTo(Instant.ofEpochMilli(newTimestampMillis));
       Struct rowAQual_1 = rowAQual.get(1);
       assertThat(rowAQual_1.getBytes("value")).isEqualTo(ByteString.copyFromUtf8("old"));
-      assertThat(rowAQual_1.getTimestamp("timestamp")).isEqualTo(Instant.ofEpochMilli(1));
+      assertThat(rowAQual_1.getTimestamp("timestamp"))
+          .isEqualTo(Instant.ofEpochMilli(oldTimestampMillis));
 
       assertThat(rs.next()).isTrue();
       assertThat(rs.getBytes("_key")).isEqualTo(ByteString.copyFromUtf8(uniquePrefix + "b"));
@@ -190,45 +190,28 @@ public class ExecuteQueryIT {
 
   @SuppressWarnings("DoubleBraceInitialization")
   @Test
-  public void allTypes() throws Exception {
+  public void allTypes() {
     Album album = Album.newBuilder().setTitle("Lover").build();
 
-    // For some reason the ExecuteQuery data path sometimes cannot resolve a newly-created schema
-    // bundle immediately after its creation. To avoid test flakiness, we wrap query preparation
-    // with a retry loop.
-    PreparedStatement preparedStatement;
-    int retryCount = 0;
-    int maxRetries = 10;
-    while (true) {
-      try {
-        preparedStatement =
-            dataClient.prepareStatement(
-                "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS"
-                    + " FLOAT32) as f32Col, CAST(1.3 AS FLOAT64) as f64Col, true as boolCol,"
-                    + " TIMESTAMP_FROM_UNIX_MILLIS(1000) AS tsCol, DATE(2024, 06, 01) as dateCol,"
-                    + " STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, "
-                    + cf
-                    + " as mapCol, "
-                    + " CAST(b'\022\005Lover' AS `"
-                    + schemaBundleId
-                    + "`.com.google.cloud.bigtable.data.v2.test.Album) as protoCol, CAST('JAZZ' AS"
-                    + " `"
-                    + schemaBundleId
-                    + "`.com.google.cloud.bigtable.data.v2.test.Genre) as enumCol FROM `"
-                    + tableId
-                    + "` WHERE _key='"
-                    + uniquePrefix
-                    + "a' LIMIT 1",
-                new HashMap<>());
-        break;
-      } catch (InvalidArgumentException e) {
-        if (++retryCount == maxRetries) {
-          throw e;
-        }
-        logger.log(Level.INFO, "Retrying prepareStatement, retryCount: " + retryCount);
-        Thread.sleep(5000);
-      }
-    }
+    PreparedStatement preparedStatement =
+        dataClient.prepareStatement(
+            "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS"
+                + " FLOAT32) as f32Col, CAST(1.3 AS FLOAT64) as f64Col, true as boolCol,"
+                + " TIMESTAMP_FROM_UNIX_MILLIS(1000) AS tsCol, DATE(2024, 06, 01) as dateCol,"
+                + " STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, `"
+                + cf
+                + "` as mapCol, "
+                + " CAST(b'\022\005Lover' AS `"
+                + schemaBundleId
+                + "`.com.google.cloud.bigtable.data.v2.test.Album) as protoCol, CAST('JAZZ' AS"
+                + " `"
+                + schemaBundleId
+                + "`.com.google.cloud.bigtable.data.v2.test.Genre) as enumCol FROM `"
+                + tableId
+                + "` WHERE _key='"
+                + uniquePrefix
+                + "a' LIMIT 1",
+            new HashMap<>());
 
     BoundStatement statement = preparedStatement.bind().build();
     try (ResultSet rs = dataClient.executeQuery(statement)) {
@@ -422,7 +405,11 @@ public class ExecuteQueryIT {
   public void testNullColumns() {
     PreparedStatement preparedStatement =
         dataClient.prepareStatement(
-            "SELECT cf['qual'] AS neverNull, cf['qual3'] AS maybeNull FROM `"
+            "SELECT `"
+                + cf
+                + "`['qual'] AS neverNull, `"
+                + cf
+                + "`['qual3'] AS maybeNull FROM `"
                 + tableId
                 + "` WHERE _key LIKE '"
                 + uniquePrefix
