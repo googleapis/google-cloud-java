@@ -17,13 +17,11 @@ package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_COLUMN_QUALIFIER;
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_ROW_PREFIX;
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.createTestAuthorizedView;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.rpc.PermissionDeniedException;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -87,7 +85,7 @@ public class MutateRowIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
 
-    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+    AuthorizedViewId authorizedViewId = testEnvRule.env().getAuthorizedViewId();
 
     String rowKey = AUTHORIZED_VIEW_ROW_PREFIX + UUID.randomUUID();
     String familyId = testEnvRule.env().getFamilyId();
@@ -96,9 +94,7 @@ public class MutateRowIT {
         .env()
         .getDataClient()
         .mutateRowAsync(
-            RowMutation.create(
-                    AuthorizedViewId.of(testEnvRule.env().getTableId(), testAuthorizedView.getId()),
-                    rowKey)
+            RowMutation.create(authorizedViewId, rowKey)
                 .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER, "myVal")
                 .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER + "2", "myVal2")
                 .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER + "3", "myVal3")
@@ -109,9 +105,7 @@ public class MutateRowIT {
         .env()
         .getDataClient()
         .mutateRowAsync(
-            RowMutation.create(
-                    AuthorizedViewId.of(testEnvRule.env().getTableId(), testAuthorizedView.getId()),
-                    rowKey)
+            RowMutation.create(authorizedViewId, rowKey)
                 .deleteCells(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER + "2"))
         .get(1, TimeUnit.MINUTES);
 
@@ -136,21 +130,12 @@ public class MutateRowIT {
           .env()
           .getDataClient()
           .mutateRowAsync(
-              RowMutation.create(
-                      AuthorizedViewId.of(
-                          testEnvRule.env().getTableId(), testAuthorizedView.getId()),
-                      rowKeyOutsideAuthorizedView)
+              RowMutation.create(authorizedViewId, rowKeyOutsideAuthorizedView)
                   .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER, "myVal"))
           .get(1, TimeUnit.MINUTES);
       fail("Should not be able to mutate row outside authorized view");
     } catch (Exception e) {
       assertThat(e.getCause()).isInstanceOf(PermissionDeniedException.class);
     }
-
-    testEnvRule
-        .env()
-        .getTableAdminClient()
-        .deleteAuthorizedView(
-            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

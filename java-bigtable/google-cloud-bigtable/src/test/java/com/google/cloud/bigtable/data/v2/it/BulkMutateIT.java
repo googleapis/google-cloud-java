@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_COLUMN_QUALIFIER;
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_ROW_PREFIX;
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.createTestAuthorizedView;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
@@ -27,7 +26,6 @@ import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.BatcherImpl;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlEventStats;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
@@ -110,12 +108,10 @@ public class BulkMutateIT {
     BigtableDataSettings.Builder builder =
         settings.toBuilder().enableBatchMutationLatencyBasedThrottling(2L);
 
-    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+    AuthorizedViewId authorizedViewId = testEnvRule.env().getAuthorizedViewId();
 
     try (BigtableDataClient client = BigtableDataClient.create(builder.build());
-        Batcher<RowMutationEntry, Void> batcher =
-            client.newBulkMutationBatcher(
-                AuthorizedViewId.of(testEnvRule.env().getTableId(), testAuthorizedView.getId()))) {
+        Batcher<RowMutationEntry, Void> batcher = client.newBulkMutationBatcher(authorizedViewId)) {
 
       String familyId = testEnvRule.env().getFamilyId();
 
@@ -135,12 +131,6 @@ public class BulkMutateIT {
               .call(Query.create(testEnvRule.env().getTableId()).rowKey(rowPrefix + "test-key"));
       assertThat(row.getCells()).hasSize(1);
     }
-
-    testEnvRule
-        .env()
-        .getTableAdminClient()
-        .deleteAuthorizedView(
-            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 
   @Test
@@ -211,7 +201,7 @@ public class BulkMutateIT {
         .that(testEnvRule.env().isSessionsEnabled())
         .isFalse();
 
-    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+    AuthorizedViewId authorizedViewId = testEnvRule.env().getAuthorizedViewId();
 
     BigtableDataSettings settings = testEnvRule.env().getDataClientSettings();
     String rowPrefix = AUTHORIZED_VIEW_ROW_PREFIX + UUID.randomUUID();
@@ -225,9 +215,7 @@ public class BulkMutateIT {
         .setBatchingSettings(
             batchingSettings.toBuilder().setDelayThreshold(Duration.ofHours(1)).build());
     try (BigtableDataClient client = BigtableDataClient.create(settings)) {
-      Batcher<RowMutationEntry, Void> batcher =
-          client.newBulkMutationBatcher(
-              AuthorizedViewId.of(testEnvRule.env().getTableId(), testAuthorizedView.getId()));
+      Batcher<RowMutationEntry, Void> batcher = client.newBulkMutationBatcher(authorizedViewId);
       String familyId = testEnvRule.env().getFamilyId();
       for (int i = 0; i < 2; i++) {
         String key = rowPrefix + "test-key";
@@ -262,11 +250,5 @@ public class BulkMutateIT {
         // ignore
       }
     }
-
-    testEnvRule
-        .env()
-        .getTableAdminClient()
-        .deleteAuthorizedView(
-            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

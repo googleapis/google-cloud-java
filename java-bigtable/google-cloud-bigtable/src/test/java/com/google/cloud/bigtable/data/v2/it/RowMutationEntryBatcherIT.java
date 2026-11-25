@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_COLUMN_QUALIFIER;
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_ROW_PREFIX;
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.createTestAuthorizedView;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
@@ -25,7 +24,6 @@ import static org.junit.Assert.fail;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -92,7 +90,7 @@ public class RowMutationEntryBatcherIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
 
-    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+    AuthorizedViewId authorizedViewId = testEnvRule.env().getAuthorizedViewId();
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
     TableId tableId = testEnvRule.env().getTableId();
@@ -100,7 +98,7 @@ public class RowMutationEntryBatcherIT {
     String rowPrefix = AUTHORIZED_VIEW_ROW_PREFIX + UUID.randomUUID();
 
     try (Batcher<RowMutationEntry, Void> batcher =
-        client.newBulkMutationBatcher(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))) {
+        client.newBulkMutationBatcher(authorizedViewId)) {
       for (int i = 0; i < 10; i++) {
         @SuppressWarnings("UnusedVariable")
         ApiFuture<Void> ignored =
@@ -131,7 +129,7 @@ public class RowMutationEntryBatcherIT {
     String rowKeyOutsideAuthorizedView = UUID.randomUUID() + "-outside-authorized-view";
     try {
       try (Batcher<RowMutationEntry, Void> batcher =
-          client.newBulkMutationBatcher(AuthorizedViewId.of(tableId, testAuthorizedView.getId()))) {
+          client.newBulkMutationBatcher(authorizedViewId)) {
         @SuppressWarnings("UnusedVariable")
         ApiFuture<Void> ignored =
             batcher.add(
@@ -142,11 +140,5 @@ public class RowMutationEntryBatcherIT {
     } catch (Exception e) {
       // Ignore.
     }
-
-    testEnvRule
-        .env()
-        .getTableAdminClient()
-        .deleteAuthorizedView(
-            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

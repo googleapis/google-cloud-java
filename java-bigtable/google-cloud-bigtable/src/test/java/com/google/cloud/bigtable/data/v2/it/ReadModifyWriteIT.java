@@ -17,13 +17,11 @@ package com.google.cloud.bigtable.data.v2.it;
 
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_COLUMN_QUALIFIER;
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_ROW_PREFIX;
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.createTestAuthorizedView;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.rpc.PermissionDeniedException;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -87,9 +85,8 @@ public class ReadModifyWriteIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
 
-    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+    AuthorizedViewId authorizedViewId = testEnvRule.env().getAuthorizedViewId();
 
-    TableId tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
     String rowKey = AUTHORIZED_VIEW_ROW_PREFIX + UUID.randomUUID();
 
@@ -98,8 +95,7 @@ public class ReadModifyWriteIT {
             .env()
             .getDataClient()
             .readModifyWriteRowAsync(
-                ReadModifyWriteRow.create(
-                        AuthorizedViewId.of(tableId, testAuthorizedView.getId()), rowKey)
+                ReadModifyWriteRow.create(authorizedViewId, rowKey)
                     .append(family, AUTHORIZED_VIEW_COLUMN_QUALIFIER + "1", "a")
                     .increment(family, AUTHORIZED_VIEW_COLUMN_QUALIFIER + "2", 3)
                     .increment(family, AUTHORIZED_VIEW_COLUMN_QUALIFIER + "3", 0x12345679))
@@ -119,9 +115,7 @@ public class ReadModifyWriteIT {
           .env()
           .getDataClient()
           .readModifyWriteRowAsync(
-              ReadModifyWriteRow.create(
-                      AuthorizedViewId.of(tableId, testAuthorizedView.getId()),
-                      rowKeyOutsideAuthorizedView)
+              ReadModifyWriteRow.create(authorizedViewId, rowKeyOutsideAuthorizedView)
                   .append(family, AUTHORIZED_VIEW_COLUMN_QUALIFIER, "a"))
           .get(1, TimeUnit.MINUTES);
       fail("Should not be able to modify a row outside authorized view");
@@ -135,19 +129,12 @@ public class ReadModifyWriteIT {
           .env()
           .getDataClient()
           .readModifyWriteRowAsync(
-              ReadModifyWriteRow.create(
-                      AuthorizedViewId.of(tableId, testAuthorizedView.getId()), rowKey)
+              ReadModifyWriteRow.create(authorizedViewId, rowKey)
                   .append(family, "outside-authorized-view", "a"))
           .get(1, TimeUnit.MINUTES);
       fail("Should not be able to perform mutations with cells outside the authorized view");
     } catch (Exception e) {
       assertThat(e.getCause()).isInstanceOf(PermissionDeniedException.class);
     }
-
-    testEnvRule
-        .env()
-        .getTableAdminClient()
-        .deleteAuthorizedView(
-            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }
