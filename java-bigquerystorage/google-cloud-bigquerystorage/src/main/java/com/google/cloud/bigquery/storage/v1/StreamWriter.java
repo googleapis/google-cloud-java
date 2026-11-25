@@ -168,9 +168,18 @@ public class StreamWriter implements AutoCloseable {
 
     abstract int credentialsHashcode();
 
-    public static ConnectionPoolKey create(String location, @Nullable Credentials credentials) {
+    abstract String endpoint();
+
+    abstract String universeDomain();
+
+    /** Creates a connection pool key scoped by location, credentials, endpoint, and universe. */
+    public static ConnectionPoolKey create(
+        String location,
+        @Nullable Credentials credentials,
+        String endpoint,
+        String universeDomain) {
       return new AutoValue_StreamWriter_ConnectionPoolKey(
-          location, credentials != null ? credentials.hashCode() : 0);
+          location, credentials != null ? credentials.hashCode() : 0, endpoint, universeDomain);
     }
   }
 
@@ -348,7 +357,9 @@ public class StreamWriter implements AutoCloseable {
               connectionPoolMap.computeIfAbsent(
                   ConnectionPoolKey.create(
                       location,
-                      credentialsProvider != null ? credentialsProvider.getCredentials() : null),
+                      credentialsProvider != null ? credentialsProvider.getCredentials() : null,
+                      client.getSettings().getEndpoint(),
+                      client.getSettings().getUniverseDomain()),
                   (key) -> {
                     return new ConnectionWorkerPool(
                         builder.maxInflightRequest,
@@ -414,7 +425,20 @@ public class StreamWriter implements AutoCloseable {
   static BigQueryWriteSettings getBigQueryWriteSettings(Builder builder) throws IOException {
     BigQueryWriteSettings.Builder settingsBuilder = null;
     if (builder.client != null) {
-      settingsBuilder = builder.client.getSettings().toBuilder();
+      // Fail fast if setUniverseDomain() conflicts with the provided BigQueryWriteClient to avoid
+      // split-brain routing between metadata calls and streaming connections.
+      BigQueryWriteSettings clientSettings = builder.client.getSettings();
+      String clientUniverseDomain = clientSettings.getUniverseDomain();
+      if (builder.universeDomain != null
+          && clientUniverseDomain != null
+          && !builder.universeDomain.equals(clientUniverseDomain)) {
+        throw new IllegalArgumentException(
+            String.format(
+                "The configured universe domain (%s) does not match the universe domain on the"
+                    + " provided BigQueryWriteClient (%s).",
+                builder.universeDomain, clientUniverseDomain));
+      }
+      settingsBuilder = clientSettings.toBuilder();
     } else {
       settingsBuilder =
           new BigQueryWriteSettings.Builder()
@@ -428,8 +452,9 @@ public class StreamWriter implements AutoCloseable {
               .setCredentialsProvider(
                   BigQueryWriteSettings.defaultCredentialsProviderBuilder().build())
               .setBackgroundExecutorProvider(
-                  BigQueryWriteSettings.defaultExecutorProviderBuilder().build())
-              .setEndpoint(BigQueryWriteSettings.getDefaultEndpoint());
+                  BigQueryWriteSettings.defaultExecutorProviderBuilder().build());
+      // Omit setEndpoint(getDefaultEndpoint()) so GAX expands GOOGLE_CLOUD_UNIVERSE_DOMAIN when
+      // no custom endpoint is explicitly configured.
     }
     if (builder.channelProvider != null) {
       settingsBuilder.setTransportChannelProvider(builder.channelProvider);
@@ -442,6 +467,9 @@ public class StreamWriter implements AutoCloseable {
     }
     if (builder.endpoint != null) {
       settingsBuilder.setEndpoint(builder.endpoint);
+    }
+    if (builder.universeDomain != null) {
+      settingsBuilder.setUniverseDomain(builder.universeDomain);
     }
 
     return settingsBuilder.build();
@@ -864,6 +892,8 @@ public class StreamWriter implements AutoCloseable {
 
     private String endpoint = null;
 
+    private String universeDomain = null;
+
     private TransportChannelProvider channelProvider = null;
 
     private CredentialsProvider credentialsProvider = null;
@@ -954,6 +984,12 @@ public class StreamWriter implements AutoCloseable {
     /** Gives the ability to override the gRPC endpoint. */
     public Builder setEndpoint(String endpoint) {
       this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
+      return this;
+    }
+
+    /** Gives the ability to override the universe domain. */
+    public Builder setUniverseDomain(String universeDomain) {
+      this.universeDomain = universeDomain;
       return this;
     }
 

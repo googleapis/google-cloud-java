@@ -97,6 +97,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
         builder.credentialsProvider,
         builder.executorProvider,
         builder.endpoint,
+        builder.universeDomain,
         builder.flowControlSettings,
         builder.traceId,
         builder.compressorName,
@@ -318,6 +319,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       @Nullable CredentialsProvider credentialsProvider,
       @Nullable ExecutorProvider executorProvider,
       @Nullable String endpoint,
+      @Nullable String universeDomain,
       @Nullable FlowControlSettings flowControlSettings,
       @Nullable String traceId,
       @Nullable String compressorName,
@@ -333,6 +335,9 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     }
     if (endpoint != null) {
       streamWriterBuilder.setEndpoint(endpoint);
+    }
+    if (universeDomain != null) {
+      streamWriterBuilder.setUniverseDomain(universeDomain);
     }
     if (traceId != null) {
       streamWriterBuilder.setTraceId(traceId);
@@ -468,6 +473,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     private ExecutorProvider executorProvider;
     private FlowControlSettings flowControlSettings;
     private String endpoint;
+    private String universeDomain;
     private String traceIdBase;
     private String traceId;
     private boolean ignoreUnknownFields = false;
@@ -609,6 +615,17 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
      */
     public Builder<T> setEndpoint(String endpoint) {
       this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
+      return this;
+    }
+
+    /**
+     * Setter for the underlying StreamWriter's universe domain.
+     *
+     * @param universeDomain the universe domain to use
+     * @return Builder
+     */
+    public Builder<T> setUniverseDomain(String universeDomain) {
+      this.universeDomain = universeDomain;
       return this;
     }
 
