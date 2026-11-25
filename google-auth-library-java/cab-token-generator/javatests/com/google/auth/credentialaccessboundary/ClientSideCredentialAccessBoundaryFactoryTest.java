@@ -93,8 +93,8 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
 
   static class MockStsTransportFactory implements HttpTransportFactory {
     MockStsTransport transport = new MockStsTransport();
-    private CountDownLatch refreshEntryLatch = new CountDownLatch(0);
-    private CountDownLatch refreshRequestLatch = new CountDownLatch(0);
+    private volatile CountDownLatch refreshEntryLatch = new CountDownLatch(0);
+    private volatile CountDownLatch refreshRequestLatch = new CountDownLatch(0);
 
     void setRefreshEntryLatch(CountDownLatch refreshEntryLatch) {
       this.refreshEntryLatch = refreshEntryLatch;
