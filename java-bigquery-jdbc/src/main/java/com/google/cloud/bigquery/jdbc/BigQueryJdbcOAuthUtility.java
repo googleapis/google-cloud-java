@@ -27,6 +27,7 @@ import com.google.auth.oauth2.ClientId;
 import com.google.auth.oauth2.ExternalAccountCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ImpersonatedCredentials;
+import com.google.auth.oauth2.PKCEProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.auth.oauth2.UserAuthorizer;
 import com.google.auth.oauth2.UserCredentials;
@@ -37,50 +38,66 @@ import com.google.gson.JsonParser;
 import com.google.gson.Strictness;
 import com.google.gson.stream.JsonReader;
 import java.awt.Desktop;
-import java.io.BufferedReader;
+import java.awt.GraphicsEnvironment;
+import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.io.Reader;
 import java.io.StringReader;
+import java.io.UnsupportedEncodingException;
+import java.net.Inet6Address;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
 
 final class BigQueryJdbcOAuthUtility {
 
-  private static final String USER_AUTH_SUCCESS_HTTP_RESPONSE =
-      "HTTP/1.1 200 OK\n"
-          + "Content-Length: 300\n"
-          + "Connection: close\n"
-          + "Content-Type: text/html; charset=utf-8\n"
-          + "\n"
-          + "<!DOCTYPE html><html><body>\n"
+  private static final String USER_AUTH_SUCCESS_HTML_BODY =
+      "<!DOCTYPE html><html><body>\n"
           + "Thank you for using JDBC Driver for Google BigQuery!\n"
           + "You may now close the window.</body></html>";
+  private static final String USER_AUTH_BAD_REQUEST_HTML_BODY =
+      "<!DOCTYPE html><html><body>\n"
+          + "Authentication could not be completed. Please close this window and retry.\n"
+          + "</body></html>";
+  private static final String USER_AUTH_NOT_FOUND_HTML_BODY =
+      "<!DOCTYPE html><html><body>Not Found</body></html>";
+
+  private static final byte[] USER_AUTH_SUCCESS_HTTP_RESPONSE_BYTES =
+      buildHttpResponseBytes(200, "OK", USER_AUTH_SUCCESS_HTML_BODY);
+  private static final byte[] USER_AUTH_BAD_REQUEST_HTTP_RESPONSE_BYTES =
+      buildHttpResponseBytes(400, "Bad Request", USER_AUTH_BAD_REQUEST_HTML_BODY);
+  private static final byte[] USER_AUTH_NOT_FOUND_HTTP_RESPONSE_BYTES =
+      buildHttpResponseBytes(404, "Not Found", USER_AUTH_NOT_FOUND_HTML_BODY);
 
   static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   static final String DRIVE_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.readonly";
@@ -90,6 +107,14 @@ final class BigQueryJdbcOAuthUtility {
       Arrays.asList(BIGQUERY_SCOPE, DRIVE_READONLY_SCOPE);
 
   private static final int USER_AUTH_TIMEOUT_MS = 120000;
+  private static final int USER_AUTH_SOCKET_READ_TIMEOUT_MS = 5000;
+  private static final int USER_AUTH_DRAIN_TIMEOUT_MS = 50;
+  private static final int USER_AUTH_BACKLOG = 8;
+  static final int MAX_HTTP_REQUEST_LINE_BYTES = 8192;
+  private static final int MAX_HTTP_HEADER_BYTES = 16384;
+  private static final int OAUTH_RANDOM_TOKEN_BYTES = 32;
+  private static final int MAX_OAUTH_ERROR_LENGTH = 64;
+  private static final SecureRandom SECURE_RANDOM = new SecureRandom();
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcOAuthUtility.class.getName());
 
@@ -400,20 +425,75 @@ final class BigQueryJdbcOAuthUtility {
     return builder.build();
   }
 
+  @FunctionalInterface
+  interface BrowserOpener {
+    void open(URI authorizationUri) throws IOException;
+  }
+
+  @FunctionalInterface
+  interface ServerSocketSupplier {
+    ServerSocket open() throws IOException;
+  }
+
+  @FunctionalInterface
+  interface LoopbackSocketBinder {
+    ServerSocket bind(InetAddress bindAddress, int backlog) throws IOException;
+  }
+
+  // DefaultPKCEProvider in google-auth-library-oauth2-http 1.58.0 emits a 172-character padded
+  // code_verifier, outside RFC 7636 Section 4.1 (43..128 unreserved characters, unpadded).
+  private static final class Rfc7636PkceProvider implements PKCEProvider {
+    private static final String CHALLENGE_METHOD_S256 = "S256";
+    private final String codeVerifier;
+    private final String codeChallenge;
+
+    private Rfc7636PkceProvider() {
+      byte[] verifierBytes = new byte[OAUTH_RANDOM_TOKEN_BYTES];
+      SECURE_RANDOM.nextBytes(verifierBytes);
+      this.codeVerifier = Base64.getUrlEncoder().withoutPadding().encodeToString(verifierBytes);
+      this.codeChallenge = computeS256Challenge(this.codeVerifier);
+    }
+
+    private static String computeS256Challenge(String verifier) {
+      try {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] hash = digest.digest(verifier.getBytes(StandardCharsets.US_ASCII));
+        return Base64.getUrlEncoder().withoutPadding().encodeToString(hash);
+      } catch (NoSuchAlgorithmException e) {
+        throw new IllegalStateException("SHA-256 MessageDigest not available", e);
+      }
+    }
+
+    @Override
+    public String getCodeVerifier() {
+      return codeVerifier;
+    }
+
+    @Override
+    public String getCodeChallenge() {
+      return codeChallenge;
+    }
+
+    @Override
+    public String getCodeChallengeMethod() {
+      return CHALLENGE_METHOD_S256;
+    }
+  }
+
+  private static final class HttpCallbackException extends Exception {
+    private HttpCallbackException(String message) {
+      super(message);
+    }
+  }
+
   static UserAuthorizer getUserAuthorizer(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
-      int port,
+      URI callbackUri,
       HttpTransportFactory httpTransportFactory,
       String callerClassName)
       throws URISyntaxException {
     LOG.finer("++enter++\t" + callerClassName);
-
-    List<String> scopes = new ArrayList<>();
-    scopes.add("https://www.googleapis.com/auth/bigquery");
-
-    List<String> responseTypes = new ArrayList<>();
-    responseTypes.add("code");
 
     ClientId clientId =
         ClientId.of(
@@ -422,8 +502,9 @@ final class BigQueryJdbcOAuthUtility {
     UserAuthorizer.Builder userAuthorizerBuilder =
         UserAuthorizer.newBuilder()
             .setClientId(clientId)
-            .setScopes(scopes)
-            .setCallbackUri(URI.create("http://localhost:" + port));
+            .setScopes(DEFAULT_BIGQUERY_SCOPES)
+            .setCallbackUri(callbackUri)
+            .setPKCEProvider(new Rfc7636PkceProvider());
 
     if (httpTransportFactory != null) {
       userAuthorizerBuilder.setHttpTransportFactory(httpTransportFactory);
@@ -456,50 +537,384 @@ final class BigQueryJdbcOAuthUtility {
       Map<String, String> overrideProperties,
       HttpTransportFactory httpTransportFactory,
       String callerClassName) {
+    if (!isDesktopBrowseSupported()) {
+      throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
+    }
+    return getGoogleUserAccountCredentials(
+        authProperties,
+        overrideProperties,
+        httpTransportFactory,
+        callerClassName,
+        BigQueryJdbcOAuthUtility::openLoopbackServerSocket,
+        uri -> Desktop.getDesktop().browse(uri),
+        USER_AUTH_TIMEOUT_MS,
+        USER_AUTH_SOCKET_READ_TIMEOUT_MS);
+  }
+
+  static GoogleCredentials getGoogleUserAccountCredentials(
+      Map<String, String> authProperties,
+      Map<String, String> overrideProperties,
+      HttpTransportFactory httpTransportFactory,
+      String callerClassName,
+      ServerSocketSupplier serverSocketSupplier,
+      BrowserOpener browserOpener,
+      int authTimeoutMs,
+      int socketReadTimeoutMs) {
     LOG.finer("++enter++\t" + callerClassName);
     try {
-      ServerSocket serverSocket = new ServerSocket(0);
-      serverSocket.setSoTimeout(USER_AUTH_TIMEOUT_MS);
-      int port = serverSocket.getLocalPort();
-      UserAuthorizer userAuthorizer =
-          getUserAuthorizer(
-              authProperties, overrideProperties, port, httpTransportFactory, callerClassName);
-
-      URL authURL = userAuthorizer.getAuthorizationUrl("user", "", URI.create(""));
+      UserAuthorizer userAuthorizer;
       String code;
-
-      if (Desktop.isDesktopSupported()) {
-        Desktop.getDesktop().browse(authURL.toURI());
-
-        Socket socket = serverSocket.accept();
-
-        OutputStream outputStream = socket.getOutputStream();
-        PrintWriter printWriter = new PrintWriter(outputStream);
-
-        BufferedReader bufferedReader =
-            new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String response = bufferedReader.readLine();
-
-        Pattern p = Pattern.compile("(?<=code=).*?(?=&|$)");
-        Matcher m = p.matcher(response);
-
-        if (!m.find()) {
-          throw new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
-        }
-        code = m.group();
-
-        printWriter.println(USER_AUTH_SUCCESS_HTTP_RESPONSE);
-        printWriter.flush();
-        socket.close();
-        serverSocket.close();
-      } else {
-        throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
+      try (ServerSocket serverSocket = serverSocketSupplier.open()) {
+        URI callbackUri =
+            buildLoopbackCallbackUri(serverSocket.getInetAddress(), serverSocket.getLocalPort());
+        userAuthorizer =
+            getUserAuthorizer(
+                authProperties,
+                overrideProperties,
+                callbackUri,
+                httpTransportFactory,
+                callerClassName);
+        String expectedState = generateOAuthState();
+        URL authUrl = userAuthorizer.getAuthorizationUrl("user", expectedState, URI.create(""));
+        browserOpener.open(authUrl.toURI());
+        code =
+            waitForAuthorizationCode(
+                serverSocket, expectedState, authTimeoutMs, socketReadTimeoutMs);
       }
-
       return getCredentialsFromCode(userAuthorizer, code, httpTransportFactory, callerClassName);
     } catch (IOException | URISyntaxException ex) {
       throw new BigQueryJdbcRuntimeException(
           "Failed to establish connection using User Account authentication", ex);
+    } finally {
+      LOG.finer("++exit++\t" + callerClassName);
+    }
+  }
+
+  static boolean isDesktopBrowseSupported() {
+    if (GraphicsEnvironment.isHeadless() || !Desktop.isDesktopSupported()) {
+      return false;
+    }
+    return Desktop.getDesktop().isSupported(Desktop.Action.BROWSE);
+  }
+
+  static ServerSocket openLoopbackServerSocket() throws IOException {
+    return openLoopbackServerSocket((address, backlog) -> new ServerSocket(0, backlog, address));
+  }
+
+  static ServerSocket openLoopbackServerSocket(LoopbackSocketBinder binder) throws IOException {
+    InetAddress ipv4Loopback = InetAddress.getByAddress(new byte[] {127, 0, 0, 1});
+    try {
+      return binder.bind(ipv4Loopback, USER_AUTH_BACKLOG);
+    } catch (IOException ipv4Unavailable) {
+      InetAddress ipv6Loopback =
+          InetAddress.getByAddress(new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1});
+      try {
+        return binder.bind(ipv6Loopback, USER_AUTH_BACKLOG);
+      } catch (IOException ipv6Unavailable) {
+        ipv4Unavailable.addSuppressed(ipv6Unavailable);
+        throw ipv4Unavailable;
+      }
+    }
+  }
+
+  static URI buildLoopbackCallbackUri(InetAddress bindAddress, int port) {
+    if (bindAddress instanceof Inet6Address) {
+      return URI.create("http://[::1]:" + port);
+    }
+    return URI.create("http://127.0.0.1:" + port);
+  }
+
+  private static String generateOAuthState() {
+    byte[] stateBytes = new byte[OAUTH_RANDOM_TOKEN_BYTES];
+    SECURE_RANDOM.nextBytes(stateBytes);
+    return Base64.getUrlEncoder().withoutPadding().encodeToString(stateBytes);
+  }
+
+  private static boolean isValidOAuthState(String expectedState, String actualState) {
+    if (actualState == null) {
+      return false;
+    }
+    return MessageDigest.isEqual(
+        expectedState.getBytes(StandardCharsets.UTF_8),
+        actualState.getBytes(StandardCharsets.UTF_8));
+  }
+
+  private static String waitForAuthorizationCode(
+      ServerSocket serverSocket, String expectedState, int authTimeoutMs, int socketReadTimeoutMs)
+      throws IOException {
+    long overallDeadlineNanos = System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(authTimeoutMs);
+    while (true) {
+      int acceptTimeoutMs = remainingMillis(overallDeadlineNanos);
+      if (acceptTimeoutMs <= 0) {
+        throw new SocketTimeoutException("Timed out waiting for OAuth authorization callback.");
+      }
+      serverSocket.setSoTimeout(acceptTimeoutMs);
+      Socket acceptedSocket;
+      try {
+        acceptedSocket = serverSocket.accept();
+      } catch (SocketTimeoutException acceptTimedOut) {
+        throw new SocketTimeoutException("Timed out waiting for OAuth authorization callback.");
+      }
+      try (Socket socket = acceptedSocket) {
+        String code =
+            handleCallbackConnection(
+                socket, expectedState, overallDeadlineNanos, socketReadTimeoutMs);
+        if (code != null) {
+          return code;
+        }
+      }
+    }
+  }
+
+  private static String handleCallbackConnection(
+      Socket socket, String expectedState, long overallDeadlineNanos, int socketReadTimeoutMs)
+      throws SocketTimeoutException {
+    long readDeadlineNanos =
+        Math.min(
+            overallDeadlineNanos,
+            System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(socketReadTimeoutMs));
+    try {
+      BufferedInputStream inputStream = new BufferedInputStream(socket.getInputStream());
+      boolean headersDrained = false;
+      try {
+        String requestLine =
+            readHttpRequestLine(
+                socket, inputStream, readDeadlineNanos, MAX_HTTP_REQUEST_LINE_BYTES);
+        if (requestLine == null) {
+          return null;
+        }
+        URI requestUri = parseHttpGetRequestTarget(requestLine);
+        drainHttpHeaders(socket, inputStream, readDeadlineNanos, MAX_HTTP_HEADER_BYTES);
+        headersDrained = true;
+        if (!"/".equals(requestUri.getPath())) {
+          writeHttpResponseQuietly(socket, USER_AUTH_NOT_FOUND_HTTP_RESPONSE_BYTES);
+          return null;
+        }
+        Map<String, String> queryParams = parseOAuthQueryParameters(requestUri.getRawQuery());
+        String code = extractVerifiedAuthorizationCode(queryParams, expectedState);
+        writeHttpResponseQuietly(socket, USER_AUTH_SUCCESS_HTTP_RESPONSE_BYTES);
+        return code;
+      } catch (HttpCallbackException callbackError) {
+        if (!headersDrained) {
+          long drainDeadlineNanos =
+              Math.min(
+                  overallDeadlineNanos,
+                  System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(USER_AUTH_DRAIN_TIMEOUT_MS));
+          drainHttpHeaders(socket, inputStream, drainDeadlineNanos, MAX_HTTP_HEADER_BYTES);
+        }
+        writeHttpResponseQuietly(socket, USER_AUTH_BAD_REQUEST_HTTP_RESPONSE_BYTES);
+        throw new BigQueryJdbcRuntimeException(callbackError.getMessage());
+      }
+    } catch (IOException clientIoError) {
+      if (remainingMillis(overallDeadlineNanos) <= 0) {
+        throw new SocketTimeoutException("Timed out waiting for OAuth authorization callback.");
+      }
+      return null;
+    }
+  }
+
+  private static int remainingMillis(long deadlineNanos) {
+    long remainingNanos = deadlineNanos - System.nanoTime();
+    if (remainingNanos <= 0L) {
+      return 0;
+    }
+    long millis = TimeUnit.NANOSECONDS.toMillis(remainingNanos);
+    if (millis == 0L) {
+      return 1;
+    }
+    return (int) millis;
+  }
+
+  private static int readByteBeforeDeadline(
+      Socket socket, BufferedInputStream inputStream, long deadlineNanos) throws IOException {
+    if (inputStream.available() > 0) {
+      return inputStream.read();
+    }
+    int remainingMs = remainingMillis(deadlineNanos);
+    if (remainingMs <= 0) {
+      throw new SocketTimeoutException("Timed out reading OAuth callback request.");
+    }
+    socket.setSoTimeout(remainingMs);
+    return inputStream.read();
+  }
+
+  private static String readHttpRequestLine(
+      Socket socket, BufferedInputStream inputStream, long deadlineNanos, int maxBytes)
+      throws IOException, HttpCallbackException {
+    int b = readByteBeforeDeadline(socket, inputStream, deadlineNanos);
+    if (b == -1) {
+      return null;
+    }
+    ByteArrayOutputStream buffer = new ByteArrayOutputStream(256);
+    int totalRead = 0;
+    while (true) {
+      if (b == '\n') {
+        break;
+      }
+      if (b == -1) {
+        throw new HttpCallbackException("Incomplete OAuth callback HTTP request line.");
+      }
+      totalRead++;
+      if (totalRead > maxBytes) {
+        throw new HttpCallbackException(
+            "OAuth callback HTTP request line exceeded maximum length.");
+      }
+      if (b == '\r') {
+        int next = readByteBeforeDeadline(socket, inputStream, deadlineNanos);
+        if (next != '\n') {
+          throw new HttpCallbackException("Invalid bare CR in OAuth callback HTTP request line.");
+        }
+        break;
+      }
+      buffer.write(b);
+      b = readByteBeforeDeadline(socket, inputStream, deadlineNanos);
+    }
+    return new String(buffer.toByteArray(), StandardCharsets.US_ASCII);
+  }
+
+  private static void drainHttpHeaders(
+      Socket socket, BufferedInputStream inputStream, long deadlineNanos, int maxHeaderBytes) {
+    int totalRead = 0;
+    int lineChars = 0;
+    try {
+      while (totalRead < maxHeaderBytes) {
+        int b = readByteBeforeDeadline(socket, inputStream, deadlineNanos);
+        if (b == -1) {
+          return;
+        }
+        totalRead++;
+        if (b == '\n') {
+          if (lineChars == 0) {
+            return;
+          }
+          lineChars = 0;
+        } else if (b != '\r') {
+          lineChars++;
+        }
+      }
+    } catch (IOException ignored) {
+      // Best-effort drain so closing the socket after writing the HTTP response avoids TCP RST.
+    }
+  }
+
+  private static URI parseHttpGetRequestTarget(String requestLine) throws HttpCallbackException {
+    String[] parts = requestLine.split(" ", -1);
+    if (parts.length != 3
+        || !"GET".equals(parts[0])
+        || !parts[1].startsWith("/")
+        || (!"HTTP/1.1".equals(parts[2]) && !"HTTP/1.0".equals(parts[2]))) {
+      throw new HttpCallbackException("Invalid HTTP request line on OAuth callback.");
+    }
+    URI requestUri;
+    try {
+      requestUri = new URI(parts[1]);
+    } catch (URISyntaxException e) {
+      throw new HttpCallbackException("Malformed URI in OAuth callback request.");
+    }
+    if (requestUri.getRawAuthority() != null || requestUri.getRawFragment() != null) {
+      throw new HttpCallbackException("Unexpected URI format in OAuth callback request.");
+    }
+    return requestUri;
+  }
+
+  private static Map<String, String> parseOAuthQueryParameters(String rawQuery)
+      throws HttpCallbackException {
+    if (rawQuery == null || rawQuery.isEmpty()) {
+      return Collections.emptyMap();
+    }
+    Map<String, String> params = new HashMap<>();
+    String[] pairs = rawQuery.split("&");
+    for (String pair : pairs) {
+      if (pair.isEmpty()) {
+        continue;
+      }
+      int eqIndex = pair.indexOf('=');
+      String rawKey = eqIndex >= 0 ? pair.substring(0, eqIndex) : pair;
+      String rawValue = eqIndex >= 0 ? pair.substring(eqIndex + 1) : "";
+      String key = urlDecodeUtf8(rawKey);
+      String value = urlDecodeUtf8(rawValue);
+      if (("code".equals(key) || "state".equals(key) || "error".equals(key))
+          && params.containsKey(key)) {
+        throw new HttpCallbackException("Duplicate OAuth callback parameter: " + key);
+      }
+      params.put(key, value);
+    }
+    return params;
+  }
+
+  private static String urlDecodeUtf8(String value) {
+    try {
+      return URLDecoder.decode(value, StandardCharsets.UTF_8.name());
+    } catch (UnsupportedEncodingException e) {
+      throw new IllegalStateException("UTF-8 encoding not supported", e);
+    }
+  }
+
+  private static String extractVerifiedAuthorizationCode(
+      Map<String, String> queryParams, String expectedState) throws HttpCallbackException {
+    if (!isValidOAuthState(expectedState, queryParams.get("state"))) {
+      throw new HttpCallbackException("Missing or invalid state parameter in OAuth callback.");
+    }
+    String error = queryParams.get("error");
+    if (error != null) {
+      throw new HttpCallbackException(
+          "OAuth authorization failed: " + sanitizeOAuthErrorCode(error));
+    }
+    String code = queryParams.get("code");
+    if (code == null || code.isEmpty()) {
+      throw new HttpCallbackException(
+          "Could not retrieve the authorization code from OAuth callback.");
+    }
+    return code;
+  }
+
+  private static String sanitizeOAuthErrorCode(String error) {
+    if (error.isEmpty()) {
+      return "unknown_error";
+    }
+    int limit = Math.min(error.length(), MAX_OAUTH_ERROR_LENGTH);
+    StringBuilder sb = new StringBuilder(limit);
+    for (int i = 0; i < limit; i++) {
+      char c = error.charAt(i);
+      if (c >= 0x21 && c <= 0x7E && c != '"' && c != '\'') {
+        sb.append(c);
+      } else {
+        sb.append('_');
+      }
+    }
+    return sb.toString();
+  }
+
+  private static byte[] buildHttpResponseBytes(
+      int statusCode, String reasonPhrase, String htmlBody) {
+    byte[] bodyBytes = htmlBody.getBytes(StandardCharsets.UTF_8);
+    String headers =
+        "HTTP/1.1 "
+            + statusCode
+            + " "
+            + reasonPhrase
+            + "\r\n"
+            + "Content-Type: text/html; charset=utf-8\r\n"
+            + "Content-Length: "
+            + bodyBytes.length
+            + "\r\n"
+            + "Cache-Control: no-store\r\n"
+            + "Connection: close\r\n"
+            + "\r\n";
+    byte[] headerBytes = headers.getBytes(StandardCharsets.US_ASCII);
+    byte[] response = new byte[headerBytes.length + bodyBytes.length];
+    System.arraycopy(headerBytes, 0, response, 0, headerBytes.length);
+    System.arraycopy(bodyBytes, 0, response, headerBytes.length, bodyBytes.length);
+    return response;
+  }
+
+  private static void writeHttpResponseQuietly(Socket socket, byte[] responseBytes) {
+    try {
+      OutputStream outputStream = socket.getOutputStream();
+      outputStream.write(responseBytes);
+      outputStream.flush();
+    } catch (IOException ignored) {
+      // Peer may have already closed its side of the connection.
     }
   }
 

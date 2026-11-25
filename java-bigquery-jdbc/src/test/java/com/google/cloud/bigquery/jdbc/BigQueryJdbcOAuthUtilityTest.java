@@ -20,8 +20,15 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.json.Json;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ImpersonatedCredentials;
@@ -29,27 +36,48 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.auth.oauth2.UserAuthorizer;
 import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import java.awt.Desktop;
+import java.awt.GraphicsEnvironment;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
   private static final int USER_AUTH_PORT = 53737;
-  private static final String EXPECTED_USER_AUTH_URL =
-      "https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=client_id&redirect_uri=http://localhost:"
-          + USER_AUTH_PORT
-          + "&scope=https://www.googleapis.com/auth/bigquery&state=test_state&access_type=offline&prompt=consent&login_hint=test_user&include_granted_scopes=true";
+  private static final URI USER_AUTH_CALLBACK_URI =
+      URI.create("http://127.0.0.1:" + USER_AUTH_PORT);
 
   @Test
   public void testParseOAuthPropsWithSpecialChars() {
@@ -240,26 +268,67 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
-  public void testGenerateUserAuthURL() {
-    try {
-      HashMap<String, String> authProperties = new HashMap<>();
-      authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "client_id");
-      authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "client_secret");
+  public void testGenerateUserAuthURL() throws Exception {
+    HashMap<String, String> authProperties = new HashMap<>();
+    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "client_id");
+    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "client_secret");
 
-      UserAuthorizer userAuthorizer =
-          BigQueryJdbcOAuthUtility.getUserAuthorizer(
-              authProperties, new HashMap<String, String>(), USER_AUTH_PORT, null, null);
+    UserAuthorizer userAuthorizer =
+        BigQueryJdbcOAuthUtility.getUserAuthorizer(
+            authProperties, new HashMap<String, String>(), USER_AUTH_CALLBACK_URI, null, null);
 
-      String userId = "test_user";
-      String state = "test_state";
-      URI baseURI = URI.create("http://example.com/foo");
+    URL authURL =
+        userAuthorizer.getAuthorizationUrl(
+            "test_user", "test_state", URI.create("http://example.com/foo"));
+    Map<String, String> params = parseQueryParams(authURL.toURI().getRawQuery());
 
-      URL authURL = userAuthorizer.getAuthorizationUrl(userId, state, baseURI);
+    assertThat(authURL.getProtocol()).isEqualTo("https");
+    assertThat(authURL.getHost()).isEqualTo("accounts.google.com");
+    assertThat(authURL.getPath()).isEqualTo("/o/oauth2/auth");
+    assertThat(params.get("response_type")).isEqualTo("code");
+    assertThat(params.get("client_id")).isEqualTo("client_id");
+    assertThat(params.get("redirect_uri")).isEqualTo("http://127.0.0.1:" + USER_AUTH_PORT);
+    assertThat(params.get("scope")).isEqualTo("https://www.googleapis.com/auth/bigquery");
+    assertThat(params.get("state")).isEqualTo("test_state");
+    assertThat(params.get("access_type")).isEqualTo("offline");
+    assertThat(params.get("prompt")).isEqualTo("consent");
+    assertThat(params.get("login_hint")).isEqualTo("test_user");
+    assertThat(params.get("include_granted_scopes")).isEqualTo("true");
+    assertThat(params.get("code_challenge_method")).isEqualTo("S256");
+    assertThat(params.get("code_challenge")).matches("^[A-Za-z0-9_-]{43}$");
+  }
 
-      assertThat(authURL.toString()).isEqualTo(EXPECTED_USER_AUTH_URL);
-    } catch (URISyntaxException e) {
-      throw new RuntimeException(e);
-    }
+  @Test
+  public void testGetUserAuthorizer_configuresRfc7636Pkce() throws Exception {
+    Map<String, String> authProperties = new HashMap<>();
+    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "client_id");
+    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "client_secret");
+
+    AtomicReference<Map<String, String>> capturedTokenParams = new AtomicReference<>();
+    HttpTransportFactory transportFactory =
+        createMockTokenTransport(capturedTokenParams, null, null);
+
+    UserAuthorizer userAuthorizer =
+        BigQueryJdbcOAuthUtility.getUserAuthorizer(
+            authProperties, Collections.emptyMap(), USER_AUTH_CALLBACK_URI, transportFactory, null);
+
+    URL authUrl = userAuthorizer.getAuthorizationUrl("user", "state_val", URI.create(""));
+    Map<String, String> authParams = parseQueryParams(authUrl.toURI().getRawQuery());
+    String codeChallenge = authParams.get("code_challenge");
+    assertThat(authParams.get("code_challenge_method")).isEqualTo("S256");
+    assertThat(codeChallenge).matches("^[A-Za-z0-9_-]{43}$");
+
+    UserCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentialsFromCode(
+            userAuthorizer, "sample_code", transportFactory, null);
+    assertThat(credentials.getAccessToken().getTokenValue()).isEqualTo("mock_access_token");
+
+    Map<String, String> tokenParams = capturedTokenParams.get();
+    assertThat(tokenParams).isNotNull();
+    String codeVerifier = tokenParams.get("code_verifier");
+    assertThat(codeVerifier).isNotNull();
+    assertThat(codeVerifier).matches("^[A-Za-z0-9._~-]{43,128}$");
+    assertThat(computeS256Challenge(codeVerifier)).isEqualTo(codeChallenge);
   }
 
   @Test
@@ -281,7 +350,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       UserAuthorizer userAuthorizer =
           BigQueryJdbcOAuthUtility.getUserAuthorizer(
-              authProperties, overrideProperties, USER_AUTH_PORT, null, null);
+              authProperties, overrideProperties, USER_AUTH_CALLBACK_URI, null, null);
 
       assertThat(overrideTokenSeverURI).isEqualTo(userAuthorizer.toBuilder().getTokenServerUri());
     } catch (URISyntaxException e) {
@@ -564,5 +633,698 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     assertThat(credentials).isInstanceOf(UserCredentials.class);
     assertThat(((UserCredentials) credentials).toBuilder().getHttpTransportFactory())
         .isEqualTo(dummyFactory);
+  }
+
+  @Test
+  public void testOpenLoopbackServerSocket_bindsLoopbackAndFallsBackToIpv6() throws Exception {
+    try (ServerSocket serverSocket = BigQueryJdbcOAuthUtility.openLoopbackServerSocket()) {
+      assertThat(serverSocket.getInetAddress().isLoopbackAddress()).isTrue();
+      assertThat(serverSocket.getInetAddress().isAnyLocalAddress()).isFalse();
+    }
+
+    InetAddress ipv4Loopback = InetAddress.getByAddress(new byte[] {127, 0, 0, 1});
+    InetAddress ipv6Loopback =
+        InetAddress.getByAddress(new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1});
+    assertThat(BigQueryJdbcOAuthUtility.buildLoopbackCallbackUri(ipv4Loopback, USER_AUTH_PORT))
+        .isEqualTo(URI.create("http://127.0.0.1:" + USER_AUTH_PORT));
+    assertThat(BigQueryJdbcOAuthUtility.buildLoopbackCallbackUri(ipv6Loopback, USER_AUTH_PORT))
+        .isEqualTo(URI.create("http://[::1]:" + USER_AUTH_PORT));
+
+    AtomicReference<InetAddress> fallbackBoundAddress = new AtomicReference<>();
+    AtomicInteger capturedBacklog = new AtomicInteger();
+    ServerSocket mockIpv6Socket = Mockito.mock(ServerSocket.class);
+    ServerSocket fallbackResult =
+        BigQueryJdbcOAuthUtility.openLoopbackServerSocket(
+            (address, backlog) -> {
+              if (!(address instanceof Inet6Address)) {
+                throw new IOException("IPv4 loopback unavailable");
+              }
+              fallbackBoundAddress.set(address);
+              capturedBacklog.set(backlog);
+              return mockIpv6Socket;
+            });
+    assertThat(fallbackResult).isSameInstanceAs(mockIpv6Socket);
+    assertThat(fallbackBoundAddress.get()).isEqualTo(ipv6Loopback);
+    assertThat(capturedBacklog.get()).isEqualTo(8);
+
+    IOException ipv4Error = new IOException("IPv4 bind failed");
+    IOException ipv6Error = new IOException("IPv6 bind failed");
+    IOException combined =
+        assertThrows(
+            IOException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.openLoopbackServerSocket(
+                    (address, backlog) -> {
+                      throw (address instanceof Inet6Address) ? ipv6Error : ipv4Error;
+                    }));
+    assertThat(combined).isSameInstanceAs(ipv4Error);
+    assertThat(combined.getSuppressed()).asList().containsExactly(ipv6Error);
+  }
+
+  @Test
+  public void testUserAuthFlow_exchangesUrlEncodedCodeWithValidState() throws Exception {
+    Map<String, String> authProperties = defaultUserAuthProperties();
+    AtomicReference<Map<String, String>> capturedTokenParams = new AtomicReference<>();
+    AtomicReference<ServerSocket> capturedServerSocket = new AtomicReference<>();
+    AtomicBoolean closedBeforeTokenExchange = new AtomicBoolean(false);
+
+    HttpTransportFactory transportFactory =
+        createMockTokenTransport(
+            capturedTokenParams,
+            null,
+            () -> closedBeforeTokenExchange.set(capturedServerSocket.get().isClosed()));
+
+    AtomicReference<CompletableFuture<String>> rawHttpResponseFuture = new AtomicReference<>();
+    AtomicReference<String> capturedState = new AtomicReference<>();
+    AtomicReference<String> capturedChallenge = new AtomicReference<>();
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+            authProperties,
+            Collections.emptyMap(),
+            transportFactory,
+            null,
+            capturingSocketSupplier(capturedServerSocket),
+            authUri -> {
+              Map<String, String> params = parseQueryParams(authUri.getRawQuery());
+              URI redirectUri = URI.create(params.get("redirect_uri"));
+              capturedState.set(params.get("state"));
+              capturedChallenge.set(params.get("code_challenge"));
+              rawHttpResponseFuture.set(
+                  runAsyncClient(
+                      () ->
+                          sendHttpRequest(
+                              redirectUri,
+                              callbackGetRequest(
+                                  redirectUri,
+                                  "/?state=" + params.get("state") + "&code=4%2F0AeanS0%2Btest"))));
+            },
+            5000,
+            2000);
+
+    assertThat(credentials).isInstanceOf(UserCredentials.class);
+    assertThat(closedBeforeTokenExchange.get()).isTrue();
+    assertThat(capturedServerSocket.get().isClosed()).isTrue();
+    assertThat(capturedState.get()).matches("^[A-Za-z0-9_-]{43}$");
+    assertThat(capturedTokenParams.get().get("code")).isEqualTo("4/0AeanS0+test");
+    assertThat(computeS256Challenge(capturedTokenParams.get().get("code_verifier")))
+        .isEqualTo(capturedChallenge.get());
+
+    String rawResponse = rawHttpResponseFuture.get().get(5, TimeUnit.SECONDS);
+    assertValidHttpResponse(rawResponse, "HTTP/1.1 200 OK");
+    assertThat(rawResponse).contains("Cache-Control: no-store\r\n");
+    assertThat(rawResponse).contains("Thank you for using JDBC Driver for Google BigQuery!");
+  }
+
+  @Test
+  public void testUserAuthFlow_supportsHttp10QueryVariantsAndAbortedResponseWrite()
+      throws Exception {
+    Map<String, String> authProperties = defaultUserAuthProperties();
+    AtomicReference<Map<String, String>> capturedTokenParams = new AtomicReference<>();
+    HttpTransportFactory transportFactory =
+        createMockTokenTransport(capturedTokenParams, null, null);
+    AtomicReference<ServerSocket> capturedServerSocket = new AtomicReference<>();
+    AtomicReference<CompletableFuture<Void>> clientFuture = new AtomicReference<>();
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+            authProperties,
+            Collections.emptyMap(),
+            transportFactory,
+            null,
+            capturingSocketSupplier(capturedServerSocket),
+            authUri -> {
+              Map<String, String> params = parseQueryParams(authUri.getRawQuery());
+              URI redirectUri = URI.create(params.get("redirect_uri"));
+              String rawRequest =
+                  "GET /?flag&&state=" + params.get("state") + "&code=http10_code HTTP/1.0\r\n\r\n";
+              clientFuture.set(
+                  runAsyncClient(
+                      () -> {
+                        try (Socket socket =
+                            new Socket(redirectUri.getHost(), redirectUri.getPort())) {
+                          socket.setSoLinger(true, 0);
+                          socket
+                              .getOutputStream()
+                              .write(rawRequest.getBytes(StandardCharsets.US_ASCII));
+                          socket.getOutputStream().flush();
+                        }
+                        return null;
+                      }));
+            },
+            5000,
+            2000);
+
+    clientFuture.get().get(5, TimeUnit.SECONDS);
+    assertThat(credentials).isInstanceOf(UserCredentials.class);
+    assertThat(capturedTokenParams.get().get("code")).isEqualTo("http10_code");
+    assertThat(capturedServerSocket.get().isClosed()).isTrue();
+  }
+
+  @Test
+  public void testUserAuthCallback_rejectsInvalidStateCodeAndDuplicates() throws Exception {
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(redirectUri, "/?code=some_code&scope=bigquery"),
+        "Missing or invalid state parameter in OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) -> callbackGetRequest(redirectUri, "/?state=&code=some_code"),
+        "Missing or invalid state parameter in OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(redirectUri, "/?state=wrong_state&code=some_code&scope=bigquery"),
+        "Missing or invalid state parameter in OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(redirectUri, "/?state=wrong_state&error=access_denied"),
+        "Missing or invalid state parameter in OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(redirectUri, "/?state=" + authParams.get("state")),
+        "Could not retrieve the authorization code from OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(redirectUri, "/?state=" + authParams.get("state") + "&code="),
+        "Could not retrieve the authorization code from OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(
+                redirectUri, "/?state=" + authParams.get("state") + "&code=first&code=second"),
+        "Duplicate OAuth callback parameter: code");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(
+                redirectUri,
+                "/?state="
+                    + authParams.get("state")
+                    + "&state="
+                    + authParams.get("state")
+                    + "&code=first"),
+        "Duplicate OAuth callback parameter: state");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(
+                redirectUri, "/?state=" + authParams.get("state") + "&error=err1&error=err2"),
+        "Duplicate OAuth callback parameter: error");
+  }
+
+  @Test
+  public void testUserAuthCallback_handlesAndSanitizesOAuthErrorParameter() throws Exception {
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(
+                redirectUri, "/?state=" + authParams.get("state") + "&error=access_denied"),
+        "OAuth authorization failed: access_denied");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(redirectUri, "/?state=" + authParams.get("state") + "&error="),
+        "OAuth authorization failed: unknown_error");
+
+    StringBuilder longError = new StringBuilder("bad%22err+val%0A");
+    for (int i = 0; i < 70; i++) {
+      longError.append('x');
+    }
+    StringBuilder expectedSanitized = new StringBuilder("bad_err_val_");
+    while (expectedSanitized.length() < 64) {
+      expectedSanitized.append('x');
+    }
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(
+                redirectUri, "/?state=" + authParams.get("state") + "&error=" + longError),
+        "OAuth authorization failed: " + expectedSanitized);
+  }
+
+  @Test
+  public void testUserAuthCallback_ignoresPreconnectResetSlowDripAndFaviconBeforeValidCallback()
+      throws Exception {
+    Map<String, String> authProperties = defaultUserAuthProperties();
+    AtomicReference<Map<String, String>> capturedTokenParams = new AtomicReference<>();
+    HttpTransportFactory transportFactory =
+        createMockTokenTransport(capturedTokenParams, null, null);
+    AtomicReference<CompletableFuture<String>> faviconFuture = new AtomicReference<>();
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+            authProperties,
+            Collections.emptyMap(),
+            transportFactory,
+            null,
+            BigQueryJdbcOAuthUtility::openLoopbackServerSocket,
+            authUri -> {
+              Map<String, String> params = parseQueryParams(authUri.getRawQuery());
+              URI redirectUri = URI.create(params.get("redirect_uri"));
+              String host = redirectUri.getHost();
+              int port = redirectUri.getPort();
+              String state = params.get("state");
+              faviconFuture.set(
+                  runAsyncClient(
+                      () -> {
+                        try (Socket emptyPreconnect = new Socket(host, port)) {
+                          // Immediate clean EOF preconnect.
+                        }
+                        try (Socket resetPreconnect = new Socket(host, port)) {
+                          resetPreconnect.setSoLinger(true, 0);
+                        }
+                        try (Socket slowDrip = new Socket(host, port)) {
+                          slowDrip.setSoTimeout(40);
+                          OutputStream out = slowDrip.getOutputStream();
+                          InputStream in = slowDrip.getInputStream();
+                          for (int i = 0; i < 30; i++) {
+                            try {
+                              out.write('G');
+                              out.flush();
+                            } catch (IOException serverClosed) {
+                              break;
+                            }
+                            try {
+                              if (in.read() == -1) {
+                                break;
+                              }
+                            } catch (SocketTimeoutException continueDripping) {
+                              // Drip the next byte until the server closes at readDeadlineNanos.
+                            } catch (IOException serverClosed) {
+                              break;
+                            }
+                          }
+                        }
+                        String faviconResp =
+                            sendHttpRequest(
+                                redirectUri, callbackGetRequest(redirectUri, "/favicon.ico"));
+
+                        StringBuilder largeHeaders = new StringBuilder(20000);
+                        largeHeaders
+                            .append("GET /?state=")
+                            .append(state)
+                            .append("&code=after_preconnect HTTP/1.1\r\nHost: ")
+                            .append(host)
+                            .append("\r\n");
+                        String headerLine =
+                            "X-Extra-Padding: 0123456789abcdef0123456789abcdef0123456789abcdef\r\n";
+                        while (largeHeaders.length() < 18000) {
+                          largeHeaders.append(headerLine);
+                        }
+                        largeHeaders.append("\r\n");
+                        sendHttpRequest(redirectUri, largeHeaders.toString());
+                        return faviconResp;
+                      }));
+            },
+            5000,
+            200);
+
+    assertThat(credentials).isInstanceOf(UserCredentials.class);
+    assertValidHttpResponse(faviconFuture.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 404 Not Found");
+    assertThat(capturedTokenParams.get().get("code")).isEqualTo("after_preconnect");
+  }
+
+  @Test
+  public void testUserAuthCallback_enforcesDeadlinesAndBrowserLaunchFailureCleanup()
+      throws Exception {
+    Map<String, String> authProperties = defaultUserAuthProperties();
+
+    AtomicReference<ServerSocket> browserErrorSocket = new AtomicReference<>();
+    BigQueryJdbcRuntimeException browserLaunchEx =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+                    authProperties,
+                    Collections.emptyMap(),
+                    null,
+                    null,
+                    capturingSocketSupplier(browserErrorSocket),
+                    authUri -> {
+                      throw new IOException("Browser launch failed");
+                    },
+                    1000,
+                    500));
+    assertThat(browserLaunchEx.getCause()).isInstanceOf(IOException.class);
+    assertThat(browserLaunchEx.getCause().getMessage()).isEqualTo("Browser launch failed");
+    assertThat(browserErrorSocket.get().isClosed()).isTrue();
+
+    AtomicReference<ServerSocket> eofSocket = new AtomicReference<>();
+    BigQueryJdbcRuntimeException eofTimeoutEx =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+                    authProperties,
+                    Collections.emptyMap(),
+                    null,
+                    null,
+                    capturingSocketSupplier(eofSocket),
+                    authUri -> {
+                      URI redirectUri =
+                          URI.create(parseQueryParams(authUri.getRawQuery()).get("redirect_uri"));
+                      try (Socket empty =
+                          new Socket(redirectUri.getHost(), redirectUri.getPort())) {
+                        // Queued synchronously in backlog before overallDeadlineNanos starts.
+                      }
+                    },
+                    120,
+                    60));
+    assertThat(eofTimeoutEx.getCause()).isInstanceOf(SocketTimeoutException.class);
+    assertThat(eofTimeoutEx.getCause().getMessage())
+        .isEqualTo("Timed out waiting for OAuth authorization callback.");
+    assertThat(eofSocket.get().isClosed()).isTrue();
+
+    AtomicReference<ServerSocket> stalledSocket = new AtomicReference<>();
+    CountDownLatch wrotePartialBytes = new CountDownLatch(1);
+    CountDownLatch releaseStalledClient = new CountDownLatch(1);
+    AtomicReference<CompletableFuture<Void>> stalledClientFuture = new AtomicReference<>();
+    try {
+      BigQueryJdbcRuntimeException stalledEx =
+          assertThrows(
+              BigQueryJdbcRuntimeException.class,
+              () ->
+                  BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+                      authProperties,
+                      Collections.emptyMap(),
+                      null,
+                      null,
+                      capturingSocketSupplier(stalledSocket),
+                      authUri -> {
+                        URI redirectUri =
+                            URI.create(parseQueryParams(authUri.getRawQuery()).get("redirect_uri"));
+                        stalledClientFuture.set(
+                            runAsyncClient(
+                                () -> {
+                                  try (Socket slow =
+                                      new Socket(redirectUri.getHost(), redirectUri.getPort())) {
+                                    slow.getOutputStream()
+                                        .write(
+                                            "GET /?state=partial"
+                                                .getBytes(StandardCharsets.US_ASCII));
+                                    slow.getOutputStream().flush();
+                                    wrotePartialBytes.countDown();
+                                    releaseStalledClient.await(5, TimeUnit.SECONDS);
+                                  }
+                                  return null;
+                                }));
+                        try {
+                          assertThat(wrotePartialBytes.await(5, TimeUnit.SECONDS)).isTrue();
+                        } catch (InterruptedException e) {
+                          Thread.currentThread().interrupt();
+                          throw new IOException("Interrupted waiting for partial request write", e);
+                        }
+                      },
+                      120,
+                      500));
+      assertThat(stalledEx.getCause()).isInstanceOf(SocketTimeoutException.class);
+      assertThat(stalledEx.getCause().getMessage())
+          .isEqualTo("Timed out waiting for OAuth authorization callback.");
+      assertThat(stalledSocket.get().isClosed()).isTrue();
+    } finally {
+      releaseStalledClient.countDown();
+      if (stalledClientFuture.get() != null) {
+        stalledClientFuture.get().get(5, TimeUnit.SECONDS);
+      }
+    }
+  }
+
+  @Test
+  public void testUserAuthCallback_rejectsOversizedTruncatedAndMalformedRequestLines()
+      throws Exception {
+    StringBuilder oversizedQuery =
+        new StringBuilder(BigQueryJdbcOAuthUtility.MAX_HTTP_REQUEST_LINE_BYTES + 256);
+    oversizedQuery.append("GET /?pad=");
+    for (int i = 0; i < BigQueryJdbcOAuthUtility.MAX_HTTP_REQUEST_LINE_BYTES; i++) {
+      oversizedQuery.append('a');
+    }
+    oversizedQuery.append(" HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n");
+
+    assertCallbackRejected(
+        (redirectUri, authParams) -> oversizedQuery.toString(),
+        "OAuth callback HTTP request line exceeded maximum length.");
+    assertCallbackRejected(
+        (redirectUri, authParams) -> "G\rET /?code=abc HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+        "Invalid bare CR in OAuth callback HTTP request line.");
+    assertCallbackRejected(
+        (redirectUri, authParams) -> "POST /?code=abc HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+        "Invalid HTTP request line on OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) -> "GET ?code=abc HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+        "Invalid HTTP request line on OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            "GET http://example.com/?code=abc HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+        "Invalid HTTP request line on OAuth callback.");
+    assertCallbackRejected(
+        (redirectUri, authParams) -> callbackGetRequest(redirectUri, "//example.com/?code=abc"),
+        "Unexpected URI format in OAuth callback request.");
+    assertCallbackRejected(
+        (redirectUri, authParams) -> callbackGetRequest(redirectUri, "/?code=abc#frag"),
+        "Unexpected URI format in OAuth callback request.");
+    assertCallbackRejected(
+        (redirectUri, authParams) ->
+            callbackGetRequest(redirectUri, "/?state=%ZZ&code=unlogged_token_val"),
+        "Malformed URI in OAuth callback request.");
+
+    Map<String, String> authProperties = defaultUserAuthProperties();
+    AtomicReference<ServerSocket> truncatedSocket = new AtomicReference<>();
+    AtomicReference<CompletableFuture<String>> truncatedResponse = new AtomicReference<>();
+    BigQueryJdbcRuntimeException truncatedEx =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+                    authProperties,
+                    Collections.emptyMap(),
+                    null,
+                    null,
+                    capturingSocketSupplier(truncatedSocket),
+                    authUri -> {
+                      URI redirectUri =
+                          URI.create(parseQueryParams(authUri.getRawQuery()).get("redirect_uri"));
+                      truncatedResponse.set(
+                          runAsyncClient(
+                              () -> {
+                                try (Socket socket =
+                                    new Socket(redirectUri.getHost(), redirectUri.getPort())) {
+                                  socket.setSoTimeout(3000);
+                                  socket
+                                      .getOutputStream()
+                                      .write(
+                                          "GET /?code=incomplete"
+                                              .getBytes(StandardCharsets.US_ASCII));
+                                  socket.getOutputStream().flush();
+                                  socket.shutdownOutput();
+                                  return readUtf8Stream(socket.getInputStream());
+                                }
+                              }));
+                    },
+                    5000,
+                    2000));
+    assertThat(truncatedEx.getMessage()).isEqualTo("Incomplete OAuth callback HTTP request line.");
+    assertThat(truncatedEx.getCause()).isNull();
+    assertValidHttpResponse(
+        truncatedResponse.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 400 Bad Request");
+    assertThat(truncatedSocket.get().isClosed()).isTrue();
+  }
+
+  @Test
+  public void testUserAuthFlow_failsFastWhenDesktopBrowseUnsupported() {
+    Map<String, String> authProperties = defaultUserAuthProperties();
+
+    try (MockedStatic<GraphicsEnvironment> mockedGraphics =
+            Mockito.mockStatic(GraphicsEnvironment.class);
+        MockedStatic<Desktop> mockedDesktop = Mockito.mockStatic(Desktop.class)) {
+      Desktop desktop = Mockito.mock(Desktop.class);
+
+      mockedGraphics.when(GraphicsEnvironment::isHeadless).thenReturn(true);
+      assertThat(BigQueryJdbcOAuthUtility.isDesktopBrowseSupported()).isFalse();
+
+      mockedGraphics.when(GraphicsEnvironment::isHeadless).thenReturn(false);
+      mockedDesktop.when(Desktop::isDesktopSupported).thenReturn(false);
+      assertThat(BigQueryJdbcOAuthUtility.isDesktopBrowseSupported()).isFalse();
+
+      mockedDesktop.when(Desktop::isDesktopSupported).thenReturn(true);
+      mockedDesktop.when(Desktop::getDesktop).thenReturn(desktop);
+      Mockito.when(desktop.isSupported(Desktop.Action.BROWSE)).thenReturn(false);
+      assertThat(BigQueryJdbcOAuthUtility.isDesktopBrowseSupported()).isFalse();
+
+      BigQueryJdbcRuntimeException ex =
+          assertThrows(
+              BigQueryJdbcRuntimeException.class,
+              () ->
+                  BigQueryJdbcOAuthUtility.getCredentials(
+                      authProperties, Collections.emptyMap(), false, null, null));
+      assertThat(ex.getMessage()).isEqualTo("User auth only supported in desktop environments");
+
+      Mockito.when(desktop.isSupported(Desktop.Action.BROWSE)).thenReturn(true);
+      assertThat(BigQueryJdbcOAuthUtility.isDesktopBrowseSupported()).isTrue();
+    }
+  }
+
+  @FunctionalInterface
+  private interface CallbackRequestBuilder {
+    String build(URI redirectUri, Map<String, String> authQueryParams);
+  }
+
+  private static Map<String, String> defaultUserAuthProperties() {
+    return BigQueryJdbcOAuthUtility.parseOAuthProperties(
+        DataSource.fromUrl(getUriOAuthUserAccount().toString()), null);
+  }
+
+  private static BigQueryJdbcOAuthUtility.ServerSocketSupplier capturingSocketSupplier(
+      AtomicReference<ServerSocket> socketRef) {
+    return () -> {
+      ServerSocket socket = BigQueryJdbcOAuthUtility.openLoopbackServerSocket();
+      socketRef.set(socket);
+      return socket;
+    };
+  }
+
+  private static String callbackGetRequest(URI redirectUri, String target) {
+    return "GET "
+        + target
+        + " HTTP/1.1\r\nHost: "
+        + redirectUri.getHost()
+        + ":"
+        + redirectUri.getPort()
+        + "\r\n\r\n";
+  }
+
+  private static String computeS256Challenge(String verifier) throws NoSuchAlgorithmException {
+    return Base64.getUrlEncoder()
+        .withoutPadding()
+        .encodeToString(
+            MessageDigest.getInstance("SHA-256")
+                .digest(verifier.getBytes(StandardCharsets.US_ASCII)));
+  }
+
+  private static void assertCallbackRejected(
+      CallbackRequestBuilder requestBuilder, String expectedExactMessage) throws Exception {
+    Map<String, String> authProperties = defaultUserAuthProperties();
+    AtomicInteger tokenCalls = new AtomicInteger();
+    HttpTransportFactory transportFactory =
+        createMockTokenTransport(new AtomicReference<>(), tokenCalls, null);
+    AtomicReference<ServerSocket> capturedSocket = new AtomicReference<>();
+    AtomicReference<CompletableFuture<String>> rawResponseFuture = new AtomicReference<>();
+
+    BigQueryJdbcRuntimeException ex =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+                    authProperties,
+                    Collections.emptyMap(),
+                    transportFactory,
+                    null,
+                    capturingSocketSupplier(capturedSocket),
+                    authUri -> {
+                      Map<String, String> params = parseQueryParams(authUri.getRawQuery());
+                      URI redirectUri = URI.create(params.get("redirect_uri"));
+                      String rawRequest = requestBuilder.build(redirectUri, params);
+                      rawResponseFuture.set(
+                          runAsyncClient(() -> sendHttpRequest(redirectUri, rawRequest)));
+                    },
+                    5000,
+                    2000));
+
+    assertThat(ex.getMessage()).isEqualTo(expectedExactMessage);
+    assertThat(ex.getCause()).isNull();
+    assertThat(tokenCalls.get()).isEqualTo(0);
+    assertValidHttpResponse(
+        rawResponseFuture.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 400 Bad Request");
+    assertThat(capturedSocket.get().isClosed()).isTrue();
+  }
+
+  @FunctionalInterface
+  private interface ThrowingSupplier<T> {
+    T get() throws Exception;
+  }
+
+  private static <T> CompletableFuture<T> runAsyncClient(ThrowingSupplier<T> action) {
+    CompletableFuture<T> future = new CompletableFuture<>();
+    Thread thread =
+        new Thread(
+            () -> {
+              try {
+                future.complete(action.get());
+              } catch (Throwable t) {
+                future.completeExceptionally(t);
+              }
+            });
+    thread.setDaemon(true);
+    thread.start();
+    return future;
+  }
+
+  private static HttpTransportFactory createMockTokenTransport(
+      AtomicReference<Map<String, String>> capturedParams,
+      AtomicInteger callCount,
+      Runnable beforeExchangeHook) {
+    MockHttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                if (beforeExchangeHook != null) {
+                  beforeExchangeHook.run();
+                }
+                if (callCount != null) {
+                  callCount.incrementAndGet();
+                }
+                capturedParams.set(parseQueryParams(getContentAsString()));
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(200)
+                    .setContentType(Json.MEDIA_TYPE)
+                    .setContent(
+                        "{\"access_token\":\"mock_access_token\","
+                            + "\"refresh_token\":\"mock_refresh_token\","
+                            + "\"expires_in\":3600,"
+                            + "\"token_type\":\"Bearer\"}");
+              }
+            };
+          }
+        };
+    return () -> transport;
+  }
+
+  private static Map<String, String> parseQueryParams(String rawQuery) throws IOException {
+    Map<String, String> params = new HashMap<>();
+    if (rawQuery == null || rawQuery.isEmpty()) {
+      return params;
+    }
+    for (String pair : rawQuery.split("&")) {
+      String[] kv = pair.split("=", 2);
+      String key = URLDecoder.decode(kv[0], StandardCharsets.UTF_8.name());
+      String value = kv.length > 1 ? URLDecoder.decode(kv[1], StandardCharsets.UTF_8.name()) : "";
+      params.put(key, value);
+    }
+    return params;
+  }
+
+  private static String sendHttpRequest(URI redirectUri, String rawRequest) throws IOException {
+    try (Socket socket = new Socket(redirectUri.getHost(), redirectUri.getPort())) {
+      socket.setSoTimeout(3000);
+      OutputStream out = socket.getOutputStream();
+      out.write(rawRequest.getBytes(StandardCharsets.US_ASCII));
+      out.flush();
+      return readUtf8Stream(socket.getInputStream());
+    }
+  }
+
+  private static String readUtf8Stream(InputStream in) throws IOException {
+    ByteArrayOutputStream responseBytes = new ByteArrayOutputStream();
+    byte[] buf = new byte[1024];
+    int n;
+    while ((n = in.read(buf)) != -1) {
+      responseBytes.write(buf, 0, n);
+    }
+    return new String(responseBytes.toByteArray(), StandardCharsets.UTF_8);
+  }
+
+  private static void assertValidHttpResponse(String rawResponse, String expectedStatusLine) {
+    assertThat(rawResponse).startsWith(expectedStatusLine + "\r\n");
+    int headerEnd = rawResponse.indexOf("\r\n\r\n");
+    assertThat(headerEnd).isGreaterThan(0);
+    String headers = rawResponse.substring(0, headerEnd) + "\r\n";
+    String body = rawResponse.substring(headerEnd + 4);
+    int expectedLength = body.getBytes(StandardCharsets.UTF_8).length;
+    assertThat(headers).contains("\r\nContent-Length: " + expectedLength + "\r\n");
   }
 }
