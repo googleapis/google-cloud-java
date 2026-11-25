@@ -47,6 +47,20 @@ import org.jspecify.annotations.Nullable;
  * GoogleCredentials/OAuth2Credentials, as it does not provide an access token and is not considered
  * an OAuth2 credential.
  *
+ * <p><b>WARNING:</b> API keys do not carry universe domain metadata and <b>cannot be validated</b>
+ * against a client's configured universe domain or endpoint. When no universe domain is configured
+ * on the client, requests default to {@code googleapis.com}. <b>Callers are solely responsible for
+ * ensuring the API key matches the client's configured universe domain</b>, as the client will not
+ * prevent sending an API key to an unintended universe domain.
+ *
+ * <p><b>Quota project:</b> {@code ApiKeyCredentials} does not support overriding the quota project
+ * ID. The Google Cloud project associated with the API key is used as the quota and billing
+ * project. Setting a quota project ID on the client sends {@code x-goog-user-project}, which is
+ * ignored for resource-based APIs and rejected for client-based APIs because standard API keys do
+ * not identify an IAM principal. See <a
+ * href="https://docs.cloud.google.com/docs/quotas/set-quota-project#set-project-credentials">Set
+ * the quota project</a> for details.
+ *
  * <pre><code>
  * Credentials credentials = ApiKeyCredentials.create("your api key");
  * </code></pre>
@@ -60,6 +74,19 @@ public class ApiKeyCredentials extends Credentials {
     this.apiKey = apiKey;
   }
 
+  /**
+   * Creates an {@link ApiKeyCredentials} instance for the given API key.
+   *
+   * <p><b>WARNING:</b> API keys do not carry universe domain metadata and <b>cannot be
+   * validated</b> against a client's configured universe domain or endpoint. <b>Callers are solely
+   * responsible for ensuring the API key matches the client's configured universe domain</b> (which
+   * defaults to {@code googleapis.com}), as the client will not prevent sending an API key to an
+   * unintended universe domain.
+   *
+   * @param apiKey the API key string
+   * @return the credentials instance
+   * @throws IllegalArgumentException if {@code apiKey} is null or empty
+   */
   public static ApiKeyCredentials create(String apiKey) {
     if (apiKey == null || apiKey.isEmpty()) {
       throw new IllegalArgumentException("API key cannot be null or blank");

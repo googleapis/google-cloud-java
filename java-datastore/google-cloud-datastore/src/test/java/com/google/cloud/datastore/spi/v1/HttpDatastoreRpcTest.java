@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreException;
@@ -178,6 +179,17 @@ public class HttpDatastoreRpcTest {
         httpOptionsBuilder()
             .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
             .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+            .build();
+    HttpDatastoreRpc rpc = new HttpDatastoreRpc(options, null);
+    rpc.validateUniverseDomain();
+  }
+
+  @Test
+  public void testValidateUniverseDomain_apiKeyCredentialsSkipsValidation() {
+    DatastoreOptions options =
+        httpOptionsBuilder()
+            .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
+            .setCredentials(ApiKeyCredentials.create("test-api-key"))
             .build();
     HttpDatastoreRpc rpc = new HttpDatastoreRpc(options, null);
     rpc.validateUniverseDomain();
