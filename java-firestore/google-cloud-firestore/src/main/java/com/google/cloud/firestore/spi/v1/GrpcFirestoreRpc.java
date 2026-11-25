@@ -41,6 +41,7 @@ import com.google.cloud.firestore.v1.stub.FirestoreStubSettings;
 import com.google.cloud.firestore.v1.stub.GrpcFirestoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.BatchWriteRequest;
@@ -88,6 +89,8 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
     GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
     executorFactory = transportOptions.getExecutorFactory();
     executor = executorFactory.get();
+    ClientContext createdClientContext = null;
+    TransportChannel createdTransportChannel = null;
     try {
       if (options.getHost().contains("localhost")
           || NoCredentials.getInstance().equals(options.getCredentials())) {
@@ -96,38 +99,19 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
                 .usePlaintext()
                 .executor(executor)
                 .build();
-        TransportChannel transportChannel = GrpcTransportChannel.create(managedChannel);
-        clientContext =
+        createdTransportChannel = GrpcTransportChannel.create(managedChannel);
+        createdClientContext =
             ClientContext.newBuilder()
                 .setCredentials(null)
                 .setExecutor(executor)
-                .setTransportChannel(transportChannel)
+                .setTransportChannel(createdTransportChannel)
                 .setDefaultCallContext(GrpcCallContext.of(managedChannel, CallOptions.DEFAULT))
-                .setBackgroundResources(Collections.singletonList(transportChannel))
+                .setBackgroundResources(Collections.singletonList(createdTransportChannel))
                 .build();
       } else {
-        FirestoreSettingsBuilder settingsBuilder =
-            new FirestoreSettingsBuilder(FirestoreSettings.newBuilder().build());
-
-        DatabaseRootName databaseName =
-            DatabaseRootName.of(options.getProjectId(), options.getDatabaseId());
-
-        settingsBuilder.setCredentialsProvider(options.getCredentialsProvider());
-        settingsBuilder.setTransportChannelProvider(options.getTransportChannelProvider());
-
-        HeaderProvider internalHeaderProvider =
-            FirestoreSettings.defaultApiClientHeaderProviderBuilder()
-                .setClientLibToken(
-                    ServiceOptions.getGoogApiClientLibName(),
-                    GaxProperties.getLibraryVersion(options.getClass()))
-                .setResourceToken(databaseName.toString())
-                .build();
-
-        settingsBuilder.setInternalHeaderProvider(internalHeaderProvider);
-        settingsBuilder.setHeaderProvider(options.getMergedHeaderProvider(new NoHeaderProvider()));
-
-        clientContext = ClientContext.create(settingsBuilder.build());
+        createdClientContext = ClientContext.create(createFirestoreSettings(options));
       }
+      clientContext = createdClientContext;
 
       FirestoreStubSettings.Builder firestoreBuilder =
           FirestoreStubSettings.newBuilder(clientContext);
@@ -169,6 +153,26 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
       firestoreStub = GrpcFirestoreStub.create(firestoreBuilder.build());
     } catch (Exception e) {
+      if (createdClientContext != null) {
+        for (BackgroundResource resource : createdClientContext.getBackgroundResources()) {
+          try {
+            resource.close();
+          } catch (Exception suppressed) {
+            e.addSuppressed(suppressed);
+          }
+        }
+      } else if (createdTransportChannel != null) {
+        try {
+          createdTransportChannel.close();
+        } catch (Exception suppressed) {
+          e.addSuppressed(suppressed);
+        }
+      }
+      try {
+        executorFactory.release(executor);
+      } catch (Exception suppressed) {
+        e.addSuppressed(suppressed);
+      }
       throw new IOException(e);
     }
   }
@@ -286,10 +290,56 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
     return firestoreStub.listenCallable();
   }
 
+  /** Returns the {@link ClientContext} created for this RPC instance. */
+  @VisibleForTesting
+  ClientContext getClientContext() {
+    return clientContext;
+  }
+
+  /**
+   * Builds {@link FirestoreSettings} from {@link FirestoreOptions}, propagating {@code
+   * universeDomain} and leaving the endpoint unset when the default host is used so GAX resolves
+   * the endpoint from the universe domain.
+   */
+  @VisibleForTesting
+  static FirestoreSettings createFirestoreSettings(FirestoreOptions options) throws IOException {
+    FirestoreSettingsBuilder settingsBuilder = new FirestoreSettingsBuilder();
+
+    DatabaseRootName databaseName =
+        DatabaseRootName.of(options.getProjectId(), options.getDatabaseId());
+
+    settingsBuilder.setCredentialsProvider(options.getCredentialsProvider());
+    settingsBuilder.setTransportChannelProvider(options.getTransportChannelProvider());
+    // Forward any explicitly configured universe domain so GAX resolves the endpoint
+    // and validates credentials against it.
+    if (options.getUniverseDomain() != null) {
+      settingsBuilder.setUniverseDomain(options.getUniverseDomain());
+    }
+    // Preserve custom host overrides; leave the endpoint unset for the default host so GAX
+    // resolves firestore.<universeDomain>:443 automatically.
+    if (options.getHost() != null
+        && !FirestoreSettings.getDefaultEndpoint().equals(options.getHost())) {
+      settingsBuilder.setEndpoint(options.getHost());
+    }
+
+    HeaderProvider internalHeaderProvider =
+        FirestoreSettings.defaultApiClientHeaderProviderBuilder()
+            .setClientLibToken(
+                ServiceOptions.getGoogApiClientLibName(),
+                GaxProperties.getLibraryVersion(options.getClass()))
+            .setResourceToken(databaseName.toString())
+            .build();
+
+    settingsBuilder.setInternalHeaderProvider(internalHeaderProvider);
+    settingsBuilder.setHeaderProvider(options.getMergedHeaderProvider(new NoHeaderProvider()));
+
+    return settingsBuilder.build();
+  }
+
   // This class is needed solely to get access to protected method setInternalHeaderProvider()
   private static class FirestoreSettingsBuilder extends FirestoreSettings.Builder {
-    private FirestoreSettingsBuilder(FirestoreSettings settings) {
-      super(settings);
+    private FirestoreSettingsBuilder() {
+      super(FirestoreStubSettings.newBuilder());
     }
 
     @Override
