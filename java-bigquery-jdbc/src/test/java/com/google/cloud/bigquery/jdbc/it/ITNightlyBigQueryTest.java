@@ -62,7 +62,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   static Statement bigQueryStatement;
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
-  private static final String BASE_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
   private static final String CONSTRAINTS_DATASET = "JDBC_CONSTRAINTS_TEST_DATASET";
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
@@ -184,7 +183,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidLongRunningQuery() throws SQLException {
     // setup
     String selectQuery =
@@ -269,7 +268,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testWideColumnQueries() throws SQLException {
     String selectQuery =
         "SELECT * FROM `bigquery-public-data.covid19_open_data_eu.covid19_open_data` LIMIT 50000";
@@ -288,7 +287,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testExecuteLargeUpdate() throws SQLException {
     String tableName = "JDBC_LARGE_UPDATE_TABLE_" + randomNumber;
     String createQuery =
@@ -327,7 +326,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testHTAPIWithValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
@@ -346,6 +344,9 @@ public class ITNightlyBigQueryTest extends ITBase {
 
     // assertion
     assertNotNull(resultSet);
+    assertArrowResultSet(resultSet);
+    resultSet.close();
+    connection.close();
     String selectQuery = "SELECT * FROM INTEGRATION_TESTS.destination_table_test;";
     ResultSet actualResultSet = bigQueryStatement.executeQuery(selectQuery);
     assertEquals(200000, resultSetRowCount(actualResultSet));
@@ -714,7 +715,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testHTAPIWithValidDestinationTableSavesQueriesWithLegacy() throws SQLException {
     // setup
     String connection_uri =
@@ -1042,7 +1043,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidAllDataTypesSerializationFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_DATATYPES_INTEGRATION_TEST_TABLE";
@@ -1076,7 +1077,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testRepeatedStructFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_REPEATED_STRUCT_INTEGRATION_TEST";
@@ -1101,7 +1102,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
@@ -1622,7 +1623,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   // reads using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
   public void testIterateOrderArrowMultiThread() throws SQLException {
@@ -1645,7 +1646,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
     String connection_uri = ITNightlyBigQueryTest.connection_uri;
@@ -1670,7 +1671,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLarge() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
@@ -1681,16 +1681,15 @@ public class ITNightlyBigQueryTest extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri, withReadApi);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertArrowResultSet(arrowResultSet);
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITNightlyBigQueryTest.connection_uri
@@ -1702,9 +1701,9 @@ public class ITNightlyBigQueryTest extends ITBase {
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 1000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    assertTrue(arrowResultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertArrowResultSet(arrowResultSet);
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
@@ -1721,7 +1720,7 @@ public class ITNightlyBigQueryTest extends ITBase {
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
     assertTrue(arrowResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));

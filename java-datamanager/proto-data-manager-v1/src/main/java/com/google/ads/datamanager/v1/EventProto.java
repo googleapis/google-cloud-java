@@ -72,12 +72,13 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "%google/ads/datamanager/v1/event.proto\022"
           + "\031google.ads.datamanager.v1\032)google/ads/d"
-          + "atamanager/v1/cart_data.proto\032\'google/ad"
-          + "s/datamanager/v1/consent.proto\032+google/ads/datamanager/v1/device_info.proto\0321goo"
-          + "gle/ads/datamanager/v1/encrypted_user_id.proto\0322google/ads/datamanager/v1/experi"
-          + "mental_field.proto\032)google/ads/datamanager/v1/user_data.proto\032/google/ads/datama"
-          + "nager/v1/user_properties.proto\032\037google/a"
-          + "pi/field_behavior.proto\032\037google/protobuf/timestamp.proto\"\226\n\n"
+          + "atamanager/v1/call_info.proto\032)google/ad"
+          + "s/datamanager/v1/cart_data.proto\032\'google"
+          + "/ads/datamanager/v1/consent.proto\032+google/ads/datamanager/v1/device_info.proto\0321"
+          + "google/ads/datamanager/v1/encrypted_user_id.proto\0322google/ads/datamanager/v1/exp"
+          + "erimental_field.proto\032)google/ads/datamanager/v1/user_data.proto\032/google/ads/dat"
+          + "amanager/v1/user_properties.proto\032\037googl"
+          + "e/api/field_behavior.proto\032\037google/protobuf/timestamp.proto\"\324\n\n"
           + "\005Event\022$\n"
           + "\026destination_references\030\001 \003(\tB\004\342A\001\001\022\034\n"
           + "\016transaction_id\030\002 \001(\tB\004\342A\001\001\0229\n"
@@ -85,8 +86,8 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\022@\n"
           + "\026last_updated_timestamp\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\022<\n"
-          + "\tuser_data\030\005 \001(\0132#"
-          + ".google.ads.datamanager.v1.UserDataB\004\342A\001\001\0229\n"
+          + "\tuser_data\030\005 \001("
+          + "\0132#.google.ads.datamanager.v1.UserDataB\004\342A\001\001\0229\n"
           + "\007consent\030\006"
           + " \001(\0132\".google.ads.datamanager.v1.ConsentB\004\342A\001\001\022F\n"
           + "\016ad_identifiers\030\007"
@@ -113,11 +114,13 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
           + " \003(\0132).google.ads.datamanager.v1.EventParameterB\004\342A\001\001\022H\n"
           + "\025third_party_user_data\030\024"
           + " \001(\0132#.google.ads.datamanager.v1.UserDataB\004\342A\001\001\022F\n"
-          + "\016event_location\030\025 \001(\013"
-          + "2(.google.ads.datamanager.v1.EventLocationB\004\342A\001\001\022\035\n"
-          + "\017app_instance_id\030\026 \001(\tB\004\342A\001\001B\023\n"
+          + "\016event_location\030\025 "
+          + "\001(\0132(.google.ads.datamanager.v1.EventLocationB\004\342A\001\001\022\035\n"
+          + "\017app_instance_id\030\026 \001(\tB\004\342A\001\001\022<\n"
+          + "\tcall_info\030\030"
+          + " \001(\0132#.google.ads.datamanager.v1.CallInfoB\004\342A\001\001B\023\n"
           + "\021_conversion_valueB\023\n"
-          + "\021_conversion_count\"\251\003\n\r"
+          + "\021_conversion_count\"\300\003\n\r"
           + "AdIdentifiers\022 \n"
           + "\022session_attributes\030\001 \001(\tB\004\342A\001\001\022\023\n"
           + "\005gclid\030\002 \001(\tB\004\342A\001\001\022\024\n"
@@ -132,7 +135,9 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
           + "\022encrypted_user_ids\030\n"
           + " \003(\0132*.google.ads.datamanager.v1.EncryptedUserIdB\004\342A\001\001\022\022\n"
           + "\004ppid\030\013 \001(\tB\004\342A\001\001\022\032\n"
-          + "\014visitor_ppid\030\014 \001(\tB\004\342A\001\001\"c\n"
+          + "\014visitor_ppid\030\014 \001(\tB\004\342A\001\001\022\025\n"
+          + "\007lead_id\030\r"
+          + " \001(\tB\004\342A\001\001\"c\n"
           + "\016CustomVariable\022\026\n"
           + "\010variable\030\001 \001(\tB\004\342A\001\001\022\023\n"
           + "\005value\030\002 \001(\tB\004\342A\001\001\022$\n"
@@ -156,14 +161,16 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
           + "\007MESSAGE\020\006\022\t\n"
           + "\005OTHER\020\005B\307\001\n"
           + "\035com.google.ads.datamanager.v1B\n"
-          + "EventProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanagerpb;dat"
-          + "amanagerpb\252\002\031Google.Ads.DataManager.V1\312\002"
-          + "\031Google\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "EventProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanag"
+          + "erpb;datamanagerpb\252\002\031Google.Ads.DataMana"
+          + "ger.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Goo"
+          + "gle::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.datamanager.v1.CallInfoProto.getDescriptor(),
               com.google.ads.datamanager.v1.CartDataProto.getDescriptor(),
               com.google.ads.datamanager.v1.ConsentProto.getDescriptor(),
               com.google.ads.datamanager.v1.DeviceInfoProto.getDescriptor(),
@@ -202,6 +209,7 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
               "ThirdPartyUserData",
               "EventLocation",
               "AppInstanceId",
+              "CallInfo",
             });
     internal_static_google_ads_datamanager_v1_AdIdentifiers_descriptor =
         getDescriptor().getMessageType(1);
@@ -221,6 +229,7 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
               "EncryptedUserIds",
               "Ppid",
               "VisitorPpid",
+              "LeadId",
             });
     internal_static_google_ads_datamanager_v1_CustomVariable_descriptor =
         getDescriptor().getMessageType(2);
@@ -252,6 +261,7 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
               "ContinentCode",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.datamanager.v1.CallInfoProto.getDescriptor();
     com.google.ads.datamanager.v1.CartDataProto.getDescriptor();
     com.google.ads.datamanager.v1.ConsentProto.getDescriptor();
     com.google.ads.datamanager.v1.DeviceInfoProto.getDescriptor();

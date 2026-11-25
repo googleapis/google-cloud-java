@@ -74,6 +74,47 @@ public final class InstancesGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.run.v2.UpdateInstanceRequest, com.google.longrunning.Operation>
+      getUpdateInstanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateInstance",
+      requestType = com.google.cloud.run.v2.UpdateInstanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.run.v2.UpdateInstanceRequest, com.google.longrunning.Operation>
+      getUpdateInstanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.run.v2.UpdateInstanceRequest, com.google.longrunning.Operation>
+        getUpdateInstanceMethod;
+    if ((getUpdateInstanceMethod = InstancesGrpc.getUpdateInstanceMethod) == null) {
+      synchronized (InstancesGrpc.class) {
+        if ((getUpdateInstanceMethod = InstancesGrpc.getUpdateInstanceMethod) == null) {
+          InstancesGrpc.getUpdateInstanceMethod =
+              getUpdateInstanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.run.v2.UpdateInstanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateInstance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.run.v2.UpdateInstanceRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new InstancesMethodDescriptorSupplier("UpdateInstance"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.run.v2.DeleteInstanceRequest, com.google.longrunning.Operation>
       getDeleteInstanceMethod;
 
@@ -281,6 +322,125 @@ public final class InstancesGrpc {
     return getStartInstanceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIamPolicy",
+      requestType = com.google.iam.v1.GetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+        getGetIamPolicyMethod;
+    if ((getGetIamPolicyMethod = InstancesGrpc.getGetIamPolicyMethod) == null) {
+      synchronized (InstancesGrpc.class) {
+        if ((getGetIamPolicyMethod = InstancesGrpc.getGetIamPolicyMethod) == null) {
+          InstancesGrpc.getGetIamPolicyMethod =
+              getGetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(new InstancesMethodDescriptorSupplier("GetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetIamPolicy",
+      requestType = com.google.iam.v1.SetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+        getSetIamPolicyMethod;
+    if ((getSetIamPolicyMethod = InstancesGrpc.getSetIamPolicyMethod) == null) {
+      synchronized (InstancesGrpc.class) {
+        if ((getSetIamPolicyMethod = InstancesGrpc.getSetIamPolicyMethod) == null) {
+          InstancesGrpc.getSetIamPolicyMethod =
+              getSetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(new InstancesMethodDescriptorSupplier("SetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getSetIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "TestIamPermissions",
+      requestType = com.google.iam.v1.TestIamPermissionsRequest.class,
+      responseType = com.google.iam.v1.TestIamPermissionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.iam.v1.TestIamPermissionsRequest,
+            com.google.iam.v1.TestIamPermissionsResponse>
+        getTestIamPermissionsMethod;
+    if ((getTestIamPermissionsMethod = InstancesGrpc.getTestIamPermissionsMethod) == null) {
+      synchronized (InstancesGrpc.class) {
+        if ((getTestIamPermissionsMethod = InstancesGrpc.getTestIamPermissionsMethod) == null) {
+          InstancesGrpc.getTestIamPermissionsMethod =
+              getTestIamPermissionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.TestIamPermissionsRequest,
+                          com.google.iam.v1.TestIamPermissionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "TestIamPermissions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new InstancesMethodDescriptorSupplier("TestIamPermissions"))
+                      .build();
+        }
+      }
+    }
+    return getTestIamPermissionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static InstancesStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<InstancesStub> factory =
@@ -361,7 +521,21 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Deletes a Instance
+     * Updates an Instance.
+     * </pre>
+     */
+    default void updateInstance(
+        com.google.cloud.run.v2.UpdateInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Instance
      * </pre>
      */
     default void deleteInstance(
@@ -375,7 +549,7 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Gets a Instance
+     * Gets an Instance
      * </pre>
      */
     default void getInstance(
@@ -426,6 +600,52 @@ public final class InstancesGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getStartInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM Access Control policy currently in effect for the given
+     * Instance. This result does not include any inherited policies.
+     * </pre>
+     */
+    default void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM Access control policy for the specified Instance. Overwrites
+     * any existing policy.
+     * </pre>
+     */
+    default void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified Instance.
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    default void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getTestIamPermissionsMethod(), responseObserver);
     }
   }
 
@@ -481,7 +701,23 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Deletes a Instance
+     * Updates an Instance.
+     * </pre>
+     */
+    public void updateInstance(
+        com.google.cloud.run.v2.UpdateInstanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Instance
      * </pre>
      */
     public void deleteInstance(
@@ -497,7 +733,7 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Gets a Instance
+     * Gets an Instance
      * </pre>
      */
     public void getInstance(
@@ -557,6 +793,58 @@ public final class InstancesGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM Access Control policy currently in effect for the given
+     * Instance. This result does not include any inherited policies.
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM Access control policy for the specified Instance. Overwrites
+     * any existing policy.
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified Instance.
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    public void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -595,7 +883,20 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Deletes a Instance
+     * Updates an Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstance(
+        com.google.cloud.run.v2.UpdateInstanceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Instance
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
@@ -608,7 +909,7 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Gets a Instance
+     * Gets an Instance
      * </pre>
      */
     public com.google.cloud.run.v2.Instance getInstance(
@@ -655,6 +956,48 @@ public final class InstancesGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartInstanceMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM Access Control policy currently in effect for the given
+     * Instance. This result does not include any inherited policies.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM Access control policy for the specified Instance. Overwrites
+     * any existing policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified Instance.
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -693,7 +1036,20 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Deletes a Instance
+     * Updates an Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstance(
+        com.google.cloud.run.v2.UpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Instance
      * </pre>
      */
     public com.google.longrunning.Operation deleteInstance(
@@ -706,7 +1062,7 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Gets a Instance
+     * Gets an Instance
      * </pre>
      */
     public com.google.cloud.run.v2.Instance getInstance(
@@ -753,6 +1109,46 @@ public final class InstancesGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStartInstanceMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM Access Control policy currently in effect for the given
+     * Instance. This result does not include any inherited policies.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM Access control policy for the specified Instance. Overwrites
+     * any existing policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified Instance.
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -790,7 +1186,20 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Deletes a Instance
+     * Updates an Instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateInstance(com.google.cloud.run.v2.UpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Instance
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -803,7 +1212,7 @@ public final class InstancesGrpc {
      *
      *
      * <pre>
-     * Gets a Instance
+     * Gets an Instance
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.run.v2.Instance>
@@ -851,14 +1260,61 @@ public final class InstancesGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStartInstanceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM Access Control policy currently in effect for the given
+     * Instance. This result does not include any inherited policies.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM Access control policy for the specified Instance. Overwrites
+     * any existing policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that a caller has on the specified Instance.
+     * There are no permissions required for making this API call.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.iam.v1.TestIamPermissionsResponse>
+        testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INSTANCE = 0;
-  private static final int METHODID_DELETE_INSTANCE = 1;
-  private static final int METHODID_GET_INSTANCE = 2;
-  private static final int METHODID_LIST_INSTANCES = 3;
-  private static final int METHODID_STOP_INSTANCE = 4;
-  private static final int METHODID_START_INSTANCE = 5;
+  private static final int METHODID_UPDATE_INSTANCE = 1;
+  private static final int METHODID_DELETE_INSTANCE = 2;
+  private static final int METHODID_GET_INSTANCE = 3;
+  private static final int METHODID_LIST_INSTANCES = 4;
+  private static final int METHODID_STOP_INSTANCE = 5;
+  private static final int METHODID_START_INSTANCE = 6;
+  private static final int METHODID_GET_IAM_POLICY = 7;
+  private static final int METHODID_SET_IAM_POLICY = 8;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -880,6 +1336,11 @@ public final class InstancesGrpc {
         case METHODID_CREATE_INSTANCE:
           serviceImpl.createInstance(
               (com.google.cloud.run.v2.CreateInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_INSTANCE:
+          serviceImpl.updateInstance(
+              (com.google.cloud.run.v2.UpdateInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_INSTANCE:
@@ -908,6 +1369,22 @@ public final class InstancesGrpc {
               (com.google.cloud.run.v2.StartInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_GET_IAM_POLICY:
+          serviceImpl.getIamPolicy(
+              (com.google.iam.v1.GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_SET_IAM_POLICY:
+          serviceImpl.setIamPolicy(
+              (com.google.iam.v1.SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_TEST_IAM_PERMISSIONS:
+          serviceImpl.testIamPermissions(
+              (com.google.iam.v1.TestIamPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -932,6 +1409,12 @@ public final class InstancesGrpc {
                 new MethodHandlers<
                     com.google.cloud.run.v2.CreateInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
+        .addMethod(
+            getUpdateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.UpdateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
         .addMethod(
             getDeleteInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -963,6 +1446,23 @@ public final class InstancesGrpc {
                 new MethodHandlers<
                     com.google.cloud.run.v2.StartInstanceRequest, com.google.longrunning.Operation>(
                     service, METHODID_START_INSTANCE)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
         .build();
   }
 
@@ -1015,11 +1515,15 @@ public final class InstancesGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new InstancesFileDescriptorSupplier())
                       .addMethod(getCreateInstanceMethod())
+                      .addMethod(getUpdateInstanceMethod())
                       .addMethod(getDeleteInstanceMethod())
                       .addMethod(getGetInstanceMethod())
                       .addMethod(getListInstancesMethod())
                       .addMethod(getStopInstanceMethod())
                       .addMethod(getStartInstanceMethod())
+                      .addMethod(getGetIamPolicyMethod())
+                      .addMethod(getSetIamPolicyMethod())
+                      .addMethod(getTestIamPermissionsMethod())
                       .build();
         }
       }

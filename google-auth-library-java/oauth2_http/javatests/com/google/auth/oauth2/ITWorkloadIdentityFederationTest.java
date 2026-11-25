@@ -36,7 +36,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
@@ -71,7 +73,7 @@ import java.util.Base64;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -99,18 +101,19 @@ final class ITWorkloadIdentityFederationTest {
   private static final String DEFAULT_MTLS_CERT_CONFIG_PATH =
       "testresources/mtls/certificate_config.json";
 
-  private String clientEmail;
-  private String clientId;
-  private String privateKeyId;
-  private PrivateKey privateKey;
+  private static String clientEmail;
+  private static String clientId;
+  private static String privateKeyId;
+  private static PrivateKey privateKey;
 
-  @BeforeEach
-  void setup() throws IOException {
+  @BeforeAll
+  static void setup() throws IOException {
     GenericJson keys = getServiceAccountKeyFileAsJson();
     clientEmail = (String) keys.get("client_email");
     clientId = (String) keys.get("client_id");
     privateKeyId = (String) keys.get("private_key_id");
     privateKey = OAuth2Utils.privateKeyFromPkcs8((String) keys.get("private_key"));
+    ensureOidcJwtProviderJwksSynced(clientEmail, privateKeyId);
   }
 
   /**
@@ -680,6 +683,78 @@ final class ITWorkloadIdentityFederationTest {
     }
   }
 
+  /**
+   * Ensures the {@code oidc-jwt-1} Workload Identity Pool Provider's static {@code jwksJson}
+   * includes the current service account {@code private_key_id}. When the integration test service
+   * account rotates keys bi-monthly, the first test run automatically fetches the live public JWK
+   * set for the service account and patches {@code oidc-jwt-1} using the service account's own
+   * {@code roles/iam.workloadIdentityPoolAdmin} permission.
+   */
+  private static void ensureOidcJwtProviderJwksSynced(String clientEmail, String privateKeyId)
+      throws IOException {
+    GoogleCredentials adminCredentials =
+        GoogleCredentials.getApplicationDefault().createScoped(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
+    HttpTransport transport = new NetHttpTransport();
+    HttpRequestFactory requestFactory =
+        transport.createRequestFactory(new HttpCredentialsAdapter(adminCredentials));
+    JsonObjectParser parser = new JsonObjectParser(GsonFactory.getDefaultInstance());
+
+    String providerResource = OIDC_JWT_AUDIENCE.substring("//iam.googleapis.com/".length());
+    String providerUrl = "https://iam.googleapis.com/v1/" + providerResource;
+
+    HttpRequest getRequest = requestFactory.buildGetRequest(new GenericUrl(providerUrl));
+    getRequest.setParser(parser);
+    GenericData providerData;
+    HttpResponse getResponse = getRequest.execute();
+    try {
+      providerData = getResponse.parseAs(GenericData.class);
+    } finally {
+      getResponse.disconnect();
+    }
+
+    Map<?, ?> oidc = (Map<?, ?>) providerData.get("oidc");
+    String currentJwksJson = oidc != null ? (String) oidc.get("jwksJson") : null;
+    if (currentJwksJson != null && currentJwksJson.contains(privateKeyId)) {
+      return;
+    }
+
+    HttpRequest jwksRequest =
+        transport
+            .createRequestFactory()
+            .buildGetRequest(
+                new GenericUrl(
+                    "https://www.googleapis.com/service_accounts/v1/jwk/" + clientEmail));
+    String liveJwksJson;
+    HttpResponse jwksResponse = jwksRequest.execute();
+    try {
+      liveJwksJson = jwksResponse.parseAsString();
+    } finally {
+      jwksResponse.disconnect();
+    }
+
+    GenericJson oidcPatch = new GenericJson();
+    oidcPatch.setFactory(OAuth2Utils.JSON_FACTORY);
+    oidcPatch.put("jwksJson", liveJwksJson);
+
+    GenericJson patchBody = new GenericJson();
+    patchBody.setFactory(OAuth2Utils.JSON_FACTORY);
+    patchBody.put("oidc", oidcPatch);
+
+    HttpContent content =
+        new ByteArrayContent(
+            "application/json", patchBody.toPrettyString().getBytes(StandardCharsets.UTF_8));
+    HttpRequest patchRequest =
+        requestFactory.buildPostRequest(
+            new GenericUrl(providerUrl + "?updateMask=oidc.jwksJson"), content);
+    patchRequest.getHeaders().set("X-HTTP-Method-Override", "PATCH");
+    HttpResponse patchResponse = patchRequest.execute();
+    try {
+      assertTrue(patchResponse.isSuccessStatusCode());
+    } finally {
+      patchResponse.disconnect();
+    }
+  }
+
   private void callGcs(GoogleCredentials credentials) throws IOException {
     callGcs(credentials, new NetHttpTransport(), "https://storage.googleapis.com/storage/v1/b/");
   }
@@ -740,7 +815,7 @@ final class ITWorkloadIdentityFederationTest {
     return (String) responseData.get("token");
   }
 
-  private GenericJson getServiceAccountKeyFileAsJson() throws IOException {
+  private static GenericJson getServiceAccountKeyFileAsJson() throws IOException {
     String credentialsPath = System.getenv(DefaultCredentialsProvider.CREDENTIAL_ENV_VAR);
     JsonFactory jsonFactory = OAuth2Utils.JSON_FACTORY;
     JsonObjectParser parser = new JsonObjectParser(jsonFactory);

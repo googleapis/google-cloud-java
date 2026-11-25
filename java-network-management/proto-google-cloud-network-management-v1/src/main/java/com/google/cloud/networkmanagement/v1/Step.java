@@ -463,8 +463,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Forwarding state: for packets originating from a serverless endpoint
-     * forwarded through public (external) connectivity.
+     * Forwarding state: for packets originating from a serverless
+     * endpoint forwarded through public (external) connectivity.
      * </pre>
      *
      * <code>SERVERLESS_EXTERNAL_CONNECTION = 36;</code>
@@ -1033,8 +1033,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Forwarding state: for packets originating from a serverless endpoint
-     * forwarded through public (external) connectivity.
+     * Forwarding state: for packets originating from a serverless
+     * endpoint forwarded through public (external) connectivity.
      * </pre>
      *
      * <code>SERVERLESS_EXTERNAL_CONNECTION = 36;</code>

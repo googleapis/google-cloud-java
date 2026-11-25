@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.base.Preconditions.checkState;
 import static java.time.temporal.ChronoUnit.MICROS;
 
 import com.google.api.client.util.Data;
@@ -201,10 +200,16 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   public boolean getBooleanValue() {
     String stringValue = getStringValue();
-    checkState(
-        stringValue.equalsIgnoreCase("true") || stringValue.equalsIgnoreCase("false"),
-        "Field value is not of boolean type");
-    return Boolean.parseBoolean(stringValue);
+    // Validate both literals explicitly rather than delegating directly to Boolean.parseBoolean,
+    // which silently returns false for non-boolean strings instead of throwing
+    // IllegalStateException.
+    if ("true".equalsIgnoreCase(stringValue)) {
+      return true;
+    }
+    if ("false".equalsIgnoreCase(stringValue)) {
+      return false;
+    }
+    throw new IllegalStateException("Field value is not of boolean type");
   }
 
   /**
@@ -232,9 +237,8 @@ public class FieldValue implements Serializable {
   }
 
   /**
-   * Returns this field's value as a {@code String}, representing a timestamp as an Instant. This
-   * method should only be used if the corresponding field has {@link LegacySQLTypeName#TIMESTAMP}
-   * type.
+   * Returns this field's value as an {@link Instant}. This method should only be used if the
+   * corresponding field has {@link LegacySQLTypeName#TIMESTAMP} type.
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Long}
@@ -426,7 +430,7 @@ public class FieldValue implements Serializable {
    *
    * <p>The parameter {@code interval} should be an interval in the canonical format: "[sign]Y-M
    * [sign]D [sign]H:M:S[.F]". More details <a href=
-   * "https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#canonical_format_3">
+   * "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types#canonical_format_3">
    * here</a>
    *
    * @throws IllegalArgumentException if the {@code interval} is not a valid interval

@@ -492,6 +492,38 @@ class AwsRequestSignerTest {
   }
 
   @Test
+  void sign_postGetCallerIdentityFips() {
+    String url =
+        "https://sts-fips.us-east-2.amazonaws.com?Action=GetCallerIdentity&Version=2011-06-15";
+
+    Map<String, String> additionalHeaders = new HashMap<>();
+    additionalHeaders.put("x-amz-date", X_AMZ_DATE);
+
+    AwsRequestSigner signer =
+        AwsRequestSigner.newBuilder(awsSecurityCredentials, "POST", url, "us-east-2")
+            .setAdditionalHeaders(additionalHeaders)
+            .build();
+
+    AwsRequestSignature signature = signer.sign();
+
+    String expectedSignature = "dc64d2d5b33786e97de10de5a82428f1e79cbc69d6ec3d450780f29b20eaa43f";
+    String expectedAuthHeader =
+        "AWS4-HMAC-SHA256 Credential="
+            + awsSecurityCredentials.getAccessKeyId()
+            + "/20200811/us-east-2/sts/"
+            + "aws4_request, SignedHeaders=host;x-amz-date;x-amz-security-token, Signature="
+            + expectedSignature;
+
+    assertEquals(expectedSignature, signature.getSignature());
+    assertEquals(expectedAuthHeader, signature.getAuthorizationHeader());
+    assertEquals(awsSecurityCredentials, signature.getSecurityCredentials());
+    assertEquals(X_AMZ_DATE, signature.getDate());
+    assertEquals("POST", signature.getHttpMethod());
+    assertEquals("us-east-2", signature.getRegion());
+    assertEquals(URI.create(url).normalize().toString(), signature.getUrl());
+  }
+
+  @Test
   void sign_postGetCallerIdentityNoToken() {
     String url = "https://sts.us-east-2.amazonaws.com?Action=GetCallerIdentity&Version=2011-06-15";
 

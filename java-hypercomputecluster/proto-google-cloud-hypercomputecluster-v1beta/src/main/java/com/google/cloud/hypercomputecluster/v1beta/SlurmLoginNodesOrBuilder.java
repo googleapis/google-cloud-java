@@ -106,6 +106,9 @@ public interface SlurmLoginNodesOrBuilder
    * Optional. [Startup
    * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
    * to be run on each login node instance. Max 256KB.
+   * The script must complete within the system-defined default timeout of 5
+   * minutes. For tasks that require more time, consider running them in the
+   * background using methods such as `&amp;` or `nohup`.
    * </pre>
    *
    * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -121,6 +124,9 @@ public interface SlurmLoginNodesOrBuilder
    * Optional. [Startup
    * script](https://cloud.google.com/compute/docs/instances/startup-scripts/linux)
    * to be run on each login node instance. Max 256KB.
+   * The script must complete within the system-defined default timeout of 5
+   * minutes. For tasks that require more time, consider running them in the
+   * background using methods such as `&amp;` or `nohup`.
    * </pre>
    *
    * <code>string startup_script = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -421,4 +427,62 @@ public interface SlurmLoginNodesOrBuilder
    * </code>
    */
   com.google.cloud.hypercomputecluster.v1beta.BootDiskOrBuilder getBootDiskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network tags to be applied to each login node instance.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the networkTags.
+   */
+  java.util.List<java.lang.String> getNetworkTagsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network tags to be applied to each login node instance.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of networkTags.
+   */
+  int getNetworkTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network tags to be applied to each login node instance.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The networkTags at the given index.
+   */
+  java.lang.String getNetworkTags(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Network tags to be applied to each login node instance.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>repeated string network_tags = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the networkTags at the given index.
+   */
+  com.google.protobuf.ByteString getNetworkTagsBytes(int index);
 }

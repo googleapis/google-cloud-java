@@ -142,7 +142,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * URI of the forwarding rule.
+   * URI of the forwarding rule in format
+   * "projects/{project}/global/forwardingRules/{forwarding_rule}" (global) or
+   * "projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}"
+   * (regional).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -166,7 +169,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * URI of the forwarding rule.
+   * URI of the forwarding rule in format
+   * "projects/{project}/global/forwardingRules/{forwarding_rule}" (global) or
+   * "projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}"
+   * (regional).
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -407,7 +413,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Network URI.
+   * URI of a VPC network where the forwarding rule is located in format
+   * "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string network_uri = 7;</code>
@@ -431,7 +438,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Network URI.
+   * URI of a VPC network where the forwarding rule is located in format
+   * "projects/{project}/global/networks/{network}".
    * </pre>
    *
    * <code>string network_uri = 7;</code>
@@ -569,7 +577,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * URI of the PSC service attachment this forwarding rule targets (if
-   * applicable).
+   * applicable) in format
+   * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
    * </pre>
    *
    * <code>string psc_service_attachment_uri = 10;</code>
@@ -594,7 +603,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * URI of the PSC service attachment this forwarding rule targets (if
-   * applicable).
+   * applicable) in format
+   * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
    * </pre>
    *
    * <code>string psc_service_attachment_uri = 10;</code>
@@ -1338,7 +1348,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of the forwarding rule.
+     * URI of the forwarding rule in format
+     * "projects/{project}/global/forwardingRules/{forwarding_rule}" (global) or
+     * "projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}"
+     * (regional).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1361,7 +1374,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of the forwarding rule.
+     * URI of the forwarding rule in format
+     * "projects/{project}/global/forwardingRules/{forwarding_rule}" (global) or
+     * "projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}"
+     * (regional).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1384,7 +1400,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of the forwarding rule.
+     * URI of the forwarding rule in format
+     * "projects/{project}/global/forwardingRules/{forwarding_rule}" (global) or
+     * "projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}"
+     * (regional).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1406,7 +1425,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of the forwarding rule.
+     * URI of the forwarding rule in format
+     * "projects/{project}/global/forwardingRules/{forwarding_rule}" (global) or
+     * "projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}"
+     * (regional).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1424,7 +1446,10 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * URI of the forwarding rule.
+     * URI of the forwarding rule in format
+     * "projects/{project}/global/forwardingRules/{forwarding_rule}" (global) or
+     * "projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}"
+     * (regional).
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -1893,7 +1918,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI.
+     * URI of a VPC network where the forwarding rule is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1916,7 +1942,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI.
+     * URI of a VPC network where the forwarding rule is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1939,7 +1966,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI.
+     * URI of a VPC network where the forwarding rule is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1961,7 +1989,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI.
+     * URI of a VPC network where the forwarding rule is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -1979,7 +2008,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Network URI.
+     * URI of a VPC network where the forwarding rule is located in format
+     * "projects/{project}/global/networks/{network}".
      * </pre>
      *
      * <code>string network_uri = 7;</code>
@@ -2232,7 +2262,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * URI of the PSC service attachment this forwarding rule targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 10;</code>
@@ -2256,7 +2287,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * URI of the PSC service attachment this forwarding rule targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 10;</code>
@@ -2280,7 +2312,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * URI of the PSC service attachment this forwarding rule targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 10;</code>
@@ -2303,7 +2336,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * URI of the PSC service attachment this forwarding rule targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 10;</code>
@@ -2322,7 +2356,8 @@ public final class ForwardingRuleInfo extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * URI of the PSC service attachment this forwarding rule targets (if
-     * applicable).
+     * applicable) in format
+     * "projects/{project}/regions/{region}/serviceAttachments/{service_attachment}".
      * </pre>
      *
      * <code>string psc_service_attachment_uri = 10;</code>

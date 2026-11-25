@@ -40,6 +40,11 @@ class FailingSessionStream implements SessionStream {
   }
 
   @Override
+  public void afterSessionStart() {
+    // noop
+  }
+
+  @Override
   public void sendMessage(SessionRequest request) {
     // noop
   }

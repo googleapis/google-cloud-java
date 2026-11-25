@@ -104,12 +104,13 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique identifier for the Service. It must begin with letter,
+   * Optional. The unique identifier for the Service. It must begin with letter,
    * and cannot end with hyphen; must contain fewer than 50 characters.
    * The name of the service becomes {parent}/services/{service_id}.
+   * If not provided, the server will generate a unique `service_id`.
    * </pre>
    *
-   * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string service_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The serviceId.
    */
@@ -119,12 +120,13 @@ public interface CreateServiceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique identifier for the Service. It must begin with letter,
+   * Optional. The unique identifier for the Service. It must begin with letter,
    * and cannot end with hyphen; must contain fewer than 50 characters.
    * The name of the service becomes {parent}/services/{service_id}.
+   * If not provided, the server will generate a unique `service_id`.
    * </pre>
    *
-   * <code>string service_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string service_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for serviceId.
    */

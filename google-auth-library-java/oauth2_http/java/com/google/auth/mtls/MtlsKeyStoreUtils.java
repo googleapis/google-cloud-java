@@ -64,11 +64,13 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>Everything else matches the upstream method: key store type (JKS), alias, empty password,
  * accepted key format (PKCS#8 {@code PRIVATE KEY}), which private key is chosen, and error
- * messages. Any input that the upstream method accepted is still accepted, even though more of it
- * is now used: once a certificate and a private key have been found (the point where the upstream
- * method stopped reading), a malformed later PEM section ends the input instead of failing, and an
- * extra certificate that cannot be parsed is left out of the chain. Unlike the upstream method, the
- * input is decoded as UTF-8 rather than the platform default charset, and it is read to the end.
+ * messages. Any valid certificate-and-key pair that the upstream method accepted is still accepted,
+ * even though more of the input is now used: once a certificate and a private key have been found
+ * (the point where the upstream method stopped reading), a malformed later PEM section ends the
+ * input instead of failing, and an extra certificate that cannot be parsed is left out of the
+ * chain. Unlike the upstream method, the input is decoded as UTF-8 rather than the platform default
+ * charset, it is read to the end, and the private key is verified against the leaf certificate's
+ * public key.
  */
 @NullMarked
 final class MtlsKeyStoreUtils {
@@ -89,7 +91,8 @@ final class MtlsKeyStoreUtils {
    * @throws IllegalArgumentException if the input has no certificate or no private key, or if a PEM
    *     section before both a certificate and a private key have been read is malformed
    * @throws GeneralSecurityException if the first certificate or the private key cannot be parsed,
-   *     or the key store cannot be created
+   *     if the private key does not match the leaf certificate's public key, or if the key store
+   *     cannot be created
    * @throws IOException if the input cannot be read
    */
   static KeyStore createMtlsKeyStore(InputStream certAndKey)
@@ -143,9 +146,12 @@ final class MtlsKeyStoreUtils {
         LOGGER.log(Level.FINE, "Skipping unparsable extra certificate in mTLS chain", e);
       }
     }
+    X509Certificate leaf = chain.get(0);
+    String keyAlgorithm = leaf.getPublicKey().getAlgorithm();
     PrivateKey key =
-        KeyFactory.getInstance(chain.get(0).getPublicKey().getAlgorithm())
+        KeyFactory.getInstance("ECDSA".equals(keyAlgorithm) ? "EC" : keyAlgorithm)
             .generatePrivate(new PKCS8EncodedKeySpec(privateKey));
+    MtlsUtils.verifyKeyPair(leaf, key);
 
     KeyStore keyStore = KeyStore.getInstance("JKS");
     keyStore.load(null);

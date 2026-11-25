@@ -104,6 +104,14 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
       internal_static_google_ads_admanager_v1_ExistingLineItemList_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ExistingLineItemList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ForecastingLineItem_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ForecastingLineItem_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ForecastingLineItemList_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ForecastingLineItemList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -118,16 +126,18 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
           + "ges.proto\022\027google.ads.admanager.v1\0322goog"
           + "le/ads/admanager/v1/creative_placeholder.proto\032(google/ads/admanager/v1/date_ran"
           + "ge.proto\032/google/ads/admanager/v1/forecasting_enums.proto\032(google/ads/admanager/"
-          + "v1/goal_enums.proto\032\'google/ads/admanage"
-          + "r/v1/targeting.proto\032\037google/api/field_b"
-          + "ehavior.proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\266\002\n"
+          + "v1/goal_enums.proto\0320google/ads/admanage"
+          + "r/v1/line_item_messages.proto\032\'google/ad"
+          + "s/admanager/v1/targeting.proto\032\037google/a"
+          + "pi/field_behavior.proto\032\031google/api/reso"
+          + "urce.proto\032\037google/protobuf/timestamp.proto\"\266\002\n"
           + "\033AvailabilityForecastOptions\0228\n"
           + "%targeting_criteria_breakdown_included\030\001"
           + " \001(\010B\004\342A\001\001H\000\210\001\001\0221\n"
           + "\036contending_line_items_included\030\002"
           + " \001(\010B\004\342A\001\001H\001\210\001\001\022O\n"
-          + "\tbreakdown\030\003 \001(\01321.goog"
-          + "le.ads.admanager.v1.ForecastBreakdownOptionsB\004\342A\001\001H\002\210\001\001B(\n"
+          + "\tbreakdown\030\003 "
+          + "\001(\01321.google.ads.admanager.v1.ForecastBreakdownOptionsB\004\342A\001\001H\002\210\001\001B(\n"
           + "&_targeting_criteria_breakdown_includedB!\n"
           + "\037_contending_line_items_includedB\014\n\n"
           + "_breakdown\"\210\007\n"
@@ -136,8 +146,8 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
           + "!admanager.googleapis.com/LineItemH\000\210\001\001\0227\n"
           + "\005order\030\002 \001(\tB#\372A \n"
           + "\036admanager.googleapis.com/OrderH\001\210\001\001\022F\n"
-          + "\tunit_type\030\003 \001(\0162..google"
-          + ".ads.admanager.v1.UnitTypeEnum.UnitTypeH\002\210\001\001\022\034\n"
+          + "\tunit_type\030\003 \001("
+          + "\0162..google.ads.admanager.v1.UnitTypeEnum.UnitTypeH\002\210\001\001\022\034\n"
           + "\017available_units\030\004 \001(\003H\003\210\001\001\022\034\n"
           + "\017delivered_units\030\005 \001(\003H\004\210\001\001\022\032\n\r"
           + "matched_units\030\006 \001(\003H\005\210\001\001\022\033\n"
@@ -148,10 +158,10 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
           + " \003(\01323.google.ads.admanager.v1.TargetingCriteriaBreakdown\022J\n"
           + "\025contending_line_items\030\013"
           + " \003(\0132+.google.ads.admanager.v1.ContendingLineItem\022]\n"
-          + "\037alternative_unit_type_forecasts\030\014"
-          + " \003(\01324.google.ads.admanager.v1.AlternativeUnitTypeForecast\022P\n"
-          + "\026demographic_breakdowns\030\016 \003(\01320.google.a"
-          + "ds.admanager.v1.GrpDemographicBreakdownB\014\n\n"
+          + "\037alternative_unit_type_forecasts\030\014 \003(\01324.goog"
+          + "le.ads.admanager.v1.AlternativeUnitTypeForecast\022P\n"
+          + "\026demographic_breakdowns\030\016 \003(\0132"
+          + "0.google.ads.admanager.v1.GrpDemographicBreakdownB\014\n\n"
           + "_line_itemB\010\n"
           + "\006_orderB\014\n\n"
           + "_unit_typeB\022\n"
@@ -164,8 +174,8 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
           + "\022ignored_line_items\030\001 \003(\tB*\342A\001\001\372A#\n"
           + "!admanager.googleapis.com/LineItem\"q\n"
           + "\026DeliveryForecastResult\022W\n"
-          + "\034line_item_delivery_forecasts\030\001"
-          + " \003(\01321.google.ads.admanager.v1.LineItemDeliveryForecast\"\233\001\n"
+          + "\034line_item_delivery_forecasts\030\001 \003(\01321.google.ads."
+          + "admanager.v1.LineItemDeliveryForecast\"\233\001\n"
           + "\030ForecastBreakdownOptions\0226\n"
           + "\014time_windows\030\001"
           + " \003(\0132\032.google.protobuf.TimestampB\004\342A\001\001\022G\n"
@@ -197,9 +207,8 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
           + "_availableB\013\n"
           + "\t_possible\"\252\003\n"
           + "\032TargetingCriteriaBreakdown\022z\n"
-          + "\023targeting_dimension\030\001 \001(\0162X.google.ads.a"
-          + "dmanager.v1.ForecastingTargetingDimensio"
-          + "nEnum.ForecastingTargetingDimensionH\000\210\001\001\022\"\n"
+          + "\023targeting_dimension\030\001 \001(\0162X.google.ads.admanager.v1.ForecastingTargeti"
+          + "ngDimensionEnum.ForecastingTargetingDimensionH\000\210\001\001\022\"\n"
           + "\025targeting_criteria_id\030\002 \001(\003H\001\210\001\001\022\037\n"
           + "\022targeting_criteria\030\003 \001(\tH\002\210\001\001\022\025\n"
           + "\010excluded\030\004 \001(\010H\003\210\001\001\022\034\n"
@@ -218,8 +227,8 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
           + "_line_itemB\023\n"
           + "\021_contending_units\"\203\002\n"
           + "\033AlternativeUnitTypeForecast\022F\n"
-          + "\tunit_type\030\001 \001(\0162."
-          + ".google.ads.admanager.v1.UnitTypeEnum.UnitTypeH\000\210\001\001\022\032\n\r"
+          + "\tunit_type\030\001"
+          + " \001(\0162..google.ads.admanager.v1.UnitTypeEnum.UnitTypeH\000\210\001\001\022\032\n\r"
           + "matched_units\030\002 \001(\003H\001\210\001\001\022\034\n"
           + "\017available_units\030\003 \001(\003H\002\210\001\001\022\033\n"
           + "\016possible_units\030\004 \001(\003H\003\210\001\001B\014\n\n"
@@ -228,14 +237,15 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
           + "\020_available_unitsB\021\n"
           + "\017_possible_units\"\247\003\n"
           + "\027GrpDemographicBreakdown\022\034\n"
-          + "\017available_units\030\001 \001(\003H\000\210\001\001\022\032\n\r"
+          + "\017available_units\030\001 \001(\003H\000\210\001\001\022\032\n"
+          + "\r"
           + "matched_units\030\002 \001(\003H\001\210\001\001\022Z\n"
-          + "\tunit_type\030\003 \001(\0162B.goo"
-          + "gle.ads.admanager.v1.ForecastingGrpUnitEnum.ForecastingGrpUnitH\002\210\001\001\022[\n"
-          + "\006gender\030\004 \001(\0162F.google.ads.admanager.v1.Forecastin"
-          + "gGrpGenderEnum.ForecastingGrpGenderH\003\210\001\001\022R\n"
-          + "\003age\030\005 \001(\0162@.google.ads.admanager.v1."
-          + "ForecastingGrpAgeEnum.ForecastingGrpAgeH\004\210\001\001B\022\n"
+          + "\tunit_type\030\003"
+          + " \001(\0162B.google.ads.admanager.v1.ForecastingGrpUnitEnum.ForecastingGrpUnitH\002\210\001\001\022[\n"
+          + "\006gender\030\004 \001(\0162F.google.ads.admanager.v1."
+          + "ForecastingGrpGenderEnum.ForecastingGrpGenderH\003\210\001\001\022R\n"
+          + "\003age\030\005 \001(\0162@.google.ads.adm"
+          + "anager.v1.ForecastingGrpAgeEnum.ForecastingGrpAgeH\004\210\001\001B\022\n"
           + "\020_available_unitsB\020\n"
           + "\016_matched_unitsB\014\n\n"
           + "_unit_typeB\t\n"
@@ -263,11 +273,21 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
           + "\006values\030\002 \003(\003\"V\n"
           + "\024ExistingLineItemList\022>\n\n"
           + "line_items\030\001 \003(\tB*\342A\001\002\372A#\n"
-          + "!admanager.googleapis.com/LineItemB\311\001\n"
-          + "\033com.google.ads.admanager.v1B\025ForecastMessagesProtoP\001Z@google.golang.or"
-          + "g/genproto/googleapis/ads/admanager/v1;a"
-          + "dmanager\252\002\027Google.Ads.AdManager.V1\312\002\027Goo"
-          + "gle\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "!admanager.googleapis.com/LineItem\"\245\001\n"
+          + "\023ForecastingLineItem\022<\n"
+          + "\tline_item\030\001"
+          + " \001(\0132!.google.ads.admanager.v1.LineItemB\004\342A\001\001H\000\022=\n\n"
+          + "advertiser\030\003 \001(\tB)\342A\001\001\372A\"\n"
+          + " admanager.googleapis.com/CompanyB\021\n"
+          + "\017line_item_entry\"m\n"
+          + "\027ForecastingLineItemList\022R\n"
+          + "\026forecasting_line_items\030\001 \003"
+          + "(\0132,.google.ads.admanager.v1.ForecastingLineItemB\004\342A\001\002B\311\001\n"
+          + "\033com.google.ads.admanager.v1B\025ForecastMessagesProtoP\001Z@google."
+          + "golang.org/genproto/googleapis/ads/adman"
+          + "ager/v1;admanager\252\002\027Google.Ads.AdManager"
+          + ".V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::"
+          + "Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -277,6 +297,7 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
               com.google.ads.admanager.v1.DateRangeProto.getDescriptor(),
               com.google.ads.admanager.v1.ForecastingEnumsProto.getDescriptor(),
               com.google.ads.admanager.v1.GoalEnumsProto.getDescriptor(),
+              com.google.ads.admanager.v1.LineItemMessagesProto.getDescriptor(),
               com.google.ads.admanager.v1.TargetingProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
@@ -432,11 +453,28 @@ public final class ForecastMessagesProto extends com.google.protobuf.GeneratedFi
             new java.lang.String[] {
               "LineItems",
             });
+    internal_static_google_ads_admanager_v1_ForecastingLineItem_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_ads_admanager_v1_ForecastingLineItem_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ForecastingLineItem_descriptor,
+            new java.lang.String[] {
+              "LineItem", "Advertiser", "LineItemEntry",
+            });
+    internal_static_google_ads_admanager_v1_ForecastingLineItemList_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_ads_admanager_v1_ForecastingLineItemList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ForecastingLineItemList_descriptor,
+            new java.lang.String[] {
+              "ForecastingLineItems",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.CreativePlaceholderProto.getDescriptor();
     com.google.ads.admanager.v1.DateRangeProto.getDescriptor();
     com.google.ads.admanager.v1.ForecastingEnumsProto.getDescriptor();
     com.google.ads.admanager.v1.GoalEnumsProto.getDescriptor();
+    com.google.ads.admanager.v1.LineItemMessagesProto.getDescriptor();
     com.google.ads.admanager.v1.TargetingProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();

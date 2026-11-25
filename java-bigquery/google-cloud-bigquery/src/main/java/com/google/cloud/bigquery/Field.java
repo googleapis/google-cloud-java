@@ -132,7 +132,8 @@ public final class Field implements Serializable {
      * @throws IllegalArgumentException if {@code type == LegacySQLTypeName.RECORD &&
      *     subFields.length == 0} or if {@code type != LegacySQLTypeName.RECORD && subFields.length
      *     != 0}
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
      *     Types</a>
      */
     public Builder setType(LegacySQLTypeName type, Field... subFields) {
@@ -148,7 +149,8 @@ public final class Field implements Serializable {
      * @throws IllegalArgumentException if {@code type == StandardSQLTypeName.STRUCT &&
      *     subFields.length == 0} or if {@code type != StandardSQLTypeName.STRUCT &&
      *     subFields.length != 0}
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
      *     Types</a>
      */
     public Builder setType(StandardSQLTypeName type, Field... subFields) {
@@ -166,7 +168,8 @@ public final class Field implements Serializable {
      * @throws IllegalArgumentException if {@code type == LegacySQLTypeName.RECORD && (subFields ==
      *     null || subFields.isEmpty())} or if {@code type != LegacySQLTypeName.RECORD && subFields
      *     != null}
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
      *     Types</a>
      */
     public Builder setType(LegacySQLTypeName type, FieldList subFields) {
@@ -196,7 +199,8 @@ public final class Field implements Serializable {
      * @throws IllegalArgumentException if {@code type == StandardSQLTypeName.STRUCT &&
      *     subFields.length == 0} or if {@code type != StandardSQLTypeName.STRUCT &&
      *     subFields.length != 0}
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+     * @see <a
+     *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
      *     Types</a>
      */
     public Builder setType(StandardSQLTypeName type, FieldList subFields) {
@@ -247,8 +251,8 @@ public final class Field implements Serializable {
 
     /**
      * Precision can be used to constrain the maximum number of total digits allowed for NUMERIC or
-     * BIGNUMERIC types. It is invalid to set values for Precision for types other than // NUMERIC
-     * or BIGNUMERIC. For NUMERIC type, acceptable values for Precision must be: 1 ≤ (Precision -
+     * BIGNUMERIC types. It is invalid to set values for Precision for types other than NUMERIC or
+     * BIGNUMERIC. For NUMERIC type, acceptable values for Precision must be: 1 ≤ (Precision -
      * Scale) ≤ 29. Values for Scale must be: 0 ≤ Scale ≤ 9. For BIGNUMERIC type, acceptable values
      * for Precision must be: 1 ≤ (Precision - Scale) ≤ 38. Values for Scale must be: 0 ≤ Scale ≤
      * 38.
@@ -303,9 +307,10 @@ public final class Field implements Serializable {
      * Optional. Field collation can be set only when the type of field is STRING. The following
      * values are supported:
      *
-     * <p>* 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to
-     * case-sensitive behavior. (-- A wrapper is used here because it is possible to set the value
-     * to the empty string. --)
+     * <ul>
+     *   <li>{@code 'und:ci'}: undetermined locale, case insensitive.
+     *   <li>{@code ''}: empty string. Default to case-sensitive behavior.
+     * </ul>
      */
     public Builder setCollation(String collation) {
       this.collation = collation;
@@ -348,7 +353,8 @@ public final class Field implements Serializable {
   /**
    * Returns the field type.
    *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+   * @see <a
+   *     href="https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
    *     Types</a>
    */
   public LegacySQLTypeName getType() {
@@ -572,10 +578,10 @@ public final class Field implements Serializable {
     if (fieldSchemaPb.getDefaultValueExpression() != null) {
       fieldBuilder.setDefaultValueExpression(fieldSchemaPb.getDefaultValueExpression());
     }
+    // Use FieldList.fromPb directly so nested subfields are eagerly materialized once rather
+    // than wrapped in a lazy Lists.transform view.
     FieldList subFields =
-        fieldSchemaPb.getFields() != null
-            ? FieldList.of(Lists.transform(fieldSchemaPb.getFields(), FROM_PB_FUNCTION))
-            : null;
+        fieldSchemaPb.getFields() != null ? FieldList.fromPb(fieldSchemaPb.getFields()) : null;
     fieldBuilder.setType(LegacySQLTypeName.valueOf(fieldSchemaPb.getType()), subFields);
     if (fieldSchemaPb.getCollation() != null) {
       fieldBuilder.setCollation(fieldSchemaPb.getCollation());

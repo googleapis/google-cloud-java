@@ -22,9 +22,11 @@ import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.CrossRun;
 import com.google.cloud.storage.it.runner.annotations.Inject;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
+import org.junit.runners.model.FrameworkMethod;
 
 @RunWith(Enclosed.class)
 public final class StorageITRunnerTest {
@@ -41,6 +43,35 @@ public final class StorageITRunnerTest {
     @Test
     public void transport() {
       assertThat(transport).isNotNull();
+    }
+  }
+
+  public static final class CrossRunFrameworkMethodTest {
+    @CrossRun.Ignore(locations = {LocationType.REGIONAL_RAPID})
+    public static class ClassAndMethodIgnoreSample {
+      @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
+      public void sampleMethod() {}
+    }
+
+    @Test
+    public void classAndMethodIgnoreAreUnioned() throws Exception {
+      FrameworkMethod fm =
+          new FrameworkMethod(ClassAndMethodIgnoreSample.class.getMethod("sampleMethod"));
+      CrossRunFrameworkMethod crfm = CrossRunFrameworkMethod.of(fm);
+      assertThat(
+              crfm.isIgnored(
+                  CrossRunIntersection.of(
+                      Backend.TEST_BENCH, Transport.GRPC, LocationType.ZONAL_RAPID)))
+          .isTrue();
+      assertThat(
+              crfm.isIgnored(
+                  CrossRunIntersection.of(
+                      Backend.PROD, Transport.GRPC, LocationType.REGIONAL_RAPID)))
+          .isTrue();
+      assertThat(
+              crfm.isIgnored(
+                  CrossRunIntersection.of(Backend.PROD, Transport.GRPC, LocationType.ZONAL_RAPID)))
+          .isFalse();
     }
   }
 }

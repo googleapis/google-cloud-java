@@ -30,12 +30,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The fully qualified name of this Instance. In CreateInstanceRequest, this
-   * field is ignored, and instead composed from CreateInstanceRequest.parent
-   * and CreateInstanceRequest.instance_id.
-   *
-   * Format:
-   * projects/{project}/locations/{location}/instances/{instance_id}
+   * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+   * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+   * and `CreateInstanceRequest.instance_id`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -48,12 +45,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * The fully qualified name of this Instance. In CreateInstanceRequest, this
-   * field is ignored, and instead composed from CreateInstanceRequest.parent
-   * and CreateInstanceRequest.instance_id.
-   *
-   * Format:
-   * projects/{project}/locations/{location}/instances/{instance_id}
+   * The fully qualified name of this Instance. In `CreateInstanceRequest`, this
+   * field is ignored, and instead composed from `CreateInstanceRequest.parent`
+   * and `CreateInstanceRequest.instance_id`.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -126,7 +120,7 @@ public interface InstanceOrBuilder
    * <pre>
    * Output only. A number that monotonically increases every time the user
    * modifies the desired state.
-   * Please note that unlike v1, this is an int64 value. As with most Google
+   * Please note that unlike v1, this is an `int64` value. As with most Google
    * APIs, its JSON representation will be a `string` instead of an `integer`.
    * </pre>
    *
@@ -455,14 +449,13 @@ public interface InstanceOrBuilder
    * <pre>
    * The launch stage as defined by [Google Cloud Platform
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
-   * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-   * is assumed.
-   * Set the launch stage to a preview stage on input to allow use of preview
-   * features in that stage. On read (or output), describes whether the
-   * resource uses preview features.
-   * &lt;p&gt;
-   * For example, if ALPHA is provided as input, but only BETA and GA-level
-   * features are used, this field will be BETA on output.
+   * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+   * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+   * use of preview features in that stage. On read (or output), describes
+   * whether the resource uses preview features.
+   *
+   * For example, if `ALPHA` is provided as input, but only `BETA` and
+   * `GA`-level features are used, this field will be `BETA` on output.
    * </pre>
    *
    * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -477,14 +470,13 @@ public interface InstanceOrBuilder
    * <pre>
    * The launch stage as defined by [Google Cloud Platform
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
-   * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
-   * is assumed.
-   * Set the launch stage to a preview stage on input to allow use of preview
-   * features in that stage. On read (or output), describes whether the
-   * resource uses preview features.
-   * &lt;p&gt;
-   * For example, if ALPHA is provided as input, but only BETA and GA-level
-   * features are used, this field will be BETA on output.
+   * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified,
+   * `GA` is assumed. Set the launch stage to a preview stage on input to allow
+   * use of preview features in that stage. On read (or output), describes
+   * whether the resource uses preview features.
+   *
+   * For example, if `ALPHA` is provided as input, but only `BETA` and
+   * `GA`-level features are used, this field will be `BETA` on output.
    * </pre>
    *
    * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -664,6 +656,49 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sandboxes field is set.
+   */
+  boolean hasSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sandboxes.
+   */
+  com.google.cloud.run.v2.SandboxConfiguration getSandboxes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for sandboxes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.SandboxConfiguration sandboxes = 34 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.run.v2.SandboxConfigurationOrBuilder getSandboxesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A list of Volumes to make available to containers.
    * </pre>
    *
@@ -777,7 +812,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
    * shutting down all instances. The minimum increment is 1 hour.
    * </pre>
    *
@@ -791,7 +826,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
    * shutting down all instances. The minimum increment is 1 hour.
    * </pre>
    *
@@ -805,7 +840,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * If encryption_key_revocation_action is SHUTDOWN, the duration before
+   * If `encryption_key_revocation_action` is `SHUTDOWN`, the duration before
    * shutting down all instances. The minimum increment is 1 hour.
    * </pre>
    *
@@ -892,7 +927,7 @@ public interface InstanceOrBuilder
    * <pre>
    * Optional. Provides the ingress settings for this Instance. On output,
    * returns the currently observed ingress settings, or
-   * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+   * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
    * </pre>
    *
    * <code>
@@ -909,7 +944,7 @@ public interface InstanceOrBuilder
    * <pre>
    * Optional. Provides the ingress settings for this Instance. On output,
    * returns the currently observed ingress settings, or
-   * INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
+   * `INGRESS_TRAFFIC_UNSPECIFIED` if no revision is active.
    * </pre>
    *
    * <code>
@@ -924,7 +959,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Disables IAM permission check for run.routes.invoke for callers
+   * Optional. Disables IAM permission check for `run.routes.invoke` for callers
    * of this Instance. For more information, visit
    * https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
    * </pre>
@@ -934,6 +969,19 @@ public interface InstanceOrBuilder
    * @return The invokerIamDisabled.
    */
   boolean getInvokerIamDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables public resolution of the default URI of this Instance.
+   * </pre>
+   *
+   * <code>bool default_uri_disabled = 33 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The defaultUriDisabled.
+   */
+  boolean getDefaultUriDisabled();
 
   /**
    *
@@ -952,9 +1000,65 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. Enables SSH access to the Instance.
+   * </pre>
+   *
+   * <code>optional bool ssh_enabled = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the sshEnabled field is set.
+   */
+  boolean hasSshEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables SSH access to the Instance.
+   * </pre>
+   *
+   * <code>optional bool ssh_enabled = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sshEnabled.
+   */
+  boolean getSshEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restart policy for the Instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for restartPolicy.
+   */
+  int getRestartPolicyValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restart policy for the Instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.Instance.RestartPolicy restart_policy = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The restartPolicy.
+   */
+  com.google.cloud.run.v2.Instance.RestartPolicy getRestartPolicy();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The generation of this Instance currently serving traffic. See
    * comments in `reconciling` for additional information on reconciliation
-   * process in Cloud Run. Please note that unlike v1, this is an int64 value.
+   * process in Cloud Run. Please note that unlike v1, this is an `int64` value.
    * As with most Google APIs, its JSON representation will be a `string`
    * instead of an `integer`.
    * </pre>
@@ -1265,15 +1369,15 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Returns true if the Instance is currently being acted upon by
-   * the system to bring it into the desired state.
+   * Output only. Returns `true` if the Instance is currently being acted upon
+   * by the system to bring it into the desired state.
    *
    * When a new Instance is created, or an existing one is updated, Cloud Run
    * will asynchronously perform all necessary steps to bring the Instance to
    * the desired serving state. This process is called reconciliation. While
    * reconciliation is in process, `observed_generation` will have a transient
    * value that might mismatch the intended state.
-   * Once reconciliation is over (and this field is false), there are two
+   * Once reconciliation is over (and this field is `false`), there are two
    * possible outcomes: reconciliation succeeded and the serving state matches
    * the Instance, or there was an error, and reconciliation failed. This state
    * can be found in `terminal_condition.state`.

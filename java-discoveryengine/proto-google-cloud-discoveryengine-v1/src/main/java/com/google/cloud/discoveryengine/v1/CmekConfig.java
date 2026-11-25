@@ -671,11 +671,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KMS key resource name which will be used to encrypt resources
+   * Required. KMS key resource name which will be used to encrypt resources
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
    * </pre>
    *
-   * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKey.
    */
@@ -696,11 +698,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KMS key resource name which will be used to encrypt resources
+   * Required. KMS key resource name which will be used to encrypt resources
    * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
    * </pre>
    *
-   * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKey.
    */
@@ -1644,11 +1648,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The kmsKey.
      */
@@ -1668,11 +1674,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for kmsKey.
      */
@@ -1692,11 +1700,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The kmsKey to set.
      * @return This builder for chaining.
@@ -1715,11 +1725,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1734,11 +1746,13 @@ public final class CmekConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KMS key resource name which will be used to encrypt resources
+     * Required. KMS key resource name which will be used to encrypt resources
      * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
      * </pre>
      *
-     * <code>string kms_key = 2 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string kms_key = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for kmsKey to set.
      * @return This builder for chaining.

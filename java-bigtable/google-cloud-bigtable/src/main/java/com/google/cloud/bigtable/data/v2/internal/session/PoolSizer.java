@@ -42,6 +42,8 @@ class PoolSizer {
   // the session is ready it takes 10-40ms to process all pending calls.
   private volatile int pendingVRpcsPerSession;
 
+  private volatile boolean disabled;
+
   interface Sized {
     int getSize();
   }
@@ -52,11 +54,7 @@ class PoolSizer {
       SessionClientConfiguration.SessionPoolConfiguration poolConfig) {
     this.stats = stats;
     this.pendingRpcs = pendingRpcs;
-
-    this.idlesSessionHeadRoom = poolConfig.getHeadroom();
-    this.minIdleSessions = poolConfig.getMinSessionCount();
-    this.maxIdleSessions = poolConfig.getMaxSessionCount();
-    this.pendingVRpcsPerSession = poolConfig.getNewSessionQueueLength();
+    updateConfig(poolConfig);
   }
 
   void updateConfig(SessionClientConfiguration.SessionPoolConfiguration poolConfiguration) {
@@ -64,12 +62,23 @@ class PoolSizer {
     this.minIdleSessions = poolConfiguration.getMinSessionCount();
     this.maxIdleSessions = poolConfiguration.getMaxSessionCount();
     this.pendingVRpcsPerSession = poolConfiguration.getNewSessionQueueLength();
+    this.disabled =
+        poolConfiguration.equals(
+                SessionClientConfiguration.SessionPoolConfiguration.getDefaultInstance())
+            || this.maxIdleSessions <= 0;
+  }
+
+  boolean isDisabled() {
+    return disabled;
   }
 
   public int getScaleDelta() {
     // Assume each session handles 1 RPC at a time. This should be revisited if sessions get
     // support for multiplexing.
-    int effectivePending = (int) Math.ceil((float) pendingRpcs.getSize() / pendingVRpcsPerSession);
+    int effectivePending =
+        pendingVRpcsPerSession > 0
+            ? (int) Math.ceil((float) pendingRpcs.getSize() / pendingVRpcsPerSession)
+            : pendingRpcs.getSize();
     int sessionsInUse = effectivePending + stats.getInUseCount();
     int unboundedDesiredIdleSessions = (int) Math.ceil(sessionsInUse * idlesSessionHeadRoom);
     int desiredIdleSessions =
@@ -82,6 +91,9 @@ class PoolSizer {
     if (desiredCapacity < immediateCapacity) {
       return desiredCapacity - immediateCapacity;
     } else if (desiredCapacity > eventualCapacity) {
+      if (isDisabled()) {
+        return 0;
+      }
       return desiredCapacity - eventualCapacity;
     } else {
       return 0;
@@ -91,13 +103,13 @@ class PoolSizer {
   /** Returns true if the session should be replaced */
   @CheckReturnValue
   public boolean handleGoAway(GoAwayResponse msg) {
-    return getScaleDelta() >= 0;
+    return getScaleDelta() > 0;
   }
 
   /** Returns true if the closed session should be replaced */
   @CheckReturnValue
   boolean handleSessionClose(Status statusProto) {
-    return getScaleDelta() >= 0;
+    return getScaleDelta() > 0;
   }
 
   /** Returns true if a new session should be added. */

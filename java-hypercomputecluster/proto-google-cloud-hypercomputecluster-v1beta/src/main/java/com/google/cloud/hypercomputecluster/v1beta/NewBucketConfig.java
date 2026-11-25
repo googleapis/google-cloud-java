@@ -135,6 +135,16 @@ public final class NewBucketConfig extends com.google.protobuf.GeneratedMessage
      * <code>ARCHIVE = 4;</code>
      */
     ARCHIVE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Storage class optimized for I/O intensive workloads.
+     * </pre>
+     *
+     * <code>RAPID = 5;</code>
+     */
+    RAPID(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -204,6 +214,17 @@ public final class NewBucketConfig extends com.google.protobuf.GeneratedMessage
      */
     public static final int ARCHIVE_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * Storage class optimized for I/O intensive workloads.
+     * </pre>
+     *
+     * <code>RAPID = 5;</code>
+     */
+    public static final int RAPID_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -238,6 +259,8 @@ public final class NewBucketConfig extends com.google.protobuf.GeneratedMessage
           return COLDLINE;
         case 4:
           return ARCHIVE;
+        case 5:
+          return RAPID;
         default:
           return null;
       }

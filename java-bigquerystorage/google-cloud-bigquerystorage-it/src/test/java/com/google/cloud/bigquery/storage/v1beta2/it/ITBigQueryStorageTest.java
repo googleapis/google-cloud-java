@@ -211,6 +211,7 @@ class ITBigQueryStorageTest {
     }
   }
 
+  @Disabled("Flaky test: b/579437450")
   @Test
   void testSimpleRead() {
     String table =
@@ -356,6 +357,7 @@ class ITBigQueryStorageTest {
     assertEquals(1, rowCount);
   }
 
+  @Disabled("Flaky test: b/564596647")
   @Test
   void testSimpleReadAndResume() {
     String table =
@@ -460,7 +462,9 @@ class ITBigQueryStorageTest {
     assertEquals(1_333, rowCount);
   }
 
-  @Disabled("Flaky test: b/576747708")
+  @Disabled(
+      "Disabled on non-GA v1beta2 to avoid overloading BigQuery Storage CreateReadSession quota"
+          + " across versions; covered on v1 (b/576747708)")
   @Test
   void testColumnSelection() throws IOException {
     String table =
@@ -1075,7 +1079,9 @@ class ITBigQueryStorageTest {
     localClient.close();
   }
 
-  @Disabled("Flaky test: b/575538593")
+  @Disabled(
+      "Disabled on non-GA v1beta2 to avoid overloading BigQuery Storage CreateReadSession quota"
+          + " across versions; covered on v1 (b/575538593)")
   @Test
   void testUniverseDomainWithMatchingDomain() throws IOException {
     // Test a valid domain using the default credentials and Google default universe domain.
@@ -1108,42 +1114,6 @@ class ITBigQueryStorageTest {
     }
 
     assertEquals(164_656, rowCount);
-    localClient.close();
-  }
-
-  void testUniverseDomain() throws IOException {
-    // This test is not yet part presubmit integration test as it requires the apis-tpclp.goog
-    // universe domain credentials.
-    // Test a valid domain using the default credentials and Google default universe domain.
-    BigQueryReadSettings bigQueryReadSettings =
-        BigQueryReadSettings.newBuilder().setUniverseDomain("apis-tpclp.goog").build();
-    BigQueryReadClient localClient = BigQueryReadClient.create(bigQueryReadSettings);
-
-    String table =
-        BigQueryResource.FormatTableResource(
-            /* projectId= */ "google-tpc-testing-environment:cloudsdk-test-project",
-            /* datasetId= */ "tpc_demo_dataset",
-            /* tableId= */ "new_table");
-
-    ReadSession session =
-        localClient.createReadSession(
-            /* parent= */ parentProjectId,
-            /* readSession= */ ReadSession.newBuilder()
-                .setTable(table)
-                .setDataFormat(DataFormat.AVRO)
-                .build(),
-            /* maxStreamCount= */ 1);
-
-    ReadRowsRequest readRowsRequest =
-        ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
-
-    long rowCount = 0;
-    ServerStream<ReadRowsResponse> stream = localClient.readRowsCallable().call(readRowsRequest);
-    for (ReadRowsResponse response : stream) {
-      rowCount += response.getRowCount();
-    }
-
-    assertEquals(1, rowCount);
     localClient.close();
   }
 

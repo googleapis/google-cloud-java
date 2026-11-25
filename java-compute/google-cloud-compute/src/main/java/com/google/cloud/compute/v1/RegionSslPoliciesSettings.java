@@ -132,6 +132,11 @@ public class RegionSslPoliciesSettings extends ClientSettings<RegionSslPoliciesS
     return ((RegionSslPoliciesStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRegionSslPolicyRequest, Policy> getIamPolicySettings() {
+    return ((RegionSslPoliciesStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionSslPolicyRequest, Operation> insertSettings() {
     return ((RegionSslPoliciesStubSettings) getStubSettings()).insertSettings();
@@ -165,6 +170,17 @@ public class RegionSslPoliciesSettings extends ClientSettings<RegionSslPoliciesS
   public OperationCallSettings<PatchRegionSslPolicyRequest, Operation, Operation>
       patchOperationSettings() {
     return ((RegionSslPoliciesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRegionSslPolicyRequest, Policy> setIamPolicySettings() {
+    return ((RegionSslPoliciesStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((RegionSslPoliciesStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final RegionSslPoliciesSettings create(RegionSslPoliciesStubSettings stub)
@@ -280,6 +296,12 @@ public class RegionSslPoliciesSettings extends ClientSettings<RegionSslPoliciesS
       return getStubSettingsBuilder().getSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRegionSslPolicyRequest, Policy>
+        getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertRegionSslPolicyRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
@@ -314,6 +336,19 @@ public class RegionSslPoliciesSettings extends ClientSettings<RegionSslPoliciesS
     public OperationCallSettings.Builder<PatchRegionSslPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRegionSslPolicyRequest, Policy>
+        setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionSslPolicyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

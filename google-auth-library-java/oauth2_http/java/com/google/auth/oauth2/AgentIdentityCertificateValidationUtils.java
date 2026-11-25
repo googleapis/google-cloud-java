@@ -30,6 +30,7 @@
  */
 package com.google.auth.oauth2;
 
+import com.google.auth.mtls.MtlsUtils;
 import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -38,14 +39,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
-import java.security.KeyFactory;
 import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.Signature;
 import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
-import java.security.spec.X509EncodedKeySpec;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -78,9 +75,6 @@ final class AgentIdentityCertificateValidationUtils {
   private static final int SAN_URI_TYPE = 6;
 
   private static final String SPIFFE_SCHEME_PREFIX = "spiffe://";
-
-  private static final byte[] VERIFICATION_DATA =
-      "verification-data".getBytes(StandardCharsets.UTF_8);
 
   private AgentIdentityCertificateValidationUtils() {}
 
@@ -159,35 +153,16 @@ final class AgentIdentityCertificateValidationUtils {
    */
   static boolean verifyKeyPair(final X509Certificate cert, final PrivateKey privateKey)
       throws UnsupportedKeyAlgorithmException {
-    PublicKey publicKey = cert.getPublicKey();
-    String keyAlgorithm = publicKey.getAlgorithm();
-    String sigAlg;
-    if ("RSA".equals(keyAlgorithm)) {
-      sigAlg = "SHA256withRSA";
-    } else if ("EC".equals(keyAlgorithm) || "ECDSA".equals(keyAlgorithm)) {
-      sigAlg = "SHA256withECDSA";
-    } else {
+    String keyAlgorithm = cert.getPublicKey().getAlgorithm();
+    if (!"RSA".equals(keyAlgorithm)
+        && !"EC".equals(keyAlgorithm)
+        && !"ECDSA".equals(keyAlgorithm)) {
       throw new UnsupportedKeyAlgorithmException(keyAlgorithm);
     }
 
     try {
-      if ("ECDSA".equals(keyAlgorithm) && publicKey.getEncoded() != null) {
-        // SunEC rejects keys whose algorithm is "ECDSA" rather than "EC"; normalize the key.
-        publicKey =
-            KeyFactory.getInstance("EC")
-                .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
-      }
-
-      Signature signer = Signature.getInstance(sigAlg);
-      signer.initSign(privateKey);
-      signer.update(VERIFICATION_DATA);
-      byte[] signature = signer.sign();
-
-      Signature verifier = Signature.getInstance(sigAlg);
-      verifier.initVerify(publicKey);
-      verifier.update(VERIFICATION_DATA);
-
-      return verifier.verify(signature);
+      MtlsUtils.verifyKeyPair(cert, privateKey);
+      return true;
     } catch (Exception e) {
       LoggingUtils.log(
           LOGGER_PROVIDER,

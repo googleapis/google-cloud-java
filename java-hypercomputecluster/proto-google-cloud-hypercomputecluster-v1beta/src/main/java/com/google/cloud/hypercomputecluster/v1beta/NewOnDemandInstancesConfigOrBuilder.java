@@ -93,4 +93,70 @@ public interface NewOnDemandInstancesConfigOrBuilder
    * @return The bytes for machineType.
    */
   com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return A list containing the networkTags.
+   */
+  java.util.List<java.lang.String> getNetworkTagsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The count of networkTags.
+   */
+  int getNetworkTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The networkTags at the given index.
+   */
+  java.lang.String getNetworkTags(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the networkTags at the given index.
+   */
+  com.google.protobuf.ByteString getNetworkTagsBytes(int index);
 }

@@ -150,6 +150,13 @@ public class BulkMutateIT {
         .withMessage("testManyMutations is not supported on Emulator")
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
+    // TODO: Remove this skip once the server supports dynamic heartbeats based on message payload.
+    assume()
+        .withMessage(
+            "Skipping testManyMutations on session path until the server supports dynamic"
+                + " heartbeats based on message payload")
+        .that(testEnvRule.env().isSessionsEnabled())
+        .isFalse();
 
     BigtableDataSettings settings = testEnvRule.env().getDataClientSettings();
     String rowPrefix = UUID.randomUUID().toString();
@@ -196,6 +203,13 @@ public class BulkMutateIT {
         .withMessage("AuthorizedView is not supported on Emulator")
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
+    // TODO: Remove this skip once the server supports dynamic heartbeats based on message payload.
+    assume()
+        .withMessage(
+            "Skipping testManyMutationsOnAuthorizedView on session path until the server supports"
+                + " dynamic heartbeats based on message payload")
+        .that(testEnvRule.env().isSessionsEnabled())
+        .isFalse();
 
     AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
 

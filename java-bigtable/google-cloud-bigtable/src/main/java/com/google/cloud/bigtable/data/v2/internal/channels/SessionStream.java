@@ -31,6 +31,8 @@ public interface SessionStream {
 
   public void start(Listener responseListener, Metadata headers);
 
+  public void afterSessionStart();
+
   public void sendMessage(SessionRequest request);
 
   public void halfClose();

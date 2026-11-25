@@ -18,6 +18,7 @@ package com.google.cloud.hypercomputecluster.v1beta.stub;
 
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListNodesPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
@@ -42,6 +43,8 @@ import com.google.cloud.hypercomputecluster.v1beta.DeleteClusterRequest;
 import com.google.cloud.hypercomputecluster.v1beta.GetClusterRequest;
 import com.google.cloud.hypercomputecluster.v1beta.ListClustersRequest;
 import com.google.cloud.hypercomputecluster.v1beta.ListClustersResponse;
+import com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest;
+import com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse;
 import com.google.cloud.hypercomputecluster.v1beta.OperationMetadata;
 import com.google.cloud.hypercomputecluster.v1beta.UpdateClusterRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -277,6 +280,45 @@ public class HttpJsonHypercomputeClusterStub extends HypercomputeClusterStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListNodesRequest, ListNodesResponse>
+      listNodesMethodDescriptor =
+          ApiMethodDescriptor.<ListNodesRequest, ListNodesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.hypercomputecluster.v1beta.HypercomputeCluster/ListNodes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListNodesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/clusters/*}/nodes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNodesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListNodesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListNodesResponse>newBuilder()
+                      .setDefaultInstance(ListNodesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -358,6 +400,8 @@ public class HttpJsonHypercomputeClusterStub extends HypercomputeClusterStub {
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable;
+  private final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable;
+  private final UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -494,6 +538,18 @@ public class HttpJsonHypercomputeClusterStub extends HypercomputeClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<ListNodesRequest, ListNodesResponse> listNodesTransportSettings =
+        HttpJsonCallSettings.<ListNodesRequest, ListNodesResponse>newBuilder()
+            .setMethodDescriptor(listNodesMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -554,6 +610,12 @@ public class HttpJsonHypercomputeClusterStub extends HypercomputeClusterStub {
             settings.deleteClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listNodesCallable =
+        callableFactory.createUnaryCallable(
+            listNodesTransportSettings, settings.listNodesSettings(), clientContext);
+    this.listNodesPagedCallable =
+        callableFactory.createPagedCallable(
+            listNodesTransportSettings, settings.listNodesSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -576,6 +638,7 @@ public class HttpJsonHypercomputeClusterStub extends HypercomputeClusterStub {
     methodDescriptors.add(createClusterMethodDescriptor);
     methodDescriptors.add(updateClusterMethodDescriptor);
     methodDescriptors.add(deleteClusterMethodDescriptor);
+    methodDescriptors.add(listNodesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -631,6 +694,16 @@ public class HttpJsonHypercomputeClusterStub extends HypercomputeClusterStub {
   public OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable() {
     return deleteClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable() {
+    return listNodesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable() {
+    return listNodesPagedCallable;
   }
 
   @Override

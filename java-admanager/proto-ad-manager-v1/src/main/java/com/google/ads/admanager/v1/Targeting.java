@@ -69,6 +69,66 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  public static final int INVENTORY_URL_TARGETING_FIELD_NUMBER = 1;
+  private com.google.ads.admanager.v1.InventoryUrlTargeting inventoryUrlTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude specific websites.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the inventoryUrlTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasInventoryUrlTargeting() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude specific websites.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The inventoryUrlTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.InventoryUrlTargeting getInventoryUrlTargeting() {
+    return inventoryUrlTargeting_ == null
+        ? com.google.ads.admanager.v1.InventoryUrlTargeting.getDefaultInstance()
+        : inventoryUrlTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude specific websites.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.InventoryUrlTargetingOrBuilder
+      getInventoryUrlTargetingOrBuilder() {
+    return inventoryUrlTargeting_ == null
+        ? com.google.ads.admanager.v1.InventoryUrlTargeting.getDefaultInstance()
+        : inventoryUrlTargeting_;
+  }
+
   public static final int GEO_TARGETING_FIELD_NUMBER = 2;
   private com.google.ads.admanager.v1.GeoTargeting geoTargeting_;
 
@@ -87,7 +147,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGeoTargeting() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -146,7 +206,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTechnologyTargeting() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -188,6 +248,66 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         : technologyTargeting_;
   }
 
+  public static final int INVENTORY_SIZE_TARGETING_FIELD_NUMBER = 4;
+  private com.google.ads.admanager.v1.InventorySizeTargeting inventorySizeTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the inventorySizeTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasInventorySizeTargeting() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The inventorySizeTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.InventorySizeTargeting getInventorySizeTargeting() {
+    return inventorySizeTargeting_ == null
+        ? com.google.ads.admanager.v1.InventorySizeTargeting.getDefaultInstance()
+        : inventorySizeTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.InventorySizeTargetingOrBuilder
+      getInventorySizeTargetingOrBuilder() {
+    return inventorySizeTargeting_ == null
+        ? com.google.ads.admanager.v1.InventorySizeTargeting.getDefaultInstance()
+        : inventorySizeTargeting_;
+  }
+
   public static final int INVENTORY_TARGETING_FIELD_NUMBER = 5;
   private com.google.ads.admanager.v1.InventoryTargeting inventoryTargeting_;
 
@@ -206,7 +326,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasInventoryTargeting() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -265,7 +385,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRequestPlatformTargeting() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -326,7 +446,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCustomTargeting() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -369,6 +489,128 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         : customTargeting_;
   }
 
+  public static final int DATE_TIME_RANGE_TARGETING_FIELD_NUMBER = 8;
+  private com.google.ads.admanager.v1.DateTimeRangeTargeting dateTimeRangeTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target a datetime range.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dateTimeRangeTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasDateTimeRangeTargeting() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target a datetime range.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dateTimeRangeTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DateTimeRangeTargeting getDateTimeRangeTargeting() {
+    return dateTimeRangeTargeting_ == null
+        ? com.google.ads.admanager.v1.DateTimeRangeTargeting.getDefaultInstance()
+        : dateTimeRangeTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target a datetime range.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DateTimeRangeTargetingOrBuilder
+      getDateTimeRangeTargetingOrBuilder() {
+    return dateTimeRangeTargeting_ == null
+        ? com.google.ads.admanager.v1.DateTimeRangeTargeting.getDefaultInstance()
+        : dateTimeRangeTargeting_;
+  }
+
+  public static final int PUBLISHER_PROVIDED_SIGNALS_TARGETING_FIELD_NUMBER = 9;
+  private com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting
+      publisherProvidedSignalsTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target publisher provided signals.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the publisherProvidedSignalsTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasPublisherProvidedSignalsTargeting() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target publisher provided signals.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The publisherProvidedSignalsTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting
+      getPublisherProvidedSignalsTargeting() {
+    return publisherProvidedSignalsTargeting_ == null
+        ? com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.getDefaultInstance()
+        : publisherProvidedSignalsTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target publisher provided signals.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.PublisherProvidedSignalsTargetingOrBuilder
+      getPublisherProvidedSignalsTargetingOrBuilder() {
+    return publisherProvidedSignalsTargeting_ == null
+        ? com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.getDefaultInstance()
+        : publisherProvidedSignalsTargeting_;
+  }
+
   public static final int USER_DOMAIN_TARGETING_FIELD_NUMBER = 10;
   private com.google.ads.admanager.v1.UserDomainTargeting userDomainTargeting_;
 
@@ -387,7 +629,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUserDomainTargeting() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -429,6 +671,66 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         : userDomainTargeting_;
   }
 
+  public static final int CONTEXTUAL_TARGETING_FIELD_NUMBER = 11;
+  private com.google.ads.admanager.v1.ContextualTargeting contextualTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target verticals / content labels
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the contextualTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasContextualTargeting() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target verticals / content labels
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The contextualTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ContextualTargeting getContextualTargeting() {
+    return contextualTargeting_ == null
+        ? com.google.ads.admanager.v1.ContextualTargeting.getDefaultInstance()
+        : contextualTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target verticals / content labels
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ContextualTargetingOrBuilder
+      getContextualTargetingOrBuilder() {
+    return contextualTargeting_ == null
+        ? com.google.ads.admanager.v1.ContextualTargeting.getDefaultInstance()
+        : contextualTargeting_;
+  }
+
   public static final int VIDEO_POSITION_TARGETING_FIELD_NUMBER = 12;
   private com.google.ads.admanager.v1.VideoPositionTargeting videoPositionTargeting_;
 
@@ -447,7 +749,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasVideoPositionTargeting() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -507,7 +809,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDataSegmentTargeting() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -567,7 +869,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRequestFormatTargeting() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -627,7 +929,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasContentTargeting() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -686,7 +988,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMobileApplicationTargeting() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -728,6 +1030,125 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         : mobileApplicationTargeting_;
   }
 
+  public static final int DAY_PART_TARGETING_FIELD_NUMBER = 19;
+  private com.google.ads.admanager.v1.DayPartTargeting dayPartTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target day parts.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dayPartTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasDayPartTargeting() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target day parts.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dayPartTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DayPartTargeting getDayPartTargeting() {
+    return dayPartTargeting_ == null
+        ? com.google.ads.admanager.v1.DayPartTargeting.getDefaultInstance()
+        : dayPartTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target day parts.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DayPartTargetingOrBuilder getDayPartTargetingOrBuilder() {
+    return dayPartTargeting_ == null
+        ? com.google.ads.admanager.v1.DayPartTargeting.getDefaultInstance()
+        : dayPartTargeting_;
+  }
+
+  public static final int BUYER_USER_LIST_TARGETING_FIELD_NUMBER = 20;
+  private com.google.ads.admanager.v1.BuyerUserListTargeting buyerUserListTargeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target buyer user lists.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the buyerUserListTargeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasBuyerUserListTargeting() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target buyer user lists.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The buyerUserListTargeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.BuyerUserListTargeting getBuyerUserListTargeting() {
+    return buyerUserListTargeting_ == null
+        ? com.google.ads.admanager.v1.BuyerUserListTargeting.getDefaultInstance()
+        : buyerUserListTargeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target buyer user lists.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.BuyerUserListTargetingOrBuilder
+      getBuyerUserListTargetingOrBuilder() {
+    return buyerUserListTargeting_ == null
+        ? com.google.ads.admanager.v1.BuyerUserListTargeting.getDefaultInstance()
+        : buyerUserListTargeting_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -743,37 +1164,58 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(2, getGeoTargeting());
+      output.writeMessage(1, getInventoryUrlTargeting());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(3, getTechnologyTargeting());
+      output.writeMessage(2, getGeoTargeting());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(5, getInventoryTargeting());
+      output.writeMessage(3, getTechnologyTargeting());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(6, getRequestPlatformTargeting());
+      output.writeMessage(4, getInventorySizeTargeting());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeMessage(7, getCustomTargeting());
+      output.writeMessage(5, getInventoryTargeting());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeMessage(10, getUserDomainTargeting());
+      output.writeMessage(6, getRequestPlatformTargeting());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(12, getVideoPositionTargeting());
+      output.writeMessage(7, getCustomTargeting());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeMessage(13, getDataSegmentTargeting());
+      output.writeMessage(8, getDateTimeRangeTargeting());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeMessage(14, getRequestFormatTargeting());
+      output.writeMessage(9, getPublisherProvidedSignalsTargeting());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeMessage(15, getContentTargeting());
+      output.writeMessage(10, getUserDomainTargeting());
     }
     if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(11, getContextualTargeting());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(12, getVideoPositionTargeting());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(13, getDataSegmentTargeting());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(14, getRequestFormatTargeting());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(15, getContentTargeting());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(18, getMobileApplicationTargeting());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(19, getDayPartTargeting());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeMessage(20, getBuyerUserListTargeting());
     }
     getUnknownFields().writeTo(output);
   }
@@ -785,45 +1227,73 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGeoTargeting());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInventoryUrlTargeting());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTechnologyTargeting());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGeoTargeting());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getInventoryTargeting());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTechnologyTargeting());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getInventorySizeTargeting());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getInventoryTargeting());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, getRequestPlatformTargeting());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCustomTargeting());
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUserDomainTargeting());
-    }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(12, getVideoPositionTargeting());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCustomTargeting());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDataSegmentTargeting());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getDateTimeRangeTargeting());
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getRequestFormatTargeting());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getPublisherProvidedSignalsTargeting());
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getContentTargeting());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUserDomainTargeting());
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getContextualTargeting());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, getVideoPositionTargeting());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, getDataSegmentTargeting());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getRequestFormatTargeting());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getContentTargeting());
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getMobileApplicationTargeting());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getDayPartTargeting());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(20, getBuyerUserListTargeting());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -840,6 +1310,10 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     }
     com.google.ads.admanager.v1.Targeting other = (com.google.ads.admanager.v1.Targeting) obj;
 
+    if (hasInventoryUrlTargeting() != other.hasInventoryUrlTargeting()) return false;
+    if (hasInventoryUrlTargeting()) {
+      if (!getInventoryUrlTargeting().equals(other.getInventoryUrlTargeting())) return false;
+    }
     if (hasGeoTargeting() != other.hasGeoTargeting()) return false;
     if (hasGeoTargeting()) {
       if (!getGeoTargeting().equals(other.getGeoTargeting())) return false;
@@ -847,6 +1321,10 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     if (hasTechnologyTargeting() != other.hasTechnologyTargeting()) return false;
     if (hasTechnologyTargeting()) {
       if (!getTechnologyTargeting().equals(other.getTechnologyTargeting())) return false;
+    }
+    if (hasInventorySizeTargeting() != other.hasInventorySizeTargeting()) return false;
+    if (hasInventorySizeTargeting()) {
+      if (!getInventorySizeTargeting().equals(other.getInventorySizeTargeting())) return false;
     }
     if (hasInventoryTargeting() != other.hasInventoryTargeting()) return false;
     if (hasInventoryTargeting()) {
@@ -860,9 +1338,23 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     if (hasCustomTargeting()) {
       if (!getCustomTargeting().equals(other.getCustomTargeting())) return false;
     }
+    if (hasDateTimeRangeTargeting() != other.hasDateTimeRangeTargeting()) return false;
+    if (hasDateTimeRangeTargeting()) {
+      if (!getDateTimeRangeTargeting().equals(other.getDateTimeRangeTargeting())) return false;
+    }
+    if (hasPublisherProvidedSignalsTargeting() != other.hasPublisherProvidedSignalsTargeting())
+      return false;
+    if (hasPublisherProvidedSignalsTargeting()) {
+      if (!getPublisherProvidedSignalsTargeting()
+          .equals(other.getPublisherProvidedSignalsTargeting())) return false;
+    }
     if (hasUserDomainTargeting() != other.hasUserDomainTargeting()) return false;
     if (hasUserDomainTargeting()) {
       if (!getUserDomainTargeting().equals(other.getUserDomainTargeting())) return false;
+    }
+    if (hasContextualTargeting() != other.hasContextualTargeting()) return false;
+    if (hasContextualTargeting()) {
+      if (!getContextualTargeting().equals(other.getContextualTargeting())) return false;
     }
     if (hasVideoPositionTargeting() != other.hasVideoPositionTargeting()) return false;
     if (hasVideoPositionTargeting()) {
@@ -885,6 +1377,14 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       if (!getMobileApplicationTargeting().equals(other.getMobileApplicationTargeting()))
         return false;
     }
+    if (hasDayPartTargeting() != other.hasDayPartTargeting()) return false;
+    if (hasDayPartTargeting()) {
+      if (!getDayPartTargeting().equals(other.getDayPartTargeting())) return false;
+    }
+    if (hasBuyerUserListTargeting() != other.hasBuyerUserListTargeting()) return false;
+    if (hasBuyerUserListTargeting()) {
+      if (!getBuyerUserListTargeting().equals(other.getBuyerUserListTargeting())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -896,6 +1396,10 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasInventoryUrlTargeting()) {
+      hash = (37 * hash) + INVENTORY_URL_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getInventoryUrlTargeting().hashCode();
+    }
     if (hasGeoTargeting()) {
       hash = (37 * hash) + GEO_TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getGeoTargeting().hashCode();
@@ -903,6 +1407,10 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     if (hasTechnologyTargeting()) {
       hash = (37 * hash) + TECHNOLOGY_TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getTechnologyTargeting().hashCode();
+    }
+    if (hasInventorySizeTargeting()) {
+      hash = (37 * hash) + INVENTORY_SIZE_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getInventorySizeTargeting().hashCode();
     }
     if (hasInventoryTargeting()) {
       hash = (37 * hash) + INVENTORY_TARGETING_FIELD_NUMBER;
@@ -916,9 +1424,21 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + CUSTOM_TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getCustomTargeting().hashCode();
     }
+    if (hasDateTimeRangeTargeting()) {
+      hash = (37 * hash) + DATE_TIME_RANGE_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getDateTimeRangeTargeting().hashCode();
+    }
+    if (hasPublisherProvidedSignalsTargeting()) {
+      hash = (37 * hash) + PUBLISHER_PROVIDED_SIGNALS_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getPublisherProvidedSignalsTargeting().hashCode();
+    }
     if (hasUserDomainTargeting()) {
       hash = (37 * hash) + USER_DOMAIN_TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getUserDomainTargeting().hashCode();
+    }
+    if (hasContextualTargeting()) {
+      hash = (37 * hash) + CONTEXTUAL_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getContextualTargeting().hashCode();
     }
     if (hasVideoPositionTargeting()) {
       hash = (37 * hash) + VIDEO_POSITION_TARGETING_FIELD_NUMBER;
@@ -939,6 +1459,14 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     if (hasMobileApplicationTargeting()) {
       hash = (37 * hash) + MOBILE_APPLICATION_TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getMobileApplicationTargeting().hashCode();
+    }
+    if (hasDayPartTargeting()) {
+      hash = (37 * hash) + DAY_PART_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getDayPartTargeting().hashCode();
+    }
+    if (hasBuyerUserListTargeting()) {
+      hash = (37 * hash) + BUYER_USER_LIST_TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getBuyerUserListTargeting().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1080,17 +1608,24 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetInventoryUrlTargetingFieldBuilder();
         internalGetGeoTargetingFieldBuilder();
         internalGetTechnologyTargetingFieldBuilder();
+        internalGetInventorySizeTargetingFieldBuilder();
         internalGetInventoryTargetingFieldBuilder();
         internalGetRequestPlatformTargetingFieldBuilder();
         internalGetCustomTargetingFieldBuilder();
+        internalGetDateTimeRangeTargetingFieldBuilder();
+        internalGetPublisherProvidedSignalsTargetingFieldBuilder();
         internalGetUserDomainTargetingFieldBuilder();
+        internalGetContextualTargetingFieldBuilder();
         internalGetVideoPositionTargetingFieldBuilder();
         internalGetDataSegmentTargetingFieldBuilder();
         internalGetRequestFormatTargetingFieldBuilder();
         internalGetContentTargetingFieldBuilder();
         internalGetMobileApplicationTargetingFieldBuilder();
+        internalGetDayPartTargetingFieldBuilder();
+        internalGetBuyerUserListTargetingFieldBuilder();
       }
     }
 
@@ -1098,6 +1633,11 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      inventoryUrlTargeting_ = null;
+      if (inventoryUrlTargetingBuilder_ != null) {
+        inventoryUrlTargetingBuilder_.dispose();
+        inventoryUrlTargetingBuilder_ = null;
+      }
       geoTargeting_ = null;
       if (geoTargetingBuilder_ != null) {
         geoTargetingBuilder_.dispose();
@@ -1107,6 +1647,11 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       if (technologyTargetingBuilder_ != null) {
         technologyTargetingBuilder_.dispose();
         technologyTargetingBuilder_ = null;
+      }
+      inventorySizeTargeting_ = null;
+      if (inventorySizeTargetingBuilder_ != null) {
+        inventorySizeTargetingBuilder_.dispose();
+        inventorySizeTargetingBuilder_ = null;
       }
       inventoryTargeting_ = null;
       if (inventoryTargetingBuilder_ != null) {
@@ -1123,10 +1668,25 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         customTargetingBuilder_.dispose();
         customTargetingBuilder_ = null;
       }
+      dateTimeRangeTargeting_ = null;
+      if (dateTimeRangeTargetingBuilder_ != null) {
+        dateTimeRangeTargetingBuilder_.dispose();
+        dateTimeRangeTargetingBuilder_ = null;
+      }
+      publisherProvidedSignalsTargeting_ = null;
+      if (publisherProvidedSignalsTargetingBuilder_ != null) {
+        publisherProvidedSignalsTargetingBuilder_.dispose();
+        publisherProvidedSignalsTargetingBuilder_ = null;
+      }
       userDomainTargeting_ = null;
       if (userDomainTargetingBuilder_ != null) {
         userDomainTargetingBuilder_.dispose();
         userDomainTargetingBuilder_ = null;
+      }
+      contextualTargeting_ = null;
+      if (contextualTargetingBuilder_ != null) {
+        contextualTargetingBuilder_.dispose();
+        contextualTargetingBuilder_ = null;
       }
       videoPositionTargeting_ = null;
       if (videoPositionTargetingBuilder_ != null) {
@@ -1152,6 +1712,16 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       if (mobileApplicationTargetingBuilder_ != null) {
         mobileApplicationTargetingBuilder_.dispose();
         mobileApplicationTargetingBuilder_ = null;
+      }
+      dayPartTargeting_ = null;
+      if (dayPartTargetingBuilder_ != null) {
+        dayPartTargetingBuilder_.dispose();
+        dayPartTargetingBuilder_ = null;
+      }
+      buyerUserListTargeting_ = null;
+      if (buyerUserListTargetingBuilder_ != null) {
+        buyerUserListTargetingBuilder_.dispose();
+        buyerUserListTargetingBuilder_ = null;
       }
       return this;
     }
@@ -1191,75 +1761,122 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.geoTargeting_ =
-            geoTargetingBuilder_ == null ? geoTargeting_ : geoTargetingBuilder_.build();
+        result.inventoryUrlTargeting_ =
+            inventoryUrlTargetingBuilder_ == null
+                ? inventoryUrlTargeting_
+                : inventoryUrlTargetingBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.geoTargeting_ =
+            geoTargetingBuilder_ == null ? geoTargeting_ : geoTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.technologyTargeting_ =
             technologyTargetingBuilder_ == null
                 ? technologyTargeting_
                 : technologyTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.inventorySizeTargeting_ =
+            inventorySizeTargetingBuilder_ == null
+                ? inventorySizeTargeting_
+                : inventorySizeTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.inventoryTargeting_ =
             inventoryTargetingBuilder_ == null
                 ? inventoryTargeting_
                 : inventoryTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.requestPlatformTargeting_ =
             requestPlatformTargetingBuilder_ == null
                 ? requestPlatformTargeting_
                 : requestPlatformTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.customTargeting_ =
             customTargetingBuilder_ == null ? customTargeting_ : customTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.dateTimeRangeTargeting_ =
+            dateTimeRangeTargetingBuilder_ == null
+                ? dateTimeRangeTargeting_
+                : dateTimeRangeTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.publisherProvidedSignalsTargeting_ =
+            publisherProvidedSignalsTargetingBuilder_ == null
+                ? publisherProvidedSignalsTargeting_
+                : publisherProvidedSignalsTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.userDomainTargeting_ =
             userDomainTargetingBuilder_ == null
                 ? userDomainTargeting_
                 : userDomainTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.contextualTargeting_ =
+            contextualTargetingBuilder_ == null
+                ? contextualTargeting_
+                : contextualTargetingBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.videoPositionTargeting_ =
             videoPositionTargetingBuilder_ == null
                 ? videoPositionTargeting_
                 : videoPositionTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.dataSegmentTargeting_ =
             dataSegmentTargetingBuilder_ == null
                 ? dataSegmentTargeting_
                 : dataSegmentTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.requestFormatTargeting_ =
             requestFormatTargetingBuilder_ == null
                 ? requestFormatTargeting_
                 : requestFormatTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.contentTargeting_ =
             contentTargetingBuilder_ == null ? contentTargeting_ : contentTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000200;
+        to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.mobileApplicationTargeting_ =
             mobileApplicationTargetingBuilder_ == null
                 ? mobileApplicationTargeting_
                 : mobileApplicationTargetingBuilder_.build();
-        to_bitField0_ |= 0x00000400;
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.dayPartTargeting_ =
+            dayPartTargetingBuilder_ == null ? dayPartTargeting_ : dayPartTargetingBuilder_.build();
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.buyerUserListTargeting_ =
+            buyerUserListTargetingBuilder_ == null
+                ? buyerUserListTargeting_
+                : buyerUserListTargetingBuilder_.build();
+        to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1276,11 +1893,17 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.ads.admanager.v1.Targeting other) {
       if (other == com.google.ads.admanager.v1.Targeting.getDefaultInstance()) return this;
+      if (other.hasInventoryUrlTargeting()) {
+        mergeInventoryUrlTargeting(other.getInventoryUrlTargeting());
+      }
       if (other.hasGeoTargeting()) {
         mergeGeoTargeting(other.getGeoTargeting());
       }
       if (other.hasTechnologyTargeting()) {
         mergeTechnologyTargeting(other.getTechnologyTargeting());
+      }
+      if (other.hasInventorySizeTargeting()) {
+        mergeInventorySizeTargeting(other.getInventorySizeTargeting());
       }
       if (other.hasInventoryTargeting()) {
         mergeInventoryTargeting(other.getInventoryTargeting());
@@ -1291,8 +1914,17 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       if (other.hasCustomTargeting()) {
         mergeCustomTargeting(other.getCustomTargeting());
       }
+      if (other.hasDateTimeRangeTargeting()) {
+        mergeDateTimeRangeTargeting(other.getDateTimeRangeTargeting());
+      }
+      if (other.hasPublisherProvidedSignalsTargeting()) {
+        mergePublisherProvidedSignalsTargeting(other.getPublisherProvidedSignalsTargeting());
+      }
       if (other.hasUserDomainTargeting()) {
         mergeUserDomainTargeting(other.getUserDomainTargeting());
+      }
+      if (other.hasContextualTargeting()) {
+        mergeContextualTargeting(other.getContextualTargeting());
       }
       if (other.hasVideoPositionTargeting()) {
         mergeVideoPositionTargeting(other.getVideoPositionTargeting());
@@ -1308,6 +1940,12 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasMobileApplicationTargeting()) {
         mergeMobileApplicationTargeting(other.getMobileApplicationTargeting());
+      }
+      if (other.hasDayPartTargeting()) {
+        mergeDayPartTargeting(other.getDayPartTargeting());
+      }
+      if (other.hasBuyerUserListTargeting()) {
+        mergeBuyerUserListTargeting(other.getBuyerUserListTargeting());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1335,25 +1973,40 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(
+                    internalGetInventoryUrlTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetGeoTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetTechnologyTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetInventorySizeTargetingFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             case 42:
               {
                 input.readMessage(
                     internalGetInventoryTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
@@ -1361,36 +2014,59 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetRequestPlatformTargetingFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetCustomTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetDateTimeRangeTargetingFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetPublisherProvidedSignalsTargetingFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             case 82:
               {
                 input.readMessage(
                     internalGetUserDomainTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetContextualTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             case 98:
               {
                 input.readMessage(
                     internalGetVideoPositionTargetingFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     internalGetDataSegmentTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
@@ -1398,14 +2074,14 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetRequestFormatTargetingFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     internalGetContentTargetingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 122
             case 146:
@@ -1413,9 +2089,24 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetMobileApplicationTargetingFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    internalGetDayPartTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    internalGetBuyerUserListTargetingFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1434,6 +2125,224 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+
+    private com.google.ads.admanager.v1.InventoryUrlTargeting inventoryUrlTargeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.InventoryUrlTargeting,
+            com.google.ads.admanager.v1.InventoryUrlTargeting.Builder,
+            com.google.ads.admanager.v1.InventoryUrlTargetingOrBuilder>
+        inventoryUrlTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the inventoryUrlTargeting field is set.
+     */
+    public boolean hasInventoryUrlTargeting() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The inventoryUrlTargeting.
+     */
+    public com.google.ads.admanager.v1.InventoryUrlTargeting getInventoryUrlTargeting() {
+      if (inventoryUrlTargetingBuilder_ == null) {
+        return inventoryUrlTargeting_ == null
+            ? com.google.ads.admanager.v1.InventoryUrlTargeting.getDefaultInstance()
+            : inventoryUrlTargeting_;
+      } else {
+        return inventoryUrlTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInventoryUrlTargeting(
+        com.google.ads.admanager.v1.InventoryUrlTargeting value) {
+      if (inventoryUrlTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inventoryUrlTargeting_ = value;
+      } else {
+        inventoryUrlTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInventoryUrlTargeting(
+        com.google.ads.admanager.v1.InventoryUrlTargeting.Builder builderForValue) {
+      if (inventoryUrlTargetingBuilder_ == null) {
+        inventoryUrlTargeting_ = builderForValue.build();
+      } else {
+        inventoryUrlTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeInventoryUrlTargeting(
+        com.google.ads.admanager.v1.InventoryUrlTargeting value) {
+      if (inventoryUrlTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && inventoryUrlTargeting_ != null
+            && inventoryUrlTargeting_
+                != com.google.ads.admanager.v1.InventoryUrlTargeting.getDefaultInstance()) {
+          getInventoryUrlTargetingBuilder().mergeFrom(value);
+        } else {
+          inventoryUrlTargeting_ = value;
+        }
+      } else {
+        inventoryUrlTargetingBuilder_.mergeFrom(value);
+      }
+      if (inventoryUrlTargeting_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInventoryUrlTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      inventoryUrlTargeting_ = null;
+      if (inventoryUrlTargetingBuilder_ != null) {
+        inventoryUrlTargetingBuilder_.dispose();
+        inventoryUrlTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.InventoryUrlTargeting.Builder
+        getInventoryUrlTargetingBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return internalGetInventoryUrlTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.InventoryUrlTargetingOrBuilder
+        getInventoryUrlTargetingOrBuilder() {
+      if (inventoryUrlTargetingBuilder_ != null) {
+        return inventoryUrlTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return inventoryUrlTargeting_ == null
+            ? com.google.ads.admanager.v1.InventoryUrlTargeting.getDefaultInstance()
+            : inventoryUrlTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude specific websites.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventoryUrlTargeting inventory_url_targeting = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.InventoryUrlTargeting,
+            com.google.ads.admanager.v1.InventoryUrlTargeting.Builder,
+            com.google.ads.admanager.v1.InventoryUrlTargetingOrBuilder>
+        internalGetInventoryUrlTargetingFieldBuilder() {
+      if (inventoryUrlTargetingBuilder_ == null) {
+        inventoryUrlTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.InventoryUrlTargeting,
+                com.google.ads.admanager.v1.InventoryUrlTargeting.Builder,
+                com.google.ads.admanager.v1.InventoryUrlTargetingOrBuilder>(
+                getInventoryUrlTargeting(), getParentForChildren(), isClean());
+        inventoryUrlTargeting_ = null;
+      }
+      return inventoryUrlTargetingBuilder_;
+    }
 
     private com.google.ads.admanager.v1.GeoTargeting geoTargeting_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -1456,7 +2365,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the geoTargeting field is set.
      */
     public boolean hasGeoTargeting() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -1502,7 +2411,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         geoTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1525,7 +2434,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         geoTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1543,7 +2452,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGeoTargeting(com.google.ads.admanager.v1.GeoTargeting value) {
       if (geoTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && geoTargeting_ != null
             && geoTargeting_ != com.google.ads.admanager.v1.GeoTargeting.getDefaultInstance()) {
           getGeoTargetingBuilder().mergeFrom(value);
@@ -1554,7 +2463,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         geoTargetingBuilder_.mergeFrom(value);
       }
       if (geoTargeting_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -1572,7 +2481,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearGeoTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       geoTargeting_ = null;
       if (geoTargetingBuilder_ != null) {
         geoTargetingBuilder_.dispose();
@@ -1594,7 +2503,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.GeoTargeting.Builder getGeoTargetingBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return internalGetGeoTargetingFieldBuilder().getBuilder();
     }
@@ -1669,7 +2578,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the technologyTargeting field is set.
      */
     public boolean hasTechnologyTargeting() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1715,7 +2624,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         technologyTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1738,7 +2647,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         technologyTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1756,7 +2665,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTechnologyTargeting(com.google.ads.admanager.v1.TechnologyTargeting value) {
       if (technologyTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && technologyTargeting_ != null
             && technologyTargeting_
                 != com.google.ads.admanager.v1.TechnologyTargeting.getDefaultInstance()) {
@@ -1768,7 +2677,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         technologyTargetingBuilder_.mergeFrom(value);
       }
       if (technologyTargeting_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1786,7 +2695,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTechnologyTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       technologyTargeting_ = null;
       if (technologyTargetingBuilder_ != null) {
         technologyTargetingBuilder_.dispose();
@@ -1808,7 +2717,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.TechnologyTargeting.Builder getTechnologyTargetingBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return internalGetTechnologyTargetingFieldBuilder().getBuilder();
     }
@@ -1863,6 +2772,224 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       return technologyTargetingBuilder_;
     }
 
+    private com.google.ads.admanager.v1.InventorySizeTargeting inventorySizeTargeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.InventorySizeTargeting,
+            com.google.ads.admanager.v1.InventorySizeTargeting.Builder,
+            com.google.ads.admanager.v1.InventorySizeTargetingOrBuilder>
+        inventorySizeTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the inventorySizeTargeting field is set.
+     */
+    public boolean hasInventorySizeTargeting() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The inventorySizeTargeting.
+     */
+    public com.google.ads.admanager.v1.InventorySizeTargeting getInventorySizeTargeting() {
+      if (inventorySizeTargetingBuilder_ == null) {
+        return inventorySizeTargeting_ == null
+            ? com.google.ads.admanager.v1.InventorySizeTargeting.getDefaultInstance()
+            : inventorySizeTargeting_;
+      } else {
+        return inventorySizeTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInventorySizeTargeting(
+        com.google.ads.admanager.v1.InventorySizeTargeting value) {
+      if (inventorySizeTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inventorySizeTargeting_ = value;
+      } else {
+        inventorySizeTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInventorySizeTargeting(
+        com.google.ads.admanager.v1.InventorySizeTargeting.Builder builderForValue) {
+      if (inventorySizeTargetingBuilder_ == null) {
+        inventorySizeTargeting_ = builderForValue.build();
+      } else {
+        inventorySizeTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeInventorySizeTargeting(
+        com.google.ads.admanager.v1.InventorySizeTargeting value) {
+      if (inventorySizeTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && inventorySizeTargeting_ != null
+            && inventorySizeTargeting_
+                != com.google.ads.admanager.v1.InventorySizeTargeting.getDefaultInstance()) {
+          getInventorySizeTargetingBuilder().mergeFrom(value);
+        } else {
+          inventorySizeTargeting_ = value;
+        }
+      } else {
+        inventorySizeTargetingBuilder_.mergeFrom(value);
+      }
+      if (inventorySizeTargeting_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInventorySizeTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      inventorySizeTargeting_ = null;
+      if (inventorySizeTargetingBuilder_ != null) {
+        inventorySizeTargetingBuilder_.dispose();
+        inventorySizeTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.InventorySizeTargeting.Builder
+        getInventorySizeTargetingBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetInventorySizeTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.InventorySizeTargetingOrBuilder
+        getInventorySizeTargetingOrBuilder() {
+      if (inventorySizeTargetingBuilder_ != null) {
+        return inventorySizeTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return inventorySizeTargeting_ == null
+            ? com.google.ads.admanager.v1.InventorySizeTargeting.getDefaultInstance()
+            : inventorySizeTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target/exclude ad requests for specific ad slot sizes.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InventorySizeTargeting inventory_size_targeting = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.InventorySizeTargeting,
+            com.google.ads.admanager.v1.InventorySizeTargeting.Builder,
+            com.google.ads.admanager.v1.InventorySizeTargetingOrBuilder>
+        internalGetInventorySizeTargetingFieldBuilder() {
+      if (inventorySizeTargetingBuilder_ == null) {
+        inventorySizeTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.InventorySizeTargeting,
+                com.google.ads.admanager.v1.InventorySizeTargeting.Builder,
+                com.google.ads.admanager.v1.InventorySizeTargetingOrBuilder>(
+                getInventorySizeTargeting(), getParentForChildren(), isClean());
+        inventorySizeTargeting_ = null;
+      }
+      return inventorySizeTargetingBuilder_;
+    }
+
     private com.google.ads.admanager.v1.InventoryTargeting inventoryTargeting_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.ads.admanager.v1.InventoryTargeting,
@@ -1884,7 +3011,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the inventoryTargeting field is set.
      */
     public boolean hasInventoryTargeting() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1930,7 +3057,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         inventoryTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1953,7 +3080,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         inventoryTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1971,7 +3098,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeInventoryTargeting(com.google.ads.admanager.v1.InventoryTargeting value) {
       if (inventoryTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && inventoryTargeting_ != null
             && inventoryTargeting_
                 != com.google.ads.admanager.v1.InventoryTargeting.getDefaultInstance()) {
@@ -1983,7 +3110,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         inventoryTargetingBuilder_.mergeFrom(value);
       }
       if (inventoryTargeting_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2001,7 +3128,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearInventoryTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       inventoryTargeting_ = null;
       if (inventoryTargetingBuilder_ != null) {
         inventoryTargetingBuilder_.dispose();
@@ -2023,7 +3150,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.InventoryTargeting.Builder getInventoryTargetingBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetInventoryTargetingFieldBuilder().getBuilder();
     }
@@ -2099,7 +3226,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the requestPlatformTargeting field is set.
      */
     public boolean hasRequestPlatformTargeting() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2146,7 +3273,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         requestPlatformTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2169,7 +3296,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         requestPlatformTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2188,7 +3315,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     public Builder mergeRequestPlatformTargeting(
         com.google.ads.admanager.v1.RequestPlatformTargeting value) {
       if (requestPlatformTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && requestPlatformTargeting_ != null
             && requestPlatformTargeting_
                 != com.google.ads.admanager.v1.RequestPlatformTargeting.getDefaultInstance()) {
@@ -2200,7 +3327,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         requestPlatformTargetingBuilder_.mergeFrom(value);
       }
       if (requestPlatformTargeting_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2218,7 +3345,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRequestPlatformTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       requestPlatformTargeting_ = null;
       if (requestPlatformTargetingBuilder_ != null) {
         requestPlatformTargetingBuilder_.dispose();
@@ -2241,7 +3368,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public com.google.ads.admanager.v1.RequestPlatformTargeting.Builder
         getRequestPlatformTargetingBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetRequestPlatformTargetingFieldBuilder().getBuilder();
     }
@@ -2318,7 +3445,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the customTargeting field is set.
      */
     public boolean hasCustomTargeting() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2366,7 +3493,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         customTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2390,7 +3517,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         customTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2409,7 +3536,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCustomTargeting(com.google.ads.admanager.v1.CustomTargeting value) {
       if (customTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && customTargeting_ != null
             && customTargeting_
                 != com.google.ads.admanager.v1.CustomTargeting.getDefaultInstance()) {
@@ -2421,7 +3548,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         customTargetingBuilder_.mergeFrom(value);
       }
       if (customTargeting_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2440,7 +3567,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCustomTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       customTargeting_ = null;
       if (customTargetingBuilder_ != null) {
         customTargetingBuilder_.dispose();
@@ -2463,7 +3590,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.CustomTargeting.Builder getCustomTargetingBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetCustomTargetingFieldBuilder().getBuilder();
     }
@@ -2519,6 +3646,445 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       return customTargetingBuilder_;
     }
 
+    private com.google.ads.admanager.v1.DateTimeRangeTargeting dateTimeRangeTargeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.DateTimeRangeTargeting,
+            com.google.ads.admanager.v1.DateTimeRangeTargeting.Builder,
+            com.google.ads.admanager.v1.DateTimeRangeTargetingOrBuilder>
+        dateTimeRangeTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dateTimeRangeTargeting field is set.
+     */
+    public boolean hasDateTimeRangeTargeting() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dateTimeRangeTargeting.
+     */
+    public com.google.ads.admanager.v1.DateTimeRangeTargeting getDateTimeRangeTargeting() {
+      if (dateTimeRangeTargetingBuilder_ == null) {
+        return dateTimeRangeTargeting_ == null
+            ? com.google.ads.admanager.v1.DateTimeRangeTargeting.getDefaultInstance()
+            : dateTimeRangeTargeting_;
+      } else {
+        return dateTimeRangeTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDateTimeRangeTargeting(
+        com.google.ads.admanager.v1.DateTimeRangeTargeting value) {
+      if (dateTimeRangeTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dateTimeRangeTargeting_ = value;
+      } else {
+        dateTimeRangeTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDateTimeRangeTargeting(
+        com.google.ads.admanager.v1.DateTimeRangeTargeting.Builder builderForValue) {
+      if (dateTimeRangeTargetingBuilder_ == null) {
+        dateTimeRangeTargeting_ = builderForValue.build();
+      } else {
+        dateTimeRangeTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDateTimeRangeTargeting(
+        com.google.ads.admanager.v1.DateTimeRangeTargeting value) {
+      if (dateTimeRangeTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && dateTimeRangeTargeting_ != null
+            && dateTimeRangeTargeting_
+                != com.google.ads.admanager.v1.DateTimeRangeTargeting.getDefaultInstance()) {
+          getDateTimeRangeTargetingBuilder().mergeFrom(value);
+        } else {
+          dateTimeRangeTargeting_ = value;
+        }
+      } else {
+        dateTimeRangeTargetingBuilder_.mergeFrom(value);
+      }
+      if (dateTimeRangeTargeting_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDateTimeRangeTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      dateTimeRangeTargeting_ = null;
+      if (dateTimeRangeTargetingBuilder_ != null) {
+        dateTimeRangeTargetingBuilder_.dispose();
+        dateTimeRangeTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DateTimeRangeTargeting.Builder
+        getDateTimeRangeTargetingBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetDateTimeRangeTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DateTimeRangeTargetingOrBuilder
+        getDateTimeRangeTargetingOrBuilder() {
+      if (dateTimeRangeTargetingBuilder_ != null) {
+        return dateTimeRangeTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return dateTimeRangeTargeting_ == null
+            ? com.google.ads.admanager.v1.DateTimeRangeTargeting.getDefaultInstance()
+            : dateTimeRangeTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target a datetime range.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DateTimeRangeTargeting date_time_range_targeting = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.DateTimeRangeTargeting,
+            com.google.ads.admanager.v1.DateTimeRangeTargeting.Builder,
+            com.google.ads.admanager.v1.DateTimeRangeTargetingOrBuilder>
+        internalGetDateTimeRangeTargetingFieldBuilder() {
+      if (dateTimeRangeTargetingBuilder_ == null) {
+        dateTimeRangeTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.DateTimeRangeTargeting,
+                com.google.ads.admanager.v1.DateTimeRangeTargeting.Builder,
+                com.google.ads.admanager.v1.DateTimeRangeTargetingOrBuilder>(
+                getDateTimeRangeTargeting(), getParentForChildren(), isClean());
+        dateTimeRangeTargeting_ = null;
+      }
+      return dateTimeRangeTargetingBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting
+        publisherProvidedSignalsTargeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting,
+            com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.Builder,
+            com.google.ads.admanager.v1.PublisherProvidedSignalsTargetingOrBuilder>
+        publisherProvidedSignalsTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the publisherProvidedSignalsTargeting field is set.
+     */
+    public boolean hasPublisherProvidedSignalsTargeting() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The publisherProvidedSignalsTargeting.
+     */
+    public com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting
+        getPublisherProvidedSignalsTargeting() {
+      if (publisherProvidedSignalsTargetingBuilder_ == null) {
+        return publisherProvidedSignalsTargeting_ == null
+            ? com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.getDefaultInstance()
+            : publisherProvidedSignalsTargeting_;
+      } else {
+        return publisherProvidedSignalsTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPublisherProvidedSignalsTargeting(
+        com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting value) {
+      if (publisherProvidedSignalsTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        publisherProvidedSignalsTargeting_ = value;
+      } else {
+        publisherProvidedSignalsTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPublisherProvidedSignalsTargeting(
+        com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.Builder builderForValue) {
+      if (publisherProvidedSignalsTargetingBuilder_ == null) {
+        publisherProvidedSignalsTargeting_ = builderForValue.build();
+      } else {
+        publisherProvidedSignalsTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePublisherProvidedSignalsTargeting(
+        com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting value) {
+      if (publisherProvidedSignalsTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && publisherProvidedSignalsTargeting_ != null
+            && publisherProvidedSignalsTargeting_
+                != com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting
+                    .getDefaultInstance()) {
+          getPublisherProvidedSignalsTargetingBuilder().mergeFrom(value);
+        } else {
+          publisherProvidedSignalsTargeting_ = value;
+        }
+      } else {
+        publisherProvidedSignalsTargetingBuilder_.mergeFrom(value);
+      }
+      if (publisherProvidedSignalsTargeting_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPublisherProvidedSignalsTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      publisherProvidedSignalsTargeting_ = null;
+      if (publisherProvidedSignalsTargetingBuilder_ != null) {
+        publisherProvidedSignalsTargetingBuilder_.dispose();
+        publisherProvidedSignalsTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.Builder
+        getPublisherProvidedSignalsTargetingBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetPublisherProvidedSignalsTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.PublisherProvidedSignalsTargetingOrBuilder
+        getPublisherProvidedSignalsTargetingOrBuilder() {
+      if (publisherProvidedSignalsTargetingBuilder_ != null) {
+        return publisherProvidedSignalsTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return publisherProvidedSignalsTargeting_ == null
+            ? com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.getDefaultInstance()
+            : publisherProvidedSignalsTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target publisher provided signals.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.PublisherProvidedSignalsTargeting publisher_provided_signals_targeting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting,
+            com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.Builder,
+            com.google.ads.admanager.v1.PublisherProvidedSignalsTargetingOrBuilder>
+        internalGetPublisherProvidedSignalsTargetingFieldBuilder() {
+      if (publisherProvidedSignalsTargetingBuilder_ == null) {
+        publisherProvidedSignalsTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting,
+                com.google.ads.admanager.v1.PublisherProvidedSignalsTargeting.Builder,
+                com.google.ads.admanager.v1.PublisherProvidedSignalsTargetingOrBuilder>(
+                getPublisherProvidedSignalsTargeting(), getParentForChildren(), isClean());
+        publisherProvidedSignalsTargeting_ = null;
+      }
+      return publisherProvidedSignalsTargetingBuilder_;
+    }
+
     private com.google.ads.admanager.v1.UserDomainTargeting userDomainTargeting_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.ads.admanager.v1.UserDomainTargeting,
@@ -2540,7 +4106,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the userDomainTargeting field is set.
      */
     public boolean hasUserDomainTargeting() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2586,7 +4152,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         userDomainTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2609,7 +4175,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         userDomainTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2627,7 +4193,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUserDomainTargeting(com.google.ads.admanager.v1.UserDomainTargeting value) {
       if (userDomainTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && userDomainTargeting_ != null
             && userDomainTargeting_
                 != com.google.ads.admanager.v1.UserDomainTargeting.getDefaultInstance()) {
@@ -2639,7 +4205,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         userDomainTargetingBuilder_.mergeFrom(value);
       }
       if (userDomainTargeting_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2657,7 +4223,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUserDomainTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000200);
       userDomainTargeting_ = null;
       if (userDomainTargetingBuilder_ != null) {
         userDomainTargetingBuilder_.dispose();
@@ -2679,7 +4245,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.UserDomainTargeting.Builder getUserDomainTargetingBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetUserDomainTargetingFieldBuilder().getBuilder();
     }
@@ -2734,6 +4300,221 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       return userDomainTargetingBuilder_;
     }
 
+    private com.google.ads.admanager.v1.ContextualTargeting contextualTargeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ContextualTargeting,
+            com.google.ads.admanager.v1.ContextualTargeting.Builder,
+            com.google.ads.admanager.v1.ContextualTargetingOrBuilder>
+        contextualTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the contextualTargeting field is set.
+     */
+    public boolean hasContextualTargeting() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The contextualTargeting.
+     */
+    public com.google.ads.admanager.v1.ContextualTargeting getContextualTargeting() {
+      if (contextualTargetingBuilder_ == null) {
+        return contextualTargeting_ == null
+            ? com.google.ads.admanager.v1.ContextualTargeting.getDefaultInstance()
+            : contextualTargeting_;
+      } else {
+        return contextualTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContextualTargeting(com.google.ads.admanager.v1.ContextualTargeting value) {
+      if (contextualTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contextualTargeting_ = value;
+      } else {
+        contextualTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContextualTargeting(
+        com.google.ads.admanager.v1.ContextualTargeting.Builder builderForValue) {
+      if (contextualTargetingBuilder_ == null) {
+        contextualTargeting_ = builderForValue.build();
+      } else {
+        contextualTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeContextualTargeting(com.google.ads.admanager.v1.ContextualTargeting value) {
+      if (contextualTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && contextualTargeting_ != null
+            && contextualTargeting_
+                != com.google.ads.admanager.v1.ContextualTargeting.getDefaultInstance()) {
+          getContextualTargetingBuilder().mergeFrom(value);
+        } else {
+          contextualTargeting_ = value;
+        }
+      } else {
+        contextualTargetingBuilder_.mergeFrom(value);
+      }
+      if (contextualTargeting_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearContextualTargeting() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      contextualTargeting_ = null;
+      if (contextualTargetingBuilder_ != null) {
+        contextualTargetingBuilder_.dispose();
+        contextualTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ContextualTargeting.Builder getContextualTargetingBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetContextualTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ContextualTargetingOrBuilder
+        getContextualTargetingOrBuilder() {
+      if (contextualTargetingBuilder_ != null) {
+        return contextualTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return contextualTargeting_ == null
+            ? com.google.ads.admanager.v1.ContextualTargeting.getDefaultInstance()
+            : contextualTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target verticals / content labels
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ContextualTargeting contextual_targeting = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ContextualTargeting,
+            com.google.ads.admanager.v1.ContextualTargeting.Builder,
+            com.google.ads.admanager.v1.ContextualTargetingOrBuilder>
+        internalGetContextualTargetingFieldBuilder() {
+      if (contextualTargetingBuilder_ == null) {
+        contextualTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ContextualTargeting,
+                com.google.ads.admanager.v1.ContextualTargeting.Builder,
+                com.google.ads.admanager.v1.ContextualTargetingOrBuilder>(
+                getContextualTargeting(), getParentForChildren(), isClean());
+        contextualTargeting_ = null;
+      }
+      return contextualTargetingBuilder_;
+    }
+
     private com.google.ads.admanager.v1.VideoPositionTargeting videoPositionTargeting_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.ads.admanager.v1.VideoPositionTargeting,
@@ -2755,7 +4536,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the videoPositionTargeting field is set.
      */
     public boolean hasVideoPositionTargeting() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -2802,7 +4583,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         videoPositionTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2825,7 +4606,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         videoPositionTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2844,7 +4625,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     public Builder mergeVideoPositionTargeting(
         com.google.ads.admanager.v1.VideoPositionTargeting value) {
       if (videoPositionTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && videoPositionTargeting_ != null
             && videoPositionTargeting_
                 != com.google.ads.admanager.v1.VideoPositionTargeting.getDefaultInstance()) {
@@ -2856,7 +4637,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         videoPositionTargetingBuilder_.mergeFrom(value);
       }
       if (videoPositionTargeting_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -2874,7 +4655,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearVideoPositionTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000800);
       videoPositionTargeting_ = null;
       if (videoPositionTargetingBuilder_ != null) {
         videoPositionTargetingBuilder_.dispose();
@@ -2897,7 +4678,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public com.google.ads.admanager.v1.VideoPositionTargeting.Builder
         getVideoPositionTargetingBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetVideoPositionTargetingFieldBuilder().getBuilder();
     }
@@ -2973,7 +4754,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the dataSegmentTargeting field is set.
      */
     public boolean hasDataSegmentTargeting() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3019,7 +4800,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         dataSegmentTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3042,7 +4823,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         dataSegmentTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3061,7 +4842,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     public Builder mergeDataSegmentTargeting(
         com.google.ads.admanager.v1.DataSegmentTargeting value) {
       if (dataSegmentTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && dataSegmentTargeting_ != null
             && dataSegmentTargeting_
                 != com.google.ads.admanager.v1.DataSegmentTargeting.getDefaultInstance()) {
@@ -3073,7 +4854,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         dataSegmentTargetingBuilder_.mergeFrom(value);
       }
       if (dataSegmentTargeting_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -3091,7 +4872,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDataSegmentTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00001000);
       dataSegmentTargeting_ = null;
       if (dataSegmentTargetingBuilder_ != null) {
         dataSegmentTargetingBuilder_.dispose();
@@ -3114,7 +4895,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public com.google.ads.admanager.v1.DataSegmentTargeting.Builder
         getDataSegmentTargetingBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetDataSegmentTargetingFieldBuilder().getBuilder();
     }
@@ -3190,7 +4971,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the requestFormatTargeting field is set.
      */
     public boolean hasRequestFormatTargeting() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -3237,7 +5018,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         requestFormatTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3260,7 +5041,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         requestFormatTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3279,7 +5060,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     public Builder mergeRequestFormatTargeting(
         com.google.ads.admanager.v1.RequestFormatTargeting value) {
       if (requestFormatTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && requestFormatTargeting_ != null
             && requestFormatTargeting_
                 != com.google.ads.admanager.v1.RequestFormatTargeting.getDefaultInstance()) {
@@ -3291,7 +5072,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         requestFormatTargetingBuilder_.mergeFrom(value);
       }
       if (requestFormatTargeting_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -3309,7 +5090,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRequestFormatTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00002000);
       requestFormatTargeting_ = null;
       if (requestFormatTargetingBuilder_ != null) {
         requestFormatTargetingBuilder_.dispose();
@@ -3332,7 +5113,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public com.google.ads.admanager.v1.RequestFormatTargeting.Builder
         getRequestFormatTargetingBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetRequestFormatTargetingFieldBuilder().getBuilder();
     }
@@ -3408,7 +5189,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the contentTargeting field is set.
      */
     public boolean hasContentTargeting() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -3454,7 +5235,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         contentTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3477,7 +5258,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         contentTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3495,7 +5276,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeContentTargeting(com.google.ads.admanager.v1.ContentTargeting value) {
       if (contentTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && contentTargeting_ != null
             && contentTargeting_
                 != com.google.ads.admanager.v1.ContentTargeting.getDefaultInstance()) {
@@ -3507,7 +5288,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         contentTargetingBuilder_.mergeFrom(value);
       }
       if (contentTargeting_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -3525,7 +5306,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearContentTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00004000);
       contentTargeting_ = null;
       if (contentTargetingBuilder_ != null) {
         contentTargetingBuilder_.dispose();
@@ -3547,7 +5328,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.ContentTargeting.Builder getContentTargetingBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetContentTargetingFieldBuilder().getBuilder();
     }
@@ -3622,7 +5403,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * @return Whether the mobileApplicationTargeting field is set.
      */
     public boolean hasMobileApplicationTargeting() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -3669,7 +5450,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         mobileApplicationTargetingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3692,7 +5473,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
       } else {
         mobileApplicationTargetingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3711,7 +5492,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
     public Builder mergeMobileApplicationTargeting(
         com.google.ads.admanager.v1.MobileApplicationTargeting value) {
       if (mobileApplicationTargetingBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && mobileApplicationTargeting_ != null
             && mobileApplicationTargeting_
                 != com.google.ads.admanager.v1.MobileApplicationTargeting.getDefaultInstance()) {
@@ -3723,7 +5504,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         mobileApplicationTargetingBuilder_.mergeFrom(value);
       }
       if (mobileApplicationTargeting_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -3741,7 +5522,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearMobileApplicationTargeting() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00008000);
       mobileApplicationTargeting_ = null;
       if (mobileApplicationTargetingBuilder_ != null) {
         mobileApplicationTargetingBuilder_.dispose();
@@ -3764,7 +5545,7 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
      */
     public com.google.ads.admanager.v1.MobileApplicationTargeting.Builder
         getMobileApplicationTargetingBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetMobileApplicationTargetingFieldBuilder().getBuilder();
     }
@@ -3817,6 +5598,438 @@ public final class Targeting extends com.google.protobuf.GeneratedMessage
         mobileApplicationTargeting_ = null;
       }
       return mobileApplicationTargetingBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.DayPartTargeting dayPartTargeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.DayPartTargeting,
+            com.google.ads.admanager.v1.DayPartTargeting.Builder,
+            com.google.ads.admanager.v1.DayPartTargetingOrBuilder>
+        dayPartTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dayPartTargeting field is set.
+     */
+    public boolean hasDayPartTargeting() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dayPartTargeting.
+     */
+    public com.google.ads.admanager.v1.DayPartTargeting getDayPartTargeting() {
+      if (dayPartTargetingBuilder_ == null) {
+        return dayPartTargeting_ == null
+            ? com.google.ads.admanager.v1.DayPartTargeting.getDefaultInstance()
+            : dayPartTargeting_;
+      } else {
+        return dayPartTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDayPartTargeting(com.google.ads.admanager.v1.DayPartTargeting value) {
+      if (dayPartTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dayPartTargeting_ = value;
+      } else {
+        dayPartTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDayPartTargeting(
+        com.google.ads.admanager.v1.DayPartTargeting.Builder builderForValue) {
+      if (dayPartTargetingBuilder_ == null) {
+        dayPartTargeting_ = builderForValue.build();
+      } else {
+        dayPartTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDayPartTargeting(com.google.ads.admanager.v1.DayPartTargeting value) {
+      if (dayPartTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && dayPartTargeting_ != null
+            && dayPartTargeting_
+                != com.google.ads.admanager.v1.DayPartTargeting.getDefaultInstance()) {
+          getDayPartTargetingBuilder().mergeFrom(value);
+        } else {
+          dayPartTargeting_ = value;
+        }
+      } else {
+        dayPartTargetingBuilder_.mergeFrom(value);
+      }
+      if (dayPartTargeting_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDayPartTargeting() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      dayPartTargeting_ = null;
+      if (dayPartTargetingBuilder_ != null) {
+        dayPartTargetingBuilder_.dispose();
+        dayPartTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DayPartTargeting.Builder getDayPartTargetingBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return internalGetDayPartTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DayPartTargetingOrBuilder getDayPartTargetingOrBuilder() {
+      if (dayPartTargetingBuilder_ != null) {
+        return dayPartTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return dayPartTargeting_ == null
+            ? com.google.ads.admanager.v1.DayPartTargeting.getDefaultInstance()
+            : dayPartTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target day parts.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.DayPartTargeting day_part_targeting = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.DayPartTargeting,
+            com.google.ads.admanager.v1.DayPartTargeting.Builder,
+            com.google.ads.admanager.v1.DayPartTargetingOrBuilder>
+        internalGetDayPartTargetingFieldBuilder() {
+      if (dayPartTargetingBuilder_ == null) {
+        dayPartTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.DayPartTargeting,
+                com.google.ads.admanager.v1.DayPartTargeting.Builder,
+                com.google.ads.admanager.v1.DayPartTargetingOrBuilder>(
+                getDayPartTargeting(), getParentForChildren(), isClean());
+        dayPartTargeting_ = null;
+      }
+      return dayPartTargetingBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.BuyerUserListTargeting buyerUserListTargeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.BuyerUserListTargeting,
+            com.google.ads.admanager.v1.BuyerUserListTargeting.Builder,
+            com.google.ads.admanager.v1.BuyerUserListTargetingOrBuilder>
+        buyerUserListTargetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the buyerUserListTargeting field is set.
+     */
+    public boolean hasBuyerUserListTargeting() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The buyerUserListTargeting.
+     */
+    public com.google.ads.admanager.v1.BuyerUserListTargeting getBuyerUserListTargeting() {
+      if (buyerUserListTargetingBuilder_ == null) {
+        return buyerUserListTargeting_ == null
+            ? com.google.ads.admanager.v1.BuyerUserListTargeting.getDefaultInstance()
+            : buyerUserListTargeting_;
+      } else {
+        return buyerUserListTargetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBuyerUserListTargeting(
+        com.google.ads.admanager.v1.BuyerUserListTargeting value) {
+      if (buyerUserListTargetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        buyerUserListTargeting_ = value;
+      } else {
+        buyerUserListTargetingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBuyerUserListTargeting(
+        com.google.ads.admanager.v1.BuyerUserListTargeting.Builder builderForValue) {
+      if (buyerUserListTargetingBuilder_ == null) {
+        buyerUserListTargeting_ = builderForValue.build();
+      } else {
+        buyerUserListTargetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBuyerUserListTargeting(
+        com.google.ads.admanager.v1.BuyerUserListTargeting value) {
+      if (buyerUserListTargetingBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && buyerUserListTargeting_ != null
+            && buyerUserListTargeting_
+                != com.google.ads.admanager.v1.BuyerUserListTargeting.getDefaultInstance()) {
+          getBuyerUserListTargetingBuilder().mergeFrom(value);
+        } else {
+          buyerUserListTargeting_ = value;
+        }
+      } else {
+        buyerUserListTargetingBuilder_.mergeFrom(value);
+      }
+      if (buyerUserListTargeting_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBuyerUserListTargeting() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      buyerUserListTargeting_ = null;
+      if (buyerUserListTargetingBuilder_ != null) {
+        buyerUserListTargetingBuilder_.dispose();
+        buyerUserListTargetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.BuyerUserListTargeting.Builder
+        getBuyerUserListTargetingBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return internalGetBuyerUserListTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.BuyerUserListTargetingOrBuilder
+        getBuyerUserListTargetingOrBuilder() {
+      if (buyerUserListTargetingBuilder_ != null) {
+        return buyerUserListTargetingBuilder_.getMessageOrBuilder();
+      } else {
+        return buyerUserListTargeting_ == null
+            ? com.google.ads.admanager.v1.BuyerUserListTargeting.getDefaultInstance()
+            : buyerUserListTargeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Used to target buyer user lists.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerUserListTargeting buyer_user_list_targeting = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.BuyerUserListTargeting,
+            com.google.ads.admanager.v1.BuyerUserListTargeting.Builder,
+            com.google.ads.admanager.v1.BuyerUserListTargetingOrBuilder>
+        internalGetBuyerUserListTargetingFieldBuilder() {
+      if (buyerUserListTargetingBuilder_ == null) {
+        buyerUserListTargetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.BuyerUserListTargeting,
+                com.google.ads.admanager.v1.BuyerUserListTargeting.Builder,
+                com.google.ads.admanager.v1.BuyerUserListTargetingOrBuilder>(
+                getBuyerUserListTargeting(), getParentForChildren(), isClean());
+        buyerUserListTargeting_ = null;
+      }
+      return buyerUserListTargetingBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.Targeting)

@@ -64,7 +64,7 @@ public final class ExecutionTemplateProto extends com.google.protobuf.GeneratedF
       "\n"
           + ",google/cloud/run/v2/execution_template"
           + ".proto\022\023google.cloud.run.v2\032\037google/api/"
-          + "field_behavior.proto\032\'google/cloud/run/v2/task_template.proto\"\362\002\n"
+          + "field_behavior.proto\032\'google/cloud/run/v2/task_template.proto\"\336\003\n"
           + "\021ExecutionTemplate\022B\n"
           + "\006labels\030\001"
           + " \003(\01322.google.cloud.run.v2.ExecutionTemplate.LabelsEntry\022L\n"
@@ -73,15 +73,20 @@ public final class ExecutionTemplateProto extends com.google.protobuf.GeneratedF
           + "\013parallelism\030\003 \001(\005B\004\342A\001\001\022\022\n\n"
           + "task_count\030\004 \001(\005\0229\n"
           + "\010template\030\005"
-          + " \001(\0132!.google.cloud.run.v2.TaskTemplateB\004\342A\001\002\032-\n"
+          + " \001(\0132!.google.cloud.run.v2.TaskTemplateB\004\342A\001\002\022\"\n"
+          + "\017delay_execution\030\010 \001(\010B\004\342A\001\001H\000\210\001\001\022\024\n"
+          + "\006client\030\t \001(\tB\004\342A\001\001\022\034\n"
+          + "\016client_version\030\n"
+          + " \001(\tB\004\342A\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001B^\n"
-          + "\027com.google.cloud.run.v2B\026ExecutionTemplate"
-          + "ProtoP\001Z)cloud.google.com/go/run/apiv2/runpb;runpbb\006proto3"
+          + "\005value\030\002 \001(\t:\0028\001B\022\n"
+          + "\020_delay_executionB^\n"
+          + "\027com.google.cloud.run.v2B\026ExecutionTemplateProtoP\001Z)clo"
+          + "ud.google.com/go/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -96,7 +101,14 @@ public final class ExecutionTemplateProto extends com.google.protobuf.GeneratedF
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_run_v2_ExecutionTemplate_descriptor,
             new java.lang.String[] {
-              "Labels", "Annotations", "Parallelism", "TaskCount", "Template",
+              "Labels",
+              "Annotations",
+              "Parallelism",
+              "TaskCount",
+              "Template",
+              "DelayExecution",
+              "Client",
+              "ClientVersion",
             });
     internal_static_google_cloud_run_v2_ExecutionTemplate_LabelsEntry_descriptor =
         internal_static_google_cloud_run_v2_ExecutionTemplate_descriptor.getNestedType(0);

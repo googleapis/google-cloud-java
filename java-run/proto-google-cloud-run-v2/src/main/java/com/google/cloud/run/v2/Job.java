@@ -61,6 +61,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     clientVersion_ = "";
     launchStage_ = 0;
     conditions_ = java.util.Collections.emptyList();
+    functionalType_ = 0;
     etag_ = "";
   }
 
@@ -1650,6 +1651,47 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int FUNCTIONAL_TYPE_FIELD_NUMBER = 31;
+  private int functionalType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The functional type of the Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for functionalType.
+   */
+  @java.lang.Override
+  public int getFunctionalTypeValue() {
+    return functionalType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The functional type of the Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The functionalType.
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.FunctionalType getFunctionalType() {
+    com.google.cloud.run.v2.FunctionalType result =
+        com.google.cloud.run.v2.FunctionalType.forNumber(functionalType_);
+    return result == null ? com.google.cloud.run.v2.FunctionalType.UNRECOGNIZED : result;
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
@@ -1792,6 +1834,10 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     if (createExecutionCase_ == 27) {
       com.google.protobuf.GeneratedMessage.writeString(output, 27, createExecution_);
     }
+    if (functionalType_
+        != com.google.cloud.run.v2.FunctionalType.FUNCTIONAL_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(31, functionalType_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 99, etag_);
     }
@@ -1895,6 +1941,10 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     if (createExecutionCase_ == 27) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(27, createExecution_);
     }
+    if (functionalType_
+        != com.google.cloud.run.v2.FunctionalType.FUNCTIONAL_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(31, functionalType_);
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(99, etag_);
     }
@@ -1960,6 +2010,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     }
     if (getReconciling() != other.getReconciling()) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (functionalType_ != other.functionalType_) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getCreateExecutionCase().equals(other.getCreateExecutionCase())) return false;
     switch (createExecutionCase_) {
@@ -2051,6 +2102,8 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + FUNCTIONAL_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + functionalType_;
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     switch (createExecutionCase_) {
@@ -2307,6 +2360,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       }
       reconciling_ = false;
       satisfiesPzs_ = false;
+      functionalType_ = 0;
       etag_ = "";
       createExecutionCase_ = 0;
       createExecution_ = null;
@@ -2445,6 +2499,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.functionalType_ = functionalType_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2570,9 +2627,12 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.functionalType_ != 0) {
+        setFunctionalTypeValue(other.getFunctionalTypeValue());
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       switch (other.getCreateExecutionCase()) {
@@ -2801,10 +2861,16 @@ public final class Job extends com.google.protobuf.GeneratedMessage
                 createExecution_ = s;
                 break;
               } // case 218
+            case 248:
+              {
+                functionalType_ = input.readEnum();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 248
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 794
             default:
@@ -6984,6 +7050,111 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int functionalType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The functional type of the Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for functionalType.
+     */
+    @java.lang.Override
+    public int getFunctionalTypeValue() {
+      return functionalType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The functional type of the Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for functionalType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFunctionalTypeValue(int value) {
+      functionalType_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The functional type of the Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The functionalType.
+     */
+    @java.lang.Override
+    public com.google.cloud.run.v2.FunctionalType getFunctionalType() {
+      com.google.cloud.run.v2.FunctionalType result =
+          com.google.cloud.run.v2.FunctionalType.forNumber(functionalType_);
+      return result == null ? com.google.cloud.run.v2.FunctionalType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The functional type of the Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The functionalType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFunctionalType(com.google.cloud.run.v2.FunctionalType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x02000000;
+      functionalType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The functional type of the Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.run.v2.FunctionalType functional_type = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFunctionalType() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      functionalType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object etag_ = "";
 
     /**
@@ -7052,7 +7223,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7071,7 +7242,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -7095,7 +7266,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }

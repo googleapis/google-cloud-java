@@ -39,6 +39,7 @@ import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Modifier;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Base64;
@@ -179,6 +180,11 @@ class ClientSideStatementValueConverters {
         return null;
       }
     }
+
+    @Override
+    public boolean isValid(Integer value) {
+      return value != null && value >= 0;
+    }
   }
 
   /** Converter from string to a long. */
@@ -207,6 +213,12 @@ class ClientSideStatementValueConverters {
       } catch (Exception ignore) {
         return null;
       }
+    }
+
+    @Override
+    public boolean isValid(Long value) {
+      // Match convert(String), which only accepts non-negative values.
+      return value != null && value >= 0;
     }
   }
 
@@ -263,6 +275,12 @@ class ClientSideStatementValueConverters {
         }
       }
       return null;
+    }
+
+    @Override
+    public boolean isValid(Duration value) {
+      // Match convert(String), which only accepts non-negative durations.
+      return value != null && !value.isNegative();
     }
   }
 
@@ -763,117 +781,113 @@ class ClientSideStatementValueConverters {
     }
   }
 
-  /** Converter for converting String that take in file path as input to String */
-  static class ProtoDescriptorsFileConverter implements ClientSideStatementValueConverter<String> {
+  abstract static class GuardedClassConverter<T> implements ClientSideStatementValueConverter<T> {
+    private final Class<T> targetClass;
+    private final String systemPropertyName;
+    private final String connectionPropertyName;
 
-    public ProtoDescriptorsFileConverter(String allowedValues) {}
-
-    @Override
-    public Class<String> getParameterClass() {
-      return String.class;
+    GuardedClassConverter(
+        Class<T> targetClass, String systemPropertyName, String connectionPropertyName) {
+      this.targetClass = Preconditions.checkNotNull(targetClass);
+      this.systemPropertyName = Preconditions.checkNotNull(systemPropertyName);
+      this.connectionPropertyName = Preconditions.checkNotNull(connectionPropertyName);
     }
 
     @Override
-    public String convert(String filePath) {
-      if (Strings.isNullOrEmpty(filePath)) {
-        return null;
-      }
-      return filePath;
-    }
-  }
-
-  static class CredentialsProviderConverter
-      implements ClientSideStatementValueConverter<CredentialsProvider> {
-    static final CredentialsProviderConverter INSTANCE = new CredentialsProviderConverter();
-
-    private CredentialsProviderConverter() {}
-
-    @Override
-    public Class<CredentialsProvider> getParameterClass() {
-      return CredentialsProvider.class;
+    public Class<T> getParameterClass() {
+      return targetClass;
     }
 
     @Override
-    public CredentialsProvider convert(String credentialsProviderName) {
-      if (!Strings.isNullOrEmpty(credentialsProviderName)) {
+    public T convert(String className) {
+      if (!Strings.isNullOrEmpty(className)) {
+        if (!Boolean.parseBoolean(System.getProperty(systemPropertyName))) {
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.FAILED_PRECONDITION,
+              ConnectionOptions.generateGuardedConnectionPropertyError(
+                  systemPropertyName, connectionPropertyName));
+        }
         try {
-          Class<? extends CredentialsProvider> clazz =
-              (Class<? extends CredentialsProvider>) Class.forName(credentialsProviderName);
-          Constructor<? extends CredentialsProvider> constructor = clazz.getDeclaredConstructor();
+          ClassLoader classLoader =
+              Thread.currentThread().getContextClassLoader() != null
+                  ? Thread.currentThread().getContextClassLoader()
+                  : getClass().getClassLoader();
+          Class<?> rawClass = Class.forName(className, false, classLoader);
+          if (!targetClass.isAssignableFrom(rawClass)) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INVALID_ARGUMENT,
+                String.format("Class %s does not implement %s", className, targetClass.getName()));
+          }
+          if (Modifier.isAbstract(rawClass.getModifiers())) {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INVALID_ARGUMENT,
+                String.format("Class %s is abstract and cannot be instantiated", className));
+          }
+          Class<? extends T> clazz = rawClass.asSubclass(targetClass);
+          Constructor<? extends T> constructor = clazz.getConstructor();
           return constructor.newInstance();
         } catch (ClassNotFoundException classNotFoundException) {
           throw SpannerExceptionFactory.newSpannerException(
               ErrorCode.INVALID_ARGUMENT,
-              "Unknown or invalid CredentialsProvider class name: " + credentialsProviderName,
+              "Unknown or invalid " + targetClass.getSimpleName() + " class name: " + className,
               classNotFoundException);
         } catch (NoSuchMethodException noSuchMethodException) {
           throw SpannerExceptionFactory.newSpannerException(
               ErrorCode.INVALID_ARGUMENT,
-              "Credentials provider "
-                  + credentialsProviderName
+              targetClass.getSimpleName()
+                  + " "
+                  + className
                   + " does not have a public no-arg constructor.",
               noSuchMethodException);
         } catch (InvocationTargetException
             | InstantiationException
-            | IllegalAccessException exception) {
+            | IllegalAccessException
+            | LinkageError exception) {
+          Throwable cause = exception.getCause() != null ? exception.getCause() : exception;
+          String message =
+              !Strings.isNullOrEmpty(cause.getMessage()) ? cause.getMessage() : cause.toString();
           throw SpannerExceptionFactory.newSpannerException(
               ErrorCode.INVALID_ARGUMENT,
-              "Failed to create an instance of "
-                  + credentialsProviderName
-                  + ": "
-                  + exception.getMessage(),
-              exception);
+              "Failed to create an instance of " + className + ": " + message,
+              cause);
         }
       }
       return null;
+    }
+  }
+
+  static class CredentialsProviderConverter extends GuardedClassConverter<CredentialsProvider> {
+    static final CredentialsProviderConverter INSTANCE = new CredentialsProviderConverter();
+
+    private CredentialsProviderConverter() {
+      super(
+          CredentialsProvider.class,
+          ConnectionOptions.ENABLE_CREDENTIALS_PROVIDER_SYSTEM_PROPERTY,
+          ConnectionOptions.CREDENTIALS_PROVIDER_PROPERTY_NAME);
     }
   }
 
   static class GrpcInterceptorProviderConverter
-      implements ClientSideStatementValueConverter<GrpcInterceptorProvider> {
+      extends GuardedClassConverter<GrpcInterceptorProvider> {
     static final GrpcInterceptorProviderConverter INSTANCE = new GrpcInterceptorProviderConverter();
 
-    private GrpcInterceptorProviderConverter() {}
-
-    @Override
-    public Class<GrpcInterceptorProvider> getParameterClass() {
-      return GrpcInterceptorProvider.class;
+    private GrpcInterceptorProviderConverter() {
+      super(
+          GrpcInterceptorProvider.class,
+          ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY,
+          ConnectionOptions.GRPC_INTERCEPTOR_PROVIDER_PROPERTY_NAME);
     }
+  }
 
-    @Override
-    public GrpcInterceptorProvider convert(String interceptorProviderName) {
-      if (!Strings.isNullOrEmpty(interceptorProviderName)) {
-        try {
-          Class<? extends GrpcInterceptorProvider> clazz =
-              (Class<? extends GrpcInterceptorProvider>) Class.forName(interceptorProviderName);
-          Constructor<? extends GrpcInterceptorProvider> constructor =
-              clazz.getDeclaredConstructor();
-          return constructor.newInstance();
-        } catch (ClassNotFoundException classNotFoundException) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INVALID_ARGUMENT,
-              "Unknown or invalid GrpcInterceptorProvider class name: " + interceptorProviderName,
-              classNotFoundException);
-        } catch (NoSuchMethodException noSuchMethodException) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INVALID_ARGUMENT,
-              "GrpcInterceptorProvider "
-                  + interceptorProviderName
-                  + " does not have a public no-arg constructor.",
-              noSuchMethodException);
-        } catch (InvocationTargetException
-            | InstantiationException
-            | IllegalAccessException exception) {
-          throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INVALID_ARGUMENT,
-              "Failed to create an instance of "
-                  + interceptorProviderName
-                  + ": "
-                  + exception.getMessage(),
-              exception);
-        }
-      }
-      return null;
+  static class ExternalChannelProviderConverter
+      extends GuardedClassConverter<ConnectionOptions.ExternalChannelProvider> {
+    static final ExternalChannelProviderConverter INSTANCE = new ExternalChannelProviderConverter();
+
+    private ExternalChannelProviderConverter() {
+      super(
+          ConnectionOptions.ExternalChannelProvider.class,
+          ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+          ConnectionOptions.CHANNEL_PROVIDER_PROPERTY_NAME);
     }
   }
 

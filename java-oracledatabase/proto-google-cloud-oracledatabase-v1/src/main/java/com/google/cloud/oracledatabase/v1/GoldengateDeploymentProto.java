@@ -93,6 +93,10 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_CreateGoldengateDeploymentRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateDeploymentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateDeploymentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateDeploymentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateDeploymentRequest_fieldAccessorTable;
@@ -128,22 +132,22 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
       "\n"
           + ":google/cloud/oracledatabase/v1/goldengate_deployment.proto\022\036google.cloud.oracl"
           + "edatabase.v1\032\037google/api/field_behavior."
-          + "proto\032\033google/api/field_info.proto\032\031goog"
-          + "le/api/resource.proto\032\037google/protobuf/t"
-          + "imestamp.proto\032\033google/type/dayofweek.proto\"\377\005\n"
+          + "proto\032\033google/api/field_info.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timesta"
+          + "mp.proto\032\033google/type/dayofweek.proto\"\204\006\n"
           + "\024GoldengateDeployment\022\022\n"
-          + "\004name\030\001 \001(\tB\004\342A\001\010\022X\n\n"
-          + "properties\030\002 \001(\0132>.google.cl"
-          + "oud.oracledatabase.v1.GoldengateDeploymentPropertiesB\004\342A\001\002\022\035\n"
-          + "\017gcp_oracle_zone\030\003 \001(\tB\004\342A\001\001\022V\n"
-          + "\006labels\030\004 \003(\0132@.google.cloud"
-          + ".oracledatabase.v1.GoldengateDeployment.LabelsEntryB\004\342A\001\001\022F\n"
-          + "\013odb_network\030\005 \001(\tB1\342A\001\001\372A*\n"
-          + "(oracledatabase.googleapis.com/OdbNetwork\022D\n\n"
-          + "odb_subnet\030\006 \001(\tB0\342A\001\002\372A)\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022Y\n\n"
+          + "properties\030\002 \001(\0132>.google.cloud.or"
+          + "acledatabase.v1.GoldengateDeploymentPropertiesB\005\342A\002\002\005\022\036\n"
+          + "\017gcp_oracle_zone\030\003 \001(\tB\005\342A\002\001\005\022V\n"
+          + "\006labels\030\004 \003(\0132@.google.cloud.ora"
+          + "cledatabase.v1.GoldengateDeployment.LabelsEntryB\004\342A\001\001\022G\n"
+          + "\013odb_network\030\005 \001(\tB2\342A\002\001\005\372A*\n"
+          + "(oracledatabase.googleapis.com/OdbNetwork\022E\n\n"
+          + "odb_subnet\030\006 \001(\tB1\342A\002\002\005\372A)\n"
           + "\'oracledatabase.googleapis.com/OdbSubnet\022\034\n"
-          + "\016entitlement_id\030\007 \001(\tB\004\342A\001\003\022\032\n"
-          + "\014display_name\030\010 \001(\tB\004\342A\001\002\0225\n"
+          + "\016entitlement_id\030\007 \001(\tB\004\342A\001\003\022\033\n"
+          + "\014display_name\030\010 \001(\tB\005\342A\002\002\005\0225\n"
           + "\013create_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\025\n"
           + "\007oci_url\030\n"
@@ -151,34 +155,34 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\274\001\352A\270\001\n"
-          + "2oracledatabase.googleapis.com/GoldengateDeploymen"
-          + "t\022Uprojects/{project}/locations/{location}/goldengateDeployments/{goldengate_dep"
-          + "loyment}*\025goldengateDeployments2\024goldengateDeployment\"\324\033\n"
+          + "2oracledatabase.googleapis.com/GoldengateDeployment"
+          + "\022Uprojects/{project}/locations/{location}/goldengateDeployments/{goldengate_depl"
+          + "oyment}*\025goldengateDeployments2\024goldengateDeployment\"\324\033\n"
           + "\036GoldengateDeploymentProperties\022\022\n"
           + "\004ocid\030\001 \001(\tB\004\342A\001\003\022\200\001\n"
-          + "\017lifecycle_state\030\002 \001(\0162a.google.cloud.oracledata"
-          + "base.v1.GoldengateDeploymentProperties.G"
-          + "oldengateDeploymentLifecycleStateB\004\342A\001\003\022h\n\r"
-          + "license_model\030\003 \001(\0162K.google.cloud.or"
-          + "acledatabase.v1.GoldengateDeploymentProperties.LicenseModelB\004\342A\001\001\022\036\n"
+          + "\017lifecycle_state\030\002 \001(\0162a.google.cloud.oracledatab"
+          + "ase.v1.GoldengateDeploymentProperties.Go"
+          + "ldengateDeploymentLifecycleStateB\004\342A\001\003\022h\n\r"
+          + "license_model\030\003 \001(\0162K.google.cloud.ora"
+          + "cledatabase.v1.GoldengateDeploymentProperties.LicenseModelB\004\342A\001\001\022\036\n"
           + "\020environment_type\030\004 \001(\tB\004\342A\001\001\022\034\n"
           + "\016cpu_core_count\030\005 \001(\005B\004\342A\001\001\022%\n"
           + "\027is_auto_scaling_enabled\030\006 \001(\010B\004\342A\001\001\022\031\n"
           + "\013description\030\007 \001(\tB\004\342A\001\001\022\035\n"
           + "\017deployment_type\030\010 \001(\tB\004\342A\001\002\022O\n"
-          + "\010ogg_data\030\t \001"
-          + "(\01327.google.cloud.oracledatabase.v1.GoldengateOggDeploymentB\004\342A\001\002\022]\n"
+          + "\010ogg_data\030\t \001("
+          + "\01327.google.cloud.oracledatabase.v1.GoldengateOggDeploymentB\004\342A\001\002\022]\n"
           + "\022maintenance_window\030\n"
-          + " \001(\0132;.google.cloud.oracledatab"
-          + "ase.v1.GoldengateMaintenanceWindowB\004\342A\001\001\022]\n"
-          + "\022maintenance_config\030\013 \001(\0132;.google.cl"
-          + "oud.oracledatabase.v1.GoldengateMaintenanceConfigB\004\342A\001\001\022\022\n"
+          + " \001(\0132;.google.cloud.oracledataba"
+          + "se.v1.GoldengateMaintenanceWindowB\004\342A\001\001\022]\n"
+          + "\022maintenance_config\030\013 \001(\0132;.google.clo"
+          + "ud.oracledatabase.v1.GoldengateMaintenanceConfigB\004\342A\001\001\022\022\n"
           + "\004fqdn\030\014 \001(\tB\004\342A\001\003\022\207\001\n"
           + "\023lifecycle_sub_state\030\r"
-          + " \001(\0162d.google.cloud.oracledatabase.v1.GoldengateDeploymentP"
-          + "roperties.GoldengateDeploymentLifecycleSubStateB\004\342A\001\003\022s\n"
-          + "\010category\030\016 \001(\0162[.google.cloud.oracledatabase.v1.GoldengateDeplo"
-          + "ymentProperties.GoldengateDeploymentCategoryB\004\342A\001\003\022\"\n"
+          + " \001(\0162d.google.cloud.oracledatabase.v1.GoldengateDeploymentPr"
+          + "operties.GoldengateDeploymentLifecycleSubStateB\004\342A\001\003\022s\n"
+          + "\010category\030\016 \001(\0162[.google.cloud.oracledatabase.v1.GoldengateDeploy"
+          + "mentProperties.GoldengateDeploymentCategoryB\004\342A\001\003\022\"\n"
           + "\024deployment_backup_id\030\017 \001(\tB\004\342A\001\003\0225\n"
           + "\013update_time\030\020"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\037\n"
@@ -198,23 +202,23 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\'\n"
           + "\031storage_utilization_bytes\030\034 \001(\003B\004\342A\001\003\0223\n"
           + "%is_storage_utilization_limit_exceeded\030\035 \001(\010B\004\342A\001\003\022b\n"
-          + "\032deployment_diagnostic_data\030\036 \001(\01328.google.cloud.oracled"
-          + "atabase.v1.DeploymentDiagnosticDataB\004\342A\001\003\022W\n"
-          + "\017backup_schedule\030\037 \001(\01328.google.clou"
-          + "d.oracledatabase.v1.GoldengateBackupScheduleB\004\342A\001\003\022?\n"
+          + "\032deployment_diagnostic_data\030\036 \001(\01328.google.cloud.oracleda"
+          + "tabase.v1.DeploymentDiagnosticDataB\004\342A\001\003\022W\n"
+          + "\017backup_schedule\030\037 \001(\01328.google.cloud"
+          + ".oracledatabase.v1.GoldengateBackupScheduleB\004\342A\001\003\022?\n"
           + "\025next_maintenance_time\030 "
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\204\001\n"
-          + "\034next_maintenance_action_type\030! \001(\0162X.goo"
-          + "gle.cloud.oracledatabase.v1.GoldengateDe"
-          + "ploymentProperties.NextMaintenanceActionTypeB\004\342A\001\003\022*\n"
+          + "\034next_maintenance_action_type\030! \001(\0162X.goog"
+          + "le.cloud.oracledatabase.v1.GoldengateDep"
+          + "loymentProperties.NextMaintenanceActionTypeB\004\342A\001\003\022*\n"
           + "\034next_maintenance_description\030\" \001(\tB\004\342A\001\003\022F\n"
           + "\034ogg_version_support_end_time\030#"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022D\n"
           + "\013ingress_ips\030$"
           + " \003(\0132).google.cloud.oracledatabase.v1.IngressIpB\004\342A\001\003\022z\n"
-          + "\017deployment_role\030% \001(\0162[.google.cloud.ora"
-          + "cledatabase.v1.GoldengateDeploymentPrope"
-          + "rties.GoldengateDeploymentRoleTypeB\004\342A\001\003\022C\n"
+          + "\017deployment_role\030% \001(\0162[.google.cloud.orac"
+          + "ledatabase.v1.GoldengateDeploymentProper"
+          + "ties.GoldengateDeploymentRoleTypeB\004\342A\001\003\022C\n"
           + "\031last_backup_schedule_time\030&"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022C\n"
           + "\031next_backup_schedule_time\030\'"
@@ -222,15 +226,13 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
           + "\020role_change_time\030("
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022M\n"
           + "\005locks\030)"
-          + " \003(\01328.google.cloud.oracledatabase.v1.GoldengateDeploymentLockB\004\342A\001\003\022M\n"
-          + "\n"
+          + " \003(\01328.google.cloud.oracledatabase.v1.GoldengateDeploymentLockB\004\342A\001\003\022M\n\n"
           + "placements\030*"
           + " \003(\01323.google.cloud.oracledatabase.v1.GoldengatePlacementB\004\342A\001\003\"\231\002\n"
           + "\"GoldengateDeploymentLifecycleState\0225\n"
           + "1GOLDENGATE_DEPLOYMENT_LIFECYCLE_STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\014\n"
-          + "\010UPDATING\020\002\022\n"
-          + "\n"
+          + "\010UPDATING\020\002\022\n\n"
           + "\006ACTIVE\020\003\022\014\n"
           + "\010INACTIVE\020\004\022\014\n"
           + "\010DELETING\020\005\022\013\n"
@@ -249,7 +251,8 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
           + "\020LICENSE_INCLUDED\020\001\022\032\n"
           + "\026BRING_YOUR_OWN_LICENSE\020\002\"\332\001\n"
           + "%GoldengateDeploymentLifecycleSubState\0229\n"
-          + "5GOLDENGATE_DEPLOYMENT_LIFECYCLE_SUB_STATE_UNSPECIFIED\020\000\022\016\n\n"
+          + "5GOLDENGATE_DEPLOYMENT_LIFECYCLE_SUB_STATE_UNSPECIFIED\020\000\022\016\n"
+          + "\n"
           + "RECOVERING\020\001\022\014\n"
           + "\010STARTING\020\002\022\014\n"
           + "\010STOPPING\020\003\022\n\n"
@@ -268,9 +271,9 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
           + "\034GoldengateDeploymentRoleType\022/\n"
           + "+GOLDENGATE_DEPLOYMENT_ROLE_TYPE_UNSPECIFIED\020\000\022\013\n"
           + "\007PRIMARY\020\001\022\013\n"
-          + "\007STANDBY\020\002\"\202\005\n"
-          + "\027GoldengateOggDeployment\022\036\n"
-          + "\016admin_password\030\003 \001(\tB\004\342A\001\001H\000\022]\n"
+          + "\007STANDBY\020\002\"\203\005\n"
+          + "\027GoldengateOggDeployment\022\037\n"
+          + "\016admin_password\030\003 \001(\tB\005\342A\002\001\004H\000\022]\n"
           + "\035admin_password_secret_version\030\n"
           + " \001(\tB4\342A\002\001\004\372A,\n"
           + "*secretmanager.googleapis.com/SecretVersionH\000\022\030\n\n"
@@ -357,6 +360,13 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
           + "\025goldengate_deployment\030\003 \001(\01324.google.cloud."
           + "oracledatabase.v1.GoldengateDeploymentB\004\342A\001\002\022 \n\n"
           + "request_id\030\004 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\327\001\n"
+          + "!UpdateGoldengateDeploymentRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022Y\n"
+          + "\025goldengate_deployment\030\002 \001"
+          + "(\01324.google.cloud.oracledatabase.v1.GoldengateDeploymentB\004\342A\001\002\022 \n\n"
+          + "request_id\030\003 \001("
           + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\220\001\n"
           + "!DeleteGoldengateDeploymentRequest\022I\n"
           + "\004name\030\001 \001(\tB;\342A\001\002\372A4\n"
@@ -366,15 +376,15 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
           + "\004name\030\001 \001(\tB;\342A\001\002\372A4\n"
           + "2oracledatabase.googleapis.com/GoldengateDeployment\"\320\001\n"
           + " ListGoldengateDeploymentsRequest\022K\n"
-          + "\006parent\030\001 \001(\tB;\342A\001\002\372A4\0222or"
-          + "acledatabase.googleapis.com/GoldengateDeployment\022\027\n"
+          + "\006parent\030\001 \001("
+          + "\tB;\342A\001\002\372A4\0222oracledatabase.googleapis.com/GoldengateDeployment\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\255\001\n"
           + "!ListGoldengateDeploymentsResponse\022T\n"
-          + "\026goldengate_deployments\030\001"
-          + " \003(\01324.google.cloud.oracledatabase.v1.GoldengateDeployment\022\027\n"
+          + "\026goldengate_deployments\030\001 \003(\01324.goog"
+          + "le.cloud.oracledatabase.v1.GoldengateDeployment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\031\n"
           + "\013unreachable\030\003 \003(\tB\004\342A\001\001\"l\n"
           + "\037StopGoldengateDeploymentRequest\022I\n"
@@ -383,11 +393,11 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
           + " StartGoldengateDeploymentRequest\022I\n"
           + "\004name\030\001 \001(\tB;\342A\001\002\372A4\n"
           + "2oracledatabase.googleapis.com/GoldengateDeploymentB\363\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\031GoldengateDeploym"
-          + "entProtoP\001ZJcloud.google.com/go/oracledatabase/apiv1/oracledatabasepb;oracledata"
-          + "basepb\252\002\036Google.Cloud.OracleDatabase.V1\312"
-          + "\002\036Google\\Cloud\\OracleDatabase\\V1\352\002!Googl"
-          + "e::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\031GoldengateDeploymentProtoP\001ZJcloud.goog"
+          + "le.com/go/oracledatabase/apiv1/oracledat"
+          + "abasepb;oracledatabasepb\252\002\036Google.Cloud."
+          + "OracleDatabase.V1\312\002\036Google\\Cloud\\OracleD"
+          + "atabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -396,6 +406,7 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.DayOfWeekProto.getDescriptor(),
             });
@@ -578,8 +589,16 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
             new java.lang.String[] {
               "Parent", "GoldengateDeploymentId", "GoldengateDeployment", "RequestId",
             });
-    internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateDeploymentRequest_descriptor =
+    internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateDeploymentRequest_descriptor =
         getDescriptor().getMessageType(12);
+    internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateDeploymentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_oracledatabase_v1_UpdateGoldengateDeploymentRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "GoldengateDeployment", "RequestId",
+            });
+    internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateDeploymentRequest_descriptor =
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_DeleteGoldengateDeploymentRequest_descriptor,
@@ -587,7 +606,7 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
               "Name", "RequestId",
             });
     internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_GetGoldengateDeploymentRequest_descriptor,
@@ -595,7 +614,7 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
               "Name",
             });
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentsRequest_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentsRequest_descriptor,
@@ -603,7 +622,7 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentsResponse_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_ListGoldengateDeploymentsResponse_descriptor,
@@ -611,7 +630,7 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
               "GoldengateDeployments", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_oracledatabase_v1_StopGoldengateDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_oracledatabase_v1_StopGoldengateDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_StopGoldengateDeploymentRequest_descriptor,
@@ -619,7 +638,7 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
               "Name",
             });
     internal_static_google_cloud_oracledatabase_v1_StartGoldengateDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_oracledatabase_v1_StartGoldengateDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_oracledatabase_v1_StartGoldengateDeploymentRequest_descriptor,
@@ -630,6 +649,7 @@ public final class GoldengateDeploymentProto extends com.google.protobuf.Generat
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DayOfWeekProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

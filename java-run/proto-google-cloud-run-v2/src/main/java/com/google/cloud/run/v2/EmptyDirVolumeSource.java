@@ -24,7 +24,7 @@ package com.google.cloud.run.v2;
  *
  *
  * <pre>
- * In memory (tmpfs) ephemeral storage.
+ * Represents in-memory (tmpfs) or disk-backed ephemeral storage.
  * It is ephemeral in the sense that when the sandbox is taken down, the data is
  * destroyed with it (it does not persist across sandbox runs).
  * </pre>
@@ -104,6 +104,16 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      * <code>MEMORY = 1;</code>
      */
     MEMORY(1),
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly sets the EmptyDir to be a disk.
+     * </pre>
+     *
+     * <code>DISK = 2;</code>
+     */
+    DISK(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -140,6 +150,17 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      */
     public static final int MEMORY_VALUE = 1;
 
+    /**
+     *
+     *
+     * <pre>
+     * Explicitly sets the EmptyDir to be a disk.
+     * </pre>
+     *
+     * <code>DISK = 2;</code>
+     */
+    public static final int DISK_VALUE = 2;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -168,6 +189,8 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
           return MEDIUM_UNSPECIFIED;
         case 1:
           return MEMORY;
+        case 2:
+          return DISK;
         default:
           return null;
       }
@@ -228,9 +251,9 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The medium on which the data is stored. Acceptable values today is only
-   * MEMORY or none. When none, the default will currently be backed by memory
-   * but could change over time. +optional
+   * The medium on which the data is stored. Acceptable values are `MEMORY`,
+   * `DISK`, or unset (`MEDIUM_UNSPECIFIED`). When unset, the default is
+   * currently memory-backed but could change over time.
    * </pre>
    *
    * <code>.google.cloud.run.v2.EmptyDirVolumeSource.Medium medium = 1;</code>
@@ -246,9 +269,9 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The medium on which the data is stored. Acceptable values today is only
-   * MEMORY or none. When none, the default will currently be backed by memory
-   * but could change over time. +optional
+   * The medium on which the data is stored. Acceptable values are `MEMORY`,
+   * `DISK`, or unset (`MEDIUM_UNSPECIFIED`). When unset, the default is
+   * currently memory-backed but could change over time.
    * </pre>
    *
    * <code>.google.cloud.run.v2.EmptyDirVolumeSource.Medium medium = 1;</code>
@@ -278,10 +301,11 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
    * The maximum usage on memory medium EmptyDir would be the minimum value
    * between the SizeLimit specified here and the sum of memory limits of all
    * containers. The default is nil which means that the limit is undefined.
-   * More info:
-   * https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume.
-   * Info in Kubernetes:
-   * https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+   * For more information, see
+   * [Configure in-memory volume
+   * mounts](https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume)
+   * and the [Kubernetes `emptyDir` volume
+   * documentation](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
    * </pre>
    *
    * <code>string size_limit = 2;</code>
@@ -310,10 +334,11 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
    * The maximum usage on memory medium EmptyDir would be the minimum value
    * between the SizeLimit specified here and the sum of memory limits of all
    * containers. The default is nil which means that the limit is undefined.
-   * More info:
-   * https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume.
-   * Info in Kubernetes:
-   * https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+   * For more information, see
+   * [Configure in-memory volume
+   * mounts](https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume)
+   * and the [Kubernetes `emptyDir` volume
+   * documentation](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
    * </pre>
    *
    * <code>string size_limit = 2;</code>
@@ -508,7 +533,7 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * In memory (tmpfs) ephemeral storage.
+   * Represents in-memory (tmpfs) or disk-backed ephemeral storage.
    * It is ephemeral in the sense that when the sandbox is taken down, the data is
    * destroyed with it (it does not persist across sandbox runs).
    * </pre>
@@ -674,9 +699,9 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The medium on which the data is stored. Acceptable values today is only
-     * MEMORY or none. When none, the default will currently be backed by memory
-     * but could change over time. +optional
+     * The medium on which the data is stored. Acceptable values are `MEMORY`,
+     * `DISK`, or unset (`MEDIUM_UNSPECIFIED`). When unset, the default is
+     * currently memory-backed but could change over time.
      * </pre>
      *
      * <code>.google.cloud.run.v2.EmptyDirVolumeSource.Medium medium = 1;</code>
@@ -692,9 +717,9 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The medium on which the data is stored. Acceptable values today is only
-     * MEMORY or none. When none, the default will currently be backed by memory
-     * but could change over time. +optional
+     * The medium on which the data is stored. Acceptable values are `MEMORY`,
+     * `DISK`, or unset (`MEDIUM_UNSPECIFIED`). When unset, the default is
+     * currently memory-backed but could change over time.
      * </pre>
      *
      * <code>.google.cloud.run.v2.EmptyDirVolumeSource.Medium medium = 1;</code>
@@ -713,9 +738,9 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The medium on which the data is stored. Acceptable values today is only
-     * MEMORY or none. When none, the default will currently be backed by memory
-     * but could change over time. +optional
+     * The medium on which the data is stored. Acceptable values are `MEMORY`,
+     * `DISK`, or unset (`MEDIUM_UNSPECIFIED`). When unset, the default is
+     * currently memory-backed but could change over time.
      * </pre>
      *
      * <code>.google.cloud.run.v2.EmptyDirVolumeSource.Medium medium = 1;</code>
@@ -735,9 +760,9 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The medium on which the data is stored. Acceptable values today is only
-     * MEMORY or none. When none, the default will currently be backed by memory
-     * but could change over time. +optional
+     * The medium on which the data is stored. Acceptable values are `MEMORY`,
+     * `DISK`, or unset (`MEDIUM_UNSPECIFIED`). When unset, the default is
+     * currently memory-backed but could change over time.
      * </pre>
      *
      * <code>.google.cloud.run.v2.EmptyDirVolumeSource.Medium medium = 1;</code>
@@ -759,9 +784,9 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The medium on which the data is stored. Acceptable values today is only
-     * MEMORY or none. When none, the default will currently be backed by memory
-     * but could change over time. +optional
+     * The medium on which the data is stored. Acceptable values are `MEMORY`,
+     * `DISK`, or unset (`MEDIUM_UNSPECIFIED`). When unset, the default is
+     * currently memory-backed but could change over time.
      * </pre>
      *
      * <code>.google.cloud.run.v2.EmptyDirVolumeSource.Medium medium = 1;</code>
@@ -786,10 +811,11 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      * The maximum usage on memory medium EmptyDir would be the minimum value
      * between the SizeLimit specified here and the sum of memory limits of all
      * containers. The default is nil which means that the limit is undefined.
-     * More info:
-     * https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume.
-     * Info in Kubernetes:
-     * https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+     * For more information, see
+     * [Configure in-memory volume
+     * mounts](https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume)
+     * and the [Kubernetes `emptyDir` volume
+     * documentation](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
      * </pre>
      *
      * <code>string size_limit = 2;</code>
@@ -817,10 +843,11 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      * The maximum usage on memory medium EmptyDir would be the minimum value
      * between the SizeLimit specified here and the sum of memory limits of all
      * containers. The default is nil which means that the limit is undefined.
-     * More info:
-     * https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume.
-     * Info in Kubernetes:
-     * https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+     * For more information, see
+     * [Configure in-memory volume
+     * mounts](https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume)
+     * and the [Kubernetes `emptyDir` volume
+     * documentation](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
      * </pre>
      *
      * <code>string size_limit = 2;</code>
@@ -848,10 +875,11 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      * The maximum usage on memory medium EmptyDir would be the minimum value
      * between the SizeLimit specified here and the sum of memory limits of all
      * containers. The default is nil which means that the limit is undefined.
-     * More info:
-     * https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume.
-     * Info in Kubernetes:
-     * https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+     * For more information, see
+     * [Configure in-memory volume
+     * mounts](https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume)
+     * and the [Kubernetes `emptyDir` volume
+     * documentation](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
      * </pre>
      *
      * <code>string size_limit = 2;</code>
@@ -878,10 +906,11 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      * The maximum usage on memory medium EmptyDir would be the minimum value
      * between the SizeLimit specified here and the sum of memory limits of all
      * containers. The default is nil which means that the limit is undefined.
-     * More info:
-     * https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume.
-     * Info in Kubernetes:
-     * https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+     * For more information, see
+     * [Configure in-memory volume
+     * mounts](https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume)
+     * and the [Kubernetes `emptyDir` volume
+     * documentation](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
      * </pre>
      *
      * <code>string size_limit = 2;</code>
@@ -904,10 +933,11 @@ public final class EmptyDirVolumeSource extends com.google.protobuf.GeneratedMes
      * The maximum usage on memory medium EmptyDir would be the minimum value
      * between the SizeLimit specified here and the sum of memory limits of all
      * containers. The default is nil which means that the limit is undefined.
-     * More info:
-     * https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume.
-     * Info in Kubernetes:
-     * https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+     * For more information, see
+     * [Configure in-memory volume
+     * mounts](https://cloud.google.com/run/docs/configuring/in-memory-volumes#configure-volume)
+     * and the [Kubernetes `emptyDir` volume
+     * documentation](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
      * </pre>
      *
      * <code>string size_limit = 2;</code>

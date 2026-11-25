@@ -193,6 +193,8 @@ final class BigQueryJdbcUrlUtility {
   static final String MAX_BYTES_BILLED_PROPERTY_NAME = "MaximumBytesBilled";
   static final Long DEFAULT_MAX_BYTES_BILLED_VALUE = 0L;
   static final String LABELS_PROPERTY_NAME = "Labels";
+  static final String ENABLE_GRAPH_METADATA_PROPERTY_NAME = "EnableGraphMetadata";
+  static final boolean DEFAULT_ENABLE_GRAPH_METADATA_VALUE = false;
   static final List<String> OVERRIDE_PROPERTIES =
       Arrays.asList(
           BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME,
@@ -375,8 +377,8 @@ final class BigQueryJdbcUrlUtility {
                   BigQueryConnectionProperty.newBuilder()
                       .setName(UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)
                       .setDescription(
-                          "The name of the partner-operated cloud which is a new instance of Google"
-                              + " production, known as a Trusted Partner Cloud universe.")
+                          "The universe domain for the target cloud environment. Defaults to"
+                              + " googleapis.com.")
                       .setDefaultValue(DEFAULT_UNIVERSE_DOMAIN_VALUE)
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
@@ -691,6 +693,11 @@ final class BigQueryJdbcUrlUtility {
                       .setDefaultValue(
                           String.valueOf(
                               TelemetryPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_GRAPH_METADATA_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables discovery of Property Graphs and related metadata in DatabaseMetaData methods.")
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =
@@ -861,7 +868,7 @@ final class BigQueryJdbcUrlUtility {
     return urlBuilder.toString();
   }
 
-  static boolean convertIntToBoolean(String value, String propertyName) {
+  static boolean convertToBoolean(String value, String propertyName) {
     int integerValue;
 
     try {

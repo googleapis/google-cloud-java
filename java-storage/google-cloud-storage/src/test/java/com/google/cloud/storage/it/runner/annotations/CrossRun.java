@@ -39,10 +39,12 @@ public @interface CrossRun {
 
   Transport[] transports();
 
+  LocationType[] locations() default {LocationType.REGIONAL_STANDARD};
+
   /**
-   * Exclude a method from being included in the generated test suite if it's backend and transport
-   * match with those defined. When matching, if the empty set is defined as a value it will be
-   * treated as ANY rather than NONE.
+   * Exclude a method from being included in the generated test suite if it's backend, transport,
+   * and location match with those defined. When matching, if the empty set is defined as a value it
+   * will be treated as ANY rather than NONE.
    *
    * <p>{@link Ignore} Will take precedence if present on a method along with {@link Exclude}.
    */
@@ -53,12 +55,14 @@ public @interface CrossRun {
     Backend[] backends() default {};
 
     TransportCompatibility.Transport[] transports() default {};
+
+    LocationType[] locations() default {};
   }
 
   /**
-   * Ignore a method from being ran in the generated test suite if it's backend and transport match
-   * with those defined. When matching, if the empty set is defined as a value it will be treated as
-   * ANY rather than NONE.
+   * Ignore a method from being ran in the generated test suite if it's backend, transport, and
+   * location match with those defined. When matching, if the empty set is defined as a value it
+   * will be treated as ANY rather than NONE.
    *
    * <p>{@link Ignore} Will take precedence if present on a method along with {@link Exclude}.
    */
@@ -69,6 +73,8 @@ public @interface CrossRun {
     Backend[] backends() default {};
 
     TransportCompatibility.Transport[] transports() default {};
+
+    LocationType[] locations() default {};
   }
 
   /**

@@ -466,13 +466,6 @@ class ResumableUploadCallableImplTest {
   }
 
   @Test
-  void testResumeCall_throwsUnsupportedOperationException() {
-    assertThrows(
-        UnsupportedOperationException.class,
-        () -> callable.resumeCall("https://upload.url/session", payloadOf("data"), null));
-  }
-
-  @Test
   void testChunkRetry_transientFailureThenSuccess_retriesAndSucceeds() throws Exception {
     stubStartSession("https://upload.url/chunk-retry-ok");
     TrackableStream stream = new TrackableStream("01234567"); // exactly 1 chunk of 8 bytes
@@ -1381,6 +1374,174 @@ class ResumableUploadCallableImplTest {
     assertThat(exception.getCause().getSuppressed()[0])
         .hasMessageThat()
         .contains("stream close error");
+  }
+
+  @Test
+  void testResumeCall_partialOffset_resumesAndCompletes() throws Exception {
+    String sessionUrl = "https://upload.url/resume-partial";
+    when(mockQueryCallable.futureCall(eq(QueryStatusRequest.create(sessionUrl)), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                createQueryResponse(8L, null, ResumableUploadStatus.ACTIVE)));
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "resumed-done")));
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    TrackableStream stream = new TrackableStream("0123456789abcdefghij");
+    ResumableUploadFuture<String> future = callable.resumeCall(sessionUrl, () -> stream, options);
+
+    assertThat(future.getUploadSessionUrl()).isEqualTo(sessionUrl);
+    assertThat(future.getEffectiveChunkSize()).isEqualTo(8);
+    assertThat(future.get()).isEqualTo("resumed-done");
+    assertThat(stream.closed).isTrue();
+    verifyNoInteractions(mockStartCallable);
+
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(2)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> chunks = captor.getAllValues();
+    assertChunk(chunks.get(0), 8, 8, false);
+    assertChunk(chunks.get(1), 16, 4, true);
+    assertThat(new String(chunks.get(1).getPayload(), StandardCharsets.UTF_8)).isEqualTo("ghij");
+
+    assertThat(listener.awaitTerminal())
+        .containsExactly(
+            createProgress(ResumableUploadProgress.STATE_RECOVERING, 0L, sessionUrl, null),
+            createProgress(ResumableUploadProgress.STATE_OFFSET_RECEIVED, 8L, sessionUrl, 8),
+            createProgress(ResumableUploadProgress.STATE_UPLOADING, 16L, sessionUrl, 8),
+            createProgress(ResumableUploadProgress.STATE_FINALIZED, 20L, sessionUrl, 8))
+        .inOrder();
+  }
+
+  @Test
+  void testResumeCall_alignsChunkSizeToQueryGranularity() throws Exception {
+    String sessionUrl = "https://upload.url/resume-granularity";
+    when(mockQueryCallable.futureCall(eq(QueryStatusRequest.create(sessionUrl)), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                QueryStatusResponse.<String>newBuilder()
+                    .setCommittedOffset(4L)
+                    .setUploadStatus(ResumableUploadStatus.ACTIVE)
+                    .setChunkGranularity(4)
+                    .build()));
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "resumed-aligned")));
+
+    // Configured chunkSize = 10, query granularity = 4 -> aligned down to 8
+    ResumableUploadOptions options = defaultSettings.toBuilder().setChunkSize(10).build();
+    ResumableUploadFuture<String> future =
+        callable.resumeCall(sessionUrl, payloadOf("0123456789abcdef"), options);
+
+    assertThat(future.get()).isEqualTo("resumed-aligned");
+    assertThat(future.getEffectiveChunkSize()).isEqualTo(8);
+
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(2)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> chunks = captor.getAllValues();
+    assertChunk(chunks.get(0), 4, 8, false);
+    assertChunk(chunks.get(1), 12, 4, true);
+  }
+
+  @Test
+  void testResumeCall_alreadyFinalizedOnServer_completesImmediately() throws Exception {
+    String sessionUrl = "https://upload.url/resume-already-final";
+    when(mockQueryCallable.futureCall(eq(QueryStatusRequest.create(sessionUrl)), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                createQueryResponse(null, "already-finalized", ResumableUploadStatus.FINAL)));
+
+    ResumableUploadFuture<String> future =
+        callable.resumeCall(sessionUrl, payloadOf("0123456789abcdefghij"), null);
+
+    assertThat(future.get()).isEqualTo("already-finalized");
+    verifyNoInteractions(mockStartCallable);
+    verifyNoInteractions(mockChunkCallable);
+  }
+
+  @Test
+  void testResumeCall_initialQueryTransientFailure_retriesAndResumes() throws Exception {
+    String sessionUrl = "https://upload.url/resume-query-retry";
+    when(mockQueryCallable.futureCall(eq(QueryStatusRequest.create(sessionUrl)), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                createQueryResponse(8L, null, ResumableUploadStatus.ACTIVE)));
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "resumed-after-503")));
+
+    ResumableUploadFuture<String> future =
+        callable.resumeCall(sessionUrl, payloadOf("0123456789abcd"), null);
+
+    assertThat(future.get()).isEqualTo("resumed-after-503");
+    verify(mockQueryCallable, times(2)).futureCall(any(), any());
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(1)).futureCall(captor.capture(), any());
+    assertChunk(captor.getValue(), 8, 6, true);
+    assertThat(new String(captor.getValue().getPayload(), StandardCharsets.UTF_8))
+        .isEqualTo("89abcd");
+  }
+
+  @Test
+  void testResumeCall_withSubsequentRecovery_realignsWithinChunkWindow() throws Exception {
+    String sessionUrl = "https://upload.url/resume-then-recover";
+    // Initial resume query reports 8 bytes committed; mid-upload recovery reports 12 bytes
+    when(mockQueryCallable.futureCall(eq(QueryStatusRequest.create(sessionUrl)), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(createQueryResponse(8L, null, ResumableUploadStatus.ACTIVE)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                createQueryResponse(12L, null, ResumableUploadStatus.ACTIVE)));
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "recovered-after-resume")));
+
+    ResumableUploadFuture<String> future =
+        callable.resumeCall(sessionUrl, payloadOf("0123456789abcdefgh"), null);
+
+    assertThat(future.get()).isEqualTo("recovered-after-resume");
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(2)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> chunks = captor.getAllValues();
+    assertChunk(chunks.get(0), 8, 8, false);
+    assertChunk(chunks.get(1), 12, 6, true);
+    assertThat(new String(chunks.get(1).getPayload(), StandardCharsets.UTF_8)).isEqualTo("cdefgh");
+  }
+
+  @Test
+  void testResumeCall_failure_includesSessionUrlAndEffectiveChunkSize() {
+    String sessionUrl = "https://upload.url/resume-short-stream";
+    when(mockQueryCallable.futureCall(eq(QueryStatusRequest.create(sessionUrl)), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                createQueryResponse(16L, null, ResumableUploadStatus.ACTIVE)));
+
+    TrackableStream shortStream = new TrackableStream("01234567");
+    ResumableUploadFuture<String> future = callable.resumeCall(sessionUrl, () -> shortStream, null);
+
+    ExecutionException ex = assertThrows(ExecutionException.class, future::get);
+    assertThat(ex.getCause()).isInstanceOf(UnknownException.class);
+    assertThat(ex.getCause().getMessage()).contains(sessionUrl);
+    assertThat(ex.getCause().getMessage()).contains("effective chunk size: 8");
+    assertThat(shortStream.closed).isTrue();
   }
 
   private static class HttpStatusStatusCode implements StatusCode {

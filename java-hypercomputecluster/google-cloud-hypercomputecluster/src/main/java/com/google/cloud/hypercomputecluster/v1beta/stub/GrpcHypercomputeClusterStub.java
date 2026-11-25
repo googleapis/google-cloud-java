@@ -18,6 +18,7 @@ package com.google.cloud.hypercomputecluster.v1beta.stub;
 
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.hypercomputecluster.v1beta.HypercomputeClusterClient.ListNodesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -34,6 +35,8 @@ import com.google.cloud.hypercomputecluster.v1beta.DeleteClusterRequest;
 import com.google.cloud.hypercomputecluster.v1beta.GetClusterRequest;
 import com.google.cloud.hypercomputecluster.v1beta.ListClustersRequest;
 import com.google.cloud.hypercomputecluster.v1beta.ListClustersResponse;
+import com.google.cloud.hypercomputecluster.v1beta.ListNodesRequest;
+import com.google.cloud.hypercomputecluster.v1beta.ListNodesResponse;
 import com.google.cloud.hypercomputecluster.v1beta.OperationMetadata;
 import com.google.cloud.hypercomputecluster.v1beta.UpdateClusterRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -118,6 +121,17 @@ public class GrpcHypercomputeClusterStub extends HypercomputeClusterStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListNodesRequest, ListNodesResponse>
+      listNodesMethodDescriptor =
+          MethodDescriptor.<ListNodesRequest, ListNodesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.hypercomputecluster.v1beta.HypercomputeCluster/ListNodes")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListNodesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListNodesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -152,6 +166,8 @@ public class GrpcHypercomputeClusterStub extends HypercomputeClusterStub {
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable;
+  private final UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable;
+  private final UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -255,6 +271,17 @@ public class GrpcHypercomputeClusterStub extends HypercomputeClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ListNodesRequest, ListNodesResponse> listNodesTransportSettings =
+        GrpcCallSettings.<ListNodesRequest, ListNodesResponse>newBuilder()
+            .setMethodDescriptor(listNodesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -312,6 +339,12 @@ public class GrpcHypercomputeClusterStub extends HypercomputeClusterStub {
             settings.deleteClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.listNodesCallable =
+        callableFactory.createUnaryCallable(
+            listNodesTransportSettings, settings.listNodesSettings(), clientContext);
+    this.listNodesPagedCallable =
+        callableFactory.createPagedCallable(
+            listNodesTransportSettings, settings.listNodesSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -376,6 +409,16 @@ public class GrpcHypercomputeClusterStub extends HypercomputeClusterStub {
   public OperationCallable<DeleteClusterRequest, Empty, OperationMetadata>
       deleteClusterOperationCallable() {
     return deleteClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNodesRequest, ListNodesResponse> listNodesCallable() {
+    return listNodesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListNodesRequest, ListNodesPagedResponse> listNodesPagedCallable() {
+    return listNodesPagedCallable;
   }
 
   @Override

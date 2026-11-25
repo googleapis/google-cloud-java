@@ -56,6 +56,14 @@ public final class AgentCardProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_ces_v1_RemoteAgentTool_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1_RemoteAgentTool_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1_RemoteAgentTool_InputVariableMappingEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1_RemoteAgentTool_InputVariableMappingEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1_RemoteAgentTool_OutputVariableMappingEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1_RemoteAgentTool_OutputVariableMappingEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -67,7 +75,8 @@ public final class AgentCardProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "$google/cloud/ces/v1/agent_card.proto\022\023"
-          + "google.cloud.ces.v1\032\037google/api/field_behavior.proto\"\321\001\n"
+          + "google.cloud.ces.v1\032\037google/api/field_be"
+          + "havior.proto\032\036google/cloud/ces/v1/auth.proto\"\321\001\n"
           + "\tAgentCard\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\002\022\031\n"
           + "\013description\030\002 \001(\tB\004\342A\001\002\022G\n"
@@ -88,19 +97,34 @@ public final class AgentCardProto extends com.google.protobuf.GeneratedFile {
           + "\004tags\030\004 \003(\tB\004\342A\001\002\022\020\n"
           + "\010examples\030\005 \003(\t\022\023\n"
           + "\013input_modes\030\006 \003(\t\022\024\n"
-          + "\014output_modes\030\007 \003(\t\"z\n"
+          + "\014output_modes\030\007 \003(\t\"\253\004\n"
           + "\017RemoteAgentTool\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\002\022\031\n"
           + "\013description\030\002 \001(\tB\004\342A\001\002\0228\n\n"
-          + "agent_card\030\003 \001(\0132\036.google.cloud.ces.v1.AgentCardB\004\342A\001\002BV\n"
-          + "\027com.google.cloud.ces.v1B\016AgentCardProtoP\001Z)cloud.g"
-          + "oogle.com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + "agent_card\030\003"
+          + " \001(\0132\036.google.cloud.ces.v1.AgentCardB\004\342A\001\002\022H\n"
+          + "\022api_authentication\030\004"
+          + " \001(\0132&.google.cloud.ces.v1.ApiAuthenticationB\004\342A\001\001\022\034\n"
+          + "\016stateful_agent\030\005 \001(\010B\004\342A\001\001\022d\n"
+          + "\026input_variable_mapping\030\006 \003(\0132>.go"
+          + "ogle.cloud.ces.v1.RemoteAgentTool.InputVariableMappingEntryB\004\342A\001\001\022f\n"
+          + "\027output_variable_mapping\030\007 \003(\0132?.google.cloud.ces.v1"
+          + ".RemoteAgentTool.OutputVariableMappingEntryB\004\342A\001\001\032;\n"
+          + "\031InputVariableMappingEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032<\n"
+          + "\032OutputVariableMappingEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001BV\n"
+          + "\027com.google.cloud.ces.v1B\016AgentCardProtoP\001Z)cloud.google.com/go/c"
+          + "es/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.ces.v1.AuthProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1_AgentCard_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_cloud_ces_v1_AgentCard_fieldAccessorTable =
@@ -130,10 +154,33 @@ public final class AgentCardProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1_RemoteAgentTool_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "AgentCard",
+              "Name",
+              "Description",
+              "AgentCard",
+              "ApiAuthentication",
+              "StatefulAgent",
+              "InputVariableMapping",
+              "OutputVariableMapping",
+            });
+    internal_static_google_cloud_ces_v1_RemoteAgentTool_InputVariableMappingEntry_descriptor =
+        internal_static_google_cloud_ces_v1_RemoteAgentTool_descriptor.getNestedType(0);
+    internal_static_google_cloud_ces_v1_RemoteAgentTool_InputVariableMappingEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1_RemoteAgentTool_InputVariableMappingEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_ces_v1_RemoteAgentTool_OutputVariableMappingEntry_descriptor =
+        internal_static_google_cloud_ces_v1_RemoteAgentTool_descriptor.getNestedType(1);
+    internal_static_google_cloud_ces_v1_RemoteAgentTool_OutputVariableMappingEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1_RemoteAgentTool_OutputVariableMappingEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.cloud.ces.v1.AuthProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

@@ -28,6 +28,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListNodes": {
+              "methods": ["listNodes", "listNodes", "listNodes", "listNodesPagedCallable", "listNodesCallable"]
+            },
             "UpdateCluster": {
               "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
             }

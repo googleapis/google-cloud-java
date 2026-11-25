@@ -50,6 +50,7 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.ThreadFactoryUtil;
 import com.google.cloud.spanner.TransactionContext;
 import com.google.cloud.spanner.TransactionManager;
+import com.google.cloud.spanner.TransactionManager.TransactionState;
 import com.google.cloud.spanner.connection.AbstractStatementParser.ParsedStatement;
 import com.google.cloud.spanner.connection.AbstractStatementParser.StatementType;
 import com.google.cloud.spanner.connection.TransactionRetryListener.RetryResult;
@@ -164,6 +165,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
   private final TransactionOption[] transactionOptions;
   private TransactionManager txManager;
   private final boolean retryAbortsInternally;
+  private final boolean keepAbortedTransactionOpen;
   private final boolean delayTransactionStartUntilFirstWrite;
   private final boolean keepTransactionAlive;
   private final long keepAliveIntervalMillis;
@@ -218,6 +220,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     private boolean useAutoSavepointsForEmulator;
     private DatabaseClient dbClient;
     private Boolean retryAbortsInternally;
+    private boolean keepAbortedTransactionOpen;
     private boolean delayTransactionStartUntilFirstWrite;
     private boolean keepTransactionAlive;
     private boolean returnCommitStats;
@@ -257,6 +260,17 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
 
     Builder setRetryAbortsInternally(boolean retryAbortsInternally) {
       this.retryAbortsInternally = retryAbortsInternally;
+      return this;
+    }
+
+    /**
+     * Configures whether {@link AbortedException}s when internal retries are disabled should leave
+     * the underlying {@link TransactionManager} and unit-of-work span open so {@link
+     * TransactionRunnerImpl} can invoke {@link #resetForRetry()} or {@link
+     * ConnectionImpl#rollbackAfterAbort(UnitOfWork)}.
+     */
+    Builder setKeepAbortedTransactionOpen(boolean keepAbortedTransactionOpen) {
+      this.keepAbortedTransactionOpen = keepAbortedTransactionOpen;
       return this;
     }
 
@@ -332,6 +346,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
             : 0L;
     this.keepAliveLock = this.keepTransactionAlive ? new ReentrantLock() : null;
     this.retryAbortsInternally = builder.retryAbortsInternally;
+    this.keepAbortedTransactionOpen = builder.keepAbortedTransactionOpen;
     this.savepointSupport = builder.savepointSupport;
     this.isolationLevel = Preconditions.checkNotNull(builder.isolationLevel);
     this.readLockMode = Preconditions.checkNotNull(builder.readLockMode);
@@ -473,7 +488,8 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
   }
 
   private boolean shouldPing() {
-    return isActive()
+    return getState().isActive()
+        && this.abortedException == null
         && keepAliveLock != null
         && keepTransactionAlive
         && !timedOutOrCancelled
@@ -600,8 +616,19 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     return getState().isActive() || state == UnitOfWorkState.ABORTED;
   }
 
+  /**
+   * Returns the recorded {@link AbortedException} when this transaction is in {@code ABORTED}
+   * state.
+   */
+  @Nullable
+  AbortedException getAbortedException() {
+    return this.abortedException;
+  }
+
   void checkAborted() {
-    if (this.state == UnitOfWorkState.ABORTED && this.abortedException != null) {
+    // Only check abortedException and not the state, as the ABORTED state can be overwritten by a
+    // commit that is called while (or after) an asynchronous statement aborted the transaction.
+    if (this.abortedException != null) {
       if (this.abortedException instanceof AbortedDueToConcurrentModificationException) {
         throw SpannerExceptionFactory.newAbortedDueToConcurrentModificationException(
             (AbortedDueToConcurrentModificationException) this.abortedException);
@@ -757,8 +784,22 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
                 () -> {
                   checkTimedOut();
                   checkAborted();
-                  return DirectExecuteResultSet.ofResultSet(
-                      internalExecuteQuery(statement, analyzeMode, options));
+                  ResultSet queryResultSet = internalExecuteQuery(statement, analyzeMode, options);
+                  if (keepAbortedTransactionOpen) {
+                    queryResultSet =
+                        new ReplaceableForwardingResultSet(queryResultSet) {
+                          @Override
+                          public boolean next() throws SpannerException {
+                            try {
+                              return super.next();
+                            } catch (AbortedException aborted) {
+                              markAborted(aborted);
+                              throw aborted;
+                            }
+                          }
+                        };
+                  }
+                  return DirectExecuteResultSet.ofResultSet(queryResultSet);
                 },
                 SpannerGrpc.getExecuteStreamingSqlMethod());
       }
@@ -861,15 +902,23 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
               () -> {
                 checkTimedOut();
                 checkAborted();
-                if (analyzeMode == AnalyzeMode.NONE) {
-                  return Tuple.of(
-                      get(txContextFuture).executeUpdate(update.getStatement(), options), null);
+                try {
+                  if (analyzeMode == AnalyzeMode.NONE) {
+                    return Tuple.of(
+                        get(txContextFuture).executeUpdate(update.getStatement(), options), null);
+                  }
+                  ResultSet resultSet =
+                      get(txContextFuture)
+                          .analyzeUpdateStatement(
+                              update.getStatement(), analyzeMode.getQueryAnalyzeMode(), options);
+                  return Tuple.of(null, resultSet);
+                } catch (AbortedException aborted) {
+                  if (keepAbortedTransactionOpen) {
+                    this.state = UnitOfWorkState.ABORTED;
+                    this.abortedException = aborted;
+                  }
+                  throw aborted;
                 }
-                ResultSet resultSet =
-                    get(txContextFuture)
-                        .analyzeUpdateStatement(
-                            update.getStatement(), analyzeMode.getQueryAnalyzeMode(), options);
-                return Tuple.of(null, resultSet);
               },
               SpannerGrpc.getExecuteSqlMethod());
     }
@@ -929,7 +978,15 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
                 () -> {
                   checkTimedOut();
                   checkAborted();
-                  return get(txContextFuture).batchUpdate(updateStatements);
+                  try {
+                    return get(txContextFuture).batchUpdate(updateStatements);
+                  } catch (AbortedException aborted) {
+                    if (keepAbortedTransactionOpen) {
+                      this.state = UnitOfWorkState.ABORTED;
+                      this.abortedException = aborted;
+                    }
+                    throw aborted;
+                  }
                 },
                 SpannerGrpc.getExecuteBatchDmlMethod());
       }
@@ -987,6 +1044,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         state = UnitOfWorkState.COMMITTED;
         res = SettableApiFuture.create();
         ((SettableApiFuture<Void>) res).set(null);
+        asyncEndUnitOfWorkSpan();
       } else if (retryAbortsInternally) {
         res =
             executeStatementAsync(
@@ -1021,32 +1079,45 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
                 },
                 InterceptorsUsage.IGNORE_INTERCEPTORS,
                 ImmutableList.of(SpannerGrpc.getCommitMethod()));
+        asyncEndUnitOfWorkSpan();
       } else {
         res =
             executeStatementAsync(
                 callType,
                 COMMIT_STATEMENT,
                 () -> {
-                  checkTimedOut();
                   try {
+                    checkTimedOut();
                     Void result = commitCallable.call();
                     callback.onSuccess();
+                    if (span != null) {
+                      span.end();
+                    }
                     return result;
                   } catch (Throwable t) {
                     commitResponseFuture.setException(t);
                     callback.onFailure();
-                    state = UnitOfWorkState.COMMIT_FAILED;
-                    try {
-                      txManager.close();
-                    } catch (Throwable t2) {
-                      // Ignore.
+                    if (keepAbortedTransactionOpen && t instanceof AbortedException) {
+                      // Under TransactionRunnerImpl, leave txManager and unit-of-work span open so
+                      // resetForRetry() can reuse them or rollbackAfterAbort() can close them once.
+                      state = UnitOfWorkState.ABORTED;
+                      abortedException = (AbortedException) t;
+                    } else {
+                      state = UnitOfWorkState.COMMIT_FAILED;
+                      try {
+                        txManager.close();
+                      } catch (Throwable t2) {
+                        // Ignore.
+                      }
+                      if (span != null) {
+                        span.end();
+                      }
                     }
                     throw t;
                   }
                 },
                 SpannerGrpc.getCommitMethod());
       }
-      asyncEndUnitOfWorkSpan();
       return res;
     }
   }
@@ -1243,8 +1314,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
           } catch (Throwable t) {
             // ignore
           }
-          this.state = UnitOfWorkState.ABORTED;
-          this.abortedException = e;
+          markAborted(e);
           throw e;
         } catch (AbortedException abortedExceptionDuringRetry) {
           // Retry aborted, do another retry of the transaction.
@@ -1269,23 +1339,31 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
             // ignore
           }
           // Set transaction state to aborted as the retry failed.
-          this.state = UnitOfWorkState.ABORTED;
-          this.abortedException = aborted;
+          markAborted(aborted);
           // Re-throw underlying exception.
           throw e;
         }
       }
     } else {
-      try {
-        txManager.close();
-      } catch (Throwable t) {
-        // ignore
+      if (!keepAbortedTransactionOpen && txManager != null) {
+        try {
+          txManager.close();
+        } catch (Throwable t) {
+          // ignore
+        }
+        txManager = null;
       }
       // Internal retry is not enabled.
-      this.state = UnitOfWorkState.ABORTED;
-      this.abortedException = aborted;
+      markAborted(aborted);
       throw aborted;
     }
+  }
+
+  private void markAborted(AbortedException aborted) {
+    if (this.state == UnitOfWorkState.STARTED) {
+      this.state = UnitOfWorkState.ABORTED;
+    }
+    this.abortedException = aborted;
   }
 
   private void throwAbortWithRetryAttemptsExceeded() throws SpannerException {
@@ -1302,11 +1380,10 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     } catch (Throwable t) {
       // ignore
     }
-    this.state = UnitOfWorkState.ABORTED;
-    this.abortedException =
+    markAborted(
         (AbortedException)
             SpannerExceptionFactory.newSpannerException(
-                ErrorCode.ABORTED, MAX_INTERNAL_RETRIES_EXCEEDED);
+                ErrorCode.ABORTED, MAX_INTERNAL_RETRIES_EXCEEDED));
     throw this.abortedException;
   }
 
@@ -1327,7 +1404,9 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         @Override
         public Void call() {
           try {
-            if (state != UnitOfWorkState.ABORTED && rolledBackToSavepointException == null) {
+            if (state != UnitOfWorkState.ABORTED
+                && abortedException == null
+                && rolledBackToSavepointException == null) {
               // Make sure the transaction has actually started before we try to rollback.
               get(txContextFuture);
               txManager.rollback();
@@ -1356,21 +1435,49 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         state == UnitOfWorkState.STARTED || state == UnitOfWorkState.ABORTED,
         "This transaction has status " + state.name());
     cancelScheduledKeepAlivePing();
+    boolean isAborted = (state == UnitOfWorkState.ABORTED) || (this.abortedException != null);
     if (updateStatusAndEndSpan) {
       state = UnitOfWorkState.ROLLED_BACK;
     }
-    if (txContextFuture != null && state != UnitOfWorkState.ABORTED) {
-      ApiFuture<Void> result =
-          executeStatementAsync(
-              callType, ROLLBACK_STATEMENT, rollbackCallable, SpannerGrpc.getRollbackMethod());
+    if (isAborted) {
       if (updateStatusAndEndSpan) {
-        // Note: We end the transaction span after executing the rollback to include the rollback in
-        // the transaction span. Even though both methods are executed asynchronously, they are both
-        // executed using the same single-threaded executor, meaning that the span will only be
-        // ended after the rollback has finished.
-        asyncEndUnitOfWorkSpan();
+        // TransactionManagerImpl.rollback() requires STARTED; close any kept-open aborted txManager
+        // to release its session and span, then end the unit-of-work span before completing.
+        return getStatementExecutor()
+            .submit(
+                () -> {
+                  if (txManager != null) {
+                    try {
+                      txManager.close();
+                    } catch (Throwable ignored) {
+                      // Ignore cleanup errors on an already-aborted transaction manager.
+                    }
+                    txManager = null;
+                  }
+                  if (span != null) {
+                    span.end();
+                  }
+                  return null;
+                });
       }
-      return result;
+      return ApiFutures.immediateFuture(null);
+    }
+    if (txContextFuture != null) {
+      return executeStatementAsync(
+          callType,
+          ROLLBACK_STATEMENT,
+          () -> {
+            try {
+              return rollbackCallable.call();
+            } finally {
+              if (updateStatusAndEndSpan && span != null) {
+                // End the unit-of-work span inside the rollback task so callers awaiting the
+                // returned future observe deterministic span completion.
+                span.end();
+              }
+            }
+          },
+          SpannerGrpc.getRollbackMethod());
     } else if (updateStatusAndEndSpan) {
       return asyncEndUnitOfWorkSpan();
     } else {
@@ -1378,9 +1485,51 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     }
   }
 
+  /**
+   * Resets this read/write transaction for a new attempt by {@link TransactionRunnerImpl}, reusing
+   * an aborted {@link TransactionManager} when available or closing an un-aborted manager, and
+   * clearing buffered per-attempt collections and state.
+   */
   @Override
   public void resetForRetry() {
-    txContextFuture = ApiFutures.immediateFuture(txManager.resetForRetry());
+    cancelScheduledKeepAlivePing();
+    if (txManager != null) {
+      boolean resetSucceeded = false;
+      if (state == UnitOfWorkState.ABORTED
+          || this.abortedException != null
+          || txManager.getState() == TransactionState.ABORTED) {
+        try {
+          txContextFuture = ApiFutures.immediateFuture(txManager.resetForRetry());
+          resetSucceeded = true;
+        } catch (IllegalStateException ignored) {
+          // Synthetic aborts may mark ReadWriteTransaction as ABORTED without aborting txManager.
+        }
+      }
+      if (!resetSucceeded) {
+        TransactionState managerState = txManager.getState();
+        if (managerState == TransactionState.STARTED || managerState == TransactionState.ABORTED) {
+          try {
+            txManager.close();
+          } catch (Throwable ignored) {
+            // Ignore cleanup errors when closing an un-aborted transaction manager.
+          }
+        }
+        txManager = null;
+        txContextFuture = null;
+      }
+    } else {
+      txContextFuture = null;
+    }
+    canUseSingleUseRead = false;
+    commitResponseFuture = null;
+    abortedException = null;
+    rolledBackToSavepointException = null;
+    autoSavepoint = null;
+    transactionStarted = null;
+    statements.clear();
+    mutations.clear();
+    clearSavepoints();
+    state = UnitOfWorkState.STARTED;
   }
 
   @Override

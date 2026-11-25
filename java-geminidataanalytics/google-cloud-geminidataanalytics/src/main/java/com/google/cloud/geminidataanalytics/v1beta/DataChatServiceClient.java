@@ -1108,6 +1108,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setPendingWriteWaitSkipped(true)
    *           .build();
    *   for (StorageMessage element : dataChatServiceClient.listMessages(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1142,6 +1143,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setPendingWriteWaitSkipped(true)
    *           .build();
    *   ApiFuture<StorageMessage> future =
    *       dataChatServiceClient.listMessagesPagedCallable().futureCall(request);
@@ -1177,6 +1179,7 @@ public class DataChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setFilter("filter-1274492040")
+   *           .setPendingWriteWaitSkipped(true)
    *           .build();
    *   while (true) {
    *     ListMessagesResponse response = dataChatServiceClient.listMessagesCallable().call(request);

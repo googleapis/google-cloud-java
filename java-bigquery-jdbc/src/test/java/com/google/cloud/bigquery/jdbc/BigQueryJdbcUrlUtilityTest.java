@@ -318,20 +318,22 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testParseDefaultDataset_tpcProject() {
-    DatasetId datasetId = BigQueryJdbcUrlUtility.parseDefaultDataset("tpc:my-project:my_dataset");
+  public void testParseDefaultDataset_universeDomainProject() {
+    DatasetId datasetId =
+        BigQueryJdbcUrlUtility.parseDefaultDataset("custom-universe:my-project:my_dataset");
     assertNotNull(datasetId);
     assertEquals("my_dataset", datasetId.getDataset());
-    assertEquals("tpc:my-project", datasetId.getProject());
+    assertEquals("custom-universe:my-project", datasetId.getProject());
   }
 
   @Test
-  public void testParseDefaultDataset_tpcProject_threeTierPcntNamespace() {
+  public void testParseDefaultDataset_universeDomainProject_threeTierPcntNamespace() {
     DatasetId datasetId =
-        BigQueryJdbcUrlUtility.parseDefaultDataset("tpc:my-project:my-warehouse.my_namespace");
+        BigQueryJdbcUrlUtility.parseDefaultDataset(
+            "custom-universe:my-project:my-warehouse.my_namespace");
     assertNotNull(datasetId);
     assertEquals("my-warehouse.my_namespace", datasetId.getDataset());
-    assertEquals("tpc:my-project", datasetId.getProject());
+    assertEquals("custom-universe:my-project", datasetId.getProject());
   }
 
   @Test
@@ -344,7 +346,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset(":my_dataset"));
     assertThrows(
         BigQueryJdbcRuntimeException.class,
-        () -> BigQueryJdbcUrlUtility.parseDefaultDataset("tpc:my-project:"));
+        () -> BigQueryJdbcUrlUtility.parseDefaultDataset("custom-universe:my-project:"));
     assertThrows(
         BigQueryJdbcRuntimeException.class,
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset("   :   "));
@@ -390,5 +392,27 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     DataSource defaultDs = DataSource.fromUrl(urlWithoutTelemetry);
     assertThat(defaultDs.getEnableDiagnosticTelemetry())
         .isEqualTo(TelemetryPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE);
+  }
+
+  @Test
+  public void testEnableGraphMetadataProperties() {
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=MyBigQueryProject;"
+            + "EnableGraphMetadata=1";
+
+    assertThat(BigQueryJdbcUrlUtility.parseUriProperty(url, "EnableGraphMetadata")).isEqualTo("1");
+
+    DataSource ds = DataSource.fromUrl(url);
+    assertThat(ds.getEnableGraphMetadata()).isTrue();
+
+    Properties props = ds.createProperties();
+    assertThat(props.getProperty("EnableGraphMetadata")).isEqualTo("true");
+
+    String urlWithoutGraph =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=MyBigQueryProject";
+    DataSource defaultDs = DataSource.fromUrl(urlWithoutGraph);
+    assertThat(defaultDs.getEnableGraphMetadata())
+        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_METADATA_VALUE);
   }
 }

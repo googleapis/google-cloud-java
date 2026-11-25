@@ -46,15 +46,20 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteRegionSslPolicyRequest;
+import com.google.cloud.compute.v1.GetIamPolicyRegionSslPolicyRequest;
 import com.google.cloud.compute.v1.GetRegionSslPolicyRequest;
 import com.google.cloud.compute.v1.InsertRegionSslPolicyRequest;
 import com.google.cloud.compute.v1.ListAvailableFeaturesRegionSslPoliciesRequest;
 import com.google.cloud.compute.v1.ListRegionSslPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchRegionSslPolicyRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyRegionSslPolicyRequest;
 import com.google.cloud.compute.v1.SslPoliciesList;
 import com.google.cloud.compute.v1.SslPoliciesListAvailableFeaturesResponse;
 import com.google.cloud.compute.v1.SslPolicy;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionSslPolicyRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -158,6 +163,7 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
   private final OperationCallSettings<DeleteRegionSslPolicyRequest, Operation, Operation>
       deleteOperationSettings;
   private final UnaryCallSettings<GetRegionSslPolicyRequest, SslPolicy> getSettings;
+  private final UnaryCallSettings<GetIamPolicyRegionSslPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<InsertRegionSslPolicyRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertRegionSslPolicyRequest, Operation, Operation>
       insertOperationSettings;
@@ -169,6 +175,9 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
   private final UnaryCallSettings<PatchRegionSslPolicyRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRegionSslPolicyRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<SetIamPolicyRegionSslPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRegionSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListRegionSslPoliciesRequest, SslPoliciesList, SslPolicy>
       LIST_PAGE_STR_DESC =
@@ -241,6 +250,11 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
     return getSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRegionSslPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionSslPolicyRequest, Operation> insertSettings() {
     return insertSettings;
@@ -274,6 +288,17 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
   public OperationCallSettings<PatchRegionSslPolicyRequest, Operation, Operation>
       patchOperationSettings() {
     return patchOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRegionSslPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public RegionSslPoliciesStub createStub() throws IOException {
@@ -338,7 +363,7 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
             GaxHttpJsonProperties.getHttpJsonVersion())
-        .setApiVersionToken("2026-09-01");
+        .setApiVersionToken("2026-11-01");
   }
 
   /** Returns a new builder for this class. */
@@ -362,12 +387,15 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listAvailableFeaturesSettings = settingsBuilder.listAvailableFeaturesSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   @Override
@@ -386,6 +414,8 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
     private final OperationCallSettings.Builder<DeleteRegionSslPolicyRequest, Operation, Operation>
         deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetRegionSslPolicyRequest, SslPolicy> getSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRegionSslPolicyRequest, Policy>
+        getIamPolicySettings;
     private final UnaryCallSettings.Builder<InsertRegionSslPolicyRequest, Operation> insertSettings;
     private final OperationCallSettings.Builder<InsertRegionSslPolicyRequest, Operation, Operation>
         insertOperationSettings;
@@ -398,6 +428,11 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
     private final UnaryCallSettings.Builder<PatchRegionSslPolicyRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchRegionSslPolicyRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRegionSslPolicyRequest, Policy>
+        setIamPolicySettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsRegionSslPolicyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -451,21 +486,27 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listAvailableFeaturesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteSettings,
               getSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               listAvailableFeaturesSettings,
-              patchSettings);
+              patchSettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -475,21 +516,27 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listAvailableFeaturesSettings = settings.listAvailableFeaturesSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteSettings,
               getSettings,
+              getIamPolicySettings,
               insertSettings,
               listSettings,
               listAvailableFeaturesSettings,
-              patchSettings);
+              patchSettings,
+              setIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -516,6 +563,11 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .insertSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -532,6 +584,16 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -641,6 +703,12 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
       return getSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRegionSslPolicyRequest, Policy>
+        getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertRegionSslPolicyRequest, Operation> insertSettings() {
       return insertSettings;
@@ -675,6 +743,19 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
     public OperationCallSettings.Builder<PatchRegionSslPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRegionSslPolicyRequest, Policy>
+        setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionSslPolicyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

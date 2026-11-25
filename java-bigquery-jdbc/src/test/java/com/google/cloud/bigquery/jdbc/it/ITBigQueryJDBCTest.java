@@ -114,7 +114,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
@@ -188,7 +188,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   // reads without using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testIterateOrderJsonMultiThread_NoReadApi() throws SQLException {
     int expectedCnt = 10000;
     String query = String.format(BASE_QUERY, expectedCnt);
@@ -207,7 +207,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   // reads using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testIterateOrderArrowMultiThread() throws SQLException {
     int expectedCnt = 200000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
@@ -228,7 +228,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLarge() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
@@ -240,15 +239,15 @@ public class ITBigQueryJDBCTest extends ITBase {
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG), withReadApi);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
+    assertArrowResultSet(arrowResultSet);
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
@@ -259,15 +258,15 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 1000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
     ResultSet arrowResultSet = statement.executeQuery(longQuery);
+    assertArrowResultSet(arrowResultSet);
     assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
     arrowResultSet.close();
     connection.close();
   }
 
   @Test
-  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
@@ -277,10 +276,11 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connectionUri);
     Statement statement = connection.createStatement();
     int expectedCnt = 5000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
-    ResultSet arrowResultSet = statement.executeQuery(longQuery);
-    assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
-    arrowResultSet.close();
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, expectedCnt);
+    try (ResultSet jsonResultSet = statement.executeQuery(longQuery)) {
+      assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+      assertEquals(expectedCnt, resultSetRowCount(jsonResultSet));
+    }
     connection.close();
   }
 
@@ -366,7 +366,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testLocation() throws SQLException {
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=EU";
 
@@ -393,7 +393,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testIncorrectLocation() throws SQLException {
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=europe-west3";
 
@@ -1378,7 +1378,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testUnsupportedHTAPIFallbacksToStandardQueriesWithRange() throws SQLException {
     String selectQuery = "select * from `DATATYPERANGETEST.RangeIntervalTestTable` LIMIT 5000;";
     String connection_uri =
@@ -1403,7 +1403,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testIntervalDataTypeWithArrowResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
@@ -1420,7 +1420,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     ResultSet resultSet = statement.executeQuery(selectQuery);
-    assertTrue(resultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertArrowResultSet(resultSet);
     resultSet.next();
     assertEquals("0-0 10 -12:30:0.0", resultSet.getString("intervalField"));
 
@@ -1429,7 +1429,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testIntervalDataTypeWithJsonResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 10 ;";
@@ -1455,7 +1455,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidLEPEndpointQuery() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1488,7 +1488,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testLEPEndpointDataNotFoundThrows() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1505,7 +1505,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidREPEndpointQuery() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1840,7 +1840,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidDestinationTableSavesQueriesWithLegacySQL() throws SQLException {
     // setup
     String connection_uri =
@@ -1885,7 +1885,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testUseLegacySQLWithLargeResultsNotAllowedQueries() throws SQLException {
     // setup
     String connection_uri =
@@ -1904,7 +1904,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
@@ -1934,7 +1934,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testDestinationTableAndDestinationDatasetThatDoesNotExistsCreates()
       throws SQLException {
     // setup
@@ -1969,7 +1969,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testUseLegacySQLWithLargeResultsAllowedWithNoDestinationTableDefaults()
       throws SQLException {
     // setup
@@ -1989,7 +1989,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testDestinationTableWithMissingDestinationDatasetDefaults() throws SQLException {
     // setup
     String connection_uri =
@@ -2121,7 +2121,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testRangeDataTypeWithArrowResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
@@ -2138,7 +2138,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     Statement statement = connection.createStatement();
     ResultSet resultSet = statement.executeQuery(selectQuery);
-    assertTrue(resultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+    assertArrowResultSet(resultSet);
     resultSet.next();
     assertEquals("[2024-07-14, 2024-09-23)", resultSet.getString("rangeField"));
     connection.close();
@@ -2245,7 +2245,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testQueryPropertySessionIdSetsStatementSession()
       throws SQLException, InterruptedException {
     String sessionId = getSessionId();
@@ -2272,7 +2272,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testEncryptedTableWithKmsQueries() throws SQLException {
     // setup
     org.junit.jupiter.api.Assumptions.assumeTrue(
@@ -2295,7 +2295,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testIncorrectKmsThrows() throws SQLException {
     org.junit.jupiter.api.Assumptions.assumeTrue(
         System.getenv("KMS_RESOURCE_PATH") != null, "KMS_RESOURCE_PATH is missing");
@@ -2314,7 +2314,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testQueryPropertyServiceAccountFollowsIamPermission() throws SQLException {
     final String SERVICE_ACCOUNT_EMAIL = requireEnvVar("SA_EMAIL");
     String connection_uri =
@@ -2336,7 +2336,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidLegacySQLStatement() throws SQLException {
     String legacyJoinQuery =
         "SELECT\n"

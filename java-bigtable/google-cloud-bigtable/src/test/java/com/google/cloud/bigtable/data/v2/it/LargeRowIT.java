@@ -69,6 +69,14 @@ public class LargeRowIT {
 
   @Before
   public void setup() {
+    // TODO: Remove this skip once the server supports dynamic heartbeats based on message payload.
+    assume()
+        .withMessage(
+            "Skipping LargeRowIT on session path until the server supports dynamic heartbeats"
+                + " based on message payload")
+        .that(testEnvRule.env().isSessionsEnabled())
+        .isFalse();
+
     tableAdminClient = testEnvRule.env().getTableAdminClient();
     String tableId = PrefixGenerator.newPrefix("LargeRowTest");
     table = tableAdminClient.createTable(CreateTableRequest.of(tableId).addFamily(familyId));

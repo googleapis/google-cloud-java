@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
@@ -41,12 +42,18 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.webtoken.JsonWebSignature;
 import com.google.api.client.util.Clock;
+import com.google.auth.Credentials;
 import com.google.auth.http.AuthHttpConstants;
 import java.io.IOException;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 import org.junit.jupiter.api.Test;
 
 class JwtCredentialsTest extends BaseSerializationTest {
@@ -78,24 +85,40 @@ class JwtCredentialsTest extends BaseSerializationTest {
 
   @Test
   void serialize() throws IOException, ClassNotFoundException {
-    JwtClaims claims =
-        JwtClaims.newBuilder()
-            .setAudience("some-audience")
-            .setIssuer("some-issuer")
-            .setSubject("some-subject")
-            .build();
-    JwtCredentials credentials =
-        JwtCredentials.newBuilder()
-            .setJwtClaims(claims)
-            .setPrivateKey(getPrivateKey())
-            .setPrivateKeyId(PRIVATE_KEY_ID)
-            .build();
+    for (String universeDomain : Arrays.asList(null, "example.com")) {
+      JwtCredentials credentials = createTestBuilder().setUniverseDomain(universeDomain).build();
 
-    JwtCredentials deserializedCredentials = serializeAndDeserialize(credentials);
-    assertEquals(credentials, deserializedCredentials);
-    assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
-    assertEquals(credentials.toString(), deserializedCredentials.toString());
-    assertSame(Clock.SYSTEM, deserializedCredentials.getClock());
+      JwtCredentials deserializedCredentials = serializeAndDeserialize(credentials);
+      assertEquals(credentials, deserializedCredentials);
+      assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
+      assertEquals(credentials.toString(), deserializedCredentials.toString());
+      assertEquals(credentials.getUniverseDomain(), deserializedCredentials.getUniverseDomain());
+      verifyJwtAccess(
+          deserializedCredentials.getRequestMetadata(),
+          "some-audience",
+          "some-issuer",
+          "some-subject",
+          PRIVATE_KEY_ID);
+      assertSame(Clock.SYSTEM, deserializedCredentials.getClock());
+    }
+  }
+
+  @Test
+  void deserialize_missingOrBlankUniverseDomain_defaultsToGoogleDefaultUniverse()
+      throws IOException, ClassNotFoundException {
+    JwtCredentials expected = createTestBuilder().build();
+
+    for (String serializedUniverseDomain : Arrays.asList(null, "", "   ")) {
+      JwtCredentials credentials = createTestBuilder().build();
+      credentials.universeDomain = serializedUniverseDomain;
+
+      JwtCredentials deserialized = serializeAndDeserialize(credentials);
+      assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, deserialized.getUniverseDomain());
+      assertEquals(expected, deserialized);
+      assertEquals(deserialized, expected);
+      assertEquals(expected.hashCode(), deserialized.hashCode());
+      assertEquals(expected.toString(), deserialized.toString());
+    }
   }
 
   @Test
@@ -251,6 +274,101 @@ class JwtCredentialsTest extends BaseSerializationTest {
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata();
     verifyJwtAccess(metadata, "some-audience", "some-issuer", "some-subject", null);
+  }
+
+  private static JwtClaims createTestClaims() {
+    return JwtClaims.newBuilder()
+        .setAudience("some-audience")
+        .setIssuer("some-issuer")
+        .setSubject("some-subject")
+        .build();
+  }
+
+  private static JwtCredentials.Builder createTestBuilder() {
+    return JwtCredentials.newBuilder()
+        .setJwtClaims(createTestClaims())
+        .setPrivateKey(getPrivateKey())
+        .setPrivateKeyId(PRIVATE_KEY_ID);
+  }
+
+  @Test
+  void builder_universeDomain() {
+    JwtCredentials.Builder builder = createTestBuilder();
+    assertNull(builder.getUniverseDomain());
+
+    builder.setUniverseDomain("example.com");
+    assertEquals("example.com", builder.getUniverseDomain());
+  }
+
+  @Test
+  void getUniverseDomain() throws IOException {
+    Map<String, String> testCases = new LinkedHashMap<>();
+    testCases.put(null, Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    testCases.put("", Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    testCases.put("   ", Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    testCases.put("example.com", "example.com");
+
+    for (Map.Entry<String, String> testCase : testCases.entrySet()) {
+      JwtCredentials credentials = createTestBuilder().setUniverseDomain(testCase.getKey()).build();
+      assertEquals(testCase.getValue(), credentials.getUniverseDomain());
+    }
+  }
+
+  @Test
+  void jwtWithClaims_preservesUniverseDomain() throws IOException {
+    JwtClaims newClaims = JwtClaims.newBuilder().setAudience("new-audience").build();
+    for (String universeDomain : Arrays.asList(null, "example.com")) {
+      JwtCredentials credentials = createTestBuilder().setUniverseDomain(universeDomain).build();
+      JwtCredentials updated = credentials.jwtWithClaims(newClaims);
+      assertEquals(credentials.getUniverseDomain(), updated.getUniverseDomain());
+    }
+  }
+
+  @Test
+  void equals_true() {
+    JwtCredentials credentials =
+        createTestBuilder().setLifeSpanSeconds(600L).setUniverseDomain("example.com").build();
+    JwtCredentials other =
+        createTestBuilder().setLifeSpanSeconds(600L).setUniverseDomain("example.com").build();
+
+    assertEquals(credentials, credentials);
+    assertEquals(credentials, other);
+    assertEquals(other, credentials);
+    assertEquals(credentials.hashCode(), other.hashCode());
+  }
+
+  @Test
+  void equals_false() throws NoSuchAlgorithmException {
+    JwtCredentials baseline =
+        createTestBuilder().setLifeSpanSeconds(600L).setUniverseDomain("example.com").build();
+    KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+    keyPairGenerator.initialize(1024);
+    PrivateKey otherPrivateKey = keyPairGenerator.generateKeyPair().getPrivate();
+    JwtClaims otherClaims =
+        JwtClaims.newBuilder()
+            .setAudience("other-audience")
+            .setIssuer("some-issuer")
+            .setSubject("some-subject")
+            .build();
+
+    List<Consumer<JwtCredentials.Builder>> mutations =
+        Arrays.asList(
+            b -> b.setPrivateKey(otherPrivateKey),
+            b -> b.setPrivateKeyId("other-key-id"),
+            b -> b.setJwtClaims(otherClaims),
+            b -> b.setLifeSpanSeconds(1200L),
+            b -> b.setUniverseDomain("other.example.com"));
+
+    assertNotEquals(baseline, null);
+    assertNotEquals(baseline, "not-a-credential");
+    for (Consumer<JwtCredentials.Builder> mutation : mutations) {
+      JwtCredentials.Builder builder =
+          createTestBuilder().setLifeSpanSeconds(600L).setUniverseDomain("example.com");
+      mutation.accept(builder);
+      JwtCredentials other = builder.build();
+      assertNotEquals(baseline, other);
+      assertNotEquals(other, baseline);
+    }
   }
 
   private void verifyJwtAccess(

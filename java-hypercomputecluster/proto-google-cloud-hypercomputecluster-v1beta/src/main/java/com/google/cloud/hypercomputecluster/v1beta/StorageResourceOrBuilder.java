@@ -30,11 +30,13 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Filestore instance. Populated if and only if the storage
-   * resource was configured to use Filestore.
+   * Output only. A reference to a Filestore instance. Populated if and only
+   * if the storage resource was configured to use Filestore.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the filestore field is set.
    */
@@ -44,11 +46,13 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Filestore instance. Populated if and only if the storage
-   * resource was configured to use Filestore.
+   * Output only. A reference to a Filestore instance. Populated if and only
+   * if the storage resource was configured to use Filestore.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The filestore.
    */
@@ -58,11 +62,13 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Filestore instance. Populated if and only if the storage
-   * resource was configured to use Filestore.
+   * Output only. A reference to a Filestore instance. Populated if and only
+   * if the storage resource was configured to use Filestore.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.FilestoreReference filestore = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.hypercomputecluster.v1beta.FilestoreReferenceOrBuilder getFilestoreOrBuilder();
 
@@ -70,11 +76,14 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Google Cloud Storage bucket. Populated if and only if the
-   * storage resource was configured to use Google Cloud Storage.
+   * Output only. A reference to a Google Cloud Storage bucket. Populated if
+   * and only if the storage resource was configured to use Google Cloud
+   * Storage.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the bucket field is set.
    */
@@ -84,11 +93,14 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Google Cloud Storage bucket. Populated if and only if the
-   * storage resource was configured to use Google Cloud Storage.
+   * Output only. A reference to a Google Cloud Storage bucket. Populated if
+   * and only if the storage resource was configured to use Google Cloud
+   * Storage.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bucket.
    */
@@ -98,11 +110,14 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Google Cloud Storage bucket. Populated if and only if the
-   * storage resource was configured to use Google Cloud Storage.
+   * Output only. A reference to a Google Cloud Storage bucket. Populated if
+   * and only if the storage resource was configured to use Google Cloud
+   * Storage.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.BucketReference bucket = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.hypercomputecluster.v1beta.BucketReferenceOrBuilder getBucketOrBuilder();
 
@@ -110,11 +125,13 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Managed Lustre instance. Populated if and only if the
-   * storage resource was configured to use Managed Lustre.
+   * Output only. A reference to a Managed Lustre instance. Populated if and
+   * only if the storage resource was configured to use Managed Lustre.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lustre field is set.
    */
@@ -124,11 +141,13 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Managed Lustre instance. Populated if and only if the
-   * storage resource was configured to use Managed Lustre.
+   * Output only. A reference to a Managed Lustre instance. Populated if and
+   * only if the storage resource was configured to use Managed Lustre.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lustre.
    */
@@ -138,11 +157,13 @@ public interface StorageResourceOrBuilder
    *
    *
    * <pre>
-   * Reference to a Managed Lustre instance. Populated if and only if the
-   * storage resource was configured to use Managed Lustre.
+   * Output only. A reference to a Managed Lustre instance. Populated if and
+   * only if the storage resource was configured to use Managed Lustre.
    * </pre>
    *
-   * <code>.google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3;</code>
+   * <code>
+   * .google.cloud.hypercomputecluster.v1beta.LustreReference lustre = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.hypercomputecluster.v1beta.LustreReferenceOrBuilder getLustreOrBuilder();
 

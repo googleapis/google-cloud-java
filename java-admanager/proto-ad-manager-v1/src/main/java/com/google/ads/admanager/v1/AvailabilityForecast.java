@@ -271,8 +271,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The unit with which the goal or cap of the LineItem is defined. Will be the
-   * same value as [Goal.unitType][] for both a set line item or a
-   * prospective one.
+   * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+   * both a set line item or a prospective one.
    * </pre>
    *
    * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -289,8 +289,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The unit with which the goal or cap of the LineItem is defined. Will be the
-   * same value as [Goal.unitType][] for both a set line item or a
-   * prospective one.
+   * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+   * both a set line item or a prospective one.
    * </pre>
    *
    * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -307,8 +307,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The unit with which the goal or cap of the LineItem is defined. Will be the
-   * same value as [Goal.unitType][] for both a set line item or a
-   * prospective one.
+   * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+   * both a set line item or a prospective one.
    * </pre>
    *
    * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -329,10 +329,10 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that can
-   * be booked without affecting the delivery of any reserved line items.
-   * Exceeding this value won't cause an overbook, but lower priority line items
-   * may not run.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that can be booked
+   * without affecting the delivery of any reserved line items. Exceeding this
+   * value won't cause an overbook, but lower priority line items may not run.
    * </pre>
    *
    * <code>optional int64 available_units = 4;</code>
@@ -348,10 +348,10 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that can
-   * be booked without affecting the delivery of any reserved line items.
-   * Exceeding this value won't cause an overbook, but lower priority line items
-   * may not run.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that can be booked
+   * without affecting the delivery of any reserved line items. Exceeding this
+   * value won't cause an overbook, but lower priority line items may not run.
    * </pre>
    *
    * <code>optional int64 available_units = 4;</code>
@@ -370,8 +370,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that have already been
-   * served if the reservation is already running.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that have already
+   * been served if the reservation is already running.
    * </pre>
    *
    * <code>optional int64 delivered_units = 5;</code>
@@ -387,8 +388,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that have already been
-   * served if the reservation is already running.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that have already
+   * been served if the reservation is already running.
    * </pre>
    *
    * <code>optional int64 delivered_units = 5;</code>
@@ -407,8 +409,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that match the specified
-   * targeting and delivery settings.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that match the
+   * specified targeting and delivery settings.
    * </pre>
    *
    * <code>optional int64 matched_units = 6;</code>
@@ -424,8 +427,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The number of units, defined by [Goal.unitType][], that match the specified
-   * targeting and delivery settings.
+   * The number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that match the
+   * specified targeting and delivery settings.
    * </pre>
    *
    * <code>optional int64 matched_units = 6;</code>
@@ -444,7 +448,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The maximum number of units, defined by [Goal.unitType][], that could be
+   * The maximum number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that could be
    * booked by taking inventory away from lower priority line items and some
    * same priority line items.
    *
@@ -465,7 +470,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The maximum number of units, defined by [Goal.unitType][], that could be
+   * The maximum number of units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that could be
    * booked by taking inventory away from lower priority line items and some
    * same priority line items.
    *
@@ -489,7 +495,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The number of reserved units, defined by [Goal.unitType][], requested. This
+   * The number of reserved units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], requested. This
    * can be an absolute or percentage value.
    * </pre>
    *
@@ -506,7 +513,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The number of reserved units, defined by [Goal.unitType][], requested. This
+   * The number of reserved units, defined by
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], requested. This
    * can be an absolute or percentage value.
    * </pre>
    *
@@ -529,7 +537,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The breakdowns for each time window defined in
-   * [ForecastBreakdownOptions.timeWindows][].
+   * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
    *
    * If no breakdown was requested through
    * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -548,7 +556,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The breakdowns for each time window defined in
-   * [ForecastBreakdownOptions.timeWindows][].
+   * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
    *
    * If no breakdown was requested through
    * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -568,7 +576,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The breakdowns for each time window defined in
-   * [ForecastBreakdownOptions.timeWindows][].
+   * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
    *
    * If no breakdown was requested through
    * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -587,7 +595,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The breakdowns for each time window defined in
-   * [ForecastBreakdownOptions.timeWindows][].
+   * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
    *
    * If no breakdown was requested through
    * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -606,7 +614,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The breakdowns for each time window defined in
-   * [ForecastBreakdownOptions.timeWindows][].
+   * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
    *
    * If no breakdown was requested through
    * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2174,8 +2182,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The unit with which the goal or cap of the LineItem is defined. Will be the
-     * same value as [Goal.unitType][] for both a set line item or a
-     * prospective one.
+     * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+     * both a set line item or a prospective one.
      * </pre>
      *
      * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -2192,8 +2200,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The unit with which the goal or cap of the LineItem is defined. Will be the
-     * same value as [Goal.unitType][] for both a set line item or a
-     * prospective one.
+     * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+     * both a set line item or a prospective one.
      * </pre>
      *
      * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -2210,8 +2218,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The unit with which the goal or cap of the LineItem is defined. Will be the
-     * same value as [Goal.unitType][] for both a set line item or a
-     * prospective one.
+     * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+     * both a set line item or a prospective one.
      * </pre>
      *
      * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -2231,8 +2239,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The unit with which the goal or cap of the LineItem is defined. Will be the
-     * same value as [Goal.unitType][] for both a set line item or a
-     * prospective one.
+     * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+     * both a set line item or a prospective one.
      * </pre>
      *
      * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -2253,8 +2261,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The unit with which the goal or cap of the LineItem is defined. Will be the
-     * same value as [Goal.unitType][] for both a set line item or a
-     * prospective one.
+     * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+     * both a set line item or a prospective one.
      * </pre>
      *
      * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -2277,8 +2285,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The unit with which the goal or cap of the LineItem is defined. Will be the
-     * same value as [Goal.unitType][] for both a set line item or a
-     * prospective one.
+     * same value as [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] for
+     * both a set line item or a prospective one.
      * </pre>
      *
      * <code>optional .google.ads.admanager.v1.UnitTypeEnum.UnitType unit_type = 3;</code>
@@ -2298,10 +2306,10 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that can
-     * be booked without affecting the delivery of any reserved line items.
-     * Exceeding this value won't cause an overbook, but lower priority line items
-     * may not run.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that can be booked
+     * without affecting the delivery of any reserved line items. Exceeding this
+     * value won't cause an overbook, but lower priority line items may not run.
      * </pre>
      *
      * <code>optional int64 available_units = 4;</code>
@@ -2317,10 +2325,10 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that can
-     * be booked without affecting the delivery of any reserved line items.
-     * Exceeding this value won't cause an overbook, but lower priority line items
-     * may not run.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that can be booked
+     * without affecting the delivery of any reserved line items. Exceeding this
+     * value won't cause an overbook, but lower priority line items may not run.
      * </pre>
      *
      * <code>optional int64 available_units = 4;</code>
@@ -2336,10 +2344,10 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that can
-     * be booked without affecting the delivery of any reserved line items.
-     * Exceeding this value won't cause an overbook, but lower priority line items
-     * may not run.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that can be booked
+     * without affecting the delivery of any reserved line items. Exceeding this
+     * value won't cause an overbook, but lower priority line items may not run.
      * </pre>
      *
      * <code>optional int64 available_units = 4;</code>
@@ -2359,10 +2367,10 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that can
-     * be booked without affecting the delivery of any reserved line items.
-     * Exceeding this value won't cause an overbook, but lower priority line items
-     * may not run.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that can be booked
+     * without affecting the delivery of any reserved line items. Exceeding this
+     * value won't cause an overbook, but lower priority line items may not run.
      * </pre>
      *
      * <code>optional int64 available_units = 4;</code>
@@ -2382,8 +2390,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that have already been
-     * served if the reservation is already running.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that have already
+     * been served if the reservation is already running.
      * </pre>
      *
      * <code>optional int64 delivered_units = 5;</code>
@@ -2399,8 +2408,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that have already been
-     * served if the reservation is already running.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that have already
+     * been served if the reservation is already running.
      * </pre>
      *
      * <code>optional int64 delivered_units = 5;</code>
@@ -2416,8 +2426,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that have already been
-     * served if the reservation is already running.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that have already
+     * been served if the reservation is already running.
      * </pre>
      *
      * <code>optional int64 delivered_units = 5;</code>
@@ -2437,8 +2448,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that have already been
-     * served if the reservation is already running.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that have already
+     * been served if the reservation is already running.
      * </pre>
      *
      * <code>optional int64 delivered_units = 5;</code>
@@ -2458,8 +2470,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that match the specified
-     * targeting and delivery settings.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that match the
+     * specified targeting and delivery settings.
      * </pre>
      *
      * <code>optional int64 matched_units = 6;</code>
@@ -2475,8 +2488,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that match the specified
-     * targeting and delivery settings.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that match the
+     * specified targeting and delivery settings.
      * </pre>
      *
      * <code>optional int64 matched_units = 6;</code>
@@ -2492,8 +2506,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that match the specified
-     * targeting and delivery settings.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that match the
+     * specified targeting and delivery settings.
      * </pre>
      *
      * <code>optional int64 matched_units = 6;</code>
@@ -2513,8 +2528,9 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of units, defined by [Goal.unitType][], that match the specified
-     * targeting and delivery settings.
+     * The number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that match the
+     * specified targeting and delivery settings.
      * </pre>
      *
      * <code>optional int64 matched_units = 6;</code>
@@ -2534,7 +2550,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The maximum number of units, defined by [Goal.unitType][], that could be
+     * The maximum number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that could be
      * booked by taking inventory away from lower priority line items and some
      * same priority line items.
      *
@@ -2555,7 +2572,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The maximum number of units, defined by [Goal.unitType][], that could be
+     * The maximum number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that could be
      * booked by taking inventory away from lower priority line items and some
      * same priority line items.
      *
@@ -2576,7 +2594,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The maximum number of units, defined by [Goal.unitType][], that could be
+     * The maximum number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that could be
      * booked by taking inventory away from lower priority line items and some
      * same priority line items.
      *
@@ -2601,7 +2620,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The maximum number of units, defined by [Goal.unitType][], that could be
+     * The maximum number of units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], that could be
      * booked by taking inventory away from lower priority line items and some
      * same priority line items.
      *
@@ -2626,7 +2646,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of reserved units, defined by [Goal.unitType][], requested. This
+     * The number of reserved units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], requested. This
      * can be an absolute or percentage value.
      * </pre>
      *
@@ -2643,7 +2664,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of reserved units, defined by [Goal.unitType][], requested. This
+     * The number of reserved units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], requested. This
      * can be an absolute or percentage value.
      * </pre>
      *
@@ -2660,7 +2682,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of reserved units, defined by [Goal.unitType][], requested. This
+     * The number of reserved units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], requested. This
      * can be an absolute or percentage value.
      * </pre>
      *
@@ -2681,7 +2704,8 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The number of reserved units, defined by [Goal.unitType][], requested. This
+     * The number of reserved units, defined by
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type], requested. This
      * can be an absolute or percentage value.
      * </pre>
      *
@@ -2718,7 +2742,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2740,7 +2764,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2762,7 +2786,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2784,7 +2808,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2812,7 +2836,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2838,7 +2862,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2866,7 +2890,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2894,7 +2918,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2920,7 +2944,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2946,7 +2970,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2972,7 +2996,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -2997,7 +3021,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -3022,7 +3046,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -3040,7 +3064,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -3063,7 +3087,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -3086,7 +3110,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -3105,7 +3129,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],
@@ -3124,7 +3148,7 @@ public final class AvailabilityForecast extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * The breakdowns for each time window defined in
-     * [ForecastBreakdownOptions.timeWindows][].
+     * [ForecastBreakdownOptions.timeWindows][google.ads.admanager.v1.ForecastBreakdownOptions.time_windows].
      *
      * If no breakdown was requested through
      * [AvailabilityForecastOptions.breakdown][google.ads.admanager.v1.AvailabilityForecastOptions.breakdown],

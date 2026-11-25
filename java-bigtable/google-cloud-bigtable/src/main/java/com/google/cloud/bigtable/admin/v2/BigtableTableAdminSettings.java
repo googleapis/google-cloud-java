@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ChannelPoolSettings;
@@ -30,7 +31,10 @@ import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
 /**
- * Settings class to configure an instance of {@link BigtableTableAdminClient}.
+ * This class is obsolete. For the recommended proto-based approach, please see {@link
+ * BaseBigtableTableAdminSettings}.
+ *
+ * <p>Settings class to configure an instance of {@link BigtableTableAdminClient}.
  *
  * <p>It must be configured with a project ID and instance ID.
  *
@@ -50,6 +54,7 @@ import javax.annotation.Nullable;
  * BigtableTableAdminSettings tableAdminSettings = tableAdminSettingsBuilder.build();
  * }</pre>
  */
+@ObsoleteApi("Use BaseBigtableTableAdminSettings instead.")
 public final class BigtableTableAdminSettings {
 
   private static final Logger LOGGER = Logger.getLogger(BigtableTableAdminSettings.class.getName());

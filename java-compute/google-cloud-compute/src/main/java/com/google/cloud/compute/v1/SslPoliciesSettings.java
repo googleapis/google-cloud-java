@@ -138,6 +138,11 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
     return ((SslPoliciesStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicySslPolicyRequest, Policy> getIamPolicySettings() {
+    return ((SslPoliciesStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertSslPolicyRequest, Operation> insertSettings() {
     return ((SslPoliciesStubSettings) getStubSettings()).insertSettings();
@@ -171,6 +176,17 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
   public OperationCallSettings<PatchSslPolicyRequest, Operation, Operation>
       patchOperationSettings() {
     return ((SslPoliciesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicySslPolicyRequest, Policy> setIamPolicySettings() {
+    return ((SslPoliciesStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((SslPoliciesStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final SslPoliciesSettings create(SslPoliciesStubSettings stub) throws IOException {
@@ -294,6 +310,11 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
       return getStubSettingsBuilder().getSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicySslPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
     /** Returns the builder for the settings used for calls to insert. */
     public UnaryCallSettings.Builder<InsertSslPolicyRequest, Operation> insertSettings() {
       return getStubSettingsBuilder().insertSettings();
@@ -327,6 +348,17 @@ public class SslPoliciesSettings extends ClientSettings<SslPoliciesSettings> {
     public OperationCallSettings.Builder<PatchSslPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicySslPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsSslPolicyRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

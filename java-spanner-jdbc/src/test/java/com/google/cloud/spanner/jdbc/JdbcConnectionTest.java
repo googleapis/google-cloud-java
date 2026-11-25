@@ -44,6 +44,7 @@ import com.google.cloud.spanner.connection.ConnectionImplTest;
 import com.google.cloud.spanner.connection.ConnectionOptions;
 import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
 import com.google.rpc.Code;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import io.opentelemetry.api.OpenTelemetry;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -88,6 +89,8 @@ public class JdbcConnectionTest {
     when(spanner.getOptions()).thenReturn(spannerOptions);
     when(spannerOptions.getOpenTelemetry()).thenReturn(OpenTelemetry.noop());
     when(spannerConnection.getDialect()).thenReturn(dialect);
+    when(spannerConnection.getDatabaseClient().getDatabaseDefaultIsolationLevel())
+        .thenReturn(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED);
     when(options.getConnection()).thenReturn(spannerConnection);
     when(options.getDatabaseId()).thenReturn(DatabaseId.of("project", "instance", "database"));
     return new JdbcConnection(
@@ -398,6 +401,17 @@ public class JdbcConnectionTest {
           assertEquals(Code.UNIMPLEMENTED, spannerException.getCode());
         }
       }
+    }
+  }
+
+  @Test
+  public void testUnrecognizedDatabaseDefaultIsolationLevel() throws SQLException {
+    try (JdbcConnection connection = createConnection(mockOptions())) {
+      when(connection.getDatabaseClient().getDatabaseDefaultIsolationLevel())
+          .thenReturn(IsolationLevel.UNRECOGNIZED);
+      SQLException exception =
+          assertThrows(SQLException.class, connection::getTransactionIsolation);
+      assertEquals(Code.FAILED_PRECONDITION, ((JdbcSqlException) exception).getCode());
     }
   }
 
