@@ -67,6 +67,8 @@ final class BigQueryJdbcUrlUtility {
   static final String DEFAULT_QUERY_DIALECT_VALUE = "SQL";
   static final String UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME = "universeDomain";
   static final String DEFAULT_UNIVERSE_DOMAIN_VALUE = "googleapis.com";
+  static final String GOOGLE_CLOUD_UNIVERSE_DOMAIN_ENV_VAR = "GOOGLE_CLOUD_UNIVERSE_DOMAIN";
+  private static final String STS_TOKEN_URI_FORMAT = "https://sts.%s/v1/token";
   static final String PROJECT_ID_PROPERTY_NAME = "ProjectId";
   static final String DEFAULT_DATASET_PROPERTY_NAME = "DefaultDataset";
   static final String OAUTH_TYPE_PROPERTY_NAME = "OAuthType";
@@ -377,8 +379,8 @@ final class BigQueryJdbcUrlUtility {
                   BigQueryConnectionProperty.newBuilder()
                       .setName(UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)
                       .setDescription(
-                          "The name of the partner-operated cloud which is a new instance of Google"
-                              + " production, known as a Trusted Partner Cloud universe.")
+                          "The universe domain for the target cloud environment. Defaults to"
+                              + " googleapis.com.")
                       .setDefaultValue(DEFAULT_UNIVERSE_DOMAIN_VALUE)
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
@@ -972,5 +974,43 @@ final class BigQueryJdbcUrlUtility {
     }
 
     return DatasetId.of(trimmed);
+  }
+
+  /**
+   * Reads {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN} from the environment. Returns {@code null} when the
+   * variable is unset, or {@code googleapis.com} when set to an empty/whitespace string so callers
+   * override GAX EndpointContext's raw {@code System.getenv} read instead of producing an empty
+   * host.
+   */
+  static String getEnvUniverseDomain() {
+    return resolveEnvUniverseDomain(readRawEnvUniverseDomain());
+  }
+
+  static String readRawEnvUniverseDomain() {
+    return System.getenv(GOOGLE_CLOUD_UNIVERSE_DOMAIN_ENV_VAR);
+  }
+
+  static String resolveEnvUniverseDomain(String rawEnvValue) {
+    if (rawEnvValue == null) {
+      return null;
+    }
+    String trimmed = rawEnvValue.trim();
+    return trimmed.isEmpty() ? DEFAULT_UNIVERSE_DOMAIN_VALUE : trimmed;
+  }
+
+  /** Trims a universe domain string and normalizes empty/whitespace values to {@code null}. */
+  static String normalizeUniverseDomain(String universeDomain) {
+    if (universeDomain == null) {
+      return null;
+    }
+    String trimmed = universeDomain.trim();
+    return trimmed.isEmpty() ? null : trimmed;
+  }
+
+  /** Derives the Security Token Service (STS) token URI from the resolved universe domain. */
+  static String formatByoidTokenUri(String universeDomain) {
+    String normalized = normalizeUniverseDomain(universeDomain);
+    String domain = normalized != null ? normalized : DEFAULT_UNIVERSE_DOMAIN_VALUE;
+    return String.format(STS_TOKEN_URI_FORMAT, domain);
   }
 }

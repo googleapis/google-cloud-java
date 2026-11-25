@@ -41,6 +41,7 @@
     <bigtable.directpath-admin-endpoint/>
     <bigtable.internal.client-config-override-use-default>false</bigtable.internal.client-config-override-use-default>
     <bigtable.internal.client-config-override/>
+    <bigtable.expected-protocol/>
 
     <!-- Number of JVMs used to run the integration tests concurrently. The ITs are almost entirely
      RPC bound, so this can be raised well above the core count. Override on the commandline via
@@ -541,6 +542,41 @@
     </profile>
 
     <profile>
+      <id>bigtable-admin-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>admin-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.admin.v2.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-admin-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/admin-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
       <id>bigtable-prod-it</id>
       <build>
         <plugins>
@@ -563,7 +599,7 @@
                     <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
                   </systemPropertyVariables>
                   <includes>
-                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
                   <reportsDirectory>${project.build.directory}/failsafe-reports/prod-it</reportsDirectory>
@@ -576,10 +612,20 @@
     </profile>
 
     <profile>
+      <id>bigtable-classic-it</id>
+      <properties>
+        <bigtable.internal.client-config-override-use-default>true</bigtable.internal.client-config-override-use-default>
+        <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 0.0 } } }</bigtable.internal.client-config-override>
+        <bigtable.expected-protocol>CLASSIC</bigtable.expected-protocol>
+      </properties>
+    </profile>
+
+    <profile>
       <id>bigtable-session-it</id>
       <properties>
         <bigtable.internal.client-config-override-use-default>true</bigtable.internal.client-config-override-use-default>
         <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 1.0 } } }</bigtable.internal.client-config-override>
+        <bigtable.expected-protocol>SESSION</bigtable.expected-protocol>
       </properties>
     </profile>
 
@@ -784,6 +830,7 @@
             <java.util.logging.config.file>${java-log-config}</java.util.logging.config.file>
             <bigtable.internal.client-config-override-use-default>${bigtable.internal.client-config-override-use-default}</bigtable.internal.client-config-override-use-default>
             <bigtable.internal.client-config-override>${bigtable.internal.client-config-override}</bigtable.internal.client-config-override>
+            <bigtable.expected-protocol>${bigtable.expected-protocol}</bigtable.expected-protocol>
           </systemPropertyVariables>
         </configuration>
       </plugin>

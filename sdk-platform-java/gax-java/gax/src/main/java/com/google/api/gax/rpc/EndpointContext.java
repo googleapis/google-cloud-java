@@ -32,6 +32,7 @@ package com.google.api.gax.rpc;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsProvider;
@@ -41,6 +42,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.net.HostAndPort;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -162,6 +164,9 @@ public abstract class EndpointContext {
    * implementation of the StatusCode). This method is scoped to be internal and should be not be
    * accessed by users.
    *
+   * <p>Universe domain validation is skipped for {@link ApiKeyCredentials} because API keys do not
+   * carry universe domain metadata and are expected to match the configured universe domain.
+   *
    * @param credentials Auth Library Credentials
    * @param invalidUniverseDomainStatusCode Transport-specific Status Code to be returned if the
    *     Universe Domain is invalid. For both transports, this is defined to be Unauthorized.
@@ -173,6 +178,12 @@ public abstract class EndpointContext {
       throws IOException {
     if (usingGDCH()) {
       // GDC-H has no universe domain, return
+      return;
+    }
+    // Client-side universe domain configuration is already validated in Builder#build().
+    // API keys carry no universe domain metadata, so callers are responsible for ensuring the
+    // API key belongs to the configured universe domain.
+    if (credentials instanceof ApiKeyCredentials) {
       return;
     }
     // (TODO: b/349488459) - Disable automatic requests to MDS until 01/2025
@@ -385,8 +396,27 @@ public abstract class EndpointContext {
         return false;
       }
 
-      // mTLS via S2A is not supported in any universe other than googleapis.com.
-      return mtlsEndpoint().contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
+      // mTLS via S2A is not supported in any universe other than googleapis.com. Check
+      // resolvedUniverseDomain() first because generated StubSettings keep mtlsEndpoint set to
+      // <service>.mtls.googleapis.com:443 even when configured for another universe.
+      if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(resolvedUniverseDomain())) {
+        throw new IllegalArgumentException(
+            "S2A is not supported in any universe other than googleapis.com");
+      }
+
+      return isGoogleDefaultUniverseEndpoint(mtlsEndpoint());
+    }
+
+    /**
+     * Checks that {@code endpoint}'s parsed host is a {@code .googleapis.com} subdomain, rather
+     * than a substring match on the raw endpoint string.
+     */
+    private boolean isGoogleDefaultUniverseEndpoint(String endpoint) {
+      String host = parseServerAddress(endpoint);
+      if (Strings.isNullOrEmpty(host)) {
+        return false;
+      }
+      return host.toLowerCase(Locale.ROOT).endsWith("." + Credentials.GOOGLE_DEFAULT_UNIVERSE);
     }
 
     private @Nullable String parseServerAddress(String endpoint) {

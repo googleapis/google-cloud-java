@@ -33,12 +33,12 @@ import java.util.Set;
 /**
  * Datastore service exception.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud
- *     Datastore error codes</a>
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/concepts/errors#error_codes">Google
+ *     Cloud Datastore error codes</a>
  */
 public final class DatastoreException extends BaseHttpServiceException {
 
-  // see https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes
+  // see https://docs.cloud.google.com/datastore/docs/concepts/errors#error_codes
   private static final Set<Error> RETRYABLE_ERRORS =
       ImmutableSet.of(
           new Error(10, "ABORTED", false),

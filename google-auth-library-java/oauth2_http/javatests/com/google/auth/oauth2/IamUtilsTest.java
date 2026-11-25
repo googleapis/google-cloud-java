@@ -51,6 +51,14 @@ class IamUtilsTest {
 
   private static final String CLIENT_EMAIL =
       "36680232662-vrd7ji19qe3nelgchd0ah2csanun6bnr@developer.gserviceaccount.com";
+  private static final String SIGN_BLOB_URL =
+      String.format(
+          IamUtils.IAM_SIGN_BLOB_ENDPOINT_FORMAT,
+          Credentials.GOOGLE_DEFAULT_UNIVERSE,
+          CLIENT_EMAIL);
+  private static final String ID_TOKEN_URL =
+      String.format(
+          IamUtils.IAM_ID_TOKEN_ENDPOINT_FORMAT, Credentials.GOOGLE_DEFAULT_UNIVERSE, CLIENT_EMAIL);
 
   private ServiceAccountCredentials credentials;
 
@@ -77,9 +85,8 @@ class IamUtilsTest {
 
     byte[] signature =
         IamUtils.sign(
-            CLIENT_EMAIL,
+            SIGN_BLOB_URL,
             credentials,
-            Credentials.GOOGLE_DEFAULT_UNIVERSE,
             transportFactory.getTransport(),
             expectedSignature,
             ImmutableMap.of());
@@ -109,9 +116,8 @@ class IamUtilsTest {
 
     byte[] signature =
         IamUtils.sign(
-            CLIENT_EMAIL,
+            SIGN_BLOB_URL,
             credentials,
-            Credentials.GOOGLE_DEFAULT_UNIVERSE,
             transportFactory.getTransport(),
             expectedSignature,
             ImmutableMap.of());
@@ -146,9 +152,8 @@ class IamUtilsTest {
 
     byte[] signature =
         IamUtils.sign(
-            CLIENT_EMAIL,
+            SIGN_BLOB_URL,
             credentials,
-            Credentials.GOOGLE_DEFAULT_UNIVERSE,
             transportFactory.getTransport(),
             expectedSignature,
             ImmutableMap.of());
@@ -189,9 +194,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transportFactory.getTransport(),
                     expectedSignature,
                     ImmutableMap.of()));
@@ -225,9 +229,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transportFactory.getTransport(),
                     expectedSignature,
                     ImmutableMap.of()));
@@ -262,9 +265,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transport,
                     new byte[] {0xD, 0xE, 0xA, 0xD},
                     ImmutableMap.of()));
@@ -292,14 +294,13 @@ class IamUtilsTest {
             IOException.class,
             () ->
                 IamUtils.getIdToken(
-                    CLIENT_EMAIL,
+                    ID_TOKEN_URL,
                     credentials,
                     transport,
                     "https://example.com",
                     false,
                     ImmutableMap.of(),
-                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT));
     assertEquals("Error code 401 trying to getIDToken: Unauthorized", exception.getMessage());
     Mockito.verify(credentials, Mockito.never()).refresh();
   }
@@ -320,14 +321,13 @@ class IamUtilsTest {
             IOException.class,
             () ->
                 IamUtils.getIdToken(
-                    CLIENT_EMAIL,
+                    ID_TOKEN_URL,
                     credentials,
                     transport,
                     "https://example.com",
                     false,
                     ImmutableMap.of(),
-                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT));
     assertEquals("Error code 403 trying to getIDToken: Permission denied", exception.getMessage());
   }
 
@@ -347,9 +347,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transport,
                     new byte[] {0xD, 0xE, 0xA, 0xD},
                     ImmutableMap.of()));
@@ -372,9 +371,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transport,
                     new byte[] {0xD, 0xE, 0xA, 0xD},
                     ImmutableMap.of()));
@@ -398,14 +396,13 @@ class IamUtilsTest {
             IOException.class,
             () ->
                 IamUtils.getIdToken(
-                    CLIENT_EMAIL,
+                    ID_TOKEN_URL,
                     credentials,
                     transport,
                     "https://example.com",
                     false,
                     ImmutableMap.of(),
-                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT));
     assertEquals(
         "Error code 403 trying to getIDToken: (no error details in the response)",
         exception.getMessage());
@@ -427,9 +424,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transport,
                     new byte[] {0xD, 0xE, 0xA, 0xD},
                     ImmutableMap.of()));
@@ -457,9 +453,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transport,
                     new byte[] {0xD, 0xE, 0xA, 0xD},
                     ImmutableMap.of()));
@@ -486,9 +481,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transport,
                     new byte[] {0xD, 0xE, 0xA, 0xD},
                     ImmutableMap.of()));
@@ -515,9 +509,8 @@ class IamUtilsTest {
             ServiceAccountSigner.SigningException.class,
             () ->
                 IamUtils.sign(
-                    CLIENT_EMAIL,
+                    SIGN_BLOB_URL,
                     credentials,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE,
                     transport,
                     new byte[] {0xD, 0xE, 0xA, 0xD},
                     ImmutableMap.of()));
@@ -544,14 +537,13 @@ class IamUtilsTest {
             IOException.class,
             () ->
                 IamUtils.getIdToken(
-                    CLIENT_EMAIL,
+                    ID_TOKEN_URL,
                     credentials,
                     transport,
                     "https://example.com",
                     false,
                     ImmutableMap.of(),
-                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT));
     assertEquals("Error code 403 trying to getIDToken: Forbidden", exception.getMessage());
   }
 
@@ -572,14 +564,13 @@ class IamUtilsTest {
             IOException.class,
             () ->
                 IamUtils.getIdToken(
-                    CLIENT_EMAIL,
+                    ID_TOKEN_URL,
                     credentials,
                     transport,
                     "https://example.com",
                     false,
                     ImmutableMap.of(),
-                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT));
     assertEquals("Error code 403 trying to getIDToken: Forbidden", exception.getMessage());
   }
 
@@ -600,14 +591,13 @@ class IamUtilsTest {
             IOException.class,
             () ->
                 IamUtils.getIdToken(
-                    CLIENT_EMAIL,
+                    ID_TOKEN_URL,
                     credentials,
                     transport,
                     "https://example.com",
                     false,
                     ImmutableMap.of(),
-                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT,
-                    Credentials.GOOGLE_DEFAULT_UNIVERSE));
+                    CredentialTypeForMetrics.SERVICE_ACCOUNT_CREDENTIALS_AT));
     assertEquals("Error code 403 trying to getIDToken: Forbidden", exception.getMessage());
   }
 }

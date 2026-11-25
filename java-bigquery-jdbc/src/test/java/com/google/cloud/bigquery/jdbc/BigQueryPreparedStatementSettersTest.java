@@ -23,14 +23,19 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
@@ -77,7 +82,7 @@ public class BigQueryPreparedStatementSettersTest {
     when(connection.getConnectionId()).thenReturn("test-connection-id");
     doReturn(BigQueryConnection.SessionState.empty()).when(connection).getSessionStateSnapshot();
 
-    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?");
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?", false);
   }
 
   @Test
@@ -294,7 +299,7 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testSetObjectWithJavaTime() throws Exception {
-    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?, ?");
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?, ?", false);
     // 1582-10-10 does not exist in java.sql's calendar; the time has sub-second digits.
     preparedStatement.setObject(1, LocalDate.of(1582, 10, 10));
     preparedStatement.setObject(2, LocalTime.of(12, 34, 56, 789_123_000));
@@ -388,7 +393,7 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testInferredParameterTypeKnownBeforeSetters() throws Exception {
-    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?");
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?", false);
 
     // 1. Inferred type is known immediately without calling setInt/setString
     preparedStatement.parameterHandler.setInferredParameterType(1, StandardSQLTypeName.INT64);
@@ -426,7 +431,7 @@ public class BigQueryPreparedStatementSettersTest {
         .when(picosConnection)
         .getQueryDialect();
     BigQueryPreparedStatement ps =
-        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
+        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)", false);
 
     ps.setObject(1, "2024-01-01 12:34:56.123456789012", Types.TIMESTAMP);
     assertEquals(Timestamp.class, ps.parameterHandler.getType(1));
@@ -453,7 +458,7 @@ public class BigQueryPreparedStatementSettersTest {
         .when(picosConnection)
         .getQueryDialect();
     BigQueryPreparedStatement ps =
-        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
+        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)", false);
 
     // Built from an Instant so the expected UTC rendering does not depend on the JVM zone.
     Timestamp ts = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
@@ -479,7 +484,7 @@ public class BigQueryPreparedStatementSettersTest {
         .when(nonPicosConnection)
         .getQueryDialect();
     BigQueryPreparedStatement ps =
-        new BigQueryPreparedStatement(nonPicosConnection, "INSERT INTO t (col) VALUES (?)");
+        new BigQueryPreparedStatement(nonPicosConnection, "INSERT INTO t (col) VALUES (?)", false);
 
     Timestamp ts = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
     ps.setTimestamp(1, ts);
@@ -503,7 +508,7 @@ public class BigQueryPreparedStatementSettersTest {
         .when(picosConnection)
         .getQueryDialect();
     BigQueryPreparedStatement ps =
-        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
+        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)", false);
 
     ps.setTimestamp(1, Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z")));
     ps.addBatch();
@@ -550,5 +555,28 @@ public class BigQueryPreparedStatementSettersTest {
           () -> TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING),
           times(3));
     }
+  }
+
+  @Test
+  public void testSkipDryRun_bypassesDryRunAndResolvesParametersFromSql() throws SQLException {
+    BigQuery mockBigQuery = mock(BigQuery.class);
+    when(connection.getBigQuery()).thenReturn(mockBigQuery);
+
+    BigQueryPreparedStatement skipDryRunStmt =
+        new BigQueryPreparedStatement(connection, "SELECT ?, ?", true);
+    verify(mockBigQuery, never()).create(any(JobInfo.class));
+    assertEquals(2, skipDryRunStmt.parameterCount);
+
+    skipDryRunStmt.setString(1, "first");
+    skipDryRunStmt.setString(2, "second");
+    QueryJobConfiguration.Builder configBuilder = QueryJobConfiguration.newBuilder("SELECT ?, ?");
+    skipDryRunStmt.parameterHandler.configureParameters(configBuilder);
+    QueryJobConfiguration config = configBuilder.build();
+    assertEquals(2, config.getPositionalParameters().size());
+    assertEquals("first", config.getPositionalParameters().get(0).getValue());
+    assertEquals("second", config.getPositionalParameters().get(1).getValue());
+
+    new BigQueryPreparedStatement(connection, "SELECT ?", false);
+    verify(mockBigQuery).create(any(JobInfo.class));
   }
 }

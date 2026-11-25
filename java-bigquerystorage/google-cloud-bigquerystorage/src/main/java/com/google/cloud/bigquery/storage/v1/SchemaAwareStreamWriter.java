@@ -97,6 +97,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
         builder.credentialsProvider,
         builder.executorProvider,
         builder.endpoint,
+        builder.universeDomain,
         builder.flowControlSettings,
         builder.traceId,
         builder.compressorName,
@@ -318,6 +319,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       @Nullable CredentialsProvider credentialsProvider,
       @Nullable ExecutorProvider executorProvider,
       @Nullable String endpoint,
+      @Nullable String universeDomain,
       @Nullable FlowControlSettings flowControlSettings,
       @Nullable String traceId,
       @Nullable String compressorName,
@@ -333,6 +335,9 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     }
     if (endpoint != null) {
       streamWriterBuilder.setEndpoint(endpoint);
+    }
+    if (universeDomain != null) {
+      streamWriterBuilder.setUniverseDomain(universeDomain);
     }
     if (traceId != null) {
       streamWriterBuilder.setTraceId(traceId);
@@ -363,10 +368,13 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
    * newBuilder that constructs a SchemaAwareStreamWriter builder with BigQuery client being
    * initialized by StreamWriter by default.
    *
-   * <p>The table schema passed in will be updated automatically when there is a schema update
-   * event. When used for Writer creation, it should be the latest schema. So when you are trying to
-   * reuse a stream, you should use Builder newBuilder( String streamOrTableName,
-   * BigQueryWriteClient client) instead, so the created Writer will be based on a fresh schema.
+   * <p>Automatic schema updates are disabled when an explicit {@link TableSchema} is passed in; the
+   * caller is responsible for providing the latest schema and recreating the writer if the table
+   * schema changes. To enable automatic schema refresh on schema update events, use {@link
+   * #newBuilder(String, BigQueryWriteClient, ToProtoConverter)} instead. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/write-api-best-practices#handle_schema_updates">Handle
+   * schema updates</a> for how BigQuery detects out-of-band table schema changes and how automatic
+   * writer reconnection works.
    *
    * @param streamOrTableName name of the stream that must follow
    *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+" or table name
@@ -386,10 +394,13 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
   /**
    * newBuilder that constructs a SchemaAwareStreamWriter builder.
    *
-   * <p>The table schema passed in will be updated automatically when there is a schema update
-   * event. When used for Writer creation, it should be the latest schema. So when you are trying to
-   * reuse a stream, you should use Builder newBuilder( String streamOrTableName,
-   * BigQueryWriteClient client) instead, so the created Writer will be based on a fresh schema.
+   * <p>Automatic schema updates are disabled when an explicit {@link TableSchema} is passed in; the
+   * caller is responsible for providing the latest schema and recreating the writer if the table
+   * schema changes. To enable automatic schema refresh on schema update events, use {@link
+   * #newBuilder(String, BigQueryWriteClient, ToProtoConverter)} instead. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/write-api-best-practices#handle_schema_updates">Handle
+   * schema updates</a> for how BigQuery detects out-of-band table schema changes and how automatic
+   * writer reconnection works.
    *
    * @param streamOrTableName name of the stream that must follow
    *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+"
@@ -462,6 +473,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
     private ExecutorProvider executorProvider;
     private FlowControlSettings flowControlSettings;
     private String endpoint;
+    private String universeDomain;
     private String traceIdBase;
     private String traceId;
     private boolean ignoreUnknownFields = false;
@@ -603,6 +615,17 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
      */
     public Builder<T> setEndpoint(String endpoint) {
       this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
+      return this;
+    }
+
+    /**
+     * Setter for the underlying StreamWriter's universe domain.
+     *
+     * @param universeDomain the universe domain to use
+     * @return Builder
+     */
+    public Builder<T> setUniverseDomain(String universeDomain) {
+      this.universeDomain = universeDomain;
       return this;
     }
 

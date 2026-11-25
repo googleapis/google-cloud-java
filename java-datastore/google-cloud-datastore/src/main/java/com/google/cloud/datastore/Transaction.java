@@ -54,7 +54,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  * }
  * }</pre>
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/transactions">Google Cloud
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/concepts/transactions">Google Cloud
  *     Datastore transactions</a>
  *     <p><b> WARNING: This class maintains an internal state in terms of {@link
  *     java.util.LinkedHashMap} and {@link java.util.LinkedHashSet} which gets updated on every

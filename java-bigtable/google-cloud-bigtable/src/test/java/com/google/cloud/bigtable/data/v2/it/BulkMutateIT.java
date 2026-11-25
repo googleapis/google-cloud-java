@@ -155,8 +155,8 @@ public class BulkMutateIT {
         .withMessage(
             "Skipping testManyMutations on session path until the server supports dynamic"
                 + " heartbeats based on message payload")
-        .that(System.getProperty("bigtable.internal.client-config-override", ""))
-        .isEmpty();
+        .that(testEnvRule.env().isSessionsEnabled())
+        .isFalse();
 
     BigtableDataSettings settings = testEnvRule.env().getDataClientSettings();
     String rowPrefix = UUID.randomUUID().toString();
@@ -208,8 +208,8 @@ public class BulkMutateIT {
         .withMessage(
             "Skipping testManyMutationsOnAuthorizedView on session path until the server supports"
                 + " dynamic heartbeats based on message payload")
-        .that(System.getProperty("bigtable.internal.client-config-override", ""))
-        .isEmpty();
+        .that(testEnvRule.env().isSessionsEnabled())
+        .isFalse();
 
     AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
 

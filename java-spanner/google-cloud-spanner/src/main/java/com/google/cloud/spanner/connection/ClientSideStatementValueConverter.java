@@ -32,4 +32,12 @@ interface ClientSideStatementValueConverter<T> {
    * converted.
    */
   T convert(String value);
+
+  /**
+   * Returns {@code true} if the given non-null typed value is valid for properties using this
+   * converter.
+   */
+  default boolean isValid(T value) {
+    return true;
+  }
 }

@@ -35,6 +35,7 @@ import com.google.bigtable.v2.SampleRowKeysResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
@@ -135,7 +136,10 @@ public class BigtableTracerCallableTest {
         new EnhancedBigtableStub(
             settings.getStubSettings().getPerOpSettings(),
             BigtableClientContext.create(
-                settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder()));
+                settings.getStubSettings(),
+                Tags.getTagger(),
+                localStats.getStatsRecorder(),
+                MetricsImpl::createBuiltinOtel));
 
     // Create another server without injecting the server-timing header and another stub that
     // connects to it.
@@ -156,7 +160,8 @@ public class BigtableTracerCallableTest {
             BigtableClientContext.create(
                 noHeaderSettings.getStubSettings(),
                 Tags.getTagger(),
-                localStats.getStatsRecorder()));
+                localStats.getStatsRecorder(),
+                MetricsImpl::createBuiltinOtel));
   }
 
   @SuppressWarnings("deprecation")

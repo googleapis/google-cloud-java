@@ -37,6 +37,7 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
@@ -285,7 +286,7 @@ class ServiceOptionsTest {
       }
     }
 
-    private TestServiceOptions(Builder builder) {
+    TestServiceOptions(Builder builder) {
       super(
           TestServiceFactory.class,
           TestServiceRpcFactory.class,
@@ -628,6 +629,57 @@ class ServiceOptionsTest {
             .setCredentials(credentialsNotInGDU)
             .build();
     assertThat(options.hasValidUniverseDomain()).isTrue();
+  }
+
+  @Test
+  void testIsValidUniverseDomain_apiKeyCredentials_skipsValidation() throws IOException {
+    ApiKeyCredentials apiKeyCredentials = ApiKeyCredentials.create("test-api-key");
+    TestServiceOptions defaultOptions =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setHost("https://test.googleapis.com")
+            .setCredentials(apiKeyCredentials)
+            .build();
+    TestServiceOptions customOptions =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setHost("https://test.random.com")
+            .setUniverseDomain("random.com")
+            .setCredentials(apiKeyCredentials)
+            .build();
+
+    assertThat(defaultOptions.hasValidUniverseDomain()).isTrue();
+    assertThat(customOptions.hasValidUniverseDomain()).isTrue();
+  }
+
+  @Test
+  void testIsValidUniverseDomain_nullCredentials_defaultsToGdu() throws IOException {
+    TestServiceOptions defaultOptions =
+        new TestServiceOptions(
+            TestServiceOptions.newBuilder()
+                .setProjectId("project-id")
+                .setHost("https://test.googleapis.com")
+                .setCredentials(NoCredentials.getInstance())) {
+          @Override
+          public com.google.auth.Credentials getCredentials() {
+            return null;
+          }
+        };
+    TestServiceOptions customOptions =
+        new TestServiceOptions(
+            TestServiceOptions.newBuilder()
+                .setProjectId("project-id")
+                .setHost("https://test.random.com")
+                .setUniverseDomain("random.com")
+                .setCredentials(NoCredentials.getInstance())) {
+          @Override
+          public com.google.auth.Credentials getCredentials() {
+            return null;
+          }
+        };
+
+    assertThat(defaultOptions.hasValidUniverseDomain()).isTrue();
+    assertThat(customOptions.hasValidUniverseDomain()).isFalse();
   }
 
   @Test

@@ -108,8 +108,9 @@ import java.util.logging.SimpleFormatter;
  *   <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *       creating the default {@link MonitoredResource} (defaults to auto-detected resource type,
  *       else "global").
- *   <li>{@code com.google.cloud.logging.Synchronicity} the synchronicity of the write method to use
- *       to write logs to the Cloud Logging service (defaults to {@link Synchronicity#ASYNC}).
+ *   <li>{@code com.google.cloud.logging.LoggingHandler.synchronicity} the synchronicity of the
+ *       write method to use to write logs to the Cloud Logging service (defaults to {@link
+ *       Synchronicity#ASYNC}).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.autoPopulateMetadata} is a boolean flag that
  *       opts-out the population of the log entries metadata before the logs are sent to Cloud
  *       Logging (defaults to {@code true}).
@@ -126,9 +127,9 @@ import java.util.logging.SimpleFormatter;
  *       agent. If set to CLOUD_LOGGING, logs will be sent directly to the Google Cloud Logging API.
  * </ul>
  *
- * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
- * recursion when logging, use the {@link #addHandler(Logger, LoggingHandler)} method. Alternatively
- * you can add the handler via {@code logging.properties}. For example using the following line:
+ * <p>To add a {@code LoggingHandler} to an existing {@link Logger}, call {@link #addHandler(Logger,
+ * LoggingHandler)} or {@link Logger#addHandler(Handler)}. Alternatively you can add the handler via
+ * {@code logging.properties}. For example using the following line:
  *
  * <pre>
  * {@code com.example.mypackage.handlers=com.google.cloud.logging.LoggingHandler}
@@ -214,7 +215,7 @@ public class LoggingHandler extends Handler {
    * @param options options for the Cloud Logging service
    * @param monitoredResource the monitored resource to which log entries refer. If it is null then
    *     a default resource is created based on the project ID and deployment environment.
-   * @param enhancers List of {@link LoggingEnhancer} instances used to enhance any{@link LogEntry}
+   * @param enhancers List of {@link LoggingEnhancer} instances used to enhance any {@link LogEntry}
    *     instances built by this handler.
    */
   public LoggingHandler(
@@ -227,15 +228,17 @@ public class LoggingHandler extends Handler {
 
   /**
    * Creates a handler that publishes messages to Cloud Logging. Auto-population of the logs
-   * metadata can be opted-out in {@code options} argument or in the configuration file. At least
-   * one flag {@link LoggingOptions} or {@link LoggingConfig} has to be explicitly set to {@code
-   * false} in order to opt out the metadata auto-population.
+   * metadata can be opted-out in the {@code options} argument or via the {@code
+   * com.google.cloud.logging.LoggingHandler.autoPopulateMetadata} configuration property. At least
+   * one of {@link LoggingOptions#getAutoPopulateMetadata()} or the {@code logging.properties}
+   * property must be explicitly set to {@code false} in order to opt out of metadata
+   * auto-population.
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Cloud Logging service
    * @param monitoredResource the monitored resource to which log entries refer. If it is null then
    *     a default resource is created based on the project ID and deployment environment.
-   * @param enhancers List of {@link LoggingEnhancer} instances used to enhance any{@link LogEntry}
+   * @param enhancers List of {@link LoggingEnhancer} instances used to enhance any {@link LogEntry}
    *     instances built by this handler.
    * @param destination the log destination {@link LogDestinationName} (see 'logName' parameter in
    *     https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry)
@@ -433,7 +436,7 @@ public class LoggingHandler extends Handler {
     logging.setWriteSynchronicity(synchronicity);
   }
 
-  /** Get the flush log level. */
+  /** Returns the synchronicity of logging writes. */
   public Synchronicity getSynchronicity() {
     return logging.getWriteSynchronicity();
   }
@@ -462,7 +465,9 @@ public class LoggingHandler extends Handler {
     this.logTarget = value ? LogTarget.STDOUT : LogTarget.CLOUD_LOGGING;
   }
 
-  /*
+  /**
+   * Returns {@code true} if log output is redirected to {@link LogTarget#STDOUT}.
+   *
    * @deprecated Use {@link #getLogTarget()}.
    */
   @Deprecated
@@ -481,14 +486,14 @@ public class LoggingHandler extends Handler {
     this.logTarget = value;
   }
 
+  /** Returns the configured destination target for ingested logs. */
   public LogTarget getLogTarget() {
     return logTarget;
   }
 
   /**
-   * Adds the provided {@code LoggingHandler} to {@code logger}. Use this method to register Cloud
-   * Logging handlers instead of {@link Logger#addHandler(Handler)} to avoid infinite recursion when
-   * logging.
+   * Adds the provided {@code LoggingHandler} to {@code logger}. This convenience method delegates
+   * to {@link Logger#addHandler(Handler)}.
    */
   public static void addHandler(Logger logger, LoggingHandler handler) {
     logger.addHandler(handler);

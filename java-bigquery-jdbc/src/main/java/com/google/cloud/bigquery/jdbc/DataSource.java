@@ -1013,10 +1013,18 @@ public class DataSource implements javax.sql.DataSource {
     this.gcpTelemetryCredentials = gcpTelemetryCredentials;
   }
 
+  /** Returns the universe domain explicitly set via URL or setter, or {@code null} if omitted. */
   public String getUniverseDomain() {
-    return universeDomain != null
-        ? universeDomain
-        : BigQueryJdbcUrlUtility.DEFAULT_UNIVERSE_DOMAIN_VALUE;
+    return BigQueryJdbcUrlUtility.normalizeUniverseDomain(universeDomain);
+  }
+
+  /**
+   * Resolves the client-endpoint universe domain from the explicit URL/DataSource setting or {@code
+   * GOOGLE_CLOUD_UNIVERSE_DOMAIN}, returning {@code null} when neither is set.
+   */
+  String resolveUniverseDomain() {
+    String explicit = getUniverseDomain();
+    return explicit != null ? explicit : BigQueryJdbcUrlUtility.getEnvUniverseDomain();
   }
 
   public void setUniverseDomain(String universeDomain) {
@@ -1523,10 +1531,14 @@ public class DataSource implements javax.sql.DataSource {
     this.byoidSubjectTokenType = byoidSubjectTokenType;
   }
 
+  /**
+   * Returns the explicit BYOID token URI if configured; otherwise derives {@code
+   * https://sts.<universeDomain>/v1/token} from the explicit universe domain.
+   */
   public String getByoidTokenUri() {
     return byoidTokenUri != null
         ? byoidTokenUri
-        : BigQueryJdbcUrlUtility.DEFAULT_BYOID_TOKEN_URI_VALUE;
+        : BigQueryJdbcUrlUtility.formatByoidTokenUri(getUniverseDomain());
   }
 
   public void setByoidTokenUri(String byoidTokenUri) {

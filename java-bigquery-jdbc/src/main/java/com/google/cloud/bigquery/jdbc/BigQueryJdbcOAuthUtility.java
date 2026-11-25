@@ -90,6 +90,7 @@ final class BigQueryJdbcOAuthUtility {
       Arrays.asList(BIGQUERY_SCOPE, DRIVE_READONLY_SCOPE);
 
   private static final int USER_AUTH_TIMEOUT_MS = 120000;
+  private static final String EXTERNAL_ACCOUNT_TYPE = "external_account";
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcOAuthUtility.class.getName());
 
@@ -217,10 +218,8 @@ final class BigQueryJdbcOAuthUtility {
                 BigQueryJdbcUrlUtility.BYOID_SUBJECT_TOKEN_TYPE_PROPERTY_NAME,
                 ds.getByoidSubjectTokenType());
           }
-          if (ds.getByoidTokenUri() != null) {
-            oauthProperties.put(
-                BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME, ds.getByoidTokenUri());
-          }
+          oauthProperties.put(
+              BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME, ds.getByoidTokenUri());
 
           String universeDomain = ds.getUniverseDomain();
           if (universeDomain != null) {
@@ -387,8 +386,9 @@ final class BigQueryJdbcOAuthUtility {
         builder.setTokenServerUri(
             new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
       }
-      if (overrideProperties.containsKey(
-          BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
+      if (stream == null
+          && overrideProperties.containsKey(
+              BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
         builder.setUniverseDomain(
             overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
       }
@@ -630,22 +630,29 @@ final class BigQueryJdbcOAuthUtility {
         credentialsPath =
             authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME);
       } else {
+        // Synthesize an external_account JSON payload. token_url is always present here:
+        // DataSource.getByoidTokenUri() derives https://sts.<universeDomain>/v1/token from an
+        // explicit universeDomain when BYOID_TokenUri is omitted.
         jsonObject = new JsonObject();
+        jsonObject.addProperty("type", EXTERNAL_ACCOUNT_TYPE);
         for (String property : BigQueryJdbcUrlUtility.BYOID_PROPERTIES) {
+          if (authProperties.get(property) == null) {
+            continue;
+          }
           if (Objects.equals(
               property, BigQueryJdbcUrlUtility.BYOID_CREDENTIAL_SOURCE_PROPERTY_NAME)) {
             jsonObject.add(
                 BYOID_NAME_MAP.get(property),
                 JsonParser.parseString(authProperties.get(property)).getAsJsonObject());
-          } else if (authProperties.containsKey(property)) {
+          } else {
             jsonObject.addProperty(BYOID_NAME_MAP.get(property), authProperties.get(property));
           }
         }
-        if (authProperties.containsKey(
-            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME)) {
-          jsonObject.addProperty(
-              "universe_domain",
-              authProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
+        String byoidUniverseDomain =
+            BigQueryJdbcUrlUtility.normalizeUniverseDomain(
+                authProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
+        if (byoidUniverseDomain != null) {
+          jsonObject.addProperty("universe_domain", byoidUniverseDomain);
         }
       }
 

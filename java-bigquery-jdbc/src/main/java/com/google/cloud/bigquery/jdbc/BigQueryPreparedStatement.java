@@ -83,10 +83,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   Schema insertSchema = null; // Feeds the Storage Write API.
   private TableName insertTableName = null;
 
-  BigQueryPreparedStatement(BigQueryConnection connection, String query) throws SQLException {
+  BigQueryPreparedStatement(BigQueryConnection connection, String query, boolean skipDryRun)
+      throws SQLException {
     super(connection);
     this.currentQuery = query;
-    QueryStatistics queryStatistics = describeQueryQuietly();
+    QueryStatistics queryStatistics = skipDryRun ? null : describeQueryQuietly();
     this.parameterCount = resolveParameterCount(query, queryStatistics);
     this.parameterHandler =
         new BigQueryParameterHandler(this.parameterCount, this.isEnableTimestampPicos());

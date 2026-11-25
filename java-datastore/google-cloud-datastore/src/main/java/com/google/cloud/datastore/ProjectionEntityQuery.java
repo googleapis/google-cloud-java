@@ -20,7 +20,7 @@ package com.google.cloud.datastore;
  * An implementation of a Google Cloud Datastore projection entity query that can be constructed by
  * providing all the specific query elements.
  *
- * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore
+ * @see <a href="https://docs.cloud.google.com/datastore/docs/concepts/queries">Datastore
  *     queries</a>
  */
 public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntity> {

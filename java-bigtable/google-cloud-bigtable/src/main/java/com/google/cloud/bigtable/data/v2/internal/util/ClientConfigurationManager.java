@@ -212,6 +212,7 @@ public class ClientConfigurationManager implements AutoCloseable {
         Boolean.parseBoolean(sysProps.getProperty(OVERRIDE_USE_DEFAULT_SYS_PROP_KEY));
     this.overrideConfig =
         Optional.ofNullable(sysProps.getProperty(OVERRIDE_SYS_PROP_KEY))
+            .filter(str -> !str.trim().isEmpty())
             .map(
                 str -> {
                   try {
