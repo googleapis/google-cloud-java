@@ -17,19 +17,30 @@
 package com.google.cloud.firestore.spi.v1;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
+import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
+import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnauthenticatedException;
+import com.google.auth.Credentials;
+import com.google.cloud.firestore.FirestoreOpenTelemetryOptions;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.v1.FirestoreClient.ListDocumentsPagedResponse;
 import com.google.cloud.firestore.v1.FirestoreClient.PartitionQueryPagedResponse;
+import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.cloud.firestore.v1.stub.FirestoreStubSettings;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.BatchWriteRequest;
@@ -50,13 +61,28 @@ import com.google.firestore.v1.RunAggregationQueryResponse;
 import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.RunQueryResponse;
 import com.google.protobuf.Empty;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.net.URI;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import org.junit.Assume;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class GrpcFirestoreRpcTest {
+
+  private static final String PROJECT_ID = "test-project";
+  private static final String CUSTOM_UNIVERSE_DOMAIN = "s3nsapis.fr";
+  private static final String UNIVERSE_DOMAIN_ENV_VAR = "GOOGLE_CLOUD_UNIVERSE_DOMAIN";
 
   private static FirestoreStubSettings defaultStubSettings;
 
@@ -337,6 +363,393 @@ public class GrpcFirestoreRpcTest {
         }
       default:
         throw new Exception("Unexpected class " + aClassName);
+    }
+  }
+
+  private static void assumeNoEmulatorHostEnv() {
+    Assume.assumeTrue(
+        "FIRESTORE_EMULATOR_HOST must be unset", System.getenv("FIRESTORE_EMULATOR_HOST") == null);
+  }
+
+  @Test
+  public void universeDomainResolvesEndpointViaGax() throws Exception {
+    assumeNoEmulatorHostEnv();
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+            .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
+            .build();
+
+    FirestoreSettings settings = GrpcFirestoreRpc.createFirestoreSettings(options);
+    assertThat(settings.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+    assertThat(settings.getEndpoint()).isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
+    InstantiatingGrpcChannelProvider channelProvider =
+        (InstantiatingGrpcChannelProvider) settings.getTransportChannelProvider();
+    assertThat(channelProvider.needsEndpoint()).isTrue();
+    assertThat(channelProvider.getEndpoint()).isNull();
+
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(options);
+    try {
+      ClientContext clientContext = rpc.getClientContext();
+      assertThat(clientContext.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(clientContext.getEndpoint())
+          .isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
+      GrpcTransportChannel transportChannel =
+          (GrpcTransportChannel) clientContext.getTransportChannel();
+      assertThat(transportChannel.getChannel().authority())
+          .isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
+
+      FirestoreStubSettings stubSettings = FirestoreStubSettings.newBuilder(clientContext).build();
+      assertThat(stubSettings.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(stubSettings.getEndpoint())
+          .isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
+
+      // Matching credentials pass universe domain validation cleanly without network calls.
+      ((GrpcCallContext) clientContext.getDefaultCallContext()).validateUniverseDomain();
+    } finally {
+      rpc.close();
+    }
+  }
+
+  @Test
+  public void defaultUniverseDomainAndEndpointWhenEnvUnset() throws Exception {
+    assumeNoEmulatorHostEnv();
+    Assume.assumeTrue(
+        UNIVERSE_DOMAIN_ENV_VAR + " must be unset for default resolution test",
+        System.getenv(UNIVERSE_DOMAIN_ENV_VAR) == null);
+
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(new FakeUniverseCredentials(Credentials.GOOGLE_DEFAULT_UNIVERSE))
+            .build();
+
+    FirestoreSettings settings = GrpcFirestoreRpc.createFirestoreSettings(options);
+    assertThat(settings.getUniverseDomain()).isEqualTo(Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    assertThat(settings.getEndpoint()).isEqualTo("firestore.googleapis.com:443");
+
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(options);
+    try {
+      ClientContext clientContext = rpc.getClientContext();
+      assertThat(clientContext.getUniverseDomain()).isEqualTo(Credentials.GOOGLE_DEFAULT_UNIVERSE);
+      GrpcTransportChannel transportChannel =
+          (GrpcTransportChannel) clientContext.getTransportChannel();
+      assertThat(transportChannel.getChannel().authority())
+          .isEqualTo("firestore.googleapis.com:443");
+
+      FirestoreStubSettings stubSettings = FirestoreStubSettings.newBuilder(clientContext).build();
+      assertThat(stubSettings.getUniverseDomain()).isEqualTo(Credentials.GOOGLE_DEFAULT_UNIVERSE);
+      assertThat(stubSettings.getEndpoint()).isEqualTo("firestore.googleapis.com:443");
+    } finally {
+      rpc.close();
+    }
+  }
+
+  @Test
+  public void customHostOverridesDefaultEndpointWithUniverseDomain() throws Exception {
+    assumeNoEmulatorHostEnv();
+    String customHost = "custom-firestore.example.com:443";
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+            .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
+            .setHost(customHost)
+            .build();
+
+    FirestoreSettings settings = GrpcFirestoreRpc.createFirestoreSettings(options);
+    assertThat(settings.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+    assertThat(settings.getEndpoint()).isEqualTo(customHost);
+
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(options);
+    try {
+      ClientContext clientContext = rpc.getClientContext();
+      assertThat(clientContext.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      GrpcTransportChannel transportChannel =
+          (GrpcTransportChannel) clientContext.getTransportChannel();
+      assertThat(transportChannel.getChannel().authority()).isEqualTo(customHost);
+
+      FirestoreStubSettings stubSettings = FirestoreStubSettings.newBuilder(clientContext).build();
+      assertThat(stubSettings.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(stubSettings.getEndpoint()).isEqualTo(customHost);
+    } finally {
+      rpc.close();
+    }
+  }
+
+  @Test
+  public void toBuilderSetHostUpdatesChannelAuthority() throws Exception {
+    assumeNoEmulatorHostEnv();
+    String customHostA = "custom-a.example.com:443";
+    String customHostB = "custom-b.example.com:8443";
+    FirestoreOptions optionsA =
+        FirestoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+            .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
+            .setHost(customHostA)
+            .build();
+    FirestoreOptions optionsB = optionsA.toBuilder().setHost(customHostB).build();
+    FirestoreOptions resetToDefault =
+        optionsA.toBuilder().setHost(FirestoreSettings.getDefaultEndpoint()).build();
+
+    GrpcFirestoreRpc rpcB = new GrpcFirestoreRpc(optionsB);
+    try {
+      ClientContext clientContext = rpcB.getClientContext();
+      GrpcTransportChannel transportChannel =
+          (GrpcTransportChannel) clientContext.getTransportChannel();
+      assertThat(clientContext.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(transportChannel.getChannel().authority()).isEqualTo(customHostB);
+    } finally {
+      rpcB.close();
+    }
+
+    GrpcFirestoreRpc rpcDefault = new GrpcFirestoreRpc(resetToDefault);
+    try {
+      ClientContext clientContext = rpcDefault.getClientContext();
+      GrpcTransportChannel transportChannel =
+          (GrpcTransportChannel) clientContext.getTransportChannel();
+      assertThat(clientContext.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(transportChannel.getChannel().authority())
+          .isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
+    } finally {
+      rpcDefault.close();
+    }
+  }
+
+  @Test
+  public void emptyUniverseDomainThrowsIllegalArgumentWrappedInIoException() {
+    assumeNoEmulatorHostEnv();
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+            .setUniverseDomain("")
+            .build();
+
+    assertThrows(
+        IllegalArgumentException.class, () -> GrpcFirestoreRpc.createFirestoreSettings(options));
+    IOException thrown = assertThrows(IOException.class, () -> new GrpcFirestoreRpc(options));
+    assertThat(thrown).hasCauseThat().isInstanceOf(IllegalArgumentException.class);
+  }
+
+  @Test
+  public void mismatchedCredentialsUniverseDomainThrowsUnauthenticated() throws Exception {
+    assumeNoEmulatorHostEnv();
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(new FakeUniverseCredentials(Credentials.GOOGLE_DEFAULT_UNIVERSE))
+            .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
+            .build();
+
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(options);
+    try {
+      GrpcCallContext callContext =
+          (GrpcCallContext) rpc.getClientContext().getDefaultCallContext();
+      UnauthenticatedException contextException =
+          assertThrows(UnauthenticatedException.class, callContext::validateUniverseDomain);
+      assertThat(contextException.getStatusCode().getCode()).isEqualTo(Code.UNAUTHENTICATED);
+      assertThat(contextException.getMessage()).contains(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(contextException.getMessage()).contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
+
+      // Verify the live stub enforces universe domain validation before making a network call.
+      UnauthenticatedException callException =
+          assertThrows(
+              UnauthenticatedException.class,
+              () -> rpc.commitCallable().call(CommitRequest.getDefaultInstance()));
+      assertThat(callException.getStatusCode().getCode()).isEqualTo(Code.UNAUTHENTICATED);
+      assertThat(callException.getMessage()).contains(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(callException.getMessage()).contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    } finally {
+      rpc.close();
+    }
+  }
+
+  @Test
+  public void endpointLessChannelProviderUsesCustomHost() throws Exception {
+    assumeNoEmulatorHostEnv();
+    String customHost = "custom-firestore.example.com:443";
+    InstantiatingGrpcChannelProvider endpointLessProvider =
+        FirestoreSettings.defaultGrpcTransportProviderBuilder().build();
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+            .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
+            .setChannelProvider(endpointLessProvider)
+            .setHost(customHost)
+            .build();
+
+    FirestoreSettings settings = GrpcFirestoreRpc.createFirestoreSettings(options);
+    assertThat(settings.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+    assertThat(settings.getEndpoint()).isEqualTo(customHost);
+
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(options);
+    try {
+      ClientContext clientContext = rpc.getClientContext();
+      GrpcTransportChannel transportChannel =
+          (GrpcTransportChannel) clientContext.getTransportChannel();
+      assertThat(clientContext.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(transportChannel.getChannel().authority()).isEqualTo(customHost);
+    } finally {
+      rpc.close();
+    }
+  }
+
+  @Test
+  public void explicitChannelProviderEndpointOverridesSetHost() throws Exception {
+    assumeNoEmulatorHostEnv();
+    String providerEndpoint = "provider-endpoint.example.com:8443";
+    InstantiatingGrpcChannelProvider customProvider =
+        FirestoreSettings.defaultGrpcTransportProviderBuilder()
+            .setEndpoint(providerEndpoint)
+            .build();
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+            .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
+            .setChannelProvider(customProvider)
+            .setHost("ignored-host.example.com:443")
+            .build();
+
+    FirestoreSettings settings = GrpcFirestoreRpc.createFirestoreSettings(options);
+    assertThat(settings.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+    assertThat(settings.getEndpoint()).isEqualTo(providerEndpoint);
+
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(options);
+    try {
+      ClientContext clientContext = rpc.getClientContext();
+      GrpcTransportChannel transportChannel =
+          (GrpcTransportChannel) clientContext.getTransportChannel();
+      assertThat(clientContext.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(transportChannel.getChannel().authority()).isEqualTo(providerEndpoint);
+    } finally {
+      rpc.close();
+    }
+  }
+
+  @Test
+  public void tracingEnabledToBuilderPreservesChannelConfiguratorAndResolvesUniverseDomain()
+      throws Exception {
+    assumeNoEmulatorHostEnv();
+    SdkTracerProvider tracerProvider = SdkTracerProvider.builder().build();
+    try {
+      OpenTelemetrySdk openTelemetry =
+          OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
+      FirestoreOptions baseOptions =
+          FirestoreOptions.newBuilder()
+              .setProjectId(PROJECT_ID)
+              .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+              .setUniverseDomain(CUSTOM_UNIVERSE_DOMAIN)
+              .build();
+      FirestoreOptions tracedOptions =
+          baseOptions.toBuilder()
+              .setOpenTelemetryOptions(
+                  FirestoreOpenTelemetryOptions.newBuilder()
+                      .setOpenTelemetry(openTelemetry)
+                      .build())
+              .build();
+
+      FirestoreSettings settings = GrpcFirestoreRpc.createFirestoreSettings(tracedOptions);
+      InstantiatingGrpcChannelProvider provider =
+          (InstantiatingGrpcChannelProvider) settings.getTransportChannelProvider();
+      assertThat(provider.needsEndpoint()).isTrue();
+      assertThat(provider.toBuilder().getChannelConfigurator()).isNotNull();
+      assertThat(settings.getUniverseDomain()).isEqualTo(CUSTOM_UNIVERSE_DOMAIN);
+      assertThat(settings.getEndpoint()).isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
+
+      GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(tracedOptions);
+      try {
+        GrpcTransportChannel transportChannel =
+            (GrpcTransportChannel) rpc.getClientContext().getTransportChannel();
+        assertThat(transportChannel.getChannel().authority())
+            .isEqualTo("firestore." + CUSTOM_UNIVERSE_DOMAIN + ":443");
+      } finally {
+        rpc.close();
+      }
+    } finally {
+      tracerProvider.close();
+    }
+  }
+
+  @Test
+  public void constructorFailureReleasesExecutor() {
+    assumeNoEmulatorHostEnv();
+    ScheduledExecutorService backingExecutor = Executors.newSingleThreadScheduledExecutor();
+    AtomicInteger getCount = new AtomicInteger();
+    AtomicInteger releaseCount = new AtomicInteger();
+    AtomicReference<ScheduledExecutorService> released = new AtomicReference<>();
+    ExecutorFactory<ScheduledExecutorService> spyFactory =
+        new ExecutorFactory<ScheduledExecutorService>() {
+          @Override
+          public ScheduledExecutorService get() {
+            getCount.incrementAndGet();
+            return backingExecutor;
+          }
+
+          @Override
+          public void release(ScheduledExecutorService executor) {
+            releaseCount.incrementAndGet();
+            released.set(executor);
+          }
+        };
+    try {
+      FirestoreOptions options =
+          FirestoreOptions.newBuilder()
+              .setProjectId(PROJECT_ID)
+              .setCredentials(new FakeUniverseCredentials(CUSTOM_UNIVERSE_DOMAIN))
+              .setTransportOptions(
+                  GrpcTransportOptions.newBuilder().setExecutorFactory(spyFactory).build())
+              .setUniverseDomain("")
+              .build();
+
+      IOException thrown = assertThrows(IOException.class, () -> new GrpcFirestoreRpc(options));
+      assertThat(thrown).hasCauseThat().isInstanceOf(IllegalArgumentException.class);
+      assertThat(getCount.get()).isEqualTo(1);
+      assertThat(releaseCount.get()).isEqualTo(1);
+      assertThat(released.get()).isSameInstanceAs(backingExecutor);
+    } finally {
+      backingExecutor.shutdownNow();
+    }
+  }
+
+  /** Minimal Credentials implementation with a configurable universe domain for unit testing. */
+  private static final class FakeUniverseCredentials extends Credentials {
+    private final String universeDomain;
+
+    private FakeUniverseCredentials(String universeDomain) {
+      this.universeDomain = universeDomain;
+    }
+
+    @Override
+    public String getAuthenticationType() {
+      return "Fake";
+    }
+
+    @Override
+    public Map<String, List<String>> getRequestMetadata(URI uri) {
+      return Collections.emptyMap();
+    }
+
+    @Override
+    public boolean hasRequestMetadata() {
+      return false;
+    }
+
+    @Override
+    public boolean hasRequestMetadataOnly() {
+      return true;
+    }
+
+    @Override
+    public void refresh() {}
+
+    @Override
+    public String getUniverseDomain() {
+      return universeDomain;
     }
   }
 

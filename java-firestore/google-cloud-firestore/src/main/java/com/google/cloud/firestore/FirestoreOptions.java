@@ -63,6 +63,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
   private final String databaseId;
   private final TransportChannelProvider channelProvider;
+  private final boolean hasCustomChannelProvider;
   private final CredentialsProvider credentialsProvider;
   private final String emulatorHost;
   private final boolean alwaysUseImplicitOrderBy;
@@ -167,6 +168,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
     @Nullable private String databaseId = null;
     @Nullable private TransportChannelProvider channelProvider = null;
+    private boolean hasCustomChannelProvider = false;
     @Nullable private CredentialsProvider credentialsProvider = null;
     @Nullable private String emulatorHost = null;
     private boolean alwaysUseImplicitOrderBy = false;
@@ -178,10 +180,28 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
       super(options);
       this.databaseId = options.databaseId;
       this.channelProvider = options.channelProvider;
+      this.hasCustomChannelProvider = options.hasCustomChannelProvider;
       this.credentialsProvider = options.credentialsProvider;
       this.emulatorHost = options.emulatorHost;
       this.alwaysUseImplicitOrderBy = options.alwaysUseImplicitOrderBy;
       this.openTelemetryOptions = options.openTelemetryOptions;
+    }
+
+    /**
+     * Sets the service host. Setting {@code null} or the default endpoint ({@link
+     * FirestoreSettings#getDefaultEndpoint()}) resets an auto-generated channel provider so the
+     * endpoint is resolved from the configured universe domain.
+     *
+     * @param host The service host, or {@code null} to use the default host.
+     * @return the builder
+     */
+    @Nonnull
+    @Override
+    public Builder setHost(@Nullable String host) {
+      if (!this.hasCustomChannelProvider) {
+        this.channelProvider = null;
+      }
+      return super.setHost(host);
     }
 
     /**
@@ -214,6 +234,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
             "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
       }
       this.channelProvider = channelProvider;
+      this.hasCustomChannelProvider = true;
       return this;
     }
 
@@ -278,6 +299,9 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     @Nonnull
     public Builder setOpenTelemetryOptions(
         @Nonnull FirestoreOpenTelemetryOptions openTelemetryOptions) {
+      if (!this.hasCustomChannelProvider) {
+        this.channelProvider = null;
+      }
       this.openTelemetryOptions = openTelemetryOptions;
       return this;
     }
@@ -379,21 +403,22 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     // Set up the `MetricsUtil` instance after the database ID has been set.
     this.metricsUtil = MetricsUtil.getInstance(this);
 
+    this.hasCustomChannelProvider = builder.hasCustomChannelProvider;
     if (builder.channelProvider == null) {
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
+          FirestoreSettings.defaultGrpcTransportProviderBuilder();
+      // Only pin the endpoint when a custom host is configured; otherwise leave it unset
+      // so GAX resolves firestore.<universeDomain>:443 automatically.
+      if (getHost() != null && !FirestoreSettings.getDefaultEndpoint().equals(getHost())) {
+        channelProviderBuilder.setEndpoint(getHost());
+      }
       ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
           this.traceUtil.getChannelConfigurator();
-      if (channelConfigurator == null) {
-        this.channelProvider =
-            GrpcTransportOptions.setUpChannelProvider(
-                FirestoreSettings.defaultGrpcTransportProviderBuilder(), this);
-      } else {
+      if (channelConfigurator != null) {
         // Intercept the grpc channel calls to add telemetry info.
-        this.channelProvider =
-            GrpcTransportOptions.setUpChannelProvider(
-                FirestoreSettings.defaultGrpcTransportProviderBuilder()
-                    .setChannelConfigurator(channelConfigurator),
-                this);
+        channelProviderBuilder.setChannelConfigurator(channelConfigurator);
       }
+      this.channelProvider = channelProviderBuilder.build();
     } else {
       this.channelProvider = builder.channelProvider;
     }
@@ -479,12 +504,13 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     FirestoreOptions that = (FirestoreOptions) o;
     return Objects.equals(databaseId, that.databaseId)
         && Objects.equals(channelProvider, that.channelProvider)
+        && Objects.equals(getUniverseDomain(), that.getUniverseDomain())
         && baseEquals(that);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(databaseId, channelProvider, baseHashCode());
+    return Objects.hash(databaseId, channelProvider, getUniverseDomain(), baseHashCode());
   }
 
   @Nonnull

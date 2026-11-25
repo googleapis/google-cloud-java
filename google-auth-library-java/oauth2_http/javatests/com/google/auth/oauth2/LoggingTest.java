@@ -604,6 +604,7 @@ class LoggingTest {
   void stsRequestHandler_exchangeToken_masksSensitiveTokens() throws IOException {
     TestAppender testAppender = setupTestLogger(StsRequestHandler.class);
     MockStsTransport transport = new MockStsTransport();
+    transport.setReturnAccessBoundarySessionKey(true);
 
     StsTokenExchangeRequest tokenRequest =
         StsTokenExchangeRequest.newBuilder(
@@ -643,6 +644,7 @@ class LoggingTest {
     assertEquals("Response payload for token exchange", payloadLog.getMessage());
 
     boolean foundAccessToken = false;
+    boolean foundSessionKey = false;
     for (KeyValuePair kvp : payloadLog.getKeyValuePairs()) {
       if ("access_token".equals(kvp.key)) {
         foundAccessToken = true;
@@ -657,9 +659,21 @@ class LoggingTest {
             64,
             ((String) kvp.value).length(),
             "access_token should be masked as a SHA-256 hash (64 hex chars)");
+      } else if ("access_boundary_session_key".equals(kvp.key)) {
+        foundSessionKey = true;
+        assertNotNull(kvp.value);
+        assertNotEquals(
+            transport.getAccessBoundarySessionKey(),
+            kvp.value,
+            "access_boundary_session_key value should be masked, not logged as raw key");
+        assertEquals(
+            64,
+            ((String) kvp.value).length(),
+            "access_boundary_session_key should be masked as a SHA-256 hash (64 hex chars)");
       }
     }
     assertTrue(foundAccessToken);
+    assertTrue(foundSessionKey);
 
     testAppender.stop();
   }
