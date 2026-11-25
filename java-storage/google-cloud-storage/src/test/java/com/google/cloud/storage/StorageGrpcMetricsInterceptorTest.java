@@ -18,6 +18,7 @@ package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.ApiClock;
 import com.google.api.gax.grpc.GrpcInterceptorProvider;
@@ -913,6 +914,37 @@ public final class StorageGrpcMetricsInterceptorTest {
     } finally {
       scheduler.shutdownNow();
     }
+  }
+
+  @Test
+  public void interceptCall_requestActive_balancesWhenStartThrows() {
+    StorageClientMetrics debugMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(meterProvider)
+            .build()
+            .getStorageClientMetrics();
+    StorageGrpcMetricsInterceptor debugInterceptor =
+        new StorageGrpcMetricsInterceptor(debugMetrics, clock);
+    IllegalStateException failure = new IllegalStateException("start failed");
+    Channel throwingChannel = Mockito.mock(Channel.class);
+    @SuppressWarnings("unchecked")
+    ClientCall<Void, Void> throwingCall = Mockito.mock(ClientCall.class);
+    Mockito.doThrow(failure).when(throwingCall).start(Mockito.any(), Mockito.any());
+    Mockito.when(throwingChannel.newCall(Mockito.eq(READ_OBJECT_METHOD), Mockito.any()))
+        .thenReturn(throwingCall);
+    ClientCall<Void, Void> wrapped =
+        debugInterceptor.interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, throwingChannel);
+
+    IllegalStateException thrown =
+        assertThrows(
+            IllegalStateException.class, () -> wrapped.start(new TestListener<>(), new Metadata()));
+
+    assertThat(thrown).isSameInstanceAs(failure);
+    assertThat(requestActivePoint().getValue()).isEqualTo(0L);
   }
 
   @Test
