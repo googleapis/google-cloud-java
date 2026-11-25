@@ -412,7 +412,7 @@ public final class StorageGrpcMetricsInterceptorTest {
     @SuppressWarnings("unchecked")
     ClientCall<Void, Void> throwingCall = Mockito.mock(ClientCall.class);
     Mockito.doThrow(failure).when(throwingCall).start(Mockito.any(), Mockito.any());
-    Mockito.when(throwingChannel.newCall(READ_OBJECT_METHOD, CallOptions.DEFAULT))
+    Mockito.when(throwingChannel.newCall(Mockito.eq(READ_OBJECT_METHOD), Mockito.any()))
         .thenReturn(throwingCall);
     ClientCall<Void, Void> wrapped =
         debugInterceptor.interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, throwingChannel);
