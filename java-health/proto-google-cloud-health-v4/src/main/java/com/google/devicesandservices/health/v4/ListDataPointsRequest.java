@@ -55,6 +55,7 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
     parent_ = "";
     pageToken_ = "";
     filter_ = "";
+    dataSourceFamily_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -83,10 +84,16 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Parent data type of the Data Point collection.
    *
-   * Format: `users/me/dataTypes/{data_type}`, e.g.:
+   * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
    *
    * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
    * - `users/me/dataTypes/weight`
+   * - `users/1234567890/dataTypes/weight`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
    *
    * For a list of the supported data types see the [DataPoint
    * data][google.devicesandservices.health.v4.DataPoint] union
@@ -118,10 +125,16 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. Parent data type of the Data Point collection.
    *
-   * Format: `users/me/dataTypes/{data_type}`, e.g.:
+   * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
    *
    * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
    * - `users/me/dataTypes/weight`
+   * - `users/1234567890/dataTypes/weight`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
    *
    * For a list of the supported data types see the [DataPoint
    * data][google.devicesandservices.health.v4.DataPoint] union
@@ -481,6 +494,143 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int DATA_SOURCE_FAMILY_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dataSourceFamily_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The data source family name to filter by.
+   *
+   * If empty, data points from all available data sources will be returned.
+   *
+   * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+   * (e.g. `users/me/dataSourceFamilies/...` or
+   * `users/1234567890/dataSourceFamilies/...`).
+   *
+   * The supported values are:
+   *
+   * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+   * data from all available data sources.
+   * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
+   * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+   * Watch). Excludes manually logged data.
+   * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
+   * Google data, such as data from tracker devices, manually logged data, and
+   * Health Connect.
+   * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+   * the calling client wrote through this API, that is, data points whose data
+   * source was registered through this API with the same OAuth client ID as
+   * the caller.
+   *
+   * Callers that were only granted write scopes for the requested data types
+   * may only read the data they wrote themselves: their requests are
+   * implicitly restricted to `self-sources`, and requesting any other data
+   * source family fails with `PERMISSION_DENIED`.
+   *
+   * If no data point matches the requested data source family, the response is
+   * an empty list rather than an error.
+   *
+   * Filtering by data source family is not supported for the `sleep`, `food`
+   * and `food-measurement-unit` data types, because the underlying listing
+   * implementation cannot restrict results by data source. Such requests fail
+   * with `INVALID_ARGUMENT` when the data source family is set explicitly, and
+   * with `PERMISSION_DENIED` when the restriction is only implied by the
+   * caller's scopes. For `sleep`, use
+   * [ReconcileDataPoints][google.devicesandservices.health.v4.DataPointsService.ReconcileDataPoints]
+   * instead.
+   * </pre>
+   *
+   * <code>string data_source_family = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dataSourceFamily.
+   */
+  @java.lang.Override
+  public java.lang.String getDataSourceFamily() {
+    java.lang.Object ref = dataSourceFamily_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dataSourceFamily_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The data source family name to filter by.
+   *
+   * If empty, data points from all available data sources will be returned.
+   *
+   * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+   * (e.g. `users/me/dataSourceFamilies/...` or
+   * `users/1234567890/dataSourceFamilies/...`).
+   *
+   * The supported values are:
+   *
+   * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+   * data from all available data sources.
+   * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
+   * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+   * Watch). Excludes manually logged data.
+   * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
+   * Google data, such as data from tracker devices, manually logged data, and
+   * Health Connect.
+   * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+   * the calling client wrote through this API, that is, data points whose data
+   * source was registered through this API with the same OAuth client ID as
+   * the caller.
+   *
+   * Callers that were only granted write scopes for the requested data types
+   * may only read the data they wrote themselves: their requests are
+   * implicitly restricted to `self-sources`, and requesting any other data
+   * source family fails with `PERMISSION_DENIED`.
+   *
+   * If no data point matches the requested data source family, the response is
+   * an empty list rather than an error.
+   *
+   * Filtering by data source family is not supported for the `sleep`, `food`
+   * and `food-measurement-unit` data types, because the underlying listing
+   * implementation cannot restrict results by data source. Such requests fail
+   * with `INVALID_ARGUMENT` when the data source family is set explicitly, and
+   * with `PERMISSION_DENIED` when the restriction is only implied by the
+   * caller's scopes. For `sleep`, use
+   * [ReconcileDataPoints][google.devicesandservices.health.v4.DataPointsService.ReconcileDataPoints]
+   * instead.
+   * </pre>
+   *
+   * <code>string data_source_family = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for dataSourceFamily.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDataSourceFamilyBytes() {
+    java.lang.Object ref = dataSourceFamily_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dataSourceFamily_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -507,6 +657,9 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, filter_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataSourceFamily_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, dataSourceFamily_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -528,6 +681,9 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, filter_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dataSourceFamily_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, dataSourceFamily_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -548,6 +704,7 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (!getDataSourceFamily().equals(other.getDataSourceFamily())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -567,6 +724,8 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + DATA_SOURCE_FAMILY_FIELD_NUMBER;
+    hash = (53 * hash) + getDataSourceFamily().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -712,6 +871,7 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
       pageSize_ = 0;
       pageToken_ = "";
       filter_ = "";
+      dataSourceFamily_ = "";
       return this;
     }
 
@@ -762,6 +922,9 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.dataSourceFamily_ = dataSourceFamily_;
+      }
     }
 
     @java.lang.Override
@@ -794,6 +957,11 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
         bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getDataSourceFamily().isEmpty()) {
+        dataSourceFamily_ = other.dataSourceFamily_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -846,6 +1014,12 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                dataSourceFamily_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -873,10 +1047,16 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Parent data type of the Data Point collection.
      *
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/weight`
+     * - `users/1234567890/dataTypes/weight`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DataPoint
      * data][google.devicesandservices.health.v4.DataPoint] union
@@ -907,10 +1087,16 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Parent data type of the Data Point collection.
      *
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/weight`
+     * - `users/1234567890/dataTypes/weight`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DataPoint
      * data][google.devicesandservices.health.v4.DataPoint] union
@@ -941,10 +1127,16 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Parent data type of the Data Point collection.
      *
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/weight`
+     * - `users/1234567890/dataTypes/weight`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DataPoint
      * data][google.devicesandservices.health.v4.DataPoint] union
@@ -974,10 +1166,16 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Parent data type of the Data Point collection.
      *
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/weight`
+     * - `users/1234567890/dataTypes/weight`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DataPoint
      * data][google.devicesandservices.health.v4.DataPoint] union
@@ -1003,10 +1201,16 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. Parent data type of the Data Point collection.
      *
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/weight`
+     * - `users/1234567890/dataTypes/weight`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DataPoint
      * data][google.devicesandservices.health.v4.DataPoint] union
@@ -1830,6 +2034,327 @@ public final class ListDataPointsRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dataSourceFamily_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data source family name to filter by.
+     *
+     * If empty, data points from all available data sources will be returned.
+     *
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
+     *
+     * The supported values are:
+     *
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
+     * source was registered through this API with the same OAuth client ID as
+     * the caller.
+     *
+     * Callers that were only granted write scopes for the requested data types
+     * may only read the data they wrote themselves: their requests are
+     * implicitly restricted to `self-sources`, and requesting any other data
+     * source family fails with `PERMISSION_DENIED`.
+     *
+     * If no data point matches the requested data source family, the response is
+     * an empty list rather than an error.
+     *
+     * Filtering by data source family is not supported for the `sleep`, `food`
+     * and `food-measurement-unit` data types, because the underlying listing
+     * implementation cannot restrict results by data source. Such requests fail
+     * with `INVALID_ARGUMENT` when the data source family is set explicitly, and
+     * with `PERMISSION_DENIED` when the restriction is only implied by the
+     * caller's scopes. For `sleep`, use
+     * [ReconcileDataPoints][google.devicesandservices.health.v4.DataPointsService.ReconcileDataPoints]
+     * instead.
+     * </pre>
+     *
+     * <code>string data_source_family = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dataSourceFamily.
+     */
+    public java.lang.String getDataSourceFamily() {
+      java.lang.Object ref = dataSourceFamily_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dataSourceFamily_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data source family name to filter by.
+     *
+     * If empty, data points from all available data sources will be returned.
+     *
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
+     *
+     * The supported values are:
+     *
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
+     * source was registered through this API with the same OAuth client ID as
+     * the caller.
+     *
+     * Callers that were only granted write scopes for the requested data types
+     * may only read the data they wrote themselves: their requests are
+     * implicitly restricted to `self-sources`, and requesting any other data
+     * source family fails with `PERMISSION_DENIED`.
+     *
+     * If no data point matches the requested data source family, the response is
+     * an empty list rather than an error.
+     *
+     * Filtering by data source family is not supported for the `sleep`, `food`
+     * and `food-measurement-unit` data types, because the underlying listing
+     * implementation cannot restrict results by data source. Such requests fail
+     * with `INVALID_ARGUMENT` when the data source family is set explicitly, and
+     * with `PERMISSION_DENIED` when the restriction is only implied by the
+     * caller's scopes. For `sleep`, use
+     * [ReconcileDataPoints][google.devicesandservices.health.v4.DataPointsService.ReconcileDataPoints]
+     * instead.
+     * </pre>
+     *
+     * <code>string data_source_family = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for dataSourceFamily.
+     */
+    public com.google.protobuf.ByteString getDataSourceFamilyBytes() {
+      java.lang.Object ref = dataSourceFamily_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dataSourceFamily_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data source family name to filter by.
+     *
+     * If empty, data points from all available data sources will be returned.
+     *
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
+     *
+     * The supported values are:
+     *
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
+     * source was registered through this API with the same OAuth client ID as
+     * the caller.
+     *
+     * Callers that were only granted write scopes for the requested data types
+     * may only read the data they wrote themselves: their requests are
+     * implicitly restricted to `self-sources`, and requesting any other data
+     * source family fails with `PERMISSION_DENIED`.
+     *
+     * If no data point matches the requested data source family, the response is
+     * an empty list rather than an error.
+     *
+     * Filtering by data source family is not supported for the `sleep`, `food`
+     * and `food-measurement-unit` data types, because the underlying listing
+     * implementation cannot restrict results by data source. Such requests fail
+     * with `INVALID_ARGUMENT` when the data source family is set explicitly, and
+     * with `PERMISSION_DENIED` when the restriction is only implied by the
+     * caller's scopes. For `sleep`, use
+     * [ReconcileDataPoints][google.devicesandservices.health.v4.DataPointsService.ReconcileDataPoints]
+     * instead.
+     * </pre>
+     *
+     * <code>string data_source_family = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The dataSourceFamily to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataSourceFamily(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dataSourceFamily_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data source family name to filter by.
+     *
+     * If empty, data points from all available data sources will be returned.
+     *
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
+     *
+     * The supported values are:
+     *
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
+     * source was registered through this API with the same OAuth client ID as
+     * the caller.
+     *
+     * Callers that were only granted write scopes for the requested data types
+     * may only read the data they wrote themselves: their requests are
+     * implicitly restricted to `self-sources`, and requesting any other data
+     * source family fails with `PERMISSION_DENIED`.
+     *
+     * If no data point matches the requested data source family, the response is
+     * an empty list rather than an error.
+     *
+     * Filtering by data source family is not supported for the `sleep`, `food`
+     * and `food-measurement-unit` data types, because the underlying listing
+     * implementation cannot restrict results by data source. Such requests fail
+     * with `INVALID_ARGUMENT` when the data source family is set explicitly, and
+     * with `PERMISSION_DENIED` when the restriction is only implied by the
+     * caller's scopes. For `sleep`, use
+     * [ReconcileDataPoints][google.devicesandservices.health.v4.DataPointsService.ReconcileDataPoints]
+     * instead.
+     * </pre>
+     *
+     * <code>string data_source_family = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataSourceFamily() {
+      dataSourceFamily_ = getDefaultInstance().getDataSourceFamily();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The data source family name to filter by.
+     *
+     * If empty, data points from all available data sources will be returned.
+     *
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
+     *
+     * The supported values are:
+     *
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
+     * source was registered through this API with the same OAuth client ID as
+     * the caller.
+     *
+     * Callers that were only granted write scopes for the requested data types
+     * may only read the data they wrote themselves: their requests are
+     * implicitly restricted to `self-sources`, and requesting any other data
+     * source family fails with `PERMISSION_DENIED`.
+     *
+     * If no data point matches the requested data source family, the response is
+     * an empty list rather than an error.
+     *
+     * Filtering by data source family is not supported for the `sleep`, `food`
+     * and `food-measurement-unit` data types, because the underlying listing
+     * implementation cannot restrict results by data source. Such requests fail
+     * with `INVALID_ARGUMENT` when the data source family is set explicitly, and
+     * with `PERMISSION_DENIED` when the restriction is only implied by the
+     * caller's scopes. For `sleep`, use
+     * [ReconcileDataPoints][google.devicesandservices.health.v4.DataPointsService.ReconcileDataPoints]
+     * instead.
+     * </pre>
+     *
+     * <code>string data_source_family = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for dataSourceFamily to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataSourceFamilyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      dataSourceFamily_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

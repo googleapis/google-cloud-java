@@ -334,7 +334,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final State[] VALUES = values();

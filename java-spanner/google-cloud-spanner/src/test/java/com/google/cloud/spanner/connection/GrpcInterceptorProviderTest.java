@@ -225,7 +225,8 @@ public class GrpcInterceptorProviderTest extends AbstractMockServerTest {
               exception
                   .getMessage()
                   .contains(
-                      "Unknown or invalid GrpcInterceptorProvider class name: com.google.cloud.spanner.connection.NonExistentClass"));
+                      "Unknown or invalid GrpcInterceptorProvider class name:"
+                          + " com.google.cloud.spanner.connection.NonExistentClass"));
         });
   }
 

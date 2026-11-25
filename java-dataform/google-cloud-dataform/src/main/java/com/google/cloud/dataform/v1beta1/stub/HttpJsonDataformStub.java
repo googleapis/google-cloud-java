@@ -72,6 +72,7 @@ import com.google.cloud.dataform.v1beta1.CreateRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1beta1.CreateWorkspaceMetadata;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.DeleteBranchRequest;
 import com.google.cloud.dataform.v1beta1.DeleteBranchResponse;
@@ -225,8 +226,10 @@ public class HttpJsonDataformStub extends DataformStub {
           .add(DeleteRepositoryLongRunningMetadata.getDescriptor())
           .add(MoveRepositoryMetadata.getDescriptor())
           .add(CreateCompilationResultMetadata.getDescriptor())
+          .add(Workspace.getDescriptor())
           .add(CompilationResult.getDescriptor())
           .add(DeleteFolderTreeMetadata.getDescriptor())
+          .add(CreateWorkspaceMetadata.getDescriptor())
           .add(MoveFolderMetadata.getDescriptor())
           .build();
 
@@ -1403,6 +1406,49 @@ public class HttpJsonDataformStub extends DataformStub {
                       .setDefaultInstance(Workspace.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateWorkspaceRequest, Operation>
+      createWorkspaceLongRunningMethodDescriptor =
+          ApiMethodDescriptor.<CreateWorkspaceRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dataform.v1beta1.Dataform/CreateWorkspaceLongRunning")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateWorkspaceRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/repositories/*}/workspaces:createLongRunning",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateWorkspaceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateWorkspaceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "workspaceId", request.getWorkspaceId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("workspace", request.getWorkspace(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateWorkspaceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
               .build();
 
   private static final ApiMethodDescriptor<DeleteWorkspaceRequest, Empty>
@@ -3419,6 +3465,9 @@ public class HttpJsonDataformStub extends DataformStub {
       listWorkspacesPagedCallable;
   private final UnaryCallable<GetWorkspaceRequest, Workspace> getWorkspaceCallable;
   private final UnaryCallable<CreateWorkspaceRequest, Workspace> createWorkspaceCallable;
+  private final UnaryCallable<CreateWorkspaceRequest, Operation> createWorkspaceLongRunningCallable;
+  private final OperationCallable<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationCallable;
   private final UnaryCallable<DeleteWorkspaceRequest, Empty> deleteWorkspaceCallable;
   private final UnaryCallable<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
       installNpmPackagesCallable;
@@ -3998,6 +4047,19 @@ public class HttpJsonDataformStub extends DataformStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<CreateWorkspaceRequest, Operation>
+        createWorkspaceLongRunningTransportSettings =
+            HttpJsonCallSettings.<CreateWorkspaceRequest, Operation>newBuilder()
+                .setMethodDescriptor(createWorkspaceLongRunningMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceTransportSettings =
         HttpJsonCallSettings.<DeleteWorkspaceRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteWorkspaceMethodDescriptor)
@@ -4861,6 +4923,17 @@ public class HttpJsonDataformStub extends DataformStub {
     this.createWorkspaceCallable =
         callableFactory.createUnaryCallable(
             createWorkspaceTransportSettings, settings.createWorkspaceSettings(), clientContext);
+    this.createWorkspaceLongRunningCallable =
+        callableFactory.createUnaryCallable(
+            createWorkspaceLongRunningTransportSettings,
+            settings.createWorkspaceLongRunningSettings(),
+            clientContext);
+    this.createWorkspaceLongRunningOperationCallable =
+        callableFactory.createOperationCallable(
+            createWorkspaceLongRunningTransportSettings,
+            settings.createWorkspaceLongRunningOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteWorkspaceCallable =
         callableFactory.createUnaryCallable(
             deleteWorkspaceTransportSettings, settings.deleteWorkspaceSettings(), clientContext);
@@ -5177,6 +5250,7 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(listWorkspacesMethodDescriptor);
     methodDescriptors.add(getWorkspaceMethodDescriptor);
     methodDescriptors.add(createWorkspaceMethodDescriptor);
+    methodDescriptors.add(createWorkspaceLongRunningMethodDescriptor);
     methodDescriptors.add(deleteWorkspaceMethodDescriptor);
     methodDescriptors.add(installNpmPackagesMethodDescriptor);
     methodDescriptors.add(pullGitCommitsMethodDescriptor);
@@ -5485,6 +5559,17 @@ public class HttpJsonDataformStub extends DataformStub {
   @Override
   public UnaryCallable<CreateWorkspaceRequest, Workspace> createWorkspaceCallable() {
     return createWorkspaceCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateWorkspaceRequest, Operation> createWorkspaceLongRunningCallable() {
+    return createWorkspaceLongRunningCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationCallable() {
+    return createWorkspaceLongRunningOperationCallable;
   }
 
   @Override

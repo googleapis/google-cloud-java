@@ -112,6 +112,7 @@ import com.google.chat.v1.UpdateSectionRequest;
 import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
+import com.google.chat.v1.UpdateThreadReadStateRequest;
 import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
 import com.google.protobuf.Empty;
@@ -311,6 +312,11 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateSpaceReadStateRequest, SpaceReadState> updateSpaceReadStateCallable() {
     throw new UnsupportedOperationException("Not implemented: updateSpaceReadStateCallable()");
+  }
+
+  public UnaryCallable<UpdateThreadReadStateRequest, ThreadReadState>
+      updateThreadReadStateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateThreadReadStateCallable()");
   }
 
   public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {

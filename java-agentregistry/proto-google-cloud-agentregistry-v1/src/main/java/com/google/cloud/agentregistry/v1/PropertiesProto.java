@@ -55,25 +55,26 @@ public final class PropertiesProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/agentregistry/v1/properti"
           + "es.proto\022\035google.cloud.agentregistry.v1\032"
-          + "\037google/api/field_behavior.proto\"\323\001\n\tInt"
-          + "erface\022\021\n\003url\030\001 \001(\tB\004\342A\001\002\022X\n\020protocol_bi"
-          + "nding\030\002 \001(\01628.google.cloud.agentregistry"
-          + ".v1.Interface.ProtocolBindingB\004\342A\001\002\"Y\n\017P"
-          + "rotocolBinding\022 \n\034PROTOCOL_BINDING_UNSPE"
-          + "CIFIED\020\000\022\013\n\007JSONRPC\020\001\022\010\n\004GRPC\020\002\022\r\n\tHTTP_"
-          + "JSON\020\003B\342\001\n!com.google.cloud.agentregistr"
-          + "y.v1B\017PropertiesProtoP\001ZGcloud.google.co"
-          + "m/go/agentregistry/apiv1/agentregistrypb"
-          + ";agentregistrypb\252\002\035Google.Cloud.AgentReg"
-          + "istry.V1\312\002\035Google\\Cloud\\AgentRegistry\\V1"
-          + "\352\002 Google::Cloud::AgentRegistry::V1b\006pro"
-          + "to3"
+          + "\037google/api/field_behavior.proto\032\031google"
+          + "/api/resource.proto\"\323\001\n\tInterface\022\021\n\003url"
+          + "\030\001 \001(\tB\004\342A\001\002\022X\n\020protocol_binding\030\002 \001(\01628"
+          + ".google.cloud.agentregistry.v1.Interface"
+          + ".ProtocolBindingB\004\342A\001\002\"Y\n\017ProtocolBindin"
+          + "g\022 \n\034PROTOCOL_BINDING_UNSPECIFIED\020\000\022\013\n\007J"
+          + "SONRPC\020\001\022\010\n\004GRPC\020\002\022\r\n\tHTTP_JSON\020\003B\342\001\n!co"
+          + "m.google.cloud.agentregistry.v1B\017Propert"
+          + "iesProtoP\001ZGcloud.google.com/go/agentreg"
+          + "istry/apiv1/agentregistrypb;agentregistr"
+          + "ypb\252\002\035Google.Cloud.AgentRegistry.V1\312\002\035Go"
+          + "ogle\\Cloud\\AgentRegistry\\V1\352\002 Google::Cl"
+          + "oud::AgentRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_agentregistry_v1_Interface_descriptor =
         getDescriptor().getMessageType(0);
@@ -85,6 +86,7 @@ public final class PropertiesProto extends com.google.protobuf.GeneratedFile {
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

@@ -5,6 +5,33 @@
   "protoPackage": "google.cloud.secretmanager.v1",
   "libraryPackage": "com.google.cloud.secretmanager.v1",
   "services": {
+    "SecretOperationsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SecretOperationsServiceClient",
+          "rpcs": {
+            "CreateBackup": {
+              "methods": ["createBackupAsync", "createBackupAsync", "createBackupAsync", "createBackupOperationCallable", "createBackupCallable"]
+            },
+            "DeleteBackup": {
+              "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
+            },
+            "GetBackup": {
+              "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
+            },
+            "ListBackups": {
+              "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "RestoreBackup": {
+              "methods": ["restoreBackupAsync", "restoreBackupAsync", "restoreBackupAsync", "restoreBackupAsync", "restoreBackupAsync", "restoreBackupAsync", "restoreBackupAsync", "restoreBackupOperationCallable", "restoreBackupCallable"]
+            },
+            "UpdateBackup": {
+              "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
+            }
+          }
+        }
+      }
+    },
     "SecretManagerService": {
       "clients": {
         "grpc": {

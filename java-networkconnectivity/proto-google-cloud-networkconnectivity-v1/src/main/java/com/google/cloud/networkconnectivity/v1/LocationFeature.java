@@ -61,6 +61,26 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SITE_TO_SITE_SPOKES = 2;</code>
    */
   SITE_TO_SITE_SPOKES(2),
+  /**
+   *
+   *
+   * <pre>
+   * Gateway spokes are supported in this location.
+   * </pre>
+   *
+   * <code>GATEWAY_SPOKES = 3;</code>
+   */
+  GATEWAY_SPOKES(3),
+  /**
+   *
+   *
+   * <pre>
+   * Supports transports in this location.
+   * </pre>
+   *
+   * <code>TRANSPORTS = 4;</code>
+   */
+  TRANSPORTS(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -107,6 +127,28 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int SITE_TO_SITE_SPOKES_VALUE = 2;
 
+  /**
+   *
+   *
+   * <pre>
+   * Gateway spokes are supported in this location.
+   * </pre>
+   *
+   * <code>GATEWAY_SPOKES = 3;</code>
+   */
+  public static final int GATEWAY_SPOKES_VALUE = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Supports transports in this location.
+   * </pre>
+   *
+   * <code>TRANSPORTS = 4;</code>
+   */
+  public static final int TRANSPORTS_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -137,6 +179,10 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
         return SITE_TO_CLOUD_SPOKES;
       case 2:
         return SITE_TO_SITE_SPOKES;
+      case 3:
+        return GATEWAY_SPOKES;
+      case 4:
+        return TRANSPORTS;
       default:
         return null;
     }
@@ -166,7 +212,7 @@ public enum LocationFeature implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final LocationFeature[] VALUES = values();
