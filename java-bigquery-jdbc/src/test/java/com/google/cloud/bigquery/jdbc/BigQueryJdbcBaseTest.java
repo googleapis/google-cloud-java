@@ -59,7 +59,7 @@ public class BigQueryJdbcBaseTest {
         return (BigQuery) method.invoke(unwrapped);
       }
     } catch (Throwable e) {
-      // ignore for some set of tests; Proxy/TPC tests will fail if it doesn't work.
+      // ignore for some set of tests; Proxy/universe-domain tests will fail if it doesn't work.
     }
     return BigQueryOptions.getDefaultInstance().getService();
   }

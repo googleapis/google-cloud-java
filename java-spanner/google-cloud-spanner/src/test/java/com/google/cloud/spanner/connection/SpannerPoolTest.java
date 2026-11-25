@@ -41,6 +41,7 @@ import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.connection.ConnectionImpl.LeakedConnectionException;
+import com.google.cloud.spanner.connection.ConnectionOptions.StartupPropertyPolicy;
 import com.google.cloud.spanner.connection.SpannerPool.CheckAndCloseSpannersMode;
 import com.google.cloud.spanner.connection.SpannerPool.CredentialsKey;
 import com.google.cloud.spanner.connection.SpannerPool.SpannerPoolKey;
@@ -1275,5 +1276,47 @@ public class SpannerPoolTest {
 
     assertEquals(defaultKey, keyWithNullProvider);
     assertEquals(defaultKey.hashCode(), keyWithNullProvider.hashCode());
+  }
+
+  @Test
+  public void testSpannerPoolKeyReuseWithStartupPropertyPolicyReject() {
+    ConnectionOptions optionsA =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(URI + "?autocommit=true;readonly=false;maxPartitions=10;optimizerVersion=1")
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.DIALECT, Dialect.POSTGRESQL))
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.USE_PLAIN_TEXT, true))
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.ENDPOINT, "localhost:9010"))
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    ConnectionOptions optionsB =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(URI + "?autocommit=false;readonly=true;maxPartitions=20;optimizerVersion=2")
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.DIALECT, Dialect.POSTGRESQL))
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.USE_PLAIN_TEXT, true))
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.ENDPOINT, "localhost:9010"))
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+
+    SpannerPoolKey keyA = SpannerPoolKey.of(optionsA);
+    SpannerPoolKey keyB = SpannerPoolKey.of(optionsB);
+    assertEquals(keyA, keyB);
+    assertEquals(keyA.hashCode(), keyB.hashCode());
+
+    SpannerPool pool = createSubjectAndMocks();
+    Spanner spannerA = pool.getSpanner(optionsA, connection1);
+    Spanner spannerB = pool.getSpanner(optionsB, connection2);
+    assertSame(spannerA, spannerB);
+
+    pool.removeConnection(optionsA, connection1);
+    pool.removeConnection(optionsB, connection2);
+    pool.checkAndCloseSpanners(CheckAndCloseSpannersMode.ERROR);
   }
 }

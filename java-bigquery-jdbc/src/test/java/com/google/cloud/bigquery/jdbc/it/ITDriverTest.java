@@ -91,7 +91,7 @@ public class ITDriverTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testDriverLocation() throws SQLException, InterruptedException {
 
     String datasetUS = "JDBC_DRIVER_US_TEST_DATASET" + random.nextInt(999);

@@ -90,6 +90,7 @@ import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.connection.ConnectionProperty.Context;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementExecutorType;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.annotations.VisibleForTesting;
@@ -107,13 +108,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.AbstractMap.SimpleImmutableEntry;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -452,6 +457,31 @@ public class ConnectionOptions {
   }
 
   /**
+   * Policy controlling how {@link Context#STARTUP} properties found in the connection URI string
+   * are handled.
+   *
+   * <p>This policy governs property key/value parameters in the connection URI (for example {@code
+   * ?endpoint=...;minSessions=...}). It does not restrict the URI host authority ({@code //host}),
+   * Omni URI format, or {@code /projects/<id>} path. Callers accepting full untrusted URIs should
+   * validate or construct those URI components separately.
+   *
+   * <p>This policy can only be configured programmatically via {@link Builder}; it is never parsed
+   * from the connection URI string itself.
+   */
+  public enum StartupPropertyPolicy {
+    /** Allow {@link Context#STARTUP} properties in the connection URI. */
+    ALLOW,
+    /**
+     * Reject {@link Context#STARTUP} properties in the connection URI by throwing a {@link
+     * SpannerException} with {@link ErrorCode#INVALID_ARGUMENT}. Applications that accept
+     * connection URIs from untrusted sources should set this policy to {@code REJECT} so callers
+     * cannot modify {@link Context#STARTUP} settings such as endpoints, credentials, or session
+     * pool configuration via the URI.
+     */
+    REJECT,
+  }
+
+  /**
    * {@link SpannerOptionsConfigurator} can be used to add additional configuration for a {@link
    * Spanner} instance. Intended for tests.
    */
@@ -482,12 +512,13 @@ public class ConnectionOptions {
     private SpannerOptionsConfigurator configurator;
     private OpenTelemetry openTelemetry;
     private Ticker ticker = Deadline.getSystemTicker();
+    private StartupPropertyPolicy startupPropertyPolicy = StartupPropertyPolicy.ALLOW;
 
     private Builder() {}
 
     /** Spanner {@link ConnectionOptions} URI format. */
     public static final String SPANNER_URI_FORMAT =
-        "(?:(?:spanner|cloudspanner):)(?<HOSTGROUP>//[\\w.-]+(?:\\.[\\w\\.-]+)*[\\w\\-\\._~:/?#\\[\\]@!\\$&'\\(\\)\\*\\+,;=.]+)?/projects/(?<PROJECTGROUP>(([a-z]|[-.:]|[0-9])+|(DEFAULT_PROJECT_ID)))(/instances/(?<INSTANCEGROUP>([a-z]|[-]|[0-9])+)(/databases/(?<DATABASEGROUP>([a-z]|[-]|[_]|[0-9])+))?)?(?:[?|;].*)?";
+        "(?:(?:spanner|cloudspanner):)(?<HOSTGROUP>//(?:[\\w.-]+|\\[[0-9a-fA-F:]+\\])(?::\\d+)?)?/projects/(?<PROJECTGROUP>(([a-z]|[-.:]|[0-9])+|(DEFAULT_PROJECT_ID)))(/instances/(?<INSTANCEGROUP>([a-z]|[-]|[0-9])+)(/databases/(?<DATABASEGROUP>([a-z]|[-]|[_]|[0-9])+))?)?(?:[?;].*)?";
 
     public static final String EXTERNAL_HOST_FORMAT =
         "(?:(?:spanner|cloudspanner):)(?<HOSTGROUP>//[\\w.-]+(?::\\d+)?)(/instances/(?<INSTANCEGROUP>[a-z0-9-]+))?(/databases/(?<DATABASEGROUP>[a-z0-9_-]+))(?:[?;].*)?";
@@ -569,6 +600,10 @@ public class ConnectionOptions {
      *       or any region (false) in read/write transactions and Partitioned DML. Default is true.
      * </ul>
      *
+     * <p>When {@link StartupPropertyPolicy#REJECT} is configured on this {@link Builder}, {@link
+     * Context#STARTUP} properties in the URI property string are rejected with {@link
+     * ErrorCode#INVALID_ARGUMENT}.
+     *
      * @param uri The URI of the Spanner database to connect to.
      * @return this builder
      */
@@ -580,18 +615,60 @@ public class ConnectionOptions {
                 + " the format"
                 + " \"cloudspanner:[//host[:port]]/projects/project-id[/instances/instance-id[/databases/database-name]][\\?property-name=property-value[;property-name=property-value]*]?\"");
       }
-      ConnectionPropertyValue<Boolean> value =
-          cast(ConnectionProperties.parseValues(uri).get(LENIENT.getKey()));
-      checkValidProperties(value != null && value.getValue(), uri);
+      ParsedUriProperties parsedProperties = parseUriProperties(uri);
+      checkValidProperties(
+          isLenient(parsedProperties), parsedProperties, this.startupPropertyPolicy);
+      ConnectionProperties.validateValues(parsedProperties);
       this.uri = uri;
       return this;
     }
 
-    <T> Builder setConnectionPropertyValue(
-        com.google.cloud.spanner.connection.ConnectionProperty<T> property, T value) {
-      this.connectionPropertyValues.put(
-          property.getKey(), new ConnectionPropertyValue<>(property, value, value));
+    private boolean isLenient(ParsedUriProperties parsedProperties) {
+      ConnectionPropertyValue<Boolean> value =
+          cast(this.connectionPropertyValues.get(LENIENT.getKey()));
+      if (value != null) {
+        return Boolean.TRUE.equals(value.getValue());
+      }
+      if (this.startupPropertyPolicy == StartupPropertyPolicy.ALLOW) {
+        ConnectionPropertyValue<Boolean> uriLenient =
+            LENIENT.convert(parsedProperties.getValue(LENIENT.getKey()));
+        return uriLenient != null && Boolean.TRUE.equals(uriLenient.getValue());
+      }
+      return false;
+    }
+
+    /**
+     * Sets the {@link StartupPropertyPolicy} controlling how {@link Context#STARTUP} properties in
+     * the connection URI string are handled. Defaults to {@link StartupPropertyPolicy#ALLOW}.
+     *
+     * <p>Applications that accept connection URIs from untrusted sources should set this to {@link
+     * StartupPropertyPolicy#REJECT} so callers cannot modify {@link Context#STARTUP} settings such
+     * as endpoints, credentials, or session pool configuration via the URI.
+     */
+    public Builder setStartupPropertyPolicy(StartupPropertyPolicy startupPropertyPolicy) {
+      this.startupPropertyPolicy =
+          Preconditions.checkNotNull(
+              startupPropertyPolicy, "startupPropertyPolicy must not be null");
       return this;
+    }
+
+    StartupPropertyPolicy getStartupPropertyPolicy() {
+      return this.startupPropertyPolicy;
+    }
+
+    /**
+     * Programmatically sets a {@link ConnectionPropertyValue}. All {@link
+     * ConnectionProperties#VALID_CONNECTION_PROPERTIES} are allowed when set programmatically, and
+     * take precedence over properties parsed from the connection URI.
+     */
+    public <T> Builder setConnectionPropertyValue(ConnectionPropertyValue<T> value) {
+      Preconditions.checkNotNull(value, "value must not be null");
+      this.connectionPropertyValues.put(value.getProperty().getKey(), value.copy());
+      return this;
+    }
+
+    <T> Builder setConnectionPropertyValue(ConnectionProperty<T> property, T value) {
+      return setConnectionPropertyValue(ConnectionPropertyValue.of(property, value));
     }
 
     /** Sets the {@link SessionPoolOptions} to use for the connection. */
@@ -743,17 +820,21 @@ public class ConnectionOptions {
     Preconditions.checkArgument(
         matcher.find(), String.format("Invalid connection URI specified: %s", builder.uri));
 
+    ParsedUriProperties parsedProperties = parseUriProperties(builder.uri);
+    this.warnings =
+        checkValidProperties(
+            builder.isLenient(parsedProperties), parsedProperties, builder.startupPropertyPolicy);
+    ImmutableMap<String, ConnectionPropertyValue<?>> urlPropertyValues =
+        ConnectionProperties.parseValues(parsedProperties);
     ImmutableMap<String, ConnectionPropertyValue<?>> connectionPropertyValues =
         ImmutableMap.<String, ConnectionPropertyValue<?>>builder()
-            .putAll(ConnectionProperties.parseValues(builder.uri))
+            .putAll(urlPropertyValues)
             .putAll(builder.connectionPropertyValues)
             .buildKeepingLast();
     this.uri = builder.uri;
     this.typeExplicitlySet =
-        ConnectionProperties.parseValues(builder.uri).containsKey(TYPE_PROPERTY_NAME)
+        urlPropertyValues.containsKey(TYPE.getKey())
             || builder.connectionPropertyValues.containsKey(TYPE.getKey());
-    ConnectionPropertyValue<Boolean> value = cast(connectionPropertyValues.get(LENIENT.getKey()));
-    this.warnings = checkValidProperties(value != null && value.getValue(), uri);
     this.fixedCredentials = builder.credentials;
     this.statementExecutorType = builder.statementExecutorType;
 
@@ -998,52 +1079,152 @@ public class ConnectionOptions {
     }
   }
 
+  static final class ParsedUriProperties {
+    private static final ParsedUriProperties EMPTY =
+        new ParsedUriProperties(Collections.emptyList(), Collections.emptyMap());
+
+    private final List<Map.Entry<String, String>> tokens;
+    private final Map<String, String> propertyValues;
+
+    private ParsedUriProperties(
+        List<Map.Entry<String, String>> tokens, Map<String, String> propertyValues) {
+      this.tokens = tokens;
+      this.propertyValues = propertyValues;
+    }
+
+    List<Map.Entry<String, String>> getTokens() {
+      return tokens;
+    }
+
+    Map<String, String> getPropertyValues() {
+      return propertyValues;
+    }
+
+    @Nullable
+    String getValue(String property) {
+      return propertyValues.get(property.toLowerCase(Locale.ENGLISH));
+    }
+  }
+
+  static ParsedUriProperties parseUriProperties(String uri) {
+    if (Strings.isNullOrEmpty(uri)) {
+      return ParsedUriProperties.EMPTY;
+    }
+    int startIndex = findNextPropertyDelimiterIndex(uri, 0);
+    if (startIndex < 0 || startIndex + 1 >= uri.length()) {
+      return ParsedUriProperties.EMPTY;
+    }
+    List<Map.Entry<String, String>> tokens = new ArrayList<>();
+    Map<String, String> values = new LinkedHashMap<>();
+    int index = startIndex + 1;
+    int length = uri.length();
+    while (index < length) {
+      int end = findNextPropertyDelimiterIndex(uri, index);
+      if (end < 0) {
+        end = length;
+      }
+      if (end > index) {
+        parsePropertyToken(uri.substring(index, end), tokens, values);
+      }
+      index = end + 1;
+    }
+    return new ParsedUriProperties(
+        Collections.unmodifiableList(tokens), Collections.unmodifiableMap(values));
+  }
+
+  private static void parsePropertyToken(
+      String token, List<Map.Entry<String, String>> tokens, Map<String, String> values) {
+    int equalsIndex = token.indexOf('=');
+    if (equalsIndex <= 0) {
+      // Malformed token (no '=' or empty key): surface as an invalid token during validation.
+      tokens.add(new SimpleImmutableEntry<>(token, null));
+      return;
+    }
+    String rawName = token.substring(0, equalsIndex);
+    String rawValue = token.substring(equalsIndex + 1);
+    tokens.add(new SimpleImmutableEntry<>(rawName, rawValue));
+    values.putIfAbsent(rawName.toLowerCase(Locale.ENGLISH), rawValue);
+  }
+
+  private static int findNextPropertyDelimiterIndex(String uri, int fromIndex) {
+    for (int i = fromIndex; i < uri.length(); i++) {
+      char currentChar = uri.charAt(i);
+      if (currentChar == '?' || currentChar == ';') {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   @VisibleForTesting
   static String parseUriProperty(String uri, String property) {
-    Pattern pattern = Pattern.compile(String.format("(?is)(?:;|\\?)%s=(.*?)(?:;|$)", property));
-    Matcher matcher = pattern.matcher(uri);
-    if (matcher.find() && matcher.groupCount() == 1) {
-      return matcher.group(1);
-    }
-    return null;
+    return parseUriProperties(uri).getValue(property);
   }
 
   /** Check that only valid properties have been specified. */
   @VisibleForTesting
   static String checkValidProperties(boolean lenient, String uri) {
-    StringBuilder invalidProperties = new StringBuilder();
-    List<String> properties = parseProperties(uri);
-    for (String property : properties) {
-      if (!ConnectionProperties.CONNECTION_PROPERTIES.containsKey(
-          property.toLowerCase(Locale.ENGLISH))) {
-        if (invalidProperties.length() > 0) {
+    return checkValidProperties(lenient, uri, StartupPropertyPolicy.ALLOW);
+  }
+
+  static String checkValidProperties(
+      boolean lenient, String uri, StartupPropertyPolicy startupPropertyPolicy) {
+    return checkValidProperties(lenient, parseUriProperties(uri), startupPropertyPolicy);
+  }
+
+  static String checkValidProperties(
+      boolean lenient,
+      ParsedUriProperties parsedProperties,
+      StartupPropertyPolicy startupPropertyPolicy) {
+    Set<String> startupPropertiesInUri = null;
+    StringBuilder invalidProperties = null;
+    for (Map.Entry<String, String> token : parsedProperties.getTokens()) {
+      String property = token.getKey();
+      ConnectionProperty<?> connectionProperty =
+          token.getValue() == null
+              ? null
+              : ConnectionProperties.CONNECTION_PROPERTIES.get(
+                  property.toLowerCase(Locale.ENGLISH));
+      if (connectionProperty == null) {
+        if (invalidProperties == null) {
+          invalidProperties = new StringBuilder();
+        } else {
           invalidProperties.append(", ");
         }
         invalidProperties.append(property);
+      } else if (startupPropertyPolicy == StartupPropertyPolicy.REJECT
+          && connectionProperty.getContext() == Context.STARTUP) {
+        if (startupPropertiesInUri == null) {
+          startupPropertiesInUri = new LinkedHashSet<>();
+        }
+        startupPropertiesInUri.add(property);
       }
     }
-    if (lenient) {
-      return String.format("Invalid properties found in connection URI: %s", invalidProperties);
-    } else {
-      Preconditions.checkArgument(
-          invalidProperties.length() == 0,
-          String.format(
-              "Invalid properties found in connection URI. Add lenient=true to the connection"
-                  + " string to ignore unknown properties. Invalid properties: %s",
-              invalidProperties));
+    if (startupPropertiesInUri != null) {
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.INVALID_ARGUMENT,
+          "Startup properties are not allowed in connection URI: "
+              + String.join(", ", startupPropertiesInUri));
+    }
+    if (invalidProperties == null) {
       return null;
     }
+    Preconditions.checkArgument(
+        lenient,
+        "Invalid properties found in connection URI. Add lenient=true to the connection"
+            + " string to ignore unknown properties. Invalid properties: %s",
+        invalidProperties);
+    return String.format("Invalid properties found in connection URI: %s", invalidProperties);
   }
 
   @VisibleForTesting
   static List<String> parseProperties(String uri) {
-    Pattern pattern = Pattern.compile("(?is)(?:\\?|;)(?<PROPERTY>.*?)=(?:.*?)");
-    Matcher matcher = pattern.matcher(uri);
-    List<String> res = new ArrayList<>();
-    while (matcher.find() && matcher.group("PROPERTY") != null) {
-      res.add(matcher.group("PROPERTY"));
+    List<Map.Entry<String, String>> tokens = parseUriProperties(uri).getTokens();
+    List<String> names = new ArrayList<>(tokens.size());
+    for (Map.Entry<String, String> token : tokens) {
+      names.add(token.getKey());
     }
-    return res;
+    return names;
   }
 
   static long tryParseLong(String value, long defaultValue) {

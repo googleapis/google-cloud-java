@@ -183,7 +183,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidLongRunningQuery() throws SQLException {
     // setup
     String selectQuery =
@@ -268,7 +268,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testWideColumnQueries() throws SQLException {
     String selectQuery =
         "SELECT * FROM `bigquery-public-data.covid19_open_data_eu.covid19_open_data` LIMIT 50000";
@@ -287,7 +287,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testExecuteLargeUpdate() throws SQLException {
     String tableName = "JDBC_LARGE_UPDATE_TABLE_" + randomNumber;
     String createQuery =
@@ -715,7 +715,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testHTAPIWithValidDestinationTableSavesQueriesWithLegacy() throws SQLException {
     // setup
     String connection_uri =
@@ -1043,7 +1043,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidAllDataTypesSerializationFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_DATATYPES_INTEGRATION_TEST_TABLE";
@@ -1077,7 +1077,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testRepeatedStructFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_REPEATED_STRUCT_INTEGRATION_TEST";
@@ -1102,7 +1102,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
@@ -1623,7 +1623,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   // reads using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
   public void testIterateOrderArrowMultiThread() throws SQLException {
@@ -1646,7 +1646,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
     String connection_uri = ITNightlyBigQueryTest.connection_uri;

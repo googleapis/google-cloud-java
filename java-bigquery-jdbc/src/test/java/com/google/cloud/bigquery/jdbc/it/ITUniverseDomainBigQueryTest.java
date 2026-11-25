@@ -29,44 +29,39 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import org.junit.jupiter.api.Test;
 
-public class ITTPCBigQueryTest {
+public class ITUniverseDomainBigQueryTest {
   private static final String ENDPOINT_URL = System.getenv("ENDPOINT_URL");
-  private static final String UNIVERSE_DOMAIN = System.getenv("UNIVERSE_DOMAIN");
-  private static final String TPC_SERVICE_ACCOUNT = System.getenv("SERVICE_ACCOUNT");
-  private static final String TPC_PVT_KEY = System.getenv("PRIVATE_KEY");
-  private static final String TPC_ACCESS_TOKEN = System.getenv("ACCESS_TOKEN");
-  private static final String TPC_PROJECT_ID = System.getenv("PROJECT_ID");
+  private static final String UNIVERSE_DOMAIN_ENV = System.getenv("UNIVERSE_DOMAIN");
+  private static final String UNIVERSE_DOMAIN_SERVICE_ACCOUNT = System.getenv("SERVICE_ACCOUNT");
+  private static final String UNIVERSE_DOMAIN_PVT_KEY = System.getenv("PRIVATE_KEY");
+  private static final String UNIVERSE_DOMAIN_ACCESS_TOKEN = System.getenv("ACCESS_TOKEN");
+  private static final String UNIVERSE_DOMAIN_PROJECT_ID = System.getenv("PROJECT_ID");
 
-  private static final String TPC_ENDPOINT =
+  private static final String UNIVERSE_DOMAIN_ENDPOINT =
       (ENDPOINT_URL.isEmpty())
           ? "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443"
           : "jdbc:bigquery://" + ENDPOINT_URL;
-  private static final String TPC_UNIVERSE_DOMAIN =
-      (UNIVERSE_DOMAIN.isEmpty()) ? "googleapis.com" : UNIVERSE_DOMAIN;
+  private static final String UNIVERSE_DOMAIN =
+      (UNIVERSE_DOMAIN_ENV.isEmpty()) ? "googleapis.com" : UNIVERSE_DOMAIN_ENV;
 
-  // See here go/bq-cli-tpc for testing setup.
-  // Use the default test project.
-  // For the SA you will have to give it bigquery admin permissions cl/627813300 and will have to
-  // revert after testing.
-  // Plug in the values for the connection properties from the guide into the connection string.
   @Test
   public void testServiceAccountAuthenticationViaEmail() throws SQLException {
-    validateTPCEnvironment();
+    validateUniverseDomainEnvironment();
     String connection_uri =
-        TPC_ENDPOINT
+        UNIVERSE_DOMAIN_ENDPOINT
             + ";"
             + "ProjectId="
-            + TPC_PROJECT_ID
+            + UNIVERSE_DOMAIN_PROJECT_ID
             + ";"
             + "OAuthType=0;"
             + "universeDomain="
-            + TPC_UNIVERSE_DOMAIN
+            + UNIVERSE_DOMAIN
             + ";"
             + "OAuthServiceAcctEmail="
-            + TPC_SERVICE_ACCOUNT
+            + UNIVERSE_DOMAIN_SERVICE_ACCOUNT
             + ";"
             + "OAuthPvtKey="
-            + TPC_PVT_KEY
+            + UNIVERSE_DOMAIN_PVT_KEY
             + ";";
 
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -86,16 +81,16 @@ public class ITTPCBigQueryTest {
   // the SA key file.
   @Test
   public void testValidApplicationDefaultCredentialsAuthentication() throws SQLException {
-    validateTPCEnvironment();
+    validateUniverseDomainEnvironment();
     String connection_uri =
-        TPC_ENDPOINT
+        UNIVERSE_DOMAIN_ENDPOINT
             + ";"
             + "OAuthType=3;"
             + "ProjectId="
-            + TPC_PROJECT_ID
+            + UNIVERSE_DOMAIN_PROJECT_ID
             + ";"
             + "universeDomain="
-            + TPC_UNIVERSE_DOMAIN
+            + UNIVERSE_DOMAIN
             + ";";
 
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -113,19 +108,19 @@ public class ITTPCBigQueryTest {
 
   @Test
   public void testValidPreGeneratedAccessTokenAuthentication() throws SQLException {
-    validateTPCEnvironment();
+    validateUniverseDomainEnvironment();
     String connection_uri =
-        TPC_ENDPOINT
+        UNIVERSE_DOMAIN_ENDPOINT
             + ";"
             + "OAuthType=2;"
             + "ProjectId="
-            + TPC_PROJECT_ID
+            + UNIVERSE_DOMAIN_PROJECT_ID
             + ";"
             + "OAuthAccessToken="
-            + TPC_ACCESS_TOKEN
+            + UNIVERSE_DOMAIN_ACCESS_TOKEN
             + ";"
             + "universeDomain="
-            + TPC_UNIVERSE_DOMAIN
+            + UNIVERSE_DOMAIN
             + ";";
 
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -140,22 +135,22 @@ public class ITTPCBigQueryTest {
 
   @Test
   public void testSimpleQueryReturns() throws SQLException {
-    validateTPCEnvironment();
+    validateUniverseDomainEnvironment();
     String connection_uri =
-        TPC_ENDPOINT
+        UNIVERSE_DOMAIN_ENDPOINT
             + ";"
             + "ProjectId="
-            + TPC_PROJECT_ID
+            + UNIVERSE_DOMAIN_PROJECT_ID
             + ";"
             + "OAuthType=0;"
             + "universeDomain="
-            + TPC_UNIVERSE_DOMAIN
+            + UNIVERSE_DOMAIN
             + ";"
             + "OAuthServiceAcctEmail="
-            + TPC_SERVICE_ACCOUNT
+            + UNIVERSE_DOMAIN_SERVICE_ACCOUNT
             + ";"
             + "OAuthPvtKey="
-            + TPC_PVT_KEY
+            + UNIVERSE_DOMAIN_PVT_KEY
             + ";"; // Plug in this value when testing from the key file
 
     Connection connection = DriverManager.getConnection(connection_uri);
@@ -173,16 +168,16 @@ public class ITTPCBigQueryTest {
 
   @Test
   public void testServiceAccountKeyFileReturns() throws SQLException {
-    validateTPCEnvironment();
+    validateUniverseDomainEnvironment();
     String connection_uri =
-        TPC_ENDPOINT
+        UNIVERSE_DOMAIN_ENDPOINT
             + ";"
             + "ProjectId="
-            + TPC_PROJECT_ID
+            + UNIVERSE_DOMAIN_PROJECT_ID
             + ";"
             + "OAuthType=0;"
             + "universeDomain="
-            + TPC_UNIVERSE_DOMAIN
+            + UNIVERSE_DOMAIN
             + ";"
             // Point the key path to where you have downloaded it to.
             + "OAuthPvtKeyPath=/Users/YourPathToSecretFile/SAKeyFile.json;";
@@ -200,21 +195,21 @@ public class ITTPCBigQueryTest {
     connection.close();
   }
 
-  private void validateTPCEnvironment() {
-    if (TPC_PROJECT_ID.isEmpty()) {
-      throw new IllegalArgumentException("TPC_PROJECT_ID is empty");
+  private void validateUniverseDomainEnvironment() {
+    if (UNIVERSE_DOMAIN_PROJECT_ID.isEmpty()) {
+      throw new IllegalArgumentException("UNIVERSE_DOMAIN_PROJECT_ID is empty");
     }
-    if (TPC_SERVICE_ACCOUNT.isEmpty()) {
-      throw new IllegalArgumentException("TPC_SERVICE_ACCOUNT is empty");
+    if (UNIVERSE_DOMAIN_SERVICE_ACCOUNT.isEmpty()) {
+      throw new IllegalArgumentException("UNIVERSE_DOMAIN_SERVICE_ACCOUNT is empty");
     }
-    if (TPC_ENDPOINT.isEmpty()) {
-      throw new IllegalArgumentException("TPC_ENDPOINT is empty");
+    if (UNIVERSE_DOMAIN_ENDPOINT.isEmpty()) {
+      throw new IllegalArgumentException("UNIVERSE_DOMAIN_ENDPOINT is empty");
     }
-    if (TPC_PVT_KEY.isEmpty()) {
-      throw new IllegalArgumentException("TPC_PVT_KEY is empty");
+    if (UNIVERSE_DOMAIN_PVT_KEY.isEmpty()) {
+      throw new IllegalArgumentException("UNIVERSE_DOMAIN_PVT_KEY is empty");
     }
-    if (TPC_UNIVERSE_DOMAIN.isEmpty()) {
-      throw new IllegalArgumentException("TPC_UNIVERSE_DOMAIN is empty");
+    if (UNIVERSE_DOMAIN.isEmpty()) {
+      throw new IllegalArgumentException("UNIVERSE_DOMAIN is empty");
     }
   }
 }

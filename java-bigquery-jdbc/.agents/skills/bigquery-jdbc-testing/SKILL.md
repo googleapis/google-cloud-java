@@ -1,6 +1,6 @@
 ---
 name: bigquery-jdbc-testing
-description: Conventions for writing and refactoring unit and integration tests in the BigQuery JDBC driver (java-bigquery-jdbc). Use this skill when adding, reviewing, or cleaning up tests under java-bigquery-jdbc/src/test, including tests for connection/credential setup, Storage Read/Write API clients, TPC/universe-domain behavior, and ITBase-derived integration tests.
+description: Conventions for writing and refactoring unit and integration tests in the BigQuery JDBC driver (java-bigquery-jdbc). Use this skill when adding, reviewing, or cleaning up tests under java-bigquery-jdbc/src/test, including tests for connection/credential setup, Storage Read/Write API clients, universe-domain behavior, and ITBase-derived integration tests.
 ---
 
 # BigQuery JDBC Driver: Writing Tests
@@ -39,7 +39,7 @@ Example:
 String url =
     getUriOAuthServiceAccount()
         .append("ProjectId", "project")
-        .append("universeDomain", "apis-tpczero.goog")
+        .append("universeDomain", "example.com")
         .toString();
 ```
 
@@ -54,20 +54,20 @@ the assertions into one `private static` helper that takes the varying parts
 (credentials, endpoint URI, expected scopes, expected universe) as parameters.
 Each test then makes one call per object.
 
-This is how `BigQueryConnectionTest` does it. `TPC_UNIVERSE`, `storageUri` and
-`assertStorageCredentialsScoped` are private members of that class, not shared
-fixtures:
+This is how `BigQueryConnectionTest` does it. `CUSTOM_UNIVERSE`, `storageUri`
+and `assertStorageCredentialsScoped` are private members of that class, not
+shared fixtures:
 
 ```java
 assertStorageCredentialsScoped(
     readClient.getSettings().getCredentialsProvider().getCredentials(),
-    TPC_UNIVERSE,
-    storageUri(TPC_UNIVERSE, "BigQueryRead"),
+    CUSTOM_UNIVERSE,
+    storageUri(CUSTOM_UNIVERSE, "BigQueryRead"),
     BigQueryReadSettings.getDefaultServiceScopes());
 assertStorageCredentialsScoped(
     writeClient.getSettings().getCredentialsProvider().getCredentials(),
-    TPC_UNIVERSE,
-    storageUri(TPC_UNIVERSE, "BigQueryWrite"),
+    CUSTOM_UNIVERSE,
+    storageUri(CUSTOM_UNIVERSE, "BigQueryWrite"),
     BigQueryWriteSettings.getDefaultServiceScopes());
 ```
 
@@ -83,8 +83,8 @@ takes each side. In particular:
   `GoogleCredentials`, also test a credential that is *not* a service account,
   such as `getUriOAuthToken()` / `GoogleCredentials.create(AccessToken)`. Check
   that it passes through unchanged (`assertSame` where possible).
-- **Universe domain.** If the code behaves differently for TPC
-  (`universeDomain=apis-tpczero.goog`), also test the **default** universe (no
+- **Universe domain.** If the code behaves differently for a custom universe
+  domain (`universeDomain=example.com`), also test the **default** universe (no
   `universeDomain` property, so `googleapis.com`).
 - **Already configured input.** For example, credentials that already have
   explicit scopes must keep them.
@@ -111,9 +111,10 @@ cases or weaken assertions (for example, changing `assertEquals` to
   misleads the reader.
 - Use try-with-resources for `Connection`, `Statement`, and `ResultSet`, or close
   them explicitly. IT suites share quotas.
-- `@Tag("disable_tpc")` excludes a test from TPC runs. Remove it only when the
-  feature is known to work against TPC, and in that case add an assertion that
-  proves the intended path was used (for example `assertArrowResultSet`).
+- `@Tag("disable_universe_domain")` excludes a test from custom universe domain
+  runs. Remove it only when the feature is known to work against a custom
+  universe domain, and in that case add an assertion that proves the intended
+  path was used (for example `assertArrowResultSet`).
 
 ## 5. Style and verification
 

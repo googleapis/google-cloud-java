@@ -19,14 +19,23 @@ package com.google.cloud.spanner.connection;
 import static com.google.cloud.spanner.connection.ConnectionProperty.create;
 import static com.google.cloud.spanner.connection.ConnectionProperty.createKey;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.spanner.Dialect;
+import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.DialectConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.NonNegativeIntegerConverter;
 import com.google.cloud.spanner.connection.ClientSideStatementValueConverters.StringValueConverter;
 import com.google.cloud.spanner.connection.ConnectionProperty.Context;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
+import java.time.Duration;
 import java.util.Objects;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -56,6 +65,7 @@ public class ConnectionPropertyTest {
             "my_property",
             "Description of my_property",
             "default_value",
+            /* nullAllowed= */ false,
             StringValueConverter.INSTANCE,
             Context.USER);
     assertEquals("my_property", property.getName());
@@ -64,12 +74,14 @@ public class ConnectionPropertyTest {
     assertEquals("my_value", Objects.requireNonNull(property.convert("my_value")).getValue());
     assertEquals(property.getContext(), Context.USER);
     assertEquals("my_property", property.getKey());
+    assertFalse(property.isNullAllowed());
 
     ConnectionProperty<Integer> startupProperty =
         create(
             "STARTUP_PROPERTY",
             "Description of STARTUP_PROPERTY",
             1,
+            /* nullAllowed= */ true,
             NonNegativeIntegerConverter.INSTANCE,
             Context.STARTUP);
     // The name is folded to lower-case.
@@ -80,6 +92,18 @@ public class ConnectionPropertyTest {
         Integer.valueOf(2), Objects.requireNonNull(startupProperty.convert("2")).getValue());
     assertEquals(startupProperty.getContext(), Context.STARTUP);
     assertEquals("startup_property", startupProperty.getKey());
+    assertTrue(startupProperty.isNullAllowed());
+
+    assertThrows(
+        SpannerException.class,
+        () ->
+            create(
+                "invalid_property",
+                "Description",
+                null,
+                /* nullAllowed= */ false,
+                StringValueConverter.INSTANCE,
+                Context.USER));
   }
 
   @Test
@@ -91,6 +115,7 @@ public class ConnectionPropertyTest {
             "Description of property1",
             "default_value_1",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.STARTUP);
     ConnectionProperty<String> property2 =
@@ -100,6 +125,7 @@ public class ConnectionPropertyTest {
             "Description of property2",
             "default_value_2",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.USER);
     ConnectionProperty<String> property3 =
@@ -109,6 +135,7 @@ public class ConnectionPropertyTest {
             "Description of property3",
             "default_value_3",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.STARTUP);
     ConnectionProperty<String> property4 =
@@ -118,6 +145,7 @@ public class ConnectionPropertyTest {
             "Description of property4",
             "default_value_4",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.USER);
     ConnectionProperty<String> property5 =
@@ -127,6 +155,7 @@ public class ConnectionPropertyTest {
             "Description of property5",
             "default_value_5",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.STARTUP);
     ConnectionProperty<String> property6 =
@@ -136,6 +165,7 @@ public class ConnectionPropertyTest {
             "Description of property6",
             "default_value_6",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.STARTUP);
     ConnectionProperty<String> property7 =
@@ -145,6 +175,7 @@ public class ConnectionPropertyTest {
             "Description of property7",
             "default_value_7",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.STARTUP);
     ConnectionProperty<String> property8 =
@@ -154,6 +185,7 @@ public class ConnectionPropertyTest {
             "Description of property8",
             "default_value_8",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.STARTUP);
     ConnectionProperty<String> property9 =
@@ -163,6 +195,7 @@ public class ConnectionPropertyTest {
             "Description of property9",
             "default_value_9",
             null,
+            false,
             StringValueConverter.INSTANCE,
             Context.STARTUP);
 
@@ -268,6 +301,7 @@ public class ConnectionPropertyTest {
             "my_property",
             "Description of my_property",
             1,
+            /* nullAllowed= */ false,
             NonNegativeIntegerConverter.INSTANCE,
             Context.STARTUP);
     assertEquals(Integer.valueOf(100), Objects.requireNonNull(property.convert("100")).getValue());
@@ -282,6 +316,7 @@ public class ConnectionPropertyTest {
             "my_property",
             "Description of my_property",
             "default_value",
+            /* nullAllowed= */ false,
             StringValueConverter.INSTANCE,
             Context.USER);
 
@@ -297,5 +332,153 @@ public class ConnectionPropertyTest {
     assertEquals("other_value", initialValueWithStartupValue.getValue());
     assertEquals("other_value", initialValueWithStartupValue.getResetValue());
     assertSame(initialValueWithStartupValue.getProperty(), property);
+  }
+
+  @Test
+  public void testCreateConnectionPropertyValue() {
+    ConnectionPropertyValue<String> stringValue =
+        ConnectionPropertyValue.of(ConnectionProperties.ENDPOINT, "localhost:9010");
+    assertSame(ConnectionProperties.ENDPOINT, stringValue.getProperty());
+    assertEquals("localhost:9010", stringValue.getValue());
+    assertEquals("localhost:9010", stringValue.getResetValue());
+
+    ConnectionPropertyValue<Boolean> boolValue =
+        ConnectionPropertyValue.of(ConnectionProperties.AUTOCOMMIT, false);
+    assertSame(ConnectionProperties.AUTOCOMMIT, boolValue.getProperty());
+    assertEquals(Boolean.FALSE, boolValue.getValue());
+
+    ConnectionPropertyValue<Dialect> dialectValue =
+        ConnectionPropertyValue.of(ConnectionProperties.DIALECT, Dialect.POSTGRESQL);
+    assertSame(ConnectionProperties.DIALECT, dialectValue.getProperty());
+    assertEquals(Dialect.POSTGRESQL, dialectValue.getValue());
+
+    // Nullable / optional properties accept null, including those with bounded validValues.
+    for (ConnectionProperty<?> nullableProperty :
+        new ConnectionProperty<?>[] {
+          ConnectionProperties.CONNECTION_STATE_TYPE,
+          ConnectionProperties.ENABLE_DIRECT_ACCESS,
+          ConnectionProperties.ENABLE_EXTENDED_TRACING,
+          ConnectionProperties.ENABLE_API_TRACING,
+          ConnectionProperties.ENABLE_DYNAMIC_CHANNEL_POOL,
+          ConnectionProperties.ENABLE_GRPC_GCP,
+          ConnectionProperties.MIN_SESSIONS,
+          ConnectionProperties.ENDPOINT,
+          ConnectionProperties.STATEMENT_TIMEOUT,
+          ConnectionProperties.AUTOCOMMIT_DML_MODE,
+          ConnectionProperties.RPC_PRIORITY,
+        }) {
+      assertTrue(nullableProperty.isNullAllowed());
+      assertNull(ConnectionPropertyValue.of(nullableProperty, null).getValue());
+    }
+    assertEquals(
+        Boolean.TRUE,
+        ConnectionPropertyValue.of(ConnectionProperties.ENABLE_API_TRACING, true).getValue());
+
+    assertThrows(
+        NullPointerException.class, () -> ConnectionPropertyValue.of(null, "localhost:9010"));
+
+    for (ConnectionProperty<?> nonNullProperty :
+        new ConnectionProperty<?>[] {
+          ConnectionProperties.AUTOCOMMIT,
+          ConnectionProperties.MAX_PARTITIONS,
+          ConnectionProperties.BATCH_DML_UPDATE_COUNT,
+          ConnectionProperties.DIALECT,
+          ConnectionProperties.TYPE,
+          ConnectionProperties.DEFAULT_ISOLATION_LEVEL,
+          ConnectionProperties.READ_LOCK_MODE,
+          ConnectionProperties.SAVEPOINT_SUPPORT,
+          ConnectionProperties.DDL_IN_TRANSACTION_MODE,
+          ConnectionProperties.TRACING_PREFIX,
+          ConnectionProperties.UNIVERSE_DOMAIN,
+          ConnectionProperties.OPTIMIZER_VERSION,
+          ConnectionProperties.READ_ONLY_STALENESS,
+        }) {
+      assertFalse(nonNullProperty.isNullAllowed());
+      SpannerException exception =
+          assertThrows(
+              "Expected null rejection for " + nonNullProperty.getKey(),
+              SpannerException.class,
+              () -> ConnectionPropertyValue.of(nonNullProperty, null));
+      assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+    }
+
+    SpannerException unrecognizedLockMode =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionPropertyValue.of(
+                    ConnectionProperties.READ_LOCK_MODE, ReadLockMode.UNRECOGNIZED));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, unrecognizedLockMode.getErrorCode());
+
+    SpannerException unrecognizedIsolationLevel =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionPropertyValue.of(
+                    ConnectionProperties.DEFAULT_ISOLATION_LEVEL, IsolationLevel.UNRECOGNIZED));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, unrecognizedIsolationLevel.getErrorCode());
+
+    // Negative integers, longs, and durations are rejected consistently with string conversion.
+    SpannerException negativeChannels =
+        assertThrows(
+            SpannerException.class,
+            () -> ConnectionPropertyValue.of(ConnectionProperties.NUM_CHANNELS, -1));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, negativeChannels.getErrorCode());
+
+    SpannerException negativeMaxPartitions =
+        assertThrows(
+            SpannerException.class,
+            () -> ConnectionPropertyValue.of(ConnectionProperties.MAX_PARTITIONS, -1));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, negativeMaxPartitions.getErrorCode());
+
+    SpannerException negativeUpdateCount =
+        assertThrows(
+            SpannerException.class,
+            () -> ConnectionPropertyValue.of(ConnectionProperties.BATCH_DML_UPDATE_COUNT, -1L));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, negativeUpdateCount.getErrorCode());
+
+    SpannerException negativeTimeout =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionPropertyValue.of(
+                    ConnectionProperties.STATEMENT_TIMEOUT, Duration.ofSeconds(-1)));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, negativeTimeout.getErrorCode());
+
+    assertEquals(
+        Integer.valueOf(0),
+        ConnectionPropertyValue.of(ConnectionProperties.MAX_PARTITIONS, 0).getValue());
+    assertEquals(
+        Long.valueOf(0L),
+        ConnectionPropertyValue.of(ConnectionProperties.BATCH_DML_UPDATE_COUNT, 0L).getValue());
+    assertEquals(
+        Long.valueOf(1L),
+        ConnectionPropertyValue.of(ConnectionProperties.BATCH_DML_UPDATE_COUNT, 1L).getValue());
+    assertEquals(
+        Duration.ZERO,
+        ConnectionPropertyValue.of(ConnectionProperties.STATEMENT_TIMEOUT, Duration.ZERO)
+            .getValue());
+    assertEquals(
+        Duration.ofSeconds(5),
+        ConnectionPropertyValue.of(ConnectionProperties.STATEMENT_TIMEOUT, Duration.ofSeconds(5))
+            .getValue());
+
+    ConnectionProperty<Dialect> restrictedDialect =
+        create(
+            "restricted_dialect",
+            "Restricted dialect test property",
+            Dialect.GOOGLE_STANDARD_SQL,
+            new Dialect[] {Dialect.GOOGLE_STANDARD_SQL},
+            /* nullAllowed= */ false,
+            DialectConverter.INSTANCE,
+            Context.USER);
+    assertEquals(
+        Dialect.GOOGLE_STANDARD_SQL,
+        ConnectionPropertyValue.of(restrictedDialect, Dialect.GOOGLE_STANDARD_SQL).getValue());
+    SpannerException disallowedDialect =
+        assertThrows(
+            SpannerException.class,
+            () -> ConnectionPropertyValue.of(restrictedDialect, Dialect.POSTGRESQL));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, disallowedDialect.getErrorCode());
   }
 }
