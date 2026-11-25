@@ -179,16 +179,13 @@ public class HttpTransportOptions implements TransportOptions {
       }
 
       private void validateUniverseDomain() throws IOException {
-        // Resolve the client's configured universe domain before checking ApiKeyCredentials so
-        // malformed client universe domain configuration is still rejected.
-        String configuredUniverseDomain = determineUniverseDomain();
         // Default to the GDU. Override with value in the Credentials if needed
         String credentialsUniverseDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
 
         // delegate is always HttpCredentialsAdapter or null (NoCredentials)
         if (delegate != null) {
           Credentials credentials = ((HttpCredentialsAdapter) delegate).getCredentials();
-          // API keys carry no universe domain metadata; callers are responsible for ensuring the
+          // API keys carry no universe domain metadata. Callers are responsible for ensuring the
           // API key belongs to the configured universe domain.
           if (credentials instanceof ApiKeyCredentials) {
             return;
@@ -196,6 +193,7 @@ public class HttpTransportOptions implements TransportOptions {
           credentialsUniverseDomain = credentials.getUniverseDomain();
         }
 
+        String configuredUniverseDomain = determineUniverseDomain();
         if (!configuredUniverseDomain.equals(credentialsUniverseDomain)) {
           throw new UnauthenticatedException(
               new Throwable(
