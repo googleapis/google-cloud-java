@@ -23,6 +23,7 @@ import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SpannerImpl.ClosedException;
 import com.google.cloud.spanner.Statement.StatementFactory;
+import com.google.cloud.spanner.spi.v1.BatchWriteResumingServerStreamingCallable;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -30,6 +31,7 @@ import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import io.opentelemetry.api.common.Attributes;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
@@ -168,13 +170,26 @@ class DatabaseClientImpl implements DatabaseClient {
       final Iterable<MutationGroup> mutationGroups, final TransactionOption... options)
       throws SpannerException {
     ISpan span = tracer.spanBuilder(READ_WRITE_TRANSACTION, databaseAttributes, options);
-    try (IScope s = tracer.withSpan(span)) {
-      return multiplexedSessionDatabaseClient.batchWriteAtLeastOnce(mutationGroups, options);
+    List<MutationGroup> materializedGroups;
+    try {
+      materializedGroups = SessionImpl.materializeMutationGroups(mutationGroups);
     } catch (RuntimeException e) {
       span.setStatus(e);
-      throw e;
-    } finally {
       span.end();
+      throw e;
+    }
+    if (materializedGroups.isEmpty()) {
+      span.end();
+      return BatchWriteResumingServerStreamingCallable.emptyServerStream();
+    }
+    try (IScope s = tracer.withSpan(span)) {
+      // Span lifecycle is bound to the returned ServerStream and ended when the stream completes,
+      // errors, or is cancelled.
+      return multiplexedSessionDatabaseClient.batchWriteAtLeastOnce(materializedGroups, options);
+    } catch (RuntimeException e) {
+      span.setStatus(e);
+      span.end();
+      throw e;
     }
   }
 

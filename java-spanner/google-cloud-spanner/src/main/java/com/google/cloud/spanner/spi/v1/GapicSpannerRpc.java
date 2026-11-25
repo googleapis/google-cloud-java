@@ -30,6 +30,7 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcRawCallableFactory;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -41,6 +42,7 @@ import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -48,6 +50,8 @@ import com.google.api.gax.rpc.InstantiatingWatchdogProvider;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StreamController;
@@ -94,6 +98,7 @@ import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
 import com.google.cloud.spanner.encryption.EncryptionConfigProtoMapper;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.ChannelPrimeSessionSource;
+import com.google.cloud.spanner.v1.stub.GrpcSpannerCallableFactory;
 import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.annotations.VisibleForTesting;
@@ -319,6 +324,8 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   private final ConcurrentLinkedDeque<SpannerResponseObserver> responseObservers =
       new ConcurrentLinkedDeque<>();
+  private final List<BatchWriteResumingServerStreamingCallable> batchWriteCallables =
+      new CopyOnWriteArrayList<>();
 
   private final boolean throttleAdministrativeRequests;
   private final RetrySettings retryAdministrativeRequestsSettings;
@@ -450,13 +457,13 @@ public class GapicSpannerRpc implements SpannerRpc {
         ClientContext clientContext = ClientContext.create(spannerStubSettings);
         this.keyAwareChannel = extractKeyAwareChannel(clientContext.getTransportChannel());
         this.grpcGcpChannel = extractGrpcGcpChannel(clientContext.getTransportChannel());
+        SpannerStubSettings.Builder defaultStubSettings = SpannerStubSettings.newBuilder();
         this.spannerStub =
             GrpcSpannerStubWithStubSettingsAndClientContext.create(
-                spannerStubSettings, clientContext);
+                spannerStubSettings, clientContext, createSpannerCallableFactory());
         DIRECTPATH_CHANNEL_CREATED =
             ((GrpcTransportChannel) clientContext.getTransportChannel()).isDirectPath()
                 && isEnableDirectAccess;
-        SpannerStubSettings.Builder defaultStubSettings = SpannerStubSettings.newBuilder();
         RetrySettings configuredReadRetrySettings =
             options.getSpannerStubSettings().streamingReadSettings().getRetrySettings();
         this.readRetrySettings =
@@ -2414,11 +2421,86 @@ public class GapicSpannerRpc implements SpannerRpc {
     return partitionedDmlStub.executeStreamingSqlCallable().call(request, context);
   }
 
+  private GrpcStubCallableFactory createSpannerCallableFactory() {
+    return new GrpcSpannerCallableFactory() {
+      @Override
+      public <RequestT, ResponseT>
+          ServerStreamingCallable<RequestT, ResponseT> createServerStreamingCallable(
+              GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
+              ServerStreamingCallSettings<RequestT, ResponseT> callSettings,
+              ClientContext clientContext) {
+        if (SpannerGrpc.getBatchWriteMethod()
+            .getFullMethodName()
+            .equals(grpcCallSettings.getMethodDescriptor().getFullMethodName())) {
+          @SuppressWarnings("unchecked")
+          GrpcCallSettings<BatchWriteRequest, BatchWriteResponse> batchWriteGrpcSettings =
+              (GrpcCallSettings<BatchWriteRequest, BatchWriteResponse>) grpcCallSettings;
+          @SuppressWarnings("unchecked")
+          ServerStreamingCallSettings<BatchWriteRequest, BatchWriteResponse>
+              batchWriteCallSettings =
+                  (ServerStreamingCallSettings<BatchWriteRequest, BatchWriteResponse>) callSettings;
+          Set<Code> batchWriteRetryableCodes = batchWriteCallSettings.getRetryableCodes();
+          RetrySettings batchWriteRetrySettings = batchWriteCallSettings.getRetrySettings();
+          ServerStreamingCallable<BatchWriteRequest, BatchWriteResponse> callable =
+              GrpcRawCallableFactory.createServerStreamingCallable(
+                  batchWriteGrpcSettings, batchWriteRetryableCodes);
+          if (clientContext.getStreamWatchdog() != null) {
+            callable = Callables.watched(callable, batchWriteCallSettings, clientContext);
+          }
+          BatchWriteResumingServerStreamingCallable resumingCallable =
+              new BatchWriteResumingServerStreamingCallable(
+                  callable,
+                  batchWriteRetrySettings,
+                  batchWriteRetryableCodes,
+                  clientContext.getExecutor(),
+                  clientContext.getClock(),
+                  clientContext.getTracerFactory(),
+                  numChannels,
+                  isGrpcGcpExtensionEnabled);
+          batchWriteCallables.add(resumingCallable);
+          @SuppressWarnings("unchecked")
+          ServerStreamingCallable<RequestT, ResponseT> typedCallable =
+              (ServerStreamingCallable<RequestT, ResponseT>)
+                  resumingCallable.withDefaultCallContext(clientContext.getDefaultCallContext());
+          return typedCallable;
+        }
+        return super.createServerStreamingCallable(grpcCallSettings, callSettings, clientContext);
+      }
+    };
+  }
+
   @Override
   public ServerStream<BatchWriteResponse> batchWriteAtLeastOnce(
       BatchWriteRequest request, @Nullable Map<Option, ?> options) {
+    return batchWriteAtLeastOnce(request, options, /* listener= */ null);
+  }
+
+  @Override
+  public ServerStream<BatchWriteResponse> batchWriteAtLeastOnce(
+      BatchWriteRequest request,
+      @Nullable Map<Option, ?> options,
+      @Nullable BatchWriteResumingServerStreamingCallable.StreamLifecycleListener listener) {
+    if (request.getMutationGroupsCount() == 0) {
+      if (listener != null) {
+        listener.onComplete(null);
+      }
+      return BatchWriteResumingServerStreamingCallable.emptyServerStream();
+    }
     GrpcCallContext context =
-        newCallContext(options, request.getSession(), request, SpannerGrpc.getBatchWriteMethod());
+        newCallContext(
+            options,
+            request.getSession(),
+            request,
+            SpannerGrpc.getBatchWriteMethod(),
+            /* routeToLeader= */ true);
+    if (listener != null) {
+      context =
+          context.withCallOptions(
+              context
+                  .getCallOptions()
+                  .withOption(
+                      BatchWriteResumingServerStreamingCallable.LIFECYCLE_LISTENER_KEY, listener));
+    }
     return spannerStub.batchWriteCallable().call(request, context);
   }
 
@@ -2850,6 +2932,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   void closeResponseObservers() {
     responseObservers.forEach(SpannerResponseObserver::close);
     responseObservers.clear();
+    batchWriteCallables.forEach(BatchWriteResumingServerStreamingCallable::cancelAll);
   }
 
   @InternalApi
