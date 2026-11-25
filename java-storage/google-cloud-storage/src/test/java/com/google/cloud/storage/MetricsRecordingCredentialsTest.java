@@ -29,13 +29,12 @@ import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_OK;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_TIMEOUT;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiClock;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
 import com.google.auth.RequestMetadataCallback;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GdchCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -57,6 +56,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.SocketTimeoutException;
 import java.net.URI;
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -110,9 +110,29 @@ public final class MetricsRecordingCredentialsTest {
   public void wrap_guardsDelegationAndDeserialization() throws Exception {
     TestGoogleCredentials delegate = new TestGoogleCredentials();
     Credentials nonGoogle = OAuth2Credentials.create(null);
-    GdchCredentials gdch = mock(GdchCredentials.class);
-    ServiceAccountCredentials unscopedSa = mock(ServiceAccountCredentials.class);
-    when(unscopedSa.createScopedRequired()).thenReturn(true);
+    // Construct real instances instead of Mockito mocks because JSpecify @NullMarked on
+    // google-auth-library classes triggers ArrayStoreException under ByteBuddy on JDK 8.
+    PrivateKey dummyPrivateKey = new DummyPrivateKey();
+    HttpTransportFactory unusedTransportFactory =
+        () -> {
+          throw new UnsupportedOperationException("unused");
+        };
+    GdchCredentials gdch =
+        GdchCredentials.newBuilder()
+            .setProjectId("test-project")
+            .setPrivateKeyId("test-key-id")
+            .setPrivateKey(dummyPrivateKey)
+            .setServiceIdentityName("test-identity")
+            .setTokenServerUri(URI.create("https://sts.example.com/token"))
+            .setHttpTransportFactory(unusedTransportFactory)
+            .build();
+    ServiceAccountCredentials unscopedSa =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail("test@test-project.iam.gserviceaccount.com")
+            .setPrivateKey(dummyPrivateKey)
+            .setHttpTransportFactory(unusedTransportFactory)
+            .build();
+    assertThat(unscopedSa.createScopedRequired()).isTrue();
 
     assertThat(MetricsRecordingCredentials.wrap(null, debugMetrics, fakeClock)).isNull();
     assertThat(
@@ -410,6 +430,25 @@ public final class MetricsRecordingCredentialsTest {
     @Override
     public String getQuotaProjectId() {
       return "quota-proj";
+    }
+  }
+
+  private static final class DummyPrivateKey implements PrivateKey {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public String getAlgorithm() {
+      return "RSA";
+    }
+
+    @Override
+    public String getFormat() {
+      return "PKCS#8";
+    }
+
+    @Override
+    public byte[] getEncoded() {
+      return new byte[0];
     }
   }
 }
