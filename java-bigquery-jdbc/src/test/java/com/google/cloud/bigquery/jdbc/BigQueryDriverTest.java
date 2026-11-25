@@ -24,6 +24,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.times;
 
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.AuthenticationType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
@@ -31,6 +32,7 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
+import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.sql.Connection;
@@ -46,6 +48,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
 public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
+
+  private static final String TEST_SA_EMAIL = "dummytest@dummytest.iam.gserviceaccount.com";
 
   static BigQueryDriver bigQueryDriver;
 
@@ -291,5 +295,56 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
               () -> bigQueryDriver.connect(VALID_TOKEN_URL, new Properties()));
       assertThat(thrown.getCause()).isInstanceOf(IOException.class);
     }
+  }
+
+  @Test
+  public void testConnectWithInlineJsonKeyAndBlankEmailInProperties() throws SQLException {
+    String fakeJson = getFakeServiceAccountJson(TEST_SA_EMAIL);
+    String baseUrl = TestUtilities.getBaseConnectionUrl();
+
+    // Empty email in Properties (dropped by appendPropertiesToURL), omitted email, and whitespace
+    for (String email : new String[] {"", null, "   "}) {
+      Properties props = new Properties();
+      props.setProperty(BigQueryJdbcUrlUtility.PROJECT_ID_PROPERTY_NAME, "MyBigQueryProject");
+      props.setProperty(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, "0");
+      props.setProperty(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, fakeJson);
+      if (email != null) {
+        props.setProperty(BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME, email);
+      }
+
+      try (Connection connection = bigQueryDriver.connect(baseUrl, props)) {
+        assertConnectedWithServiceAccount(connection, TEST_SA_EMAIL);
+      }
+    }
+  }
+
+  @Test
+  public void testDataSourceGetConnectionWithInlineJsonKeyWithoutEmail() throws SQLException {
+    String fakeJson = getFakeServiceAccountJson(TEST_SA_EMAIL);
+
+    for (String email : new String[] {null, "", "   "}) {
+      DataSource ds = new DataSource();
+      ds.setURL(TestUtilities.getBaseConnectionUrl());
+      ds.setProjectId("MyBigQueryProject");
+      ds.setOAuthType(0);
+      ds.setOAuthPvtKey(fakeJson);
+      if (email != null) {
+        ds.setOAuthServiceAcctEmail(email);
+      }
+
+      try (Connection connection = ds.getConnection()) {
+        assertConnectedWithServiceAccount(connection, TEST_SA_EMAIL);
+      }
+    }
+  }
+
+  private static void assertConnectedWithServiceAccount(Connection connection, String expectedEmail)
+      throws SQLException {
+    assertThat(connection).isNotNull();
+    assertThat(connection.isClosed()).isFalse();
+    BigQueryConnection bqConnection = connection.unwrap(BigQueryConnection.class);
+    assertThat(bqConnection.credentials).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) bqConnection.credentials).getClientEmail())
+        .isEqualTo(expectedEmail);
   }
 }
