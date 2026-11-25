@@ -71,6 +71,7 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -78,8 +79,6 @@ import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -111,7 +110,7 @@ public class BuiltInTracingTest {
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
 
-  private InMemorySpanExporter spanExporter;
+  private final List<SpanData> exportedSpans = Collections.synchronizedList(new ArrayList<>());
 
   @BeforeClass
   public static void startMockServer() throws Exception {
@@ -151,9 +150,8 @@ public class BuiltInTracingTest {
     SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
     SpannerOptionsHelper.resetActiveTracingFramework();
     GlobalOpenTelemetry.resetForTest();
-    spanExporter = InMemorySpanExporter.create();
     BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
-        (projectId, credentials) -> spanExporter);
+        (projectId, credentials) -> new CollectingSpanExporter(exportedSpans, null));
     lastExecuteSqlHeaders.set(null);
   }
 
@@ -260,10 +258,7 @@ public class BuiltInTracingTest {
         while (resultSet.next()) {}
       }
     }
-    ((OpenTelemetrySdk) options.getTracingOpenTelemetry())
-        .getSdkTracerProvider()
-        .forceFlush()
-        .join(10, TimeUnit.SECONDS);
+    assertTrue(waitForInstanceCount(0));
 
     Metadata headers = lastExecuteSqlHeaders.get();
     assertNotNull(headers);
@@ -273,7 +268,7 @@ public class BuiltInTracingTest {
     String[] traceParentParts = traceParent.split("-");
     assertEquals(1, Integer.parseInt(traceParentParts[3], 16) & 1);
     Optional<SpanData> querySpan =
-        spanExporter.getFinishedSpanItems().stream()
+        exportedSpans.stream()
             .filter(span -> span.getName().equals("CloudSpannerOperation.ExecuteStreamingQuery"))
             .findFirst();
     assertTrue(querySpan.isPresent());
@@ -351,72 +346,111 @@ public class BuiltInTracingTest {
   }
 
   @Test
-  public void clientsOfTheSameProjectShareTheBuiltInOpenTelemetry() {
+  public void eachClientGetsItsOwnBuiltInOpenTelemetry() {
     SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
     SpannerOptions sameProject = createOptionsBuilder().setEnableBuiltInTracing(true).build();
-    SpannerOptions otherProject =
-        createOptionsBuilder().setEnableBuiltInTracing(true).setProjectId("other-project").build();
 
     OpenTelemetry openTelemetry = options.getTracingOpenTelemetry();
 
     assertTrue(openTelemetry instanceof OpenTelemetrySdk);
-    assertSame(openTelemetry, sameProject.getTracingOpenTelemetry());
-    assertNotSame(openTelemetry, otherProject.getTracingOpenTelemetry());
+    assertSame(openTelemetry, options.getTracingOpenTelemetry());
+    assertNotSame(openTelemetry, sameProject.getTracingOpenTelemetry());
     assertNotSame(openTelemetry, options.getOpenTelemetry());
   }
 
   @Test
-  public void clientsWithDifferentCredentialsObjectsUseDifferentBuiltInOpenTelemetry() {
-    OAuth2Credentials otherCredentials = OAuth2Credentials.create(new AccessToken("token", null));
-    SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
-    SpannerOptions otherCredentialsOptions =
+  public void oneClientUsesOneBuiltInOpenTelemetry() {
+    SpannerOptions options =
         createOptionsBuilder()
             .setEnableBuiltInTracing(true)
-            .setCredentials(otherCredentials)
+            .setBuiltInTracingSamplingRate(1.0)
+            .setEnableApiTracing(true)
             .build();
+    try (Spanner spanner = options.getService()) {
+      executeSelect1(spanner);
 
-    assertEquals(CREDENTIALS, otherCredentials);
-    assertNotSame(
-        options.getTracingOpenTelemetry(), otherCredentialsOptions.getTracingOpenTelemetry());
-  }
-
-  @Test
-  public void builtInOpenTelemetryIsKeptWhenTheTokenIsRefreshed() throws IOException {
-    AtomicInteger refreshes = new AtomicInteger();
-    OAuth2Credentials credentials =
-        new OAuth2Credentials() {
-          @Override
-          public AccessToken refreshAccessToken() {
-            return new AccessToken("token-" + refreshes.incrementAndGet(), null);
-          }
-        };
-    credentials.refresh();
-    OpenTelemetry openTelemetry =
-        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry("test-project", credentials, 1.0);
-
-    credentials.refresh();
-
-    assertSame(
-        openTelemetry,
-        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry("test-project", credentials, 1.0));
-  }
-
-  @Test
-  public void builtInTracingIsNotUsedForNewCredentialsAfterTheInstanceLimit() {
-    List<Credentials> credentials = new ArrayList<>();
-    for (int i = 0; i < BuiltInTracingProvider.MAX_OPEN_TELEMETRY_INSTANCES; i++) {
-      credentials.add(OAuth2Credentials.create(new AccessToken("token", null)));
-      assertNotNull(
-          BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
-              "test-project", credentials.get(i), 1.0));
+      assertEquals(1, BuiltInTracingProvider.INSTANCE.instanceCount());
+      assertSame(options.getTracingOpenTelemetry(), spanner.getOptions().getTracingOpenTelemetry());
     }
+  }
 
-    assertNull(
-        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
-            "test-project", OAuth2Credentials.create(new AccessToken("token", null)), 1.0));
-    assertNotNull(
-        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
-            "test-project", credentials.get(0), 1.0));
+  @Test
+  public void builtInOpenTelemetryIsShutDownWhenTheClientIsClosed() throws Exception {
+    List<SpanData> exported = new CopyOnWriteArrayList<>();
+    BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
+        (projectId, credentials) -> new CollectingSpanExporter(exported, null));
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setBuiltInTracingSamplingRate(1.0)
+            .build();
+    Spanner spanner = options.getService();
+    executeSelect1(spanner);
+
+    spanner.close();
+
+    assertTrue(waitForInstanceCount(0));
+    assertFalse(exported.isEmpty());
+    assertFalse(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    assertEquals(0, BuiltInTracingProvider.INSTANCE.instanceCount());
+  }
+
+  @Test
+  public void newClientOfTheSameOptionsGetsANewBuiltInOpenTelemetry() {
+    SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
+    Spanner first = options.getService();
+    OpenTelemetry firstOpenTelemetry = options.getTracingOpenTelemetry();
+    first.close();
+
+    try (Spanner second = options.getService()) {
+      assertNotSame(first, second);
+      assertTrue(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+      assertNotSame(firstOpenTelemetry, options.getTracingOpenTelemetry());
+    }
+  }
+
+  @Test
+  public void builtInOpenTelemetryCreatedBeforeTheClientIsClosedWithTheClient() {
+    SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
+    OpenTelemetry openTelemetry = options.getTracingOpenTelemetry();
+
+    Spanner spanner = options.getService();
+    assertSame(openTelemetry, options.getTracingOpenTelemetry());
+    assertEquals(1, BuiltInTracingProvider.INSTANCE.instanceCount());
+    spanner.close();
+
+    assertTrue(waitForInstanceCount(0));
+  }
+
+  @Test
+  public void closingTheClientDoesNotWaitForTheExport() throws Exception {
+    CountDownLatch exportStarted = new CountDownLatch(1);
+    CountDownLatch releaseExport = new CountDownLatch(1);
+    BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
+        (projectId, credentials) ->
+            new CollectingSpanExporter(
+                new CopyOnWriteArrayList<>(),
+                () -> {
+                  exportStarted.countDown();
+                  awaitUninterruptibly(releaseExport);
+                }));
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setBuiltInTracingSamplingRate(1.0)
+            .build();
+    Spanner spanner = options.getService();
+    executeSelect1(spanner);
+    try {
+      long start = System.nanoTime();
+      spanner.close();
+      assertTrue(exportStarted.await(10, TimeUnit.SECONDS));
+      assertTrue(System.nanoTime() - start < TimeUnit.SECONDS.toNanos(5));
+      assertEquals(1, BuiltInTracingProvider.INSTANCE.instanceCount());
+    } finally {
+      releaseExport.countDown();
+    }
+    assertTrue(waitForInstanceCount(0));
   }
 
   @Test
@@ -537,10 +571,7 @@ public class BuiltInTracingTest {
           }
         }
       }
-      ((OpenTelemetrySdk) options.getTracingOpenTelemetry())
-          .getSdkTracerProvider()
-          .forceFlush()
-          .join(10, TimeUnit.SECONDS);
+      assertTrue(waitForInstanceCount(0));
 
       assertEquals(1, rows);
       assertNotNull(exportRequest.get());
@@ -614,46 +645,36 @@ public class BuiltInTracingTest {
   }
 
   @Test
-  public void shutdownFlushesAllInstancesWithoutHoldingTheLock() throws Exception {
-    CountDownLatch exportStarted = new CountDownLatch(1);
-    CountDownLatch releaseExport = new CountDownLatch(1);
-    List<SpanData> otherSpans = new CopyOnWriteArrayList<>();
+  public void shutdownFlushesAllInstancesAtTheSameTimeWithoutHoldingTheLock() throws Exception {
+    CountDownLatch slowExportStarted = new CountDownLatch(1);
+    CountDownLatch releaseSlowExport = new CountDownLatch(1);
+    CountDownLatch otherExported = new CountDownLatch(1);
     BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
         (projectId, credentials) ->
-            new SpanExporter() {
-              @Override
-              public CompletableResultCode export(Collection<SpanData> spans) {
-                if (projectId.equals("slow-project")) {
-                  exportStarted.countDown();
-                  try {
-                    releaseExport.await();
-                  } catch (InterruptedException exception) {
-                    Thread.currentThread().interrupt();
-                  }
-                } else {
-                  otherSpans.addAll(spans);
-                }
-                return CompletableResultCode.ofSuccess();
-              }
-
-              @Override
-              public CompletableResultCode flush() {
-                return CompletableResultCode.ofSuccess();
-              }
-
-              @Override
-              public CompletableResultCode shutdown() {
-                return CompletableResultCode.ofSuccess();
-              }
-            });
-    BuiltInTracingProvider.INSTANCE
-        .getOrCreateOpenTelemetry("slow-project", CREDENTIALS, 1.0)
+            new CollectingSpanExporter(
+                new CopyOnWriteArrayList<>(),
+                projectId.equals("slow-project")
+                    ? () -> {
+                      slowExportStarted.countDown();
+                      awaitUninterruptibly(releaseSlowExport);
+                    }
+                    : otherExported::countDown));
+    createOptionsBuilder()
+        .setProjectId("slow-project")
+        .setEnableBuiltInTracing(true)
+        .setBuiltInTracingSamplingRate(1.0)
+        .build()
+        .getTracingOpenTelemetry()
         .getTracer("test")
         .spanBuilder("slow")
         .startSpan()
         .end();
-    BuiltInTracingProvider.INSTANCE
-        .getOrCreateOpenTelemetry("other-project", CREDENTIALS, 1.0)
+    createOptionsBuilder()
+        .setProjectId("other-project")
+        .setEnableBuiltInTracing(true)
+        .setBuiltInTracingSamplingRate(1.0)
+        .build()
+        .getTracingOpenTelemetry()
         .getTracer("test")
         .spanBuilder("other")
         .startSpan()
@@ -661,25 +682,105 @@ public class BuiltInTracingTest {
 
     Thread shutdown = new Thread(BuiltInTracingProvider.INSTANCE::shutdown);
     shutdown.start();
-    ExecutorService executor = Executors.newSingleThreadExecutor();
     try {
-      assertTrue(exportStarted.await(10, TimeUnit.SECONDS));
-      assertNull(
-          executor
-              .submit(
-                  () ->
-                      BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
-                          "new-project", CREDENTIALS, 1.0))
-              .get(5, TimeUnit.SECONDS));
-      long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
-      while (otherSpans.isEmpty() && System.nanoTime() < deadline) {
-        Thread.sleep(10L);
-      }
-      assertEquals(1, otherSpans.size());
+      assertTrue(slowExportStarted.await(10, TimeUnit.SECONDS));
+      assertTrue(otherExported.await(1, TimeUnit.SECONDS));
+      assertEquals(2, BuiltInTracingProvider.INSTANCE.instanceCount());
+      assertTrue(shutdown.isAlive());
     } finally {
-      executor.shutdownNow();
+      releaseSlowExport.countDown();
+      shutdown.join(TimeUnit.SECONDS.toMillis(15));
+    }
+    assertFalse(shutdown.isAlive());
+  }
+
+  @Test
+  public void shutdownWaitsForInstancesOfClosedClients() throws Exception {
+    CountDownLatch exportStarted = new CountDownLatch(1);
+    CountDownLatch releaseExport = new CountDownLatch(1);
+    BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
+        (projectId, credentials) ->
+            new CollectingSpanExporter(
+                new CopyOnWriteArrayList<>(),
+                () -> {
+                  exportStarted.countDown();
+                  awaitUninterruptibly(releaseExport);
+                }));
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setBuiltInTracingSamplingRate(1.0)
+            .build();
+    Spanner spanner = options.getService();
+    executeSelect1(spanner);
+    spanner.close();
+    assertTrue(exportStarted.await(10, TimeUnit.SECONDS));
+
+    Thread shutdown = new Thread(BuiltInTracingProvider.INSTANCE::shutdown);
+    shutdown.start();
+    try {
+      shutdown.join(500L);
+      assertTrue(shutdown.isAlive());
+    } finally {
       releaseExport.countDown();
       shutdown.join(TimeUnit.SECONDS.toMillis(15));
+    }
+    assertFalse(shutdown.isAlive());
+  }
+
+  private static void executeSelect1(Spanner spanner) {
+    DatabaseClient client =
+        spanner.getDatabaseClient(DatabaseId.of("test-project", "test-instance", "test-db"));
+    try (ResultSet resultSet = client.singleUse().executeQuery(SELECT1)) {
+      while (resultSet.next()) {}
+    }
+  }
+
+  private static boolean waitForInstanceCount(int count) {
+    long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(15);
+    while (BuiltInTracingProvider.INSTANCE.instanceCount() != count) {
+      if (System.nanoTime() > deadline) {
+        return false;
+      }
+      Thread.yield();
+    }
+    return true;
+  }
+
+  private static void awaitUninterruptibly(CountDownLatch latch) {
+    try {
+      latch.await(30, TimeUnit.SECONDS);
+    } catch (InterruptedException exception) {
+      Thread.currentThread().interrupt();
+    }
+  }
+
+  private static final class CollectingSpanExporter implements SpanExporter {
+    private final List<SpanData> spans;
+    @Nullable private final Runnable onExport;
+
+    CollectingSpanExporter(List<SpanData> spans, @Nullable Runnable onExport) {
+      this.spans = spans;
+      this.onExport = onExport;
+    }
+
+    @Override
+    public CompletableResultCode export(Collection<SpanData> spans) {
+      if (onExport != null) {
+        onExport.run();
+      }
+      this.spans.addAll(spans);
+      return CompletableResultCode.ofSuccess();
+    }
+
+    @Override
+    public CompletableResultCode flush() {
+      return CompletableResultCode.ofSuccess();
+    }
+
+    @Override
+    public CompletableResultCode shutdown() {
+      return CompletableResultCode.ofSuccess();
     }
   }
 
@@ -836,7 +937,7 @@ public class BuiltInTracingTest {
                 + "/"
                 + BuiltInMetricsConstant.OPERATION_COUNT_NAME));
     assertEquals(metricsWithoutBuiltInTracing, metricsWithBuiltInTracing);
-    assertFalse(spanExporter.getFinishedSpanItems().isEmpty());
+    assertFalse(exportedSpans.isEmpty());
   }
 
   private static void useBuiltInTracingEnvironment() {
@@ -876,12 +977,7 @@ public class BuiltInTracingTest {
         while (resultSet.next()) {}
       }
     }
-    if (enableBuiltInTracing) {
-      ((OpenTelemetrySdk) options.getTracingOpenTelemetry())
-          .getSdkTracerProvider()
-          .forceFlush()
-          .join(10, TimeUnit.SECONDS);
-    }
+    assertTrue(waitForInstanceCount(0));
     return metricReader.collectAllMetrics().stream()
         .map(MetricData::getName)
         .collect(Collectors.toSet());

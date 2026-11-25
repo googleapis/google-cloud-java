@@ -120,6 +120,7 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
@@ -366,6 +367,23 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean enableEndToEndTracing;
   private final boolean enableBuiltInTracing;
   private final double builtInTracingSamplingRate;
+
+  private enum BuiltInTracingState {
+    NOT_CREATED,
+    IN_USE,
+    FAILED,
+    CLOSED
+  }
+
+  private final Object builtInTracingLock = new Object();
+
+  @GuardedBy("builtInTracingLock")
+  private BuiltInTracingState builtInTracingState = BuiltInTracingState.NOT_CREATED;
+
+  @GuardedBy("builtInTracingLock")
+  @Nullable
+  private OpenTelemetrySdk builtInTracing;
+
   private final String monitoringHost;
   private final TransactionOptions defaultTransactionOptions;
   private final RequestOptions.ClientContext clientContext;
@@ -3132,10 +3150,38 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       BuiltInTracingProvider.INSTANCE.logNotUsedOnce(notUsedReason);
       return openTelemetry;
     }
-    OpenTelemetry builtInOpenTelemetry =
-        BuiltInTracingProvider.INSTANCE.getOrCreateOpenTelemetry(
-            getProjectId(), getCredentials(), builtInTracingSamplingRate);
-    return builtInOpenTelemetry == null ? openTelemetry : builtInOpenTelemetry;
+    return getOrCreateBuiltInTracing(openTelemetry);
+  }
+
+  private OpenTelemetry getOrCreateBuiltInTracing(OpenTelemetry fallback) {
+    synchronized (builtInTracingLock) {
+      if (builtInTracingState == BuiltInTracingState.NOT_CREATED) {
+        builtInTracing =
+            BuiltInTracingProvider.INSTANCE.create(
+                getProjectId(), getCredentials(), builtInTracingSamplingRate);
+        builtInTracingState =
+            builtInTracing == null ? BuiltInTracingState.FAILED : BuiltInTracingState.IN_USE;
+      }
+      return builtInTracingState == BuiltInTracingState.IN_USE ? builtInTracing : fallback;
+    }
+  }
+
+  void closeBuiltInTracing() {
+    synchronized (builtInTracingLock) {
+      if (builtInTracing != null) {
+        BuiltInTracingProvider.INSTANCE.close(builtInTracing);
+        builtInTracing = null;
+      }
+      builtInTracingState = BuiltInTracingState.CLOSED;
+    }
+  }
+
+  private void reopenBuiltInTracing() {
+    synchronized (builtInTracingLock) {
+      if (builtInTracingState != BuiltInTracingState.IN_USE) {
+        builtInTracingState = BuiltInTracingState.NOT_CREATED;
+      }
+    }
   }
 
   @Nullable
@@ -3522,7 +3568,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    */
   @Override
   protected boolean shouldRefreshService(Spanner cachedService) {
-    return cachedService == null || cachedService.isClosed();
+    boolean refresh = cachedService == null || cachedService.isClosed();
+    if (refresh) {
+      reopenBuiltInTracing();
+    }
+    return refresh;
   }
 
   /**

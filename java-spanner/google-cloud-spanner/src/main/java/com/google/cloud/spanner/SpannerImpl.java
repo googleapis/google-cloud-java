@@ -388,6 +388,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       } catch (RuntimeException e) {
         logger.log(Level.WARNING, "Failed to close channels", e);
       }
+      getOptions().closeBuiltInTracing();
     }
   }
 

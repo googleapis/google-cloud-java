@@ -19,10 +19,7 @@ package com.google.cloud.spanner;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Equivalence;
 import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableList;
-import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -48,7 +45,7 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -61,9 +58,10 @@ import java.util.logging.Logger;
 import org.jspecify.annotations.Nullable;
 
 /**
- * Creates and caches the OpenTelemetry instances that are used for built-in tracing. One instance
- * is created per project, sampling rate and credentials object, so that spans are always exported
- * to the project of the client that created them, with the credentials of that client.
+ * Creates the OpenTelemetry instances that are used for built-in tracing. Each Spanner client gets
+ * its own instance, which exports its spans with the credentials of that client to the project of
+ * that client, and which is shut down when the client is closed. Instances of clients that are not
+ * closed are shut down by a JVM shutdown hook.
  */
 final class BuiltInTracingProvider {
 
@@ -80,67 +78,80 @@ final class BuiltInTracingProvider {
       AttributeKey.stringKey("service.name");
   private static final String OTEL_SERVICE_NAME = "OTEL_SERVICE_NAME";
   private static final long SHUTDOWN_TIMEOUT_SECONDS = 10;
-  @VisibleForTesting static final int MAX_OPEN_TELEMETRY_INSTANCES = 10;
   private static final AtomicBoolean credentialsWarningLogged = new AtomicBoolean();
 
-  private final Map<List<Object>, OpenTelemetrySdk> openTelemetries = new HashMap<>();
-  private final Set<List<Object>> failedKeys = new HashSet<>();
+  private final Set<OpenTelemetrySdk> inUse = Collections.newSetFromMap(new IdentityHashMap<>());
+  private final Map<OpenTelemetrySdk, CompletableResultCode> closing = new IdentityHashMap<>();
   private BiFunction<String, Credentials, SpanExporter> spanExporterFactory =
       BuiltInTracingProvider::createTelemetryApiExporter;
   private BooleanSupplier contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
   private Boolean contextCanHoldSpans;
   private Thread shutdownHook;
   private boolean shutDown;
+  private boolean creationFailureLogged;
   private boolean openCensusWarningLogged;
   private boolean customTracingInfoLogged;
   private boolean notUsedInfoLogged;
   private boolean invalidSamplingRateWarningLogged;
-  private boolean instanceLimitWarningLogged;
 
   private BuiltInTracingProvider() {}
 
   @Nullable
-  synchronized OpenTelemetry getOrCreateOpenTelemetry(
+  synchronized OpenTelemetrySdk create(
       String projectId, Credentials credentials, double samplingRate) {
     if (shutDown || !isContextUsable()) {
       return null;
     }
-    List<Object> key =
-        ImmutableList.of(projectId, samplingRate, Equivalence.identity().wrap(credentials));
-    if (failedKeys.contains(key)) {
-      return null;
-    }
-    OpenTelemetrySdk openTelemetry = openTelemetries.get(key);
-    if (openTelemetry == null) {
-      if (openTelemetries.size() + failedKeys.size() >= MAX_OPEN_TELEMETRY_INSTANCES) {
-        logInstanceLimitWarningOnce();
-        return null;
-      }
-      try {
-        openTelemetry =
-            createOpenTelemetry(
-                projectId, spanExporterFactory.apply(projectId, credentials), samplingRate);
-      } catch (Throwable throwable) {
-        failedKeys.add(key);
+    OpenTelemetrySdk openTelemetry;
+    try {
+      openTelemetry =
+          createOpenTelemetry(
+              projectId, spanExporterFactory.apply(projectId, credentials), samplingRate);
+    } catch (Throwable throwable) {
+      if (!creationFailureLogged) {
+        creationFailureLogged = true;
         logger.log(
             Level.WARNING,
             "Unable to create the exporter for built-in tracing, built-in tracing is disabled",
             throwable);
+      }
+      return null;
+    }
+    if (shutdownHook == null) {
+      Thread hook = new Thread(this::shutdown, "spanner-builtin-tracing-shutdown");
+      try {
+        Runtime.getRuntime().addShutdownHook(hook);
+      } catch (IllegalStateException exception) {
+        openTelemetry.shutdown();
         return null;
       }
-      if (shutdownHook == null) {
-        Thread hook = new Thread(this::shutdown);
-        try {
-          Runtime.getRuntime().addShutdownHook(hook);
-        } catch (IllegalStateException exception) {
-          openTelemetry.close();
-          return null;
-        }
-        shutdownHook = hook;
-      }
-      openTelemetries.put(key, openTelemetry);
+      shutdownHook = hook;
     }
+    inUse.add(openTelemetry);
     return openTelemetry;
+  }
+
+  synchronized void close(OpenTelemetrySdk openTelemetry) {
+    if (!inUse.remove(openTelemetry) || shutDown) {
+      return;
+    }
+    CompletableResultCode result;
+    try {
+      result = openTelemetry.shutdown();
+    } catch (Throwable throwable) {
+      return;
+    }
+    closing.put(openTelemetry, result);
+    result.whenComplete(() -> closed(openTelemetry));
+  }
+
+  private synchronized void closed(OpenTelemetrySdk openTelemetry) {
+    closing.remove(openTelemetry);
+  }
+
+  @VisibleForTesting
+  synchronized int instanceCount() {
+    return inUse.size() + closing.size();
   }
 
   private boolean isContextUsable() {
@@ -217,20 +228,6 @@ final class BuiltInTracingProvider {
     }
   }
 
-  private void logInstanceLimitWarningOnce() {
-    if (!instanceLimitWarningLogged) {
-      instanceLimitWarningLogged = true;
-      logger.log(
-          Level.WARNING,
-          "Built-in tracing already uses "
-              + MAX_OPEN_TELEMETRY_INSTANCES
-              + " OpenTelemetry instances, one for each combination of project, sampling rate and"
-              + " credentials object. Built-in tracing is not used for new Spanner clients with"
-              + " another combination. Use the same credentials object for clients that use the"
-              + " same credentials.");
-    }
-  }
-
   synchronized void logInvalidSamplingRateOnce(String value) {
     if (!invalidSamplingRateWarningLogged) {
       invalidSamplingRateWarningLogged = true;
@@ -276,38 +273,41 @@ final class BuiltInTracingProvider {
   }
 
   @VisibleForTesting
-  synchronized void reset() {
+  void reset() {
     shutdown();
-    shutDown = false;
-    openTelemetries.clear();
-    failedKeys.clear();
-    if (shutdownHook != null) {
-      try {
-        Runtime.getRuntime().removeShutdownHook(shutdownHook);
-      } catch (IllegalStateException ignore) {
+    synchronized (this) {
+      shutDown = false;
+      inUse.clear();
+      closing.clear();
+      if (shutdownHook != null) {
+        try {
+          Runtime.getRuntime().removeShutdownHook(shutdownHook);
+        } catch (IllegalStateException ignore) {
+        }
+        shutdownHook = null;
       }
-      shutdownHook = null;
+      spanExporterFactory = BuiltInTracingProvider::createTelemetryApiExporter;
+      contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
+      contextCanHoldSpans = null;
+      creationFailureLogged = false;
+      openCensusWarningLogged = false;
+      customTracingInfoLogged = false;
+      notUsedInfoLogged = false;
+      invalidSamplingRateWarningLogged = false;
+      credentialsWarningLogged.set(false);
     }
-    spanExporterFactory = BuiltInTracingProvider::createTelemetryApiExporter;
-    contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
-    contextCanHoldSpans = null;
-    openCensusWarningLogged = false;
-    customTracingInfoLogged = false;
-    notUsedInfoLogged = false;
-    invalidSamplingRateWarningLogged = false;
-    instanceLimitWarningLogged = false;
-    credentialsWarningLogged.set(false);
   }
 
   @VisibleForTesting
   void shutdown() {
-    List<OpenTelemetrySdk> instances;
+    List<OpenTelemetrySdk> toShutDown;
+    List<CompletableResultCode> results;
     synchronized (this) {
       shutDown = true;
-      instances = new ArrayList<>(openTelemetries.values());
+      toShutDown = new ArrayList<>(inUse);
+      results = new ArrayList<>(closing.values());
     }
-    List<CompletableResultCode> results = new ArrayList<>();
-    for (OpenTelemetrySdk openTelemetry : instances) {
+    for (OpenTelemetrySdk openTelemetry : toShutDown) {
       try {
         results.add(openTelemetry.shutdown());
       } catch (Throwable ignore) {
