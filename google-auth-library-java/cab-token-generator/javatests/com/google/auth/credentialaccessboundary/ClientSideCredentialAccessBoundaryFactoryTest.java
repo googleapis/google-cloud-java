@@ -35,10 +35,13 @@ import static com.google.auth.oauth2.OAuth2Utils.TOKEN_EXCHANGE_URL_FORMAT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.util.Clock;
 import com.google.auth.Credentials;
@@ -51,10 +54,13 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.CredentialAccessBoundary;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.ImpersonatedCredentials;
+import com.google.auth.oauth2.MockIAMCredentialsServiceTransport;
 import com.google.auth.oauth2.MockStsTransport;
 import com.google.auth.oauth2.MockTokenServerTransportFactory;
 import com.google.auth.oauth2.OAuth2Utils;
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.auth.oauth2.UserCredentials;
 import com.google.common.collect.ImmutableList;
 import com.google.crypto.tink.Aead;
 import com.google.crypto.tink.InsecureSecretKeyAccess;
@@ -66,7 +72,10 @@ import dev.cel.expr.Expr;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.time.Duration;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
@@ -173,6 +182,158 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
     // Verify domain.
     String url = mockStsTransportFactory.transport.getRequest().getUrl();
     assertEquals(String.format(TOKEN_EXCHANGE_URL_FORMAT, universeDomain), url);
+  }
+
+  @Test
+  void fetchIntermediateCredentials_impersonatedNonDefaultUniverseServiceAccount_succeeds()
+      throws IOException {
+    String universeDomain = "example.com";
+    String targetPrincipal = "target@example.iam.gserviceaccount.com";
+    String expectedIamEndpoint =
+        String.format(
+            "https://iamcredentials.%s/v1/projects/-/serviceAccounts/%s:generateAccessToken",
+            universeDomain, targetPrincipal);
+
+    MockIAMCredentialsServiceTransport iamTransport = new MockIAMCredentialsServiceTransport();
+    iamTransport.setTargetPrincipal(targetPrincipal);
+    iamTransport.setAccessTokenEndpoint(expectedIamEndpoint);
+    iamTransport.setAccessToken("impersonated-access-token");
+    iamTransport.setExpireTime(
+        Instant.now().plusSeconds(3600).truncatedTo(ChronoUnit.SECONDS).toString());
+    iamTransport.addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    GoogleCredentials sourceSa =
+        getServiceAccountSourceCredentials(mockTokenServerTransportFactory).toBuilder()
+            .setUniverseDomain(universeDomain)
+            .build();
+    ImpersonatedCredentials impersonatedCredentials =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceSa)
+            .setTargetPrincipal(targetPrincipal)
+            .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+            .setHttpTransportFactory(() -> iamTransport)
+            .build();
+
+    ClientSideCredentialAccessBoundaryFactory factory =
+        ClientSideCredentialAccessBoundaryFactory.newBuilder()
+            .setUniverseDomain(universeDomain)
+            .setSourceCredential(impersonatedCredentials)
+            .setHttpTransportFactory(mockStsTransportFactory)
+            .build();
+
+    IntermediateCredentials intermediateCredentials = factory.fetchIntermediateCredentials();
+
+    assertEquals(
+        mockStsTransportFactory.transport.getAccessToken(),
+        intermediateCredentials.getIntermediateAccessToken().getTokenValue());
+    assertEquals(
+        String.format(TOKEN_EXCHANGE_URL_FORMAT, universeDomain),
+        mockStsTransportFactory.transport.getRequest().getUrl());
+    assertNotNull(iamTransport.getRequest());
+    assertEquals(expectedIamEndpoint, iamTransport.getRequest().getUrl());
+    assertNull(mockTokenServerTransportFactory.transport.getRequest());
+  }
+
+  @Test
+  void builder_whitespaceUniverseDomain_defaultsToGoogleDefaultUniverse() throws IOException {
+    GoogleCredentials sourceCredentials =
+        getServiceAccountSourceCredentials(mockTokenServerTransportFactory);
+
+    ClientSideCredentialAccessBoundaryFactory factory =
+        ClientSideCredentialAccessBoundaryFactory.newBuilder()
+            .setUniverseDomain("   ")
+            .setSourceCredential(sourceCredentials)
+            .setHttpTransportFactory(mockStsTransportFactory)
+            .build();
+
+    assertEquals(
+        String.format(TOKEN_EXCHANGE_URL_FORMAT, Credentials.GOOGLE_DEFAULT_UNIVERSE),
+        factory.getTokenExchangeEndpoint());
+  }
+
+  @Test
+  void builder_nonDefaultUniverseServiceAccount_throws() throws IOException {
+    String universeDomain = "example.com";
+    GoogleCredentials sourceCredentials =
+        getServiceAccountSourceCredentials(mockTokenServerTransportFactory).toBuilder()
+            .setUniverseDomain(universeDomain)
+            .build();
+
+    IllegalArgumentException error =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                ClientSideCredentialAccessBoundaryFactory.newBuilder()
+                    .setUniverseDomain(universeDomain)
+                    .setSourceCredential(sourceCredentials)
+                    .setHttpTransportFactory(mockStsTransportFactory)
+                    .build());
+
+    assertTrue(error.getMessage().contains("ServiceAccountCredentials"));
+    assertTrue(error.getMessage().contains("ImpersonatedCredentials"));
+    assertNull(mockTokenServerTransportFactory.transport.getRequest());
+    assertEquals(0, mockStsTransportFactory.transport.getRequestCount());
+  }
+
+  @Test
+  void fetchIntermediateCredentials_wrappedNonDefaultUniverseServiceAccount_failsClosed()
+      throws IOException {
+    String universeDomain = "example.com";
+    GoogleCredentials delegate =
+        getServiceAccountSourceCredentials(mockTokenServerTransportFactory).toBuilder()
+            .setUniverseDomain(universeDomain)
+            .build();
+    GoogleCredentials wrapped =
+        new GoogleCredentials(GoogleCredentials.newBuilder().setUniverseDomain(universeDomain)) {
+          @Override
+          public AccessToken refreshAccessToken() throws IOException {
+            return delegate.refreshAccessToken();
+          }
+        };
+
+    ClientSideCredentialAccessBoundaryFactory factory =
+        ClientSideCredentialAccessBoundaryFactory.newBuilder()
+            .setUniverseDomain(universeDomain)
+            .setSourceCredential(wrapped)
+            .setHttpTransportFactory(mockStsTransportFactory)
+            .build();
+
+    IOException error = assertThrows(IOException.class, factory::fetchIntermediateCredentials);
+    assertEquals("Unable to refresh the provided source credential.", error.getMessage());
+    assertNotNull(error.getCause());
+    assertTrue(error.getCause().getMessage().contains(universeDomain));
+    assertNull(mockTokenServerTransportFactory.transport.getRequest());
+    assertEquals(0, mockStsTransportFactory.transport.getRequestCount());
+  }
+
+  @Test
+  void fetchIntermediateCredentials_nonDefaultUniverseUserCredentials_failsClosed() {
+    MockTokenServerTransportFactory tokenTransportFactory = new MockTokenServerTransportFactory();
+    tokenTransportFactory.transport.addClient("test-client-id", "test-client-secret");
+    tokenTransportFactory.transport.addRefreshToken("test-refresh-token", "test-access-token");
+
+    GoogleCredentials sourceCredentials =
+        UserCredentials.newBuilder()
+            .setClientId("test-client-id")
+            .setClientSecret("test-client-secret")
+            .setRefreshToken("test-refresh-token")
+            .setHttpTransportFactory(tokenTransportFactory)
+            .setUniverseDomain("example.com")
+            .build();
+
+    ClientSideCredentialAccessBoundaryFactory factory =
+        ClientSideCredentialAccessBoundaryFactory.newBuilder()
+            .setUniverseDomain("example.com")
+            .setSourceCredential(sourceCredentials)
+            .setHttpTransportFactory(mockStsTransportFactory)
+            .build();
+
+    IOException error = assertThrows(IOException.class, factory::fetchIntermediateCredentials);
+    assertEquals("Unable to refresh the provided source credential.", error.getMessage());
+    assertNotNull(error.getCause());
+    assertTrue(error.getCause().getMessage().contains("example.com"));
+    assertNull(tokenTransportFactory.transport.getRequest());
+    assertEquals(0, mockStsTransportFactory.transport.getRequestCount());
   }
 
   @Test

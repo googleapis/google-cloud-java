@@ -47,6 +47,7 @@ import com.google.auth.oauth2.DownscopedCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.OAuth2CredentialsWithRefresh;
 import com.google.auth.oauth2.OAuth2Utils;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.auth.oauth2.StsRequestHandler;
 import com.google.auth.oauth2.StsTokenExchangeRequest;
 import com.google.auth.oauth2.StsTokenExchangeResponse;
@@ -97,11 +98,15 @@ import org.jspecify.annotations.Nullable;
  * the upper bound of permissions that the credential can access. You must also provide a source
  * credential which will be used to acquire the downscoped credential.
  *
- * <p>The factory can be configured with options such as the {@code refreshMargin} and {@code
- * minimumTokenLifetime}. The {@code refreshMargin} controls how far in advance of the underlying
- * credentials' expiry a refresh is attempted. The {@code minimumTokenLifetime} ensures that
- * generated tokens have a minimum usable lifespan. See the {@link Builder} class for more details
- * on these options.
+ * <p>On the first call to {@link #generateToken(CredentialAccessBoundary)}, and whenever the cached
+ * intermediate access token approaches expiry, this factory refreshes the source credential and
+ * exchanges it with the Security Token Service (STS) for an intermediate access token and an access
+ * boundary session key. Each {@link #generateToken(CredentialAccessBoundary)} call then locally
+ * serializes and encrypts the {@link CredentialAccessBoundary} rules with that session key and
+ * appends them to the intermediate token, returning an {@link AccessToken} whose expiration matches
+ * the intermediate token. The {@code refreshMargin} and {@code minimumTokenLifetime} options
+ * control when the cached intermediate token is refreshed asynchronously or synchronously. See the
+ * {@link Builder} class for more details on these options.
  *
  * <p>Usage:
  *
@@ -134,9 +139,15 @@ import org.jspecify.annotations.Nullable;
  * System.out.printf("Blob %s retrieved.", blob.getBlobId());
  * </code></pre>
  *
- * Note that {@link OAuth2CredentialsWithRefresh} can instead be used to consume the downscoped
- * token, allowing for automatic token refreshes by providing a {@link
- * OAuth2CredentialsWithRefresh.OAuth2RefreshHandler}.
+ * <p>For automatic token refreshes, consume the downscoped token with {@link
+ * OAuth2CredentialsWithRefresh} and an {@link OAuth2CredentialsWithRefresh.OAuth2RefreshHandler}
+ * that obtains a fresh token from {@link #generateToken(CredentialAccessBoundary)} (typically via a
+ * token broker, or directly in-process by wrapping checked exceptions in {@link IOException}). When
+ * operating in a non-default universe domain, configure {@link
+ * OAuth2CredentialsWithRefresh.Builder#setUniverseDomain(String)} for automatic refreshes, or wrap
+ * a single token with {@link GoogleCredentials#create(String, AccessToken)} (which does not
+ * auto-refresh and throws {@link IllegalStateException} from {@code refreshAccessToken()}, so
+ * callers must obtain a new token and create a new credential before expiry).
  */
 @NullMarked
 public class ClientSideCredentialAccessBoundaryFactory {
@@ -180,6 +191,13 @@ public class ClientSideCredentialAccessBoundaryFactory {
 
   /**
    * Generates a downscoped access token given the {@link CredentialAccessBoundary}.
+   *
+   * <p>If no intermediate access token is cached, or if its remaining lifetime is within {@code
+   * refreshMargin} or {@code minimumTokenLifetime}, this method refreshes the source credential and
+   * exchanges it at the STS endpoint ({@code https://sts.<universeDomain>/v1/token}) for an
+   * intermediate access token and session key. It then locally serializes and encrypts {@code
+   * accessBoundary} with that session key and appends it to the intermediate token. The returned
+   * {@link AccessToken} shares the expiration time of the intermediate token.
    *
    * @param accessBoundary The credential access boundary that defines the restrictions for the
    *     generated CAB token.
@@ -616,6 +634,14 @@ public class ClientSideCredentialAccessBoundaryFactory {
     /**
      * Sets the required source credential.
      *
+     * <p>In non-default universe domains, {@link ServiceAccountCredentials} cannot be used directly
+     * because Credential Access Boundaries require an OAuth 2.0 access token (see <a
+     * href="https://cloud.google.com/iam/docs/create-downscoped-short-lived-credentials#before-you-begin">Create
+     * a downscoped short-lived credential</a>) and service account OAuth2 token refresh is only
+     * supported in {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}. Wrap the service account in {@code
+     * ImpersonatedCredentials}, or use credentials such as {@code ComputeEngineCredentials} or
+     * {@code ExternalAccountCredentials}.
+     *
      * @param sourceCredential the {@code GoogleCredentials} to set. This is a
      *     <strong>required</strong> parameter.
      * @return this {@code Builder} object for chaining.
@@ -698,7 +724,7 @@ public class ClientSideCredentialAccessBoundaryFactory {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       this.universeDomain = universeDomain;
       return this;
     }
@@ -721,8 +747,10 @@ public class ClientSideCredentialAccessBoundaryFactory {
      * @return A new {@code ClientSideCredentialAccessBoundaryFactory} instance.
      * @throws IllegalStateException if the builder is not properly configured (e.g., if the source
      *     credential is not set).
-     * @throws IllegalArgumentException if the refresh margin is not at least one minute longer than
-     *     the minimum token lifetime.
+     * @throws IllegalArgumentException if the universe domain does not match the source credential,
+     *     if a {@link ServiceAccountCredentials} is used directly in a non-default universe domain,
+     *     or if the refresh margin is not at least one minute longer than the minimum token
+     *     lifetime.
      */
     public ClientSideCredentialAccessBoundaryFactory build() {
       checkNotNull(sourceCredential, "Source credential must not be null.");
@@ -734,7 +762,7 @@ public class ClientSideCredentialAccessBoundaryFactory {
       }
 
       // Default to GDU when not supplied.
-      if (Strings.isNullOrEmpty(universeDomain)) {
+      if (universeDomain == null || universeDomain.trim().isEmpty()) {
         this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
       }
 
@@ -749,6 +777,21 @@ public class ClientSideCredentialAccessBoundaryFactory {
         // Throwing an IOException would be a breaking change, so wrap it here.
         throw new IllegalStateException(
             "Error occurred when attempting to retrieve source credential universe domain.", e);
+      }
+
+      // Credential Access Boundaries require a Google-issued OAuth 2.0 access token, not a
+      // self-signed JWT
+      // (https://cloud.google.com/iam/docs/create-downscoped-short-lived-credentials#before-you-begin).
+      if (!Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)
+          && sourceCredential instanceof ServiceAccountCredentials) {
+        throw new IllegalArgumentException(
+            String.format(
+                "ServiceAccountCredentials cannot be used directly as a source credential for"
+                    + " ClientSideCredentialAccessBoundaryFactory in universe domain %s because"
+                    + " OAuth2 access token refresh is only supported in %s. Wrap the service"
+                    + " account in ImpersonatedCredentials, or use credentials such as"
+                    + " ComputeEngineCredentials or ExternalAccountCredentials instead.",
+                universeDomain, Credentials.GOOGLE_DEFAULT_UNIVERSE));
       }
 
       // Use default values for refreshMargin if not provided.
