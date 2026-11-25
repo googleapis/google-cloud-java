@@ -92,6 +92,18 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
         ttfbStartNanos.set(startTimeNanos);
         metrics.recordRequestActive(otelContext, operationName, 1L);
 
+        try {
+          startWithMetrics(responseListener, headers, startTimeNanos);
+        } catch (RuntimeException | Error e) {
+          // Per the ClientCall contract, onClose is not delivered when start throws, so balance
+          // the +1 here.
+          metrics.recordRequestActive(otelContext, operationName, -1L);
+          throw e;
+        }
+      }
+
+      private void startWithMetrics(
+          Listener<RespT> responseListener, Metadata headers, long startTimeNanos) {
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               private boolean receivedServerHeaders;
