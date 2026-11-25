@@ -16,24 +16,37 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.Future;
+import java.util.logging.ErrorManager;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -219,6 +232,138 @@ public class PerConnectionFileHandlerTest {
     } finally {
       // Cleanup
       rootLogger.removeHandler(handler);
+    }
+  }
+
+  private static boolean isPosix() {
+    return FileSystems.getDefault().supportedFileAttributeViews().contains("posix");
+  }
+
+  private static ErrorManager silentErrorManager() {
+    return new ErrorManager() {
+      @Override
+      public synchronized void error(String msg, Exception ex, int code) {}
+    };
+  }
+
+  @Test
+  public void testPosixOwnerOnlyPermissionsOnCreatedDirsAndFiles() throws IOException {
+    assumeTrue(isPosix(), "POSIX permissions required");
+    Path nestedDir = tempDir.resolve("nested").resolve("logs");
+    PerConnectionFileHandler nestedHandler =
+        new PerConnectionFileHandler(nestedDir.toString(), Level.INFO);
+    try {
+      BigQueryJdbcMdc.registerInstance("BQ-JDBC-perm1234");
+      nestedHandler.publish(new LogRecord(Level.INFO, "perm check"));
+
+      Set<PosixFilePermission> expectedDir = PosixFilePermissions.fromString("rwx------");
+      Set<PosixFilePermission> expectedFile = PosixFilePermissions.fromString("rw-------");
+      assertEquals(
+          expectedDir,
+          Files.getPosixFilePermissions(nestedDir.getParent(), LinkOption.NOFOLLOW_LINKS));
+      assertEquals(
+          expectedDir, Files.getPosixFilePermissions(nestedDir, LinkOption.NOFOLLOW_LINKS));
+      assertEquals(
+          expectedFile,
+          Files.getPosixFilePermissions(
+              nestedDir.resolve("BQ-JDBC-GLOBAL.log"), LinkOption.NOFOLLOW_LINKS));
+      try (Stream<Path> stream = Files.list(nestedDir)) {
+        List<Path> connFiles =
+            stream
+                .filter(p -> p.getFileName().toString().endsWith("-perm.log"))
+                .collect(Collectors.toList());
+        assertEquals(1, connFiles.size());
+        assertEquals(
+            expectedFile,
+            Files.getPosixFilePermissions(connFiles.get(0), LinkOption.NOFOLLOW_LINKS));
+      }
+    } finally {
+      nestedHandler.close();
+    }
+  }
+
+  @Test
+  public void testCreateDirectoryUnderSharedNonSymlinkAncestor() throws IOException {
+    assumeTrue(isPosix(), "POSIX permissions required");
+    Path sharedParent = tempDir.resolve("shared-parent");
+    Files.createDirectory(sharedParent);
+    Files.setPosixFilePermissions(sharedParent, PosixFilePermissions.fromString("rwxr-xr-x"));
+
+    Path leafDir = sharedParent.resolve("driver-logs");
+    PerConnectionFileHandler subHandler =
+        new PerConnectionFileHandler(leafDir.toString(), Level.INFO);
+    try {
+      assertEquals(
+          PosixFilePermissions.fromString("rwx------"),
+          Files.getPosixFilePermissions(leafDir, LinkOption.NOFOLLOW_LINKS));
+      assertEquals(
+          PosixFilePermissions.fromString("rwxr-xr-x"),
+          Files.getPosixFilePermissions(sharedParent, LinkOption.NOFOLLOW_LINKS));
+      assertTrue(Files.exists(leafDir.resolve("BQ-JDBC-GLOBAL.log"), LinkOption.NOFOLLOW_LINKS));
+    } finally {
+      subHandler.close();
+    }
+  }
+
+  @Test
+  public void testSymbolicLinksAndNonRegularPathsAreRejected() throws IOException {
+    assumeTrue(isPosix(), "Symbolic link creation required");
+    Path victimFile = tempDir.resolve("victim-secret.txt");
+    Files.write(victimFile, "TOP-SECRET".getBytes(StandardCharsets.UTF_8));
+
+    Path realTargetDir = tempDir.resolve("real-dir");
+    Files.createDirectory(realTargetDir);
+    Path symlinkLeafDir = tempDir.resolve("symlink-dir");
+    Files.createSymbolicLink(symlinkLeafDir, realTargetDir);
+
+    PerConnectionFileHandler symlinkDirHandler =
+        new PerConnectionFileHandler(symlinkLeafDir.toString(), Level.INFO);
+    symlinkDirHandler.setErrorManager(silentErrorManager());
+    try {
+      symlinkDirHandler.publish(new LogRecord(Level.INFO, "must not write"));
+      assertFalse(Files.exists(realTargetDir.resolve("BQ-JDBC-GLOBAL.log")));
+    } finally {
+      symlinkDirHandler.close();
+    }
+
+    Path symlinkGlobalDir = tempDir.resolve("symlink-global-dir");
+    Files.createDirectory(symlinkGlobalDir);
+    Files.createSymbolicLink(symlinkGlobalDir.resolve("BQ-JDBC-GLOBAL.log"), victimFile);
+    PerConnectionFileHandler symlinkGlobalHandler =
+        new PerConnectionFileHandler(symlinkGlobalDir.toString(), Level.INFO);
+    symlinkGlobalHandler.setErrorManager(silentErrorManager());
+    try {
+      symlinkGlobalHandler.publish(new LogRecord(Level.INFO, "must not clobber victim"));
+      assertEquals(
+          "TOP-SECRET", new String(Files.readAllBytes(victimFile), StandardCharsets.UTF_8));
+    } finally {
+      symlinkGlobalHandler.close();
+    }
+  }
+
+  @Test
+  public void testPercentTokensCollisionSuffixesAndNoLockFiles() throws IOException {
+    Path literalPercentDir = tempDir.resolve("logs-%t-%h-%g-%u");
+    PerConnectionFileHandler pctHandler =
+        new PerConnectionFileHandler(literalPercentDir.toString(), Level.INFO);
+    try {
+      BigQueryJdbcMdc.registerInstance("BQ-JDBC-abcd-1111");
+      pctHandler.publish(new LogRecord(Level.INFO, "conn one"));
+      BigQueryJdbcMdc.registerInstance("BQ-JDBC-abcd-2222");
+      pctHandler.publish(new LogRecord(Level.INFO, "conn two"));
+
+      assertTrue(Files.isDirectory(literalPercentDir, LinkOption.NOFOLLOW_LINKS));
+      try (Stream<Path> stream = Files.list(literalPercentDir)) {
+        List<Path> files = stream.collect(Collectors.toList());
+        assertFalse(
+            files.stream().anyMatch(p -> p.getFileName().toString().endsWith(".lck")),
+            "No JUL .lck sidecar files should be created");
+        long abcdFiles =
+            files.stream().filter(p -> p.getFileName().toString().endsWith("-abcd.log")).count();
+        assertEquals(2L, abcdFiles, "Colliding 4-char connection prefixes must get distinct files");
+      }
+    } finally {
+      pctHandler.close();
     }
   }
 }
