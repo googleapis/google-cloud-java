@@ -25,13 +25,20 @@ import static java.util.concurrent.Executors.callable;
 
 import com.google.api.client.util.Data;
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.httpjson.HttpJsonStatusCode;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.rpc.EndpointContext;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.UnauthenticatedException;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.ComputeEngineCredentials;
+import com.google.auth.oauth2.GdchCredentials;
 import com.google.cloud.BaseService;
 import com.google.cloud.BatchResult;
 import com.google.cloud.PageImpl;
@@ -891,6 +898,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
           "Signing key was not provided and could not be derived");
       credentials = (ServiceAccountSigner) this.getOptions().getCredentials();
     }
+    validateSigningCredentialsUniverseDomain(credentials, optionMap);
 
     long expiration =
         isV4
@@ -998,6 +1006,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
           "Signing key was not provided and could not be derived");
       credentials = (ServiceAccountSigner) this.getOptions().getCredentials();
     }
+    validateSigningCredentialsUniverseDomain(credentials, optionMap);
 
     checkArgument(
         !(optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)
@@ -1105,6 +1114,42 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
       BlobInfo blobInfo, long duration, TimeUnit unit, PostPolicyV4Option... options) {
     return generateSignedPostPolicyV4(
         blobInfo, duration, unit, PostFieldsV4.newBuilder().build(), options);
+  }
+
+  private void validateSigningCredentialsUniverseDomain(
+      ServiceAccountSigner signer, Map<SignUrlOption.Option, Object> optionMap) {
+    if (!Strings.isNullOrEmpty((String) optionMap.get(SignUrlOption.Option.HOST_NAME))
+        || optionMap.containsKey(SignUrlOption.Option.BUCKET_BOUND_HOST_NAME)
+        || !(signer instanceof Credentials)
+        || signer instanceof GdchCredentials
+        || signer instanceof ComputeEngineCredentials) {
+      return;
+    }
+    Credentials credentialsToValidate = (Credentials) signer;
+    String credentialsUniverseDomain;
+    try {
+      credentialsUniverseDomain =
+          firstNonNull(
+              credentialsToValidate.getUniverseDomain(), Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    } catch (IOException e) {
+      throw unauthenticated(EndpointContext.UNABLE_TO_RETRIEVE_CREDENTIALS_ERROR_MESSAGE, e);
+    }
+    String configuredUniverseDomain = getOptions().getResolvedUniverseDomain();
+    if (!configuredUniverseDomain.equals(credentialsUniverseDomain)) {
+      String errorMessage =
+          String.format(
+              EndpointContext.INVALID_UNIVERSE_DOMAIN_ERROR_TEMPLATE,
+              configuredUniverseDomain,
+              credentialsUniverseDomain);
+      throw unauthenticated(errorMessage, new Throwable(errorMessage));
+    }
+  }
+
+  private static StorageException unauthenticated(String message, Throwable cause) {
+    UnauthenticatedException unauthenticatedException =
+        new UnauthenticatedException(
+            message, cause, HttpJsonStatusCode.of(StatusCode.Code.UNAUTHENTICATED), false);
+    return new StorageException(401, message, unauthenticatedException);
   }
 
   private String constructResourceUriPath(
