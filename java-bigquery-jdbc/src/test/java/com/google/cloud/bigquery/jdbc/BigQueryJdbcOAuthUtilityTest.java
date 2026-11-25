@@ -300,9 +300,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
   @Test
   public void testGetUserAuthorizer_configuresRfc7636Pkce() throws Exception {
-    Map<String, String> authProperties = new HashMap<>();
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "client_id");
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "client_secret");
+    Map<String, String> authProperties = defaultUserAuthProperties();
 
     AtomicReference<Map<String, String>> capturedTokenParams = new AtomicReference<>();
     HttpTransportFactory transportFactory =
@@ -757,7 +755,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
               Map<String, String> params = parseQueryParams(authUri.getRawQuery());
               URI redirectUri = URI.create(params.get("redirect_uri"));
               String rawRequest =
-                  "GET /?flag&&state=" + params.get("state") + "&code=http10_code HTTP/1.0\r\n\r\n";
+                  "GET /?flag&&state=" + params.get("state") + "&code=http10_code HTTP/1.0\n\n";
               clientFuture.set(
                   runAsyncClient(
                       () -> {
@@ -783,35 +781,48 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
   @Test
   public void testUserAuthCallback_rejectsInvalidStateCodeAndDuplicates() throws Exception {
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
+        (redirectUri, authParams) -> callbackGetRequest(redirectUri, "/"),
+        false,
+        "Missing or invalid state parameter in OAuth callback.");
+    assertUnverifiedCallbackIgnoredUntilTimeout(
+        (redirectUri, authParams) -> callbackGetRequest(redirectUri, "/?"),
+        false,
+        "Missing or invalid state parameter in OAuth callback.");
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) ->
             callbackGetRequest(redirectUri, "/?code=some_code&scope=bigquery"),
+        false,
         "Missing or invalid state parameter in OAuth callback.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) -> callbackGetRequest(redirectUri, "/?state=&code=some_code"),
+        false,
         "Missing or invalid state parameter in OAuth callback.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) ->
             callbackGetRequest(redirectUri, "/?state=wrong_state&code=some_code&scope=bigquery"),
+        false,
         "Missing or invalid state parameter in OAuth callback.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) ->
             callbackGetRequest(redirectUri, "/?state=wrong_state&error=access_denied"),
+        false,
         "Missing or invalid state parameter in OAuth callback.");
-    assertCallbackRejected(
+    assertTerminalCallbackAbortsImmediately(
         (redirectUri, authParams) ->
             callbackGetRequest(redirectUri, "/?state=" + authParams.get("state")),
         "Could not retrieve the authorization code from OAuth callback.");
-    assertCallbackRejected(
+    assertTerminalCallbackAbortsImmediately(
         (redirectUri, authParams) ->
             callbackGetRequest(redirectUri, "/?state=" + authParams.get("state") + "&code="),
         "Could not retrieve the authorization code from OAuth callback.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) ->
             callbackGetRequest(
                 redirectUri, "/?state=" + authParams.get("state") + "&code=first&code=second"),
+        false,
         "Duplicate OAuth callback parameter: code");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) ->
             callbackGetRequest(
                 redirectUri,
@@ -820,22 +831,24 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                     + "&state="
                     + authParams.get("state")
                     + "&code=first"),
+        false,
         "Duplicate OAuth callback parameter: state");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) ->
             callbackGetRequest(
                 redirectUri, "/?state=" + authParams.get("state") + "&error=err1&error=err2"),
+        false,
         "Duplicate OAuth callback parameter: error");
   }
 
   @Test
   public void testUserAuthCallback_handlesAndSanitizesOAuthErrorParameter() throws Exception {
-    assertCallbackRejected(
+    assertTerminalCallbackAbortsImmediately(
         (redirectUri, authParams) ->
             callbackGetRequest(
                 redirectUri, "/?state=" + authParams.get("state") + "&error=access_denied"),
         "OAuth authorization failed: access_denied");
-    assertCallbackRejected(
+    assertTerminalCallbackAbortsImmediately(
         (redirectUri, authParams) ->
             callbackGetRequest(redirectUri, "/?state=" + authParams.get("state") + "&error="),
         "OAuth authorization failed: unknown_error");
@@ -848,7 +861,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     while (expectedSanitized.length() < 64) {
       expectedSanitized.append('x');
     }
-    assertCallbackRejected(
+    assertTerminalCallbackAbortsImmediately(
         (redirectUri, authParams) ->
             callbackGetRequest(
                 redirectUri, "/?state=" + authParams.get("state") + "&error=" + longError),
@@ -856,13 +869,14 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
-  public void testUserAuthCallback_ignoresPreconnectResetSlowDripAndFaviconBeforeValidCallback()
+  public void testUserAuthCallback_ignoresPreconnectProbesAndFaviconBeforeValidCallback()
       throws Exception {
     Map<String, String> authProperties = defaultUserAuthProperties();
     AtomicReference<Map<String, String>> capturedTokenParams = new AtomicReference<>();
     HttpTransportFactory transportFactory =
         createMockTokenTransport(capturedTokenParams, null, null);
-    AtomicReference<CompletableFuture<String>> faviconFuture = new AtomicReference<>();
+    AtomicReference<CompletableFuture<String[]>> intermediateResponsesFuture =
+        new AtomicReference<>();
 
     GoogleCredentials credentials =
         BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
@@ -877,7 +891,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
               String host = redirectUri.getHost();
               int port = redirectUri.getPort();
               String state = params.get("state");
-              faviconFuture.set(
+              intermediateResponsesFuture.set(
                   runAsyncClient(
                       () -> {
                         try (Socket emptyPreconnect = new Socket(host, port)) {
@@ -911,6 +925,19 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                         String faviconResp =
                             sendHttpRequest(
                                 redirectUri, callbackGetRequest(redirectUri, "/favicon.ico"));
+                        String optionsProbeResp =
+                            sendHttpRequest(
+                                redirectUri,
+                                "OPTIONS / HTTP/1.1\r\nHost: " + host + ":" + port + "\r\n\r\n");
+                        String missingStateProbeResp =
+                            sendHttpRequest(
+                                redirectUri,
+                                callbackGetRequest(redirectUri, "/?code=unverified_probe_code"));
+                        String wrongStateErrorProbeResp =
+                            sendHttpRequest(
+                                redirectUri,
+                                callbackGetRequest(
+                                    redirectUri, "/?state=wrong_state&error=access_denied"));
 
                         StringBuilder largeHeaders = new StringBuilder(20000);
                         largeHeaders
@@ -925,15 +952,26 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                           largeHeaders.append(headerLine);
                         }
                         largeHeaders.append("\r\n");
-                        sendHttpRequest(redirectUri, largeHeaders.toString());
-                        return faviconResp;
+                        String successResp = sendHttpRequest(redirectUri, largeHeaders.toString());
+                        return new String[] {
+                          faviconResp,
+                          optionsProbeResp,
+                          missingStateProbeResp,
+                          wrongStateErrorProbeResp,
+                          successResp
+                        };
                       }));
             },
             5000,
             200);
 
     assertThat(credentials).isInstanceOf(UserCredentials.class);
-    assertValidHttpResponse(faviconFuture.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 404 Not Found");
+    String[] responses = intermediateResponsesFuture.get().get(5, TimeUnit.SECONDS);
+    assertValidHttpResponse(responses[0], "HTTP/1.1 404 Not Found");
+    assertValidHttpResponse(responses[1], "HTTP/1.1 400 Bad Request");
+    assertValidHttpResponse(responses[2], "HTTP/1.1 400 Bad Request");
+    assertValidHttpResponse(responses[3], "HTTP/1.1 400 Bad Request");
+    assertValidHttpResponse(responses[4], "HTTP/1.1 200 OK");
     assertThat(capturedTokenParams.get().get("code")).isEqualTo("after_preconnect");
   }
 
@@ -1040,6 +1078,38 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         stalledClientFuture.get().get(5, TimeUnit.SECONDS);
       }
     }
+    AtomicReference<ServerSocket> rejectedThenTimedOutSocket = new AtomicReference<>();
+    BigQueryJdbcRuntimeException rejectedTimeoutEx =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+                    authProperties,
+                    Collections.emptyMap(),
+                    null,
+                    null,
+                    capturingSocketSupplier(rejectedThenTimedOutSocket),
+                    authUri -> {
+                      URI redirectUri =
+                          URI.create(parseQueryParams(authUri.getRawQuery()).get("redirect_uri"));
+                      try (Socket probe =
+                          new Socket(redirectUri.getHost(), redirectUri.getPort())) {
+                        probe
+                            .getOutputStream()
+                            .write(
+                                callbackGetRequest(redirectUri, "/?state=wrong")
+                                    .getBytes(StandardCharsets.US_ASCII));
+                        probe.getOutputStream().flush();
+                      }
+                    },
+                    250,
+                    250));
+    assertThat(rejectedTimeoutEx.getCause()).isInstanceOf(SocketTimeoutException.class);
+    assertThat(rejectedTimeoutEx.getCause().getMessage())
+        .isEqualTo(
+            "Timed out waiting for OAuth authorization callback. Last rejected callback request: "
+                + "Missing or invalid state parameter in OAuth callback.");
+    assertThat(rejectedThenTimedOutSocket.get().isClosed()).isTrue();
   }
 
   @Test
@@ -1053,77 +1123,56 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     }
     oversizedQuery.append(" HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n");
 
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) -> oversizedQuery.toString(),
+        false,
         "OAuth callback HTTP request line exceeded maximum length.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) -> "G\rET /?code=abc HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+        false,
         "Invalid bare CR in OAuth callback HTTP request line.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
+        (redirectUri, authParams) -> "GET /\r\n\r\n",
+        false,
+        "Invalid HTTP request line on OAuth callback.");
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) -> "POST /?code=abc HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+        false,
         "Invalid HTTP request line on OAuth callback.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) -> "GET ?code=abc HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+        false,
         "Invalid HTTP request line on OAuth callback.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
+        (redirectUri, authParams) -> "GET /?code=abc HTTP/2.0\r\nHost: 127.0.0.1\r\n\r\n",
+        false,
+        "Invalid HTTP request line on OAuth callback.");
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) ->
             "GET http://example.com/?code=abc HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n",
+        false,
         "Invalid HTTP request line on OAuth callback.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) -> callbackGetRequest(redirectUri, "//example.com/?code=abc"),
+        false,
         "Unexpected URI format in OAuth callback request.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) -> callbackGetRequest(redirectUri, "/?code=abc#frag"),
+        false,
         "Unexpected URI format in OAuth callback request.");
-    assertCallbackRejected(
+    assertUnverifiedCallbackIgnoredUntilTimeout(
         (redirectUri, authParams) ->
             callbackGetRequest(redirectUri, "/?state=%ZZ&code=unlogged_token_val"),
+        false,
         "Malformed URI in OAuth callback request.");
-
-    Map<String, String> authProperties = defaultUserAuthProperties();
-    AtomicReference<ServerSocket> truncatedSocket = new AtomicReference<>();
-    AtomicReference<CompletableFuture<String>> truncatedResponse = new AtomicReference<>();
-    BigQueryJdbcRuntimeException truncatedEx =
-        assertThrows(
-            BigQueryJdbcRuntimeException.class,
-            () ->
-                BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
-                    authProperties,
-                    Collections.emptyMap(),
-                    null,
-                    null,
-                    capturingSocketSupplier(truncatedSocket),
-                    authUri -> {
-                      URI redirectUri =
-                          URI.create(parseQueryParams(authUri.getRawQuery()).get("redirect_uri"));
-                      truncatedResponse.set(
-                          runAsyncClient(
-                              () -> {
-                                try (Socket socket =
-                                    new Socket(redirectUri.getHost(), redirectUri.getPort())) {
-                                  socket.setSoTimeout(3000);
-                                  socket
-                                      .getOutputStream()
-                                      .write(
-                                          "GET /?code=incomplete"
-                                              .getBytes(StandardCharsets.US_ASCII));
-                                  socket.getOutputStream().flush();
-                                  socket.shutdownOutput();
-                                  return readUtf8Stream(socket.getInputStream());
-                                }
-                              }));
-                    },
-                    5000,
-                    2000));
-    assertThat(truncatedEx.getMessage()).isEqualTo("Incomplete OAuth callback HTTP request line.");
-    assertThat(truncatedEx.getCause()).isNull();
-    assertValidHttpResponse(
-        truncatedResponse.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 400 Bad Request");
-    assertThat(truncatedSocket.get().isClosed()).isTrue();
+    assertUnverifiedCallbackIgnoredUntilTimeout(
+        (redirectUri, authParams) -> "GET /?code=incomplete",
+        true,
+        "Incomplete OAuth callback HTTP request line.");
   }
 
   @Test
-  public void testUserAuthFlow_failsFastWhenDesktopBrowseUnsupported() {
+  public void testUserAuthFlow_failsFastWhenDesktopBrowseUnsupported() throws Exception {
     Map<String, String> authProperties = defaultUserAuthProperties();
 
     try (MockedStatic<GraphicsEnvironment> mockedGraphics =
@@ -1153,12 +1202,61 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       Mockito.when(desktop.isSupported(Desktop.Action.BROWSE)).thenReturn(true);
       assertThat(BigQueryJdbcOAuthUtility.isDesktopBrowseSupported()).isTrue();
+
+      AtomicReference<Map<String, String>> capturedTokenParams = new AtomicReference<>();
+      HttpTransportFactory transportFactory =
+          createMockTokenTransport(capturedTokenParams, null, null);
+      AtomicReference<CompletableFuture<String>> callbackResponseFuture = new AtomicReference<>();
+      Mockito.doAnswer(
+              invocation -> {
+                URI authUri = invocation.getArgument(0);
+                Map<String, String> params = parseQueryParams(authUri.getRawQuery());
+                URI redirectUri = URI.create(params.get("redirect_uri"));
+                callbackResponseFuture.set(
+                    runAsyncClient(
+                        () ->
+                            sendHttpRequest(
+                                redirectUri,
+                                callbackGetRequest(
+                                    redirectUri,
+                                    "/?state="
+                                        + params.get("state")
+                                        + "&code=desktop_browse_code"))));
+                return null;
+              })
+          .when(desktop)
+          .browse(Mockito.any(URI.class));
+
+      GoogleCredentials credentials =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              authProperties, Collections.emptyMap(), false, transportFactory, null);
+      assertThat(credentials).isInstanceOf(UserCredentials.class);
+      assertThat(capturedTokenParams.get().get("code")).isEqualTo("desktop_browse_code");
+      assertValidHttpResponse(
+          callbackResponseFuture.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 200 OK");
     }
   }
 
   @FunctionalInterface
   private interface CallbackRequestBuilder {
     String build(URI redirectUri, Map<String, String> authQueryParams);
+  }
+
+  private static final class SingleAcceptLoopbackServerSocket extends ServerSocket {
+    private boolean acceptedFirstConnection;
+
+    private SingleAcceptLoopbackServerSocket() throws IOException {
+      super(0, 8, InetAddress.getByAddress(new byte[] {127, 0, 0, 1}));
+    }
+
+    @Override
+    public Socket accept() throws IOException {
+      if (!acceptedFirstConnection) {
+        acceptedFirstConnection = true;
+        return super.accept();
+      }
+      throw new SocketTimeoutException("Simulated accept timeout after first connection");
+    }
   }
 
   private static Map<String, String> defaultUserAuthProperties() {
@@ -1193,7 +1291,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                 .digest(verifier.getBytes(StandardCharsets.US_ASCII)));
   }
 
-  private static void assertCallbackRejected(
+  private static void assertTerminalCallbackAbortsImmediately(
       CallbackRequestBuilder requestBuilder, String expectedExactMessage) throws Exception {
     Map<String, String> authProperties = defaultUserAuthProperties();
     AtomicInteger tokenCalls = new AtomicInteger();
@@ -1224,6 +1322,70 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
     assertThat(ex.getMessage()).isEqualTo(expectedExactMessage);
     assertThat(ex.getCause()).isNull();
+    assertThat(tokenCalls.get()).isEqualTo(0);
+    assertValidHttpResponse(
+        rawResponseFuture.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 400 Bad Request");
+    assertThat(capturedSocket.get().isClosed()).isTrue();
+  }
+
+  private static void assertUnverifiedCallbackIgnoredUntilTimeout(
+      CallbackRequestBuilder requestBuilder,
+      boolean shutdownOutputAfterWrite,
+      String expectedRejectedReason)
+      throws Exception {
+    Map<String, String> authProperties = defaultUserAuthProperties();
+    AtomicInteger tokenCalls = new AtomicInteger();
+    HttpTransportFactory transportFactory =
+        createMockTokenTransport(new AtomicReference<>(), tokenCalls, null);
+    AtomicReference<ServerSocket> capturedSocket = new AtomicReference<>();
+    AtomicReference<CompletableFuture<String>> rawResponseFuture = new AtomicReference<>();
+
+    BigQueryJdbcRuntimeException ex =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
+                    authProperties,
+                    Collections.emptyMap(),
+                    transportFactory,
+                    null,
+                    () -> {
+                      ServerSocket socket = new SingleAcceptLoopbackServerSocket();
+                      capturedSocket.set(socket);
+                      return socket;
+                    },
+                    authUri -> {
+                      Map<String, String> params = parseQueryParams(authUri.getRawQuery());
+                      URI redirectUri = URI.create(params.get("redirect_uri"));
+                      String rawRequest = requestBuilder.build(redirectUri, params);
+                      rawResponseFuture.set(
+                          runAsyncClient(
+                              () -> {
+                                try (Socket socket =
+                                    new Socket(redirectUri.getHost(), redirectUri.getPort())) {
+                                  socket.setSoTimeout(3000);
+                                  OutputStream out = socket.getOutputStream();
+                                  out.write(rawRequest.getBytes(StandardCharsets.US_ASCII));
+                                  out.flush();
+                                  if (shutdownOutputAfterWrite) {
+                                    socket.shutdownOutput();
+                                  }
+                                  return readUtf8Stream(socket.getInputStream());
+                                }
+                              }));
+                    },
+                    5000,
+                    2000));
+
+    String expectedTimeoutMessage =
+        "Timed out waiting for OAuth authorization callback. Last rejected callback request: "
+            + expectedRejectedReason;
+    assertThat(ex.getMessage())
+        .isEqualTo(
+            "Failed to establish connection using User Account authentication\n"
+                + expectedTimeoutMessage);
+    assertThat(ex.getCause()).isInstanceOf(SocketTimeoutException.class);
+    assertThat(ex.getCause().getMessage()).isEqualTo(expectedTimeoutMessage);
     assertThat(tokenCalls.get()).isEqualTo(0);
     assertValidHttpResponse(
         rawResponseFuture.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 400 Bad Request");

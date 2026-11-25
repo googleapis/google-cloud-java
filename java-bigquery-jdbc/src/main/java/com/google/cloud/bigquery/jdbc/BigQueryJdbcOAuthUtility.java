@@ -643,17 +643,18 @@ final class BigQueryJdbcOAuthUtility {
       ServerSocket serverSocket, String expectedState, int authTimeoutMs, int socketReadTimeoutMs)
       throws IOException {
     long overallDeadlineNanos = System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(authTimeoutMs);
+    String lastRejectedReason = null;
     while (true) {
       int acceptTimeoutMs = remainingMillis(overallDeadlineNanos);
       if (acceptTimeoutMs <= 0) {
-        throw new SocketTimeoutException("Timed out waiting for OAuth authorization callback.");
+        throw callbackTimeoutException(lastRejectedReason);
       }
       serverSocket.setSoTimeout(acceptTimeoutMs);
       Socket acceptedSocket;
       try {
         acceptedSocket = serverSocket.accept();
       } catch (SocketTimeoutException acceptTimedOut) {
-        throw new SocketTimeoutException("Timed out waiting for OAuth authorization callback.");
+        throw callbackTimeoutException(lastRejectedReason);
       }
       try (Socket socket = acceptedSocket) {
         String code =
@@ -662,13 +663,24 @@ final class BigQueryJdbcOAuthUtility {
         if (code != null) {
           return code;
         }
+      } catch (HttpCallbackException rejectedRequest) {
+        lastRejectedReason = rejectedRequest.getMessage();
       }
     }
   }
 
+  private static SocketTimeoutException callbackTimeoutException(String lastRejectedReason) {
+    if (lastRejectedReason == null) {
+      return new SocketTimeoutException("Timed out waiting for OAuth authorization callback.");
+    }
+    return new SocketTimeoutException(
+        "Timed out waiting for OAuth authorization callback. Last rejected callback request: "
+            + lastRejectedReason);
+  }
+
   private static String handleCallbackConnection(
       Socket socket, String expectedState, long overallDeadlineNanos, int socketReadTimeoutMs)
-      throws SocketTimeoutException {
+      throws HttpCallbackException {
     long readDeadlineNanos =
         Math.min(
             overallDeadlineNanos,
@@ -691,7 +703,21 @@ final class BigQueryJdbcOAuthUtility {
           return null;
         }
         Map<String, String> queryParams = parseOAuthQueryParameters(requestUri.getRawQuery());
-        String code = extractVerifiedAuthorizationCode(queryParams, expectedState);
+        if (!isValidOAuthState(expectedState, queryParams.get("state"))) {
+          throw new HttpCallbackException("Missing or invalid state parameter in OAuth callback.");
+        }
+        String error = queryParams.get("error");
+        if (error != null) {
+          writeHttpResponseQuietly(socket, USER_AUTH_BAD_REQUEST_HTTP_RESPONSE_BYTES);
+          throw new BigQueryJdbcRuntimeException(
+              "OAuth authorization failed: " + sanitizeOAuthErrorCode(error));
+        }
+        String code = queryParams.get("code");
+        if (code == null || code.isEmpty()) {
+          writeHttpResponseQuietly(socket, USER_AUTH_BAD_REQUEST_HTTP_RESPONSE_BYTES);
+          throw new BigQueryJdbcRuntimeException(
+              "Could not retrieve the authorization code from OAuth callback.");
+        }
         writeHttpResponseQuietly(socket, USER_AUTH_SUCCESS_HTTP_RESPONSE_BYTES);
         return code;
       } catch (HttpCallbackException callbackError) {
@@ -703,12 +729,9 @@ final class BigQueryJdbcOAuthUtility {
           drainHttpHeaders(socket, inputStream, drainDeadlineNanos, MAX_HTTP_HEADER_BYTES);
         }
         writeHttpResponseQuietly(socket, USER_AUTH_BAD_REQUEST_HTTP_RESPONSE_BYTES);
-        throw new BigQueryJdbcRuntimeException(callbackError.getMessage());
+        throw callbackError;
       }
     } catch (IOException clientIoError) {
-      if (remainingMillis(overallDeadlineNanos) <= 0) {
-        throw new SocketTimeoutException("Timed out waiting for OAuth authorization callback.");
-      }
       return null;
     }
   }
@@ -848,24 +871,6 @@ final class BigQueryJdbcOAuthUtility {
     } catch (UnsupportedEncodingException e) {
       throw new IllegalStateException("UTF-8 encoding not supported", e);
     }
-  }
-
-  private static String extractVerifiedAuthorizationCode(
-      Map<String, String> queryParams, String expectedState) throws HttpCallbackException {
-    if (!isValidOAuthState(expectedState, queryParams.get("state"))) {
-      throw new HttpCallbackException("Missing or invalid state parameter in OAuth callback.");
-    }
-    String error = queryParams.get("error");
-    if (error != null) {
-      throw new HttpCallbackException(
-          "OAuth authorization failed: " + sanitizeOAuthErrorCode(error));
-    }
-    String code = queryParams.get("code");
-    if (code == null || code.isEmpty()) {
-      throw new HttpCallbackException(
-          "Could not retrieve the authorization code from OAuth callback.");
-    }
-    return code;
   }
 
   private static String sanitizeOAuthErrorCode(String error) {
