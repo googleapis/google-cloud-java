@@ -70,8 +70,8 @@ import java.util.Set;
 import javax.annotation.Nullable;
 
 /**
- * Test environment that uses an existing bigtable table. The table must have a pre-existing family
- * {@code cf}. The target table is configured via the system properties:
+ * Test environment that uses pre-provisioned shared Bigtable resources (see {@code
+ * scripts/setup-test-table.sh}). The target table is configured via the system properties:
  *
  * <ul>
  *   <li>{@code bigtable.project}
@@ -125,8 +125,8 @@ public class CloudEnv extends AbstractTestEnv {
 
   private BigtableDataClient dataClient;
   @Nullable private Shim sessionShim;
-  private BigtableTableAdminClient tableAdminClient;
-  private BigtableInstanceAdminClient instanceAdminClient;
+  @Nullable private BigtableTableAdminClient tableAdminClient;
+  @Nullable private BigtableInstanceAdminClient instanceAdminClient;
 
   static CloudEnv fromSystemProperties() {
     return new CloudEnv(
@@ -497,8 +497,6 @@ public class CloudEnv extends AbstractTestEnv {
       dataClient = null;
       throw e;
     }
-    tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
-    instanceAdminClient = BigtableInstanceAdminClient.create(instanceAdminSettings.build());
   }
 
   static void verifyExpectedProtocol(ExpectedProtocol expectedProtocol, Shim shim) {
@@ -523,11 +521,20 @@ public class CloudEnv extends AbstractTestEnv {
   }
 
   @Override
-  void stop() {
+  synchronized void stop() {
     sessionShim = null;
-    dataClient.close();
-    tableAdminClient.close();
-    instanceAdminClient.close();
+    if (dataClient != null) {
+      dataClient.close();
+      dataClient = null;
+    }
+    if (tableAdminClient != null) {
+      tableAdminClient.close();
+      tableAdminClient = null;
+    }
+    if (instanceAdminClient != null) {
+      instanceAdminClient.close();
+      instanceAdminClient = null;
+    }
   }
 
   @Override
@@ -551,7 +558,14 @@ public class CloudEnv extends AbstractTestEnv {
   }
 
   @Override
-  public BigtableTableAdminClient getTableAdminClient() {
+  public synchronized BigtableTableAdminClient getTableAdminClient() {
+    if (tableAdminClient == null) {
+      try {
+        tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
+      } catch (IOException e) {
+        throw new IllegalStateException("Caught unexpected error creating table admin client", e);
+      }
+    }
     return tableAdminClient;
   }
 
@@ -567,7 +581,15 @@ public class CloudEnv extends AbstractTestEnv {
   }
 
   @Override
-  public BigtableInstanceAdminClient getInstanceAdminClient() {
+  public synchronized BigtableInstanceAdminClient getInstanceAdminClient() {
+    if (instanceAdminClient == null) {
+      try {
+        instanceAdminClient = BigtableInstanceAdminClient.create(instanceAdminSettings.build());
+      } catch (IOException e) {
+        throw new IllegalStateException(
+            "Caught unexpected error creating instance admin client", e);
+      }
+    }
     return instanceAdminClient;
   }
 

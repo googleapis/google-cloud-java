@@ -22,6 +22,8 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
+import com.google.cloud.bigtable.data.v2.models.MaterializedViewId;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -112,8 +114,43 @@ public abstract class AbstractTestEnv {
 
   public abstract String getKmsKeyName();
 
+  public static final String SHARED_AUTHORIZED_VIEW_ID = "test-authorized-view";
+  public static final String SHARED_SCHEMA_BUNDLE_ID = "test-schema-bundle";
+
   public String getFamilyId() {
     return "cf";
+  }
+
+  /**
+   * Returns the multi-version column family ({@code maxversions=10 || maxage=1h}) provisioned by
+   * {@code scripts/setup-test-table.sh} for tests that read historical cell versions.
+   */
+  public String getHistoryFamilyId() {
+    return "cf_history";
+  }
+
+  /**
+   * Returns the pre-provisioned {@link AuthorizedViewId} on {@link #getTableId()} configured by
+   * {@code scripts/setup-test-table.sh}.
+   */
+  public AuthorizedViewId getAuthorizedViewId() {
+    return AuthorizedViewId.of(getTableId(), SHARED_AUTHORIZED_VIEW_ID);
+  }
+
+  /**
+   * Returns the pre-provisioned {@link MaterializedViewId} backed by {@link #getTableId()}
+   * configured by {@code scripts/setup-test-table.sh}.
+   */
+  public MaterializedViewId getMaterializedViewId() {
+    return MaterializedViewId.of(getTableId().getTableId() + "-mv");
+  }
+
+  /**
+   * Returns the pre-provisioned schema bundle ID on {@link #getTableId()} configured by {@code
+   * scripts/setup-test-table.sh}.
+   */
+  public String getSchemaBundleId() {
+    return SHARED_SCHEMA_BUNDLE_ID;
   }
 
   public boolean isInstanceAdminSupported() {

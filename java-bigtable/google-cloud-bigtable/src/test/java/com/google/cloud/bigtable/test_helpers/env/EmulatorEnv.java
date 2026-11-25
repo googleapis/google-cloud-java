@@ -78,7 +78,9 @@ public class EmulatorEnv extends AbstractTestEnv {
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings);
 
     tableAdminClient.createTable(
-        CreateTableRequest.of(TABLE_ID.getTableId()).addFamily(getFamilyId()));
+        CreateTableRequest.of(TABLE_ID.getTableId())
+            .addFamily(getFamilyId())
+            .addFamily(getHistoryFamilyId()));
   }
 
   @Override
