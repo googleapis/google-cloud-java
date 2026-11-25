@@ -237,6 +237,78 @@ public class BuiltInTracingTest {
   }
 
   @Test
+  public void toBuilderKeepsTheBuiltInTracingSettings() {
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setBuiltInTracingSamplingRate(0.3)
+            .build()
+            .toBuilder()
+            .build();
+
+    assertTrue(options.isEnableBuiltInTracing());
+    assertEquals(0.3, options.getBuiltInTracingSamplingRate(), 0.0);
+  }
+
+  @Test
+  public void builtInTracingIsNotUsedInTheUniverseOfTheEnvironment() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public String getGoogleCloudUniverseDomain() {
+            return "example.com";
+          }
+        });
+
+    SpannerOptions options = createOptionsBuilder().setEnableBuiltInTracing(true).build();
+
+    assertBuiltInTracingIsNotUsed(options, "universe domain example.com");
+  }
+
+  @Test
+  public void noSpansAreExportedWithASamplingRateOfZero() {
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setBuiltInTracingSamplingRate(0.0)
+            .build();
+    try (Spanner spanner = options.getService()) {
+      executeSelect1(spanner);
+    }
+    assertTrue(waitForInstanceCount(0));
+
+    assertTrue(exportedSpans.isEmpty());
+    String traceParent = lastExecuteSqlHeaders.get().get(TRACE_PARENT_KEY);
+    assertNotNull(traceParent);
+    assertEquals(0, Integer.parseInt(traceParent.split("-")[3], 16) & 1);
+  }
+
+  @Test
+  public void serviceNameOfTheEnvironmentIsUsed() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public String getOtelServiceName() {
+            return "my-service";
+          }
+        });
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setBuiltInTracingSamplingRate(1.0)
+            .build();
+    try (Spanner spanner = options.getService()) {
+      executeSelect1(spanner);
+    }
+    assertTrue(waitForInstanceCount(0));
+
+    assertFalse(exportedSpans.isEmpty());
+    assertEquals(
+        "my-service",
+        exportedSpans.get(0).getResource().getAttribute(AttributeKey.stringKey("service.name")));
+  }
+
+  @Test
   public void samplingRateMustBeBetweenZeroAndOne() {
     assertThrows(
         IllegalArgumentException.class,

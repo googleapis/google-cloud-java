@@ -77,7 +77,6 @@ final class BuiltInTracingProvider {
       AttributeKey.stringKey("gcp.project_id");
   private static final AttributeKey<String> SERVICE_NAME_KEY =
       AttributeKey.stringKey("service.name");
-  private static final String OTEL_SERVICE_NAME = "OTEL_SERVICE_NAME";
   private static final long SHUTDOWN_TIMEOUT_SECONDS = 10;
 
   private final Set<OpenTelemetrySdk> inUse = Collections.newSetFromMap(new IdentityHashMap<>());
@@ -98,7 +97,10 @@ final class BuiltInTracingProvider {
 
   @Nullable
   synchronized OpenTelemetrySdk create(
-      String projectId, Credentials credentials, double samplingRate) {
+      String projectId,
+      Credentials credentials,
+      double samplingRate,
+      @Nullable String serviceName) {
     if (shutDown || !isContextUsable()) {
       return null;
     }
@@ -106,7 +108,10 @@ final class BuiltInTracingProvider {
     try {
       openTelemetry =
           createOpenTelemetry(
-              projectId, spanExporterFactory.apply(projectId, credentials), samplingRate);
+              projectId,
+              spanExporterFactory.apply(projectId, credentials),
+              samplingRate,
+              serviceName);
     } catch (Throwable throwable) {
       if (!creationFailureLogged) {
         creationFailureLogged = true;
@@ -315,10 +320,13 @@ final class BuiltInTracingProvider {
   }
 
   private static OpenTelemetrySdk createOpenTelemetry(
-      String projectId, SpanExporter spanExporter, double samplingRate) {
+      String projectId,
+      SpanExporter spanExporter,
+      double samplingRate,
+      @Nullable String serviceName) {
     SdkTracerProvider tracerProvider =
         SdkTracerProvider.builder()
-            .setResource(createResource(projectId, System.getenv(OTEL_SERVICE_NAME)))
+            .setResource(createResource(projectId, serviceName))
             .setSampler(Sampler.parentBased(Sampler.traceIdRatioBased(samplingRate)))
             .addSpanProcessor(BatchSpanProcessor.builder(spanExporter).build())
             .build();

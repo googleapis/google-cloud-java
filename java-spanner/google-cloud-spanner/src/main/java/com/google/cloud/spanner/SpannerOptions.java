@@ -139,7 +139,6 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String SPANNER_SERVICE_NAME = "spanner";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
-  private static final String GOOGLE_CLOUD_UNIVERSE_DOMAIN = "GOOGLE_CLOUD_UNIVERSE_DOMAIN";
   private static final int MAX_DNS_HOSTNAME_LENGTH = 253;
   private static final Pattern VALID_UNIVERSE_DOMAIN_PATTERN =
       Pattern.compile(
@@ -1282,6 +1281,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return null;
     }
 
+    @Nullable
+    default String getGoogleCloudUniverseDomain() {
+      return null;
+    }
+
+    @Nullable
+    default String getOtelServiceName() {
+      return null;
+    }
+
     default boolean isEnableLocationApi() {
       return false;
     }
@@ -1331,6 +1340,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private static final String SPANNER_ENABLE_BUILTIN_TRACING = "SPANNER_ENABLE_BUILTIN_TRACING";
     private static final String SPANNER_BUILTIN_TRACING_SAMPLING_RATE =
         "SPANNER_BUILTIN_TRACING_SAMPLING_RATE";
+    private static final String GOOGLE_CLOUD_UNIVERSE_DOMAIN = "GOOGLE_CLOUD_UNIVERSE_DOMAIN";
+    private static final String OTEL_SERVICE_NAME = "OTEL_SERVICE_NAME";
     private static final String SPANNER_DISABLE_BUILTIN_METRICS = "SPANNER_DISABLE_BUILTIN_METRICS";
     private static final String SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS =
         "SPANNER_DISABLE_DIRECT_ACCESS_GRPC_BUILTIN_METRICS";
@@ -1419,6 +1430,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @Override
     public String getBuiltInTracingSamplingRate() {
       return System.getenv(SPANNER_BUILTIN_TRACING_SAMPLING_RATE);
+    }
+
+    @Override
+    public String getGoogleCloudUniverseDomain() {
+      return System.getenv(GOOGLE_CLOUD_UNIVERSE_DOMAIN);
+    }
+
+    @Override
+    public String getOtelServiceName() {
+      return System.getenv(OTEL_SERVICE_NAME);
     }
 
     @Override
@@ -3179,7 +3200,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       if (builtInTracingState == BuiltInTracingState.NOT_CREATED) {
         builtInTracing =
             BuiltInTracingProvider.INSTANCE.create(
-                getProjectId(), getCredentials(), builtInTracingSamplingRate);
+                getProjectId(),
+                getCredentials(),
+                builtInTracingSamplingRate,
+                environment.getOtelServiceName());
         builtInTracingState =
             builtInTracing == null ? BuiltInTracingState.FAILED : BuiltInTracingState.IN_USE;
       }
@@ -3219,7 +3243,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     String universeDomain =
         resolveBuiltInTracingUniverseDomain(
-            getUniverseDomain(), System.getenv(GOOGLE_CLOUD_UNIVERSE_DOMAIN));
+            getUniverseDomain(), environment.getGoogleCloudUniverseDomain());
     if (!GOOGLE_DEFAULT_UNIVERSE.equals(universeDomain)) {
       return "universe domain " + universeDomain;
     }
