@@ -316,9 +316,11 @@ public abstract class ClientSettings<SettingsT extends ClientSettings<SettingsT>
      * <p>API Key authorization is not supported for every product. Please check the documentation
      * for each product to confirm if it is supported.
      *
-     * <p>API keys do not carry universe domain metadata. Callers are expected to provide an API key
-     * created in the configured universe domain (defaulting to {@code googleapis.com}). No universe
-     * domain validation is performed for API keys.
+     * <p>API keys do not carry universe domain metadata and are not validated against the client's
+     * universe domain. If no universe domain is configured on the client (or via {@code
+     * GOOGLE_CLOUD_UNIVERSE_DOMAIN}), requests default to {@code googleapis.com}. Callers using an
+     * API key from a non-default universe domain must explicitly configure the client's universe
+     * domain to match.
      *
      * <p>Note: If you set an API key and {@link CredentialsProvider} in the same ClientSettings the
      * API key will override any credentials provided.

@@ -235,7 +235,8 @@ class HttpTransportOptionsTest {
     // Does not throw a validation exception
     httpRequestInitializer.initialize(defaultHttpRequest);
     assertEquals(
-        "test-api-key", defaultHttpRequest.getHeaders().getFirstHeaderStringValue("x-goog-api-key"));
+        "test-api-key",
+        defaultHttpRequest.getHeaders().getFirstHeaderStringValue("x-goog-api-key"));
   }
 
   private TestServiceOptions generateTestServiceOptions(

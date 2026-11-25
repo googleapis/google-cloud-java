@@ -30,7 +30,6 @@
 package com.google.api.gax.rpc.internal;
 
 import com.google.api.client.util.Beta;
-import com.google.api.core.InternalApi;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableMap;
 import java.io.IOException;
@@ -97,10 +96,5 @@ public class QuotaProjectIdHidingCredentials extends Credentials {
   @Override
   public String getUniverseDomain() throws IOException {
     return this.wrappedCredentials.getUniverseDomain();
-  }
-
-  @InternalApi
-  public Credentials getWrappedCredentials() {
-    return this.wrappedCredentials;
   }
 }

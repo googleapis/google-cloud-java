@@ -286,7 +286,7 @@ class ServiceOptionsTest {
       }
     }
 
-    private TestServiceOptions(Builder builder) {
+    TestServiceOptions(Builder builder) {
       super(
           TestServiceFactory.class,
           TestServiceRpcFactory.class,
@@ -650,6 +650,36 @@ class ServiceOptionsTest {
 
     assertThat(defaultOptions.hasValidUniverseDomain()).isTrue();
     assertThat(customOptions.hasValidUniverseDomain()).isTrue();
+  }
+
+  @Test
+  void testIsValidUniverseDomain_nullCredentials_defaultsToGdu() throws IOException {
+    TestServiceOptions defaultOptions =
+        new TestServiceOptions(
+            TestServiceOptions.newBuilder()
+                .setProjectId("project-id")
+                .setHost("https://test.googleapis.com")
+                .setCredentials(NoCredentials.getInstance())) {
+          @Override
+          public com.google.auth.Credentials getCredentials() {
+            return null;
+          }
+        };
+    TestServiceOptions customOptions =
+        new TestServiceOptions(
+            TestServiceOptions.newBuilder()
+                .setProjectId("project-id")
+                .setHost("https://test.random.com")
+                .setUniverseDomain("random.com")
+                .setCredentials(NoCredentials.getInstance())) {
+          @Override
+          public com.google.auth.Credentials getCredentials() {
+            return null;
+          }
+        };
+
+    assertThat(defaultOptions.hasValidUniverseDomain()).isTrue();
+    assertThat(customOptions.hasValidUniverseDomain()).isFalse();
   }
 
   @Test

@@ -31,7 +31,6 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
-import com.google.api.gax.rpc.internal.QuotaProjectIdHidingCredentials;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
@@ -181,7 +180,10 @@ public abstract class EndpointContext {
       // GDC-H has no universe domain, return
       return;
     }
-    if (isApiKeyCredentials(credentials)) {
+    // Client-side universe domain configuration is already validated in Builder#build().
+    // API keys carry no universe domain metadata, so callers are responsible for ensuring the
+    // API key belongs to the configured universe domain.
+    if (credentials instanceof ApiKeyCredentials) {
       return;
     }
     // (TODO: b/349488459) - Disable automatic requests to MDS until 01/2025
@@ -204,14 +206,6 @@ public abstract class EndpointContext {
           invalidUniverseDomainStatusCode,
           false);
     }
-  }
-
-  private static boolean isApiKeyCredentials(@Nullable Credentials credentials) {
-    Credentials current = credentials;
-    while (current instanceof QuotaProjectIdHidingCredentials) {
-      current = ((QuotaProjectIdHidingCredentials) current).getWrappedCredentials();
-    }
-    return current instanceof ApiKeyCredentials;
   }
 
   @AutoValue.Builder

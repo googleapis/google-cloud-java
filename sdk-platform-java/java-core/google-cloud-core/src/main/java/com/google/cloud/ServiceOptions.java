@@ -915,12 +915,19 @@ public abstract class ServiceOptions<
    */
   @InternalApi
   public boolean hasValidUniverseDomain() throws IOException {
+    // Resolve the client's configured universe domain before checking ApiKeyCredentials so
+    // malformed client universe domain configuration is still validated first.
+    String resolvedUniverseDomain =
+        universeDomain != null ? universeDomain : Credentials.GOOGLE_DEFAULT_UNIVERSE;
     Credentials credentials = getCredentials();
+    // API keys carry no universe domain metadata; callers are responsible for ensuring the API key
+    // belongs to the configured universe domain.
     if (credentials instanceof ApiKeyCredentials) {
       return true;
     }
-    String resolvedUniverseDomain =
-        universeDomain != null ? universeDomain : Credentials.GOOGLE_DEFAULT_UNIVERSE;
-    return resolvedUniverseDomain.equals(credentials.getUniverseDomain());
+    // Fall back to GDU when credentials are null to match EndpointContext and HttpTransportOptions.
+    String credentialsUniverseDomain =
+        credentials != null ? credentials.getUniverseDomain() : Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    return resolvedUniverseDomain.equals(credentialsUniverseDomain);
   }
 }
