@@ -15,14 +15,14 @@
  */
 package com.google.cloud.bigtable.data.v2.it;
 
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.createTestAuthorizedView;
+import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_COLUMN_QUALIFIER;
+import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_ROW_PREFIX;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.Batcher;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
@@ -46,8 +46,6 @@ import org.junit.runners.JUnit4;
 public class BulkReadIT {
 
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
-  private static String AUTHORIZED_VIEW_ROW_PREFIX = "row#";
-  private static String AUTHORIZED_VIEW_COLUMN_QUALIFIER = "qualifier";
 
   @Test
   public void testBulkRead() throws InterruptedException, ExecutionException {
@@ -117,7 +115,7 @@ public class BulkReadIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
 
-    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+    AuthorizedViewId authorizedViewId = testEnvRule.env().getAuthorizedViewId();
 
     BigtableDataClient client = testEnvRule.env().getDataClient();
     String family = testEnvRule.env().getFamilyId();
@@ -149,9 +147,7 @@ public class BulkReadIT {
             .setCell(family, "outside-authorized-view", 10_000L, "test-value"));
     client.bulkMutateRows(bulkMutation);
 
-    try (Batcher<ByteString, Row> batcher =
-        client.newBulkReadRowsBatcher(
-            AuthorizedViewId.of(testEnvRule.env().getTableId(), testAuthorizedView.getId()))) {
+    try (Batcher<ByteString, Row> batcher = client.newBulkReadRowsBatcher(authorizedViewId)) {
 
       List<ApiFuture<Row>> rowFutures = new ArrayList<>(numRows);
 
@@ -186,11 +182,5 @@ public class BulkReadIT {
       assertThat(actualRows.get(2)).isEqualTo(expectedRows.get(0));
       assertThat(actualRows.get(3)).isNull();
     }
-
-    testEnvRule
-        .env()
-        .getTableAdminClient()
-        .deleteAuthorizedView(
-            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }

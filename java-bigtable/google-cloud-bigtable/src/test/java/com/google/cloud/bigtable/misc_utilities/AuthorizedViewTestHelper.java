@@ -16,60 +16,14 @@
 
 package com.google.cloud.bigtable.misc_utilities;
 
-import com.google.api.gax.rpc.UnavailableException;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
-import com.google.cloud.bigtable.admin.v2.models.CreateAuthorizedViewRequest;
-import com.google.cloud.bigtable.admin.v2.models.FamilySubsets;
-import com.google.cloud.bigtable.admin.v2.models.SubsetView;
-import com.google.cloud.bigtable.data.v2.models.TableId;
-import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+/**
+ * Constants matching the shared pre-provisioned {@code test-authorized-view} configured by {@code
+ * scripts/setup-test-table.sh}.
+ */
+public final class AuthorizedViewTestHelper {
 
-public class AuthorizedViewTestHelper {
+  public static final String AUTHORIZED_VIEW_ROW_PREFIX = "row#";
+  public static final String AUTHORIZED_VIEW_COLUMN_QUALIFIER = "qualifier";
 
-  public static String AUTHORIZED_VIEW_ROW_PREFIX = "row#";
-  public static String AUTHORIZED_VIEW_COLUMN_QUALIFIER = "qualifier";
-
-  private static final Logger logger = Logger.getLogger(AuthorizedViewTestHelper.class.getName());
-
-  public static AuthorizedView createTestAuthorizedView(TestEnvRule testEnvRule)
-      throws InterruptedException {
-    TableId tableId = testEnvRule.env().getTableId();
-    String authorizedViewId = UUID.randomUUID().toString();
-    CreateAuthorizedViewRequest request =
-        CreateAuthorizedViewRequest.of(tableId.getTableId(), authorizedViewId)
-            .setAuthorizedViewType(
-                SubsetView.create()
-                    .addRowPrefix(AUTHORIZED_VIEW_ROW_PREFIX)
-                    .setFamilySubsets(
-                        testEnvRule.env().getFamilyId(),
-                        FamilySubsets.create()
-                            .addQualifierPrefix(AUTHORIZED_VIEW_COLUMN_QUALIFIER)))
-            .setDeletionProtection(false);
-    int retryCount = 0;
-    int maxRetries = 10;
-    while (true) {
-      try {
-        return testEnvRule.env().getTableAdminClient().createAuthorizedView(request);
-      } catch (UnavailableException e) {
-        if (++retryCount == maxRetries) {
-          throw e;
-        }
-        logger.log(
-            Level.INFO,
-            "Retrying createAuthorizedView "
-                + authorizedViewId
-                + " in  table "
-                + tableId
-                + ", retryCount: "
-                + retryCount);
-        // Exponential backoff delay starting at 100ms.
-        double expSleep = 100 * Math.pow(2, retryCount);
-        Thread.sleep(Math.min((long) expSleep, TimeUnit.MINUTES.toMillis(1)));
-      }
-    }
-  }
+  private AuthorizedViewTestHelper() {}
 }

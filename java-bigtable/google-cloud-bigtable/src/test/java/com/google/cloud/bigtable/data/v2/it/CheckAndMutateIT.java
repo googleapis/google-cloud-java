@@ -18,13 +18,11 @@ package com.google.cloud.bigtable.data.v2.it;
 import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_COLUMN_QUALIFIER;
 import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.AUTHORIZED_VIEW_ROW_PREFIX;
-import static com.google.cloud.bigtable.misc_utilities.AuthorizedViewTestHelper.createTestAuthorizedView;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.rpc.PermissionDeniedException;
-import com.google.cloud.bigtable.admin.v2.models.AuthorizedView;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
@@ -100,7 +98,7 @@ public class CheckAndMutateIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
 
-    AuthorizedView testAuthorizedView = createTestAuthorizedView(testEnvRule);
+    AuthorizedViewId authorizedViewId = testEnvRule.env().getAuthorizedViewId();
 
     TableId tableId = testEnvRule.env().getTableId();
     String familyId = testEnvRule.env().getFamilyId();
@@ -110,14 +108,13 @@ public class CheckAndMutateIT {
     dataClient
         .mutateRowCallable()
         .call(
-            RowMutation.create(AuthorizedViewId.of(tableId, testAuthorizedView.getId()), rowKey)
+            RowMutation.create(authorizedViewId, rowKey)
                 .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER + "1", "val1")
                 .setCell(familyId, AUTHORIZED_VIEW_COLUMN_QUALIFIER + "2", "val2"));
 
     dataClient
         .checkAndMutateRowAsync(
-            ConditionalRowMutation.create(
-                    AuthorizedViewId.of(tableId, testAuthorizedView.getId()), rowKey)
+            ConditionalRowMutation.create(authorizedViewId, rowKey)
                 .condition(FILTERS.qualifier().exactMatch(AUTHORIZED_VIEW_COLUMN_QUALIFIER + "1"))
                 .then(
                     Mutation.create()
@@ -139,9 +136,7 @@ public class CheckAndMutateIT {
     try {
       dataClient
           .checkAndMutateRowAsync(
-              ConditionalRowMutation.create(
-                      AuthorizedViewId.of(tableId, testAuthorizedView.getId()),
-                      rowKeyOutsideAuthorizedView)
+              ConditionalRowMutation.create(authorizedViewId, rowKeyOutsideAuthorizedView)
                   .condition(FILTERS.qualifier().exactMatch(AUTHORIZED_VIEW_COLUMN_QUALIFIER))
                   .then(Mutation.create().setCell(familyId, "new_qualifier", "new-value")))
           .get(1, TimeUnit.MINUTES);
@@ -154,8 +149,7 @@ public class CheckAndMutateIT {
     try {
       dataClient
           .checkAndMutateRowAsync(
-              ConditionalRowMutation.create(
-                      AuthorizedViewId.of(tableId, testAuthorizedView.getId()), rowKey)
+              ConditionalRowMutation.create(authorizedViewId, rowKey)
                   .condition(FILTERS.qualifier().exactMatch(AUTHORIZED_VIEW_COLUMN_QUALIFIER))
                   .then(Mutation.create().setCell(familyId, "new_qualifier", "new-value")))
           .get(1, TimeUnit.MINUTES);
@@ -163,11 +157,5 @@ public class CheckAndMutateIT {
     } catch (Exception e) {
       assertThat(e.getCause()).isInstanceOf(PermissionDeniedException.class);
     }
-
-    testEnvRule
-        .env()
-        .getTableAdminClient()
-        .deleteAuthorizedView(
-            testEnvRule.env().getTableId().getTableId(), testAuthorizedView.getId());
   }
 }
