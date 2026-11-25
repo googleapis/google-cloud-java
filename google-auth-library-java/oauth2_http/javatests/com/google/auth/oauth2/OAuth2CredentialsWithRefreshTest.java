@@ -42,6 +42,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.google.auth.Credentials;
 import com.google.auth.TestUtils;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URI;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -50,11 +51,12 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.function.Consumer;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link OAuth2CredentialsWithRefresh}. */
-class OAuth2CredentialsWithRefreshTest {
+class OAuth2CredentialsWithRefreshTest extends BaseSerializationTest {
   private static final AccessToken ACCESS_TOKEN = new AccessToken("accessToken", new Date());
 
   @Test
@@ -206,11 +208,80 @@ class OAuth2CredentialsWithRefreshTest {
     TestUtils.assertContainsBearerToken(metadata, refreshedToken.getTokenValue());
   }
 
+  private static final class SerializableRefreshHandler
+      implements OAuth2CredentialsWithRefresh.OAuth2RefreshHandler, Serializable {
+    private static final long serialVersionUID = 1L;
+    private final AccessToken refreshedToken;
+
+    private SerializableRefreshHandler(AccessToken refreshedToken) {
+      this.refreshedToken = refreshedToken;
+    }
+
+    @Override
+    public AccessToken refreshAccessToken() {
+      return refreshedToken;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof SerializableRefreshHandler)) {
+        return false;
+      }
+      SerializableRefreshHandler other = (SerializableRefreshHandler) obj;
+      return Objects.equals(this.refreshedToken, other.refreshedToken);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(refreshedToken);
+    }
+  }
+
   private static OAuth2CredentialsWithRefresh.Builder createTestBuilder(
       OAuth2CredentialsWithRefresh.OAuth2RefreshHandler handler) {
     return OAuth2CredentialsWithRefresh.newBuilder()
         .setAccessToken(ACCESS_TOKEN)
         .setRefreshHandler(handler);
+  }
+
+  @Test
+  void serialize() throws IOException, ClassNotFoundException {
+    AccessToken refreshedToken = new AccessToken("refreshedAccessToken", new Date());
+    SerializableRefreshHandler handler = new SerializableRefreshHandler(refreshedToken);
+
+    for (String universeDomain : Arrays.asList(null, "example.com")) {
+      OAuth2CredentialsWithRefresh credentials =
+          createTestBuilder(handler).setUniverseDomain(universeDomain).build();
+
+      OAuth2CredentialsWithRefresh deserialized = serializeAndDeserialize(credentials);
+      assertEquals(credentials, deserialized);
+      assertEquals(credentials.hashCode(), deserialized.hashCode());
+      assertEquals(credentials.getUniverseDomain(), deserialized.getUniverseDomain());
+      assertEquals(refreshedToken, deserialized.refreshAccessToken());
+      TestUtils.assertContainsBearerToken(
+          deserialized.getRequestMetadata(URI.create("http://googleapis.com/testapi/v1/foo")),
+          refreshedToken.getTokenValue());
+    }
+  }
+
+  @Test
+  void deserialize_missingOrBlankUniverseDomain_defaultsToGoogleDefaultUniverse()
+      throws IOException, ClassNotFoundException {
+    AccessToken refreshedToken = new AccessToken("refreshedAccessToken", new Date());
+    SerializableRefreshHandler handler = new SerializableRefreshHandler(refreshedToken);
+    OAuth2CredentialsWithRefresh expected = createTestBuilder(handler).build();
+
+    for (String serializedUniverseDomain : Arrays.asList(null, "", "   ")) {
+      OAuth2CredentialsWithRefresh credentials = createTestBuilder(handler).build();
+      credentials.universeDomain = serializedUniverseDomain;
+
+      OAuth2CredentialsWithRefresh deserialized = serializeAndDeserialize(credentials);
+      assertEquals(Credentials.GOOGLE_DEFAULT_UNIVERSE, deserialized.getUniverseDomain());
+      assertEquals(expected, deserialized);
+      assertEquals(deserialized, expected);
+      assertEquals(expected.hashCode(), deserialized.hashCode());
+      assertEquals(refreshedToken, deserialized.refreshAccessToken());
+    }
   }
 
   @Test
@@ -253,6 +324,52 @@ class OAuth2CredentialsWithRefreshTest {
     assertEquals(credentials, other);
     assertEquals(other, credentials);
     assertEquals(credentials.hashCode(), other.hashCode());
+  }
+
+  @Test
+  void equals_defaultUniverseDomain() {
+    OAuth2CredentialsWithRefresh.OAuth2RefreshHandler handler = () -> ACCESS_TOKEN;
+    OAuth2CredentialsWithRefresh explicitDefault =
+        createTestBuilder(handler).setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE).build();
+    OAuth2CredentialsWithRefresh unsetDefault = createTestBuilder(handler).build();
+
+    assertEquals(explicitDefault, unsetDefault);
+    assertEquals(unsetDefault, explicitDefault);
+    assertEquals(explicitDefault.hashCode(), unsetDefault.hashCode());
+
+    for (String defaultInput : Arrays.asList(null, "", "   ")) {
+      OAuth2CredentialsWithRefresh normalized =
+          createTestBuilder(handler).setUniverseDomain(defaultInput).build();
+      assertEquals(explicitDefault, normalized);
+      assertEquals(normalized, explicitDefault);
+      assertEquals(explicitDefault.hashCode(), normalized.hashCode());
+    }
+  }
+
+  @Test
+  void equals_withoutInitialAccessToken() {
+    OAuth2CredentialsWithRefresh.OAuth2RefreshHandler handler = () -> ACCESS_TOKEN;
+    OAuth2CredentialsWithRefresh.OAuth2RefreshHandler otherHandler = () -> ACCESS_TOKEN;
+    OAuth2CredentialsWithRefresh first =
+        OAuth2CredentialsWithRefresh.newBuilder()
+            .setRefreshHandler(handler)
+            .setUniverseDomain("example.com")
+            .build();
+    OAuth2CredentialsWithRefresh same =
+        OAuth2CredentialsWithRefresh.newBuilder()
+            .setRefreshHandler(handler)
+            .setUniverseDomain("example.com")
+            .build();
+    OAuth2CredentialsWithRefresh differentHandler =
+        OAuth2CredentialsWithRefresh.newBuilder()
+            .setRefreshHandler(otherHandler)
+            .setUniverseDomain("example.com")
+            .build();
+
+    assertEquals(first, same);
+    assertEquals(first.hashCode(), same.hashCode());
+    assertNotEquals(first, differentHandler);
+    assertNotEquals(differentHandler, first);
   }
 
   @Test

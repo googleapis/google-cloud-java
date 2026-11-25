@@ -563,6 +563,13 @@ public class OAuth2Credentials extends Credentials {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 
+  /**
+   * Returns a new builder for {@link OAuth2Credentials}.
+   *
+   * <p>Built credentials default to {@link Credentials#GOOGLE_DEFAULT_UNIVERSE}. To create
+   * access-token credentials for a custom universe domain, use {@link
+   * GoogleCredentials#create(String, AccessToken)} or {@link GoogleCredentials#newBuilder()}.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }

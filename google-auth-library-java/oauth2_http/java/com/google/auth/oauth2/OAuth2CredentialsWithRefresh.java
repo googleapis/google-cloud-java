@@ -34,8 +34,10 @@ package com.google.auth.oauth2;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.auth.Credentials;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -48,13 +50,16 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
 
+  // Matches the computed serialVersionUID prior to adding universeDomain.
+  private static final long serialVersionUID = -5362111100740719676L;
+
   /** Interface for the refresh handler. */
   public interface OAuth2RefreshHandler {
     AccessToken refreshAccessToken() throws IOException;
   }
 
   private final OAuth2RefreshHandler refreshHandler;
-  private final String universeDomain;
+  @VisibleForTesting String universeDomain;
 
   protected OAuth2CredentialsWithRefresh(Builder builder) {
     super(builder.getAccessToken(), builder.getRefreshMargin(), builder.getExpirationMargin());
@@ -123,6 +128,14 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
   @Override
   public int hashCode() {
     return Objects.hash(super.hashCode(), this.refreshHandler, this.universeDomain);
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    // Default absent or blank universeDomain from older serialized streams.
+    if (this.universeDomain == null || this.universeDomain.trim().isEmpty()) {
+      this.universeDomain = Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    }
   }
 
   public static Builder newBuilder() {
