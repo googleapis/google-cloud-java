@@ -25,6 +25,7 @@ import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_CLIENT_RE
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS;
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS;
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS;
+import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_DEADLINE_EXCEEDED;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_DNS_FAILURE;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_NOT_FOUND;
@@ -38,6 +39,7 @@ import static org.junit.Assert.assertThrows;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.Retrying.DefaultRetrier;
 import com.google.cloud.storage.Retrying.Retrier;
@@ -103,6 +105,7 @@ public final class RetryingMetricsTest {
             () -> "success", Decoder.identity(), StorageMetricsContext.create("GetObject"));
     assertThat(result).isEqualTo("success");
     assertOutcomeMetrics(STATUS_OK, 1L, 0L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_RETRIES)).isEqualTo(0L);
     assertThat(assertDuration(STATUS_OK).getAttributes().get(KEY_GCP_CLIENT_SERVICE))
         .isEqualTo("storage");
   }
@@ -126,6 +129,7 @@ public final class RetryingMetricsTest {
     assertThat(attemptCounter.get()).isEqualTo(3);
     assertOutcomeMetrics(STATUS_OK, 3L, 2L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_UNAVAILABLE, 2L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_RETRIES, KEY_ERROR_TYPE, STATUS_UNAVAILABLE, 2L);
     assertDuration(STATUS_OK);
   }
 
@@ -169,6 +173,7 @@ public final class RetryingMetricsTest {
     assertThat(se.getCode()).isEqualTo(503);
     assertOutcomeMetrics(STATUS_UNAVAILABLE, 3L, 3L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_UNAVAILABLE, 3L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_RETRIES, KEY_ERROR_TYPE, STATUS_UNAVAILABLE, 2L);
     assertDuration(STATUS_UNAVAILABLE);
   }
 
@@ -249,6 +254,7 @@ public final class RetryingMetricsTest {
     assertThat(se.getCode()).isEqualTo(404);
     assertOutcomeMetrics(STATUS_NOT_FOUND, 1L, 1L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_NOT_FOUND, 1L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_RETRIES)).isEqualTo(0L);
     assertDuration(STATUS_NOT_FOUND);
   }
 
@@ -279,6 +285,9 @@ public final class RetryingMetricsTest {
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_DEADLINE_EXCEEDED, 1L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_TIMEOUT, 1L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_DNS_FAILURE, 1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_RETRIES, KEY_ERROR_TYPE, STATUS_DEADLINE_EXCEEDED, 1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_RETRIES, KEY_ERROR_TYPE, STATUS_TIMEOUT, 1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_RETRIES, KEY_ERROR_TYPE, STATUS_DNS_FAILURE, 0L);
   }
 
   @Test
@@ -526,6 +535,59 @@ public final class RetryingMetricsTest {
     collected = null;
     assertOutcomeMetrics(STATUS_OK, 2L, 1L);
     assertDuration(STATUS_OK);
+  }
+
+  @Test
+  public void retriedCall_viaStorageOptions_recordsExactRetryAttributes() {
+    GrpcStorageOptions options =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setRetrySettings(RETRY_SETTINGS)
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    StorageMetricsContext ctx = options.getStorageClientMetrics().createContext("GetObject");
+    ctx.setNetworkPath(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+    Retrier bound = options.createRetrier().withMetricsContext(ctx);
+
+    AtomicInteger attempts = new AtomicInteger(0);
+    String result =
+        bound.run(
+            Retrying.alwaysRetry(),
+            () -> {
+              if (attempts.incrementAndGet() == 1) {
+                throw new StorageException(503, "Unavailable");
+              }
+              return "ok";
+            },
+            Decoder.identity());
+    assertThat(result).isEqualTo("ok");
+
+    MetricData retriesMetric = findMetric(collect(), METRIC_GCP_STORAGE_CLIENT_RETRIES);
+    assertThat(retriesMetric).isNotNull();
+    assertThat(retriesMetric.getUnit()).isEqualTo("{attempt}");
+    assertThat(retriesMetric.getLongSumData().getPoints()).hasSize(1);
+    LongPointData point = retriesMetric.getLongSumData().getPoints().iterator().next();
+    assertThat(point.getValue()).isEqualTo(1L);
+    assertThat(point.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "GetObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
+                .put(StorageClientMetrics.KEY_ERROR_TYPE, STATUS_UNAVAILABLE)
+                .build());
   }
 
   private void assertCreateRetrierWiresMetricsWhenEnabled(StorageOptions options) {

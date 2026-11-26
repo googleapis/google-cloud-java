@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
-import com.google.cloud.BaseServiceException;
 import com.google.cloud.storage.Backoff.Jitterer;
 import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.spi.v1.HttpRpcContext;
@@ -264,22 +263,11 @@ final class Retrying {
                 metricsContext.recordAttemptSuccess(metrics);
               }
               return decoded;
-            } catch (StorageException se) {
-              if (metricsContext != null) {
-                metricsContext.recordAttemptFailure(metrics, se);
-              }
-              ctx.recordError(se, () -> attemptAgain.set(true), failure::set);
-            } catch (IllegalArgumentException iae) {
-              if (metricsContext != null) {
-                metricsContext.recordAttemptFailure(metrics, iae);
-              }
-              ctx.recordError(iae, () -> attemptAgain.set(true), failure::set);
+            } catch (StorageException | IllegalArgumentException e) {
+              handleAttemptError(ctx, metricsContext, e, e, attemptAgain, failure);
             } catch (Exception e) {
-              if (metricsContext != null) {
-                metricsContext.recordAttemptFailure(metrics, e);
-              }
-              BaseServiceException coalesced = StorageException.coalesce(e);
-              ctx.recordError(coalesced, () -> attemptAgain.set(true), failure::set);
+              handleAttemptError(
+                  ctx, metricsContext, e, StorageException.coalesce(e), attemptAgain, failure);
             }
           } while (attemptAgain.get());
 
@@ -300,6 +288,22 @@ final class Retrying {
             metricsContext.recordOperation(metrics, terminalThrowable);
           }
         }
+      }
+    }
+
+    private void handleAttemptError(
+        RetryContext ctx,
+        @Nullable StorageMetricsContext metricsContext,
+        Throwable rawError,
+        Exception retryError,
+        AtomicBoolean attemptAgain,
+        AtomicReference<Exception> failure) {
+      if (metricsContext != null) {
+        metricsContext.recordAttemptFailure(metrics, rawError);
+      }
+      ctx.recordError(retryError, () -> attemptAgain.set(true), failure::set);
+      if (attemptAgain.get() && metricsContext != null) {
+        metricsContext.recordRetry(metrics, rawError);
       }
     }
   }

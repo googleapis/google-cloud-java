@@ -50,6 +50,7 @@ public final class StorageClientMetricsTest {
           StorageClientMetrics::getGcpClientRequestDuration,
           StorageClientMetrics::getOperations,
           StorageClientMetrics::getAttempts,
+          StorageClientMetrics::getRetries,
           StorageClientMetrics::getErrors,
           StorageClientMetrics::getTtfb,
           StorageClientMetrics::getRequestBodySize,
@@ -144,6 +145,7 @@ public final class StorageClientMetricsTest {
 
     metrics.getOperations().add(1);
     metrics.getAttempts().add(2);
+    metrics.getRetries().add(1);
     metrics.getErrors().add(1);
     metrics.getRequestActive().add(1);
     metrics.getServerUnreached().add(1);
@@ -206,6 +208,10 @@ public final class StorageClientMetricsTest {
     String attemptsName = StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS.replace(".", "/");
     assertThat(metricsMap).containsKey(attemptsName);
     assertThat(metricsMap.get(attemptsName).getUnit()).isEqualTo("{attempt}");
+
+    String retriesName = StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES.replace(".", "/");
+    assertThat(metricsMap).containsKey(retriesName);
+    assertThat(metricsMap.get(retriesName).getUnit()).isEqualTo("{attempt}");
 
     String errorsName = StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS.replace(".", "/");
     assertThat(metricsMap).containsKey(errorsName);

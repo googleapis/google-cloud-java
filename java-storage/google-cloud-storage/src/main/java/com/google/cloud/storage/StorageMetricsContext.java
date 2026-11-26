@@ -317,6 +317,17 @@ final class StorageMetricsContext {
     }
   }
 
+  void recordRetry(@Nullable StorageClientMetrics metrics, Throwable priorError) {
+    if (metrics == null) {
+      return;
+    }
+    metrics.recordRetry(
+        otelContext,
+        operationName,
+        resolveNetworkPath(),
+        StorageErrorTypeMapper.mapThrowable(priorError));
+  }
+
   void setNetworkPath(String networkPath) {
     this.networkPath = networkPath;
   }
