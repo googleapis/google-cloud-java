@@ -22,7 +22,6 @@ import java.nio.channels.ClosedByInterruptException;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 import java.nio.channels.OverlappingFileLockException;
-import java.nio.channels.SeekableByteChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.FileSystems;
@@ -30,6 +29,7 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileAttribute;
@@ -56,6 +56,9 @@ import java.util.regex.Pattern;
  * log files using the connection ID retrieved from BigQueryJdbcMdc.
  */
 class PerConnectionFileHandler extends Handler {
+  static final long DEFAULT_MAX_LOG_FILE_BYTES = 1024L * 1024L * 1024L;
+  static final String MAX_LOG_FILE_BYTES_SYSTEM_PROPERTY =
+      "com.google.cloud.bigquery.jdbc.maxLogFileBytes";
   private static final String DEFAULT_HANDLER_ID = "Jdbc-default";
   private static final String GLOBAL_LOG_FILE_NAME = "BQ-JDBC-GLOBAL.log";
   private static final long GLOBAL_LOCK_POSITION = Long.MAX_VALUE - 1;
@@ -79,12 +82,18 @@ class PerConnectionFileHandler extends Handler {
 
   private final Path baseLogPath;
   private final Level level;
+  private final long maxFileBytes;
   private final Formatter logFormatter;
   private final ConcurrentHashMap<String, ChannelLogWriter> writers = new ConcurrentHashMap<>();
   private final ChannelLogWriter defaultWriter;
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
+    this(baseLogPath, level, resolveMaxLogFileBytes());
+  }
+
+  PerConnectionFileHandler(String baseLogPath, Level level, long maxFileBytes) {
     this.level = level;
+    this.maxFileBytes = maxFileBytes <= 0L ? DEFAULT_MAX_LOG_FILE_BYTES : maxFileBytes;
     this.logFormatter = BigQueryJdbcRootLogger.getFormatter();
     setLevel(level);
     setFormatter(this.logFormatter);
@@ -94,12 +103,28 @@ class PerConnectionFileHandler extends Handler {
     try {
       Path candidate = Paths.get(baseLogPath != null ? baseLogPath : "").toAbsolutePath();
       initializedDir = ensureSecureDirectory(candidate);
-      initializedDefault = createLogWriter(DEFAULT_HANDLER_ID, initializedDir, level);
+      initializedDefault =
+          createLogWriter(DEFAULT_HANDLER_ID, initializedDir, level, this.maxFileBytes);
     } catch (Exception e) {
       reportError("Failed to initialize default log file", e, ErrorManager.OPEN_FAILURE);
     }
     this.baseLogPath = initializedDir;
     this.defaultWriter = initializedDefault;
+  }
+
+  static long resolveMaxLogFileBytes() {
+    String raw = System.getProperty(MAX_LOG_FILE_BYTES_SYSTEM_PROPERTY);
+    if (raw != null && !raw.trim().isEmpty()) {
+      try {
+        long parsed = Long.parseLong(raw.trim());
+        if (parsed > 0L) {
+          return parsed;
+        }
+      } catch (NumberFormatException ignored) {
+        // Fall back to 1 GiB default on invalid property value.
+      }
+    }
+    return DEFAULT_MAX_LOG_FILE_BYTES;
   }
 
   private static int resolveProcessUid() {
@@ -382,10 +407,44 @@ class PerConnectionFileHandler extends Handler {
     throw new IOException("Unable to allocate unique log file for connection " + id);
   }
 
-  ChannelLogWriter createLogWriter(String id, Path logDir, Level writerLevel) {
+  private static Path deriveBackupPath(Path activePath) {
+    String fileName = activePath.getFileName().toString();
+    String backupName =
+        fileName.endsWith(".log")
+            ? fileName.substring(0, fileName.length() - 4) + ".1.log"
+            : fileName + ".1";
+    return activePath.resolveSibling(backupName);
+  }
+
+  private static OpenedLogFile reopenRotatedTarget(
+      Path logDir, String id, Path preferredPath, Path heldClaimKey, boolean isPosix)
+      throws IOException {
+    try {
+      FileChannel fc = openExclusiveNewChannel(preferredPath, isPosix);
+      FileLock lock = null;
+      if (DEFAULT_HANDLER_ID.equals(id)) {
+        try {
+          lock = tryAcquireSentinelLock(fc);
+        } catch (IOException ignored) {
+          // Locking unsupported on filesystem; CREATE_NEW still succeeded.
+        }
+      }
+      return new OpenedLogFile(preferredPath, fc, lock, heldClaimKey);
+    } catch (FileAlreadyExistsException contended) {
+      if (heldClaimKey != null) {
+        ACTIVE_GLOBAL_PATHS.remove(heldClaimKey);
+      }
+      return DEFAULT_HANDLER_ID.equals(id)
+          ? openFallbackGlobalChannel(logDir, isPosix)
+          : openConnectionChannel(logDir, id, isPosix);
+    }
+  }
+
+  ChannelLogWriter createLogWriter(String id, Path logDir, Level writerLevel, long limitBytes) {
     if (logDir == null) {
       return null;
     }
+    boolean interrupted = Thread.interrupted();
     try {
       Path verifiedDir = ensureSecureDirectory(logDir);
       boolean isPosix = supportsPosix(verifiedDir);
@@ -393,10 +452,15 @@ class PerConnectionFileHandler extends Handler {
           DEFAULT_HANDLER_ID.equals(id)
               ? openGlobalChannel(verifiedDir, isPosix)
               : openConnectionChannel(verifiedDir, id, isPosix);
-      return new ChannelLogWriter(opened, isPosix, writerLevel, logFormatter, this);
+      return new ChannelLogWriter(
+          id, verifiedDir, opened, isPosix, writerLevel, limitBytes, logFormatter, this);
     } catch (Exception e) {
       reportError("Failed to create log file for connection " + id, e, ErrorManager.OPEN_FAILURE);
       return null;
+    } finally {
+      if (interrupted) {
+        Thread.currentThread().interrupt();
+      }
     }
   }
 
@@ -417,7 +481,8 @@ class PerConnectionFileHandler extends Handler {
 
     if (connectionId != null && !connectionId.isEmpty() && baseLogPath != null) {
       target =
-          writers.computeIfAbsent(connectionId, id -> createLogWriter(id, baseLogPath, this.level));
+          writers.computeIfAbsent(
+              connectionId, id -> createLogWriter(id, baseLogPath, this.level, this.maxFileBytes));
       if (target == null) {
         target = defaultWriter;
       }
@@ -475,30 +540,42 @@ class PerConnectionFileHandler extends Handler {
 
   static final class ChannelLogWriter {
     private final Object lock = new Object();
-    private final Path filePath;
+    private final String id;
+    private final Path logDir;
     private final boolean isPosix;
-    private final Path globalClaimKey;
     private final Level writerLevel;
+    private final long maxBytes;
     private final Formatter formatter;
     private final PerConnectionFileHandler owner;
-    private SeekableByteChannel channel;
+    private Path filePath;
+    private Path globalClaimKey;
+    private FileChannel channel;
     private FileLock fileLock;
+    private long writtenBytes;
     private boolean closed;
 
     ChannelLogWriter(
+        String id,
+        Path logDir,
         OpenedLogFile opened,
         boolean isPosix,
         Level writerLevel,
+        long maxBytes,
         Formatter formatter,
-        PerConnectionFileHandler owner) {
+        PerConnectionFileHandler owner)
+        throws IOException {
+      this.id = id;
+      this.logDir = logDir;
       this.filePath = opened.path;
       this.channel = opened.channel;
       this.fileLock = opened.lock;
       this.globalClaimKey = opened.globalClaimKey;
       this.isPosix = isPosix;
       this.writerLevel = writerLevel;
+      this.maxBytes = maxBytes;
       this.formatter = formatter;
       this.owner = owner;
+      this.writtenBytes = opened.channel.size();
     }
 
     private void reopenAfterInterrupt() throws IOException {
@@ -523,54 +600,140 @@ class PerConnectionFileHandler extends Handler {
       }
       this.channel = reopened;
       this.fileLock = reacquired;
+      this.writtenBytes = reopened.size();
     }
 
-    void publish(LogRecord record) {
+    private void rotate() throws IOException {
+      Path backupPath = deriveBackupPath(filePath);
+      if (Files.exists(backupPath, LinkOption.NOFOLLOW_LINKS)) {
+        BasicFileAttributes backupAttrs =
+            Files.readAttributes(backupPath, BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
+        if (backupAttrs.isSymbolicLink()) {
+          Files.deleteIfExists(backupPath);
+        } else {
+          if (!backupAttrs.isRegularFile() || backupAttrs.isOther()) {
+            throw new IOException("Refusing to rotate onto non-regular backup path: " + backupPath);
+          }
+          if (isPosix) {
+            verifyPosixOwner(backupPath, false);
+            verifySingleLinkCount(backupPath);
+          }
+        }
+      }
+      if (fileLock != null && fileLock.isValid()) {
+        try {
+          fileLock.release();
+        } catch (IOException ignored) {
+        }
+        fileLock = null;
+      }
+      if (channel != null) {
+        channel.close();
+        channel = null;
+      }
+      try {
+        Files.move(filePath, backupPath, StandardCopyOption.REPLACE_EXISTING);
+      } catch (Exception moveEx) {
+        try {
+          reopenAfterInterrupt();
+        } catch (Exception recoverEx) {
+          moveEx.addSuppressed(recoverEx);
+        }
+        if (moveEx instanceof IOException) {
+          throw (IOException) moveEx;
+        }
+        throw new IOException("Failed to move active log file to backup", moveEx);
+      }
+      if (isPosix) {
+        try {
+          Files.setPosixFilePermissions(backupPath, FILE_PERMS_0600);
+        } catch (Exception permEx) {
+          owner.reportError(
+              "Failed to set permissions on rotated log file", permEx, ErrorManager.WRITE_FAILURE);
+        }
+      }
+      OpenedLogFile reopened = reopenRotatedTarget(logDir, id, filePath, globalClaimKey, isPosix);
+      this.filePath = reopened.path;
+      this.channel = reopened.channel;
+      this.fileLock = reopened.lock;
+      this.globalClaimKey = reopened.globalClaimKey;
+      this.writtenBytes = reopened.channel.size();
+    }
+
+    private void truncateInPlace() throws IOException {
+      if (channel == null || !channel.isOpen()) {
+        reopenAfterInterrupt();
+      }
+      channel.truncate(0L);
+      channel.position(0L);
+      writtenBytes = 0L;
+    }
+
+    boolean publish(LogRecord record) {
       if (record.getLevel().intValue() < writerLevel.intValue()) {
-        return;
+        return true;
       }
       String formatted;
       try {
         formatted = formatter.format(record);
       } catch (Exception e) {
         owner.reportError("Failed to format log record", e, ErrorManager.FORMAT_FAILURE);
-        return;
+        return true;
       }
       byte[] bytes = formatted.getBytes(StandardCharsets.UTF_8);
       synchronized (lock) {
-        if (closed || channel == null) {
-          return;
+        if (closed) {
+          return false;
         }
         boolean interrupted = false;
         try {
           for (int attempt = 0; attempt < MAX_REOPEN_ATTEMPTS; attempt++) {
             interrupted |= Thread.interrupted();
             try {
-              if (!channel.isOpen()) {
+              if (channel == null || !channel.isOpen()) {
                 reopenAfterInterrupt();
+              }
+              if (maxBytes > 0L
+                  && writtenBytes > 0L
+                  && (writtenBytes >= maxBytes || bytes.length > maxBytes - writtenBytes)) {
+                try {
+                  rotate();
+                } catch (Exception rotEx) {
+                  owner.reportError("Failed to rotate log file", rotEx, ErrorManager.WRITE_FAILURE);
+                  truncateInPlace();
+                }
               }
               ByteBuffer buf = ByteBuffer.wrap(bytes);
               while (buf.hasRemaining()) {
-                channel.write(buf);
+                writtenBytes += channel.write(buf);
               }
-              return;
+              return true;
             } catch (ClosedByInterruptException cbie) {
               interrupted = true;
               Thread.interrupted();
               if (attempt + 1 >= MAX_REOPEN_ATTEMPTS) {
                 owner.reportError(
                     "Failed to write log record after interrupt", cbie, ErrorManager.WRITE_FAILURE);
-                return;
+                return true;
               }
             }
           }
         } catch (IOException e) {
           owner.reportError("Failed to write log record", e, ErrorManager.WRITE_FAILURE);
+          if (channel == null) {
+            closed = true;
+            if (globalClaimKey != null) {
+              ACTIVE_GLOBAL_PATHS.remove(globalClaimKey);
+              globalClaimKey = null;
+            }
+            return false;
+          }
         } finally {
           if (interrupted) {
             Thread.currentThread().interrupt();
           }
         }
+        return true;
       }
     }
 
@@ -599,6 +762,7 @@ class PerConnectionFileHandler extends Handler {
           channel = null;
           if (globalClaimKey != null) {
             ACTIVE_GLOBAL_PATHS.remove(globalClaimKey);
+            globalClaimKey = null;
           }
         }
       }
