@@ -17,18 +17,29 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assume.assumeFalse;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
+import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.GrpcMetricsBootstrapResult;
+import com.google.common.collect.ImmutableList;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.time.Duration;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import org.junit.Test;
 
 public final class OpenTelemetryBootstrappingUtilsTest {
@@ -274,8 +285,193 @@ public final class OpenTelemetryBootstrappingUtilsTest {
         .isEqualTo("monitoring.googleapis.com:8080");
     assertThat(
             OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "[::1]:8443", "googleapis.com"))
+        .isEqualTo("monitoring.googleapis.com:8443");
+    assertThat(OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint("::1", "googleapis.com"))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "[::1]:invalid", "googleapis.com"))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
                 "storage.my-universe.com:8443", "my-universe.com"))
         .isEqualTo("monitoring.my-universe.com:8443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage.googleapis.com:443", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+  }
+
+  @Test
+  public void getCloudMonitoringEndpoint_directPathInterconnectAndC2pEndpoints() {
+    ImmutableList<String[]> cases =
+        ImmutableList.of(
+            new String[] {
+              "storage-direct.googleapis.com:443", null, "monitoring.googleapis.com:443"
+            },
+            new String[] {
+              "storage-preprod-direct.sandbox.googleapis.com:443",
+              null,
+              "monitoring.googleapis.com:443"
+            },
+            new String[] {
+              "storage-direct.apis-tpclp.goog:443",
+              "apis-tpclp.goog",
+              "monitoring.apis-tpclp.goog:443"
+            },
+            new String[] {
+              "google-c2p:///storage-direct.googleapis.com?force-xds",
+              null,
+              "monitoring.googleapis.com:443"
+            },
+            new String[] {
+              "google-c2p-experimental:///storage-preprod-direct.sandbox.googleapis.com:443?force-xds",
+              null,
+              "monitoring.googleapis.com:443"
+            },
+            new String[] {
+              "google-c2p:///storage-direct.googleapis.com:8443?force-xds",
+              null,
+              "monitoring.googleapis.com:8443"
+            },
+            new String[] {
+              "google-c2p-experimental:///storage-preprod-direct.sandbox.googleapis.com:8443?force-xds#frag",
+              null,
+              "monitoring.googleapis.com:8443"
+            },
+            new String[] {
+              "google-c2p-experimental:///storage-direct.apis-tpclp.goog:8443#frag",
+              "apis-tpclp.goog",
+              "monitoring.apis-tpclp.goog:8443"
+            },
+            new String[] {"storage.googleapis.com.:443", null, "monitoring.googleapis.com:443"},
+            new String[] {
+              "private.googleapis.com.example.com:443", null, "monitoring.googleapis.com:443"
+            },
+            new String[] {"private.googleapis.com:443", null, "private.googleapis.com:443"},
+            new String[] {"restricted.googleapis.com:443", null, "restricted.googleapis.com:443"},
+            new String[] {
+              "private.my-universe.com:443", "my-universe.com", "private.my-universe.com:443"
+            },
+            new String[] {
+              "restricted.my-universe.com:443", "my-universe.com", "restricted.my-universe.com:443"
+            },
+            new String[] {
+              "storage.my-universe.com:99999", "my-universe.com", "monitoring.my-universe.com:443"
+            },
+            new String[] {
+              "storage-direct.my-universe.com:99999",
+              "my-universe.com",
+              "monitoring.my-universe.com:443"
+            },
+            new String[] {null, null, "monitoring.googleapis.com:443"},
+            new String[] {"", null, "monitoring.googleapis.com:443"});
+    for (String[] c : cases) {
+      assertWithMessage("endpoint=%s, universe=%s", c[0], c[1])
+          .that(OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(c[0], c[1]))
+          .isEqualTo(c[2]);
+    }
+  }
+
+  @Test
+  public void registerGrpcChannelViews_exportsChannelCreationLatencyWithSecondsBuckets() {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProviderBuilder providerBuilder =
+        SdkMeterProvider.builder().registerMetricReader(metricReader);
+    SdkMeterProviderBuilder returned =
+        OpenTelemetryBootstrappingUtils.registerGrpcChannelViews(providerBuilder);
+    assertThat(returned).isSameInstanceAs(providerBuilder);
+
+    try (SdkMeterProvider meterProvider = providerBuilder.build()) {
+      BiConsumer<String, Duration> recorder =
+          OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(meterProvider);
+      recorder.accept("DirectPath", Duration.ofMillis(3));
+      recorder.accept("DirectPathInterconnect", Duration.ofMillis(1200));
+      recorder.accept("CloudPath", Duration.ofSeconds(45));
+
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      assertThat(metrics).hasSize(1);
+      MetricData metricData = metrics.iterator().next();
+      assertThat(metricData.getName())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_VIEW_NAME);
+      assertThat(metricData.getUnit())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_UNIT);
+      assertThat(metricData.getDescription())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_DESCRIPTION);
+
+      Map<String, HistogramPointData> pointsByTransport =
+          metricData.getHistogramData().getPoints().stream()
+              .collect(
+                  Collectors.toMap(
+                      p ->
+                          p.getAttributes().get(OpenTelemetryBootstrappingUtils.TRANSPORT_TYPE_KEY),
+                      Function.identity()));
+      assertThat(pointsByTransport.keySet())
+          .containsExactly("DirectPath", "DirectPathInterconnect", "CloudPath");
+
+      HistogramPointData dpPoint = pointsByTransport.get("DirectPath");
+      HistogramPointData dpInterconnectPoint = pointsByTransport.get("DirectPathInterconnect");
+      HistogramPointData cloudPathPoint = pointsByTransport.get("CloudPath");
+
+      assertThat(dpPoint.getSum()).isWithin(1e-6).of(0.003);
+      assertThat(dpInterconnectPoint.getSum()).isWithin(1e-6).of(1.2);
+      assertThat(cloudPathPoint.getSum()).isWithin(1e-6).of(45.0);
+
+      List<Double> boundaries = dpPoint.getBoundaries();
+      int idx003 = findBucketIndex(boundaries, 0.003);
+      int idx12 = findBucketIndex(boundaries, 1.2);
+      int idx45 = findBucketIndex(boundaries, 45.0);
+      assertThat(idx003).isEqualTo(2);
+      assertThat(idx12).isGreaterThan(idx003);
+      assertThat(idx45).isGreaterThan(idx12);
+      assertThat(dpPoint.getCounts().get(idx003)).isEqualTo(1L);
+      assertThat(dpInterconnectPoint.getCounts().get(idx12)).isEqualTo(1L);
+      assertThat(cloudPathPoint.getCounts().get(idx45)).isEqualTo(1L);
+    }
+  }
+
+  @Test
+  public void bootstrapGrpcMetrics_withoutProjectId_returnsFallbackAndNullMeterProvider() {
+    ChannelConfigurator custom = b -> b;
+    GrpcMetricsBootstrapResult withCustom =
+        OpenTelemetryBootstrappingUtils.bootstrapGrpcMetrics(
+            custom, "storage.googleapis.com:443", null, null, true, Attributes.empty());
+    assertThat(withCustom.getChannelConfigurator()).isSameInstanceAs(custom);
+    assertThat(withCustom.getMeterProvider()).isNull();
+
+    GrpcMetricsBootstrapResult withNullConfigurator =
+        OpenTelemetryBootstrappingUtils.bootstrapGrpcMetrics(
+            null, "storage.googleapis.com:443", null, null, true, Attributes.empty());
+    assertThat(withNullConfigurator.getChannelConfigurator())
+        .isSameInstanceAs(ChannelConfigurator.identity());
+    assertThat(withNullConfigurator.getMeterProvider()).isNull();
+  }
+
+  @SuppressWarnings("rawtypes") // ManagedChannelBuilder
+  @Test
+  public void bootstrapGrpcMetrics_withProjectId_composesConfiguratorAndExposesMeterProvider() {
+    AtomicBoolean callerInvoked = new AtomicBoolean(false);
+    ChannelConfigurator callerConfigurator =
+        b -> {
+          callerInvoked.set(true);
+          return b;
+        };
+    GrpcMetricsBootstrapResult result =
+        OpenTelemetryBootstrappingUtils.bootstrapGrpcMetrics(
+            callerConfigurator,
+            "storage-direct.googleapis.com:443",
+            "test-project",
+            "googleapis.com",
+            true,
+            Attributes.empty());
+    assertThat(result.getMeterProvider()).isInstanceOf(SdkMeterProvider.class);
+    try (SdkMeterProvider provider = (SdkMeterProvider) result.getMeterProvider()) {
+      assertThat(provider.toString()).contains("project_id=\"test-project\"");
+      ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forTarget("localhost:8080");
+      assertThat(result.getChannelConfigurator().apply(builder)).isSameInstanceAs(builder);
+      assertThat(callerInvoked.get()).isTrue();
+    }
   }
 
   @Test
@@ -325,5 +521,44 @@ public final class OpenTelemetryBootstrappingUtilsTest {
             "json",
             Attributes.empty());
     assertThat(nullProvider).isNull();
+  }
+
+  @Test
+  public void
+      createChannelCreationLatencyRecorder_appliesExplicitBucketBoundariesAdviceWithoutCustomViews() {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    try (SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build()) {
+      BiConsumer<String, Duration> recorder =
+          OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(meterProvider);
+      recorder.accept("DirectPathInterconnect", Duration.ofMillis(125));
+
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      assertThat(metrics).hasSize(1);
+      MetricData metricData = metrics.iterator().next();
+      assertThat(metricData.getName())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_INSTRUMENT);
+      HistogramPointData point = metricData.getHistogramData().getPoints().iterator().next();
+      assertThat(point.getBoundaries())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries());
+      assertThat(point.getSum()).isWithin(1e-6).of(0.125);
+    }
+  }
+
+  @Test
+  public void createChannelCreationLatencyRecorder_nullMeterProvider_isNoop() {
+    BiConsumer<String, Duration> noopRecorder =
+        OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(null);
+    assertThat(noopRecorder).isNotNull();
+    noopRecorder.accept("CloudPath", Duration.ofMillis(10));
+  }
+
+  private static int findBucketIndex(List<Double> boundaries, double value) {
+    for (int i = 0; i < boundaries.size(); i++) {
+      if (value <= boundaries.get(i)) {
+        return i;
+      }
+    }
+    return boundaries.size();
   }
 }
