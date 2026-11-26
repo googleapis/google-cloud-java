@@ -26,6 +26,7 @@ import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
+import io.grpc.ClientStreamTracer;
 import io.grpc.ForwardingClientCall.SimpleForwardingClientCall;
 import io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener;
 import io.grpc.Grpc;
@@ -74,7 +75,14 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             ? metricsCtx.getOperationName()
             : defaultOperationName(method.getBareMethodName());
 
-    return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
+    NetworkIoTracerFactory networkIoTracerFactory =
+        metrics.getNetworkIo() != null ? new NetworkIoTracerFactory() : null;
+    CallOptions effectiveCallOptions =
+        networkIoTracerFactory != null
+            ? callOptions.withStreamTracerFactory(networkIoTracerFactory)
+            : callOptions;
+
+    return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, effectiveCallOptions)) {
       private final AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
       private final AtomicLong ttfbStartNanos = new AtomicLong();
       private final AtomicBoolean activeReleased = new AtomicBoolean(false);
@@ -161,6 +169,13 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                       trailers)) {
                     metrics.recordServerUnreached(
                         otelContext, operationName, networkPath, errorType);
+                  }
+                  if (networkIoTracerFactory != null) {
+                    metrics.recordNetworkIo(
+                        otelContext,
+                        networkPath,
+                        networkIoTracerFactory.getOutboundBytes(),
+                        networkIoTracerFactory.getInboundBytes());
                   }
                 } finally {
                   releaseActive();
@@ -286,5 +301,38 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   private static boolean hasNonEmptyMetadata(Metadata metadata, Metadata.Key<String> key) {
     String value = metadata.get(key);
     return value != null && !value.isEmpty();
+  }
+
+  private static final class NetworkIoTracerFactory extends ClientStreamTracer.Factory {
+    private final AtomicLong outboundBytes = new AtomicLong();
+    private final AtomicLong inboundBytes = new AtomicLong();
+
+    @Override
+    public ClientStreamTracer newClientStreamTracer(
+        ClientStreamTracer.StreamInfo info, Metadata headers) {
+      return new ClientStreamTracer() {
+        @Override
+        public void outboundWireSize(long bytes) {
+          if (bytes > 0) {
+            outboundBytes.addAndGet(bytes);
+          }
+        }
+
+        @Override
+        public void inboundWireSize(long bytes) {
+          if (bytes > 0) {
+            inboundBytes.addAndGet(bytes);
+          }
+        }
+      };
+    }
+
+    long getOutboundBytes() {
+      return outboundBytes.get();
+    }
+
+    long getInboundBytes() {
+      return inboundBytes.get();
+    }
   }
 }

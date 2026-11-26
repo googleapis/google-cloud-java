@@ -18,9 +18,11 @@ package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.NoCredentials;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.sdk.common.CompletableResultCode;
 import io.opentelemetry.sdk.metrics.Aggregation;
 import io.opentelemetry.sdk.metrics.InstrumentType;
@@ -28,6 +30,7 @@ import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
+import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.export.CollectionRegistration;
 import io.opentelemetry.sdk.metrics.export.MetricReader;
@@ -38,6 +41,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -418,6 +422,52 @@ public final class StorageClientMetricsTest {
   public void createContext_nullMetrics_returnsNull() {
     assertThat(StorageClientMetrics.createContext(null, "GetObject")).isNull();
     assertThat(StorageClientMetrics.createMultiStepContext(null, "WriteObject")).isNull();
+  }
+
+  @Test
+  public void recordNetworkIo_skipsNonPositiveOrDisabled() {
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics standardMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    standardMetrics.recordNetworkIo(
+        Context.current(), StorageClientMetrics.NETWORK_PATH_DIRECTPATH, 100L, 200L);
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO)).isNull();
+
+    StorageClientMetrics debugMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    debugMetrics.recordNetworkIo(
+        Context.current(), StorageClientMetrics.NETWORK_PATH_DIRECTPATH, 0L, -5L);
+    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO)).isNull();
+
+    debugMetrics.recordNetworkIo(
+        Context.current(), StorageClientMetrics.NETWORK_PATH_CLOUDPATH, 128L, 0L);
+    MetricData metricData = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
+    assertThat(metricData).isNotNull();
+    assertThat(metricData.getLongSumData().getPoints()).hasSize(1);
+    LongPointData point = metricData.getLongSumData().getPoints().iterator().next();
+    assertThat(point.getValue()).isEqualTo(128L);
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_IO_DIRECTION))
+        .isEqualTo(StorageClientMetrics.NETWORK_IO_DIRECTION_TRANSMIT);
+  }
+
+  private @Nullable MetricData findMetric(String name) {
+    return reader.collectAllMetrics().stream()
+        .filter(m -> m.getName().equals(name))
+        .findFirst()
+        .orElse(null);
   }
 
   static final class TestMetricReader implements MetricReader {
