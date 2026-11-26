@@ -31,7 +31,9 @@ import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SessionClient.SessionOption;
 import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Ticker;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
@@ -291,7 +293,7 @@ class SessionImpl implements Session {
               .setNanos(options.maxCommitDelay().getNano())
               .build());
     }
-    RequestOptions commitRequestOptions = getRequestOptions(transactionOptions);
+    RequestOptions commitRequestOptions = getRequestOptions(options);
 
     if (commitRequestOptions != null) {
       requestBuilder.setRequestOptions(commitRequestOptions);
@@ -311,19 +313,24 @@ class SessionImpl implements Session {
     }
   }
 
-  private RequestOptions getRequestOptions(TransactionOption... transactionOptions) {
-    Options requestOptions = Options.fromTransactionOptions(transactionOptions);
-    if (requestOptions.hasPriority() || requestOptions.hasTag()) {
-      RequestOptions.Builder requestOptionsBuilder = RequestOptions.newBuilder();
-      if (requestOptions.hasPriority()) {
-        requestOptionsBuilder.setPriority(requestOptions.priority());
+  static ImmutableList<MutationGroup> materializeMutationGroups(
+      Iterable<MutationGroup> mutationGroups) {
+    return ImmutableList.copyOf(Preconditions.checkNotNull(mutationGroups));
+  }
+
+  private RequestOptions getRequestOptions(Options requestOptions) {
+    RequestOptions.Builder requestOptionsBuilder =
+        requestOptions.toRequestOptionsProto(/* isTransactionOption= */ true).toBuilder();
+    RequestOptions.ClientContext defaultClientContext = spanner.getOptions().getClientContext();
+    if (defaultClientContext != null) {
+      RequestOptions.ClientContext.Builder clientContextBuilder = defaultClientContext.toBuilder();
+      if (requestOptionsBuilder.hasClientContext()) {
+        clientContextBuilder.mergeFrom(requestOptionsBuilder.getClientContext());
       }
-      if (requestOptions.hasTag()) {
-        requestOptionsBuilder.setTransactionTag(requestOptions.tag());
-      }
-      return requestOptionsBuilder.build();
+      requestOptionsBuilder.setClientContext(clientContextBuilder.build());
     }
-    return null;
+    RequestOptions built = requestOptionsBuilder.build();
+    return built.equals(RequestOptions.getDefaultInstance()) ? null : built;
   }
 
   private Map<SpannerRpc.Option, ?> getSingleUseWriteChannelHintOptions() {
@@ -339,17 +346,19 @@ class SessionImpl implements Session {
       throws SpannerException {
     setActive(null);
     List<BatchWriteRequest.MutationGroup> mutationGroupsProto =
-        MutationGroup.toListProto(mutationGroups);
+        MutationGroup.toListProto(materializeMutationGroups(mutationGroups));
     final BatchWriteRequest.Builder requestBuilder =
         BatchWriteRequest.newBuilder()
             .setSession(getName())
             .addAllMutationGroups(mutationGroupsProto);
-    RequestOptions batchWriteRequestOptions = getRequestOptions(transactionOptions);
     Options allOptions = Options.fromTransactionOptions(transactionOptions);
+    RequestOptions batchWriteRequestOptions = getRequestOptions(allOptions);
     if (batchWriteRequestOptions != null) {
       requestBuilder.setRequestOptions(batchWriteRequestOptions);
     }
-    if (allOptions.withExcludeTxnFromChangeStreams() == Boolean.TRUE) {
+    if (allOptions.withExcludeTxnFromChangeStreams() == Boolean.TRUE
+        || (allOptions.withExcludeTxnFromChangeStreams() == null
+            && defaultTransactionOptions().getExcludeTxnFromChangeStreams())) {
       requestBuilder.setExcludeTxnFromChangeStreams(true);
     }
     ISpan span = tracer.spanBuilder(SpannerImpl.BATCH_WRITE);
