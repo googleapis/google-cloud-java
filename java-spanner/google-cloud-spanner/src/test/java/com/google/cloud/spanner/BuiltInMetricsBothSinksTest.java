@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.connection.AbstractMockServerTest;
 import io.grpc.ManagedChannelBuilder;
@@ -88,6 +89,7 @@ public class BuiltInMetricsBothSinksTest extends AbstractMockServerTest {
     return SpannerOptions.newBuilder()
         .setProjectId("my-project")
         .setHost(String.format("http://localhost:%d", getPort()))
+        .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
         .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
         .setCredentials(NoCredentials.getInstance())
         .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())

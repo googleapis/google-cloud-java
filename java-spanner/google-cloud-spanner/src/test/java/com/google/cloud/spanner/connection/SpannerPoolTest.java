@@ -1357,4 +1357,45 @@ public class SpannerPoolTest {
     assertNotEquals(omittedKey, explicitCustomKey);
     assertNotEquals(explicitGduKey, explicitCustomKey);
   }
+
+  @Test
+  public void testEndpointOnlyJdbcUrlDisablesBuiltInMetrics() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      ConnectionOptions endpointOnly =
+          ConnectionOptions.newBuilder()
+              .setUri("cloudspanner://spanner.tpc.example/projects/p/instances/i/databases/d")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      try (Spanner spanner =
+          SpannerPool.INSTANCE.createSpanner(SpannerPoolKey.of(endpointOnly), endpointOnly)) {
+        assertFalse(spanner.getOptions().isEnableBuiltInMetrics());
+      }
+
+      ConnectionOptions withUniverseDomain =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  "cloudspanner://spanner.tpc.example/projects/p/instances/i/databases/d"
+                      + ";universeDomain=tpc.example")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      try (Spanner spanner =
+          SpannerPool.INSTANCE.createSpanner(
+              SpannerPoolKey.of(withUniverseDomain), withUniverseDomain)) {
+        assertTrue(spanner.getOptions().isEnableBuiltInMetrics());
+      }
+
+      ConnectionOptions defaultHost =
+          ConnectionOptions.newBuilder()
+              .setUri("cloudspanner:/projects/p/instances/i/databases/d")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      try (Spanner spanner =
+          SpannerPool.INSTANCE.createSpanner(SpannerPoolKey.of(defaultHost), defaultHost)) {
+        assertTrue(spanner.getOptions().isEnableBuiltInMetrics());
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
 }
