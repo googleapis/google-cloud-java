@@ -54,13 +54,13 @@ public final class StorageClientMetricsTest {
           StorageClientMetrics::getErrors,
           StorageClientMetrics::getTtfb,
           StorageClientMetrics::getRequestBodySize,
-          StorageClientMetrics::getResponseBodySize);
+          StorageClientMetrics::getResponseBodySize,
+          StorageClientMetrics::getServerUnreached);
 
   private static final List<Function<StorageClientMetrics, Object>> DEBUG_INSTRUMENTS =
       ImmutableList.of(
           StorageClientMetrics::getRequestActive,
           StorageClientMetrics::getServerDuration,
-          StorageClientMetrics::getServerUnreached,
           StorageClientMetrics::getStallDuration,
           StorageClientMetrics::getNetworkIo,
           StorageClientMetrics::getCredentialRefreshDuration);
@@ -226,7 +226,7 @@ public final class StorageClientMetricsTest {
     String serverUnreachedName =
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED.replace(".", "/");
     assertThat(metricsMap).containsKey(serverUnreachedName);
-    assertThat(metricsMap.get(serverUnreachedName).getUnit()).isEqualTo("{attempt}");
+    assertThat(metricsMap.get(serverUnreachedName).getUnit()).isEqualTo("{request}");
 
     assertThat(metricsMap)
         .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO.replace(".", "/"));

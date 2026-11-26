@@ -23,6 +23,7 @@ import com.google.api.client.http.HttpExecuteInterceptor;
 import com.google.api.client.http.HttpIOExceptionHandler;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.core.ApiClock;
@@ -54,6 +55,9 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
+
+  static final String HEADER_UPLOADER_UPLOAD_ID = "X-GUploader-UploadID";
+  static final String HEADER_GFE_SERVICE_TIME = "X-Goog-Gfe-Service-Time";
 
   private static final ImmutableSet<String> OBJECT_SUB_RESOURCES =
       ImmutableSet.of("acl", "compose", "restore");
@@ -180,7 +184,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                   && recorded.compareAndSet(false, true)) {
                 metrics.recordRequestActive(
                     activeOtelContext.get(), activeOperationName.get(), -1L);
-                recordResponse(req, startTimeNanos.get(), endNanos, response.getStatusCode());
+                recordResponse(req, response, startTimeNanos.get(), endNanos);
               }
             }
             if (handled
@@ -203,7 +207,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           } finally {
             if (response.getRequest() == request && recorded.compareAndSet(false, true)) {
               metrics.recordRequestActive(activeOtelContext.get(), activeOperationName.get(), -1L);
-              recordResponse(request, startTimeNanos.get(), endNanos, response.getStatusCode());
+              recordResponse(request, response, startTimeNanos.get(), endNanos);
             }
           }
         });
@@ -216,11 +220,18 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           if (recorded.compareAndSet(false, true)) {
             metrics.recordRequestActive(activeOtelContext.get(), activeOperationName.get(), -1L);
             double durationSeconds = (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0;
+            String urlTemplate = extractUrlTemplate(req.getUrl());
             recordDuration(
                 req,
                 durationSeconds,
                 0L,
-                extractUrlTemplate(req.getUrl()),
+                urlTemplate,
+                StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+            StorageMetricsContext ctx = StorageMetricsContext.current();
+            metrics.recordServerUnreached(
+                ctx != null ? ctx.getOtelContext() : Context.current(),
+                resolveOperationName(req, urlTemplate),
+                StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
                 StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
           }
           boolean handled =
@@ -252,7 +263,9 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
         errorType);
   }
 
-  private void recordResponse(HttpRequest request, long startNanos, long endNanos, int statusCode) {
+  private void recordResponse(
+      HttpRequest request, HttpResponse response, long startNanos, long endNanos) {
+    int statusCode = response.getStatusCode();
     double durationSeconds = (endNanos - startNanos) / 1_000_000_000.0;
     String urlTemplate = extractUrlTemplate(request.getUrl());
     String errorType =
@@ -265,11 +278,16 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     // may append query parameters (e.g. alt=media, uploadType) after buildRequest().
     StorageMetricsContext ctx = StorageMetricsContext.current();
     Context otelContext = ctx != null ? ctx.getOtelContext() : Context.current();
+    String operationName = resolveOperationName(request, urlTemplate);
     metrics.recordTtfb(
-        otelContext,
-        resolveOperationName(request, urlTemplate),
-        durationSeconds,
-        StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
+        otelContext, operationName, durationSeconds, StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
+    boolean reached =
+        hasNonEmptyHeader(response, HEADER_UPLOADER_UPLOAD_ID)
+            || hasNonEmptyHeader(response, HEADER_GFE_SERVICE_TIME);
+    if (!reached) {
+      metrics.recordServerUnreached(
+          otelContext, operationName, StorageClientMetrics.NETWORK_PATH_CLOUDPATH, errorType);
+    }
   }
 
   private void recordDuration(
@@ -422,5 +440,10 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       return "/storage/v1/b/{bucket}/o/{object}/" + action;
     }
     return "/storage/v1/b/{bucket}/o/{object}";
+  }
+
+  private static boolean hasNonEmptyHeader(HttpResponse response, String headerName) {
+    String value = response.getHeaders().getFirstHeaderStringValue(headerName);
+    return value != null && !value.isEmpty();
   }
 }

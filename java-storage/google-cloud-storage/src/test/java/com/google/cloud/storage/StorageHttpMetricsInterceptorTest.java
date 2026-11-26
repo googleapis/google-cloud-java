@@ -50,6 +50,7 @@ import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.DoubleExemplarData;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -58,6 +59,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import org.jspecify.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -702,7 +704,8 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(retries.get(0).getValue()).isEqualTo(1L);
     assertThat(retries.get(0).getAttributes())
         .isEqualTo(
-            expectedRetryAttributes("GetBucket", StorageErrorTypeMapper.STATUS_CONNECTION_ERROR));
+            expectedOperationErrorAttributes(
+                "GetBucket", StorageErrorTypeMapper.STATUS_CONNECTION_ERROR));
     assertInternallyRetriedAttempt(StorageErrorTypeMapper.STATUS_CONNECTION_ERROR, 0L);
   }
 
@@ -786,7 +789,7 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(retries).hasSize(1);
     assertThat(retries.get(0).getValue()).isEqualTo(1L);
     assertThat(retries.get(0).getAttributes())
-        .isEqualTo(expectedRetryAttributes("ReadObject", "UNAUTHENTICATED"));
+        .isEqualTo(expectedOperationErrorAttributes("ReadObject", "UNAUTHENTICATED"));
     assertInternallyRetriedAttempt("UNAUTHENTICATED", 401L);
   }
 
@@ -1032,6 +1035,52 @@ public final class StorageHttpMetricsInterceptorTest {
   }
 
   @Test
+  public void initialize_serverUnreached_cases() throws IOException {
+    assertServerUnreached(
+        "reached via upload id (debug on, no server.duration)",
+        true,
+        200,
+        StorageHttpMetricsInterceptor.HEADER_UPLOADER_UPLOAD_ID,
+        "u-123",
+        null);
+    assertServerUnreached(
+        "reached via gfe service time (debug on, no server.duration)",
+        true,
+        503,
+        StorageHttpMetricsInterceptor.HEADER_GFE_SERVICE_TIME,
+        "12.5",
+        null);
+    assertServerUnreached(
+        "502 without markers (standard tier)",
+        false,
+        502,
+        null,
+        null,
+        StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+    assertServerUnreached(
+        "504 proxy timeout without markers",
+        false,
+        504,
+        null,
+        null,
+        StorageErrorTypeMapper.STATUS_DEADLINE_EXCEEDED);
+    assertServerUnreached(
+        "502 with empty upload id header",
+        false,
+        502,
+        StorageHttpMetricsInterceptor.HEADER_UPLOADER_UPLOAD_ID,
+        "",
+        StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+    assertServerUnreached(
+        "transport IOException",
+        false,
+        0,
+        null,
+        null,
+        StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+  }
+
+  @Test
   public void initialize_batchPart401_doesNotRecordPartDuration() throws IOException {
     AtomicBoolean refreshHandlerCalled = new AtomicBoolean(false);
     AtomicBoolean partSucceeded = new AtomicBoolean(false);
@@ -1252,6 +1301,87 @@ public final class StorageHttpMetricsInterceptorTest {
     return longSumPoints(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE);
   }
 
+  private static @Nullable MetricData findMetric(InMemoryMetricReader metricReader, String name) {
+    return metricReader.collectAllMetrics().stream()
+        .filter(m -> m.getName().equals(name))
+        .findFirst()
+        .orElse(null);
+  }
+
+  private void assertServerUnreached(
+      String label,
+      boolean debugEnabled,
+      int statusCode,
+      @Nullable String headerName,
+      @Nullable String headerValue,
+      @Nullable String expectedError)
+      throws IOException {
+    InMemoryMetricReader caseReader = InMemoryMetricReader.create();
+    SdkMeterProvider caseProvider =
+        SdkMeterProvider.builder().registerMetricReader(caseReader).build();
+    StorageClientMetrics caseMetrics =
+        StorageOptions.http()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setClock(clock)
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(debugEnabled)
+            .setMeterProvider(caseProvider)
+            .build()
+            .getStorageClientMetrics();
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(null, caseMetrics, clock);
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                if (statusCode == 0) {
+                  throw new IOException("connection refused");
+                }
+                MockLowLevelHttpResponse resp =
+                    new MockLowLevelHttpResponse().setStatusCode(statusCode);
+                if (headerName != null) {
+                  resp.addHeader(headerName, headerValue);
+                }
+                return resp;
+              }
+            };
+          }
+        };
+    HttpRequest req =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
+    if (statusCode == 0) {
+      assertThrows(IOException.class, req::execute);
+    } else {
+      req.setThrowExceptionOnExecuteError(false);
+      req.execute();
+    }
+
+    assertWithMessage(label)
+        .that(
+            findMetric(caseReader, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION))
+        .isNull();
+    MetricData unreached =
+        findMetric(caseReader, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED);
+    if (expectedError == null) {
+      assertWithMessage(label).that(unreached).isNull();
+      return;
+    }
+    assertWithMessage(label).that(unreached).isNotNull();
+    assertWithMessage(label).that(unreached.getUnit()).isEqualTo("{request}");
+    assertWithMessage(label).that(unreached.getLongSumData().getPoints()).hasSize(1);
+    LongPointData point = unreached.getLongSumData().getPoints().iterator().next();
+    assertWithMessage(label).that(point.getValue()).isEqualTo(1L);
+    assertWithMessage(label)
+        .that(point.getAttributes())
+        .isEqualTo(expectedOperationErrorAttributes("GetBucket", expectedError));
+  }
+
   private List<LongPointData> longSumPoints(String metricName) {
     return reader.collectAllMetrics().stream()
         .filter(m -> m.getName().equals(metricName))
@@ -1298,7 +1428,8 @@ public final class StorageHttpMetricsInterceptorTest {
         .isEqualTo(errorType);
   }
 
-  private static Attributes expectedRetryAttributes(String operationName, String errorType) {
+  private static Attributes expectedOperationErrorAttributes(
+      String operationName, String errorType) {
     return Attributes.builder()
         .put(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE, StorageClientMetrics.SERVICE_STORAGE)
         .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
