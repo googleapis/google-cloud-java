@@ -380,7 +380,8 @@ final class StorageMetricsContext {
     recordHttpReadStallIfTimeout(this.metrics, e);
   }
 
-  private void recordHttpReadStallIfTimeout(@Nullable StorageClientMetrics metrics, Throwable e) {
+  private void recordHttpReadStallIfTimeout(
+      @Nullable StorageClientMetrics metrics, @Nullable Throwable e) {
     if (metrics == null
         || metrics.getStallDuration() == null
         || !READ_OBJECT_OPERATION.equals(operationName)
