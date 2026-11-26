@@ -77,6 +77,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
       private final AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
       private final AtomicLong ttfbStartNanos = new AtomicLong();
+      private final AtomicBoolean activeReleased = new AtomicBoolean(false);
 
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
@@ -88,9 +89,16 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
           startWithMetrics(responseListener, headers, startTimeNanos);
         } catch (RuntimeException | Error e) {
           // Per the ClientCall contract, onClose is not delivered when start throws, so balance
-          // the +1 here.
-          metrics.recordRequestActive(otelContext, operationName, -1L);
+          // the +1 here. A misbehaving downstream call may still have closed the listener inline
+          // before throwing, so releaseActive() ensures the -1 is recorded only once.
+          releaseActive();
           throw e;
+        }
+      }
+
+      private void releaseActive() {
+        if (activeReleased.compareAndSet(false, true)) {
+          metrics.recordRequestActive(otelContext, operationName, -1L);
         }
       }
 
@@ -155,7 +163,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                         otelContext, operationName, networkPath, errorType);
                   }
                 } finally {
-                  metrics.recordRequestActive(otelContext, operationName, -1L);
+                  releaseActive();
                   super.onClose(status, trailers);
                 }
               }
@@ -176,7 +184,8 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   static double decodeServerDurationSeconds(Metadata trailers) {
     byte[] bytes = trailers.get(GRPC_SERVER_STATS_BIN_KEY);
     // Census ServerStats binary encoding: version (0x00), field ID (0x00), 8-byte LE uint64 nanos.
-    if (bytes == null || bytes.length != 10 || bytes[0] != 0 || bytes[1] != 0) {
+    // Any additional trailing fields are ignored.
+    if (bytes == null || bytes.length < 10 || bytes[0] != 0 || bytes[1] != 0) {
       return -1.0;
     }
     long nanos = ByteBuffer.wrap(bytes, 2, 8).order(ByteOrder.LITTLE_ENDIAN).getLong();
