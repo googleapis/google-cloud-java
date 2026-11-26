@@ -25,16 +25,18 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.google.api.gax.paging.Page;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
+import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
+import com.google.cloud.bigquery.jdbc.BigQueryBaseResultSet;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import java.io.IOException;
 import java.sql.Connection;
@@ -403,12 +405,14 @@ public class ITStatementTest extends ITBase {
             + tempDatasetName
             + ";";
 
-    try (Connection connection = DriverManager.getConnection(customConnectionUrl)) {
-      Statement statement = connection.createStatement();
+    try (Connection connection = DriverManager.getConnection(customConnectionUrl);
+        Statement statement = connection.createStatement()) {
       String query = "SELECT 1 as val;";
+      TableId generatedTableId;
       try (ResultSet rs = statement.executeQuery(query)) {
         assertTrue(rs.next());
         assertEquals(1, rs.getInt("val"));
+        generatedTableId = destinationTableId(rs);
 
         Dataset dataset = bigQuery.getDataset(DatasetId.of(tempDatasetName));
         assertNotNull(dataset);
@@ -416,37 +420,20 @@ public class ITStatementTest extends ITBase {
         assertEquals(3_600_000L, dataset.getDefaultTableLifetime());
         assertNotNull(dataset.getAcl());
         assertTrue(dataset.getAcl().stream().anyMatch(acl -> Acl.Role.OWNER.equals(acl.getRole())));
+        assertTrue(
+            dataset.getAcl().stream().noneMatch(acl -> acl.getEntity() instanceof Acl.Group));
 
-        // Validate that the query results were written to a table in this dataset while open
-        Page<Table> tables = dataset.list();
-        boolean tableFound = false;
-        for (Table table : tables.iterateAll()) {
-          if (table.getTableId().getTable().startsWith("temp_table_")) {
-            tableFound = true;
-            TableResult tableData = bigQuery.listTableData(table.getTableId());
-            assertNotNull(tableData);
-            assertEquals(1, tableData.getTotalRows());
-            for (FieldValueList row : tableData.iterateAll()) {
-              assertEquals(1, row.get(0).getLongValue());
-            }
-            break;
-          }
+        TableResult tableData = bigQuery.listTableData(generatedTableId);
+        assertNotNull(tableData);
+        assertEquals(1, tableData.getTotalRows());
+        for (FieldValueList row : tableData.iterateAll()) {
+          assertEquals(1, row.get(0).getLongValue());
         }
-        assertTrue(tableFound, "Expected temporary table was not found in the dataset");
       }
 
       // Generated temporary table is removed when the ResultSet closes
-      Dataset datasetAfterClose = bigQuery.getDataset(DatasetId.of(tempDatasetName));
-      assertNotNull(datasetAfterClose);
-      boolean tempTableStillPresent = false;
-      for (Table table : datasetAfterClose.list().iterateAll()) {
-        if (table.getTableId().getTable().startsWith("temp_table_")) {
-          tempTableStillPresent = true;
-          break;
-        }
-      }
-      assertFalse(
-          tempTableStillPresent,
+      assertNull(
+          bigQuery.getTable(generatedTableId),
           "Expected generated temporary table to be deleted on ResultSet.close()");
     } finally {
       try {
@@ -461,10 +448,24 @@ public class ITStatementTest extends ITBase {
   @Test
   @Tag("disable_universe_domain")
   public void testLargeResultDatasetLifecycleAndExplicitTableRetention() throws SQLException {
+    String noTtlDatasetName =
+        "jdbc_no_ttl_dataset_" + System.currentTimeMillis() + "_" + Math.abs(random.nextInt(1000));
     String explicitTableName = "explicit_large_result_" + Math.abs(random.nextInt(100000));
+    bigQuery.create(DatasetInfo.newBuilder(noTtlDatasetName).build());
+
     String tempTableUrl =
-        ITBase.connectionUrl + "AllowLargeResults=true;LargeResultDataset=" + DATASET + ";";
-    String explicitTableUrl = tempTableUrl + "LargeResultTable=" + explicitTableName + ";";
+        ITBase.connectionUrl
+            + "AllowLargeResults=true;LargeResultDataset="
+            + noTtlDatasetName
+            + ";";
+    String readApiTempTableUrl = tempTableUrl + "MaxResults=100" + FORCE_READ_API_PROPERTIES;
+    String explicitTableUrl =
+        ITBase.connectionUrl
+            + "AllowLargeResults=true;LargeResultDataset="
+            + DATASET
+            + ";LargeResultTable="
+            + explicitTableName
+            + ";";
 
     try {
       try (Connection connection = DriverManager.getConnection(tempTableUrl);
@@ -473,24 +474,51 @@ public class ITStatementTest extends ITBase {
         assertTrue(rs1.next());
         assertEquals(10, rs1.getInt("val"));
 
-        Table firstTempTable = findTempTableWithValue(DATASET, 10L);
+        TableId firstTableId = destinationTableId(rs1);
+        Table firstTempTable = bigQuery.getTable(firstTableId);
         assertNotNull(firstTempTable, "Expected first generated temporary table while open");
-        assertThat(firstTempTable.getTableId().getTable())
+        assertThat(firstTableId.getTable())
             .matches("^temp_table_[0-9a-f]{8}_[0-9a-f]{4}_[0-9a-f]{4}_[0-9a-f]{4}_[0-9a-f]{12}$");
+        long nowMs = System.currentTimeMillis();
         assertNotNull(firstTempTable.getExpirationTime());
-        assertThat(firstTempTable.getExpirationTime()).isGreaterThan(System.currentTimeMillis());
+        assertThat(firstTempTable.getExpirationTime()).isGreaterThan(nowMs);
+        assertThat(firstTempTable.getExpirationTime()).isAtMost(nowMs + 3_600_000L + 120_000L);
 
-        // Re-executing on the same Statement removes the previous temporary table
+        // Re-executing on the same Statement closes rs1 and deletes its temporary table
         try (ResultSet rs2 = statement.executeQuery("SELECT 20 AS val;")) {
+          assertTrue(rs1.isClosed());
           assertTrue(rs2.next());
           assertEquals(20, rs2.getInt("val"));
-          assertNull(bigQuery.getTable(firstTempTable.getTableId()));
+          assertNull(bigQuery.getTable(firstTableId));
 
-          Table secondTempTable = findTempTableWithValue(DATASET, 20L);
-          assertNotNull(secondTempTable, "Expected second generated temporary table while open");
+          TableId secondTableId = destinationTableId(rs2);
+          assertNotNull(bigQuery.getTable(secondTableId));
           rs2.close();
-          assertNull(bigQuery.getTable(secondTempTable.getTableId()));
+          assertNull(bigQuery.getTable(secondTableId));
         }
+
+        // Closing Statement while a ResultSet is still open closes the ResultSet and deletes its
+        // temporary table
+        ResultSet openRs = statement.executeQuery("SELECT 25 AS val;");
+        TableId openRsTableId = destinationTableId(openRs);
+        assertNotNull(bigQuery.getTable(openRsTableId));
+        statement.close();
+        assertTrue(openRs.isClosed());
+        assertNull(bigQuery.getTable(openRsTableId));
+      }
+
+      // Storage Read API ResultSet also deletes its generated temporary table on close()
+      try (Connection readApiConn = DriverManager.getConnection(readApiTempTableUrl);
+          Statement readApiStmt = readApiConn.createStatement()) {
+        TableId arrowTableId;
+        try (ResultSet arrowRs =
+            readApiStmt.executeQuery(String.format(GENERATE_ARRAY_QUERY, 500))) {
+          assertArrowResultSet(arrowRs);
+          arrowTableId = destinationTableId(arrowRs);
+          assertNotNull(bigQuery.getTable(arrowTableId));
+          assertEquals(500, resultSetRowCount(arrowRs));
+        }
+        assertNull(bigQuery.getTable(arrowTableId));
       }
 
       // Explicit LargeResultTable is preserved after ResultSet and Statement close
@@ -504,30 +532,20 @@ public class ITStatementTest extends ITBase {
           bigQuery.getTable(TableId.of(DATASET, explicitTableName)),
           "Explicit LargeResultTable should be preserved after close");
     } finally {
+      try {
+        bigQuery.delete(
+            DatasetId.of(noTtlDatasetName), BigQuery.DatasetDeleteOption.deleteContents());
+      } catch (Exception ignored) {
+        // Best-effort cleanup
+      }
       bigQuery.delete(TableId.of(DATASET, explicitTableName));
     }
   }
 
-  private static Table findTempTableWithValue(String datasetName, long expectedVal) {
-    Dataset dataset = bigQuery.getDataset(DatasetId.of(datasetName));
-    if (dataset == null) {
-      return null;
-    }
-    for (Table summary : dataset.list().iterateAll()) {
-      if (summary.getTableId().getTable().startsWith("temp_table_")) {
-        Table fullTable = bigQuery.getTable(summary.getTableId());
-        if (fullTable == null) {
-          continue;
-        }
-        TableResult data = bigQuery.listTableData(summary.getTableId());
-        for (FieldValueList row : data.iterateAll()) {
-          if (row.get(0).getLongValue() == expectedVal) {
-            return fullTable;
-          }
-        }
-      }
-    }
-    return null;
+  private static TableId destinationTableId(ResultSet rs) throws SQLException {
+    QueryJobConfiguration config =
+        rs.unwrap(BigQueryBaseResultSet.class).getJob().getConfiguration();
+    return config.getDestinationTable();
   }
 
   @Test

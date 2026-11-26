@@ -70,6 +70,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TableResult;
@@ -137,6 +138,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
+import org.mockito.InOrder;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
@@ -823,8 +825,12 @@ public class BigQueryStatementTest {
 
     statementSpy.cancel();
 
-    // Cancel should call bigquery.cancel() but not rollback the transaction
+    // Cancel should call bigquery.cancel(), keep the open statement tracked, and not rollback
     verify(bigquery).cancel(eq(jobId));
+    verify(bigQueryConnection, Mockito.never()).rollback();
+    verify(bigQueryConnection, Mockito.never()).removeStatement(statementSpy);
+
+    statementSpy.close();
     verify(bigQueryConnection, Mockito.never()).rollback();
     verify(bigQueryConnection).removeStatement(statementSpy);
   }
@@ -1944,14 +1950,60 @@ public class BigQueryStatementTest {
       BigQueryJdbcUrlUtility.DEFAULT_DESTINATION_DATASET_EXPIRATION_TIME_VALUE;
 
   private void configureLargeResults(
-      String datasetName, String tableName, long expirationMs, Long existingDatasetDefaultTtlMs) {
+      String datasetName,
+      String tableName,
+      long expirationMs,
+      boolean explicitExpiration,
+      Long existingDatasetDefaultTtlMs) {
     doReturn(true).when(bigQueryConnection).isAllowLargeResults();
     doReturn(datasetName).when(bigQueryConnection).getDestinationDataset();
     doReturn(tableName).when(bigQueryConnection).getDestinationTable();
     doReturn(expirationMs).when(bigQueryConnection).getDestinationDatasetExpirationTime();
+    doReturn(explicitExpiration)
+        .when(bigQueryConnection)
+        .hasExplicitDestinationDatasetExpirationTime();
     Dataset dataset = mock(Dataset.class);
     doReturn(existingDatasetDefaultTtlMs).when(dataset).getDefaultTableLifetime();
     doReturn(dataset).when(bigquery).getDataset(eq(DatasetId.of(datasetName)));
+  }
+
+  private Job setupMockLargeResultJobQuery(StatementType type, Long dmlAffectedRows)
+      throws Exception {
+    Job lastJobMock = mock(Job.class);
+    QueryStatistics statistics = mock(QueryStatistics.class);
+    doReturn(statistics).when(lastJobMock).getStatistics();
+    doReturn(type).when(statistics).getStatementType();
+    if (dmlAffectedRows != null) {
+      doReturn(dmlAffectedRows).when(statistics).getNumDmlAffectedRows();
+    }
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn(Schema.of()).when(tableResultMock).getSchema();
+    doReturn(type).when(tableResultMock).getStatementType();
+    if (dmlAffectedRows != null) {
+      doReturn(dmlAffectedRows).when(tableResultMock).getNumDmlAffectedRows();
+    }
+    doReturn(tableResultMock).when(lastJobMock).getQueryResults(any(QueryResultsOption.class));
+    doReturn(lastJobMock).when(lastJobMock).waitFor();
+
+    Mockito.when(bigquery.queryWithTimeout(any(QueryJobConfiguration.class), any(), any()))
+        .thenAnswer(
+            invocation -> {
+              QueryJobConfiguration config = invocation.getArgument(0);
+              JobId submittedJobId = invocation.getArgument(1);
+              JobId effectiveJobId =
+                  submittedJobId != null && submittedJobId.getJob() != null
+                      ? submittedJobId
+                      : JobId.of("server-generated-" + UUID.randomUUID());
+              doReturn(effectiveJobId).when(tableResultMock).getJobId();
+              doReturn(effectiveJobId).when(lastJobMock).getJobId();
+              doReturn(config).when(lastJobMock).getConfiguration();
+              doReturn(lastJobMock).when(bigquery).getJob(eq(effectiveJobId));
+              return lastJobMock;
+            });
+
+    Job dryRunJobMock = getJobMock(null, null, type);
+    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
+    return lastJobMock;
   }
 
   private BigQueryConnection createConnectionWithMockedBigQuery(String url) throws SQLException {
@@ -1961,10 +2013,26 @@ public class BigQueryStatementTest {
   }
 
   @Test
-  public void testLargeResultDataset_usesUuidNameAndWriteEmpty() throws Exception {
-    configureLargeResults(
-        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, DEFAULT_DATASET_EXPIRATION_MS);
+  public void testLargeResultDataset_usesUuidNameWriteEmptyAndClientJobId() throws Exception {
+    // 1. Without destinationTable, executeJob must leave JobId.job unset so jobless fast-query
+    // remains eligible.
     setupMockQueryResults(null, StatementType.SELECT, null);
+    try (BigQueryStatement joblessStmt = new BigQueryStatement(bigQueryConnection);
+        ResultSet rs = joblessStmt.executeQuery("SELECT 0")) {
+      assertNotNull(rs);
+    }
+    ArgumentCaptor<JobId> joblessIdCaptor = ArgumentCaptor.forClass(JobId.class);
+    verify(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), joblessIdCaptor.capture(), any());
+    assertNull(joblessIdCaptor.getValue().getJob());
+
+    // 2. With LargeResultDataset, executeJob takes the Job path with a client JobId so
+    // WRITE_EMPTY retries are idempotent.
+    Mockito.clearInvocations(bigquery);
+    configureLargeResults(
+        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, false, DEFAULT_DATASET_EXPIRATION_MS);
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doReturn(true).when(bigquery).delete(any(TableId.class));
 
     try (BigQueryStatement statement = new BigQueryStatement(bigQueryConnection)) {
       try (ResultSet rs1 = statement.executeQuery("SELECT 1")) {
@@ -1976,29 +2044,36 @@ public class BigQueryStatementTest {
       }
     }
 
-    ArgumentCaptor<QueryJobConfiguration> captor =
+    ArgumentCaptor<QueryJobConfiguration> configCaptor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
-    verify(bigquery, times(2)).queryWithTimeout(captor.capture(), any(), any());
-    List<QueryJobConfiguration> configs = captor.getAllValues();
+    ArgumentCaptor<JobId> jobIdCaptor = ArgumentCaptor.forClass(JobId.class);
+    verify(bigquery, times(2))
+        .queryWithTimeout(configCaptor.capture(), jobIdCaptor.capture(), any());
+    List<QueryJobConfiguration> configs = configCaptor.getAllValues();
+    List<JobId> jobIds = jobIdCaptor.getAllValues();
 
-    TableId firstTable = configs.get(0).getDestinationTable();
-    TableId secondTable = configs.get(1).getDestinationTable();
-    for (QueryJobConfiguration config : configs) {
+    for (int i = 0; i < configs.size(); i++) {
+      QueryJobConfiguration config = configs.get(i);
       assertEquals(SCRATCH_DATASET, config.getDestinationTable().getDataset());
       assertTrue(
           GENERATED_TEMP_TABLE_PATTERN.matcher(config.getDestinationTable().getTable()).matches());
       assertEquals(JobInfo.WriteDisposition.WRITE_EMPTY, config.getWriteDisposition());
       assertEquals(JobInfo.CreateDisposition.CREATE_IF_NEEDED, config.getCreateDisposition());
+      assertNotNull(jobIds.get(i).getJob());
+      assertTrue(jobIds.get(i).getJob().startsWith("google-jdbc-"));
     }
-    assertNotEquals(firstTable.getTable(), secondTable.getTable());
+    assertNotEquals(
+        configs.get(0).getDestinationTable().getTable(),
+        configs.get(1).getDestinationTable().getTable());
+    assertNotEquals(jobIds.get(0).getJob(), jobIds.get(1).getJob());
   }
 
   @Test
   public void testLargeResultTable_explicitTablePreservedOnCloseAndUsesWriteTruncate()
       throws Exception {
     configureLargeResults(
-        SCRATCH_DATASET, "explicit_results_table", DEFAULT_DATASET_EXPIRATION_MS, null);
-    setupMockQueryResults(null, StatementType.SELECT, null);
+        SCRATCH_DATASET, "explicit_results_table", DEFAULT_DATASET_EXPIRATION_MS, false, null);
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
 
     try (BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
         ResultSet rs = statement.executeQuery("SELECT 1")) {
@@ -2007,31 +2082,47 @@ public class BigQueryStatementTest {
 
     ArgumentCaptor<QueryJobConfiguration> captor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
-    verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+    ArgumentCaptor<JobId> jobIdCaptor = ArgumentCaptor.forClass(JobId.class);
+    verify(bigquery).queryWithTimeout(captor.capture(), jobIdCaptor.capture(), any());
     QueryJobConfiguration capturedConfig = captor.getValue();
     assertEquals(
         TableId.of(SCRATCH_DATASET, "explicit_results_table"),
         capturedConfig.getDestinationTable());
     assertEquals(JobInfo.WriteDisposition.WRITE_TRUNCATE, capturedConfig.getWriteDisposition());
+    assertNotNull(jobIdCaptor.getValue().getJob());
+    assertTrue(jobIdCaptor.getValue().getJob().startsWith("google-jdbc-"));
     verify(bigquery, never()).update(any(TableInfo.class));
     verify(bigquery, never()).delete(any(TableId.class));
   }
 
   private static Stream<Arguments> perTableExpirationCases() {
     return Stream.of(
-        Arguments.of(null, DEFAULT_DATASET_EXPIRATION_MS, true),
-        Arguments.of(86_400_000L, DEFAULT_DATASET_EXPIRATION_MS, true),
-        Arguments.of(DEFAULT_DATASET_EXPIRATION_MS, 14_400_000L, true),
-        Arguments.of(DEFAULT_DATASET_EXPIRATION_MS, DEFAULT_DATASET_EXPIRATION_MS, false));
+        // Dataset has no default TTL + property unset -> apply 1h safety net
+        Arguments.of(null, false, DEFAULT_DATASET_EXPIRATION_MS, true),
+        // Dataset has 24h admin TTL + property unset -> respect admin TTL (no tables.patch)
+        Arguments.of(86_400_000L, false, DEFAULT_DATASET_EXPIRATION_MS, false),
+        // Dataset has 24h admin TTL + property explicitly set to 1h -> override to 1h
+        Arguments.of(86_400_000L, true, DEFAULT_DATASET_EXPIRATION_MS, true),
+        // Sub-hour explicit TTL (10m) -> override to 10m
+        Arguments.of(DEFAULT_DATASET_EXPIRATION_MS, true, 600_000L, true),
+        // Longer explicit TTL (4h) on 1h dataset -> override to 4h
+        Arguments.of(DEFAULT_DATASET_EXPIRATION_MS, true, 14_400_000L, true),
+        // Explicit TTL already matches dataset TTL -> skip redundant tables.patch
+        Arguments.of(DEFAULT_DATASET_EXPIRATION_MS, true, DEFAULT_DATASET_EXPIRATION_MS, false));
   }
 
   @ParameterizedTest
   @MethodSource("perTableExpirationCases")
-  public void testLargeResultDataset_perTableExpirationByDatasetDefaultTtl(
-      Long datasetDefaultTtlMs, long configuredExpirationMs, boolean expectUpdate)
+  public void testLargeResultDataset_perTableExpirationRespectsOption1A(
+      Long datasetDefaultTtlMs,
+      boolean explicitExpiration,
+      long configuredExpirationMs,
+      boolean expectUpdate)
       throws Exception {
-    configureLargeResults(SCRATCH_DATASET, null, configuredExpirationMs, datasetDefaultTtlMs);
-    setupMockQueryResults(null, StatementType.SELECT, null);
+    configureLargeResults(
+        SCRATCH_DATASET, null, configuredExpirationMs, explicitExpiration, datasetDefaultTtlMs);
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doReturn(true).when(bigquery).delete(any(TableId.class));
 
     long beforeMs = System.currentTimeMillis();
     try (BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
@@ -2057,15 +2148,18 @@ public class BigQueryStatementTest {
     assertThat(updatedTable.getExpirationTime()).isAtMost(afterMs + configuredExpirationMs);
   }
 
-  private static Stream<Arguments> autoCreatedDatasetCases() {
+  private static Stream<Arguments> autoCreatedServiceAccountDatasetCases() {
     return Stream.of(
         Arguments.of(
             BigQueryJdbcBaseTest.getUriOAuthServiceAccount()
                 .append("ProjectId", PROJECT)
+                .append("Location", "EU")
                 .append("LargeResultDataset", "auto_sa_dataset")
                 .toString(),
             "auto_sa_dataset",
+            "EU",
             "service@account",
+            DEFAULT_DATASET_EXPIRATION_MS,
             false,
             true),
         Arguments.of(
@@ -2075,10 +2169,13 @@ public class BigQueryStatementTest {
                     "ServiceAccountImpersonationEmail",
                     "impersonated@project.iam.gserviceaccount.com")
                 .append("LargeResultDataset", "auto_impersonated_dataset")
+                .append("LargeResultsDatasetExpirationTime", "600000")
                 .toString(),
             "auto_impersonated_dataset",
+            null,
             "impersonated@project.iam.gserviceaccount.com",
-            false,
+            600_000L,
+            true,
             true),
         Arguments.of(
             BigQueryJdbcBaseTest.getUriOAuthServiceAccount()
@@ -2088,104 +2185,400 @@ public class BigQueryStatementTest {
                 .append("LargeResultTable", "explicit_legacy_table")
                 .toString(),
             "_google_jdbc",
-            "service@account",
-            false,
-            false),
-        Arguments.of(
-            BigQueryJdbcBaseTest.getUriOAuthToken()
-                .append("ProjectId", PROJECT)
-                .append("LargeResultDataset", "auto_token_dataset")
-                .toString(),
-            "auto_token_dataset",
             null,
-            true,
-            true));
+            "service@account",
+            DEFAULT_DATASET_EXPIRATION_MS,
+            false,
+            false));
   }
 
   @ParameterizedTest
-  @MethodSource("autoCreatedDatasetCases")
-  public void testAutoCreatedDataset_ownerAclDefaultLifetimeAndConflictHandling(
+  @MethodSource("autoCreatedServiceAccountDatasetCases")
+  public void testAutoCreatedDataset_serviceAccountAtomicOwnerAclAndSubHourClamp(
       String url,
       String expectedDatasetName,
+      String expectedLocation,
       String expectedOwnerEmail,
-      boolean simulateConflictRace,
+      long expectedEffectiveTableTtlMs,
+      boolean expectPerTablePatch,
       boolean expectTempTableDelete)
       throws Exception {
     doReturn(null).when(bigquery).getDataset(eq(DatasetId.of(expectedDatasetName)));
-    if (simulateConflictRace) {
-      doThrow(new BigQueryException(409, "Already Exists: Dataset " + expectedDatasetName))
-          .when(bigquery)
-          .create(any(DatasetInfo.class));
-    }
-    setupMockQueryResults(null, StatementType.SELECT, null);
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doReturn(true).when(bigquery).delete(any(TableId.class));
 
+    long beforeMs = System.currentTimeMillis();
     try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
         Statement stmt = conn.createStatement();
-        ResultSet rs = assertDoesNotThrow(() -> stmt.executeQuery("SELECT 1"))) {
+        ResultSet rs = stmt.executeQuery("SELECT 1")) {
       assertNotNull(rs);
     }
+    long afterMs = System.currentTimeMillis();
 
     ArgumentCaptor<DatasetInfo> datasetCaptor = ArgumentCaptor.forClass(DatasetInfo.class);
     verify(bigquery).create(datasetCaptor.capture());
     DatasetInfo createdDataset = datasetCaptor.getValue();
     assertEquals(expectedDatasetName, createdDataset.getDatasetId().getDataset());
+    assertEquals(expectedLocation, createdDataset.getLocation());
+    // Dataset defaultTableLifetime is clamped to >= 1h (BigQuery minimum) even for sub-hour TTLs.
     assertEquals(DEFAULT_DATASET_EXPIRATION_MS, createdDataset.getDefaultTableLifetime());
-    if (expectedOwnerEmail == null) {
-      assertNull(createdDataset.getAcl());
+    assertEquals(
+        Collections.singletonList(Acl.of(new Acl.User(expectedOwnerEmail), Acl.Role.OWNER)),
+        createdDataset.getAcl());
+    verify(bigquery, never()).update(any(DatasetInfo.class));
+
+    if (expectPerTablePatch) {
+      ArgumentCaptor<TableInfo> tableCaptor = ArgumentCaptor.forClass(TableInfo.class);
+      verify(bigquery).update(tableCaptor.capture());
+      assertThat(tableCaptor.getValue().getExpirationTime())
+          .isAtLeast(beforeMs + expectedEffectiveTableTtlMs);
+      assertThat(tableCaptor.getValue().getExpirationTime())
+          .isAtMost(afterMs + expectedEffectiveTableTtlMs);
     } else {
-      assertEquals(
-          Collections.singletonList(Acl.of(new Acl.User(expectedOwnerEmail), Acl.Role.OWNER)),
-          createdDataset.getAcl());
+      verify(bigquery, never()).update(any(TableInfo.class));
     }
     verify(bigquery, times(expectTempTableDelete ? 1 : 0)).delete(any(TableId.class));
   }
 
+  @Test
+  public void testAutoCreatedDataset_nonServiceAccountStripsDefaultGroupAclsBeforeQuery()
+      throws Exception {
+    String datasetName = "auto_user_oauth_dataset";
+    String url =
+        BigQueryJdbcBaseTest.getUriOAuthToken()
+            .append("ProjectId", PROJECT)
+            .append("LargeResultDataset", datasetName)
+            .toString();
+    doReturn(null).when(bigquery).getDataset(eq(DatasetId.of(datasetName)));
+    Dataset serverCreatedDataset = mock(Dataset.class);
+    Acl creatorUserAcl = Acl.of(new Acl.User("alice@example.com"), Acl.Role.OWNER);
+    Acl creatorIamMemberAcl =
+        Acl.of(
+            new Acl.IamMember(
+                "principal://iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/p/subject/sub"),
+            Acl.Role.OWNER);
+    doReturn(
+            Arrays.asList(
+                Acl.of(new Acl.Group("projectOwners"), Acl.Role.OWNER),
+                Acl.of(new Acl.Group("projectWriters"), Acl.Role.WRITER),
+                Acl.of(new Acl.Group("projectReaders"), Acl.Role.READER),
+                creatorUserAcl,
+                creatorIamMemberAcl))
+        .when(serverCreatedDataset)
+        .getAcl();
+    doReturn(serverCreatedDataset).when(bigquery).create(any(DatasetInfo.class));
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doReturn(true).when(bigquery).delete(any(TableId.class));
+
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT 1")) {
+      assertNotNull(rs);
+    }
+
+    InOrder inOrder = Mockito.inOrder(bigquery);
+    ArgumentCaptor<DatasetInfo> createCaptor = ArgumentCaptor.forClass(DatasetInfo.class);
+    ArgumentCaptor<DatasetInfo> updateCaptor = ArgumentCaptor.forClass(DatasetInfo.class);
+    inOrder.verify(bigquery).create(createCaptor.capture());
+    inOrder.verify(bigquery).update(updateCaptor.capture());
+    inOrder.verify(bigquery).queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    assertNull(createCaptor.getValue().getAcl());
+    assertEquals(
+        Arrays.asList(creatorUserAcl, creatorIamMemberAcl), updateCaptor.getValue().getAcl());
+
+    // Fail-closed: if stripping default group ACLs fails, the query job must NOT be submitted.
+    Mockito.clearInvocations(bigquery);
+    doReturn(null).when(bigquery).getDataset(eq(DatasetId.of(datasetName)));
+    doReturn(serverCreatedDataset).when(bigquery).create(any(DatasetInfo.class));
+    doThrow(new BigQueryException(500, "Failed to patch dataset ACL"))
+        .when(bigquery)
+        .update(any(DatasetInfo.class));
+
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement()) {
+      assertThrows(BigQueryJdbcException.class, () -> stmt.executeQuery("SELECT 1"));
+    }
+    verify(bigquery, never()).queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+  }
+
+  @Test
+  public void testAutoCreatedDataset_conflictRaceAndDatasetRpcErrors() throws Exception {
+    String datasetName = "conflict_dataset";
+    String url =
+        BigQueryJdbcBaseTest.getUriOAuthServiceAccount()
+            .append("ProjectId", PROJECT)
+            .append("LargeResultDataset", datasetName)
+            .toString();
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doReturn(true).when(bigquery).delete(any(TableId.class));
+
+    // 1. 409 Conflict where reload returns dataset with matching 1h TTL -> no per-table patch
+    Dataset reloadedWithTtl = mock(Dataset.class);
+    doReturn(DEFAULT_DATASET_EXPIRATION_MS).when(reloadedWithTtl).getDefaultTableLifetime();
+    Mockito.when(bigquery.getDataset(eq(DatasetId.of(datasetName))))
+        .thenReturn(null)
+        .thenReturn(reloadedWithTtl);
+    doThrow(new BigQueryException(409, "Already Exists"))
+        .when(bigquery)
+        .create(any(DatasetInfo.class));
+
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT 1")) {
+      assertNotNull(rs);
+    }
+    verify(bigquery, never()).update(any(TableInfo.class));
+
+    // 2. 409 Conflict where reload throws BigQueryException -> falls back to per-table patch
+    Mockito.clearInvocations(bigquery);
+    Mockito.when(bigquery.getDataset(eq(DatasetId.of(datasetName))))
+        .thenReturn(null)
+        .thenThrow(new BigQueryException(503, "Reload failed"));
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT 1")) {
+      assertNotNull(rs);
+    }
+    verify(bigquery, times(1)).update(any(TableInfo.class));
+
+    // 3. Non-409 BigQueryException on dataset create -> wrapped as BigQueryJdbcException
+    Mockito.reset(bigquery);
+    doReturn(null).when(bigquery).getDataset(eq(DatasetId.of(datasetName)));
+    doThrow(new BigQueryException(403, "Dataset create denied"))
+        .when(bigquery)
+        .create(any(DatasetInfo.class));
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement()) {
+      assertThrows(BigQueryJdbcException.class, () -> stmt.executeQuery("SELECT 1"));
+    }
+
+    // 4. BigQueryException on initial getDataset -> wrapped as BigQueryJdbcException
+    Mockito.reset(bigquery);
+    doThrow(new BigQueryException(403, "Dataset get denied"))
+        .when(bigquery)
+        .getDataset(eq(DatasetId.of(datasetName)));
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement()) {
+      assertThrows(BigQueryJdbcException.class, () -> stmt.executeQuery("SELECT 1"));
+    }
+  }
+
   @ParameterizedTest
   @ValueSource(booleans = {true, false})
-  public void testLargeResultDataset_ignoresBestEffortRpcFailures(boolean failOnUpdate)
+  public void testLargeResultDataset_memoizes403AndHandlesNon403Failures(boolean failOnUpdate)
       throws Exception {
-    configureLargeResults(SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, null);
-    setupMockQueryResults(null, StatementType.SELECT, null);
+    String url =
+        BigQueryJdbcBaseTest.getUriOAuthServiceAccount()
+            .append("ProjectId", PROJECT)
+            .append("LargeResultDataset", SCRATCH_DATASET)
+            .toString();
+    Dataset datasetWithoutTtl = mock(Dataset.class);
+    doReturn(null).when(datasetWithoutTtl).getDefaultTableLifetime();
+    doReturn(datasetWithoutTtl).when(bigquery).getDataset(eq(DatasetId.of(SCRATCH_DATASET)));
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+
     if (failOnUpdate) {
       doThrow(new BigQueryException(403, "Permission bigquery.tables.update denied"))
           .when(bigquery)
           .update(any(TableInfo.class));
+      doReturn(true).when(bigquery).delete(any(TableId.class));
     } else {
       doThrow(new BigQueryException(403, "Permission bigquery.tables.delete denied"))
           .when(bigquery)
           .delete(any(TableId.class));
     }
 
-    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
-    ResultSet rs = assertDoesNotThrow(() -> statement.executeQuery("SELECT 1"));
-    assertFalse(rs.next());
-    assertDoesNotThrow(rs::close);
-    assertDoesNotThrow(statement::close);
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement()) {
+      try (ResultSet rs1 = assertDoesNotThrow(() -> stmt.executeQuery("SELECT 1"))) {
+        assertFalse(rs1.next());
+      }
+      try (ResultSet rs2 = assertDoesNotThrow(() -> stmt.executeQuery("SELECT 2"))) {
+        assertFalse(rs2.next());
+      }
+    }
+
+    // HTTP 403 must be memoized per connection so the second query skips the doomed RPC.
+    if (failOnUpdate) {
+      verify(bigquery, times(1)).update(any(TableInfo.class));
+      verify(bigquery, times(2)).delete(any(TableId.class));
+    } else {
+      verify(bigquery, times(2)).update(any(TableInfo.class));
+      verify(bigquery, times(1)).delete(any(TableId.class));
+    }
   }
 
   @Test
-  public void testLargeResultDataset_deletesGeneratedTempTableOnJsonAndArrowResultSetClose()
+  public void testLargeResultDataset_non403FailureDoesNotPoisonConnection() throws Exception {
+    String url =
+        BigQueryJdbcBaseTest.getUriOAuthServiceAccount()
+            .append("ProjectId", PROJECT)
+            .append("LargeResultDataset", SCRATCH_DATASET)
+            .toString();
+    Dataset datasetWithoutTtl = mock(Dataset.class);
+    doReturn(null).when(datasetWithoutTtl).getDefaultTableLifetime();
+    doReturn(datasetWithoutTtl).when(bigquery).getDataset(eq(DatasetId.of(SCRATCH_DATASET)));
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+
+    Mockito.when(bigquery.update(any(TableInfo.class)))
+        .thenThrow(new BigQueryException(503, "Transient backend error"))
+        .thenReturn(mock(Table.class));
+    Mockito.when(bigquery.delete(any(TableId.class)))
+        .thenThrow(new BigQueryException(503, "Transient delete error"))
+        .thenReturn(true);
+
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement()) {
+      try (ResultSet rs1 = stmt.executeQuery("SELECT 1")) {
+        assertNotNull(rs1);
+      }
+      try (ResultSet rs2 = stmt.executeQuery("SELECT 2")) {
+        assertNotNull(rs2);
+      }
+    }
+    verify(bigquery, times(2)).update(any(TableInfo.class));
+    verify(bigquery, Mockito.atLeast(2)).delete(any(TableId.class));
+  }
+
+  @Test
+  public void
+      testLargeResultDataset_interruptDuringGetQueryResultsCancelsJobAndRetainsTableUntilClose()
+          throws Exception {
+    configureLargeResults(
+        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, false, DEFAULT_DATASET_EXPIRATION_MS);
+    Job jobMock = setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doThrow(new InterruptedException("Caller interrupted"))
+        .when(jobMock)
+        .getQueryResults(any(QueryResultsOption.class));
+    // First delete (on abort while job is still finishing on BQ) returns false (404);
+    // second delete (on Statement.close() after job materialized the table) returns true.
+    Mockito.when(bigquery.delete(any(TableId.class))).thenReturn(false).thenReturn(true);
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    try {
+      assertThrows(BigQueryJdbcException.class, () -> statement.executeQuery("SELECT 1"));
+      assertTrue(Thread.interrupted());
+
+      ArgumentCaptor<QueryJobConfiguration> captor =
+          ArgumentCaptor.forClass(QueryJobConfiguration.class);
+      verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+      TableId tempTable = captor.getValue().getDestinationTable();
+
+      verify(jobMock).cancel();
+      verify(bigquery, times(1)).delete(eq(tempTable));
+
+      // Statement.close() must retry deleting the retained TableId!
+      statement.close();
+      verify(bigquery, times(2)).delete(eq(tempTable));
+    } finally {
+      Thread.interrupted();
+    }
+  }
+
+  @Test
+  public void testLargeResultDataset_concurrentCancelKeepsStatementOpenAndCleansUpTable()
+      throws Exception {
+    String url =
+        BigQueryJdbcBaseTest.getUriOAuthServiceAccount()
+            .append("ProjectId", PROJECT)
+            .append("LargeResultDataset", SCRATCH_DATASET)
+            .toString();
+    Dataset datasetWithTtl = mock(Dataset.class);
+    doReturn(DEFAULT_DATASET_EXPIRATION_MS).when(datasetWithTtl).getDefaultTableLifetime();
+    doReturn(datasetWithTtl).when(bigquery).getDataset(eq(DatasetId.of(SCRATCH_DATASET)));
+
+    Job jobMock = setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    TableResult completedResult = mock(TableResult.class);
+    doReturn(Schema.of()).when(completedResult).getSchema();
+    doReturn(StatementType.SELECT).when(completedResult).getStatementType();
+
+    CountDownLatch enteredGetQueryResults = new CountDownLatch(1);
+    CountDownLatch allowGetQueryResultsReturn = new CountDownLatch(1);
+    Mockito.when(jobMock.getQueryResults(any(QueryResultsOption.class)))
+        .thenAnswer(
+            invocation -> {
+              enteredGetQueryResults.countDown();
+              assertTrue(allowGetQueryResultsReturn.await(5, TimeUnit.SECONDS));
+              return completedResult;
+            });
+    // Simulate table not yet visible when query aborts, becoming visible by Connection.close()
+    Mockito.when(bigquery.delete(any(TableId.class))).thenReturn(false).thenReturn(true);
+
+    ExecutorService callerPool = Executors.newSingleThreadExecutor();
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url)) {
+      Statement stmt = conn.createStatement();
+      BigQueryStatement unwrappedStmt = stmt.unwrap(BigQueryStatement.class);
+
+      Future<ResultSet> queryFuture = callerPool.submit(() -> stmt.executeQuery("SELECT 1"));
+      assertTrue(enteredGetQueryResults.await(5, TimeUnit.SECONDS));
+
+      stmt.cancel();
+      verify(bigquery).cancel(any(JobId.class));
+      // cancel() must NOT prematurely wipe trackedTempTables or unregister the open statement
+      verify(bigquery, never()).delete(any(TableId.class));
+      assertTrue(conn.openStatements.contains(stmt));
+      assertFalse(unwrappedStmt.isClosed());
+
+      allowGetQueryResultsReturn.countDown();
+      ExecutionException execEx =
+          assertThrows(ExecutionException.class, () -> queryFuture.get(5, TimeUnit.SECONDS));
+      assertThat(execEx.getCause()).isInstanceOf(BigQueryJdbcException.class);
+      assertNull(unwrappedStmt.getResultSet());
+
+      ArgumentCaptor<QueryJobConfiguration> captor =
+          ArgumentCaptor.forClass(QueryJobConfiguration.class);
+      verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+      TableId tempTable = captor.getValue().getDestinationTable();
+      verify(bigquery, times(1)).delete(eq(tempTable));
+
+      // Connection.close() closes the cancelled statement and sweeps the retained temp table!
+      conn.close();
+      assertTrue(unwrappedStmt.isClosed());
+      verify(bigquery, times(2)).delete(eq(tempTable));
+    } finally {
+      callerPool.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testLargeResultDataset_workerCancelledBeforeDeleteOnJsonAndArrowResultSetClose()
       throws Exception {
     configureLargeResults(
-        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, DEFAULT_DATASET_EXPIRATION_MS);
-    setupMockQueryResults(null, StatementType.SELECT, null);
+        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, false, DEFAULT_DATASET_EXPIRATION_MS);
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doReturn(true).when(bigquery).delete(any(TableId.class));
 
-    BigQueryStatement jsonStatement = new BigQueryStatement(bigQueryConnection);
-    ResultSet jsonRs = jsonStatement.executeQuery("SELECT 1");
+    // 1. JSON ResultSet: verify background worker Future.cancel(true) happens BEFORE tables.delete
+    BigQueryStatement jsonStmtSpy = Mockito.spy(new BigQueryStatement(bigQueryConnection));
+    Future<?> jsonWorkerFuture = mock(Future.class);
+    doReturn(jsonWorkerFuture)
+        .when(jsonStmtSpy)
+        .runNextPageTaskAsync(any(), any(), any(), any(), any());
+
+    ResultSet jsonRs = jsonStmtSpy.executeQuery("SELECT 1");
     ArgumentCaptor<QueryJobConfiguration> jsonCaptor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
     verify(bigquery).queryWithTimeout(jsonCaptor.capture(), any(), any());
     TableId jsonTempTable = jsonCaptor.getValue().getDestinationTable();
 
-    verify(bigquery, never()).delete(any(TableId.class));
     jsonRs.close();
-    verify(bigquery, times(1)).delete(eq(jsonTempTable));
+    InOrder jsonOrder = Mockito.inOrder(jsonWorkerFuture, bigquery);
+    jsonOrder.verify(jsonWorkerFuture).cancel(true);
+    jsonOrder.verify(bigquery).delete(eq(jsonTempTable));
     jsonRs.close();
-    jsonStatement.close();
+    jsonStmtSpy.close();
     verify(bigquery, times(1)).delete(eq(jsonTempTable));
 
+    // 2. Arrow ResultSet: verify background worker Future.cancel(true) happens BEFORE tables.delete
     BigQueryStatement arrowStmtSpy = createReadApiStatementSpy();
-    TableResult arrowTableResult = setupMockQueryResults(this.jobId, StatementType.SELECT, null);
+    Future<?> arrowWorkerFuture = mock(Future.class);
+    doReturn(arrowWorkerFuture)
+        .when(arrowStmtSpy)
+        .populateArrowBufferedQueue(
+            any(ReadSession.class), any(BlockingQueue.class), any(BigQueryReadClient.class));
+    Job arrowJob = setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    TableResult arrowTableResult = arrowJob.getQueryResults(QueryResultsOption.pageSize(1000L));
     doReturn(Schema.of(fieldList)).when(arrowTableResult).getSchema();
     doReturn(2000L).when(arrowTableResult).getTotalRows();
     doReturn(500L).when(arrowTableResult).getRowsInPage();
@@ -2198,56 +2591,109 @@ public class BigQueryStatementTest {
     verify(bigquery, times(2)).queryWithTimeout(arrowCaptor.capture(), any(), any());
     TableId arrowTempTable = arrowCaptor.getAllValues().get(1).getDestinationTable();
 
-    verify(bigquery, never()).delete(eq(arrowTempTable));
     arrowRs.close();
-    verify(bigquery, times(1)).delete(eq(arrowTempTable));
+    InOrder arrowOrder = Mockito.inOrder(arrowWorkerFuture, bigquery);
+    arrowOrder.verify(arrowWorkerFuture).cancel(true);
+    arrowOrder.verify(bigquery).delete(eq(arrowTempTable));
     arrowStmtSpy.close();
     verify(bigquery, times(1)).delete(eq(arrowTempTable));
   }
 
   @Test
-  public void testLargeResultDataset_deletesGeneratedTempTableOnReexecutionCloseAndFailure()
-      throws Exception {
+  public void
+      testLargeResultDataset_closeOnCompletionReexecutionNonSingularAndPreparedStatementBatch()
+          throws Exception {
     configureLargeResults(
-        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, DEFAULT_DATASET_EXPIRATION_MS);
-    setupMockQueryResults(null, StatementType.SELECT, null);
+        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, false, DEFAULT_DATASET_EXPIRATION_MS);
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doReturn(true).when(bigquery).delete(any(TableId.class));
 
+    // 1. Positive closeOnCompletion() path: closing the ResultSet closes the Statement and deletes
+    // its temp table once; re-executing first does NOT prematurely close the Statement.
     BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
     statement.closeOnCompletion();
 
     ResultSet rs1 = statement.executeQuery("SELECT 1");
-    verify(bigquery, never()).delete(any(TableId.class));
-
     ResultSet rs2 = statement.executeQuery("SELECT 2");
     assertFalse(statement.isClosed());
     assertTrue(rs1.isClosed());
     assertFalse(rs2.isClosed());
 
+    rs2.close();
+    assertTrue(statement.isClosed());
+
     ArgumentCaptor<QueryJobConfiguration> captor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
     verify(bigquery, times(2)).queryWithTimeout(captor.capture(), any(), any());
-    TableId firstTable = captor.getAllValues().get(0).getDestinationTable();
-    TableId secondTable = captor.getAllValues().get(1).getDestinationTable();
+    verify(bigquery, times(1)).delete(eq(captor.getAllValues().get(0).getDestinationTable()));
+    verify(bigquery, times(1)).delete(eq(captor.getAllValues().get(1).getDestinationTable()));
 
-    verify(bigquery, times(1)).delete(eq(firstTable));
-    verify(bigquery, never()).delete(eq(secondTable));
-
-    statement.close();
-    assertTrue(rs2.isClosed());
-    verify(bigquery, times(1)).delete(eq(secondTable));
-
-    doThrow(new BigQueryException(400, "Query execution failed"))
-        .when(bigquery)
-        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
-    BigQueryStatement failingStatement = new BigQueryStatement(bigQueryConnection);
-    assertThrows(BigQueryJdbcException.class, () -> failingStatement.executeQuery("SELECT 3"));
-
-    ArgumentCaptor<QueryJobConfiguration> failCaptor =
+    // 2. Non-singular executeQuery (DML returning update count instead of ResultSet) cleans up temp
+    // table before throwing SQLException.
+    Mockito.clearInvocations(bigquery);
+    setupMockLargeResultJobQuery(StatementType.INSERT, 1L);
+    try (BigQueryStatement nonSingularStmt = new BigQueryStatement(bigQueryConnection)) {
+      assertThrows(
+          BigQueryJdbcException.class,
+          () -> nonSingularStmt.executeQuery("INSERT INTO t VALUES(1)"));
+    }
+    ArgumentCaptor<QueryJobConfiguration> nonSingularCaptor =
         ArgumentCaptor.forClass(QueryJobConfiguration.class);
-    verify(bigquery, times(3)).queryWithTimeout(failCaptor.capture(), any(), any());
-    TableId failedTempTable = failCaptor.getAllValues().get(2).getDestinationTable();
-    verify(bigquery, times(1)).delete(eq(failedTempTable));
-    failingStatement.close();
-    verify(bigquery, times(1)).delete(eq(failedTempTable));
+    verify(bigquery).queryWithTimeout(nonSingularCaptor.capture(), any(), any());
+    verify(bigquery, times(1)).delete(eq(nonSingularCaptor.getValue().getDestinationTable()));
+
+    // 3. BigQueryPreparedStatement.executeBatch() closes any open ResultSet from an earlier query
+    // and deletes its generated temp table (m5).
+    Mockito.clearInvocations(bigquery);
+    setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    try (BigQueryPreparedStatement ps =
+        new BigQueryPreparedStatement(bigQueryConnection, "SELECT 1", true)) {
+      assertEquals(
+          ps.querySettings.hasExplicitDestinationDatasetExpirationTime(),
+          ps.querySettings.toBuilder().build().hasExplicitDestinationDatasetExpirationTime());
+      ResultSet psRs = ps.executeQuery();
+      assertFalse(psRs.isClosed());
+      assertEquals(0, ps.executeBatch().length);
+      assertTrue(psRs.isClosed());
+    }
+    ArgumentCaptor<QueryJobConfiguration> psCaptor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery).queryWithTimeout(psCaptor.capture(), any(), any());
+    verify(bigquery, times(1)).delete(eq(psCaptor.getValue().getDestinationTable()));
+
+    // 4. Multi-result SCRIPT with closeOnCompletion(): advancing via getMoreResults() keeps the
+    // Statement open while child jobs remain and closes it when advancing past the final ResultSet.
+    Job childJob1 =
+        createScriptChildJobMock("script-child-1", StatementType.SELECT, 1L, 1L, false, null);
+    Job childJob2 =
+        createScriptChildJobMock("script-child-2", StatementType.SELECT, 1L, 1L, false, null);
+    Page<Job> childJobsPage = mock(Page.class);
+    doReturn(Arrays.asList(childJob2, childJob1)).when(childJobsPage).iterateAll();
+    doReturn(childJobsPage).when(bigquery).listJobs(any(JobListOption.class));
+    setupMockLargeResultJobQuery(StatementType.SCRIPT, null);
+
+    BigQueryStatement scriptStmt = new BigQueryStatement(bigQueryConnection);
+    scriptStmt.closeOnCompletion();
+    assertTrue(scriptStmt.execute("SELECT 1; SELECT 2;"));
+    assertFalse(scriptStmt.isClosed());
+    assertTrue(scriptStmt.getMoreResults());
+    assertFalse(scriptStmt.isClosed());
+    assertFalse(scriptStmt.getMoreResults());
+    assertTrue(scriptStmt.isClosed());
+
+    // 5. Best-effort job.cancel() failure during getQueryResults failure does not mask the root
+    // query exception.
+    Job failingCancelJob = setupMockLargeResultJobQuery(StatementType.SELECT, null);
+    doThrow(new BigQueryException(500, "Query failed"))
+        .when(failingCancelJob)
+        .getQueryResults(any(QueryResultsOption.class));
+    doThrow(new BigQueryException(400, "Job is already in state DONE"))
+        .when(failingCancelJob)
+        .cancel();
+    try (BigQueryStatement cancelFailStmt = new BigQueryStatement(bigQueryConnection)) {
+      BigQueryJdbcException ex =
+          assertThrows(BigQueryJdbcException.class, () -> cancelFailStmt.executeQuery("SELECT 9"));
+      assertTrue(ex.getCause().getMessage().contains("Query failed"));
+    }
   }
 }

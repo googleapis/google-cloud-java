@@ -153,7 +153,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public void close() {
-    if (!this.isNested && this.statement != null) {
+    if (this.statement != null) {
       this.statement.onResultSetClosed(this);
     }
   }

@@ -1297,13 +1297,42 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       Credentials validSigner =
           mock(Credentials.class, withSettings().extraInterfaces(ServiceAccountSigner.class));
       when(((ServiceAccountSigner) validSigner).getAccount())
-          .thenReturn("gce-sa@project.iam.gserviceaccount.com");
+          .thenReturn("  gce-sa@project.iam.gserviceaccount.com  ");
       conn.credentials = validSigner;
       assertEquals("gce-sa@project.iam.gserviceaccount.com", conn.resolveOwnerEmail());
+
+      when(((ServiceAccountSigner) validSigner).getAccount()).thenReturn("non-email-subject");
+      assertNull(conn.resolveOwnerEmail());
 
       when(((ServiceAccountSigner) validSigner).getAccount())
           .thenThrow(new RuntimeException("Metadata server unavailable"));
       assertNull(conn.resolveOwnerEmail());
+    }
+  }
+
+  @Test
+  public void testExplicitExpirationTimeAndTempTablePermissionFlags() throws Exception {
+    try (BigQueryConnection defaultConn =
+        new BigQueryConnection(getUriOAuthToken().append("ProjectId", "project").toString())) {
+      assertFalse(defaultConn.hasExplicitDestinationDatasetExpirationTime());
+      assertFalse(defaultConn.isTempTableUpdateForbidden());
+      assertTrue(defaultConn.markTempTableUpdateForbidden());
+      assertTrue(defaultConn.isTempTableUpdateForbidden());
+      assertFalse(defaultConn.markTempTableUpdateForbidden());
+
+      assertFalse(defaultConn.isTempTableDeleteForbidden());
+      assertTrue(defaultConn.markTempTableDeleteForbidden());
+      assertTrue(defaultConn.isTempTableDeleteForbidden());
+      assertFalse(defaultConn.markTempTableDeleteForbidden());
+    }
+
+    try (BigQueryConnection explicitConn =
+        new BigQueryConnection(
+            getUriOAuthToken()
+                .append("ProjectId", "project")
+                .append("LargeResultsDatasetExpirationTime", "3600000")
+                .toString())) {
+      assertTrue(explicitConn.hasExplicitDestinationDatasetExpirationTime());
     }
   }
 

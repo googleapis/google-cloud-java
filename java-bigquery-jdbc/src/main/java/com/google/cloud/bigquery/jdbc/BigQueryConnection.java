@@ -85,6 +85,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 
@@ -212,6 +213,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   String destinationTable;
   String destinationDataset;
   long destinationDatasetExpirationTime;
+  boolean explicitDestinationDatasetExpirationTime;
+  private final AtomicBoolean tempTableUpdateForbidden = new AtomicBoolean(false);
+  private final AtomicBoolean tempTableDeleteForbidden = new AtomicBoolean(false);
   String kmsKeyName;
   String universeDomain;
   Map<String, String> authProperties;
@@ -374,6 +378,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.destinationTable = ds.getDestinationTable();
       this.destinationDataset = ds.getDestinationDataset();
       this.destinationDatasetExpirationTime = ds.getDestinationDatasetExpirationTime();
+      this.explicitDestinationDatasetExpirationTime =
+          ds.hasExplicitDestinationDatasetExpirationTime();
       this.kmsKeyName = ds.getKmsKeyName();
       this.transportChannelProvider =
           BigQueryJdbcProxyUtility.getTransportChannelProvider(
@@ -633,6 +639,26 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.destinationDatasetExpirationTime;
   }
 
+  boolean hasExplicitDestinationDatasetExpirationTime() {
+    return this.explicitDestinationDatasetExpirationTime;
+  }
+
+  boolean isTempTableUpdateForbidden() {
+    return this.tempTableUpdateForbidden.get();
+  }
+
+  boolean markTempTableUpdateForbidden() {
+    return this.tempTableUpdateForbidden.compareAndSet(false, true);
+  }
+
+  boolean isTempTableDeleteForbidden() {
+    return this.tempTableDeleteForbidden.get();
+  }
+
+  boolean markTempTableDeleteForbidden() {
+    return this.tempTableDeleteForbidden.compareAndSet(false, true);
+  }
+
   String getKmsKeyName() {
     return this.kmsKeyName;
   }
@@ -647,6 +673,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.authProperties;
   }
 
+  /**
+   * Returns a service-account email suitable for {@code Acl.User} owner assignment when available,
+   * or {@code null} for credentials without an email (such as user OAuth, raw access tokens, or
+   * federated {@code principal://} IAM members, which strip default group ACLs post-create).
+   */
   String resolveOwnerEmail() {
     String email = null;
     try {

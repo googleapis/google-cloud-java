@@ -80,7 +80,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -151,11 +150,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   final BigQuerySettings querySettings;
 
+  private static final class TempTablePlan {
+    static final TempTablePlan NONE = new TempTablePlan(null, false);
+
+    final TableId tempTableId;
+    final boolean needsTableExpiration;
+
+    TempTablePlan(TableId tempTableId, boolean needsTableExpiration) {
+      this.tempTableId = tempTableId;
+      this.needsTableExpiration = needsTableExpiration;
+    }
+  }
+
   private final Set<TableId> trackedTempTables = ConcurrentHashMap.newKeySet();
   private final Map<ResultSet, TableId> resultSetTempTables =
       Collections.synchronizedMap(new IdentityHashMap<>());
-  private TableId pendingTempTableId = null;
-  private boolean pendingTempTableNeedsExpiration = false;
 
   private BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue;
 
@@ -239,6 +248,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       querySettings.setDestinationDatasetExpirationTime(
           this.connection.getDestinationDatasetExpirationTime());
     }
+    querySettings.setExplicitDestinationDatasetExpirationTime(
+        this.connection.hasExplicitDestinationDatasetExpirationTime());
     // only create session if enable session and session info is null
     if (this.connection.isSessionEnabled()) {
       querySettings.setEnableSession(this.connection.isSessionEnabled());
@@ -281,8 +292,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     logQueryExecutionStart(sql);
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
     jobConfiguration = applyParametersIfPresent(jobConfiguration);
-    jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
-    runQuery(sql, jobConfiguration.build());
+    TempTablePlan tempTablePlan = configureDestinationDatasetAndTable(jobConfiguration);
+    runQuery(sql, jobConfiguration.build(), tempTablePlan);
 
     if (!isSingularResultSet()) {
       cleanupPreviousExecution();
@@ -342,10 +353,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     logQueryExecutionStart(sql);
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
     jobConfiguration = applyParametersIfPresent(jobConfiguration);
+    TempTablePlan tempTablePlan = TempTablePlan.NONE;
     if (isLargeResultsEnabled() && getQueryType(jobConfiguration.build(), null) == SqlType.SELECT) {
-      jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
+      tempTablePlan = configureDestinationDatasetAndTable(jobConfiguration);
     }
-    runQuery(sql, jobConfiguration.build());
+    runQuery(sql, jobConfiguration.build(), tempTablePlan);
     return getCurrentResultSet() != null;
   }
 
@@ -423,17 +435,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     this.isClosed = true;
     LOG.fine("Closing Statement %s.", this);
 
-    boolean cancelSucceeded = false;
     try {
-      cancelInternal(); // Cancels jobs and calls closeStatementResources(); no telemetry.
-      cancelSucceeded = true;
+      cancelRunningJobs();
     } catch (SQLException e) {
       LOG.warning("Failed to cancel statement during close().", e);
     } finally {
-      if (!cancelSucceeded) {
+      try {
         closeStatementResources();
+      } finally {
+        this.connection = null;
       }
-      this.connection = null;
     }
   }
 
@@ -486,15 +497,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public void cancel() throws SQLException {
     LOG.finer("Statement %s cancelled", this);
-    cancelInternal();
+    cancelRunningJobs();
+    closeCurrentResultSetWithoutCompletion();
+    this.arrowBatchWrapperBlockingQueue = null;
+    this.bigQueryFieldValueListWrapperBlockingQueue = null;
+    this.currentUpdateCount = -1;
+    this.currentJobIdIndex = -1;
     TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
   }
 
   /**
-   * Cancels running jobs and releases statement resources without recording telemetry. Used by
-   * {@link #close()}, where cancellation is housekeeping, not a user-initiated cancel.
+   * Cancels running jobs without recording telemetry or closing statement-level tracking. Shared by
+   * {@link #cancel()} and {@link #close()}.
    */
-  private void cancelInternal() throws SQLException {
+  private void cancelRunningJobs() throws SQLException {
     LOG.finer("Statement %s cancelled internally", this);
     synchronized (cancelLock) {
       this.isCanceled = true;
@@ -514,9 +530,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
       jobIds.clear();
     }
-    // If a ResultSet exists, then it will be closed as well, closing the
-    // ownedThreads
-    closeStatementResources();
   }
 
   @Override
@@ -556,16 +569,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private void closeStatementResources() throws SQLException {
     LOG.finer("++enter++");
-    if (this.currentResultSet != null) {
-      // If Statement has 'CloseOnCompletion' set, resultset might
-      // call into the same function; In order to avoid stack overflow
-      // we will cleanup resultset before calling into 'close'.
-      ResultSet tmp = this.currentResultSet;
-      this.currentResultSet = null;
-      tmp.close();
-    }
+    closeCurrentResultSetWithoutCompletion();
     this.resultSetTempTables.clear();
-    deleteAllTrackedTempTables();
+    deleteAllTrackedTempTables(true);
     this.batchQueries.clear();
     this.arrowBatchWrapperBlockingQueue = null;
     this.bigQueryFieldValueListWrapperBlockingQueue = null;
@@ -576,23 +582,36 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
-  private void cleanupPreviousExecution() throws SQLException {
-    if (this.currentResultSet != null) {
-      ResultSet previousResultSet = this.currentResultSet;
-      this.currentResultSet = null;
-      previousResultSet.close();
-    }
+  void cleanupPreviousExecution() throws SQLException {
+    closeCurrentResultSetWithoutCompletion();
     this.resultSetTempTables.clear();
-    deleteAllTrackedTempTables();
+    deleteAllTrackedTempTables(false);
+  }
+
+  private void closeCurrentResultSetWithoutCompletion() throws SQLException {
+    ResultSet resultSetToClose = this.currentResultSet;
+    if (resultSetToClose != null) {
+      // Clear currentResultSet before close() so onResultSetClosed does not trigger
+      // closeOnCompletion() when replacing, cancelling, or closing the Statement itself.
+      this.currentResultSet = null;
+      resultSetToClose.close();
+    }
+  }
+
+  private void closeCurrentResultSetAllowingCompletion() throws SQLException {
+    ResultSet resultSetToClose = this.currentResultSet;
+    if (resultSetToClose != null) {
+      // Keep currentResultSet assigned during close() so onResultSetClosed honors
+      // closeOnCompletion() when advancing past the final ResultSet via getMoreResults().
+      resultSetToClose.close();
+      this.currentResultSet = null;
+    }
   }
 
   void onResultSetClosed(ResultSet closedResultSet) {
-    if (closedResultSet == null) {
-      return;
-    }
     TableId tableToDelete = this.resultSetTempTables.remove(closedResultSet);
     if (tableToDelete != null) {
-      deleteTempTableBestEffort(tableToDelete);
+      deleteTempTableBestEffort(tableToDelete, true);
     }
     if (closedResultSet == this.currentResultSet
         && !this.isClosed
@@ -606,32 +625,60 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
-  private void deleteAllTrackedTempTables() {
-    if (this.trackedTempTables.isEmpty()) {
-      return;
-    }
-    for (TableId tableId : new ArrayList<>(this.trackedTempTables)) {
-      deleteTempTableBestEffort(tableId);
+  private void deleteAllTrackedTempTables(boolean terminalAttempt) {
+    for (TableId tableId : this.trackedTempTables) {
+      deleteTempTableBestEffort(tableId, terminalAttempt);
     }
   }
 
-  private void deleteTempTableBestEffort(TableId tableId) {
-    if (tableId == null || !this.trackedTempTables.remove(tableId) || this.bigQuery == null) {
+  private void deleteTempTableBestEffort(TableId tableId, boolean terminalAttempt) {
+    if (terminalAttempt) {
+      if (!this.trackedTempTables.remove(tableId)) {
+        return;
+      }
+    } else if (!this.trackedTempTables.contains(tableId)) {
       return;
     }
+    BigQueryConnection conn = this.connection;
+    if (conn != null && conn.isTempTableDeleteForbidden()) {
+      this.trackedTempTables.remove(tableId);
+      return;
+    }
+    boolean shouldUntrack = terminalAttempt;
     try {
       boolean deleted = this.bigQuery.delete(tableId);
+      if (deleted) {
+        shouldUntrack = true;
+      }
       LOG.fine("Deleted temporary destination table %s (deleted=%s).", tableId, deleted);
     } catch (RuntimeException ex) {
-      LOG.warning("Failed to delete temporary destination table %s: %s", tableId, ex.getMessage());
+      if (ex instanceof BigQueryException
+          && ((BigQueryException) ex).getCode() == HttpURLConnection.HTTP_FORBIDDEN) {
+        shouldUntrack = true;
+        if (conn == null || conn.markTempTableDeleteForbidden()) {
+          LOG.warning(
+              "Permission denied deleting temporary destination table %s; skipping further temp"
+                  + " table deletes on this connection: %s",
+              tableId, ex.getMessage());
+        }
+      } else {
+        LOG.warning(
+            "Failed to delete temporary destination table %s: %s", tableId, ex.getMessage());
+      }
+    } finally {
+      if (!terminalAttempt && shouldUntrack) {
+        this.trackedTempTables.remove(tableId);
+      }
     }
   }
 
   private void applyTempTableExpirationBestEffort(TableId tableId) {
-    if (tableId == null || this.bigQuery == null) {
+    BigQueryConnection conn = this.connection;
+    if (conn != null && conn.isTempTableUpdateForbidden()) {
       return;
     }
-    long expirationTimeMs = Instant.now().toEpochMilli() + getEffectiveDestinationExpirationMs();
+    long expirationTimeMs =
+        System.currentTimeMillis() + this.querySettings.getDestinationDatasetExpirationTime();
     try {
       TableInfo tableInfo =
           TableInfo.newBuilder(tableId, StandardTableDefinition.newBuilder().build())
@@ -641,17 +688,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       LOG.fine(
           "Set expirationTime=%d on temporary destination table %s.", expirationTimeMs, tableId);
     } catch (RuntimeException ex) {
-      LOG.warning(
-          "Failed to set expirationTime on temporary destination table %s: %s",
-          tableId, ex.getMessage());
+      if (ex instanceof BigQueryException
+          && ((BigQueryException) ex).getCode() == HttpURLConnection.HTTP_FORBIDDEN) {
+        if (conn == null || conn.markTempTableUpdateForbidden()) {
+          LOG.warning(
+              "Permission denied setting expirationTime on temporary destination table %s;"
+                  + " skipping further temp table expiration updates on this connection: %s",
+              tableId, ex.getMessage());
+        }
+      } else {
+        LOG.warning(
+            "Failed to set expirationTime on temporary destination table %s: %s",
+            tableId, ex.getMessage());
+      }
     }
-  }
-
-  private long getEffectiveDestinationExpirationMs() {
-    long configuredMs = this.querySettings.getDestinationDatasetExpirationTime();
-    return configuredMs > 0
-        ? configuredMs
-        : BigQueryJdbcUrlUtility.DEFAULT_DESTINATION_DATASET_EXPIRATION_TIME_VALUE;
   }
 
   private boolean isSingularResultSet() {
@@ -661,6 +711,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private String generateJobId() {
     return JDBC_JOB_PREFIX + UUID.randomUUID().toString();
+  }
+
+  private void cancelJobBestEffort(Job job) {
+    try {
+      job.cancel();
+    } catch (RuntimeException cancelEx) {
+      LOG.fine("Best-effort job cancellation failed: %s", cancelEx.getMessage());
+    }
   }
 
   private class ExecuteResult {
@@ -678,10 +736,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       throws InterruptedException, BigQueryException, BigQueryJdbcException {
     LOG.finer("++enter++");
     Job job = null;
-    // Location is not properly passed from the connection,
-    // so we need to explicitly set it;
-    // Do not set custom JobId here or it will disable jobless queries.
-    JobId jobId = JobId.newBuilder().setLocation(connection.getLocation()).build();
+    // Location is not properly passed from the connection, so we need to explicitly set it.
+    // Only populate a client JobId when destinationTable != null (which already disables jobless
+    // fast query), making jobs.insert retries idempotent for WRITE_EMPTY temp tables.
+    JobId.Builder jobIdBuilder = JobId.newBuilder().setLocation(connection.getLocation());
+    if (jobConfiguration.getDestinationTable() != null) {
+      jobIdBuilder.setJob(generateJobId());
+    }
+    JobId jobId = jobIdBuilder.build();
     Object result = bigQuery.queryWithTimeout(jobConfiguration, jobId, null);
     if (result instanceof TableResult) {
       TableResult tableResult = (TableResult) result;
@@ -698,17 +760,29 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     synchronized (cancelLock) {
       if (isCanceled) {
-        job.cancel();
+        cancelJobBestEffort(job);
         throw new BigQueryJdbcException("Query was cancelled.");
       }
       jobId = job.getJobId();
       jobIds.add(jobId);
     }
-    LOG.info("Query submitted with Job ID: " + job.getJobId().getJob());
-    TableResult tableResult =
-        job.getQueryResults(QueryResultsOption.pageSize(querySettings.getMaxResultPerPage()));
+    LOG.info("Query submitted with Job ID: %s", jobId != null ? jobId.getJob() : null);
+    TableResult tableResult;
+    try {
+      tableResult =
+          job.getQueryResults(QueryResultsOption.pageSize(querySettings.getMaxResultPerPage()));
+    } catch (InterruptedException | RuntimeException ex) {
+      cancelJobBestEffort(job);
+      throw ex;
+    } finally {
+      synchronized (cancelLock) {
+        jobIds.remove(jobId);
+      }
+    }
     synchronized (cancelLock) {
-      jobIds.remove(jobId);
+      if (isCanceled) {
+        throw new BigQueryJdbcException("Query was cancelled.");
+      }
     }
     saveSessionIdIfPresent(tableResult);
     if (jobId != null && bigQuery != null) {
@@ -760,6 +834,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @InternalApi
   void runQuery(String query, QueryJobConfiguration jobConfiguration) throws SQLException {
+    runQuery(query, jobConfiguration, TempTablePlan.NONE);
+  }
+
+  private void runQuery(
+      String query, QueryJobConfiguration jobConfiguration, TempTablePlan tempTablePlan)
+      throws SQLException {
     LOG.finer("++enter++");
     LOG.fine("Run Query started");
 
@@ -768,11 +848,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           jobConfiguration.toBuilder().setJobTimeoutMs(Long.valueOf(queryTimeout) * 1000).build();
     }
 
-    TableId executionTempTableId = this.pendingTempTableId;
-    boolean applyTempTableExpiration = this.pendingTempTableNeedsExpiration;
-    this.pendingTempTableId = null;
-    this.pendingTempTableNeedsExpiration = false;
+    TableId executionTempTableId = tempTablePlan.tempTableId;
+    boolean applyTempTableExpiration = tempTablePlan.needsTableExpiration;
     boolean tempTableRetainedForResultSet = false;
+    boolean jobTerminated = false;
 
     long startTime = System.currentTimeMillis();
     // Overwritten by the catch blocks below. The initial value covers failures that reach none of
@@ -782,6 +861,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     try {
       resetStatementFields();
       ExecuteResult executeResult = executeJob(jobConfiguration);
+      jobTerminated = true;
       if (executionTempTableId != null && applyTempTableExpiration) {
         applyTempTableExpirationBestEffort(executionTempTableId);
       }
@@ -830,7 +910,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
       TelemetryManager.recordStatementExecution(this.currentExecutionBuilder, durationMs);
       if (executionTempTableId != null && !tempTableRetainedForResultSet) {
-        deleteTempTableBestEffort(executionTempTableId);
+        deleteTempTableBestEffort(executionTempTableId, jobTerminated);
       }
     }
   }
@@ -850,42 +930,42 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return destinationDataset != null || destinationTable != null;
   }
 
-  QueryJobConfiguration.Builder setDestinationDatasetAndTableInJobConfig(
+  private TempTablePlan configureDestinationDatasetAndTable(
       QueryJobConfiguration.Builder jobConfigurationBuilder) throws BigQueryJdbcException {
     String configuredDestinationTable = this.querySettings.getDestinationTable();
     String destinationDataset = this.querySettings.getDestinationDataset();
-    if (destinationDataset != null || configuredDestinationTable != null) {
-      boolean needsTableExpiration = false;
-      if (destinationDataset != null) {
-        needsTableExpiration = ensureDatasetAndCheckNeedsTableExpiration(destinationDataset);
-      } else if (getUseLegacySql()) {
-        needsTableExpiration = ensureDatasetAndCheckNeedsTableExpiration(DEFAULT_DATASET_NAME);
-        destinationDataset = DEFAULT_DATASET_NAME;
-      }
-
-      boolean isGeneratedTempTable = (configuredDestinationTable == null);
-      String targetTableName =
-          isGeneratedTempTable ? getDefaultDestinationTable() : configuredDestinationTable;
-      TableId targetTableId = TableId.of(destinationDataset, targetTableName);
-      JobInfo.WriteDisposition writeDisposition;
-      if (isGeneratedTempTable) {
-        writeDisposition = JobInfo.WriteDisposition.WRITE_EMPTY;
-        this.pendingTempTableId = targetTableId;
-        this.pendingTempTableNeedsExpiration = needsTableExpiration;
-        this.trackedTempTables.add(targetTableId);
-      } else {
-        writeDisposition = JobInfo.WriteDisposition.WRITE_TRUNCATE;
-        this.pendingTempTableId = null;
-        this.pendingTempTableNeedsExpiration = false;
-      }
-
-      return jobConfigurationBuilder
-          .setAllowLargeResults(this.querySettings.getAllowLargeResults())
-          .setDestinationTable(targetTableId)
-          .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-          .setWriteDisposition(writeDisposition);
+    if (destinationDataset == null && configuredDestinationTable == null) {
+      return TempTablePlan.NONE;
     }
-    return jobConfigurationBuilder;
+
+    boolean needsTableExpiration = false;
+    if (destinationDataset != null) {
+      needsTableExpiration = ensureDatasetAndCheckNeedsTableExpiration(destinationDataset);
+    } else if (getUseLegacySql()) {
+      needsTableExpiration = ensureDatasetAndCheckNeedsTableExpiration(DEFAULT_DATASET_NAME);
+      destinationDataset = DEFAULT_DATASET_NAME;
+    }
+
+    boolean isGeneratedTempTable = (configuredDestinationTable == null);
+    String targetTableName =
+        isGeneratedTempTable ? getDefaultDestinationTable() : configuredDestinationTable;
+    TableId targetTableId = TableId.of(destinationDataset, targetTableName);
+    JobInfo.WriteDisposition writeDisposition =
+        isGeneratedTempTable
+            ? JobInfo.WriteDisposition.WRITE_EMPTY
+            : JobInfo.WriteDisposition.WRITE_TRUNCATE;
+
+    jobConfigurationBuilder
+        .setAllowLargeResults(this.querySettings.getAllowLargeResults())
+        .setDestinationTable(targetTableId)
+        .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+        .setWriteDisposition(writeDisposition);
+
+    if (isGeneratedTempTable) {
+      this.trackedTempTables.add(targetTableId);
+      return new TempTablePlan(targetTableId, needsTableExpiration);
+    }
+    return TempTablePlan.NONE;
   }
 
   Job getNextJob() {
@@ -1774,7 +1854,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private boolean ensureDatasetAndCheckNeedsTableExpiration(String datasetName)
       throws BigQueryJdbcException {
-    long effectiveExpirationMs = getEffectiveDestinationExpirationMs();
+    LOG.finer("++enter++");
+    long effectiveExpirationMs = this.querySettings.getDestinationDatasetExpirationTime();
     Dataset dataset;
     try {
       dataset = bigQuery.getDataset(DatasetId.of(datasetName));
@@ -1800,7 +1881,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           Collections.singletonList(Acl.of(new Acl.User(ownerEmail), Acl.Role.OWNER)));
     }
     try {
-      bigQuery.create(datasetInfoBuilder.build());
+      Dataset createdDataset = bigQuery.create(datasetInfoBuilder.build());
+      if (ownerEmail == null) {
+        restrictAutoCreatedDatasetAclToCreator(datasetName, createdDataset);
+      }
       return effectiveExpirationMs < MIN_DATASET_DEFAULT_TABLE_LIFETIME_MS;
     } catch (BigQueryException ex) {
       if (ex.getCode() == HttpURLConnection.HTTP_CONFLICT) {
@@ -1817,14 +1901,40 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
-  private static boolean needsPerTableExpiration(Dataset dataset, long effectiveExpirationMs) {
+  private void restrictAutoCreatedDatasetAclToCreator(String datasetName, Dataset createdDataset)
+      throws BigQueryJdbcException {
+    if (createdDataset == null || createdDataset.getAcl() == null) {
+      return;
+    }
+    List<Acl> creatorOnlyAcl = new ArrayList<>();
+    boolean hasGroupAcl = false;
+    for (Acl acl : createdDataset.getAcl()) {
+      if (acl.getEntity() instanceof Acl.Group) {
+        hasGroupAcl = true;
+      } else {
+        creatorOnlyAcl.add(acl);
+      }
+    }
+    if (!hasGroupAcl || creatorOnlyAcl.isEmpty()) {
+      return;
+    }
+    try {
+      this.bigQuery.update(DatasetInfo.newBuilder(datasetName).setAcl(creatorOnlyAcl).build());
+    } catch (BigQueryException ex) {
+      throw new BigQueryJdbcException(ex);
+    }
+  }
+
+  private boolean needsPerTableExpiration(Dataset dataset, long effectiveExpirationMs) {
     if (dataset == null) {
       return true;
     }
     Long defaultTableLifetime = dataset.getDefaultTableLifetime();
-    return defaultTableLifetime == null
-        || defaultTableLifetime <= 0
-        || defaultTableLifetime != effectiveExpirationMs;
+    if (defaultTableLifetime == null) {
+      return true;
+    }
+    return this.querySettings.hasExplicitDestinationDatasetExpirationTime()
+        && defaultTableLifetime != effectiveExpirationMs;
   }
 
   private String getDefaultDestinationTable() {
@@ -2026,13 +2136,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     try {
-      if (this.currentResultSet != null) {
-        this.currentResultSet.close();
-        this.currentResultSet = null;
-        // Statement can be closed if it was the last result
-        if (isClosed) {
-          return false;
-        }
+      closeCurrentResultSetAllowingCompletion();
+      // Statement can be closed if it was the last result
+      if (isClosed) {
+        return false;
       }
 
       Job currentJob = getNextJob();
