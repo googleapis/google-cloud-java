@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.jdbc;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.ResultSets;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
@@ -37,6 +38,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Timestamp;
+import java.time.Duration;
+import java.time.Period;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -97,6 +100,8 @@ class JdbcArray implements Array {
         // Convert Byte[], Short[], and Integer[] to Long[] for INT64 type
         // since Spanner only supports ARRAY<INT64>
         this.data = convertToLongArray(elements);
+      } else if (type == JdbcDataType.INTERVAL) {
+        this.data = convertToIntervalArray(elements);
       } else {
         this.data = java.lang.reflect.Array.newInstance(type.getJavaClass(), elements.length);
         try {
@@ -129,11 +134,44 @@ class JdbcArray implements Array {
     return longElements;
   }
 
+  private static Interval[] convertToIntervalArray(Object[] elements) throws SQLException {
+    Interval[] intervalElements = new Interval[elements.length];
+    for (int i = 0; i < elements.length; i++) {
+      if (elements[i] == null) {
+        intervalElements[i] = null;
+      } else if (elements[i] instanceof Duration) {
+        intervalElements[i] = JdbcTypeConverter.toInterval((Duration) elements[i]);
+      } else if (elements[i] instanceof Period) {
+        intervalElements[i] = JdbcTypeConverter.toInterval((Period) elements[i]);
+      } else if (elements[i] instanceof Interval) {
+        intervalElements[i] = (Interval) elements[i];
+      } else {
+        throw JdbcSqlExceptionFactory.of(
+            "Could not copy array elements. Make sure the supplied array only contains elements of class "
+                + Interval.class.getName()
+                + ", "
+                + Duration.class.getName()
+                + ", or "
+                + Period.class.getName(),
+            Code.UNKNOWN);
+      }
+    }
+    return intervalElements;
+  }
+
   private JdbcArray(JdbcDataType type, List<?> elements) {
     this.type = type;
     if (elements != null) {
-      this.data = java.lang.reflect.Array.newInstance(type.getJavaClass(), elements.size());
-      elements.toArray((Object[]) data);
+      if (type == JdbcDataType.INTERVAL) {
+        try {
+          this.data = convertToIntervalArray(elements.toArray());
+        } catch (SQLException e) {
+          throw new IllegalArgumentException(e.getMessage(), e);
+        }
+      } else {
+        this.data = java.lang.reflect.Array.newInstance(type.getJavaClass(), elements.size());
+        elements.toArray((Object[]) data);
+      }
     }
   }
 
@@ -280,6 +318,9 @@ class JdbcArray implements Array {
             break;
           case TIMESTAMP:
             builder = binder.to(JdbcTypeConverter.toGoogleTimestamp((Timestamp) value));
+            break;
+          case INTERVAL:
+            builder = binder.to((Interval) value);
             break;
           case ARRAY:
           case STRUCT:

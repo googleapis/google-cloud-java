@@ -27,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type.Code;
 import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
@@ -40,6 +41,8 @@ import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Duration;
+import java.time.Period;
 import java.util.Arrays;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -339,6 +342,74 @@ public class JdbcArrayTest {
       assertFalse(rs.next());
     }
 
+    Interval interval1 = Interval.ofMonths(1);
+    Interval interval2 = Interval.ofDays(10);
+    Interval interval3 = Interval.parseFromString("P1Y2M3DT4H5M6S");
+    array =
+        JdbcArray.createArray("INTERVAL", new Interval[] {interval1, interval2, interval3, null});
+    assertEquals(IntervalType.VENDOR_TYPE_NUMBER, array.getBaseType());
+    assertEquals(interval1, ((Interval[]) array.getArray(1, 1))[0]);
+    try (ResultSet rs = array.getResultSet()) {
+      assertTrue(rs.next());
+      assertEquals(interval1, ((JdbcResultSet) rs).getInterval(2));
+      assertEquals(interval1.toString(), rs.getString(2));
+      assertTrue(rs.next());
+      assertEquals(interval2, ((JdbcResultSet) rs).getInterval(2));
+      assertEquals(interval2.toString(), rs.getString(2));
+      assertTrue(rs.next());
+      assertEquals(interval3, ((JdbcResultSet) rs).getInterval(2));
+      assertEquals(interval3.toString(), rs.getString(2));
+      assertTrue(rs.next());
+      assertNull(((JdbcResultSet) rs).getInterval(2));
+      assertNull(rs.getString(2));
+      assertTrue(rs.wasNull());
+      assertFalse(rs.next());
+    }
+
+    array = JdbcArray.createArray("interval", new Interval[] {interval1, interval2});
+    assertEquals(IntervalType.VENDOR_TYPE_NUMBER, array.getBaseType());
+
+    // Duration[] and Period[] array creation (consistent with pgjdbc), including null as first
+    // element
+    array =
+        JdbcArray.createArray(
+            "INTERVAL", new Duration[] {null, Duration.ofHours(1), Duration.ofMinutes(30)});
+    assertEquals(IntervalType.VENDOR_TYPE_NUMBER, array.getBaseType());
+    assertTrue(array.getArray() instanceof Interval[]);
+    Interval[] durationIntervals = (Interval[]) array.getArray();
+    assertNull(durationIntervals[0]);
+    assertEquals(Interval.parseFromString("PT1H"), durationIntervals[1]);
+    assertEquals(Interval.parseFromString("PT30M"), durationIntervals[2]);
+
+    array =
+        JdbcArray.createArray(
+            "INTERVAL", new Period[] {null, Period.ofYears(1), Period.ofMonths(2)});
+    assertEquals(IntervalType.VENDOR_TYPE_NUMBER, array.getBaseType());
+    assertTrue(array.getArray() instanceof Interval[]);
+    Interval[] periodIntervals = (Interval[]) array.getArray();
+    assertNull(periodIntervals[0]);
+    assertEquals(Interval.parseFromString("P1Y"), periodIntervals[1]);
+    assertEquals(Interval.parseFromString("P2M"), periodIntervals[2]);
+
+    // List of Duration and Period with null as first element
+    array = JdbcArray.createArray(JdbcDataType.INTERVAL, Arrays.asList(null, Duration.ofHours(1)));
+    assertEquals(IntervalType.VENDOR_TYPE_NUMBER, array.getBaseType());
+    assertTrue(array.getArray() instanceof Interval[]);
+    durationIntervals = (Interval[]) array.getArray();
+    assertNull(durationIntervals[0]);
+    assertEquals(Interval.parseFromString("PT1H"), durationIntervals[1]);
+
+    array = JdbcArray.createArray(JdbcDataType.INTERVAL, Arrays.asList(null, Period.ofYears(2)));
+    assertEquals(IntervalType.VENDOR_TYPE_NUMBER, array.getBaseType());
+    assertTrue(array.getArray() instanceof Interval[]);
+    periodIntervals = (Interval[]) array.getArray();
+    assertNull(periodIntervals[0]);
+    assertEquals(Interval.parseFromString("P2Y"), periodIntervals[1]);
+
+    assertEquals(JdbcDataType.INTERVAL, JdbcDataType.getType(Interval.class));
+    assertEquals(JdbcDataType.INTERVAL, JdbcDataType.getType(Duration.class));
+    assertEquals(JdbcDataType.INTERVAL, JdbcDataType.getType(Period.class));
+
     array =
         JdbcArray.createArray(
             JdbcDataType.getType(Code.PROTO),
@@ -458,5 +529,18 @@ public class JdbcArrayTest {
       assertThat(e.getErrorCode())
           .isEqualTo(ErrorCode.INVALID_ARGUMENT.getGrpcStatusCode().value());
     }
+  }
+
+  @Test
+  public void testCreateIntervalArrayWithInvalidElements() {
+    SQLException sqlException =
+        assertThrows(
+            SQLException.class,
+            () -> JdbcArray.createArray("INTERVAL", new Object[] {"not-an-interval"}));
+    assertEquals(ErrorCode.UNKNOWN.getGrpcStatusCode().value(), sqlException.getErrorCode());
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> JdbcArray.createArray(JdbcDataType.INTERVAL, Arrays.asList("not-an-interval")));
   }
 }

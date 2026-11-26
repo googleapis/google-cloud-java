@@ -18,6 +18,7 @@ package com.google.cloud.spanner.jdbc;
 
 import static com.google.cloud.spanner.jdbc.JdbcTypeConverter.getMainTypeCode;
 
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.ResultSets;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
@@ -244,6 +245,8 @@ class JdbcResultSet extends AbstractJdbcResultSet {
         return isNull ? null : spanner.getPgJsonb(spannerIndex);
       case TIMESTAMP:
         return isNull ? null : spanner.getTimestamp(spannerIndex).toString();
+      case INTERVAL:
+        return isNull ? null : spanner.getInterval(spannerIndex).toString();
       case STRUCT:
       case ARRAY:
       default:
@@ -660,6 +663,50 @@ class JdbcResultSet extends AbstractJdbcResultSet {
     }
   }
 
+  public Interval getInterval(int columnIndex) throws SQLException {
+    checkClosedAndValidRow();
+    if (isNull(columnIndex)) {
+      return null;
+    }
+    int spannerIndex = columnIndex - 1;
+    Code type = getMainTypeCode(spanner.getColumnType(spannerIndex));
+    switch (type) {
+      case INTERVAL:
+        return spanner.getInterval(spannerIndex);
+      case STRING:
+        try {
+          return Interval.parseFromString(spanner.getString(spannerIndex));
+        } catch (Exception e) {
+          throw JdbcSqlExceptionFactory.of(
+              "The column does not contain a valid INTERVAL string",
+              com.google.rpc.Code.INVALID_ARGUMENT,
+              e);
+        }
+      case BYTES:
+      case DATE:
+      case TIMESTAMP:
+      case BOOL:
+      case FLOAT32:
+      case FLOAT64:
+      case INT64:
+      case NUMERIC:
+      case PG_NUMERIC:
+      case JSON:
+      case PG_JSONB:
+      case UUID:
+      case STRUCT:
+      case PROTO:
+      case ENUM:
+      case ARRAY:
+      default:
+        throw createInvalidToGetAs("interval", type);
+    }
+  }
+
+  public Interval getInterval(String columnLabel) throws SQLException {
+    return getInterval(findColumn(columnLabel));
+  }
+
   private InputStream getInputStream(String val, Charset charset) {
     if (val == null) return null;
     byte[] b = val.getBytes(charset);
@@ -835,6 +882,8 @@ class JdbcResultSet extends AbstractJdbcResultSet {
         return getTimestamp(columnIndex);
       case UUID:
         return getUUID(columnIndex);
+      case INTERVAL:
+        return getInterval(columnIndex);
       case ARRAY:
         return getArray(columnIndex);
       default:
