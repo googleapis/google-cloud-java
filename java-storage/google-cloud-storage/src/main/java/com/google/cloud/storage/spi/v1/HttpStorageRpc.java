@@ -188,6 +188,10 @@ public class HttpStorageRpc implements StorageRpc {
       storageBuilder.setRootUrl(host);
     }
     storage = storageBuilder.build();
+    // Batch parts skip decorateWithMetrics: they are serialized into the outer multipart request
+    // and never execute as their own HTTP exchange, so a metrics interceptor on them would
+    // increment gcp.storage.client.request.active without a matching response. The outer batch
+    // request (batchRequestInitializer) is instrumented instead.
     batchPartStorage =
         initializer == batchPartInitializer
             ? storage
