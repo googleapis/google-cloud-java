@@ -136,6 +136,23 @@ final class StorageErrorTypeMapper {
     return mapThrowable(t, 0);
   }
 
+  static boolean hasSocketTimeoutCause(@Nullable Throwable t) {
+    Throwable current = t;
+    int depth = 0;
+    while (current != null && depth < MAX_CAUSE_DEPTH) {
+      if (current instanceof SocketTimeoutException) {
+        return true;
+      }
+      Throwable next = current.getCause();
+      if (next == current) {
+        break;
+      }
+      current = next;
+      depth++;
+    }
+    return false;
+  }
+
   static @Nullable String extractRpcStatusCode(@Nullable Throwable t) {
     Throwable curr = t;
     int depth = 0;

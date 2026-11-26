@@ -739,6 +739,30 @@ public final class StorageErrorTypeMapperTest {
     assertThat(StorageErrorTypeMapper.extractHttpStatusCode(deep)).isNull();
   }
 
+  @Test
+  public void hasSocketTimeoutCause_detectsAndBoundsDepth() {
+    assertThat(StorageErrorTypeMapper.hasSocketTimeoutCause(null)).isFalse();
+    assertThat(StorageErrorTypeMapper.hasSocketTimeoutCause(new SocketTimeoutException("read")))
+        .isTrue();
+    assertThat(
+            StorageErrorTypeMapper.hasSocketTimeoutCause(
+                new StorageException(new IOException(new SocketTimeoutException("nested")))))
+        .isTrue();
+    assertThat(StorageErrorTypeMapper.hasSocketTimeoutCause(new ConnectException("refused")))
+        .isFalse();
+
+    Throwable deep = new SocketTimeoutException("too deep");
+    for (int i = 0; i < 25; i++) {
+      deep = new RuntimeException("wrap " + i, deep);
+    }
+    assertThat(StorageErrorTypeMapper.hasSocketTimeoutCause(deep)).isFalse();
+
+    RuntimeException cycleA = new RuntimeException("cycleA");
+    RuntimeException cycleB = new RuntimeException("cycleB", cycleA);
+    cycleA.initCause(cycleB);
+    assertThat(StorageErrorTypeMapper.hasSocketTimeoutCause(cycleA)).isFalse();
+  }
+
   private static WatchdogTimeoutException createWatchdogTimeoutException() throws Exception {
     Constructor<WatchdogTimeoutException> ctor =
         WatchdogTimeoutException.class.getDeclaredConstructor(String.class, boolean.class);

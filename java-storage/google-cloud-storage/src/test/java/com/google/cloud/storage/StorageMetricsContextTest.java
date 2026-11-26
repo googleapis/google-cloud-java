@@ -95,7 +95,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UncheckedIOException;
 import java.lang.reflect.Field;
+import java.net.ConnectException;
 import java.net.InetSocketAddress;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
@@ -114,6 +117,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import javax.net.ssl.SSLException;
 import org.jspecify.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Rule;
@@ -353,6 +357,94 @@ public final class StorageMetricsContextTest {
     StorageMetricsContext.notifyWatchdogTimeout();
     assertThat(outerCalls.get()).isEqualTo(1);
     assertThat(innerCalls.get()).isEqualTo(1);
+  }
+
+  @Test
+  public void recordAttemptFailure_httpStallDuration_recordsOnlyHttpReadSocketTimeout() {
+    AtomicLong nanos = new AtomicLong(1_000_000_000L);
+    ApiClock fakeClock =
+        new ApiClock() {
+          @Override
+          public long nanoTime() {
+            return nanos.get();
+          }
+
+          @Override
+          public long millisTime() {
+            return nanos.get() / 1_000_000L;
+          }
+        };
+    StorageClientMetrics httpDebugMetrics =
+        StorageOptions.http()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    StorageClientMetrics httpStandardMetrics =
+        StorageOptions.http()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+    StorageClientMetrics grpcDebugMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(provider)
+            .build()
+            .getStorageClientMetrics();
+
+    // Negative cases: non-timeout errors, non-ReadObject op, gRPC transport, and debug disabled.
+    Attributes httpBase = httpDebugMetrics.createContext("ReadObject").getBaseAttributes();
+    StorageMetricsContext httpReadCtx =
+        StorageMetricsContext.create(httpDebugMetrics, "ReadObject", httpBase, fakeClock);
+    httpReadCtx.recordAttemptFailure(new ConnectException("refused"));
+    httpReadCtx.recordAttemptFailure(new UnknownHostException("dns"));
+    httpReadCtx.recordAttemptFailure(new SSLException("tls"));
+    httpReadCtx.recordAttemptFailure(new StorageException(503, "unavailable"));
+
+    StorageMetricsContext httpBucketCtx =
+        StorageMetricsContext.create(httpDebugMetrics, "GetBucket", httpBase, fakeClock);
+    httpBucketCtx.recordAttemptFailure(new SocketTimeoutException("bucket timeout"));
+
+    StorageMetricsContext grpcReadCtx =
+        StorageMetricsContext.create(
+            grpcDebugMetrics,
+            "ReadObject",
+            grpcDebugMetrics.createContext("ReadObject").getBaseAttributes(),
+            fakeClock);
+    grpcReadCtx.recordAttemptFailure(new SocketTimeoutException("grpc socket timeout"));
+
+    StorageMetricsContext stdReadCtx =
+        StorageMetricsContext.create(httpStandardMetrics, "ReadObject", httpBase, fakeClock);
+    stdReadCtx.recordAttemptFailure(new SocketTimeoutException("debug off timeout"));
+
+    assertThat(
+            findMetric(
+                reader.collectAllMetrics(),
+                StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION))
+        .isNull();
+
+    // Positive case: incrementAttempts resets per-attempt activity baseline.
+    nanos.addAndGet(5_000_000_000L);
+    httpReadCtx.incrementAttempts();
+    nanos.addAndGet(1_500_000_000L);
+    httpReadCtx.recordAttemptFailure(
+        new StorageException(new SocketTimeoutException("read timed out")));
+
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            reader.collectAllMetrics(),
+            StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isWithin(0.0001).of(1.5);
   }
 
   @Test

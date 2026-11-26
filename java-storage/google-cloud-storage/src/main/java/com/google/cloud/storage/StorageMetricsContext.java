@@ -47,6 +47,8 @@ final class StorageMetricsContext {
   private static final ThreadLocal<Runnable> WATCHDOG_TIMEOUT_CALLBACK = new ThreadLocal<>();
   private static final long HTTP_STATUS_OK = 200L;
   private static final long HTTP_STATUS_UNSET = 0L;
+  private static final String READ_OBJECT_OPERATION = "ReadObject";
+  private static final String READ_OBJECT_RPC_METHOD = "google.storage.v2.Storage/ReadObject";
 
   @Nullable private final StorageClientMetrics metrics;
   private final String operationName;
@@ -59,6 +61,7 @@ final class StorageMetricsContext {
   private final AtomicInteger attemptCount = new AtomicInteger(0);
   private final AtomicLong requestBytes = new AtomicLong(0L);
   private final AtomicLong responseBytes = new AtomicLong(0L);
+  private final AtomicLong lastActivityNanos;
   @Nullable private volatile String networkPath;
 
   private StorageMetricsContext(
@@ -74,6 +77,7 @@ final class StorageMetricsContext {
     this.baseAttributes = requireNonNull(baseAttributes, "baseAttributes cannot be null");
     this.clock = requireNonNull(clock, "clock cannot be null");
     this.startTimeNanos = startTimeNanos;
+    this.lastActivityNanos = new AtomicLong(startTimeNanos);
     this.otelContext = requireNonNull(otelContext, "otelContext cannot be null");
     this.recordOperationOnRetrierExit = recordOperationOnRetrierExit;
   }
@@ -282,7 +286,7 @@ final class StorageMetricsContext {
       return;
     }
     long respBytes = responseBytes.get();
-    if ("ReadObject".equals(operationName) && respBytes >= 0) {
+    if (READ_OBJECT_OPERATION.equals(operationName) && respBytes >= 0) {
       metrics.getResponseBodySize().record(respBytes, bodySizeAttributes, otelContext);
     }
   }
@@ -334,6 +338,7 @@ final class StorageMetricsContext {
       String networkPath = resolveNetworkPath();
       Attributes attemptBase = buildAttemptBaseAttributes(metrics);
       recordErrorCounter(metrics, attemptBase, errorType, networkPath);
+      recordHttpReadStallIfTimeout(metrics, e);
       if (metrics.getAttempts() != null) {
         AttributesBuilder builder =
             attemptBase.toBuilder()
@@ -369,6 +374,28 @@ final class StorageMetricsContext {
         operationName,
         resolveNetworkPath(),
         StorageErrorTypeMapper.mapThrowable(priorError));
+  }
+
+  void recordHttpReadStallIfTimeout(Throwable e) {
+    recordHttpReadStallIfTimeout(this.metrics, e);
+  }
+
+  private void recordHttpReadStallIfTimeout(
+      @Nullable StorageClientMetrics metrics, @Nullable Throwable e) {
+    if (metrics == null
+        || metrics.getStallDuration() == null
+        || !READ_OBJECT_OPERATION.equals(operationName)
+        || !"http".equals(baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        || !StorageErrorTypeMapper.hasSocketTimeoutCause(e)) {
+      return;
+    }
+    double stallSeconds = (clock.nanoTime() - lastActivityNanos.get()) / 1_000_000_000.0;
+    metrics.recordStallDuration(
+        otelContext, stallSeconds, operationName, READ_OBJECT_RPC_METHOD, resolveNetworkPath());
+  }
+
+  void markActivity() {
+    lastActivityNanos.set(clock.nanoTime());
   }
 
   private void recordErrorCounter(
@@ -483,6 +510,7 @@ final class StorageMetricsContext {
   }
 
   int incrementAttempts() {
+    lastActivityNanos.set(clock.nanoTime());
     return attemptCount.incrementAndGet();
   }
 
