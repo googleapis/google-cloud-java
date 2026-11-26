@@ -722,4 +722,26 @@ public class OpaqueUtilTest {
       assertTrue(exception.getMessage().contains("blindScalar"));
     }
   }
+
+  @Test
+  public void testOversizedScalarReducedModuloOrder() throws Exception {
+    X9ECParameters params = CustomNamedCurves.getByName(OpaqueUtil.CURVE_NAME);
+    byte[] validPoint = params.getG().getEncoded(true);
+    byte[] password = "password1234".getBytes(StandardCharsets.UTF_8);
+
+    // 2^65536 has bitLength >= 65536 (which exceeds BouncyCastle WNafUtil's limit if unreduced)
+    // and is non-zero modulo the prime curve order.
+    byte[] oversizedScalar = new byte[8193];
+    oversizedScalar[0] = 1;
+    byte[] reducedScalar = new BigInteger(1, oversizedScalar).mod(params.getN()).toByteArray();
+
+    assertArrayEquals(
+        OpaqueUtil.diffieHellman(reducedScalar, validPoint),
+        OpaqueUtil.diffieHellman(oversizedScalar, validPoint));
+    assertArrayEquals(
+        OpaqueUtil.blind(password, reducedScalar), OpaqueUtil.blind(password, oversizedScalar));
+    assertArrayEquals(
+        OpaqueUtil.finalize(reducedScalar, validPoint),
+        OpaqueUtil.finalize(oversizedScalar, validPoint));
+  }
 }

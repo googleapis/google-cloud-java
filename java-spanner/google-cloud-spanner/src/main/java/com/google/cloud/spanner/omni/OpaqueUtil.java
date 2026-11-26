@@ -272,19 +272,20 @@ public class OpaqueUtil {
 
   /**
    * Validates that a big-endian scalar byte array is non-null, non-empty, and non-zero modulo the
-   * curve order so scalar inversion and multiplication cannot fail or collapse to infinity.
+   * curve order, returning the reduced value in {@code [1, order - 1]} so scalar inversion and
+   * BouncyCastle multiplication cannot fail or collapse to infinity.
    */
   private static BigInteger validateNonZeroScalar(
       byte[] scalarBytes, BigInteger order, String label) throws GeneralSecurityException {
     if (scalarBytes == null || scalarBytes.length == 0) {
       throw new GeneralSecurityException("Invalid " + label + ": scalar must not be null or empty");
     }
-    BigInteger scalar = new BigInteger(1, scalarBytes);
-    if (scalar.mod(order).equals(BigInteger.ZERO)) {
+    BigInteger reduced = new BigInteger(1, scalarBytes).mod(order);
+    if (reduced.equals(BigInteger.ZERO)) {
       throw new GeneralSecurityException(
           "Invalid " + label + ": scalar must be non-zero modulo curve order");
     }
-    return scalar;
+    return reduced;
   }
 
   /**
