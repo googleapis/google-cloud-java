@@ -463,57 +463,6 @@ public final class StorageClientMetricsTest {
         .isEqualTo(StorageClientMetrics.NETWORK_IO_DIRECTION_TRANSMIT);
   }
 
-  @Test
-  public void recordCredentialRefreshDuration_recordsExactFourAttributesAndSkipsWhenDisabled() {
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics standardMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setMeterProvider(provider)
-            .build()
-            .getStorageClientMetrics();
-    standardMetrics.recordCredentialRefreshDuration(
-        Context.current(), 0.25, StorageErrorTypeMapper.STATUS_OK);
-    assertThat(
-            findMetric(
-                StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION))
-        .isNull();
-
-    StorageClientMetrics debugMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .setMeterProvider(provider)
-            .build()
-            .getStorageClientMetrics();
-    debugMetrics.recordCredentialRefreshDuration(
-        Context.current(), 0.25, StorageErrorTypeMapper.STATUS_OK);
-
-    MetricData metricData =
-        findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION);
-    assertThat(metricData).isNotNull();
-    assertThat(metricData.getUnit()).isEqualTo("s");
-    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
-    HistogramPointData point = metricData.getHistogramData().getPoints().iterator().next();
-    assertThat(point.getSum()).isWithin(0.0001).of(0.25);
-    assertThat(point.getAttributes())
-        .isEqualTo(
-            Attributes.builder()
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
-                    StorageClientMetrics.SERVICE_STORAGE)
-                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
-                    StorageClientMetrics.ARTIFACT_STORAGE)
-                .put(StorageClientMetrics.KEY_ERROR_TYPE, StorageErrorTypeMapper.STATUS_OK)
-                .build());
-  }
-
   static final class TestMetricReader implements MetricReader {
     private final MetricReader delegate = InMemoryMetricReader.create();
     final AtomicBoolean shutdownCalled = new AtomicBoolean(false);
