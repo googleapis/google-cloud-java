@@ -34,6 +34,7 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -116,6 +117,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               private boolean receivedServerHeaders;
               private boolean headerHasUploadId;
+              private long lastActivityNanos = startTimeNanos;
 
               @Override
               public void onHeaders(Metadata headers) {
@@ -131,10 +133,12 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
               @Override
               public void onMessage(@Nullable RespT message) {
+                long now = clock.nanoTime();
+                lastActivityNanos = now;
                 // The first response message from the server (including metadata-only
                 // responses for 0-byte objects) marks Time To First Byte (TTFB).
                 if (ttfbRecorded.compareAndSet(false, true)) {
-                  double ttfbSeconds = (clock.nanoTime() - ttfbStartNanos.get()) / 1_000_000_000.0;
+                  double ttfbSeconds = (now - ttfbStartNanos.get()) / 1_000_000_000.0;
                   String networkPath = detectNetworkPath(getAttributes());
                   metrics.recordTtfb(otelContext, operationName, ttfbSeconds, networkPath);
                 }
@@ -143,14 +147,56 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
               @Override
               public void onClose(Status status, Metadata trailers) {
-                try {
-                  double durationSeconds = (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0;
-                  String networkPath = detectNetworkPath(getAttributes());
-                  if (metricsCtx != null) {
-                    metricsCtx.setNetworkPath(networkPath);
+                long endTimeNanos = clock.nanoTime();
+                String networkPath = detectNetworkPath(getAttributes());
+                if (metricsCtx != null) {
+                  metricsCtx.setNetworkPath(networkPath);
+                }
+                if (status.getCode() != Status.Code.CANCELLED) {
+                  try {
+                    recordOnCloseMetrics(
+                        /* watchdogTimedOut= */ false, endTimeNanos, networkPath, status, trailers);
+                  } finally {
+                    super.onClose(status, trailers);
                   }
+                  return;
+                }
+                boolean[] recordedOnClose = {false};
+                Runnable onWatchdogTimeout =
+                    () -> {
+                      if (!recordedOnClose[0]) {
+                        recordedOnClose[0] = true;
+                        recordOnCloseMetrics(
+                            /* watchdogTimedOut= */ true,
+                            endTimeNanos,
+                            networkPath,
+                            status,
+                            trailers);
+                      }
+                    };
+                try (Scope ignore = StorageMetricsContext.enterWatchdogScope(onWatchdogTimeout)) {
+                  super.onClose(status, trailers);
+                } finally {
+                  if (!recordedOnClose[0]) {
+                    recordOnCloseMetrics(
+                        /* watchdogTimedOut= */ false, endTimeNanos, networkPath, status, trailers);
+                  }
+                }
+              }
+
+              private void recordOnCloseMetrics(
+                  boolean watchdogTimedOut,
+                  long endTimeNanos,
+                  String networkPath,
+                  Status status,
+                  Metadata trailers) {
+                try {
+                  double durationSeconds = (endTimeNanos - startTimeNanos) / 1_000_000_000.0;
                   String statusCode = status.getCode().name();
-                  String errorType = StorageErrorTypeMapper.mapGrpcStatus(status);
+                  String errorType =
+                      watchdogTimedOut
+                          ? StorageErrorTypeMapper.STATUS_TIMEOUT
+                          : StorageErrorTypeMapper.mapGrpcStatus(status);
 
                   metrics.recordRpcCallDuration(
                       otelContext, durationSeconds, rpcMethod, statusCode, networkPath, errorType);
@@ -177,9 +223,13 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                         networkIoTracerFactory.getOutboundBytes(),
                         networkIoTracerFactory.getInboundBytes());
                   }
+                  if (watchdogTimedOut) {
+                    double stallSeconds = (endTimeNanos - lastActivityNanos) / 1_000_000_000.0;
+                    metrics.recordStallDuration(
+                        otelContext, stallSeconds, operationName, rpcMethod, networkPath);
+                  }
                 } finally {
                   releaseActive();
-                  super.onClose(status, trailers);
                 }
               }
             },
