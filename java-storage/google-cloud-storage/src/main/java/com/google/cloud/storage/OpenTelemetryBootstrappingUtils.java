@@ -32,7 +32,6 @@ import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
-import io.opentelemetry.api.internal.StringUtils;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterProvider;
@@ -65,7 +64,6 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiConsumer;
-import java.util.function.Supplier;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -83,9 +81,6 @@ final class OpenTelemetryBootstrappingUtils {
 
   private static final String C2P_PREFIX = "google-c2p:///";
   private static final String C2P_EXPERIMENTAL_PREFIX = "google-c2p-experimental:///";
-  private static final String DIRECT_PATH_INTERCONNECT_HOST = "storage-direct.googleapis.com";
-  private static final String DIRECT_PATH_INTERCONNECT_PREPROD_HOST =
-      "storage-preprod-direct.sandbox.googleapis.com";
 
   private static final Collection<String> METRICS_TO_ENABLE =
       ImmutableList.of(
@@ -117,17 +112,46 @@ final class OpenTelemetryBootstrappingUtils {
   @NonNull
   static ChannelConfigurator enableGrpcMetrics(
       @Nullable ChannelConfigurator channelConfigurator,
-      String endpoint,
+      @Nullable String endpoint,
       @Nullable String projectId,
-      String universeDomain,
+      @Nullable String universeDomain,
+      boolean shouldSuppressExceptions) {
+    return bootstrapGrpcMetrics(
+            channelConfigurator, endpoint, projectId, universeDomain, shouldSuppressExceptions)
+        .getChannelConfigurator();
+  }
+
+  static GrpcMetricsBootstrapResult bootstrapGrpcMetrics(
+      @Nullable ChannelConfigurator channelConfigurator,
+      @Nullable String endpoint,
+      @Nullable String projectId,
+      @Nullable String universeDomain,
       boolean shouldSuppressExceptions) {
     GCPResourceProvider resourceProvider = new GCPResourceProvider();
     Attributes detectedAttributes = resourceProvider.getAttributes();
+    return bootstrapGrpcMetrics(
+        channelConfigurator,
+        endpoint,
+        projectId,
+        universeDomain,
+        shouldSuppressExceptions,
+        detectedAttributes);
+  }
 
+  @VisibleForTesting
+  static GrpcMetricsBootstrapResult bootstrapGrpcMetrics(
+      @Nullable ChannelConfigurator channelConfigurator,
+      @Nullable String endpoint,
+      @Nullable String projectId,
+      @Nullable String universeDomain,
+      boolean shouldSuppressExceptions,
+      Attributes detectedAttributes) {
     String projectIdToUse =
         resolveProjectIdForMetrics(detectedAttributes, projectId, "gRPC client metrics");
     if (projectIdToUse == null) {
-      return channelConfigurator != null ? channelConfigurator : ChannelConfigurator.identity();
+      ChannelConfigurator fallback =
+          channelConfigurator != null ? channelConfigurator : ChannelConfigurator.identity();
+      return new GrpcMetricsBootstrapResult(fallback, null);
     }
 
     String metricServiceEndpoint = getCloudMonitoringEndpoint(endpoint, universeDomain);
@@ -148,28 +172,24 @@ final class OpenTelemetryBootstrappingUtils {
           grpcOpenTelemetry.configureChannelBuilder(b);
           return b;
         };
-    return new GrpcMetricsChannelConfigurator(
-        otelConfigurator.andThen(channelConfigurator), provider);
+    return new GrpcMetricsBootstrapResult(otelConfigurator.andThen(channelConfigurator), provider);
   }
 
-  @SuppressWarnings("rawtypes") // ManagedChannelBuilder
-  static final class GrpcMetricsChannelConfigurator
-      implements ChannelConfigurator, Supplier<MeterProvider> {
-    private final ChannelConfigurator delegate;
-    private final MeterProvider meterProvider;
+  static final class GrpcMetricsBootstrapResult {
+    private final ChannelConfigurator channelConfigurator;
+    @Nullable private final MeterProvider meterProvider;
 
-    GrpcMetricsChannelConfigurator(ChannelConfigurator delegate, MeterProvider meterProvider) {
-      this.delegate = delegate;
+    GrpcMetricsBootstrapResult(
+        ChannelConfigurator channelConfigurator, @Nullable MeterProvider meterProvider) {
+      this.channelConfigurator = channelConfigurator;
       this.meterProvider = meterProvider;
     }
 
-    @Override
-    public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
-      return delegate.apply(input);
+    ChannelConfigurator getChannelConfigurator() {
+      return channelConfigurator;
     }
 
-    @Override
-    public MeterProvider get() {
+    @Nullable MeterProvider getMeterProvider() {
       return meterProvider;
     }
   }
@@ -221,52 +241,27 @@ final class OpenTelemetryBootstrappingUtils {
     String host = parsed != null ? parsed.getHost() : extractHostFallback(endpoint);
     int port = parsed != null ? parsed.getPortOrDefault(443) : 443;
 
+    String domain = universeDomain != null ? universeDomain : "googleapis.com";
     if (universeDomain != null
         && (host.equals("storage." + universeDomain)
             || host.equals("storage-direct." + universeDomain))) {
       metricServiceEndpoint = "monitoring." + universeDomain;
-    } else if (!host.equals("storage.googleapis.com") && !isDirectPathInterconnectHost(host)) {
-      String canonicalEndpoint = "storage.googleapis.com";
-      String privateEndpoint = "private.googleapis.com";
-      String restrictedEndpoint = "restricted.googleapis.com";
-      if (universeDomain != null) {
-        canonicalEndpoint = "storage." + universeDomain;
-        privateEndpoint = "private." + universeDomain;
-        restrictedEndpoint = "restricted." + universeDomain;
-      }
-      final String resolvedHost = host;
-      String match =
-          ImmutableList.of(canonicalEndpoint, privateEndpoint, restrictedEndpoint).stream()
-              .filter(resolvedHost::contains)
-              .collect(Collectors.joining());
-      if (!StringUtils.isNullOrEmpty(match)) {
-        metricServiceEndpoint = match;
-      }
+    } else if (host.equals("private." + domain) || host.equals("restricted." + domain)) {
+      metricServiceEndpoint = host;
     }
     return metricServiceEndpoint + ":" + port;
   }
 
-  private static boolean isDirectPathInterconnectHost(String host) {
-    return DIRECT_PATH_INTERCONNECT_HOST.equals(host)
-        || DIRECT_PATH_INTERCONNECT_PREPROD_HOST.equals(host);
+  private static String extractHostFallback(String endpoint) {
+    String hostPort = stripSchemeAndSuffix(endpoint);
+    int colon = hostPort.lastIndexOf(':');
+    return colon >= 0 ? hostPort.substring(0, colon) : hostPort;
   }
 
-  private static String extractHostFallback(String endpoint) {
+  private static String stripSchemeAndSuffix(String endpoint) {
     String s = stripEndpointScheme(endpoint.trim());
-    int end = indexOfPathQueryOrFragment(s);
-    String hostPort = end >= 0 ? s.substring(0, end) : s;
-    int colon = hostPort.lastIndexOf(':');
-    if (colon >= 0) {
-      int closeBracket = hostPort.indexOf(']');
-      if (closeBracket >= 0 && colon < closeBracket) {
-        return hostPort;
-      }
-      if (closeBracket < 0 && hostPort.indexOf(':') != colon) {
-        return hostPort;
-      }
-      return hostPort.substring(0, colon);
-    }
-    return hostPort;
+    int endIdx = indexOfPathQueryOrFragment(s);
+    return endIdx >= 0 ? s.substring(0, endIdx) : s;
   }
 
   private static String stripEndpointScheme(String s) {
@@ -300,11 +295,7 @@ final class OpenTelemetryBootstrappingUtils {
     if (host == null || host.trim().isEmpty()) {
       return null;
     }
-    String s = stripEndpointScheme(host.trim());
-    int endIdx = indexOfPathQueryOrFragment(s);
-    if (endIdx >= 0) {
-      s = s.substring(0, endIdx);
-    }
+    String s = stripSchemeAndSuffix(host);
     if (s.isEmpty()) {
       return null;
     }
@@ -662,6 +653,7 @@ final class OpenTelemetryBootstrappingUtils {
     return providerBuilder.build();
   }
 
+  @VisibleForTesting
   static SdkMeterProviderBuilder registerGrpcChannelViews(SdkMeterProviderBuilder providerBuilder) {
     addHistogramView(
         providerBuilder,

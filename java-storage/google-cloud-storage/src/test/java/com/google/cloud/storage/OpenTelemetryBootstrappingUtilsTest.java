@@ -23,11 +23,10 @@ import static org.junit.Assume.assumeFalse;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
-import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.GrpcMetricsChannelConfigurator;
+import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.GrpcMetricsBootstrapResult;
 import com.google.common.collect.ImmutableList;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
@@ -40,7 +39,6 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import org.junit.Test;
 
@@ -332,6 +330,41 @@ public final class OpenTelemetryBootstrappingUtilsTest {
               null,
               "monitoring.googleapis.com:443"
             },
+            new String[] {
+              "google-c2p:///storage-direct.googleapis.com:8443?force-xds",
+              null,
+              "monitoring.googleapis.com:8443"
+            },
+            new String[] {
+              "google-c2p-experimental:///storage-preprod-direct.sandbox.googleapis.com:8443?force-xds#frag",
+              null,
+              "monitoring.googleapis.com:8443"
+            },
+            new String[] {
+              "google-c2p-experimental:///storage-direct.apis-tpclp.goog:8443#frag",
+              "apis-tpclp.goog",
+              "monitoring.apis-tpclp.goog:8443"
+            },
+            new String[] {"storage.googleapis.com.:443", null, "monitoring.googleapis.com:443"},
+            new String[] {
+              "private.googleapis.com.example.com:443", null, "monitoring.googleapis.com:443"
+            },
+            new String[] {"private.googleapis.com:443", null, "private.googleapis.com:443"},
+            new String[] {"restricted.googleapis.com:443", null, "restricted.googleapis.com:443"},
+            new String[] {
+              "private.my-universe.com:443", "my-universe.com", "private.my-universe.com:443"
+            },
+            new String[] {
+              "restricted.my-universe.com:443", "my-universe.com", "restricted.my-universe.com:443"
+            },
+            new String[] {
+              "storage.my-universe.com:99999", "my-universe.com", "monitoring.my-universe.com:443"
+            },
+            new String[] {
+              "storage-direct.my-universe.com:99999",
+              "my-universe.com",
+              "monitoring.my-universe.com:443"
+            },
             new String[] {null, null, "monitoring.googleapis.com:443"},
             new String[] {"", null, "monitoring.googleapis.com:443"});
     for (String[] c : cases) {
@@ -398,21 +431,46 @@ public final class OpenTelemetryBootstrappingUtilsTest {
     }
   }
 
+  @Test
+  public void bootstrapGrpcMetrics_withoutProjectId_returnsFallbackAndNullMeterProvider() {
+    ChannelConfigurator custom = b -> b;
+    GrpcMetricsBootstrapResult withCustom =
+        OpenTelemetryBootstrappingUtils.bootstrapGrpcMetrics(
+            custom, "storage.googleapis.com:443", null, null, true, Attributes.empty());
+    assertThat(withCustom.getChannelConfigurator()).isSameInstanceAs(custom);
+    assertThat(withCustom.getMeterProvider()).isNull();
+
+    GrpcMetricsBootstrapResult withNullConfigurator =
+        OpenTelemetryBootstrappingUtils.bootstrapGrpcMetrics(
+            null, "storage.googleapis.com:443", null, null, true, Attributes.empty());
+    assertThat(withNullConfigurator.getChannelConfigurator())
+        .isSameInstanceAs(ChannelConfigurator.identity());
+    assertThat(withNullConfigurator.getMeterProvider()).isNull();
+  }
+
   @SuppressWarnings("rawtypes") // ManagedChannelBuilder
   @Test
-  public void grpcMetricsChannelConfigurator_delegatesAndSuppliesMeterProvider() {
-    ManagedChannelBuilder b1 = mock(ManagedChannelBuilder.class, "b1");
-    ManagedChannelBuilder b2 = mock(ManagedChannelBuilder.class, "b2");
-    ChannelConfigurator delegate =
+  public void bootstrapGrpcMetrics_withProjectId_composesConfiguratorAndExposesMeterProvider() {
+    AtomicBoolean callerInvoked = new AtomicBoolean(false);
+    ChannelConfigurator callerConfigurator =
         b -> {
-          assertThat(b).isSameInstanceAs(b1);
-          return b2;
+          callerInvoked.set(true);
+          return b;
         };
-    try (SdkMeterProvider meterProvider = SdkMeterProvider.builder().build()) {
-      GrpcMetricsChannelConfigurator configurator =
-          new GrpcMetricsChannelConfigurator(delegate, meterProvider);
-      assertThat(configurator.apply(b1)).isSameInstanceAs(b2);
-      assertThat(((Supplier<MeterProvider>) configurator).get()).isSameInstanceAs(meterProvider);
+    GrpcMetricsBootstrapResult result =
+        OpenTelemetryBootstrappingUtils.bootstrapGrpcMetrics(
+            callerConfigurator,
+            "storage-direct.googleapis.com:443",
+            "test-project",
+            "googleapis.com",
+            true,
+            Attributes.empty());
+    assertThat(result.getMeterProvider()).isInstanceOf(SdkMeterProvider.class);
+    try (SdkMeterProvider provider = (SdkMeterProvider) result.getMeterProvider()) {
+      assertThat(provider.toString()).contains("project_id=\"test-project\"");
+      ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forTarget("localhost:8080");
+      assertThat(result.getChannelConfigurator().apply(builder)).isSameInstanceAs(builder);
+      assertThat(callerInvoked.get()).isTrue();
     }
   }
 
@@ -489,14 +547,10 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
   @Test
   public void createChannelCreationLatencyRecorder_nullMeterProvider_isNoop() {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    try (SdkMeterProvider unusedProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build()) {
-      BiConsumer<String, Duration> noopRecorder =
-          OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(null);
-      noopRecorder.accept("CloudPath", Duration.ofMillis(10));
-      assertThat(metricReader.collectAllMetrics()).isEmpty();
-    }
+    BiConsumer<String, Duration> noopRecorder =
+        OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(null);
+    assertThat(noopRecorder).isNotNull();
+    noopRecorder.accept("CloudPath", Duration.ofMillis(10));
   }
 
   private static int findBucketIndex(List<Double> boundaries, double value) {
