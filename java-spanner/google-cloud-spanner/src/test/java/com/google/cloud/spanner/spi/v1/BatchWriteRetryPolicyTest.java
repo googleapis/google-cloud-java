@@ -27,11 +27,13 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.cloud.spanner.spi.v1.BatchWriteRetryPolicy.Action;
 import com.google.cloud.spanner.spi.v1.BatchWriteRetryPolicy.RetryDecision;
 import com.google.common.collect.ImmutableSet;
+import com.google.protobuf.Any;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
 import io.grpc.Context;
@@ -89,7 +91,7 @@ public class BatchWriteRetryPolicyTest {
     }
   }
 
-  private static final class FakeClock implements ApiClock {
+  private static final class FakeClock extends Deadline.Ticker implements ApiClock {
     private final AtomicLong nanos = new AtomicLong(1_000_000_000L);
 
     @Override
@@ -115,12 +117,16 @@ public class BatchWriteRetryPolicyTest {
 
     assertTrue(policy.isRetryable(apiException(Status.Code.UNAVAILABLE, "transient")));
     assertTrue(policy.isRetryable(apiException(Status.Code.RESOURCE_EXHAUSTED, "throttled")));
+    assertTrue(policy.isRetryable(Status.UNAVAILABLE.withDescription("grpc").asRuntimeException()));
+    assertTrue(policy.isRetryable(Status.RESOURCE_EXHAUSTED.withDescription("grpc").asException()));
     assertTrue(
         policy.isRetryable(
             apiException(Status.Code.INTERNAL, "HTTP/2 error code: INTERNAL_ERROR")));
     assertTrue(policy.isRetryable(watchdogTimeout(true)));
 
     assertFalse(policy.isRetryable(apiException(Status.Code.INVALID_ARGUMENT, "bad")));
+    assertFalse(policy.isRetryable(Status.INVALID_ARGUMENT.asRuntimeException()));
+    assertFalse(policy.isRetryable(Status.PERMISSION_DENIED.asException()));
     assertFalse(policy.isRetryable(apiException(Status.Code.INTERNAL, "unexpected bug")));
     assertFalse(policy.isRetryable(watchdogTimeout(false)));
 
@@ -132,15 +138,6 @@ public class BatchWriteRetryPolicyTest {
         disabledPolicy.isRetryable(
             apiException(Status.Code.INTERNAL, "HTTP/2 error code: INTERNAL_ERROR")));
     assertFalse(disabledPolicy.isRetryable(watchdogTimeout(true)));
-
-    // maxAttempts == 1 disables all retries.
-    BatchWriteRetryPolicy oneAttemptPolicy =
-        new BatchWriteRetryPolicy(
-            defaultSettings().toBuilder().setMaxAttempts(1).build(),
-            DEFAULT_CODES,
-            clock,
-            () -> 1.0);
-    assertFalse(oneAttemptPolicy.isRetryable(apiException(Status.Code.UNAVAILABLE, "transient")));
   }
 
   @Test
@@ -175,6 +172,20 @@ public class BatchWriteRetryPolicyTest {
         Status.UNAVAILABLE.withDescription("retry later").asRuntimeException(trailers);
 
     assertEquals(345L, policy.computeNextRetryDelayMillis(withRetryInfo, 1));
+
+    // RetryInfo provided via ApiException.getErrorDetails() overrides exponential backoff.
+    RetryInfo detailsRetryInfo =
+        RetryInfo.newBuilder().setRetryDelay(Durations.fromMillis(678)).build();
+    ApiException withErrorDetails =
+        ApiExceptionFactory.createException(
+            "retry via error details",
+            null,
+            GrpcStatusCode.of(Status.Code.UNAVAILABLE),
+            /* retryable= */ true,
+            ErrorDetails.builder()
+                .setRawErrorMessages(Collections.singletonList(Any.pack(detailsRetryInfo)))
+                .build());
+    assertEquals(Duration.ofMillis(678), policy.computeNextRetryDelay(withErrorDetails, 1));
 
     // Corrupted RetryInfo bytes must fall back to exponential backoff (100ms).
     Metadata badTrailers = new Metadata();
@@ -216,10 +227,28 @@ public class BatchWriteRetryPolicyTest {
     Throwable unavailable = apiException(Status.Code.UNAVAILABLE, "transient");
     long startNanos = clock.nanoTime();
 
+    // Non-retryable error -> PERMANENT_FAILURE
+    Throwable invalidArgument = apiException(Status.Code.INVALID_ARGUMENT, "bad");
+    RetryDecision permanentFailure =
+        policy.evaluate(invalidArgument, 1, startNanos, Context.ROOT, null);
+    assertEquals(Action.PERMANENT_FAILURE, permanentFailure.action);
+    assertEquals(invalidArgument, permanentFailure.terminalError);
+
+    // maxAttempts == 0 means unlimited retries (GAX convention)
+    BatchWriteRetryPolicy unlimitedPolicy =
+        new BatchWriteRetryPolicy(
+            defaultSettings().toBuilder().setMaxAttempts(0).build(),
+            DEFAULT_CODES,
+            clock,
+            () -> 1.0);
+    RetryDecision unlimitedDecision =
+        unlimitedPolicy.evaluate(unavailable, 100, startNanos, Context.ROOT, null);
+    assertEquals(Action.RETRY, unlimitedDecision.action);
+
     // Attempt 1 -> retry with 100ms delay
     RetryDecision d1 = policy.evaluate(unavailable, 1, startNanos, Context.ROOT, null);
     assertEquals(Action.RETRY, d1.action);
-    assertEquals(100L, d1.delayMillis);
+    assertEquals(Duration.ofMillis(100), d1.delay);
 
     // Attempt 3 == maxAttempts -> retries exhausted
     RetryDecision exhausted = policy.evaluate(unavailable, 3, startNanos, Context.ROOT, null);
@@ -234,11 +263,20 @@ public class BatchWriteRetryPolicyTest {
         Code.DEADLINE_EXCEEDED,
         ((ApiException) totalTimeout.terminalError).getStatusCode().getCode());
 
-    // CallOptions deadline shorter than delay fails immediately with DEADLINE_EXCEEDED
+    // Deterministic CallOptions deadlines via FakeClock (Deadline.Ticker):
+    // deadline larger than 100ms delay -> RETRY; deadline shorter than 100ms delay ->
+    // RETRIES_EXHAUSTED with DEADLINE_EXCEEDED.
     FakeClock freshClock = new FakeClock();
     BatchWriteRetryPolicy freshPolicy =
         new BatchWriteRetryPolicy(defaultSettings(), DEFAULT_CODES, freshClock, () -> 1.0);
-    Deadline tightCallDeadline = Deadline.after(20, TimeUnit.MILLISECONDS);
+    Deadline generousCallDeadline = Deadline.after(500, TimeUnit.MILLISECONDS, freshClock);
+    RetryDecision generousCallDecision =
+        freshPolicy.evaluate(
+            unavailable, 1, freshClock.nanoTime(), Context.ROOT, generousCallDeadline);
+    assertEquals(Action.RETRY, generousCallDecision.action);
+    assertEquals(Duration.ofMillis(100), generousCallDecision.delay);
+
+    Deadline tightCallDeadline = Deadline.after(20, TimeUnit.MILLISECONDS, freshClock);
     RetryDecision callDeadlineDecision =
         freshPolicy.evaluate(
             unavailable, 1, freshClock.nanoTime(), Context.ROOT, tightCallDeadline);
@@ -262,8 +300,26 @@ public class BatchWriteRetryPolicyTest {
     }
 
     ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+    // Active (non-cancelled) grpcContext deadline shorter than 100ms retry delay ->
+    // RETRIES_EXHAUSTED with DEADLINE_EXCEEDED. Schedule wall-clock cancellation far out (10s) and
+    // advance FakeClock by 9980ms so 20ms deterministically remain without racing the scheduler.
+    Context.CancellableContext tightContext =
+        Context.ROOT.withDeadline(Deadline.after(10, TimeUnit.SECONDS, freshClock), scheduler);
+    try {
+      freshClock.advanceMillis(9_980);
+      assertFalse(tightContext.isCancelled());
+      RetryDecision tightContextDecision =
+          freshPolicy.evaluate(unavailable, 1, freshClock.nanoTime(), tightContext, null);
+      assertEquals(Action.RETRIES_EXHAUSTED, tightContextDecision.action);
+      assertEquals(
+          Code.DEADLINE_EXCEEDED,
+          ((ApiException) tightContextDecision.terminalError).getStatusCode().getCode());
+    } finally {
+      tightContext.close();
+    }
+
     Context.CancellableContext expired =
-        Context.ROOT.withDeadlineAfter(-1, TimeUnit.SECONDS, scheduler);
+        Context.ROOT.withDeadline(Deadline.after(-1, TimeUnit.SECONDS, freshClock), scheduler);
     try {
       RetryDecision deadlineDecision =
           freshPolicy.evaluate(unavailable, 1, freshClock.nanoTime(), expired, null);
@@ -278,34 +334,101 @@ public class BatchWriteRetryPolicyTest {
   }
 
   @Test
-  public void computeAttemptRpcTimeoutClampsToRemainingTotalTimeout() {
+  public void computeAttemptRpcTimeoutScalesCapsAndClampsToRemainingTotalTimeout() {
     FakeClock clock = new FakeClock();
     RetrySettings settings =
         defaultSettings().toBuilder()
             .setInitialRpcTimeoutDuration(Duration.ofSeconds(10))
             .setRpcTimeoutMultiplier(2.0)
             .setMaxRpcTimeoutDuration(Duration.ofSeconds(25))
-            .setTotalTimeoutDuration(Duration.ofSeconds(15))
+            .setTotalTimeoutDuration(Duration.ofSeconds(60))
             .build();
     BatchWriteRetryPolicy policy =
         new BatchWriteRetryPolicy(settings, DEFAULT_CODES, clock, () -> 1.0);
     long startNanos = clock.nanoTime();
 
-    // Attempt 0: min(10s, 15s) = 10s
+    // Attempt 0: initial 10s
     assertEquals(Duration.ofSeconds(10), policy.computeAttemptRpcTimeout(0, null, startNanos));
+    // Attempt 1: 10s * 2.0 = 20s (verifies rpcTimeoutMultiplier)
+    assertEquals(Duration.ofSeconds(20), policy.computeAttemptRpcTimeout(1, null, startNanos));
+    // Attempt 2: min(10s * 4.0, 25s) = 25s (verifies maxRpcTimeoutDuration cap)
+    assertEquals(Duration.ofSeconds(25), policy.computeAttemptRpcTimeout(2, null, startNanos));
     // Explicit smaller timeout wins over configured RPC timeout
     assertEquals(
         Duration.ofSeconds(4),
         policy.computeAttemptRpcTimeout(0, Duration.ofSeconds(4), startNanos));
-    // Attempt 1 after 12s elapsed: remaining totalTimeout is 3s < 20s scaled RPC timeout
-    clock.advanceMillis(12_000);
+    // Attempt 1 after 57s elapsed: remaining totalTimeout is 3s < 20s scaled RPC timeout
+    clock.advanceMillis(57_000);
     assertEquals(Duration.ofSeconds(3), policy.computeAttemptRpcTimeout(1, null, startNanos));
 
     // checkDeadlineExceeded returns null when within budget and DEADLINE_EXCEEDED once past budget
-    assertNull(policy.checkDeadlineExceeded(startNanos, Context.ROOT, null, 0L, null));
+    assertNull(policy.checkDeadlineExceeded(startNanos, Context.ROOT, null, Duration.ZERO, null));
     clock.advanceMillis(3_000);
-    ApiException exceeded = policy.checkDeadlineExceeded(startNanos, Context.ROOT, null, 0L, null);
+    ApiException exceeded =
+        policy.checkDeadlineExceeded(startNanos, Context.ROOT, null, Duration.ZERO, null);
     assertNotNull(exceeded);
     assertEquals(Code.DEADLINE_EXCEEDED, exceeded.getStatusCode().getCode());
+  }
+
+  @Test
+  public void zeroInitialRetryDelayProducesZeroBackoff() {
+    FakeClock clock = new FakeClock();
+    RetrySettings zeroDelaySettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(Duration.ZERO)
+            .setMaxRetryDelayDuration(Duration.ZERO)
+            .setMaxAttempts(5)
+            .build();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(zeroDelaySettings, DEFAULT_CODES, clock, () -> 1.0);
+    Throwable unavailable = apiException(Status.Code.UNAVAILABLE, "transient");
+    assertEquals(Duration.ZERO, policy.computeNextRetryDelay(unavailable, 1));
+    assertEquals(0L, policy.computeNextRetryDelayMillis(unavailable, 1));
+  }
+
+  @Test
+  public void subMillisecondRetryDelayIsPreservedInDuration() {
+    FakeClock clock = new FakeClock();
+    RetrySettings subMsSettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(Duration.ofNanos(1))
+            .setMaxRetryDelayDuration(Duration.ofNanos(1))
+            .setMaxAttempts(5)
+            .build();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(subMsSettings, DEFAULT_CODES, clock, () -> 1.0);
+    Throwable unavailable = apiException(Status.Code.UNAVAILABLE, "transient");
+    assertEquals(Duration.ofNanos(1), policy.computeNextRetryDelay(unavailable, 1));
+    RetryDecision decision = policy.evaluate(unavailable, 1, clock.nanoTime(), Context.ROOT, null);
+    assertEquals(Action.RETRY, decision.action);
+    assertEquals(Duration.ofNanos(1), decision.delay);
+  }
+
+  @Test
+  public void internalExceptionWithNullMessageIsNotRetryable() {
+    FakeClock clock = new FakeClock();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(defaultSettings(), DEFAULT_CODES, clock, () -> 1.0);
+    ApiException nullMessageInternal = apiException(Status.Code.INTERNAL, null);
+    assertFalse(policy.isRetryable(nullMessageInternal));
+  }
+
+  @Test
+  public void evaluateWithMaxAttemptsOneReturnsRetriesExhaustedForRetryableError() {
+    FakeClock clock = new FakeClock();
+    RetrySettings oneAttemptSettings = defaultSettings().toBuilder().setMaxAttempts(1).build();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(oneAttemptSettings, DEFAULT_CODES, clock, () -> 1.0);
+    Throwable unavailable = apiException(Status.Code.UNAVAILABLE, "transient");
+    RetryDecision decision = policy.evaluate(unavailable, 1, clock.nanoTime(), Context.ROOT, null);
+    assertEquals(Action.RETRIES_EXHAUSTED, decision.action);
+    assertEquals(unavailable, decision.terminalError);
+
+    // Non-retryable errors still classify as PERMANENT_FAILURE when maxAttempts == 1.
+    Throwable invalidArgument = apiException(Status.Code.INVALID_ARGUMENT, "bad");
+    RetryDecision permanent =
+        policy.evaluate(invalidArgument, 1, clock.nanoTime(), Context.ROOT, null);
+    assertEquals(Action.PERMANENT_FAILURE, permanent.action);
+    assertEquals(invalidArgument, permanent.terminalError);
   }
 }

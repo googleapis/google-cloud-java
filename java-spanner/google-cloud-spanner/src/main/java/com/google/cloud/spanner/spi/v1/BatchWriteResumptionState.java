@@ -19,12 +19,12 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BatchWriteResponse;
 import io.grpc.Status;
-import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Pure state tracker for {@code BatchWrite} mutation groups across stream resumption attempts.
@@ -43,7 +43,7 @@ final class BatchWriteResumptionState {
   // Entries are nulled once acknowledged so large mutation payloads can be GC'd immediately.
   private final BatchWriteRequest.MutationGroup[] pending;
   private int remaining;
-  @Nullable private int[] streamIndexes;
+  private int @Nullable [] streamIndexes;
 
   BatchWriteResumptionState(BatchWriteRequest initialRequest) {
     Preconditions.checkNotNull(initialRequest, "initialRequest must not be null");
@@ -70,6 +70,11 @@ final class BatchWriteResumptionState {
 
   BatchWriteRequest getRequestTemplate() {
     return requestTemplate;
+  }
+
+  @VisibleForTesting
+  BatchWriteRequest.@Nullable MutationGroup getPending(int originalIndex) {
+    return pending[originalIndex];
   }
 
   /**
@@ -103,10 +108,10 @@ final class BatchWriteResumptionState {
     Preconditions.checkState(
         streamIndexes != null,
         "buildNextAttemptRequest() must be called before translateAndAcknowledge()");
-    List<Integer> relIndexes = response.getIndexesList();
+    int indexCount = response.getIndexesCount();
     // Validate all indices before mutating tracking state.
-    for (int i = 0; i < relIndexes.size(); i++) {
-      int relIdx = relIndexes.get(i);
+    for (int i = 0; i < indexCount; i++) {
+      int relIdx = response.getIndexes(i);
       if (relIdx < 0 || relIdx >= streamIndexes.length) {
         throw ApiExceptionFactory.createException(
             String.format(
@@ -119,9 +124,22 @@ final class BatchWriteResumptionState {
       }
     }
 
+    // When all mutation groups are present in the attempt request, streamIndexes is the identity
+    // mapping, so we can update tracking state and return response directly without copying.
+    if (streamIndexes.length == pending.length) {
+      for (int i = 0; i < indexCount; i++) {
+        int origIdx = response.getIndexes(i);
+        if (pending[origIdx] != null) {
+          pending[origIdx] = null;
+          remaining--;
+        }
+      }
+      return response;
+    }
+
     BatchWriteResponse.Builder translated = response.toBuilder().clearIndexes();
-    for (int i = 0; i < relIndexes.size(); i++) {
-      int origIdx = streamIndexes[relIndexes.get(i)];
+    for (int i = 0; i < indexCount; i++) {
+      int origIdx = streamIndexes[response.getIndexes(i)];
       translated.addIndexes(origIdx);
       if (pending[origIdx] != null) {
         pending[origIdx] = null;

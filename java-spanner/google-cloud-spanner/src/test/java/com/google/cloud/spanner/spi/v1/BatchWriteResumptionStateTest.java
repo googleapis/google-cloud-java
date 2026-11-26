@@ -19,7 +19,9 @@ package com.google.cloud.spanner.spi.v1;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
@@ -32,7 +34,6 @@ import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BatchWriteResponse;
 import com.google.spanner.v1.Mutation;
 import com.google.spanner.v1.RequestOptions;
-import java.lang.ref.WeakReference;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -96,9 +97,11 @@ public class BatchWriteResumptionStateTest {
     assertTrue(attempt0.getExcludeTxnFromChangeStreams());
 
     // Acknowledge relative 1 (orig 1) with OK and relative 3 (orig 3) with non-OK ABORTED.
-    BatchWriteResponse resp0 =
-        state.translateAndAcknowledge(
-            BatchWriteResponse.newBuilder().setStatus(STATUS_OK).addIndexes(1).build());
+    // On the initial full-batch attempt, response is returned directly without copying.
+    BatchWriteResponse rawResp0 =
+        BatchWriteResponse.newBuilder().setStatus(STATUS_OK).addIndexes(1).build();
+    BatchWriteResponse resp0 = state.translateAndAcknowledge(rawResp0);
+    assertSame(rawResp0, resp0);
     assertThat(resp0.getIndexesList()).containsExactly(1);
     BatchWriteResponse resp1 =
         state.translateAndAcknowledge(
@@ -199,54 +202,35 @@ public class BatchWriteResumptionStateTest {
     assertEquals(2, state.getRemainingCount());
   }
 
-  private static final class GcTestFixture {
-    final BatchWriteResumptionState state;
-    final WeakReference<BatchWriteRequest.MutationGroup> weakGroup0;
-
-    GcTestFixture(
-        BatchWriteResumptionState state,
-        WeakReference<BatchWriteRequest.MutationGroup> weakGroup0) {
-      this.state = state;
-      this.weakGroup0 = weakGroup0;
-    }
-  }
-
-  private static GcTestFixture createStateAndAcknowledgeFirstGroup() {
-    BatchWriteRequest.MutationGroup largeGroup = groupWithKey("payload-0");
-    WeakReference<BatchWriteRequest.MutationGroup> weakGroup0 = new WeakReference<>(largeGroup);
-
+  @Test
+  public void requestTemplateAndPendingSlotClearAcknowledgedPayloads() {
+    BatchWriteRequest.MutationGroup group0 = groupWithKey("payload-0");
+    BatchWriteRequest.MutationGroup group1 = groupWithKey("payload-1");
     BatchWriteRequest initial =
         BatchWriteRequest.newBuilder()
             .setSession("projects/p/instances/i/databases/d/sessions/s1")
-            .addMutationGroups(largeGroup)
-            .addMutationGroups(groupWithKey("payload-1"))
+            .addMutationGroups(group0)
+            .addMutationGroups(group1)
             .build();
     BatchWriteResumptionState state = new BatchWriteResumptionState(initial);
+
+    // Request template must not retain any mutation group payloads.
     assertEquals(0, state.getRequestTemplate().getMutationGroupsCount());
+    assertSame(group0, state.getPending(0));
+    assertSame(group1, state.getPending(1));
+
     state.buildNextAttemptRequest();
     state.translateAndAcknowledge(
         BatchWriteResponse.newBuilder().setStatus(STATUS_OK).addIndexes(0).build());
-    return new GcTestFixture(state, weakGroup0);
-  }
 
-  @Test
-  public void requestTemplateClearsMutationGroupsSoAcknowledgedPayloadsCanBeGarbageCollected() {
-    // Isolate request creation and buildNextAttemptRequest() in a helper frame so no local or
-    // operand stack slots retain strong references to largeGroup before System.gc() runs.
-    GcTestFixture fixture = createStateAndAcknowledgeFirstGroup();
+    // Acknowledged slot must be nulled out while unacknowledged group remains intact.
+    assertNull(state.getPending(0));
+    assertNotNull(state.getPending(1));
+    assertSame(group1, state.getPending(1));
+    assertEquals(1, state.getRemainingCount());
 
-    for (int i = 0; i < 10 && fixture.weakGroup0.get() != null; i++) {
-      System.gc();
-      try {
-        Thread.sleep(10);
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        break;
-      }
-    }
-    assertNull(
-        "Acknowledged mutation group should be eligible for GC mid-stream",
-        fixture.weakGroup0.get());
-    assertEquals(1, fixture.state.getRemainingCount());
+    BatchWriteRequest retryRequest = state.buildNextAttemptRequest();
+    assertEquals(1, retryRequest.getMutationGroupsCount());
+    assertEquals(group1, retryRequest.getMutationGroups(0));
   }
 }

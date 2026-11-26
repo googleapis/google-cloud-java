@@ -1999,6 +1999,47 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   }
 
   @Test
+  public void testWriteAtLeastOnceWithOptionsMergesClientContext() {
+    RequestOptions.ClientContext defaultClientContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext(
+                "default_key", Value.newBuilder().setStringValue("default_val").build())
+            .putSecureContext(
+                "shared_key", Value.newBuilder().setStringValue("from_default").build())
+            .build();
+    RequestOptions.ClientContext rpcClientContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext("shared_key", Value.newBuilder().setStringValue("from_rpc").build())
+            .putSecureContext("rpc_key", Value.newBuilder().setStringValue("rpc_val").build())
+            .build();
+
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setDefaultClientContext(defaultClientContext);
+
+    ImmutableList<Mutation> mutations =
+        ImmutableList.of(
+            Mutation.newInsertBuilder("FOO1").set("ID").to(1L).set("NAME").to("Bar1").build());
+
+    try (Spanner ctxSpanner = builder.build().getService()) {
+      DatabaseClient ctxClient = ctxSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      ctxClient.writeAtLeastOnceWithOptions(mutations, Options.clientContext(rpcClientContext));
+    }
+
+    List<CommitRequest> requests = mockSpanner.getRequestsOfType(CommitRequest.class);
+    assertThat(requests).hasSize(1);
+    RequestOptions.ClientContext actualContext =
+        requests.get(0).getRequestOptions().getClientContext();
+    assertEquals(
+        "default_val", actualContext.getSecureContextOrThrow("default_key").getStringValue());
+    assertEquals("from_rpc", actualContext.getSecureContextOrThrow("shared_key").getStringValue());
+    assertEquals("rpc_val", actualContext.getSecureContextOrThrow("rpc_key").getStringValue());
+  }
+
+  @Test
   public void testBatchWriteAtLeastOnceMaterializesAndRejectsNull() {
     DatabaseClientImpl client =
         (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
