@@ -263,10 +263,8 @@ final class Retrying {
                 metricsContext.recordAttemptSuccess(metrics);
               }
               return decoded;
-            } catch (StorageException se) {
-              handleAttemptError(ctx, metricsContext, se, se, attemptAgain, failure);
-            } catch (IllegalArgumentException iae) {
-              handleAttemptError(ctx, metricsContext, iae, iae, attemptAgain, failure);
+            } catch (StorageException | IllegalArgumentException e) {
+              handleAttemptError(ctx, metricsContext, e, e, attemptAgain, failure);
             } catch (Exception e) {
               handleAttemptError(
                   ctx, metricsContext, e, StorageException.coalesce(e), attemptAgain, failure);
