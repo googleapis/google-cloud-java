@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcInterceptorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.NoCredentials;
 import com.google.common.collect.ImmutableList;
+import com.google.common.primitives.Bytes;
 import com.google.storage.v2.BidiWriteObjectRequest;
 import com.google.storage.v2.BidiWriteObjectResponse;
 import com.google.storage.v2.ReadObjectRequest;
@@ -399,7 +400,11 @@ public final class StorageGrpcMetricsInterceptorTest {
       {"valid 0ns", encodeServerStats(0, 0, 0L), 0.0},
       {"absent trailer", null, -1.0},
       {"too short (9 bytes)", new byte[9], -1.0},
-      {"too long (11 bytes)", new byte[11], -1.0},
+      {
+        "trailing fields ignored (13 bytes)",
+        Bytes.concat(encodeServerStats(0, 0, 125_000_000L), new byte[] {1, 0, 7}),
+        0.125
+      },
       {"wrong version", encodeServerStats(1, 0, 125_000_000L), -1.0},
       {"wrong field id", encodeServerStats(0, 1, 125_000_000L), -1.0},
       {"negative nanos overflow", encodeServerStats(0, 0, Long.MIN_VALUE), -1.0},
@@ -457,13 +462,29 @@ public final class StorageGrpcMetricsInterceptorTest {
         .start(new TestListener<>(), new Metadata());
     withTrailerCall.close(Status.OK, validTrailers);
 
+    // Recorded regardless of the call status, and for a 0ns server duration.
+    TestClientCall<Void, Void> failedCall = new TestClientCall<>(directPathAttrs);
+    debugInterceptor
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(failedCall))
+        .start(new TestListener<>(), new Metadata());
+    failedCall.close(Status.UNAVAILABLE, validTrailers);
+    Metadata zeroTrailers = new Metadata();
+    zeroTrailers.put(
+        StorageGrpcMetricsInterceptor.GRPC_SERVER_STATS_BIN_KEY, encodeServerStats(0, 0, 0L));
+    TestClientCall<Void, Void> zeroCall = new TestClientCall<>(directPathAttrs);
+    debugInterceptor
+        .interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, new TestChannel(zeroCall))
+        .start(new TestListener<>(), new Metadata());
+    zeroCall.close(Status.OK, zeroTrailers);
+
     MetricData serverDuration =
         findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION);
     assertThat(serverDuration).isNotNull();
+    assertThat(serverDuration.getUnit()).isEqualTo("s");
     assertThat(serverDuration.getHistogramData().getPoints()).hasSize(1);
     HistogramPointData point = serverDuration.getHistogramData().getPoints().iterator().next();
-    assertThat(point.getCount()).isEqualTo(1L);
-    assertThat(point.getSum()).isWithin(1e-6).of(0.25);
+    assertThat(point.getCount()).isEqualTo(3L);
+    assertThat(point.getSum()).isWithin(1e-6).of(0.5);
     assertThat(point.getAttributes())
         .isEqualTo(
             io.opentelemetry.api.common.Attributes.builder()
@@ -485,17 +506,7 @@ public final class StorageGrpcMetricsInterceptorTest {
 
   @Test
   public void interceptCall_requestActive_balancesWhenStartThrows() {
-    StorageClientMetrics debugMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .setMeterProvider(meterProvider)
-            .build()
-            .getStorageClientMetrics();
-    StorageGrpcMetricsInterceptor debugInterceptor =
-        new StorageGrpcMetricsInterceptor(debugMetrics, clock);
+    StorageGrpcMetricsInterceptor debugInterceptor = createDebugInterceptor();
     IllegalStateException failure = new IllegalStateException("start failed");
     Channel throwingChannel = Mockito.mock(Channel.class);
     @SuppressWarnings("unchecked")
@@ -516,17 +527,7 @@ public final class StorageGrpcMetricsInterceptorTest {
 
   @Test
   public void interceptCall_requestActive_releasesOnceWhenClosedInlineBeforeStartThrows() {
-    StorageClientMetrics debugMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .setMeterProvider(meterProvider)
-            .build()
-            .getStorageClientMetrics();
-    StorageGrpcMetricsInterceptor debugInterceptor =
-        new StorageGrpcMetricsInterceptor(debugMetrics, clock);
+    StorageGrpcMetricsInterceptor debugInterceptor = createDebugInterceptor();
     IllegalStateException failure = new IllegalStateException("start failed after close");
     Channel throwingChannel = Mockito.mock(Channel.class);
     @SuppressWarnings("unchecked")

@@ -166,7 +166,8 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   static double decodeServerDurationSeconds(Metadata trailers) {
     byte[] bytes = trailers.get(GRPC_SERVER_STATS_BIN_KEY);
     // Census ServerStats binary encoding: version (0x00), field ID (0x00), 8-byte LE uint64 nanos.
-    if (bytes == null || bytes.length != 10 || bytes[0] != 0 || bytes[1] != 0) {
+    // Any additional trailing fields are ignored.
+    if (bytes == null || bytes.length < 10 || bytes[0] != 0 || bytes[1] != 0) {
       return -1.0;
     }
     long nanos = ByteBuffer.wrap(bytes, 2, 8).order(ByteOrder.LITTLE_ENDIAN).getLong();
