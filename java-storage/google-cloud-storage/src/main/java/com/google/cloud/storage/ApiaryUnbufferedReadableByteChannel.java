@@ -29,6 +29,7 @@ import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.Storage.Objects;
 import com.google.api.services.storage.Storage.Objects.Get;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.cloud.BaseServiceException;
 import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.Retrying.Retrier;
 import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
@@ -162,10 +163,13 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
             recordMidStreamRetry(ioE);
             sbc = null;
           } else {
+            recordMidStreamError(ioE);
             throw ioE;
           }
         } else {
-          throw new IOException(StorageException.coalesce(t));
+          BaseServiceException coalesced = StorageException.coalesce(t);
+          recordMidStreamError(coalesced);
+          throw new IOException(coalesced);
         }
       } finally {
         long totalRemainingAfter = Buffers.totalRemaining(dsts, offset, length);
@@ -226,6 +230,13 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
     if (metricsContext != null) {
       metricsContext.recordError(error);
       metricsContext.recordRetry(error);
+    }
+  }
+
+  private void recordMidStreamError(Throwable error) {
+    StorageMetricsContext metricsContext = retrier.getMetricsContext();
+    if (metricsContext != null) {
+      metricsContext.recordError(error);
     }
   }
 
