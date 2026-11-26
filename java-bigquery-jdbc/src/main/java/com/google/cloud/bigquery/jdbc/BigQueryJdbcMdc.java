@@ -33,7 +33,7 @@ class BigQueryJdbcMdc {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcMdc.class.getName());
 
-  private static final InheritableThreadLocal<String> currentConnectionId =
+  private static final InheritableThreadLocal<ConnectionLogContext> currentContext =
       new InheritableThreadLocal<>();
 
   /**
@@ -41,30 +41,46 @@ class BigQueryJdbcMdc {
    * context when closed.
    */
   static MdcCloseable registerInstance(String connectionId) {
-    String previousConnectionId = currentConnectionId.get();
-    if (connectionId != null) {
-      currentConnectionId.set(connectionId);
+    if (connectionId == null) {
+      return withContext(null);
+    }
+    ConnectionLogContext context = BigQueryJdbcRootLogger.getConnectionContext(connectionId);
+    if (context == null) {
+      context = ConnectionLogContext.unregistered(connectionId);
+    }
+    return withContext(context);
+  }
+
+  static MdcCloseable withContext(ConnectionLogContext context) {
+    ConnectionLogContext previous = currentContext.get();
+    if (context != null) {
+      currentContext.set(context);
     } else {
-      clear();
+      currentContext.remove();
     }
     return () -> {
-      if (previousConnectionId != null) {
-        currentConnectionId.set(previousConnectionId);
+      if (previous != null) {
+        currentContext.set(previous);
       } else {
-        clear();
+        currentContext.remove();
       }
     };
+  }
+
+  static ConnectionLogContext getConnectionContext() {
+    return currentContext.get();
   }
 
   /**
    * Returns the connection ID carried by any registered active connection on the current thread.
    */
   static String getConnectionId() {
-    return currentConnectionId.get();
+    ConnectionLogContext context = currentContext.get();
+    return context != null ? context.connectionId() : null;
   }
 
   static void clear() {
-    currentConnectionId.remove();
+    currentContext.remove();
   }
 
   /**
@@ -191,18 +207,18 @@ class BigQueryJdbcMdc {
 
     @Override
     protected <T> RunnableFuture<T> newTaskFor(Runnable runnable, T value) {
-      return new MdcFutureTask<>(runnable, value, getConnectionId());
+      return new MdcFutureTask<>(runnable, value, getConnectionContext());
     }
 
     @Override
     protected <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
-      return new MdcFutureTask<>(callable, getConnectionId());
+      return new MdcFutureTask<>(callable, getConnectionContext());
     }
 
     private static Runnable wrap(Runnable runnable) {
-      String connectionId = getConnectionId();
+      ConnectionLogContext context = getConnectionContext();
       return () -> {
-        try (MdcCloseable mdc = registerInstance(connectionId)) {
+        try (MdcCloseable mdc = withContext(context)) {
           runnable.run();
         }
       };
@@ -210,21 +226,21 @@ class BigQueryJdbcMdc {
   }
 
   private static class MdcFutureTask<V> extends FutureTask<V> {
-    private final String connectionId;
+    private final ConnectionLogContext context;
 
-    public MdcFutureTask(Runnable runnable, V result, String connectionId) {
+    public MdcFutureTask(Runnable runnable, V result, ConnectionLogContext context) {
       super(runnable, result);
-      this.connectionId = connectionId;
+      this.context = context;
     }
 
-    public MdcFutureTask(Callable<V> callable, String connectionId) {
+    public MdcFutureTask(Callable<V> callable, ConnectionLogContext context) {
       super(callable);
-      this.connectionId = connectionId;
+      this.context = context;
     }
 
     @Override
     public void run() {
-      try (MdcCloseable mdc = registerInstance(connectionId)) {
+      try (MdcCloseable mdc = withContext(context)) {
         super.run();
       }
     }

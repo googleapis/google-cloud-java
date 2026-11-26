@@ -85,18 +85,24 @@ class PerConnectionFileHandler extends Handler {
   private final long maxFileBytes;
   private final Formatter logFormatter;
   private final ConcurrentHashMap<String, ChannelLogWriter> writers = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, Level> connectionLevels;
   private final Object defaultWriterLock = new Object();
   private ChannelLogWriter defaultWriter;
   private volatile boolean handlerClosed = false;
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
-    this(baseLogPath, level, resolveMaxLogFileBytes());
+    this(baseLogPath, level, resolveMaxLogFileBytes(), false);
   }
 
   PerConnectionFileHandler(String baseLogPath, Level level, long maxFileBytes) {
+    this(baseLogPath, level, maxFileBytes, false);
+  }
+
+  PerConnectionFileHandler(String baseLogPath, Level level, long maxFileBytes, boolean managed) {
     this.level = level;
     this.maxFileBytes = maxFileBytes <= 0L ? DEFAULT_MAX_LOG_FILE_BYTES : maxFileBytes;
     this.logFormatter = BigQueryJdbcRootLogger.getFormatter();
+    this.connectionLevels = managed ? new ConcurrentHashMap<>() : null;
     setLevel(level);
     setFormatter(this.logFormatter);
 
@@ -108,6 +114,16 @@ class PerConnectionFileHandler extends Handler {
       reportError("Failed to initialize default log file", e, ErrorManager.OPEN_FAILURE);
     }
     this.baseLogPath = initializedDir;
+  }
+
+  Path getBaseLogPath() {
+    return baseLogPath;
+  }
+
+  void registerConnection(String connectionId, Level connLevel) {
+    if (connectionLevels != null && connectionId != null && connLevel != null) {
+      connectionLevels.put(connectionId, connLevel);
+    }
   }
 
   static long resolveMaxLogFileBytes() {
@@ -478,13 +494,55 @@ class PerConnectionFileHandler extends Handler {
       return;
     }
 
-    String connectionId = BigQueryJdbcMdc.getConnectionId();
-    if (connectionId == null || connectionId.isEmpty()) {
-      ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
-      if (context != null) {
-        connectionId = context.connectionId();
-      }
+    ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
+    if (context == null) {
+      context = BigQueryJdbcMdc.getConnectionContext();
     }
+    String connectionId = context != null ? context.connectionId() : null;
+
+    if (connectionLevels != null) {
+      if (connectionId != null && !connectionId.isEmpty()) {
+        Level allowedLevel = connectionLevels.get(connectionId);
+        if (allowedLevel == null
+            || allowedLevel == Level.OFF
+            || record.getLevel().intValue() < allowedLevel.intValue()) {
+          return;
+        }
+        if (baseLogPath != null) {
+          boolean usedConnWriter = false;
+          ChannelLogWriter target =
+              writers.computeIfAbsent(
+                  connectionId,
+                  id -> createLogWriter(id, baseLogPath, allowedLevel, this.maxFileBytes));
+          if (target != null) {
+            usedConnWriter = true;
+          } else {
+            target = getOrCreateDefaultWriter();
+          }
+          if (!handlerClosed && target != null && !target.publish(record)) {
+            if (usedConnWriter) {
+              writers.remove(connectionId, target);
+            } else {
+              clearDefaultWriter(target);
+            }
+          }
+        }
+        return;
+      }
+      if (context == null
+          || !context.isLoggable(record.getLevel())
+          || context.preConnectDir() == null
+          || baseLogPath == null
+          || !baseLogPath.equals(context.preConnectDir())) {
+        return;
+      }
+      ChannelLogWriter globalTarget = getOrCreateDefaultWriter();
+      if (!handlerClosed && globalTarget != null && !globalTarget.publish(record)) {
+        clearDefaultWriter(globalTarget);
+      }
+      return;
+    }
+
     boolean usedConnectionWriter = false;
     ChannelLogWriter target = null;
 
@@ -502,11 +560,15 @@ class PerConnectionFileHandler extends Handler {
       if (usedConnectionWriter) {
         writers.remove(connectionId, target);
       } else {
-        synchronized (defaultWriterLock) {
-          if (defaultWriter == target) {
-            defaultWriter = null;
-          }
-        }
+        clearDefaultWriter(target);
+      }
+    }
+  }
+
+  private void clearDefaultWriter(ChannelLogWriter expected) {
+    synchronized (defaultWriterLock) {
+      if (defaultWriter == expected) {
+        defaultWriter = null;
       }
     }
   }
@@ -534,11 +596,17 @@ class PerConnectionFileHandler extends Handler {
       }
     } finally {
       writers.clear();
+      if (connectionLevels != null) {
+        connectionLevels.clear();
+      }
     }
   }
 
   void closeHandler(String connectionId) {
     if (connectionId != null) {
+      if (connectionLevels != null) {
+        connectionLevels.remove(connectionId);
+      }
       ChannelLogWriter writer = writers.remove(connectionId);
       if (writer != null) {
         writer.close();

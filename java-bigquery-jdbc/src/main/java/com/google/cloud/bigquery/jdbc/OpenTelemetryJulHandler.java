@@ -56,23 +56,29 @@ public class OpenTelemetryJulHandler extends Handler {
     }
 
     try {
-      // Extract connection ID from baggage
+      ConnectionLogContext logContext = ConnectionLogContext.extractFromParameters(record);
+      if (logContext == null) {
+        logContext = BigQueryJdbcMdc.getConnectionContext();
+      }
+
+      // Extract connection ID from baggage, falling back to ConnectionLogContext
       String connectionId =
           Baggage.fromContext(Context.current())
               .getEntryValue(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY);
-
       if (connectionId == null || connectionId.isEmpty()) {
-        connectionId = BigQueryJdbcMdc.getConnectionId();
+        connectionId = logContext != null ? logContext.connectionId() : null;
       }
 
       if (connectionId == null || connectionId.isEmpty()) {
-        ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
-        if (context != null) {
-          connectionId = context.connectionId();
-        }
+        return;
       }
 
-      if (connectionId == null || connectionId.isEmpty()) {
+      if (logContext == null || !connectionId.equals(logContext.connectionId())) {
+        logContext = BigQueryJdbcRootLogger.getConnectionContext(connectionId);
+      }
+      if (logContext != null
+          && logContext.hasExplicitLevel()
+          && !logContext.isLoggable(record.getLevel())) {
         return;
       }
 

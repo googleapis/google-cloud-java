@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import java.nio.file.Path;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -29,15 +30,48 @@ final class ConnectionLogContext {
   static final int ALL_VALUE = Level.ALL.intValue();
 
   private final String connectionId;
+  private final Path preConnectDir;
+  private final boolean explicitLevel;
   private volatile int levelValue;
 
   ConnectionLogContext(String connectionId, int levelValue) {
-    this.connectionId = Objects.requireNonNull(connectionId, "connectionId cannot be null");
+    this(
+        Objects.requireNonNull(connectionId, "connectionId cannot be null"),
+        levelValue,
+        null,
+        true);
+  }
+
+  private ConnectionLogContext(
+      String connectionId, int levelValue, Path preConnectDir, boolean explicitLevel) {
+    this.connectionId = connectionId;
     this.levelValue = levelValue;
+    this.preConnectDir = preConnectDir;
+    this.explicitLevel = explicitLevel;
+  }
+
+  static ConnectionLogContext unregistered(String connectionId) {
+    return new ConnectionLogContext(
+        Objects.requireNonNull(connectionId, "connectionId cannot be null"),
+        ALL_VALUE,
+        null,
+        false);
+  }
+
+  static ConnectionLogContext preConnect(int levelValue, Path preConnectDir) {
+    return new ConnectionLogContext(null, levelValue, preConnectDir, true);
   }
 
   String connectionId() {
     return connectionId;
+  }
+
+  Path preConnectDir() {
+    return preConnectDir;
+  }
+
+  boolean hasExplicitLevel() {
+    return explicitLevel;
   }
 
   int levelValue() {
@@ -46,6 +80,16 @@ final class ConnectionLogContext {
 
   void setLevelValue(int levelValue) {
     this.levelValue = levelValue;
+  }
+
+  boolean isLoggable(Level level) {
+    if (level == null || levelValue == OFF_VALUE) {
+      return false;
+    }
+    if (levelValue == ALL_VALUE) {
+      return true;
+    }
+    return level.intValue() >= levelValue;
   }
 
   static ConnectionLogContext extractFromParameters(LogRecord record) {
@@ -61,6 +105,6 @@ final class ConnectionLogContext {
 
   @Override
   public String toString() {
-    return connectionId;
+    return connectionId != null ? connectionId : "NO_CONN";
   }
 }
