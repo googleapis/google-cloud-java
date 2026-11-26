@@ -30,13 +30,12 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.storage.GrpcChannelTelemetry.ChannelReadyCallback;
 import com.google.cloud.storage.GrpcChannelTelemetry.TransportType;
-import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
-import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.GrpcMetricsChannelConfigurator;
 import com.google.storage.v2.StorageSettings;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
@@ -44,6 +43,7 @@ import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -54,7 +54,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.BiConsumer;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -298,70 +297,104 @@ public final class GrpcChannelTelemetryTest {
   }
 
   @Test
-  public void logChannelReady_directPathInterconnectReady_logsInfo() {
-    GrpcChannelTelemetry.logChannelReady(
+  public void logChannelReady_allCases() {
+    Object[][] cases = {
+      {
+        "interconnect ready",
         TransportType.DIRECT_PATH_INTERCONNECT,
         TransportType.DIRECT_PATH_INTERCONNECT,
         GrpcChannelTelemetry.XDS_LB_POLICY_NAME,
         Duration.ofMillis(42),
         true,
-        null);
-    assertThat(logHandler.records).hasSize(1);
-    assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.INFO);
-    assertThat(logHandler.records.get(0).getMessage())
-        .isEqualTo(
-            "gRPC channel [0] is ready. transport_type=DirectPathInterconnect,"
-                + " requested_transport_type=DirectPathInterconnect,"
-                + " lb_policy=xds_cluster_manager_experimental, elapsed_ms=42");
-  }
-
-  @Test
-  public void logChannelReady_dnsFallback_logsCloudPathNote() {
-    GrpcChannelTelemetry.logChannelReady(
+        null,
+        "gRPC channel [0] is ready. transport_type=DirectPathInterconnect,"
+            + " requested_transport_type=DirectPathInterconnect,"
+            + " lb_policy=xds_cluster_manager_experimental, elapsed_ms=42"
+      },
+      {
+        "dns fallback",
         TransportType.DIRECT_PATH_INTERCONNECT,
         TransportType.CLOUD_PATH,
         GrpcChannelTelemetry.DNS_LB_POLICY_NAME,
         Duration.ofMillis(15),
         true,
-        null);
-    assertThat(logHandler.records).hasSize(1);
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains(
-            "Note: google-c2p resolver fell back to DNS (pick_first); traffic is using CloudPath"
-                + " instead of DirectPathInterconnect.");
-  }
-
-  @Test
-  public void logChannelReady_unexpectedLbPolicy_logsNote() {
-    GrpcChannelTelemetry.logChannelReady(
+        null,
+        "gRPC channel [0] is ready. transport_type=CloudPath,"
+            + " requested_transport_type=DirectPathInterconnect,"
+            + " lb_policy=pick_first, elapsed_ms=15 Note: google-c2p resolver fell back to DNS"
+            + " (pick_first); traffic is using CloudPath instead of DirectPathInterconnect."
+      },
+      {
+        "unexpected lb policy",
         TransportType.DIRECT_PATH,
         TransportType.DIRECT_PATH,
         "round_robin",
         Duration.ofMillis(20),
         true,
-        null);
-    assertThat(logHandler.records).hasSize(1);
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains(
-            "Note: unexpected LB policy 'round_robin' for DirectPath (expected"
-                + " 'xds_cluster_manager_experimental').");
-  }
-
-  @Test
-  public void logChannelReady_deadlineExceeded_logsJavaLoggingGuidance() {
-    GrpcChannelTelemetry.logChannelReady(
+        null,
+        "gRPC channel [0] is ready. transport_type=DirectPath,"
+            + " requested_transport_type=DirectPath, lb_policy=round_robin, elapsed_ms=20 Note:"
+            + " unexpected LB policy 'round_robin' for DirectPath (expected"
+            + " 'xds_cluster_manager_experimental')."
+      },
+      {
+        "interconnect deadline exceeded",
         TransportType.DIRECT_PATH_INTERCONNECT,
         TransportType.DIRECT_PATH_INTERCONNECT,
         null,
         Duration.ofMillis(30000),
         false,
-        "DEADLINE_EXCEEDED");
-    assertThat(logHandler.records).hasSize(1);
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains("gRPC channel [0] did not become ready before deadline.");
-    assertThat(logHandler.records.get(0).getMessage()).contains("status=DEADLINE_EXCEEDED");
-    assertThat(logHandler.records.get(0).getMessage())
-        .contains("enable FINE java.util.logging for io.grpc.xds and io.grpc.googleapis");
+        "DEADLINE_EXCEEDED",
+        "gRPC channel [0] did not become ready before deadline."
+            + " transport_type=DirectPathInterconnect,"
+            + " requested_transport_type=DirectPathInterconnect, lb_policy=unknown,"
+            + " elapsed_ms=30000, status=DEADLINE_EXCEEDED Verify that TD bootstrap and xDS"
+            + " reachability are configured, or enable FINE java.util.logging for io.grpc.xds and"
+            + " io.grpc.googleapis."
+      },
+      {
+        "directpath deadline exceeded",
+        TransportType.DIRECT_PATH,
+        TransportType.DIRECT_PATH,
+        null,
+        Duration.ofMillis(30000),
+        false,
+        "DEADLINE_EXCEEDED",
+        "gRPC channel [0] did not become ready before deadline. transport_type=DirectPath,"
+            + " requested_transport_type=DirectPath, lb_policy=unknown, elapsed_ms=30000,"
+            + " status=DEADLINE_EXCEEDED Enable FINE java.util.logging for io.grpc.xds and"
+            + " io.grpc.googleapis."
+      },
+      {
+        "cloudpath deadline exceeded",
+        TransportType.CLOUD_PATH,
+        TransportType.CLOUD_PATH,
+        null,
+        Duration.ofMillis(30000),
+        false,
+        "DEADLINE_EXCEEDED",
+        "gRPC channel [0] did not become ready before deadline. transport_type=CloudPath,"
+            + " requested_transport_type=CloudPath, lb_policy=unknown, elapsed_ms=30000,"
+            + " status=DEADLINE_EXCEEDED"
+      }
+    };
+    for (Object[] c : cases) {
+      logHandler.records.clear();
+      GrpcChannelTelemetry.logChannelReady(
+          (TransportType) c[1],
+          (TransportType) c[2],
+          (String) c[3],
+          (Duration) c[4],
+          (Boolean) c[5],
+          (String) c[6]);
+      assertWithMessage("case=%s", c[0]).that(logHandler.records).hasSize(1);
+      assertWithMessage("case=%s", c[0])
+          .that(logHandler.records.get(0).getLevel())
+          .isEqualTo(Level.INFO);
+      assertWithMessage("case=%s", c[0])
+          .that(logHandler.records.get(0).getMessage())
+          .isEqualTo(c[7]);
+    }
   }
 
   @Test
@@ -422,6 +455,7 @@ public final class GrpcChannelTelemetryTest {
     assertThat(callbackCount.get()).isEqualTo(1);
     assertThat(reportedTransport.get()).isEqualTo(TransportType.DIRECT_PATH_INTERCONNECT);
     assertThat(reportedLatency.get()).isEqualTo(Duration.ofMillis(55));
+    assertThat(channel.getStateRequests).containsExactly(true, false, false).inOrder();
   }
 
   @Test
@@ -544,50 +578,78 @@ public final class GrpcChannelTelemetryTest {
   }
 
   @Test
-  public void defaultExtractLbPolicyName_extractsFromPackagePrivateAndHandlesMissingMethod() {
-    FakeManagedChannel channel =
-        new FakeManagedChannel(ConnectivityState.READY, GrpcChannelTelemetry.XDS_LB_POLICY_NAME);
-    assertThat(GrpcChannelTelemetry.defaultExtractLbPolicyName(channel))
-        .isEqualTo(GrpcChannelTelemetry.XDS_LB_POLICY_NAME);
-    assertThat(GrpcChannelTelemetry.defaultExtractLbPolicyName(mock(ManagedChannel.class)))
-        .isNull();
-    assertThat(GrpcChannelTelemetry.defaultExtractLbPolicyName(null)).isNull();
+  public void createChannelPrimer_startupFailure_doesNotThrowAndShutsDownOwnedScheduler() {
+    ChannelPrimer throwingSupplierPrimer =
+        GrpcChannelTelemetry.createChannelPrimer(
+            DP_INTERCONNECT_TARGET,
+            true,
+            null,
+            NanoClock.getDefaultClock(),
+            () -> {
+              throw new IllegalStateException("scheduler unavailable");
+            });
+    throwingSupplierPrimer.primeChannel(new FakeManagedChannel(ConnectivityState.READY, null));
+    assertThat(logHandler.records).hasSize(1);
+    assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.FINE);
+
+    logHandler.records.clear();
+    AtomicReference<ScheduledExecutorService> createdScheduler = new AtomicReference<>();
+    ApiClock throwingClock =
+        new ApiClock() {
+          @Override
+          public long nanoTime() {
+            throw new IllegalStateException("clock error");
+          }
+
+          @Override
+          public long millisTime() {
+            return 0L;
+          }
+        };
+    ChannelPrimer throwingClockPrimer =
+        GrpcChannelTelemetry.createChannelPrimer(
+            DP_INTERCONNECT_TARGET,
+            true,
+            null,
+            throwingClock,
+            () -> {
+              ScheduledExecutorService s = Executors.newSingleThreadScheduledExecutor();
+              createdScheduler.set(s);
+              return s;
+            });
+    throwingClockPrimer.primeChannel(new FakeManagedChannel(ConnectivityState.READY, null));
+    assertThat(createdScheduler.get()).isNotNull();
+    assertThat(createdScheduler.get().isShutdown()).isTrue();
+    assertThat(logHandler.records).hasSize(1);
+    assertThat(logHandler.records.get(0).getLevel()).isEqualTo(Level.FINE);
   }
 
   @Test
-  public void channelReadyCallback_withLatencyRecorder_recordsExpectedHistogramMetric()
-      throws Exception {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProviderBuilder providerBuilder =
-        OpenTelemetryBootstrappingUtils.registerGrpcChannelViews(
-            SdkMeterProvider.builder().registerMetricReader(metricReader));
-
-    try (SdkMeterProvider meterProvider = providerBuilder.build()) {
-      BiConsumer<String, Duration> recorder =
-          OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(meterProvider);
-      ChannelReadyCallback callback =
-          (selectedTransport, latency) -> recorder.accept(selectedTransport.toString(), latency);
-
-      TestApiClock clock = TestApiClock.tickBy(0L, Duration.ofMillis(125));
-      FakeManagedChannel channel =
-          new FakeManagedChannel(ConnectivityState.READY, GrpcChannelTelemetry.XDS_LB_POLICY_NAME);
-      watchInterconnect(channel, Duration.ofSeconds(30), clock, callback).get(5, TimeUnit.SECONDS);
-
-      Collection<MetricData> metrics = metricReader.collectAllMetrics();
-      assertThat(metrics).hasSize(1);
-      MetricData metricData = metrics.iterator().next();
-      assertThat(metricData.getName())
-          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_VIEW_NAME);
-      HistogramPointData point = metricData.getHistogramData().getPoints().iterator().next();
-      assertThat(point.getAttributes().get(OpenTelemetryBootstrappingUtils.TRANSPORT_TYPE_KEY))
-          .isEqualTo("DirectPathInterconnect");
-      assertThat(point.getCount()).isEqualTo(1L);
-      assertThat(point.getSum()).isWithin(1e-6).of(0.125);
+  public void defaultExtractLbPolicyName_extractsFromRealManagedChannelAndHandlesUnknown() {
+    ManagedChannel defaultChannel =
+        ManagedChannelBuilder.forTarget("localhost:8080").usePlaintext().build();
+    ManagedChannel roundRobinChannel =
+        ManagedChannelBuilder.forTarget("localhost:8080")
+            .usePlaintext()
+            .defaultLoadBalancingPolicy("round_robin")
+            .build();
+    try {
+      defaultChannel.getState(true);
+      roundRobinChannel.getState(true);
+      assertThat(GrpcChannelTelemetry.defaultExtractLbPolicyName(defaultChannel))
+          .isEqualTo(GrpcChannelTelemetry.DNS_LB_POLICY_NAME);
+      assertThat(GrpcChannelTelemetry.defaultExtractLbPolicyName(roundRobinChannel))
+          .isEqualTo("round_robin");
+      assertThat(GrpcChannelTelemetry.defaultExtractLbPolicyName(mock(ManagedChannel.class)))
+          .isNull();
+    } finally {
+      defaultChannel.shutdownNow();
+      roundRobinChannel.shutdownNow();
     }
   }
 
   @Test
-  public void configureChannelTelemetry_extractsMeterProviderFromGrpcMetricsConfigurator() {
+  public void configureChannelTelemetry_registersPrimerAndRecordsLatency() throws Exception {
     InMemoryMetricReader metricReader = InMemoryMetricReader.create();
     SdkMeterProviderBuilder providerBuilder =
         OpenTelemetryBootstrappingUtils.registerGrpcChannelViews(
@@ -595,29 +657,51 @@ public final class GrpcChannelTelemetryTest {
 
     try (SdkMeterProvider meterProvider = providerBuilder.build()) {
       InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
-          InstantiatingGrpcChannelProvider.newBuilder()
-              .setEndpoint("storage.googleapis.com:443")
-              .setChannelConfigurator(
-                  new GrpcMetricsChannelConfigurator(
-                      ChannelConfigurator.identity(), meterProvider));
+          InstantiatingGrpcChannelProvider.newBuilder().setEndpoint("storage.googleapis.com:443");
       TestApiClock clock = TestApiClock.tickBy(0L, Duration.ofMillis(80));
 
       ChannelPrimer primer =
           GrpcChannelTelemetry.configureChannelTelemetry(
-              channelProviderBuilder, NoCredentials.getInstance(), false, clock);
-      primer.primeChannel(
+              channelProviderBuilder, NoCredentials.getInstance(), false, meterProvider, clock);
+      ChannelPrimer registeredPrimer = extractChannelPrimer(channelProviderBuilder.build());
+      assertThat(registeredPrimer).isSameInstanceAs(primer);
+      registeredPrimer.primeChannel(
           new FakeManagedChannel(ConnectivityState.READY, GrpcChannelTelemetry.DNS_LB_POLICY_NAME));
 
       assertThat(logHandler.records).hasSize(2);
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       assertThat(metrics).hasSize(1);
-      HistogramPointData point =
-          metrics.iterator().next().getHistogramData().getPoints().iterator().next();
+      MetricData metricData = metrics.iterator().next();
+      assertThat(metricData.getName())
+          .isEqualTo(OpenTelemetryBootstrappingUtils.CHANNEL_CREATION_LATENCY_VIEW_NAME);
+      HistogramPointData point = metricData.getHistogramData().getPoints().iterator().next();
       assertThat(point.getAttributes().get(OpenTelemetryBootstrappingUtils.TRANSPORT_TYPE_KEY))
           .isEqualTo("CloudPath");
       assertThat(point.getCount()).isEqualTo(1L);
       assertThat(point.getSum()).isWithin(1e-6).of(0.080);
     }
+
+    logHandler.records.clear();
+    InstantiatingGrpcChannelProvider.Builder nullMetricsBuilder =
+        InstantiatingGrpcChannelProvider.newBuilder().setEndpoint("storage.googleapis.com:443");
+    ChannelPrimer nullMetricsPrimer =
+        GrpcChannelTelemetry.configureChannelTelemetry(
+            nullMetricsBuilder,
+            NoCredentials.getInstance(),
+            false,
+            null,
+            NanoClock.getDefaultClock());
+    ChannelPrimer registeredNullMetricsPrimer = extractChannelPrimer(nullMetricsBuilder.build());
+    assertThat(registeredNullMetricsPrimer).isSameInstanceAs(nullMetricsPrimer);
+    registeredNullMetricsPrimer.primeChannel(new FakeManagedChannel(ConnectivityState.READY, null));
+    assertThat(logHandler.records).hasSize(2);
+  }
+
+  private static ChannelPrimer extractChannelPrimer(InstantiatingGrpcChannelProvider provider)
+      throws ReflectiveOperationException {
+    Field field = InstantiatingGrpcChannelProvider.class.getDeclaredField("channelPrimer");
+    field.setAccessible(true);
+    return (ChannelPrimer) field.get(provider);
   }
 
   @Test
@@ -757,14 +841,11 @@ public final class GrpcChannelTelemetryTest {
     private volatile ConnectivityState state;
     private final String lbPolicy;
     private volatile Runnable stateChangeCallback;
+    private final List<Boolean> getStateRequests = new ArrayList<>();
 
     FakeManagedChannel(ConnectivityState initialState, String lbPolicy) {
       this.state = initialState;
       this.lbPolicy = lbPolicy;
-    }
-
-    public String getLoadBalancingPolicyName() {
-      return lbPolicy;
     }
 
     static String getLbPolicy(ManagedChannel channel) {
@@ -773,6 +854,7 @@ public final class GrpcChannelTelemetryTest {
 
     @Override
     public ConnectivityState getState(boolean requestConnection) {
+      getStateRequests.add(requestConnection);
       return state;
     }
 

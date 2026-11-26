@@ -17,21 +17,18 @@
 package com.google.cloud.storage;
 
 import com.google.api.core.ApiClock;
-import com.google.api.core.ApiFunction;
-import com.google.api.core.NanoClock;
 import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
-import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.GrpcMetricsChannelConfigurator;
 import com.google.common.annotations.VisibleForTesting;
 import io.grpc.ConnectivityState;
+import io.grpc.LoadBalancerProvider;
 import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
 import io.grpc.internal.GrpcUtil;
 import io.opentelemetry.api.metrics.MeterProvider;
 import java.lang.ref.WeakReference;
-import java.lang.reflect.Method;
+import java.lang.reflect.Field;
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.RejectedExecutionException;
@@ -209,21 +206,15 @@ final class GrpcChannelTelemetry {
     return endpoint;
   }
 
-  @SuppressWarnings("rawtypes") // ManagedChannelBuilder
   static ChannelPrimer configureChannelTelemetry(
       InstantiatingGrpcChannelProvider.Builder channelProviderBuilder,
       @Nullable Credentials credentials,
       boolean attemptDirectPathXdsOverInterconnect,
-      @Nullable ApiClock clock) {
+      @Nullable MeterProvider grpcMeterProvider,
+      ApiClock clock) {
     InstantiatingGrpcChannelProvider baseProvider = channelProviderBuilder.build();
     String effectiveTarget =
         logChannelConfiguration(baseProvider, credentials, attemptDirectPathXdsOverInterconnect);
-    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> configurator =
-        channelProviderBuilder.getChannelConfigurator();
-    MeterProvider grpcMeterProvider =
-        configurator instanceof GrpcMetricsChannelConfigurator
-            ? ((GrpcMetricsChannelConfigurator) configurator).get()
-            : null;
     BiConsumer<String, Duration> latencyRecorder =
         OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(grpcMeterProvider);
     ChannelReadyCallback onReady =
@@ -234,7 +225,7 @@ final class GrpcChannelTelemetry {
             effectiveTarget,
             grpcForceXdsIsSupported(),
             onReady,
-            clock != null ? clock : NanoClock.getDefaultClock(),
+            clock,
             GrpcChannelTelemetry::newTelemetryScheduler);
     channelProviderBuilder.setChannelPrimer(primer);
     return primer;
@@ -315,45 +306,6 @@ final class GrpcChannelTelemetry {
             + effectiveAuthority
             + ", grpc_version="
             + grpcVersion);
-  }
-
-  static String channelReadyNote(
-      TransportType requestedTransport,
-      TransportType selectedTransport,
-      @Nullable String lbPolicyName,
-      boolean ready) {
-    if (!ready) {
-      if (requestedTransport == TransportType.DIRECT_PATH_INTERCONNECT) {
-        return " Verify that TD bootstrap and xDS reachability are configured, or enable FINE"
-            + " java.util.logging for io.grpc.xds and io.grpc.googleapis.";
-      }
-      if (requestedTransport == TransportType.DIRECT_PATH) {
-        return " Enable FINE java.util.logging for io.grpc.xds and io.grpc.googleapis.";
-      }
-      return "";
-    }
-    if (requestedTransport != TransportType.CLOUD_PATH
-        && selectedTransport == TransportType.CLOUD_PATH) {
-      return " Note: google-c2p resolver fell back to DNS ("
-          + DNS_LB_POLICY_NAME
-          + "); traffic is using CloudPath instead of "
-          + requestedTransport
-          + ".";
-    }
-    if (requestedTransport != TransportType.CLOUD_PATH
-        && lbPolicyName != null
-        && !lbPolicyName.isEmpty()
-        && !XDS_LB_POLICY_NAME.equals(lbPolicyName)
-        && !DNS_LB_POLICY_NAME.equals(lbPolicyName)) {
-      return " Note: unexpected LB policy '"
-          + lbPolicyName
-          + "' for "
-          + requestedTransport
-          + " (expected '"
-          + XDS_LB_POLICY_NAME
-          + "').";
-    }
-    return "";
   }
 
   static void logChannelReady(
@@ -448,21 +400,92 @@ final class GrpcChannelTelemetry {
     AtomicBoolean firstChannelObserved = new AtomicBoolean(false);
     return managedChannel -> {
       if (firstChannelObserved.compareAndSet(false, true)) {
-        ScheduledExecutorService scheduler = ownedSchedulerSupplier.get();
-        startChannelTelemetry(
-                managedChannel,
-                effectiveEndpoint,
-                grpcSupportsForceXds,
-                DEFAULT_CHANNEL_READY_TIMEOUT,
-                onReady,
-                clock,
-                scheduler)
-            .whenComplete((unused, error) -> scheduler.shutdown());
+        ScheduledExecutorService scheduler = null;
+        try {
+          scheduler = ownedSchedulerSupplier.get();
+          ScheduledExecutorService ownedScheduler = scheduler;
+          startChannelTelemetry(
+                  managedChannel,
+                  effectiveEndpoint,
+                  grpcSupportsForceXds,
+                  DEFAULT_CHANNEL_READY_TIMEOUT,
+                  onReady,
+                  clock,
+                  ownedScheduler)
+              .whenComplete((unused, error) -> ownedScheduler.shutdown());
+        } catch (RuntimeException e) {
+          LOG.log(Level.FINE, "Failed to start channel telemetry", e);
+          if (scheduler != null) {
+            scheduler.shutdown();
+          }
+        }
       }
     };
   }
 
+  @VisibleForTesting
+  @Nullable
+  static String defaultExtractLbPolicyName(ManagedChannel channel) {
+    try {
+      Object current = unwrapForwardingChannel(channel);
+      Object lbHelper = readField(current, "lbHelper");
+      if (lbHelper == null) {
+        return null;
+      }
+      Object lb = readField(lbHelper, "lb");
+      if (lb == null) {
+        return null;
+      }
+      Object delegateProvider = readField(lb, "delegateProvider");
+      if (delegateProvider instanceof LoadBalancerProvider) {
+        return ((LoadBalancerProvider) delegateProvider).getPolicyName();
+      }
+    } catch (RuntimeException | ReflectiveOperationException ignored) {
+      // Best-effort extraction from grpc-core internals; fall back to null when unavailable.
+    }
+    return null;
+  }
+
   private GrpcChannelTelemetry() {}
+
+  private static String channelReadyNote(
+      TransportType requestedTransport,
+      TransportType selectedTransport,
+      @Nullable String lbPolicyName,
+      boolean ready) {
+    if (!ready) {
+      if (requestedTransport == TransportType.DIRECT_PATH_INTERCONNECT) {
+        return " Verify that TD bootstrap and xDS reachability are configured, or enable FINE"
+            + " java.util.logging for io.grpc.xds and io.grpc.googleapis.";
+      }
+      if (requestedTransport == TransportType.DIRECT_PATH) {
+        return " Enable FINE java.util.logging for io.grpc.xds and io.grpc.googleapis.";
+      }
+      return "";
+    }
+    if (requestedTransport != TransportType.CLOUD_PATH
+        && selectedTransport == TransportType.CLOUD_PATH) {
+      return " Note: google-c2p resolver fell back to DNS ("
+          + DNS_LB_POLICY_NAME
+          + "); traffic is using CloudPath instead of "
+          + requestedTransport
+          + ".";
+    }
+    if (requestedTransport != TransportType.CLOUD_PATH
+        && lbPolicyName != null
+        && !lbPolicyName.isEmpty()
+        && !XDS_LB_POLICY_NAME.equals(lbPolicyName)
+        && !DNS_LB_POLICY_NAME.equals(lbPolicyName)) {
+      return " Note: unexpected LB policy '"
+          + lbPolicyName
+          + "' for "
+          + requestedTransport
+          + " (expected '"
+          + XDS_LB_POLICY_NAME
+          + "').";
+    }
+    return "";
+  }
 
   private static ScheduledExecutorService newTelemetryScheduler() {
     ScheduledThreadPoolExecutor executor =
@@ -501,20 +524,43 @@ final class GrpcChannelTelemetry {
     return serviceAddress;
   }
 
+  private static Object unwrapForwardingChannel(ManagedChannel channel)
+      throws ReflectiveOperationException {
+    Object current = channel;
+    for (int depth = 0; depth < 8; depth++) {
+      Field delegateField = findField(current.getClass(), "delegate");
+      if (delegateField == null) {
+        break;
+      }
+      delegateField.setAccessible(true);
+      Object next = delegateField.get(current);
+      if (!(next instanceof ManagedChannel) || next == current) {
+        break;
+      }
+      current = next;
+    }
+    return current;
+  }
+
   @Nullable
-  static String defaultExtractLbPolicyName(@Nullable ManagedChannel channel) {
-    if (channel == null) {
+  private static Object readField(Object target, String fieldName)
+      throws ReflectiveOperationException {
+    Field field = findField(target.getClass(), fieldName);
+    if (field == null) {
       return null;
     }
-    try {
-      Method m = channel.getClass().getMethod("getLoadBalancingPolicyName");
-      m.setAccessible(true);
-      Object result = m.invoke(channel);
-      if (result instanceof String) {
-        return (String) result;
+    field.setAccessible(true);
+    return field.get(target);
+  }
+
+  @Nullable
+  private static Field findField(Class<?> clazz, String fieldName) {
+    for (Class<?> current = clazz; current != null; current = current.getSuperclass()) {
+      try {
+        return current.getDeclaredField(fieldName);
+      } catch (NoSuchFieldException ignored) {
+        // Continue walking up the class hierarchy.
       }
-    } catch (Exception ignored) {
-      // Standard io.grpc.ManagedChannel does not expose getLoadBalancingPolicyName publicly.
     }
     return null;
   }
@@ -562,11 +608,11 @@ final class GrpcChannelTelemetry {
         completeFailure(channelRef.get(), "telemetry scheduler shut down");
         return completionFuture;
       }
-      step();
+      step(true);
       return completionFuture;
     }
 
-    private void step() {
+    private void step(boolean requestConnection) {
       if (completed.get()) {
         return;
       }
@@ -577,9 +623,13 @@ final class GrpcChannelTelemetry {
       }
       ConnectivityState state;
       try {
-        state = ch.getState(true);
+        state = ch.getState(requestConnection);
       } catch (UnsupportedOperationException e) {
         completeFailure(ch, "channel does not support connectivity state inspection");
+        return;
+      } catch (RuntimeException e) {
+        completeFailure(
+            ch, "failed to inspect connectivity state: " + e.getClass().getSimpleName());
         return;
       }
       if (state == ConnectivityState.READY) {
@@ -607,9 +657,12 @@ final class GrpcChannelTelemetry {
         return;
       }
       try {
-        ch.notifyWhenStateChanged(state, this::step);
+        ch.notifyWhenStateChanged(state, () -> step(false));
       } catch (UnsupportedOperationException e) {
         completeFailure(ch, "channel does not support state change notifications");
+      } catch (RuntimeException e) {
+        completeFailure(
+            ch, "failed to watch state change notifications: " + e.getClass().getSimpleName());
       }
     }
 
