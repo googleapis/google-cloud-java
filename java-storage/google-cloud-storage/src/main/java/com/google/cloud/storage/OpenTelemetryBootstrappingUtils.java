@@ -67,6 +67,8 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 final class OpenTelemetryBootstrappingUtils {
+  private static final String OTEL_SDK_METRICS_METER_NAME = "io.opentelemetry.sdk.metrics";
+
   private static final Collection<String> METRICS_TO_ENABLE =
       ImmutableList.of(
           "grpc.lb.wrr.rr_fallback",
@@ -517,7 +519,8 @@ final class OpenTelemetryBootstrappingUtils {
         shouldSuppressExceptions);
   }
 
-  private static SdkMeterProvider buildMeterProvider(
+  @VisibleForTesting
+  static SdkMeterProvider buildMeterProvider(
       MetricExporter cloudMonitoringExporter,
       SdkMeterProviderBuilder providerBuilder,
       String projectIdToUse,
@@ -559,7 +562,13 @@ final class OpenTelemetryBootstrappingUtils {
             : null;
     attributesBuilder.put("host_id", detectedHostId != null ? detectedHostId : "unknown");
 
+    // Drop OpenTelemetry SDK internal self-telemetry (opentelemetry-sdk-metrics records
+    // otel.sdk.metric_reader.collection.duration with empty explicit bucket boundaries, which
+    // Cloud Monitoring rejects starting on the second periodic export).
     providerBuilder
+        .registerView(
+            InstrumentSelector.builder().setMeterName(OTEL_SDK_METRICS_METER_NAME).build(),
+            View.builder().setAggregation(Aggregation.drop()).build())
         .registerMetricReader(
             PeriodicMetricReader.builder(exporter)
                 .setInterval(metricInterval != null ? metricInterval : Duration.ofSeconds(60))

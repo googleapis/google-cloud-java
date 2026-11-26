@@ -24,10 +24,14 @@ import static org.mockito.Mockito.mock;
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.common.CompletableResultCode;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricExporter;
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Test;
 
@@ -325,5 +329,44 @@ public final class OpenTelemetryBootstrappingUtilsTest {
             "json",
             Attributes.empty());
     assertThat(nullProvider).isNull();
+  }
+
+  @Test
+  public void buildMeterProvider_dropsOtelSdkInternalMetricsAcrossRepeatedFlushes() {
+    InMemoryMetricExporter exporter = InMemoryMetricExporter.create();
+
+    SdkMeterProviderBuilder builder =
+        OpenTelemetryBootstrappingUtils.registerClientViews(SdkMeterProvider.builder());
+    try (SdkMeterProvider provider =
+        OpenTelemetryBootstrappingUtils.buildMeterProvider(
+            exporter,
+            builder,
+            "test-project",
+            "test-instance",
+            "grpc",
+            /* customResourceType= */ null,
+            Attributes.empty(),
+            Duration.ofHours(1),
+            /* shouldSuppressExceptions= */ false)) {
+      provider
+          .get(StorageClientMetrics.METER_NAME)
+          .counterBuilder(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS)
+          .build()
+          .add(1L);
+
+      CompletableResultCode firstFlush = provider.forceFlush().join(10, TimeUnit.SECONDS);
+      CompletableResultCode secondFlush = provider.forceFlush().join(10, TimeUnit.SECONDS);
+      assertThat(firstFlush.isSuccess()).isTrue();
+      assertThat(secondFlush.isSuccess()).isTrue();
+
+      // Assert before the provider closes; InMemoryMetricExporter clears its items on shutdown.
+      List<MetricData> items = exporter.getFinishedMetricItems();
+      assertThat(items.size()).isAtLeast(2);
+      for (MetricData item : items) {
+        assertThat(item.getName()).isEqualTo("gcp/storage/client/operations");
+        assertThat(item.getInstrumentationScopeInfo().getName())
+            .isEqualTo(StorageClientMetrics.METER_NAME);
+      }
+    }
   }
 }
