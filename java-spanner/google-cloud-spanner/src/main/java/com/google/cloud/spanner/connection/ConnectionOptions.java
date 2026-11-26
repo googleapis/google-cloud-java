@@ -122,7 +122,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 
 /**
  * Internal connection API for Google Cloud Spanner. This class may introduce breaking changes
@@ -1097,7 +1097,8 @@ public class ConnectionOptions {
       return propertyValues;
     }
 
-    @Nullable String getValue(String property) {
+    @Nullable
+    String getValue(String property) {
       return propertyValues.get(property.toLowerCase(Locale.ENGLISH));
     }
   }
@@ -1263,11 +1264,13 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(CREDENTIALS_URL);
   }
 
-  @Nullable String getEncodedCredentialsHash() {
+  @Nullable
+  String getEncodedCredentialsHash() {
     return this.encodedCredentialsHash;
   }
 
-  @Nullable String getOAuthTokenHash() {
+  @Nullable
+  String getOAuthTokenHash() {
     return this.oAuthTokenHash;
   }
 
@@ -1499,7 +1502,8 @@ public class ConnectionOptions {
   }
 
   /** Any warnings that were generated while creating the {@link ConnectionOptions} instance. */
-  public @Nullable String getWarnings() {
+  @Nullable
+  public String getWarnings() {
     return warnings;
   }
 
@@ -1530,7 +1534,8 @@ public class ConnectionOptions {
    * Returns the explicitly configured universe domain, normalizing an empty string to {@code null}
    * so omitted and empty values are treated identically across callers and connection pooling.
    */
-  @Nullable String getUniverseDomain() {
+  @Nullable
+  String getUniverseDomain() {
     return Strings.emptyToNull(getInitialConnectionPropertyValue(UNIVERSE_DOMAIN));
   }
 
