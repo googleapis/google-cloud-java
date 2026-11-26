@@ -291,11 +291,26 @@ final class StorageMetricsContext {
   }
 
   void recordAttemptFailure(@Nullable StorageClientMetrics metrics, Throwable e) {
+    recordAttemptFailure(metrics, StorageErrorTypeMapper.mapThrowable(e), e, HTTP_STATUS_UNSET);
+  }
+
+  /**
+   * Records a failed attempt that google-http-client retried internally (for example a 401
+   * credential refresh or an {@code IOException}), which {@link Retrying} never observes.
+   */
+  void recordAttemptFailure(String errorType, long httpStatusCode) {
+    recordAttemptFailure(this.metrics, errorType, null, httpStatusCode);
+  }
+
+  private void recordAttemptFailure(
+      @Nullable StorageClientMetrics metrics,
+      String errorType,
+      @Nullable Throwable e,
+      long defaultHttpStatus) {
     if (metrics == null) {
       return;
     }
     try (Scope ignore = otelContext.makeCurrent()) {
-      String errorType = StorageErrorTypeMapper.mapThrowable(e);
       String networkPath = resolveNetworkPath();
       Attributes attemptBase = buildAttemptBaseAttributes(metrics);
       recordErrorCounter(metrics, attemptBase, errorType, networkPath);
@@ -304,7 +319,7 @@ final class StorageMetricsContext {
             attemptBase.toBuilder()
                 .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
                 .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath);
-        putAttemptStatusCodes(builder, e, StorageErrorTypeMapper.STATUS_UNKNOWN, HTTP_STATUS_UNSET);
+        putAttemptStatusCodes(builder, e, StorageErrorTypeMapper.STATUS_UNKNOWN, defaultHttpStatus);
         metrics.getAttempts().add(1, builder.build());
       }
     }
