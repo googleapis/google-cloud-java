@@ -221,6 +221,7 @@ public final class StorageClientMetricsTest {
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE.replace(".", "/");
     assertThat(metricsMap).containsKey(requestActiveName);
     assertThat(metricsMap.get(requestActiveName).getUnit()).isEqualTo("{request}");
+    assertThat(metricsMap.get(requestActiveName).getLongSumData().isMonotonic()).isFalse();
 
     String serverUnreachedName =
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED.replace(".", "/");

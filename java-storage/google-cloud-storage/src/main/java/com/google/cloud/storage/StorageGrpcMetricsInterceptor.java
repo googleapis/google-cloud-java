@@ -70,12 +70,33 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
       private final AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
       private final AtomicLong ttfbStartNanos = new AtomicLong();
+      private final AtomicBoolean activeReleased = new AtomicBoolean(false);
 
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
         long startTimeNanos = clock.nanoTime();
         ttfbStartNanos.set(startTimeNanos);
+        metrics.recordRequestActive(otelContext, operationName, 1L);
 
+        try {
+          startWithMetrics(responseListener, headers, startTimeNanos);
+        } catch (RuntimeException | Error e) {
+          // Per the ClientCall contract, onClose is not delivered when start throws, so balance
+          // the +1 here. A misbehaving downstream call may still have closed the listener inline
+          // before throwing, so releaseActive() ensures the -1 is recorded only once.
+          releaseActive();
+          throw e;
+        }
+      }
+
+      private void releaseActive() {
+        if (activeReleased.compareAndSet(false, true)) {
+          metrics.recordRequestActive(otelContext, operationName, -1L);
+        }
+      }
+
+      private void startWithMetrics(
+          Listener<RespT> responseListener, Metadata headers, long startTimeNanos) {
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               @Override
@@ -112,6 +133,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                   metrics.recordRpcCallDuration(
                       otelContext, durationSeconds, rpcMethod, statusCode, networkPath, errorType);
                 } finally {
+                  releaseActive();
                   super.onClose(status, trailers);
                 }
               }
