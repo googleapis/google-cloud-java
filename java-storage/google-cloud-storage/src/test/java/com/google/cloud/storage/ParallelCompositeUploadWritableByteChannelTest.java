@@ -25,6 +25,7 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ApiExceptions;
+import com.google.cloud.storage.BlobInfo.Retention;
 import com.google.cloud.storage.BufferHandlePool.PooledBuffer;
 import com.google.cloud.storage.Crc32cValue.Crc32cLengthKnown;
 import com.google.cloud.storage.MetadataField.PartRange;
@@ -844,6 +845,105 @@ public final class ParallelCompositeUploadWritableByteChannelTest {
     pcu.write(content.asByteBuffer());
 
     pcu.close();
+  }
+
+  @Test
+  public void partsDoNotInheritRetentionOrHolds() throws Exception {
+    Retention retention =
+        Retention.newBuilder()
+            .setMode(Retention.Mode.LOCKED)
+            .setRetainUntilTime(OffsetDateTime.parse("2100-01-01T00:00:00Z"))
+            .build();
+    BlobInfo ultimate =
+        info.toBuilder()
+            .setRetention(retention)
+            .setTemporaryHold(true)
+            .setEventBasedHold(true)
+            .build();
+
+    List<BlobInfo> partTargets = Collections.synchronizedList(new ArrayList<>());
+    AtomicReference<BlobInfo> finalTarget = new AtomicReference<>();
+    FakeStorageInternal storageInternal =
+        new FakeStorageInternal() {
+          @Override
+          public BlobInfo internalDirectUpload(
+              BlobInfo info, Opts<ObjectTargetOpt> opts, ByteBuffer buf) {
+            partTargets.add(info);
+            return super.internalDirectUpload(info, opts, buf);
+          }
+
+          @Override
+          public BlobInfo compose(ComposeRequest composeRequest) {
+            BlobInfo target = composeRequest.getTarget();
+            if (target.getBlobId().getName().startsWith(partNamingStrategy.prefix)) {
+              partTargets.add(target);
+            } else {
+              finalTarget.set(target);
+            }
+            return super.compose(composeRequest);
+          }
+
+          @Override
+          public Void internalObjectDelete(BlobId id, Opts<ObjectSourceOpt> opts) {
+            // mimic GCS: retained or held objects cannot be deleted
+            Data d = addedObjects.get(id);
+            if (d != null) {
+              BlobInfo i = d.getInfo();
+              if (i.getRetention() != null
+                  || Boolean.TRUE.equals(i.getTemporaryHold())
+                  || Boolean.TRUE.equals(i.getEventBasedHold())) {
+                deleteRequests.add(id);
+                throw ApiExceptionFactory.createException(
+                    null, GrpcStatusCode.of(Code.PERMISSION_DENIED), false);
+              }
+            }
+            return super.internalObjectDelete(id, opts);
+          }
+        };
+    ParallelCompositeUploadWritableByteChannel pcu =
+        new ParallelCompositeUploadWritableByteChannel(
+            bufferHandlePool,
+            MoreExecutors.directExecutor(),
+            partNamingStrategy,
+            PartCleanupStrategy.always(),
+            2,
+            partMetadataFieldDecorator,
+            finalObject,
+            storageInternal,
+            ultimate,
+            opts);
+
+    byte[] bytes = DataGenerator.base64Characters().genBytes(bufferCapacity * 3 - 1);
+    pcu.write(ByteBuffer.wrap(bytes));
+    pcu.close();
+
+    BlobInfo result = ApiFutureUtils.await(finalObject);
+
+    assertAll(
+        () -> assertThat(result.getName()).isEqualTo(info.getName()),
+        // 3 direct uploads + 2 intermediate composes
+        () -> assertThat(partTargets).hasSize(5),
+        () ->
+            assertThat(
+                    partTargets.stream()
+                        .filter(p -> p.getRetention() != null)
+                        .collect(ImmutableList.toImmutableList()))
+                .isEmpty(),
+        () ->
+            assertThat(
+                    partTargets.stream()
+                        .filter(p -> p.getTemporaryHold() != null)
+                        .collect(ImmutableList.toImmutableList()))
+                .isEmpty(),
+        () ->
+            assertThat(
+                    partTargets.stream()
+                        .filter(p -> p.getEventBasedHold() != null)
+                        .collect(ImmutableList.toImmutableList()))
+                .isEmpty(),
+        () -> assertThat(finalTarget.get().getRetention()).isEqualTo(retention),
+        () -> assertThat(finalTarget.get().getTemporaryHold()).isTrue(),
+        () -> assertThat(finalTarget.get().getEventBasedHold()).isTrue());
   }
 
   @NonNull

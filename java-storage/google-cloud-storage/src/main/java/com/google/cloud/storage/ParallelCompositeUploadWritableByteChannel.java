@@ -441,6 +441,11 @@ final class ParallelCompositeUploadWritableByteChannel implements BufferedWritab
     // however, gcs will not accept that version resource identifier when creating a new object
     // strip it out, so it can be included as a query string parameter instead
     b.setKmsKeyName(null);
+    // parts are transient and must remain deletable. Retention and holds only belong on the
+    // ultimate object, which the final compose applies from ultimateObject.
+    b.setRetention(null);
+    b.setTemporaryHold(null);
+    b.setEventBasedHold(null);
     b = partMetadataFieldDecorator.apply(b);
     return b.build();
   }
