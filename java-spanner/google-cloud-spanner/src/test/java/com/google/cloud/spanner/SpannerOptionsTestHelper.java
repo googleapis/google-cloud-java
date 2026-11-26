@@ -28,6 +28,10 @@ public class SpannerOptionsTestHelper {
         (projectId, credentials) -> spanExporter);
   }
 
+  public static void allowBuiltInTracingHost(String host) {
+    BuiltInTracingProvider.INSTANCE.allowHostForTesting(host);
+  }
+
   public static void resetBuiltInTracing() {
     BuiltInTracingProvider.INSTANCE.reset();
   }

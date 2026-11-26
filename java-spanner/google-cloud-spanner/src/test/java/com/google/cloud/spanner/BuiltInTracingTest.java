@@ -27,6 +27,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
@@ -70,10 +71,14 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import io.opentelemetry.sdk.trace.export.SpanExporter;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.UncheckedIOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
@@ -123,6 +128,11 @@ public class BuiltInTracingTest {
       OAuth2Credentials.create(new AccessToken("token", null));
 
   private static final AtomicReference<Metadata> lastExecuteSqlHeaders = new AtomicReference<>();
+  private static final RetryPolicy FAST_RETRY =
+      RetryPolicy.builder()
+          .setInitialBackoff(Duration.ofNanos(1))
+          .setMaxBackoff(Duration.ofNanos(1))
+          .build();
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
 
@@ -169,6 +179,7 @@ public class BuiltInTracingTest {
     BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
         (projectId, credentials) -> new CollectingSpanExporter(exportedSpans, null));
     lastExecuteSqlHeaders.set(null);
+    BuiltInTracingProvider.INSTANCE.allowHostForTesting("http://localhost:" + server.getPort());
   }
 
   @After
@@ -650,7 +661,7 @@ public class BuiltInTracingTest {
     }
     SpanExporter exporter =
         BuiltInTracingProvider.createOtlpExporter(
-            "http://localhost:" + server.getPort(), CREDENTIALS);
+            "http://localhost:" + server.getPort(), CREDENTIALS, FAST_RETRY);
 
     exporter.export(spans).join(10, TimeUnit.SECONDS);
     exporter.shutdown().join(10, TimeUnit.SECONDS);
@@ -675,7 +686,7 @@ public class BuiltInTracingTest {
       }
       SpanExporter exporter =
           BuiltInTracingProvider.createOtlpExporter(
-              "http://localhost:" + traceServer.getPort(), CREDENTIALS);
+              "http://localhost:" + traceServer.getPort(), CREDENTIALS, FAST_RETRY);
 
       CompletableResultCode result = exporter.export(spans).join(10, TimeUnit.SECONDS);
       exporter.shutdown().join(10, TimeUnit.SECONDS);
@@ -709,7 +720,8 @@ public class BuiltInTracingTest {
         tracerProvider.get("test").spanBuilder("denied").startSpan().end();
         spans = finishedSpans.getFinishedSpanItems();
       }
-      SpanExporter exporter = BuiltInTracingProvider.createOtlpExporter(endpoint, CREDENTIALS);
+      SpanExporter exporter =
+          BuiltInTracingProvider.createOtlpExporter(endpoint, CREDENTIALS, FAST_RETRY);
       CompletableResultCode result = exporter.export(spans).join(10, TimeUnit.SECONDS);
       exporter.shutdown().join(10, TimeUnit.SECONDS);
       assertTrue(result.isDone());
@@ -718,7 +730,7 @@ public class BuiltInTracingTest {
       exportRequest.set(null);
       BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
           (projectId, credentials) ->
-              BuiltInTracingProvider.createOtlpExporter(endpoint, credentials));
+              BuiltInTracingProvider.createOtlpExporter(endpoint, credentials, FAST_RETRY));
       SpannerOptions options =
           createOptionsBuilder()
               .setEnableBuiltInTracing(true)
@@ -818,6 +830,61 @@ public class BuiltInTracingTest {
   }
 
   @Test
+  public void exporterDoesNotSendSpansWithoutTlsToARemoteHost() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            BuiltInTracingProvider.createOtlpExporter(
+                "http://telemetry.example.com:4317", CREDENTIALS, FAST_RETRY));
+  }
+
+  @Test
+  public void builtInTracingFieldsDoNotPreventSerialization() throws Exception {
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setBuiltInTracingSamplingRate(1.0)
+            .build();
+    assertTrue(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+
+    for (Field field : SpannerOptions.class.getDeclaredFields()) {
+      int modifiers = field.getModifiers();
+      if (!field.getName().toLowerCase().contains("builtintracing")
+          || Modifier.isStatic(modifiers)
+          || Modifier.isTransient(modifiers)) {
+        continue;
+      }
+      field.setAccessible(true);
+      try (ObjectOutputStream output = new ObjectOutputStream(new ByteArrayOutputStream())) {
+        output.writeObject(field.get(options));
+      }
+    }
+  }
+
+  @Test
+  public void builtInTracingWorksWhenItsTransientFieldsAreEmpty() throws Exception {
+    SpannerOptions options =
+        createOptionsBuilder()
+            .setEnableBuiltInTracing(true)
+            .setBuiltInTracingSamplingRate(1.0)
+            .build();
+    for (String name : new String[] {"builtInTracingState", "builtInTracing"}) {
+      Field field = SpannerOptions.class.getDeclaredField(name);
+      assertTrue(Modifier.isTransient(field.getModifiers()));
+      field.setAccessible(true);
+      field.set(options, null);
+    }
+
+    assertTrue(options.getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+    try (Spanner spanner = options.getService()) {
+      assertTrue(spanner.getOptions().getTracingOpenTelemetry() instanceof OpenTelemetrySdk);
+      executeSelect1(spanner);
+    }
+    assertTrue(waitForInstanceCount(0));
+    assertFalse(exportedSpans.isEmpty());
+  }
+
+  @Test
   public void exporterRetriesWhenTheServerIsUnavailable() throws Exception {
     AtomicInteger calls = new AtomicInteger();
     Server traceServer =
@@ -831,7 +898,7 @@ public class BuiltInTracingTest {
     try {
       SpanExporter exporter =
           BuiltInTracingProvider.createOtlpExporter(
-              "http://localhost:" + traceServer.getPort(), CREDENTIALS);
+              "http://localhost:" + traceServer.getPort(), CREDENTIALS, FAST_RETRY);
       CompletableResultCode result =
           exporter.export(createFinishedSpans()).join(10, TimeUnit.SECONDS);
       exporter.shutdown().join(10, TimeUnit.SECONDS);
@@ -855,12 +922,7 @@ public class BuiltInTracingTest {
             new AtomicReference<>(),
             new AtomicReference<>());
     try {
-      RetryPolicy retryPolicy =
-          RetryPolicy.builder()
-              .setMaxAttempts(3)
-              .setInitialBackoff(Duration.ofMillis(10))
-              .setMaxBackoff(Duration.ofMillis(10))
-              .build();
+      RetryPolicy retryPolicy = FAST_RETRY.toBuilder().setMaxAttempts(3).build();
 
       assertEquals(GrpcStatusCode.OK, send(traceServer, retryPolicy).getStatusCode());
       assertEquals(3, calls.get());
@@ -900,7 +962,7 @@ public class BuiltInTracingTest {
             new AtomicReference<>(),
             new AtomicReference<>());
     try {
-      GrpcResponse response = send(traceServer, RetryPolicy.getDefault());
+      GrpcResponse response = send(traceServer, FAST_RETRY);
 
       assertEquals(GrpcStatusCode.PERMISSION_DENIED, response.getStatusCode());
       assertEquals("denied", response.getStatusDescription());
@@ -1269,6 +1331,36 @@ public class BuiltInTracingTest {
             .build();
 
     assertFalse(options.isEndToEndTracingEnabled());
+  }
+
+  @Test
+  public void builtInTracingIsNotUsedWithACustomHost() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setHost("https://spanner-psc.internal.example.com")
+            .setCredentials(CREDENTIALS)
+            .setEnableBuiltInTracing(true)
+            .build();
+
+    assertBuiltInTracingIsNotUsed(options, "a custom host");
+  }
+
+  @Test
+  public void builtInTracingIsNotUsedWithACustomChannelProvider() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(
+                InstantiatingGrpcChannelProvider.newBuilder()
+                    .setEndpoint("localhost:" + server.getPort())
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setCredentials(CREDENTIALS)
+            .setEnableBuiltInTracing(true)
+            .build();
+
+    assertBuiltInTracingIsNotUsed(options, "a custom channel provider");
   }
 
   @Test

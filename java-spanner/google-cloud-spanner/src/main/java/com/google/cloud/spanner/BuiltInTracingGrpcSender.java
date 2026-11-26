@@ -102,6 +102,10 @@ final class BuiltInTracingGrpcSender implements GrpcSender {
     ManagedChannelBuilder<?> channelBuilder =
         ManagedChannelBuilder.forAddress(endpoint.getHost(), endpoint.getPort());
     if (!"https".equals(endpoint.getScheme())) {
+      if (!isLoopback(endpoint.getHost())) {
+        throw new IllegalArgumentException(
+            "Built-in tracing only sends spans without TLS to localhost, not to " + endpoint);
+      }
       channelBuilder.usePlaintext();
     }
     RetryPolicy retryPolicy = config.getRetryPolicy();
@@ -127,6 +131,13 @@ final class BuiltInTracingGrpcSender implements GrpcSender {
 
   static ComponentLoader componentLoader() {
     return new SenderComponentLoader();
+  }
+
+  private static boolean isLoopback(@Nullable String host) {
+    return "localhost".equals(host)
+        || "127.0.0.1".equals(host)
+        || "::1".equals(host)
+        || "[::1]".equals(host);
   }
 
   private static Map<String, ?> createServiceConfig(

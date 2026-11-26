@@ -97,6 +97,7 @@ import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -376,14 +377,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     CLOSED
   }
 
-  private final Object builtInTracingLock = new Object();
+  private static final class BuiltInTracingLock implements Serializable {
+    private static final long serialVersionUID = 1L;
+  }
 
-  @GuardedBy("builtInTracingLock")
-  private BuiltInTracingState builtInTracingState = BuiltInTracingState.NOT_CREATED;
+  private final Object builtInTracingLock = new BuiltInTracingLock();
 
   @GuardedBy("builtInTracingLock")
   @Nullable
-  private OpenTelemetrySdk builtInTracing;
+  private transient BuiltInTracingState builtInTracingState = BuiltInTracingState.NOT_CREATED;
+
+  @GuardedBy("builtInTracingLock")
+  @Nullable
+  private transient OpenTelemetrySdk builtInTracing;
 
   private final String monitoringHost;
   private final TransactionOptions defaultTransactionOptions;
@@ -2678,10 +2684,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * permission, for example through the roles/cloudtrace.agent role. User credentials also need a
      * quota project.
      *
-     * <p>Built-in tracing is not used with the emulator, Spanner Omni, a client without
-     * credentials, or a universe domain other than googleapis.com. If the client or the application
-     * has an OpenTelemetry instance that only has metrics, OpenTelemetry 1.67 or later is needed
-     * for the client to detect this and use built-in tracing.
+     * <p>Built-in tracing is not used with the emulator, Spanner Omni, a custom host or channel
+     * provider (for example a Private Service Connect endpoint), a client without credentials, or a
+     * universe domain other than googleapis.com. If the client or the application has an
+     * OpenTelemetry instance that only has metrics, OpenTelemetry 1.67 or later is needed for the
+     * client to detect this and use built-in tracing.
      */
     public Builder setEnableBuiltInTracing(boolean enableBuiltInTracing) {
       this.enableBuiltInTracing = enableBuiltInTracing;
@@ -3202,7 +3209,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   private OpenTelemetry getOrCreateBuiltInTracing(OpenTelemetry fallback) {
     synchronized (builtInTracingLock) {
-      if (builtInTracingState == BuiltInTracingState.NOT_CREATED) {
+      if (builtInTracingState == null || builtInTracingState == BuiltInTracingState.NOT_CREATED) {
         builtInTracing =
             BuiltInTracingProvider.INSTANCE.create(
                 getProjectId(),
@@ -3241,6 +3248,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     if (instanceType == InstanceType.OMNI) {
       return "Spanner Omni";
+    }
+    if (getChannelProvider() != null) {
+      return "a custom channel provider";
+    }
+    if (!Objects.equals(getHost(), getDefaultHost())
+        && !BuiltInTracingProvider.INSTANCE.isHostAllowedForTesting(getHost())) {
+      return "a custom host";
     }
     Credentials credentials = getCredentials();
     if (credentials == null || credentials instanceof NoCredentials) {

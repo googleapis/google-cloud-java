@@ -32,6 +32,7 @@ import io.opentelemetry.context.propagation.ContextPropagators;
 import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.common.CompletableResultCode;
+import io.opentelemetry.sdk.common.export.RetryPolicy;
 import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.trace.ReadWriteSpan;
 import io.opentelemetry.sdk.trace.ReadableSpan;
@@ -85,6 +86,7 @@ final class BuiltInTracingProvider {
   private BiFunction<String, Credentials, SpanExporter> spanExporterFactory =
       BuiltInTracingProvider::createTelemetryApiExporter;
   private BooleanSupplier contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
+  @Nullable private String hostAllowedForTesting;
   private Boolean contextCanHoldSpans;
   private Thread shutdownHook;
   private boolean shutDown;
@@ -277,6 +279,15 @@ final class BuiltInTracingProvider {
   }
 
   @VisibleForTesting
+  synchronized void allowHostForTesting(@Nullable String host) {
+    this.hostAllowedForTesting = host;
+  }
+
+  synchronized boolean isHostAllowedForTesting(String host) {
+    return host != null && host.equals(hostAllowedForTesting);
+  }
+
+  @VisibleForTesting
   void reset() {
     shutdown();
     synchronized (this) {
@@ -293,6 +304,7 @@ final class BuiltInTracingProvider {
       spanExporterFactory = BuiltInTracingProvider::createTelemetryApiExporter;
       contextCheck = BuiltInTracingProvider::contextCanHoldSpans;
       contextCanHoldSpans = null;
+      hostAllowedForTesting = null;
       creationFailureLogged = false;
       openCensusWarningLogged = false;
       customTracingInfoLogged = false;
@@ -347,11 +359,12 @@ final class BuiltInTracingProvider {
 
   private static SpanExporter createTelemetryApiExporter(
       String projectId, Credentials credentials) {
-    return createOtlpExporter(TELEMETRY_API_ENDPOINT, credentials);
+    return createOtlpExporter(TELEMETRY_API_ENDPOINT, credentials, RetryPolicy.getDefault());
   }
 
   @VisibleForTesting
-  static SpanExporter createOtlpExporter(String endpoint, Credentials credentials) {
+  static SpanExporter createOtlpExporter(
+      String endpoint, Credentials credentials, RetryPolicy retryPolicy) {
     Credentials scopedCredentials =
         credentials instanceof GoogleCredentials
                 && ((GoogleCredentials) credentials).createScopedRequired()
@@ -362,6 +375,7 @@ final class BuiltInTracingProvider {
         .setEndpoint(endpoint)
         .setHeaders(() -> getRequestHeaders(scopedCredentials, credentialsWarningLogged))
         .setMeterProvider(MeterProvider.noop())
+        .setRetryPolicy(retryPolicy)
         .setComponentLoader(BuiltInTracingGrpcSender.componentLoader())
         .build();
   }

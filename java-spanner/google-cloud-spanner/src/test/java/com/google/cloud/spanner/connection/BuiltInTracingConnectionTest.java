@@ -45,6 +45,7 @@ public class BuiltInTracingConnectionTest extends AbstractMockServerTest {
     GlobalOpenTelemetry.resetForTest();
     spanExporter = InMemorySpanExporter.create();
     SpannerOptionsTestHelper.setBuiltInTracingSpanExporter(spanExporter);
+    SpannerOptionsTestHelper.allowBuiltInTracingHost("http://localhost:" + getPort());
   }
 
   @After
