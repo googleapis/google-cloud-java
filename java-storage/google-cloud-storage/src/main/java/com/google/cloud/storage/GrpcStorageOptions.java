@@ -326,7 +326,7 @@ public final class GrpcStorageOptions extends StorageOptions
         InstantiatingGrpcChannelProvider.newBuilder()
             .setEndpoint(endpoint)
             .setAllowNonDefaultServiceAccount(true)
-            .setAttemptDirectPath(attemptDirectPath || attemptDirectPathXdsOverInterconnect)
+            .setAttemptDirectPath(attemptDirectPath)
             .setAttemptDirectPathXdsOverInterconnect(attemptDirectPathXdsOverInterconnect);
 
     if (!DIRECT_PATH_BOUND_TOKEN_DISABLED) {
@@ -357,7 +357,10 @@ public final class GrpcStorageOptions extends StorageOptions
       channelProviderBuilder.setChannelConfigurator(channelConfigurator);
     }
 
-    builder.setTransportChannelProvider(channelProviderBuilder.build());
+    InstantiatingGrpcChannelProvider baseProvider = channelProviderBuilder.build();
+    GrpcChannelTelemetry.logChannelConfiguration(
+        baseProvider, credentials, attemptDirectPathXdsOverInterconnect);
+    builder.setTransportChannelProvider(baseProvider);
     RetrySettings baseRetrySettings = getRetrySettings();
     RetrySettings readRetrySettings =
         baseRetrySettings.toBuilder()
