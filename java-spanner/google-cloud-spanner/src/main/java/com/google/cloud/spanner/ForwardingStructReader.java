@@ -32,7 +32,7 @@ import java.util.function.Function;
 /** Forwarding implements of StructReader */
 public class ForwardingStructReader implements StructReader {
 
-  private Supplier<? extends StructReader> delegate;
+  private volatile Supplier<? extends StructReader> delegate;
 
   public ForwardingStructReader(StructReader delegate) {
     this.delegate = Suppliers.ofInstance(Preconditions.checkNotNull(delegate));
@@ -51,6 +51,10 @@ public class ForwardingStructReader implements StructReader {
    */
   void replaceDelegate(StructReader newDelegate) {
     this.delegate = Suppliers.ofInstance(Preconditions.checkNotNull(newDelegate));
+  }
+
+  void replaceDelegateSupplier(Supplier<? extends StructReader> newDelegate) {
+    this.delegate = Preconditions.checkNotNull(newDelegate);
   }
 
   /**
@@ -152,11 +156,13 @@ public class ForwardingStructReader implements StructReader {
 
   @Override
   public BigDecimal getBigDecimal(int columnIndex) {
+    checkValidState();
     return delegate.get().getBigDecimal(columnIndex);
   }
 
   @Override
   public BigDecimal getBigDecimal(String columnName) {
+    checkValidState();
     return delegate.get().getBigDecimal(columnName);
   }
 
@@ -354,11 +360,13 @@ public class ForwardingStructReader implements StructReader {
 
   @Override
   public List<BigDecimal> getBigDecimalList(int columnIndex) {
+    checkValidState();
     return delegate.get().getBigDecimalList(columnIndex);
   }
 
   @Override
   public List<BigDecimal> getBigDecimalList(String columnName) {
+    checkValidState();
     return delegate.get().getBigDecimalList(columnName);
   }
 
