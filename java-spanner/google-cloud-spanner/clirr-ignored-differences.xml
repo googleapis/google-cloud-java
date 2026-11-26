@@ -1172,4 +1172,11 @@
     <className>com/google/cloud/spanner/DatabaseClient</className>
     <method>java.lang.String getDatabaseDefaultIsolationLevelValue()</method>
   </difference>
+
+  <!-- Added universe domain environment option -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/SpannerOptions$SpannerEnvironment</className>
+    <method>java.lang.String getUniverseDomain()</method>
+  </difference>
 </differences>

@@ -36,6 +36,8 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.OpencensusTracerFactory;
+import com.google.auth.ApiKeyCredentials;
+import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.NoCredentials;
@@ -118,7 +120,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
@@ -136,6 +138,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String SPANNER_SERVICE_NAME = "spanner";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
+  private static final String GOOGLE_CLOUD_UNIVERSE_DOMAIN_ENV_VAR = "GOOGLE_CLOUD_UNIVERSE_DOMAIN";
   private static final int MAX_DNS_HOSTNAME_LENGTH = 253;
   private static final Pattern VALID_UNIVERSE_DOMAIN_PATTERN =
       Pattern.compile(
@@ -323,7 +326,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean trackTransactionStarter;
   private final boolean enableGrpcGcpOtelMetrics;
   private final boolean enableChannelPoolBuiltInMetrics;
-  private final BuiltInMetricsProvider builtInMetricsProvider = BuiltInMetricsProvider.INSTANCE;
+
+  // Non-final so tests can observe the arguments passed to the process-wide metrics provider.
+  @VisibleForTesting
+  BuiltInMetricsProvider builtInMetricsProvider = BuiltInMetricsProvider.INSTANCE;
 
   /**
    * These are the default {@link QueryOptions} defined by the user on this {@link SpannerOptions}.
@@ -460,8 +466,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      *     ApiCallContext}. If <code>null</code> is returned, no changes to the default {@link
      *     ApiCallContext} will be made.
      */
-    @Nullable
-    <ReqT, RespT> ApiCallContext configure(
+    @Nullable <ReqT, RespT> ApiCallContext configure(
         ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method);
   }
 
@@ -1013,18 +1018,20 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     databaseRole = builder.databaseRole;
     sessionLabels = builder.sessionLabels;
     try {
-      String resolvedUniversalDomain = getResolvedUniverseDomain();
+      // Resolve and validate the universe domain explicitly so validation does not rely solely on
+      // ServiceOptions eagerly evaluating getDefaultHost().
+      String resolvedUniverseDomain = getResolvedUniverseDomain();
       spannerStubSettings =
-          builder.spannerStubSettingsBuilder.setUniverseDomain(resolvedUniversalDomain).build();
+          builder.spannerStubSettingsBuilder.setUniverseDomain(resolvedUniverseDomain).build();
       instanceAdminStubSettings =
           builder
               .instanceAdminStubSettingsBuilder
-              .setUniverseDomain(resolvedUniversalDomain)
+              .setUniverseDomain(resolvedUniverseDomain)
               .build();
       databaseAdminStubSettings =
           builder
               .databaseAdminStubSettingsBuilder
-              .setUniverseDomain(resolvedUniversalDomain)
+              .setUniverseDomain(resolvedUniverseDomain)
               .build();
     } catch (IOException e) {
       throw SpannerExceptionFactory.newSpannerException(e);
@@ -1141,7 +1148,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    * inject URL components (such as userinfo, port, path, query, or fragment) into constructed
    * endpoint URLs.
    */
-  private static void validateUniverseDomain(@Nullable String universeDomain) {
+  @InternalApi
+  public static void validateUniverseDomain(@Nullable String universeDomain) {
     if (Strings.isNullOrEmpty(universeDomain)) {
       return;
     }
@@ -1152,13 +1160,51 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         universeDomain);
   }
 
-  private String getResolvedUniverseDomain() {
-    String universeDomain = getUniverseDomain();
+  /**
+   * Resolves the effective universe domain using the precedence: explicit configuration, then
+   * {@link SpannerEnvironment#getUniverseDomain()} ({@code GOOGLE_CLOUD_UNIVERSE_DOMAIN}), then
+   * {@code "googleapis.com"}. Validates any non-empty domain against RFC 1123 hostname constraints.
+   */
+  @InternalApi
+  public static String resolveUniverseDomain(@Nullable String configuredUniverseDomain) {
+    return resolveUniverseDomain(configuredUniverseDomain, environment.getUniverseDomain());
+  }
+
+  @VisibleForTesting
+  static String resolveUniverseDomain(
+      @Nullable String configuredUniverseDomain, @Nullable String envUniverseDomain) {
+    String universeDomain =
+        !Strings.isNullOrEmpty(configuredUniverseDomain)
+            ? configuredUniverseDomain
+            : envUniverseDomain;
     if (Strings.isNullOrEmpty(universeDomain)) {
       return GOOGLE_DEFAULT_UNIVERSE;
     }
     validateUniverseDomain(universeDomain);
     return universeDomain;
+  }
+
+  @VisibleForTesting
+  String getResolvedUniverseDomain() {
+    return resolveUniverseDomain(getUniverseDomain());
+  }
+
+  /**
+   * Validates that the credentials' universe domain matches the resolved universe domain (explicit
+   * configuration, {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN}, or {@code "googleapis.com"}). Validation
+   * is skipped for {@link ApiKeyCredentials} because API keys carry no universe domain metadata.
+   */
+  @InternalApi
+  @Override
+  public boolean hasValidUniverseDomain() throws IOException {
+    Credentials credentials = getCredentials();
+    // API keys carry no universe domain metadata (mirrors ServiceOptions#hasValidUniverseDomain).
+    if (credentials instanceof ApiKeyCredentials) {
+      return true;
+    }
+    String credentialsUniverseDomain =
+        credentials != null ? credentials.getUniverseDomain() : GOOGLE_DEFAULT_UNIVERSE;
+    return getResolvedUniverseDomain().equals(credentialsUniverseDomain);
   }
 
   /** Returns the default {@link RequestOptions.ClientContext} for this {@link SpannerOptions}. */
@@ -1250,6 +1296,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     default GoogleCredentials getDefaultSpannerOmniCredentials() {
+      return null;
+    }
+
+    /**
+     * Returns the universe domain configured in the environment (for example via {@code
+     * GOOGLE_CLOUD_UNIVERSE_DOMAIN}), or {@code null} if not set.
+     */
+    default @Nullable String getUniverseDomain() {
       return null;
     }
   }
@@ -1380,6 +1434,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     @Override
     public GoogleCredentials getDefaultSpannerOmniCredentials() {
       return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_OMNI_CREDENTIALS));
+    }
+
+    @Override
+    public @Nullable String getUniverseDomain() {
+      return System.getenv(GOOGLE_CLOUD_UNIVERSE_DOMAIN_ENV_VAR);
     }
   }
 
@@ -3048,7 +3107,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @InternalApi
   public OpenTelemetry getBuiltInOpenTelemetry() {
     return this.builtInMetricsProvider.getOrCreateOpenTelemetry(
-        this.getProjectId(), getCredentials(), this.monitoringHost, getUniverseDomain());
+        this.getProjectId(), getCredentials(), this.monitoringHost, getResolvedUniverseDomain());
   }
 
   /**
@@ -3088,7 +3147,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
           this.getProjectId(),
           getCredentials(),
           this.monitoringHost,
-          getUniverseDomain());
+          getResolvedUniverseDomain());
     }
     if (usesCustomMetricsProvider()) {
       OpenTelemetry customOpenTelemetry =
@@ -3187,7 +3246,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private ApiTracerFactory createCloudMonitoringMetricsTracerFactory() {
     OpenTelemetry openTelemetry =
         this.builtInMetricsProvider.getOrCreateOpenTelemetry(
-            this.getProjectId(), getCredentials(), this.monitoringHost, getUniverseDomain());
+            this.getProjectId(),
+            getCredentials(),
+            this.monitoringHost,
+            getResolvedUniverseDomain());
 
     return openTelemetry != null
         ? new BuiltInMetricsTracerFactory(

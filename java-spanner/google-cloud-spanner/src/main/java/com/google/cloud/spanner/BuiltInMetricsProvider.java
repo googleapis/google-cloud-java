@@ -61,7 +61,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
-final class BuiltInMetricsProvider {
+class BuiltInMetricsProvider {
 
   static BuiltInMetricsProvider INSTANCE = new BuiltInMetricsProvider();
 
@@ -78,7 +78,9 @@ final class BuiltInMetricsProvider {
   private boolean mismatchedProjectIdLogged;
   private Thread shutdownHook;
 
-  private BuiltInMetricsProvider() {}
+  // Package-private and non-final so tests can record the arguments passed by SpannerOptions.
+  @VisibleForTesting
+  BuiltInMetricsProvider() {}
 
   synchronized OpenTelemetry getOrCreateOpenTelemetry(
       String projectId,
