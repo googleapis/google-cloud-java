@@ -31,12 +31,18 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.storage.ApiaryUnbufferedReadableByteChannel.ApiaryReadRequest;
 import com.google.cloud.storage.Retrying.Retrier;
 import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
 import com.google.cloud.storage.spi.v1.AuditingHttpTransport;
 import com.google.common.collect.ImmutableMap;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.LongPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -47,10 +53,12 @@ import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -414,5 +422,160 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
     } finally {
       logger.removeHandler(handler);
     }
+  }
+
+  @Test
+  public void midStreamIoException_retried_recordsRetryAndErrorMetrics() throws IOException {
+    // Not retryable as-is; retried once translated to a StorageException.
+    assertMidStreamRetryRecorded(
+        readWithMidStreamIoException(retryIf(t -> t instanceof StorageException), true));
+  }
+
+  @Test
+  public void midStreamIoException_directlyRetryable_recordsRetryAndErrorMetrics()
+      throws IOException {
+    assertMidStreamRetryRecorded(readWithMidStreamIoException(retryIf(t -> true), true));
+  }
+
+  @Test
+  public void midStreamIoException_notRetryable_recordsErrorWithoutRetry() throws IOException {
+    Collection<MetricData> collected = readWithMidStreamIoException(retryIf(t -> false), false);
+    LongPointData errorPoint =
+        findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getValue()).isEqualTo(1L);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+    assertThat(collected.stream().map(MetricData::getName))
+        .doesNotContain(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
+  }
+
+  private static Collection<MetricData> readWithMidStreamIoException(
+      BasicResultRetryAlgorithm<Object> alg, boolean expectSuccess) throws IOException {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    HttpStorageOptions options =
+        StorageOptions.http()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    StorageMetricsContext ctx =
+        options.getStorageClientMetrics().createMultiStepContext("ReadObject");
+
+    AtomicInteger calls = new AtomicInteger(0);
+    HttpTransport transport =
+        new HttpTransport() {
+          @Override
+          protected LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                InputStream body =
+                    calls.incrementAndGet() == 1
+                        ? new InputStream() {
+                          @Override
+                          public int read() throws IOException {
+                            throw new IOException("connection reset mid-stream");
+                          }
+                        }
+                        : new ByteArrayInputStream(CONTENT_BYTES);
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(200)
+                    .setContent(body)
+                    .addHeader("x-goog-generation", "12345");
+              }
+            };
+          }
+        };
+    Storage storageClient =
+        new Storage.Builder(transport, GsonFactory.getDefaultInstance(), null)
+            .setApplicationName("test")
+            .build();
+    ApiaryReadRequest req =
+        new ApiaryReadRequest(
+            new StorageObject().setBucket("bucket").setName("blob"),
+            ImmutableMap.of(),
+            ByteRangeSpec.nullRange());
+
+    try (ApiaryUnbufferedReadableByteChannel channel =
+        new ApiaryUnbufferedReadableByteChannel(
+            req,
+            storageClient,
+            SettableApiFuture.create(),
+            options.createRetrier().withMetricsContext(ctx),
+            alg,
+            Hasher.noop())) {
+      ByteBuffer[] bufs = {ByteBuffer.allocate(CONTENT_BYTES.length)};
+      if (expectSuccess) {
+        assertThat(channel.read(bufs, 0, 1)).isEqualTo(CONTENT_BYTES.length);
+      } else {
+        assertThrows(IOException.class, () -> channel.read(bufs, 0, 1));
+      }
+    }
+    assertThat(calls.get()).isEqualTo(expectSuccess ? 2 : 1);
+    return reader.collectAllMetrics();
+  }
+
+  private static void assertMidStreamRetryRecorded(Collection<MetricData> collected) {
+    LongPointData retryPoint =
+        findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
+    assertThat(retryPoint.getValue()).isEqualTo(1L);
+    assertThat(retryPoint.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                .put(
+                    StorageClientMetrics.KEY_ERROR_TYPE,
+                    StorageErrorTypeMapper.STATUS_CONNECTION_ERROR)
+                .build());
+
+    LongPointData errorPoint =
+        findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getValue()).isEqualTo(1L);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("ReadObject");
+
+    long attemptsTotal =
+        collected.stream()
+            .filter(
+                m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS))
+            .flatMap(m -> m.getLongSumData().getPoints().stream())
+            .mapToLong(LongPointData::getValue)
+            .sum();
+    assertThat(attemptsTotal).isEqualTo(2L);
+  }
+
+  private static BasicResultRetryAlgorithm<Object> retryIf(Predicate<Throwable> shouldRetry) {
+    return new BasicResultRetryAlgorithm<Object>() {
+      @Override
+      public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+        return shouldRetry.test(previousThrowable);
+      }
+    };
+  }
+
+  private static LongPointData findSinglePoint(Collection<MetricData> collected, String name) {
+    MetricData metric =
+        collected.stream()
+            .filter(m -> m.getName().equals(name))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Missing metric " + name));
+    assertThat(metric.getLongSumData().getPoints()).hasSize(1);
+    return metric.getLongSumData().getPoints().iterator().next();
   }
 }

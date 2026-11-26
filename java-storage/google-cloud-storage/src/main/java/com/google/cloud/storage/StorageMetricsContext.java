@@ -291,30 +291,53 @@ final class StorageMetricsContext {
   }
 
   void recordAttemptFailure(@Nullable StorageClientMetrics metrics, Throwable e) {
+    recordAttemptFailure(metrics, StorageErrorTypeMapper.mapThrowable(e), e, HTTP_STATUS_UNSET);
+  }
+
+  /**
+   * Records a failed attempt that google-http-client retried internally (for example a 401
+   * credential refresh or an {@code IOException}), which {@link Retrying} never observes.
+   */
+  void recordAttemptFailure(String errorType, long httpStatusCode) {
+    recordAttemptFailure(this.metrics, errorType, null, httpStatusCode);
+  }
+
+  private void recordAttemptFailure(
+      @Nullable StorageClientMetrics metrics,
+      String errorType,
+      @Nullable Throwable e,
+      long defaultHttpStatus) {
     if (metrics == null) {
       return;
     }
     try (Scope ignore = otelContext.makeCurrent()) {
-      String errorType = StorageErrorTypeMapper.mapThrowable(e);
       String networkPath = resolveNetworkPath();
       Attributes attemptBase = buildAttemptBaseAttributes(metrics);
-      if (metrics.getErrors() != null) {
-        Attributes errorAttributes =
-            attemptBase.toBuilder()
-                .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
-                .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-                .build();
-        metrics.getErrors().add(1, errorAttributes);
-      }
+      recordErrorCounter(metrics, attemptBase, errorType, networkPath);
       if (metrics.getAttempts() != null) {
         AttributesBuilder builder =
             attemptBase.toBuilder()
                 .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
                 .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath);
-        putAttemptStatusCodes(builder, e, StorageErrorTypeMapper.STATUS_UNKNOWN, HTTP_STATUS_UNSET);
+        putAttemptStatusCodes(builder, e, StorageErrorTypeMapper.STATUS_UNKNOWN, defaultHttpStatus);
         metrics.getAttempts().add(1, builder.build());
       }
     }
+  }
+
+  void recordError(Throwable e) {
+    if (metrics == null || metrics.getErrors() == null) {
+      return;
+    }
+    recordErrorCounter(
+        metrics,
+        buildAttemptBaseAttributes(metrics),
+        StorageErrorTypeMapper.mapThrowable(e),
+        resolveNetworkPath());
+  }
+
+  void recordRetry(Throwable priorError) {
+    recordRetry(this.metrics, priorError);
   }
 
   void recordRetry(@Nullable StorageClientMetrics metrics, Throwable priorError) {
@@ -326,6 +349,18 @@ final class StorageMetricsContext {
         operationName,
         resolveNetworkPath(),
         StorageErrorTypeMapper.mapThrowable(priorError));
+  }
+
+  private void recordErrorCounter(
+      StorageClientMetrics metrics, Attributes attemptBase, String errorType, String networkPath) {
+    if (metrics.getErrors() != null) {
+      Attributes errorAttributes =
+          attemptBase.toBuilder()
+              .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
+              .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
+              .build();
+      metrics.getErrors().add(1, errorAttributes, otelContext);
+    }
   }
 
   void setNetworkPath(String networkPath) {

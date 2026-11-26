@@ -84,6 +84,11 @@ final class Retrying {
       return metricsContext == null ? this : new ContextBoundRetrier(this, metricsContext);
     }
 
+    @Nullable
+    default StorageMetricsContext getMetricsContext() {
+      return null;
+    }
+
     static Retrier attemptOnce() {
       return AttemptOnceRetrier.INSTANCE;
     }
@@ -169,6 +174,11 @@ final class Retrying {
     public Retrier withMetricsContext(@Nullable StorageMetricsContext explicitCtx) {
       return explicitCtx != null ? new ContextBoundRetrier(delegate, explicitCtx) : this;
     }
+
+    @Override
+    public StorageMetricsContext getMetricsContext() {
+      return metricsContext;
+    }
   }
 
   static final class DefaultRetrierWithAlg implements RetrierWithAlg {
@@ -211,6 +221,11 @@ final class Retrying {
         Decoder<Response, Model> d,
         @Nullable StorageMetricsContext metricsContext) {
       return retrier.run(alg, c, d, metricsContext != null ? metricsContext : boundMetricsContext);
+    }
+
+    @Override
+    public @Nullable StorageMetricsContext getMetricsContext() {
+      return boundMetricsContext != null ? boundMetricsContext : retrier.getMetricsContext();
     }
   }
 
@@ -328,6 +343,11 @@ final class Retrying {
       } finally {
         httpRpcContext.clearInvocationId();
       }
+    }
+
+    @Override
+    public @Nullable StorageMetricsContext getMetricsContext() {
+      return delegate.getMetricsContext();
     }
   }
 

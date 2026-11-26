@@ -42,6 +42,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.Retrying.DefaultRetrier;
+import com.google.cloud.storage.Retrying.HttpRetrier;
 import com.google.cloud.storage.Retrying.Retrier;
 import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.cloud.storage.Retrying.RetryingDependencies;
@@ -538,7 +539,8 @@ public final class RetryingMetricsTest {
   }
 
   @Test
-  public void retriedCall_viaStorageOptions_recordsExactRetryAttributes() {
+  public void
+      retriedCall_viaStorageOptions_recordsExactRetryAttributesAndDelegatesMetricsContext() {
     GrpcStorageOptions options =
         StorageOptions.grpc()
             .setProjectId("test-project")
@@ -550,6 +552,10 @@ public final class RetryingMetricsTest {
     StorageMetricsContext ctx = options.getStorageClientMetrics().createContext("GetObject");
     ctx.setNetworkPath(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
     Retrier bound = options.createRetrier().withMetricsContext(ctx);
+    assertThat(bound.getMetricsContext()).isSameInstanceAs(ctx);
+    assertThat(bound.withAlg(Retrying.alwaysRetry()).getMetricsContext()).isSameInstanceAs(ctx);
+    assertThat(new HttpRetrier(bound).getMetricsContext()).isSameInstanceAs(ctx);
+    assertThat(Retrier.attemptOnce().getMetricsContext()).isNull();
 
     AtomicInteger attempts = new AtomicInteger(0);
     String result =

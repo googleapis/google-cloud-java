@@ -32,6 +32,7 @@ import io.opentelemetry.context.Context;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -108,6 +109,9 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           .put("GET /storage/v1/projects/{project}/serviceAccount", "GetServiceAccount")
           .build();
 
+  private static final int NO_PENDING_RETRY = -1;
+  private static final int NO_RESPONSE = 0;
+
   @Nullable private final HttpRequestInitializer delegate;
   private final StorageClientMetrics metrics;
   private final ApiClock clock;
@@ -133,9 +137,16 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
     AtomicLong startTimeNanos = new AtomicLong();
     AtomicBoolean recorded = new AtomicBoolean(true);
+    // HTTP status of a failed attempt that google-http-client is about to retry (NO_RESPONSE for
+    // an IOException), recorded once the next attempt starts.
+    AtomicInteger pendingRetryStatusCode = new AtomicInteger(NO_PENDING_RETRY);
 
     request.setInterceptor(
         req -> {
+          int priorStatusCode = pendingRetryStatusCode.getAndSet(NO_PENDING_RETRY);
+          if (priorStatusCode != NO_PENDING_RETRY) {
+            recordInternalRetry(req, priorStatusCode);
+          }
           if (existingExec != null) {
             existingExec.intercept(req);
           }
@@ -149,7 +160,11 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             long endNanos = clock.nanoTime();
             boolean handled =
                 existingUnsuccessfulHandler.handleResponse(req, response, supportsRetry);
-            if (handled && response.getRequest() == req && recorded.compareAndSet(false, true)) {
+            boolean ownResponse = response.getRequest() == req;
+            if (handled && supportsRetry && ownResponse && response.getStatusCode() >= 400) {
+              pendingRetryStatusCode.set(response.getStatusCode());
+            }
+            if (handled && ownResponse && recorded.compareAndSet(false, true)) {
               recordResponse(req, startTimeNanos.get(), endNanos, response.getStatusCode());
             }
             return handled;
@@ -181,9 +196,33 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                 extractUrlTemplate(req.getUrl()),
                 StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
           }
-          return existingIoHandler != null
-              && existingIoHandler.handleIOException(req, supportsRetry);
+          boolean handled =
+              existingIoHandler != null && existingIoHandler.handleIOException(req, supportsRetry);
+          if (handled && supportsRetry) {
+            pendingRetryStatusCode.set(NO_RESPONSE);
+          }
+          return handled;
         });
+  }
+
+  private void recordInternalRetry(HttpRequest request, int priorStatusCode) {
+    String errorType =
+        priorStatusCode == NO_RESPONSE
+            ? StorageErrorTypeMapper.STATUS_CONNECTION_ERROR
+            : StorageErrorTypeMapper.mapHttpResponseCode(priorStatusCode);
+    StorageMetricsContext ctx = StorageMetricsContext.current();
+    Context otelContext = Context.current();
+    if (ctx != null) {
+      // Retrying only sees the final outcome of HttpRequest.execute(), so the failed attempt that
+      // google-http-client retried internally is recorded here.
+      ctx.recordAttemptFailure(errorType, priorStatusCode);
+      otelContext = ctx.getOtelContext();
+    }
+    metrics.recordRetry(
+        otelContext,
+        resolveOperationName(request, extractUrlTemplate(request.getUrl())),
+        StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+        errorType);
   }
 
   private void recordResponse(HttpRequest request, long startNanos, long endNanos, int statusCode) {

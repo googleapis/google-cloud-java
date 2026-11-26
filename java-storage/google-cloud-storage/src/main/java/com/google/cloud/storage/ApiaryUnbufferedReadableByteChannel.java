@@ -29,6 +29,7 @@ import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.Storage.Objects;
 import com.google.api.services.storage.Storage.Objects.Get;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.cloud.BaseServiceException;
 import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.Retrying.Retrier;
 import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
@@ -152,16 +153,21 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
         if (resultRetryAlgorithm.shouldRetry(t, null)) {
           // if our retry algorithm COULD allow a retry, continue the loop and allow trying to
           // open the stream again.
+          recordMidStreamRetry(t);
           sbc = null;
         } else if (t instanceof IOException) {
           IOException ioE = (IOException) t;
           if (resultRetryAlgorithm.shouldRetry(StorageException.translate(ioE), null)) {
+            recordMidStreamRetry(ioE);
             sbc = null;
           } else {
+            recordMidStreamError(ioE);
             throw ioE;
           }
         } else {
-          throw new IOException(StorageException.coalesce(t));
+          BaseServiceException coalesced = StorageException.coalesce(t);
+          recordMidStreamError(coalesced);
+          throw new IOException(coalesced);
         }
       } finally {
         long totalRemainingAfter = Buffers.totalRemaining(dsts, offset, length);
@@ -200,6 +206,21 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
       if (sbc != null) {
         sbc.close();
       }
+    }
+  }
+
+  private void recordMidStreamRetry(Throwable error) {
+    StorageMetricsContext metricsContext = retrier.getMetricsContext();
+    if (metricsContext != null) {
+      metricsContext.recordError(error);
+      metricsContext.recordRetry(error);
+    }
+  }
+
+  private void recordMidStreamError(Throwable error) {
+    StorageMetricsContext metricsContext = retrier.getMetricsContext();
+    if (metricsContext != null) {
+      metricsContext.recordError(error);
     }
   }
 

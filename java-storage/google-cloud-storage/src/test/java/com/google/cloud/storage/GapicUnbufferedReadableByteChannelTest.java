@@ -21,9 +21,11 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.storage.GrpcUtils.ZeroCopyServerStreamingCallable;
 import com.google.cloud.storage.Retrying.Retrier;
 import com.google.cloud.storage.it.ChecksummedTestContent;
@@ -31,9 +33,17 @@ import com.google.storage.v2.Object;
 import com.google.storage.v2.ObjectChecksums;
 import com.google.storage.v2.ReadObjectRequest;
 import com.google.storage.v2.ReadObjectResponse;
+import io.grpc.Status;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.LongPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.util.Collection;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Test;
 
 public final class GapicUnbufferedReadableByteChannelTest {
@@ -536,5 +546,150 @@ public final class GapicUnbufferedReadableByteChannelTest {
       assertThat(read).isEqualTo(0);
       assertThat(c.read(buffer)).isEqualTo(-1);
     }
+  }
+
+  @Test
+  public void midStreamError_retried_recordsRetryAndErrorMetrics() throws IOException {
+    assertMidStreamRetryRecorded(
+        readWithMidStreamError(
+            Status.UNAVAILABLE.asRuntimeException(), Retrying.alwaysRetry(), true),
+        StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+  }
+
+  @Test
+  public void midStreamIoException_retried_recordsRetryAndErrorMetrics() throws IOException {
+    IOException ioe = new IOException("connection reset");
+    assertMidStreamRetryRecorded(
+        readWithMidStreamError(ioe, Retrying.alwaysRetry(), true),
+        StorageErrorTypeMapper.mapThrowable(StorageException.coalesce(ioe)));
+  }
+
+  @Test
+  public void midStreamError_notRetryable_recordsErrorWithoutRetry() throws IOException {
+    Collection<MetricData> collected =
+        readWithMidStreamError(
+            Status.PERMISSION_DENIED.asRuntimeException(), Retrying.neverRetry(), false);
+    LongPointData errorPoint =
+        findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getValue()).isEqualTo(1L);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("PERMISSION_DENIED");
+    assertThat(collected.stream().map(MetricData::getName))
+        .doesNotContain(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
+  }
+
+  private static Collection<MetricData> readWithMidStreamError(
+      Throwable firstError, ResultRetryAlgorithm<?> alg, boolean expectSuccess) throws IOException {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    GrpcStorageOptions options =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    StorageMetricsContext ctx =
+        options.getStorageClientMetrics().createMultiStepContext("ReadObject");
+    ctx.setNetworkPath(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    byte[] firstPart = DataGenerator.base64Characters().genBytes(5);
+    byte[] secondPart = DataGenerator.base64Characters().genBytes(5);
+    ChecksummedTestContent firstContent = ChecksummedTestContent.of(firstPart);
+    ChecksummedTestContent secondContent = ChecksummedTestContent.of(secondPart);
+    AtomicInteger calls = new AtomicInteger(0);
+
+    try (GapicUnbufferedReadableByteChannel c =
+        new GapicUnbufferedReadableByteChannel(
+            SettableApiFuture.create(),
+            new ZeroCopyServerStreamingCallable<>(
+                new ServerStreamingCallable<ReadObjectRequest, ReadObjectResponse>() {
+                  @Override
+                  public void call(
+                      ReadObjectRequest request,
+                      ResponseObserver<ReadObjectResponse> respond,
+                      ApiCallContext context) {
+                    respond.onStart(TestUtils.nullStreamController());
+                    if (calls.incrementAndGet() == 1) {
+                      respond.onResponse(
+                          ReadObjectResponse.newBuilder()
+                              .setChecksummedData(firstContent.asChecksummedData())
+                              .build());
+                      respond.onError(firstError);
+                    } else {
+                      respond.onResponse(
+                          ReadObjectResponse.newBuilder()
+                              .setChecksummedData(secondContent.asChecksummedData())
+                              .build());
+                      respond.onComplete();
+                    }
+                  }
+                },
+                ResponseContentLifecycleManager.noop()),
+            ReadObjectRequest.getDefaultInstance(),
+            Hasher.noop(),
+            options.createRetrier().withMetricsContext(ctx),
+            alg)) {
+      ByteBuffer buffer = ByteBuffer.allocate(10);
+      if (expectSuccess) {
+        assertThat(c.read(buffer)).isEqualTo(10);
+      } else {
+        assertThrows(IOException.class, () -> c.read(buffer));
+      }
+    }
+    assertThat(calls.get()).isEqualTo(expectSuccess ? 2 : 1);
+    return reader.collectAllMetrics();
+  }
+
+  private static void assertMidStreamRetryRecorded(
+      Collection<MetricData> collected, String errorType) {
+    LongPointData retryPoint =
+        findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
+    assertThat(retryPoint.getValue()).isEqualTo(1L);
+    assertThat(retryPoint.getAttributes())
+        .isEqualTo(
+            Attributes.builder()
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
+                    StorageClientMetrics.SERVICE_STORAGE)
+                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+                .put(
+                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
+                    StorageClientMetrics.ARTIFACT_STORAGE)
+                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
+                .put(
+                    StorageClientMetrics.KEY_NETWORK_PATH,
+                    StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
+                .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
+                .build());
+
+    LongPointData errorPoint =
+        findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getValue()).isEqualTo(1L);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(errorType);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("ReadObject");
+
+    long attemptsTotal =
+        collected.stream()
+            .filter(
+                m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS))
+            .flatMap(m -> m.getLongSumData().getPoints().stream())
+            .mapToLong(LongPointData::getValue)
+            .sum();
+    assertThat(attemptsTotal).isEqualTo(2L);
+  }
+
+  private static LongPointData findSinglePoint(Collection<MetricData> collected, String name) {
+    MetricData metric =
+        collected.stream()
+            .filter(m -> m.getName().equals(name))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Missing metric " + name));
+    assertThat(metric.getLongSumData().getPoints()).hasSize(1);
+    return metric.getLongSumData().getPoints().iterator().next();
   }
 }
