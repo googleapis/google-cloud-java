@@ -275,6 +275,19 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, this.connectionId)
             .build();
     this.otelContext = Context.current().with(baggage);
+    String rawLogLevel = ds.getLogLevel();
+    if (rawLogLevel == null) {
+      rawLogLevel = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
+    }
+    String connLogPath = ds.getLogPath();
+    if (connLogPath == null) {
+      connLogPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
+    }
+    if (connLogPath == null && rawLogLevel != null && !ds.getEnableGcpLogExporter()) {
+      connLogPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
+    }
+    BigQueryJdbcRootLogger.registerConnection(this.connectionId, rawLogLevel, connLogPath);
+    boolean initialized = false;
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
       this.connectionUrl = url;
       if (LOG.isLoggable(Level.CONFIG)) {
@@ -421,6 +434,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.metadataExecutor =
           BigQueryJdbcMdc.newFixedThreadPool(
               String.format("BQ-Metadata-%s", connectionId), this.metadataFetchThreadCount);
+      initialized = true;
+    } finally {
+      if (!initialized) {
+        BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+      }
     }
   }
 

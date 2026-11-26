@@ -21,13 +21,20 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.lang.management.ManagementFactory;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
-import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -44,7 +51,13 @@ class BigQueryJdbcRootLogger {
   private static final Logger storageLogger = Logger.getLogger("com.google.cloud.bigquery.storage");
   private static final boolean isTest = Boolean.getBoolean("JDBC_TESTS");
 
-  private static Handler fileHandler = null;
+  private static final Object HANDLER_LOCK = new Object();
+  private static final ConcurrentHashMap<String, ConnectionLogConfig> activeConnections =
+      new ConcurrentHashMap<>();
+  private static final Map<String, ManagedFileHandler> handlersByPath = new HashMap<>();
+  private static int activePreConnectScopes = 0;
+  private static Level externalRootLevel = null;
+  private static Level lastManagedRootLevel = logger.getLevel();
 
   static final String PROCESS_ID = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
 
@@ -102,12 +115,10 @@ class BigQueryJdbcRootLogger {
       @Override
       public String format(LogRecord record) {
         String date = DATE_FORMATTER.format(Instant.ofEpochMilli(record.getMillis()));
-        String connectionId = BigQueryJdbcMdc.getConnectionId();
+        ConnectionLogContext paramContext = ConnectionLogContext.extractFromParameters(record);
+        String connectionId = paramContext != null ? paramContext.connectionId() : null;
         if (connectionId == null || connectionId.isEmpty()) {
-          ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
-          if (context != null) {
-            connectionId = context.connectionId();
-          }
+          connectionId = BigQueryJdbcMdc.getConnectionId();
         }
         String connStr =
             (connectionId != null && !connectionId.isEmpty()) ? connectionId : "NO_CONN";
@@ -148,8 +159,8 @@ class BigQueryJdbcRootLogger {
             .append(System.lineSeparator());
 
         if (record.getThrown() != null) {
-          java.io.StringWriter sw = new java.io.StringWriter();
-          record.getThrown().printStackTrace(new java.io.PrintWriter(sw));
+          StringWriter sw = new StringWriter();
+          record.getThrown().printStackTrace(new PrintWriter(sw));
           sb.append(sw.toString()).append(System.lineSeparator());
         }
 
@@ -162,48 +173,231 @@ class BigQueryJdbcRootLogger {
     return logger;
   }
 
-  public static void setLevel(Level level, String logPath) throws IOException {
-    if (level != Level.OFF) {
-      if (logPath != null) {
-        setPath(logPath, level);
-      }
-    } else {
-      for (Handler h : logger.getHandlers()) {
-        h.close();
-        logger.removeHandler(h);
-      }
-      fileHandler = null;
+  static ConnectionLogContext getConnectionContext(String connectionId) {
+    if (connectionId == null) {
+      return null;
     }
-    logger.setLevel(level);
+    ConnectionLogConfig config = activeConnections.get(connectionId);
+    return config != null ? config.context : null;
   }
 
-  static void setPath(String logPath, Level level) {
-    try {
-      if (logPath == null) {
-        logPath = "";
-      }
-      if (!logPath.isEmpty() && !logPath.endsWith("/")) {
-        logPath = logPath + "/";
-      }
+  public static void setLevel(Level level, String logPath) throws IOException {
+    synchronized (HANDLER_LOCK) {
+      externalRootLevel = null;
+      updateEffectiveRootLevelLocked();
+    }
+  }
 
-      if (fileHandler != null) {
-        fileHandler.close();
-        logger.removeHandler(fileHandler);
+  static BigQueryJdbcMdc.MdcCloseable openPreConnectScope(Level level, String logPath) {
+    Level effectiveLevel = level != null ? level : Level.OFF;
+    ManagedFileHandler tempHandler = null;
+    boolean countedScope = false;
+    synchronized (HANDLER_LOCK) {
+      if (effectiveLevel != Level.OFF) {
+        activePreConnectScopes++;
+        countedScope = true;
+        if (logPath != null) {
+          try {
+            tempHandler = acquireHandlerLocked(logPath);
+          } catch (Exception ex) {
+            logger.warning("Log File warning : " + ex);
+          }
+        }
       }
+      updateEffectiveRootLevelLocked();
+    }
+    Path preConnectDir = tempHandler != null ? tempHandler.handler.getBaseLogPath() : null;
+    BigQueryJdbcMdc.MdcCloseable mdcScope =
+        BigQueryJdbcMdc.withContext(
+            ConnectionLogContext.preConnect(effectiveLevel.intValue(), preConnectDir));
+    final ManagedFileHandler acquired = tempHandler;
+    final boolean decrementScope = countedScope;
+    return () -> {
+      try {
+        mdcScope.close();
+      } finally {
+        if (decrementScope || acquired != null) {
+          synchronized (HANDLER_LOCK) {
+            if (decrementScope && activePreConnectScopes > 0) {
+              activePreConnectScopes--;
+            }
+            releaseHandlerLocked(acquired);
+            updateEffectiveRootLevelLocked();
+          }
+        }
+      }
+    };
+  }
 
-      fileHandler = new PerConnectionFileHandler(logPath, level);
-      fileHandler.setLevel(level);
-      logger.addHandler(fileHandler);
-      logger.setUseParentHandlers(false);
-
-    } catch (Exception ex) {
-      logger.warning("Log File warning : " + ex);
+  static void registerConnection(String connectionId, String rawLogLevel, String logPath) {
+    if (connectionId == null || connectionId.isEmpty()) {
+      return;
+    }
+    synchronized (HANDLER_LOCK) {
+      captureExternalRootLevelLocked();
+      Level connLevel =
+          rawLogLevel != null
+              ? BigQueryJdbcUrlUtility.parseLogLevel(rawLogLevel)
+              : (externalRootLevel != null ? externalRootLevel : Level.OFF);
+      if (connLevel == null) {
+        connLevel = Level.OFF;
+      }
+      ManagedFileHandler managed = null;
+      if (connLevel != Level.OFF && logPath != null) {
+        try {
+          managed = acquireHandlerLocked(logPath);
+          managed.handler.registerConnection(connectionId, connLevel);
+        } catch (Exception ex) {
+          logger.warning("Log File warning : " + ex);
+        }
+      }
+      ConnectionLogConfig previous =
+          activeConnections.put(
+              connectionId,
+              new ConnectionLogConfig(
+                  new ConnectionLogContext(connectionId, connLevel.intValue()),
+                  connLevel,
+                  managed));
+      if (previous != null && previous.managedHandler != null) {
+        previous.managedHandler.handler.closeHandler(connectionId);
+        releaseHandlerLocked(previous.managedHandler);
+      }
+      updateEffectiveRootLevelLocked();
     }
   }
 
   public static void closeConnectionHandler(String connectionId) {
-    if (fileHandler instanceof PerConnectionFileHandler) {
-      ((PerConnectionFileHandler) fileHandler).closeHandler(connectionId);
+    if (connectionId == null) {
+      return;
+    }
+    synchronized (HANDLER_LOCK) {
+      captureExternalRootLevelLocked();
+      ConnectionLogConfig removed = activeConnections.remove(connectionId);
+      if (removed != null && removed.managedHandler != null) {
+        try {
+          removed.managedHandler.handler.closeHandler(connectionId);
+        } finally {
+          releaseHandlerLocked(removed.managedHandler);
+        }
+      }
+      updateEffectiveRootLevelLocked();
+    }
+  }
+
+  static void resetForTest() {
+    synchronized (HANDLER_LOCK) {
+      activeConnections.clear();
+      for (ManagedFileHandler managed : handlersByPath.values()) {
+        try {
+          managed.handler.close();
+        } catch (Exception ignored) {
+        } finally {
+          logger.removeHandler(managed.handler);
+        }
+      }
+      handlersByPath.clear();
+      activePreConnectScopes = 0;
+      externalRootLevel = null;
+      lastManagedRootLevel = Level.OFF;
+      logger.setLevel(Level.OFF);
+    }
+  }
+
+  private static void captureExternalRootLevelLocked() {
+    Level current = logger.getLevel();
+    if (current != lastManagedRootLevel) {
+      externalRootLevel = current;
+    }
+  }
+
+  private static void updateEffectiveRootLevelLocked() {
+    if (activePreConnectScopes > 0) {
+      lastManagedRootLevel = Level.ALL;
+      logger.setLevel(Level.ALL);
+      return;
+    }
+    Level effective = externalRootLevel != null ? externalRootLevel : Level.OFF;
+    int minVal = effective != null ? effective.intValue() : Level.OFF.intValue();
+    for (ConnectionLogConfig cfg : activeConnections.values()) {
+      int connVal = cfg.level.intValue();
+      if (connVal < minVal) {
+        minVal = connVal;
+        effective = cfg.level;
+      }
+    }
+    if (effective == null) {
+      effective = Level.OFF;
+    }
+    lastManagedRootLevel = effective;
+    logger.setLevel(effective);
+  }
+
+  private static String canonicalPathKey(String logPath) {
+    String normalized = logPath == null ? "" : logPath;
+    try {
+      return Paths.get(normalized).toAbsolutePath().normalize().toString();
+    } catch (InvalidPathException e) {
+      return normalized;
+    }
+  }
+
+  private static ManagedFileHandler acquireHandlerLocked(String logPath) {
+    String key = canonicalPathKey(logPath);
+    ManagedFileHandler managed = handlersByPath.get(key);
+    if (managed == null) {
+      String pathArg = logPath == null ? "" : logPath;
+      if (!pathArg.isEmpty() && !pathArg.endsWith("/")) {
+        pathArg = pathArg + "/";
+      }
+      PerConnectionFileHandler created =
+          new PerConnectionFileHandler(
+              pathArg, Level.ALL, PerConnectionFileHandler.resolveMaxLogFileBytes(), true);
+      logger.addHandler(created);
+      logger.setUseParentHandlers(false);
+      managed = new ManagedFileHandler(key, created);
+      handlersByPath.put(key, managed);
+    }
+    managed.refCount++;
+    return managed;
+  }
+
+  private static void releaseHandlerLocked(ManagedFileHandler managed) {
+    if (managed == null) {
+      return;
+    }
+    managed.refCount--;
+    if (managed.refCount <= 0) {
+      handlersByPath.remove(managed.pathKey);
+      try {
+        managed.handler.close();
+      } finally {
+        logger.removeHandler(managed.handler);
+      }
+    }
+  }
+
+  private static final class ManagedFileHandler {
+    final String pathKey;
+    final PerConnectionFileHandler handler;
+    int refCount;
+
+    ManagedFileHandler(String pathKey, PerConnectionFileHandler handler) {
+      this.pathKey = pathKey;
+      this.handler = handler;
+      this.refCount = 0;
+    }
+  }
+
+  private static final class ConnectionLogConfig {
+    final ConnectionLogContext context;
+    final Level level;
+    final ManagedFileHandler managedHandler;
+
+    ConnectionLogConfig(
+        ConnectionLogContext context, Level level, ManagedFileHandler managedHandler) {
+      this.context = context;
+      this.level = level;
+      this.managedHandler = managedHandler;
     }
   }
 }

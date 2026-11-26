@@ -85,16 +85,22 @@ class PerConnectionFileHandler extends Handler {
   private final long maxFileBytes;
   private final Formatter logFormatter;
   private final ConcurrentHashMap<String, ChannelLogWriter> writers = new ConcurrentHashMap<>();
+  private final ConcurrentHashMap<String, Level> connectionLevels;
   private final ChannelLogWriter defaultWriter;
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
-    this(baseLogPath, level, resolveMaxLogFileBytes());
+    this(baseLogPath, level, resolveMaxLogFileBytes(), false);
   }
 
   PerConnectionFileHandler(String baseLogPath, Level level, long maxFileBytes) {
+    this(baseLogPath, level, maxFileBytes, false);
+  }
+
+  PerConnectionFileHandler(String baseLogPath, Level level, long maxFileBytes, boolean managed) {
     this.level = level;
     this.maxFileBytes = maxFileBytes <= 0L ? DEFAULT_MAX_LOG_FILE_BYTES : maxFileBytes;
     this.logFormatter = BigQueryJdbcRootLogger.getFormatter();
+    this.connectionLevels = managed ? new ConcurrentHashMap<>() : null;
     setLevel(level);
     setFormatter(this.logFormatter);
 
@@ -110,6 +116,16 @@ class PerConnectionFileHandler extends Handler {
     }
     this.baseLogPath = initializedDir;
     this.defaultWriter = initializedDefault;
+  }
+
+  Path getBaseLogPath() {
+    return baseLogPath;
+  }
+
+  void registerConnection(String connectionId, Level connLevel) {
+    if (connectionLevels != null && connectionId != null && connLevel != null) {
+      connectionLevels.put(connectionId, connLevel);
+    }
   }
 
   static long resolveMaxLogFileBytes() {
@@ -470,13 +486,47 @@ class PerConnectionFileHandler extends Handler {
       return;
     }
 
-    String connectionId = BigQueryJdbcMdc.getConnectionId();
-    if (connectionId == null || connectionId.isEmpty()) {
-      ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
-      if (context != null) {
-        connectionId = context.connectionId();
-      }
+    ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
+    if (context == null) {
+      context = BigQueryJdbcMdc.getConnectionContext();
     }
+    String connectionId = context != null ? context.connectionId() : null;
+
+    if (connectionLevels != null) {
+      if (connectionId != null && !connectionId.isEmpty()) {
+        Level allowedLevel = connectionLevels.get(connectionId);
+        if (allowedLevel == null
+            || allowedLevel == Level.OFF
+            || record.getLevel().intValue() < allowedLevel.intValue()) {
+          return;
+        }
+        if (baseLogPath != null) {
+          ChannelLogWriter target =
+              writers.computeIfAbsent(
+                  connectionId,
+                  id -> createLogWriter(id, baseLogPath, allowedLevel, this.maxFileBytes));
+          if (target == null) {
+            target = defaultWriter;
+          }
+          if (target != null) {
+            target.publish(record);
+          }
+        }
+        return;
+      }
+      if (context == null
+          || !context.isLoggable(record.getLevel())
+          || context.preConnectDir() == null
+          || baseLogPath == null
+          || !baseLogPath.equals(context.preConnectDir())) {
+        return;
+      }
+      if (defaultWriter != null) {
+        defaultWriter.publish(record);
+      }
+      return;
+    }
+
     ChannelLogWriter target = defaultWriter;
 
     if (connectionId != null && !connectionId.isEmpty() && baseLogPath != null) {
@@ -512,11 +562,17 @@ class PerConnectionFileHandler extends Handler {
       }
     } finally {
       writers.clear();
+      if (connectionLevels != null) {
+        connectionLevels.clear();
+      }
     }
   }
 
   void closeHandler(String connectionId) {
     if (connectionId != null) {
+      if (connectionLevels != null) {
+        connectionLevels.remove(connectionId);
+      }
       ChannelLogWriter writer = writers.remove(connectionId);
       if (writer != null) {
         writer.close();

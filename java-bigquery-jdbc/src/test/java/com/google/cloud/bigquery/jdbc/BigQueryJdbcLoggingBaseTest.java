@@ -61,12 +61,10 @@ public abstract class BigQueryJdbcLoggingBaseTest extends BigQueryJdbcBaseTest {
   public void tearDownLogValidator() {
     if (logger != null && handler != null) {
       logger.removeHandler(handler);
-      logger.setLevel(originalLevel);
     }
-    try {
-      BigQueryJdbcRootLogger.setLevel(java.util.logging.Level.OFF, null);
-    } catch (Exception e) {
-      // Ignore
+    BigQueryJdbcRootLogger.resetForTest();
+    if (logger != null) {
+      logger.setLevel(originalLevel);
     }
   }
 
