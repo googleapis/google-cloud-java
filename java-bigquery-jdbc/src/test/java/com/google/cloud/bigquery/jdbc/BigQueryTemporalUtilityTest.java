@@ -22,6 +22,7 @@ import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.arrowRange;
 import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.rangeField;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValue;
@@ -31,12 +32,14 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -386,6 +389,77 @@ public class BigQueryTemporalUtilityTest {
     assertThrows(
         NumberFormatException.class,
         () -> BigQueryTemporalUtility.parseEpochDecimalToInstant("invalid_epoch"));
+  }
+
+  @ParameterizedTest
+  @ValueSource(
+      strings = {
+        "1e100000000",
+        "-1e100000000",
+        "1e2147483647",
+        "-1e2147483647",
+        "1e2147483648",
+        "-1e2147483648",
+        "1e18",
+        "-1e18",
+        "5e16",
+        "-5e16"
+      })
+  public void testExtremePositiveExponentEpochDecimalsFailFast(String input) {
+    assertTimeoutPreemptively(
+        Duration.ofSeconds(1),
+        () -> {
+          assertThrows(
+              BigQueryJdbcException.class,
+              () ->
+                  BigQueryTypeRegistry.convert(
+                      input, StandardSQLTypeName.STRING, Timestamp.class, null));
+          assertThrows(
+              BigQueryJdbcException.class,
+              () -> BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal(input, false));
+          assertThrows(
+              BigQueryJdbcException.class,
+              () -> BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal(input, true));
+        });
+  }
+
+  @ParameterizedTest
+  @ValueSource(
+      strings = {
+        "0e100000000",
+        "-0e100000000",
+        "1e-100000000",
+        "-1e-100000000",
+        "12345678901234567890e-100000000",
+        "-12345678901234567890e-100000000"
+      })
+  public void testExtremeSubUnitAndZeroExponentsTruncateInConstantTime(String input)
+      throws Exception {
+    assertTimeoutPreemptively(
+        Duration.ofSeconds(1),
+        () -> {
+          assertThat(BigQueryTemporalUtility.parseEpochDecimalToInstant(input))
+              .isEqualTo(Instant.EPOCH);
+          assertThat(BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal(input, false))
+              .isEqualTo("1970-01-01 00:00:00.000000");
+          assertThat(BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal(input, true))
+              .isEqualTo("1970-01-01 00:00:00.000000000000");
+        });
+  }
+
+  @Test
+  public void testOverlongEpochDecimalStringRejectedFast() {
+    String overlong = String.join("", Collections.nCopies(200, "0")) + ".5";
+    assertTimeoutPreemptively(
+        Duration.ofSeconds(1),
+        () -> {
+          assertThrows(
+              NumberFormatException.class,
+              () -> BigQueryTemporalUtility.parseEpochDecimalToInstant(overlong));
+          assertThrows(
+              BigQueryJdbcException.class,
+              () -> BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal(overlong, false));
+        });
   }
 
   @Test

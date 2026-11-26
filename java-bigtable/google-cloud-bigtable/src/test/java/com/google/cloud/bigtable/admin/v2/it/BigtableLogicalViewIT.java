@@ -32,8 +32,10 @@ import com.google.cloud.bigtable.admin.v2.models.UpdateLogicalViewRequest;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
+import com.google.common.truth.Correspondence;
 import io.grpc.StatusRuntimeException;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
@@ -54,6 +56,15 @@ public class BigtableLogicalViewIT {
   // sleeping for minutes past that point.
   private static final long DELETE_POLL_INTERVAL_SECONDS = 2;
   private static final int DELETE_POLL_ATTEMPTS = 60;
+  private static final Correspondence<LogicalView, LogicalView> LOGICAL_VIEW_CORRESPONDENCE =
+      Correspondence.from(
+          (LogicalView actual, LogicalView expected) ->
+              actual != null
+                  && expected != null
+                  && Objects.equals(actual.getId(), expected.getId())
+                  && actual.isDeletionProtected() == expected.isDeletionProtected()
+                  && Objects.equals(actual.getQuery(), expected.getQuery()),
+          "has same id, deletionProtection, and query as");
 
   private static BigtableInstanceAdminClient client;
   private static Table testTable;
@@ -128,6 +139,7 @@ public class BigtableLogicalViewIT {
       List<LogicalView> response = client.listLogicalViews(instanceId);
       assertWithMessage("Got wrong logical view Ids in listLogicalViews")
           .that(response)
+          .comparingElementsUsing(LOGICAL_VIEW_CORRESPONDENCE)
           .contains(logicalView);
     } finally {
       client.deleteLogicalView(instanceId, logicalViewId);
