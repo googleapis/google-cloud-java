@@ -512,6 +512,14 @@ public class PerConnectionFileHandlerTest {
         new PerConnectionFileHandler(tempDir.resolve("def_max").toString(), Level.INFO, 0L);
     defaultMaxHandler.close();
 
+    ConnectionLogContext connCtx =
+        new ConnectionLogContext("rotc-uuid", ConnectionLogContext.ALL_VALUE);
+    assertEquals(ConnectionLogContext.ALL_VALUE, connCtx.levelValue());
+    connCtx.setLevelValue(ConnectionLogContext.OFF_VALUE);
+    assertEquals(ConnectionLogContext.OFF_VALUE, connCtx.levelValue());
+    assertEquals("rotc-uuid", connCtx.toString());
+    assertNull(ConnectionLogContext.extractFromParameters(null));
+
     PerConnectionFileHandler boundedHandler =
         new PerConnectionFileHandler(boundedDir.toString(), Level.FINEST, maxBytes);
     try {
@@ -519,12 +527,18 @@ public class PerConnectionFileHandlerTest {
         boundedHandler.publish(
             new LogRecord(Level.INFO, "Padding log line to exceed 1 KiB limit #" + i));
       }
-      BigQueryJdbcMdc.registerInstance("BQ-JDBC-rotc1234");
-      for (int i = 0; i < 15; i++) {
-        boundedHandler.publish(new LogRecord(Level.INFO, "Per-conn rotation line #" + i));
-      }
+      // Route via ConnectionLogContext in params[0] with empty MDC and trigger per-conn .1.log
       BigQueryJdbcMdc.clear();
-      boundedHandler.publish(new LogRecord(Level.FINEST, "Tail global record"));
+      for (int i = 0; i < 15; i++) {
+        LogRecord ctxRec = new LogRecord(Level.INFO, "Per-conn rotation line #" + i);
+        ctxRec.setParameters(new Object[] {connCtx});
+        boundedHandler.publish(ctxRec);
+      }
+      // Plain String in params[0] with empty MDC routes to global log instead of "-BigQ.log"
+      LogRecord retryRecord = new LogRecord(Level.FINEST, "Retrying RPC");
+      retryRecord.setParameters(new Object[] {"BigQuery retried method: getQueryResults"});
+      boundedHandler.publish(retryRecord);
+      assertTrue(BigQueryJdbcRootLogger.getFormatter().format(retryRecord).contains("[NO_CONN]"));
     } finally {
       boundedHandler.close();
     }
@@ -536,6 +550,7 @@ public class PerConnectionFileHandlerTest {
     assertFalse(Files.exists(boundedDir.resolve("BQ-JDBC-GLOBAL.2.log")));
     assertTrue(findLogFileInDir(boundedDir, "-rotc.log").isPresent());
     assertTrue(findLogFileInDir(boundedDir, "-rotc.1.log").isPresent());
+    assertFalse(findLogFileInDir(boundedDir, "-BigQ.log").isPresent());
 
     if (isPosix()) {
       Set<PosixFilePermission> expected0600 = PosixFilePermissions.fromString("rw-------");

@@ -28,7 +28,9 @@ import io.opentelemetry.api.logs.Severity;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
+import java.text.MessageFormat;
 import java.time.Instant;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.logging.ErrorManager;
 import java.util.logging.Handler;
@@ -61,6 +63,13 @@ public class OpenTelemetryJulHandler extends Handler {
 
       if (connectionId == null || connectionId.isEmpty()) {
         connectionId = BigQueryJdbcMdc.getConnectionId();
+      }
+
+      if (connectionId == null || connectionId.isEmpty()) {
+        ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
+        if (context != null) {
+          connectionId = context.connectionId();
+        }
       }
 
       if (connectionId == null || connectionId.isEmpty()) {
@@ -97,8 +106,9 @@ public class OpenTelemetryJulHandler extends Handler {
       logId = UNSAFE_LOG_CHARACTERS.matcher(logId).replaceAll("_");
     }
 
+    String formatted = formatMessage(record);
     LogEntry.Builder builder =
-        LogEntry.newBuilder(Payload.StringPayload.of(formatMessage(record)))
+        LogEntry.newBuilder(Payload.StringPayload.of(formatted != null ? formatted : ""))
             .setSeverity(mapGcpSeverity(record.getLevel()))
             .setTimestamp(Instant.ofEpochMilli(record.getMillis()))
             .setLogName(logId);
@@ -135,13 +145,16 @@ public class OpenTelemetryJulHandler extends Handler {
                     ? loggerName
                     : BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
 
+    String formatted = formatMessage(record);
     LogRecordBuilder builder =
         logger
             .logRecordBuilder()
-            .setBody(formatMessage(record))
             .setSeverity(mapSeverity(record.getLevel()))
             .setTimestamp(Instant.ofEpochMilli(record.getMillis()))
             .setContext(Context.current());
+    if (formatted != null) {
+      builder.setBody(formatted);
+    }
 
     if (connectionId != null) {
       builder.setAttribute(
@@ -165,15 +178,33 @@ public class OpenTelemetryJulHandler extends Handler {
 
   private String formatMessage(LogRecord record) {
     String message = record.getMessage();
+    if (message == null) {
+      return null;
+    }
     Object[] params = record.getParameters();
-    if (params != null && params.length > 0) {
-      try {
-        return java.text.MessageFormat.format(message, params);
-      } catch (IllegalArgumentException e) {
-        return message;
+    if (params == null || params.length == 0) {
+      return message;
+    }
+    int startIndex = (params[0] instanceof ConnectionLogContext) ? 1 : 0;
+    if (params.length <= startIndex || !hasPositionalPlaceholder(message)) {
+      return message;
+    }
+    Object[] messageParams =
+        startIndex == 0 ? params : Arrays.copyOfRange(params, startIndex, params.length);
+    try {
+      return MessageFormat.format(message, messageParams);
+    } catch (IllegalArgumentException e) {
+      return message;
+    }
+  }
+
+  private static boolean hasPositionalPlaceholder(String message) {
+    for (int i = 0; i <= 9; i++) {
+      if (message.indexOf("{" + i) >= 0) {
+        return true;
       }
     }
-    return message;
+    return false;
   }
 
   @Override
