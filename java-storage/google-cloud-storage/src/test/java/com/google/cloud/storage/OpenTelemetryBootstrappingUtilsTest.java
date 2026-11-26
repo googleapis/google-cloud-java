@@ -22,20 +22,15 @@ import static org.junit.Assume.assumeFalse;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
-import com.google.common.collect.ImmutableList;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.common.CompletableResultCode;
-import io.opentelemetry.sdk.metrics.InstrumentType;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
-import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.MetricData;
-import io.opentelemetry.sdk.metrics.export.MetricExporter;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricExporter;
 import java.time.Duration;
-import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Test;
@@ -338,36 +333,13 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
   @Test
   public void buildMeterProvider_dropsOtelSdkInternalMetricsAcrossRepeatedFlushes() {
-    List<ImmutableList<MetricData>> exportedBatches = new CopyOnWriteArrayList<>();
-    MetricExporter capturingExporter =
-        new MetricExporter() {
-          @Override
-          public CompletableResultCode export(Collection<MetricData> metrics) {
-            exportedBatches.add(ImmutableList.copyOf(metrics));
-            return CompletableResultCode.ofSuccess();
-          }
-
-          @Override
-          public CompletableResultCode flush() {
-            return CompletableResultCode.ofSuccess();
-          }
-
-          @Override
-          public CompletableResultCode shutdown() {
-            return CompletableResultCode.ofSuccess();
-          }
-
-          @Override
-          public AggregationTemporality getAggregationTemporality(InstrumentType instrumentType) {
-            return AggregationTemporality.CUMULATIVE;
-          }
-        };
+    InMemoryMetricExporter exporter = InMemoryMetricExporter.create();
 
     SdkMeterProviderBuilder builder =
         OpenTelemetryBootstrappingUtils.registerClientViews(SdkMeterProvider.builder());
     try (SdkMeterProvider provider =
         OpenTelemetryBootstrappingUtils.buildMeterProvider(
-            capturingExporter,
+            exporter,
             builder,
             "test-project",
             "test-instance",
@@ -386,18 +358,15 @@ public final class OpenTelemetryBootstrappingUtilsTest {
       CompletableResultCode secondFlush = provider.forceFlush().join(10, TimeUnit.SECONDS);
       assertThat(firstFlush.isSuccess()).isTrue();
       assertThat(secondFlush.isSuccess()).isTrue();
-    }
 
-    assertThat(exportedBatches.size()).isAtLeast(2);
-    for (ImmutableList<MetricData> batch : exportedBatches) {
-      ImmutableList<String> names =
-          batch.stream().map(MetricData::getName).collect(ImmutableList.toImmutableList());
-      ImmutableList<String> scopes =
-          batch.stream()
-              .map(metric -> metric.getInstrumentationScopeInfo().getName())
-              .collect(ImmutableList.toImmutableList());
-      assertThat(names).containsExactly("gcp/storage/client/operations");
-      assertThat(scopes).containsExactly(StorageClientMetrics.METER_NAME);
+      // Assert before the provider closes; InMemoryMetricExporter clears its items on shutdown.
+      List<MetricData> items = exporter.getFinishedMetricItems();
+      assertThat(items.size()).isAtLeast(2);
+      for (MetricData item : items) {
+        assertThat(item.getName()).isEqualTo("gcp/storage/client/operations");
+        assertThat(item.getInstrumentationScopeInfo().getName())
+            .isEqualTo(StorageClientMetrics.METER_NAME);
+      }
     }
   }
 }

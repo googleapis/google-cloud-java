@@ -67,6 +67,8 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 final class OpenTelemetryBootstrappingUtils {
+  private static final String OTEL_SDK_METRICS_METER_NAME = "io.opentelemetry.sdk.metrics";
+
   private static final Collection<String> METRICS_TO_ENABLE =
       ImmutableList.of(
           "grpc.lb.wrr.rr_fallback",
@@ -565,7 +567,7 @@ final class OpenTelemetryBootstrappingUtils {
     // Cloud Monitoring rejects starting on the second periodic export).
     providerBuilder
         .registerView(
-            InstrumentSelector.builder().setMeterName("io.opentelemetry.sdk.metrics").build(),
+            InstrumentSelector.builder().setMeterName(OTEL_SDK_METRICS_METER_NAME).build(),
             View.builder().setAggregation(Aggregation.drop()).build())
         .registerMetricReader(
             PeriodicMetricReader.builder(exporter)
