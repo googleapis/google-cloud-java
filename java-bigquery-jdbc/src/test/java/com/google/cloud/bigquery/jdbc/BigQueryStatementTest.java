@@ -18,8 +18,10 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchema;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -28,7 +30,10 @@ import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.withSettings;
 
@@ -39,12 +44,14 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
@@ -64,6 +71,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
@@ -92,6 +100,7 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -109,6 +118,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
@@ -1190,9 +1200,10 @@ public class BigQueryStatementTest {
   @Test
   public void testTemporaryDatasetCreationRespectsConnectionLocation()
       throws SQLException, InterruptedException {
-    // 1. Setup mock connection with location and destination dataset
+    // 1. Setup mock connection with location, owner email, and destination dataset
     doReturn("europe-west3").when(bigQueryConnection).getLocation();
     doReturn("temp_dataset").when(bigQueryConnection).getDestinationDataset();
+    doReturn("owner@project.iam.gserviceaccount.com").when(bigQueryConnection).resolveOwnerEmail();
 
     // Re-instantiate bigQueryStatement so it regenerates querySettings with these mocked connection
     // values
@@ -1219,11 +1230,18 @@ public class BigQueryStatementTest {
     // 5. Execute query
     statementSpy.executeQuery("SELECT 1");
 
-    // 6. Verify dataset was created with correct location
+    // 6. Verify dataset was created with correct location, default table lifetime, and owner ACL
     verify(bigquery).create(datasetInfoCaptor.capture());
     DatasetInfo createdDatasetInfo = datasetInfoCaptor.getValue();
     assertEquals("temp_dataset", createdDatasetInfo.getDatasetId().getDataset());
     assertEquals("europe-west3", createdDatasetInfo.getLocation());
+    assertEquals(
+        BigQueryJdbcUrlUtility.DEFAULT_DESTINATION_DATASET_EXPIRATION_TIME_VALUE,
+        createdDatasetInfo.getDefaultTableLifetime());
+    assertEquals(
+        Collections.singletonList(
+            Acl.of(new Acl.User("owner@project.iam.gserviceaccount.com"), Acl.Role.OWNER)),
+        createdDatasetInfo.getAcl());
   }
 
   @Test
@@ -1917,5 +1935,319 @@ public class BigQueryStatementTest {
   @FunctionalInterface
   private interface SqlRunnable {
     void run() throws SQLException;
+  }
+
+  private static final Pattern GENERATED_TEMP_TABLE_PATTERN =
+      Pattern.compile("^temp_table_[0-9a-f]{8}_[0-9a-f]{4}_[0-9a-f]{4}_[0-9a-f]{4}_[0-9a-f]{12}$");
+  private static final String SCRATCH_DATASET = "scratch_dataset";
+  private static final long DEFAULT_DATASET_EXPIRATION_MS =
+      BigQueryJdbcUrlUtility.DEFAULT_DESTINATION_DATASET_EXPIRATION_TIME_VALUE;
+
+  private void configureLargeResults(
+      String datasetName, String tableName, long expirationMs, Long existingDatasetDefaultTtlMs) {
+    doReturn(true).when(bigQueryConnection).isAllowLargeResults();
+    doReturn(datasetName).when(bigQueryConnection).getDestinationDataset();
+    doReturn(tableName).when(bigQueryConnection).getDestinationTable();
+    doReturn(expirationMs).when(bigQueryConnection).getDestinationDatasetExpirationTime();
+    Dataset dataset = mock(Dataset.class);
+    doReturn(existingDatasetDefaultTtlMs).when(dataset).getDefaultTableLifetime();
+    doReturn(dataset).when(bigquery).getDataset(eq(DatasetId.of(datasetName)));
+  }
+
+  private BigQueryConnection createConnectionWithMockedBigQuery(String url) throws SQLException {
+    BigQueryConnection conn = new BigQueryConnection(url);
+    conn.bigQuery = this.bigquery;
+    return conn;
+  }
+
+  @Test
+  public void testLargeResultDataset_usesUuidNameAndWriteEmpty() throws Exception {
+    configureLargeResults(
+        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, DEFAULT_DATASET_EXPIRATION_MS);
+    setupMockQueryResults(null, StatementType.SELECT, null);
+
+    try (BigQueryStatement statement = new BigQueryStatement(bigQueryConnection)) {
+      try (ResultSet rs1 = statement.executeQuery("SELECT 1")) {
+        assertNotNull(rs1);
+      }
+      assertTrue(statement.execute("SELECT 2"));
+      try (ResultSet rs2 = statement.getResultSet()) {
+        assertNotNull(rs2);
+      }
+    }
+
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery, times(2)).queryWithTimeout(captor.capture(), any(), any());
+    List<QueryJobConfiguration> configs = captor.getAllValues();
+
+    TableId firstTable = configs.get(0).getDestinationTable();
+    TableId secondTable = configs.get(1).getDestinationTable();
+    for (QueryJobConfiguration config : configs) {
+      assertEquals(SCRATCH_DATASET, config.getDestinationTable().getDataset());
+      assertTrue(
+          GENERATED_TEMP_TABLE_PATTERN.matcher(config.getDestinationTable().getTable()).matches());
+      assertEquals(JobInfo.WriteDisposition.WRITE_EMPTY, config.getWriteDisposition());
+      assertEquals(JobInfo.CreateDisposition.CREATE_IF_NEEDED, config.getCreateDisposition());
+    }
+    assertNotEquals(firstTable.getTable(), secondTable.getTable());
+  }
+
+  @Test
+  public void testLargeResultTable_explicitTablePreservedOnCloseAndUsesWriteTruncate()
+      throws Exception {
+    configureLargeResults(
+        SCRATCH_DATASET, "explicit_results_table", DEFAULT_DATASET_EXPIRATION_MS, null);
+    setupMockQueryResults(null, StatementType.SELECT, null);
+
+    try (BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+        ResultSet rs = statement.executeQuery("SELECT 1")) {
+      assertNotNull(rs);
+    }
+
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+    QueryJobConfiguration capturedConfig = captor.getValue();
+    assertEquals(
+        TableId.of(SCRATCH_DATASET, "explicit_results_table"),
+        capturedConfig.getDestinationTable());
+    assertEquals(JobInfo.WriteDisposition.WRITE_TRUNCATE, capturedConfig.getWriteDisposition());
+    verify(bigquery, never()).update(any(TableInfo.class));
+    verify(bigquery, never()).delete(any(TableId.class));
+  }
+
+  private static Stream<Arguments> perTableExpirationCases() {
+    return Stream.of(
+        Arguments.of(null, DEFAULT_DATASET_EXPIRATION_MS, true),
+        Arguments.of(86_400_000L, DEFAULT_DATASET_EXPIRATION_MS, true),
+        Arguments.of(DEFAULT_DATASET_EXPIRATION_MS, 14_400_000L, true),
+        Arguments.of(DEFAULT_DATASET_EXPIRATION_MS, DEFAULT_DATASET_EXPIRATION_MS, false));
+  }
+
+  @ParameterizedTest
+  @MethodSource("perTableExpirationCases")
+  public void testLargeResultDataset_perTableExpirationByDatasetDefaultTtl(
+      Long datasetDefaultTtlMs, long configuredExpirationMs, boolean expectUpdate)
+      throws Exception {
+    configureLargeResults(SCRATCH_DATASET, null, configuredExpirationMs, datasetDefaultTtlMs);
+    setupMockQueryResults(null, StatementType.SELECT, null);
+
+    long beforeMs = System.currentTimeMillis();
+    try (BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+        ResultSet rs = statement.executeQuery("SELECT 1")) {
+      assertNotNull(rs);
+    }
+    long afterMs = System.currentTimeMillis();
+
+    if (!expectUpdate) {
+      verify(bigquery, never()).update(any(TableInfo.class));
+      return;
+    }
+
+    ArgumentCaptor<QueryJobConfiguration> configCaptor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery).queryWithTimeout(configCaptor.capture(), any(), any());
+    ArgumentCaptor<TableInfo> tableInfoCaptor = ArgumentCaptor.forClass(TableInfo.class);
+    verify(bigquery).update(tableInfoCaptor.capture());
+
+    TableInfo updatedTable = tableInfoCaptor.getValue();
+    assertEquals(configCaptor.getValue().getDestinationTable(), updatedTable.getTableId());
+    assertThat(updatedTable.getExpirationTime()).isAtLeast(beforeMs + configuredExpirationMs);
+    assertThat(updatedTable.getExpirationTime()).isAtMost(afterMs + configuredExpirationMs);
+  }
+
+  private static Stream<Arguments> autoCreatedDatasetCases() {
+    return Stream.of(
+        Arguments.of(
+            BigQueryJdbcBaseTest.getUriOAuthServiceAccount()
+                .append("ProjectId", PROJECT)
+                .append("LargeResultDataset", "auto_sa_dataset")
+                .toString(),
+            "auto_sa_dataset",
+            "service@account",
+            false,
+            true),
+        Arguments.of(
+            BigQueryJdbcBaseTest.getUriOAuthToken()
+                .append("ProjectId", PROJECT)
+                .append(
+                    "ServiceAccountImpersonationEmail",
+                    "impersonated@project.iam.gserviceaccount.com")
+                .append("LargeResultDataset", "auto_impersonated_dataset")
+                .toString(),
+            "auto_impersonated_dataset",
+            "impersonated@project.iam.gserviceaccount.com",
+            false,
+            true),
+        Arguments.of(
+            BigQueryJdbcBaseTest.getUriOAuthServiceAccount()
+                .append("ProjectId", PROJECT)
+                .append("QueryDialect", "BIG_QUERY")
+                .append("AllowLargeResults", 1)
+                .append("LargeResultTable", "explicit_legacy_table")
+                .toString(),
+            "_google_jdbc",
+            "service@account",
+            false,
+            false),
+        Arguments.of(
+            BigQueryJdbcBaseTest.getUriOAuthToken()
+                .append("ProjectId", PROJECT)
+                .append("LargeResultDataset", "auto_token_dataset")
+                .toString(),
+            "auto_token_dataset",
+            null,
+            true,
+            true));
+  }
+
+  @ParameterizedTest
+  @MethodSource("autoCreatedDatasetCases")
+  public void testAutoCreatedDataset_ownerAclDefaultLifetimeAndConflictHandling(
+      String url,
+      String expectedDatasetName,
+      String expectedOwnerEmail,
+      boolean simulateConflictRace,
+      boolean expectTempTableDelete)
+      throws Exception {
+    doReturn(null).when(bigquery).getDataset(eq(DatasetId.of(expectedDatasetName)));
+    if (simulateConflictRace) {
+      doThrow(new BigQueryException(409, "Already Exists: Dataset " + expectedDatasetName))
+          .when(bigquery)
+          .create(any(DatasetInfo.class));
+    }
+    setupMockQueryResults(null, StatementType.SELECT, null);
+
+    try (BigQueryConnection conn = createConnectionWithMockedBigQuery(url);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = assertDoesNotThrow(() -> stmt.executeQuery("SELECT 1"))) {
+      assertNotNull(rs);
+    }
+
+    ArgumentCaptor<DatasetInfo> datasetCaptor = ArgumentCaptor.forClass(DatasetInfo.class);
+    verify(bigquery).create(datasetCaptor.capture());
+    DatasetInfo createdDataset = datasetCaptor.getValue();
+    assertEquals(expectedDatasetName, createdDataset.getDatasetId().getDataset());
+    assertEquals(DEFAULT_DATASET_EXPIRATION_MS, createdDataset.getDefaultTableLifetime());
+    if (expectedOwnerEmail == null) {
+      assertNull(createdDataset.getAcl());
+    } else {
+      assertEquals(
+          Collections.singletonList(Acl.of(new Acl.User(expectedOwnerEmail), Acl.Role.OWNER)),
+          createdDataset.getAcl());
+    }
+    verify(bigquery, times(expectTempTableDelete ? 1 : 0)).delete(any(TableId.class));
+  }
+
+  @ParameterizedTest
+  @ValueSource(booleans = {true, false})
+  public void testLargeResultDataset_ignoresBestEffortRpcFailures(boolean failOnUpdate)
+      throws Exception {
+    configureLargeResults(SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, null);
+    setupMockQueryResults(null, StatementType.SELECT, null);
+    if (failOnUpdate) {
+      doThrow(new BigQueryException(403, "Permission bigquery.tables.update denied"))
+          .when(bigquery)
+          .update(any(TableInfo.class));
+    } else {
+      doThrow(new BigQueryException(403, "Permission bigquery.tables.delete denied"))
+          .when(bigquery)
+          .delete(any(TableId.class));
+    }
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    ResultSet rs = assertDoesNotThrow(() -> statement.executeQuery("SELECT 1"));
+    assertFalse(rs.next());
+    assertDoesNotThrow(rs::close);
+    assertDoesNotThrow(statement::close);
+  }
+
+  @Test
+  public void testLargeResultDataset_deletesGeneratedTempTableOnJsonAndArrowResultSetClose()
+      throws Exception {
+    configureLargeResults(
+        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, DEFAULT_DATASET_EXPIRATION_MS);
+    setupMockQueryResults(null, StatementType.SELECT, null);
+
+    BigQueryStatement jsonStatement = new BigQueryStatement(bigQueryConnection);
+    ResultSet jsonRs = jsonStatement.executeQuery("SELECT 1");
+    ArgumentCaptor<QueryJobConfiguration> jsonCaptor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery).queryWithTimeout(jsonCaptor.capture(), any(), any());
+    TableId jsonTempTable = jsonCaptor.getValue().getDestinationTable();
+
+    verify(bigquery, never()).delete(any(TableId.class));
+    jsonRs.close();
+    verify(bigquery, times(1)).delete(eq(jsonTempTable));
+    jsonRs.close();
+    jsonStatement.close();
+    verify(bigquery, times(1)).delete(eq(jsonTempTable));
+
+    BigQueryStatement arrowStmtSpy = createReadApiStatementSpy();
+    TableResult arrowTableResult = setupMockQueryResults(this.jobId, StatementType.SELECT, null);
+    doReturn(Schema.of(fieldList)).when(arrowTableResult).getSchema();
+    doReturn(2000L).when(arrowTableResult).getTotalRows();
+    doReturn(500L).when(arrowTableResult).getRowsInPage();
+    doReturn(true).when(arrowTableResult).hasNextPage();
+
+    ResultSet arrowRs = arrowStmtSpy.executeQuery("SELECT * FROM t");
+    assertThat(arrowRs).isInstanceOf(BigQueryArrowResultSet.class);
+    ArgumentCaptor<QueryJobConfiguration> arrowCaptor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery, times(2)).queryWithTimeout(arrowCaptor.capture(), any(), any());
+    TableId arrowTempTable = arrowCaptor.getAllValues().get(1).getDestinationTable();
+
+    verify(bigquery, never()).delete(eq(arrowTempTable));
+    arrowRs.close();
+    verify(bigquery, times(1)).delete(eq(arrowTempTable));
+    arrowStmtSpy.close();
+    verify(bigquery, times(1)).delete(eq(arrowTempTable));
+  }
+
+  @Test
+  public void testLargeResultDataset_deletesGeneratedTempTableOnReexecutionCloseAndFailure()
+      throws Exception {
+    configureLargeResults(
+        SCRATCH_DATASET, null, DEFAULT_DATASET_EXPIRATION_MS, DEFAULT_DATASET_EXPIRATION_MS);
+    setupMockQueryResults(null, StatementType.SELECT, null);
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    statement.closeOnCompletion();
+
+    ResultSet rs1 = statement.executeQuery("SELECT 1");
+    verify(bigquery, never()).delete(any(TableId.class));
+
+    ResultSet rs2 = statement.executeQuery("SELECT 2");
+    assertFalse(statement.isClosed());
+    assertTrue(rs1.isClosed());
+    assertFalse(rs2.isClosed());
+
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery, times(2)).queryWithTimeout(captor.capture(), any(), any());
+    TableId firstTable = captor.getAllValues().get(0).getDestinationTable();
+    TableId secondTable = captor.getAllValues().get(1).getDestinationTable();
+
+    verify(bigquery, times(1)).delete(eq(firstTable));
+    verify(bigquery, never()).delete(eq(secondTable));
+
+    statement.close();
+    assertTrue(rs2.isClosed());
+    verify(bigquery, times(1)).delete(eq(secondTable));
+
+    doThrow(new BigQueryException(400, "Query execution failed"))
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+    BigQueryStatement failingStatement = new BigQueryStatement(bigQueryConnection);
+    assertThrows(BigQueryJdbcException.class, () -> failingStatement.executeQuery("SELECT 3"));
+
+    ArgumentCaptor<QueryJobConfiguration> failCaptor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    verify(bigquery, times(3)).queryWithTimeout(failCaptor.capture(), any(), any());
+    TableId failedTempTable = failCaptor.getAllValues().get(2).getDestinationTable();
+    verify(bigquery, times(1)).delete(eq(failedTempTable));
+    failingStatement.close();
+    verify(bigquery, times(1)).delete(eq(failedTempTable));
   }
 }

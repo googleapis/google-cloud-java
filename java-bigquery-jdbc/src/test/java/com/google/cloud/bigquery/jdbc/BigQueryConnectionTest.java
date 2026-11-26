@@ -42,6 +42,7 @@ import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
+import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.BigQuery;
@@ -81,11 +82,14 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.MockedStatic;
 
@@ -1075,6 +1079,71 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
     assertStorageCredentialsScoped(
         result, CUSTOM_UNIVERSE, storageUri(CUSTOM_UNIVERSE, "BigQueryRead"), explicitScopes);
+  }
+
+  private static String externalAccountJson(String impersonatedEmail) {
+    String impersonationField =
+        impersonatedEmail == null
+            ? ""
+            : ",\"service_account_impersonation_url\":\"https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/"
+                + impersonatedEmail
+                + ":generateAccessToken\"";
+    return "{\"type\":\"external_account\","
+        + "\"audience\":\"//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/p/providers/pr\","
+        + "\"subject_token_type\":\"urn:ietf:params:oauth:tokentype:id_token\","
+        + "\"token_url\":\"https://sts.googleapis.com/v1/token\","
+        + "\"credential_source\":{\"file\":\"/tmp/nonexistent-token\"}"
+        + impersonationField
+        + "}";
+  }
+
+  private static Stream<Arguments> ownerEmailUrlCases() {
+    return Stream.of(
+        Arguments.of(
+            getUriOAuthServiceAccount().append("ProjectId", "project").toString(),
+            "service@account"),
+        Arguments.of(
+            getUriOAuthToken()
+                .append("ProjectId", "project")
+                .append(
+                    "ServiceAccountImpersonationEmail", "target-sa@project.iam.gserviceaccount.com")
+                .toString(),
+            "target-sa@project.iam.gserviceaccount.com"),
+        Arguments.of(
+            getBaseUri(4, "project")
+                .append(
+                    "OAuthPvtKey", externalAccountJson("byoid-sa@project.iam.gserviceaccount.com"))
+                .toString(),
+            "byoid-sa@project.iam.gserviceaccount.com"),
+        Arguments.of(
+            getBaseUri(4, "project").append("OAuthPvtKey", externalAccountJson(null)).toString(),
+            null),
+        Arguments.of(getUriOAuthToken().append("ProjectId", "project").toString(), null));
+  }
+
+  @ParameterizedTest
+  @MethodSource("ownerEmailUrlCases")
+  public void testResolveOwnerEmailFromUrl(String url, String expectedEmail) throws Exception {
+    try (BigQueryConnection conn = new BigQueryConnection(url)) {
+      assertEquals(expectedEmail, conn.resolveOwnerEmail());
+    }
+  }
+
+  @Test
+  public void testResolveOwnerEmailFromServiceAccountSigner() throws Exception {
+    try (BigQueryConnection conn =
+        new BigQueryConnection(getUriOAuthToken().append("ProjectId", "project").toString())) {
+      Credentials validSigner =
+          mock(Credentials.class, withSettings().extraInterfaces(ServiceAccountSigner.class));
+      when(((ServiceAccountSigner) validSigner).getAccount())
+          .thenReturn("gce-sa@project.iam.gserviceaccount.com");
+      conn.credentials = validSigner;
+      assertEquals("gce-sa@project.iam.gserviceaccount.com", conn.resolveOwnerEmail());
+
+      when(((ServiceAccountSigner) validSigner).getAccount())
+          .thenThrow(new RuntimeException("Metadata server unavailable"));
+      assertNull(conn.resolveOwnerEmail());
+    }
   }
 
   private static URI storageUri(String universeDomain, String service) {

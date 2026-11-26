@@ -25,7 +25,9 @@ import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
+import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.oauth2.ExternalAccountCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.BigQuery;
@@ -640,6 +642,24 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   public Map<String, String> getAuthProperties() throws BigQueryJdbcException {
     checkClosed();
     return this.authProperties;
+  }
+
+  String resolveOwnerEmail() {
+    String email = null;
+    try {
+      if (this.credentials instanceof ServiceAccountSigner) {
+        email = ((ServiceAccountSigner) this.credentials).getAccount();
+      } else if (this.credentials instanceof ExternalAccountCredentials) {
+        email = ((ExternalAccountCredentials) this.credentials).getServiceAccountEmail();
+      }
+    } catch (RuntimeException ex) {
+      LOG.fine("Could not resolve account email from credentials: %s", ex);
+    }
+    if (email == null) {
+      return null;
+    }
+    String trimmed = email.trim();
+    return trimmed.contains("@") ? trimmed : null;
   }
 
   long getMaxResults() {

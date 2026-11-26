@@ -22,6 +22,7 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.Tuple;
+import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
@@ -43,7 +44,9 @@ import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.JobStatistics.ScriptStatistics;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
@@ -72,6 +75,7 @@ import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import java.lang.ref.ReferenceQueue;
+import java.net.HttpURLConnection;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -80,12 +84,14 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
+import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -111,6 +117,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private static final String DEFAULT_DATASET_NAME = "_google_jdbc";
   private static final String DEFAULT_TABLE_NAME = "temp_table_";
   private static final String JDBC_JOB_PREFIX = "google-jdbc-";
+  private static final long MIN_DATASET_DEFAULT_TABLE_LIFETIME_MS = 3_600_000L;
   private static final int MAX_RETRY_COUNT = 5;
   private static final long RETRY_DELAY_MS = 2000L;
   // Reported when a failure carries no BigQuery or SQL error code, matching the fallback used by
@@ -143,6 +150,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private final BigQuery bigQuery;
 
   final BigQuerySettings querySettings;
+
+  private final Set<TableId> trackedTempTables = ConcurrentHashMap.newKeySet();
+  private final Map<ResultSet, TableId> resultSetTempTables =
+      Collections.synchronizedMap(new IdentityHashMap<>());
+  private TableId pendingTempTableId = null;
+  private boolean pendingTempTableNeedsExpiration = false;
 
   private BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue;
 
@@ -221,6 +234,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
     if (this.connection.getDestinationDataset() != null) {
       querySettings.setDestinationDataset(this.connection.getDestinationDataset());
+    }
+    if (this.connection.getDestinationDatasetExpirationTime() > 0) {
       querySettings.setDestinationDatasetExpirationTime(
           this.connection.getDestinationDatasetExpirationTime());
     }
@@ -262,6 +277,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private ResultSet executeQueryImpl(String sql) throws SQLException {
+    cleanupPreviousExecution();
     logQueryExecutionStart(sql);
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
     jobConfiguration = applyParametersIfPresent(jobConfiguration);
@@ -269,6 +285,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     runQuery(sql, jobConfiguration.build());
 
     if (!isSingularResultSet()) {
+      cleanupPreviousExecution();
       throw new BigQueryJdbcException(
           "Query returned more than one or didn't return any ResultSet.");
     }
@@ -286,6 +303,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private long executeLargeUpdateImpl(String sql) throws SQLException {
+    cleanupPreviousExecution();
     logQueryExecutionStart(sql);
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
     jobConfiguration = applyParametersIfPresent(jobConfiguration);
@@ -320,6 +338,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private boolean executeImpl(String sql) throws SQLException {
+    cleanupPreviousExecution();
     logQueryExecutionStart(sql);
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
     jobConfiguration = applyParametersIfPresent(jobConfiguration);
@@ -545,6 +564,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       this.currentResultSet = null;
       tmp.close();
     }
+    this.resultSetTempTables.clear();
+    deleteAllTrackedTempTables();
     this.batchQueries.clear();
     this.arrowBatchWrapperBlockingQueue = null;
     this.bigQueryFieldValueListWrapperBlockingQueue = null;
@@ -553,6 +574,84 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (this.connection != null) {
       this.connection.removeStatement(this);
     }
+  }
+
+  private void cleanupPreviousExecution() throws SQLException {
+    if (this.currentResultSet != null) {
+      ResultSet previousResultSet = this.currentResultSet;
+      this.currentResultSet = null;
+      previousResultSet.close();
+    }
+    this.resultSetTempTables.clear();
+    deleteAllTrackedTempTables();
+  }
+
+  void onResultSetClosed(ResultSet closedResultSet) {
+    if (closedResultSet == null) {
+      return;
+    }
+    TableId tableToDelete = this.resultSetTempTables.remove(closedResultSet);
+    if (tableToDelete != null) {
+      deleteTempTableBestEffort(tableToDelete);
+    }
+    if (closedResultSet == this.currentResultSet
+        && !this.isClosed
+        && isCloseOnCompletion()
+        && !hasMoreResults()) {
+      try {
+        close();
+      } catch (SQLException ex) {
+        LOG.warning("Exception during ResultSet.close() operation: %s", ex.getMessage());
+      }
+    }
+  }
+
+  private void deleteAllTrackedTempTables() {
+    if (this.trackedTempTables.isEmpty()) {
+      return;
+    }
+    for (TableId tableId : new ArrayList<>(this.trackedTempTables)) {
+      deleteTempTableBestEffort(tableId);
+    }
+  }
+
+  private void deleteTempTableBestEffort(TableId tableId) {
+    if (tableId == null || !this.trackedTempTables.remove(tableId) || this.bigQuery == null) {
+      return;
+    }
+    try {
+      boolean deleted = this.bigQuery.delete(tableId);
+      LOG.fine("Deleted temporary destination table %s (deleted=%s).", tableId, deleted);
+    } catch (RuntimeException ex) {
+      LOG.warning("Failed to delete temporary destination table %s: %s", tableId, ex.getMessage());
+    }
+  }
+
+  private void applyTempTableExpirationBestEffort(TableId tableId) {
+    if (tableId == null || this.bigQuery == null) {
+      return;
+    }
+    long expirationTimeMs = Instant.now().toEpochMilli() + getEffectiveDestinationExpirationMs();
+    try {
+      TableInfo tableInfo =
+          TableInfo.newBuilder(tableId, StandardTableDefinition.newBuilder().build())
+              .setExpirationTime(expirationTimeMs)
+              .build();
+      this.bigQuery.update(tableInfo);
+      LOG.fine(
+          "Set expirationTime=%d on temporary destination table %s.", expirationTimeMs, tableId);
+    } catch (RuntimeException ex) {
+      LOG.warning(
+          "Failed to set expirationTime on temporary destination table %s: %s",
+          tableId, ex.getMessage());
+    }
+  }
+
+  private long getEffectiveDestinationExpirationMs() {
+    long configuredMs = this.querySettings.getDestinationDatasetExpirationTime();
+    return configuredMs > 0
+        ? configuredMs
+        : BigQueryJdbcUrlUtility.DEFAULT_DESTINATION_DATASET_EXPIRATION_TIME_VALUE;
   }
 
   private boolean isSingularResultSet() {
@@ -669,6 +768,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           jobConfiguration.toBuilder().setJobTimeoutMs(Long.valueOf(queryTimeout) * 1000).build();
     }
 
+    TableId executionTempTableId = this.pendingTempTableId;
+    boolean applyTempTableExpiration = this.pendingTempTableNeedsExpiration;
+    this.pendingTempTableId = null;
+    this.pendingTempTableNeedsExpiration = false;
+    boolean tempTableRetainedForResultSet = false;
+
     long startTime = System.currentTimeMillis();
     // Overwritten by the catch blocks below. The initial value covers failures that reach none of
     // them, such as an uncaught RuntimeException, so a failure is never reported without a code.
@@ -677,6 +782,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     try {
       resetStatementFields();
       ExecuteResult executeResult = executeJob(jobConfiguration);
+      if (executionTempTableId != null && applyTempTableExpiration) {
+        applyTempTableExpirationBestEffort(executionTempTableId);
+      }
       StatementType statementType = getStatementType(executeResult);
 
       this.currentExecutionBuilder.setStatementType(
@@ -684,6 +792,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
       SqlType queryType = getQueryType(jobConfiguration, statementType);
       handleQueryResult(query, executeResult.tableResult, queryType, executeResult.job);
+      if (executionTempTableId != null && this.currentResultSet != null) {
+        this.resultSetTempTables.put(this.currentResultSet, executionTempTableId);
+        tempTableRetainedForResultSet = true;
+      }
 
       this.currentExecutionBuilder.setStatus(
           com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
@@ -717,6 +829,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
 
       TelemetryManager.recordStatementExecution(this.currentExecutionBuilder, durationMs);
+      if (executionTempTableId != null && !tempTableRetainedForResultSet) {
+        deleteTempTableBestEffort(executionTempTableId);
+      }
     }
   }
 
@@ -737,24 +852,38 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   QueryJobConfiguration.Builder setDestinationDatasetAndTableInJobConfig(
       QueryJobConfiguration.Builder jobConfigurationBuilder) throws BigQueryJdbcException {
-    String destinationTable = this.querySettings.getDestinationTable();
+    String configuredDestinationTable = this.querySettings.getDestinationTable();
     String destinationDataset = this.querySettings.getDestinationDataset();
-    if (destinationDataset != null || destinationTable != null) {
+    if (destinationDataset != null || configuredDestinationTable != null) {
+      boolean needsTableExpiration = false;
       if (destinationDataset != null) {
-        checkIfDatasetExistElseCreate(destinationDataset);
-      }
-      if (getUseLegacySql() && destinationDataset == null) {
-        checkIfDatasetExistElseCreate(DEFAULT_DATASET_NAME);
+        needsTableExpiration = ensureDatasetAndCheckNeedsTableExpiration(destinationDataset);
+      } else if (getUseLegacySql()) {
+        needsTableExpiration = ensureDatasetAndCheckNeedsTableExpiration(DEFAULT_DATASET_NAME);
         destinationDataset = DEFAULT_DATASET_NAME;
       }
-      if (destinationTable == null) {
-        destinationTable = getDefaultDestinationTable();
+
+      boolean isGeneratedTempTable = (configuredDestinationTable == null);
+      String targetTableName =
+          isGeneratedTempTable ? getDefaultDestinationTable() : configuredDestinationTable;
+      TableId targetTableId = TableId.of(destinationDataset, targetTableName);
+      JobInfo.WriteDisposition writeDisposition;
+      if (isGeneratedTempTable) {
+        writeDisposition = JobInfo.WriteDisposition.WRITE_EMPTY;
+        this.pendingTempTableId = targetTableId;
+        this.pendingTempTableNeedsExpiration = needsTableExpiration;
+        this.trackedTempTables.add(targetTableId);
+      } else {
+        writeDisposition = JobInfo.WriteDisposition.WRITE_TRUNCATE;
+        this.pendingTempTableId = null;
+        this.pendingTempTableNeedsExpiration = false;
       }
+
       return jobConfigurationBuilder
           .setAllowLargeResults(this.querySettings.getAllowLargeResults())
-          .setDestinationTable(TableId.of(destinationDataset, destinationTable))
+          .setDestinationTable(targetTableId)
           .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-          .setWriteDisposition(JobInfo.WriteDisposition.WRITE_TRUNCATE);
+          .setWriteDisposition(writeDisposition);
     }
     return jobConfigurationBuilder;
   }
@@ -1643,25 +1772,63 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return this.querySettings.isEnableTimestampPicos();
   }
 
-  private void checkIfDatasetExistElseCreate(String datasetName) throws BigQueryJdbcException {
-    Dataset dataset = bigQuery.getDataset(DatasetId.of(datasetName));
-    if (dataset == null) {
-      LOG.info("Creating a hidden dataset: %s ", datasetName);
-      DatasetInfo.Builder datasetInfoBuilder =
-          DatasetInfo.newBuilder(datasetName)
-              .setDefaultTableLifetime(this.querySettings.getDestinationDatasetExpirationTime());
-      String location = this.connection.getLocation();
-      if (location != null && !location.isEmpty()) {
-        datasetInfoBuilder.setLocation(location);
-      }
+  private boolean ensureDatasetAndCheckNeedsTableExpiration(String datasetName)
+      throws BigQueryJdbcException {
+    long effectiveExpirationMs = getEffectiveDestinationExpirationMs();
+    Dataset dataset;
+    try {
+      dataset = bigQuery.getDataset(DatasetId.of(datasetName));
+    } catch (BigQueryException ex) {
+      throw new BigQueryJdbcException(ex);
+    }
+    if (dataset != null) {
+      return needsPerTableExpiration(dataset, effectiveExpirationMs);
+    }
+
+    LOG.info("Creating a hidden dataset: %s ", datasetName);
+    long datasetDefaultLifetimeMs =
+        Math.max(effectiveExpirationMs, MIN_DATASET_DEFAULT_TABLE_LIFETIME_MS);
+    DatasetInfo.Builder datasetInfoBuilder =
+        DatasetInfo.newBuilder(datasetName).setDefaultTableLifetime(datasetDefaultLifetimeMs);
+    String location = this.connection.getLocation();
+    if (location != null && !location.isEmpty()) {
+      datasetInfoBuilder.setLocation(location);
+    }
+    String ownerEmail = this.connection.resolveOwnerEmail();
+    if (ownerEmail != null) {
+      datasetInfoBuilder.setAcl(
+          Collections.singletonList(Acl.of(new Acl.User(ownerEmail), Acl.Role.OWNER)));
+    }
+    try {
       bigQuery.create(datasetInfoBuilder.build());
+      return effectiveExpirationMs < MIN_DATASET_DEFAULT_TABLE_LIFETIME_MS;
+    } catch (BigQueryException ex) {
+      if (ex.getCode() == HttpURLConnection.HTTP_CONFLICT) {
+        LOG.fine("Dataset %s was created concurrently.", datasetName);
+        Dataset existingDataset = null;
+        try {
+          existingDataset = bigQuery.getDataset(DatasetId.of(datasetName));
+        } catch (BigQueryException ignored) {
+          LOG.fine("Could not reload concurrently created dataset %s.", datasetName);
+        }
+        return needsPerTableExpiration(existingDataset, effectiveExpirationMs);
+      }
+      throw new BigQueryJdbcException(ex);
     }
   }
 
+  private static boolean needsPerTableExpiration(Dataset dataset, long effectiveExpirationMs) {
+    if (dataset == null) {
+      return true;
+    }
+    Long defaultTableLifetime = dataset.getDefaultTableLifetime();
+    return defaultTableLifetime == null
+        || defaultTableLifetime <= 0
+        || defaultTableLifetime != effectiveExpirationMs;
+  }
+
   private String getDefaultDestinationTable() {
-    String timeOfCreation = String.valueOf(Instant.now().toEpochMilli());
-    String randomizedId = String.valueOf(new Random().nextInt(9999));
-    return DEFAULT_TABLE_NAME + timeOfCreation + randomizedId;
+    return DEFAULT_TABLE_NAME + UUID.randomUUID().toString().replace("-", "_");
   }
 
   @InternalApi
@@ -1810,6 +1977,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private int[] executeBatchImpl(String combinedQueries) throws SQLException {
+    cleanupPreviousExecution();
     int[] result = new int[this.batchQueries.size()];
     if (this.batchQueries.isEmpty()) {
       return result;
