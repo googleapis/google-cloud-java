@@ -122,7 +122,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Internal connection API for Google Cloud Spanner. This class may introduce breaking changes
@@ -841,7 +841,9 @@ public class ConnectionOptions {
 
     // Create the initial connection state from the parsed properties in the connection URL.
     this.initialConnectionState = new ConnectionState(connectionPropertyValues);
-    SpannerOptions.validateUniverseDomain(getUniverseDomain());
+    // Validate the effective universe domain (explicit property or GOOGLE_CLOUD_UNIVERSE_DOMAIN)
+    // eagerly so malformed values fail closed during construction, even with a custom host.
+    SpannerOptions.resolveUniverseDomain(getUniverseDomain());
 
     checkGuardedProperty(
         getInitialConnectionPropertyValue(ENCODED_CREDENTIALS),
@@ -1095,8 +1097,7 @@ public class ConnectionOptions {
       return propertyValues;
     }
 
-    @Nullable
-    String getValue(String property) {
+    @Nullable String getValue(String property) {
       return propertyValues.get(property.toLowerCase(Locale.ENGLISH));
     }
   }
@@ -1262,13 +1263,11 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(CREDENTIALS_URL);
   }
 
-  @Nullable
-  String getEncodedCredentialsHash() {
+  @Nullable String getEncodedCredentialsHash() {
     return this.encodedCredentialsHash;
   }
 
-  @Nullable
-  String getOAuthTokenHash() {
+  @Nullable String getOAuthTokenHash() {
     return this.oAuthTokenHash;
   }
 
@@ -1500,8 +1499,7 @@ public class ConnectionOptions {
   }
 
   /** Any warnings that were generated while creating the {@link ConnectionOptions} instance. */
-  @Nullable
-  public String getWarnings() {
+  public @Nullable String getWarnings() {
     return warnings;
   }
 
@@ -1528,8 +1526,12 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(ENABLE_DIRECT_ACCESS);
   }
 
-  String getUniverseDomain() {
-    return getInitialConnectionPropertyValue(UNIVERSE_DOMAIN);
+  /**
+   * Returns the explicitly configured universe domain, normalizing an empty string to {@code null}
+   * so omitted and empty values are treated identically across callers and connection pooling.
+   */
+  @Nullable String getUniverseDomain() {
+    return Strings.emptyToNull(getInitialConnectionPropertyValue(UNIVERSE_DOMAIN));
   }
 
   String getClientCertificate() {

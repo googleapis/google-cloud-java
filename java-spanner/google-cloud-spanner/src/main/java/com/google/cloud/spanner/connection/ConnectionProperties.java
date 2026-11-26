@@ -235,7 +235,9 @@ public class ConnectionProperties {
       createNullable(
           "universeDomain",
           "Configure the connection to try to connect to Spanner using "
-              + "a different partner Google Universe than GDU (googleapis.com).",
+              + "a different partner Google Universe than GDU (googleapis.com). "
+              + "If not set, the GOOGLE_CLOUD_UNIVERSE_DOMAIN environment variable is used, "
+              + "falling back to googleapis.com.",
           null,
           StringValueConverter.INSTANCE,
           Context.STARTUP);
