@@ -152,12 +152,55 @@ public final class StorageOptionsBuilderTest {
   }
 
   @Test
+  public void http_toBuilderSetUniverseDomain_resolvesDefaultHost() throws Exception {
+    HttpStorageOptions base = newHttpBuilder().build();
+
+    HttpStorageOptions actual = base.toBuilder().setUniverseDomain("example.com").build();
+    assertAll(
+        () -> assertThat(base.getHost()).isEqualTo("https://storage.googleapis.com/"),
+        () -> assertThat(actual.getHost()).isEqualTo("https://storage.example.com/"),
+        () -> assertThat(actual.getUniverseDomain()).isEqualTo("example.com"));
+  }
+
+  @Test
+  public void http_setHost_isUsedWithUniverseDomain() throws Exception {
+    HttpStorageOptions customHost =
+        newHttpBuilder().setHost("http://localhost:9000").setUniverseDomain("example.com").build();
+    HttpStorageOptions apiaryHost =
+        newHttpBuilder()
+            .setHost("https://www.googleapis.com")
+            .setUniverseDomain("example.com")
+            .build();
+    assertAll(
+        () -> assertThat(customHost.getHost()).isEqualTo("http://localhost:9000"),
+        () -> assertThat(apiaryHost.getHost()).isEqualTo("https://storage.example.com/"));
+  }
+
+  @Test
+  public void http_toBuilder_keepsHostFromOptions() throws Exception {
+    HttpStorageOptions base = newHttpBuilder().setHost("http://localhost:9000").build();
+
+    HttpStorageOptions rebuilt = base.toBuilder().build();
+    HttpStorageOptions withUniverseDomain =
+        base.toBuilder().setUniverseDomain("example.com").build();
+    assertAll(
+        () -> assertThat(rebuilt.getHost()).isEqualTo("http://localhost:9000"),
+        () -> assertThat(withUniverseDomain.getHost()).isEqualTo("http://localhost:9000"));
+  }
+
+  @Test
   public void useJwtAccessWithScope_defaultsToFalse() {
     HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
     GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();
 
     assertThat(httpOptions.getUseJwtAccessWithScope()).isFalse();
     assertThat(grpcOptions.getUseJwtAccessWithScope()).isFalse();
+  }
+
+  private static HttpStorageOptions.Builder newHttpBuilder() {
+    return HttpStorageOptions.newBuilder()
+        .setProjectId("p")
+        .setCredentials(NoCredentials.getInstance());
   }
 
   private static class MyStorageRetryStrategy implements StorageRetryStrategy {

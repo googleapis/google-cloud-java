@@ -126,6 +126,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     private Duration metricInterval = Duration.ofSeconds(60);
     private boolean customOpenTelemetryConfigured = false;
     private boolean customMeterProviderConfigured = false;
+    private boolean hostManuallySet = false;
 
     Builder() {
       setUseJwtAccessWithScope(false);
@@ -133,12 +134,29 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
 
     Builder(StorageOptions options) {
       super(options);
+      this.hostManuallySet = !options.usesDefaultHost();
       this.enableOtelMetrics = options.getRawEnableOtelMetrics();
       this.enableOtelDebugMetrics = options.getRawEnableOtelDebugMetrics();
       this.meterProvider = options.getMeterProvider();
       this.metricInterval = options.metricInterval;
       this.customMeterProviderConfigured = options.isCustomMeterProviderConfigured();
       this.customOpenTelemetryConfigured = options.isCustomOpenTelemetryConfigured();
+    }
+
+    @Override
+    public Builder setHost(String host) {
+      this.hostManuallySet = host != null;
+      return super.setHost(host);
+    }
+
+    /** Whether the host was set with {@link #setHost(String)}. */
+    boolean isHostManuallySet() {
+      return hostManuallySet;
+    }
+
+    /** Sets a host resolved by the builder itself, leaving {@link #isHostManuallySet()} as is. */
+    Builder setResolvedHostInternal(@Nullable String host) {
+      return super.setHost(host);
     }
 
     @Nullable Boolean getEnableOtelMetrics() {
@@ -289,6 +307,14 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
           "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring"
               + " exporter");
     }
+  }
+
+  /**
+   * Whether {@link #getHost()} is the host this transport derives from {@link #getUniverseDomain()}
+   * when no host is set with {@link Builder#setHost(String)}.
+   */
+  boolean usesDefaultHost() {
+    return false;
   }
 
   @Nullable Boolean getRawEnableOtelMetrics() {

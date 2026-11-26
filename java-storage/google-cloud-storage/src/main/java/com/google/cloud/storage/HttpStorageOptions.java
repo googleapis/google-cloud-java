@@ -111,6 +111,13 @@ public class HttpStorageOptions extends StorageOptions {
   }
 
   @Override
+  boolean usesDefaultHost() {
+    String universeDomain =
+        MoreObjects.firstNonNull(getUniverseDomain(), Credentials.GOOGLE_DEFAULT_UNIVERSE);
+    return getHost().equals("https://storage." + universeDomain + "/");
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(
         retryAlgorithmManager,
@@ -306,14 +313,18 @@ public class HttpStorageOptions extends StorageOptions {
 
     @Override
     public HttpStorageOptions build() {
+      if (!isHostManuallySet()) {
+        // Resolve the default host from the current universe domain on every build.
+        setResolvedHostInternal(null);
+      }
       HttpStorageOptions options = new HttpStorageOptions(this, defaults());
 
       // todo: In the future, this step will be done automatically, and the getResolvedApiaryHost
       // helper method will
       // be removed. When that happens, delete the following block.
       // https://github.com/googleapis/google-api-java-client-services/issues/19286
-      if (options.getHost() != null) { // user did not manually set a host
-        this.setHost(options.getResolvedApiaryHost("storage"));
+      if (options.getHost() != null) {
+        setResolvedHostInternal(options.getResolvedApiaryHost("storage"));
         return new HttpStorageOptions(this, defaults());
       }
       return options;
