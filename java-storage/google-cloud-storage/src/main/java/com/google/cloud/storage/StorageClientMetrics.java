@@ -602,6 +602,15 @@ final class StorageClientMetrics implements AutoCloseable {
     stallDuration.record(durationSeconds, attributes, otelContext);
   }
 
+  void recordCredentialRefreshDuration(
+      Context otelContext, double durationSeconds, String errorType) {
+    if (credentialRefreshDuration == null) {
+      return;
+    }
+    Attributes attributes = clientAttributes.toBuilder().put(KEY_ERROR_TYPE, errorType).build();
+    credentialRefreshDuration.record(durationSeconds, attributes, otelContext);
+  }
+
   @Nullable
   static StorageMetricsContext createContext(
       @Nullable StorageClientMetrics metrics, String operationName) {
