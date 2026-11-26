@@ -59,6 +59,8 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 @TransportCompatibility(Transport.HTTP)
 // non-final because of mocking frameworks
 public class HttpStorageOptions extends StorageOptions {
+  /** The {@code ServiceOptions} default host, which maps to the storage host. */
+  private static final String SERVICE_OPTIONS_DEFAULT_HOST = "https://www.googleapis.com";
 
   private static final long serialVersionUID = -5302637952911052045L;
   private static final String API_SHORT_NAME = "Storage";
@@ -112,9 +114,7 @@ public class HttpStorageOptions extends StorageOptions {
 
   @Override
   boolean usesDefaultHost() {
-    String universeDomain =
-        MoreObjects.firstNonNull(getUniverseDomain(), Credentials.GOOGLE_DEFAULT_UNIVERSE);
-    return getHost().equals("https://storage." + universeDomain + "/");
+    return getHost().equals("https://storage." + getResolvedUniverseDomain() + "/");
   }
 
   @Override
@@ -313,18 +313,13 @@ public class HttpStorageOptions extends StorageOptions {
 
     @Override
     public HttpStorageOptions build() {
-      if (!isHostManuallySet()) {
-        // Resolve the default host from the current universe domain on every build.
-        setResolvedHostInternal(null);
-      }
+      String universeDomain =
+          MoreObjects.firstNonNull(
+              resolveBuilderUniverseDomain(), Credentials.GOOGLE_DEFAULT_UNIVERSE);
       HttpStorageOptions options = new HttpStorageOptions(this, defaults());
-
-      // todo: In the future, this step will be done automatically, and the getResolvedApiaryHost
-      // helper method will
-      // be removed. When that happens, delete the following block.
-      // https://github.com/googleapis/google-api-java-client-services/issues/19286
-      if (options.getHost() != null) {
-        setResolvedHostInternal(options.getResolvedApiaryHost("storage"));
+      // Unless a custom host was set with setHost(), use the storage host for the universe domain.
+      if (!isHostManuallySet() || SERVICE_OPTIONS_DEFAULT_HOST.equals(options.getHost())) {
+        setResolvedHostInternal("https://storage." + universeDomain + "/");
         return new HttpStorageOptions(this, defaults());
       }
       return options;

@@ -18,8 +18,14 @@ package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertThrows;
 
+import com.google.api.gax.rpc.EndpointContext;
+import com.google.auth.ServiceAccountSigner;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.storage.Storage.SignUrlOption;
+import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -29,9 +35,13 @@ import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
+import java.net.URI;
+import java.net.URL;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.After;
 import org.junit.Test;
 
@@ -50,6 +60,7 @@ public final class StorageOptionsTest {
   @After
   public void tearDown() {
     StorageMetricsConfig.resetResolversForTesting();
+    StorageOptions.resetEnvResolverForTesting();
   }
 
   @Test
@@ -530,5 +541,95 @@ public final class StorageOptionsTest {
           assertThat(options.getStorageClientMetrics()).isNull();
           assertThat(reader.shutdownCalled.get()).isFalse();
         });
+  }
+
+  @Test
+  public void resolvesDefaultHostFromConfiguredUniverseDomain() {
+    Map<String, String> env = new HashMap<>();
+    env.put(EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN, "custom.example.com");
+    StorageOptions.setEnvResolverForTesting(env::get);
+
+    HttpStorageOptions httpOptions = StorageOptions.http().setProjectId("test-proj").build();
+    assertThat(httpOptions.getUniverseDomain()).isNull();
+    assertThat(httpOptions.getHost()).isEqualTo("https://storage.custom.example.com/");
+
+    HttpStorageOptions explicitHttp =
+        StorageOptions.http()
+            .setProjectId("test-proj")
+            .setUniverseDomain("explicit.example.com")
+            .build();
+    assertThat(explicitHttp.getHost()).isEqualTo("https://storage.explicit.example.com/");
+
+    HttpStorageOptions clearedHostHttp =
+        StorageOptions.http()
+            .setProjectId("test-proj")
+            .setHost("http://localhost:8080")
+            .setHost(null)
+            .build();
+    assertThat(clearedHostHttp.getHost()).isEqualTo("https://storage.custom.example.com/");
+
+    HttpStorageOptions serviceDefaultHostHttp =
+        StorageOptions.http()
+            .setProjectId("test-proj")
+            .setHost("https://www.googleapis.com")
+            .build();
+    assertThat(serviceDefaultHostHttp.getHost()).isEqualTo("https://storage.custom.example.com/");
+
+    AtomicReference<byte[]> signedPayload = new AtomicReference<>();
+    ServiceAccountSigner signer =
+        new ServiceAccountSigner() {
+          @Override
+          public String getAccount() {
+            return "signer@test-proj.iam.gserviceaccount.com";
+          }
+
+          @Override
+          public byte[] sign(byte[] toSign) {
+            signedPayload.set(toSign);
+            return new byte[] {1};
+          }
+        };
+    TestApiClock clock = TestApiClock.of(TimeUnit.SECONDS.toNanos(1_700_000_000L), ns -> ns);
+    Storage storage =
+        StorageOptions.http()
+            .setProjectId("test-proj")
+            .setCredentials(NoCredentials.getInstance())
+            .setClock(clock)
+            .build()
+            .getService();
+    URL signedUrl =
+        storage.signUrl(
+            BlobInfo.newBuilder("my-bucket", "my-obj.txt").build(),
+            900,
+            TimeUnit.SECONDS,
+            SignUrlOption.withV4Signature(),
+            SignUrlOption.signWith(signer));
+    String expectedPayload =
+        new SignatureInfo.Builder(HttpMethod.GET, 900, URI.create("/my-bucket/my-obj.txt"))
+            .setSignatureVersion(SignUrlOption.SignatureVersion.V4)
+            .setAccountEmail(signer.getAccount())
+            .setTimestamp(clock.millisTime())
+            .setCanonicalizedExtensionHeaders(ImmutableMap.of("host", "storage.custom.example.com"))
+            .build()
+            .constructUnsignedPayload();
+    assertThat(signedUrl.getHost()).isEqualTo("storage.custom.example.com");
+    assertThat(new String(signedPayload.get(), UTF_8)).isEqualTo(expectedPayload);
+
+    storage.signUrl(
+        BlobInfo.newBuilder("my-bucket", "my-obj.txt").build(),
+        900,
+        TimeUnit.SECONDS,
+        SignUrlOption.withV4Signature(),
+        SignUrlOption.signWith(signer),
+        SignUrlOption.withExtHeaders(ImmutableMap.of("host", "custom-host.example.com")));
+    String expectedExtHeaderPayload =
+        new SignatureInfo.Builder(HttpMethod.GET, 900, URI.create("/my-bucket/my-obj.txt"))
+            .setSignatureVersion(SignUrlOption.SignatureVersion.V4)
+            .setAccountEmail(signer.getAccount())
+            .setTimestamp(clock.millisTime())
+            .setCanonicalizedExtensionHeaders(ImmutableMap.of("host", "custom-host.example.com"))
+            .build()
+            .constructUnsignedPayload();
+    assertThat(new String(signedPayload.get(), UTF_8)).isEqualTo(expectedExtHeaderPayload);
   }
 }
