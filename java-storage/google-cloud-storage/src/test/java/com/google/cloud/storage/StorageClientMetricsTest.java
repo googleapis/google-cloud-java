@@ -42,6 +42,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import org.junit.Before;
+import org.jspecify.annotations.Nullable;
 import org.junit.Test;
 
 public final class StorageClientMetricsTest {
@@ -460,6 +461,13 @@ public final class StorageClientMetricsTest {
     assertThat(point.getValue()).isEqualTo(128L);
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_IO_DIRECTION))
         .isEqualTo(StorageClientMetrics.NETWORK_IO_DIRECTION_TRANSMIT);
+  }
+
+  private @Nullable MetricData findMetric(String name) {
+    return reader.collectAllMetrics().stream()
+        .filter(m -> m.getName().equals(name))
+        .findFirst()
+        .orElse(null);
   }
 
   static final class TestMetricReader implements MetricReader {
