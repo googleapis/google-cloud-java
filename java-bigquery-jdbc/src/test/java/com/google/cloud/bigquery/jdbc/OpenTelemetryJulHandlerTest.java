@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import com.google.cloud.logging.LogEntry;
@@ -31,6 +32,8 @@ import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.logs.data.LogRecordData;
 import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -120,15 +123,63 @@ public class OpenTelemetryJulHandlerTest {
     try (Scope scope = baggage.makeCurrent();
         BigQueryJdbcMdc.MdcCloseable mdcScope = BigQueryJdbcMdc.registerInstance("gcp-uuid")) {
       logger.info("Test message");
+      logger.log(new LogRecord(Level.INFO, null));
     }
 
     ArgumentCaptor<Iterable<LogEntry>> captor = ArgumentCaptor.forClass(Iterable.class);
-    verify(loggingClient).write(captor.capture());
+    verify(loggingClient, times(2)).write(captor.capture());
 
-    Iterable<LogEntry> entries = captor.getValue();
-    LogEntry entry = entries.iterator().next();
+    List<Iterable<LogEntry>> allWrites = captor.getAllValues();
+    LogEntry entry = allWrites.get(0).iterator().next();
+    LogEntry nullEntry = allWrites.get(1).iterator().next();
 
     assertEquals("Test message", ((Payload.StringPayload) entry.getPayload()).getData());
     assertEquals(com.google.cloud.logging.Severity.INFO, entry.getSeverity());
+    assertEquals("", ((Payload.StringPayload) nullEntry.getPayload()).getData());
+  }
+
+  @Test
+  public void testResultSetLoggerRoutingAndMessageFormatting() {
+    BigQueryJdbcOpenTelemetry.registerConnection(
+        "test-uuid", otelTesting.getOpenTelemetry(), null, false);
+    BigQueryJdbcMdc.clear();
+
+    BigQueryJdbcResultSetLogger rsLogger =
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, "test-uuid");
+    rsLogger.fineTrace("getObject", "Column 'user_id' has unparsed {json}");
+
+    LogRecord parameterized = new LogRecord(Level.INFO, "Processing job {0}");
+    parameterized.setParameters(new Object[] {"job-999"});
+    rsLogger.log(parameterized);
+
+    Baggage baggage =
+        Baggage.builder()
+            .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, "test-uuid")
+            .build();
+    try (Scope scope = baggage.makeCurrent()) {
+      LogRecord retryStyle = new LogRecord(Level.INFO, "Retrying 'getQueryResults'");
+      retryStyle.setParameters(new Object[] {"attempt=1"});
+      logger.log(retryStyle);
+
+      LogRecord directPositional = new LogRecord(Level.INFO, "Direct {0} ok");
+      directPositional.setParameters(new Object[] {"param0"});
+      logger.log(directPositional);
+
+      LogRecord malformedPattern = new LogRecord(Level.INFO, "Broken {0");
+      malformedPattern.setParameters(new Object[] {"param0"});
+      logger.log(malformedPattern);
+
+      LogRecord nullMessage = new LogRecord(Level.INFO, null);
+      logger.log(nullMessage);
+    }
+
+    List<LogRecordData> logs = otelTesting.getLogRecords();
+    assertEquals(6, logs.size());
+    assertEquals("Column 'user_id' has unparsed {json}", logs.get(0).getBody().asString());
+    assertEquals("Processing job job-999", logs.get(1).getBody().asString());
+    assertEquals("Retrying 'getQueryResults'", logs.get(2).getBody().asString());
+    assertEquals("Direct param0 ok", logs.get(3).getBody().asString());
+    assertEquals("Broken {0", logs.get(4).getBody().asString());
+    assertTrue(logs.get(5).getBody().asString().isEmpty());
   }
 }

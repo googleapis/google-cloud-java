@@ -480,9 +480,9 @@ class PerConnectionFileHandler extends Handler {
 
     String connectionId = BigQueryJdbcMdc.getConnectionId();
     if (connectionId == null || connectionId.isEmpty()) {
-      Object[] params = record.getParameters();
-      if (params != null && params.length > 0 && params[0] instanceof String) {
-        connectionId = (String) params[0];
+      ConnectionLogContext context = ConnectionLogContext.extractFromParameters(record);
+      if (context != null) {
+        connectionId = context.connectionId();
       }
     }
     boolean usedConnectionWriter = false;
