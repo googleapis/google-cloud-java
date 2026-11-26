@@ -334,6 +334,8 @@ class ApiTracerContextTest {
             .setLibraryMetadata(metadata)
             .setFullMethodName("method1")
             .setTransport(ApiTracerContext.Transport.HTTP)
+            .setJavaClientName("com.google.cloud.v1.Service1Client")
+            .setJavaMethodName("javaMethod1")
             .build();
 
     LibraryMetadata metadata2 = LibraryMetadata.newBuilder().setArtifactName("artifact").build();
@@ -343,6 +345,8 @@ class ApiTracerContextTest {
             .setLibraryMetadata(metadata2)
             .setFullMethodName("method2")
             .setTransport(ApiTracerContext.Transport.GRPC)
+            .setJavaClientName("com.google.cloud.v1.Service2Client")
+            .setJavaMethodName("javaMethod2")
             .build();
 
     ApiTracerContext merged = context1.merge(context2);
@@ -354,6 +358,27 @@ class ApiTracerContextTest {
     assertThat(merged.libraryMetadata().repository()).isNull();
     assertThat(merged.fullMethodName()).isEqualTo("method2");
     assertThat(merged.transport()).isEqualTo(ApiTracerContext.Transport.GRPC);
+    assertThat(merged.javaClientName()).isEqualTo("com.google.cloud.v1.Service2Client");
+    assertThat(merged.javaMethodName()).isEqualTo("javaMethod2");
+  }
+
+  @Test
+  void testMerge_javaClientAndMethodName() {
+    ApiTracerContext clientLevelContext =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setJavaClientName("com.google.cloud.secretmanager.v1.SecretManagerServiceClient")
+            .build();
+    ApiTracerContext methodLevelContext =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setJavaMethodName("accessSecretVersion")
+            .build();
+
+    ApiTracerContext merged = clientLevelContext.merge(methodLevelContext);
+    assertThat(merged.javaClientName())
+        .isEqualTo("com.google.cloud.secretmanager.v1.SecretManagerServiceClient");
+    assertThat(merged.javaMethodName()).isEqualTo("accessSecretVersion");
   }
 
   @Test
@@ -388,6 +413,8 @@ class ApiTracerContextTest {
             .setLibraryMetadata(LibraryMetadata.newBuilder().setRepository("repo").build())
             .setFullMethodName("method1")
             .setTransport(ApiTracerContext.Transport.HTTP)
+            .setJavaClientName("com.google.cloud.v1.Service1Client")
+            .setJavaMethodName("javaMethod1")
             .build();
 
     ApiTracerContext merged = context1.merge(ApiTracerContext.empty());
