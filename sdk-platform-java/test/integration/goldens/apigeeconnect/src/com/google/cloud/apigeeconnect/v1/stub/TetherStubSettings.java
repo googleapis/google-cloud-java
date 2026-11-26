@@ -201,6 +201,11 @@ public class TetherStubSettings extends StubSettings<TetherStubSettings> {
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.apigeeconnect.v1.TetherClient";
+  }
+
   /** Builder for TetherStubSettings. */
   public static class Builder extends StubSettings.Builder<TetherStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

@@ -397,6 +397,11 @@ public class SequenceServiceStubSettings extends StubSettings<SequenceServiceStu
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.showcase.v1beta1.SequenceServiceClient";
+  }
+
   /** Builder for SequenceServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<SequenceServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

@@ -520,6 +520,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.logging.v2.LoggingServiceV2Client";
+  }
+
   /** Builder for LoggingServiceV2StubSettings. */
   public static class Builder extends StubSettings.Builder<LoggingServiceV2StubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

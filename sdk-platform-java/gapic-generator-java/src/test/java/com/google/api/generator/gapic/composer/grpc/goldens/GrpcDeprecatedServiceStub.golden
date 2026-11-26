@@ -96,10 +96,12 @@ public class GrpcDeprecatedServiceStub extends DeprecatedServiceStub {
     GrpcCallSettings<FibonacciRequest, Empty> fastFibonacciTransportSettings =
         GrpcCallSettings.<FibonacciRequest, Empty>newBuilder()
             .setMethodDescriptor(fastFibonacciMethodDescriptor)
+            .setJavaMethodName("fastFibonacci")
             .build();
     GrpcCallSettings<FibonacciRequest, Empty> slowFibonacciTransportSettings =
         GrpcCallSettings.<FibonacciRequest, Empty>newBuilder()
             .setMethodDescriptor(slowFibonacciMethodDescriptor)
+            .setJavaMethodName("slowFibonacci")
             .build();
 
     this.fastFibonacciCallable =

@@ -437,6 +437,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listBuckets")
             .build();
     GrpcCallSettings<GetBucketRequest, LogBucket> getBucketTransportSettings =
         GrpcCallSettings.<GetBucketRequest, LogBucket>newBuilder()
@@ -448,6 +449,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getBucket")
             .build();
     GrpcCallSettings<CreateBucketRequest, LogBucket> createBucketTransportSettings =
         GrpcCallSettings.<CreateBucketRequest, LogBucket>newBuilder()
@@ -459,6 +461,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createBucket")
             .build();
     GrpcCallSettings<UpdateBucketRequest, LogBucket> updateBucketTransportSettings =
         GrpcCallSettings.<UpdateBucketRequest, LogBucket>newBuilder()
@@ -470,6 +473,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("updateBucket")
             .build();
     GrpcCallSettings<DeleteBucketRequest, Empty> deleteBucketTransportSettings =
         GrpcCallSettings.<DeleteBucketRequest, Empty>newBuilder()
@@ -481,6 +485,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteBucket")
             .build();
     GrpcCallSettings<UndeleteBucketRequest, Empty> undeleteBucketTransportSettings =
         GrpcCallSettings.<UndeleteBucketRequest, Empty>newBuilder()
@@ -492,6 +497,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("undeleteBucket")
             .build();
     GrpcCallSettings<ListViewsRequest, ListViewsResponse> listViewsTransportSettings =
         GrpcCallSettings.<ListViewsRequest, ListViewsResponse>newBuilder()
@@ -502,6 +508,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setJavaMethodName("listViews")
             .build();
     GrpcCallSettings<GetViewRequest, LogView> getViewTransportSettings =
         GrpcCallSettings.<GetViewRequest, LogView>newBuilder()
@@ -513,6 +520,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getView")
             .build();
     GrpcCallSettings<CreateViewRequest, LogView> createViewTransportSettings =
         GrpcCallSettings.<CreateViewRequest, LogView>newBuilder()
@@ -523,6 +531,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setJavaMethodName("createView")
             .build();
     GrpcCallSettings<UpdateViewRequest, LogView> updateViewTransportSettings =
         GrpcCallSettings.<UpdateViewRequest, LogView>newBuilder()
@@ -533,6 +542,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateView")
             .build();
     GrpcCallSettings<DeleteViewRequest, Empty> deleteViewTransportSettings =
         GrpcCallSettings.<DeleteViewRequest, Empty>newBuilder()
@@ -544,6 +554,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteView")
             .build();
     GrpcCallSettings<ListSinksRequest, ListSinksResponse> listSinksTransportSettings =
         GrpcCallSettings.<ListSinksRequest, ListSinksResponse>newBuilder()
@@ -555,6 +566,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listSinks")
             .build();
     GrpcCallSettings<GetSinkRequest, LogSink> getSinkTransportSettings =
         GrpcCallSettings.<GetSinkRequest, LogSink>newBuilder()
@@ -566,6 +578,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSinkName())
+            .setJavaMethodName("getSink")
             .build();
     GrpcCallSettings<CreateSinkRequest, LogSink> createSinkTransportSettings =
         GrpcCallSettings.<CreateSinkRequest, LogSink>newBuilder()
@@ -577,6 +590,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createSink")
             .build();
     GrpcCallSettings<UpdateSinkRequest, LogSink> updateSinkTransportSettings =
         GrpcCallSettings.<UpdateSinkRequest, LogSink>newBuilder()
@@ -588,6 +602,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSinkName())
+            .setJavaMethodName("updateSink")
             .build();
     GrpcCallSettings<DeleteSinkRequest, Empty> deleteSinkTransportSettings =
         GrpcCallSettings.<DeleteSinkRequest, Empty>newBuilder()
@@ -599,6 +614,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSinkName())
+            .setJavaMethodName("deleteSink")
             .build();
     GrpcCallSettings<ListExclusionsRequest, ListExclusionsResponse>
         listExclusionsTransportSettings =
@@ -611,6 +627,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("listExclusions")
                 .build();
     GrpcCallSettings<GetExclusionRequest, LogExclusion> getExclusionTransportSettings =
         GrpcCallSettings.<GetExclusionRequest, LogExclusion>newBuilder()
@@ -622,6 +639,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getExclusion")
             .build();
     GrpcCallSettings<CreateExclusionRequest, LogExclusion> createExclusionTransportSettings =
         GrpcCallSettings.<CreateExclusionRequest, LogExclusion>newBuilder()
@@ -633,6 +651,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createExclusion")
             .build();
     GrpcCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionTransportSettings =
         GrpcCallSettings.<UpdateExclusionRequest, LogExclusion>newBuilder()
@@ -644,6 +663,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("updateExclusion")
             .build();
     GrpcCallSettings<DeleteExclusionRequest, Empty> deleteExclusionTransportSettings =
         GrpcCallSettings.<DeleteExclusionRequest, Empty>newBuilder()
@@ -655,6 +675,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteExclusion")
             .build();
     GrpcCallSettings<GetCmekSettingsRequest, CmekSettings> getCmekSettingsTransportSettings =
         GrpcCallSettings.<GetCmekSettingsRequest, CmekSettings>newBuilder()
@@ -666,6 +687,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getCmekSettings")
             .build();
     GrpcCallSettings<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsTransportSettings =
         GrpcCallSettings.<UpdateCmekSettingsRequest, CmekSettings>newBuilder()
@@ -676,6 +698,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateCmekSettings")
             .build();
     GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         GrpcCallSettings.<GetSettingsRequest, Settings>newBuilder()
@@ -687,6 +710,7 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getSettings")
             .build();
     GrpcCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
         GrpcCallSettings.<UpdateSettingsRequest, Settings>newBuilder()
@@ -697,10 +721,12 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateSettings")
             .build();
     GrpcCallSettings<CopyLogEntriesRequest, Operation> copyLogEntriesTransportSettings =
         GrpcCallSettings.<CopyLogEntriesRequest, Operation>newBuilder()
             .setMethodDescriptor(copyLogEntriesMethodDescriptor)
+            .setJavaMethodName("copyLogEntries")
             .build();
 
     this.listBucketsCallable =

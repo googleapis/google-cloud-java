@@ -261,6 +261,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("createTopic")
             .build();
     GrpcCallSettings<UpdateTopicRequest, Topic> updateTopicTransportSettings =
         GrpcCallSettings.<UpdateTopicRequest, Topic>newBuilder()
@@ -271,6 +272,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   builder.add("topic.name", String.valueOf(request.getTopic().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateTopic")
             .build();
     GrpcCallSettings<PublishRequest, PublishResponse> publishTransportSettings =
         GrpcCallSettings.<PublishRequest, PublishResponse>newBuilder()
@@ -282,6 +284,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getTopic())
+            .setJavaMethodName("publish")
             .build();
     GrpcCallSettings<GetTopicRequest, Topic> getTopicTransportSettings =
         GrpcCallSettings.<GetTopicRequest, Topic>newBuilder()
@@ -293,6 +296,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getTopic())
+            .setJavaMethodName("getTopic")
             .build();
     GrpcCallSettings<ListTopicsRequest, ListTopicsResponse> listTopicsTransportSettings =
         GrpcCallSettings.<ListTopicsRequest, ListTopicsResponse>newBuilder()
@@ -304,6 +308,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getProject())
+            .setJavaMethodName("listTopics")
             .build();
     GrpcCallSettings<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
         listTopicSubscriptionsTransportSettings =
@@ -317,6 +322,7 @@ public class GrpcPublisherStub extends PublisherStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getTopic())
+                .setJavaMethodName("listTopicSubscriptions")
                 .build();
     GrpcCallSettings<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse>
         listTopicSnapshotsTransportSettings =
@@ -329,6 +335,7 @@ public class GrpcPublisherStub extends PublisherStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getTopic())
+                .setJavaMethodName("listTopicSnapshots")
                 .build();
     GrpcCallSettings<DeleteTopicRequest, Empty> deleteTopicTransportSettings =
         GrpcCallSettings.<DeleteTopicRequest, Empty>newBuilder()
@@ -340,6 +347,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getTopic())
+            .setJavaMethodName("deleteTopic")
             .build();
     GrpcCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
         detachSubscriptionTransportSettings =
@@ -352,6 +360,7 @@ public class GrpcPublisherStub extends PublisherStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getSubscription())
+                .setJavaMethodName("detachSubscription")
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -363,6 +372,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -374,6 +384,7 @@ public class GrpcPublisherStub extends PublisherStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -386,6 +397,7 @@ public class GrpcPublisherStub extends PublisherStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.createTopicCallable =

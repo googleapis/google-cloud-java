@@ -434,6 +434,11 @@ public class LibraryServiceStubSettings extends StubSettings<LibraryServiceStubS
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.example.library.v1.LibraryServiceClient";
+  }
+
   /** Builder for LibraryServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<LibraryServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

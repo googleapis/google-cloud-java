@@ -247,11 +247,13 @@ public class HttpJsonExplicitDynamicRoutingHeaderTestingStub
                       BACKWARDS_COMPATIBLE1_TEST_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("backwardsCompatible1Test")
             .build();
     HttpJsonCallSettings<Request, Empty> backwardsCompatible2TestTransportSettings =
         HttpJsonCallSettings.<Request, Empty>newBuilder()
             .setMethodDescriptor(backwardsCompatible2TestMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("backwardsCompatible2Test")
             .build();
     HttpJsonCallSettings<Request, Empty> backwardsCompatible3TestTransportSettings =
         HttpJsonCallSettings.<Request, Empty>newBuilder()
@@ -263,6 +265,7 @@ public class HttpJsonExplicitDynamicRoutingHeaderTestingStub
                   builder.add("table_name", String.valueOf(request.getTableName()));
                   return builder.build();
                 })
+            .setJavaMethodName("backwardsCompatible3Test")
             .build();
     HttpJsonCallSettings<EnumRequest, EnumResponse>
         implicitRoutingHeaderWithEnumTestTransportSettings =
@@ -276,6 +279,7 @@ public class HttpJsonExplicitDynamicRoutingHeaderTestingStub
                           "info.enum_test", String.valueOf(request.getInfo().getEnumTestValue()));
                       return builder.build();
                     })
+                .setJavaMethodName("implicitRoutingHeaderWithEnumTest")
                 .build();
 
     this.backwardsCompatible1TestCallable =
