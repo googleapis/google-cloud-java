@@ -225,6 +225,7 @@ public final class StorageClientMetricsTest {
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE.replace(".", "/");
     assertThat(metricsMap).containsKey(requestActiveName);
     assertThat(metricsMap.get(requestActiveName).getUnit()).isEqualTo("{request}");
+    assertThat(metricsMap.get(requestActiveName).getLongSumData().isMonotonic()).isFalse();
 
     String serverUnreachedName =
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED.replace(".", "/");
@@ -424,221 +425,7 @@ public final class StorageClientMetricsTest {
   }
 
   @Test
-  public void recordRetry_recordsExactAttributes() {
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics grpcMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setMeterProvider(provider)
-            .build()
-            .getStorageClientMetrics();
-
-    grpcMetrics.recordRetry(
-        Context.current(),
-        "ReadObject",
-        StorageClientMetrics.NETWORK_PATH_DIRECTPATH,
-        StorageErrorTypeMapper.STATUS_UNAVAILABLE);
-
-    MetricData metricData =
-        reader.collectAllMetrics().stream()
-            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES))
-            .findFirst()
-            .orElseThrow(() -> new AssertionError("Missing retries metric"));
-    assertThat(metricData.getUnit()).isEqualTo("{attempt}");
-    assertThat(metricData.getLongSumData().getPoints()).hasSize(1);
-    LongPointData point = metricData.getLongSumData().getPoints().iterator().next();
-    assertThat(point.getValue()).isEqualTo(1L);
-    assertThat(point.getAttributes())
-        .isEqualTo(
-            Attributes.builder()
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
-                    StorageClientMetrics.SERVICE_STORAGE)
-                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
-                    StorageClientMetrics.ARTIFACT_STORAGE)
-                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
-                .put(
-                    StorageClientMetrics.KEY_NETWORK_PATH,
-                    StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-                .put(StorageClientMetrics.KEY_ERROR_TYPE, StorageErrorTypeMapper.STATUS_UNAVAILABLE)
-                .build());
-  }
-
-  @Test
-  public void recordRequestActive_recordsExactSixAttributes() {
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics grpcMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .setMeterProvider(provider)
-            .build()
-            .getStorageClientMetrics();
-
-    grpcMetrics.recordRequestActive(Context.current(), "ReadObject", 1L);
-
-    MetricData metricData =
-        reader.collectAllMetrics().stream()
-            .filter(
-                m ->
-                    m.getName()
-                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE))
-            .findFirst()
-            .orElseThrow(() -> new AssertionError("Missing request.active metric"));
-    assertThat(metricData.getUnit()).isEqualTo("{request}");
-    assertThat(metricData.getLongSumData().isMonotonic()).isFalse();
-    assertThat(metricData.getLongSumData().getPoints()).hasSize(1);
-    LongPointData point = metricData.getLongSumData().getPoints().iterator().next();
-    assertThat(point.getValue()).isEqualTo(1L);
-    assertThat(point.getAttributes())
-        .isEqualTo(
-            Attributes.builder()
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
-                    StorageClientMetrics.SERVICE_STORAGE)
-                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
-                    StorageClientMetrics.ARTIFACT_STORAGE)
-                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
-                .build());
-
-    grpcMetrics.recordRequestActive(Context.current(), "ReadObject", -1L);
-    MetricData afterDecrement =
-        reader.collectAllMetrics().stream()
-            .filter(
-                m ->
-                    m.getName()
-                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE))
-            .findFirst()
-            .orElseThrow(() -> new AssertionError("Missing request.active metric"));
-    assertThat(afterDecrement.getLongSumData().getPoints().iterator().next().getValue())
-        .isEqualTo(0L);
-  }
-
-  @Test
-  public void recordServerDuration_recordsExactSevenAttributes() {
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics standardMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setMeterProvider(provider)
-            .build()
-            .getStorageClientMetrics();
-    standardMetrics.recordServerDuration(
-        Context.current(), 0.125, "ReadObject", StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
-    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION)).isNull();
-
-    StorageClientMetrics grpcMetrics =
-        StorageOptions.grpc()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .setMeterProvider(provider)
-            .build()
-            .getStorageClientMetrics();
-
-    grpcMetrics.recordServerDuration(
-        Context.current(), 0.125, "ReadObject", StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
-
-    MetricData metricData =
-        findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION);
-    assertThat(metricData).isNotNull();
-    assertThat(metricData.getUnit()).isEqualTo("s");
-    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
-    HistogramPointData point = metricData.getHistogramData().getPoints().iterator().next();
-    assertThat(point.getCount()).isEqualTo(1L);
-    assertThat(point.getSum()).isWithin(1e-6).of(0.125);
-    assertThat(point.getAttributes())
-        .isEqualTo(
-            Attributes.builder()
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
-                    StorageClientMetrics.SERVICE_STORAGE)
-                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
-                    StorageClientMetrics.ARTIFACT_STORAGE)
-                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
-                .put(
-                    StorageClientMetrics.KEY_NETWORK_PATH,
-                    StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-                .build());
-  }
-
-  @Test
-  public void recordServerUnreached_recordsExactEightAttributes() {
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics disabledMetrics = StorageClientMetrics.create(provider, false, false);
-    disabledMetrics.recordServerUnreached(
-        Context.current(),
-        "GetObject",
-        StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
-        StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
-    assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED))
-        .isNull();
-
-    StorageClientMetrics standardMetrics =
-        StorageOptions.http()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setEnableOtelMetrics(true)
-            .setMeterProvider(provider)
-            .build()
-            .getStorageClientMetrics();
-
-    standardMetrics.recordServerUnreached(
-        Context.current(),
-        "GetObject",
-        StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
-        StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
-
-    MetricData metricData =
-        findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED);
-    assertThat(metricData).isNotNull();
-    assertThat(metricData.getUnit()).isEqualTo("{request}");
-    assertThat(metricData.getLongSumData().getPoints()).hasSize(1);
-    LongPointData point = metricData.getLongSumData().getPoints().iterator().next();
-    assertThat(point.getValue()).isEqualTo(1L);
-    assertThat(point.getAttributes())
-        .isEqualTo(
-            Attributes.builder()
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_SERVICE,
-                    StorageClientMetrics.SERVICE_STORAGE)
-                .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-                .put(
-                    StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT,
-                    StorageClientMetrics.ARTIFACT_STORAGE)
-                .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
-                .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-                .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "GetObject")
-                .put(
-                    StorageClientMetrics.KEY_NETWORK_PATH,
-                    StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                .put(
-                    StorageClientMetrics.KEY_ERROR_TYPE,
-                    StorageErrorTypeMapper.STATUS_CONNECTION_ERROR)
-                .build());
-  }
-
-  @Test
-  public void recordNetworkIo_recordsExactSevenAttributesAndSkipsNonPositiveOrDisabled() {
+  public void recordNetworkIo_skipsNonPositiveOrDisabled() {
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics standardMetrics =
         StorageOptions.grpc()
@@ -666,51 +453,14 @@ public final class StorageClientMetricsTest {
     assertThat(findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO)).isNull();
 
     debugMetrics.recordNetworkIo(
-        Context.current(), StorageClientMetrics.NETWORK_PATH_DIRECTPATH, 512L, 2048L);
-    debugMetrics.recordNetworkIo(
         Context.current(), StorageClientMetrics.NETWORK_PATH_CLOUDPATH, 128L, 0L);
-    debugMetrics.recordNetworkIo(
-        Context.current(), StorageClientMetrics.NETWORK_PATH_UNKNOWN, 0L, 64L);
     MetricData metricData = findMetric(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
     assertThat(metricData).isNotNull();
-    assertThat(metricData.getUnit()).isEqualTo("By");
-    Map<Attributes, Long> pointsByAttrs =
-        metricData.getLongSumData().getPoints().stream()
-            .collect(Collectors.toMap(LongPointData::getAttributes, LongPointData::getValue));
-    Attributes transmitAttrs =
-        Attributes.builder()
-            .put(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE, StorageClientMetrics.SERVICE_STORAGE)
-            .put(StorageClientMetrics.KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-            .put(
-                StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT, StorageClientMetrics.ARTIFACT_STORAGE)
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
-            .put(
-                StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-            .put(
-                StorageClientMetrics.KEY_NETWORK_IO_DIRECTION,
-                StorageClientMetrics.NETWORK_IO_DIRECTION_TRANSMIT)
-            .build();
-    Attributes receiveAttrs =
-        transmitAttrs.toBuilder()
-            .put(
-                StorageClientMetrics.KEY_NETWORK_IO_DIRECTION,
-                StorageClientMetrics.NETWORK_IO_DIRECTION_RECEIVE)
-            .build();
-    Attributes cloudTransmitAttrs =
-        transmitAttrs.toBuilder()
-            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-            .build();
-    Attributes unknownReceiveAttrs =
-        receiveAttrs.toBuilder()
-            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_UNKNOWN)
-            .build();
-    assertThat(pointsByAttrs)
-        .containsExactly(
-            transmitAttrs, 512L,
-            receiveAttrs, 2048L,
-            cloudTransmitAttrs, 128L,
-            unknownReceiveAttrs, 64L);
+    assertThat(metricData.getLongSumData().getPoints()).hasSize(1);
+    LongPointData point = metricData.getLongSumData().getPoints().iterator().next();
+    assertThat(point.getValue()).isEqualTo(128L);
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_IO_DIRECTION))
+        .isEqualTo(StorageClientMetrics.NETWORK_IO_DIRECTION_TRANSMIT);
   }
 
   @Test

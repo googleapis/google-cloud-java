@@ -167,6 +167,7 @@ final class GapicUnbufferedReadableByteChannel
           cancelAndDrainCurrentObserver();
           continue;
         } else {
+          recordMidStreamError(StorageException.coalesce(ioe));
           ioe.addSuppressed(new AsyncStorageTaskException());
           throw ioe;
         }
@@ -179,6 +180,7 @@ final class GapicUnbufferedReadableByteChannel
           cancelAndDrainCurrentObserver();
           continue;
         } else {
+          recordMidStreamError(coalesce);
           close();
           throw new IOException(coalesce);
         }
@@ -305,6 +307,13 @@ final class GapicUnbufferedReadableByteChannel
     if (metricsContext != null) {
       metricsContext.recordError(error);
       metricsContext.recordRetry(error);
+    }
+  }
+
+  private void recordMidStreamError(Throwable error) {
+    StorageMetricsContext metricsContext = retrier.getMetricsContext();
+    if (metricsContext != null) {
+      metricsContext.recordError(error);
     }
   }
 
