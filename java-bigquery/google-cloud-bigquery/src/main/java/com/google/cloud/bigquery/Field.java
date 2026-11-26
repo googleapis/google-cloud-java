@@ -30,6 +30,7 @@ import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Google BigQuery Table schema field. A table field has a name, a type, a mode and possibly a
@@ -67,6 +68,7 @@ public final class Field implements Serializable {
   private final String defaultValueExpression;
   private final String collation;
   private final FieldElementType rangeElementType;
+  private final DataGovernanceTagsInfo dataGovernanceTagsInfo;
 
   /**
    * Mode for a BigQuery Table field. {@link Mode#NULLABLE} fields can be set to {@code null},
@@ -94,6 +96,7 @@ public final class Field implements Serializable {
     private String defaultValueExpression;
     private String collation;
     private FieldElementType rangeElementType;
+    private DataGovernanceTagsInfo dataGovernanceTagsInfo;
 
     private Builder() {}
 
@@ -111,6 +114,7 @@ public final class Field implements Serializable {
       this.defaultValueExpression = field.defaultValueExpression;
       this.collation = field.collation;
       this.rangeElementType = field.rangeElementType;
+      this.dataGovernanceTagsInfo = field.dataGovernanceTagsInfo;
     }
 
     /**
@@ -323,6 +327,19 @@ public final class Field implements Serializable {
       return this;
     }
 
+    /**
+     * Optional. Sets the data governance tags info for the field, used for column-level access
+     * control and dynamic data masking. Leave {@code null} (unset) during a {@code Tables.patch}
+     * update to preserve existing tags on the column, or pass an empty {@link
+     * DataGovernanceTagsInfo} (for example, {@code DataGovernanceTagsInfo.newBuilder().build()}) to
+     * clear existing tags from the column.
+     */
+    public Builder setDataGovernanceTagsInfo(
+        @Nullable DataGovernanceTagsInfo dataGovernanceTagsInfo) {
+      this.dataGovernanceTagsInfo = dataGovernanceTagsInfo;
+      return this;
+    }
+
     /** Creates a {@code Field} object. */
     public Field build() {
       return new Field(this);
@@ -343,6 +360,7 @@ public final class Field implements Serializable {
     this.defaultValueExpression = builder.defaultValueExpression;
     this.collation = builder.collation;
     this.rangeElementType = builder.rangeElementType;
+    this.dataGovernanceTagsInfo = builder.dataGovernanceTagsInfo;
   }
 
   /** Returns the field name. */
@@ -413,6 +431,11 @@ public final class Field implements Serializable {
     return rangeElementType;
   }
 
+  /** Returns the data governance tags info for the field, or {@code null} if not set. */
+  public @Nullable DataGovernanceTagsInfo getDataGovernanceTagsInfo() {
+    return dataGovernanceTagsInfo;
+  }
+
   /**
    * Returns the list of sub-fields if {@link #getType()} is a {@link LegacySQLTypeName#RECORD}.
    * Returns {@code null} otherwise.
@@ -441,6 +464,7 @@ public final class Field implements Serializable {
         .add("defaultValueExpression", defaultValueExpression)
         .add("collation", collation)
         .add("rangeElementType", rangeElementType)
+        .add("dataGovernanceTagsInfo", dataGovernanceTagsInfo)
         .toString();
   }
 
@@ -458,7 +482,8 @@ public final class Field implements Serializable {
         timestampPrecision,
         defaultValueExpression,
         collation,
-        rangeElementType);
+        rangeElementType,
+        dataGovernanceTagsInfo);
   }
 
   @Override
@@ -548,6 +573,9 @@ public final class Field implements Serializable {
     if (rangeElementType != null) {
       fieldSchemaPb.setRangeElementType(rangeElementType.toPb());
     }
+    if (dataGovernanceTagsInfo != null) {
+      fieldSchemaPb.setDataGovernanceTagsInfo(dataGovernanceTagsInfo.toPb());
+    }
     return fieldSchemaPb;
   }
 
@@ -589,6 +617,10 @@ public final class Field implements Serializable {
     if (fieldSchemaPb.getRangeElementType() != null) {
       fieldBuilder.setRangeElementType(
           FieldElementType.fromPb(fieldSchemaPb.getRangeElementType()));
+    }
+    if (fieldSchemaPb.getDataGovernanceTagsInfo() != null) {
+      fieldBuilder.setDataGovernanceTagsInfo(
+          DataGovernanceTagsInfo.fromPb(fieldSchemaPb.getDataGovernanceTagsInfo()));
     }
     return fieldBuilder.build();
   }

@@ -20,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.api.services.bigquery.model.TableSchema;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -27,6 +28,8 @@ class SchemaTest {
 
   private static PolicyTags POLICY_TAGS =
       PolicyTags.newBuilder().setNames(ImmutableList.of("someTag")).build();
+  private static final DataGovernanceTagsInfo DATA_GOVERNANCE_TAGS_INFO =
+      DataGovernanceTagsInfo.of(ImmutableMap.of("myProject/pii", "sensitive"));
 
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder("StringField", LegacySQLTypeName.STRING)
@@ -35,6 +38,7 @@ class SchemaTest {
           .setPrecision(20L)
           .setScale(20L)
           .setMaxLength(10L)
+          .setDataGovernanceTagsInfo(DATA_GOVERNANCE_TAGS_INFO)
           .build();
   private static final Field FIELD_SCHEMA2 =
       Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
