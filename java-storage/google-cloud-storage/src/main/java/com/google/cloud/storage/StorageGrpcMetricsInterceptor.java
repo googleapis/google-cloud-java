@@ -75,6 +75,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
       private final AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
       private final AtomicLong ttfbStartNanos = new AtomicLong();
+      private final AtomicBoolean activeReleased = new AtomicBoolean(false);
 
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
@@ -86,9 +87,16 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
           startWithMetrics(responseListener, headers, startTimeNanos);
         } catch (RuntimeException | Error e) {
           // Per the ClientCall contract, onClose is not delivered when start throws, so balance
-          // the +1 here.
-          metrics.recordRequestActive(otelContext, operationName, -1L);
+          // the +1 here. A misbehaving downstream call may still have closed the listener inline
+          // before throwing, so releaseActive() ensures the -1 is recorded only once.
+          releaseActive();
           throw e;
+        }
+      }
+
+      private void releaseActive() {
+        if (activeReleased.compareAndSet(false, true)) {
+          metrics.recordRequestActive(otelContext, operationName, -1L);
         }
       }
 
@@ -137,7 +145,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                     }
                   }
                 } finally {
-                  metrics.recordRequestActive(otelContext, operationName, -1L);
+                  releaseActive();
                   super.onClose(status, trailers);
                 }
               }

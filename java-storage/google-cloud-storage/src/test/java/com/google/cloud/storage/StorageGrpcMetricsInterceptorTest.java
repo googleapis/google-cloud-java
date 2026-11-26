@@ -515,6 +515,44 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
+  public void interceptCall_requestActive_releasesOnceWhenClosedInlineBeforeStartThrows() {
+    StorageClientMetrics debugMetrics =
+        StorageOptions.grpc()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .setMeterProvider(meterProvider)
+            .build()
+            .getStorageClientMetrics();
+    StorageGrpcMetricsInterceptor debugInterceptor =
+        new StorageGrpcMetricsInterceptor(debugMetrics, clock);
+    IllegalStateException failure = new IllegalStateException("start failed after close");
+    Channel throwingChannel = Mockito.mock(Channel.class);
+    @SuppressWarnings("unchecked")
+    ClientCall<Void, Void> throwingCall = Mockito.mock(ClientCall.class);
+    Mockito.doAnswer(
+            invocation -> {
+              ClientCall.Listener<Void> listener = invocation.getArgument(0);
+              listener.onClose(Status.UNAVAILABLE, new Metadata());
+              throw failure;
+            })
+        .when(throwingCall)
+        .start(Mockito.any(), Mockito.any());
+    Mockito.when(throwingChannel.newCall(Mockito.eq(READ_OBJECT_METHOD), Mockito.any()))
+        .thenReturn(throwingCall);
+    ClientCall<Void, Void> wrapped =
+        debugInterceptor.interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, throwingChannel);
+
+    IllegalStateException thrown =
+        assertThrows(
+            IllegalStateException.class, () -> wrapped.start(new TestListener<>(), new Metadata()));
+
+    assertThat(thrown).isSameInstanceAs(failure);
+    assertThat(requestActivePoint().getValue()).isEqualTo(0L);
+  }
+
+  @Test
   public void interceptCall_withStorageMetricsContext_propagatesContextAndFeedsNetworkPath()
       throws Exception {
     StorageMetricsContext metricsContext = metrics.createContext("CustomOperation");

@@ -58,6 +58,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -425,6 +426,31 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
 
   @Test
   public void midStreamIoException_retried_recordsRetryAndErrorMetrics() throws IOException {
+    // Not retryable as-is; retried once translated to a StorageException.
+    assertMidStreamRetryRecorded(
+        readWithMidStreamIoException(retryIf(t -> t instanceof StorageException), true));
+  }
+
+  @Test
+  public void midStreamIoException_directlyRetryable_recordsRetryAndErrorMetrics()
+      throws IOException {
+    assertMidStreamRetryRecorded(readWithMidStreamIoException(retryIf(t -> true), true));
+  }
+
+  @Test
+  public void midStreamIoException_notRetryable_recordsErrorWithoutRetry() throws IOException {
+    Collection<MetricData> collected = readWithMidStreamIoException(retryIf(t -> false), false);
+    LongPointData errorPoint =
+        findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getValue()).isEqualTo(1L);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
+    assertThat(collected.stream().map(MetricData::getName))
+        .doesNotContain(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
+  }
+
+  private static Collection<MetricData> readWithMidStreamIoException(
+      BasicResultRetryAlgorithm<Object> alg, boolean expectSuccess) throws IOException {
     InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     HttpStorageOptions options =
@@ -478,19 +504,20 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
             storageClient,
             SettableApiFuture.create(),
             options.createRetrier().withMetricsContext(ctx),
-            new BasicResultRetryAlgorithm<Object>() {
-              @Override
-              public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
-                return previousThrowable instanceof StorageException;
-              }
-            },
+            alg,
             Hasher.noop())) {
-      ByteBuffer buf = ByteBuffer.allocate(CONTENT_BYTES.length);
-      assertThat(channel.read(new ByteBuffer[] {buf}, 0, 1)).isEqualTo(CONTENT_BYTES.length);
+      ByteBuffer[] bufs = {ByteBuffer.allocate(CONTENT_BYTES.length)};
+      if (expectSuccess) {
+        assertThat(channel.read(bufs, 0, 1)).isEqualTo(CONTENT_BYTES.length);
+      } else {
+        assertThrows(IOException.class, () -> channel.read(bufs, 0, 1));
+      }
     }
+    assertThat(calls.get()).isEqualTo(expectSuccess ? 2 : 1);
+    return reader.collectAllMetrics();
+  }
 
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    assertThat(calls.get()).isEqualTo(2);
+  private static void assertMidStreamRetryRecorded(Collection<MetricData> collected) {
     LongPointData retryPoint =
         findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
     assertThat(retryPoint.getValue()).isEqualTo(1L);
@@ -531,6 +558,15 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
             .mapToLong(LongPointData::getValue)
             .sum();
     assertThat(attemptsTotal).isEqualTo(2L);
+  }
+
+  private static BasicResultRetryAlgorithm<Object> retryIf(Predicate<Throwable> shouldRetry) {
+    return new BasicResultRetryAlgorithm<Object>() {
+      @Override
+      public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+        return shouldRetry.test(previousThrowable);
+      }
+    };
   }
 
   private static LongPointData findSinglePoint(Collection<MetricData> collected, String name) {

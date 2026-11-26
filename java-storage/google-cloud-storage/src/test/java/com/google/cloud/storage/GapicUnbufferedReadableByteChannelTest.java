@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -549,6 +550,36 @@ public final class GapicUnbufferedReadableByteChannelTest {
 
   @Test
   public void midStreamError_retried_recordsRetryAndErrorMetrics() throws IOException {
+    assertMidStreamRetryRecorded(
+        readWithMidStreamError(
+            Status.UNAVAILABLE.asRuntimeException(), Retrying.alwaysRetry(), true),
+        StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+  }
+
+  @Test
+  public void midStreamIoException_retried_recordsRetryAndErrorMetrics() throws IOException {
+    IOException ioe = new IOException("connection reset");
+    assertMidStreamRetryRecorded(
+        readWithMidStreamError(ioe, Retrying.alwaysRetry(), true),
+        StorageErrorTypeMapper.mapThrowable(StorageException.coalesce(ioe)));
+  }
+
+  @Test
+  public void midStreamError_notRetryable_recordsErrorWithoutRetry() throws IOException {
+    Collection<MetricData> collected =
+        readWithMidStreamError(
+            Status.PERMISSION_DENIED.asRuntimeException(), Retrying.neverRetry(), false);
+    LongPointData errorPoint =
+        findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getValue()).isEqualTo(1L);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("PERMISSION_DENIED");
+    assertThat(collected.stream().map(MetricData::getName))
+        .doesNotContain(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
+  }
+
+  private static Collection<MetricData> readWithMidStreamError(
+      Throwable firstError, ResultRetryAlgorithm<?> alg, boolean expectSuccess) throws IOException {
     InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     GrpcStorageOptions options =
@@ -584,7 +615,7 @@ public final class GapicUnbufferedReadableByteChannelTest {
                           ReadObjectResponse.newBuilder()
                               .setChecksummedData(firstContent.asChecksummedData())
                               .build());
-                      respond.onError(Status.UNAVAILABLE.asRuntimeException());
+                      respond.onError(firstError);
                     } else {
                       respond.onResponse(
                           ReadObjectResponse.newBuilder()
@@ -598,13 +629,20 @@ public final class GapicUnbufferedReadableByteChannelTest {
             ReadObjectRequest.getDefaultInstance(),
             Hasher.noop(),
             options.createRetrier().withMetricsContext(ctx),
-            Retrying.alwaysRetry())) {
+            alg)) {
       ByteBuffer buffer = ByteBuffer.allocate(10);
-      assertThat(c.read(buffer)).isEqualTo(10);
+      if (expectSuccess) {
+        assertThat(c.read(buffer)).isEqualTo(10);
+      } else {
+        assertThrows(IOException.class, () -> c.read(buffer));
+      }
     }
+    assertThat(calls.get()).isEqualTo(expectSuccess ? 2 : 1);
+    return reader.collectAllMetrics();
+  }
 
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    assertThat(calls.get()).isEqualTo(2);
+  private static void assertMidStreamRetryRecorded(
+      Collection<MetricData> collected, String errorType) {
     LongPointData retryPoint =
         findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
     assertThat(retryPoint.getValue()).isEqualTo(1L);
@@ -624,14 +662,14 @@ public final class GapicUnbufferedReadableByteChannelTest {
                 .put(
                     StorageClientMetrics.KEY_NETWORK_PATH,
                     StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-                .put(StorageClientMetrics.KEY_ERROR_TYPE, StorageErrorTypeMapper.STATUS_UNAVAILABLE)
+                .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
                 .build());
 
     LongPointData errorPoint =
         findSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
     assertThat(errorPoint.getValue()).isEqualTo(1L);
     assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
-        .isEqualTo(StorageErrorTypeMapper.STATUS_UNAVAILABLE);
+        .isEqualTo(errorType);
     assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
         .isEqualTo("ReadObject");
 

@@ -668,7 +668,9 @@ public final class StorageHttpMetricsInterceptorTest {
         transport
             .createRequestFactory(interceptor)
             .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
-    req.execute();
+    try (Scope ignore = metrics.createContext("GetBucket").makeCurrent()) {
+      req.execute();
+    }
 
     List<HistogramPointData> points = durationPoints();
     assertThat(points).hasSize(2);
@@ -701,6 +703,7 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(retries.get(0).getAttributes())
         .isEqualTo(
             expectedRetryAttributes("GetBucket", StorageErrorTypeMapper.STATUS_CONNECTION_ERROR));
+    assertInternallyRetriedAttempt(StorageErrorTypeMapper.STATUS_CONNECTION_ERROR, 0L);
   }
 
   @Test
@@ -748,7 +751,9 @@ public final class StorageHttpMetricsInterceptorTest {
             .buildGetRequest(
                 new GenericUrl(
                     "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj?alt=media"));
-    req.execute();
+    try (Scope ignore = metrics.createContext("ReadObject").makeCurrent()) {
+      req.execute();
+    }
 
     List<HistogramPointData> points = durationPoints();
     assertThat(points).hasSize(2);
@@ -782,6 +787,40 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(retries.get(0).getValue()).isEqualTo(1L);
     assertThat(retries.get(0).getAttributes())
         .isEqualTo(expectedRetryAttributes("ReadObject", "UNAUTHENTICATED"));
+    assertInternallyRetriedAttempt("UNAUTHENTICATED", 401L);
+  }
+
+  @Test
+  public void initialize_handled3xxThenRetry_doesNotRecordRetry() throws IOException {
+    AtomicBoolean firstAttempt = new AtomicBoolean(true);
+    HttpRequestInitializer delegate =
+        request -> request.setUnsuccessfulResponseHandler((req, response, supportsRetry) -> true);
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(delegate, metrics, clock);
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(firstAttempt.compareAndSet(true, false) ? 308 : 200);
+              }
+            };
+          }
+        };
+    HttpRequest req =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
+    try (Scope ignore = metrics.createContext("GetBucket").makeCurrent()) {
+      req.execute();
+    }
+
+    assertThat(durationPoints()).hasSize(2);
+    assertThat(retriesPoints()).isEmpty();
+    assertThat(longSumPoints(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS)).isEmpty();
   }
 
   @Test
@@ -824,6 +863,13 @@ public final class StorageHttpMetricsInterceptorTest {
             .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
     reqIo.setNumberOfRetries(0);
     assertThrows(IOException.class, reqIo::execute);
+
+    // IOException with retries left but no IOExceptionHandler, so google-http-client rethrows it.
+    HttpRequest reqUnhandled =
+        ioTransport
+            .createRequestFactory(new StorageHttpMetricsInterceptor(null, metrics, clock))
+            .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
+    assertThrows(IOException.class, reqUnhandled::execute);
 
     assertThat(durationPoints()).hasSize(2);
     assertThat(retriesPoints()).isEmpty();
@@ -909,7 +955,29 @@ public final class StorageHttpMetricsInterceptorTest {
         throwingHandlerTransport
             .createRequestFactory(debugInterceptor)
             .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
-    assertThrows(IOException.class, failingReq::execute);
+    long retriesBefore = retriesPoints().stream().mapToLong(LongPointData::getValue).sum();
+    IOException handlerFailure = assertThrows(IOException.class, failingReq::execute);
+    assertThat(handlerFailure).hasMessageThat().contains("refresh failed");
+    assertThat(retriesPoints().stream().mapToLong(LongPointData::getValue).sum())
+        .isEqualTo(retriesBefore);
+    assertSingleRequestActive(0L, "GetBucket");
+
+    // 4. A delegate HttpResponseInterceptor throws: active gauge must still return to 0.
+    StorageHttpMetricsInterceptor throwingResponseInterceptor =
+        new StorageHttpMetricsInterceptor(
+            request ->
+                request.setResponseInterceptor(
+                    response -> {
+                      throw new IOException("response interceptor failed");
+                    }),
+            debugMetrics,
+            clock);
+    HttpRequest interceptedReq =
+        createAdvancingTransport(200, 10_000_000L)
+            .createRequestFactory(throwingResponseInterceptor)
+            .buildGetRequest(new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b"));
+    IOException interceptorFailure = assertThrows(IOException.class, interceptedReq::execute);
+    assertThat(interceptorFailure).hasMessageThat().contains("response interceptor failed");
     assertSingleRequestActive(0L, "GetBucket");
   }
 
@@ -1210,6 +1278,24 @@ public final class StorageHttpMetricsInterceptorTest {
                 .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
                 .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, expectedOperation)
                 .build());
+  }
+
+  private void assertInternallyRetriedAttempt(String errorType, long httpStatusCode) {
+    List<LongPointData> attempts =
+        longSumPoints(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(attempts).hasSize(1);
+    assertThat(attempts.get(0).getValue()).isEqualTo(1L);
+    assertThat(attempts.get(0).getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(errorType);
+    assertThat(
+            attempts.get(0).getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+        .isEqualTo(httpStatusCode);
+    List<LongPointData> errors =
+        longSumPoints(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errors).hasSize(1);
+    assertThat(errors.get(0).getValue()).isEqualTo(1L);
+    assertThat(errors.get(0).getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(errorType);
   }
 
   private static Attributes expectedRetryAttributes(String operationName, String errorType) {
