@@ -217,6 +217,7 @@ public class TransactionRunnerImplTest {
     when(options.getSessionLabels()).thenReturn(Collections.emptyMap());
     when(options.getDatabaseRole()).thenReturn("role");
     when(options.getOpenTelemetry()).thenReturn(OpenTelemetry.noop());
+    when(options.getTracingOpenTelemetry()).thenReturn(OpenTelemetry.noop());
     SpannerRpc rpc = mock(SpannerRpc.class);
     when(rpc.asyncDeleteSession(Mockito.anyString(), Mockito.anyMap()))
         .thenReturn(ApiFutures.immediateFuture(Empty.getDefaultInstance()));

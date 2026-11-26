@@ -324,7 +324,7 @@ class ConnectionImpl implements Connection {
     this.tracer =
         spanner
             .getOptions()
-            .getOpenTelemetry()
+            .getTracingOpenTelemetry()
             .getTracer(
                 INSTRUMENTATION_SCOPE,
                 GaxProperties.getLibraryVersion(spanner.getOptions().getClass()));

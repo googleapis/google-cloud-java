@@ -15,9 +15,24 @@
  */
 package com.google.cloud.spanner;
 
+import io.opentelemetry.sdk.trace.export.SpanExporter;
+
 public class SpannerOptionsTestHelper {
 
   public static void resetActiveTracingFramework() {
     SpannerOptions.resetActiveTracingFramework();
+  }
+
+  public static void setBuiltInTracingSpanExporter(SpanExporter spanExporter) {
+    BuiltInTracingProvider.INSTANCE.setSpanExporterFactory(
+        (projectId, credentials) -> spanExporter);
+  }
+
+  public static void allowBuiltInTracingHost(String host) {
+    BuiltInTracingProvider.INSTANCE.allowHostForTesting(host);
+  }
+
+  public static void resetBuiltInTracing() {
+    BuiltInTracingProvider.INSTANCE.reset();
   }
 }
