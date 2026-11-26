@@ -20,6 +20,7 @@ import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.ObjectParser;
+import com.google.cloud.storage.spi.v1.HttpStorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
@@ -76,6 +77,15 @@ final class HttpClientContext {
         storageRpc.getStorage().getRequestFactory(),
         storageRpc.getStorage().getObjectParser(),
         Tracing.getTracer());
+  }
+
+  static HttpClientContext forSignedUrl(StorageRpc storageRpc) {
+    HttpRequestFactory requestFactory =
+        storageRpc instanceof HttpStorageRpc
+            ? ((HttpStorageRpc) storageRpc).getSignedUrlRequestFactory()
+            : storageRpc.getStorage().getRequestFactory().getTransport().createRequestFactory();
+    return new HttpClientContext(
+        requestFactory, storageRpc.getStorage().getObjectParser(), Tracing.getTracer());
   }
 
   public static HttpClientContext of(
