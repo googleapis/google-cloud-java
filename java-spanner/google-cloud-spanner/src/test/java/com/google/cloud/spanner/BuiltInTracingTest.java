@@ -1351,6 +1351,7 @@ public class BuiltInTracingTest {
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setProjectId("test-project")
+            .setEmulatorHost(null)
             .setChannelProvider(
                 InstantiatingGrpcChannelProvider.newBuilder()
                     .setEndpoint("localhost:" + server.getPort())

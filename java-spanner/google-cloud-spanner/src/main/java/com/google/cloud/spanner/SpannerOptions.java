@@ -2682,7 +2682,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * <p>Built-in tracing requires the Telemetry API and the Cloud Trace API to be enabled in the
      * project of the client, and the credentials of the client need the telemetry.traces.write
      * permission, for example through the roles/cloudtrace.agent role. User credentials also need a
-     * quota project.
+     * quota project. The credentials need the trace.append or cloud-platform scope. On Compute
+     * Engine, the access scopes of the VM must include one of them.
      *
      * <p>Built-in tracing is not used with the emulator, Spanner Omni, a custom host or channel
      * provider (for example a Private Service Connect endpoint), a client without credentials, or a
