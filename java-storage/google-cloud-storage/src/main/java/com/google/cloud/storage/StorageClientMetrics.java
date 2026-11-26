@@ -256,9 +256,7 @@ final class StorageClientMetrics implements AutoCloseable {
       this.retries =
           meter
               .counterBuilder(METRIC_GCP_STORAGE_CLIENT_RETRIES)
-              .setDescription(
-                  "Number of GCS client attempts that retried an earlier failed attempt of the same"
-                      + " request.")
+              .setDescription("Number of GCS client retry attempts")
               .setUnit("{attempt}")
               .build();
       this.errors =
@@ -302,7 +300,8 @@ final class StorageClientMetrics implements AutoCloseable {
       this.serverUnreached =
           meter
               .counterBuilder(METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED)
-              .setDescription("Count of requests that failed before reaching the GCS server.")
+              .setDescription(
+                  "Number of GCS client requests that failed before reaching the server")
               .setUnit("{request}")
               .build();
     } else {
