@@ -16,18 +16,37 @@
 
 package com.google.cloud.storage;
 
+import com.google.api.core.ApiClock;
+import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.common.annotations.VisibleForTesting;
+import io.grpc.ConnectivityState;
+import io.grpc.LoadBalancerProvider;
+import io.grpc.ManagedChannel;
 import io.grpc.internal.GrpcUtil;
+import io.opentelemetry.api.metrics.MeterProvider;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
+import java.time.Duration;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * Package-private transport classification and startup configuration diagnostics for gRPC channels,
- * supporting CloudPath, DirectPath, and DirectPath over Cloud Interconnect.
+ * Package-private telemetry and diagnostics for gRPC channels, supporting CloudPath, DirectPath,
+ * and DirectPath over Cloud Interconnect.
  */
 final class GrpcChannelTelemetry {
 
@@ -37,6 +56,9 @@ final class GrpcChannelTelemetry {
   static final String DIRECT_PATH_INTERCONNECT_HOST = "storage-direct.googleapis.com";
   static final String DIRECT_PATH_INTERCONNECT_PREPROD_HOST =
       "storage-preprod-direct.sandbox.googleapis.com";
+  static final String XDS_LB_POLICY_NAME = "xds_cluster_manager_experimental";
+  static final String DNS_LB_POLICY_NAME = "pick_first";
+  static final Duration DEFAULT_CHANNEL_READY_TIMEOUT = Duration.ofSeconds(30);
 
   @VisibleForTesting
   static final Logger LOG = Logger.getLogger(GrpcChannelTelemetry.class.getName());
@@ -62,6 +84,14 @@ final class GrpcChannelTelemetry {
     public String toString() {
       return label;
     }
+  }
+
+  /**
+   * Callback invoked once the first gRPC channel transitions to {@link ConnectivityState#READY}.
+   */
+  @FunctionalInterface
+  interface ChannelReadyCallback {
+    void onChannelReady(TransportType selectedTransport, Duration latency);
   }
 
   static boolean hasQueryParameter(@Nullable String uri, String key) {
@@ -104,22 +134,7 @@ final class GrpcChannelTelemetry {
   }
 
   static String extractHost(@Nullable String endpointOrAuthority) {
-    if (endpointOrAuthority == null || endpointOrAuthority.isEmpty()) {
-      return "";
-    }
-    String normalized = endpointOrAuthority;
-    if (normalized.startsWith(C2P_EXPERIMENTAL_PREFIX)) {
-      normalized = C2P_PREFIX + normalized.substring(C2P_EXPERIMENTAL_PREFIX.length());
-    }
-    int queryIdx = normalized.indexOf('?');
-    if (queryIdx >= 0) {
-      normalized = normalized.substring(0, queryIdx);
-    }
-    int fragmentIdx = normalized.indexOf('#');
-    if (fragmentIdx >= 0) {
-      normalized = normalized.substring(0, fragmentIdx);
-    }
-    String extracted = OpenTelemetryBootstrappingUtils.extractServerAddress(normalized);
+    String extracted = OpenTelemetryBootstrappingUtils.extractServerAddress(endpointOrAuthority);
     return extracted != null ? extracted : "";
   }
 
@@ -127,6 +142,19 @@ final class GrpcChannelTelemetry {
     String h = extractHost(host);
     return DIRECT_PATH_INTERCONNECT_HOST.equals(h)
         || DIRECT_PATH_INTERCONNECT_PREPROD_HOST.equals(h);
+  }
+
+  static TransportType selectedTransportType(
+      TransportType requestedTransport,
+      @Nullable String lbPolicyName,
+      boolean grpcSupportsForceXds) {
+    if (requestedTransport == TransportType.CLOUD_PATH || DNS_LB_POLICY_NAME.equals(lbPolicyName)) {
+      return TransportType.CLOUD_PATH;
+    }
+    if (requestedTransport == TransportType.DIRECT_PATH_INTERCONNECT && !grpcSupportsForceXds) {
+      return TransportType.DIRECT_PATH;
+    }
+    return requestedTransport;
   }
 
   static boolean grpcForceXdsIsSupported() {
@@ -176,6 +204,31 @@ final class GrpcChannelTelemetry {
       return C2P_PREFIX + serviceAddress;
     }
     return endpoint;
+  }
+
+  static ChannelPrimer configureChannelTelemetry(
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder,
+      @Nullable Credentials credentials,
+      boolean attemptDirectPathXdsOverInterconnect,
+      @Nullable MeterProvider grpcMeterProvider,
+      ApiClock clock) {
+    InstantiatingGrpcChannelProvider baseProvider = channelProviderBuilder.build();
+    String effectiveTarget =
+        logChannelConfiguration(baseProvider, credentials, attemptDirectPathXdsOverInterconnect);
+    BiConsumer<String, Duration> latencyRecorder =
+        OpenTelemetryBootstrappingUtils.createChannelCreationLatencyRecorder(grpcMeterProvider);
+    ChannelReadyCallback onReady =
+        (selectedTransport, latency) ->
+            latencyRecorder.accept(selectedTransport.toString(), latency);
+    ChannelPrimer primer =
+        createChannelPrimer(
+            effectiveTarget,
+            grpcForceXdsIsSupported(),
+            onReady,
+            clock,
+            GrpcChannelTelemetry::newTelemetryScheduler);
+    channelProviderBuilder.setChannelPrimer(primer);
+    return primer;
   }
 
   static String logChannelConfiguration(
@@ -255,7 +308,199 @@ final class GrpcChannelTelemetry {
             + grpcVersion);
   }
 
+  static void logChannelReady(
+      TransportType requestedTransport,
+      TransportType selectedTransport,
+      @Nullable String lbPolicyName,
+      Duration elapsed,
+      boolean ready,
+      @Nullable String statusDescription) {
+    String lb = (lbPolicyName == null || lbPolicyName.isEmpty()) ? "unknown" : lbPolicyName;
+    String note = channelReadyNote(requestedTransport, selectedTransport, lbPolicyName, ready);
+    long elapsedMs = elapsed.toMillis();
+    if (ready) {
+      LOG.log(
+          Level.INFO,
+          "gRPC channel [0] is ready. transport_type="
+              + selectedTransport
+              + ", requested_transport_type="
+              + requestedTransport
+              + ", lb_policy="
+              + lb
+              + ", elapsed_ms="
+              + elapsedMs
+              + note);
+    } else {
+      LOG.log(
+          Level.INFO,
+          "gRPC channel [0] did not become ready before deadline. transport_type="
+              + selectedTransport
+              + ", requested_transport_type="
+              + requestedTransport
+              + ", lb_policy="
+              + lb
+              + ", elapsed_ms="
+              + elapsedMs
+              + (statusDescription != null && !statusDescription.isEmpty()
+                  ? ", status=" + statusDescription
+                  : "")
+              + note);
+    }
+  }
+
+  static CompletableFuture<Void> startChannelTelemetry(
+      ManagedChannel channel,
+      String effectiveEndpoint,
+      boolean grpcSupportsForceXds,
+      Duration timeout,
+      @Nullable ChannelReadyCallback onReady,
+      ApiClock clock,
+      ScheduledExecutorService scheduler) {
+    return startChannelTelemetry(
+        new WeakReference<>(channel),
+        effectiveEndpoint,
+        grpcSupportsForceXds,
+        timeout,
+        onReady,
+        scheduler,
+        clock,
+        GrpcChannelTelemetry::defaultExtractLbPolicyName);
+  }
+
+  @VisibleForTesting
+  static CompletableFuture<Void> startChannelTelemetry(
+      WeakReference<ManagedChannel> channelRef,
+      String effectiveEndpoint,
+      boolean grpcSupportsForceXds,
+      Duration timeout,
+      @Nullable ChannelReadyCallback onReady,
+      ScheduledExecutorService scheduler,
+      ApiClock clock,
+      Function<ManagedChannel, @Nullable String> lbPolicyExtractor) {
+    TransportType requestedTransport = detectTransportType(effectiveEndpoint);
+    ChannelReadyWatcher watcher =
+        new ChannelReadyWatcher(
+            channelRef,
+            requestedTransport,
+            grpcSupportsForceXds,
+            timeout,
+            onReady,
+            scheduler,
+            clock,
+            lbPolicyExtractor);
+    return watcher.start();
+  }
+
+  static ChannelPrimer createChannelPrimer(
+      String effectiveEndpoint,
+      boolean grpcSupportsForceXds,
+      @Nullable ChannelReadyCallback onReady,
+      ApiClock clock,
+      Supplier<ScheduledExecutorService> ownedSchedulerSupplier) {
+    AtomicBoolean firstChannelObserved = new AtomicBoolean(false);
+    return managedChannel -> {
+      if (firstChannelObserved.compareAndSet(false, true)) {
+        ScheduledExecutorService scheduler = null;
+        try {
+          scheduler = ownedSchedulerSupplier.get();
+          ScheduledExecutorService ownedScheduler = scheduler;
+          startChannelTelemetry(
+                  managedChannel,
+                  effectiveEndpoint,
+                  grpcSupportsForceXds,
+                  DEFAULT_CHANNEL_READY_TIMEOUT,
+                  onReady,
+                  clock,
+                  ownedScheduler)
+              .whenComplete((unused, error) -> ownedScheduler.shutdown());
+        } catch (RuntimeException e) {
+          LOG.log(Level.FINE, "Failed to start channel telemetry", e);
+          if (scheduler != null) {
+            scheduler.shutdown();
+          }
+        }
+      }
+    };
+  }
+
+  @VisibleForTesting
+  @Nullable
+  static String defaultExtractLbPolicyName(ManagedChannel channel) {
+    try {
+      Object current = unwrapForwardingChannel(channel);
+      Object lbHelper = readField(current, "lbHelper");
+      if (lbHelper == null) {
+        return null;
+      }
+      Object lb = readField(lbHelper, "lb");
+      if (lb == null) {
+        return null;
+      }
+      Object delegateProvider = readField(lb, "delegateProvider");
+      if (delegateProvider instanceof LoadBalancerProvider) {
+        return ((LoadBalancerProvider) delegateProvider).getPolicyName();
+      }
+    } catch (RuntimeException | ReflectiveOperationException ignored) {
+      // Best-effort extraction from grpc-core internals; fall back to null when unavailable.
+    }
+    return null;
+  }
+
   private GrpcChannelTelemetry() {}
+
+  private static String channelReadyNote(
+      TransportType requestedTransport,
+      TransportType selectedTransport,
+      @Nullable String lbPolicyName,
+      boolean ready) {
+    if (!ready) {
+      if (requestedTransport == TransportType.DIRECT_PATH_INTERCONNECT) {
+        return " Verify that TD bootstrap and xDS reachability are configured, or enable FINE"
+            + " java.util.logging for io.grpc.xds and io.grpc.googleapis.";
+      }
+      if (requestedTransport == TransportType.DIRECT_PATH) {
+        return " Enable FINE java.util.logging for io.grpc.xds and io.grpc.googleapis.";
+      }
+      return "";
+    }
+    if (requestedTransport != TransportType.CLOUD_PATH
+        && selectedTransport == TransportType.CLOUD_PATH) {
+      return " Note: google-c2p resolver fell back to DNS ("
+          + DNS_LB_POLICY_NAME
+          + "); traffic is using CloudPath instead of "
+          + requestedTransport
+          + ".";
+    }
+    if (requestedTransport != TransportType.CLOUD_PATH
+        && lbPolicyName != null
+        && !lbPolicyName.isEmpty()
+        && !XDS_LB_POLICY_NAME.equals(lbPolicyName)
+        && !DNS_LB_POLICY_NAME.equals(lbPolicyName)) {
+      return " Note: unexpected LB policy '"
+          + lbPolicyName
+          + "' for "
+          + requestedTransport
+          + " (expected '"
+          + XDS_LB_POLICY_NAME
+          + "').";
+    }
+    return "";
+  }
+
+  private static ScheduledExecutorService newTelemetryScheduler() {
+    ScheduledThreadPoolExecutor executor =
+        new ScheduledThreadPoolExecutor(
+            1,
+            runnable -> {
+              Thread t = new Thread(runnable, "gcs-grpc-channel-telemetry");
+              t.setDaemon(true);
+              return t;
+            });
+    executor.setKeepAliveTime(5L, TimeUnit.SECONDS);
+    executor.allowCoreThreadTimeOut(true);
+    executor.setRemoveOnCancelPolicy(true);
+    return executor;
+  }
 
   private static boolean detectGrpcForceXdsSupport() {
     try {
@@ -277,5 +522,181 @@ final class GrpcChannelTelemetry {
       }
     }
     return serviceAddress;
+  }
+
+  private static Object unwrapForwardingChannel(ManagedChannel channel)
+      throws ReflectiveOperationException {
+    Object current = channel;
+    for (int depth = 0; depth < 8; depth++) {
+      Field delegateField = findField(current.getClass(), "delegate");
+      if (delegateField == null) {
+        break;
+      }
+      delegateField.setAccessible(true);
+      Object next = delegateField.get(current);
+      if (!(next instanceof ManagedChannel) || next == current) {
+        break;
+      }
+      current = next;
+    }
+    return current;
+  }
+
+  @Nullable
+  private static Object readField(Object target, String fieldName)
+      throws ReflectiveOperationException {
+    Field field = findField(target.getClass(), fieldName);
+    if (field == null) {
+      return null;
+    }
+    field.setAccessible(true);
+    return field.get(target);
+  }
+
+  @Nullable
+  private static Field findField(Class<?> clazz, String fieldName) {
+    for (Class<?> current = clazz; current != null; current = current.getSuperclass()) {
+      try {
+        return current.getDeclaredField(fieldName);
+      } catch (NoSuchFieldException ignored) {
+        // Continue walking up the class hierarchy.
+      }
+    }
+    return null;
+  }
+
+  private static final class ChannelReadyWatcher {
+    private final WeakReference<ManagedChannel> channelRef;
+    private final TransportType requestedTransport;
+    private final boolean grpcSupportsForceXds;
+    private final Duration timeout;
+    @Nullable private final ChannelReadyCallback onReady;
+    private final ScheduledExecutorService scheduler;
+    private final ApiClock clock;
+    private final Function<ManagedChannel, @Nullable String> lbPolicyExtractor;
+    private final AtomicBoolean completed = new AtomicBoolean(false);
+    private final CompletableFuture<Void> completionFuture = new CompletableFuture<>();
+    private volatile long startNanos;
+    @Nullable private volatile ScheduledFuture<?> timeoutFuture;
+
+    ChannelReadyWatcher(
+        WeakReference<ManagedChannel> channelRef,
+        TransportType requestedTransport,
+        boolean grpcSupportsForceXds,
+        Duration timeout,
+        @Nullable ChannelReadyCallback onReady,
+        ScheduledExecutorService scheduler,
+        ApiClock clock,
+        Function<ManagedChannel, @Nullable String> lbPolicyExtractor) {
+      this.channelRef = channelRef;
+      this.requestedTransport = requestedTransport;
+      this.grpcSupportsForceXds = grpcSupportsForceXds;
+      this.timeout = timeout;
+      this.onReady = onReady;
+      this.scheduler = scheduler;
+      this.clock = clock;
+      this.lbPolicyExtractor = lbPolicyExtractor;
+    }
+
+    CompletableFuture<Void> start() {
+      this.startNanos = clock.nanoTime();
+      try {
+        this.timeoutFuture =
+            scheduler.schedule(
+                this::onTimeout, Math.max(0L, timeout.toMillis()), TimeUnit.MILLISECONDS);
+      } catch (RejectedExecutionException e) {
+        completeFailure(channelRef.get(), "telemetry scheduler shut down");
+        return completionFuture;
+      }
+      step(true);
+      return completionFuture;
+    }
+
+    private void step(boolean requestConnection) {
+      if (completed.get()) {
+        return;
+      }
+      ManagedChannel ch = channelRef.get();
+      if (ch == null) {
+        completeFailure(null, "channel destroyed before becoming ready");
+        return;
+      }
+      ConnectivityState state;
+      try {
+        state = ch.getState(requestConnection);
+      } catch (UnsupportedOperationException e) {
+        completeFailure(ch, "channel does not support connectivity state inspection");
+        return;
+      } catch (RuntimeException e) {
+        completeFailure(
+            ch, "failed to inspect connectivity state: " + e.getClass().getSimpleName());
+        return;
+      }
+      if (state == ConnectivityState.READY) {
+        if (completed.compareAndSet(false, true)) {
+          try {
+            cancelTimeout();
+            Duration elapsed = elapsedDuration();
+            String lbPolicyName = lbPolicyExtractor.apply(ch);
+            TransportType selected =
+                selectedTransportType(requestedTransport, lbPolicyName, grpcSupportsForceXds);
+            logChannelReady(requestedTransport, selected, lbPolicyName, elapsed, true, null);
+            if (onReady != null) {
+              onReady.onChannelReady(selected, elapsed);
+            }
+          } catch (RuntimeException e) {
+            LOG.log(Level.FINE, "Channel telemetry callback failed", e);
+          } finally {
+            completionFuture.complete(null);
+          }
+        }
+        return;
+      }
+      if (state == ConnectivityState.SHUTDOWN) {
+        completeFailure(ch, "channel shut down before becoming ready");
+        return;
+      }
+      try {
+        ch.notifyWhenStateChanged(state, () -> step(false));
+      } catch (UnsupportedOperationException e) {
+        completeFailure(ch, "channel does not support state change notifications");
+      } catch (RuntimeException e) {
+        completeFailure(
+            ch, "failed to watch state change notifications: " + e.getClass().getSimpleName());
+      }
+    }
+
+    private void onTimeout() {
+      completeFailure(channelRef.get(), "DEADLINE_EXCEEDED");
+    }
+
+    private void completeFailure(@Nullable ManagedChannel ch, String statusDescription) {
+      if (completed.compareAndSet(false, true)) {
+        try {
+          cancelTimeout();
+          Duration elapsed = elapsedDuration();
+          String lbPolicyName = ch != null ? lbPolicyExtractor.apply(ch) : null;
+          TransportType selected =
+              selectedTransportType(requestedTransport, lbPolicyName, grpcSupportsForceXds);
+          logChannelReady(
+              requestedTransport, selected, lbPolicyName, elapsed, false, statusDescription);
+        } catch (RuntimeException e) {
+          LOG.log(Level.FINE, "Channel telemetry failure callback failed", e);
+        } finally {
+          completionFuture.complete(null);
+        }
+      }
+    }
+
+    private Duration elapsedDuration() {
+      return Duration.ofNanos(clock.nanoTime() - startNanos);
+    }
+
+    private void cancelTimeout() {
+      ScheduledFuture<?> f = this.timeoutFuture;
+      if (f != null) {
+        f.cancel(false);
+      }
+    }
   }
 }

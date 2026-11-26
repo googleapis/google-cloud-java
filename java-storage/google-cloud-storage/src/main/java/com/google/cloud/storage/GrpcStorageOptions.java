@@ -24,6 +24,7 @@ import static java.util.Objects.requireNonNull;
 import com.google.api.core.ApiClock;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.core.NanoClock;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
@@ -60,6 +61,7 @@ import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.cloud.storage.GrpcUtils.ZeroCopyBidiStreamingCallable;
 import com.google.cloud.storage.Hasher.UncheckedChecksumMismatchException;
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
+import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.GrpcMetricsBootstrapResult;
 import com.google.cloud.storage.RetryContext.RetryContextProvider;
 import com.google.cloud.storage.Retrying.DefaultRetrier;
 import com.google.cloud.storage.Storage.BlobWriteOption;
@@ -346,21 +348,26 @@ public final class GrpcStorageOptions extends StorageOptions
       channelProviderBuilder.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
     }
 
+    MeterProvider grpcMeterProvider = null;
     if (enableGrpcClientMetrics) {
-      ChannelConfigurator channelConfigurator =
-          OpenTelemetryBootstrappingUtils.enableGrpcMetrics(
+      GrpcMetricsBootstrapResult metricsBootstrap =
+          OpenTelemetryBootstrappingUtils.bootstrapGrpcMetrics(
               ChannelConfigurator.lift(channelProviderBuilder.getChannelConfigurator()),
               endpoint,
               this.getProjectId(),
               this.getUniverseDomain(),
               !grpcClientMetricsManuallyEnabled);
-      channelProviderBuilder.setChannelConfigurator(channelConfigurator);
+      channelProviderBuilder.setChannelConfigurator(metricsBootstrap.getChannelConfigurator());
+      grpcMeterProvider = metricsBootstrap.getMeterProvider();
     }
 
-    InstantiatingGrpcChannelProvider baseProvider = channelProviderBuilder.build();
-    GrpcChannelTelemetry.logChannelConfiguration(
-        baseProvider, credentials, attemptDirectPathXdsOverInterconnect);
-    builder.setTransportChannelProvider(baseProvider);
+    GrpcChannelTelemetry.configureChannelTelemetry(
+        channelProviderBuilder,
+        credentials,
+        attemptDirectPathXdsOverInterconnect,
+        grpcMeterProvider,
+        NanoClock.getDefaultClock());
+    builder.setTransportChannelProvider(channelProviderBuilder.build());
     RetrySettings baseRetrySettings = getRetrySettings();
     RetrySettings readRetrySettings =
         baseRetrySettings.toBuilder()
