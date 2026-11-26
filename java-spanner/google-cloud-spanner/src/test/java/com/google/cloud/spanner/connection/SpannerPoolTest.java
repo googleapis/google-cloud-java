@@ -1319,4 +1319,42 @@ public class SpannerPoolTest {
     pool.removeConnection(optionsB, connection2);
     pool.checkAndCloseSpanners(CheckAndCloseSpannersMode.ERROR);
   }
+
+  @Test
+  public void testSpannerPoolKeyUniverseDomain() {
+    ConnectionOptions omitted =
+        ConnectionOptions.newBuilder()
+            .setUri(URI)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    ConnectionOptions empty =
+        ConnectionOptions.newBuilder()
+            .setUri(URI + "?universeDomain=")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    ConnectionOptions explicitGdu =
+        ConnectionOptions.newBuilder()
+            .setUri(URI + "?universeDomain=googleapis.com")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    ConnectionOptions explicitCustom =
+        ConnectionOptions.newBuilder()
+            .setUri(URI + "?universeDomain=custom.example")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+
+    SpannerPoolKey omittedKey = SpannerPoolKey.of(omitted);
+    SpannerPoolKey emptyKey = SpannerPoolKey.of(empty);
+    SpannerPoolKey explicitGduKey = SpannerPoolKey.of(explicitGdu);
+    SpannerPoolKey explicitCustomKey = SpannerPoolKey.of(explicitCustom);
+
+    // Omitted and explicit empty universeDomain both normalize to null and share one pool key.
+    assertEquals(omittedKey, emptyKey);
+    assertEquals(omittedKey.hashCode(), emptyKey.hashCode());
+
+    // Explicit universeDomain values must remain distinct from unset/empty and from each other.
+    assertNotEquals(omittedKey, explicitGduKey);
+    assertNotEquals(omittedKey, explicitCustomKey);
+    assertNotEquals(explicitGduKey, explicitCustomKey);
+  }
 }

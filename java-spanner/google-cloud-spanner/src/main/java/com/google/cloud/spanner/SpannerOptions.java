@@ -36,6 +36,8 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.OpencensusTracerFactory;
+import com.google.auth.ApiKeyCredentials;
+import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.NoCredentials;
@@ -1185,6 +1187,24 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @VisibleForTesting
   String getResolvedUniverseDomain() {
     return resolveUniverseDomain(getUniverseDomain());
+  }
+
+  /**
+   * Validates that the credentials' universe domain matches the resolved universe domain (explicit
+   * configuration, {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN}, or {@code "googleapis.com"}). Validation
+   * is skipped for {@link ApiKeyCredentials} because API keys carry no universe domain metadata.
+   */
+  @InternalApi
+  @Override
+  public boolean hasValidUniverseDomain() throws IOException {
+    Credentials credentials = getCredentials();
+    // API keys carry no universe domain metadata (mirrors ServiceOptions#hasValidUniverseDomain).
+    if (credentials instanceof ApiKeyCredentials) {
+      return true;
+    }
+    String credentialsUniverseDomain =
+        credentials != null ? credentials.getUniverseDomain() : GOOGLE_DEFAULT_UNIVERSE;
+    return getResolvedUniverseDomain().equals(credentialsUniverseDomain);
   }
 
   /** Returns the default {@link RequestOptions.ClientContext} for this {@link SpannerOptions}. */

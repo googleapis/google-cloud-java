@@ -841,7 +841,9 @@ public class ConnectionOptions {
 
     // Create the initial connection state from the parsed properties in the connection URL.
     this.initialConnectionState = new ConnectionState(connectionPropertyValues);
-    SpannerOptions.validateUniverseDomain(getUniverseDomain());
+    // Validate the effective universe domain (explicit property or GOOGLE_CLOUD_UNIVERSE_DOMAIN)
+    // eagerly so malformed values fail closed during construction, even with a custom host.
+    SpannerOptions.resolveUniverseDomain(getUniverseDomain());
 
     checkGuardedProperty(
         getInitialConnectionPropertyValue(ENCODED_CREDENTIALS),
@@ -1528,8 +1530,13 @@ public class ConnectionOptions {
     return getInitialConnectionPropertyValue(ENABLE_DIRECT_ACCESS);
   }
 
+  /**
+   * Returns the explicitly configured universe domain, normalizing an empty string to {@code null}
+   * so omitted and empty values are treated identically across callers and connection pooling.
+   */
+  @Nullable
   String getUniverseDomain() {
-    return getInitialConnectionPropertyValue(UNIVERSE_DOMAIN);
+    return Strings.emptyToNull(getInitialConnectionPropertyValue(UNIVERSE_DOMAIN));
   }
 
   String getClientCertificate() {

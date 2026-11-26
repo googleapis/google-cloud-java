@@ -25,6 +25,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -39,28 +40,38 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.ForceCloseSpannerFunction;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.connection.ConnectionOptions.StartupPropertyPolicy;
+import com.google.cloud.spanner.connection.SpannerPool.CheckAndCloseSpannersMode;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.Files;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import org.jspecify.annotations.Nullable;
+import org.junit.Assume;
 import org.junit.Test;
 import org.junit.function.ThrowingRunnable;
 import org.junit.runner.RunWith;
@@ -2499,18 +2510,72 @@ public class ConnectionOptionsTest {
             SpannerOptions.useDefaultEnvironment();
           }
 
-          useUniverseDomainEnvironment("evil.com/path");
+          useUniverseDomainEnvironment("evil.example/path");
           try {
-            ConnectionOptions invalidEnvOptions =
-                ConnectionOptions.newBuilder()
-                    .setUri(baseUri)
-                    .setCredentials(NoCredentials.getInstance())
-                    .build();
-            SpannerException exception =
-                assertThrows(SpannerException.class, invalidEnvOptions::getChannelProvider);
-            assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+            // Unset universeDomain fails closed eagerly during ConnectionOptions.Builder#build().
+            IllegalArgumentException exception =
+                assertThrows(
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(baseUri)
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
             assertTrue(
                 exception.getMessage(), exception.getMessage().contains("Invalid universe domain"));
+
+            // Empty universeDomain property also falls back to env and fails closed eagerly.
+            IllegalArgumentException emptyPropException =
+                assertThrows(
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(baseUri)
+                            .setConnectionPropertyValue(ConnectionProperties.UNIVERSE_DOMAIN, "")
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                emptyPropException.getMessage(),
+                emptyPropException.getMessage().contains("Invalid universe domain"));
+
+            // Malformed GOOGLE_CLOUD_UNIVERSE_DOMAIN still fails closed even with an explicit host
+            // or emulator configuration.
+            IllegalArgumentException explicitHostException =
+                assertThrows(
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(
+                                "cloudspanner://custom.example:443/projects/test-project-123/instances/test-instance/databases/test-database")
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                explicitHostException.getMessage(),
+                explicitHostException.getMessage().contains("Invalid universe domain"));
+
+            IllegalArgumentException emulatorException =
+                assertThrows(
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(baseUri + ";autoConfigEmulator=true")
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                emulatorException.getMessage(),
+                emulatorException.getMessage().contains("Invalid universe domain"));
+
+            // An explicit valid universeDomain property overrides an invalid environment variable.
+            ConnectionOptions explicitOverrideOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri + ";universeDomain=explicit.example")
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            assertEquals("explicit.example", explicitOverrideOptions.getUniverseDomain());
+            assertEquals(
+                "spanner.explicit.example:443",
+                ((InstantiatingGrpcChannelProvider) explicitOverrideOptions.getChannelProvider())
+                    .getEndpoint());
           } finally {
             SpannerOptions.useDefaultEnvironment();
           }
@@ -3102,6 +3167,7 @@ public class ConnectionOptionsTest {
   @Test
   public void testSpannerPoolUsesUniverseDomainEnvironmentVariable() {
     ConnectionImpl connection = mock(ConnectionImpl.class);
+    ConnectionImpl secondConnection = mock(ConnectionImpl.class);
     useUniverseDomainEnvironment("partner.example");
     try {
       AtomicBoolean executedConfigurator = new AtomicBoolean(false);
@@ -3128,10 +3194,53 @@ public class ConnectionOptionsTest {
                         spannerOptions.getDatabaseAdminStubSettings().getUniverseDomain());
                   })
               .build();
-      Spanner spanner = SpannerPool.INSTANCE.getSpanner(plainOptions, connection);
-      spanner.close();
-      SpannerPool.INSTANCE.removeConnection(plainOptions, connection);
-      assertTrue(executedConfigurator.get());
+      Spanner plainSpanner = SpannerPool.INSTANCE.getSpanner(plainOptions, connection);
+      try {
+        assertTrue(executedConfigurator.get());
+
+        // An empty universeDomain on the same database shares the exact same pooled Spanner client.
+        ConnectionOptions samePoolEmptyOptions =
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/default/instances/default/databases/singers-db;universeDomain=;usePlainText=true")
+                .setCredentials(NoCredentials.getInstance())
+                .build();
+        Spanner samePoolEmptySpanner =
+            SpannerPool.INSTANCE.getSpanner(samePoolEmptyOptions, secondConnection);
+        try {
+          assertSame(plainSpanner, samePoolEmptySpanner);
+        } finally {
+          SpannerPool.INSTANCE.removeConnection(samePoolEmptyOptions, secondConnection);
+        }
+      } finally {
+        SpannerPool.INSTANCE.removeConnection(plainOptions, connection);
+      }
+
+      // Empty universeDomain in the URI leaves SpannerOptions unset and falls back to env.
+      executedConfigurator.set(false);
+      ConnectionOptions emptyOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  "cloudspanner:/projects/default-empty/instances/default/databases/singers-db;universeDomain=;usePlainText=true")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    executedConfigurator.set(true);
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    assertNull(spannerOptions.getUniverseDomain());
+                    assertEquals("https://spanner.partner.example", spannerOptions.getHost());
+                    assertEquals("spanner.partner.example:443", spannerOptions.getEndpoint());
+                    assertEquals(
+                        "partner.example",
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      SpannerPool.INSTANCE.getSpanner(emptyOptions, connection);
+      try {
+        assertTrue(executedConfigurator.get());
+      } finally {
+        SpannerPool.INSTANCE.removeConnection(emptyOptions, connection);
+      }
 
       // Explicit universeDomain in the URI takes precedence over the environment value.
       executedConfigurator.set(false);
@@ -3151,13 +3260,31 @@ public class ConnectionOptionsTest {
                         spannerOptions.getSpannerStubSettings().getUniverseDomain());
                   })
               .build();
-      spanner = SpannerPool.INSTANCE.getSpanner(explicitOptions, connection);
-      spanner.close();
-      SpannerPool.INSTANCE.removeConnection(explicitOptions, connection);
-      assertTrue(executedConfigurator.get());
+      SpannerPool.INSTANCE.getSpanner(explicitOptions, connection);
+      try {
+        assertTrue(executedConfigurator.get());
+      } finally {
+        SpannerPool.INSTANCE.removeConnection(explicitOptions, connection);
+      }
+
+      // Invalid GOOGLE_CLOUD_UNIVERSE_DOMAIN fails closed when creating a Spanner instance.
+      useUniverseDomainEnvironment("evil.example/path");
+      IllegalArgumentException invalidEnvException =
+          assertThrows(
+              IllegalArgumentException.class,
+              () ->
+                  SpannerPool.INSTANCE.createSpanner(
+                      SpannerPool.SpannerPoolKey.of(plainOptions), plainOptions));
+      assertTrue(
+          invalidEnvException.getMessage(),
+          invalidEnvException.getMessage().contains("Invalid universe domain"));
     } finally {
       SpannerOptions.useDefaultEnvironment();
       connection.close();
+      secondConnection.close();
+      SpannerPool.INSTANCE.checkAndCloseSpanners(
+          CheckAndCloseSpannersMode.ERROR,
+          new ForceCloseSpannerFunction(5L, TimeUnit.MILLISECONDS));
     }
   }
 
@@ -3169,5 +3296,169 @@ public class ConnectionOptionsTest {
             return universeDomain;
           }
         });
+  }
+
+  /**
+   * Forked-JVM entry point that exercises real {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN} process
+   * environment resolution without mutating the parent test JVM's environment.
+   */
+  public static final class UniverseDomainEnvProbe {
+    public static void main(String[] args) {
+      String baseUri = "cloudspanner:/projects/test-project/instances/test-instance/databases/db";
+
+      // 1. Omitted universeDomain inherits GOOGLE_CLOUD_UNIVERSE_DOMAIN end-to-end.
+      AtomicReference<String> omittedSpannerUniverseDomain = new AtomicReference<>("UNSET");
+      AtomicReference<String> omittedStubUniverseDomain = new AtomicReference<>("UNSET");
+      ConnectionOptions omittedOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  baseUri
+                      + "?usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    omittedSpannerUniverseDomain.set(
+                        String.valueOf(spannerOptions.getUniverseDomain()));
+                    omittedStubUniverseDomain.set(
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      String omittedEndpoint =
+          ((InstantiatingGrpcChannelProvider) omittedOptions.getChannelProvider()).getEndpoint();
+      Spanner omittedSpanner =
+          SpannerPool.INSTANCE.createSpanner(
+              SpannerPool.SpannerPoolKey.of(omittedOptions), omittedOptions);
+      omittedSpanner.close();
+
+      // 2. Empty universeDomain normalizes to null and inherits GOOGLE_CLOUD_UNIVERSE_DOMAIN.
+      AtomicReference<String> emptySpannerUniverseDomain = new AtomicReference<>("UNSET");
+      AtomicReference<String> emptyStubUniverseDomain = new AtomicReference<>("UNSET");
+      ConnectionOptions emptyOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  baseUri
+                      + "?universeDomain=;usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    emptySpannerUniverseDomain.set(
+                        String.valueOf(spannerOptions.getUniverseDomain()));
+                    emptyStubUniverseDomain.set(
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      String emptyEndpoint =
+          ((InstantiatingGrpcChannelProvider) emptyOptions.getChannelProvider()).getEndpoint();
+      Spanner emptySpanner =
+          SpannerPool.INSTANCE.createSpanner(
+              SpannerPool.SpannerPoolKey.of(emptyOptions), emptyOptions);
+      emptySpanner.close();
+
+      // 3. Explicit universeDomain overrides GOOGLE_CLOUD_UNIVERSE_DOMAIN end-to-end.
+      AtomicReference<String> explicitSpannerUniverseDomain = new AtomicReference<>("UNSET");
+      AtomicReference<String> explicitStubUniverseDomain = new AtomicReference<>("UNSET");
+      ConnectionOptions explicitOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  baseUri
+                      + "?universeDomain=custom.example;usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    explicitSpannerUniverseDomain.set(
+                        String.valueOf(spannerOptions.getUniverseDomain()));
+                    explicitStubUniverseDomain.set(
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      String explicitEndpoint =
+          ((InstantiatingGrpcChannelProvider) explicitOptions.getChannelProvider()).getEndpoint();
+      Spanner explicitSpanner =
+          SpannerPool.INSTANCE.createSpanner(
+              SpannerPool.SpannerPoolKey.of(explicitOptions), explicitOptions);
+      explicitSpanner.close();
+
+      System.out.println("omittedChannelProviderEndpoint=" + omittedEndpoint);
+      System.out.println("omittedSpannerUniverseDomain=" + omittedSpannerUniverseDomain.get());
+      System.out.println("omittedStubUniverseDomain=" + omittedStubUniverseDomain.get());
+      System.out.println("emptyChannelProviderEndpoint=" + emptyEndpoint);
+      System.out.println("emptySpannerUniverseDomain=" + emptySpannerUniverseDomain.get());
+      System.out.println("emptyStubUniverseDomain=" + emptyStubUniverseDomain.get());
+      System.out.println("explicitChannelProviderEndpoint=" + explicitEndpoint);
+      System.out.println("explicitSpannerUniverseDomain=" + explicitSpannerUniverseDomain.get());
+      System.out.println("explicitStubUniverseDomain=" + explicitStubUniverseDomain.get());
+    }
+  }
+
+  @Test
+  public void testUniverseDomain_RealEnvVarEndToEndSubprocess() throws Exception {
+    boolean isWindows = System.getProperty("os.name", "").toLowerCase(Locale.ROOT).contains("win");
+    File javaExe =
+        new File(new File(System.getProperty("java.home"), "bin"), isWindows ? "java.exe" : "java");
+    Assume.assumeTrue("Java executable not found for subprocess test", javaExe.isFile());
+
+    ProcessBuilder processBuilder =
+        new ProcessBuilder(
+            javaExe.getAbsolutePath(),
+            "-cp",
+            System.getProperty("java.class.path"),
+            "-D" + ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY + "=true",
+            UniverseDomainEnvProbe.class.getName());
+    processBuilder.environment().put("GOOGLE_CLOUD_UNIVERSE_DOMAIN", "universe.example");
+    processBuilder.redirectErrorStream(true);
+
+    Process process = processBuilder.start();
+    List<String> outputLines = Collections.synchronizedList(new ArrayList<>());
+    Thread drainThread =
+        new Thread(
+            () -> {
+              try (BufferedReader reader =
+                  new BufferedReader(
+                      new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                  outputLines.add(line);
+                }
+              } catch (IOException ignore) {
+                // Stream closed on process termination.
+              }
+            },
+            "universe-domain-probe-drain");
+    drainThread.start();
+
+    boolean exited;
+    try {
+      exited = process.waitFor(30, TimeUnit.SECONDS);
+    } finally {
+      if (process.isAlive()) {
+        process.destroyForcibly();
+      }
+    }
+    drainThread.join(TimeUnit.SECONDS.toMillis(5));
+    assertFalse("Output drain thread did not terminate", drainThread.isAlive());
+    assertTrue("Subprocess timed out: " + outputLines, exited);
+    assertEquals("Subprocess exited with error: " + outputLines, 0, process.exitValue());
+
+    Map<String, String> parsed = new HashMap<>();
+    synchronized (outputLines) {
+      for (String line : outputLines) {
+        int idx = line.indexOf('=');
+        if (idx > 0) {
+          parsed.put(line.substring(0, idx), line.substring(idx + 1));
+        }
+      }
+    }
+    assertEquals("spanner.universe.example:443", parsed.get("omittedChannelProviderEndpoint"));
+    assertEquals("null", parsed.get("omittedSpannerUniverseDomain"));
+    assertEquals("universe.example", parsed.get("omittedStubUniverseDomain"));
+    assertEquals("spanner.universe.example:443", parsed.get("emptyChannelProviderEndpoint"));
+    assertEquals("null", parsed.get("emptySpannerUniverseDomain"));
+    assertEquals("universe.example", parsed.get("emptyStubUniverseDomain"));
+    assertEquals("spanner.custom.example:443", parsed.get("explicitChannelProviderEndpoint"));
+    assertEquals("custom.example", parsed.get("explicitSpannerUniverseDomain"));
+    assertEquals("custom.example", parsed.get("explicitStubUniverseDomain"));
   }
 }
