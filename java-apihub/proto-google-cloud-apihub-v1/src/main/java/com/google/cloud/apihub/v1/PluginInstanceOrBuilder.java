@@ -60,7 +60,7 @@ public interface PluginInstanceOrBuilder
    *
    *
    * <pre>
-   * Required. The display name for this plugin instance. Max length is 255
+   * Required. The display name for this plugin instance. Max length is 500
    * characters.
    * </pre>
    *
@@ -74,7 +74,7 @@ public interface PluginInstanceOrBuilder
    *
    *
    * <pre>
-   * Required. The display name for this plugin instance. Max length is 255
+   * Required. The display name for this plugin instance. Max length is 500
    * characters.
    * </pre>
    *
@@ -439,9 +439,9 @@ public interface PluginInstanceOrBuilder
    *
    * <pre>
    * Optional. The source project id of the plugin instance. This will be the id
-   * of runtime project in case of gcp based plugins and org id in case of non
-   * gcp based plugins. This field will be a required field for Google provided
-   * on-ramp plugins.
+   * of runtime project in case of Google Cloud based plugins and org id in case
+   * of non-Google Cloud based plugins. This field will be a required field for
+   * Google provided on-ramp plugins.
    * </pre>
    *
    * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -455,9 +455,9 @@ public interface PluginInstanceOrBuilder
    *
    * <pre>
    * Optional. The source project id of the plugin instance. This will be the id
-   * of runtime project in case of gcp based plugins and org id in case of non
-   * gcp based plugins. This field will be a required field for Google provided
-   * on-ramp plugins.
+   * of runtime project in case of Google Cloud based plugins and org id in case
+   * of non-Google Cloud based plugins. This field will be a required field for
+   * Google provided on-ramp plugins.
    * </pre>
    *
    * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -465,4 +465,90 @@ public interface PluginInstanceOrBuilder
    * @return The bytes for sourceProjectId.
    */
   com.google.protobuf.ByteString getSourceProjectIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSourceEnvironmentsConfigCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsSourceEnvironmentsConfig(java.lang.String key);
+
+  /** Use {@link #getSourceEnvironmentsConfigMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+      getSourceEnvironmentsConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+      getSourceEnvironmentsConfigMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.apihub.v1.SourceEnvironment getSourceEnvironmentsConfigOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.apihub.v1.SourceEnvironment defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.SourceEnvironment getSourceEnvironmentsConfigOrThrow(
+      java.lang.String key);
 }

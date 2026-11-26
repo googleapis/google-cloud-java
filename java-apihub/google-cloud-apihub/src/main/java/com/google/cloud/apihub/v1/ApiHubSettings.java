@@ -24,6 +24,7 @@ import static com.google.cloud.apihub.v1.ApiHubClient.ListExternalApisPagedRespo
 import static com.google.cloud.apihub.v1.ApiHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.ListSpecsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.ListVersionsPagedResponse;
+import static com.google.cloud.apihub.v1.ApiHubClient.RetrieveApiViewsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.SearchResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -33,6 +34,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -41,6 +43,7 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -96,6 +99,31 @@ import org.jspecify.annotations.Nullable;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for configureAndDeployServer:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ApiHubSettings.Builder apiHubSettingsBuilder = ApiHubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * apiHubSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @NullMarked
 @Generated("by gapic-generator-java")
@@ -166,6 +194,12 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
   /** Returns the object with the settings used for calls to getSpecContents. */
   public UnaryCallSettings<GetSpecContentsRequest, SpecContents> getSpecContentsSettings() {
     return ((ApiHubStubSettings) getStubSettings()).getSpecContentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchAdditionalSpecContent. */
+  public UnaryCallSettings<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+      fetchAdditionalSpecContentSettings() {
+    return ((ApiHubStubSettings) getStubSettings()).fetchAdditionalSpecContentSettings();
   }
 
   /** Returns the object with the settings used for calls to listSpecs. */
@@ -302,6 +336,26 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
           ListExternalApisRequest, ListExternalApisResponse, ListExternalApisPagedResponse>
       listExternalApisSettings() {
     return ((ApiHubStubSettings) getStubSettings()).listExternalApisSettings();
+  }
+
+  /** Returns the object with the settings used for calls to retrieveApiViews. */
+  public PagedCallSettings<
+          RetrieveApiViewsRequest, RetrieveApiViewsResponse, RetrieveApiViewsPagedResponse>
+      retrieveApiViewsSettings() {
+    return ((ApiHubStubSettings) getStubSettings()).retrieveApiViewsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to configureAndDeployServer. */
+  public UnaryCallSettings<ConfigureAndDeployServerRequest, Operation>
+      configureAndDeployServerSettings() {
+    return ((ApiHubStubSettings) getStubSettings()).configureAndDeployServerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to configureAndDeployServer. */
+  public OperationCallSettings<
+          ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerOperationSettings() {
+    return ((ApiHubStubSettings) getStubSettings()).configureAndDeployServerOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -480,6 +534,13 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
       return getStubSettingsBuilder().getSpecContentsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to fetchAdditionalSpecContent. */
+    public UnaryCallSettings.Builder<
+            FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+        fetchAdditionalSpecContentSettings() {
+      return getStubSettingsBuilder().fetchAdditionalSpecContentSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listSpecs. */
     public PagedCallSettings.Builder<ListSpecsRequest, ListSpecsResponse, ListSpecsPagedResponse>
         listSpecsSettings() {
@@ -622,6 +683,26 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
             ListExternalApisRequest, ListExternalApisResponse, ListExternalApisPagedResponse>
         listExternalApisSettings() {
       return getStubSettingsBuilder().listExternalApisSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveApiViews. */
+    public PagedCallSettings.Builder<
+            RetrieveApiViewsRequest, RetrieveApiViewsResponse, RetrieveApiViewsPagedResponse>
+        retrieveApiViewsSettings() {
+      return getStubSettingsBuilder().retrieveApiViewsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to configureAndDeployServer. */
+    public UnaryCallSettings.Builder<ConfigureAndDeployServerRequest, Operation>
+        configureAndDeployServerSettings() {
+      return getStubSettingsBuilder().configureAndDeployServerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to configureAndDeployServer. */
+    public OperationCallSettings.Builder<
+            ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+        configureAndDeployServerOperationSettings() {
+      return getStubSettingsBuilder().configureAndDeployServerOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

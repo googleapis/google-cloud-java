@@ -166,6 +166,9 @@
             "UpdateSpaceReadState": {
               "methods": ["updateSpaceReadState", "updateSpaceReadState", "updateSpaceReadStateCallable"]
             },
+            "UpdateThreadReadState": {
+              "methods": ["updateThreadReadState", "updateThreadReadState", "updateThreadReadStateCallable"]
+            },
             "UploadAttachment": {
               "methods": ["uploadAttachment", "uploadAttachmentCallable"]
             }

@@ -125,6 +125,18 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_batch_v1_AllocationPolicy_PlacementPolicy_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_InstanceSelectionsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_InstanceSelectionsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceSelection_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceSelection_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_fieldAccessorTable;
@@ -229,7 +241,7 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\025\n"
           + "\021JOB_STATE_CHANGED\020\001\022\026\n"
-          + "\022TASK_STATE_CHANGED\020\002\"\345\020\n"
+          + "\022TASK_STATE_CHANGED\020\002\"\271\024\n"
           + "\020AllocationPolicy\022H\n"
           + "\010location\030\001 \001(\01326.google.cloud"
           + ".batch.v1.AllocationPolicy.LocationPolicy\022S\n"
@@ -242,7 +254,9 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "oogle.cloud.batch.v1.AllocationPolicy.NetworkPolicy\022J\n"
           + "\tplacement\030\n"
           + " \001(\01327.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy\022\022\n"
-          + "\004tags\030\013 \003(\tB\004\342A\001\001\032+\n"
+          + "\004tags\030\013 \003(\tB\004\342A\001\001\022l\n"
+          + "\033instance_flexibility_policy\030\014 \001(\0132A.google.cloud."
+          + "batch.v1.AllocationPolicy.InstanceFlexibilityPolicyB\004\342A\001\001\032+\n"
           + "\016LocationPolicy\022\031\n"
           + "\021allowed_locations\030\001 \003(\t\032q\n"
           + "\004Disk\022\017\n"
@@ -266,17 +280,17 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "\016InstancePolicy\022\024\n"
           + "\014machine_type\030\002 \001(\t\022\030\n"
           + "\020min_cpu_platform\030\003 \001(\t\022U\n"
-          + "\022provisioning_model\030\004"
-          + " \001(\01629.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel\022I\n"
-          + "\014accelerators\030\005"
-          + " \003(\01323.google.cloud.batch.v1.AllocationPolicy.Accelerator\022?\n"
+          + "\022provisioning_model\030\004 \001(\016"
+          + "29.google.cloud.batch.v1.AllocationPolicy.ProvisioningModel\022I\n"
+          + "\014accelerators\030\005 \003("
+          + "\01323.google.cloud.batch.v1.AllocationPolicy.Accelerator\022?\n"
           + "\tboot_disk\030\010 \001(\0132,.google.cloud.batch.v1.AllocationPolicy.Disk\022C\n"
-          + "\005disks\030\006 \003(\01324.google.cloud."
-          + "batch.v1.AllocationPolicy.AttachedDisk\022\031\n"
+          + "\005disks\030\006"
+          + " \003(\01324.google.cloud.batch.v1.AllocationPolicy.AttachedDisk\022\031\n"
           + "\013reservation\030\007 \001(\tB\004\342A\001\001\032\370\001\n"
           + "\030InstancePolicyOrTemplate\022H\n"
-          + "\006policy\030\001 \001(\01326.google."
-          + "cloud.batch.v1.AllocationPolicy.InstancePolicyH\000\022\033\n"
+          + "\006policy\030\001 \001(\01326.google.cloud.batc"
+          + "h.v1.AllocationPolicy.InstancePolicyH\000\022\033\n"
           + "\021instance_template\030\002 \001(\tH\000\022\033\n"
           + "\023install_gpu_drivers\030\003 \001(\010\022\037\n"
           + "\021install_ops_agent\030\004 \001(\010B\004\342A\001\001\022$\n"
@@ -286,8 +300,8 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "\007network\030\001 \001(\t\022\022\n\n"
           + "subnetwork\030\002 \001(\t\022\036\n"
           + "\026no_external_ip_address\030\003 \001(\010\022]\n"
-          + "\010nic_type\030\007 \001(\0162@.google.cloud."
-          + "batch.v1.AllocationPolicy.NetworkInterface.NicTypeB\004\342A\001\001H\000\210\001\001\"D\n"
+          + "\010nic_type\030\007 \001(\0162@.google.cloud.batch.v1.A"
+          + "llocationPolicy.NetworkInterface.NicTypeB\004\342A\001\001H\000\210\001\001\"D\n"
           + "\007NicType\022\030\n"
           + "\024NIC_TYPE_UNSPECIFIED\020\000\022\t\n"
           + "\005GVNIC\020\001\022\t\n"
@@ -295,11 +309,22 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "\005MRDMA\020\003B\013\n"
           + "\t_nic_type\032e\n\r"
           + "NetworkPolicy\022T\n"
-          + "\022network_interfaces\030\001 \003(\01328.google.c"
-          + "loud.batch.v1.AllocationPolicy.NetworkInterface\032<\n"
+          + "\022network_interfaces\030\001"
+          + " \003(\01328.google.cloud.batch.v1.AllocationPolicy.NetworkInterface\032<\n"
           + "\017PlacementPolicy\022\023\n"
           + "\013collocation\030\001 \001(\t\022\024\n"
-          + "\014max_distance\030\002 \001(\003\032-\n"
+          + "\014max_distance\030\002 \001(\003\032\217\002\n"
+          + "\031InstanceFlexibilityPolicy\022|\n"
+          + "\023instance_selections\030\001 \003(\0132Y.google.cloud.batch.v1.AllocationPolicy."
+          + "InstanceFlexibilityPolicy.InstanceSelectionsEntryB\004\342A\001\002\032t\n"
+          + "\027InstanceSelectionsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022H\n"
+          + "\005value\030\002 \001(\01329.google."
+          + "cloud.batch.v1.AllocationPolicy.InstanceSelection:\0028\001\032R\n"
+          + "\021InstanceSelection\022\033\n\r"
+          + "machine_types\030\001 \003(\tB\004\342A\001\002\022\027\n"
+          + "\004rank\030\002 \001(\005B\004\342A\001\001H\000\210\001\001B\007\n"
+          + "\005_rank\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\213\001\n"
@@ -328,15 +353,15 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
           + "\035SCHEDULING_POLICY_UNSPECIFIED\020\000\022\027\n"
           + "\023AS_SOON_AS_POSSIBLE\020\001\022\014\n"
           + "\010IN_ORDER\020\002:o\352Al\n"
-          + "\036batch.googleapis.com/TaskGroup\022Jprojects/{project}/loca"
-          + "tions/{location}/jobs/{job}/taskGroups/{task_group}\"/\n"
+          + "\036batch.googleapis.com/TaskGroup\022Jprojects/{project}/locations/{locat"
+          + "ion}/jobs/{job}/taskGroups/{task_group}\"/\n"
           + "\016ServiceAccount\022\r\n"
           + "\005email\030\001 \001(\t\022\016\n"
           + "\006scopes\030\002 \003(\tB\251\001\n"
-          + "\031com.google.cloud.batch.v1B\010JobProtoP\001Z/cloud.google.com"
-          + "/go/batch/apiv1/batchpb;batchpb\242\002\003GCB\252\002\025"
-          + "Google.Cloud.Batch.V1\312\002\025Google\\Cloud\\Bat"
-          + "ch\\V1\352\002\030Google::Cloud::Batch::V1b\006proto3"
+          + "\031com.google.cloud.batch.v1B\010JobProtoP\001Z/cloud.google.com/go/batch/ap"
+          + "iv1/batchpb;batchpb\242\002\003GCB\252\002\025Google.Cloud"
+          + ".Batch.V1\312\002\025Google\\Cloud\\Batch\\V1\352\002\030Goog"
+          + "le::Cloud::Batch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -449,7 +474,14 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor,
             new java.lang.String[] {
-              "Location", "Instances", "ServiceAccount", "Labels", "Network", "Placement", "Tags",
+              "Location",
+              "Instances",
+              "ServiceAccount",
+              "Labels",
+              "Network",
+              "Placement",
+              "Tags",
+              "InstanceFlexibilityPolicy",
             });
     internal_static_google_cloud_batch_v1_AllocationPolicy_LocationPolicy_descriptor =
         internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedType(0);
@@ -534,8 +566,33 @@ public final class JobProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Collocation", "MaxDistance",
             });
-    internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_descriptor =
+    internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_descriptor =
         internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedType(9);
+    internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_descriptor,
+            new java.lang.String[] {
+              "InstanceSelections",
+            });
+    internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_InstanceSelectionsEntry_descriptor =
+        internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_InstanceSelectionsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceFlexibilityPolicy_InstanceSelectionsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceSelection_descriptor =
+        internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedType(10);
+    internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceSelection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_batch_v1_AllocationPolicy_InstanceSelection_descriptor,
+            new java.lang.String[] {
+              "MachineTypes", "Rank",
+            });
+    internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_descriptor =
+        internal_static_google_cloud_batch_v1_AllocationPolicy_descriptor.getNestedType(11);
     internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_batch_v1_AllocationPolicy_LabelsEntry_descriptor,

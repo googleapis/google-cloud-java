@@ -536,4 +536,86 @@ public interface AuditScheduleOrBuilder
    */
   com.google.cloud.auditmanager.v1.ParameterOverrides getParameterOverridesOrThrow(
       java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export each scheduled audit report, in
+   * addition to the ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the reportExportFormats.
+   */
+  java.util.List<com.google.cloud.auditmanager.v1.ReportExportFormat> getReportExportFormatsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export each scheduled audit report, in
+   * addition to the ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of reportExportFormats.
+   */
+  int getReportExportFormatsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export each scheduled audit report, in
+   * addition to the ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reportExportFormats at the given index.
+   */
+  com.google.cloud.auditmanager.v1.ReportExportFormat getReportExportFormats(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export each scheduled audit report, in
+   * addition to the ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for reportExportFormats.
+   */
+  java.util.List<java.lang.Integer> getReportExportFormatsValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export each scheduled audit report, in
+   * addition to the ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of reportExportFormats at the given index.
+   */
+  int getReportExportFormatsValue(int index);
 }

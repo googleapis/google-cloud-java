@@ -2634,6 +2634,52 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getUpdateOdbDnsZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateOdbDnsZone",
+      requestType = com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getUpdateOdbDnsZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest,
+            com.google.longrunning.Operation>
+        getUpdateOdbDnsZoneMethod;
+    if ((getUpdateOdbDnsZoneMethod = OracleDatabaseGrpc.getUpdateOdbDnsZoneMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getUpdateOdbDnsZoneMethod = OracleDatabaseGrpc.getUpdateOdbDnsZoneMethod) == null) {
+          OracleDatabaseGrpc.getUpdateOdbDnsZoneMethod =
+              getUpdateOdbDnsZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateOdbDnsZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("UpdateOdbDnsZone"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateOdbDnsZoneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
           com.google.longrunning.Operation>
       getDeleteOdbDnsZoneMethod;
@@ -6216,6 +6262,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB DNS Zone.
+     * </pre>
+     */
+    default void updateOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateOdbDnsZoneMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB DNS Zone.
      * </pre>
      */
@@ -7927,6 +7987,22 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB DNS Zone.
+     * </pre>
+     */
+    public void updateOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateOdbDnsZoneMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB DNS Zone.
      * </pre>
      */
@@ -9621,6 +9697,20 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB DNS Zone.
      * </pre>
      */
@@ -11128,6 +11218,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB DNS Zone.
      * </pre>
      */
@@ -12629,6 +12732,19 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Updates the `labels` of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateOdbDnsZone(com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateOdbDnsZoneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single ODB DNS Zone.
      * </pre>
      */
@@ -13475,60 +13591,61 @@ public final class OracleDatabaseGrpc {
   private static final int METHODID_LIST_ODB_DNS_ZONES = 49;
   private static final int METHODID_GET_ODB_DNS_ZONE = 50;
   private static final int METHODID_CREATE_ODB_DNS_ZONE = 51;
-  private static final int METHODID_DELETE_ODB_DNS_ZONE = 52;
-  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 53;
-  private static final int METHODID_GET_EXADB_VM_CLUSTER = 54;
-  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 55;
-  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 56;
-  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 57;
-  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 58;
-  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 59;
-  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 60;
-  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 61;
-  private static final int METHODID_UPDATE_EXASCALE_DB_STORAGE_VAULT = 62;
-  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 63;
-  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 64;
-  private static final int METHODID_LIST_DB_SYSTEM_COMPUTE_PERFORMANCES = 65;
-  private static final int METHODID_LIST_DATABASES = 66;
-  private static final int METHODID_GET_DATABASE = 67;
-  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 68;
-  private static final int METHODID_GET_PLUGGABLE_DATABASE = 69;
-  private static final int METHODID_LIST_DB_SYSTEMS = 70;
-  private static final int METHODID_GET_DB_SYSTEM = 71;
-  private static final int METHODID_CREATE_DB_SYSTEM = 72;
-  private static final int METHODID_UPDATE_DB_SYSTEM = 73;
-  private static final int METHODID_DELETE_DB_SYSTEM = 74;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 75;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 76;
-  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 77;
-  private static final int METHODID_UPDATE_GOLDENGATE_DEPLOYMENT = 78;
-  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 79;
-  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 80;
-  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 81;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 82;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 83;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 84;
-  private static final int METHODID_UPDATE_GOLDENGATE_CONNECTION = 85;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 86;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 87;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 88;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 89;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 90;
-  private static final int METHODID_LIST_DB_VERSIONS = 91;
-  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 92;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 93;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 94;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 95;
-  private static final int METHODID_UPDATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 96;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 97;
-  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 98;
-  private static final int METHODID_LIST_DATABASE_CONNECTIONS = 99;
-  private static final int METHODID_GET_DATABASE_CONNECTION = 100;
-  private static final int METHODID_CREATE_DATABASE_CONNECTION = 101;
-  private static final int METHODID_UPDATE_DATABASE_CONNECTION = 102;
-  private static final int METHODID_DELETE_DATABASE_CONNECTION = 103;
-  private static final int METHODID_TEST_DATABASE_CONNECTION = 104;
-  private static final int METHODID_EXECUTE_SQL = 105;
+  private static final int METHODID_UPDATE_ODB_DNS_ZONE = 52;
+  private static final int METHODID_DELETE_ODB_DNS_ZONE = 53;
+  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 54;
+  private static final int METHODID_GET_EXADB_VM_CLUSTER = 55;
+  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 56;
+  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 57;
+  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 58;
+  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 59;
+  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 60;
+  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 61;
+  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 62;
+  private static final int METHODID_UPDATE_EXASCALE_DB_STORAGE_VAULT = 63;
+  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 64;
+  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 65;
+  private static final int METHODID_LIST_DB_SYSTEM_COMPUTE_PERFORMANCES = 66;
+  private static final int METHODID_LIST_DATABASES = 67;
+  private static final int METHODID_GET_DATABASE = 68;
+  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 69;
+  private static final int METHODID_GET_PLUGGABLE_DATABASE = 70;
+  private static final int METHODID_LIST_DB_SYSTEMS = 71;
+  private static final int METHODID_GET_DB_SYSTEM = 72;
+  private static final int METHODID_CREATE_DB_SYSTEM = 73;
+  private static final int METHODID_UPDATE_DB_SYSTEM = 74;
+  private static final int METHODID_DELETE_DB_SYSTEM = 75;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 76;
+  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 77;
+  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 78;
+  private static final int METHODID_UPDATE_GOLDENGATE_DEPLOYMENT = 79;
+  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 80;
+  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 81;
+  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 82;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 83;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 84;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 85;
+  private static final int METHODID_UPDATE_GOLDENGATE_CONNECTION = 86;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 87;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 88;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 89;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 90;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 91;
+  private static final int METHODID_LIST_DB_VERSIONS = 92;
+  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 93;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 94;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 95;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 96;
+  private static final int METHODID_UPDATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 97;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 98;
+  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 99;
+  private static final int METHODID_LIST_DATABASE_CONNECTIONS = 100;
+  private static final int METHODID_GET_DATABASE_CONNECTION = 101;
+  private static final int METHODID_CREATE_DATABASE_CONNECTION = 102;
+  private static final int METHODID_UPDATE_DATABASE_CONNECTION = 103;
+  private static final int METHODID_DELETE_DATABASE_CONNECTION = 104;
+  private static final int METHODID_TEST_DATABASE_CONNECTION = 105;
+  private static final int METHODID_EXECUTE_SQL = 106;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -13856,6 +13973,11 @@ public final class OracleDatabaseGrpc {
         case METHODID_CREATE_ODB_DNS_ZONE:
           serviceImpl.createOdbDnsZone(
               (com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_ODB_DNS_ZONE:
+          serviceImpl.updateOdbDnsZone(
+              (com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_ODB_DNS_ZONE:
@@ -14563,6 +14685,12 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_ODB_DNS_ZONE)))
         .addMethod(
+            getUpdateOdbDnsZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.UpdateOdbDnsZoneRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ODB_DNS_ZONE)))
+        .addMethod(
             getDeleteOdbDnsZoneMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -15035,6 +15163,7 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getListOdbDnsZonesMethod())
                       .addMethod(getGetOdbDnsZoneMethod())
                       .addMethod(getCreateOdbDnsZoneMethod())
+                      .addMethod(getUpdateOdbDnsZoneMethod())
                       .addMethod(getDeleteOdbDnsZoneMethod())
                       .addMethod(getListExadbVmClustersMethod())
                       .addMethod(getGetExadbVmClusterMethod())

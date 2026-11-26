@@ -42,6 +42,8 @@ import com.google.cloud.apihub.v1.ListPluginInstancesRequest;
 import com.google.cloud.apihub.v1.ListPluginInstancesResponse;
 import com.google.cloud.apihub.v1.ListPluginsRequest;
 import com.google.cloud.apihub.v1.ListPluginsResponse;
+import com.google.cloud.apihub.v1.ManagePluginInstanceSourceDataRequest;
+import com.google.cloud.apihub.v1.ManagePluginInstanceSourceDataResponse;
 import com.google.cloud.apihub.v1.OperationMetadata;
 import com.google.cloud.apihub.v1.Plugin;
 import com.google.cloud.apihub.v1.PluginInstance;
@@ -182,6 +184,13 @@ public abstract class ApiHubPluginStub implements BackgroundResource {
 
   public UnaryCallable<DeletePluginInstanceRequest, Operation> deletePluginInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: deletePluginInstanceCallable()");
+  }
+
+  public UnaryCallable<
+          ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+      managePluginInstanceSourceDataCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: managePluginInstanceSourceDataCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

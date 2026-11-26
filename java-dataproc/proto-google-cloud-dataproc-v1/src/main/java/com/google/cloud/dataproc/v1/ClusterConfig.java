@@ -609,6 +609,53 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  private int provisioningConfigCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object provisioningConfig_;
+
+  public enum ProvisioningConfigCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    SCHEDULING_CONFIG(26),
+    PROVISIONINGCONFIG_NOT_SET(0);
+    private final int value;
+
+    private ProvisioningConfigCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProvisioningConfigCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ProvisioningConfigCase forNumber(int value) {
+      switch (value) {
+        case 26:
+          return SCHEDULING_CONFIG;
+        case 0:
+          return PROVISIONINGCONFIG_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ProvisioningConfigCase getProvisioningConfigCase() {
+    return ProvisioningConfigCase.forNumber(provisioningConfigCase_);
+  }
+
   public static final int CLUSTER_TYPE_FIELD_NUMBER = 27;
   private int clusterType_ = 0;
 
@@ -1844,6 +1891,69 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     return auxiliaryNodeGroups_.get(index);
   }
 
+  public static final int SCHEDULING_CONFIG_FIELD_NUMBER = 26;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for scheduling the resources to be allocated when
+   * available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schedulingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSchedulingConfig() {
+    return provisioningConfigCase_ == 26;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for scheduling the resources to be allocated when
+   * available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schedulingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.SchedulingConfig getSchedulingConfig() {
+    if (provisioningConfigCase_ == 26) {
+      return (com.google.cloud.dataproc.v1.SchedulingConfig) provisioningConfig_;
+    }
+    return com.google.cloud.dataproc.v1.SchedulingConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for scheduling the resources to be allocated when
+   * available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.SchedulingConfigOrBuilder getSchedulingConfigOrBuilder() {
+    if (provisioningConfigCase_ == 26) {
+      return (com.google.cloud.dataproc.v1.SchedulingConfig) provisioningConfig_;
+    }
+    return com.google.cloud.dataproc.v1.SchedulingConfig.getDefaultInstance();
+  }
+
   public static final int MASTER_FLEXIBLE_CONFIG_FIELD_NUMBER = 31;
   private com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig masterFlexibleConfig_;
 
@@ -2219,6 +2329,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < auxiliaryNodeGroups_.size(); i++) {
       output.writeMessage(25, auxiliaryNodeGroups_.get(i));
     }
+    if (provisioningConfigCase_ == 26) {
+      output.writeMessage(26, (com.google.cloud.dataproc.v1.SchedulingConfig) provisioningConfig_);
+    }
     if (clusterType_
         != com.google.cloud.dataproc.v1.ClusterConfig.ClusterType.CLUSTER_TYPE_UNSPECIFIED
             .getNumber()) {
@@ -2303,6 +2416,11 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < auxiliaryNodeGroups_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(25, auxiliaryNodeGroups_.get(i));
+    }
+    if (provisioningConfigCase_ == 26) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26, (com.google.cloud.dataproc.v1.SchedulingConfig) provisioningConfig_);
     }
     if (clusterType_
         != com.google.cloud.dataproc.v1.ClusterConfig.ClusterType.CLUSTER_TYPE_UNSPECIFIED
@@ -2416,6 +2534,14 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       if (!getSecondaryWorkerFlexibleConfig().equals(other.getSecondaryWorkerFlexibleConfig()))
         return false;
     }
+    if (!getProvisioningConfigCase().equals(other.getProvisioningConfigCase())) return false;
+    switch (provisioningConfigCase_) {
+      case 26:
+        if (!getSchedulingConfig().equals(other.getSchedulingConfig())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2504,6 +2630,14 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     if (hasSecondaryWorkerFlexibleConfig()) {
       hash = (37 * hash) + SECONDARY_WORKER_FLEXIBLE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSecondaryWorkerFlexibleConfig().hashCode();
+    }
+    switch (provisioningConfigCase_) {
+      case 26:
+        hash = (37 * hash) + SCHEDULING_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSchedulingConfig().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2749,6 +2883,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         auxiliaryNodeGroupsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00040000);
+      if (schedulingConfigBuilder_ != null) {
+        schedulingConfigBuilder_.clear();
+      }
       masterFlexibleConfig_ = null;
       if (masterFlexibleConfigBuilder_ != null) {
         masterFlexibleConfigBuilder_.dispose();
@@ -2764,6 +2901,8 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         secondaryWorkerFlexibleConfigBuilder_.dispose();
         secondaryWorkerFlexibleConfigBuilder_ = null;
       }
+      provisioningConfigCase_ = 0;
+      provisioningConfig_ = null;
       return this;
     }
 
@@ -2795,6 +2934,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -2904,21 +3044,21 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
                 : dataprocMetricConfigBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.masterFlexibleConfig_ =
             masterFlexibleConfigBuilder_ == null
                 ? masterFlexibleConfig_
                 : masterFlexibleConfigBuilder_.build();
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.workerFlexibleConfig_ =
             workerFlexibleConfigBuilder_ == null
                 ? workerFlexibleConfig_
                 : workerFlexibleConfigBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.secondaryWorkerFlexibleConfig_ =
             secondaryWorkerFlexibleConfigBuilder_ == null
                 ? secondaryWorkerFlexibleConfig_
@@ -2926,6 +3066,14 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.dataproc.v1.ClusterConfig result) {
+      result.provisioningConfigCase_ = provisioningConfigCase_;
+      result.provisioningConfig_ = this.provisioningConfig_;
+      if (provisioningConfigCase_ == 26 && schedulingConfigBuilder_ != null) {
+        result.provisioningConfig_ = schedulingConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -3057,6 +3205,17 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSecondaryWorkerFlexibleConfig()) {
         mergeSecondaryWorkerFlexibleConfig(other.getSecondaryWorkerFlexibleConfig());
+      }
+      switch (other.getProvisioningConfigCase()) {
+        case SCHEDULING_CONFIG:
+          {
+            mergeSchedulingConfig(other.getSchedulingConfig());
+            break;
+          }
+        case PROVISIONINGCONFIG_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3208,6 +3367,13 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 202
+            case 210:
+              {
+                input.readMessage(
+                    internalGetSchedulingConfigFieldBuilder().getBuilder(), extensionRegistry);
+                provisioningConfigCase_ = 26;
+                break;
+              } // case 210
             case 216:
               {
                 clusterType_ = input.readEnum();
@@ -3230,14 +3396,14 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetMasterFlexibleConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 250
             case 258:
               {
                 input.readMessage(
                     internalGetWorkerFlexibleConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 258
             case 266:
@@ -3245,7 +3411,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetSecondaryWorkerFlexibleConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 266
             default:
@@ -3262,6 +3428,20 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int provisioningConfigCase_ = 0;
+    private java.lang.Object provisioningConfig_;
+
+    public ProvisioningConfigCase getProvisioningConfigCase() {
+      return ProvisioningConfigCase.forNumber(provisioningConfigCase_);
+    }
+
+    public Builder clearProvisioningConfig() {
+      provisioningConfigCase_ = 0;
+      provisioningConfig_ = null;
+      onChanged();
       return this;
     }
 
@@ -7580,6 +7760,252 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       return auxiliaryNodeGroupsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataproc.v1.SchedulingConfig,
+            com.google.cloud.dataproc.v1.SchedulingConfig.Builder,
+            com.google.cloud.dataproc.v1.SchedulingConfigOrBuilder>
+        schedulingConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schedulingConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSchedulingConfig() {
+      return provisioningConfigCase_ == 26;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schedulingConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.SchedulingConfig getSchedulingConfig() {
+      if (schedulingConfigBuilder_ == null) {
+        if (provisioningConfigCase_ == 26) {
+          return (com.google.cloud.dataproc.v1.SchedulingConfig) provisioningConfig_;
+        }
+        return com.google.cloud.dataproc.v1.SchedulingConfig.getDefaultInstance();
+      } else {
+        if (provisioningConfigCase_ == 26) {
+          return schedulingConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.dataproc.v1.SchedulingConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchedulingConfig(com.google.cloud.dataproc.v1.SchedulingConfig value) {
+      if (schedulingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        provisioningConfig_ = value;
+        onChanged();
+      } else {
+        schedulingConfigBuilder_.setMessage(value);
+      }
+      provisioningConfigCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchedulingConfig(
+        com.google.cloud.dataproc.v1.SchedulingConfig.Builder builderForValue) {
+      if (schedulingConfigBuilder_ == null) {
+        provisioningConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        schedulingConfigBuilder_.setMessage(builderForValue.build());
+      }
+      provisioningConfigCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSchedulingConfig(com.google.cloud.dataproc.v1.SchedulingConfig value) {
+      if (schedulingConfigBuilder_ == null) {
+        if (provisioningConfigCase_ == 26
+            && provisioningConfig_
+                != com.google.cloud.dataproc.v1.SchedulingConfig.getDefaultInstance()) {
+          provisioningConfig_ =
+              com.google.cloud.dataproc.v1.SchedulingConfig.newBuilder(
+                      (com.google.cloud.dataproc.v1.SchedulingConfig) provisioningConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          provisioningConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (provisioningConfigCase_ == 26) {
+          schedulingConfigBuilder_.mergeFrom(value);
+        } else {
+          schedulingConfigBuilder_.setMessage(value);
+        }
+      }
+      provisioningConfigCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSchedulingConfig() {
+      if (schedulingConfigBuilder_ == null) {
+        if (provisioningConfigCase_ == 26) {
+          provisioningConfigCase_ = 0;
+          provisioningConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (provisioningConfigCase_ == 26) {
+          provisioningConfigCase_ = 0;
+          provisioningConfig_ = null;
+        }
+        schedulingConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.SchedulingConfig.Builder getSchedulingConfigBuilder() {
+      return internalGetSchedulingConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataproc.v1.SchedulingConfigOrBuilder getSchedulingConfigOrBuilder() {
+      if ((provisioningConfigCase_ == 26) && (schedulingConfigBuilder_ != null)) {
+        return schedulingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (provisioningConfigCase_ == 26) {
+          return (com.google.cloud.dataproc.v1.SchedulingConfig) provisioningConfig_;
+        }
+        return com.google.cloud.dataproc.v1.SchedulingConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Config for scheduling the resources to be allocated when
+     * available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataproc.v1.SchedulingConfig,
+            com.google.cloud.dataproc.v1.SchedulingConfig.Builder,
+            com.google.cloud.dataproc.v1.SchedulingConfigOrBuilder>
+        internalGetSchedulingConfigFieldBuilder() {
+      if (schedulingConfigBuilder_ == null) {
+        if (!(provisioningConfigCase_ == 26)) {
+          provisioningConfig_ = com.google.cloud.dataproc.v1.SchedulingConfig.getDefaultInstance();
+        }
+        schedulingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataproc.v1.SchedulingConfig,
+                com.google.cloud.dataproc.v1.SchedulingConfig.Builder,
+                com.google.cloud.dataproc.v1.SchedulingConfigOrBuilder>(
+                (com.google.cloud.dataproc.v1.SchedulingConfig) provisioningConfig_,
+                getParentForChildren(),
+                isClean());
+        provisioningConfig_ = null;
+      }
+      provisioningConfigCase_ = 26;
+      onChanged();
+      return schedulingConfigBuilder_;
+    }
+
     private com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig masterFlexibleConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
@@ -7615,7 +8041,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the masterFlexibleConfig field is set.
      */
     public boolean hasMasterFlexibleConfig() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -7690,7 +8116,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       } else {
         masterFlexibleConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7727,7 +8153,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       } else {
         masterFlexibleConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7760,7 +8186,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeMasterFlexibleConfig(
         com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
       if (masterFlexibleConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && masterFlexibleConfig_ != null
             && masterFlexibleConfig_
                 != com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()) {
@@ -7772,7 +8198,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         masterFlexibleConfigBuilder_.mergeFrom(value);
       }
       if (masterFlexibleConfig_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -7804,7 +8230,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearMasterFlexibleConfig() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       masterFlexibleConfig_ = null;
       if (masterFlexibleConfigBuilder_ != null) {
         masterFlexibleConfigBuilder_.dispose();
@@ -7841,7 +8267,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder
         getMasterFlexibleConfigBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetMasterFlexibleConfigFieldBuilder().getBuilder();
     }
@@ -7961,7 +8387,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the workerFlexibleConfig field is set.
      */
     public boolean hasWorkerFlexibleConfig() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -8040,7 +8466,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       } else {
         workerFlexibleConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -8079,7 +8505,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       } else {
         workerFlexibleConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -8114,7 +8540,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeWorkerFlexibleConfig(
         com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
       if (workerFlexibleConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && workerFlexibleConfig_ != null
             && workerFlexibleConfig_
                 != com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()) {
@@ -8126,7 +8552,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         workerFlexibleConfigBuilder_.mergeFrom(value);
       }
       if (workerFlexibleConfig_ != null) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -8160,7 +8586,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearWorkerFlexibleConfig() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       workerFlexibleConfig_ = null;
       if (workerFlexibleConfigBuilder_ != null) {
         workerFlexibleConfigBuilder_.dispose();
@@ -8199,7 +8625,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder
         getWorkerFlexibleConfigBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return internalGetWorkerFlexibleConfigFieldBuilder().getBuilder();
     }
@@ -8321,7 +8747,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the secondaryWorkerFlexibleConfig field is set.
      */
     public boolean hasSecondaryWorkerFlexibleConfig() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -8397,7 +8823,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       } else {
         secondaryWorkerFlexibleConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8434,7 +8860,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       } else {
         secondaryWorkerFlexibleConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -8467,7 +8893,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     public Builder mergeSecondaryWorkerFlexibleConfig(
         com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
       if (secondaryWorkerFlexibleConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && secondaryWorkerFlexibleConfig_ != null
             && secondaryWorkerFlexibleConfig_
                 != com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()) {
@@ -8479,7 +8905,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         secondaryWorkerFlexibleConfigBuilder_.mergeFrom(value);
       }
       if (secondaryWorkerFlexibleConfig_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -8511,7 +8937,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSecondaryWorkerFlexibleConfig() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       secondaryWorkerFlexibleConfig_ = null;
       if (secondaryWorkerFlexibleConfigBuilder_ != null) {
         secondaryWorkerFlexibleConfigBuilder_.dispose();
@@ -8548,7 +8974,7 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder
         getSecondaryWorkerFlexibleConfigBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return internalGetSecondaryWorkerFlexibleConfigFieldBuilder().getBuilder();
     }

@@ -77,6 +77,8 @@ public interface ListPluginInstancesRequestOrBuilder
    *
    * * `state` - The state of the Plugin Instance. Allowed
    * comparison operators: `=`.
+   * * `source_project_id` - The source project id of the Plugin Instance.
+   * Allowed comparison operators: `=`.
    *
    * A filter function is also supported in the filter string. The filter
    * function is `id(name)`. The `id(name)` function returns the id of the
@@ -119,6 +121,8 @@ public interface ListPluginInstancesRequestOrBuilder
    *
    * * `state` - The state of the Plugin Instance. Allowed
    * comparison operators: `=`.
+   * * `source_project_id` - The source project id of the Plugin Instance.
+   * Allowed comparison operators: `=`.
    *
    * A filter function is also supported in the filter string. The filter
    * function is `id(name)`. The `id(name)` function returns the id of the

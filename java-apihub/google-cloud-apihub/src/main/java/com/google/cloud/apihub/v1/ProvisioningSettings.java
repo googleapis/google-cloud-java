@@ -147,6 +147,17 @@ public class ProvisioningSettings extends ClientSettings<ProvisioningSettings> {
     return ((ProvisioningStubSettings) getStubSettings()).getApiHubInstanceSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateApiHubInstance. */
+  public UnaryCallSettings<UpdateApiHubInstanceRequest, Operation> updateApiHubInstanceSettings() {
+    return ((ProvisioningStubSettings) getStubSettings()).updateApiHubInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateApiHubInstance. */
+  public OperationCallSettings<UpdateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
+      updateApiHubInstanceOperationSettings() {
+    return ((ProvisioningStubSettings) getStubSettings()).updateApiHubInstanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to lookupApiHubInstance. */
   public UnaryCallSettings<LookupApiHubInstanceRequest, LookupApiHubInstanceResponse>
       lookupApiHubInstanceSettings() {
@@ -290,6 +301,19 @@ public class ProvisioningSettings extends ClientSettings<ProvisioningSettings> {
     public UnaryCallSettings.Builder<GetApiHubInstanceRequest, ApiHubInstance>
         getApiHubInstanceSettings() {
       return getStubSettingsBuilder().getApiHubInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateApiHubInstance. */
+    public UnaryCallSettings.Builder<UpdateApiHubInstanceRequest, Operation>
+        updateApiHubInstanceSettings() {
+      return getStubSettingsBuilder().updateApiHubInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateApiHubInstance. */
+    public OperationCallSettings.Builder<
+            UpdateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
+        updateApiHubInstanceOperationSettings() {
+      return getStubSettingsBuilder().updateApiHubInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to lookupApiHubInstance. */

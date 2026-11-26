@@ -67,6 +67,43 @@ public interface OperationDetailsOrBuilder
    *
    *
    * <pre>
+   * The MCP Tool Operation.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+   *
+   * @return Whether the mcpTool field is set.
+   */
+  boolean hasMcpTool();
+
+  /**
+   *
+   *
+   * <pre>
+   * The MCP Tool Operation.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+   *
+   * @return The mcpTool.
+   */
+  com.google.cloud.apihub.v1.McpTool getMcpTool();
+
+  /**
+   *
+   *
+   * <pre>
+   * The MCP Tool Operation.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+   */
+  com.google.cloud.apihub.v1.McpToolOrBuilder getMcpToolOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Description of the operation behavior.
    * For OpenAPI spec, this will map to `operation.description` in the
    * spec, in case description is empty, `operation.summary` will be used.

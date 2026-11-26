@@ -112,8 +112,19 @@ public interface ReasoningEngineSpecOrBuilder
    * Optional. The service account that the Reasoning Engine artifact runs as.
    * It should have "roles/storage.objectViewer" for reading the user project's
    * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-   * will be used.
+   * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+   * Vertex AI Reasoning Engine Service Agent in the project will be used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). For sensitive resources such as Secret
+   * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+   * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+   * custom `service_account`.
    * </pre>
    *
    * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -129,8 +140,19 @@ public interface ReasoningEngineSpecOrBuilder
    * Optional. The service account that the Reasoning Engine artifact runs as.
    * It should have "roles/storage.objectViewer" for reading the user project's
    * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-   * will be used.
+   * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+   * Vertex AI Reasoning Engine Service Agent in the project will be used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). For sensitive resources such as Secret
+   * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+   * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+   * custom `service_account`.
    * </pre>
    *
    * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -146,8 +168,19 @@ public interface ReasoningEngineSpecOrBuilder
    * Optional. The service account that the Reasoning Engine artifact runs as.
    * It should have "roles/storage.objectViewer" for reading the user project's
    * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-   * will be used.
+   * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+   * Vertex AI Reasoning Engine Service Agent in the project will be used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). For sensitive resources such as Secret
+   * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+   * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+   * custom `service_account`.
    * </pre>
    *
    * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -366,6 +399,17 @@ public interface ReasoningEngineSpecOrBuilder
    * specified, the `service_account` field will be used if set, otherwise the
    * default Vertex AI Reasoning Engine Service Agent in the project will be
    * used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+   * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+   * dedicated custom `service_account` when granting access to sensitive
+   * resources such as Secret Manager secrets.
    * </pre>
    *
    * <code>
@@ -384,6 +428,17 @@ public interface ReasoningEngineSpecOrBuilder
    * specified, the `service_account` field will be used if set, otherwise the
    * default Vertex AI Reasoning Engine Service Agent in the project will be
    * used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+   * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+   * dedicated custom `service_account` when granting access to sensitive
+   * resources such as Secret Manager secrets.
    * </pre>
    *
    * <code>

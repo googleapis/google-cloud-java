@@ -65,6 +65,17 @@ public enum PresetTopology implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STAR = 3;</code>
    */
   STAR(3),
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid inspection has 4 groups ('non-prod', 'prod', 'services', and
+   * 'untrusted') that are automatically created along with hub creation.
+   * </pre>
+   *
+   * <code>HYBRID_INSPECTION = 4;</code>
+   */
+  HYBRID_INSPECTION(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -115,6 +126,18 @@ public enum PresetTopology implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int STAR_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * Hybrid inspection has 4 groups ('non-prod', 'prod', 'services', and
+   * 'untrusted') that are automatically created along with hub creation.
+   * </pre>
+   *
+   * <code>HYBRID_INSPECTION = 4;</code>
+   */
+  public static final int HYBRID_INSPECTION_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -145,6 +168,8 @@ public enum PresetTopology implements com.google.protobuf.ProtocolMessageEnum {
         return MESH;
       case 3:
         return STAR;
+      case 4:
+        return HYBRID_INSPECTION;
       default:
         return null;
     }
@@ -174,7 +199,7 @@ public enum PresetTopology implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(5);
+    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final PresetTopology[] VALUES = values();

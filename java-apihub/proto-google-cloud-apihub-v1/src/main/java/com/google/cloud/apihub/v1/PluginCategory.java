@@ -168,7 +168,7 @@ public enum PluginCategory implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.apihub.v1.CommonFieldsProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.cloud.apihub.v1.CommonFieldsProto.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final PluginCategory[] VALUES = values();

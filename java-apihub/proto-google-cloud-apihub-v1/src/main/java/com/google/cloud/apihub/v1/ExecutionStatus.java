@@ -384,6 +384,36 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result metadata of the last execution of the plugin
+     * instance. This will be a string representation of a JSON object and will
+     * be available on successful execution.
+     * </pre>
+     *
+     * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The resultMetadata.
+     */
+    java.lang.String getResultMetadata();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result metadata of the last execution of the plugin
+     * instance. This will be a string representation of a JSON object and will
+     * be available on successful execution.
+     * </pre>
+     *
+     * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for resultMetadata.
+     */
+    com.google.protobuf.ByteString getResultMetadataBytes();
   }
 
   /**
@@ -419,6 +449,7 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
     private LastExecution() {
       result_ = 0;
       errorMessage_ = "";
+      resultMetadata_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -810,6 +841,63 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
 
+    public static final int RESULT_METADATA_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object resultMetadata_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result metadata of the last execution of the plugin
+     * instance. This will be a string representation of a JSON object and will
+     * be available on successful execution.
+     * </pre>
+     *
+     * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The resultMetadata.
+     */
+    @java.lang.Override
+    public java.lang.String getResultMetadata() {
+      java.lang.Object ref = resultMetadata_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resultMetadata_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The result metadata of the last execution of the plugin
+     * instance. This will be a string representation of a JSON object and will
+     * be available on successful execution.
+     * </pre>
+     *
+     * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for resultMetadata.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getResultMetadataBytes() {
+      java.lang.Object ref = resultMetadata_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resultMetadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -838,6 +926,9 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(4, getEndTime());
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resultMetadata_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, resultMetadata_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -860,6 +951,9 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getEndTime());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resultMetadata_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, resultMetadata_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -887,6 +981,7 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
       if (hasEndTime()) {
         if (!getEndTime().equals(other.getEndTime())) return false;
       }
+      if (!getResultMetadata().equals(other.getResultMetadata())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -910,6 +1005,8 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + END_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getEndTime().hashCode();
       }
+      hash = (37 * hash) + RESULT_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getResultMetadata().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1073,6 +1170,7 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
           endTimeBuilder_.dispose();
           endTimeBuilder_ = null;
         }
+        resultMetadata_ = "";
         return this;
       }
 
@@ -1124,6 +1222,9 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
           result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.resultMetadata_ = resultMetadata_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1153,6 +1254,11 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasEndTime()) {
           mergeEndTime(other.getEndTime());
+        }
+        if (!other.getResultMetadata().isEmpty()) {
+          resultMetadata_ = other.resultMetadata_;
+          bitField0_ |= 0x00000010;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1206,6 +1312,12 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 42:
+                {
+                  resultMetadata_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1858,6 +1970,127 @@ public final class ExecutionStatus extends com.google.protobuf.GeneratedMessage
           endTime_ = null;
         }
         return endTimeBuilder_;
+      }
+
+      private java.lang.Object resultMetadata_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The result metadata of the last execution of the plugin
+       * instance. This will be a string representation of a JSON object and will
+       * be available on successful execution.
+       * </pre>
+       *
+       * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The resultMetadata.
+       */
+      public java.lang.String getResultMetadata() {
+        java.lang.Object ref = resultMetadata_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resultMetadata_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The result metadata of the last execution of the plugin
+       * instance. This will be a string representation of a JSON object and will
+       * be available on successful execution.
+       * </pre>
+       *
+       * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for resultMetadata.
+       */
+      public com.google.protobuf.ByteString getResultMetadataBytes() {
+        java.lang.Object ref = resultMetadata_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resultMetadata_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The result metadata of the last execution of the plugin
+       * instance. This will be a string representation of a JSON object and will
+       * be available on successful execution.
+       * </pre>
+       *
+       * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The resultMetadata to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResultMetadata(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resultMetadata_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The result metadata of the last execution of the plugin
+       * instance. This will be a string representation of a JSON object and will
+       * be available on successful execution.
+       * </pre>
+       *
+       * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResultMetadata() {
+        resultMetadata_ = getDefaultInstance().getResultMetadata();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The result metadata of the last execution of the plugin
+       * instance. This will be a string representation of a JSON object and will
+       * be available on successful execution.
+       * </pre>
+       *
+       * <code>string result_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for resultMetadata to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResultMetadataBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        resultMetadata_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.ExecutionStatus.LastExecution)

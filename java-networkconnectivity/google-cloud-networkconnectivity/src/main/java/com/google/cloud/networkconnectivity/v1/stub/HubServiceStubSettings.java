@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkconnectivity.v1.stub;
 
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGatewayAdvertisedRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGroupsPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubSpokesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
@@ -60,10 +61,14 @@ import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptHubSpokeResponse;
 import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest;
 import com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateResponse;
+import com.google.cloud.networkconnectivity.v1.CreateGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
 import com.google.cloud.networkconnectivity.v1.CreateSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.DeleteGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteHubRequest;
 import com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest;
+import com.google.cloud.networkconnectivity.v1.GatewayAdvertisedRoute;
+import com.google.cloud.networkconnectivity.v1.GetGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.GetGroupRequest;
 import com.google.cloud.networkconnectivity.v1.GetHubRequest;
 import com.google.cloud.networkconnectivity.v1.GetRouteRequest;
@@ -72,6 +77,8 @@ import com.google.cloud.networkconnectivity.v1.GetSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.Group;
 import com.google.cloud.networkconnectivity.v1.Hub;
 import com.google.cloud.networkconnectivity.v1.HubStatusEntry;
+import com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesRequest;
+import com.google.cloud.networkconnectivity.v1.ListGatewayAdvertisedRoutesResponse;
 import com.google.cloud.networkconnectivity.v1.ListGroupsRequest;
 import com.google.cloud.networkconnectivity.v1.ListGroupsResponse;
 import com.google.cloud.networkconnectivity.v1.ListHubSpokesRequest;
@@ -94,6 +101,7 @@ import com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateResponse;
 import com.google.cloud.networkconnectivity.v1.Route;
 import com.google.cloud.networkconnectivity.v1.RouteTable;
 import com.google.cloud.networkconnectivity.v1.Spoke;
+import com.google.cloud.networkconnectivity.v1.UpdateGatewayAdvertisedRouteRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateGroupRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateHubRequest;
 import com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest;
@@ -257,6 +265,27 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
   private final UnaryCallSettings<UpdateGroupRequest, Operation> updateGroupSettings;
   private final OperationCallSettings<UpdateGroupRequest, Group, OperationMetadata>
       updateGroupOperationSettings;
+  private final UnaryCallSettings<CreateGatewayAdvertisedRouteRequest, Operation>
+      createGatewayAdvertisedRouteSettings;
+  private final OperationCallSettings<
+          CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteOperationSettings;
+  private final UnaryCallSettings<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+      getGatewayAdvertisedRouteSettings;
+  private final PagedCallSettings<
+          ListGatewayAdvertisedRoutesRequest,
+          ListGatewayAdvertisedRoutesResponse,
+          ListGatewayAdvertisedRoutesPagedResponse>
+      listGatewayAdvertisedRoutesSettings;
+  private final UnaryCallSettings<UpdateGatewayAdvertisedRouteRequest, Operation>
+      updateGatewayAdvertisedRouteSettings;
+  private final OperationCallSettings<
+          UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteOperationSettings;
+  private final UnaryCallSettings<DeleteGatewayAdvertisedRouteRequest, Operation>
+      deleteGatewayAdvertisedRouteSettings;
+  private final OperationCallSettings<DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+      deleteGatewayAdvertisedRouteOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -509,6 +538,53 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<
+          ListGatewayAdvertisedRoutesRequest,
+          ListGatewayAdvertisedRoutesResponse,
+          GatewayAdvertisedRoute>
+      LIST_GATEWAY_ADVERTISED_ROUTES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGatewayAdvertisedRoutesRequest,
+              ListGatewayAdvertisedRoutesResponse,
+              GatewayAdvertisedRoute>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGatewayAdvertisedRoutesRequest injectToken(
+                ListGatewayAdvertisedRoutesRequest payload, String token) {
+              return ListGatewayAdvertisedRoutesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListGatewayAdvertisedRoutesRequest injectPageSize(
+                ListGatewayAdvertisedRoutesRequest payload, int pageSize) {
+              return ListGatewayAdvertisedRoutesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGatewayAdvertisedRoutesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGatewayAdvertisedRoutesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<GatewayAdvertisedRoute> extractResources(
+                ListGatewayAdvertisedRoutesResponse payload) {
+              return payload.getGatewayAdvertisedRoutesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -660,6 +736,35 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               PageContext<ListGroupsRequest, ListGroupsResponse, Group> pageContext =
                   PageContext.create(callable, LIST_GROUPS_PAGE_STR_DESC, request, context);
               return ListGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGatewayAdvertisedRoutesRequest,
+          ListGatewayAdvertisedRoutesResponse,
+          ListGatewayAdvertisedRoutesPagedResponse>
+      LIST_GATEWAY_ADVERTISED_ROUTES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGatewayAdvertisedRoutesRequest,
+              ListGatewayAdvertisedRoutesResponse,
+              ListGatewayAdvertisedRoutesPagedResponse>() {
+            @Override
+            public ApiFuture<ListGatewayAdvertisedRoutesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListGatewayAdvertisedRoutesRequest, ListGatewayAdvertisedRoutesResponse>
+                    callable,
+                ListGatewayAdvertisedRoutesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGatewayAdvertisedRoutesResponse> futureResponse) {
+              PageContext<
+                      ListGatewayAdvertisedRoutesRequest,
+                      ListGatewayAdvertisedRoutesResponse,
+                      GatewayAdvertisedRoute>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GATEWAY_ADVERTISED_ROUTES_PAGE_STR_DESC, request, context);
+              return ListGatewayAdvertisedRoutesPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -872,6 +977,59 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     return updateGroupOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to createGatewayAdvertisedRoute. */
+  public UnaryCallSettings<CreateGatewayAdvertisedRouteRequest, Operation>
+      createGatewayAdvertisedRouteSettings() {
+    return createGatewayAdvertisedRouteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createGatewayAdvertisedRoute. */
+  public OperationCallSettings<
+          CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteOperationSettings() {
+    return createGatewayAdvertisedRouteOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getGatewayAdvertisedRoute. */
+  public UnaryCallSettings<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+      getGatewayAdvertisedRouteSettings() {
+    return getGatewayAdvertisedRouteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listGatewayAdvertisedRoutes. */
+  public PagedCallSettings<
+          ListGatewayAdvertisedRoutesRequest,
+          ListGatewayAdvertisedRoutesResponse,
+          ListGatewayAdvertisedRoutesPagedResponse>
+      listGatewayAdvertisedRoutesSettings() {
+    return listGatewayAdvertisedRoutesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewayAdvertisedRoute. */
+  public UnaryCallSettings<UpdateGatewayAdvertisedRouteRequest, Operation>
+      updateGatewayAdvertisedRouteSettings() {
+    return updateGatewayAdvertisedRouteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewayAdvertisedRoute. */
+  public OperationCallSettings<
+          UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteOperationSettings() {
+    return updateGatewayAdvertisedRouteOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewayAdvertisedRoute. */
+  public UnaryCallSettings<DeleteGatewayAdvertisedRouteRequest, Operation>
+      deleteGatewayAdvertisedRouteSettings() {
+    return deleteGatewayAdvertisedRouteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewayAdvertisedRoute. */
+  public OperationCallSettings<DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+      deleteGatewayAdvertisedRouteOperationSettings() {
+    return deleteGatewayAdvertisedRouteOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1016,6 +1174,21 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     listGroupsSettings = settingsBuilder.listGroupsSettings().build();
     updateGroupSettings = settingsBuilder.updateGroupSettings().build();
     updateGroupOperationSettings = settingsBuilder.updateGroupOperationSettings().build();
+    createGatewayAdvertisedRouteSettings =
+        settingsBuilder.createGatewayAdvertisedRouteSettings().build();
+    createGatewayAdvertisedRouteOperationSettings =
+        settingsBuilder.createGatewayAdvertisedRouteOperationSettings().build();
+    getGatewayAdvertisedRouteSettings = settingsBuilder.getGatewayAdvertisedRouteSettings().build();
+    listGatewayAdvertisedRoutesSettings =
+        settingsBuilder.listGatewayAdvertisedRoutesSettings().build();
+    updateGatewayAdvertisedRouteSettings =
+        settingsBuilder.updateGatewayAdvertisedRouteSettings().build();
+    updateGatewayAdvertisedRouteOperationSettings =
+        settingsBuilder.updateGatewayAdvertisedRouteOperationSettings().build();
+    deleteGatewayAdvertisedRouteSettings =
+        settingsBuilder.deleteGatewayAdvertisedRouteSettings().build();
+    deleteGatewayAdvertisedRouteOperationSettings =
+        settingsBuilder.deleteGatewayAdvertisedRouteOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1102,6 +1275,29 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     private final UnaryCallSettings.Builder<UpdateGroupRequest, Operation> updateGroupSettings;
     private final OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
         updateGroupOperationSettings;
+    private final UnaryCallSettings.Builder<CreateGatewayAdvertisedRouteRequest, Operation>
+        createGatewayAdvertisedRouteSettings;
+    private final OperationCallSettings.Builder<
+            CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+        createGatewayAdvertisedRouteOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+        getGatewayAdvertisedRouteSettings;
+    private final PagedCallSettings.Builder<
+            ListGatewayAdvertisedRoutesRequest,
+            ListGatewayAdvertisedRoutesResponse,
+            ListGatewayAdvertisedRoutesPagedResponse>
+        listGatewayAdvertisedRoutesSettings;
+    private final UnaryCallSettings.Builder<UpdateGatewayAdvertisedRouteRequest, Operation>
+        updateGatewayAdvertisedRouteSettings;
+    private final OperationCallSettings.Builder<
+            UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+        updateGatewayAdvertisedRouteOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteGatewayAdvertisedRouteRequest, Operation>
+        deleteGatewayAdvertisedRouteSettings;
+    private final OperationCallSettings.Builder<
+            DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+        deleteGatewayAdvertisedRouteOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1192,6 +1388,15 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       listGroupsSettings = PagedCallSettings.newBuilder(LIST_GROUPS_PAGE_STR_FACT);
       updateGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateGroupOperationSettings = OperationCallSettings.newBuilder();
+      createGatewayAdvertisedRouteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createGatewayAdvertisedRouteOperationSettings = OperationCallSettings.newBuilder();
+      getGatewayAdvertisedRouteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listGatewayAdvertisedRoutesSettings =
+          PagedCallSettings.newBuilder(LIST_GATEWAY_ADVERTISED_ROUTES_PAGE_STR_FACT);
+      updateGatewayAdvertisedRouteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateGatewayAdvertisedRouteOperationSettings = OperationCallSettings.newBuilder();
+      deleteGatewayAdvertisedRouteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteGatewayAdvertisedRouteOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1223,6 +1428,11 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               getGroupSettings,
               listGroupsSettings,
               updateGroupSettings,
+              createGatewayAdvertisedRouteSettings,
+              getGatewayAdvertisedRouteSettings,
+              listGatewayAdvertisedRoutesSettings,
+              updateGatewayAdvertisedRouteSettings,
+              deleteGatewayAdvertisedRouteSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1268,6 +1478,21 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
       listGroupsSettings = settings.listGroupsSettings.toBuilder();
       updateGroupSettings = settings.updateGroupSettings.toBuilder();
       updateGroupOperationSettings = settings.updateGroupOperationSettings.toBuilder();
+      createGatewayAdvertisedRouteSettings =
+          settings.createGatewayAdvertisedRouteSettings.toBuilder();
+      createGatewayAdvertisedRouteOperationSettings =
+          settings.createGatewayAdvertisedRouteOperationSettings.toBuilder();
+      getGatewayAdvertisedRouteSettings = settings.getGatewayAdvertisedRouteSettings.toBuilder();
+      listGatewayAdvertisedRoutesSettings =
+          settings.listGatewayAdvertisedRoutesSettings.toBuilder();
+      updateGatewayAdvertisedRouteSettings =
+          settings.updateGatewayAdvertisedRouteSettings.toBuilder();
+      updateGatewayAdvertisedRouteOperationSettings =
+          settings.updateGatewayAdvertisedRouteOperationSettings.toBuilder();
+      deleteGatewayAdvertisedRouteSettings =
+          settings.deleteGatewayAdvertisedRouteSettings.toBuilder();
+      deleteGatewayAdvertisedRouteOperationSettings =
+          settings.deleteGatewayAdvertisedRouteOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1299,6 +1524,11 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
               getGroupSettings,
               listGroupsSettings,
               updateGroupSettings,
+              createGatewayAdvertisedRouteSettings,
+              getGatewayAdvertisedRouteSettings,
+              listGatewayAdvertisedRoutesSettings,
+              updateGatewayAdvertisedRouteSettings,
+              deleteGatewayAdvertisedRouteSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1431,6 +1661,31 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
 
       builder
           .updateGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createGatewayAdvertisedRouteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getGatewayAdvertisedRouteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listGatewayAdvertisedRoutesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateGatewayAdvertisedRouteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteGatewayAdvertisedRouteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1716,6 +1971,81 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createGatewayAdvertisedRouteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateGatewayAdvertisedRouteRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GatewayAdvertisedRoute.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateGatewayAdvertisedRouteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateGatewayAdvertisedRouteRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(GatewayAdvertisedRoute.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteGatewayAdvertisedRouteOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteGatewayAdvertisedRouteRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1929,6 +2259,60 @@ public class HubServiceStubSettings extends StubSettings<HubServiceStubSettings>
     public OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
         updateGroupOperationSettings() {
       return updateGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewayAdvertisedRoute. */
+    public UnaryCallSettings.Builder<CreateGatewayAdvertisedRouteRequest, Operation>
+        createGatewayAdvertisedRouteSettings() {
+      return createGatewayAdvertisedRouteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewayAdvertisedRoute. */
+    public OperationCallSettings.Builder<
+            CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+        createGatewayAdvertisedRouteOperationSettings() {
+      return createGatewayAdvertisedRouteOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewayAdvertisedRoute. */
+    public UnaryCallSettings.Builder<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+        getGatewayAdvertisedRouteSettings() {
+      return getGatewayAdvertisedRouteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewayAdvertisedRoutes. */
+    public PagedCallSettings.Builder<
+            ListGatewayAdvertisedRoutesRequest,
+            ListGatewayAdvertisedRoutesResponse,
+            ListGatewayAdvertisedRoutesPagedResponse>
+        listGatewayAdvertisedRoutesSettings() {
+      return listGatewayAdvertisedRoutesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewayAdvertisedRoute. */
+    public UnaryCallSettings.Builder<UpdateGatewayAdvertisedRouteRequest, Operation>
+        updateGatewayAdvertisedRouteSettings() {
+      return updateGatewayAdvertisedRouteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewayAdvertisedRoute. */
+    public OperationCallSettings.Builder<
+            UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+        updateGatewayAdvertisedRouteOperationSettings() {
+      return updateGatewayAdvertisedRouteOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewayAdvertisedRoute. */
+    public UnaryCallSettings.Builder<DeleteGatewayAdvertisedRouteRequest, Operation>
+        deleteGatewayAdvertisedRouteSettings() {
+      return deleteGatewayAdvertisedRouteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewayAdvertisedRoute. */
+    public OperationCallSettings.Builder<
+            DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+        deleteGatewayAdvertisedRouteOperationSettings() {
+      return deleteGatewayAdvertisedRouteOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -37,7 +37,9 @@ public class SyncGetAgent {
     try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
       GetAgentRequest request =
           GetAgentRequest.newBuilder()
-              .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setName(
+                  AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]")
+                      .toString())
               .build();
       Agent response = agentRegistryClient.getAgent(request);
     }

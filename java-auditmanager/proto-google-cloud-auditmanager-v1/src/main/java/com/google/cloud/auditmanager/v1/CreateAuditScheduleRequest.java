@@ -82,11 +82,12 @@ public final class CreateAuditScheduleRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Project or folder that this audit schedule is for, in one of the
-   * following formats:
+   * Required. Project, folder, or organization that this audit schedule is for,
+   * in one of the following formats:
    *
    * * `projects/{project}/locations/{location}`
    * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -112,11 +113,12 @@ public final class CreateAuditScheduleRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Project or folder that this audit schedule is for, in one of the
-   * following formats:
+   * Required. Project, folder, or organization that this audit schedule is for,
+   * in one of the following formats:
    *
    * * `projects/{project}/locations/{location}`
    * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -691,11 +693,12 @@ public final class CreateAuditScheduleRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Project or folder that this audit schedule is for, in one of the
-     * following formats:
+     * Required. Project, folder, or organization that this audit schedule is for,
+     * in one of the following formats:
      *
      * * `projects/{project}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -720,11 +723,12 @@ public final class CreateAuditScheduleRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Project or folder that this audit schedule is for, in one of the
-     * following formats:
+     * Required. Project, folder, or organization that this audit schedule is for,
+     * in one of the following formats:
      *
      * * `projects/{project}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -749,11 +753,12 @@ public final class CreateAuditScheduleRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Project or folder that this audit schedule is for, in one of the
-     * following formats:
+     * Required. Project, folder, or organization that this audit schedule is for,
+     * in one of the following formats:
      *
      * * `projects/{project}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -777,11 +782,12 @@ public final class CreateAuditScheduleRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Project or folder that this audit schedule is for, in one of the
-     * following formats:
+     * Required. Project, folder, or organization that this audit schedule is for,
+     * in one of the following formats:
      *
      * * `projects/{project}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>
@@ -801,11 +807,12 @@ public final class CreateAuditScheduleRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Project or folder that this audit schedule is for, in one of the
-     * following formats:
+     * Required. Project, folder, or organization that this audit schedule is for,
+     * in one of the following formats:
      *
      * * `projects/{project}/locations/{location}`
      * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>

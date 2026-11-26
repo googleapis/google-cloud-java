@@ -146,7 +146,10 @@ import org.jspecify.annotations.Nullable;
 public class ApiHubCollectStubSettings extends StubSettings<ApiHubCollectStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/apihub.readwrite")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<CollectApiDataRequest, Operation> collectApiDataSettings;
   private final OperationCallSettings<

@@ -24,13 +24,18 @@ import static com.google.cloud.apihub.v1.ApiHubClient.ListExternalApisPagedRespo
 import static com.google.cloud.apihub.v1.ApiHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.ListSpecsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.ListVersionsPagedResponse;
+import static com.google.cloud.apihub.v1.ApiHubClient.RetrieveApiViewsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.SearchResourcesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.stub.OperationsStub;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.Api;
 import com.google.cloud.apihub.v1.ApiOperation;
 import com.google.cloud.apihub.v1.Attribute;
+import com.google.cloud.apihub.v1.ConfigureAndDeployServerRequest;
+import com.google.cloud.apihub.v1.ConfigureAndDeployServerResponse;
 import com.google.cloud.apihub.v1.CreateApiOperationRequest;
 import com.google.cloud.apihub.v1.CreateApiRequest;
 import com.google.cloud.apihub.v1.CreateAttributeRequest;
@@ -48,6 +53,8 @@ import com.google.cloud.apihub.v1.DeleteSpecRequest;
 import com.google.cloud.apihub.v1.DeleteVersionRequest;
 import com.google.cloud.apihub.v1.Deployment;
 import com.google.cloud.apihub.v1.ExternalApi;
+import com.google.cloud.apihub.v1.FetchAdditionalSpecContentRequest;
+import com.google.cloud.apihub.v1.FetchAdditionalSpecContentResponse;
 import com.google.cloud.apihub.v1.GetApiOperationRequest;
 import com.google.cloud.apihub.v1.GetApiRequest;
 import com.google.cloud.apihub.v1.GetAttributeRequest;
@@ -71,6 +78,9 @@ import com.google.cloud.apihub.v1.ListSpecsRequest;
 import com.google.cloud.apihub.v1.ListSpecsResponse;
 import com.google.cloud.apihub.v1.ListVersionsRequest;
 import com.google.cloud.apihub.v1.ListVersionsResponse;
+import com.google.cloud.apihub.v1.OperationMetadata;
+import com.google.cloud.apihub.v1.RetrieveApiViewsRequest;
+import com.google.cloud.apihub.v1.RetrieveApiViewsResponse;
 import com.google.cloud.apihub.v1.SearchResourcesRequest;
 import com.google.cloud.apihub.v1.SearchResourcesResponse;
 import com.google.cloud.apihub.v1.Spec;
@@ -87,9 +97,11 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -100,6 +112,10 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ApiHubStub implements BackgroundResource {
+
+  public @Nullable OperationsStub getHttpJsonOperationsStub() {
+    throw new UnsupportedOperationException("Not implemented: getHttpJsonOperationsStub()");
+  }
 
   public UnaryCallable<CreateApiRequest, Api> createApiCallable() {
     throw new UnsupportedOperationException("Not implemented: createApiCallable()");
@@ -159,6 +175,12 @@ public abstract class ApiHubStub implements BackgroundResource {
 
   public UnaryCallable<GetSpecContentsRequest, SpecContents> getSpecContentsCallable() {
     throw new UnsupportedOperationException("Not implemented: getSpecContentsCallable()");
+  }
+
+  public UnaryCallable<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+      fetchAdditionalSpecContentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchAdditionalSpecContentCallable()");
   }
 
   public UnaryCallable<ListSpecsRequest, ListSpecsPagedResponse> listSpecsPagedCallable() {
@@ -290,6 +312,28 @@ public abstract class ApiHubStub implements BackgroundResource {
   public UnaryCallable<ListExternalApisRequest, ListExternalApisResponse>
       listExternalApisCallable() {
     throw new UnsupportedOperationException("Not implemented: listExternalApisCallable()");
+  }
+
+  public UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsPagedResponse>
+      retrieveApiViewsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: retrieveApiViewsPagedCallable()");
+  }
+
+  public UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsResponse>
+      retrieveApiViewsCallable() {
+    throw new UnsupportedOperationException("Not implemented: retrieveApiViewsCallable()");
+  }
+
+  public OperationCallable<
+          ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: configureAndDeployServerOperationCallable()");
+  }
+
+  public UnaryCallable<ConfigureAndDeployServerRequest, Operation>
+      configureAndDeployServerCallable() {
+    throw new UnsupportedOperationException("Not implemented: configureAndDeployServerCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

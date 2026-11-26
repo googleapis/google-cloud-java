@@ -19,9 +19,12 @@ package com.google.cloud.apihub.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.stub.ApiHubStub;
@@ -31,6 +34,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -143,6 +147,7 @@ import org.jspecify.annotations.Nullable;
  * <li>  [maturity_level][google.cloud.apihub.v1.Api.maturity_level]
  * <li>  [api_style][google.cloud.apihub.v1.Api.api_style]
  * <li>  [attributes][google.cloud.apihub.v1.Api.attributes]
+ * <li>  [fingerprint][google.cloud.apihub.v1.Api.fingerprint]
  * </ul>
  * <p>  The [update_mask][google.cloud.apihub.v1.UpdateApiRequest.update_mask] should be used to specify the fields being updated.
  * <p>  Updating the owner field requires complete owner message and updates both owner and email fields.</td>
@@ -346,6 +351,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> FetchAdditionalSpecContent</td>
+ *      <td><p> Fetch additional spec content.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchAdditionalSpecContent(FetchAdditionalSpecContentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchAdditionalSpecContent(SpecName name, SpecContentType specContentType)
+ *           <li><p> fetchAdditionalSpecContent(String name, SpecContentType specContentType)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchAdditionalSpecContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListSpecs</td>
  *      <td><p> List specs corresponding to a particular API resource.</td>
  *      <td>
@@ -396,7 +420,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteSpec</td>
- *      <td><p> Delete a spec. Deleting a spec will also delete the associated operations from the version.</td>
+ *      <td><p> Delete a spec. Deleting a spec will also delete the associated operations from the version and remove any links between the spec and deployments.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -481,6 +505,18 @@ import org.jspecify.annotations.Nullable;
  * <li>  [details.http_operation.method][ApiOperation.details.http_operation.method]
  * <li>  [details.deprecated][ApiOperation.details.deprecated]
  * <li>  [attributes][google.cloud.apihub.v1.ApiOperation.attributes]
+ * <li>  [details.mcp_tool.title][ApiOperation.details.mcp_tool.title]
+ * <li>  [details.mcp_tool.description][ApiOperation.details.mcp_tool.description]
+ * <li>  [details.mcp_tool.input_schema][ApiOperation.details.mcp_tool.input_schema]
+ * <li>  [details.mcp_tool.output_schema][ApiOperation.details.mcp_tool.output_schema]
+ * <li>  [details.input_schema][ApiOperation.details.input_schema]
+ * <li>  [details.output_schema][ApiOperation.details.output_schema]
+ * <li>  [details.mcp_tool.annotations.title][ApiOperation.details.mcp_tool.annotations.title]
+ * <li>  [details.mcp_tool.annotations.read_only_hint][ApiOperation.details.mcp_tool.annotations.read_only_hint]
+ * <li>  [details.mcp_tool.annotations.destructive_hint][ApiOperation.details.mcp_tool.annotations.destructive_hint]
+ * <li>  [details.mcp_tool.annotations.idempotent_hint][ApiOperation.details.mcp_tool.annotations.idempotent_hint]
+ * <li>  [details.mcp_tool.annotations.open_world_hint][ApiOperation.details.mcp_tool.annotations.open_world_hint]
+ * <li>  [details.mcp_tool.annotations.additional_hints][ApiOperation.details.mcp_tool.annotations.additional_hints]
  * </ul>
  * <p>  The [update_mask][google.cloud.apihub.v1.UpdateApiOperationRequest.update_mask] should be used to specify the fields being updated.
  * <p>  An operation can be updated only if the operation was created via [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API. If the operation was created by parsing the spec, then it can be edited by updating the spec.</td>
@@ -501,7 +537,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteApiOperation</td>
- *      <td><p> Delete an operation in an API version and we can delete only the operations created via create API. If the operation was created by parsing the spec, then it can be deleted by editing or deleting the spec.</td>
+ *      <td><p> Delete an operation in an API version and we can delete only the operations created via create API. If the operation was created by parsing the spec, then it can be deleted by editing or deleting the spec. Deleting an operation will also remove any links between the operation and deployments.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -630,7 +666,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteDeployment</td>
- *      <td><p> Delete a deployment resource in the API hub.</td>
+ *      <td><p> Deletes a deployment resource in the API hub. A deployment can only be deleted after its links to any versions, specs, and API operations have been removed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -875,8 +911,50 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RetrieveApiViews</td>
+ *      <td><p> Retrieve API views.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> retrieveApiViews(RetrieveApiViewsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> retrieveApiViews(LocationName parent, ApiViewType view)
+ *           <li><p> retrieveApiViews(String parent, ApiViewType view)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> retrieveApiViewsPagedCallable()
+ *           <li><p> retrieveApiViewsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ConfigureAndDeployServer</td>
+ *      <td><p> Configures and deploys a given server config for given target. Currently this API supports only deploying MCP server in Apigee X. For mcp server deployment in apigee X, if there is already a mcp proxy deployed, then this method will try to overwrite it by creating new revision i.e. all existing tools will be removed and new set of tools will be deployed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> configureAndDeployServerAsync(ConfigureAndDeployServerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> configureAndDeployServerAsync(LocationName parent, McpServerConfig mcpServerConfig)
+ *           <li><p> configureAndDeployServerAsync(String parent, McpServerConfig mcpServerConfig)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> configureAndDeployServerOperationCallable()
+ *           <li><p> configureAndDeployServerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -948,6 +1026,7 @@ import org.jspecify.annotations.Nullable;
 public class ApiHubClient implements BackgroundResource {
   private final @Nullable ApiHubSettings settings;
   private final ApiHubStub stub;
+  private final OperationsClient httpJsonOperationsClient;
 
   /** Constructs an instance of ApiHubClient with default settings. */
   public static final ApiHubClient create() throws IOException {
@@ -977,11 +1056,13 @@ public class ApiHubClient implements BackgroundResource {
   protected ApiHubClient(ApiHubSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((ApiHubStubSettings) settings.getStubSettings()).createStub();
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected ApiHubClient(ApiHubStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   public final @Nullable ApiHubSettings getSettings() {
@@ -990,6 +1071,14 @@ public class ApiHubClient implements BackgroundResource {
 
   public ApiHubStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1426,6 +1515,7 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[maturity_level][google.cloud.apihub.v1.Api.maturity_level]
    *   <li>[api_style][google.cloud.apihub.v1.Api.api_style]
    *   <li>[attributes][google.cloud.apihub.v1.Api.attributes]
+   *   <li>[fingerprint][google.cloud.apihub.v1.Api.fingerprint]
    * </ul>
    *
    * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiRequest.update_mask] should be used to
@@ -1477,6 +1567,7 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[maturity_level][google.cloud.apihub.v1.Api.maturity_level]
    *   <li>[api_style][google.cloud.apihub.v1.Api.api_style]
    *   <li>[attributes][google.cloud.apihub.v1.Api.attributes]
+   *   <li>[fingerprint][google.cloud.apihub.v1.Api.fingerprint]
    * </ul>
    *
    * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiRequest.update_mask] should be used to
@@ -1526,6 +1617,7 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[maturity_level][google.cloud.apihub.v1.Api.maturity_level]
    *   <li>[api_style][google.cloud.apihub.v1.Api.api_style]
    *   <li>[attributes][google.cloud.apihub.v1.Api.attributes]
+   *   <li>[fingerprint][google.cloud.apihub.v1.Api.fingerprint]
    * </ul>
    *
    * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiRequest.update_mask] should be used to
@@ -2789,6 +2881,140 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Fetch additional spec content.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   SpecName name = SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]");
+   *   SpecContentType specContentType = SpecContentType.forNumber(0);
+   *   FetchAdditionalSpecContentResponse response =
+   *       apiHubClient.fetchAdditionalSpecContent(name, specContentType);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the spec whose contents need to be retrieved. Format:
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+   * @param specContentType Optional. The type of the spec contents to be retrieved.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAdditionalSpecContentResponse fetchAdditionalSpecContent(
+      @Nullable SpecName name, SpecContentType specContentType) {
+    FetchAdditionalSpecContentRequest request =
+        FetchAdditionalSpecContentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpecContentType(specContentType)
+            .build();
+    return fetchAdditionalSpecContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch additional spec content.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   String name =
+   *       SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]").toString();
+   *   SpecContentType specContentType = SpecContentType.forNumber(0);
+   *   FetchAdditionalSpecContentResponse response =
+   *       apiHubClient.fetchAdditionalSpecContent(name, specContentType);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the spec whose contents need to be retrieved. Format:
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+   * @param specContentType Optional. The type of the spec contents to be retrieved.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAdditionalSpecContentResponse fetchAdditionalSpecContent(
+      String name, SpecContentType specContentType) {
+    FetchAdditionalSpecContentRequest request =
+        FetchAdditionalSpecContentRequest.newBuilder()
+            .setName(name)
+            .setSpecContentType(specContentType)
+            .build();
+    return fetchAdditionalSpecContent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch additional spec content.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   FetchAdditionalSpecContentRequest request =
+   *       FetchAdditionalSpecContentRequest.newBuilder()
+   *           .setName(
+   *               SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]").toString())
+   *           .setSpecContentType(SpecContentType.forNumber(0))
+   *           .build();
+   *   FetchAdditionalSpecContentResponse response =
+   *       apiHubClient.fetchAdditionalSpecContent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAdditionalSpecContentResponse fetchAdditionalSpecContent(
+      FetchAdditionalSpecContentRequest request) {
+    return fetchAdditionalSpecContentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch additional spec content.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   FetchAdditionalSpecContentRequest request =
+   *       FetchAdditionalSpecContentRequest.newBuilder()
+   *           .setName(
+   *               SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]").toString())
+   *           .setSpecContentType(SpecContentType.forNumber(0))
+   *           .build();
+   *   ApiFuture<FetchAdditionalSpecContentResponse> future =
+   *       apiHubClient.fetchAdditionalSpecContentCallable().futureCall(request);
+   *   // Do something.
+   *   FetchAdditionalSpecContentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+      fetchAdditionalSpecContentCallable() {
+    return stub.fetchAdditionalSpecContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * List specs corresponding to a particular API resource.
    *
    * <p>Sample code:
@@ -3100,7 +3326,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a spec. Deleting a spec will also delete the associated operations from the version.
+   * Delete a spec. Deleting a spec will also delete the associated operations from the version and
+   * remove any links between the spec and deployments.
    *
    * <p>Sample code:
    *
@@ -3128,7 +3355,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a spec. Deleting a spec will also delete the associated operations from the version.
+   * Delete a spec. Deleting a spec will also delete the associated operations from the version and
+   * remove any links between the spec and deployments.
    *
    * <p>Sample code:
    *
@@ -3156,7 +3384,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a spec. Deleting a spec will also delete the associated operations from the version.
+   * Delete a spec. Deleting a spec will also delete the associated operations from the version and
+   * remove any links between the spec and deployments.
    *
    * <p>Sample code:
    *
@@ -3185,7 +3414,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a spec. Deleting a spec will also delete the associated operations from the version.
+   * Delete a spec. Deleting a spec will also delete the associated operations from the version and
+   * remove any links between the spec and deployments.
    *
    * <p>Sample code:
    *
@@ -3244,7 +3474,7 @@ public class ApiHubClient implements BackgroundResource {
    *     </ul>
    *     <p>This value should be 4-500 characters, overall resource name which will be of format
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-   *     its length is limited to 700 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
+   *     its length is limited to 1000 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiOperation createApiOperation(
@@ -3291,7 +3521,7 @@ public class ApiHubClient implements BackgroundResource {
    *     </ul>
    *     <p>This value should be 4-500 characters, overall resource name which will be of format
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-   *     its length is limited to 700 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
+   *     its length is limited to 1000 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiOperation createApiOperation(
@@ -3667,6 +3897,18 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[details.http_operation.method][ApiOperation.details.http_operation.method]
    *   <li>[details.deprecated][ApiOperation.details.deprecated]
    *   <li>[attributes][google.cloud.apihub.v1.ApiOperation.attributes]
+   *   <li>[details.mcp_tool.title][ApiOperation.details.mcp_tool.title]
+   *   <li>[details.mcp_tool.description][ApiOperation.details.mcp_tool.description]
+   *   <li>[details.mcp_tool.input_schema][ApiOperation.details.mcp_tool.input_schema]
+   *   <li>[details.mcp_tool.output_schema][ApiOperation.details.mcp_tool.output_schema]
+   *   <li>[details.input_schema][ApiOperation.details.input_schema]
+   *   <li>[details.output_schema][ApiOperation.details.output_schema]
+   *   <li>[details.mcp_tool.annotations.title][ApiOperation.details.mcp_tool.annotations.title]
+   *   <li>[details.mcp_tool.annotations.read_only_hint][ApiOperation.details.mcp_tool.annotations.read_only_hint]
+   *   <li>[details.mcp_tool.annotations.destructive_hint][ApiOperation.details.mcp_tool.annotations.destructive_hint]
+   *   <li>[details.mcp_tool.annotations.idempotent_hint][ApiOperation.details.mcp_tool.annotations.idempotent_hint]
+   *   <li>[details.mcp_tool.annotations.open_world_hint][ApiOperation.details.mcp_tool.annotations.open_world_hint]
+   *   <li>[details.mcp_tool.annotations.additional_hints][ApiOperation.details.mcp_tool.annotations.additional_hints]
    * </ul>
    *
    * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiOperationRequest.update_mask] should be
@@ -3719,6 +3961,18 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[details.http_operation.method][ApiOperation.details.http_operation.method]
    *   <li>[details.deprecated][ApiOperation.details.deprecated]
    *   <li>[attributes][google.cloud.apihub.v1.ApiOperation.attributes]
+   *   <li>[details.mcp_tool.title][ApiOperation.details.mcp_tool.title]
+   *   <li>[details.mcp_tool.description][ApiOperation.details.mcp_tool.description]
+   *   <li>[details.mcp_tool.input_schema][ApiOperation.details.mcp_tool.input_schema]
+   *   <li>[details.mcp_tool.output_schema][ApiOperation.details.mcp_tool.output_schema]
+   *   <li>[details.input_schema][ApiOperation.details.input_schema]
+   *   <li>[details.output_schema][ApiOperation.details.output_schema]
+   *   <li>[details.mcp_tool.annotations.title][ApiOperation.details.mcp_tool.annotations.title]
+   *   <li>[details.mcp_tool.annotations.read_only_hint][ApiOperation.details.mcp_tool.annotations.read_only_hint]
+   *   <li>[details.mcp_tool.annotations.destructive_hint][ApiOperation.details.mcp_tool.annotations.destructive_hint]
+   *   <li>[details.mcp_tool.annotations.idempotent_hint][ApiOperation.details.mcp_tool.annotations.idempotent_hint]
+   *   <li>[details.mcp_tool.annotations.open_world_hint][ApiOperation.details.mcp_tool.annotations.open_world_hint]
+   *   <li>[details.mcp_tool.annotations.additional_hints][ApiOperation.details.mcp_tool.annotations.additional_hints]
    * </ul>
    *
    * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiOperationRequest.update_mask] should be
@@ -3765,6 +4019,18 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[details.http_operation.method][ApiOperation.details.http_operation.method]
    *   <li>[details.deprecated][ApiOperation.details.deprecated]
    *   <li>[attributes][google.cloud.apihub.v1.ApiOperation.attributes]
+   *   <li>[details.mcp_tool.title][ApiOperation.details.mcp_tool.title]
+   *   <li>[details.mcp_tool.description][ApiOperation.details.mcp_tool.description]
+   *   <li>[details.mcp_tool.input_schema][ApiOperation.details.mcp_tool.input_schema]
+   *   <li>[details.mcp_tool.output_schema][ApiOperation.details.mcp_tool.output_schema]
+   *   <li>[details.input_schema][ApiOperation.details.input_schema]
+   *   <li>[details.output_schema][ApiOperation.details.output_schema]
+   *   <li>[details.mcp_tool.annotations.title][ApiOperation.details.mcp_tool.annotations.title]
+   *   <li>[details.mcp_tool.annotations.read_only_hint][ApiOperation.details.mcp_tool.annotations.read_only_hint]
+   *   <li>[details.mcp_tool.annotations.destructive_hint][ApiOperation.details.mcp_tool.annotations.destructive_hint]
+   *   <li>[details.mcp_tool.annotations.idempotent_hint][ApiOperation.details.mcp_tool.annotations.idempotent_hint]
+   *   <li>[details.mcp_tool.annotations.open_world_hint][ApiOperation.details.mcp_tool.annotations.open_world_hint]
+   *   <li>[details.mcp_tool.annotations.additional_hints][ApiOperation.details.mcp_tool.annotations.additional_hints]
    * </ul>
    *
    * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiOperationRequest.update_mask] should be
@@ -3803,7 +4069,8 @@ public class ApiHubClient implements BackgroundResource {
   /**
    * Delete an operation in an API version and we can delete only the operations created via create
    * API. If the operation was created by parsing the spec, then it can be deleted by editing or
-   * deleting the spec.
+   * deleting the spec. Deleting an operation will also remove any links between the operation and
+   * deployments.
    *
    * <p>Sample code:
    *
@@ -3836,7 +4103,8 @@ public class ApiHubClient implements BackgroundResource {
   /**
    * Delete an operation in an API version and we can delete only the operations created via create
    * API. If the operation was created by parsing the spec, then it can be deleted by editing or
-   * deleting the spec.
+   * deleting the spec. Deleting an operation will also remove any links between the operation and
+   * deployments.
    *
    * <p>Sample code:
    *
@@ -3868,7 +4136,8 @@ public class ApiHubClient implements BackgroundResource {
   /**
    * Delete an operation in an API version and we can delete only the operations created via create
    * API. If the operation was created by parsing the spec, then it can be deleted by editing or
-   * deleting the spec.
+   * deleting the spec. Deleting an operation will also remove any links between the operation and
+   * deployments.
    *
    * <p>Sample code:
    *
@@ -3901,7 +4170,8 @@ public class ApiHubClient implements BackgroundResource {
   /**
    * Delete an operation in an API version and we can delete only the operations created via create
    * API. If the operation was created by parsing the spec, then it can be deleted by editing or
-   * deleting the spec.
+   * deleting the spec. Deleting an operation will also remove any links between the operation and
+   * deployments.
    *
    * <p>Sample code:
    *
@@ -4625,7 +4895,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a deployment resource in the API hub.
+   * Deletes a deployment resource in the API hub. A deployment can only be deleted after its links
+   * to any versions, specs, and API operations have been removed.
    *
    * <p>Sample code:
    *
@@ -4653,7 +4924,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a deployment resource in the API hub.
+   * Deletes a deployment resource in the API hub. A deployment can only be deleted after its links
+   * to any versions, specs, and API operations have been removed.
    *
    * <p>Sample code:
    *
@@ -4680,7 +4952,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a deployment resource in the API hub.
+   * Deletes a deployment resource in the API hub. A deployment can only be deleted after its links
+   * to any versions, specs, and API operations have been removed.
    *
    * <p>Sample code:
    *
@@ -4708,7 +4981,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Delete a deployment resource in the API hub.
+   * Deletes a deployment resource in the API hub. A deployment can only be deleted after its links
+   * to any versions, specs, and API operations have been removed.
    *
    * <p>Sample code:
    *
@@ -6301,7 +6575,369 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Retrieve API views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   ApiViewType view = ApiViewType.forNumber(0);
+   *   for (ApiView element : apiHubClient.retrieveApiViews(parent, view).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param view Required. The view type to return.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveApiViewsPagedResponse retrieveApiViews(
+      @Nullable LocationName parent, ApiViewType view) {
+    RetrieveApiViewsRequest request =
+        RetrieveApiViewsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setView(view)
+            .build();
+    return retrieveApiViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve API views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   ApiViewType view = ApiViewType.forNumber(0);
+   *   for (ApiView element : apiHubClient.retrieveApiViews(parent, view).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name. Format:
+   *     `projects/{project}/locations/{location}`.
+   * @param view Required. The view type to return.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveApiViewsPagedResponse retrieveApiViews(String parent, ApiViewType view) {
+    RetrieveApiViewsRequest request =
+        RetrieveApiViewsRequest.newBuilder().setParent(parent).setView(view).build();
+    return retrieveApiViews(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve API views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   RetrieveApiViewsRequest request =
+   *       RetrieveApiViewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(ApiViewType.forNumber(0))
+   *           .build();
+   *   for (ApiView element : apiHubClient.retrieveApiViews(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveApiViewsPagedResponse retrieveApiViews(RetrieveApiViewsRequest request) {
+    return retrieveApiViewsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve API views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   RetrieveApiViewsRequest request =
+   *       RetrieveApiViewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(ApiViewType.forNumber(0))
+   *           .build();
+   *   ApiFuture<ApiView> future = apiHubClient.retrieveApiViewsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ApiView element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsPagedResponse>
+      retrieveApiViewsPagedCallable() {
+    return stub.retrieveApiViewsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve API views.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   RetrieveApiViewsRequest request =
+   *       RetrieveApiViewsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(ApiViewType.forNumber(0))
+   *           .build();
+   *   while (true) {
+   *     RetrieveApiViewsResponse response = apiHubClient.retrieveApiViewsCallable().call(request);
+   *     for (ApiView element : response.getApiViewsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsResponse>
+      retrieveApiViewsCallable() {
+    return stub.retrieveApiViewsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures and deploys a given server config for given target. Currently this API supports only
+   * deploying MCP server in Apigee X. For mcp server deployment in apigee X, if there is already a
+   * mcp proxy deployed, then this method will try to overwrite it by creating new revision i.e. all
+   * existing tools will be removed and new set of tools will be deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   McpServerConfig mcpServerConfig = McpServerConfig.newBuilder().build();
+   *   ConfigureAndDeployServerResponse response =
+   *       apiHubClient.configureAndDeployServerAsync(parent, mcpServerConfig).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `projects/{project}/locations/{location}`
+   * @param mcpServerConfig MCP (Model Context Protocol) server configuration.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerAsync(
+          @Nullable LocationName parent, McpServerConfig mcpServerConfig) {
+    ConfigureAndDeployServerRequest request =
+        ConfigureAndDeployServerRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMcpServerConfig(mcpServerConfig)
+            .build();
+    return configureAndDeployServerAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures and deploys a given server config for given target. Currently this API supports only
+   * deploying MCP server in Apigee X. For mcp server deployment in apigee X, if there is already a
+   * mcp proxy deployed, then this method will try to overwrite it by creating new revision i.e. all
+   * existing tools will be removed and new set of tools will be deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   McpServerConfig mcpServerConfig = McpServerConfig.newBuilder().build();
+   *   ConfigureAndDeployServerResponse response =
+   *       apiHubClient.configureAndDeployServerAsync(parent, mcpServerConfig).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `projects/{project}/locations/{location}`
+   * @param mcpServerConfig MCP (Model Context Protocol) server configuration.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerAsync(String parent, McpServerConfig mcpServerConfig) {
+    ConfigureAndDeployServerRequest request =
+        ConfigureAndDeployServerRequest.newBuilder()
+            .setParent(parent)
+            .setMcpServerConfig(mcpServerConfig)
+            .build();
+    return configureAndDeployServerAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures and deploys a given server config for given target. Currently this API supports only
+   * deploying MCP server in Apigee X. For mcp server deployment in apigee X, if there is already a
+   * mcp proxy deployed, then this method will try to overwrite it by creating new revision i.e. all
+   * existing tools will be removed and new set of tools will be deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   ConfigureAndDeployServerRequest request =
+   *       ConfigureAndDeployServerRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ConfigureAndDeployServerResponse response =
+   *       apiHubClient.configureAndDeployServerAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerAsync(ConfigureAndDeployServerRequest request) {
+    return configureAndDeployServerOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures and deploys a given server config for given target. Currently this API supports only
+   * deploying MCP server in Apigee X. For mcp server deployment in apigee X, if there is already a
+   * mcp proxy deployed, then this method will try to overwrite it by creating new revision i.e. all
+   * existing tools will be removed and new set of tools will be deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   ConfigureAndDeployServerRequest request =
+   *       ConfigureAndDeployServerRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   OperationFuture<ConfigureAndDeployServerResponse, OperationMetadata> future =
+   *       apiHubClient.configureAndDeployServerOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ConfigureAndDeployServerResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerOperationCallable() {
+    return stub.configureAndDeployServerOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Configures and deploys a given server config for given target. Currently this API supports only
+   * deploying MCP server in Apigee X. For mcp server deployment in apigee X, if there is already a
+   * mcp proxy deployed, then this method will try to overwrite it by creating new revision i.e. all
+   * existing tools will be removed and new set of tools will be deployed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   ConfigureAndDeployServerRequest request =
+   *       ConfigureAndDeployServerRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       apiHubClient.configureAndDeployServerCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ConfigureAndDeployServerRequest, Operation>
+      configureAndDeployServerCallable() {
+    return stub.configureAndDeployServerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -6336,6 +6972,18 @@ public class ApiHubClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -6368,6 +7016,18 @@ public class ApiHubClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -7083,6 +7743,83 @@ public class ApiHubClient implements BackgroundResource {
     protected ListExternalApisFixedSizeCollection createCollection(
         @Nullable List<ListExternalApisPage> pages, int collectionSize) {
       return new ListExternalApisFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class RetrieveApiViewsPagedResponse
+      extends AbstractPagedListResponse<
+          RetrieveApiViewsRequest,
+          RetrieveApiViewsResponse,
+          ApiView,
+          RetrieveApiViewsPage,
+          RetrieveApiViewsFixedSizeCollection> {
+
+    public static ApiFuture<RetrieveApiViewsPagedResponse> createAsync(
+        PageContext<RetrieveApiViewsRequest, RetrieveApiViewsResponse, ApiView> context,
+        ApiFuture<RetrieveApiViewsResponse> futureResponse) {
+      ApiFuture<RetrieveApiViewsPage> futurePage =
+          RetrieveApiViewsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new RetrieveApiViewsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private RetrieveApiViewsPagedResponse(RetrieveApiViewsPage page) {
+      super(page, RetrieveApiViewsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class RetrieveApiViewsPage
+      extends AbstractPage<
+          RetrieveApiViewsRequest, RetrieveApiViewsResponse, ApiView, RetrieveApiViewsPage> {
+
+    private RetrieveApiViewsPage(
+        @Nullable PageContext<RetrieveApiViewsRequest, RetrieveApiViewsResponse, ApiView> context,
+        @Nullable RetrieveApiViewsResponse response) {
+      super(context, response);
+    }
+
+    private static RetrieveApiViewsPage createEmptyPage() {
+      return new RetrieveApiViewsPage(null, null);
+    }
+
+    @Override
+    protected RetrieveApiViewsPage createPage(
+        @Nullable PageContext<RetrieveApiViewsRequest, RetrieveApiViewsResponse, ApiView> context,
+        @Nullable RetrieveApiViewsResponse response) {
+      return new RetrieveApiViewsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<RetrieveApiViewsPage> createPageAsync(
+        @Nullable PageContext<RetrieveApiViewsRequest, RetrieveApiViewsResponse, ApiView> context,
+        ApiFuture<RetrieveApiViewsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class RetrieveApiViewsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          RetrieveApiViewsRequest,
+          RetrieveApiViewsResponse,
+          ApiView,
+          RetrieveApiViewsPage,
+          RetrieveApiViewsFixedSizeCollection> {
+
+    private RetrieveApiViewsFixedSizeCollection(
+        @Nullable List<RetrieveApiViewsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static RetrieveApiViewsFixedSizeCollection createEmptyCollection() {
+      return new RetrieveApiViewsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected RetrieveApiViewsFixedSizeCollection createCollection(
+        @Nullable List<RetrieveApiViewsPage> pages, int collectionSize) {
+      return new RetrieveApiViewsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -676,7 +676,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new audit schedule in a given project and location.
+     * Creates a new audit schedule in a given location for an organization,
+     * folder, or project.
      * </pre>
      */
     default void createAuditSchedule(
@@ -721,7 +722,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit schedules in a given project and location.
+     * Lists audit schedules in a given location for an organization, folder, or
+     * project.
      * </pre>
      */
     default void listAuditSchedules(
@@ -904,7 +906,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new audit schedule in a given project and location.
+     * Creates a new audit schedule in a given location for an organization,
+     * folder, or project.
      * </pre>
      */
     public void createAuditSchedule(
@@ -955,7 +958,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit schedules in a given project and location.
+     * Lists audit schedules in a given location for an organization, folder, or
+     * project.
      * </pre>
      */
     public void listAuditSchedules(
@@ -1141,7 +1145,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new audit schedule in a given project and location.
+     * Creates a new audit schedule in a given location for an organization,
+     * folder, or project.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.AuditSchedule createAuditSchedule(
@@ -1183,7 +1188,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit schedules in a given project and location.
+     * Lists audit schedules in a given location for an organization, folder, or
+     * project.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse listAuditSchedules(
@@ -1344,7 +1350,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new audit schedule in a given project and location.
+     * Creates a new audit schedule in a given location for an organization,
+     * folder, or project.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.AuditSchedule createAuditSchedule(
@@ -1383,7 +1390,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit schedules in a given project and location.
+     * Lists audit schedules in a given location for an organization, folder, or
+     * project.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse listAuditSchedules(
@@ -1535,7 +1543,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Creates a new audit schedule in a given project and location.
+     * Creates a new audit schedule in a given location for an organization,
+     * folder, or project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1577,7 +1586,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit schedules in a given project and location.
+     * Lists audit schedules in a given location for an organization, folder, or
+     * project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

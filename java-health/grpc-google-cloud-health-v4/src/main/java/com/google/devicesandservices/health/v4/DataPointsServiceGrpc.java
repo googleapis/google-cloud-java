@@ -656,8 +656,10 @@ public final class DataPointsServiceGrpc {
      * Exports exercise data in TCX format.
      * **IMPORTANT:** HTTP clients must append `?alt=media` to the
      * request URL to download the raw TCX file.
-     * Example:
+     * ## Examples:
+     * ##
      * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * `https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
      * Without `alt=media`, the server returns a JSON response
      * (`ExportExerciseTcxResponse`)
      * which is intended primarily for gRPC clients.
@@ -859,8 +861,10 @@ public final class DataPointsServiceGrpc {
      * Exports exercise data in TCX format.
      * **IMPORTANT:** HTTP clients must append `?alt=media` to the
      * request URL to download the raw TCX file.
-     * Example:
+     * ## Examples:
+     * ##
      * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * `https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
      * Without `alt=media`, the server returns a JSON response
      * (`ExportExerciseTcxResponse`)
      * which is intended primarily for gRPC clients.
@@ -1025,8 +1029,10 @@ public final class DataPointsServiceGrpc {
      * Exports exercise data in TCX format.
      * **IMPORTANT:** HTTP clients must append `?alt=media` to the
      * request URL to download the raw TCX file.
-     * Example:
+     * ## Examples:
+     * ##
      * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * `https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
      * Without `alt=media`, the server returns a JSON response
      * (`ExportExerciseTcxResponse`)
      * which is intended primarily for gRPC clients.
@@ -1179,8 +1185,10 @@ public final class DataPointsServiceGrpc {
      * Exports exercise data in TCX format.
      * **IMPORTANT:** HTTP clients must append `?alt=media` to the
      * request URL to download the raw TCX file.
-     * Example:
+     * ## Examples:
+     * ##
      * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * `https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
      * Without `alt=media`, the server returns a JSON response
      * (`ExportExerciseTcxResponse`)
      * which is intended primarily for gRPC clients.
@@ -1338,8 +1346,10 @@ public final class DataPointsServiceGrpc {
      * Exports exercise data in TCX format.
      * **IMPORTANT:** HTTP clients must append `?alt=media` to the
      * request URL to download the raw TCX file.
-     * Example:
+     * ## Examples:
+     * ##
      * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+     * `https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
      * Without `alt=media`, the server returns a JSON response
      * (`ExportExerciseTcxResponse`)
      * which is intended primarily for gRPC clients.

@@ -30,7 +30,8 @@ public interface SpecContentsOrBuilder
    *
    *
    * <pre>
-   * Required. The contents of the spec.
+   * Required. The contents of the spec. The contents should be base64 encoded
+   * when calling methods such as CreateSpec, UpdateSpec and CollectApiData.
    * </pre>
    *
    * <code>bytes contents = 1 [(.google.api.field_behavior) = REQUIRED];</code>

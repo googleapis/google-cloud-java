@@ -64,6 +64,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     sourceMetadata_ = java.util.Collections.emptyList();
     sourceProject_ = "";
     sourceEnvironment_ = "";
+    specs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    apiOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    sourceRevision_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1267,7 +1270,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The project to which the deployment belongs.
-   * For GCP gateways, this will refer to the project identifier.
+   * For Google Cloud gateways, this will refer to the project identifier.
    * For others like Edge/OPDK, this will refer to the org identifier.
    * </pre>
    *
@@ -1293,7 +1296,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The project to which the deployment belongs.
-   * For GCP gateways, this will refer to the project identifier.
+   * For Google Cloud gateways, this will refer to the project identifier.
    * For others like Edge/OPDK, this will refer to the org identifier.
    * </pre>
    *
@@ -1369,6 +1372,225 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SPECS_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList specs_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specs linked directly to this deployment.
+   * Note: a deployment could serve multiple specs (e.g., across different
+   * revisions of the same underlying gateway configuration).
+   * </pre>
+   *
+   * <code>
+   * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the specs.
+   */
+  public com.google.protobuf.ProtocolStringList getSpecsList() {
+    return specs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specs linked directly to this deployment.
+   * Note: a deployment could serve multiple specs (e.g., across different
+   * revisions of the same underlying gateway configuration).
+   * </pre>
+   *
+   * <code>
+   * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of specs.
+   */
+  public int getSpecsCount() {
+    return specs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specs linked directly to this deployment.
+   * Note: a deployment could serve multiple specs (e.g., across different
+   * revisions of the same underlying gateway configuration).
+   * </pre>
+   *
+   * <code>
+   * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The specs at the given index.
+   */
+  public java.lang.String getSpecs(int index) {
+    return specs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specs linked directly to this deployment.
+   * Note: a deployment could serve multiple specs (e.g., across different
+   * revisions of the same underlying gateway configuration).
+   * </pre>
+   *
+   * <code>
+   * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the specs at the given index.
+   */
+  public com.google.protobuf.ByteString getSpecsBytes(int index) {
+    return specs_.getByteString(index);
+  }
+
+  public static final int API_OPERATIONS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList apiOperations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The API operations linked directly to this deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the apiOperations.
+   */
+  public com.google.protobuf.ProtocolStringList getApiOperationsList() {
+    return apiOperations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The API operations linked directly to this deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of apiOperations.
+   */
+  public int getApiOperationsCount() {
+    return apiOperations_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The API operations linked directly to this deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The apiOperations at the given index.
+   */
+  public java.lang.String getApiOperations(int index) {
+    return apiOperations_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The API operations linked directly to this deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the apiOperations at the given index.
+   */
+  public com.google.protobuf.ByteString getApiOperationsBytes(int index) {
+    return apiOperations_.getByteString(index);
+  }
+
+  public static final int SOURCE_REVISION_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceRevision_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A revision identifier for the underlying gateway configuration
+   * that this deployment serves. For Apigee gateway variants, this is typically
+   * the proxy revision number populated automatically when the deployment is
+   * discovered.
+   * </pre>
+   *
+   * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceRevision.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceRevision() {
+    java.lang.Object ref = sourceRevision_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceRevision_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A revision identifier for the underlying gateway configuration
+   * that this deployment serves. For Apigee gateway variants, this is typically
+   * the proxy revision number populated automatically when the deployment is
+   * discovered.
+   * </pre>
+   *
+   * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceRevision.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceRevisionBytes() {
+    java.lang.Object ref = sourceRevision_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceRevision_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1435,6 +1657,15 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceEnvironment_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18, sourceEnvironment_);
+    }
+    for (int i = 0; i < specs_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 19, specs_.getRaw(i));
+    }
+    for (int i = 0; i < apiOperations_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 20, apiOperations_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceRevision_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 21, sourceRevision_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1517,6 +1748,25 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceEnvironment_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18, sourceEnvironment_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < specs_.size(); i++) {
+        dataSize += computeStringSizeNoTag(specs_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getSpecsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < apiOperations_.size(); i++) {
+        dataSize += computeStringSizeNoTag(apiOperations_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getApiOperationsList().size();
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceRevision_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(21, sourceRevision_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1574,6 +1824,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
     if (!getSourceProject().equals(other.getSourceProject())) return false;
     if (!getSourceEnvironment().equals(other.getSourceEnvironment())) return false;
+    if (!getSpecsList().equals(other.getSpecsList())) return false;
+    if (!getApiOperationsList().equals(other.getApiOperationsList())) return false;
+    if (!getSourceRevision().equals(other.getSourceRevision())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1645,6 +1898,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getSourceProject().hashCode();
     hash = (37 * hash) + SOURCE_ENVIRONMENT_FIELD_NUMBER;
     hash = (53 * hash) + getSourceEnvironment().hashCode();
+    if (getSpecsCount() > 0) {
+      hash = (37 * hash) + SPECS_FIELD_NUMBER;
+      hash = (53 * hash) + getSpecsList().hashCode();
+    }
+    if (getApiOperationsCount() > 0) {
+      hash = (37 * hash) + API_OPERATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getApiOperationsList().hashCode();
+    }
+    hash = (37 * hash) + SOURCE_REVISION_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceRevision().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1882,6 +2145,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       }
       sourceProject_ = "";
       sourceEnvironment_ = "";
+      specs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      apiOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      sourceRevision_ = "";
       return this;
     }
 
@@ -1997,6 +2263,17 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.sourceEnvironment_ = sourceEnvironment_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        specs_.makeImmutable();
+        result.specs_ = specs_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        apiOperations_.makeImmutable();
+        result.apiOperations_ = apiOperations_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.sourceRevision_ = sourceRevision_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2114,6 +2391,31 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       if (!other.getSourceEnvironment().isEmpty()) {
         sourceEnvironment_ = other.sourceEnvironment_;
         bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      if (!other.specs_.isEmpty()) {
+        if (specs_.isEmpty()) {
+          specs_ = other.specs_;
+          bitField0_ |= 0x00040000;
+        } else {
+          ensureSpecsIsMutable();
+          specs_.addAll(other.specs_);
+        }
+        onChanged();
+      }
+      if (!other.apiOperations_.isEmpty()) {
+        if (apiOperations_.isEmpty()) {
+          apiOperations_ = other.apiOperations_;
+          bitField0_ |= 0x00080000;
+        } else {
+          ensureApiOperationsIsMutable();
+          apiOperations_.addAll(other.apiOperations_);
+        }
+        onChanged();
+      }
+      if (!other.getSourceRevision().isEmpty()) {
+        sourceRevision_ = other.sourceRevision_;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2274,6 +2576,26 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00020000;
                 break;
               } // case 146
+            case 154:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSpecsIsMutable();
+                specs_.add(s);
+                break;
+              } // case 154
+            case 162:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureApiOperationsIsMutable();
+                apiOperations_.add(s);
+                break;
+              } // case 162
+            case 170:
+              {
+                sourceRevision_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5905,7 +6227,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The project to which the deployment belongs.
-     * For GCP gateways, this will refer to the project identifier.
+     * For Google Cloud gateways, this will refer to the project identifier.
      * For others like Edge/OPDK, this will refer to the org identifier.
      * </pre>
      *
@@ -5930,7 +6252,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The project to which the deployment belongs.
-     * For GCP gateways, this will refer to the project identifier.
+     * For Google Cloud gateways, this will refer to the project identifier.
      * For others like Edge/OPDK, this will refer to the org identifier.
      * </pre>
      *
@@ -5955,7 +6277,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The project to which the deployment belongs.
-     * For GCP gateways, this will refer to the project identifier.
+     * For Google Cloud gateways, this will refer to the project identifier.
      * For others like Edge/OPDK, this will refer to the org identifier.
      * </pre>
      *
@@ -5979,7 +6301,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The project to which the deployment belongs.
-     * For GCP gateways, this will refer to the project identifier.
+     * For Google Cloud gateways, this will refer to the project identifier.
      * For others like Edge/OPDK, this will refer to the org identifier.
      * </pre>
      *
@@ -5999,7 +6321,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The project to which the deployment belongs.
-     * For GCP gateways, this will refer to the project identifier.
+     * For Google Cloud gateways, this will refer to the project identifier.
      * For others like Edge/OPDK, this will refer to the org identifier.
      * </pre>
      *
@@ -6131,6 +6453,552 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       sourceEnvironment_ = value;
       bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList specs_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSpecsIsMutable() {
+      if (!specs_.isModifiable()) {
+        specs_ = new com.google.protobuf.LazyStringArrayList(specs_);
+      }
+      bitField0_ |= 0x00040000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the specs.
+     */
+    public com.google.protobuf.ProtocolStringList getSpecsList() {
+      specs_.makeImmutable();
+      return specs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of specs.
+     */
+    public int getSpecsCount() {
+      return specs_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The specs at the given index.
+     */
+    public java.lang.String getSpecs(int index) {
+      return specs_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the specs at the given index.
+     */
+    public com.google.protobuf.ByteString getSpecsBytes(int index) {
+      return specs_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The specs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpecs(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSpecsIsMutable();
+      specs_.set(index, value);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The specs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSpecs(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSpecsIsMutable();
+      specs_.add(value);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The specs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSpecs(java.lang.Iterable<java.lang.String> values) {
+      ensureSpecsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, specs_);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpecs() {
+      specs_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The specs linked directly to this deployment.
+     * Note: a deployment could serve multiple specs (e.g., across different
+     * revisions of the same underlying gateway configuration).
+     * </pre>
+     *
+     * <code>
+     * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the specs to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSpecsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSpecsIsMutable();
+      specs_.add(value);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList apiOperations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureApiOperationsIsMutable() {
+      if (!apiOperations_.isModifiable()) {
+        apiOperations_ = new com.google.protobuf.LazyStringArrayList(apiOperations_);
+      }
+      bitField0_ |= 0x00080000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the apiOperations.
+     */
+    public com.google.protobuf.ProtocolStringList getApiOperationsList() {
+      apiOperations_.makeImmutable();
+      return apiOperations_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of apiOperations.
+     */
+    public int getApiOperationsCount() {
+      return apiOperations_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The apiOperations at the given index.
+     */
+    public java.lang.String getApiOperations(int index) {
+      return apiOperations_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the apiOperations at the given index.
+     */
+    public com.google.protobuf.ByteString getApiOperationsBytes(int index) {
+      return apiOperations_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The apiOperations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApiOperations(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureApiOperationsIsMutable();
+      apiOperations_.set(index, value);
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The apiOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addApiOperations(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureApiOperationsIsMutable();
+      apiOperations_.add(value);
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The apiOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllApiOperations(java.lang.Iterable<java.lang.String> values) {
+      ensureApiOperationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, apiOperations_);
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApiOperations() {
+      apiOperations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The API operations linked directly to this deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the apiOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addApiOperationsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureApiOperationsIsMutable();
+      apiOperations_.add(value);
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceRevision_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A revision identifier for the underlying gateway configuration
+     * that this deployment serves. For Apigee gateway variants, this is typically
+     * the proxy revision number populated automatically when the deployment is
+     * discovered.
+     * </pre>
+     *
+     * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourceRevision.
+     */
+    public java.lang.String getSourceRevision() {
+      java.lang.Object ref = sourceRevision_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceRevision_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A revision identifier for the underlying gateway configuration
+     * that this deployment serves. For Apigee gateway variants, this is typically
+     * the proxy revision number populated automatically when the deployment is
+     * discovered.
+     * </pre>
+     *
+     * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourceRevision.
+     */
+    public com.google.protobuf.ByteString getSourceRevisionBytes() {
+      java.lang.Object ref = sourceRevision_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceRevision_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A revision identifier for the underlying gateway configuration
+     * that this deployment serves. For Apigee gateway variants, this is typically
+     * the proxy revision number populated automatically when the deployment is
+     * discovered.
+     * </pre>
+     *
+     * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The sourceRevision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceRevision(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceRevision_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A revision identifier for the underlying gateway configuration
+     * that this deployment serves. For Apigee gateway variants, this is typically
+     * the proxy revision number populated automatically when the deployment is
+     * discovered.
+     * </pre>
+     *
+     * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceRevision() {
+      sourceRevision_ = getDefaultInstance().getSourceRevision();
+      bitField0_ = (bitField0_ & ~0x00100000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A revision identifier for the underlying gateway configuration
+     * that this deployment serves. For Apigee gateway variants, this is typically
+     * the proxy revision number populated automatically when the deployment is
+     * discovered.
+     * </pre>
+     *
+     * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for sourceRevision to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceRevisionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceRevision_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }

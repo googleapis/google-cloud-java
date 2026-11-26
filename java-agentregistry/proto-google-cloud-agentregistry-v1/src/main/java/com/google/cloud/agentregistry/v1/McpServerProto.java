@@ -71,7 +71,7 @@ public final class McpServerProto extends com.google.protobuf.GeneratedFile {
           + "\037google/api/field_behavior.proto\032\031google"
           + "/api/resource.proto\032.google/cloud/agentr"
           + "egistry/v1/properties.proto\032\034google/prot"
-          + "obuf/struct.proto\032\037google/protobuf/timestamp.proto\"\277\007\n"
+          + "obuf/struct.proto\032\037google/protobuf/timestamp.proto\"\324\010\n"
           + "\tMcpServer\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\033\n\r"
           + "mcp_server_id\030\t \001(\tB\004\342A\001\003\022\032\n"
@@ -86,12 +86,14 @@ public final class McpServerProto extends com.google.protobuf.GeneratedFile {
           + "\013update_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022R\n\n"
           + "attributes\030\010 \003(\01328.goo"
-          + "gle.cloud.agentregistry.v1.McpServer.AttributesEntryB\004\342A\001\003\032\254\002\n"
+          + "gle.cloud.agentregistry.v1.McpServer.AttributesEntryB\004\342A\001\003\032\340\002\n"
           + "\004Tool\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\003\022\031\n"
           + "\013description\030\002 \001(\tB\004\342A\001\003\022T\n"
           + "\013annotations\030\003 \001(\01329.google.cloud.agentregi"
-          + "stry.v1.McpServer.Tool.AnnotationsB\004\342A\001\003\032\236\001\n"
+          + "stry.v1.McpServer.Tool.AnnotationsB\004\342A\001\003\0222\n"
+          + "\004meta\030\004"
+          + " \001(\0132\027.google.protobuf.StructB\004\342A\001\003R\005_meta\032\236\001\n"
           + "\013Annotations\022\023\n"
           + "\005title\030\001 \001(\tB\004\342A\001\003\022\036\n"
           + "\020destructive_hint\030\002 \001(\010B\004\342A\001\003\022\035\n"
@@ -101,14 +103,14 @@ public final class McpServerProto extends com.google.protobuf.GeneratedFile {
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022&\n"
           + "\005value\030\002"
-          + " \001(\0132\027.google.protobuf.Struct:\0028\001:\204\001\352A\200\001\n"
-          + "&agentregistry.googleapis.com/McpSe"
-          + "rver\022?projects/{project}/locations/{location}/mcpServers/{mcp_server}*\n"
+          + " \001(\0132\027.google.protobuf.Struct:\0028\001:\345\001\352A\341\001\n"
+          + "&agentregistry.googleapis.com/McpServer\022?projects/{project}/loc"
+          + "ations/{location}/mcpServers/{mcp_server}\022_projects/{project}/locations/{locatio"
+          + "n}/aiApplications/{ai_application}/mcpServers/{mcp_server}*\n"
           + "mcpServers2\tmcpServerB\341\001\n"
-          + "!com.google.cloud.agentregistry.v1B\016McpServerProtoP\001ZGcloud.goog"
-          + "le.com/go/agentregistry/apiv1/agentregis"
-          + "trypb;agentregistrypb\252\002\035Google.Cloud.Age"
-          + "ntRegistry.V1\312\002\035Google\\Cloud\\AgentRegistry\\V1\352\002"
+          + "!com.google.cloud.agentregistry.v1B\016McpServerProtoP\001ZGcloud.google.com/go/a"
+          + "gentregistry/apiv1/agentregistrypb;agent"
+          + "registrypb\252\002\035Google.Cloud.AgentRegistry.V1\312\002\035Google\\Cloud\\AgentRegistry\\V1\352\002"
           + " Google::Cloud::AgentRegistry::V1b\006proto3"
     };
     descriptor =
@@ -143,7 +145,7 @@ public final class McpServerProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_McpServer_Tool_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "Annotations",
+              "Name", "Description", "Annotations", "Meta",
             });
     internal_static_google_cloud_agentregistry_v1_McpServer_Tool_Annotations_descriptor =
         internal_static_google_cloud_agentregistry_v1_McpServer_Tool_descriptor.getNestedType(0);

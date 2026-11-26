@@ -2898,11 +2898,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
-   * Example:
-   * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   * ## Examples:
    *
-   * The `{user}` ID is a system-generated identifier, as described in
-   * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id].
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, which can be retrieved by calling
+   * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+   * (see
+   * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id]).
    *
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
@@ -2941,11 +2948,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
-   * Example:
-   * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   * ## Examples:
    *
-   * The `{user}` ID is a system-generated identifier, as described in
-   * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id].
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, which can be retrieved by calling
+   * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+   * (see
+   * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id]).
    *
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
@@ -15176,11 +15190,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -15218,11 +15239,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -15260,11 +15288,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -15301,11 +15336,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -15338,11 +15380,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint

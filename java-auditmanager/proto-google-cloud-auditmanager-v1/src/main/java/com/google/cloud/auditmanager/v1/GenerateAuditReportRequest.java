@@ -57,6 +57,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
     complianceStandard_ = "";
     reportFormat_ = 0;
     complianceFramework_ = "";
+    reportExportFormats_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -445,7 +446,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
    * @return The complianceStandard.
    */
   @java.lang.Override
@@ -476,7 +477,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
    * @return The bytes for complianceStandard.
    */
   @java.lang.Override
@@ -766,6 +767,127 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
     return validateOnly_;
   }
 
+  public static final int REPORT_EXPORT_FORMATS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList reportExportFormats_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.cloud.auditmanager.v1.ReportExportFormat>
+      reportExportFormats_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.cloud.auditmanager.v1.ReportExportFormat>() {
+            public com.google.cloud.auditmanager.v1.ReportExportFormat convert(int from) {
+              com.google.cloud.auditmanager.v1.ReportExportFormat result =
+                  com.google.cloud.auditmanager.v1.ReportExportFormat.forNumber(from);
+              return result == null
+                  ? com.google.cloud.auditmanager.v1.ReportExportFormat.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the reportExportFormats.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.auditmanager.v1.ReportExportFormat>
+      getReportExportFormatsList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.cloud.auditmanager.v1.ReportExportFormat>(
+        reportExportFormats_, reportExportFormats_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of reportExportFormats.
+   */
+  @java.lang.Override
+  public int getReportExportFormatsCount() {
+    return reportExportFormats_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reportExportFormats at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.auditmanager.v1.ReportExportFormat getReportExportFormats(int index) {
+    return reportExportFormats_converter_.convert(reportExportFormats_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for reportExportFormats.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getReportExportFormatsValueList() {
+    return reportExportFormats_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of reportExportFormats at the given index.
+   */
+  @java.lang.Override
+  public int getReportExportFormatsValue(int index) {
+    return reportExportFormats_.getInt(index);
+  }
+
+  private int reportExportFormatsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -780,6 +902,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(scope_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, scope_);
     }
@@ -805,6 +928,13 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
         7);
     if (validateOnly_ != false) {
       output.writeBool(8, validateOnly_);
+    }
+    if (getReportExportFormatsList().size() > 0) {
+      output.writeUInt32NoTag(74);
+      output.writeUInt32NoTag(reportExportFormatsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < reportExportFormats_.size(); i++) {
+      output.writeEnumNoTag(reportExportFormats_.getInt(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -848,6 +978,20 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
     if (validateOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, validateOnly_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < reportExportFormats_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                reportExportFormats_.getInt(i));
+      }
+      size += dataSize;
+      if (!getReportExportFormatsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      reportExportFormatsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -871,6 +1015,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
     if (!internalGetParameterOverrides().equals(other.internalGetParameterOverrides()))
       return false;
     if (getValidateOnly() != other.getValidateOnly()) return false;
+    if (!reportExportFormats_.equals(other.reportExportFormats_)) return false;
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
       case 2:
@@ -904,6 +1049,10 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
     }
     hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
+    if (getReportExportFormatsCount() > 0) {
+      hash = (37 * hash) + REPORT_EXPORT_FORMATS_FIELD_NUMBER;
+      hash = (53 * hash) + reportExportFormats_.hashCode();
+    }
     switch (destinationCase_) {
       case 2:
         hash = (37 * hash) + GCS_URI_FIELD_NUMBER;
@@ -1082,6 +1231,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
       complianceFramework_ = "";
       internalGetMutableParameterOverrides().clear();
       validateOnly_ = false;
+      reportExportFormats_ = emptyIntList();
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -1141,6 +1291,10 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.validateOnly_ = validateOnly_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        reportExportFormats_.makeImmutable();
+        result.reportExportFormats_ = reportExportFormats_;
+      }
     }
 
     private void buildPartialOneofs(
@@ -1184,6 +1338,17 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
       bitField0_ |= 0x00000020;
       if (other.getValidateOnly() != false) {
         setValidateOnly(other.getValidateOnly());
+      }
+      if (!other.reportExportFormats_.isEmpty()) {
+        if (reportExportFormats_.isEmpty()) {
+          reportExportFormats_ = other.reportExportFormats_;
+          reportExportFormats_.makeImmutable();
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureReportExportFormatsIsMutable();
+          reportExportFormats_.addAll(other.reportExportFormats_);
+        }
+        onChanged();
       }
       switch (other.getDestinationCase()) {
         case GCS_URI:
@@ -1275,6 +1440,24 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000040;
                 break;
               } // case 64
+            case 72:
+              {
+                int tmpRaw = input.readEnum();
+                ensureReportExportFormatsIsMutable();
+                reportExportFormats_.addInt(tmpRaw);
+                break;
+              } // case 72
+            case 74:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureReportExportFormatsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  reportExportFormats_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1611,7 +1794,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
      * @return The complianceStandard.
      */
     @java.lang.Deprecated
@@ -1641,7 +1824,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
      * @return The bytes for complianceStandard.
      */
     @java.lang.Deprecated
@@ -1671,7 +1854,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
      * @param value The complianceStandard to set.
      * @return This builder for chaining.
      */
@@ -1700,7 +1883,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1725,7 +1908,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
      * @param value The bytes for complianceStandard to set.
      * @return This builder for chaining.
      */
@@ -2348,6 +2531,279 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
     public Builder clearValidateOnly() {
       bitField0_ = (bitField0_ & ~0x00000040);
       validateOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList reportExportFormats_ = emptyIntList();
+
+    private void ensureReportExportFormatsIsMutable() {
+      if (!reportExportFormats_.isModifiable()) {
+        reportExportFormats_ = makeMutableCopy(reportExportFormats_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the reportExportFormats.
+     */
+    public java.util.List<com.google.cloud.auditmanager.v1.ReportExportFormat>
+        getReportExportFormatsList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.cloud.auditmanager.v1.ReportExportFormat>(
+          reportExportFormats_, reportExportFormats_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of reportExportFormats.
+     */
+    public int getReportExportFormatsCount() {
+      return reportExportFormats_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The reportExportFormats at the given index.
+     */
+    public com.google.cloud.auditmanager.v1.ReportExportFormat getReportExportFormats(int index) {
+      return reportExportFormats_converter_.convert(reportExportFormats_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The reportExportFormats to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReportExportFormats(
+        int index, com.google.cloud.auditmanager.v1.ReportExportFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReportExportFormatsIsMutable();
+      reportExportFormats_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The reportExportFormats to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReportExportFormats(
+        com.google.cloud.auditmanager.v1.ReportExportFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReportExportFormatsIsMutable();
+      reportExportFormats_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The reportExportFormats to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReportExportFormats(
+        java.lang.Iterable<? extends com.google.cloud.auditmanager.v1.ReportExportFormat> values) {
+      ensureReportExportFormatsIsMutable();
+      for (com.google.cloud.auditmanager.v1.ReportExportFormat value : values) {
+        reportExportFormats_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReportExportFormats() {
+      reportExportFormats_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for reportExportFormats.
+     */
+    public java.util.List<java.lang.Integer> getReportExportFormatsValueList() {
+      reportExportFormats_.makeImmutable();
+      return reportExportFormats_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of reportExportFormats at the given index.
+     */
+    public int getReportExportFormatsValue(int index) {
+      return reportExportFormats_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for reportExportFormats to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReportExportFormatsValue(int index, int value) {
+      ensureReportExportFormatsIsMutable();
+      reportExportFormats_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for reportExportFormats to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReportExportFormatsValue(int value) {
+      ensureReportExportFormatsIsMutable();
+      reportExportFormats_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Formats in which to export the audit report, in addition to the
+     * ODF report. Each format can be listed only once.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for reportExportFormats to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReportExportFormatsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureReportExportFormatsIsMutable();
+      for (int value : values) {
+        reportExportFormats_.addInt(value);
+      }
       onChanged();
       return this;
     }

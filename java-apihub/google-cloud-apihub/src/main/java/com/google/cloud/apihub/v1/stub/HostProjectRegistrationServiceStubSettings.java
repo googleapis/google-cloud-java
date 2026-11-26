@@ -121,7 +121,11 @@ public class HostProjectRegistrationServiceStubSettings
     extends StubSettings<HostProjectRegistrationServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/apihub.readonly")
+          .add("https://www.googleapis.com/auth/apihub.readwrite")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<CreateHostProjectRegistrationRequest, HostProjectRegistration>
       createHostProjectRegistrationSettings;

@@ -61,6 +61,18 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_agentregistry_v1_GetAgentRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetAiApplicationAgentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetAiApplicationAgentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_agentregistry_v1_ListEndpointsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_agentregistry_v1_ListEndpointsRequest_fieldAccessorTable;
@@ -72,6 +84,18 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
       internal_static_google_cloud_agentregistry_v1_GetEndpointRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_agentregistry_v1_GetEndpointRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetAiApplicationEndpointRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetAiApplicationEndpointRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_agentregistry_v1_ListMcpServersRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -92,6 +116,18 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
       internal_static_google_cloud_agentregistry_v1_GetMcpServerRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_agentregistry_v1_GetMcpServerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetAiApplicationMcpServerRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetAiApplicationMcpServerRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_agentregistry_v1_ListServicesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -152,6 +188,102 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
       internal_static_google_cloud_agentregistry_v1_DeleteBindingRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_agentregistry_v1_DeleteBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_CreateSkillRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_CreateSkillRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetSkillRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetSkillRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_UpdateSkillRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_UpdateSkillRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_DeleteSkillRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_DeleteSkillRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListSkillsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListSkillsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListSkillsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListSkillsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_SearchSkillsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_SearchSkillsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_SearchSkillsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_SearchSkillsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_CreateSkillRevisionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_CreateSkillRevisionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetSkillRevisionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetSkillRevisionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_DeleteSkillRevisionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_DeleteSkillRevisionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetPublisherRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetPublisherRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListPublishersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListPublishersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListPublishersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListPublishersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetAiApplicationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetAiApplicationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListAiApplicationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListFindingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListFindingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_ListFindingsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_ListFindingsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetFindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetFindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_GetSkillEncryptionSpecRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_GetSkillEncryptionSpecRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_agentregistry_v1_UpdateSkillEncryptionSpecRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_agentregistry_v1_UpdateSkillEncryptionSpecRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -167,24 +299,28 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
           + "\032\027google/api/client.proto\032\037google/api/fi"
           + "eld_behavior.proto\032\033google/api/field_inf"
           + "o.proto\032\031google/api/resource.proto\032)goog"
-          + "le/cloud/agentregistry/v1/agent.proto\032+google/cloud/agentregistry/v1/binding.pro"
-          + "to\032,google/cloud/agentregistry/v1/endpoint.proto\032.google/cloud/agentregistry/v1/"
-          + "mcp_server.proto\032+google/cloud/agentregistry/v1/service.proto\032#google/longrunnin"
-          + "g/operations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\261\001\n"
-          + "\021ListAgentsRequest\022;\n"
-          + "\006parent\030\001 \001("
-          + "\tB+\342A\001\002\372A$\022\"agentregistry.googleapis.com/Agent\022\027\n"
+          + "le/cloud/agentregistry/v1/agent.proto\0322google/cloud/agentregistry/v1/ai_applicat"
+          + "ion.proto\032+google/cloud/agentregistry/v1/binding.proto\032,google/cloud/agentregist"
+          + "ry/v1/endpoint.proto\032+google/cloud/agentregistry/v1/finding.proto\032.google/cloud/"
+          + "agentregistry/v1/mcp_server.proto\032+google/cloud/agentregistry/v1/service.proto\032)"
+          + "google/cloud/agentregistry/v1/skill.proto\0329google/cloud/agentregistry/v1/skill_e"
+          + "ncryption_spec.proto\032#google/longrunning"
+          + "/operations.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\260\001\n"
+          + "\021ListAgentsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\"c\n"
           + "\022ListAgentsResponse\0224\n"
           + "\006agents\030\001 \003(\0132$.google.cloud.agentregistry.v1.Agent\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\242\001\n"
-          + "\023SearchAgentsRequest\022;\n"
-          + "\006parent\030\001 \001(\tB+\342A\001"
-          + "\002\372A$\022\"agentregistry.googleapis.com/Agent\022\033\n\r"
+          + "\017next_page_token\030\002 \001(\t\"\241\001\n"
+          + "\023SearchAgentsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\033\n"
+          + "\r"
           + "search_string\030\003 \001(\tB\004\342A\001\001\022\027\n"
           + "\tpage_size\030\006 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\007 \001(\tB\004\342A\001\001\"e\n"
@@ -193,10 +329,21 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
           + "\017next_page_token\030\002 \001(\t\"L\n"
           + "\017GetAgentRequest\0229\n"
           + "\004name\030\001 \001(\tB+\342A\001\002\372A$\n"
-          + "\"agentregistry.googleapis.com/Agent\"\237\001\n"
-          + "\024ListEndpointsRequest\022>\n"
-          + "\006parent\030\001 \001("
-          + "\tB.\342A\001\002\372A\'\022%agentregistry.googleapis.com/Endpoint\022\027\n"
+          + "\"agentregistry.googleapis.com/Agent\"Y\n"
+          + "\034GetAiApplicationAgentRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"agentregistry.googleapis.com/Agent\"\230\001\n"
+          + "\036ListAiApplicationAgentsRequest\022C\n"
+          + "\006parent\030\001 \001(\tB3\342A\001\002\372A,\n"
+          + "*agentregistry.googleapis.com/AiApplication\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"p\n"
+          + "\037ListAiApplicationAgentsResponse\0224\n"
+          + "\006agents\030\001 \003(\0132$.google.cloud.agentregistry.v1.Agent\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\233\001\n"
+          + "\024ListEndpointsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\"l\n"
@@ -205,20 +352,31 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
           + "\017next_page_token\030\002 \001(\t\"R\n"
           + "\022GetEndpointRequest\022<\n"
           + "\004name\030\001 \001(\tB.\342A\001\002\372A\'\n"
-          + "%agentregistry.googleapis.com/Endpoint\"\271\001\n"
-          + "\025ListMcpServersRequest\022?\n"
-          + "\006parent\030\001 \001("
-          + "\tB/\342A\001\002\372A(\022&agentregistry.googleapis.com/McpServer\022\027\n"
+          + "%agentregistry.googleapis.com/Endpoint\"_\n"
+          + "\037GetAiApplicationEndpointRequest\022<\n"
+          + "\004name\030\001 \001(\tB.\342A\001\002\372A\'\n"
+          + "%agentregistry.googleapis.com/Endpoint\"\233\001\n"
+          + "!ListAiApplicationEndpointsRequest\022C\n"
+          + "\006parent\030\001 \001(\tB3\342A\001\002\372A,\n"
+          + "*agentregistry.googleapis.com/AiApplication\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"y\n"
+          + "\"ListAiApplicationEndpointsResponse\022:\n"
+          + "\tendpoints\030\001 \003(\0132\'.google.cloud.agentregistry.v1.Endpoint\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\264\001\n"
+          + "\025ListMcpServersRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\"p\n"
           + "\026ListMcpServersResponse\022=\n"
           + "\013mcp_servers\030\001 \003(\0132(.google.cloud.agentregistry.v1.McpServer\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\252\001\n"
-          + "\027SearchMcpServersRequest\022?\n"
-          + "\006parent\030\001 \001("
-          + "\tB/\342A\001\002\372A(\022&agentregistry.googleapis.com/McpServer\022\033\n\r"
+          + "\017next_page_token\030\002 \001(\t\"\245\001\n"
+          + "\027SearchMcpServersRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\033\n\r"
           + "search_string\030\003 \001(\tB\004\342A\001\001\022\027\n"
           + "\tpage_size\030\006 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\007 \001(\tB\004\342A\001\001\"r\n"
@@ -227,10 +385,21 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
           + "\017next_page_token\030\002 \001(\t\"T\n"
           + "\023GetMcpServerRequest\022=\n"
           + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
-          + "&agentregistry.googleapis.com/McpServer\"\235\001\n"
+          + "&agentregistry.googleapis.com/McpServer\"a\n"
+          + " GetAiApplicationMcpServerRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
+          + "&agentregistry.googleapis.com/McpServer\"\234\001\n"
+          + "\"ListAiApplicationMcpServersRequest\022C\n"
+          + "\006parent\030\001 \001(\tB3\342A\001\002\372A,\n"
+          + "*agentregistry.googleapis.com/AiApplication\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"}\n"
+          + "#ListAiApplicationMcpServersResponse\022=\n"
+          + "\013mcp_servers\030\001 \003(\0132(.google.cloud.agentregistry.v1.McpServer\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\235\001\n"
           + "\023ListServicesRequest\022=\n"
-          + "\006parent\030\001 \001("
-          + "\tB-\342A\001\002\372A&\022$agentregistry.googleapis.com/Service\022\027\n"
+          + "\006parent\030\001 \001(\t"
+          + "B-\342A\001\002\372A&\022$agentregistry.googleapis.com/Service\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\"i\n"
@@ -242,17 +411,18 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
           + "$agentregistry.googleapis.com/Service\"\320\001\n"
           + "\024CreateServiceRequest\022=\n"
           + "\006parent\030\001 \001("
-          + "\tB-\342A\001\002\372A&\022$agentregistry.googleapis.com/Service\022\030\n\n"
+          + "\tB-\342A\001\002\372A&\022$agentregistry.googleapis.com/Service\022\030\n"
+          + "\n"
           + "service_id\030\002 \001(\tB\004\342A\001\002\022=\n"
-          + "\007service\030\003"
-          + " \001(\0132&.google.cloud.agentregistry.v1.ServiceB\004\342A\001\002\022 \n\n"
+          + "\007service\030\003 \001(\013"
+          + "2&.google.cloud.agentregistry.v1.ServiceB\004\342A\001\002\022 \n\n"
           + "request_id\030\004 \001("
           + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\345\001\n"
           + "\035FetchAvailableBindingsRequest\022\033\n"
           + "\021source_identifier\030\002 \001(\tH\000\022!\n"
           + "\021target_identifier\030\003 \001(\tB\004\342A\001\001H\001\022=\n"
-          + "\006parent\030\001 \001("
-          + "\tB-\342A\001\002\372A&\022$agentregistry.googleapis.com/Binding\022\027\n"
+          + "\006parent\030\001 \001(\tB-\342A\001\002"
+          + "\372A&\022$agentregistry.googleapis.com/Binding\022\027\n"
           + "\tpage_size\030\004 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\005 \001(\tB\004\342A\001\001B\010\n"
           + "\006sourceB\010\n"
@@ -282,10 +452,9 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
           + "\026requested_cancellation\030\006 \001(\010B\004\342A\001\003\022\031\n"
           + "\013api_version\030\007 \001(\tB\004\342A\001\003\"\265\001\n"
           + "\023ListBindingsRequest\022=\n"
-          + "\006parent\030\001 \001("
-          + "\tB-\342A\001\002\372A&\022$agentregistry.googleapis.com/Binding\022\027\n"
-          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n"
-          + "\n"
+          + "\006parent\030\001 \001(\tB-\342A\001\002\372A&"
+          + "\022$agentregistry.googleapis.com/Binding\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\"i\n"
@@ -311,91 +480,328 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
           + "request_id\030\003 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"u\n"
           + "\024DeleteBindingRequest\022;\n"
           + "\004name\030\001 \001(\tB-\342A\001\002\372A&\n"
-          + "$agentregistry.googleapis.com/Binding\022 \n\n"
+          + "$agentregistry.googleapis.com/Binding\022 \n"
+          + "\n"
           + "request_id\030\002 \001("
-          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\0012\214\037\n\r"
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\306\001\n"
+          + "\022CreateSkillRequest\022;\n"
+          + "\006parent\030\001 \001("
+          + "\tB+\342A\001\002\372A$\022\"agentregistry.googleapis.com/Skill\022\026\n"
+          + "\010skill_id\030\002 \001(\tB\004\342A\001\002\0229\n"
+          + "\005skill\030\003"
+          + " \001(\0132$.google.cloud.agentregistry.v1.SkillB\004\342A\001\002\022 \n\n"
+          + "request_id\030\004 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"L\n"
+          + "\017GetSkillRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"agentregistry.googleapis.com/Skill\"\250\001\n"
+          + "\022UpdateSkillRequest\0229\n"
+          + "\005skill\030\001"
+          + " \001(\0132$.google.cloud.agentregistry.v1.SkillB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022"
+          + " \n\n"
+          + "request_id\030\003 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\206\001\n"
+          + "\022DeleteSkillRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"agentregistry.googleapis.com/Skill\022 \n\n"
+          + "request_id\030\002 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\022\023\n"
+          + "\005force\030\003 \001(\010B\004\342A\001\001\"\261\001\n"
+          + "\021ListSkillsRequest\022;\n"
+          + "\006parent\030\001 \001("
+          + "\tB+\342A\001\002\372A$\022\"agentregistry.googleapis.com/Skill\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"x\n"
+          + "\022ListSkillsResponse\0224\n"
+          + "\006skills\030\001 \003(\0132$.google.cloud.agentregistry.v1.Skill\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"\376\001\n"
+          + "\023SearchSkillsRequest\022;\n"
+          + "\006parent\030\001 \001(\t"
+          + "B+\342A\001\002\372A$\022\"agentregistry.googleapis.com/Skill\022D\n"
+          + "\013search_type\030\006"
+          + " \001(\0162).google.cloud.agentregistry.v1.SearchTypeB\004\342A\001\001\022\033\n\r"
+          + "search_string\030\007 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\005 \001(\tB\004\342A\001\001\022\027\n"
+          + "\tpage_size\030\003 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\004 \001(\tB\004\342A\001\001\"e\n"
+          + "\024SearchSkillsResponse\0224\n"
+          + "\006skills\030\001 \003(\0132$.google.cloud.agentregistry.v1.Skill\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\350\001\n"
+          + "\032CreateSkillRevisionRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"agentregistry.googleapis.com/Skill\022J\n"
+          + "\016skill_revision\030\002 \001(\0132,.g"
+          + "oogle.cloud.agentregistry.v1.SkillRevisionB\004\342A\001\002\022\037\n"
+          + "\021skill_revision_id\030\003 \001(\tB\004\342A\001\001\022 \n\n"
+          + "request_id\030\004 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\\\n"
+          + "\027GetSkillRevisionRequest\022A\n"
+          + "\004name\030\001 \001(\tB3\342A\001\002\372A,\n"
+          + "*agentregistry.googleapis.com/SkillRevision\"\201\001\n"
+          + "\032DeleteSkillRevisionRequest\022A\n"
+          + "\004name\030\001 \001(\tB3\342A\001\002\372A,\n"
+          + "*agentregistry.googleapis.com/SkillRevision\022 \n\n"
+          + "request_id\030\002 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\213\001\n"
+          + "\031ListSkillRevisionsRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"agentregistry.googleapis.com/Skill\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"|\n"
+          + "\032ListSkillRevisionsResponse\022E\n"
+          + "\017skill_revisions\030\001"
+          + " \003(\0132,.google.cloud.agentregistry.v1.SkillRevision\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"T\n"
+          + "\023GetPublisherRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
+          + "&agentregistry.googleapis.com/Publisher\"\213\001\n"
+          + "\025ListPublishersRequest\022?\n"
+          + "\006parent\030\001 \001("
+          + "\tB/\342A\001\002\372A(\022&agentregistry.googleapis.com/Publisher\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"o\n"
+          + "\026ListPublishersResponse\022<\n\n"
+          + "publishers\030\001 \003(\0132(.google.cloud.agentregistry.v1.Publisher\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\\\n"
+          + "\027GetAiApplicationRequest\022A\n"
+          + "\004name\030\001 \001(\tB3\342A\001\002\372A,\n"
+          + "*agentregistry.googleapis.com/AiApplication\"\301\001\n"
+          + "\031ListAiApplicationsRequest\022C\n"
+          + "\006parent\030\001 \001("
+          + "\tB3\342A\001\002\372A,\022*agentregistry.googleapis.com/AiApplication\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\227\001\n"
+          + "\032ListAiApplicationsResponse\022E\n"
+          + "\017ai_applications\030\001"
+          + " \003(\0132,.google.cloud.agentregistry.v1.AiApplication\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\031\n"
+          + "\013unreachable\030\003 \003(\tB\004\342A\001\006\"\265\001\n"
+          + "\023ListFindingsRequest\022=\n"
+          + "\006parent\030\001 \001(\tB-\342A\001\002"
+          + "\372A&\022$agentregistry.googleapis.com/Finding\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"i\n"
+          + "\024ListFindingsResponse\0228\n"
+          + "\010findings\030\001 \003(\0132&.google.cloud.agentregistry.v1.Finding\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"P\n"
+          + "\021GetFindingRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\342A\001\002\372A&\n"
+          + "$agentregistry.googleapis.com/Finding\"h\n"
+          + "\035GetSkillEncryptionSpecRequest\022G\n"
+          + "\004name\030\001 \001(\tB9\342A\001\002\372A2\n"
+          + "0agentregistry.googleapis.com/SkillEncryptionSpec\"\262\001\n"
+          + " UpdateSkillEncryptionSpecRequest\022W\n"
+          + "\025skill_encryption_spec\030\001 \001(\01322.google.cloud.age"
+          + "ntregistry.v1.SkillEncryptionSpecB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001*D\n\n"
+          + "SearchType\022\033\n"
+          + "\027SEARCH_TYPE_UNSPECIFIED\020\000\022\013\n"
+          + "\007KEYWORD\020\001\022\014\n"
+          + "\010SEMANTIC\020\0022\377F\n\r"
           + "AgentRegistry\022\256\001\n\n"
-          + "ListAgents\0220.google.cloud.agentregistry.v1.ListAgent"
-          + "sRequest\0321.google.cloud.agentregistry.v1"
-          + ".ListAgentsResponse\";\332A\006parent\202\323\344\223\002,\022*/v"
-          + "1/{parent=projects/*/locations/*}/agents\022\276\001\n"
-          + "\014SearchAgents\0222.google.cloud.agentregistry.v1.SearchAgentsRequest\0323.google.c"
-          + "loud.agentregistry.v1.SearchAgentsRespon"
-          + "se\"E\332A\006parent\202\323\344\223\0026\"1/v1/{parent=projects/*/locations/*}/agents:search:\001*\022\233\001\n"
-          + "\010GetAgent\022..google.cloud.agentregistry.v1.G"
-          + "etAgentRequest\032$.google.cloud.agentregis"
-          + "try.v1.Agent\"9\332A\004name\202\323\344\223\002,\022*/v1/{name=projects/*/locations/*/agents/*}\022\272\001\n\r"
-          + "ListEndpoints\0223.google.cloud.agentregistry.v"
-          + "1.ListEndpointsRequest\0324.google.cloud.ag"
-          + "entregistry.v1.ListEndpointsResponse\">\332A"
-          + "\006parent\202\323\344\223\002/\022-/v1/{parent=projects/*/locations/*}/endpoints\022\247\001\n"
-          + "\013GetEndpoint\0221.google.cloud.agentregistry.v1.GetEndpoint"
-          + "Request\032\'.google.cloud.agentregistry.v1."
-          + "Endpoint\"<\332A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/locations/*/endpoints/*}\022\276\001\n"
-          + "\016ListMcpServers\0224.google.cloud.agentregistry.v"
-          + "1.ListMcpServersRequest\0325.google.cloud.agentregistry.v1.ListMcpServersResponse\"?"
-          + "\332A\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/mcpServers\022\316\001\n"
-          + "\020SearchMcpServers\0226.google.cloud.agentregistry.v1.Sea"
-          + "rchMcpServersRequest\0327.google.cloud.agen"
-          + "tregistry.v1.SearchMcpServersResponse\"I\332"
-          + "A\006parent\202\323\344\223\002:\"5/v1/{parent=projects/*/locations/*}/mcpServers:search:\001*\022\253\001\n"
-          + "\014GetMcpServer\0222.google.cloud.agentregistry.v"
-          + "1.GetMcpServerRequest\032(.google.cloud.age"
-          + "ntregistry.v1.McpServer\"=\332A\004name\202\323\344\223\0020\022."
-          + "/v1/{name=projects/*/locations/*/mcpServers/*}\022\266\001\n"
-          + "\014ListServices\0222.google.cloud.agentregistry.v1.ListServicesRequest\0323.go"
-          + "ogle.cloud.agentregistry.v1.ListServices"
-          + "Response\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=projects/*/locations/*}/services\022\243\001\n\n"
-          + "GetService\0220.google.cloud.agentregistry.v1.G"
-          + "etServiceRequest\032&.google.cloud.agentreg"
-          + "istry.v1.Service\";\332A\004name\202\323\344\223\002.\022,/v1/{na"
-          + "me=projects/*/locations/*/services/*}\022\335\001\n\r"
-          + "CreateService\0223.google.cloud.agentregi"
-          + "stry.v1.CreateServiceRequest\032\035.google.longrunning.Operation\"x\312A\034\n"
-          + "\007Service\022\021OperationMetadata\332A\031parent,service,service_id"
-          + "\202\323\344\223\0027\",/v1/{parent=projects/*/locations/*}/services:\007service\022\337\001\n\r"
-          + "UpdateService\0223.google.cloud.agentregistry.v1.UpdateSe"
-          + "rviceRequest\032\035.google.longrunning.Operation\"z\312A\034\n"
-          + "\007Service\022\021OperationMetadata\332A\023s"
-          + "ervice,update_mask\202\323\344\223\002?24/v1/{service.n"
-          + "ame=projects/*/locations/*/services/*}:\007service\022\315\001\n\r"
-          + "DeleteService\0223.google.cloud"
-          + ".agentregistry.v1.DeleteServiceRequest\032\035.google.longrunning.Operation\"h\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004n"
-          + "ame\202\323\344\223\002.*,/v1/{name=projects/*/locations/*/services/*}\022\266\001\n"
-          + "\014ListBindings\0222.google.cloud.agentregistry.v1.ListBindingsReq"
-          + "uest\0323.google.cloud.agentregistry.v1.Lis"
-          + "tBindingsResponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/"
-          + "{parent=projects/*/locations/*}/bindings\022\243\001\n\n"
-          + "GetBinding\0220.google.cloud.agentregistry.v1.GetBindingRequest\032&.google.cloud"
-          + ".agentregistry.v1.Binding\";\332A\004name\202\323\344\223\002."
-          + "\022,/v1/{name=projects/*/locations/*/bindings/*}\022\335\001\n\r"
-          + "CreateBinding\0223.google.cloud."
-          + "agentregistry.v1.CreateBindingRequest\032\035.google.longrunning.Operation\"x\312A\034\n"
-          + "\007Binding\022\021OperationMetadata\332A\031parent,binding,b"
-          + "inding_id\202\323\344\223\0027\",/v1/{parent=projects/*/locations/*}/bindings:\007binding\022\337\001\n\r"
-          + "UpdateBinding\0223.google.cloud.agentregistry.v1"
-          + ".UpdateBindingRequest\032\035.google.longrunning.Operation\"z\312A\034\n"
-          + "\007Binding\022\021OperationMet"
-          + "adata\332A\023binding,update_mask\202\323\344\223\002?24/v1/{"
-          + "binding.name=projects/*/locations/*/bindings/*}:\007binding\022\315\001\n\r"
-          + "DeleteBinding\0223.google.cloud.agentregistry.v1.DeleteBinding"
-          + "Request\032\035.google.longrunning.Operation\"h\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMet"
-          + "adata\332A\004name\202\323\344\223\002.*,/v1/{name=projects/*/locations/*/bindings/*}\022\343\001\n"
-          + "\026FetchAvailableBindings\022<.google.cloud.agentregistry"
-          + ".v1.FetchAvailableBindingsRequest\032=.google.cloud.agentregistry.v1.FetchAvailable"
-          + "BindingsResponse\"L\332A\006parent\202\323\344\223\002=\022;/v1/{"
-          + "parent=projects/*/locations/*}/bindings:"
-          + "fetchAvailable\032\373\001\312A\034agentregistry.google"
-          + "apis.com\322A\330\001https://www.googleapis.com/a"
-          + "uth/agentregistry.read-only,https://www.googleapis.com/auth/agentregistry.read-w"
-          + "rite,https://www.googleapis.com/auth/clo"
-          + "ud-platform,https://www.googleapis.com/auth/cloud-platform.read-onlyB\354\001\n"
-          + "!com.google.cloud.agentregistry.v1B\031AgentRegistr"
-          + "yServiceProtoP\001ZGcloud.google.com/go/agentregistry/apiv1/agentregistrypb;agentre"
-          + "gistrypb\252\002\035Google.Cloud.AgentRegistry.V1\312\002\035Google\\Cloud\\AgentRegistry\\V1\352\002"
-          + " Google::Cloud::AgentRegistry::V1b\006proto3"
+          + "ListAgents\0220.google.cloud.agentregistry.v1.ListAgents"
+          + "Request\0321.google.cloud.agentregistry.v1."
+          + "ListAgentsResponse\";\332A\006parent\202\323\344\223\002,\022*/v1"
+          + "/{parent=projects/*/locations/*}/agents\022\276\001\n"
+          + "\014SearchAgents\0222.google.cloud.agentregistry.v1.SearchAgentsRequest\0323.google.cl"
+          + "oud.agentregistry.v1.SearchAgentsRespons"
+          + "e\"E\332A\006parent\202\323\344\223\0026\"1/v1/{parent=projects/*/locations/*}/agents:search:\001*\022\233\001\n"
+          + "\010GetAgent\022..google.cloud.agentregistry.v1.Ge"
+          + "tAgentRequest\032$.google.cloud.agentregist"
+          + "ry.v1.Agent\"9\332A\004name\202\323\344\223\002,\022*/v1/{name=projects/*/locations/*/agents/*}\022\272\001\n\r"
+          + "ListEndpoints\0223.google.cloud.agentregistry.v1"
+          + ".ListEndpointsRequest\0324.google.cloud.age"
+          + "ntregistry.v1.ListEndpointsResponse\">\332A\006"
+          + "parent\202\323\344\223\002/\022-/v1/{parent=projects/*/locations/*}/endpoints\022\247\001\n"
+          + "\013GetEndpoint\0221.google.cloud.agentregistry.v1.GetEndpointR"
+          + "equest\032\'.google.cloud.agentregistry.v1.E"
+          + "ndpoint\"<\332A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/locations/*/endpoints/*}\022\276\001\n"
+          + "\016ListMcpServers\0224.google.cloud.agentregistry.v1"
+          + ".ListMcpServersRequest\0325.google.cloud.ag"
+          + "entregistry.v1.ListMcpServersResponse\"?\332"
+          + "A\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/mcpServers\022\316\001\n"
+          + "\020SearchMcpServers\0226.google.cloud.agentregistry.v1.Sear"
+          + "chMcpServersRequest\0327.google.cloud.agent"
+          + "registry.v1.SearchMcpServersResponse\"I\332A"
+          + "\006parent\202\323\344\223\002:\"5/v1/{parent=projects/*/locations/*}/mcpServers:search:\001*\022\253\001\n"
+          + "\014GetMcpServer\0222.google.cloud.agentregistry.v1"
+          + ".GetMcpServerRequest\032(.google.cloud.agen"
+          + "tregistry.v1.McpServer\"=\332A\004name\202\323\344\223\0020\022./"
+          + "v1/{name=projects/*/locations/*/mcpServers/*}\022\266\001\n"
+          + "\014ListServices\0222.google.cloud.agentregistry.v1.ListServicesRequest\0323.goo"
+          + "gle.cloud.agentregistry.v1.ListServicesR"
+          + "esponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=projects/*/locations/*}/services\022\243\001\n\n"
+          + "GetService\0220.google.cloud.agentregistry.v1.Ge"
+          + "tServiceRequest\032&.google.cloud.agentregi"
+          + "stry.v1.Service\";\332A\004name\202\323\344\223\002.\022,/v1/{name=projects/*/locations/*/services/*}\022\335\001\n"
+          + "\r"
+          + "CreateService\0223.google.cloud.agentregis"
+          + "try.v1.CreateServiceRequest\032\035.google.longrunning.Operation\"x\312A\034\n"
+          + "\007Service\022\021OperationMetadata\332A\031parent,service,service_id\202"
+          + "\323\344\223\0027\",/v1/{parent=projects/*/locations/*}/services:\007service\022\337\001\n\r"
+          + "UpdateService\0223.google.cloud.agentregistry.v1.UpdateSer"
+          + "viceRequest\032\035.google.longrunning.Operation\"z\312A\034\n"
+          + "\007Service\022\021OperationMetadata\332A\023se"
+          + "rvice,update_mask\202\323\344\223\002?24/v1/{service.na"
+          + "me=projects/*/locations/*/services/*}:\007service\022\315\001\n\r"
+          + "DeleteService\0223.google.cloud."
+          + "agentregistry.v1.DeleteServiceRequest\032\035.google.longrunning.Operation\"h\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004na"
+          + "me\202\323\344\223\002.*,/v1/{name=projects/*/locations/*/services/*}\022\266\001\n"
+          + "\014ListBindings\0222.google.cloud.agentregistry.v1.ListBindingsRequ"
+          + "est\0323.google.cloud.agentregistry.v1.List"
+          + "BindingsResponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{"
+          + "parent=projects/*/locations/*}/bindings\022\243\001\n\n"
+          + "GetBinding\0220.google.cloud.agentregistry.v1.GetBindingRequest\032&.google.cloud."
+          + "agentregistry.v1.Binding\";\332A\004name\202\323\344\223\002.\022"
+          + ",/v1/{name=projects/*/locations/*/bindings/*}\022\335\001\n\r"
+          + "CreateBinding\0223.google.cloud.a"
+          + "gentregistry.v1.CreateBindingRequest\032\035.google.longrunning.Operation\"x\312A\034\n"
+          + "\007Binding\022\021OperationMetadata\332A\031parent,binding,bi"
+          + "nding_id\202\323\344\223\0027\",/v1/{parent=projects/*/locations/*}/bindings:\007binding\022\337\001\n\r"
+          + "UpdateBinding\0223.google.cloud.agentregistry.v1."
+          + "UpdateBindingRequest\032\035.google.longrunning.Operation\"z\312A\034\n"
+          + "\007Binding\022\021OperationMeta"
+          + "data\332A\023binding,update_mask\202\323\344\223\002?24/v1/{b"
+          + "inding.name=projects/*/locations/*/bindings/*}:\007binding\022\315\001\n\r"
+          + "DeleteBinding\0223.google.cloud.agentregistry.v1.DeleteBindingR"
+          + "equest\032\035.google.longrunning.Operation\"h\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMeta"
+          + "data\332A\004name\202\323\344\223\002.*,/v1/{name=projects/*/locations/*/bindings/*}\022\343\001\n"
+          + "\026FetchAvailableBindings\022<.google.cloud.agentregistry."
+          + "v1.FetchAvailableBindingsRequest\032=.google.cloud.agentregistry.v1.FetchAvailableB"
+          + "indingsResponse\"L\332A\006parent\202\323\344\223\002=\022;/v1/{p"
+          + "arent=projects/*/locations/*}/bindings:fetchAvailable\022\317\001\n"
+          + "\013CreateSkill\0221.google.c"
+          + "loud.agentregistry.v1.CreateSkillRequest\032\035.google.longrunning.Operation\"n\312A\032\n"
+          + "\005Skill\022\021OperationMetadata\332A\025parent,skill,sk"
+          + "ill_id\202\323\344\223\0023\"*/v1/{parent=projects/*/locations/*}/skills:\005skill\022\233\001\n"
+          + "\010GetSkill\022..google.cloud.agentregistry.v1.GetSkillReq"
+          + "uest\032$.google.cloud.agentregistry.v1.Ski"
+          + "ll\"9\332A\004name\202\323\344\223\002,\022*/v1/{name=projects/*/locations/*/skills/*}\022\321\001\n"
+          + "\013UpdateSkill\0221.google.cloud.agentregistry.v1.UpdateSkil"
+          + "lRequest\032\035.google.longrunning.Operation\"p\312A\032\n"
+          + "\005Skill\022\021OperationMetadata\332A\021skill,u"
+          + "pdate_mask\202\323\344\223\002920/v1/{skill.name=projects/*/locations/*/skills/*}:\005skill\022\307\001\n"
+          + "\013DeleteSkill\0221.google.cloud.agentregistry.v"
+          + "1.DeleteSkillRequest\032\035.google.longrunning.Operation\"f\312A*\n"
+          + "\025google.protobuf.Empty\022"
+          + "\021OperationMetadata\332A\004name\202\323\344\223\002,**/v1/{name=projects/*/locations/*/skills/*}\022\256\001\n\n"
+          + "ListSkills\0220.google.cloud.agentregistry.v1.ListSkillsRequest\0321.google.cloud.agen"
+          + "tregistry.v1.ListSkillsResponse\";\332A\006pare"
+          + "nt\202\323\344\223\002,\022*/v1/{parent=projects/*/locations/*}/skills\022\352\001\n"
+          + "\014SearchSkills\0222.google.cloud.agentregistry.v1.SearchSkillsReques"
+          + "t\0323.google.cloud.agentregistry.v1.Search"
+          + "SkillsResponse\"q\202\323\344\223\002k\"1/v1/{parent=proj"
+          + "ects/*/locations/*}/skills:search:\001*Z3\0221"
+          + "/v1/{parent=projects/*/locations/*}/skills:search\022\217\002\n"
+          + "\023CreateSkillRevision\0229.google.cloud.agentregistry.v1.CreateSkillRev"
+          + "isionRequest\032\035.google.longrunning.Operation\"\235\001\312A\"\n\r"
+          + "SkillRevision\022\021OperationMetadata\332A\'parent,skill_revision,skill_revisi"
+          + "on_id\202\323\344\223\002H\"6/v1/{parent=projects/*/loca"
+          + "tions/*/skills/*}/revisions:\016skill_revision\022\277\001\n"
+          + "\020GetSkillRevision\0226.google.cloud.agentregistry.v1.GetSkillRevisionRequest"
+          + "\032,.google.cloud.agentregistry.v1.SkillRe"
+          + "vision\"E\332A\004name\202\323\344\223\0028\0226/v1/{name=project"
+          + "s/*/locations/*/skills/*/revisions/*}\022\343\001\n"
+          + "\023DeleteSkillRevision\0229.google.cloud.age"
+          + "ntregistry.v1.DeleteSkillRevisionRequest\032\035.google.longrunning.Operation\"r\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A"
+          + "\004name\202\323\344\223\0028*6/v1/{name=projects/*/locations/*/skills/*/revisions/*}\022\322\001\n"
+          + "\022ListSkillRevisions\0228.google.cloud.agentregistry."
+          + "v1.ListSkillRevisionsRequest\0329.google.cloud.agentregistry.v1.ListSkillRevisionsR"
+          + "esponse\"G\332A\006parent\202\323\344\223\0028\0226/v1/{parent=pr"
+          + "ojects/*/locations/*/skills/*}/revisions\022\253\001\n"
+          + "\014GetPublisher\0222.google.cloud.agentregistry.v1.GetPublisherRequest\032(.google.c"
+          + "loud.agentregistry.v1.Publisher\"=\332A\004name"
+          + "\202\323\344\223\0020\022./v1/{name=projects/*/locations/*/publishers/*}\022\276\001\n"
+          + "\016ListPublishers\0224.google.cloud.agentregistry.v1.ListPublishers"
+          + "Request\0325.google.cloud.agentregistry.v1."
+          + "ListPublishersResponse\"?\332A\006parent\202\323\344\223\0020\022"
+          + "./v1/{parent=projects/*/locations/*}/publishers\022\273\001\n"
+          + "\020GetAiApplication\0226.google.cloud.agentregistry.v1.GetAiApplicationReq"
+          + "uest\032,.google.cloud.agentregistry.v1.AiA"
+          + "pplication\"A\332A\004name\202\323\344\223\0024\0222/v1/{name=pro"
+          + "jects/*/locations/*/aiApplications/*}\022\316\001\n"
+          + "\022ListAiApplications\0228.google.cloud.agen"
+          + "tregistry.v1.ListAiApplicationsRequest\0329.google.cloud.agentregistry.v1.ListAiApp"
+          + "licationsResponse\"C\332A\006parent\202\323\344\223\0024\0222/v1/"
+          + "{parent=projects/*/locations/*}/aiApplic",
+      "ations\022\306\001\n\025GetAiApplicationAgent\022;.googl"
+          + "e.cloud.agentregistry.v1.GetAiApplicatio"
+          + "nAgentRequest\032$.google.cloud.agentregist"
+          + "ry.v1.Agent\"J\332A\004name\202\323\344\223\002=\022;/v1/{name=pr"
+          + "ojects/*/locations/*/aiApplications/*/ag"
+          + "ents/*}\022\346\001\n\027ListAiApplicationAgents\022=.go"
+          + "ogle.cloud.agentregistry.v1.ListAiApplic"
+          + "ationAgentsRequest\032>.google.cloud.agentr"
+          + "egistry.v1.ListAiApplicationAgentsRespon"
+          + "se\"L\332A\006parent\202\323\344\223\002=\022;/v1/{parent=project"
+          + "s/*/locations/*/aiApplications/*}/agents"
+          + "\022\326\001\n\031GetAiApplicationMcpServer\022?.google."
+          + "cloud.agentregistry.v1.GetAiApplicationM"
+          + "cpServerRequest\032(.google.cloud.agentregi"
+          + "stry.v1.McpServer\"N\332A\004name\202\323\344\223\002A\022?/v1/{n"
+          + "ame=projects/*/locations/*/aiApplication"
+          + "s/*/mcpServers/*}\022\366\001\n\033ListAiApplicationM"
+          + "cpServers\022A.google.cloud.agentregistry.v"
+          + "1.ListAiApplicationMcpServersRequest\032B.g"
+          + "oogle.cloud.agentregistry.v1.ListAiAppli"
+          + "cationMcpServersResponse\"P\332A\006parent\202\323\344\223\002"
+          + "A\022?/v1/{parent=projects/*/locations/*/ai"
+          + "Applications/*}/mcpServers\022\243\001\n\nGetFindin"
+          + "g\0220.google.cloud.agentregistry.v1.GetFin"
+          + "dingRequest\032&.google.cloud.agentregistry"
+          + ".v1.Finding\";\332A\004name\202\323\344\223\002.\022,/v1/{name=pr"
+          + "ojects/*/locations/*/findings/*}\022\266\001\n\014Lis"
+          + "tFindings\0222.google.cloud.agentregistry.v"
+          + "1.ListFindingsRequest\0323.google.cloud.age"
+          + "ntregistry.v1.ListFindingsResponse\"=\332A\006p"
+          + "arent\202\323\344\223\002.\022,/v1/{parent=projects/*/loca"
+          + "tions/*}/findings\022\322\001\n\030GetAiApplicationEn"
+          + "dpoint\022>.google.cloud.agentregistry.v1.G"
+          + "etAiApplicationEndpointRequest\032\'.google."
+          + "cloud.agentregistry.v1.Endpoint\"M\332A\004name"
+          + "\202\323\344\223\002@\022>/v1/{name=projects/*/locations/*"
+          + "/aiApplications/*/endpoints/*}\022\362\001\n\032ListA"
+          + "iApplicationEndpoints\022@.google.cloud.age"
+          + "ntregistry.v1.ListAiApplicationEndpoints"
+          + "Request\032A.google.cloud.agentregistry.v1."
+          + "ListAiApplicationEndpointsResponse\"O\332A\006p"
+          + "arent\202\323\344\223\002@\022>/v1/{parent=projects/*/loca"
+          + "tions/*/aiApplications/*}/endpoints\022\320\001\n\026"
+          + "GetSkillEncryptionSpec\022<.google.cloud.ag"
+          + "entregistry.v1.GetSkillEncryptionSpecReq"
+          + "uest\0322.google.cloud.agentregistry.v1.Ski"
+          + "llEncryptionSpec\"D\332A\004name\202\323\344\223\0027\0225/v1/{na"
+          + "me=projects/*/locations/*/skillEncryptio"
+          + "nSpec}\022\267\002\n\031UpdateSkillEncryptionSpec\022?.g"
+          + "oogle.cloud.agentregistry.v1.UpdateSkill"
+          + "EncryptionSpecRequest\032\035.google.longrunni"
+          + "ng.Operation\"\271\001\312A(\n\023SkillEncryptionSpec\022"
+          + "\021OperationMetadata\332A!skill_encryption_sp"
+          + "ec,update_mask\202\323\344\223\002d2K/v1/{skill_encrypt"
+          + "ion_spec.name=projects/*/locations/*/ski"
+          + "llEncryptionSpec}:\025skill_encryption_spec"
+          + "\032\373\001\312A\034agentregistry.googleapis.com\322A\330\001ht"
+          + "tps://www.googleapis.com/auth/agentregis"
+          + "try.read-only,https://www.googleapis.com"
+          + "/auth/agentregistry.read-write,https://w"
+          + "ww.googleapis.com/auth/cloud-platform,ht"
+          + "tps://www.googleapis.com/auth/cloud-plat"
+          + "form.read-onlyB\354\001\n!com.google.cloud.agen"
+          + "tregistry.v1B\031AgentRegistryServiceProtoP"
+          + "\001ZGcloud.google.com/go/agentregistry/api"
+          + "v1/agentregistrypb;agentregistrypb\252\002\035Goo"
+          + "gle.Cloud.AgentRegistry.V1\312\002\035Google\\Clou"
+          + "d\\AgentRegistry\\V1\352\002 Google::Cloud::Agen"
+          + "tRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -407,10 +813,14 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.agentregistry.v1.AgentProto.getDescriptor(),
+              com.google.cloud.agentregistry.v1.AiApplicationProto.getDescriptor(),
               com.google.cloud.agentregistry.v1.BindingProto.getDescriptor(),
               com.google.cloud.agentregistry.v1.EndpointProto.getDescriptor(),
+              com.google.cloud.agentregistry.v1.FindingProto.getDescriptor(),
               com.google.cloud.agentregistry.v1.McpServerProto.getDescriptor(),
               com.google.cloud.agentregistry.v1.ServiceProto.getDescriptor(),
+              com.google.cloud.agentregistry.v1.SkillProto.getDescriptor(),
+              com.google.cloud.agentregistry.v1.SkillEncryptionSpecProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -456,8 +866,32 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_agentregistry_v1_ListEndpointsRequest_descriptor =
+    internal_static_google_cloud_agentregistry_v1_GetAiApplicationAgentRequest_descriptor =
         getDescriptor().getMessageType(5);
+    internal_static_google_cloud_agentregistry_v1_GetAiApplicationAgentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetAiApplicationAgentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsResponse_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListAiApplicationAgentsResponse_descriptor,
+            new java.lang.String[] {
+              "Agents", "NextPageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListEndpointsRequest_descriptor =
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_agentregistry_v1_ListEndpointsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_ListEndpointsRequest_descriptor,
@@ -465,7 +899,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_agentregistry_v1_ListEndpointsResponse_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_agentregistry_v1_ListEndpointsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_ListEndpointsResponse_descriptor,
@@ -473,15 +907,39 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Endpoints", "NextPageToken",
             });
     internal_static_google_cloud_agentregistry_v1_GetEndpointRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_agentregistry_v1_GetEndpointRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_GetEndpointRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_agentregistry_v1_GetAiApplicationEndpointRequest_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_agentregistry_v1_GetAiApplicationEndpointRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetAiApplicationEndpointRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsResponse_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListAiApplicationEndpointsResponse_descriptor,
+            new java.lang.String[] {
+              "Endpoints", "NextPageToken",
+            });
     internal_static_google_cloud_agentregistry_v1_ListMcpServersRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_agentregistry_v1_ListMcpServersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_ListMcpServersRequest_descriptor,
@@ -489,7 +947,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_agentregistry_v1_ListMcpServersResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_agentregistry_v1_ListMcpServersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_ListMcpServersResponse_descriptor,
@@ -497,7 +955,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "McpServers", "NextPageToken",
             });
     internal_static_google_cloud_agentregistry_v1_SearchMcpServersRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_agentregistry_v1_SearchMcpServersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_SearchMcpServersRequest_descriptor,
@@ -505,7 +963,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Parent", "SearchString", "PageSize", "PageToken",
             });
     internal_static_google_cloud_agentregistry_v1_SearchMcpServersResponse_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_agentregistry_v1_SearchMcpServersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_SearchMcpServersResponse_descriptor,
@@ -513,15 +971,39 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "McpServers", "NextPageToken",
             });
     internal_static_google_cloud_agentregistry_v1_GetMcpServerRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_agentregistry_v1_GetMcpServerRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_GetMcpServerRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_agentregistry_v1_GetAiApplicationMcpServerRequest_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_cloud_agentregistry_v1_GetAiApplicationMcpServerRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetAiApplicationMcpServerRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersRequest_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersResponse_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListAiApplicationMcpServersResponse_descriptor,
+            new java.lang.String[] {
+              "McpServers", "NextPageToken",
+            });
     internal_static_google_cloud_agentregistry_v1_ListServicesRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_agentregistry_v1_ListServicesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_ListServicesRequest_descriptor,
@@ -529,7 +1011,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_agentregistry_v1_ListServicesResponse_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_agentregistry_v1_ListServicesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_ListServicesResponse_descriptor,
@@ -537,7 +1019,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Services", "NextPageToken",
             });
     internal_static_google_cloud_agentregistry_v1_GetServiceRequest_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_agentregistry_v1_GetServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_GetServiceRequest_descriptor,
@@ -545,7 +1027,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Name",
             });
     internal_static_google_cloud_agentregistry_v1_CreateServiceRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_agentregistry_v1_CreateServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_CreateServiceRequest_descriptor,
@@ -553,7 +1035,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Parent", "ServiceId", "Service", "RequestId",
             });
     internal_static_google_cloud_agentregistry_v1_FetchAvailableBindingsRequest_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_agentregistry_v1_FetchAvailableBindingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_FetchAvailableBindingsRequest_descriptor,
@@ -567,7 +1049,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Target",
             });
     internal_static_google_cloud_agentregistry_v1_FetchAvailableBindingsResponse_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_agentregistry_v1_FetchAvailableBindingsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_FetchAvailableBindingsResponse_descriptor,
@@ -575,7 +1057,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Bindings", "NextPageToken",
             });
     internal_static_google_cloud_agentregistry_v1_UpdateServiceRequest_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_agentregistry_v1_UpdateServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_UpdateServiceRequest_descriptor,
@@ -583,7 +1065,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "UpdateMask", "Service", "RequestId",
             });
     internal_static_google_cloud_agentregistry_v1_DeleteServiceRequest_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_agentregistry_v1_DeleteServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_DeleteServiceRequest_descriptor,
@@ -591,7 +1073,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Name", "RequestId",
             });
     internal_static_google_cloud_agentregistry_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_agentregistry_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_OperationMetadata_descriptor,
@@ -605,7 +1087,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "ApiVersion",
             });
     internal_static_google_cloud_agentregistry_v1_ListBindingsRequest_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(31);
     internal_static_google_cloud_agentregistry_v1_ListBindingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_ListBindingsRequest_descriptor,
@@ -613,7 +1095,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_agentregistry_v1_ListBindingsResponse_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(32);
     internal_static_google_cloud_agentregistry_v1_ListBindingsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_ListBindingsResponse_descriptor,
@@ -621,7 +1103,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Bindings", "NextPageToken",
             });
     internal_static_google_cloud_agentregistry_v1_GetBindingRequest_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(33);
     internal_static_google_cloud_agentregistry_v1_GetBindingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_GetBindingRequest_descriptor,
@@ -629,7 +1111,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Name",
             });
     internal_static_google_cloud_agentregistry_v1_CreateBindingRequest_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(34);
     internal_static_google_cloud_agentregistry_v1_CreateBindingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_CreateBindingRequest_descriptor,
@@ -637,7 +1119,7 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Parent", "BindingId", "Binding", "RequestId",
             });
     internal_static_google_cloud_agentregistry_v1_UpdateBindingRequest_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_agentregistry_v1_UpdateBindingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_UpdateBindingRequest_descriptor,
@@ -645,12 +1127,204 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
               "Binding", "UpdateMask", "RequestId",
             });
     internal_static_google_cloud_agentregistry_v1_DeleteBindingRequest_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_agentregistry_v1_DeleteBindingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_agentregistry_v1_DeleteBindingRequest_descriptor,
             new java.lang.String[] {
               "Name", "RequestId",
+            });
+    internal_static_google_cloud_agentregistry_v1_CreateSkillRequest_descriptor =
+        getDescriptor().getMessageType(37);
+    internal_static_google_cloud_agentregistry_v1_CreateSkillRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_CreateSkillRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "SkillId", "Skill", "RequestId",
+            });
+    internal_static_google_cloud_agentregistry_v1_GetSkillRequest_descriptor =
+        getDescriptor().getMessageType(38);
+    internal_static_google_cloud_agentregistry_v1_GetSkillRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetSkillRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_UpdateSkillRequest_descriptor =
+        getDescriptor().getMessageType(39);
+    internal_static_google_cloud_agentregistry_v1_UpdateSkillRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_UpdateSkillRequest_descriptor,
+            new java.lang.String[] {
+              "Skill", "UpdateMask", "RequestId",
+            });
+    internal_static_google_cloud_agentregistry_v1_DeleteSkillRequest_descriptor =
+        getDescriptor().getMessageType(40);
+    internal_static_google_cloud_agentregistry_v1_DeleteSkillRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_DeleteSkillRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId", "Force",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListSkillsRequest_descriptor =
+        getDescriptor().getMessageType(41);
+    internal_static_google_cloud_agentregistry_v1_ListSkillsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListSkillsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListSkillsResponse_descriptor =
+        getDescriptor().getMessageType(42);
+    internal_static_google_cloud_agentregistry_v1_ListSkillsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListSkillsResponse_descriptor,
+            new java.lang.String[] {
+              "Skills", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_agentregistry_v1_SearchSkillsRequest_descriptor =
+        getDescriptor().getMessageType(43);
+    internal_static_google_cloud_agentregistry_v1_SearchSkillsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_SearchSkillsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "SearchType", "SearchString", "Filter", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_SearchSkillsResponse_descriptor =
+        getDescriptor().getMessageType(44);
+    internal_static_google_cloud_agentregistry_v1_SearchSkillsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_SearchSkillsResponse_descriptor,
+            new java.lang.String[] {
+              "Skills", "NextPageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_CreateSkillRevisionRequest_descriptor =
+        getDescriptor().getMessageType(45);
+    internal_static_google_cloud_agentregistry_v1_CreateSkillRevisionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_CreateSkillRevisionRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "SkillRevision", "SkillRevisionId", "RequestId",
+            });
+    internal_static_google_cloud_agentregistry_v1_GetSkillRevisionRequest_descriptor =
+        getDescriptor().getMessageType(46);
+    internal_static_google_cloud_agentregistry_v1_GetSkillRevisionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetSkillRevisionRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_DeleteSkillRevisionRequest_descriptor =
+        getDescriptor().getMessageType(47);
+    internal_static_google_cloud_agentregistry_v1_DeleteSkillRevisionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_DeleteSkillRevisionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsRequest_descriptor =
+        getDescriptor().getMessageType(48);
+    internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsResponse_descriptor =
+        getDescriptor().getMessageType(49);
+    internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListSkillRevisionsResponse_descriptor,
+            new java.lang.String[] {
+              "SkillRevisions", "NextPageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_GetPublisherRequest_descriptor =
+        getDescriptor().getMessageType(50);
+    internal_static_google_cloud_agentregistry_v1_GetPublisherRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetPublisherRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListPublishersRequest_descriptor =
+        getDescriptor().getMessageType(51);
+    internal_static_google_cloud_agentregistry_v1_ListPublishersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListPublishersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListPublishersResponse_descriptor =
+        getDescriptor().getMessageType(52);
+    internal_static_google_cloud_agentregistry_v1_ListPublishersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListPublishersResponse_descriptor,
+            new java.lang.String[] {
+              "Publishers", "NextPageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_GetAiApplicationRequest_descriptor =
+        getDescriptor().getMessageType(53);
+    internal_static_google_cloud_agentregistry_v1_GetAiApplicationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetAiApplicationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationsRequest_descriptor =
+        getDescriptor().getMessageType(54);
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListAiApplicationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationsResponse_descriptor =
+        getDescriptor().getMessageType(55);
+    internal_static_google_cloud_agentregistry_v1_ListAiApplicationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListAiApplicationsResponse_descriptor,
+            new java.lang.String[] {
+              "AiApplications", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListFindingsRequest_descriptor =
+        getDescriptor().getMessageType(56);
+    internal_static_google_cloud_agentregistry_v1_ListFindingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListFindingsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_agentregistry_v1_ListFindingsResponse_descriptor =
+        getDescriptor().getMessageType(57);
+    internal_static_google_cloud_agentregistry_v1_ListFindingsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_ListFindingsResponse_descriptor,
+            new java.lang.String[] {
+              "Findings", "NextPageToken",
+            });
+    internal_static_google_cloud_agentregistry_v1_GetFindingRequest_descriptor =
+        getDescriptor().getMessageType(58);
+    internal_static_google_cloud_agentregistry_v1_GetFindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetFindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_GetSkillEncryptionSpecRequest_descriptor =
+        getDescriptor().getMessageType(59);
+    internal_static_google_cloud_agentregistry_v1_GetSkillEncryptionSpecRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_GetSkillEncryptionSpecRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_agentregistry_v1_UpdateSkillEncryptionSpecRequest_descriptor =
+        getDescriptor().getMessageType(60);
+    internal_static_google_cloud_agentregistry_v1_UpdateSkillEncryptionSpecRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_agentregistry_v1_UpdateSkillEncryptionSpecRequest_descriptor,
+            new java.lang.String[] {
+              "SkillEncryptionSpec", "UpdateMask",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
@@ -659,10 +1333,14 @@ public final class AgentRegistryServiceProto extends com.google.protobuf.Generat
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.agentregistry.v1.AgentProto.getDescriptor();
+    com.google.cloud.agentregistry.v1.AiApplicationProto.getDescriptor();
     com.google.cloud.agentregistry.v1.BindingProto.getDescriptor();
     com.google.cloud.agentregistry.v1.EndpointProto.getDescriptor();
+    com.google.cloud.agentregistry.v1.FindingProto.getDescriptor();
     com.google.cloud.agentregistry.v1.McpServerProto.getDescriptor();
     com.google.cloud.agentregistry.v1.ServiceProto.getDescriptor();
+    com.google.cloud.agentregistry.v1.SkillProto.getDescriptor();
+    com.google.cloud.agentregistry.v1.SkillEncryptionSpecProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

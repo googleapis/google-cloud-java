@@ -294,7 +294,7 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * GCP external load balancer.
+     * Google Cloud external load balancer.
      * </pre>
      *
      * <code>GCP_XLB = 1;</code>
@@ -304,7 +304,7 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * GCP internal load balancer.
+     * Google Cloud internal load balancer.
      * </pre>
      *
      * <code>GCP_ILB = 2;</code>
@@ -338,7 +338,7 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * GCP external load balancer.
+     * Google Cloud external load balancer.
      * </pre>
      *
      * <code>GCP_XLB = 1;</code>
@@ -349,7 +349,7 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * GCP internal load balancer.
+     * Google Cloud internal load balancer.
      * </pre>
      *
      * <code>GCP_ILB = 2;</code>
@@ -836,8 +836,8 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. For an observation pushed from a gcp resource, this would be the
-   * gcp project id.
+   * Optional. For an observation pushed from a Google Cloud resource, this
+   * would be the Google Cloud project id.
    * </pre>
    *
    * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -861,8 +861,8 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. For an observation pushed from a gcp resource, this would be the
-   * gcp project id.
+   * Optional. For an observation pushed from a Google Cloud resource, this
+   * would be the Google Cloud project id.
    * </pre>
    *
    * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2960,8 +2960,8 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. For an observation pushed from a gcp resource, this would be the
-     * gcp project id.
+     * Optional. For an observation pushed from a Google Cloud resource, this
+     * would be the Google Cloud project id.
      * </pre>
      *
      * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2984,8 +2984,8 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. For an observation pushed from a gcp resource, this would be the
-     * gcp project id.
+     * Optional. For an observation pushed from a Google Cloud resource, this
+     * would be the Google Cloud project id.
      * </pre>
      *
      * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3008,8 +3008,8 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. For an observation pushed from a gcp resource, this would be the
-     * gcp project id.
+     * Optional. For an observation pushed from a Google Cloud resource, this
+     * would be the Google Cloud project id.
      * </pre>
      *
      * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3031,8 +3031,8 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. For an observation pushed from a gcp resource, this would be the
-     * gcp project id.
+     * Optional. For an observation pushed from a Google Cloud resource, this
+     * would be the Google Cloud project id.
      * </pre>
      *
      * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3050,8 +3050,8 @@ public final class DiscoveredApiObservation extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. For an observation pushed from a gcp resource, this would be the
-     * gcp project id.
+     * Optional. For an observation pushed from a Google Cloud resource, this
+     * would be the Google Cloud project id.
      * </pre>
      *
      * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

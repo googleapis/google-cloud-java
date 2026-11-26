@@ -34,7 +34,8 @@ public class SyncGetAgentString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
-      String name = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
+      String name =
+          AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]").toString();
       Agent response = agentRegistryClient.getAgent(name);
     }
   }

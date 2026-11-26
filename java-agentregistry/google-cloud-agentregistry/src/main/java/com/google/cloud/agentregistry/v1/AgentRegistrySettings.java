@@ -18,13 +18,22 @@ package com.google.cloud.agentregistry.v1;
 
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.FetchAvailableBindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAgentsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationAgentsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationEndpointsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListAiApplicationsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListBindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListEndpointsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListFindingsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListLocationsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListPublishersPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListServicesPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListSkillRevisionsPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.ListSkillsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchAgentsPagedResponse;
 import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchMcpServersPagedResponse;
+import static com.google.cloud.agentregistry.v1.AgentRegistryClient.SearchSkillsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -272,6 +281,189 @@ public class AgentRegistrySettings extends ClientSettings<AgentRegistrySettings>
           FetchAvailableBindingsPagedResponse>
       fetchAvailableBindingsSettings() {
     return ((AgentRegistryStubSettings) getStubSettings()).fetchAvailableBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSkill. */
+  public UnaryCallSettings<CreateSkillRequest, Operation> createSkillSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).createSkillSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSkill. */
+  public OperationCallSettings<CreateSkillRequest, Skill, OperationMetadata>
+      createSkillOperationSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).createSkillOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSkill. */
+  public UnaryCallSettings<GetSkillRequest, Skill> getSkillSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getSkillSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSkill. */
+  public UnaryCallSettings<UpdateSkillRequest, Operation> updateSkillSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).updateSkillSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSkill. */
+  public OperationCallSettings<UpdateSkillRequest, Skill, OperationMetadata>
+      updateSkillOperationSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).updateSkillOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSkill. */
+  public UnaryCallSettings<DeleteSkillRequest, Operation> deleteSkillSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).deleteSkillSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSkill. */
+  public OperationCallSettings<DeleteSkillRequest, Empty, OperationMetadata>
+      deleteSkillOperationSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).deleteSkillOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSkills. */
+  public PagedCallSettings<ListSkillsRequest, ListSkillsResponse, ListSkillsPagedResponse>
+      listSkillsSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).listSkillsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchSkills. */
+  public PagedCallSettings<SearchSkillsRequest, SearchSkillsResponse, SearchSkillsPagedResponse>
+      searchSkillsSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).searchSkillsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSkillRevision. */
+  public UnaryCallSettings<CreateSkillRevisionRequest, Operation> createSkillRevisionSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).createSkillRevisionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createSkillRevision. */
+  public OperationCallSettings<CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+      createSkillRevisionOperationSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).createSkillRevisionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSkillRevision. */
+  public UnaryCallSettings<GetSkillRevisionRequest, SkillRevision> getSkillRevisionSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getSkillRevisionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSkillRevision. */
+  public UnaryCallSettings<DeleteSkillRevisionRequest, Operation> deleteSkillRevisionSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).deleteSkillRevisionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSkillRevision. */
+  public OperationCallSettings<DeleteSkillRevisionRequest, Empty, OperationMetadata>
+      deleteSkillRevisionOperationSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).deleteSkillRevisionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSkillRevisions. */
+  public PagedCallSettings<
+          ListSkillRevisionsRequest, ListSkillRevisionsResponse, ListSkillRevisionsPagedResponse>
+      listSkillRevisionsSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).listSkillRevisionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPublisher. */
+  public UnaryCallSettings<GetPublisherRequest, Publisher> getPublisherSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getPublisherSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPublishers. */
+  public PagedCallSettings<
+          ListPublishersRequest, ListPublishersResponse, ListPublishersPagedResponse>
+      listPublishersSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).listPublishersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAiApplication. */
+  public UnaryCallSettings<GetAiApplicationRequest, AiApplication> getAiApplicationSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getAiApplicationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAiApplications. */
+  public PagedCallSettings<
+          ListAiApplicationsRequest, ListAiApplicationsResponse, ListAiApplicationsPagedResponse>
+      listAiApplicationsSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).listAiApplicationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAiApplicationAgent. */
+  public UnaryCallSettings<GetAiApplicationAgentRequest, Agent> getAiApplicationAgentSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getAiApplicationAgentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAiApplicationAgents. */
+  public PagedCallSettings<
+          ListAiApplicationAgentsRequest,
+          ListAiApplicationAgentsResponse,
+          ListAiApplicationAgentsPagedResponse>
+      listAiApplicationAgentsSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).listAiApplicationAgentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAiApplicationMcpServer. */
+  public UnaryCallSettings<GetAiApplicationMcpServerRequest, McpServer>
+      getAiApplicationMcpServerSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getAiApplicationMcpServerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAiApplicationMcpServers. */
+  public PagedCallSettings<
+          ListAiApplicationMcpServersRequest,
+          ListAiApplicationMcpServersResponse,
+          ListAiApplicationMcpServersPagedResponse>
+      listAiApplicationMcpServersSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).listAiApplicationMcpServersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getFinding. */
+  public UnaryCallSettings<GetFindingRequest, Finding> getFindingSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getFindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listFindings. */
+  public PagedCallSettings<ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
+      listFindingsSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).listFindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAiApplicationEndpoint. */
+  public UnaryCallSettings<GetAiApplicationEndpointRequest, Endpoint>
+      getAiApplicationEndpointSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getAiApplicationEndpointSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAiApplicationEndpoints. */
+  public PagedCallSettings<
+          ListAiApplicationEndpointsRequest,
+          ListAiApplicationEndpointsResponse,
+          ListAiApplicationEndpointsPagedResponse>
+      listAiApplicationEndpointsSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).listAiApplicationEndpointsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSkillEncryptionSpec. */
+  public UnaryCallSettings<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+      getSkillEncryptionSpecSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).getSkillEncryptionSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSkillEncryptionSpec. */
+  public UnaryCallSettings<UpdateSkillEncryptionSpecRequest, Operation>
+      updateSkillEncryptionSpecSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings()).updateSkillEncryptionSpecSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSkillEncryptionSpec. */
+  public OperationCallSettings<
+          UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+      updateSkillEncryptionSpecOperationSettings() {
+    return ((AgentRegistryStubSettings) getStubSettings())
+        .updateSkillEncryptionSpecOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -543,6 +735,196 @@ public class AgentRegistrySettings extends ClientSettings<AgentRegistrySettings>
             FetchAvailableBindingsPagedResponse>
         fetchAvailableBindingsSettings() {
       return getStubSettingsBuilder().fetchAvailableBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSkill. */
+    public UnaryCallSettings.Builder<CreateSkillRequest, Operation> createSkillSettings() {
+      return getStubSettingsBuilder().createSkillSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSkill. */
+    public OperationCallSettings.Builder<CreateSkillRequest, Skill, OperationMetadata>
+        createSkillOperationSettings() {
+      return getStubSettingsBuilder().createSkillOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSkill. */
+    public UnaryCallSettings.Builder<GetSkillRequest, Skill> getSkillSettings() {
+      return getStubSettingsBuilder().getSkillSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSkill. */
+    public UnaryCallSettings.Builder<UpdateSkillRequest, Operation> updateSkillSettings() {
+      return getStubSettingsBuilder().updateSkillSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSkill. */
+    public OperationCallSettings.Builder<UpdateSkillRequest, Skill, OperationMetadata>
+        updateSkillOperationSettings() {
+      return getStubSettingsBuilder().updateSkillOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSkill. */
+    public UnaryCallSettings.Builder<DeleteSkillRequest, Operation> deleteSkillSettings() {
+      return getStubSettingsBuilder().deleteSkillSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSkill. */
+    public OperationCallSettings.Builder<DeleteSkillRequest, Empty, OperationMetadata>
+        deleteSkillOperationSettings() {
+      return getStubSettingsBuilder().deleteSkillOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSkills. */
+    public PagedCallSettings.Builder<ListSkillsRequest, ListSkillsResponse, ListSkillsPagedResponse>
+        listSkillsSettings() {
+      return getStubSettingsBuilder().listSkillsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchSkills. */
+    public PagedCallSettings.Builder<
+            SearchSkillsRequest, SearchSkillsResponse, SearchSkillsPagedResponse>
+        searchSkillsSettings() {
+      return getStubSettingsBuilder().searchSkillsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSkillRevision. */
+    public UnaryCallSettings.Builder<CreateSkillRevisionRequest, Operation>
+        createSkillRevisionSettings() {
+      return getStubSettingsBuilder().createSkillRevisionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createSkillRevision. */
+    public OperationCallSettings.Builder<
+            CreateSkillRevisionRequest, SkillRevision, OperationMetadata>
+        createSkillRevisionOperationSettings() {
+      return getStubSettingsBuilder().createSkillRevisionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSkillRevision. */
+    public UnaryCallSettings.Builder<GetSkillRevisionRequest, SkillRevision>
+        getSkillRevisionSettings() {
+      return getStubSettingsBuilder().getSkillRevisionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSkillRevision. */
+    public UnaryCallSettings.Builder<DeleteSkillRevisionRequest, Operation>
+        deleteSkillRevisionSettings() {
+      return getStubSettingsBuilder().deleteSkillRevisionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSkillRevision. */
+    public OperationCallSettings.Builder<DeleteSkillRevisionRequest, Empty, OperationMetadata>
+        deleteSkillRevisionOperationSettings() {
+      return getStubSettingsBuilder().deleteSkillRevisionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSkillRevisions. */
+    public PagedCallSettings.Builder<
+            ListSkillRevisionsRequest, ListSkillRevisionsResponse, ListSkillRevisionsPagedResponse>
+        listSkillRevisionsSettings() {
+      return getStubSettingsBuilder().listSkillRevisionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPublisher. */
+    public UnaryCallSettings.Builder<GetPublisherRequest, Publisher> getPublisherSettings() {
+      return getStubSettingsBuilder().getPublisherSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPublishers. */
+    public PagedCallSettings.Builder<
+            ListPublishersRequest, ListPublishersResponse, ListPublishersPagedResponse>
+        listPublishersSettings() {
+      return getStubSettingsBuilder().listPublishersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAiApplication. */
+    public UnaryCallSettings.Builder<GetAiApplicationRequest, AiApplication>
+        getAiApplicationSettings() {
+      return getStubSettingsBuilder().getAiApplicationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAiApplications. */
+    public PagedCallSettings.Builder<
+            ListAiApplicationsRequest, ListAiApplicationsResponse, ListAiApplicationsPagedResponse>
+        listAiApplicationsSettings() {
+      return getStubSettingsBuilder().listAiApplicationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAiApplicationAgent. */
+    public UnaryCallSettings.Builder<GetAiApplicationAgentRequest, Agent>
+        getAiApplicationAgentSettings() {
+      return getStubSettingsBuilder().getAiApplicationAgentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAiApplicationAgents. */
+    public PagedCallSettings.Builder<
+            ListAiApplicationAgentsRequest,
+            ListAiApplicationAgentsResponse,
+            ListAiApplicationAgentsPagedResponse>
+        listAiApplicationAgentsSettings() {
+      return getStubSettingsBuilder().listAiApplicationAgentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAiApplicationMcpServer. */
+    public UnaryCallSettings.Builder<GetAiApplicationMcpServerRequest, McpServer>
+        getAiApplicationMcpServerSettings() {
+      return getStubSettingsBuilder().getAiApplicationMcpServerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAiApplicationMcpServers. */
+    public PagedCallSettings.Builder<
+            ListAiApplicationMcpServersRequest,
+            ListAiApplicationMcpServersResponse,
+            ListAiApplicationMcpServersPagedResponse>
+        listAiApplicationMcpServersSettings() {
+      return getStubSettingsBuilder().listAiApplicationMcpServersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getFinding. */
+    public UnaryCallSettings.Builder<GetFindingRequest, Finding> getFindingSettings() {
+      return getStubSettingsBuilder().getFindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listFindings. */
+    public PagedCallSettings.Builder<
+            ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
+        listFindingsSettings() {
+      return getStubSettingsBuilder().listFindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAiApplicationEndpoint. */
+    public UnaryCallSettings.Builder<GetAiApplicationEndpointRequest, Endpoint>
+        getAiApplicationEndpointSettings() {
+      return getStubSettingsBuilder().getAiApplicationEndpointSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAiApplicationEndpoints. */
+    public PagedCallSettings.Builder<
+            ListAiApplicationEndpointsRequest,
+            ListAiApplicationEndpointsResponse,
+            ListAiApplicationEndpointsPagedResponse>
+        listAiApplicationEndpointsSettings() {
+      return getStubSettingsBuilder().listAiApplicationEndpointsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSkillEncryptionSpec. */
+    public UnaryCallSettings.Builder<GetSkillEncryptionSpecRequest, SkillEncryptionSpec>
+        getSkillEncryptionSpecSettings() {
+      return getStubSettingsBuilder().getSkillEncryptionSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSkillEncryptionSpec. */
+    public UnaryCallSettings.Builder<UpdateSkillEncryptionSpecRequest, Operation>
+        updateSkillEncryptionSpecSettings() {
+      return getStubSettingsBuilder().updateSkillEncryptionSpecSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSkillEncryptionSpec. */
+    public OperationCallSettings.Builder<
+            UpdateSkillEncryptionSpecRequest, SkillEncryptionSpec, OperationMetadata>
+        updateSkillEncryptionSpecOperationSettings() {
+      return getStubSettingsBuilder().updateSkillEncryptionSpecOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

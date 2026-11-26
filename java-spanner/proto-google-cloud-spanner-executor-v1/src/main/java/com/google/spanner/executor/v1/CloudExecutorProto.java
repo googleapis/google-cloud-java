@@ -739,12 +739,14 @@ public final class CloudExecutorProto extends com.google.protobuf.GeneratedFile 
           + "sdl_statement\030\004 \003(\t\022\024\n"
           + "\014operation_id\030\005 \001(\t\022\036\n"
           + "\021proto_descriptors\030\006 \001(\014H\000\210\001\001B\024\n"
-          + "\022_proto_descriptors\"{\n"
+          + "\022_proto_descriptors\"\312\001\n"
           + "\031UpdateCloudDatabaseAction\022\023\n"
           + "\013instance_id\030\001 \001(\t\022\022\n\n"
           + "project_id\030\002 \001(\t\022\025\n\r"
           + "database_name\030\003 \001(\t\022\036\n"
-          + "\026enable_drop_protection\030\004 \001(\010\"W\n"
+          + "\026enable_drop_protection\030\004 \001(\010\022M\n"
+          + "\021encryption_config\030\005"
+          + " \001(\01322.google.spanner.admin.database.v1.EncryptionConfig\"W\n"
           + "\027DropCloudDatabaseAction\022\023\n"
           + "\013instance_id\030\001 \001(\t\022\022\n\n"
           + "project_id\030\002 \001(\t\022\023\n"
@@ -918,9 +920,9 @@ public final class CloudExecutorProto extends com.google.protobuf.GeneratedFile 
           + "ogle.spanner.executor.v1.AdminResultH\006\210\001\001\022\031\n"
           + "\021dml_rows_modified\030\t \003(\003\022M\n"
           + "\025change_stream_records\030\n"
-          + " \003(\0132..google.spanner.executor.v1.ChangeStreamRecord\0222\n"
-          + "%snapshot_isolation_txn_read_timestamp\030\013 \001(\003H\007\210\001\001B",
-      "\t\n"
+          + " \003(\0132..google.spanner.exe",
+      "cutor.v1.ChangeStreamRecord\0222\n"
+          + "%snapshot_isolation_txn_read_timestamp\030\013 \001(\003H\007\210\001\001B\t\n"
           + "\007_statusB\016\n"
           + "\014_commit_timeB\016\n"
           + "\014_read_resultB\017\n\r"
@@ -1484,7 +1486,7 @@ public final class CloudExecutorProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_spanner_executor_v1_UpdateCloudDatabaseAction_descriptor,
             new java.lang.String[] {
-              "InstanceId", "ProjectId", "DatabaseName", "EnableDropProtection",
+              "InstanceId", "ProjectId", "DatabaseName", "EnableDropProtection", "EncryptionConfig",
             });
     internal_static_google_spanner_executor_v1_DropCloudDatabaseAction_descriptor =
         getDescriptor().getMessageType(32);
