@@ -41,7 +41,6 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import org.jspecify.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -492,13 +491,6 @@ public final class StorageClientMetricsTest {
       shutdownCalled.set(true);
       return delegate.shutdown();
     }
-  }
-
-  private @Nullable MetricData findMetric(String name) {
-    return reader.collectAllMetrics().stream()
-        .filter(m -> m.getName().equals(name))
-        .findFirst()
-        .orElse(null);
   }
 
   private static int findBucketIndex(List<Double> boundaries, double value) {
