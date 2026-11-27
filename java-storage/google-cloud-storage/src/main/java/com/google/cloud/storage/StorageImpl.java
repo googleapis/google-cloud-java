@@ -87,6 +87,7 @@ import java.util.Collections;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -1202,7 +1203,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
     signatureInfoBuilder.setTimestamp(getOptions().getClock().millisTime());
 
-    ImmutableMap.Builder<String, String> extHeadersBuilder = new ImmutableMap.Builder<>();
+    Map<String, String> extHeaders = new LinkedHashMap<>();
 
     boolean isV4 =
         SignUrlOption.SignatureVersion.V4.equals(
@@ -1210,19 +1211,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     if (isV4) { // We don't sign the host header for V2 signed URLs; only do this for V4.
       // Add the host here first, allowing it to be overridden in the EXT_HEADERS option below.
       if (optionMap.containsKey(SignUrlOption.Option.VIRTUAL_HOSTED_STYLE)) {
-        extHeadersBuilder.put(
+        extHeaders.put(
             "host",
             slashlessBucketNameFromBlobInfo(blobInfo) + "." + getBaseStorageHostName(optionMap));
       } else if (optionMap.containsKey(SignUrlOption.Option.HOST_NAME)
           || optionMap.containsKey(SignUrlOption.Option.BUCKET_BOUND_HOST_NAME)
-          || getOptions().getUniverseDomain() != null) {
-        extHeadersBuilder.put("host", getBaseStorageHostName(optionMap));
+          || getOptions().getConfiguredUniverseDomain() != null) {
+        extHeaders.put("host", getBaseStorageHostName(optionMap));
       }
     }
 
     if (optionMap.containsKey(SignUrlOption.Option.EXT_HEADERS)) {
-      extHeadersBuilder.putAll(
-          (Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS));
+      extHeaders.putAll((Map<String, String>) optionMap.get(SignUrlOption.Option.EXT_HEADERS));
     }
 
     ImmutableMap.Builder<String, String> queryParamsBuilder = new ImmutableMap.Builder<>();
@@ -1232,7 +1232,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     }
 
     return signatureInfoBuilder
-        .setCanonicalizedExtensionHeaders(extHeadersBuilder.build())
+        .setCanonicalizedExtensionHeaders(ImmutableMap.copyOf(extHeaders))
         .setCanonicalizedQueryParams(queryParamsBuilder.build())
         .build();
   }

@@ -20,6 +20,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.rpc.EndpointContext;
+import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
@@ -34,6 +36,8 @@ import com.google.cloud.storage.Retrying.RetryingDependencies;
 import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.MoreObjects;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.IOException;
@@ -42,6 +46,7 @@ import java.io.ObjectInputStream;
 import java.time.Duration;
 import java.util.Locale;
 import java.util.Properties;
+import java.util.function.Function;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -50,6 +55,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
 
   private static final long serialVersionUID = -7295846567928013233L;
   private static final String VERSION;
+  private static volatile Function<String, String> envResolver = System::getenv;
 
   static {
     String tmp = "unresolved";
@@ -127,6 +133,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     private boolean customOpenTelemetryConfigured = false;
     private boolean customMeterProviderConfigured = false;
     private boolean hostManuallySet = false;
+    private @Nullable String explicitUniverseDomain = null;
 
     Builder() {
       setUseJwtAccessWithScope(false);
@@ -135,6 +142,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     Builder(StorageOptions options) {
       super(options);
       this.hostManuallySet = !options.usesDefaultHost();
+      this.explicitUniverseDomain = options.getUniverseDomain();
       this.enableOtelMetrics = options.getRawEnableOtelMetrics();
       this.enableOtelDebugMetrics = options.getRawEnableOtelDebugMetrics();
       this.meterProvider = options.getMeterProvider();
@@ -149,6 +157,13 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
       return super.setHost(host);
     }
 
+    @Override
+    public Builder setUniverseDomain(String universeDomain) {
+      super.setUniverseDomain(universeDomain);
+      this.explicitUniverseDomain = universeDomain;
+      return this;
+    }
+
     /** Whether the host was set with {@link #setHost(String)}. */
     boolean isHostManuallySet() {
       return hostManuallySet;
@@ -157,6 +172,11 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     /** Sets a host resolved by the builder itself, leaving {@link #isHostManuallySet()} as is. */
     Builder setResolvedHostInternal(@Nullable String host) {
       return super.setHost(host);
+    }
+
+    /** The universe domain set on this builder, or else the configured one, if any. */
+    @Nullable String resolveBuilderUniverseDomain() {
+      return StorageOptions.resolveConfiguredUniverseDomain(explicitUniverseDomain);
     }
 
     @Nullable Boolean getEnableOtelMetrics() {
@@ -307,6 +327,32 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
           "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring"
               + " exporter");
     }
+  }
+
+  @VisibleForTesting
+  static void setEnvResolverForTesting(Function<String, String> testEnv) {
+    envResolver = testEnv != null ? testEnv : System::getenv;
+  }
+
+  @VisibleForTesting
+  static void resetEnvResolverForTesting() {
+    envResolver = System::getenv;
+  }
+
+  static @Nullable String resolveConfiguredUniverseDomain(@Nullable String explicitUniverseDomain) {
+    if (explicitUniverseDomain != null) {
+      return explicitUniverseDomain;
+    }
+    return envResolver.apply(EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN);
+  }
+
+  @Nullable String getConfiguredUniverseDomain() {
+    return resolveConfiguredUniverseDomain(getUniverseDomain());
+  }
+
+  @NonNull String getResolvedUniverseDomain() {
+    return MoreObjects.firstNonNull(
+        getConfiguredUniverseDomain(), Credentials.GOOGLE_DEFAULT_UNIVERSE);
   }
 
   /**

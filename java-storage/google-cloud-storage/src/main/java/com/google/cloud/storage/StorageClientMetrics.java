@@ -117,7 +117,7 @@ final class StorageClientMetrics implements AutoCloseable {
           OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
               options.getHost(),
               options.getProjectId(),
-              options.getUniverseDomain(),
+              options.getConfiguredUniverseDomain(),
               options.getMetricInterval(),
               options instanceof GrpcStorageOptions ? "grpc" : "json");
       mp = ownedMeterProvider;
