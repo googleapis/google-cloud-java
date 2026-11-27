@@ -28,7 +28,10 @@ import static org.mockito.Mockito.mock;
 
 import com.google.api.core.ApiClock;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.spi.StorageRpcFactory;
@@ -40,6 +43,7 @@ import com.google.common.io.BaseEncoding;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.Key;
@@ -54,7 +58,9 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import javax.crypto.spec.SecretKeySpec;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -344,6 +350,11 @@ public class StorageImplMockitoTest {
             .setServiceRpcFactory(rpcFactoryMock)
             .setRetrySettings(ServiceOptions.getNoRetrySettings())
             .build();
+  }
+
+  @After
+  public void tearDown() {
+    ServiceOptions.setEnvResolverForTesting(null);
   }
 
   private void initializeService() {
@@ -1072,5 +1083,41 @@ public class StorageImplMockitoTest {
 
     Map<StorageRpc.Option, Object> capturedOptions = optionsCaptor.getValue();
     assertEquals(true, capturedOptions.get(StorageRpc.Option.DELETE_SOURCE_OBJECTS));
+  }
+
+  @Test
+  public void testSignUrlV4_universeDomainFromEnvironment_signsResolvedHost() {
+    ServiceOptions.setEnvResolverForTesting(
+        key -> EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN.equals(key) ? "example.com" : null);
+    ServiceAccountSigner signer =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail("signer@example.com")
+            .setPrivateKey(privateKey)
+            .build();
+    Storage envStorage =
+        StorageOptions.http()
+            .setProjectId("projectId")
+            .setClock(TIME_SOURCE)
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            .build()
+            .getService();
+
+    URL envSignedUrl =
+        envStorage.signUrl(
+            BLOB_INFO1,
+            1,
+            TimeUnit.HOURS,
+            Storage.SignUrlOption.withV4Signature(),
+            Storage.SignUrlOption.signWith(signer));
+    URL explicitHostSignedUrl =
+        envStorage.signUrl(
+            BLOB_INFO1,
+            1,
+            TimeUnit.HOURS,
+            Storage.SignUrlOption.withV4Signature(),
+            Storage.SignUrlOption.signWith(signer),
+            Storage.SignUrlOption.withHostName("https://storage.example.com"));
+    assertEquals(explicitHostSignedUrl.toString(), envSignedUrl.toString());
   }
 }

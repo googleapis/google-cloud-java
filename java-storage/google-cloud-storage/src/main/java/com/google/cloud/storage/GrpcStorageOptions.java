@@ -135,7 +135,6 @@ public final class GrpcStorageOptions extends StorageOptions
   private static final long serialVersionUID = -4499446543857945349L;
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
-  private static final String DEFAULT_HOST = "https://storage.googleapis.com";
   // If true, disable the bound-token-by-default feature for DirectPath.
   private static final boolean DIRECT_PATH_BOUND_TOKEN_DISABLED =
       Boolean.parseBoolean(
@@ -150,6 +149,7 @@ public final class GrpcStorageOptions extends StorageOptions
   private final boolean grpcClientMetricsManuallyEnabled;
   private final GrpcInterceptorProvider grpcInterceptorProvider;
   private final BlobWriteSessionConfig blobWriteSessionConfig;
+  private final boolean hostResolvedFromDefault;
   private transient OpenTelemetry openTelemetry;
 
   private GrpcStorageOptions(Builder builder, GrpcStorageDefaults serviceDefaults) {
@@ -168,6 +168,7 @@ public final class GrpcStorageOptions extends StorageOptions
     this.grpcClientMetricsManuallyEnabled = builder.grpcMetricsManuallyEnabled;
     this.grpcInterceptorProvider = builder.grpcInterceptorProvider;
     this.blobWriteSessionConfig = builder.blobWriteSessionConfig;
+    this.hostResolvedFromDefault = builder.hostResolvedFromDefault;
     this.openTelemetry = builder.openTelemetry;
   }
 
@@ -352,7 +353,7 @@ public final class GrpcStorageOptions extends StorageOptions
               ChannelConfigurator.lift(channelProviderBuilder.getChannelConfigurator()),
               endpoint,
               this.getProjectId(),
-              this.getUniverseDomain(),
+              this.getResolvedUniverseDomainForService(),
               !grpcClientMetricsManuallyEnabled);
       channelProviderBuilder.setChannelConfigurator(channelConfigurator);
     }
@@ -437,6 +438,7 @@ public final class GrpcStorageOptions extends StorageOptions
         enableGrpcClientMetrics,
         grpcInterceptorProvider,
         blobWriteSessionConfig,
+        hostResolvedFromDefault,
         openTelemetry,
         isEnableOtelMetrics(),
         isEnableOtelDebugMetrics(),
@@ -457,6 +459,7 @@ public final class GrpcStorageOptions extends StorageOptions
     return attemptDirectPath == that.attemptDirectPath
         && attemptDirectPathXdsOverInterconnect == that.attemptDirectPathXdsOverInterconnect
         && enableGrpcClientMetrics == that.enableGrpcClientMetrics
+        && hostResolvedFromDefault == that.hostResolvedFromDefault
         && isEnableOtelMetrics() == that.isEnableOtelMetrics()
         && isEnableOtelDebugMetrics() == that.isEnableOtelDebugMetrics()
         && Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
@@ -473,7 +476,7 @@ public final class GrpcStorageOptions extends StorageOptions
    * @since 2.14.0
    */
   public static GrpcStorageOptions.Builder newBuilder() {
-    return new GrpcStorageOptions.Builder().setHost(DEFAULT_HOST);
+    return new GrpcStorageOptions.Builder();
   }
 
   /**
@@ -519,6 +522,7 @@ public final class GrpcStorageOptions extends StorageOptions
     private OpenTelemetry openTelemetry = GrpcStorageDefaults.INSTANCE.getDefaultOpenTelemetry();
 
     private boolean grpcMetricsManuallyEnabled = false;
+    private boolean hostResolvedFromDefault = false;
 
     Builder() {}
 
@@ -532,6 +536,7 @@ public final class GrpcStorageOptions extends StorageOptions
       this.enableGrpcClientMetrics = gso.enableGrpcClientMetrics;
       this.grpcInterceptorProvider = gso.grpcInterceptorProvider;
       this.blobWriteSessionConfig = gso.blobWriteSessionConfig;
+      this.hostResolvedFromDefault = gso.hostResolvedFromDefault;
       this.openTelemetry = gso.openTelemetry;
     }
 
@@ -675,6 +680,7 @@ public final class GrpcStorageOptions extends StorageOptions
      */
     @Override
     public GrpcStorageOptions.Builder setHost(String host) {
+      this.hostResolvedFromDefault = false;
       super.setHost(host);
       return this;
     }
@@ -852,11 +858,25 @@ public final class GrpcStorageOptions extends StorageOptions
      */
     @Override
     public GrpcStorageOptions build() {
+      // Invariant: the builder never retains an auto-resolved host across build() calls;
+      // hostResolvedFromDefault tracks built instances whose host came from resolution so
+      // toBuilder().setUniverseDomain(...) and builder reuse re-resolve cleanly.
+      if (this.hostResolvedFromDefault) {
+        super.setHost(null);
+      }
       GrpcStorageOptions options = new GrpcStorageOptions(this, defaults());
       // TODO: Remove when https://github.com/googleapis/sdk-platform-java/issues/2911 is resolved
-      if (options.getUniverseDomain() != null) {
-        this.setHost("https://storage." + options.getUniverseDomain());
-        return new GrpcStorageOptions(this, defaults());
+      String resolvedHost = options.getResolvedHost("storage");
+      if (!resolvedHost.equals(options.getHost())) {
+        boolean wasResolvedFromDefault = this.hostResolvedFromDefault;
+        try {
+          super.setHost(resolvedHost);
+          this.hostResolvedFromDefault = true;
+          return new GrpcStorageOptions(this, defaults());
+        } finally {
+          super.setHost(null);
+          this.hostResolvedFromDefault = wasResolvedFromDefault;
+        }
       }
       return options;
     }

@@ -21,15 +21,18 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.BufferAllocationStrategy;
 import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.ExecutorSupplier;
 import com.google.cloud.storage.ParallelCompositeUploadBlobWriteSessionConfig.PartNamingStrategy;
 import com.google.storage.v2.StorageSettings;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -46,6 +49,11 @@ public final class StorageOptionsBuilderTest {
             .withBufferAllocationStrategy(BufferAllocationStrategy.simple(256 * 1024))
             .withPartNamingStrategy(PartNamingStrategy.prefix("blahblahblah"))
             .withExecutorSupplier(ExecutorSupplier.fixedPool(2));
+  }
+
+  @After
+  public void tearDown() {
+    ServiceOptions.setEnvResolverForTesting(null);
   }
 
   @Test
@@ -158,6 +166,74 @@ public final class StorageOptionsBuilderTest {
 
     assertThat(httpOptions.getUseJwtAccessWithScope()).isFalse();
     assertThat(grpcOptions.getUseJwtAccessWithScope()).isFalse();
+  }
+
+  @Test
+  public void http_universeDomainFromEnvironment_resolvesHost() {
+    ServiceOptions.setEnvResolverForTesting(
+        key -> EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN.equals(key) ? "example.com" : null);
+
+    HttpStorageOptions envOptions = StorageOptions.http().build();
+    assertThat(envOptions.getHost()).isEqualTo("https://storage.example.com/");
+    assertThat(envOptions.getUniverseDomain()).isNull();
+  }
+
+  @Test
+  public void grpc_universeDomainFromEnvironment_resolvesHostAndEndpoint() throws Exception {
+    ServiceOptions.setEnvResolverForTesting(
+        key -> EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN.equals(key) ? "example.com" : null);
+
+    GrpcStorageOptions envOptions =
+        StorageOptions.grpc().setCredentials(NoCredentials.getInstance()).build();
+    assertThat(envOptions.getHost()).isEqualTo("https://storage.example.com");
+    assertThat(envOptions.getUniverseDomain()).isNull();
+    assertThat(envOptions.getResolvedUniverseDomainForService()).isEqualTo("example.com");
+    assertThat(envOptions.toBuilder().build().getHost()).isEqualTo("https://storage.example.com");
+    StorageSettings envSettings = envOptions.getStorageSettings();
+    assertThat(envSettings.getEndpoint()).isEqualTo("storage.example.com:443");
+    InstantiatingGrpcChannelProvider envProvider =
+        (InstantiatingGrpcChannelProvider) envSettings.getTransportChannelProvider();
+    assertThat(envProvider.getEndpoint()).isEqualTo("storage.example.com:443");
+
+    assertThat(envOptions.toBuilder().setUniverseDomain("explicit.example.com").build().getHost())
+        .isEqualTo("https://storage.explicit.example.com");
+
+    GrpcStorageOptions.Builder reusableBuilder =
+        StorageOptions.grpc().setCredentials(NoCredentials.getInstance());
+    assertThat(reusableBuilder.build().getHost()).isEqualTo("https://storage.example.com");
+    assertThat(reusableBuilder.setUniverseDomain("explicit.example.com").build().getHost())
+        .isEqualTo("https://storage.explicit.example.com");
+
+    GrpcStorageOptions explicitHostAndUniverseOptions =
+        StorageOptions.grpc()
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://custom.example.com")
+            .setUniverseDomain("explicit.example.com")
+            .build();
+    assertThat(explicitHostAndUniverseOptions.getHost()).isEqualTo("https://custom.example.com");
+
+    GrpcStorageOptions explicitHostOptions =
+        StorageOptions.grpc()
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://custom.example.com")
+            .build();
+    assertThat(explicitHostOptions.getHost()).isEqualTo("https://custom.example.com");
+    assertThat(explicitHostOptions.getStorageSettings().getEndpoint())
+        .isEqualTo("custom.example.com:443");
+    assertThat(
+            explicitHostOptions.toBuilder()
+                .setUniverseDomain("explicit.example.com")
+                .build()
+                .getHost())
+        .isEqualTo("https://custom.example.com");
+
+    ServiceOptions.setEnvResolverForTesting(null);
+    assertThat(
+            GrpcStorageOptions.getDefaultInstance().toBuilder()
+                .setUniverseDomain("explicit.example.com")
+                .build()
+                .getHost())
+        .isEqualTo("https://storage.explicit.example.com");
   }
 
   private static class MyStorageRetryStrategy implements StorageRetryStrategy {
