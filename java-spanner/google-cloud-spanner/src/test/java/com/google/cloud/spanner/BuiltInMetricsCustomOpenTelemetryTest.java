@@ -47,9 +47,9 @@ public class BuiltInMetricsCustomOpenTelemetryTest extends AbstractMockServerTes
 
   @After
   public void resetGcmSingleton() {
-    // A cloud custom+enabled client now also activates the Cloud Monitoring sink (additive
-    // semantics), which initializes the process-wide singleton via the gRPC layer. Reset it so the
-    // state does not leak into other tests sharing the JVM fork.
+    SpannerOptions.useDefaultEnvironment();
+    // Reset the process-wide Cloud Monitoring singleton so state cannot leak across tests sharing
+    // the JVM fork.
     BuiltInMetricsProvider.INSTANCE.reset();
   }
 
@@ -164,6 +164,58 @@ public class BuiltInMetricsCustomOpenTelemetryTest extends AbstractMockServerTes
       executeSelect1(spanner);
     }
     assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+  }
+
+  @Test
+  public void noCredentialsClientDoesNotInitializeGcmSingletonWithGrpcMetricsEnabled() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGRPCBuiltInMetrics() {
+            return true;
+          }
+        });
+    BuiltInMetricsProvider.INSTANCE.reset();
+
+    try {
+      // Default provider with NoCredentials and built-in metrics enabled must not initialize GCM.
+      try (Spanner defaultSpanner =
+          spannerBuilder(DefaultMetricsProvider.INSTANCE)
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .build()
+              .getService()) {
+        executeSelect1(defaultSpanner);
+      }
+      assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+
+      // Custom provider with NoCredentials and built-in metrics enabled still records custom
+      // metrics while leaving the GCM singleton uninitialized.
+      InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+      OpenTelemetrySdk customOpenTelemetry = createOpenTelemetry(metricReader);
+      try {
+        try (Spanner customSpanner =
+            spannerBuilder(CustomOpenTelemetryMetricsProvider.create(customOpenTelemetry))
+                .setEmulatorHost(null)
+                .setBuiltInMetricsEnabled(true)
+                .build()
+                .getService()) {
+          executeSelect1(customSpanner);
+        }
+        assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+        assertNotNull(
+            getMetric(
+                metricReader,
+                BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME
+                    + "/"
+                    + BuiltInMetricsConstant.OPERATION_COUNT_NAME));
+      } finally {
+        customOpenTelemetry.close();
+      }
+    } finally {
+      BuiltInMetricsProvider.INSTANCE.reset();
+      SpannerOptions.useDefaultEnvironment();
+    }
   }
 
   @Test

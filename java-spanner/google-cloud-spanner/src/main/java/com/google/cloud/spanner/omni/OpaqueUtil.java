@@ -237,16 +237,80 @@ public class OpaqueUtil {
     }
   }
 
+  /**
+   * Decodes a canonical 33-byte compressed secp256r1 point, rejecting the point at infinity,
+   * non-canonical encodings, and off-curve coordinates per RFC 9497 Section 3.3.1 / RFC 9807.
+   */
+  private static ECPoint decodeCompressedPoint(ECCurve curve, byte[] encoded, String label)
+      throws GeneralSecurityException {
+    if (encoded == null) {
+      throw new GeneralSecurityException("Invalid " + label + ": point bytes must not be null");
+    }
+    if (encoded.length != PUBLIC_KEY_LENGTH || (encoded[0] != 0x02 && encoded[0] != 0x03)) {
+      throw new GeneralSecurityException(
+          "Invalid "
+              + label
+              + ": expected "
+              + PUBLIC_KEY_LENGTH
+              + "-byte compressed secp256r1 point");
+    }
+    ECPoint point;
+    try {
+      point = curve.decodePoint(encoded);
+    } catch (IllegalArgumentException e) {
+      throw new GeneralSecurityException(
+          "Invalid " + label + ": failed to decode secp256r1 point", e);
+    }
+    // Defense-in-depth: unreachable via public API on prime-order secp256r1 after 33-byte
+    // compressed decoding, kept to fail closed if the curve or decoder ever changes.
+    if (point.isInfinity() || !point.isValid()) {
+      throw new GeneralSecurityException(
+          "Invalid " + label + ": point is at infinity or not on curve");
+    }
+    return point;
+  }
+
+  /**
+   * Validates that a big-endian scalar byte array is non-null, non-empty, and non-zero modulo the
+   * curve order, returning the reduced value in {@code [1, order - 1]} so scalar inversion and
+   * BouncyCastle multiplication cannot fail or collapse to infinity.
+   */
+  private static BigInteger validateNonZeroScalar(
+      byte[] scalarBytes, BigInteger order, String label) throws GeneralSecurityException {
+    if (scalarBytes == null || scalarBytes.length == 0) {
+      throw new GeneralSecurityException("Invalid " + label + ": scalar must not be null or empty");
+    }
+    BigInteger reduced = new BigInteger(1, scalarBytes).mod(order);
+    if (reduced.equals(BigInteger.ZERO)) {
+      throw new GeneralSecurityException(
+          "Invalid " + label + ": scalar must be non-zero modulo curve order");
+    }
+    return reduced;
+  }
+
+  /**
+   * Normalizes and encodes a curve point in compressed form, failing closed if the multiplication
+   * result is the point at infinity.
+   */
+  private static byte[] encodeNonInfinityPoint(ECPoint point, String label)
+      throws GeneralSecurityException {
+    ECPoint normalized = point.normalize();
+    // Defense-in-depth: unreachable on prime-order secp256r1 with validated non-zero scalars,
+    // kept to fail closed if the curve or caller invariants ever change.
+    if (normalized.isInfinity()) {
+      throw new GeneralSecurityException("Invalid " + label + ": resulting point is at infinity");
+    }
+    return normalized.getEncoded(true);
+  }
+
   public static byte[] blind(byte[] password, byte[] blindScalar) throws GeneralSecurityException {
-    byte[] hashedPoint = getHashToCurve(password, LOGIN_DOMAIN_SEPARATION_TAG.getBytes(UTF_8));
-
     X9ECParameters params = CustomNamedCurves.getByName(CURVE_NAME);
-    ECCurve curve = params.getCurve();
+    BigInteger scalar = validateNonZeroScalar(blindScalar, params.getN(), "blindScalar");
 
-    ECPoint point = curve.decodePoint(hashedPoint);
-    BigInteger scalar = new BigInteger(1, blindScalar);
+    byte[] hashedPoint = getHashToCurve(password, LOGIN_DOMAIN_SEPARATION_TAG.getBytes(UTF_8));
+    ECPoint point = decodeCompressedPoint(params.getCurve(), hashedPoint, "hashedPoint");
 
-    return point.multiply(scalar).getEncoded(true);
+    return encodeNonInfinityPoint(point.multiply(scalar), "blindedPoint");
   }
 
   public static byte[] expand(byte[] keyMaterial, byte[] info, int size)
@@ -323,24 +387,24 @@ public class OpaqueUtil {
 
   public static byte[] finalize(byte[] blind, byte[] evaluatedMessage)
       throws GeneralSecurityException {
-    BigInteger blindBigInt = new BigInteger(1, blind);
     X9ECParameters params = CustomNamedCurves.getByName(CURVE_NAME);
     BigInteger order = params.getN();
+    BigInteger blindBigInt = validateNonZeroScalar(blind, order, "blind");
     BigInteger inverseBlind = blindBigInt.modInverse(order);
 
-    ECCurve curve = params.getCurve();
-    ECPoint evaluatedPoint = curve.decodePoint(evaluatedMessage);
+    ECPoint evaluatedPoint =
+        decodeCompressedPoint(params.getCurve(), evaluatedMessage, "evaluatedMessage");
 
-    return evaluatedPoint.multiply(inverseBlind).getEncoded(true);
+    return encodeNonInfinityPoint(evaluatedPoint.multiply(inverseBlind), "evaluatedMessage");
   }
 
   public static byte[] diffieHellman(byte[] privateKey, byte[] peerPublicKey)
       throws GeneralSecurityException {
     X9ECParameters params = CustomNamedCurves.getByName(CURVE_NAME);
-    ECCurve curve = params.getCurve();
-    ECPoint peerPublicPoint = curve.decodePoint(peerPublicKey);
-    BigInteger priv = new BigInteger(1, privateKey);
-    return peerPublicPoint.multiply(priv).getEncoded(true);
+    BigInteger priv = validateNonZeroScalar(privateKey, params.getN(), "privateKey");
+    ECPoint peerPublicPoint =
+        decodeCompressedPoint(params.getCurve(), peerPublicKey, "peerPublicKey");
+    return encodeNonInfinityPoint(peerPublicPoint.multiply(priv), "peerPublicKey");
   }
 
   public static byte[] randomOracleSha256(byte[] x, BigInteger max)

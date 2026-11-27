@@ -3095,7 +3095,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         && System.getProperty("jmh.enabled").equals("true")) {
       return false;
     }
-    return Objects.equals(getCredentials(), NoCredentials.getInstance());
+    Credentials credentials = getCredentials();
+    return credentials == null || credentials instanceof NoCredentials;
   }
 
   public String getCompressorName() {
@@ -3154,12 +3155,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * Returns the internal OpenTelemetry instance used for built-in metrics, or {@code null} when
-   * built-in Cloud Monitoring metrics are disabled or could not be initialized.
+   * Cloud Monitoring built-in metrics are disabled, no credentials are configured, or it could not
+   * be initialized.
    */
   @InternalApi
   @Nullable
   public OpenTelemetry getBuiltInOpenTelemetry() {
-    if (!isEnableBuiltInMetrics()) {
+    if (!isEnableBuiltInMetrics() || usesNoCredentials()) {
       return null;
     }
     return this.builtInMetricsProvider.getOrCreateOpenTelemetry(
@@ -3181,10 +3183,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * Wires gRPC-layer built-in metrics into the given channel provider builder for each active
-   * metrics sink: the Cloud Monitoring (GCM) sink when {@link #isEnableBuiltInMetrics()} is true,
-   * and the caller-owned OpenTelemetry sink when a {@link CustomOpenTelemetryMetricsProvider} is
-   * configured. Does nothing when {@code isEmulatorEnabled} is true or gRPC built-in metrics are
-   * disabled via the environment.
+   * metrics sink: the Cloud Monitoring (GCM) sink when {@link #isEnableBuiltInMetrics()} is true
+   * and credentials are configured, and the caller-owned OpenTelemetry sink when a {@link
+   * CustomOpenTelemetryMetricsProvider} is configured. Does nothing when {@code isEmulatorEnabled}
+   * is true or gRPC built-in metrics are disabled via the environment.
    */
   @InternalApi
   public void enablegRPCMetrics(
@@ -3197,7 +3199,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     // records each instrument once per GrpcOpenTelemetry instance, so wiring two instances onto one
     // channel does not double-count attempt/operation metrics (verified by
     // GrpcMetricsDualWireTest).
-    if (isEnableBuiltInMetrics()) {
+    if (isEnableBuiltInMetrics() && !usesNoCredentials()) {
       this.builtInMetricsProvider.enableGrpcMetrics(
           channelProviderBuilder,
           this.getProjectId(),

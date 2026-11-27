@@ -16,8 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import java.util.UUID;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import javax.sql.ConnectionEvent;
 import javax.sql.ConnectionEventListener;
 import javax.sql.PooledConnection;
@@ -25,18 +25,18 @@ import javax.sql.PooledConnection;
 public class PooledConnectionListener implements ConnectionEventListener {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(PooledConnectionListener.class.getName());
-  private String id; // Mainly for internal use
-  private LinkedBlockingDeque<PooledConnection> connectionPool;
-  private Long connectionPoolSize = 0L;
+  private final Deque<BigQueryPooledConnection> connectionPool;
+  private final Long connectionPoolSize;
+  private final int maxCapacity;
+  private final Object poolLock = new Object();
 
   public PooledConnectionListener(Long connPoolSize) {
-    id = UUID.randomUUID().toString();
-    this.connectionPoolSize = connPoolSize;
-    if (getConnectionPoolSize() > 0L) {
-      connectionPool = new LinkedBlockingDeque<>(getConnectionPoolSize().intValue());
-    } else {
-      connectionPool = new LinkedBlockingDeque<>();
-    }
+    this.connectionPoolSize =
+        connPoolSize != null
+            ? connPoolSize
+            : BigQueryJdbcUrlUtility.DEFAULT_CONNECTION_POOL_SIZE_VALUE;
+    this.maxCapacity = BigQueryPooledConnection.clampCapacity(this.connectionPoolSize);
+    this.connectionPool = new ArrayDeque<>();
   }
 
   public Long getConnectionPoolSize() {
@@ -44,107 +44,119 @@ public class PooledConnectionListener implements ConnectionEventListener {
   }
 
   public int getConnectionPoolCurrentCapacity() {
-    return this.connectionPool.size();
+    synchronized (poolLock) {
+      return this.connectionPool.size();
+    }
   }
 
   public boolean isConnectionPoolEmpty() {
-    return (connectionPool != null && connectionPool.isEmpty());
+    synchronized (poolLock) {
+      return this.connectionPool.isEmpty();
+    }
   }
 
-  PooledConnection getPooledConnection() {
-    if (isConnectionPoolEmpty()) {
-      LOG.warning("Connection pool is empty");
+  BigQueryPooledConnection getPooledConnection() {
+    synchronized (poolLock) {
+      BigQueryPooledConnection candidate;
+      while ((candidate = connectionPool.pollFirst()) != null) {
+        if (!candidate.isAvailableForPool()) {
+          continue;
+        }
+        return candidate;
+      }
+      LOG.finer("Connection pool is empty");
       return null;
     }
-    // Return the first element.
-    return connectionPool.getFirst();
   }
 
-  void addConnection(PooledConnection connection) {
-    LOG.finest("++enter++");
-    if (connection == null) {
-      LOG.warning("Connection passed in is null");
-      return;
+  boolean addConnection(PooledConnection connection) {
+    LOG.finer("++enter++");
+    try {
+      if (!(connection instanceof BigQueryPooledConnection)) {
+        LOG.warning("Connection passed in is null or unsupported");
+        return false;
+      }
+      BigQueryPooledConnection bqConnection = (BigQueryPooledConnection) connection;
+      synchronized (poolLock) {
+        if (!bqConnection.isAvailableForPool()) {
+          return false;
+        }
+        if (connectionPool.contains(bqConnection)) {
+          LOG.finer("Connection already in the pool");
+          return true;
+        }
+        if (connectionPool.size() >= maxCapacity) {
+          connectionPool.removeIf(entry -> !entry.isAvailableForPool());
+          if (connectionPool.size() >= maxCapacity) {
+            return false;
+          }
+        }
+        // LIFO insertion keeps the most recently active idle connections warm.
+        connectionPool.addFirst(bqConnection);
+        return true;
+      }
+    } finally {
+      LOG.finer("++exit++");
     }
-    if (connectionPool.contains(connection)) {
-      LOG.warning("Connection already in the pool");
-      return;
-    }
-    connectionPool.add(connection);
   }
 
   void removeConnection(PooledConnection connection) {
-    LOG.finest("++enter++");
-    if (connection == null) {
-      LOG.warning("Connection passed in is null");
-      return;
+    LOG.finer("++enter++");
+    try {
+      if (connection == null) {
+        LOG.warning("Connection passed in is null");
+        return;
+      }
+      synchronized (poolLock) {
+        if (!connectionPool.remove(connection)) {
+          LOG.finer("Connection not present in the pool");
+        }
+      }
+    } finally {
+      LOG.finer("++exit++");
     }
-    if (!connectionPool.contains(connection)) {
-      LOG.warning("Connection already in the pool");
-      return;
-    }
-    connectionPool.remove(connection);
   }
 
   @Override
   public void connectionClosed(ConnectionEvent event) {
-    LOG.finest("++enter++");
-    Object eventSource = event.getSource();
-    if (eventSource == null
-        || !(eventSource instanceof BigQueryPooledConnection)
-        || !(eventSource.getClass().isAssignableFrom(BigQueryPooledConnection.class))) {
-      IllegalArgumentException ex =
-          new IllegalArgumentException(
-              "Invalid ConnectionEvent source passed to connectionClosed. Expecting"
-                  + " BigQueryPooledConnection.");
-      LOG.severe(ex.getMessage(), ex);
-      throw ex;
+    LOG.finer("++enter++");
+    try {
+      BigQueryPooledConnection bqPooledConnection = extractPooledConnection(event);
+      if (addConnection(bqPooledConnection)) {
+        LOG.finer("Added pooled connection to connection pool");
+        return;
+      }
+      bqPooledConnection.closeIfIdleAndSoleListener(this);
+    } finally {
+      LOG.finer("++exit++");
     }
-    BigQueryPooledConnection bqPooledConnection = (BigQueryPooledConnection) eventSource;
-    addConnection(bqPooledConnection);
-    LOG.finest("Added pooled connection to connection pool");
   }
 
   @Override
   public void connectionErrorOccurred(ConnectionEvent event) {
-    LOG.finest("++enter++");
-    Object eventSource = event.getSource();
-    if (eventSource == null
-        || !(eventSource instanceof BigQueryPooledConnection)
-        || !(eventSource.getClass().isAssignableFrom(BigQueryPooledConnection.class))) {
+    LOG.finer("++enter++");
+    try {
+      BigQueryPooledConnection bqPooledConnection = extractPooledConnection(event);
+      removeConnection(bqPooledConnection);
+      String errorMessage =
+          (event.getSQLException() != null)
+              ? event.getSQLException().getMessage()
+              : "Connection error occurred";
+      LOG.finer("Removed pooled connection from connection pool. Error: %s", errorMessage);
+    } finally {
+      LOG.finer("++exit++");
+    }
+  }
+
+  private static BigQueryPooledConnection extractPooledConnection(ConnectionEvent event) {
+    Object eventSource = event != null ? event.getSource() : null;
+    if (eventSource == null || eventSource.getClass() != BigQueryPooledConnection.class) {
       IllegalArgumentException ex =
           new IllegalArgumentException(
-              "Invalid ConnectionEvent source passed to connectionClosed. Expecting"
-                  + " BigQueryPooledConnection.");
+              "Invalid ConnectionEvent source. Expecting BigQueryPooledConnection.");
       LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
-    BigQueryPooledConnection bqPooledConnection = (BigQueryPooledConnection) eventSource;
-    removeConnection(bqPooledConnection);
-    String errorMessage =
-        (event.getSQLException() != null)
-            ? event.getSQLException().getMessage()
-            : "Connection error occured";
-    LOG.finest("Removed pooled connection from connection pool. Error: %s", errorMessage);
-  }
-
-  @Override
-  public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + ((id == null) ? 0 : id.hashCode());
-    return result;
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj) return true;
-    if (obj == null) return false;
-    if (getClass() != obj.getClass()) return false;
-    PooledConnectionListener other = (PooledConnectionListener) obj;
-    if (id == null) {
-      if (other.id != null) return false;
-    } else if (!id.equals(other.id)) return false;
-    return true;
+    return (BigQueryPooledConnection) eventSource;
   }
 }

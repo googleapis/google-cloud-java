@@ -28,6 +28,7 @@ import com.google.auth.Credentials;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.RetryOption;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -36,6 +37,7 @@ import com.google.cloud.bigquery.DataFormatOptions;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobStatus;
 import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
@@ -74,12 +76,14 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -176,13 +180,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   BigQuery bigQuery;
   String connectionUrl;
   Set<Statement> openStatements;
-  boolean autoCommit;
+  volatile boolean autoCommit;
   int transactionIsolation;
-  List<SQLWarning> sqlWarnings;
+  final List<SQLWarning> sqlWarnings;
   String catalog;
   String gcpTelemetryCredentials;
   String gcpTelemetryProjectId;
-  int holdability;
+  int holdability = ResultSet.CLOSE_CURSORS_AT_COMMIT;
   long retryTimeoutInSeconds;
   Duration retryTimeoutDuration;
   long retryInitialDelayInSeconds;
@@ -191,8 +195,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Duration retryMaxDelayDuration;
   // transactionStarted is false by default.
   // when autocommit is false transaction starts and session is initialized.
-  boolean transactionStarted;
-  boolean isClosed;
+  volatile boolean transactionStarted;
+  volatile boolean isClosed;
+  private volatile boolean closeInitiated = false;
+  private final Object closeStateLock = new Object();
+  private final Object lifecycleLock = new Object();
   DatasetId defaultDataset;
   String location;
   boolean enableHighThroughputAPI;
@@ -255,6 +262,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private boolean isReadOnlyTokenUsed = false;
   private final ExecutorService metadataExecutor;
   private final ExecutorService queryExecutor;
+  private final SessionState initialSessionState;
 
   /**
    * All session-scoped state, published as a single immutable snapshot.
@@ -291,7 +299,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.openStatements = ConcurrentHashMap.newKeySet();
       this.autoCommit = true;
-      this.sqlWarnings = new ArrayList<>();
+      this.sqlWarnings = new CopyOnWriteArrayList<>();
       this.transactionStarted = false;
       this.isClosed = false;
 
@@ -386,11 +394,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.unsupportedHTAPIFallback = ds.getUnsupportedHTAPIFallback();
       this.maxResults = ds.getMaxResults();
       Map<String, String> queryPropertiesMap = ds.getQueryProperties();
-      this.sessionState.set(
+      this.initialSessionState =
           new SessionState(
               getSessionPropertyFromQueryProperties(queryPropertiesMap),
               convertMapToConnectionPropertiesList(queryPropertiesMap),
-              false));
+              false);
+      this.sessionState.set(this.initialSessionState);
       this.enableWriteAPI = ds.getEnableWriteAPI();
       this.writeAPIActivationRowCount = ds.getSwaActivationRowCount();
       this.writeAPIAppendRowCount = ds.getSwaAppendRowCount();
@@ -907,7 +916,40 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void abort(Executor executor) throws SQLException {
-    close();
+    if (executor == null) {
+      throw new BigQueryJdbcException("Executor cannot be null.");
+    }
+    synchronized (this.closeStateLock) {
+      if (this.isClosed || this.closeInitiated) {
+        return;
+      }
+      this.closeInitiated = true;
+      try {
+        executor.execute(
+            () -> {
+              this.isClosed = true;
+              String previousConnectionId = BigQueryJdbcMdc.getConnectionId();
+              try {
+                BigQueryJdbcMdc.registerInstance(this.connectionId);
+                LOG.fine("Aborting Connection %s", this);
+                closeImpl();
+              } catch (SQLException ex) {
+                LOG.warning(ex, "Failed to release resources during connection abort");
+              } finally {
+                if (previousConnectionId != null
+                    && !previousConnectionId.equals(this.connectionId)) {
+                  BigQueryJdbcMdc.registerInstance(previousConnectionId);
+                }
+              }
+            });
+        this.isClosed = true;
+      } catch (RuntimeException | Error ex) {
+        if (!this.isClosed) {
+          this.closeInitiated = false;
+        }
+        throw ex;
+      }
+    }
   }
 
   @Override
@@ -950,7 +992,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public SQLWarning getWarnings() {
-    return this.sqlWarnings.isEmpty() ? null : this.sqlWarnings.get(0);
+    Iterator<SQLWarning> iterator = this.sqlWarnings.iterator();
+    return iterator.hasNext() ? iterator.next() : null;
   }
 
   @Override
@@ -1012,10 +1055,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
               + " start a transaction.");
     }
-    rollbackImpl();
+    rollbackImpl(!getAutoCommit());
   }
 
-  private void rollbackImpl() throws SQLException {
+  private void rollbackImpl(boolean startNextTransaction) throws SQLException {
     try {
       QueryJobConfiguration transactionRollbackJobConfig =
           QueryJobConfiguration.newBuilder("ROLLBACK TRANSACTION;")
@@ -1023,9 +1066,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
                   Collections.singletonList(this.sessionState.get().sessionInfo))
               .build();
       Job rollbackJob = this.bigQuery.create(JobInfo.of(transactionRollbackJobConfig));
-      rollbackJob.waitFor();
+      waitForTransactionJob(rollbackJob, "rollback");
       this.transactionStarted = false;
-      if (!getAutoCommit()) {
+      if (startNextTransaction) {
         beginTransaction();
       }
     } catch (BigQueryException ex) {
@@ -1034,6 +1077,108 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       Thread.currentThread().interrupt();
       throw new BigQueryJdbcException("Interrupted during rollback transaction", ex);
     }
+  }
+
+  private void waitForTransactionJob(Job job, String operationName)
+      throws BigQueryJdbcException, InterruptedException {
+    Job completedJob =
+        this.retryTimeoutInSeconds > 0L
+            ? job.waitFor(RetryOption.totalTimeoutDuration(this.retryTimeoutDuration))
+            : job.waitFor();
+    if (completedJob == null) {
+      throw new BigQueryJdbcException(
+          "Transaction " + operationName + " job no longer exists before completion.");
+    }
+    JobStatus status = completedJob.getStatus();
+    if (status != null) {
+      if (status.getState() != null && status.getState() != JobStatus.State.DONE) {
+        throw new BigQueryJdbcException(
+            "Timed out waiting for transaction " + operationName + " job to complete.");
+      }
+      if (status.getError() != null) {
+        throw new BigQueryJdbcException(
+            "Transaction " + operationName + " job failed: " + status.getError().getMessage());
+      }
+    }
+  }
+
+  /**
+   * Resets mutable JDBC connection state, closes remaining open statements, rolls back any active
+   * transaction without starting a follow-up transaction, and aborts any driver-created BigQuery
+   * session before returning this physical connection for pooled reuse.
+   */
+  void resetForReuse() throws SQLException {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
+      LOG.finer("++enter++");
+      synchronized (this.lifecycleLock) {
+        checkClosed();
+        boolean callerInterrupted = Thread.interrupted();
+        try {
+          SQLException exceptionToThrow = closeOpenStatements();
+
+          this.autoCommit = true;
+          boolean rollbackFailed = false;
+          if (this.transactionStarted) {
+            try {
+              rollbackImpl(false);
+            } catch (SQLException e) {
+              rollbackFailed = true;
+              exceptionToThrow = accumulateException(exceptionToThrow, e);
+            }
+          }
+
+          boolean sessionAbortFailed = false;
+          SessionState snapshot = this.sessionState.get();
+          if (snapshot.sessionInfo != null && snapshot.createdByDriver) {
+            try {
+              abortSession(snapshot, true);
+            } catch (SQLException e) {
+              sessionAbortFailed = true;
+              exceptionToThrow = accumulateException(exceptionToThrow, e);
+            }
+          }
+          if (!rollbackFailed && !sessionAbortFailed) {
+            this.sessionState.set(this.initialSessionState);
+          }
+
+          this.clientInfo.clear();
+          this.sqlWarnings.clear();
+          this.holdability = ResultSet.CLOSE_CURSORS_AT_COMMIT;
+
+          if (exceptionToThrow != null) {
+            throw exceptionToThrow;
+          }
+        } finally {
+          if (callerInterrupted) {
+            Thread.currentThread().interrupt();
+          }
+          LOG.finer("++exit++");
+        }
+      }
+    }
+  }
+
+  private SQLException closeOpenStatements() {
+    SQLException exceptionToThrow = null;
+    for (Statement statement : new ArrayList<>(this.openStatements)) {
+      try {
+        statement.close();
+      } catch (SQLException e) {
+        exceptionToThrow = accumulateException(exceptionToThrow, e);
+      }
+    }
+    this.openStatements.clear();
+    return exceptionToThrow;
+  }
+
+  private static SQLException accumulateException(SQLException current, SQLException next) {
+    if (current == null) {
+      return next;
+    }
+    if (current != next) {
+      current.addSuppressed(next);
+    }
+    return current;
   }
 
   @Override
@@ -1084,152 +1229,144 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    */
   @Override
   public void close() throws SQLException {
-    if (isClosed()) {
-      return;
+    synchronized (this.closeStateLock) {
+      if (this.isClosed || this.closeInitiated) {
+        return;
+      }
+      this.closeInitiated = true;
     }
 
-    LOG.fine("Closing Connection " + this);
-    closeImpl();
+    String previousConnectionId = BigQueryJdbcMdc.getConnectionId();
+    try {
+      BigQueryJdbcMdc.registerInstance(this.connectionId);
+      LOG.fine("Closing Connection %s", this);
+      closeImpl();
+    } finally {
+      if (previousConnectionId != null && !previousConnectionId.equals(this.connectionId)) {
+        BigQueryJdbcMdc.registerInstance(previousConnectionId);
+      }
+    }
   }
 
   private void closeImpl() throws SQLException {
-    SQLException exceptionToThrow = null;
-    try {
-      if (this.bigQueryReadClient != null) {
-        this.bigQueryReadClient.shutdown();
-      }
-      if (this.bigQueryWriteClient != null) {
-        this.bigQueryWriteClient.shutdown();
-      }
-      if (this.metadataExecutor != null) {
-        this.metadataExecutor.shutdown();
-      }
-      if (this.queryExecutor != null) {
-        this.queryExecutor.shutdown();
-      }
-
-      for (Statement statement : this.openStatements) {
-        try {
-          statement.close();
-        } catch (SQLException e) {
-          if (exceptionToThrow == null) {
-            exceptionToThrow = e;
-          } else {
-            exceptionToThrow.addSuppressed(e);
-          }
-        }
-      }
-      this.openStatements.clear();
-
-      if (isTransactionStarted()) {
-        try {
-          // It looks like there's no need to start a new transaction after a rollback,
-          // but the commit behavior is preserved since close() may still fail before isClosed is
-          // updated.
-          rollbackImpl();
-        } catch (SQLException e) {
-          if (exceptionToThrow == null) {
-            exceptionToThrow = e;
-          } else {
-            exceptionToThrow.addSuppressed(e);
-          }
-        }
-      }
-
-      SessionState snapshot = this.sessionState.get();
-      if (snapshot.sessionInfo != null && snapshot.createdByDriver) {
-        try {
-          abortSession(snapshot);
-        } catch (SQLException e) {
-          if (exceptionToThrow == null) {
-            exceptionToThrow = e;
-          } else {
-            exceptionToThrow.addSuppressed(e);
-          }
-        }
-      }
-
-      boolean interrupted = Thread.currentThread().isInterrupted();
-      InterruptedException terminationInterruptedException = null;
-
+    synchronized (this.lifecycleLock) {
+      SQLException exceptionToThrow = null;
+      boolean callerInterrupted = Thread.interrupted();
       try {
         if (this.bigQueryReadClient != null) {
-          if (interrupted) {
-            this.bigQueryReadClient.shutdownNow();
-          } else {
-            this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
-          }
+          this.bigQueryReadClient.shutdown();
         }
         if (this.bigQueryWriteClient != null) {
-          if (interrupted) {
-            this.bigQueryWriteClient.shutdownNow();
-          } else {
-            this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
-          }
+          this.bigQueryWriteClient.shutdown();
         }
         if (this.metadataExecutor != null) {
-          if (interrupted || !this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
-            this.metadataExecutor.shutdownNow();
-          }
+          this.metadataExecutor.shutdown();
         }
         if (this.queryExecutor != null) {
-          if (interrupted || !this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
-            this.queryExecutor.shutdownNow();
+          this.queryExecutor.shutdown();
+        }
+
+        exceptionToThrow = closeOpenStatements();
+
+        if (isTransactionStarted()) {
+          try {
+            rollbackImpl(false);
+          } catch (SQLException e) {
+            exceptionToThrow = accumulateException(exceptionToThrow, e);
           }
         }
-      } catch (InterruptedException e) {
-        interrupted = true;
-        terminationInterruptedException = e;
-        if (this.bigQueryReadClient != null) {
-          this.bigQueryReadClient.shutdownNow();
+
+        SessionState snapshot = this.sessionState.get();
+        if (snapshot.sessionInfo != null && snapshot.createdByDriver) {
+          try {
+            abortSession(snapshot, false);
+          } catch (SQLException e) {
+            exceptionToThrow = accumulateException(exceptionToThrow, e);
+          }
         }
-        if (this.bigQueryWriteClient != null) {
-          this.bigQueryWriteClient.shutdownNow();
-        }
-        if (this.metadataExecutor != null) {
-          this.metadataExecutor.shutdownNow();
-        }
-        if (this.queryExecutor != null) {
-          this.queryExecutor.shutdownNow();
-        }
-      } finally {
+
+        boolean interrupted = callerInterrupted || Thread.currentThread().isInterrupted();
+        InterruptedException terminationInterruptedException = null;
+
         try {
           if (this.bigQueryReadClient != null) {
-            this.bigQueryReadClient.close();
+            if (interrupted) {
+              this.bigQueryReadClient.shutdownNow();
+            } else {
+              this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
+            }
+          }
+          if (this.bigQueryWriteClient != null) {
+            if (interrupted) {
+              this.bigQueryWriteClient.shutdownNow();
+            } else {
+              this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
+            }
+          }
+          if (this.metadataExecutor != null) {
+            if (interrupted || !this.metadataExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+              this.metadataExecutor.shutdownNow();
+            }
+          }
+          if (this.queryExecutor != null) {
+            if (interrupted || !this.queryExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+              this.queryExecutor.shutdownNow();
+            }
+          }
+        } catch (InterruptedException e) {
+          interrupted = true;
+          terminationInterruptedException = e;
+          if (this.bigQueryReadClient != null) {
+            this.bigQueryReadClient.shutdownNow();
+          }
+          if (this.bigQueryWriteClient != null) {
+            this.bigQueryWriteClient.shutdownNow();
+          }
+          if (this.metadataExecutor != null) {
+            this.metadataExecutor.shutdownNow();
+          }
+          if (this.queryExecutor != null) {
+            this.queryExecutor.shutdownNow();
           }
         } finally {
-          if (this.bigQueryWriteClient != null) {
-            this.bigQueryWriteClient.close();
+          try {
+            if (this.bigQueryReadClient != null) {
+              this.bigQueryReadClient.close();
+            }
+          } finally {
+            if (this.bigQueryWriteClient != null) {
+              this.bigQueryWriteClient.close();
+            }
           }
         }
-      }
 
-      if (interrupted) {
-        Thread.currentThread().interrupt();
-      }
-      if (terminationInterruptedException != null) {
-        BigQueryJdbcException interruptedException =
-            new BigQueryJdbcException("Interrupted during close", terminationInterruptedException);
-        if (exceptionToThrow == null) {
-          exceptionToThrow = interruptedException;
-        } else {
-          exceptionToThrow.addSuppressed(interruptedException);
+        if (interrupted) {
+          Thread.currentThread().interrupt();
         }
+        if (terminationInterruptedException != null) {
+          exceptionToThrow =
+              accumulateException(
+                  exceptionToThrow,
+                  new BigQueryJdbcException(
+                      "Interrupted during close", terminationInterruptedException));
+        }
+      } catch (ConcurrentModificationException ex) {
+        throw new BigQueryJdbcException("Concurrent modification during close", ex);
+      } finally {
+        this.isClosed = true;
+        if (callerInterrupted) {
+          Thread.currentThread().interrupt();
+        }
+        BigQueryJdbcMdc.clear();
+        BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+        BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
+        BigQueryJdbcOpenTelemetry.releaseSdk(this.openTelemetry);
+        this.openTelemetry = null;
       }
-    } catch (ConcurrentModificationException ex) {
-      throw new BigQueryJdbcException("Concurrent modification during close", ex);
-    } finally {
-      BigQueryJdbcMdc.clear();
-      BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
-      BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
-      BigQueryJdbcOpenTelemetry.releaseSdk(this.openTelemetry);
-      this.openTelemetry = null;
-    }
 
-    this.isClosed = true;
-
-    if (exceptionToThrow != null) {
-      throw exceptionToThrow;
+      if (exceptionToThrow != null) {
+        throw exceptionToThrow;
+      }
     }
   }
 
@@ -1247,7 +1384,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private void checkClosed() throws BigQueryJdbcException {
-    if (isClosed()) {
+    if (this.isClosed || this.closeInitiated) {
       throw new BigQueryJdbcException("This " + getClass().getName() + " has been closed");
     }
   }
@@ -1593,32 +1730,44 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
                   Collections.singletonList(this.sessionState.get().sessionInfo))
               .build();
       Job commitJob = this.bigQuery.create(JobInfo.of(transactionCommitJobConfig));
-      commitJob.waitFor();
+      waitForTransactionJob(commitJob, "commit");
       this.transactionStarted = false;
+    } catch (BigQueryException ex) {
+      throw new BigQueryJdbcException("Failed to commit transaction", ex);
     } catch (InterruptedException ex) {
       Thread.currentThread().interrupt();
       throw new BigQueryJdbcException("Interrupted during commitTransaction", ex);
     }
   }
 
-  private void abortSession(SessionState snapshot) throws BigQueryJdbcException {
+  private void abortSession(SessionState snapshot, boolean throwOnError)
+      throws BigQueryJdbcException {
+    boolean clearLocalSession = false;
     try {
-      LOG.fine("Aborting session on connection close: %s", snapshot.sessionInfo.getValue());
+      LOG.fine("Aborting session: %s", snapshot.sessionInfo.getValue());
       QueryJobConfiguration abortSessionJobConfig =
           QueryJobConfiguration.newBuilder("CALL BQ.ABORT_SESSION();")
               .setConnectionProperties(Collections.singletonList(snapshot.sessionInfo))
               .build();
       this.bigQuery.query(abortSessionJobConfig);
+      clearLocalSession = true;
     } catch (InterruptedException ex) {
       Thread.currentThread().interrupt();
       throw new BigQueryJdbcException("Interrupted during session abort", ex);
     } catch (BigQueryException ex) {
+      if (throwOnError) {
+        throw new BigQueryJdbcException("Failed to abort session", ex);
+      }
       LOG.warning(
-          "Failed to abort session during session abort (session may have already ended): "
-              + ex.getMessage());
+          ex,
+          "Failed to abort session during session abort (session may have already ended): %s",
+          ex.getMessage());
+      clearLocalSession = true;
     } finally {
-      this.sessionState.updateAndGet(SessionState::withoutSession);
-      this.transactionStarted = false;
+      if (clearLocalSession) {
+        this.sessionState.updateAndGet(SessionState::withoutSession);
+        this.transactionStarted = false;
+      }
     }
   }
 
