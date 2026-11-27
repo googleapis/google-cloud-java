@@ -48,15 +48,20 @@ import java.util.List;
  * build() is called, the tree of builders is called to create the complete settings object. For
  * example, to set the total timeout of createReadSession to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EnhancedBigQueryReadStubSettings.Builder builder =
  *     EnhancedBigQueryReadStubSettings.newBuilder();
- * builder.createReadSessionSettings().getRetrySettings().toBuilder()
- *     .setTotalTimeout(Duration.ofSeconds(30));
+ * builder
+ *     .createReadSessionSettings()
+ *     .setRetrySettings(
+ *         builder
+ *             .createReadSessionSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
+ *             .setTotalTimeoutDuration(java.time.Duration.ofSeconds(30))
+ *             .build());
  * EnhancedBigQueryReadStubSettings settings = builder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
 public class EnhancedBigQueryReadStubSettings
     extends StubSettings<EnhancedBigQueryReadStubSettings> {

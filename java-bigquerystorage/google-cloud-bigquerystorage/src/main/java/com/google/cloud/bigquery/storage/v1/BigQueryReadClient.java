@@ -35,16 +35,15 @@ import java.util.concurrent.TimeUnit;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (BigQueryReadClient BigQueryReadClient = BigQueryReadClient.create()) {
+ * <pre>{@code
+ * try (BigQueryReadClient bigQueryReadClient = BigQueryReadClient.create()) {
  *   String parent = "";
  *   ReadSession readSession = ReadSession.newBuilder().build();
  *   int maxStreamCount = 0;
- *   ReadSession response = BigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
+ *   ReadSession response =
+ *       bigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
  * }
- * </code>
- * </pre>
+ * }</pre>
  *
  * <p>Note: close() needs to be called on the BigQueryReadClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
@@ -74,27 +73,23 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
- * BigQueryReadSettings BigQueryReadSettings =
+ * <pre>{@code
+ * BigQueryReadSettings bigQueryReadSettings =
  *     BigQueryReadSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * BigQueryReadClient BigQueryReadClient =
- *     BigQueryReadClient.create(BigQueryReadSettings);
- * </code>
- * </pre>
+ * BigQueryReadClient bigQueryReadClient =
+ *     BigQueryReadClient.create(bigQueryReadSettings);
+ * }</pre>
  *
  * To customize the endpoint:
  *
- * <pre>
- * <code>
- * BigQueryReadSettings BigQueryReadSettings =
+ * <pre>{@code
+ * BigQueryReadSettings bigQueryReadSettings =
  *     BigQueryReadSettings.newBuilder().setEndpoint(myEndpoint).build();
- * BigQueryReadClient BigQueryReadClient =
- *     BigQueryReadClient.create(BigQueryReadSettings);
- * </code>
- * </pre>
+ * BigQueryReadClient bigQueryReadClient =
+ *     BigQueryReadClient.create(bigQueryReadSettings);
+ * }</pre>
  */
 @BetaApi
 public class BigQueryReadClient implements BackgroundResource {
@@ -177,14 +172,15 @@ public class BigQueryReadClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (BigQueryReadClient BigQueryReadClient = BigQueryReadClient.create()) {
+   * <pre>{@code
+   * try (BigQueryReadClient bigQueryReadClient = BigQueryReadClient.create()) {
    *   String parent = "";
    *   ReadSession readSession = ReadSession.newBuilder().build();
    *   int maxStreamCount = 0;
-   *   ReadSession response = BigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
+   *   ReadSession response =
+   *       bigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param parent Required. The request project that owns the session, in the form of
    *     `projects/{project_id}`.
@@ -233,12 +229,12 @@ public class BigQueryReadClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
-   * try (BigQueryReadClient BigQueryReadClient = BigQueryReadClient.create()) {
+   * <pre>{@code
+   * try (BigQueryReadClient bigQueryReadClient = BigQueryReadClient.create()) {
    *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder().build();
-   *   ReadSession response = BigQueryReadClient.createReadSession(request);
+   *   ReadSession response = bigQueryReadClient.createReadSession(request);
    * }
-   * </code></pre>
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -296,14 +292,15 @@ public class BigQueryReadClient implements BackgroundResource {
    *
    * <p>Sample code:
    *
-   * <pre><code>
+   * <pre>{@code
    * try (BigQueryReadClient bigQueryReadClient = BigQueryReadClient.create()) {
    *   CreateReadSessionRequest request = CreateReadSessionRequest.newBuilder().build();
-   *   ApiFuture&lt;ReadSession&gt; future = BigQueryReadClient.createReadSessionCallable().futureCall(request);
+   *   ApiFuture<ReadSession> future =
+   *       bigQueryReadClient.createReadSessionCallable().futureCall(request);
    *   // Do something
    *   ReadSession response = future.get();
    * }
-   * </code></pre>
+   * }</pre>
    */
   public final UnaryCallable<CreateReadSessionRequest, ReadSession> createReadSessionCallable() {
     Span createReadSessionCallable = null;

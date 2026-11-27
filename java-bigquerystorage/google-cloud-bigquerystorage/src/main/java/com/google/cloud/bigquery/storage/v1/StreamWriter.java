@@ -999,16 +999,19 @@ public class StreamWriter implements AutoCloseable {
      * might be splitted into multiple connections if needed. Different tables' traffic can also be
      * multiplexed within the same connection.
      *
-     * <pre>
-     * Each connection pool would have a upper limit (default to 20) and lower limit (default to
-     * 2) for the number of active connections. This parameter can be tuned via a static method
-     * exposed on {@link ConnectionWorkerPool}.
+     * <p>Each connection pool has an upper limit (default 20) and lower limit (default 2) for the
+     * number of active connections. This parameter can be tuned via {@link
+     * ConnectionWorkerPool#setOptions(ConnectionWorkerPool.Settings)}.
      *
-     * Example:
+     * <p>Example:
+     *
+     * <pre>{@code
      * ConnectionWorkerPool.setOptions(
-     *     Settings.builder().setMinConnectionsPerRegion(4).setMaxConnectionsPerRegion(10).build());
-     *
-     * </pre>
+     *     ConnectionWorkerPool.Settings.builder()
+     *         .setMinConnectionsPerRegion(4)
+     *         .setMaxConnectionsPerRegion(10)
+     *         .build());
+     * }</pre>
      *
      * @param enableConnectionPool
      * @return Builder
@@ -1152,19 +1155,21 @@ public class StreamWriter implements AutoCloseable {
     /**
      * Enable client lib automatic retries on request level errors.
      *
-     * <pre>
-     * Immeidate Retry code:
-     * ABORTED, UNAVAILABLE, CANCELLED, INTERNAL, DEADLINE_EXCEEDED
-     * Backoff Retry code:
-     * RESOURCE_EXHAUSTED
+     * <p>Immediate Retry codes: ABORTED, UNAVAILABLE, CANCELLED, INTERNAL, DEADLINE_EXCEEDED.
      *
-     * Example:
-     * RetrySettings retrySettings = RetrySettings.newBuilder()
-     *      .setInitialRetryDelay(Duration.ofMillis(500)) // applies to backoff retry
-     *      .setRetryDelayMultiplier(1.1) // applies to backoff retry
-     *      .setMaxAttempts(5) // applies to both retries
-     *      .setMaxRetryDelay(Duration.ofMinutes(1)) // applies to backoff retry .build();
-     * </pre>
+     * <p>Backoff Retry code: RESOURCE_EXHAUSTED.
+     *
+     * <p>Example:
+     *
+     * <pre>{@code
+     * RetrySettings retrySettings =
+     *     RetrySettings.newBuilder()
+     *         .setInitialRetryDelayDuration(java.time.Duration.ofMillis(500)) // applies to backoff retry
+     *         .setRetryDelayMultiplier(1.1) // applies to backoff retry
+     *         .setMaxAttempts(5) // applies to both retries
+     *         .setMaxRetryDelayDuration(java.time.Duration.ofMinutes(1)) // applies to backoff retry
+     *         .build();
+     * }</pre>
      *
      * @param retrySettings
      * @return
