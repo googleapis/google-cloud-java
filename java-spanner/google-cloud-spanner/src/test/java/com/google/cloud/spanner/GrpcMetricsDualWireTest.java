@@ -57,8 +57,9 @@ public class GrpcMetricsDualWireTest extends AbstractMockServerTest {
   private static ManagedChannel buildWiredChannel(OpenTelemetry... openTelemetries) {
     InstantiatingGrpcChannelProvider.Builder providerBuilder =
         InstantiatingGrpcChannelProvider.newBuilder();
+    BuiltInMetricsProvider metricsProvider = new BuiltInMetricsProvider();
     for (OpenTelemetry openTelemetry : openTelemetries) {
-      BuiltInMetricsProvider.INSTANCE.enableGrpcMetrics(providerBuilder, openTelemetry);
+      metricsProvider.enableGrpcMetrics(providerBuilder, openTelemetry);
     }
     ManagedChannelBuilder<?> channelBuilder =
         NettyChannelBuilder.forAddress("localhost", getPort()).usePlaintext();

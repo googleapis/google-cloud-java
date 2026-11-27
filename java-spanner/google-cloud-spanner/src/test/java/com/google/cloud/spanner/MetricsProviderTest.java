@@ -61,7 +61,6 @@ public class MetricsProviderTest {
   @After
   public void reset() {
     SpannerOptions.useDefaultEnvironment();
-    BuiltInMetricsProvider.INSTANCE.reset();
   }
 
   private static SpannerOptions.Builder cloudBuilder() {
@@ -291,17 +290,16 @@ public class MetricsProviderTest {
   }
 
   @Test
-  public void customProviderDoesNotTouchProcessWideCloudMonitoringSingleton() {
-    BuiltInMetricsProvider.INSTANCE.reset();
+  public void customProviderDoesNotTouchCloudMonitoringProvider() {
     CustomOpenTelemetryMetricsProvider provider =
         CustomOpenTelemetryMetricsProvider.create(OpenTelemetry.noop());
 
     SpannerOptions cloudOptions = cloudBuilder().setClientMetricsProvider(provider).build();
     cloudOptions.getApiTracerFactory(/* isAdminClient= */ false, /* isEmulatorEnabled= */ false);
-    assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+    assertNull(cloudOptions.builtInMetricsProvider.getOpenTelemetry());
 
     SpannerOptions omniOptions = omniBuilder().setClientMetricsProvider(provider).build();
     omniOptions.getApiTracerFactory(/* isAdminClient= */ false, /* isEmulatorEnabled= */ false);
-    assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+    assertNull(omniOptions.builtInMetricsProvider.getOpenTelemetry());
   }
 }

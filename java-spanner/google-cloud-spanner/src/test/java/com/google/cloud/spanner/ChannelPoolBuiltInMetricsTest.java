@@ -57,25 +57,27 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   private String previousJmhEnabled;
   private InMemoryMetricReader builtInReader;
+  private OpenTelemetrySdk builtInOpenTelemetry;
 
   @Before
   public void setUp() {
     SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
     previousJmhEnabled = System.getProperty("jmh.enabled");
     System.setProperty("jmh.enabled", "true");
-    BuiltInMetricsProvider.INSTANCE.reset();
     builtInReader = InMemoryMetricReader.create();
     SdkMeterProviderBuilder meterProviderBuilder =
         SdkMeterProvider.builder().registerMetricReader(builtInReader);
     BuiltInMetricsConstant.getAllViews().forEach(meterProviderBuilder::registerView);
-    BuiltInMetricsProvider.INSTANCE.setOpenTelemetry(
-        OpenTelemetrySdk.builder().setMeterProvider(meterProviderBuilder.build()).build());
+    builtInOpenTelemetry =
+        OpenTelemetrySdk.builder().setMeterProvider(meterProviderBuilder.build()).build();
   }
 
   @After
   public void tearDown() {
     SpannerOptions.useDefaultEnvironment();
-    BuiltInMetricsProvider.INSTANCE.reset();
+    if (builtInOpenTelemetry != null) {
+      builtInOpenTelemetry.close();
+    }
     if (previousJmhEnabled == null) {
       System.clearProperty("jmh.enabled");
     } else {
@@ -85,7 +87,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   @Test
   public void channelCountIsReportedForTheDataPoolOnly() {
-    try (Spanner spanner = createOptions().build().getService()) {
+    try (Spanner spanner = buildWithBuiltInMetrics(createOptions()).getService()) {
       executeSelect1(spanner);
 
       List<LongPointData> active = activeChannelCountPoints();
@@ -103,7 +105,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   @Test
   public void channelPoolMetricsAreNotReportedWithoutCredentials() {
     System.clearProperty("jmh.enabled");
-    try (Spanner spanner = createOptions().build().getService()) {
+    try (Spanner spanner = buildWithBuiltInMetrics(createOptions()).getService()) {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
@@ -113,7 +115,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   @Test
   public void channelLoadIsReportedWithTheDatabaseOfTheCall() {
-    try (Spanner spanner = createOptions().build().getService()) {
+    try (Spanner spanner = buildWithBuiltInMetrics(createOptions()).getService()) {
       executeSelect1(spanner);
 
       List<HistogramPointData> points = channelLoadPoints();
@@ -155,7 +157,8 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
           }
         };
     try (Spanner spanner =
-        createOptions().setCallContextConfigurator(configurator).build().getService()) {
+        buildWithBuiltInMetrics(createOptions().setCallContextConfigurator(configurator))
+            .getService()) {
       executeSelect1(spanner);
 
       assertThat(
@@ -220,7 +223,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
             return false;
           }
         });
-    try (Spanner spanner = createOptions().build().getService()) {
+    try (Spanner spanner = buildWithBuiltInMetrics(createOptions()).getService()) {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
@@ -230,7 +233,8 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   @Test
   public void channelPoolMetricsAreNotReportedWhenBuiltInMetricsAreDisabled() {
-    try (Spanner spanner = createOptions().setBuiltInMetricsEnabled(false).build().getService()) {
+    try (Spanner spanner =
+        buildWithBuiltInMetrics(createOptions().setBuiltInMetricsEnabled(false)).getService()) {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
@@ -242,7 +246,8 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   public void channelPoolMetricsAreNotReportedWithTheEmulator() {
     mockInstanceAdmin.addResponse(ListInstanceConfigsResponse.getDefaultInstance());
     try (Spanner spanner =
-        createOptions().setEmulatorHost("localhost:" + getPort()).build().getService()) {
+        buildWithBuiltInMetrics(createOptions().setEmulatorHost("localhost:" + getPort()))
+            .getService()) {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
@@ -252,9 +257,9 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   @Test
   public void eachClientReportsItsOwnPoolUntilItIsClosed() {
-    try (Spanner first = createOptions().build().getService()) {
+    try (Spanner first = buildWithBuiltInMetrics(createOptions()).getService()) {
       executeSelect1(first);
-      try (Spanner second = createOptions().build().getService()) {
+      try (Spanner second = buildWithBuiltInMetrics(createOptions()).getService()) {
         executeSelect1(second);
 
         List<LongPointData> active = activeChannelCountPoints();
@@ -274,12 +279,15 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   @Test
   public void channelPoolMetricsConvertToCloudMonitoringTimeSeries() {
-    try (Spanner spanner = createOptions().build().getService()) {
+    SpannerOptions options = buildWithBuiltInMetrics(createOptions());
+    try (Spanner spanner = options.getService()) {
       executeSelect1(spanner);
 
       List<TimeSeries> allTimeSeries =
           SpannerCloudMonitoringExporterUtils.convertToSpannerTimeSeries(
-              builtInReader.collectAllMetrics(), "my-project");
+              builtInReader.collectAllMetrics(),
+              "my-project",
+              options.builtInMetricsProvider.createClientAttributes());
 
       TimeSeries channelCount =
           allTimeSeries.stream()
@@ -335,7 +343,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   @Test
   public void adminCallsDoNotReportChannelLoad() {
     mockInstanceAdmin.addResponse(ListInstanceConfigsResponse.getDefaultInstance());
-    try (Spanner spanner = createOptions().build().getService()) {
+    try (Spanner spanner = buildWithBuiltInMetrics(createOptions()).getService()) {
       spanner.getInstanceAdminClient().listInstanceConfigs().iterateAll().forEach(ignored -> {});
 
       assertThat(channelLoadPoints()).isEmpty();
@@ -346,14 +354,14 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   @Test
   public void dynamicPoolReportsDynamicPoolModeAndChannelLoad() {
     SpannerOptions options =
-        SpannerOptions.newBuilder()
-            .setProjectId("my-project")
-            .setHost(String.format("http://localhost:%d", getPort()))
-            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-            .setCredentials(NoCredentials.getInstance())
-            .enableGrpcGcpExtension()
-            .enableDynamicChannelPool()
-            .build();
+        buildWithBuiltInMetrics(
+            SpannerOptions.newBuilder()
+                .setProjectId("my-project")
+                .setHost(String.format("http://localhost:%d", getPort()))
+                .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                .setCredentials(NoCredentials.getInstance())
+                .enableGrpcGcpExtension()
+                .enableDynamicChannelPool());
     try (Spanner spanner = options.getService()) {
       executeSelect1(spanner);
 
@@ -398,7 +406,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
             .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
             .build();
     try (Spanner spanner =
-        createOptions().setChannelProvider(customProvider).build().getService()) {
+        buildWithBuiltInMetrics(createOptions().setChannelProvider(customProvider)).getService()) {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
@@ -408,12 +416,19 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
 
   @Test
   public void channelPoolMetricsAreNotReportedWhenGrpcGcpExtensionIsDisabled() {
-    try (Spanner spanner = createOptions().disableGrpcGcpExtension().build().getService()) {
+    try (Spanner spanner =
+        buildWithBuiltInMetrics(createOptions().disableGrpcGcpExtension()).getService()) {
       executeSelect1(spanner);
 
       assertThat(channelCountPoints()).isEmpty();
       assertThat(channelLoadPoints()).isEmpty();
     }
+  }
+
+  private SpannerOptions buildWithBuiltInMetrics(SpannerOptions.Builder builder) {
+    SpannerOptions options = builder.build();
+    options.builtInMetricsProvider.setOpenTelemetry(builtInOpenTelemetry);
+    return options;
   }
 
   private SpannerOptions.Builder createOptions() {
@@ -428,15 +443,15 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
   }
 
   private SpannerOptions createDirectPathFallbackOptions() {
-    return SpannerOptions.newBuilder()
-        .setProjectId("my-project")
-        .setEnableDirectAccess(true)
-        .setHost("http://localhost:1")
-        .setCredentials(NoCredentials.getInstance())
-        .enableGrpcGcpExtension()
-        .disableDynamicChannelPool()
-        .setNumChannels(NUM_CHANNELS)
-        .build();
+    return buildWithBuiltInMetrics(
+        SpannerOptions.newBuilder()
+            .setProjectId("my-project")
+            .setEnableDirectAccess(true)
+            .setHost("http://localhost:1")
+            .setCredentials(NoCredentials.getInstance())
+            .enableGrpcGcpExtension()
+            .disableDynamicChannelPool()
+            .setNumChannels(NUM_CHANNELS));
   }
 
   private static void executeSelect1(Spanner spanner) {

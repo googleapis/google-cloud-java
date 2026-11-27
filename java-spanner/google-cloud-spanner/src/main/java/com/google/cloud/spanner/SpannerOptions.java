@@ -327,9 +327,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean enableGrpcGcpOtelMetrics;
   private final boolean enableChannelPoolBuiltInMetrics;
 
-  // Non-final so tests can observe the arguments passed to the process-wide metrics provider.
-  @VisibleForTesting
-  BuiltInMetricsProvider builtInMetricsProvider = BuiltInMetricsProvider.INSTANCE;
+  // Per-options metrics provider; non-final so tests can inject doubles or observe arguments.
+  @VisibleForTesting BuiltInMetricsProvider builtInMetricsProvider = new BuiltInMetricsProvider();
 
   /**
    * These are the default {@link QueryOptions} defined by the user on this {@link SpannerOptions}.
@@ -3168,6 +3167,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     if (isEnableBuiltInMetrics() && !usesNoCredentials()) {
       this.builtInMetricsProvider.setProjectIdIfAbsent(databaseId.getInstanceId().getProject());
     }
+  }
+
+  /** Closes the built-in metrics provider with the default bounded shutdown timeout. */
+  void closeBuiltInMetrics() {
+    this.builtInMetricsProvider.close();
+  }
+
+  /** Closes the built-in metrics provider, waiting at most {@code timeout} for the final flush. */
+  void closeBuiltInMetrics(long timeout, TimeUnit unit) {
+    this.builtInMetricsProvider.close(timeout, unit);
   }
 
   public ApiTracerFactory getApiTracerFactory(boolean isAdminClient, boolean isEmulatorEnabled) {

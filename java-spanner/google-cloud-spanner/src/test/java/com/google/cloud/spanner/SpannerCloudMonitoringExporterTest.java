@@ -99,15 +99,17 @@ public class SpannerCloudMonitoringExporterTest {
   private InstrumentationScopeInfo scope;
 
   private String client_uid;
+  private Map<String, String> clientAttributes;
 
   @Before
   public void setUp() {
     mockMetricServiceStub =
         Mockito.mock(MetricServiceStub.class, Mockito.withSettings().withoutAnnotations());
     fakeMetricServiceClient = new FakeMetricServiceClient(mockMetricServiceStub);
-    exporter = new SpannerCloudMonitoringExporter(fakeMetricServiceClient);
-
-    this.client_uid = BuiltInMetricsProvider.INSTANCE.createClientAttributes().get("client_uid");
+    this.clientAttributes = new BuiltInMetricsProvider().createClientAttributes();
+    this.client_uid = this.clientAttributes.get("client_uid");
+    exporter =
+        new SpannerCloudMonitoringExporter(() -> null, clientAttributes, fakeMetricServiceClient);
 
     attributes =
         Attributes.builder()
@@ -270,7 +272,8 @@ public class SpannerCloudMonitoringExporterTest {
   @Test
   public void testExportingUsesFallbackProjectForMetricsWithUndefinedPointProject() {
     exporter =
-        new SpannerCloudMonitoringExporter(() -> "fallback-project", fakeMetricServiceClient);
+        new SpannerCloudMonitoringExporter(
+            () -> "fallback-project", clientAttributes, fakeMetricServiceClient);
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
@@ -311,7 +314,8 @@ public class SpannerCloudMonitoringExporterTest {
   @Test
   public void testExportingRoutesPointProjectAndFallbackProject() {
     exporter =
-        new SpannerCloudMonitoringExporter(() -> "fallback-project", fakeMetricServiceClient);
+        new SpannerCloudMonitoringExporter(
+            () -> "fallback-project", clientAttributes, fakeMetricServiceClient);
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
@@ -656,30 +660,106 @@ public class SpannerCloudMonitoringExporterTest {
   }
 
   @Test
+  public void testExportingStampsPerProviderClientAttributes() {
+    ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
+        ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
+
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
+    ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
+    when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
+
+    Map<String, String> attrsA = new BuiltInMetricsProvider().createClientAttributes();
+    Map<String, String> attrsB = new BuiltInMetricsProvider().createClientAttributes();
+    assertThat(attrsA.get(CLIENT_UID_KEY.getKey()))
+        .isNotEqualTo(attrsB.get(CLIENT_UID_KEY.getKey()));
+
+    SpannerCloudMonitoringExporter exporterA =
+        new SpannerCloudMonitoringExporter(() -> null, attrsA, fakeMetricServiceClient);
+    SpannerCloudMonitoringExporter exporterB =
+        new SpannerCloudMonitoringExporter(() -> null, attrsB, fakeMetricServiceClient);
+
+    LongPointData pointData =
+        ImmutableLongPointData.create(
+            10, 15, Attributes.builder().put(PROJECT_ID_KEY, projectId).build(), 1L);
+    MetricData metricData =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            "spanner.googleapis.com/internal/client/" + OPERATION_COUNT_NAME,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(pointData)));
+
+    exporterA.export(Collections.singletonList(metricData));
+    exporterB.export(Collections.singletonList(metricData));
+
+    assertThat(argumentCaptor.getAllValues()).hasSize(2);
+    assertThat(
+            argumentCaptor
+                .getAllValues()
+                .get(0)
+                .getTimeSeries(0)
+                .getMetric()
+                .getLabelsMap()
+                .get(CLIENT_UID_KEY.getKey()))
+        .isEqualTo(attrsA.get(CLIENT_UID_KEY.getKey()));
+    assertThat(
+            argumentCaptor
+                .getAllValues()
+                .get(1)
+                .getTimeSeries(0)
+                .getMetric()
+                .getLabelsMap()
+                .get(CLIENT_UID_KEY.getKey()))
+        .isEqualTo(attrsB.get(CLIENT_UID_KEY.getKey()));
+  }
+
+  @Test
   public void getAggregationTemporality() throws IOException {
     SpannerCloudMonitoringExporter actualExporter =
-        SpannerCloudMonitoringExporter.create(() -> null, null, null, null);
-    assertThat(actualExporter.getAggregationTemporality(InstrumentType.COUNTER))
-        .isEqualTo(AggregationTemporality.CUMULATIVE);
+        SpannerCloudMonitoringExporter.create(() -> null, clientAttributes, null, null, null);
+    try {
+      assertThat(actualExporter.getAggregationTemporality(InstrumentType.COUNTER))
+          .isEqualTo(AggregationTemporality.CUMULATIVE);
+    } finally {
+      actualExporter.shutdown();
+    }
   }
 
   @Test
   public void testUniverseDomain() throws IOException {
     SpannerCloudMonitoringExporter actualExporter =
-        SpannerCloudMonitoringExporter.create(() -> null, null, null, "abc.goog");
-    MetricServiceSettings metricServiceSettings =
-        actualExporter.getMetricServiceClient().getSettings();
-
-    assertEquals("abc.goog", metricServiceSettings.getUniverseDomain());
-    assertEquals("monitoring.abc.goog:443", metricServiceSettings.getEndpoint());
-
-    actualExporter =
         SpannerCloudMonitoringExporter.create(
-            () -> null, null, "monitoringa.abc.goog:443", "abc.goog");
-    metricServiceSettings = actualExporter.getMetricServiceClient().getSettings();
+            () -> null, clientAttributes, null, null, "partner.example");
+    try {
+      MetricServiceSettings metricServiceSettings =
+          actualExporter.getMetricServiceClient().getSettings();
 
-    assertEquals("abc.goog", metricServiceSettings.getUniverseDomain());
-    assertEquals("monitoringa.abc.goog:443", metricServiceSettings.getEndpoint());
+      assertEquals("partner.example", metricServiceSettings.getUniverseDomain());
+      assertEquals("monitoring.partner.example:443", metricServiceSettings.getEndpoint());
+    } finally {
+      actualExporter.shutdown();
+    }
+
+    SpannerCloudMonitoringExporter overrideExporter =
+        SpannerCloudMonitoringExporter.create(
+            () -> null,
+            clientAttributes,
+            null,
+            "monitoringa.partner.example:443",
+            "partner.example");
+    try {
+      MetricServiceSettings metricServiceSettings =
+          overrideExporter.getMetricServiceClient().getSettings();
+
+      assertEquals("partner.example", metricServiceSettings.getUniverseDomain());
+      assertEquals("monitoringa.partner.example:443", metricServiceSettings.getEndpoint());
+    } finally {
+      overrideExporter.shutdown();
+    }
   }
 
   private static class FakeMetricServiceClient extends MetricServiceClient {

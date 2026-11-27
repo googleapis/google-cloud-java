@@ -2605,6 +2605,7 @@ public class SpannerOptionsTest {
         SpannerCloudMonitoringExporter exporter =
             SpannerCloudMonitoringExporter.create(
                 () -> "test-project",
+                Collections.emptyMap(),
                 NoCredentials.getInstance(),
                 null,
                 options.getResolvedUniverseDomain());

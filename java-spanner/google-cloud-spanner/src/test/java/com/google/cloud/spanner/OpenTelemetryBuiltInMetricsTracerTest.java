@@ -74,7 +74,7 @@ public class OpenTelemetryBuiltInMetricsTracerTest extends AbstractNettyMockServ
   private static final Statement UPDATE_RANDOM = Statement.of("UPDATE random SET foo=1 WHERE id=1");
   private static InMemoryMetricReader metricReader;
   private static final Map<String, String> attributes =
-      BuiltInMetricsProvider.INSTANCE.createClientAttributes();
+      new BuiltInMetricsProvider().createClientAttributes();
   private static final Attributes expectedCommonBaseAttributes =
       Attributes.builder()
           .put(BuiltInMetricsConstant.PROJECT_ID_KEY, "test-project")

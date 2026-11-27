@@ -22,6 +22,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -49,6 +52,7 @@ import java.io.StringWriter;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -388,6 +392,54 @@ public class SpannerImplTest {
 
     InstanceAdminClient instanceAdminClient = spanner.createInstanceAdminClient();
     assertNotNull(instanceAdminClient);
+  }
+
+  @Test
+  public void testCloseClosesBuiltInMetrics() {
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
+    spanner.close();
+    verify(spannerOptions).closeBuiltInMetrics();
+  }
+
+  @Test
+  public void testTimedCloseCallsTimedCloseBuiltInMetrics() {
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
+    spanner.close(500L, TimeUnit.MILLISECONDS);
+    verify(spannerOptions).closeBuiltInMetrics(anyLong(), eq(TimeUnit.NANOSECONDS));
+  }
+
+  @Test
+  public void testCloseSwallowsRuntimeExceptionFromCloseBuiltInMetrics() {
+    doThrow(new RuntimeException("metrics shutdown failed"))
+        .when(spannerOptions)
+        .closeBuiltInMetrics();
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
+    spanner.close();
+    verify(rpc).shutdown();
+    verify(spannerOptions).closeBuiltInMetrics();
+  }
+
+  @Test
+  public void testTimedClosePassesRemainingDeadlineToCloseBuiltInMetrics() {
+    // Consume ~100ms inside rpc.shutdown() without sleeping, so the remaining budget must shrink.
+    Mockito.doAnswer(
+            invocation -> {
+              long start = System.nanoTime();
+              while (System.nanoTime() - start < TimeUnit.MILLISECONDS.toNanos(100L)) {
+                Thread.yield();
+              }
+              return null;
+            })
+        .when(rpc)
+        .shutdown();
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
+    ArgumentCaptor<Long> remaining = ArgumentCaptor.forClass(Long.class);
+
+    spanner.close(500L, TimeUnit.MILLISECONDS);
+
+    verify(spannerOptions).closeBuiltInMetrics(remaining.capture(), eq(TimeUnit.NANOSECONDS));
+    assertThat(remaining.getValue()).isAtLeast(0L);
+    assertThat(remaining.getValue()).isAtMost(TimeUnit.MILLISECONDS.toNanos(400L));
   }
 
   private void closeSpannerAndIncludeStacktrace(Spanner spanner) {

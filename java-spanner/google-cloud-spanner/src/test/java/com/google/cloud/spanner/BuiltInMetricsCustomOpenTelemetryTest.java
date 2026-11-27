@@ -31,7 +31,6 @@ import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Collection;
-import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -44,14 +43,6 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class BuiltInMetricsCustomOpenTelemetryTest extends AbstractMockServerTest {
   private static final Statement SELECT1 = Statement.of("SELECT 1");
-
-  @After
-  public void resetGcmSingleton() {
-    // A cloud custom+enabled client now also activates the Cloud Monitoring sink (additive
-    // semantics), which initializes the process-wide singleton via the gRPC layer. Reset it so the
-    // state does not leak into other tests sharing the JVM fork.
-    BuiltInMetricsProvider.INSTANCE.reset();
-  }
 
   private Spanner createSpanner(MetricsProvider metricsProvider) {
     return spannerBuilder(metricsProvider).build().getService();
@@ -153,16 +144,15 @@ public class BuiltInMetricsCustomOpenTelemetryTest extends AbstractMockServerTes
   @Test
   public void gcmSingletonIsNotInitializedByCustomOnlyClient() {
     // With the Cloud Monitoring sink disabled, a custom-sink client must not create or modify the
-    // process-wide Cloud Monitoring OpenTelemetry singleton (custom sink only, no GCM).
-    BuiltInMetricsProvider.INSTANCE.reset();
+    // Cloud Monitoring OpenTelemetry provider (custom sink only, no GCM).
     InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    try (Spanner spanner =
+    SpannerOptions options =
         spannerBuilder(CustomOpenTelemetryMetricsProvider.create(createOpenTelemetry(metricReader)))
             .setBuiltInMetricsEnabled(false)
-            .build()
-            .getService()) {
+            .build();
+    try (Spanner spanner = options.getService()) {
       executeSelect1(spanner);
+      assertNull(options.builtInMetricsProvider.getOpenTelemetry());
     }
-    assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
   }
 }
