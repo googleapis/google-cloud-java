@@ -306,6 +306,24 @@ public class PerConnectionFileHandlerTest {
   }
 
   @Test
+  public void testExistingDirectoryKeeps0755Permissions() throws IOException {
+    assumeTrue(isPosix(), "POSIX permissions required");
+    Path existingDir = tempDir.resolve("existing-0755");
+    Files.createDirectory(existingDir);
+    Set<PosixFilePermission> mode0755 = PosixFilePermissions.fromString("rwxr-xr-x");
+    Files.setPosixFilePermissions(existingDir, mode0755);
+
+    PerConnectionFileHandler existingDirHandler =
+        new PerConnectionFileHandler(existingDir.toString(), Level.INFO);
+    try {
+      existingDirHandler.publish(new LogRecord(Level.INFO, "preserve mode check"));
+      assertEquals(mode0755, Files.getPosixFilePermissions(existingDir, LinkOption.NOFOLLOW_LINKS));
+    } finally {
+      existingDirHandler.close();
+    }
+  }
+
+  @Test
   public void testSymbolicLinksAndNonRegularPathsAreRejected() throws IOException {
     assumeTrue(isPosix(), "Symbolic link creation required");
     Path victimFile = tempDir.resolve("victim-secret.txt");

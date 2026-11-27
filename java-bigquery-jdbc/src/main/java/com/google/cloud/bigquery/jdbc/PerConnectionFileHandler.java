@@ -193,8 +193,7 @@ class PerConnectionFileHandler extends Handler {
           throw new IOException("Log path component is not a regular directory: " + current);
         }
         if (isTarget && isPosix) {
-          verifyPosixOwner(current, false);
-          Files.setPosixFilePermissions(current, DIR_PERMS_0700);
+          verifyPosixOwner(current, true);
         }
       } else {
         try {
@@ -210,8 +209,7 @@ class PerConnectionFileHandler extends Handler {
             throw new IOException("Concurrent non-directory created at log path: " + current);
           }
           if (isTarget && isPosix) {
-            verifyPosixOwner(current, false);
-            Files.setPosixFilePermissions(current, DIR_PERMS_0700);
+            verifyPosixOwner(current, true);
           }
         }
       }
