@@ -197,9 +197,9 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `JobCreationMode` | `2` | Job creation strategy: `1` (`JOB_CREATION_REQUIRED` - forces explicit query job creation for every query) or `2` (`JOB_CREATION_OPTIONAL` - default, allows queries to execute directly without creating explicit jobs when possible). |
 | `MaxResults` | `10000` | Maximum number of rows returned per page during standard REST result set iteration. |
 | `AllowLargeResults` | `true` | Allows large query results (required when using legacy SQL destination tables). |
-| `LargeResultTable` | `null` | Destination table name for query result sets. If omitted when `LargeResultDataset` is set, the driver automatically generates a temporary table name (`_jdbc_tmp_<timestamp>`). |
-| `LargeResultDataset` | `null` | Destination dataset name for query result sets. If the specified dataset does not exist, the driver automatically creates it. Under Legacy SQL mode, defaults to creating/using `_jdbc_tmp`. |
-| `LargeResultsDatasetExpirationTime` | `3600000` (1 hour) | Expiration time (in milliseconds) for temporary destination tables in user-specified datasets. |
+| `LargeResultTable` | `null` | Destination table name for query result sets. When specified, results are written with `WRITE_TRUNCATE` and the table is preserved after close. When omitted while `LargeResultDataset` is set, the driver generates a unique temporary table (`temp_table_<uuid>`) with `WRITE_EMPTY` and deletes it on a best-effort basis when the `ResultSet` or `Statement` closes (or on `Statement` re-execution). |
+| `LargeResultDataset` | `null` | Destination dataset name for query result sets. If the dataset does not exist, the driver automatically creates it with creator-only `OWNER` access (omitting default project-wide group ACLs) and a default table expiration of at least 1 hour (`3600000` ms). Under Legacy SQL mode when `LargeResultTable` is set without `LargeResultDataset`, defaults to `_google_jdbc`. |
+| `LargeResultsDatasetExpirationTime` | `3600000` (1 hour) | Positive expiration time (in milliseconds, `> 0`) for generated temporary destination tables and auto-created destination datasets. On pre-existing datasets, per-table expiration is set when the dataset has no default table expiration or when `LargeResultsDatasetExpirationTime` is explicitly configured to a different duration. |
 | `KMSKeyName` | `null` | Cloud KMS key resource name used for encrypting query results and destination tables. |
 
 ### Session & Transaction Properties

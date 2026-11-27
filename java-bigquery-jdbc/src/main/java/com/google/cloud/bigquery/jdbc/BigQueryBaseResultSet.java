@@ -153,12 +153,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public void close() {
-    try {
-      if (statement != null && statement.isCloseOnCompletion() && !statement.hasMoreResults()) {
-        statement.close();
-      }
-    } catch (SQLException ex) {
-      LOG.warning("Exception during ResultState.close() operation: %s", ex.getMessage());
+    if (this.statement != null) {
+      this.statement.onResultSetClosed(this);
     }
   }
 

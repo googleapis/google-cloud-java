@@ -1147,6 +1147,10 @@ public class DataSource implements javax.sql.DataSource {
         : (Long) BigQueryJdbcUrlUtility.DEFAULT_DESTINATION_DATASET_EXPIRATION_TIME_VALUE;
   }
 
+  boolean hasExplicitDestinationDatasetExpirationTime() {
+    return this.destinationDatasetExpirationTime != null;
+  }
+
   public void setUseQueryCache(Boolean useQueryCache) {
     this.useQueryCache = useQueryCache;
   }
@@ -1168,6 +1172,10 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public void setDestinationDatasetExpirationTime(long destinationDatasetExpirationTime) {
+    if (destinationDatasetExpirationTime <= 0) {
+      throw new BigQueryJdbcRuntimeException(
+          "Invalid value for LargeResultsDatasetExpirationTime. It must be greater than 0.");
+    }
     this.destinationDatasetExpirationTime = destinationDatasetExpirationTime;
   }
 

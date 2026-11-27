@@ -392,6 +392,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public int[] executeBatch() throws SQLException {
     validateExecution();
+    cleanupPreviousExecution();
     int[] result = new int[this.batchParameters.size()];
     if (this.batchParameters.isEmpty()) {
       return result;

@@ -27,11 +27,18 @@ import static org.mockito.Mockito.mockStatic;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.MockedStatic;
 
 public class DataSourceTest {
+
+  private static final String BASE_URL =
+      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+          + "OAuthType=2;OAuthAccessToken=redacted;ProjectId=project;";
 
   @Test
   public void testWrapperMethods() throws SQLException {
@@ -135,5 +142,58 @@ public class DataSourceTest {
     assertEquals(
         "custom-universe.example.com",
         BigQueryJdbcUrlUtility.resolveEnvUniverseDomain(" custom-universe.example.com "));
+  }
+
+  @Test
+  public void testDestinationDatasetExpirationTimeExplicitTracking() {
+    DataSource defaultDs = new DataSource();
+    assertFalse(defaultDs.hasExplicitDestinationDatasetExpirationTime());
+    assertEquals(
+        BigQueryJdbcUrlUtility.DEFAULT_DESTINATION_DATASET_EXPIRATION_TIME_VALUE,
+        defaultDs.getDestinationDatasetExpirationTime());
+
+    defaultDs.setDestinationDatasetExpirationTime(120_000L);
+    assertTrue(defaultDs.hasExplicitDestinationDatasetExpirationTime());
+    assertEquals(120_000L, defaultDs.getDestinationDatasetExpirationTime());
+
+    DataSource fromUrlUnset = DataSource.fromUrl(BASE_URL);
+    assertFalse(fromUrlUnset.hasExplicitDestinationDatasetExpirationTime());
+
+    DataSource fromUrlSetDefaultValue =
+        DataSource.fromUrl(BASE_URL + "LargeResultsDatasetExpirationTime=3600000;");
+    assertTrue(fromUrlSetDefaultValue.hasExplicitDestinationDatasetExpirationTime());
+    assertEquals(3_600_000L, fromUrlSetDefaultValue.getDestinationDatasetExpirationTime());
+  }
+
+  @ParameterizedTest
+  @ValueSource(longs = {0L, -1L, -3_600_000L})
+  public void testDestinationDatasetExpirationTimeRejectsNonPositiveValues(long invalidValue) {
+    DataSource ds = new DataSource();
+    BigQueryJdbcRuntimeException setterEx =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () -> ds.setDestinationDatasetExpirationTime(invalidValue));
+    assertTrue(
+        setterEx
+            .getMessage()
+            .contains(
+                "Invalid value for LargeResultsDatasetExpirationTime. It must be greater than 0."));
+
+    String invalidUrl = BASE_URL + "LargeResultsDatasetExpirationTime=" + invalidValue + ";";
+    BigQueryJdbcRuntimeException urlEx =
+        assertThrows(BigQueryJdbcRuntimeException.class, () -> DataSource.fromUrl(invalidUrl));
+    assertTrue(
+        urlEx
+            .getMessage()
+            .contains(
+                "Invalid value for LargeResultsDatasetExpirationTime. It must be greater than 0."));
+
+    BigQueryJdbcException driverEx =
+        assertThrows(BigQueryJdbcException.class, () -> DriverManager.getConnection(invalidUrl));
+    assertTrue(
+        driverEx
+            .getMessage()
+            .contains(
+                "Invalid value for LargeResultsDatasetExpirationTime. It must be greater than 0."));
   }
 }

@@ -61,6 +61,7 @@ class BigQuerySettings {
   private final String destinationTable;
   private final String destinationDataset;
   private final long destinationDatasetExpirationTime;
+  private final boolean explicitDestinationDatasetExpirationTime;
 
   private final long jobTimeoutMs;
 
@@ -108,6 +109,8 @@ class BigQuerySettings {
     this.destinationTable = builder.destinationTable;
     this.destinationDataset = builder.destinationDataset;
     this.destinationDatasetExpirationTime = builder.destinationDatasetExpirationTime;
+    this.explicitDestinationDatasetExpirationTime =
+        builder.explicitDestinationDatasetExpirationTime;
     this.jobTimeoutMs = builder.jobTimeoutMs;
     this.maximumBillingTier = builder.maximumBillingTier;
     this.priority = builder.priority;
@@ -271,6 +274,10 @@ class BigQuerySettings {
 
   long getDestinationDatasetExpirationTime() {
     return destinationDatasetExpirationTime;
+  }
+
+  boolean hasExplicitDestinationDatasetExpirationTime() {
+    return explicitDestinationDatasetExpirationTime;
   }
 
   /** Returns the timeout associated with this job */
@@ -501,6 +508,7 @@ class BigQuerySettings {
     private String destinationTable;
     private String destinationDataset;
     private long destinationDatasetExpirationTime;
+    private boolean explicitDestinationDatasetExpirationTime;
     private long jobTimeoutMs;
     private int maximumBillingTier;
     private QueryJobConfiguration.Priority priority;
@@ -543,6 +551,8 @@ class BigQuerySettings {
       this.destinationTable = querySettings.getDestinationTable();
       this.destinationDataset = querySettings.getDestinationDataset();
       this.destinationDatasetExpirationTime = querySettings.destinationDatasetExpirationTime;
+      this.explicitDestinationDatasetExpirationTime =
+          querySettings.explicitDestinationDatasetExpirationTime;
       this.jobTimeoutMs = querySettings.getJobTimeoutMs();
       this.maximumBillingTier = querySettings.getMaximumBillingTier();
       this.priority = querySettings.getPriority();
@@ -565,6 +575,8 @@ class BigQuerySettings {
     Builder withDefaultValues() {
       return setUseReadAPI(false) // Read API is disabled by default;
           .setQueryDialect(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
+          .setDestinationDatasetExpirationTime(
+              BigQueryJdbcUrlUtility.DEFAULT_DESTINATION_DATASET_EXPIRATION_TIME_VALUE)
           .setNumBufferedRows(
               DEFAULT_NUM_BUFFERED_ROWS) // 10K records will be kept in the buffer (Blocking Queue);
           .setMaxResultPerPage(BigQueryJdbcUrlUtility.DEFAULT_MAX_RESULTS_VALUE);
@@ -726,6 +738,12 @@ class BigQuerySettings {
 
     Builder setDestinationDatasetExpirationTime(long destinationDatasetExpirationTime) {
       this.destinationDatasetExpirationTime = destinationDatasetExpirationTime;
+      return this;
+    }
+
+    Builder setExplicitDestinationDatasetExpirationTime(
+        boolean explicitDestinationDatasetExpirationTime) {
+      this.explicitDestinationDatasetExpirationTime = explicitDestinationDatasetExpirationTime;
       return this;
     }
 
