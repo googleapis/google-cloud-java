@@ -277,7 +277,8 @@ public class HttpTransportOptions implements TransportOptions {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    httpTransportFactory = ServiceOptions.newInstance(httpTransportFactoryClassName);
+    httpTransportFactory =
+        ServiceOptions.newInstance(httpTransportFactoryClassName, HttpTransportFactory.class);
   }
 
   public static Builder newBuilder() {

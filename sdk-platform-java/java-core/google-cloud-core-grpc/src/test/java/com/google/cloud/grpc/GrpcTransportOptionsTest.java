@@ -23,6 +23,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.grpc.GrpcTransportOptions.DefaultExecutorFactory;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.concurrent.ScheduledExecutorService;
 import org.easymock.EasyMock;
 import org.junit.jupiter.api.Test;
@@ -66,5 +70,20 @@ class GrpcTransportOptionsTest {
     ExecutorFactory<ScheduledExecutorService> executorFactory = new DefaultExecutorFactory();
     ScheduledExecutorService executorService = executorFactory.get();
     assertSame(executorService, executorFactory.get());
+  }
+
+  @Test
+  void testSerializationRoundTrip() throws Exception {
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(DEFAULT_OPTIONS);
+    }
+    GrpcTransportOptions deserialized;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserialized = (GrpcTransportOptions) ois.readObject();
+    }
+    assertEquals(DEFAULT_OPTIONS, deserialized);
+    assertTrue(deserialized.getExecutorFactory() instanceof DefaultExecutorFactory);
   }
 }

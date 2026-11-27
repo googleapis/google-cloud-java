@@ -197,7 +197,7 @@ public class GrpcTransportOptions implements TransportOptions {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    executorFactory = ServiceOptions.newInstance(executorFactoryClassName);
+    executorFactory = ServiceOptions.newInstance(executorFactoryClassName, ExecutorFactory.class);
   }
 
   public static Builder newBuilder() {

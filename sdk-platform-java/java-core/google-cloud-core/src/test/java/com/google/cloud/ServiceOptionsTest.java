@@ -45,12 +45,16 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.io.Files;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Pattern;
 import org.junit.jupiter.api.Test;
 
@@ -720,6 +724,70 @@ class ServiceOptionsTest {
     com.google.auth.Credentials scoped = options.getScopedCredentials();
     assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);
     assertThat(((ServiceAccountCredentials) scoped).getUseJwtAccessWithScope()).isFalse();
+  }
+
+  private static final AtomicBoolean DISALLOWED_CLASS_INITIALIZED = new AtomicBoolean(false);
+
+  public static class DisallowedClass {
+    static {
+      DISALLOWED_CLASS_INITIALIZED.set(true);
+    }
+  }
+
+  public static class PublicTestServiceFactory implements TestServiceFactory {
+    @Override
+    public TestService create(TestServiceOptions options) {
+      return new TestServiceImpl(options);
+    }
+  }
+
+  public static class PublicTestServiceRpcFactory implements TestServiceRpcFactory {
+    @Override
+    public TestServiceRpc create(TestServiceOptions options) {
+      return new DefaultTestServiceRpc(options);
+    }
+  }
+
+  private static class SerializableTransportOptions implements TransportOptions {
+    private static final long serialVersionUID = 1L;
+  }
+
+  @Test
+  void testNewInstance_disallowedClassDoesNotInitialize() {
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () ->
+                ServiceOptions.newInstance(DisallowedClass.class.getName(), ServiceFactory.class));
+    assertThat(exception).hasMessageThat().contains("is not assignable to");
+    assertThat(DISALLOWED_CLASS_INITIALIZED.get()).isFalse();
+  }
+
+  @Test
+  void testReadObject_validSerializationRoundTrip() throws Exception {
+    TestServiceOptions options =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setCredentials(NoCredentials.getInstance())
+            .setClock(CurrentMillisClock.getDefaultClock())
+            .setServiceFactory(new PublicTestServiceFactory())
+            .setServiceRpcFactory(new PublicTestServiceRpcFactory())
+            .setTransportOptions(new SerializableTransportOptions())
+            .build();
+
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(options);
+    }
+    TestServiceOptions deserialized;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserialized = (TestServiceOptions) ois.readObject();
+    }
+
+    assertThat(deserialized).isEqualTo(options);
+    assertThat(deserialized.getService()).isInstanceOf(TestServiceImpl.class);
+    assertThat(deserialized.getRpc()).isInstanceOf(DefaultTestServiceRpc.class);
   }
 
   private HttpResponse createHttpResponseWithHeader(final Multimap<String, String> headers)
