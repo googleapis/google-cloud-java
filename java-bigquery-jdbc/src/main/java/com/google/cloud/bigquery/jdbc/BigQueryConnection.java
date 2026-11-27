@@ -160,7 +160,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.HTTP_CONNECT_TIMEOUT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.HTTP_READ_TIMEOUT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.BYOID_AUDIENCE_URI_PROPERTY_NAME,
-              BigQueryJdbcUrlUtility.BYOID_CREDENTIAL_SOURCE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.BYOID_POOL_USER_PROJECT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.BYOID_SA_IMPERSONATION_URI_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.BYOID_SUBJECT_TOKEN_TYPE_PROPERTY_NAME,
@@ -279,6 +278,35 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private final AtomicReference<SessionState> sessionState =
       new AtomicReference<>(new SessionState(null, Collections.emptyList(), false));
 
+  static String sanitizeForLog(String value) {
+    if (value == null) {
+      return null;
+    }
+    StringBuilder sb = null;
+    for (int i = 0; i < value.length(); i++) {
+      char c = value.charAt(i);
+      if (c < 0x20 || c == 0x7F) {
+        if (sb == null) {
+          sb = new StringBuilder(value.length()).append(value, 0, i);
+        }
+        sb.append('?');
+      } else if (sb != null) {
+        sb.append(c);
+      }
+    }
+    return sb == null ? value : sb.toString();
+  }
+
+  static String maskPropertyValue(String key, Object value) {
+    if (value == null) {
+      return null;
+    }
+    if (key == null || !SAFE_TO_LOG_PROPERTIES.contains(key)) {
+      return "*****";
+    }
+    return sanitizeForLog(String.valueOf(value));
+  }
+
   BigQueryConnection(String url) throws SQLException {
     this(url, DataSource.fromUrl(url));
   }
@@ -294,32 +322,37 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (rawLogLevel == null) {
       rawLogLevel = System.getenv(BigQueryJdbcUrlUtility.LOG_LEVEL_ENV_VAR);
     }
-    String connLogPath = ds.getLogPath();
-    if (connLogPath == null) {
-      connLogPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
-    }
-    if (connLogPath == null && rawLogLevel != null && !ds.getEnableGcpLogExporter()) {
-      connLogPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
-    }
+    String connLogPath =
+        BigQueryJdbcUrlUtility.resolveEffectiveLogPath(
+            ds.getLogPath(),
+            System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR),
+            rawLogLevel != null && !ds.getEnableGcpLogExporter());
     BigQueryJdbcRootLogger.registerConnection(this.connectionId, rawLogLevel, connLogPath);
     boolean initialized = false;
+    ExecutorService createdQueryExecutor = null;
+    ExecutorService createdMetadataExecutor = null;
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
       this.connectionUrl = url;
       if (LOG.isLoggable(Level.CONFIG)) {
         Properties connectionProps = ds.createProperties();
         Properties maskedProps = new Properties();
         for (String name : connectionProps.stringPropertyNames()) {
-          String value = connectionProps.getProperty(name);
-          if (!SAFE_TO_LOG_PROPERTIES.contains(name)) {
-            value = "*****";
-          }
-          maskedProps.setProperty(name, value);
+          maskedProps.setProperty(
+              sanitizeForLog(name), maskPropertyValue(name, connectionProps.getProperty(name)));
         }
         LOG.config("Connection properties: %s", maskedProps.toString());
       }
       this.openStatements = ConcurrentHashMap.newKeySet();
       this.autoCommit = true;
       this.sqlWarnings = new CopyOnWriteArrayList<>();
+      if (ds.getLogPath() != null && !BigQueryJdbcUrlUtility.isUrlLogPathAllowed()) {
+        this.sqlWarnings.add(
+            new SQLWarning(
+                String.format(
+                    "Ignoring URL/Properties %s because system property %s is false.",
+                    BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME,
+                    BigQueryJdbcUrlUtility.ALLOW_URL_LOG_PATH_SYSTEM_PROPERTY)));
+      }
       this.transactionStarted = false;
       this.isClosed = false;
 
@@ -445,15 +478,27 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.bigQuery = getBigQueryConnection();
       // Cached pool executes queries immediately without queueing and reclaims all idle threads
       // when inactive, minimizing resources.
-      this.queryExecutor =
+      createdQueryExecutor =
           BigQueryJdbcMdc.newCachedThreadPool(String.format("BQ-Query-%s", connectionId));
-      this.metadataExecutor =
+      this.queryExecutor = createdQueryExecutor;
+      createdMetadataExecutor =
           BigQueryJdbcMdc.newFixedThreadPool(
               String.format("BQ-Metadata-%s", connectionId), this.metadataFetchThreadCount);
+      this.metadataExecutor = createdMetadataExecutor;
+      BigQueryJdbcRootLogger.trackConnectionLifecycle(this, this.connectionId);
       initialized = true;
     } finally {
       if (!initialized) {
+        if (createdQueryExecutor != null) {
+          createdQueryExecutor.shutdownNow();
+        }
+        if (createdMetadataExecutor != null) {
+          createdMetadataExecutor.shutdownNow();
+        }
         BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+        BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
+        BigQueryJdbcOpenTelemetry.releaseSdk(this.openTelemetry);
+        this.openTelemetry = null;
       }
     }
   }
@@ -1433,7 +1478,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         if (callerInterrupted) {
           Thread.currentThread().interrupt();
         }
-        BigQueryJdbcMdc.clear();
+        if (this.connectionId.equals(BigQueryJdbcMdc.getConnectionId())) {
+          BigQueryJdbcMdc.clear();
+        }
         BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
         BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
         BigQueryJdbcOpenTelemetry.releaseSdk(this.openTelemetry);
@@ -1549,6 +1596,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             effectiveProjectId,
             this.credentials,
             this.proxyProperties);
+    this.openTelemetry = openTelemetry;
 
     boolean hasExternalOtel = this.customOpenTelemetry != null || this.useGlobalOpenTelemetry;
     Logging localLoggingClient = null;

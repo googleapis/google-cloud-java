@@ -17,11 +17,13 @@
 package com.google.cloud.bigquery.jdbc;
 
 import java.util.function.Supplier;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 public class BigQueryJdbcCustomLogger extends Logger {
+  private volatile boolean hasOwnHandlers;
 
   protected BigQueryJdbcCustomLogger(String name, String resourceBundleName) {
     super(name, resourceBundleName);
@@ -33,18 +35,39 @@ public class BigQueryJdbcCustomLogger extends Logger {
   }
 
   @Override
+  public synchronized void addHandler(Handler handler) throws SecurityException {
+    super.addHandler(handler);
+    this.hasOwnHandlers = getHandlers().length > 0;
+  }
+
+  @Override
+  public synchronized void removeHandler(Handler handler) throws SecurityException {
+    super.removeHandler(handler);
+    this.hasOwnHandlers = getHandlers().length > 0;
+  }
+
+  @Override
   public boolean isLoggable(Level level) {
-    if (level == null || level == Level.OFF) {
+    if (!isSuperLoggable(level)) {
       return false;
     }
-    if (this.getLevel() != null) {
-      return super.isLoggable(level);
+    return isLoggableAfterSuper(level, BigQueryJdbcMdc.getConnectionContext());
+  }
+
+  boolean isSuperLoggable(Level level) {
+    return level != null && super.isLoggable(level);
+  }
+
+  boolean isLoggableAfterSuper(Level level, ConnectionLogContext context) {
+    if (this.getLevel() != null
+        || this.hasOwnHandlers
+        || BigQueryJdbcRootLogger.hasExternalHandler()) {
+      return true;
     }
-    ConnectionLogContext context = BigQueryJdbcMdc.getConnectionContext();
     if (context != null && context.hasExplicitLevel()) {
       return context.isLoggable(level);
     }
-    return super.isLoggable(level);
+    return true;
   }
 
   private void logWithCaller(Level level, Supplier<String> msgSupplier) {

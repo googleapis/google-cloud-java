@@ -27,7 +27,10 @@ import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
+import com.google.cloud.bigquery.jdbc.utils.URIBuilder;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
@@ -36,13 +39,23 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.attribute.PosixFilePermission;
 import java.nio.file.attribute.PosixFilePermissions;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Properties;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.ErrorManager;
+import java.util.logging.Formatter;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.stream.Collectors;
@@ -512,7 +525,7 @@ public class PerConnectionFileHandlerTest {
   }
 
   @Test
-  public void testOneGibDefaultAndBackupFileRotation() throws IOException {
+  public void testResolveMaxLogFileBytesSystemPropertyValidation() {
     assertEquals(1024L * 1024L * 1024L, PerConnectionFileHandler.DEFAULT_MAX_LOG_FILE_BYTES);
     String prop = PerConnectionFileHandler.MAX_LOG_FILE_BYTES_SYSTEM_PROPERTY;
     String prev = System.getProperty(prop);
@@ -523,6 +536,14 @@ public class PerConnectionFileHandlerTest {
       assertEquals(
           PerConnectionFileHandler.DEFAULT_MAX_LOG_FILE_BYTES,
           PerConnectionFileHandler.resolveMaxLogFileBytes());
+      System.setProperty(prop, "512MB");
+      assertEquals(
+          PerConnectionFileHandler.DEFAULT_MAX_LOG_FILE_BYTES,
+          PerConnectionFileHandler.resolveMaxLogFileBytes());
+      // Repeated identical bad value does not re-emit ErrorManager warning
+      assertEquals(
+          PerConnectionFileHandler.DEFAULT_MAX_LOG_FILE_BYTES,
+          PerConnectionFileHandler.resolveMaxLogFileBytes());
     } finally {
       if (prev == null) {
         System.clearProperty(prop);
@@ -530,7 +551,10 @@ public class PerConnectionFileHandlerTest {
         System.setProperty(prop, prev);
       }
     }
+  }
 
+  @Test
+  public void testBackupFileRotationAndParameterContextRouting() throws IOException {
     Path boundedDir = tempDir.resolve("bounded");
     long maxBytes = 1024L;
     PerConnectionFileHandler defaultMaxHandler =
@@ -552,14 +576,12 @@ public class PerConnectionFileHandlerTest {
         boundedHandler.publish(
             new LogRecord(Level.INFO, "Padding log line to exceed 1 KiB limit #" + i));
       }
-      // Route via ConnectionLogContext in params[0] with empty MDC and trigger per-conn .1.log
       BigQueryJdbcMdc.clear();
       for (int i = 0; i < 15; i++) {
         LogRecord ctxRec = new LogRecord(Level.INFO, "Per-conn rotation line #" + i);
         ctxRec.setParameters(new Object[] {connCtx});
         boundedHandler.publish(ctxRec);
       }
-      // Plain String in params[0] with empty MDC routes to global log instead of "-BigQ.log"
       LogRecord retryRecord = new LogRecord(Level.FINEST, "Retrying RPC");
       retryRecord.setParameters(new Object[] {"BigQuery retried method: getQueryResults"});
       boundedHandler.publish(retryRecord);
@@ -587,43 +609,51 @@ public class PerConnectionFileHandlerTest {
           expected0600,
           Files.getPosixFilePermissions(
               findLogFileInDir(boundedDir, "-rotc.1.log").get(), LinkOption.NOFOLLOW_LINKS));
+    }
+  }
 
-      // Symlink at .1.log is deleted safely without modifying target; foreign UID falls back
-      Path symDir = tempDir.resolve("sym_rot");
-      Files.createDirectories(symDir);
-      Path untouchedTarget = tempDir.resolve("untouched.txt");
-      Files.write(untouchedTarget, "safe".getBytes(StandardCharsets.UTF_8));
-      Files.createSymbolicLink(symDir.resolve("BQ-JDBC-GLOBAL.1.log"), untouchedTarget);
-      PerConnectionFileHandler symRotHandler =
-          new PerConnectionFileHandler(symDir.toString(), Level.INFO, maxBytes);
-      symRotHandler.setErrorManager(silentErrorManager());
+  @Test
+  public void testRotationDeletesSymlinkBackupAndReplacesExistingBackup() throws IOException {
+    assumeTrue(isPosix(), "POSIX symbolic links required");
+    long maxBytes = 1024L;
+    Path symDir = tempDir.resolve("sym_rot");
+    Files.createDirectories(symDir);
+    Path untouchedTarget = tempDir.resolve("untouched.txt");
+    Files.write(untouchedTarget, "safe".getBytes(StandardCharsets.UTF_8));
+    Files.createSymbolicLink(symDir.resolve("BQ-JDBC-GLOBAL.1.log"), untouchedTarget);
+    PerConnectionFileHandler symRotHandler =
+        new PerConnectionFileHandler(symDir.toString(), Level.INFO, maxBytes);
+    symRotHandler.setErrorManager(silentErrorManager());
+    try {
+      for (int i = 0; i < 12; i++) {
+        symRotHandler.publish(new LogRecord(Level.INFO, "Symlink backup rotation line #" + i));
+      }
+      assertEquals("safe", new String(Files.readAllBytes(untouchedTarget), StandardCharsets.UTF_8));
+      assertFalse(Files.isSymbolicLink(symDir.resolve("BQ-JDBC-GLOBAL.1.log")));
+
+      // Simulated UID mismatch on existing .1.log still rotates cleanly via atomic move
+      PerConnectionFileHandler.overrideUidForTesting = 888_888_888;
       try {
         for (int i = 0; i < 12; i++) {
-          symRotHandler.publish(new LogRecord(Level.INFO, "Symlink backup rotation line #" + i));
+          symRotHandler.publish(new LogRecord(Level.INFO, "Foreign backup rotation line #" + i));
         }
-        assertEquals(
-            "safe", new String(Files.readAllBytes(untouchedTarget), StandardCharsets.UTF_8));
-        assertFalse(Files.isSymbolicLink(symDir.resolve("BQ-JDBC-GLOBAL.1.log")));
-
-        PerConnectionFileHandler.overrideUidForTesting = 888_888_888;
-        try {
-          for (int i = 0; i < 12; i++) {
-            symRotHandler.publish(new LogRecord(Level.INFO, "Foreign backup fallback line #" + i));
-          }
-        } finally {
-          PerConnectionFileHandler.overrideUidForTesting = null;
-        }
-        assertTrue(
-            new String(
-                    Files.readAllBytes(symDir.resolve("BQ-JDBC-GLOBAL.log")),
-                    StandardCharsets.UTF_8)
-                .contains("fallback line #11"));
       } finally {
-        symRotHandler.close();
+        PerConnectionFileHandler.overrideUidForTesting = null;
       }
+      assertTrue(Files.exists(symDir.resolve("BQ-JDBC-GLOBAL.1.log"), LinkOption.NOFOLLOW_LINKS));
+      assertTrue(
+          new String(
+                  Files.readAllBytes(symDir.resolve("BQ-JDBC-GLOBAL.log")), StandardCharsets.UTF_8)
+              .contains("rotation line #11"));
+    } finally {
+      symRotHandler.close();
     }
+  }
 
-    // Non-regular directory blocking .1.log falls back gracefully to in-place truncation
+  @Test
+  public void testBlockedBackupDirectoryTruncatesWithMarkerAndWritesLargeChunks()
+      throws IOException {
+    long maxBytes = 1024L;
     Path fallbackDir = tempDir.resolve("fallback_rot");
     Files.createDirectories(fallbackDir.resolve("BQ-JDBC-GLOBAL.1.log"));
     PerConnectionFileHandler fallbackHandler =
@@ -639,18 +669,226 @@ public class PerConnectionFileHandlerTest {
     }
     Path fallbackGlobal = fallbackDir.resolve("BQ-JDBC-GLOBAL.log");
     assertTrue(Files.size(fallbackGlobal) > 0 && Files.size(fallbackGlobal) <= maxBytes);
-    assertTrue(
-        new String(Files.readAllBytes(fallbackGlobal), StandardCharsets.UTF_8).contains("cap #19"));
+    String truncatedContent =
+        new String(Files.readAllBytes(fallbackGlobal), StandardCharsets.UTF_8);
+    assertTrue(truncatedContent.contains("[LOG TRUNCATED: backup rotation failed (IOException)]"));
+    assertTrue(truncatedContent.contains("cap #19"));
+
+    // Large payload (> 8 KiB) exercises 8 KiB chunked ByteBuffer writes without data loss
+    Path chunkDir = tempDir.resolve("chunk_write");
+    PerConnectionFileHandler chunkHandler =
+        new PerConnectionFileHandler(chunkDir.toString(), Level.INFO);
+    try {
+      StringBuilder largePayload = new StringBuilder(20_000);
+      for (int i = 0; i < 2_000; i++) {
+        largePayload.append("0123456789");
+      }
+      chunkHandler.publish(new LogRecord(Level.INFO, largePayload.toString()));
+      String written =
+          new String(
+              Files.readAllBytes(chunkDir.resolve("BQ-JDBC-GLOBAL.log")), StandardCharsets.UTF_8);
+      assertTrue(written.contains(largePayload.toString()));
+      // Exercise DeduplicatingErrorManager on repeated vs distinct error keys
+      ErrorManager em = chunkHandler.getErrorManager();
+      assertNotNull(em);
+      em.error("test-dedup-msg", null, ErrorManager.WRITE_FAILURE);
+      em.error("test-dedup-msg", null, ErrorManager.WRITE_FAILURE);
+    } finally {
+      chunkHandler.close();
+    }
+  }
+
+  @Test
+  public void testConcurrentCloseAndPublishLeavesNoOpenConnectionFiles() throws Exception {
+    Path raceDir = tempDir.resolve("race");
+    for (int round = 0; round < 15; round++) {
+      PerConnectionFileHandler raceHandler =
+          new PerConnectionFileHandler(
+              raceDir.resolve("r" + round).toString(), Level.INFO, 0L, true);
+      String connId = "race-" + round;
+      raceHandler.registerConnection(connId, Level.INFO);
+      CountDownLatch start = new CountDownLatch(1);
+      ExecutorService pool = Executors.newFixedThreadPool(3);
+      Runnable publishLoop =
+          () -> {
+            try (BigQueryJdbcMdc.MdcCloseable m = BigQueryJdbcMdc.registerInstance(connId)) {
+              start.await();
+              for (int i = 0; i < 10; i++) {
+                raceHandler.publish(new LogRecord(Level.INFO, "race msg " + i));
+              }
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
+          };
+      try {
+        Future<?> pubTask1 = pool.submit(publishLoop);
+        Future<?> pubTask2 = pool.submit(publishLoop);
+        final int r = round;
+        Future<?> closeTask =
+            pool.submit(
+                () -> {
+                  try {
+                    start.await();
+                    if (r % 2 == 0) {
+                      raceHandler.closeHandler(connId);
+                    } else {
+                      raceHandler.close();
+                    }
+                  } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                  }
+                });
+        start.countDown();
+        pubTask1.get(5, TimeUnit.SECONDS);
+        pubTask2.get(5, TimeUnit.SECONDS);
+        closeTask.get(5, TimeUnit.SECONDS);
+      } finally {
+        pool.shutdownNow();
+      }
+      Path roundDir = raceDir.resolve("r" + round);
+      try (Stream<Path> before = Files.list(roundDir)) {
+        long countAfterClose = before.count();
+        try (BigQueryJdbcMdc.MdcCloseable m = BigQueryJdbcMdc.registerInstance(connId)) {
+          raceHandler.publish(new LogRecord(Level.INFO, "post-close"));
+        }
+        try (Stream<Path> after = Files.list(roundDir)) {
+          assertEquals(countAfterClose, after.count());
+        }
+      } finally {
+        raceHandler.close();
+      }
+    }
+  }
+
+  @Test
+  public void testPostCloseResultSetAndStringParamsDoNotResurrectHandlers() throws Exception {
+    Path leakDir = tempDir.resolve("no_leak");
+    String connId = "dead-conn-uuid";
+    try {
+      BigQueryJdbcRootLogger.registerConnection(connId, "7", leakDir.toString());
+      ConnectionLogContext activeCtx = BigQueryJdbcRootLogger.getConnectionContext(connId);
+      assertNotNull(activeCtx);
+      assertTrue(BigQueryJdbcRootLogger.isConnectionActive(connId));
+
+      BigQueryStatement mockStmt = mock(BigQueryStatement.class);
+      mockStmt.connectionId = connId;
+      Schema schema = Schema.of(FieldList.of(Field.of("col", StandardSQLTypeName.INT64)));
+      BigQueryJsonResultSet rs =
+          BigQueryJsonResultSet.of(schema, 0, null, mockStmt, new Future<?>[0]);
+      BigQueryJdbcResultSetLogger activeStructLogger = rs.LOG.getArrowStructLogger();
+
+      rs.LOG.finestTrace("beforeClose", "Before close trace");
+      Optional<Path> initialLog = findLogFileInDir(leakDir, "-dead.log");
+      assertTrue(initialLog.isPresent());
+
+      rs.close();
+      BigQueryJdbcRootLogger.closeConnectionHandler(connId);
+      assertFalse(BigQueryJdbcRootLogger.isConnectionActive(connId));
+      assertEquals(ConnectionLogContext.OFF_VALUE, activeCtx.levelValue());
+      Files.delete(initialLog.get());
+
+      assertThrows(SQLException.class, () -> rs.getShort(1));
+      assertThrows(SQLException.class, () -> rs.findColumn(null));
+      activeStructLogger.finestTrace("getAttributes");
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class, connId)
+          .finestTrace("getAttributes");
+
+      assertFalse(findLogFileInDir(leakDir, "-dead.log").isPresent());
+
+      Formatter formatter = BigQueryJdbcRootLogger.getFormatter();
+      LogRecord retryRecord = new LogRecord(Level.FINEST, "Retrying RPC");
+      retryRecord.setParameters(new Object[] {"BigQuery retried method: getQueryResults"});
+      assertTrue(formatter.format(retryRecord).contains("[NO_CONN]"));
+    } finally {
+      BigQueryJdbcRootLogger.resetForTest();
+    }
+  }
+
+  @Test
+  public void testFailedConnectionConstructorCleansUpActiveRegistration() {
+    Path failLogDir = tempDir.resolve("failed_conn_logs");
+    int baselineActive = BigQueryJdbcRootLogger.activeConnectionCount();
+    String invalidAuthUrl =
+        new URIBuilder(TestUtilities.getBaseConnectionUrl())
+            .append("ProjectId", "test-proj")
+            .append("OAuthType", 99)
+            .append("LogLevel", 6)
+            .append("LogPath", failLogDir.toString())
+            .toString();
+
+    try {
+      assertThrows(RuntimeException.class, () -> new BigQueryConnection(invalidAuthUrl));
+      assertEquals(baselineActive, BigQueryJdbcRootLogger.activeConnectionCount());
+    } finally {
+      BigQueryJdbcRootLogger.resetForTest();
+    }
+  }
+
+  @Test
+  public void testUnclosedGarbageCollectedConnectionsReclaimLogHandlersAndSlots() throws Exception {
+    Path leakedLogDir = tempDir.resolve("leaked_conn_logs");
+    BigQueryJdbcRootLogger.resetForTest();
+    int leakedCount = 20;
+    String url =
+        new URIBuilder(TestUtilities.getBaseConnectionUrl())
+            .append("OAuthType", 2)
+            .append("OAuthAccessToken", "RedactedToken")
+            .append("ProjectId", "test-proj")
+            .append("LogLevel", 7)
+            .append("LogPath", leakedLogDir.toString())
+            .toString();
+
+    try {
+      List<String> leakedIds = allocateAndDropLeakedConnections(url, leakedCount);
+      assertEquals(leakedCount, leakedIds.size());
+
+      long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
+      while (System.nanoTime() < deadlineNanos
+          && (BigQueryJdbcRootLogger.activeConnectionCount() > 0
+              || countManagedRootFileHandlers() > 0)) {
+        System.gc();
+        Thread.sleep(50L);
+      }
+
+      assertEquals(0, BigQueryJdbcRootLogger.activeConnectionCount());
+      assertEquals(0, countManagedRootFileHandlers());
+      assertEquals(Level.OFF, BigQueryJdbcRootLogger.getRootLogger().getLevel());
+      for (String id : leakedIds) {
+        assertFalse(BigQueryJdbcRootLogger.isConnectionActive(id));
+      }
+
+      // Verify BQ-JDBC-GLOBAL.log channel and sentinel lock were closed and released upon GC
+      try (Stream<Path> before = Files.list(leakedLogDir)) {
+        long fallbackBefore =
+            before.filter(p -> p.getFileName().toString().startsWith("BQ-JDBC-GLOBAL-")).count();
+        assertEquals(0L, fallbackBefore);
+      }
+      PerConnectionFileHandler verifyReleased =
+          new PerConnectionFileHandler(leakedLogDir.toString(), Level.INFO);
+      try {
+        verifyReleased.publish(new LogRecord(Level.INFO, "verify-primary-reacquired"));
+        try (Stream<Path> after = Files.list(leakedLogDir)) {
+          long fallbackAfter =
+              after.filter(p -> p.getFileName().toString().startsWith("BQ-JDBC-GLOBAL-")).count();
+          assertEquals(0L, fallbackAfter);
+        }
+      } finally {
+        verifyReleased.close();
+      }
+    } finally {
+      BigQueryJdbcRootLogger.resetForTest();
+    }
   }
 
   @Test
   public void testClosedWriterOnRotationFailureEvictsAndRecovers() throws IOException {
     Path recoverDir = tempDir.resolve("recover_rot");
     PerConnectionFileHandler recoverHandler =
-        new PerConnectionFileHandler(recoverDir.toString(), Level.INFO, 512L);
+        new PerConnectionFileHandler(recoverDir.toString(), Level.INFO, 512L, true);
     recoverHandler.setErrorManager(silentErrorManager());
-    try {
-      BigQueryJdbcMdc.registerInstance("BQ-JDBC-rcvr1234");
+    String connId = "BQ-JDBC-rcvr1234";
+    recoverHandler.registerConnection(connId, Level.INFO);
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connId)) {
       recoverHandler.publish(new LogRecord(Level.INFO, "initial-record"));
       Optional<Path> firstFile = findLogFileInDir(recoverDir, "-rcvr.log");
       assertTrue(firstFile.isPresent());
@@ -674,5 +912,55 @@ public class PerConnectionFileHandlerTest {
     } finally {
       recoverHandler.close();
     }
+  }
+
+  @Test
+  public void testFailedLogOpenUsesRetryBackoff() throws IOException {
+    Path unusableDir = tempDir.resolve("backoff_dir");
+    AtomicInteger openCalls = new AtomicInteger();
+    PerConnectionFileHandler backoffHandler =
+        new PerConnectionFileHandler(unusableDir.toString(), Level.INFO, 0L, true) {
+          @Override
+          ChannelLogWriter createLogWriter(
+              String id, Path logDir, Level writerLevel, long limitBytes) {
+            openCalls.incrementAndGet();
+            return null;
+          }
+        };
+    backoffHandler.setErrorManager(silentErrorManager());
+    String connId = "BQ-JDBC-bkof1234";
+    backoffHandler.registerConnection(connId, Level.INFO);
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connId)) {
+      for (int i = 0; i < 50; i++) {
+        backoffHandler.publish(new LogRecord(Level.INFO, "record-" + i));
+      }
+      // 1 attempt for connection slot + 1 fallback attempt for defaultWriter across all 50 records
+      assertEquals(2, openCalls.get());
+    } finally {
+      backoffHandler.close();
+    }
+  }
+
+  private static List<String> allocateAndDropLeakedConnections(String url, int count)
+      throws SQLException {
+    BigQueryDriver driver = new BigQueryDriver();
+    List<String> ids = new ArrayList<>(count);
+    for (int i = 0; i < count; i++) {
+      Connection leaked = driver.connect(url, new Properties());
+      ids.add(leaked.unwrap(BigQueryConnection.class).getConnectionId());
+    }
+    assertEquals(count, BigQueryJdbcRootLogger.activeConnectionCount());
+    assertEquals(1, countManagedRootFileHandlers());
+    return ids;
+  }
+
+  private static int countManagedRootFileHandlers() {
+    int count = 0;
+    for (Handler h : BigQueryJdbcRootLogger.getRootLogger().getHandlers()) {
+      if (h instanceof PerConnectionFileHandler) {
+        count++;
+      }
+    }
+    return count;
   }
 }
