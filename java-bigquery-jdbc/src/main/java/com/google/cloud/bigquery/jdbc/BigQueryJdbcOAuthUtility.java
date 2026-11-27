@@ -27,6 +27,7 @@ import com.google.auth.oauth2.ClientId;
 import com.google.auth.oauth2.ExternalAccountCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ImpersonatedCredentials;
+import com.google.auth.oauth2.PKCEProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.auth.oauth2.UserAuthorizer;
 import com.google.auth.oauth2.UserCredentials;
@@ -37,18 +38,14 @@ import com.google.gson.JsonParser;
 import com.google.gson.Strictness;
 import com.google.gson.stream.JsonReader;
 import java.awt.Desktop;
-import java.io.BufferedReader;
+import java.awt.GraphicsEnvironment;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.io.Reader;
 import java.io.StringReader;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -57,30 +54,20 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 final class BigQueryJdbcOAuthUtility {
-
-  private static final String USER_AUTH_SUCCESS_HTTP_RESPONSE =
-      "HTTP/1.1 200 OK\n"
-          + "Content-Length: 300\n"
-          + "Connection: close\n"
-          + "Content-Type: text/html; charset=utf-8\n"
-          + "\n"
-          + "<!DOCTYPE html><html><body>\n"
-          + "Thank you for using JDBC Driver for Google BigQuery!\n"
-          + "You may now close the window.</body></html>";
 
   static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   static final String DRIVE_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.readonly";
@@ -90,6 +77,9 @@ final class BigQueryJdbcOAuthUtility {
       Arrays.asList(BIGQUERY_SCOPE, DRIVE_READONLY_SCOPE);
 
   private static final int USER_AUTH_TIMEOUT_MS = 120000;
+  private static final int USER_AUTH_SOCKET_READ_TIMEOUT_MS = 1000;
+  private static final int OAUTH_RANDOM_TOKEN_BYTES = 32;
+  private static final SecureRandom SECURE_RANDOM = new SecureRandom();
   private static final String EXTERNAL_ACCOUNT_TYPE = "external_account";
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcOAuthUtility.class.getName());
@@ -280,7 +270,11 @@ final class BigQueryJdbcOAuthUtility {
       case GOOGLE_USER_ACCOUNT:
         credentials =
             getGoogleUserAccountCredentials(
-                authProperties, overrideProperties, httpTransportFactory, callerClassName);
+                authProperties,
+                overrideProperties,
+                Boolean.TRUE.equals(reqGoogleDriveScopeBool),
+                httpTransportFactory,
+                callerClassName);
         break;
       case PRE_GENERATED_TOKEN:
         credentials =
@@ -400,20 +394,60 @@ final class BigQueryJdbcOAuthUtility {
     return builder.build();
   }
 
+  @FunctionalInterface
+  interface BrowserOpener {
+    void open(URI authorizationUri) throws IOException;
+  }
+
+  // DefaultPKCEProvider in google-auth-library-oauth2-http 1.58.0 emits a 172-character padded
+  // code_verifier, outside RFC 7636 Section 4.1 (43..128 unreserved characters, unpadded).
+  private static final class Rfc7636PkceProvider implements PKCEProvider {
+    private static final String CHALLENGE_METHOD_S256 = "S256";
+    private final String codeVerifier;
+    private final String codeChallenge;
+
+    private Rfc7636PkceProvider() {
+      byte[] verifierBytes = new byte[OAUTH_RANDOM_TOKEN_BYTES];
+      SECURE_RANDOM.nextBytes(verifierBytes);
+      this.codeVerifier = Base64.getUrlEncoder().withoutPadding().encodeToString(verifierBytes);
+      this.codeChallenge = computeS256Challenge(this.codeVerifier);
+    }
+
+    private static String computeS256Challenge(String verifier) {
+      try {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] hash = digest.digest(verifier.getBytes(StandardCharsets.US_ASCII));
+        return Base64.getUrlEncoder().withoutPadding().encodeToString(hash);
+      } catch (NoSuchAlgorithmException e) {
+        throw new IllegalStateException("SHA-256 MessageDigest not available", e);
+      }
+    }
+
+    @Override
+    public String getCodeVerifier() {
+      return codeVerifier;
+    }
+
+    @Override
+    public String getCodeChallenge() {
+      return codeChallenge;
+    }
+
+    @Override
+    public String getCodeChallengeMethod() {
+      return CHALLENGE_METHOD_S256;
+    }
+  }
+
   static UserAuthorizer getUserAuthorizer(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
-      int port,
+      boolean requestDriveScope,
+      URI callbackUri,
       HttpTransportFactory httpTransportFactory,
       String callerClassName)
       throws URISyntaxException {
     LOG.finer("++enter++\t" + callerClassName);
-
-    List<String> scopes = new ArrayList<>();
-    scopes.add("https://www.googleapis.com/auth/bigquery");
-
-    List<String> responseTypes = new ArrayList<>();
-    responseTypes.add("code");
 
     ClientId clientId =
         ClientId.of(
@@ -422,8 +456,9 @@ final class BigQueryJdbcOAuthUtility {
     UserAuthorizer.Builder userAuthorizerBuilder =
         UserAuthorizer.newBuilder()
             .setClientId(clientId)
-            .setScopes(scopes)
-            .setCallbackUri(URI.create("http://localhost:" + port));
+            .setScopes(requestDriveScope ? BIGQUERY_WITH_DRIVE_SCOPES : DEFAULT_BIGQUERY_SCOPES)
+            .setCallbackUri(callbackUri)
+            .setPKCEProvider(new Rfc7636PkceProvider());
 
     if (httpTransportFactory != null) {
       userAuthorizerBuilder.setHttpTransportFactory(httpTransportFactory);
@@ -440,13 +475,23 @@ final class BigQueryJdbcOAuthUtility {
   static UserCredentials getCredentialsFromCode(
       UserAuthorizer userAuthorizer,
       String code,
+      Map<String, String> overrideProperties,
       HttpTransportFactory httpTransportFactory,
       String callerClassName)
       throws IOException {
     LOG.finer("++enter++\t" + callerClassName);
     UserCredentials credentials = userAuthorizer.getCredentialsFromCode(code, URI.create(""));
-    if (httpTransportFactory != null) {
-      credentials = credentials.toBuilder().setHttpTransportFactory(httpTransportFactory).build();
+    String universeDomain =
+        overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME);
+    if (httpTransportFactory != null || universeDomain != null) {
+      UserCredentials.Builder builder = credentials.toBuilder();
+      if (httpTransportFactory != null) {
+        builder.setHttpTransportFactory(httpTransportFactory);
+      }
+      if (universeDomain != null) {
+        builder.setUniverseDomain(universeDomain);
+      }
+      credentials = builder.build();
     }
     return credentials;
   }
@@ -454,53 +499,76 @@ final class BigQueryJdbcOAuthUtility {
   private static GoogleCredentials getGoogleUserAccountCredentials(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
+      boolean requestDriveScope,
       HttpTransportFactory httpTransportFactory,
       String callerClassName) {
+    if (!isDesktopBrowseSupported()) {
+      throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
+    }
+    return getGoogleUserAccountCredentials(
+        authProperties,
+        overrideProperties,
+        requestDriveScope,
+        httpTransportFactory,
+        callerClassName,
+        BigQueryJdbcOAuthCallbackServer::openLoopbackServerSocket,
+        uri -> Desktop.getDesktop().browse(uri),
+        USER_AUTH_TIMEOUT_MS,
+        USER_AUTH_SOCKET_READ_TIMEOUT_MS);
+  }
+
+  static GoogleCredentials getGoogleUserAccountCredentials(
+      Map<String, String> authProperties,
+      Map<String, String> overrideProperties,
+      boolean requestDriveScope,
+      HttpTransportFactory httpTransportFactory,
+      String callerClassName,
+      BigQueryJdbcOAuthCallbackServer.ServerSocketSupplier serverSocketSupplier,
+      BrowserOpener browserOpener,
+      int authTimeoutMs,
+      int socketReadTimeoutMs) {
     LOG.finer("++enter++\t" + callerClassName);
     try {
-      ServerSocket serverSocket = new ServerSocket(0);
-      serverSocket.setSoTimeout(USER_AUTH_TIMEOUT_MS);
-      int port = serverSocket.getLocalPort();
-      UserAuthorizer userAuthorizer =
-          getUserAuthorizer(
-              authProperties, overrideProperties, port, httpTransportFactory, callerClassName);
-
-      URL authURL = userAuthorizer.getAuthorizationUrl("user", "", URI.create(""));
+      UserAuthorizer userAuthorizer;
       String code;
-
-      if (Desktop.isDesktopSupported()) {
-        Desktop.getDesktop().browse(authURL.toURI());
-
-        Socket socket = serverSocket.accept();
-
-        OutputStream outputStream = socket.getOutputStream();
-        PrintWriter printWriter = new PrintWriter(outputStream);
-
-        BufferedReader bufferedReader =
-            new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String response = bufferedReader.readLine();
-
-        Pattern p = Pattern.compile("(?<=code=).*?(?=&|$)");
-        Matcher m = p.matcher(response);
-
-        if (!m.find()) {
-          throw new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
-        }
-        code = m.group();
-
-        printWriter.println(USER_AUTH_SUCCESS_HTTP_RESPONSE);
-        printWriter.flush();
-        socket.close();
-        serverSocket.close();
-      } else {
-        throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
+      try (BigQueryJdbcOAuthCallbackServer callbackServer =
+          new BigQueryJdbcOAuthCallbackServer(serverSocketSupplier.open())) {
+        userAuthorizer =
+            getUserAuthorizer(
+                authProperties,
+                overrideProperties,
+                requestDriveScope,
+                callbackServer.getCallbackUri(),
+                httpTransportFactory,
+                callerClassName);
+        String expectedState = generateOAuthState();
+        URL authUrl = userAuthorizer.getAuthorizationUrl("user", expectedState, URI.create(""));
+        browserOpener.open(authUrl.toURI());
+        code =
+            callbackServer.waitForAuthorizationCode(
+                expectedState, authTimeoutMs, socketReadTimeoutMs);
       }
-
-      return getCredentialsFromCode(userAuthorizer, code, httpTransportFactory, callerClassName);
+      return getCredentialsFromCode(
+          userAuthorizer, code, overrideProperties, httpTransportFactory, callerClassName);
     } catch (IOException | URISyntaxException ex) {
       throw new BigQueryJdbcRuntimeException(
           "Failed to establish connection using User Account authentication", ex);
+    } finally {
+      LOG.finer("++exit++\t" + callerClassName);
     }
+  }
+
+  static boolean isDesktopBrowseSupported() {
+    if (GraphicsEnvironment.isHeadless() || !Desktop.isDesktopSupported()) {
+      return false;
+    }
+    return Desktop.getDesktop().isSupported(Desktop.Action.BROWSE);
+  }
+
+  private static String generateOAuthState() {
+    byte[] stateBytes = new byte[OAUTH_RANDOM_TOKEN_BYTES];
+    SECURE_RANDOM.nextBytes(stateBytes);
+    return Base64.getUrlEncoder().withoutPadding().encodeToString(stateBytes);
   }
 
   private static GoogleCredentials getPreGeneratedAccessTokenCredentials(

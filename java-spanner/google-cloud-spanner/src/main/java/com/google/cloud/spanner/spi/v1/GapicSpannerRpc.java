@@ -276,13 +276,14 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static final CallOptions.Key<Boolean> BASE_CONTEXT_MARKER_KEY =
       CallOptions.Key.create("BASE_CONTEXT_MARKER_KEY");
 
-  // Normalize the generated placeholder to the historical streaming resume policy.
+  // Normalize the generated placeholder to the historical streaming resume policy, while allowing
+  // server-supplied retry delays up to the standard 32s unary max retry delay.
   static final RetrySettings DEFAULT_STREAMING_RETRY_SETTINGS =
       RetrySettings.newBuilder()
           .setTotalTimeoutDuration(Duration.ZERO)
           .setMaxAttempts(0)
           .setInitialRetryDelayDuration(Duration.ofMillis(10))
-          .setMaxRetryDelayDuration(Duration.ofMillis(1000))
+          .setMaxRetryDelayDuration(Duration.ofSeconds(32))
           .build();
 
   /** Fallback states owned by this rpc, one per grpc-gcp pool. */

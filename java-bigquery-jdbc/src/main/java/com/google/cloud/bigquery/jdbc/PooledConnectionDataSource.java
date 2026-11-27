@@ -16,11 +16,9 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.common.annotations.VisibleForTesting;
-import java.sql.Connection;
 import java.sql.SQLException;
 import javax.sql.ConnectionPoolDataSource;
 import javax.sql.PooledConnection;
@@ -28,42 +26,44 @@ import javax.sql.PooledConnection;
 public class PooledConnectionDataSource extends DataSource implements ConnectionPoolDataSource {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(PooledConnectionDataSource.class.getName());
-  private PooledConnectionListener connectionPoolManager = null;
-  Connection bqConnection = null;
+  private volatile PooledConnectionListener connectionPoolManager = null;
 
   @Override
   public PooledConnection getPooledConnection() throws SQLException {
-    if (connectionPoolManager != null && !connectionPoolManager.isConnectionPoolEmpty()) {
-      return connectionPoolManager.getPooledConnection();
+    PooledConnectionListener poolManager = this.connectionPoolManager;
+    if (poolManager != null) {
+      BigQueryPooledConnection candidate;
+      while ((candidate = poolManager.getPooledConnection()) != null) {
+        BigQueryConnection reusedPhysical = candidate.claimPhysicalForReuse(poolManager);
+        if (reusedPhysical != null) {
+          BigQueryPooledConnection recycled = new BigQueryPooledConnection(reusedPhysical);
+          recycled.registerInternalPoolListener(poolManager);
+          TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_CONNECTION_POOLING);
+          return recycled;
+        }
+      }
     }
-    // Create the Underlying physical connection
-    if (bqConnection == null) {
-      bqConnection = super.getConnection();
-    }
-    if (bqConnection == null) {
-      throw new BigQueryJdbcRuntimeException(
-          "Cannot get pooled connection: unable to get underlying physical connection");
-    }
-    BigQueryConnection physicalConnection;
-    if (bqConnection.isWrapperFor(BigQueryConnection.class)) {
-      physicalConnection = bqConnection.unwrap(BigQueryConnection.class);
-    } else {
-      physicalConnection = (BigQueryConnection) bqConnection;
-    }
-    Long connectionPoolSize = physicalConnection.getConnectionPoolSize();
-    if (connectionPoolManager == null) {
-      connectionPoolManager = new PooledConnectionListener(connectionPoolSize);
-    }
+
+    BigQueryConnection physicalConnection = super.getConnection().unwrap(BigQueryConnection.class);
+    poolManager = getOrInitConnectionPoolManager(physicalConnection.getConnectionPoolSize());
     BigQueryPooledConnection bqPooledConnection = new BigQueryPooledConnection(physicalConnection);
-    bqPooledConnection.addConnectionEventListener(connectionPoolManager);
+    bqPooledConnection.registerInternalPoolListener(poolManager);
 
     TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_CONNECTION_POOLING);
     return bqPooledConnection;
   }
 
-  @VisibleForTesting
-  void setConnection(Connection connection) {
-    this.bqConnection = connection;
+  private PooledConnectionListener getOrInitConnectionPoolManager(Long resolvedPoolSize) {
+    PooledConnectionListener existing = this.connectionPoolManager;
+    if (existing != null) {
+      return existing;
+    }
+    synchronized (this) {
+      if (this.connectionPoolManager == null) {
+        this.connectionPoolManager = new PooledConnectionListener(resolvedPoolSize);
+      }
+      return this.connectionPoolManager;
+    }
   }
 
   @VisibleForTesting

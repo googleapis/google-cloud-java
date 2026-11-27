@@ -47,9 +47,9 @@ public class BuiltInMetricsCustomOpenTelemetryTest extends AbstractMockServerTes
 
   @After
   public void resetGcmSingleton() {
-    // A cloud custom+enabled client now also activates the Cloud Monitoring sink (additive
-    // semantics), which initializes the process-wide singleton via the gRPC layer. Reset it so the
-    // state does not leak into other tests sharing the JVM fork.
+    SpannerOptions.useDefaultEnvironment();
+    // Reset the process-wide Cloud Monitoring singleton so state cannot leak across tests sharing
+    // the JVM fork.
     BuiltInMetricsProvider.INSTANCE.reset();
   }
 
@@ -164,5 +164,115 @@ public class BuiltInMetricsCustomOpenTelemetryTest extends AbstractMockServerTes
       executeSelect1(spanner);
     }
     assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+  }
+
+  @Test
+  public void noCredentialsClientDoesNotInitializeGcmSingletonWithGrpcMetricsEnabled() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGRPCBuiltInMetrics() {
+            return true;
+          }
+        });
+    BuiltInMetricsProvider.INSTANCE.reset();
+
+    try {
+      // Default provider with NoCredentials and built-in metrics enabled must not initialize GCM.
+      try (Spanner defaultSpanner =
+          spannerBuilder(DefaultMetricsProvider.INSTANCE)
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .build()
+              .getService()) {
+        executeSelect1(defaultSpanner);
+      }
+      assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+
+      // Custom provider with NoCredentials and built-in metrics enabled still records custom
+      // metrics while leaving the GCM singleton uninitialized.
+      InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+      OpenTelemetrySdk customOpenTelemetry = createOpenTelemetry(metricReader);
+      try {
+        try (Spanner customSpanner =
+            spannerBuilder(CustomOpenTelemetryMetricsProvider.create(customOpenTelemetry))
+                .setEmulatorHost(null)
+                .setBuiltInMetricsEnabled(true)
+                .build()
+                .getService()) {
+          executeSelect1(customSpanner);
+        }
+        assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+        assertNotNull(
+            getMetric(
+                metricReader,
+                BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME
+                    + "/"
+                    + BuiltInMetricsConstant.OPERATION_COUNT_NAME));
+      } finally {
+        customOpenTelemetry.close();
+      }
+    } finally {
+      BuiltInMetricsProvider.INSTANCE.reset();
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void customHostDisablesGcmEndToEndWhileKeepingCustomSink() {
+    String previousJmhEnabled = System.getProperty("jmh.enabled");
+    // Lift the NoCredentials guard (same pattern as BuiltInMetricsBothSinksTest) because gRPC
+    // rejects OAuth2 CallCredentials on a plaintext mock-server channel.
+    System.setProperty("jmh.enabled", "true");
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGRPCBuiltInMetrics() {
+            return true;
+          }
+        });
+    BuiltInMetricsProvider.INSTANCE.reset();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    OpenTelemetrySdk customOpenTelemetry = createOpenTelemetry(metricReader);
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("my-project")
+              .setEmulatorHost(null)
+              .setHost(String.format("http://localhost:%d", getPort()))
+              .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+              .setCredentials(NoCredentials.getInstance())
+              .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
+              .setClientMetricsProvider(
+                  CustomOpenTelemetryMetricsProvider.create(customOpenTelemetry))
+              .build();
+      assertFalse(options.isEnableBuiltInMetrics());
+
+      try (Spanner spanner = options.getService()) {
+        executeSelect1(spanner);
+      }
+
+      // Even with the NoCredentials guard lifted and gRPC built-in metrics enabled, the custom host
+      // must NOT initialize the GCM singleton.
+      assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+      assertNull(BuiltInMetricsProvider.INSTANCE.getProjectId());
+
+      // Caller-owned CustomOpenTelemetryMetricsProvider still records metrics end-to-end.
+      assertNotNull(
+          getMetric(
+              metricReader,
+              BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME
+                  + "/"
+                  + BuiltInMetricsConstant.OPERATION_COUNT_NAME));
+    } finally {
+      customOpenTelemetry.close();
+      BuiltInMetricsProvider.INSTANCE.reset();
+      SpannerOptions.useDefaultEnvironment();
+      if (previousJmhEnabled == null) {
+        System.clearProperty("jmh.enabled");
+      } else {
+        System.setProperty("jmh.enabled", previousJmhEnabled);
+      }
+    }
   }
 }

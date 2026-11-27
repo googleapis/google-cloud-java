@@ -298,7 +298,11 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Statement getStatement() throws SQLException {
     checkClosed();
-    return this.statement != null && this.statement.isInternal() ? null : this.statement;
+    if (this.statement == null || this.statement.isInternal()) {
+      return null;
+    }
+    Statement proxy = this.statement.getLogicalStatementProxy();
+    return proxy != null ? proxy : this.statement;
   }
 
   @Override

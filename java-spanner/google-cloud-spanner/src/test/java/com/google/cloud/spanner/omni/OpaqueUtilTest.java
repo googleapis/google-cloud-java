@@ -18,11 +18,13 @@ package com.google.cloud.spanner.omni;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
+import java.security.GeneralSecurityException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import org.bouncycastle.asn1.x9.X9ECParameters;
@@ -588,5 +590,158 @@ public class OpaqueUtilTest {
     byte[] prf = point.multiply(scalar).getEncoded(true);
 
     assertArrayEquals(oprf, prf);
+  }
+
+  @Test
+  public void testFinalizeRejectsPointAtInfinity() {
+    byte[] validBlind = new byte[32];
+    validBlind[31] = 7;
+
+    GeneralSecurityException exception =
+        assertThrows(
+            GeneralSecurityException.class,
+            () -> OpaqueUtil.finalize(validBlind, new byte[] {0x00}));
+    assertTrue(exception.getMessage().contains("evaluatedMessage"));
+  }
+
+  @Test
+  public void testFinalizeRejectsInvalidPointEncodings() {
+    X9ECParameters params = CustomNamedCurves.getByName(OpaqueUtil.CURVE_NAME);
+    ECPoint generator = params.getG();
+    byte[] validBlind = new byte[32];
+    validBlind[31] = 7;
+
+    byte[] uncompressed = generator.getEncoded(false);
+    byte[] hybridEven = Arrays.copyOf(uncompressed, uncompressed.length);
+    hybridEven[0] = 0x06;
+    byte[] hybridOdd = Arrays.copyOf(uncompressed, uncompressed.length);
+    hybridOdd[0] = 0x07;
+
+    byte[] validCompressed = generator.getEncoded(true);
+    byte[] invalidPrefix = Arrays.copyOf(validCompressed, validCompressed.length);
+    invalidPrefix[0] = 0x01;
+    byte[] tooShort = Arrays.copyOf(validCompressed, OpaqueUtil.PUBLIC_KEY_LENGTH - 1);
+    byte[] tooLong = Arrays.copyOf(validCompressed, OpaqueUtil.PUBLIC_KEY_LENGTH + 1);
+
+    // Non-canonical x >= p (all 0xFF bytes exceed the secp256r1 field prime p).
+    byte[] xGreaterOrEqualP = new byte[OpaqueUtil.PUBLIC_KEY_LENGTH];
+    Arrays.fill(xGreaterOrEqualP, (byte) 0xFF);
+    xGreaterOrEqualP[0] = 0x02;
+
+    // Deterministic off-curve x = 1: x^3 - 3x + b is a quadratic non-residue mod p on secp256r1.
+    byte[] offCurveX = new byte[OpaqueUtil.PUBLIC_KEY_LENGTH];
+    offCurveX[0] = 0x02;
+    offCurveX[32] = 0x01;
+
+    byte[][] invalidPoints =
+        new byte[][] {
+          null,
+          new byte[0],
+          uncompressed,
+          hybridEven,
+          hybridOdd,
+          invalidPrefix,
+          tooShort,
+          tooLong,
+          xGreaterOrEqualP,
+          offCurveX
+        };
+
+    for (byte[] invalidPoint : invalidPoints) {
+      GeneralSecurityException exception =
+          assertThrows(
+              GeneralSecurityException.class, () -> OpaqueUtil.finalize(validBlind, invalidPoint));
+      assertTrue(exception.getMessage().contains("evaluatedMessage"));
+    }
+  }
+
+  @Test
+  public void testFinalizeRejectsInvalidBlindScalar() {
+    X9ECParameters params = CustomNamedCurves.getByName(OpaqueUtil.CURVE_NAME);
+    byte[] validPoint = params.getG().getEncoded(true);
+
+    byte[][] invalidBlinds =
+        new byte[][] {null, new byte[0], new byte[32], params.getN().toByteArray()};
+
+    for (byte[] invalidBlind : invalidBlinds) {
+      GeneralSecurityException exception =
+          assertThrows(
+              GeneralSecurityException.class, () -> OpaqueUtil.finalize(invalidBlind, validPoint));
+      assertTrue(exception.getMessage().contains("blind"));
+    }
+  }
+
+  @Test
+  public void testDiffieHellmanRejectsPointAtInfinityAndInvalidEncodings() {
+    X9ECParameters params = CustomNamedCurves.getByName(OpaqueUtil.CURVE_NAME);
+    ECPoint generator = params.getG();
+    byte[] validPrivateKey = new byte[32];
+    validPrivateKey[31] = 5;
+    byte[] validPeerPublicKey = generator.getEncoded(true);
+
+    byte[] uncompressed = generator.getEncoded(false);
+    byte[] hybridEven = Arrays.copyOf(uncompressed, uncompressed.length);
+    hybridEven[0] = 0x06;
+    byte[] offCurveX = new byte[OpaqueUtil.PUBLIC_KEY_LENGTH];
+    offCurveX[0] = 0x02;
+    offCurveX[32] = 0x01;
+
+    byte[][] invalidPeerKeys =
+        new byte[][] {new byte[] {0x00}, null, new byte[0], uncompressed, hybridEven, offCurveX};
+    for (byte[] invalidPeerKey : invalidPeerKeys) {
+      GeneralSecurityException exception =
+          assertThrows(
+              GeneralSecurityException.class,
+              () -> OpaqueUtil.diffieHellman(validPrivateKey, invalidPeerKey));
+      assertTrue(exception.getMessage().contains("peerPublicKey"));
+    }
+
+    byte[][] invalidPrivateKeys =
+        new byte[][] {null, new byte[0], new byte[32], params.getN().toByteArray()};
+    for (byte[] invalidPrivateKey : invalidPrivateKeys) {
+      GeneralSecurityException exception =
+          assertThrows(
+              GeneralSecurityException.class,
+              () -> OpaqueUtil.diffieHellman(invalidPrivateKey, validPeerPublicKey));
+      assertTrue(exception.getMessage().contains("privateKey"));
+    }
+  }
+
+  @Test
+  public void testBlindRejectsInvalidBlindScalar() {
+    X9ECParameters params = CustomNamedCurves.getByName(OpaqueUtil.CURVE_NAME);
+    byte[] password = "password1234".getBytes(StandardCharsets.UTF_8);
+
+    byte[][] invalidScalars =
+        new byte[][] {null, new byte[0], new byte[32], params.getN().toByteArray()};
+
+    for (byte[] invalidScalar : invalidScalars) {
+      GeneralSecurityException exception =
+          assertThrows(
+              GeneralSecurityException.class, () -> OpaqueUtil.blind(password, invalidScalar));
+      assertTrue(exception.getMessage().contains("blindScalar"));
+    }
+  }
+
+  @Test
+  public void testOversizedScalarReducedModuloOrder() throws Exception {
+    X9ECParameters params = CustomNamedCurves.getByName(OpaqueUtil.CURVE_NAME);
+    byte[] validPoint = params.getG().getEncoded(true);
+    byte[] password = "password1234".getBytes(StandardCharsets.UTF_8);
+
+    // 2^65536 has bitLength >= 65536 (which exceeds BouncyCastle WNafUtil's limit if unreduced)
+    // and is non-zero modulo the prime curve order.
+    byte[] oversizedScalar = new byte[8193];
+    oversizedScalar[0] = 1;
+    byte[] reducedScalar = new BigInteger(1, oversizedScalar).mod(params.getN()).toByteArray();
+
+    assertArrayEquals(
+        OpaqueUtil.diffieHellman(reducedScalar, validPoint),
+        OpaqueUtil.diffieHellman(oversizedScalar, validPoint));
+    assertArrayEquals(
+        OpaqueUtil.blind(password, reducedScalar), OpaqueUtil.blind(password, oversizedScalar));
+    assertArrayEquals(
+        OpaqueUtil.finalize(reducedScalar, validPoint),
+        OpaqueUtil.finalize(oversizedScalar, validPoint));
   }
 }

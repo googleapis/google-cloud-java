@@ -67,6 +67,7 @@ public class MetricsProviderTest {
   private static SpannerOptions.Builder cloudBuilder() {
     return SpannerOptions.newBuilder()
         .setProjectId("test-project")
+        .setEmulatorHost(null)
         .setCredentials(NoCredentials.getInstance());
   }
 

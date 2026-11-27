@@ -76,6 +76,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
+import java.sql.Statement;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -123,7 +124,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   protected JobIdWrapper parentJobId = null;
   protected int currentJobIdIndex = -1;
   protected List<String> batchQueries = new ArrayList<>();
-  protected BigQueryConnection connection;
+  protected volatile BigQueryConnection connection;
+  private volatile Connection logicalConnection;
+  private volatile Statement logicalStatementProxy;
   protected BigQueryParameterHandler parameterHandler = null;
   protected String connectionId;
   protected int maxFieldSize = 0;
@@ -454,6 +457,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         closeStatementResources();
       }
       this.connection = null;
+      this.logicalConnection = null;
+      this.logicalStatementProxy = null;
     }
   }
 
@@ -1874,9 +1879,19 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return result;
   }
 
+  void attachPooledProxies(Connection logicalConnection, Statement logicalStatementProxy) {
+    this.logicalConnection = logicalConnection;
+    this.logicalStatementProxy = logicalStatementProxy;
+  }
+
+  Statement getLogicalStatementProxy() {
+    return this.logicalStatementProxy;
+  }
+
   @Override
   public Connection getConnection() {
-    return this.connection;
+    Connection owner = this.logicalConnection;
+    return owner != null ? owner : this.connection;
   }
 
   public boolean hasMoreResults() {
