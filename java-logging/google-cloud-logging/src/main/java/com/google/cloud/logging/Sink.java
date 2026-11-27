@@ -31,10 +31,11 @@ import java.util.Objects;
  * export of a set of log entries to a certain destination. A sink consists of a name, unique to the
  * project, a filter for choosing the log entries to export and a destination for the log entries.
  *
- * <p>Sink destination can either be a Google Cloud Storage bucket (see {@link
- * SinkInfo.Destination.BucketDestination}, a Google Cloud BigQuery dataset (see {@link
- * SinkInfo.Destination.DatasetDestination}) or a Google CloudPub/Sub topic (see {@link
- * SinkInfo.Destination.TopicDestination}).
+ * <p>Sink destination can be a Google Cloud Storage bucket (see {@link
+ * SinkInfo.Destination.BucketDestination}), a Google Cloud BigQuery dataset (see {@link
+ * SinkInfo.Destination.DatasetDestination}), a Google Cloud Pub/Sub topic (see {@link
+ * SinkInfo.Destination.TopicDestination}), or a Cloud Logging bucket (see {@link
+ * SinkInfo.Destination.LoggingBucketDestination}).
  *
  * <p>{@code Sink} adds a layer of service-related functionality over {@link SinkInfo}. Objects of
  * this class are immutable. To get a {@code Sink} object with the most recent information use
@@ -123,7 +124,7 @@ public class Sink extends SinkInfo {
     return baseEquals(other) && Objects.equals(options, other.options);
   }
 
-  /** Returns the sinks's {@code Logging} object used to issue requests. */
+  /** Returns the sink's {@code Logging} object used to issue requests. */
   public Logging getLogging() {
     return logging;
   }
@@ -150,9 +151,10 @@ public class Sink extends SinkInfo {
   }
 
   /**
-   * Sends a request for deleting this sink. This method returns a {@code ApiFuture} object to
+   * Sends a request for deleting this sink. This method returns an {@code ApiFuture} object to
    * consume the result. {@link ApiFuture#get()} returns {@code true} if the sink was deleted,
-   * {@code false} if it was not found.
+   * {@code false} if it was not found, or throws {@link java.util.concurrent.ExecutionException}
+   * wrapping a {@link LoggingException} upon failure.
    *
    * <p>Example of asynchronously deleting the sink.
    *
@@ -166,8 +168,6 @@ public class Sink extends SinkInfo {
    *   // the sink was not found
    * }
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   public ApiFuture<Boolean> deleteAsync() {
     return logging.deleteSinkAsync(getName());
@@ -193,9 +193,10 @@ public class Sink extends SinkInfo {
   }
 
   /**
-   * Sends a request to fetch current sink's latest information. This method returns a {@code
+   * Sends a request to fetch current sink's latest information. This method returns an {@code
    * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a {@code Sink} object
-   * with latest information or {@code null} if not found.
+   * with latest information or {@code null} if not found, or throws {@link
+   * java.util.concurrent.ExecutionException} wrapping a {@link LoggingException} upon failure.
    *
    * <p>Example of asynchronously getting the sink's latest information.
    *
@@ -207,8 +208,6 @@ public class Sink extends SinkInfo {
    *   // the sink was not found
    * }
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   public ApiFuture<Sink> reloadAsync() {
     return logging.getSinkAsync(getName());
@@ -235,8 +234,9 @@ public class Sink extends SinkInfo {
 
   /**
    * Sends a request to update current sink. If the sink does not exist, it is created. This method
-   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a
-   * {@code Sink} object with updated information.
+   * returns an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns a
+   * {@code Sink} object with updated information, or throws {@link
+   * java.util.concurrent.ExecutionException} wrapping a {@link LoggingException} upon failure.
    *
    * <p>Example of asynchronously updating the sink's information.
    *
@@ -248,8 +248,6 @@ public class Sink extends SinkInfo {
    * // ...
    * Sink updatedSink = future.get();
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   public ApiFuture<Sink> updateAsync() {
     return logging.updateAsync(this);

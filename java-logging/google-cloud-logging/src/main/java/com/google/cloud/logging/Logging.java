@@ -442,7 +442,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Sink sink = logging.update(sinkInfo);
    * }</pre>
    *
-   * @return the created sink
+   * @return the updated or created sink
    * @throws LoggingException upon failure
    */
   Sink update(SinkInfo sink);
@@ -459,7 +459,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Metric metric = logging.update(metricInfo);
    * }</pre>
    *
-   * @return the created metric
+   * @return the updated or created metric
    * @throws LoggingException upon failure
    */
   Metric update(MetricInfo metric);
@@ -484,8 +484,9 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
   /**
    * Sends a request for updating a sink (or creating it, if it does not exist). This method returns
-   * a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
-   * updated/created sink or {@code null} if not found.
+   * an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the updated
+   * or created sink, or throws {@link java.util.concurrent.ExecutionException} wrapping a {@link
+   * LoggingException} upon failure.
    *
    * <p>Example of asynchronously updating a sink.
    *
@@ -503,8 +504,9 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
   /**
    * Sends a request for updating a metric (or creating it, if it does not exist). This method
-   * returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
-   * updated/created metric or {@code null} if not found.
+   * returns an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the
+   * updated or created metric, or throws {@link java.util.concurrent.ExecutionException} wrapping a
+   * {@link LoggingException} upon failure.
    *
    * <p>Example of asynchronously updating a metric.
    *
@@ -522,7 +524,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   /**
    * Sends a request to change one or more properties of an existing exclusion. This method returns
    * an {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the updated
-   * exclusion or {@code null} if not found.
+   * exclusion, or throws {@link java.util.concurrent.ExecutionException} wrapping a {@link
+   * LoggingException} upon failure.
    *
    * <p>Example of asynchronous exclusion update:
    *
@@ -556,8 +559,10 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Sink getSink(String sink);
 
   /**
-   * Sends a request for getting a sink. This method returns a {@code ApiFuture} object to consume
-   * the result. {@link ApiFuture#get()} returns the requested sink or {@code null} if not found.
+   * Sends a request for getting a sink. This method returns an {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns the requested sink or {@code null} if not found, or
+   * throws {@link java.util.concurrent.ExecutionException} wrapping a {@link LoggingException} upon
+   * failure.
    *
    * <p>Example of asynchronously getting a sink.
    *
@@ -570,8 +575,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // sink was not found
    * }
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   ApiFuture<Sink> getSinkAsync(String sink);
 
@@ -857,8 +860,10 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Metric getMetric(String metric);
 
   /**
-   * Sends a request for getting a metric. This method returns a {@code ApiFuture} object to consume
-   * the result. {@link ApiFuture#get()} returns the requested metric or {@code null} if not found.
+   * Sends a request for getting a metric. This method returns an {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns the requested metric or {@code null} if not
+   * found, or throws {@link java.util.concurrent.ExecutionException} wrapping a {@link
+   * LoggingException} upon failure.
    *
    * <p>Example of asynchronously getting a metric.
    *
@@ -871,8 +876,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // metric was not found
    * }
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   ApiFuture<Metric> getMetricAsync(String metric);
 
@@ -975,9 +978,10 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Exclusion getExclusion(String exclusion);
 
   /**
-   * Sends a request to get the description of an exclusion . This method returns an {@code
+   * Sends a request to get the description of an exclusion. This method returns an {@code
    * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns the requested
-   * exclusion or {@code null} if not found.
+   * exclusion or {@code null} if not found, or throws {@link
+   * java.util.concurrent.ExecutionException} wrapping a {@link LoggingException} upon failure.
    *
    * <p>Example of asynchronously getting the exclusion:
    *
@@ -990,8 +994,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // exclusion was not found
    * }
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   ApiFuture<Exclusion> getExclusionAsync(String exclusion);
 
@@ -1133,14 +1135,16 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Page<LogEntry> listLogEntries(EntryListOption... options);
 
   /**
-   * Sends a request for listing log entries. This method returns a {@code ApiFuture} object to
+   * Sends a request for listing log entries. This method returns an {@code ApiFuture} object to
    * consume the result. {@link ApiFuture#get()} returns an {@link AsyncPage} object that can be
-   * used to asynchronously handle paginated results. Use {@link EntryListOption#pageSize(int)} to
-   * specify the page size. Use {@link EntryListOption#pageToken(String)} to specify the page token
-   * from which to start listing entries. Use {@link EntryListOption#sortOrder(SortingField,
-   * SortingOrder)} to sort log entries according to your preferred order (default is most-recent
-   * last). Use {@link EntryListOption#filter(String)} to filter listed log entries. By default a 24
-   * hour filter is applied.
+   * used to asynchronously handle paginated results, or throws {@link
+   * java.util.concurrent.ExecutionException} wrapping a {@link LoggingException} upon failure. Use
+   * {@link EntryListOption#pageSize(int)} to specify the page size. Use {@link
+   * EntryListOption#pageToken(String)} to specify the page token from which to start listing
+   * entries. Use {@link EntryListOption#sortOrder(SortingField, SortingOrder)} to sort log entries
+   * according to your preferred order (default is most-recent last). Use {@link
+   * EntryListOption#filter(String)} to filter listed log entries. By default a 24 hour filter is
+   * applied.
    *
    * <p>Example of asynchronously listing log entries for a specific log.
    *
@@ -1155,8 +1159,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // do something with the entry
    * }
    * }</pre>
-   *
-   * @throws LoggingException upon failure
    */
   ApiFuture<AsyncPage<LogEntry>> listLogEntriesAsync(EntryListOption... options);
 
