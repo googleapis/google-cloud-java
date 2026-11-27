@@ -469,7 +469,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
       } finally {
         if (writeApiExecutionBuilder.getStatus() == Status.STATUS_UNSPECIFIED) {
-          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR);
+          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(1000);
         }
         long durationMs = System.currentTimeMillis() - startTime;
         recordExecution(writeApiExecutionBuilder, durationMs);

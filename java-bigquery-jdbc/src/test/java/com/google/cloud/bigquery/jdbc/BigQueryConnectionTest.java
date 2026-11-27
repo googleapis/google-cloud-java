@@ -60,6 +60,7 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.FeatureUsage;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryPayload;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
@@ -1331,7 +1332,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           captured.stream()
               .flatMap(p -> p.getFeatureUsagesList().stream())
               .filter(e -> e.getDriverFeature() == DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL)
-              .count();
+              .mapToLong(FeatureUsage::getCount)
+              .sum();
       assertEquals(1L, metadataFeatureCount);
     } finally {
       pool.shutdownNow();

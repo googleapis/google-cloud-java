@@ -940,8 +940,10 @@ public class BigQueryJsonResultSetTest {
     // ResultSet.getMetaData() is only ever a user call, even on result sets produced by
     // driver-internal statements (e.g. DatabaseMetaData.getExportedKeys), so it must count.
     BigQueryStatement internalStatement = mock(BigQueryStatement.class);
+    doReturn(true).when(internalStatement).isInternal();
     BigQueryJsonResultSet internalResultSet =
         BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, buffer, internalStatement, new Future<?>[0]);
+    assertThat(internalResultSet.getStatement()).isNull();
     try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
       internalResultSet.getMetaData();
       telemetry.verify(

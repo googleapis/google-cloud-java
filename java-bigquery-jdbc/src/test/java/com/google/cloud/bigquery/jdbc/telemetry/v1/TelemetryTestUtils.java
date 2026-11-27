@@ -36,6 +36,7 @@ public final class TelemetryTestUtils {
               captured.add(invocation.getArgument(0));
               return new TransportResult(true, -1);
             });
+    TelemetryManager.resetGlobalDisableForTest();
     TelemetryManager.init(config, transport);
   }
 
