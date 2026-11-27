@@ -110,4 +110,18 @@ public class LogicalViewTest {
                 .build()
                 .hashCode());
   }
+
+  @Test
+  public void testToString() {
+    LogicalViewName logicalViewName = LogicalViewName.of(PROJECT_ID, INSTANCE_ID, LOGICAL_VIEW_ID);
+    com.google.bigtable.admin.v2.LogicalView proto =
+        com.google.bigtable.admin.v2.LogicalView.newBuilder()
+            .setName(logicalViewName.toString())
+            .setQuery("SELECT 1 FROM Table")
+            .setDeletionProtection(true)
+            .build();
+    LogicalView logicalView = LogicalView.fromProto(proto);
+
+    assertThat(logicalView.toString()).isEqualTo(proto.toString());
+  }
 }

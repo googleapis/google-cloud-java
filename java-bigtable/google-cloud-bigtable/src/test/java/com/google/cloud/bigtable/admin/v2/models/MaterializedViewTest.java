@@ -114,4 +114,19 @@ public class MaterializedViewTest {
                 .build()
                 .hashCode());
   }
+
+  @Test
+  public void testToString() {
+    MaterializedViewName materializedViewName =
+        MaterializedViewName.of(PROJECT_ID, INSTANCE_ID, MATERIALIZED_VIEW_ID);
+    com.google.bigtable.admin.v2.MaterializedView proto =
+        com.google.bigtable.admin.v2.MaterializedView.newBuilder()
+            .setName(materializedViewName.toString())
+            .setDeletionProtection(true)
+            .setQuery("SELECT 1 FROM Table")
+            .build();
+    MaterializedView materializedView = MaterializedView.fromProto(proto);
+
+    assertThat(materializedView.toString()).isEqualTo(proto.toString());
+  }
 }

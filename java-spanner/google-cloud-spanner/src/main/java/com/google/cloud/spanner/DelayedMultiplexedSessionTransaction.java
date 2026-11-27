@@ -188,7 +188,7 @@ class DelayedMultiplexedSessionTransaction extends AbstractMultiplexedSessionDat
     SessionReference sessionReference = getSessionReference();
     try (MultiplexedSessionTransaction transaction =
         new MultiplexedSessionTransaction(
-            client, span, sessionReference, NO_CHANNEL_HINT, /* singleUse= */ true)) {
+            client, span, sessionReference, NO_CHANNEL_HINT, /* singleUse= */ false)) {
       return transaction.batchWriteAtLeastOnce(mutationGroups, options);
     }
   }

@@ -109,7 +109,7 @@ The driver supports multiple OAuth 2.0 and identity workflows specified via the 
 | **`0`** | **Service Account Key File (P12)** | `OAuthPvtKeyPath`, `OAuthServiceAcctEmail` | `OAuthP12Password` | Path to `.p12` key file. Requires explicit `OAuthServiceAcctEmail` as `.p12` files do not contain email metadata. `OAuthP12Password` defaults to `notasecret`. |
 | **`0`** | **Service Account Key String (JSON)** | `OAuthPvtKey` | `OAuthServiceAcctEmail` | Raw JSON key file string content in URL. Service account email and private key are automatically extracted from the JSON string. |
 | **`0`** | **Service Account Key String (PKCS#8 / P12 Bytes)** | `OAuthPvtKey`, `OAuthServiceAcctEmail` | `OAuthP12Password` | Raw PKCS#8 or P12 bytes key string content in URL. Requires explicit `OAuthServiceAcctEmail`. |
-| **`1`** | **User Account (Interactive 3-Legged OAuth)** | None (for built-in client app) | `OAuthClientId`, `OAuthClientSecret` | Launches local browser tab for interactive user login on desktop. Built-in client ID/secret used if omitted. |
+| **`1`** | **User Account (Interactive 3-Legged OAuth)** | None (for built-in client app) | `OAuthClientId`, `OAuthClientSecret` | Launches local browser tab for interactive user login on desktop. Built-in client ID/secret used if omitted. Custom `OAuthClientId` values must be configured as a **Desktop app** OAuth 2.0 client. |
 | **`2`** | **Pre-generated Access Token** | `OAuthAccessToken` | `OAuthAccessTokenReadonly` | Uses short-lived bearer token directly. `OAuthAccessTokenReadonly` defaults to `false`. |
 | **`2`** | **Pre-generated Refresh Token** | `OAuthRefreshToken`, `OAuthClientId`, `OAuthClientSecret` | None | Uses refresh token with client credentials to automatically mint access tokens. |
 | **`3`** | **Application Default Credentials (ADC)** | None | None | Uses GCP standard credential resolution (`GOOGLE_APPLICATION_CREDENTIALS` env var or `gcloud` CLI context). |
@@ -160,7 +160,7 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `OAuthAccessToken` | `null` | Pre-generated OAuth 2.0 access token string. |
 | `OAuthAccessTokenReadonly` | `false` | Indicates whether the pre-generated access token has read-only scope. |
 | `OAuthRefreshToken` | `null` | Pre-generated refresh token to automatically mint access tokens. |
-| `OAuthClientId` | *Google Client ID* | OAuth 2.0 Client ID for user authentication or refresh token flows. |
+| `OAuthClientId` | *Google Client ID* | OAuth 2.0 Client ID for user authentication or refresh token flows. For `OAuthType=1`, custom client IDs must be configured as a **Desktop app** OAuth 2.0 client so dynamic loopback redirect URIs (`http://127.0.0.1:<port>` or `http://[::1]:<port>`) are accepted. |
 | `OAuthClientSecret` | *Google Secret* | OAuth 2.0 Client Secret for user authentication or refresh token flows. |
 | `ServiceAccountImpersonationEmail` | `null` | Target Service Account email to impersonate for query job execution. |
 | `ServiceAccountImpersonationChain` | `null` | Comma-separated list of service account emails representing the impersonation chain. |
@@ -177,7 +177,7 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `BYOID_PoolUserProject` | `null` | Google Cloud project number associated with the workforce pool. |
 | `BYOID_SA_Impersonation_Uri` | `null` | Service Account impersonation URL for Workload Identity Federation. |
 | `BYOID_SubjectTokenType` | `urn:ietf:params:oauth:tokentype:id_token` | Type of subject token provided (e.g., `urn:ietf:params:oauth:tokentype:jwt`). |
-| `BYOID_TokenUri` | `https://sts.googleapis.com/v1/token` | Security Token Service (STS) token exchange endpoint URI. |
+| `BYOID_TokenUri` | `https://sts.<universeDomain>/v1/token` (`https://sts.googleapis.com/v1/token`) | Security Token Service (STS) token exchange endpoint URI. Derived from explicit `universeDomain` when omitted (defaults to `https://sts.googleapis.com/v1/token`). |
 
 ### Core Query & Catalog Properties
 
@@ -253,7 +253,7 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `ProxyPwd` | `null` | Password for proxy server authentication. |
 | `EndpointOverrides` | `null` | Semicolon or comma-separated list of custom service endpoint overrides. Supported keys: `BIGQUERY`, `READ_API`, `OAUTH2`, `STS`, `ACCOUNTS`. |
 | `PrivateServiceConnectUris` | `null` | Alias for `EndpointOverrides`. Accepts the same custom service endpoint override format and supported keys. |
-| `universeDomain` | `googleapis.com` | Domain name for Google Cloud Dedicated (GCD) or custom Google universe instances. |
+| `universeDomain` | `null` (falls back to `GOOGLE_CLOUD_UNIVERSE_DOMAIN`, then `googleapis.com`) | Domain name for Google Cloud Dedicated (GCD) or custom universe domain instances. Configures BigQuery, Storage Read/Write, and Cloud Logging client endpoints. Explicit `universeDomain` also applies to non-JSON credentials (PKCS#8/P12 keys, pre-generated tokens, and inline `BYOID_*` properties), while `GOOGLE_CLOUD_UNIVERSE_DOMAIN` applies to client endpoints only and JSON credentials always preserve their own `universe_domain`. |
 | `SSLTrustStore` | `null` | Path to custom Java TrustStore file containing trusted server certificates for SSL. |
 | `SSLTrustStorePwd` | `null` | Password for accessing the custom Java TrustStore file. |
 | `SSLTrustStoreType` | *System Default* (`JKS`/`PKCS12`) | Type of the custom Java TrustStore file. |
@@ -625,9 +625,9 @@ jdbc:bigquery://https://bigquery.googleapis.com:443
   ;PrivateServiceConnectUris=BIGQUERY=https://bigquery-privateendpoint.p.googleapis.com
 ```
 
-#### 3. Custom Universe Domains (`universeDomain`)
+#### 3. Custom Universe Domains (`universeDomain` / `GOOGLE_CLOUD_UNIVERSE_DOMAIN`)
 
-To target Google Cloud Dedicated (GCD) or non-default Universe Domain instances, specify `universeDomain`:
+To target Google Cloud Dedicated (GCD) or custom universe domain instances, specify `universeDomain` in the connection URL (or set the `GOOGLE_CLOUD_UNIVERSE_DOMAIN` environment variable):
 
 ```
 jdbc:bigquery://https://www.my-universe.cloud:443

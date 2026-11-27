@@ -22,6 +22,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.mockStatic;
 
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
@@ -30,12 +32,14 @@ import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.oauth2.ExternalAccountCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ImpersonatedCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.auth.oauth2.UserAuthorizer;
 import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.gson.JsonObject;
 import java.awt.Desktop;
 import java.awt.GraphicsEnvironment;
 import java.io.ByteArrayOutputStream;
@@ -53,6 +57,7 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -275,7 +280,12 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
     UserAuthorizer userAuthorizer =
         BigQueryJdbcOAuthUtility.getUserAuthorizer(
-            authProperties, new HashMap<String, String>(), USER_AUTH_CALLBACK_URI, null, null);
+            authProperties,
+            new HashMap<String, String>(),
+            false,
+            USER_AUTH_CALLBACK_URI,
+            null,
+            null);
 
     URL authURL =
         userAuthorizer.getAuthorizationUrl(
@@ -296,6 +306,17 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     assertThat(params.get("include_granted_scopes")).isEqualTo("true");
     assertThat(params.get("code_challenge_method")).isEqualTo("S256");
     assertThat(params.get("code_challenge")).matches("^[A-Za-z0-9_-]{43}$");
+
+    UserAuthorizer driveScopeAuthorizer =
+        BigQueryJdbcOAuthUtility.getUserAuthorizer(
+            authProperties, Collections.emptyMap(), true, USER_AUTH_CALLBACK_URI, null, null);
+    URL driveAuthUrl =
+        driveScopeAuthorizer.getAuthorizationUrl("test_user", "test_state", URI.create(""));
+    Map<String, String> driveParams = parseQueryParams(driveAuthUrl.toURI().getRawQuery());
+    assertThat(driveParams.get("scope"))
+        .isEqualTo(
+            "https://www.googleapis.com/auth/bigquery"
+                + " https://www.googleapis.com/auth/drive.readonly");
   }
 
   @Test
@@ -308,7 +329,12 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
     UserAuthorizer userAuthorizer =
         BigQueryJdbcOAuthUtility.getUserAuthorizer(
-            authProperties, Collections.emptyMap(), USER_AUTH_CALLBACK_URI, transportFactory, null);
+            authProperties,
+            Collections.emptyMap(),
+            false,
+            USER_AUTH_CALLBACK_URI,
+            transportFactory,
+            null);
 
     URL authUrl = userAuthorizer.getAuthorizationUrl("user", "state_val", URI.create(""));
     Map<String, String> authParams = parseQueryParams(authUrl.toURI().getRawQuery());
@@ -318,8 +344,10 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
     UserCredentials credentials =
         BigQueryJdbcOAuthUtility.getCredentialsFromCode(
-            userAuthorizer, "sample_code", transportFactory, null);
+            userAuthorizer, "sample_code", Collections.emptyMap(), transportFactory, null);
     assertThat(credentials.getAccessToken().getTokenValue()).isEqualTo("mock_access_token");
+    assertThat(credentials.getUniverseDomain()).isEqualTo("googleapis.com");
+    assertThat(credentials.toBuilder().getHttpTransportFactory()).isEqualTo(transportFactory);
 
     Map<String, String> tokenParams = capturedTokenParams.get();
     assertThat(tokenParams).isNotNull();
@@ -327,6 +355,23 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     assertThat(codeVerifier).isNotNull();
     assertThat(codeVerifier).matches("^[A-Za-z0-9._~-]{43,128}$");
     assertThat(computeS256Challenge(codeVerifier)).isEqualTo(codeChallenge);
+
+    UserCredentials unchangedCredentials =
+        BigQueryJdbcOAuthUtility.getCredentialsFromCode(
+            userAuthorizer, "sample_code", Collections.emptyMap(), null, null);
+    assertThat(unchangedCredentials.getUniverseDomain()).isEqualTo("googleapis.com");
+
+    UserCredentials universeOnlyCredentials =
+        BigQueryJdbcOAuthUtility.getCredentialsFromCode(
+            userAuthorizer,
+            "sample_code",
+            Collections.singletonMap(
+                BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME,
+                "explicit-universe.example.com"),
+            null,
+            null);
+    assertThat(universeOnlyCredentials.getUniverseDomain())
+        .isEqualTo("explicit-universe.example.com");
   }
 
   @Test
@@ -348,7 +393,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       UserAuthorizer userAuthorizer =
           BigQueryJdbcOAuthUtility.getUserAuthorizer(
-              authProperties, overrideProperties, USER_AUTH_CALLBACK_URI, null, null);
+              authProperties, overrideProperties, false, USER_AUTH_CALLBACK_URI, null, null);
 
       assertThat(overrideTokenSeverURI).isEqualTo(userAuthorizer.toBuilder().getTokenServerUri());
     } catch (URISyntaxException e) {
@@ -635,7 +680,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
   @Test
   public void testOpenLoopbackServerSocket_bindsLoopbackAndFallsBackToIpv6() throws Exception {
-    try (ServerSocket serverSocket = BigQueryJdbcOAuthUtility.openLoopbackServerSocket()) {
+    try (ServerSocket serverSocket = BigQueryJdbcOAuthCallbackServer.openLoopbackServerSocket()) {
       assertThat(serverSocket.getInetAddress().isLoopbackAddress()).isTrue();
       assertThat(serverSocket.getInetAddress().isAnyLocalAddress()).isFalse();
     }
@@ -643,27 +688,30 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     InetAddress ipv4Loopback = InetAddress.getByAddress(new byte[] {127, 0, 0, 1});
     InetAddress ipv6Loopback =
         InetAddress.getByAddress(new byte[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1});
-    assertThat(BigQueryJdbcOAuthUtility.buildLoopbackCallbackUri(ipv4Loopback, USER_AUTH_PORT))
+    assertThat(
+            BigQueryJdbcOAuthCallbackServer.buildLoopbackCallbackUri(ipv4Loopback, USER_AUTH_PORT))
         .isEqualTo(URI.create("http://127.0.0.1:" + USER_AUTH_PORT));
-    assertThat(BigQueryJdbcOAuthUtility.buildLoopbackCallbackUri(ipv6Loopback, USER_AUTH_PORT))
+    assertThat(
+            BigQueryJdbcOAuthCallbackServer.buildLoopbackCallbackUri(ipv6Loopback, USER_AUTH_PORT))
         .isEqualTo(URI.create("http://[::1]:" + USER_AUTH_PORT));
 
     AtomicReference<InetAddress> fallbackBoundAddress = new AtomicReference<>();
     AtomicInteger capturedBacklog = new AtomicInteger();
-    ServerSocket mockIpv6Socket = Mockito.mock(ServerSocket.class);
-    ServerSocket fallbackResult =
-        BigQueryJdbcOAuthUtility.openLoopbackServerSocket(
-            (address, backlog) -> {
-              if (!(address instanceof Inet6Address)) {
-                throw new IOException("IPv4 loopback unavailable");
-              }
-              fallbackBoundAddress.set(address);
-              capturedBacklog.set(backlog);
-              return mockIpv6Socket;
-            });
-    assertThat(fallbackResult).isSameInstanceAs(mockIpv6Socket);
-    assertThat(fallbackBoundAddress.get()).isEqualTo(ipv6Loopback);
-    assertThat(capturedBacklog.get()).isEqualTo(8);
+    try (ServerSocket unboundIpv6Socket = new ServerSocket()) {
+      ServerSocket fallbackResult =
+          BigQueryJdbcOAuthCallbackServer.openLoopbackServerSocket(
+              (address, backlog) -> {
+                if (!(address instanceof Inet6Address)) {
+                  throw new IOException("IPv4 loopback unavailable");
+                }
+                fallbackBoundAddress.set(address);
+                capturedBacklog.set(backlog);
+                return unboundIpv6Socket;
+              });
+      assertThat(fallbackResult).isSameInstanceAs(unboundIpv6Socket);
+      assertThat(fallbackBoundAddress.get()).isEqualTo(ipv6Loopback);
+      assertThat(capturedBacklog.get()).isEqualTo(8);
+    }
 
     IOException ipv4Error = new IOException("IPv4 bind failed");
     IOException ipv6Error = new IOException("IPv6 bind failed");
@@ -671,7 +719,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         assertThrows(
             IOException.class,
             () ->
-                BigQueryJdbcOAuthUtility.openLoopbackServerSocket(
+                BigQueryJdbcOAuthCallbackServer.openLoopbackServerSocket(
                     (address, backlog) -> {
                       throw (address instanceof Inet6Address) ? ipv6Error : ipv4Error;
                     }));
@@ -699,7 +747,10 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     GoogleCredentials credentials =
         BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
             authProperties,
-            Collections.emptyMap(),
+            Collections.singletonMap(
+                BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME,
+                "explicit-universe.example.com"),
+            false,
             transportFactory,
             null,
             capturingSocketSupplier(capturedServerSocket),
@@ -715,22 +766,24 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                               redirectUri,
                               callbackGetRequest(
                                   redirectUri,
-                                  "/?state=" + params.get("state") + "&code=4%2F0AeanS0%2Btest"))));
+                                  "/?state="
+                                      + params.get("state")
+                                      + "&code=4%2F0A+raw%2Bencoded"))));
             },
             5000,
             2000);
 
     assertThat(credentials).isInstanceOf(UserCredentials.class);
+    assertThat(credentials.getUniverseDomain()).isEqualTo("explicit-universe.example.com");
     assertThat(closedBeforeTokenExchange.get()).isTrue();
     assertThat(capturedServerSocket.get().isClosed()).isTrue();
     assertThat(capturedState.get()).matches("^[A-Za-z0-9_-]{43}$");
-    assertThat(capturedTokenParams.get().get("code")).isEqualTo("4/0AeanS0+test");
+    assertThat(capturedTokenParams.get().get("code")).isEqualTo("4/0A+raw+encoded");
     assertThat(computeS256Challenge(capturedTokenParams.get().get("code_verifier")))
         .isEqualTo(capturedChallenge.get());
 
     String rawResponse = rawHttpResponseFuture.get().get(5, TimeUnit.SECONDS);
     assertValidHttpResponse(rawResponse, "HTTP/1.1 200 OK");
-    assertThat(rawResponse).contains("Cache-Control: no-store\r\n");
     assertThat(rawResponse).contains("Thank you for using JDBC Driver for Google BigQuery!");
   }
 
@@ -748,6 +801,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
             authProperties,
             Collections.emptyMap(),
+            false,
             transportFactory,
             null,
             capturingSocketSupplier(capturedServerSocket),
@@ -775,8 +829,39 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
     clientFuture.get().get(5, TimeUnit.SECONDS);
     assertThat(credentials).isInstanceOf(UserCredentials.class);
+    assertThat(credentials.getUniverseDomain()).isEqualTo("googleapis.com");
     assertThat(capturedTokenParams.get().get("code")).isEqualTo("http10_code");
     assertThat(capturedServerSocket.get().isClosed()).isTrue();
+  }
+
+  @Test
+  public void testParseOAuthQueryParameters_preservesLiteralPlusAndRejectsMalformedPercentEncoding()
+      throws Exception {
+    assertThat(BigQueryJdbcOAuthCallbackServer.parseOAuthQueryParameters(null)).isEmpty();
+    assertThat(BigQueryJdbcOAuthCallbackServer.parseOAuthQueryParameters("")).isEmpty();
+
+    Map<String, String> decoded =
+        BigQueryJdbcOAuthCallbackServer.parseOAuthQueryParameters(
+            "state=st+1%2B2&code=4%2F0A+raw%2Bencoded%20space");
+    assertThat(decoded.get("state")).isEqualTo("st+1+2");
+    assertThat(decoded.get("code")).isEqualTo("4/0A+raw+encoded space");
+
+    for (String malformedQuery :
+        new String[] {
+          "state=ok&code=bad_%ZZ_raw_token",
+          "state=ok&code=trailing_percent_%",
+          "bad_%2_key=raw_token"
+        }) {
+      BigQueryJdbcOAuthCallbackServer.HttpCallbackException ex =
+          assertThrows(
+              BigQueryJdbcOAuthCallbackServer.HttpCallbackException.class,
+              () -> BigQueryJdbcOAuthCallbackServer.parseOAuthQueryParameters(malformedQuery));
+      assertThat(ex.getMessage())
+          .isEqualTo("Malformed query parameter encoding in OAuth callback.");
+      assertThat(ex.getCause()).isNull();
+      assertThat(ex.getMessage()).doesNotContain("raw_token");
+      assertThat(ex.getMessage()).doesNotContain("trailing_percent");
+    }
   }
 
   @Test
@@ -853,7 +938,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
             callbackGetRequest(redirectUri, "/?state=" + authParams.get("state") + "&error="),
         "OAuth authorization failed: unknown_error");
 
-    StringBuilder longError = new StringBuilder("bad%22err+val%0A");
+    StringBuilder longError = new StringBuilder("bad%22err%20val%0A");
     for (int i = 0; i < 70; i++) {
       longError.append('x');
     }
@@ -882,9 +967,10 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
             authProperties,
             Collections.emptyMap(),
+            false,
             transportFactory,
             null,
-            BigQueryJdbcOAuthUtility::openLoopbackServerSocket,
+            BigQueryJdbcOAuthCallbackServer::openLoopbackServerSocket,
             authUri -> {
               Map<String, String> params = parseQueryParams(authUri.getRawQuery());
               URI redirectUri = URI.create(params.get("redirect_uri"));
@@ -922,9 +1008,19 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                             }
                           }
                         }
+                        String headerLine =
+                            "X-Extra-Padding: 0123456789abcdef0123456789abcdef0123456789abcdef\r\n";
+                        StringBuilder cookieHeavyFavicon = new StringBuilder(25000);
+                        cookieHeavyFavicon
+                            .append("GET /favicon.ico HTTP/1.1\r\nHost: ")
+                            .append(host)
+                            .append("\r\n");
+                        while (cookieHeavyFavicon.length() < 24000) {
+                          cookieHeavyFavicon.append(headerLine);
+                        }
+                        cookieHeavyFavicon.append("\r\n");
                         String faviconResp =
-                            sendHttpRequest(
-                                redirectUri, callbackGetRequest(redirectUri, "/favicon.ico"));
+                            sendHttpRequest(redirectUri, cookieHeavyFavicon.toString());
                         String optionsProbeResp =
                             sendHttpRequest(
                                 redirectUri,
@@ -939,16 +1035,16 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                                 callbackGetRequest(
                                     redirectUri, "/?state=wrong_state&error=access_denied"));
 
-                        StringBuilder largeHeaders = new StringBuilder(20000);
+                        int oversizedHeaderTarget =
+                            BigQueryJdbcOAuthCallbackServer.MAX_HTTP_HEADER_BYTES + 4096;
+                        StringBuilder largeHeaders = new StringBuilder(oversizedHeaderTarget + 256);
                         largeHeaders
                             .append("GET /?state=")
                             .append(state)
                             .append("&code=after_preconnect HTTP/1.1\r\nHost: ")
                             .append(host)
                             .append("\r\n");
-                        String headerLine =
-                            "X-Extra-Padding: 0123456789abcdef0123456789abcdef0123456789abcdef\r\n";
-                        while (largeHeaders.length() < 18000) {
+                        while (largeHeaders.length() < oversizedHeaderTarget) {
                           largeHeaders.append(headerLine);
                         }
                         largeHeaders.append("\r\n");
@@ -988,6 +1084,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                 BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
                     authProperties,
                     Collections.emptyMap(),
+                    false,
                     null,
                     null,
                     capturingSocketSupplier(browserErrorSocket),
@@ -1008,6 +1105,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                 BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
                     authProperties,
                     Collections.emptyMap(),
+                    false,
                     null,
                     null,
                     capturingSocketSupplier(eofSocket),
@@ -1038,6 +1136,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                   BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
                       authProperties,
                       Collections.emptyMap(),
+                      false,
                       null,
                       null,
                       capturingSocketSupplier(stalledSocket),
@@ -1086,6 +1185,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                 BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
                     authProperties,
                     Collections.emptyMap(),
+                    false,
                     null,
                     null,
                     capturingSocketSupplier(rejectedThenTimedOutSocket),
@@ -1116,9 +1216,9 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   public void testUserAuthCallback_rejectsOversizedTruncatedAndMalformedRequestLines()
       throws Exception {
     StringBuilder oversizedQuery =
-        new StringBuilder(BigQueryJdbcOAuthUtility.MAX_HTTP_REQUEST_LINE_BYTES + 256);
+        new StringBuilder(BigQueryJdbcOAuthCallbackServer.MAX_HTTP_REQUEST_LINE_BYTES + 256);
     oversizedQuery.append("GET /?pad=");
-    for (int i = 0; i < BigQueryJdbcOAuthUtility.MAX_HTTP_REQUEST_LINE_BYTES; i++) {
+    for (int i = 0; i < BigQueryJdbcOAuthCallbackServer.MAX_HTTP_REQUEST_LINE_BYTES; i++) {
       oversizedQuery.append('a');
     }
     oversizedQuery.append(" HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n");
@@ -1206,11 +1306,13 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
       AtomicReference<Map<String, String>> capturedTokenParams = new AtomicReference<>();
       HttpTransportFactory transportFactory =
           createMockTokenTransport(capturedTokenParams, null, null);
+      AtomicReference<String> capturedAuthScope = new AtomicReference<>();
       AtomicReference<CompletableFuture<String>> callbackResponseFuture = new AtomicReference<>();
       Mockito.doAnswer(
               invocation -> {
                 URI authUri = invocation.getArgument(0);
                 Map<String, String> params = parseQueryParams(authUri.getRawQuery());
+                capturedAuthScope.set(params.get("scope"));
                 URI redirectUri = URI.create(params.get("redirect_uri"));
                 callbackResponseFuture.set(
                     runAsyncClient(
@@ -1231,7 +1333,20 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
           BigQueryJdbcOAuthUtility.getCredentials(
               authProperties, Collections.emptyMap(), false, transportFactory, null);
       assertThat(credentials).isInstanceOf(UserCredentials.class);
+      assertThat(credentials.getUniverseDomain()).isEqualTo("googleapis.com");
+      assertThat(capturedAuthScope.get()).isEqualTo("https://www.googleapis.com/auth/bigquery");
       assertThat(capturedTokenParams.get().get("code")).isEqualTo("desktop_browse_code");
+      assertValidHttpResponse(
+          callbackResponseFuture.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 200 OK");
+
+      GoogleCredentials driveCredentials =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              authProperties, Collections.emptyMap(), true, transportFactory, null);
+      assertThat(driveCredentials).isInstanceOf(UserCredentials.class);
+      assertThat(capturedAuthScope.get())
+          .isEqualTo(
+              "https://www.googleapis.com/auth/bigquery"
+                  + " https://www.googleapis.com/auth/drive.readonly");
       assertValidHttpResponse(
           callbackResponseFuture.get().get(5, TimeUnit.SECONDS), "HTTP/1.1 200 OK");
     }
@@ -1264,10 +1379,10 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         DataSource.fromUrl(getUriOAuthUserAccount().toString()), null);
   }
 
-  private static BigQueryJdbcOAuthUtility.ServerSocketSupplier capturingSocketSupplier(
+  private static BigQueryJdbcOAuthCallbackServer.ServerSocketSupplier capturingSocketSupplier(
       AtomicReference<ServerSocket> socketRef) {
     return () -> {
-      ServerSocket socket = BigQueryJdbcOAuthUtility.openLoopbackServerSocket();
+      ServerSocket socket = BigQueryJdbcOAuthCallbackServer.openLoopbackServerSocket();
       socketRef.set(socket);
       return socket;
     };
@@ -1307,6 +1422,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                 BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
                     authProperties,
                     Collections.emptyMap(),
+                    false,
                     transportFactory,
                     null,
                     capturingSocketSupplier(capturedSocket),
@@ -1347,6 +1463,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                 BigQueryJdbcOAuthUtility.getGoogleUserAccountCredentials(
                     authProperties,
                     Collections.emptyMap(),
+                    false,
                     transportFactory,
                     null,
                     () -> {
@@ -1488,5 +1605,209 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     String body = rawResponse.substring(headerEnd + 4);
     int expectedLength = body.getBytes(StandardCharsets.UTF_8).length;
     assertThat(headers).contains("\r\nContent-Length: " + expectedLength + "\r\n");
+    assertThat(headers).contains("\r\nCache-Control: no-store\r\n");
+    assertThat(headers).contains("\r\nX-Content-Type-Options: nosniff\r\n");
+    assertThat(headers).contains("\r\nContent-Security-Policy: default-src 'none'\r\n");
+    assertThat(headers).contains("\r\nConnection: close\r\n");
+  }
+
+  @Test
+  public void testServiceAccountJsonNeverOverriddenByEnvOrExplicitUniverseDomain()
+      throws Exception {
+    JsonObject saJson = new JsonObject();
+    saJson.addProperty("type", "service_account");
+    saJson.addProperty("project_id", "custom-universe-project");
+    saJson.addProperty("private_key_id", "key-id-1");
+    saJson.addProperty("private_key", fake_pkcs8_key);
+    saJson.addProperty("client_email", "sa@custom-universe-project.iam.gserviceaccount.com");
+    saJson.addProperty("client_id", "123456");
+    saJson.addProperty("universe_domain", "custom-universe.example.com");
+
+    Path tempKeyFile = Files.createTempFile("custom-universe-sa-", ".json");
+    try {
+      Files.write(tempKeyFile, saJson.toString().getBytes(StandardCharsets.UTF_8));
+      String url =
+          "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+              + "ProjectId=custom-universe-project;OAuthType=0;OAuthPvtKeyPath="
+              + tempKeyFile;
+      DataSource ds = DataSource.fromUrl(url);
+      Map<String, String> authProps = BigQueryJdbcOAuthUtility.parseOAuthProperties(ds, null);
+
+      // 1. Omitted universeDomain (even when GOOGLE_CLOUD_UNIVERSE_DOMAIN is set to another domain)
+      // must NOT overwrite a JSON credential's parsed universe_domain.
+      try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+          mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+        urlUtil
+            .when(BigQueryJdbcUrlUtility::getEnvUniverseDomain)
+            .thenReturn("other-universe.example.com");
+        GoogleCredentials preserved =
+            BigQueryJdbcOAuthUtility.getCredentials(
+                authProps, Collections.emptyMap(), false, null, null);
+        assertEquals("custom-universe.example.com", preserved.getUniverseDomain());
+      }
+
+      // 2. Explicit universeDomain in overrideProperties also does NOT override JSON credential.
+      Map<String, String> explicitOverrides =
+          Collections.singletonMap(
+              BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME,
+              "explicit-universe.example.com");
+      GoogleCredentials overridden =
+          BigQueryJdbcOAuthUtility.getCredentials(authProps, explicitOverrides, false, null, null);
+      assertEquals("custom-universe.example.com", overridden.getUniverseDomain());
+    } finally {
+      Files.deleteIfExists(tempKeyFile);
+    }
+  }
+
+  @Test
+  public void testNonJsonCredentialsIgnoreEnvUniverseDomainAndUseExplicitOnly() throws Exception {
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil
+          .when(BigQueryJdbcUrlUtility::getEnvUniverseDomain)
+          .thenReturn("custom-universe.example.com");
+
+      // PKCS#8 Service Account
+      Map<String, String> saProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(getUriOAuthServiceAccount().toString()), null);
+      GoogleCredentials saCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              saProps, Collections.emptyMap(), false, null, null);
+      assertEquals("googleapis.com", saCreds.getUniverseDomain());
+
+      // Pre-generated Access Token
+      Map<String, String> accessProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(getUriOAuthToken().toString()), null);
+      GoogleCredentials accessCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              accessProps, Collections.emptyMap(), false, null, null);
+      assertEquals("googleapis.com", accessCreds.getUniverseDomain());
+
+      // Pre-generated Refresh Token
+      Map<String, String> refreshProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(
+                  "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                      + "ProjectId=MyProject;OAuthType=2;OAuthRefreshToken=rt;"
+                      + "OAuthClientId=cid;OAuthClientSecret=csecret;"),
+              null);
+      GoogleCredentials refreshCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              refreshProps, Collections.emptyMap(), false, null, null);
+      assertEquals("googleapis.com", refreshCreds.getUniverseDomain());
+
+      // User Account (OAuthType=1)
+      Map<String, String> userProps = defaultUserAuthProperties();
+      HttpTransportFactory userTransport =
+          createMockTokenTransport(new AtomicReference<>(), null, null);
+      UserAuthorizer userAuthorizer =
+          BigQueryJdbcOAuthUtility.getUserAuthorizer(
+              userProps,
+              Collections.emptyMap(),
+              false,
+              USER_AUTH_CALLBACK_URI,
+              userTransport,
+              null);
+      UserCredentials userCreds =
+          BigQueryJdbcOAuthUtility.getCredentialsFromCode(
+              userAuthorizer, "auth_code", Collections.emptyMap(), userTransport, null);
+      assertEquals("googleapis.com", userCreds.getUniverseDomain());
+
+      // Explicit overrideProperties applies to non-JSON credentials
+      Map<String, String> explicitOverrides =
+          Collections.singletonMap(
+              BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME,
+              "explicit-universe.example.com");
+      assertEquals(
+          "explicit-universe.example.com",
+          BigQueryJdbcOAuthUtility.getCredentials(saProps, explicitOverrides, false, null, null)
+              .getUniverseDomain());
+      assertEquals(
+          "explicit-universe.example.com",
+          BigQueryJdbcOAuthUtility.getCredentialsFromCode(
+                  userAuthorizer, "auth_code", explicitOverrides, userTransport, null)
+              .getUniverseDomain());
+    }
+  }
+
+  @Test
+  public void testByoidPropertyCredentialsDeriveStsTokenUriFromUniverseDomain() throws Exception {
+    String baseByoidUrl =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=4;ProjectId=p;"
+            + "BYOID_AudienceUri=//iam.googleapis.com/locations/global/workforcePools/pool/providers/prov;"
+            + "BYOID_CredentialSource={\"file\":\"/tmp/token.txt\"};";
+
+    // 1. Explicit universeDomain in URL with BYOID_TokenUri omitted
+    DataSource explicitUniverseDomainDs =
+        DataSource.fromUrl(baseByoidUrl + "universeDomain=custom-universe.example.com;");
+    Map<String, String> explicitAuthProps =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(explicitUniverseDomainDs, null);
+    assertEquals(
+        "https://sts.custom-universe.example.com/v1/token",
+        explicitAuthProps.get(BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME));
+    GoogleCredentials explicitByoidCreds =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            explicitAuthProps, Collections.emptyMap(), false, null, null);
+    assertThat(explicitByoidCreds).isInstanceOf(ExternalAccountCredentials.class);
+    assertEquals(
+        "https://sts.custom-universe.example.com/v1/token",
+        ((ExternalAccountCredentials) explicitByoidCreds).getTokenUrl());
+    assertEquals("custom-universe.example.com", explicitByoidCreds.getUniverseDomain());
+
+    // 2. GOOGLE_CLOUD_UNIVERSE_DOMAIN env var does NOT affect synthesized BYOID credentials when
+    // universeDomain and BYOID_TokenUri are omitted
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil
+          .when(BigQueryJdbcUrlUtility::getEnvUniverseDomain)
+          .thenReturn("env-universe.example.com");
+      DataSource envUniverseDomainDs = DataSource.fromUrl(baseByoidUrl);
+      Map<String, String> envAuthProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(envUniverseDomainDs, null);
+      GoogleCredentials envByoidCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              envAuthProps, Collections.emptyMap(), false, null, null);
+      assertEquals(
+          "https://sts.googleapis.com/v1/token",
+          ((ExternalAccountCredentials) envByoidCreds).getTokenUrl());
+      assertEquals("googleapis.com", envByoidCreds.getUniverseDomain());
+    }
+
+    // 3. Explicit BYOID_TokenUri in URL overrides universeDomain derivation
+    DataSource customTokenDs =
+        DataSource.fromUrl(
+            baseByoidUrl
+                + "universeDomain=custom-universe.example.com;"
+                + "BYOID_TokenUri=https://custom-sts.example.com/v1/token;");
+    Map<String, String> customTokenAuthProps =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(customTokenDs, null);
+    assertEquals(
+        "https://custom-sts.example.com/v1/token",
+        customTokenAuthProps.get(BigQueryJdbcUrlUtility.BYOID_TOKEN_URI_PROPERTY_NAME));
+    GoogleCredentials customTokenCreds =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            customTokenAuthProps, Collections.emptyMap(), false, null, null);
+    assertEquals(
+        "https://custom-sts.example.com/v1/token",
+        ((ExternalAccountCredentials) customTokenCreds).getTokenUrl());
+    assertEquals("custom-universe.example.com", customTokenCreds.getUniverseDomain());
+
+    // 4. Default GDU (no universeDomain, no env var, no BYOID_TokenUri) resolves sts.googleapis.com
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(null);
+      DataSource defaultGduDs = DataSource.fromUrl(baseByoidUrl);
+      Map<String, String> defaultGduProps =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(defaultGduDs, null);
+      GoogleCredentials defaultGduCreds =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              defaultGduProps, Collections.emptyMap(), false, null, null);
+      assertEquals(
+          "https://sts.googleapis.com/v1/token",
+          ((ExternalAccountCredentials) defaultGduCreds).getTokenUrl());
+      assertEquals("googleapis.com", defaultGduCreds.getUniverseDomain());
+    }
   }
 }

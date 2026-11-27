@@ -1105,4 +1105,53 @@ public class JdbcDriverTest {
               connection.unwrap(JdbcConnection.class).getConnectionOptions(), "username"));
     }
   }
+
+  @Test
+  public void testUniverseDomainPropertyInfoAndOptions() throws SQLException {
+    String baseUrl = "jdbc:cloudspanner:/projects/p/instances/i/databases/d";
+
+    // Unset universeDomain must report null in DriverPropertyInfo rather than forcing GDU.
+    DriverPropertyInfo[] propertyInfos =
+        JdbcDriver.getRegisteredDriver().getPropertyInfo(baseUrl, new Properties());
+    DriverPropertyInfo universeDomainInfo = findPropertyInfo(propertyInfos, "universedomain");
+    assertNotNull(universeDomainInfo);
+    assertNull(universeDomainInfo.value);
+
+    // Unset universeDomain remains null on ConnectionOptions built through JdbcDriver.
+    ConnectionOptions omittedOptions =
+        JdbcDriver.buildConnectionOptions(baseUrl.substring(5) + ";usePlainText=true", null);
+    assertNull(ConnectionOptionsHelper.getInitialPropertyValue(omittedOptions, "universedomain"));
+
+    // Explicit universeDomain in Properties propagates cleanly.
+    Properties propsWithUniverseDomain = new Properties();
+    propsWithUniverseDomain.setProperty("universeDomain", "props.example");
+    ConnectionOptions propsOptions =
+        JdbcDriver.buildConnectionOptions(
+            baseUrl.substring(5) + ";usePlainText=true", propsWithUniverseDomain);
+    assertEquals(
+        "props.example",
+        ConnectionOptionsHelper.getInitialPropertyValue(propsOptions, "universedomain"));
+
+    // URI universeDomain takes precedence over Properties (JDBC 4.3 section 9.2).
+    ConnectionOptions uriPrecedenceOptions =
+        JdbcDriver.buildConnectionOptions(
+            baseUrl.substring(5) + ";usePlainText=true;universeDomain=uri.example",
+            propsWithUniverseDomain);
+    assertEquals(
+        "uri.example",
+        ConnectionOptionsHelper.getInitialPropertyValue(uriPrecedenceOptions, "universedomain"));
+
+    // Malformed universeDomain in Properties fails closed with INVALID_ARGUMENT SQLException.
+    String liveUrl =
+        String.format(
+            "jdbc:cloudspanner://localhost:%d/projects/p/instances/i/databases/d;usePlainText=true;credentials=%s",
+            server.getPort(), TEST_KEY_PATH);
+    Properties invalidProps = new Properties();
+    invalidProps.setProperty("universeDomain", "ignored@attacker.com:8443");
+    SQLException sqlException =
+        assertThrows(SQLException.class, () -> DriverManager.getConnection(liveUrl, invalidProps));
+    assertEquals(Code.INVALID_ARGUMENT_VALUE, sqlException.getErrorCode());
+    assertTrue(
+        sqlException.getMessage(), sqlException.getMessage().contains("Invalid universe domain"));
+  }
 }

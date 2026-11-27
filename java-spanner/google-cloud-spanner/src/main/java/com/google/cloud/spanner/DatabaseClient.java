@@ -270,6 +270,11 @@ public interface DatabaseClient {
    *   <li>{@link Options#priority(com.google.cloud.spanner.Options.RpcPriority)}: The {@link
    *       RpcPriority} to use for the batch write request.
    *   <li>{@link Options#tag(String)}: The transaction tag to use for the batch write request.
+   *   <li>{@link Options#excludeTxnFromChangeStreams()}: Excludes the transaction from change
+   *       streams with the DDL option {@code allow_txn_exclusion=true}.
+   *   <li>{@link Options#clientContext(com.google.spanner.v1.RequestOptions.ClientContext)}: The
+   *       {@link com.google.spanner.v1.RequestOptions.ClientContext} to attach to the batch write
+   *       request.
    * </ul>
    */
   ServerStream<BatchWriteResponse> batchWriteAtLeastOnce(

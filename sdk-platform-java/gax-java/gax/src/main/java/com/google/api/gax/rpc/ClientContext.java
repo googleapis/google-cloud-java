@@ -193,7 +193,15 @@ public abstract class ClientContext {
           "GDC-H API audience can only be set when using GdchCredentials");
     }
 
-    if (settings.getQuotaProjectId() != null && credentials != null) {
+    // ApiKeyCredentials never emits x-goog-user-project, so wrapping it in
+    // QuotaProjectIdHidingCredentials is unnecessary and would hide its type from downstream
+    // instanceof checks (EndpointContext universe domain validation and
+    // InstantiatingGrpcChannelProvider duplicate header removal). We also do not reject setting
+    // quotaProjectId alongside ApiKeyCredentials because resource-based APIs ignore
+    // x-goog-user-project rather than rejecting it.
+    if (settings.getQuotaProjectId() != null
+        && credentials != null
+        && !(credentials instanceof ApiKeyCredentials)) {
       // If the quotaProjectId is set, wrap original credentials with correct
       // quotaProjectId as
       // QuotaProjectIdHidingCredentials.

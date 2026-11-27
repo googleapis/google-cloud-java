@@ -28,6 +28,7 @@ import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.CALLS_REAL_METHODS;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
@@ -656,7 +657,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           .when(
               () ->
                   BigQueryJdbcOpenTelemetry.createLoggingClient(
-                      anyBoolean(), any(), any(), any(), any(), any()))
+                      anyBoolean(), any(), any(), any(), any(), any(), any()))
           .thenReturn(mockLogging);
 
       // Stub getOpenTelemetry to return the expected mock based on inputs
@@ -1075,6 +1076,166 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
     assertStorageCredentialsScoped(
         result, CUSTOM_UNIVERSE, storageUri(CUSTOM_UNIVERSE, "BigQueryRead"), explicitScopes);
+  }
+
+  @Test
+  public void testCustomUniverseDomainServiceAccountJsonKeyNotOverwrittenWhenUniverseDomainOmitted()
+      throws Exception {
+    JsonObject saJson = new JsonObject();
+    saJson.addProperty("type", "service_account");
+    saJson.addProperty("project_id", "custom-universe-project");
+    saJson.addProperty("private_key_id", "key-id-1");
+    saJson.addProperty("private_key", fake_pkcs8_key);
+    saJson.addProperty("client_email", "sa@custom-universe-project.iam.gserviceaccount.com");
+    saJson.addProperty("client_id", "123456");
+    saJson.addProperty("universe_domain", CUSTOM_UNIVERSE);
+
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=custom-universe-project;OAuthType=0;EnableDiagnosticTelemetry=0;"
+            + "OAuthServiceAcctEmail=sa@custom-universe-project.iam.gserviceaccount.com;OAuthPvtKey="
+            + saJson;
+
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(null);
+      try (BigQueryConnection connection = new BigQueryConnection(url)) {
+        assertNull(connection.universeDomain);
+        assertFalse(
+            connection.overrideProperties.containsKey(
+                BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
+        assertEquals(CUSTOM_UNIVERSE, connection.credentials.getUniverseDomain());
+        // Client-side universe validation must fail-closed before any network RPC is sent to GDU.
+        BigQueryException ex =
+            assertThrows(
+                BigQueryException.class,
+                () ->
+                    connection
+                        .getBigQuery()
+                        .query(QueryJobConfiguration.newBuilder("SELECT 1").build()));
+        assertTrue(ex.getMessage().contains("does not match the universe domain"));
+      }
+
+      // Explicit universeDomain in URL must also NOT overwrite the JSON key's universe_domain.
+      try (BigQueryConnection explicitMismatchConn =
+          new BigQueryConnection(url + ";universeDomain=other-universe.example.com")) {
+        assertEquals("other-universe.example.com", explicitMismatchConn.universeDomain);
+        assertEquals(CUSTOM_UNIVERSE, explicitMismatchConn.credentials.getUniverseDomain());
+        BigQueryException ex =
+            assertThrows(
+                BigQueryException.class,
+                () ->
+                    explicitMismatchConn
+                        .getBigQuery()
+                        .query(QueryJobConfiguration.newBuilder("SELECT 1").build()));
+        assertTrue(ex.getMessage().contains("does not match the universe domain"));
+      }
+    }
+  }
+
+  @Test
+  public void testConnectionHonorsEnvUniverseDomainWithoutOverwritingJsonCredentials()
+      throws Exception {
+    JsonObject gduSaJson = new JsonObject();
+    gduSaJson.addProperty("type", "service_account");
+    gduSaJson.addProperty("project_id", "gdu-project");
+    gduSaJson.addProperty("private_key_id", "key-id-2");
+    gduSaJson.addProperty("private_key", fake_pkcs8_key);
+    gduSaJson.addProperty("client_email", "sa@gdu-project.iam.gserviceaccount.com");
+    gduSaJson.addProperty("client_id", "654321");
+
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=gdu-project;OAuthType=0;EnableDiagnosticTelemetry=0;"
+            + "OAuthServiceAcctEmail=sa@gdu-project.iam.gserviceaccount.com;OAuthPvtKey="
+            + gduSaJson;
+
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(CUSTOM_UNIVERSE);
+      try (BigQueryConnection connection = new BigQueryConnection(url)) {
+        // Clients honor GOOGLE_CLOUD_UNIVERSE_DOMAIN, while GDU JSON credential stays
+        // googleapis.com
+        assertEquals(CUSTOM_UNIVERSE, connection.universeDomain);
+        assertEquals(CUSTOM_UNIVERSE, connection.getBigQuery().getOptions().getUniverseDomain());
+        assertEquals(
+            CUSTOM_UNIVERSE, connection.getBigQueryReadClient().getSettings().getUniverseDomain());
+        assertEquals(
+            CUSTOM_UNIVERSE, connection.getBigQueryWriteClient().getSettings().getUniverseDomain());
+        assertFalse(
+            connection.overrideProperties.containsKey(
+                BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
+        assertEquals(DEFAULT_UNIVERSE, connection.credentials.getUniverseDomain());
+      }
+    }
+
+    // Blank/whitespace GOOGLE_CLOUD_UNIVERSE_DOMAIN resolves to googleapis.com so GAX clients
+    // do not re-read the raw empty env var and construct an invalid host.
+    try (MockedStatic<BigQueryJdbcUrlUtility> blankEnvUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      blankEnvUtil.when(BigQueryJdbcUrlUtility::readRawEnvUniverseDomain).thenReturn("");
+      try (BigQueryConnection blankEnvConn = new BigQueryConnection(url)) {
+        assertEquals(DEFAULT_UNIVERSE, blankEnvConn.universeDomain);
+        assertEquals(DEFAULT_UNIVERSE, blankEnvConn.getBigQuery().getOptions().getUniverseDomain());
+        assertEquals(
+            DEFAULT_UNIVERSE,
+            blankEnvConn.getBigQueryReadClient().getSettings().getUniverseDomain());
+        assertEquals(
+            DEFAULT_UNIVERSE,
+            blankEnvConn.getBigQueryWriteClient().getSettings().getUniverseDomain());
+        assertFalse(
+            blankEnvConn.overrideProperties.containsKey(
+                BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
+      }
+    }
+  }
+
+  @Test
+  public void
+      testConnectionCustomUniverseDomainJsonKeyMatchesEnvUniverseDomainAcrossAllThreeClients()
+          throws Exception {
+    JsonObject customSaJson = new JsonObject();
+    customSaJson.addProperty("type", "service_account");
+    customSaJson.addProperty("project_id", "custom-universe-project");
+    customSaJson.addProperty("private_key_id", "key-id-3");
+    customSaJson.addProperty("private_key", fake_pkcs8_key);
+    customSaJson.addProperty("client_email", "sa@custom-universe-project.iam.gserviceaccount.com");
+    customSaJson.addProperty("client_id", "999999");
+    customSaJson.addProperty("universe_domain", CUSTOM_UNIVERSE);
+
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=custom-universe-project;OAuthType=0;EnableDiagnosticTelemetry=0;"
+            + "OAuthServiceAcctEmail=sa@custom-universe-project.iam.gserviceaccount.com;OAuthPvtKey="
+            + customSaJson;
+
+    try (MockedStatic<BigQueryJdbcUrlUtility> urlUtil =
+        mockStatic(BigQueryJdbcUrlUtility.class, CALLS_REAL_METHODS)) {
+      urlUtil.when(BigQueryJdbcUrlUtility::getEnvUniverseDomain).thenReturn(CUSTOM_UNIVERSE);
+      try (BigQueryConnection connection = new BigQueryConnection(url)) {
+        assertEquals(CUSTOM_UNIVERSE, connection.universeDomain);
+        assertEquals(CUSTOM_UNIVERSE, connection.credentials.getUniverseDomain());
+        assertTrue(connection.getBigQuery().getOptions().hasValidUniverseDomain());
+        assertStorageCredentialsScoped(
+            connection
+                .getBigQueryReadClient()
+                .getSettings()
+                .getCredentialsProvider()
+                .getCredentials(),
+            CUSTOM_UNIVERSE,
+            storageUri(CUSTOM_UNIVERSE, "BigQueryRead"),
+            BigQueryReadSettings.getDefaultServiceScopes());
+        assertStorageCredentialsScoped(
+            connection
+                .getBigQueryWriteClient()
+                .getSettings()
+                .getCredentialsProvider()
+                .getCredentials(),
+            CUSTOM_UNIVERSE,
+            storageUri(CUSTOM_UNIVERSE, "BigQueryWrite"),
+            BigQueryWriteSettings.getDefaultServiceScopes());
+      }
+    }
   }
 
   private static URI storageUri(String universeDomain, String service) {

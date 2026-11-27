@@ -108,4 +108,9 @@ public final class MaterializedView {
   public int hashCode() {
     return Objects.hashCode(proto);
   }
+
+  @Override
+  public String toString() {
+    return proto.toString();
+  }
 }

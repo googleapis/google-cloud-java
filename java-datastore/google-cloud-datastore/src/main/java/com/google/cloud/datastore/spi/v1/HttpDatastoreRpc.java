@@ -20,6 +20,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.core.InternalApi;
+import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreException;
@@ -131,7 +132,11 @@ public class HttpDatastoreRpc implements DatastoreRpc {
   @VisibleForTesting
   void validateUniverseDomain() {
     Credentials credentials = options.getCredentials();
-    if (credentials == null || NoCredentials.getInstance().equals(credentials)) {
+    // resolvedUniverseDomain is already validated in the constructor. API keys carry no universe
+    // domain metadata, so callers are responsible for matching the configured universe domain.
+    if (credentials == null
+        || NoCredentials.getInstance().equals(credentials)
+        || credentials instanceof ApiKeyCredentials) {
       return;
     }
     try {

@@ -113,6 +113,9 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private static final long serialVersionUID = -2133257318957488431L;
   private static final int TWELVE_HOURS_IN_SECONDS = 43200;
   private static final int DEFAULT_LIFETIME_IN_SECONDS = 3600;
+  private static final String GENERATE_ACCESS_TOKEN_ACTION = ":generateAccessToken";
+  private static final String SIGN_BLOB_ACTION = ":signBlob";
+  private static final String GENERATE_ID_TOKEN_ACTION = ":generateIdToken";
   private volatile GoogleCredentials sourceCredentials;
   private transient volatile @Nullable AccessToken cachedStsAccessToken;
   private transient volatile @Nullable KeyStore cachedStsKeyStore;
@@ -367,17 +370,32 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public byte[] sign(byte[] toSign) {
     try {
       return IamUtils.sign(
-          getAccount(),
+          getIamEndpoint(IamUtils.IAM_SIGN_BLOB_ENDPOINT_FORMAT, SIGN_BLOB_ACTION),
           sourceCredentials,
-          getUniverseDomain(),
           transportFactory.create(),
           toSign,
           ImmutableMap.of("delegates", this.delegates));
     } catch (IOException ex) {
       // Throwing an IOException would be a breaking change, so wrap it here.
-      // This should not happen for this credential type.
-      throw new SigningException("Failed to sign: Error obtaining universe domain", ex);
+      throw new SigningException("Failed to sign: Error obtaining IAM endpoint", ex);
     }
+  }
+
+  private String getIamEndpoint(String endpointFormat, String action) throws IOException {
+    String endpointOverride = this.iamEndpointOverride;
+    if (endpointOverride == null) {
+      return String.format(endpointFormat, getUniverseDomain(), getAccount());
+    }
+    // Falling back to the universe-domain endpoint could send source credentials to the wrong host.
+    if (!endpointOverride.endsWith(GENERATE_ACCESS_TOKEN_ACTION)) {
+      throw new IOException(
+          String.format(
+              "Invalid IAM endpoint override: %s. Expected a URL ending in %s.",
+              endpointOverride, GENERATE_ACCESS_TOKEN_ACTION));
+    }
+    return endpointOverride.substring(
+            0, endpointOverride.length() - GENERATE_ACCESS_TOKEN_ACTION.length())
+        + action;
   }
 
   /**
@@ -462,6 +480,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     String quotaProjectId;
     String targetPrincipal;
     String serviceAccountImpersonationUrl;
+    String universeDomain;
     // This applies to the scopes applied for the impersonated token and not the
     // underlying source credential. Default to empty list to keep the existing
     // behavior (when json file did not populate a scopes field).
@@ -474,6 +493,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       sourceCredentialsJson = (Map<String, Object>) json.get("source_credentials");
       sourceCredentialsType = (String) sourceCredentialsJson.get("type");
       quotaProjectId = (String) json.get("quota_project_id");
+      universeDomain = (String) json.get("universe_domain");
       targetPrincipal = extractTargetPrincipal(serviceAccountImpersonationUrl);
       if (json.containsKey("scopes")) {
         scopes = ImmutableList.copyOf((List<String>) json.get("scopes"));
@@ -496,7 +516,19 @@ public class ImpersonatedCredentials extends GoogleCredentials
               "A credential of type %s is not supported as source credential for impersonation.",
               sourceCredentialsType));
     }
-    return ImpersonatedCredentials.newBuilder()
+    ImpersonatedCredentials.Builder builder = ImpersonatedCredentials.newBuilder();
+    if (universeDomain != null && !universeDomain.trim().isEmpty()) {
+      String sourceUniverseDomain = sourceCredentials.getUniverseDomain();
+      if (!universeDomain.equals(sourceUniverseDomain)) {
+        throw new IOException(
+            String.format(
+                "Universe domain %s in source credentials does not match %s universe domain"
+                    + " set for impersonated credentials.",
+                sourceUniverseDomain, universeDomain));
+      }
+      builder.setUniverseDomain(universeDomain);
+    }
+    return builder
         .setSourceCredentials(sourceCredentials)
         .setTargetPrincipal(targetPrincipal)
         .setDelegates(delegates)
@@ -900,14 +932,13 @@ public class ImpersonatedCredentials extends GoogleCredentials
     boolean includeEmail =
         options != null && options.contains(IdTokenProvider.Option.INCLUDE_EMAIL);
     return IamUtils.getIdToken(
-        getAccount(),
+        getIamEndpoint(IamUtils.IAM_ID_TOKEN_ENDPOINT_FORMAT, GENERATE_ID_TOKEN_ACTION),
         sourceCredentials,
         transportFactory.create(),
         targetAudience,
         includeEmail,
         ImmutableMap.of("delegates", this.delegates),
-        getMetricsCredentialType(),
-        getUniverseDomain());
+        getMetricsCredentialType());
   }
 
   @Override

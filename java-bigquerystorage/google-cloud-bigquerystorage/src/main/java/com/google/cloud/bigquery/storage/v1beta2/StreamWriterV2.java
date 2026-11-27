@@ -159,19 +159,10 @@ public class StreamWriterV2 implements AutoCloseable {
     this.waitingRequestQueue = new LinkedList<AppendRequestAndResponse>();
     this.inflightRequestQueue = new LinkedList<AppendRequestAndResponse>();
     if (builder.client == null) {
-      BigQueryWriteSettings stubSettings =
-          BigQueryWriteSettings.newBuilder()
-              .setCredentialsProvider(builder.credentialsProvider)
-              .setTransportChannelProvider(builder.channelProvider)
-              .setEndpoint(builder.endpoint)
-              // (b/185842996): Temporily fix this by explicitly providing the header.
-              .setHeaderProvider(
-                  FixedHeaderProvider.create(
-                      "x-goog-request-params", "write_stream=" + this.streamName))
-              .build();
-      this.client = BigQueryWriteClient.create(stubSettings);
+      this.client = BigQueryWriteClient.create(getBigQueryWriteSettings(builder, this.streamName));
       this.ownsBigQueryWriteClient = true;
     } else {
+      validateUniverseDomain(builder);
       this.client = builder.client;
       this.ownsBigQueryWriteClient = false;
     }
@@ -200,6 +191,44 @@ public class StreamWriterV2 implements AutoCloseable {
               }
             });
     this.appendThread.start();
+  }
+
+  /**
+   * Validates that an explicitly configured universe domain matches the provided {@link
+   * BigQueryWriteClient}'s universe domain.
+   */
+  static void validateUniverseDomain(Builder builder) {
+    if (builder.client != null && builder.universeDomain != null) {
+      String clientUniverseDomain = builder.client.getSettings().getUniverseDomain();
+      if (clientUniverseDomain != null && !builder.universeDomain.equals(clientUniverseDomain)) {
+        throw new IllegalArgumentException(
+            String.format(
+                "The configured universe domain (%s) does not match the universe domain on the"
+                    + " provided BigQueryWriteClient (%s).",
+                builder.universeDomain, clientUniverseDomain));
+      }
+    }
+  }
+
+  /** Builds {@link BigQueryWriteSettings} from the builder without pinning the default endpoint. */
+  static BigQueryWriteSettings getBigQueryWriteSettings(Builder builder, String streamName)
+      throws IOException {
+    BigQueryWriteSettings.Builder settingsBuilder =
+        BigQueryWriteSettings.newBuilder()
+            .setCredentialsProvider(builder.credentialsProvider)
+            .setTransportChannelProvider(builder.channelProvider)
+            // (b/185842996): Temporily fix this by explicitly providing the header.
+            .setHeaderProvider(
+                FixedHeaderProvider.create("x-goog-request-params", "write_stream=" + streamName));
+    // Omit setEndpoint(getDefaultEndpoint()) so GAX expands GOOGLE_CLOUD_UNIVERSE_DOMAIN when
+    // no custom endpoint is explicitly configured.
+    if (builder.endpoint != null) {
+      settingsBuilder.setEndpoint(builder.endpoint);
+    }
+    if (builder.universeDomain != null) {
+      settingsBuilder.setUniverseDomain(builder.universeDomain);
+    }
+    return settingsBuilder.build();
   }
 
   /**
@@ -527,7 +556,9 @@ public class StreamWriterV2 implements AutoCloseable {
 
     private long maxInflightBytes = DEFAULT_MAX_INFLIGHT_BYTES;
 
-    private String endpoint = BigQueryWriteSettings.getDefaultEndpoint();
+    private String endpoint = null;
+
+    private String universeDomain = null;
 
     private TransportChannelProvider channelProvider =
         BigQueryWriteSettings.defaultGrpcTransportProviderBuilder().setChannelsPerCpu(1).build();
@@ -566,6 +597,12 @@ public class StreamWriterV2 implements AutoCloseable {
     /** Gives the ability to override the gRPC endpoint. */
     public Builder setEndpoint(String endpoint) {
       this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
+      return this;
+    }
+
+    /** Gives the ability to override the universe domain. */
+    public Builder setUniverseDomain(String universeDomain) {
+      this.universeDomain = universeDomain;
       return this;
     }
 

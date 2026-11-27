@@ -46,13 +46,17 @@ import static org.mockito.Mockito.withSettings;
 
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonGenerator;
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.webtoken.JsonWebToken.Payload;
+import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.Clock;
 import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner.SigningException;
@@ -874,7 +878,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
 
     SigningException exception =
         assertThrows(SigningException.class, () -> targetCredentials.sign(expectedSignature));
-    assertEquals("Failed to sign: Error obtaining universe domain", exception.getMessage());
+    assertEquals("Failed to sign: Error obtaining IAM endpoint", exception.getMessage());
   }
 
   @Test
@@ -1595,5 +1599,154 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             .getTransport()
             .getRequest()
             .getFirstHeaderValue("Authorization"));
+  }
+
+  @Test
+  void fromStream_matchingTopLevelUniverseDomain_loads() throws IOException {
+    GenericJson json = serviceAccountImpersonationJson(NONGDU_IMPERSONATION_URL);
+    setSourceUniverseDomain(json, TEST_UNIVERSE_DOMAIN);
+    json.put("universe_domain", TEST_UNIVERSE_DOMAIN);
+
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.fromStream(TestUtils.jsonToInputStream(json));
+
+    assertEquals(TEST_UNIVERSE_DOMAIN, credentials.getUniverseDomain());
+    assertTrue(credentials.isExplicitUniverseDomain());
+  }
+
+  @Test
+  void fromStream_topLevelUniverseDomainMismatchesUserSource_throwsIOException()
+      throws IOException {
+    // authorized_user sources always report the default universe.
+    GenericJson json =
+        buildImpersonationCredentialsJson(
+            NONGDU_IMPERSONATION_URL,
+            null,
+            null,
+            USER_ACCOUNT_CLIENT_ID,
+            USER_ACCOUNT_CLIENT_SECRET,
+            REFRESH_TOKEN,
+            IMMUTABLE_SCOPES_LIST);
+    json.put("universe_domain", TEST_UNIVERSE_DOMAIN);
+    InputStream stream = TestUtils.jsonToInputStream(json);
+
+    assertThrows(IOException.class, () -> ImpersonatedCredentials.fromStream(stream));
+  }
+
+  @Test
+  void sign_withImpersonationUrlFromStream_usesOverrideSignBlobEndpoint() throws IOException {
+    List<String> requestedUrls = new ArrayList<>();
+    GenericJson json = serviceAccountImpersonationJson(NONGDU_IMPERSONATION_URL);
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.fromStream(
+            TestUtils.jsonToInputStream(json), recordingSignBlobTransportFactory(requestedUrls));
+
+    credentials.sign(new byte[] {0x1});
+
+    assertEquals(
+        Collections.singletonList(
+            String.format(
+                IamUtils.IAM_SIGN_BLOB_ENDPOINT_FORMAT,
+                TEST_UNIVERSE_DOMAIN,
+                IMPERSONATED_CLIENT_EMAIL)),
+        requestedUrls);
+  }
+
+  @Test
+  void sign_withPscImpersonationUrl_usesPscSignBlobEndpoint() throws IOException {
+    String pscUrl =
+        "https://iamcredentials-myendpoint.p.googleapis.com/v1/projects/-/serviceAccounts/"
+            + IMPERSONATED_CLIENT_EMAIL;
+    List<String> requestedUrls = new ArrayList<>();
+    GenericJson json = serviceAccountImpersonationJson(pscUrl + ":generateAccessToken");
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.fromStream(
+            TestUtils.jsonToInputStream(json), recordingSignBlobTransportFactory(requestedUrls));
+
+    credentials.sign(new byte[] {0x1});
+
+    assertEquals(Collections.singletonList(pscUrl + ":signBlob"), requestedUrls);
+  }
+
+  @Test
+  void idTokenWithAudience_withImpersonationUrlFromStream_usesOverrideGenerateIdTokenEndpoint()
+      throws IOException {
+    List<String> requestedUrls = new ArrayList<>();
+    GenericJson json = serviceAccountImpersonationJson(NONGDU_IMPERSONATION_URL);
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.fromStream(
+            TestUtils.jsonToInputStream(json), recordingIdTokenTransportFactory(requestedUrls));
+
+    credentials.idTokenWithAudience("https://foo.bar", null);
+
+    assertEquals(
+        Collections.singletonList(
+            String.format(
+                IamUtils.IAM_ID_TOKEN_ENDPOINT_FORMAT,
+                TEST_UNIVERSE_DOMAIN,
+                IMPERSONATED_CLIENT_EMAIL)),
+        requestedUrls);
+  }
+
+  @Test
+  void idTokenWithAudience_withBaseHostOverride_throwsIOExceptionWithoutNetworkCall()
+      throws IOException {
+    List<String> requestedUrls = new ArrayList<>();
+    ImpersonatedCredentials credentials =
+        credentialsWithOverride(
+            "https://iamcredentials." + TEST_UNIVERSE_DOMAIN,
+            recordingIdTokenTransportFactory(requestedUrls));
+
+    assertThrows(IOException.class, () -> credentials.idTokenWithAudience("https://foo.bar", null));
+    assertEquals(Collections.emptyList(), requestedUrls);
+  }
+
+  private static GenericJson serviceAccountImpersonationJson(String impersonationUrl) {
+    return buildImpersonationCredentialsJson(impersonationUrl, null, null, Collections.emptyList());
+  }
+
+  @SuppressWarnings("unchecked")
+  private static void setSourceUniverseDomain(GenericJson json, String universeDomain) {
+    ((Map<String, Object>) json.get("source_credentials")).put("universe_domain", universeDomain);
+  }
+
+  private static ImpersonatedCredentials credentialsWithOverride(
+      String iamEndpointOverride, HttpTransportFactory transportFactory) throws IOException {
+    return ImpersonatedCredentials.newBuilder()
+        .setSourceCredentials(getSourceCredentials())
+        .setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL)
+        .setScopes(Collections.emptyList())
+        .setIamEndpointOverride(iamEndpointOverride)
+        .setHttpTransportFactory(transportFactory)
+        .build();
+  }
+
+  private static HttpTransportFactory recordingSignBlobTransportFactory(
+      List<String> requestedUrls) {
+    return recordingIamTransportFactory(requestedUrls, "{\"signedBlob\":\"3q2+\"}");
+  }
+
+  private static HttpTransportFactory recordingIdTokenTransportFactory(List<String> requestedUrls) {
+    return recordingIamTransportFactory(requestedUrls, "{\"token\":\"" + STANDARD_ID_TOKEN + "\"}");
+  }
+
+  private static HttpTransportFactory recordingIamTransportFactory(
+      List<String> requestedUrls, String responseJson) {
+    return () ->
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            requestedUrls.add(url);
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() {
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(HttpStatusCodes.STATUS_CODE_OK)
+                    .setContentType("application/json")
+                    .setContent(responseJson);
+              }
+            };
+          }
+        };
   }
 }

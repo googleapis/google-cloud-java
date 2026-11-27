@@ -881,9 +881,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
     try {
       String account = getAccount();
       return IamUtils.sign(
-          account,
+          String.format(IamUtils.IAM_SIGN_BLOB_ENDPOINT_FORMAT, this.getUniverseDomain(), account),
           this,
-          this.getUniverseDomain(),
           transportFactory.create(),
           toSign,
           Collections.<String, Object>emptyMap());
