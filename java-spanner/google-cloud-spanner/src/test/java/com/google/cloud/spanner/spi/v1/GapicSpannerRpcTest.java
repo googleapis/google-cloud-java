@@ -2810,6 +2810,21 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testGetFallbackOpenTelemetryReturnsNoopWithNoCredentials() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .setBuiltInMetricsEnabled(true)
+            .setEnableDirectAccess(true)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, /* initializeStubs= */ false);
+
+    assertSame(OpenTelemetry.noop(), rpc.getFallbackOpenTelemetry(options));
+  }
+
+  @Test
   public void testSetEmulatorHostIsDetectedWithoutEnvironmentVariable() throws Exception {
     SpannerOptions emulatorOptions =
         SpannerOptions.newBuilder()
