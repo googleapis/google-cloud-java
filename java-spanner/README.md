@@ -165,6 +165,8 @@ SpannerOptions options = SpannerOptions.newBuilder()
 
 You can also disable the default Cloud Monitoring export by setting `SPANNER_DISABLE_BUILTIN_METRICS` to `true`. These controls affect only the Cloud Monitoring export. They do not affect a caller-owned client-metrics export configured with `CustomOpenTelemetryMetricsProvider`.
 
+When a custom non-`*.googleapis.com` host is configured via `SpannerOptions.Builder.setHost(...)` (or a JDBC/Connection URL host or `endpoint` property) without setting `setUniverseDomain(...)`, `GOOGLE_CLOUD_UNIVERSE_DOMAIN`, `setMonitoringHost(...)`, or `SPANNER_MONITORING_HOST`, the default Cloud Monitoring export is automatically disabled so telemetry and credentials are not sent to `monitoring.googleapis.com`.
+
 > Note: Client-side metrics needs `monitoring.timeSeries.create` IAM permission to export metrics data to Cloud Monitoring. Ask your administrator to grant your service account the [Monitoring Metric Writer](https://cloud.google.com/iam/docs/roles-permissions/monitoring#monitoring.metricWriter) (roles/monitoring.metricWriter) IAM role on the project.
 
 #### Exporting client metrics to OpenTelemetry

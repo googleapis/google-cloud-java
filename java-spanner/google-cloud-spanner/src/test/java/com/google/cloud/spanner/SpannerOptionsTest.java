@@ -94,7 +94,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import org.jspecify.annotations.Nullable;
@@ -1581,6 +1583,7 @@ public class SpannerOptionsTest {
       SpannerOptions options =
           SpannerOptions.newBuilder()
               .setProjectId("some-project")
+              .setEmulatorHost(null)
               .setCredentials(NoCredentials.getInstance())
               .setClientMetricsProvider(provider)
               .build();
@@ -2883,14 +2886,382 @@ public class SpannerOptionsTest {
         });
   }
 
+  @Test
+  public void testBuiltInMetricsDisabledForCustomHostWithoutExplicitTarget() {
+    useGrpcBuiltInMetricsEnabledEnvironment();
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setCredentials(GoogleCredentials.create(new AccessToken("test-token", null)))
+              .build();
+      assertFalse(options.isEnableBuiltInMetrics());
+      assertFalse(options.isEnableChannelPoolBuiltInMetrics());
+
+      RecordingBuiltInMetricsProvider provider = new RecordingBuiltInMetricsProvider();
+      options.builtInMetricsProvider = provider;
+
+      assertNull(options.getBuiltInOpenTelemetry());
+      options.enablegRPCMetrics(
+          InstantiatingGrpcChannelProvider.newBuilder(), /* isEmulatorEnabled= */ false);
+      options.getApiTracerFactory(/* isAdminClient= */ false, /* isEmulatorEnabled= */ false);
+      options.initializeBuiltInMetrics(DatabaseId.of("tpc-project", "i", "d"));
+
+      assertTrue(provider.universeDomains.isEmpty());
+      assertTrue(provider.fallbackProjects.isEmpty());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testBuiltInMetricsEnabledForDefaultUniverseHosts() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      String[] defaultUniverseHosts = {
+        null,
+        "",
+        "https://spanner.googleapis.com",
+        "https://SPANNER.GOOGLEAPIS.COM:443/",
+        "https://spanner.us-central1.rep.googleapis.com",
+        "https://private.googleapis.com",
+        "https://restricted.googleapis.com",
+      };
+      for (String host : defaultUniverseHosts) {
+        SpannerOptions options =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(NoCredentials.getInstance())
+                .setEmulatorHost(null)
+                .setHost(host)
+                .build();
+        assertTrue(
+            "Expected built-in metrics enabled for host: " + host,
+            options.isEnableBuiltInMetrics());
+      }
+      // Contrast check: ensure the default-universe allowlist is not vacuously true for all hosts.
+      SpannerOptions nonDefaultHost =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .build();
+      assertFalse(nonDefaultHost.isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testBuiltInMetricsFailClosedForSpoofedAndMalformedHosts() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      String[] nonDefaultOrMalformedHosts = {
+        "https://spanner.googleapis.com.evil.com",
+        "https://googleapis.com",
+        "https://.googleapis.com",
+        "http://localhost:9010",
+        "spanner.googleapis.com:443",
+        "not-a-url",
+      };
+      for (String host : nonDefaultOrMalformedHosts) {
+        SpannerOptions options =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(NoCredentials.getInstance())
+                .setEmulatorHost(null)
+                .setHost(host)
+                .build();
+        assertFalse(
+            "Expected built-in metrics disabled for host: " + host,
+            options.isEnableBuiltInMetrics());
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testBuiltInMetricsEnabledForCustomHostWithExplicitTarget() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      SpannerOptions withBuilderUniverse =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setUniverseDomain("tpc.example")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertTrue(withBuilderUniverse.isEnableBuiltInMetrics());
+
+      @SuppressWarnings("deprecation")
+      SpannerOptions withBuilderMonitoringHost =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setMonitoringHost("monitoring.tpc.example:443")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertTrue(withBuilderMonitoringHost.isEnableBuiltInMetrics());
+
+      @SuppressWarnings("deprecation")
+      SpannerOptions withBlankMonitoringHost =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setMonitoringHost("   ")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertFalse(withBlankMonitoringHost.isEnableBuiltInMetrics());
+
+      SpannerOptions withEmptyUniverse =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setUniverseDomain("")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertFalse(withEmptyUniverse.isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+
+    useUniverseDomainEnvironment("tpc.example");
+    try {
+      SpannerOptions withEnvUniverse =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertTrue(withEnvUniverse.isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public String getMonitoringHost() {
+            return "monitoring.tpc.example:443";
+          }
+        });
+    try {
+      SpannerOptions withEnvMonitoringHost =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertTrue(withEnvMonitoringHost.isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testCustomHostToBuilderReEvaluatesBuiltInMetrics() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      SpannerOptions customOnly =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertFalse(customOnly.isEnableBuiltInMetrics());
+
+      assertTrue(
+          customOnly.toBuilder().setUniverseDomain("tpc.example").build().isEnableBuiltInMetrics());
+      @SuppressWarnings("deprecation")
+      SpannerOptions withMonitoringHost =
+          customOnly.toBuilder().setMonitoringHost("monitoring.tpc.example:443").build();
+      assertTrue(withMonitoringHost.isEnableBuiltInMetrics());
+      assertTrue(customOnly.toBuilder().setHost(null).build().isEnableBuiltInMetrics());
+
+      SpannerOptions explicitlyDisabled =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setBuiltInMetricsEnabled(false)
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertFalse(
+          explicitlyDisabled.toBuilder()
+              .setUniverseDomain("tpc.example")
+              .build()
+              .isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testCustomHostPreservesCustomMetricsProvider() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      CustomOpenTelemetryMetricsProvider provider =
+          CustomOpenTelemetryMetricsProvider.create(OpenTelemetry.noop());
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setCredentials(NoCredentials.getInstance())
+              .setClientMetricsProvider(provider)
+              .build();
+      assertFalse(options.isEnableBuiltInMetrics());
+      assertSame(provider, options.getClientMetricsProvider());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testCustomHostWarningSuppressedForEmulatorAndPlainText() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    Logger spannerOptionsLogger = Logger.getLogger(SpannerOptions.class.getName());
+    Level previousLevel = spannerOptionsLogger.getLevel();
+    List<LogRecord> warnings = new ArrayList<>();
+    Handler handler =
+        new Handler() {
+          @Override
+          public void publish(LogRecord record) {
+            if (record.getLevel().intValue() >= Level.WARNING.intValue()) {
+              warnings.add(record);
+            }
+          }
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public void close() {}
+        };
+    spannerOptionsLogger.addHandler(handler);
+    spannerOptionsLogger.setLevel(Level.WARNING);
+    try {
+      SpannerOptions customHttps =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setCredentials(GoogleCredentials.create(new AccessToken("test-token", null)))
+              .build();
+      assertFalse(customHttps.isEnableBuiltInMetrics());
+      assertEquals(1, warnings.size());
+      assertTrue(warnings.get(0).getMessage().contains("Disabling built-in Cloud Monitoring"));
+
+      warnings.clear();
+      SpannerOptions emulatorOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setEmulatorHost("localhost:9010")
+              .build();
+      assertFalse(emulatorOptions.isEnableBuiltInMetrics());
+      assertTrue(warnings.isEmpty());
+
+      SpannerOptions plainTextCustom =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setHost("http://localhost:9010")
+              .usePlainText()
+              .build();
+      assertFalse(plainTextCustom.isEnableBuiltInMetrics());
+      assertTrue(warnings.isEmpty());
+    } finally {
+      spannerOptionsLogger.removeHandler(handler);
+      spannerOptionsLogger.setLevel(previousLevel);
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testCustomHostEdgeCasesAndToBuilderFromDefaultHost() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      // Additional fail-closed malformed / spoofed host shapes.
+      String[] additionalNonDefaultHosts = {
+        "   ", "https://spanner.googleapis.com@evil.com", "https://spanner.googleapis.com.",
+      };
+      for (String host : additionalNonDefaultHosts) {
+        SpannerOptions options =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(NoCredentials.getInstance())
+                .setEmulatorHost(null)
+                .setHost(host)
+                .build();
+        assertFalse(
+            "Expected built-in metrics disabled for host: " + host,
+            options.isEnableBuiltInMetrics());
+      }
+
+      // Explicit opt-in to googleapis.com keeps built-in metrics enabled on a custom host.
+      SpannerOptions explicitDefaultUniverse =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setUniverseDomain("googleapis.com")
+              .build();
+      assertTrue(explicitDefaultUniverse.isEnableBuiltInMetrics());
+
+      // Reverse toBuilder() transition: default host (enabled) -> custom host (disabled).
+      SpannerOptions defaultOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .build();
+      assertTrue(defaultOptions.isEnableBuiltInMetrics());
+      assertFalse(
+          defaultOptions.toBuilder()
+              .setHost("https://spanner.tpc.example")
+              .build()
+              .isEnableBuiltInMetrics());
+
+      // Clearing monitoringHost via toBuilder() re-disables built-in metrics on a custom host.
+      @SuppressWarnings("deprecation")
+      SpannerOptions withMonitoringHost =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setMonitoringHost("monitoring.tpc.example:443")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertTrue(withMonitoringHost.isEnableBuiltInMetrics());
+      @SuppressWarnings("deprecation")
+      SpannerOptions clearedMonitoringHost =
+          withMonitoringHost.toBuilder().setMonitoringHost(null).build();
+      assertFalse(clearedMonitoringHost.isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
   /**
-   * Records the universe domain, credentials, and custom OpenTelemetry instances that {@link
-   * SpannerOptions} passes to the metrics provider.
+   * Records the universe domain, credentials, custom OpenTelemetry instances, and fallback projects
+   * that {@link SpannerOptions} passes to the metrics provider.
    */
   private static final class RecordingBuiltInMetricsProvider extends BuiltInMetricsProvider {
     private final List<String> universeDomains = new ArrayList<>();
     private final List<Credentials> credentials = new ArrayList<>();
     private final List<OpenTelemetry> customOpenTelemetries = new ArrayList<>();
+    private final List<String> fallbackProjects = new ArrayList<>();
 
     @Override
     synchronized OpenTelemetry getOrCreateOpenTelemetry(
@@ -2917,6 +3288,11 @@ public class SpannerOptionsTest {
         OpenTelemetry openTelemetry) {
       customOpenTelemetries.add(openTelemetry);
       super.enableGrpcMetrics(channelProviderBuilder, openTelemetry);
+    }
+
+    @Override
+    synchronized void setProjectIdIfAbsent(String projectId) {
+      fallbackProjects.add(projectId);
     }
   }
 

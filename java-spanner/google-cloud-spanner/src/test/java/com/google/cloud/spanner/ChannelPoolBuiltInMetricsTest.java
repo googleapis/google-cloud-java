@@ -22,6 +22,7 @@ import com.google.api.MetricDescriptor;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
@@ -349,6 +350,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
         SpannerOptions.newBuilder()
             .setProjectId("my-project")
             .setHost(String.format("http://localhost:%d", getPort()))
+            .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
             .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
             .setCredentials(NoCredentials.getInstance())
             .enableGrpcGcpExtension()
@@ -420,6 +422,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
     return SpannerOptions.newBuilder()
         .setProjectId("my-project")
         .setHost(String.format("http://localhost:%d", getPort()))
+        .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
         .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
         .setCredentials(NoCredentials.getInstance())
         .enableGrpcGcpExtension()
@@ -432,6 +435,7 @@ public class ChannelPoolBuiltInMetricsTest extends AbstractMockServerTest {
         .setProjectId("my-project")
         .setEnableDirectAccess(true)
         .setHost("http://localhost:1")
+        .setUniverseDomain(Credentials.GOOGLE_DEFAULT_UNIVERSE)
         .setCredentials(NoCredentials.getInstance())
         .enableGrpcGcpExtension()
         .disableDynamicChannelPool()
