@@ -85,6 +85,16 @@ public abstract class TableDefinition implements Serializable {
 
     public static final Type SNAPSHOT = type.createAndRegister("SNAPSHOT");
 
+    /**
+     * A table whose metadata is stored in an external metastore, such as a BigLake Iceberg table.
+     * Instances of {@code TableDefinition} for this type are implemented by {@link
+     * ExternalTableDefinition}.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/docs/iceberg-tables">BigLake tables for
+     *     Apache Iceberg</a>
+     */
+    public static final Type METASTORE = type.createAndRegister("METASTORE");
+
     private Type(String constant) {
       super(constant);
     }
@@ -169,9 +179,16 @@ public abstract class TableDefinition implements Serializable {
         return (T) ModelTableDefinition.fromPb(tablePb);
       case "SNAPSHOT":
         return (T) SnapshotTableDefinition.fromPb(tablePb);
+      case "METASTORE":
+        return (T) ExternalTableDefinition.fromPb(tablePb);
       default:
-        // never reached
-        throw new IllegalArgumentException("Format " + tablePb.getType() + " is not supported");
+        // The backend can return table types that this client does not know yet. Do not fail:
+        // one unknown table would otherwise break listTables() for the whole dataset. The
+        // original type string is kept, so getType() still reports it.
+        if (tablePb.getExternalDataConfiguration() != null) {
+          return (T) ExternalTableDefinition.fromPb(tablePb);
+        }
+        return (T) StandardTableDefinition.fromPb(tablePb);
     }
   }
 }
