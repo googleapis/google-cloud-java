@@ -20,19 +20,32 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.StubSettings;
+import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.ClientConfiguration;
+import com.google.bigtable.v2.ReadRowsRequest;
+import com.google.bigtable.v2.RowRange;
+import com.google.bigtable.v2.RowSet;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataClientTestHelpers;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.internal.compat.Shim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
+import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
 import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.stub.BigtableClientContext;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -44,12 +57,16 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import javax.annotation.Nullable;
 
 /**
@@ -78,6 +95,12 @@ public class CloudEnv extends AbstractTestEnv {
         }
       };
 
+  private static final Set<String> SESSION_DIVERTED_CLASSIC_METHODS =
+      ImmutableSet.of(
+          BigtableGrpc.getMutateRowMethod().getFullMethodName(),
+          BigtableGrpc.getCheckAndMutateRowMethod().getFullMethodName(),
+          BigtableGrpc.getReadModifyWriteRowMethod().getFullMethodName());
+
   private static final String DATA_ENDPOINT_PROPERTY_NAME = "bigtable.data-endpoint";
   private static final String ADMIN_ENDPOINT_PROPERTY_NAME = "bigtable.admin-endpoint";
   private static final String DATA_JWT_OVERRIDE_PROPERTY_NAME = "bigtable.data-jwt-audience";
@@ -101,6 +124,7 @@ public class CloudEnv extends AbstractTestEnv {
   @Nullable private final String appProfileId;
 
   private BigtableDataClient dataClient;
+  @Nullable private Shim sessionShim;
   private BigtableTableAdminClient tableAdminClient;
   private BigtableInstanceAdminClient instanceAdminClient;
 
@@ -177,37 +201,50 @@ public class CloudEnv extends AbstractTestEnv {
   }
 
   private void configureConnection(StubSettings.Builder<?, ?> stubSettings) {
-    // Build an remote address restricting interceptor
-    final ClientInterceptor interceptor;
+    final List<ClientInterceptor> interceptors = new ArrayList<>();
 
     switch (getConnectionMode()) {
       case DEFAULT:
-        // nothing special
-        return;
+        break;
       case REQUIRE_DIRECT_PATH:
-        interceptor =
+        interceptors.add(
             buildRemoteAddrInterceptor(
                 "DirectPath IPv4 or IPv6",
-                Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER));
+                Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER),
+                /* skipGetClientConfiguration= */ true));
         break;
       case REQUIRE_DIRECT_PATH_IPV4:
-        interceptor =
-            buildRemoteAddrInterceptor("DirectPath IPv4", Predicates.or(DIRECT_PATH_IPV4_MATCHER));
+        interceptors.add(
+            buildRemoteAddrInterceptor(
+                "DirectPath IPv4",
+                Predicates.or(DIRECT_PATH_IPV4_MATCHER),
+                /* skipGetClientConfiguration= */ true));
         break;
       case REQUIRE_CFE:
-        interceptor =
+        interceptors.add(
             buildRemoteAddrInterceptor(
                 "a CFE ip",
-                Predicates.not(Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER)));
+                Predicates.not(Predicates.or(DIRECT_PATH_IPV4_MATCHER, DIRECT_PATH_IPV6_MATCHER)),
+                /* skipGetClientConfiguration= */ false));
         break;
       default:
         throw new IllegalStateException("Unexpected ConnectionMode: " + getConnectionMode());
     }
 
-    final ClientInterceptor appProfileInterceptor =
-        appProfileId != null ? new AppProfileInterceptor() : null;
+    ExpectedProtocol expectedProtocol = getExpectedProtocol();
+    if (expectedProtocol != ExpectedProtocol.ANY) {
+      interceptors.add(buildProtocolEnforcementInterceptor(expectedProtocol));
+    }
 
-    // Inject the interceptor into the channel provider, taking care to preserve existing channel
+    if (appProfileId != null) {
+      interceptors.add(new AppProfileInterceptor());
+    }
+
+    if (interceptors.isEmpty()) {
+      return;
+    }
+
+    // Inject the interceptors into the channel provider, taking care to preserve existing channel
     // configurator
     InstantiatingGrpcChannelProvider.Builder channelProvider =
         ((InstantiatingGrpcChannelProvider) stubSettings.getTransportChannelProvider()).toBuilder();
@@ -225,9 +262,8 @@ public class CloudEnv extends AbstractTestEnv {
             if (oldConfigurator != null) {
               builder = oldConfigurator.apply(builder);
             }
-            builder = builder.intercept(interceptor);
-            if (appProfileInterceptor != null) {
-              builder = builder.intercept(appProfileInterceptor);
+            for (ClientInterceptor interceptor : interceptors) {
+              builder = builder.intercept(interceptor);
             }
             return builder;
           }
@@ -236,12 +272,25 @@ public class CloudEnv extends AbstractTestEnv {
     stubSettings.setTransportChannelProvider(channelProvider.build());
   }
 
-  private ClientInterceptor buildRemoteAddrInterceptor(
-      final String msg, final Predicate<InetSocketAddress> predicate) {
+  static ClientInterceptor buildRemoteAddrInterceptor(
+      final String msg,
+      final Predicate<InetSocketAddress> predicate,
+      final boolean skipGetClientConfiguration) {
     return new ClientInterceptor() {
       @Override
       public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
           MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+        if (skipGetClientConfiguration
+            && BigtableGrpc.getGetClientConfigurationMethod()
+                .getFullMethodName()
+                .equals(method.getFullMethodName())) {
+          // Regardless of data transport, GetClientConfiguration always goes over CloudPath
+          // (ClientConfigurationManager polls over a CFE channel even when data traffic uses
+          // DirectPath), so skip the DirectPath IP check for it. Under REQUIRE_CFE we keep
+          // checking it so ShimImpl's DirectAccess probe over DirectPath is rejected and forces
+          // CFE.
+          return next.newCall(method, callOptions);
+        }
         final ClientCall<ReqT, RespT> clientCall = next.newCall(method, callOptions);
 
         return new SimpleForwardingClientCall<ReqT, RespT>(clientCall) {
@@ -271,6 +320,109 @@ public class CloudEnv extends AbstractTestEnv {
         };
       }
     };
+  }
+
+  static ClientInterceptor buildProtocolEnforcementInterceptor(
+      final ExpectedProtocol expectedProtocol) {
+    return new ClientInterceptor() {
+      @Override
+      public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+          MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+        if (expectedProtocol == ExpectedProtocol.CLASSIC) {
+          if (isSessionOpenMethod(method)) {
+            return new FailingClientCall<>(
+                Status.FAILED_PRECONDITION.withDescription(
+                    "Expected protocol CLASSIC (-Dbigtable.expected-protocol=CLASSIC), "
+                        + "but attempted session RPC: "
+                        + method.getFullMethodName()));
+          }
+          return next.newCall(method, callOptions);
+        }
+
+        if (expectedProtocol == ExpectedProtocol.SESSION) {
+          String fullMethodName = method.getFullMethodName();
+          if (SESSION_DIVERTED_CLASSIC_METHODS.contains(fullMethodName)) {
+            return new FailingClientCall<>(
+                Status.FAILED_PRECONDITION.withDescription(
+                    "Expected protocol SESSION (-Dbigtable.expected-protocol=SESSION), "
+                        + "but attempted classic RPC: "
+                        + fullMethodName));
+          }
+          if (BigtableGrpc.getReadRowsMethod().getFullMethodName().equals(fullMethodName)) {
+            return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
+              @Override
+              public void sendMessage(ReqT message) {
+                if (message instanceof ReadRowsRequest
+                    && isSinglePointReadRows((ReadRowsRequest) message)) {
+                  StatusRuntimeException error =
+                      Status.FAILED_PRECONDITION
+                          .withDescription(
+                              "Expected protocol SESSION (-Dbigtable.expected-protocol=SESSION), "
+                                  + "but attempted single-point classic ReadRows RPC")
+                          .asRuntimeException();
+                  cancel(error.getMessage(), error);
+                  throw error;
+                }
+                super.sendMessage(message);
+              }
+            };
+          }
+        }
+
+        return next.newCall(method, callOptions);
+      }
+    };
+  }
+
+  private static boolean isSessionOpenMethod(MethodDescriptor<?, ?> method) {
+    String bareMethodName = method.getBareMethodName();
+    return BigtableGrpc.SERVICE_NAME.equals(method.getServiceName())
+        && bareMethodName != null
+        && bareMethodName.startsWith("Open");
+  }
+
+  static boolean isSinglePointReadRows(ReadRowsRequest req) {
+    if (req.getRowsLimit() != 1) {
+      return false;
+    }
+    RowSet rows = req.getRows();
+    int keyCount = rows.getRowKeysCount();
+    int rangeCount = rows.getRowRangesCount();
+    if (keyCount == 1 && rangeCount == 0) {
+      return true;
+    }
+    if (keyCount == 0 && rangeCount == 1) {
+      RowRange range = rows.getRowRanges(0);
+      return range.hasStartKeyClosed()
+          && range.hasEndKeyClosed()
+          && range.getStartKeyClosed().equals(range.getEndKeyClosed());
+    }
+    return false;
+  }
+
+  private static final class FailingClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
+    private final Status status;
+
+    FailingClientCall(Status status) {
+      this.status = status;
+    }
+
+    @Override
+    public void start(Listener<RespT> responseListener, Metadata headers) {
+      responseListener.onClose(status, new Metadata());
+    }
+
+    @Override
+    public void request(int numMessages) {}
+
+    @Override
+    public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+
+    @Override
+    public void halfClose() {}
+
+    @Override
+    public void sendMessage(ReqT message) {}
   }
 
   private class AppProfileInterceptor implements ClientInterceptor {
@@ -320,16 +472,77 @@ public class CloudEnv extends AbstractTestEnv {
 
   @Override
   void start() throws IOException {
-    dataClient = BigtableDataClient.create(dataSettings.build());
+    BigtableDataSettings builtDataSettings = dataSettings.build();
+    BigtableClientContext clientContext =
+        BigtableClientContext.create(builtDataSettings.getStubSettings());
+    try {
+      EnhancedBigtableStub stub =
+          new EnhancedBigtableStub(
+              builtDataSettings.getStubSettings().getPerOpSettings(), clientContext);
+      dataClient = BigtableDataClientTestHelpers.createWithStub(stub);
+    } catch (RuntimeException e) {
+      try {
+        clientContext.close();
+      } catch (Exception closeError) {
+        e.addSuppressed(closeError);
+      }
+      throw e;
+    }
+    sessionShim = clientContext.getSessionShim();
+    try {
+      verifyExpectedProtocol(getExpectedProtocol(), sessionShim);
+    } catch (RuntimeException e) {
+      sessionShim = null;
+      dataClient.close();
+      dataClient = null;
+      throw e;
+    }
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
     instanceAdminClient = BigtableInstanceAdminClient.create(instanceAdminSettings.build());
   }
 
+  static void verifyExpectedProtocol(ExpectedProtocol expectedProtocol, Shim shim) {
+    switch (expectedProtocol) {
+      case ANY:
+        return;
+      case CLASSIC:
+        Preconditions.checkState(
+            !isSessionsEnabled(shim),
+            "Expected protocol CLASSIC (-Dbigtable.expected-protocol=CLASSIC), "
+                + "but sessions are enabled in the resolved ClientConfiguration");
+        return;
+      case SESSION:
+        Preconditions.checkState(
+            isSessionsEnabled(shim),
+            "Expected protocol SESSION (-Dbigtable.expected-protocol=SESSION), "
+                + "but sessions are disabled in the resolved ClientConfiguration");
+        return;
+      default:
+        throw new IllegalStateException("Unexpected ExpectedProtocol: " + expectedProtocol);
+    }
+  }
+
   @Override
   void stop() {
+    sessionShim = null;
     dataClient.close();
     tableAdminClient.close();
     instanceAdminClient.close();
+  }
+
+  @Override
+  public boolean isSessionsEnabled() {
+    Preconditions.checkState(
+        sessionShim != null, "CloudEnv must be started before calling isSessionsEnabled()");
+    return isSessionsEnabled(sessionShim);
+  }
+
+  static boolean isSessionsEnabled(Shim shim) {
+    if (!(shim instanceof ShimImpl)) {
+      return false;
+    }
+    ClientConfiguration config = ((ShimImpl) shim).getConfigManager().getClientConfiguration();
+    return SessionScope.divertsAnyTraffic(config.getSessionConfiguration());
   }
 
   @Override

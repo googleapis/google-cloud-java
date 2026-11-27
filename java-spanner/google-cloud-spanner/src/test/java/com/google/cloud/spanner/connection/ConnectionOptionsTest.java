@@ -25,6 +25,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -37,24 +38,40 @@ import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.ForceCloseSpannerFunction;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.connection.ConnectionOptions.StartupPropertyPolicy;
+import com.google.cloud.spanner.connection.SpannerPool.CheckAndCloseSpannersMode;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.Files;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
+import org.jspecify.annotations.Nullable;
+import org.junit.Assume;
 import org.junit.Test;
 import org.junit.function.ThrowingRunnable;
 import org.junit.runner.RunWith;
@@ -684,6 +701,14 @@ public class ConnectionOptionsTest {
                     .setCredentialsUrl(FILE_TEST_PATH)
                     .build());
     assertTrue(exception.getMessage(), exception.getMessage().contains("bar"));
+
+    ConnectionOptions validLenientOptions =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database?lenient=true")
+            .setCredentialsUrl(FILE_TEST_PATH)
+            .build();
+    assertNull(validLenientOptions.getWarnings());
   }
 
   @Test
@@ -1398,6 +1423,275 @@ public class ConnectionOptionsTest {
 
           TransportChannelProvider provider = options.getChannelProvider();
           assertTrue(provider instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.googleapis.com:443",
+              ((InstantiatingGrpcChannelProvider) provider).getEndpoint());
+        });
+  }
+
+  @Test
+  public void testExternalChannelProvider_WithUniverseDomain() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+
+          // Custom universeDomain without explicit host should use spanner.<universeDomain>.
+          ConnectionOptions optionsWithUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithUniverseDomain =
+              optionsWithUniverseDomain.getChannelProvider();
+          assertTrue(providerWithUniverseDomain instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.abc.goog:443",
+              ((InstantiatingGrpcChannelProvider) providerWithUniverseDomain).getEndpoint());
+
+          // Empty universeDomain without explicit host should fall back to googleapis.com.
+          ConnectionOptions optionsWithEmptyUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithEmptyUniverseDomain =
+              optionsWithEmptyUniverseDomain.getChannelProvider();
+          assertTrue(providerWithEmptyUniverseDomain instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "spanner.googleapis.com:443",
+              ((InstantiatingGrpcChannelProvider) providerWithEmptyUniverseDomain).getEndpoint());
+
+          // Explicit URI host and port should take precedence over universeDomain.
+          ConnectionOptions optionsWithHostAndUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      "cloudspanner://custom.host.abc.goog:1234/projects/test-project-123/instances/test-instance/databases/test-database?universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithHost =
+              optionsWithHostAndUniverseDomain.getChannelProvider();
+          assertTrue(providerWithHost instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "custom.host.abc.goog:1234",
+              ((InstantiatingGrpcChannelProvider) providerWithHost).getEndpoint());
+
+          // Explicit endpoint property should take precedence over universeDomain.
+          ConnectionOptions optionsWithEndpointAndUniverseDomain =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?endpoint=my.endpoint.abc.goog:5678;universeDomain=abc.goog;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          TransportChannelProvider providerWithEndpoint =
+              optionsWithEndpointAndUniverseDomain.getChannelProvider();
+          assertTrue(providerWithEndpoint instanceof InstantiatingGrpcChannelProvider);
+          assertEquals(
+              "my.endpoint.abc.goog:5678",
+              ((InstantiatingGrpcChannelProvider) providerWithEndpoint).getEndpoint());
+
+          // Verify end-to-end SpannerPool propagates the universe-scoped channel provider.
+          ConnectionImpl connection = mock(ConnectionImpl.class);
+          AtomicBoolean executedConfigurator = new AtomicBoolean(false);
+          ConnectionOptions poolOptions =
+              ConnectionOptions.newBuilder()
+                  .setUri(
+                      baseUri
+                          + "?universeDomain=abc.goog;usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                  .setCredentials(NoCredentials.getInstance())
+                  .setConfigurator(
+                      optionsBuilder -> {
+                        executedConfigurator.set(true);
+                        SpannerOptions spannerOptions = optionsBuilder.build();
+                        assertEquals("abc.goog", spannerOptions.getUniverseDomain());
+                        assertEquals("https://spanner.abc.goog", spannerOptions.getHost());
+                        assertTrue(
+                            spannerOptions.getChannelProvider()
+                                instanceof InstantiatingGrpcChannelProvider);
+                        assertEquals(
+                            "spanner.abc.goog:443",
+                            ((InstantiatingGrpcChannelProvider) spannerOptions.getChannelProvider())
+                                .getEndpoint());
+                      })
+                  .build();
+          Spanner spanner = SpannerPool.INSTANCE.getSpanner(poolOptions, connection);
+          spanner.close();
+          SpannerPool.INSTANCE.removeConnection(poolOptions, connection);
+          assertTrue(executedConfigurator.get());
+        });
+  }
+
+  @Test
+  public void testExternalChannelProvider_WithValidUniverseDomains() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+          String maxLabel = Strings.repeat("a", 63);
+          String maxLengthDomain =
+              Strings.repeat("a", 60)
+                  + "."
+                  + Strings.repeat("b", 60)
+                  + "."
+                  + Strings.repeat("c", 60)
+                  + "."
+                  + Strings.repeat("d", 62);
+          assertEquals(245, maxLengthDomain.length());
+
+          for (String universeDomain :
+              Arrays.asList(
+                  "googleapis.com",
+                  "abc.goog",
+                  "a.b",
+                  "a-1.b-2.example-3.goog",
+                  "ABC.GOOG",
+                  "localhost",
+                  maxLabel + ".goog",
+                  maxLengthDomain)) {
+            ConnectionOptions options =
+                ConnectionOptions.newBuilder()
+                    .setUri(
+                        baseUri
+                            + "?universeDomain="
+                            + universeDomain
+                            + ";channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            TransportChannelProvider provider = options.getChannelProvider();
+            assertTrue(provider instanceof InstantiatingGrpcChannelProvider);
+            assertEquals(
+                "spanner." + universeDomain + ":443",
+                ((InstantiatingGrpcChannelProvider) provider).getEndpoint());
+          }
+        });
+  }
+
+  @Test
+  public void testUniverseDomain_RejectsInvalidAndUrlInjectionValues() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+          String overlongLabel = Strings.repeat("a", 64) + ".goog";
+          String overlongDomain =
+              Strings.repeat("a", 60)
+                  + "."
+                  + Strings.repeat("b", 60)
+                  + "."
+                  + Strings.repeat("c", 60)
+                  + "."
+                  + Strings.repeat("d", 63);
+          assertEquals(246, overlongDomain.length());
+
+          // Test URL-injection and malformed domain payloads passed via connection URI.
+          for (String invalidDomain :
+              Arrays.asList(
+                  "ignored@attacker.com:8443",
+                  "ignored@attacker.com",
+                  "abc.goog:8443",
+                  "abc.goog:443",
+                  "abc.goog/injected",
+                  "abc.goog/",
+                  "abc.goog#frag",
+                  "abc.goog/injected#frag",
+                  "https://attacker.com",
+                  "abc.goog\\attacker.com",
+                  "ignored%40attacker.com",
+                  "abc%2egoog",
+                  " abc.goog",
+                  "abc.goog ",
+                  "abc .goog",
+                  "abc.goog\t",
+                  "[::1]",
+                  "abc_def.goog",
+                  "abc$def.goog",
+                  ".abc.goog",
+                  "abc.goog.",
+                  "abc..goog",
+                  "-abc.goog",
+                  "abc-.goog",
+                  "abc.-goog",
+                  "abc.goog-",
+                  overlongLabel,
+                  overlongDomain)) {
+            IllegalArgumentException uriException =
+                assertThrows(
+                    "Expected URI with universeDomain=" + invalidDomain + " to be rejected",
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(
+                                baseUri
+                                    + "?universeDomain="
+                                    + invalidDomain
+                                    + ";channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                uriException.getMessage(),
+                uriException.getMessage().contains("Invalid universe domain"));
+
+            // Also verify rejection when set programmatically via setConnectionPropertyValue.
+            IllegalArgumentException propException =
+                assertThrows(
+                    "Expected property universeDomain=" + invalidDomain + " to be rejected",
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(
+                                baseUri
+                                    + "?channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                            .setConnectionPropertyValue(
+                                ConnectionProperties.UNIVERSE_DOMAIN, invalidDomain)
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                propException.getMessage(),
+                propException.getMessage().contains("Invalid universe domain"));
+          }
+
+          // Query/control-character smuggling via setConnectionPropertyValue (characters that
+          // would otherwise be split by URI parsing).
+          for (String smuggledDomain :
+              Arrays.asList(
+                  "abc.goog?foo=bar",
+                  "abc.goog/injected?foo=bar#frag",
+                  "abc.goog;evil=true",
+                  "abc.goog\r\nHost: attacker.com")) {
+            IllegalArgumentException exception =
+                assertThrows(
+                    "Expected smuggled universeDomain=" + smuggledDomain + " to be rejected",
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(
+                                baseUri
+                                    + "?channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+                            .setConnectionPropertyValue(
+                                ConnectionProperties.UNIVERSE_DOMAIN, smuggledDomain)
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                exception.getMessage(), exception.getMessage().contains("Invalid universe domain"));
+          }
+
+          // Rejection should apply even when an explicit host is configured.
+          assertThrows(
+              IllegalArgumentException.class,
+              () ->
+                  ConnectionOptions.newBuilder()
+                      .setUri(
+                          "cloudspanner://custom.host:443/projects/test-project-123/instances/test-instance/databases/test-database?universeDomain=ignored@attacker.com:8443")
+                      .setCredentials(NoCredentials.getInstance())
+                      .build());
         });
   }
 
@@ -1810,7 +2104,10 @@ public class ConnectionOptionsTest {
                 optionsBuilder -> {
                   executedConfigurator.set(true);
                   SpannerOptions spannerOptions = optionsBuilder.build();
-                  assertEquals("googleapis.com", spannerOptions.getUniverseDomain());
+                  assertNull(spannerOptions.getUniverseDomain());
+                  assertEquals(
+                      "googleapis.com",
+                      spannerOptions.getSpannerStubSettings().getUniverseDomain());
                   assertEquals("https://spanner.googleapis.com", spannerOptions.getHost());
                 })
             .build();
@@ -2041,5 +2338,1127 @@ public class ConnectionOptionsTest {
     assertEquals("/path/to/client.crt", optionsFromUri.getClientCertificate());
     assertEquals("/path/to/client.key", optionsFromUri.getClientCertificateKey());
     assertEquals("/path/to/ca.crt", optionsFromUri.getCaCertificate());
+  }
+
+  @Test
+  public void testProgrammaticPropertiesAllowedAndTrusted() throws Throwable {
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          String baseUri =
+              "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                  + "?autocommit=true;endpoint=url-endpoint.example.com:443";
+
+          ConnectionOptions options =
+              ConnectionOptions.newBuilder()
+                  .setUri(baseUri)
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(
+                          ConnectionProperties.ENDPOINT, "trusted.example.com:443"))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.DIALECT, Dialect.POSTGRESQL))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.USER_AGENT, "pg-adapter"))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.USE_PLAIN_TEXT, true))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.NUM_CHANNELS, 8))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(
+                          ConnectionProperties.GRPC_KEEPALIVE_TIME, Duration.ofSeconds(30)))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(
+                          ConnectionProperties.GRPC_KEEPALIVE_TIMEOUT, Duration.ofSeconds(10)))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.MIN_SESSIONS, 10))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.MAX_SESSIONS, 20))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(
+                          ConnectionProperties.DATABASE_ROLE, "trusted-role"))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(
+                          ConnectionProperties.ENABLE_END_TO_END_TRACING, true))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(
+                          ConnectionProperties.CHANNEL_PROVIDER,
+                          TestChannelProvider.class.getName()))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(
+                          ConnectionProperties.CREDENTIALS_URL, FILE_TEST_PATH))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.AUTOCOMMIT, false))
+                  .build();
+          assertEquals("http://trusted.example.com:443", options.getHost());
+          assertEquals(Dialect.POSTGRESQL, options.getDialect());
+          assertEquals("pg-adapter", options.getUserAgent());
+          assertTrue(options.isUsePlainText());
+          assertEquals(Integer.valueOf(8), options.getNumChannels());
+          assertEquals(Duration.ofSeconds(30), options.getGrpcKeepAliveTime());
+          assertEquals(Duration.ofSeconds(10), options.getGrpcKeepAliveTimeout());
+          assertEquals(Integer.valueOf(10), options.getMinSessions());
+          assertEquals(Integer.valueOf(20), options.getMaxSessions());
+          assertEquals("trusted-role", options.getDatabaseRole());
+          assertTrue(options.isEndToEndTracingEnabled());
+          assertNotNull(options.getChannelProvider());
+          assertEquals(FILE_TEST_PATH, options.getCredentialsUrl());
+          assertFalse(options.isAutocommit());
+
+          // Setting programmatic properties before setUri also overrides URI values.
+          ConnectionOptions propsBeforeUri =
+              ConnectionOptions.newBuilder()
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(
+                          ConnectionProperties.ENDPOINT, "trusted.example.com:443"))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.AUTOCOMMIT, false))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.NUM_CHANNELS, 6))
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.DIALECT, Dialect.POSTGRESQL))
+                  .setUri(baseUri)
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          assertEquals("https://trusted.example.com:443", propsBeforeUri.getHost());
+          assertFalse(propsBeforeUri.isAutocommit());
+          assertEquals(Integer.valueOf(6), propsBeforeUri.getNumChannels());
+          assertEquals(Dialect.POSTGRESQL, propsBeforeUri.getDialect());
+
+          assertThrows(
+              NullPointerException.class,
+              () -> ConnectionOptions.newBuilder().setConnectionPropertyValue(null));
+
+          SpannerException nullPrimitiveException =
+              assertThrows(
+                  SpannerException.class,
+                  () -> ConnectionPropertyValue.of(ConnectionProperties.AUTOCOMMIT, null));
+          assertEquals(ErrorCode.INVALID_ARGUMENT, nullPrimitiveException.getErrorCode());
+
+          // Programmatic lenient=true allows unknown URI properties before setUri and yields null
+          // warnings when the URI has no unknown properties.
+          ConnectionOptions lenientWithUnknownUriProp =
+              ConnectionOptions.newBuilder()
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.LENIENT, true))
+                  .setUri(
+                      "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database?unknownProp=value")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          assertNotNull(lenientWithUnknownUriProp.getWarnings());
+          assertTrue(lenientWithUnknownUriProp.getWarnings().contains("unknownProp"));
+
+          ConnectionOptions lenientWithValidUri =
+              ConnectionOptions.newBuilder()
+                  .setConnectionPropertyValue(
+                      ConnectionPropertyValue.of(ConnectionProperties.LENIENT, true))
+                  .setUri(
+                      "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database")
+                  .setCredentials(NoCredentials.getInstance())
+                  .build();
+          assertNull(lenientWithValidUri.getWarnings());
+        });
+  }
+
+  @Test
+  public void testChannelProviderUsesUniverseDomainEnvironmentVariable() throws Throwable {
+    String baseUri =
+        "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+            + "?channelProvider=com.google.cloud.spanner.connection.TestChannelProvider";
+    runWithSystemPropertyEnabled(
+        ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY,
+        () -> {
+          useUniverseDomainEnvironment("partner.example");
+          try {
+            // Plain URI without universeDomain should inherit the environment universe domain.
+            ConnectionOptions plainOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri)
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            assertNull(plainOptions.getUniverseDomain());
+            assertEquals(
+                "spanner.partner.example:443",
+                ((InstantiatingGrpcChannelProvider) plainOptions.getChannelProvider())
+                    .getEndpoint());
+
+            ConnectionOptions emptyPropOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri)
+                    .setConnectionPropertyValue(ConnectionProperties.UNIVERSE_DOMAIN, "")
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            assertEquals(
+                "spanner.partner.example:443",
+                ((InstantiatingGrpcChannelProvider) emptyPropOptions.getChannelProvider())
+                    .getEndpoint());
+          } finally {
+            SpannerOptions.useDefaultEnvironment();
+          }
+
+          useUniverseDomainEnvironment("");
+          try {
+            ConnectionOptions emptyEnvOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri)
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            assertEquals(
+                "spanner.googleapis.com:443",
+                ((InstantiatingGrpcChannelProvider) emptyEnvOptions.getChannelProvider())
+                    .getEndpoint());
+          } finally {
+            SpannerOptions.useDefaultEnvironment();
+          }
+
+          useUniverseDomainEnvironment("evil.example/path");
+          try {
+            // Unset universeDomain fails closed eagerly during ConnectionOptions.Builder#build().
+            IllegalArgumentException exception =
+                assertThrows(
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(baseUri)
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                exception.getMessage(), exception.getMessage().contains("Invalid universe domain"));
+
+            // Empty universeDomain property also falls back to env and fails closed eagerly.
+            IllegalArgumentException emptyPropException =
+                assertThrows(
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(baseUri)
+                            .setConnectionPropertyValue(ConnectionProperties.UNIVERSE_DOMAIN, "")
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                emptyPropException.getMessage(),
+                emptyPropException.getMessage().contains("Invalid universe domain"));
+
+            // Malformed GOOGLE_CLOUD_UNIVERSE_DOMAIN still fails closed even with an explicit host
+            // or emulator configuration.
+            IllegalArgumentException explicitHostException =
+                assertThrows(
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(
+                                "cloudspanner://custom.example:443/projects/test-project-123/instances/test-instance/databases/test-database")
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                explicitHostException.getMessage(),
+                explicitHostException.getMessage().contains("Invalid universe domain"));
+
+            IllegalArgumentException emulatorException =
+                assertThrows(
+                    IllegalArgumentException.class,
+                    () ->
+                        ConnectionOptions.newBuilder()
+                            .setUri(baseUri + ";autoConfigEmulator=true")
+                            .setCredentials(NoCredentials.getInstance())
+                            .build());
+            assertTrue(
+                emulatorException.getMessage(),
+                emulatorException.getMessage().contains("Invalid universe domain"));
+
+            // An explicit valid universeDomain property overrides an invalid environment variable.
+            ConnectionOptions explicitOverrideOptions =
+                ConnectionOptions.newBuilder()
+                    .setUri(baseUri + ";universeDomain=explicit.example")
+                    .setCredentials(NoCredentials.getInstance())
+                    .build();
+            assertEquals("explicit.example", explicitOverrideOptions.getUniverseDomain());
+            assertEquals(
+                "spanner.explicit.example:443",
+                ((InstantiatingGrpcChannelProvider) explicitOverrideOptions.getChannelProvider())
+                    .getEndpoint());
+          } finally {
+            SpannerOptions.useDefaultEnvironment();
+          }
+        });
+  }
+
+  @Test
+  public void testProgrammaticPropertiesEdgeCasesAndUnhappyPaths() {
+    String baseUri =
+        "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+
+    // Programmatic lenient=false overrides URI lenient=true regardless of call order.
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setConnectionPropertyValue(
+                    ConnectionPropertyValue.of(ConnectionProperties.LENIENT, false))
+                .setUri(baseUri + "?lenient=true;unknownProp=bar")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setUri(baseUri + "?lenient=true;unknownProp=bar")
+                .setConnectionPropertyValue(
+                    ConnectionPropertyValue.of(ConnectionProperties.LENIENT, false))
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+
+    // setUri validates unknown URI properties eagerly if programmatic LENIENT=true was not set
+    // beforehand.
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> ConnectionOptions.newBuilder().setUri(baseUri + "?unknownProp=bar"));
+
+    // Calling setConnectionPropertyValue twice for the same property keeps the latest value, and
+    // reusing a Builder does not mutate previously built ConnectionOptions instances.
+    ConnectionOptions.Builder reusedBuilder =
+        ConnectionOptions.newBuilder()
+            .setUri(baseUri + "?numChannels=4")
+            .setCredentials(NoCredentials.getInstance())
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.NUM_CHANNELS, 6))
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.NUM_CHANNELS, 10));
+    ConnectionOptions firstBuilt = reusedBuilder.build();
+    reusedBuilder.setConnectionPropertyValue(
+        ConnectionPropertyValue.of(ConnectionProperties.NUM_CHANNELS, 12));
+    ConnectionOptions secondBuilt = reusedBuilder.build();
+    assertEquals(Integer.valueOf(10), firstBuilt.getNumChannels());
+    assertEquals(Integer.valueOf(12), secondBuilt.getNumChannels());
+
+    // Guarded properties set via ConnectionPropertyValue still enforce system property guards.
+    for (ConnectionProperty<String> guardedProperty :
+        Arrays.asList(
+            ConnectionProperties.CHANNEL_PROVIDER,
+            ConnectionProperties.CREDENTIALS_PROVIDER,
+            ConnectionProperties.ENCODED_CREDENTIALS,
+            ConnectionProperties.GRPC_INTERCEPTOR_PROVIDER)) {
+      SpannerException guardedException =
+          assertThrows(
+              "Expected guarded property " + guardedProperty.getKey() + " to fail without flag",
+              SpannerException.class,
+              () ->
+                  ConnectionOptions.newBuilder()
+                      .setUri(baseUri)
+                      .setConnectionPropertyValue(
+                          ConnectionPropertyValue.of(guardedProperty, "com.example.Test"))
+                      .build());
+      assertEquals(ErrorCode.FAILED_PRECONDITION, guardedException.getErrorCode());
+    }
+
+    // Conflicting credential properties set via ConnectionPropertyValue are rejected.
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setUri(baseUri)
+                .setConnectionPropertyValue(
+                    ConnectionPropertyValue.of(
+                        ConnectionProperties.CREDENTIALS_URL, FILE_TEST_PATH))
+                .setConnectionPropertyValue(
+                    ConnectionPropertyValue.of(ConnectionProperties.OAUTH_TOKEN, "token"))
+                .build());
+
+    // Programmatic TYPE overrides URI TYPE and updates isSpannerOmni()/getInstanceType().
+    ConnectionOptions cloudOverridingOmniUri =
+        ConnectionOptions.newBuilder()
+            .setUri(baseUri + "?type=omni")
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(
+                    ConnectionProperties.TYPE, SpannerOptions.InstanceType.CLOUD))
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertFalse(cloudOverridingOmniUri.isSpannerOmni());
+    assertEquals(SpannerOptions.InstanceType.CLOUD, cloudOverridingOmniUri.getInstanceType());
+
+    // setTracingPrefix(null) and setType(null) fail fast with INVALID_ARGUMENT, while nullable
+    // credentialsUrl/oauthToken continue to allow null.
+    SpannerException nullTracingPrefix =
+        assertThrows(
+            SpannerException.class, () -> ConnectionOptions.newBuilder().setTracingPrefix(null));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, nullTracingPrefix.getErrorCode());
+    SpannerException nullType =
+        assertThrows(SpannerException.class, () -> ConnectionOptions.newBuilder().setType(null));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, nullType.getErrorCode());
+    assertNull(
+        ConnectionOptions.newBuilder()
+            .setCredentialsUrl(null)
+            .setOAuthToken(null)
+            .setUri(baseUri)
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getCredentialsUrl());
+
+    // setUri validates property values eagerly.
+    SpannerException eagerBadInt =
+        assertThrows(
+            SpannerException.class,
+            () -> ConnectionOptions.newBuilder().setUri(baseUri + "?numChannels=notAnInt"));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, eagerBadInt.getErrorCode());
+
+    // Malformed tokens without '=' or empty keys are flagged as invalid tokens (never ignored).
+    for (String malformedSuffix : new String[] {"?bypass", "?autocommit", "?=value"}) {
+      assertThrows(
+          "Expected malformed token " + malformedSuffix + " to fail without lenient",
+          IllegalArgumentException.class,
+          () -> ConnectionOptions.newBuilder().setUri(baseUri + malformedSuffix));
+      ConnectionOptions lenientMalformed =
+          ConnectionOptions.newBuilder()
+              .setUri(baseUri + malformedSuffix + ";lenient=true")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertNotNull(lenientMalformed.getWarnings());
+    }
+  }
+
+  @Test
+  public void testStartupPropertyPolicy() throws Throwable {
+    String baseUri =
+        "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+    String spannerSchemeUri =
+        "spanner:/projects/test-project-123/instances/test-instance/databases/test-database";
+    String omniUri =
+        "cloudspanner://custom.host:443/instances/test-instance/databases/test-database";
+
+    // Default policy is ALLOW.
+    ConnectionOptions.Builder defaultBuilder = ConnectionOptions.newBuilder();
+    assertEquals(StartupPropertyPolicy.ALLOW, defaultBuilder.getStartupPropertyPolicy());
+    assertThrows(NullPointerException.class, () -> defaultBuilder.setStartupPropertyPolicy(null));
+
+    // Toggle between REJECT and ALLOW on the same Builder restores URI startup property allowance.
+    defaultBuilder.setStartupPropertyPolicy(StartupPropertyPolicy.REJECT);
+    assertEquals(StartupPropertyPolicy.REJECT, defaultBuilder.getStartupPropertyPolicy());
+    defaultBuilder.setStartupPropertyPolicy(StartupPropertyPolicy.ALLOW);
+    assertEquals(StartupPropertyPolicy.ALLOW, defaultBuilder.getStartupPropertyPolicy());
+    ConnectionOptions restoredAllowOptions =
+        defaultBuilder
+            .setUri(baseUri + "?endpoint=restored.example.com:443;usePlainText=true")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals("http://restored.example.com:443", restoredAllowOptions.getHost());
+
+    // Programmatic startup properties + USER URI properties succeed when policy is REJECT,
+    // regardless of whether setUri is called before or after setting the policy.
+    for (boolean setPolicyBeforeUri : new boolean[] {true, false}) {
+      ConnectionOptions.Builder builder = ConnectionOptions.newBuilder();
+      String userOnlyUri = baseUri + "?autocommit=false;readonly=true;maxPartitions=5";
+      if (setPolicyBeforeUri) {
+        builder.setStartupPropertyPolicy(StartupPropertyPolicy.REJECT).setUri(userOnlyUri);
+      } else {
+        builder.setUri(userOnlyUri).setStartupPropertyPolicy(StartupPropertyPolicy.REJECT);
+      }
+      ConnectionOptions options =
+          builder
+              .setConnectionPropertyValue(
+                  ConnectionPropertyValue.of(ConnectionProperties.DIALECT, Dialect.POSTGRESQL))
+              .setConnectionPropertyValue(
+                  ConnectionPropertyValue.of(ConnectionProperties.USER_AGENT, "pg-adapter"))
+              .setConnectionPropertyValue(
+                  ConnectionPropertyValue.of(ConnectionProperties.USE_PLAIN_TEXT, true))
+              .setConnectionPropertyValue(
+                  ConnectionPropertyValue.of(
+                      ConnectionProperties.ENDPOINT, "trusted-server.example.com:443"))
+              .setConnectionPropertyValue(
+                  ConnectionPropertyValue.of(ConnectionProperties.CREDENTIALS_URL, FILE_TEST_PATH))
+              .setConnectionPropertyValue(
+                  ConnectionPropertyValue.of(ConnectionProperties.DATABASE_ROLE, "server-role"))
+              .setConnectionPropertyValue(
+                  ConnectionPropertyValue.of(ConnectionProperties.NUM_CHANNELS, 6))
+              .build();
+
+      assertEquals("http://trusted-server.example.com:443", options.getHost());
+      assertEquals(Dialect.POSTGRESQL, options.getDialect());
+      assertEquals("pg-adapter", options.getUserAgent());
+      assertTrue(options.isUsePlainText());
+      assertEquals("server-role", options.getDatabaseRole());
+      assertEquals(Integer.valueOf(6), options.getNumChannels());
+      assertEquals(FILE_TEST_PATH, options.getCredentialsUrl());
+      assertFalse(options.isAutocommit());
+      assertTrue(options.isReadOnly());
+      assertEquals(5, options.getMaxPartitions());
+      assertNull(options.getWarnings());
+    }
+
+    // Any Context.STARTUP property in the URI is rejected under REJECT, regardless of call order,
+    // casing, invalid startup values, parser smuggling prefixes, URI format, or programmatic
+    // lenient=true.
+    for (String startupParam :
+        new String[] {
+          "endpoint=evil.example.com:443",
+          "Endpoint=evil.example.com:443",
+          "dialect=postgresql",
+          "numChannels=2",
+          "numChannels=-1",
+          "type=omni",
+          "autoConfigEmulator=true",
+          "lenient=true",
+          "lenient=notabool",
+          "lenient=true;unknownProp=foo",
+          "autocommit=false;endpoint=evil.example.com:443",
+          "unknownProp=foo;endpoint=evil.example.com:443",
+          "bypass;minSessions=100",
+          "bypass?endpoint=evil.example.com:443",
+          "=val;minSessions=100",
+        }) {
+      for (String uriPrefix :
+          new String[] {baseUri + "?", baseUri + ";", spannerSchemeUri + "?", omniUri + "?"}) {
+        String rejectedUri = uriPrefix + startupParam;
+        SpannerException beforeUriException =
+            assertThrows(
+                "Expected REJECT before setUri for " + rejectedUri,
+                SpannerException.class,
+                () ->
+                    ConnectionOptions.newBuilder()
+                        .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                        .setUri(rejectedUri)
+                        .setCredentials(NoCredentials.getInstance())
+                        .build());
+        assertEquals(ErrorCode.INVALID_ARGUMENT, beforeUriException.getErrorCode());
+
+        SpannerException programmaticLenientException =
+            assertThrows(
+                "Expected REJECT even with programmatic lenient=true for " + rejectedUri,
+                SpannerException.class,
+                () ->
+                    ConnectionOptions.newBuilder()
+                        .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                        .setConnectionPropertyValue(
+                            ConnectionPropertyValue.of(ConnectionProperties.LENIENT, true))
+                        .setUri(rejectedUri)
+                        .setCredentials(NoCredentials.getInstance())
+                        .build());
+        assertEquals(ErrorCode.INVALID_ARGUMENT, programmaticLenientException.getErrorCode());
+      }
+    }
+
+    // Eager USER property value validation still applies under REJECT.
+    SpannerException badUserValueInSetUri =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionOptions.newBuilder()
+                    .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                    .setUri(baseUri + "?maxPartitions=notAnInt"));
+    assertEquals(ErrorCode.INVALID_ARGUMENT, badUserValueInSetUri.getErrorCode());
+
+    // Valid startup property set in URI before REJECT still fails on build().
+    for (String validStartupParam :
+        new String[] {
+          "endpoint=evil.example.com:443",
+          "lenient=true;unknownProp=foo",
+          "bypass;minSessions=100;lenient=true",
+        }) {
+      SpannerException afterUriException =
+          assertThrows(
+              "Expected REJECT after setUri for " + validStartupParam,
+              SpannerException.class,
+              () ->
+                  ConnectionOptions.newBuilder()
+                      .setUri(baseUri + "?" + validStartupParam)
+                      .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                      .setCredentials(NoCredentials.getInstance())
+                      .build());
+      assertEquals(ErrorCode.INVALID_ARGUMENT, afterUriException.getErrorCode());
+    }
+
+    // Verify all Context.STARTUP properties in VALID_CONNECTION_PROPERTIES are rejected under
+    // REJECT, and all Context.USER properties are accepted.
+    Map<ConnectionProperty<?>, String> userPropertySamples = new HashMap<>();
+    userPropertySamples.put(ConnectionProperties.AUTOCOMMIT, "false");
+    userPropertySamples.put(ConnectionProperties.READONLY, "true");
+    userPropertySamples.put(ConnectionProperties.DEFAULT_ISOLATION_LEVEL, "SERIALIZABLE");
+    userPropertySamples.put(ConnectionProperties.READ_LOCK_MODE, "PESSIMISTIC");
+    userPropertySamples.put(ConnectionProperties.STATEMENT_TIMEOUT, "'10s'");
+    userPropertySamples.put(ConnectionProperties.TRANSACTION_TIMEOUT, "'10s'");
+    userPropertySamples.put(ConnectionProperties.AUTOCOMMIT_DML_MODE, "PARTITIONED_NON_ATOMIC");
+    userPropertySamples.put(ConnectionProperties.RETRY_ABORTS_INTERNALLY, "false");
+    userPropertySamples.put(ConnectionProperties.RETURN_COMMIT_STATS, "true");
+    userPropertySamples.put(ConnectionProperties.DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE, "true");
+    userPropertySamples.put(ConnectionProperties.KEEP_TRANSACTION_ALIVE, "true");
+    userPropertySamples.put(ConnectionProperties.READ_ONLY_STALENESS, "STRONG");
+    userPropertySamples.put(ConnectionProperties.AUTO_PARTITION_MODE, "true");
+    userPropertySamples.put(ConnectionProperties.DATA_BOOST_ENABLED, "true");
+    userPropertySamples.put(ConnectionProperties.MAX_PARTITIONS, "5");
+    userPropertySamples.put(ConnectionProperties.MAX_PARTITIONED_PARALLELISM, "2");
+    userPropertySamples.put(
+        ConnectionProperties.DIRECTED_READ,
+        "{\"includeReplicas\":{\"replicaSelections\":[{\"location\":\"us-central1\",\"type\":\"READ_ONLY\"}]}}");
+    userPropertySamples.put(ConnectionProperties.OPTIMIZER_VERSION, "1");
+    userPropertySamples.put(ConnectionProperties.OPTIMIZER_STATISTICS_PACKAGE, "pkg");
+    userPropertySamples.put(ConnectionProperties.RPC_PRIORITY, "LOW");
+    userPropertySamples.put(ConnectionProperties.SAVEPOINT_SUPPORT, "ENABLED");
+    userPropertySamples.put(
+        ConnectionProperties.DDL_IN_TRANSACTION_MODE, "AUTO_COMMIT_TRANSACTION");
+    userPropertySamples.put(ConnectionProperties.DEFAULT_SEQUENCE_KIND, "bit_reversed_positive");
+    userPropertySamples.put(ConnectionProperties.MAX_COMMIT_DELAY, "'10ms'");
+    userPropertySamples.put(ConnectionProperties.AUTO_BATCH_DML, "true");
+    userPropertySamples.put(ConnectionProperties.AUTO_BATCH_DML_UPDATE_COUNT, "2");
+    userPropertySamples.put(ConnectionProperties.AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION, "false");
+    userPropertySamples.put(ConnectionProperties.BATCH_DML_UPDATE_COUNT, "2");
+    userPropertySamples.put(ConnectionProperties.UNKNOWN_LENGTH, "100");
+
+    for (ConnectionProperty<?> property : ConnectionProperties.VALID_CONNECTION_PROPERTIES) {
+      if (property.getContext() == ConnectionProperty.Context.STARTUP) {
+        SpannerException startupRejected =
+            assertThrows(
+                "Expected startup property " + property.getKey() + " to be rejected",
+                SpannerException.class,
+                () ->
+                    ConnectionOptions.newBuilder()
+                        .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                        .setUri(baseUri + "?" + property.getKey() + "=value")
+                        .build());
+        assertEquals(ErrorCode.INVALID_ARGUMENT, startupRejected.getErrorCode());
+      } else {
+        String sampleValue = userPropertySamples.get(property);
+        assertNotNull("Missing sample value for USER property " + property.getKey(), sampleValue);
+        ConnectionOptions userAllowed =
+            ConnectionOptions.newBuilder()
+                .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                .setUri(baseUri + "?" + property.getKey() + "=" + sampleValue)
+                .setCredentials(NoCredentials.getInstance())
+                .build();
+        assertNull(userAllowed.getWarnings());
+      }
+    }
+
+    // Multiple disallowed startup properties are all reported in the error message.
+    SpannerException multiException =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionOptions.newBuilder()
+                    .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                    .setUri(baseUri + "?endpoint=evil.example.com:443;dialect=postgresql")
+                    .setCredentials(NoCredentials.getInstance())
+                    .build());
+    assertEquals(ErrorCode.INVALID_ARGUMENT, multiException.getErrorCode());
+    assertTrue(multiException.getMessage().contains("endpoint"));
+    assertTrue(multiException.getMessage().contains("dialect"));
+
+    // Unknown URI properties without startup properties fail unless programmatic lenient=true.
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                .setUri(baseUri + "?unknownProp=foo")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    ConnectionOptions lenientWithUnknown =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.LENIENT, true))
+            .setUri(baseUri + "?unknownProp=foo;autocommit=false")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertFalse(lenientWithUnknown.isAutocommit());
+    assertEquals(
+        "Invalid properties found in connection URI: unknownProp",
+        lenientWithUnknown.getWarnings());
+
+    // URL attempting to set startupPropertyPolicy or allowStartupPropertiesInUrl cannot bypass
+    // REJECT.
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                .setUri(baseUri + "?allowStartupPropertiesInUrl=true")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                .setUri(baseUri + "?startupPropertyPolicy=ALLOW")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerException urlBypassAttemptWithStartup =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionOptions.newBuilder()
+                    .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                    .setUri(baseUri + "?startupPropertyPolicy=ALLOW;endpoint=evil.example.com:443")
+                    .setCredentials(NoCredentials.getInstance())
+                    .build());
+    assertEquals(ErrorCode.INVALID_ARGUMENT, urlBypassAttemptWithStartup.getErrorCode());
+
+    // Even with programmatic lenient=true, startupPropertyPolicy/allowStartupPropertiesInUrl in URI
+    // are treated as unknown properties and never unlock startup properties.
+    ConnectionOptions urlBypassWarning =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setConnectionPropertyValue(
+                ConnectionPropertyValue.of(ConnectionProperties.LENIENT, true))
+            .setUri(baseUri + "?allowStartupPropertiesInUrl=true;startupPropertyPolicy=ALLOW")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNotNull(urlBypassWarning.getWarnings());
+    assertTrue(urlBypassWarning.getWarnings().contains("allowStartupPropertiesInUrl"));
+    assertTrue(urlBypassWarning.getWarnings().contains("startupPropertyPolicy"));
+
+    // URI property tokenization edge cases: '=' in value, empty value, trailing '?' / ';', ';;',
+    // duplicate startup keys, and '?' inside HOSTGROUP.
+    assertEquals(
+        "abc==",
+        ConnectionOptions.parseUriProperty(
+            baseUri + "?encodedCredentials=abc==", "encodedCredentials"));
+    ConnectionOptions eqAndEmptyDelimiterOptions =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(baseUri + "?optimizerVersion=a=b;;maxPartitions=3;")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(
+        "a=b",
+        eqAndEmptyDelimiterOptions
+            .getInitialConnectionPropertyValues()
+            .get(ConnectionProperties.OPTIMIZER_VERSION.getKey())
+            .getValue());
+    assertEquals(3, eqAndEmptyDelimiterOptions.getMaxPartitions());
+
+    ConnectionOptions emptyValueAndTrailingDelimiter =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(baseUri + "?optimizerVersion=")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(
+        "",
+        emptyValueAndTrailingDelimiter
+            .getInitialConnectionPropertyValues()
+            .get(ConnectionProperties.OPTIMIZER_VERSION.getKey())
+            .getValue());
+    assertNull(
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(baseUri + "?")
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getWarnings());
+    assertNull(
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(baseUri + ";")
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getWarnings());
+
+    SpannerException duplicateStartupRejected =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionOptions.newBuilder()
+                    .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                    .setUri(baseUri + "?endpoint=a;endpoint=b")
+                    .build());
+    assertEquals(ErrorCode.INVALID_ARGUMENT, duplicateStartupRejected.getErrorCode());
+
+    // Duplicate Context.USER property in URI uses first-occurrence-wins semantics.
+    ConnectionOptions duplicateUserFirstWins =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(baseUri + "?autocommit=true;autocommit=false;maxPartitions=5;maxPartitions=bad")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertTrue(duplicateUserFirstWins.isAutocommit());
+    assertEquals(5, duplicateUserFirstWins.getMaxPartitions());
+
+    // REJECT checks startup properties before validateValues runs on USER property values.
+    SpannerException invalidUserAndStartup =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionOptions.newBuilder()
+                    .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                    .setUri(baseUri + "?maxPartitions=bad;minSessions=100")
+                    .build());
+    assertEquals(ErrorCode.INVALID_ARGUMENT, invalidUserAndStartup.getErrorCode());
+    assertTrue(
+        invalidUserAndStartup.getMessage(),
+        invalidUserAndStartup.getMessage().contains("minSessions"));
+
+    // Setting the same STARTUP property programmatically does not exempt it in the URI.
+    SpannerException programmaticAndUriStartup =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                ConnectionOptions.newBuilder()
+                    .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                    .setConnectionPropertyValue(
+                        ConnectionPropertyValue.of(ConnectionProperties.MIN_SESSIONS, 50))
+                    .setUri(baseUri + "?minSessions=100")
+                    .build());
+    assertEquals(ErrorCode.INVALID_ARGUMENT, programmaticAndUriStartup.getErrorCode());
+
+    // Invalid SessionPoolOptions combination via ConnectionPropertyValue fails at build().
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ConnectionOptions.newBuilder()
+                .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                .setUri(baseUri)
+                .setCredentials(NoCredentials.getInstance())
+                .setConnectionPropertyValue(
+                    ConnectionPropertyValue.of(ConnectionProperties.MIN_SESSIONS, 100))
+                .setConnectionPropertyValue(
+                    ConnectionPropertyValue.of(ConnectionProperties.MAX_SESSIONS, 10))
+                .build());
+
+    // Tightened HOSTGROUP rejects query/path/userinfo delimiters before /projects/, and
+    // SPANNER_URI_FORMAT rejects '|' as a property delimiter.
+    for (String invalidHostOrDelimiterUri :
+        Arrays.asList(
+            "cloudspanner://host?minSessions=100/projects/test-project-123/instances/test-instance/databases/test-database",
+            "cloudspanner://user@host/projects/test-project-123/instances/test-instance/databases/test-database",
+            "cloudspanner://host;minSessions=100/projects/test-project-123/instances/test-instance/databases/test-database",
+            baseUri + "|minSessions=100",
+            baseUri + "|autocommit=false")) {
+      assertThrows(
+          "Expected invalid URI " + invalidHostOrDelimiterUri + " to be rejected",
+          IllegalArgumentException.class,
+          () ->
+              ConnectionOptions.newBuilder()
+                  .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+                  .setUri(invalidHostOrDelimiterUri));
+    }
+
+    // Query parameter containing /projects/... cannot hijack HOSTGROUP or projectId.
+    ConnectionOptions projectInQuerySafe =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(
+                "cloudspanner://trusted.host:443/projects/trusted-proj/instances/test-instance/databases/test-database?optimizerVersion=1/projects/evil-proj/instances/evil-inst/databases/evil-db")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals("https://trusted.host:443", projectInQuerySafe.getHost());
+    assertEquals("trusted-proj", projectInQuerySafe.getProjectId());
+
+    // IPv6 bracketed literal remains supported in HOSTGROUP.
+    ConnectionOptions ipv6HostOptions =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(
+                "cloudspanner://[::1]:9010/projects/test-project-123/instances/test-instance/databases/test-database")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals("https://[::1]:9010", ipv6HostOptions.getHost());
+
+    // Scoped contract: StartupPropertyPolicy.REJECT governs URI properties while still allowing
+    // HOSTGROUP and Omni URI structure when only USER properties are in the query string.
+    ConnectionOptions omniWithUserParam =
+        ConnectionOptions.newBuilder()
+            .setStartupPropertyPolicy(StartupPropertyPolicy.REJECT)
+            .setUri(omniUri + "?autocommit=false")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals("https://custom.host:443", omniWithUserParam.getHost());
+    assertFalse(omniWithUserParam.isAutocommit());
+  }
+
+  @Test
+  public void testSpannerPoolUsesUniverseDomainEnvironmentVariable() {
+    ConnectionImpl connection = mock(ConnectionImpl.class);
+    ConnectionImpl secondConnection = mock(ConnectionImpl.class);
+    useUniverseDomainEnvironment("partner.example");
+    try {
+      AtomicBoolean executedConfigurator = new AtomicBoolean(false);
+      ConnectionOptions plainOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  "cloudspanner:/projects/default/instances/default/databases/singers-db?usePlainText=true")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    executedConfigurator.set(true);
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    assertNull(spannerOptions.getUniverseDomain());
+                    assertEquals("https://spanner.partner.example", spannerOptions.getHost());
+                    assertEquals("spanner.partner.example:443", spannerOptions.getEndpoint());
+                    assertEquals(
+                        "partner.example",
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                    assertEquals(
+                        "partner.example",
+                        spannerOptions.getInstanceAdminStubSettings().getUniverseDomain());
+                    assertEquals(
+                        "partner.example",
+                        spannerOptions.getDatabaseAdminStubSettings().getUniverseDomain());
+                  })
+              .build();
+      Spanner plainSpanner = SpannerPool.INSTANCE.getSpanner(plainOptions, connection);
+      try {
+        assertTrue(executedConfigurator.get());
+
+        // An empty universeDomain on the same database shares the exact same pooled Spanner client.
+        ConnectionOptions samePoolEmptyOptions =
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/default/instances/default/databases/singers-db;universeDomain=;usePlainText=true")
+                .setCredentials(NoCredentials.getInstance())
+                .build();
+        Spanner samePoolEmptySpanner =
+            SpannerPool.INSTANCE.getSpanner(samePoolEmptyOptions, secondConnection);
+        try {
+          assertSame(plainSpanner, samePoolEmptySpanner);
+        } finally {
+          SpannerPool.INSTANCE.removeConnection(samePoolEmptyOptions, secondConnection);
+        }
+      } finally {
+        SpannerPool.INSTANCE.removeConnection(plainOptions, connection);
+      }
+
+      // Empty universeDomain in the URI leaves SpannerOptions unset and falls back to env.
+      executedConfigurator.set(false);
+      ConnectionOptions emptyOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  "cloudspanner:/projects/default-empty/instances/default/databases/singers-db;universeDomain=;usePlainText=true")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    executedConfigurator.set(true);
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    assertNull(spannerOptions.getUniverseDomain());
+                    assertEquals("https://spanner.partner.example", spannerOptions.getHost());
+                    assertEquals("spanner.partner.example:443", spannerOptions.getEndpoint());
+                    assertEquals(
+                        "partner.example",
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      SpannerPool.INSTANCE.getSpanner(emptyOptions, connection);
+      try {
+        assertTrue(executedConfigurator.get());
+      } finally {
+        SpannerPool.INSTANCE.removeConnection(emptyOptions, connection);
+      }
+
+      // Explicit universeDomain in the URI takes precedence over the environment value.
+      executedConfigurator.set(false);
+      ConnectionOptions explicitOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  "cloudspanner:/projects/default/instances/default/databases/singers-db;universeDomain=explicit.example;usePlainText=true")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    executedConfigurator.set(true);
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    assertEquals("explicit.example", spannerOptions.getUniverseDomain());
+                    assertEquals("https://spanner.explicit.example", spannerOptions.getHost());
+                    assertEquals(
+                        "explicit.example",
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      SpannerPool.INSTANCE.getSpanner(explicitOptions, connection);
+      try {
+        assertTrue(executedConfigurator.get());
+      } finally {
+        SpannerPool.INSTANCE.removeConnection(explicitOptions, connection);
+      }
+
+      // Invalid GOOGLE_CLOUD_UNIVERSE_DOMAIN fails closed when creating a Spanner instance.
+      useUniverseDomainEnvironment("evil.example/path");
+      IllegalArgumentException invalidEnvException =
+          assertThrows(
+              IllegalArgumentException.class,
+              () ->
+                  SpannerPool.INSTANCE.createSpanner(
+                      SpannerPool.SpannerPoolKey.of(plainOptions), plainOptions));
+      assertTrue(
+          invalidEnvException.getMessage(),
+          invalidEnvException.getMessage().contains("Invalid universe domain"));
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+      connection.close();
+      secondConnection.close();
+      SpannerPool.INSTANCE.checkAndCloseSpanners(
+          CheckAndCloseSpannersMode.ERROR,
+          new ForceCloseSpannerFunction(5L, TimeUnit.MILLISECONDS));
+    }
+  }
+
+  private static void useUniverseDomainEnvironment(@Nullable String universeDomain) {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public @Nullable String getUniverseDomain() {
+            return universeDomain;
+          }
+        });
+  }
+
+  /**
+   * Forked-JVM entry point that exercises real {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN} process
+   * environment resolution without mutating the parent test JVM's environment.
+   */
+  public static final class UniverseDomainEnvProbe {
+    public static void main(String[] args) {
+      String baseUri = "cloudspanner:/projects/test-project/instances/test-instance/databases/db";
+
+      // 1. Omitted universeDomain inherits GOOGLE_CLOUD_UNIVERSE_DOMAIN end-to-end.
+      AtomicReference<String> omittedSpannerUniverseDomain = new AtomicReference<>("UNSET");
+      AtomicReference<String> omittedStubUniverseDomain = new AtomicReference<>("UNSET");
+      ConnectionOptions omittedOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  baseUri
+                      + "?usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    omittedSpannerUniverseDomain.set(
+                        String.valueOf(spannerOptions.getUniverseDomain()));
+                    omittedStubUniverseDomain.set(
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      String omittedEndpoint =
+          ((InstantiatingGrpcChannelProvider) omittedOptions.getChannelProvider()).getEndpoint();
+      Spanner omittedSpanner =
+          SpannerPool.INSTANCE.createSpanner(
+              SpannerPool.SpannerPoolKey.of(omittedOptions), omittedOptions);
+      omittedSpanner.close();
+
+      // 2. Empty universeDomain normalizes to null and inherits GOOGLE_CLOUD_UNIVERSE_DOMAIN.
+      AtomicReference<String> emptySpannerUniverseDomain = new AtomicReference<>("UNSET");
+      AtomicReference<String> emptyStubUniverseDomain = new AtomicReference<>("UNSET");
+      ConnectionOptions emptyOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  baseUri
+                      + "?universeDomain=;usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    emptySpannerUniverseDomain.set(
+                        String.valueOf(spannerOptions.getUniverseDomain()));
+                    emptyStubUniverseDomain.set(
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      String emptyEndpoint =
+          ((InstantiatingGrpcChannelProvider) emptyOptions.getChannelProvider()).getEndpoint();
+      Spanner emptySpanner =
+          SpannerPool.INSTANCE.createSpanner(
+              SpannerPool.SpannerPoolKey.of(emptyOptions), emptyOptions);
+      emptySpanner.close();
+
+      // 3. Explicit universeDomain overrides GOOGLE_CLOUD_UNIVERSE_DOMAIN end-to-end.
+      AtomicReference<String> explicitSpannerUniverseDomain = new AtomicReference<>("UNSET");
+      AtomicReference<String> explicitStubUniverseDomain = new AtomicReference<>("UNSET");
+      ConnectionOptions explicitOptions =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  baseUri
+                      + "?universeDomain=custom.example;usePlainText=true;channelProvider=com.google.cloud.spanner.connection.TestChannelProvider")
+              .setCredentials(NoCredentials.getInstance())
+              .setConfigurator(
+                  optionsBuilder -> {
+                    SpannerOptions spannerOptions = optionsBuilder.build();
+                    explicitSpannerUniverseDomain.set(
+                        String.valueOf(spannerOptions.getUniverseDomain()));
+                    explicitStubUniverseDomain.set(
+                        spannerOptions.getSpannerStubSettings().getUniverseDomain());
+                  })
+              .build();
+      String explicitEndpoint =
+          ((InstantiatingGrpcChannelProvider) explicitOptions.getChannelProvider()).getEndpoint();
+      Spanner explicitSpanner =
+          SpannerPool.INSTANCE.createSpanner(
+              SpannerPool.SpannerPoolKey.of(explicitOptions), explicitOptions);
+      explicitSpanner.close();
+
+      System.out.println("omittedChannelProviderEndpoint=" + omittedEndpoint);
+      System.out.println("omittedSpannerUniverseDomain=" + omittedSpannerUniverseDomain.get());
+      System.out.println("omittedStubUniverseDomain=" + omittedStubUniverseDomain.get());
+      System.out.println("emptyChannelProviderEndpoint=" + emptyEndpoint);
+      System.out.println("emptySpannerUniverseDomain=" + emptySpannerUniverseDomain.get());
+      System.out.println("emptyStubUniverseDomain=" + emptyStubUniverseDomain.get());
+      System.out.println("explicitChannelProviderEndpoint=" + explicitEndpoint);
+      System.out.println("explicitSpannerUniverseDomain=" + explicitSpannerUniverseDomain.get());
+      System.out.println("explicitStubUniverseDomain=" + explicitStubUniverseDomain.get());
+    }
+  }
+
+  @Test
+  public void testUniverseDomain_RealEnvVarEndToEndSubprocess() throws Exception {
+    boolean isWindows = System.getProperty("os.name", "").toLowerCase(Locale.ROOT).contains("win");
+    File javaExe =
+        new File(new File(System.getProperty("java.home"), "bin"), isWindows ? "java.exe" : "java");
+    Assume.assumeTrue("Java executable not found for subprocess test", javaExe.isFile());
+
+    ProcessBuilder processBuilder =
+        new ProcessBuilder(
+            javaExe.getAbsolutePath(),
+            "-cp",
+            System.getProperty("java.class.path"),
+            "-D" + ConnectionOptions.ENABLE_CHANNEL_PROVIDER_SYSTEM_PROPERTY + "=true",
+            UniverseDomainEnvProbe.class.getName());
+    processBuilder.environment().put("GOOGLE_CLOUD_UNIVERSE_DOMAIN", "universe.example");
+    processBuilder.redirectErrorStream(true);
+
+    Process process = processBuilder.start();
+    List<String> outputLines = Collections.synchronizedList(new ArrayList<>());
+    Thread drainThread =
+        new Thread(
+            () -> {
+              try (BufferedReader reader =
+                  new BufferedReader(
+                      new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                  outputLines.add(line);
+                }
+              } catch (IOException ignore) {
+                // Stream closed on process termination.
+              }
+            },
+            "universe-domain-probe-drain");
+    drainThread.start();
+
+    boolean exited;
+    try {
+      exited = process.waitFor(30, TimeUnit.SECONDS);
+    } finally {
+      if (process.isAlive()) {
+        process.destroyForcibly();
+      }
+    }
+    drainThread.join(TimeUnit.SECONDS.toMillis(5));
+    assertFalse("Output drain thread did not terminate", drainThread.isAlive());
+    assertTrue("Subprocess timed out: " + outputLines, exited);
+    assertEquals("Subprocess exited with error: " + outputLines, 0, process.exitValue());
+
+    Map<String, String> parsed = new HashMap<>();
+    synchronized (outputLines) {
+      for (String line : outputLines) {
+        int idx = line.indexOf('=');
+        if (idx > 0) {
+          parsed.put(line.substring(0, idx), line.substring(idx + 1));
+        }
+      }
+    }
+    assertEquals("spanner.universe.example:443", parsed.get("omittedChannelProviderEndpoint"));
+    assertEquals("null", parsed.get("omittedSpannerUniverseDomain"));
+    assertEquals("universe.example", parsed.get("omittedStubUniverseDomain"));
+    assertEquals("spanner.universe.example:443", parsed.get("emptyChannelProviderEndpoint"));
+    assertEquals("null", parsed.get("emptySpannerUniverseDomain"));
+    assertEquals("universe.example", parsed.get("emptyStubUniverseDomain"));
+    assertEquals("spanner.custom.example:443", parsed.get("explicitChannelProviderEndpoint"));
+    assertEquals("custom.example", parsed.get("explicitSpannerUniverseDomain"));
+    assertEquals("custom.example", parsed.get("explicitStubUniverseDomain"));
   }
 }

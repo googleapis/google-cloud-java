@@ -234,7 +234,7 @@ final class BigQueryTemporalUtility {
       return null;
     }
 
-    BigDecimal bd = new BigDecimal(epochDecimal).setScale(9, RoundingMode.DOWN);
+    BigDecimal bd = parseScaledEpochDecimal(epochDecimal, 9);
     BigDecimal secondsBd = bd.setScale(0, RoundingMode.FLOOR);
     BigDecimal fractionBd = bd.subtract(secondsBd);
     int nanos = fractionBd.multiply(NANOS_PER_SECOND).intValue();
@@ -260,7 +260,7 @@ final class BigQueryTemporalUtility {
     int scale = enableTimestampPicos ? 12 : 6;
     BigDecimal bd;
     try {
-      bd = new BigDecimal(epochDecimal).setScale(scale, RoundingMode.DOWN);
+      bd = parseScaledEpochDecimal(epochDecimal, scale);
     } catch (NumberFormatException e) {
       try {
         return formatTimestampStringFromIso(epochDecimal, enableTimestampPicos);
@@ -275,10 +275,32 @@ final class BigQueryTemporalUtility {
     BigDecimal multiplier = scale == 12 ? PICOS_PER_SECOND : MICROS_PER_SECOND;
     long fractionVal = fractionBd.multiply(multiplier).setScale(0, RoundingMode.DOWN).longValue();
 
-    LocalDateTime dt = LocalDateTime.ofEpochSecond(epochSeconds, 0, ZoneOffset.UTC);
+    LocalDateTime dt;
+    try {
+      dt = LocalDateTime.ofEpochSecond(epochSeconds, 0, ZoneOffset.UTC);
+    } catch (DateTimeException e) {
+      throw new BigQueryJdbcException("Invalid timestamp value: " + epochDecimal, e);
+    }
     StringBuilder sb = formatDateTimeBase(dt, scale);
     appendPadded(sb, fractionVal, scale);
     return sb.toString();
+  }
+
+  private static BigDecimal parseScaledEpochDecimal(String epochDecimal, int scale) {
+    if (epochDecimal.length() > 128) {
+      throw new NumberFormatException("Epoch timestamp string too long");
+    }
+    BigDecimal raw = new BigDecimal(epochDecimal);
+    if (raw.signum() == 0) {
+      return BigDecimal.ZERO.setScale(scale);
+    }
+    long integerDigits = (long) raw.precision() - (long) raw.scale();
+    if (integerDigits > 17) {
+      throw new NumberFormatException("Epoch timestamp out of range");
+    }
+    return integerDigits <= -scale
+        ? BigDecimal.ZERO.setScale(scale)
+        : raw.setScale(scale, RoundingMode.DOWN);
   }
 
   /**

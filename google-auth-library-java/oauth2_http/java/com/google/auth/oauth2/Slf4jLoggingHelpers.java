@@ -72,6 +72,7 @@ class Slf4jLoggingHelpers {
             "authorization",
             "subject_token",
             "actor_token",
+            "access_boundary_session_key",
             "id_token"));
   }
 

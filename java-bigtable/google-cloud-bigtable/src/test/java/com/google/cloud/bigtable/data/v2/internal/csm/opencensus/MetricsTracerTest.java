@@ -34,6 +34,7 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
+import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -131,7 +132,10 @@ public class MetricsTracerTest {
 
     BigtableClientContext bigtableClientContext =
         BigtableClientContext.create(
-            settings.getStubSettings(), Tags.getTagger(), localStats.getStatsRecorder());
+            settings.getStubSettings(),
+            Tags.getTagger(),
+            localStats.getStatsRecorder(),
+            MetricsImpl::createBuiltinOtel);
 
     stub =
         new EnhancedBigtableStub(

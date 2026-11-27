@@ -40,6 +40,7 @@ import java.time.Instant;
 import java.util.BitSet;
 import java.util.EnumSet;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -279,6 +280,10 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   private void asyncCreateMultiplexedSession(
       SettableApiFuture<SessionReference> sessionReferenceFuture, int remainingAttempts) {
+    if (isClosed || sessionReferenceFuture.isDone()) {
+      sessionReferenceFuture.setException(newClosedException());
+      return;
+    }
     this.sessionClient.asyncCreateMultiplexedSession(
         new SessionConsumer() {
           @Override
@@ -317,16 +322,37 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
               MultiplexedSessionDatabaseClient.this.resourceNotFoundException.set(
                   (ResourceNotFoundException) spannerException);
             }
-            // Set the exception to trigger an error for all waiters.
-            // Then retry the session creation if the error is (potentially) transient and the
-            // client has not been closed in the meantime.
-            sessionReferenceFuture.setException(t);
+            SettableApiFuture<SessionReference> retryFuture = null;
             if (remainingAttempts > 1
                 && !isClientClosed()
                 && RETRYABLE_ERROR_CODES.contains(spannerException.getErrorCode())) {
-              final SettableApiFuture<SessionReference> future = SettableApiFuture.create();
-              MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.set(future);
-              asyncCreateMultiplexedSession(future, remainingAttempts - 1);
+              final SettableApiFuture<SessionReference> nextFuture = SettableApiFuture.create();
+              if (MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.compareAndSet(
+                  sessionReferenceFuture, nextFuture)) {
+                retryFuture = nextFuture;
+              }
+            }
+
+            // 1. Unblock all waiters of the failed attempt first.
+            // This is executed OUTSIDE any lock to avoid deadlocks in foreign listener callbacks.
+            // Because the retryFuture was installed into multiplexedSessionReference above,
+            // any waking waiter that retries immediately is guaranteed to observe the retry future.
+            sessionReferenceFuture.setException(t);
+
+            // 2. If a retry was scheduled, initiate it:
+            if (retryFuture != null) {
+              // Guard against concurrent client close that happened while waking waiters.
+              if (isClientClosed() || retryFuture.isDone()) {
+                retryFuture.setException(newClosedException());
+                return;
+              }
+              try {
+                asyncCreateMultiplexedSession(retryFuture, remainingAttempts - 1);
+              } catch (Throwable e) {
+                // Failsafe: ensure waiting threads never hang if RPC scheduling throws
+                // synchronously.
+                retryFuture.setException(e);
+              }
             }
           }
         });
@@ -404,6 +430,18 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     return this.numSessionsReleased;
   }
 
+  @VisibleForTesting
+  int getChannelUsageCardinality() {
+    synchronized (this.channelUsage) {
+      return this.channelUsage.cardinality();
+    }
+  }
+
+  @VisibleForTesting
+  int getNumCurrentSingleUseTransactions() {
+    return this.numCurrentSingleUseTransactions.get();
+  }
+
   @Override
   @Nullable
   public String getChannelPrimeSessionName() {
@@ -424,14 +462,22 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   void close() {
     boolean releaseChannelUsage = false;
+    ApiFuture<SessionReference> currentSessionFuture = null;
     synchronized (this) {
       if (!this.isClosed) {
         this.isClosed = true;
         this.maintainer.stop();
         releaseChannelUsage = true;
+        currentSessionFuture = this.multiplexedSessionReference.get();
       }
     }
     if (releaseChannelUsage) {
+      // If a session creation or retry is currently in flight, fail it immediately so
+      // transactions waiting on the closed client do not hang.
+      if (currentSessionFuture instanceof SettableApiFuture && !currentSessionFuture.isDone()) {
+        ((SettableApiFuture<SessionReference>) currentSessionFuture)
+            .setException(newClosedException());
+      }
       // The multiplexed session is no longer maintained, so this client must no longer be asked
       // for a session when priming dynamic channel pool channels.
       spanner.getRpc().unregisterChannelPrimeSessionSource(this);
@@ -445,6 +491,11 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
         }
       }
     }
+  }
+
+  @VisibleForTesting
+  ApiFuture<SessionReference> getMultiplexedSessionFuture() {
+    return this.multiplexedSessionReference.get();
   }
 
   @VisibleForTesting
@@ -574,6 +625,16 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   }
 
   @Override
+  @Nullable
+  public String getDatabaseDefaultIsolationLevelValue() {
+    try {
+      return databaseMetadataSupplier.get().getDefaultIsolationLevelValue();
+    } catch (Exception exception) {
+      throw SpannerExceptionFactory.asSpannerException(exception);
+    }
+  }
+
+  @Override
   public String getDatabaseRole() {
     return this.sessionClient.getSpanner().getOptions().getDatabaseRole();
   }
@@ -602,8 +663,9 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   public ServerStream<BatchWriteResponse> batchWriteAtLeastOnce(
       Iterable<MutationGroup> mutationGroups, TransactionOption... options)
       throws SpannerException {
-    return createMultiplexedSessionTransaction(/* singleUse= */ true)
-        .batchWriteAtLeastOnce(mutationGroups, options);
+    List<MutationGroup> materializedGroups = SessionImpl.materializeMutationGroups(mutationGroups);
+    return createMultiplexedSessionTransaction(/* singleUse= */ false)
+        .batchWriteAtLeastOnce(materializedGroups, options);
   }
 
   @Override

@@ -30,12 +30,25 @@ import java.util.concurrent.ExecutionException;
 /**
  * BigQuery service exception.
  *
- * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud BigQuery
+ * <p>BigQuery often indicates whether a failure is transient or permanent through a structured
+ * error reason ({@link #getReason()}, {@link #getError()}, or {@link #getErrors()}) rather than the
+ * HTTP status code alone. For example, rate-limit errors may arrive with HTTP 403, and
+ * job-execution errors surfaced from job status have {@link #getCode()} equal to {@code 0}.
+ *
+ * <p>{@link #isRetryable()} classifies only HTTP 500, 502, 503, 504, and low-level transport {@link
+ * IOException} failures as retryable. When deciding whether to retry, inspect the structured error
+ * reason alongside the HTTP status code and consult the BigQuery error codes reference. Transient
+ * asynchronous job failures cannot be recovered by polling the failed job again. Resubmit the work
+ * as a new job with a new {@link JobId}.
+ *
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/errors">BigQuery API HTTP status and
  *     error codes</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/error-messages">BigQuery client and
+ *     connectivity error messages</a>
  */
 public final class BigQueryException extends BaseHttpServiceException {
 
-  // see: https://cloud.google.com/bigquery/troubleshooting-errors
+  // see: https://docs.cloud.google.com/bigquery/docs/errors
   private static final Set<Error> RETRYABLE_ERRORS =
       ImmutableSet.of(
           new Error(500, null), new Error(502, null), new Error(503, null), new Error(504, null));

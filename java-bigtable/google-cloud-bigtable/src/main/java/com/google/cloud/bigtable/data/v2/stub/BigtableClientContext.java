@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.data.v2.stub;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
-import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
@@ -42,6 +41,7 @@ import com.google.cloud.bigtable.data.v2.internal.dp.NoopDirectAccessChecker;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableTransportChannelProvider;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
+import com.google.common.annotations.VisibleForTesting;
 import io.grpc.ManagedChannelBuilder;
 import io.opencensus.stats.Stats;
 import io.opencensus.stats.StatsRecorder;
@@ -75,13 +75,45 @@ public class BigtableClientContext {
   private final ExecutorProvider backgroundExecutorProvider;
   private final Shim sessionShim;
 
-  public static BigtableClientContext create(EnhancedBigtableStubSettings settings)
-      throws IOException {
-    return create(settings, Tags.getTagger(), Stats.getStatsRecorder());
+  @InternalApi("Visible for testing")
+  @VisibleForTesting
+  @FunctionalInterface
+  public interface BuiltinOtelFactory {
+    @Nullable
+    OpenTelemetrySdk create(
+        MetricRegistry metricRegistry,
+        ClientInfo clientInfo,
+        @Nullable Credentials defaultCredentials,
+        @Nullable String metricsEndpoint,
+        String universeDomain,
+        ScheduledExecutorService executor)
+        throws IOException;
   }
 
+  public static BigtableClientContext create(EnhancedBigtableStubSettings settings)
+      throws IOException {
+    return create(
+        settings, Tags.getTagger(), Stats.getStatsRecorder(), MetricsImpl::createBuiltinOtel);
+  }
+
+  /**
+   * @deprecated This method was only intended for internal testing and was accidentally exposed.
+   *     Use {@link #create(EnhancedBigtableStubSettings)} instead.
+   */
+  @Deprecated
   public static BigtableClientContext create(
       EnhancedBigtableStubSettings settings, Tagger ocTagger, StatsRecorder ocRecorder)
+      throws IOException {
+    return create(settings, ocTagger, ocRecorder, MetricsImpl::createBuiltinOtel);
+  }
+
+  @InternalApi("Visible for testing")
+  @VisibleForTesting
+  public static BigtableClientContext create(
+      EnhancedBigtableStubSettings settings,
+      Tagger ocTagger,
+      StatsRecorder ocRecorder,
+      BuiltinOtelFactory builtinOtelFactory)
       throws IOException {
     ClientInfo clientInfo =
         ClientInfo.builder()
@@ -91,15 +123,13 @@ public class BigtableClientContext {
 
     EnhancedBigtableStubSettings.Builder builder = settings.toBuilder();
 
-    // Set up credentials
-    patchCredentials(builder);
-
     // Fix the credentials so that they can be shared
     @Nullable Credentials credentials = null;
     if (builder.getCredentialsProvider() != null) {
       credentials = builder.getCredentialsProvider().getCredentials();
     }
-    builder.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
+    @Nullable Credentials dataCredentials = patchCredentials(builder.getJwtAudience(), credentials);
+    builder.setCredentialsProvider(FixedCredentialsProvider.create(dataCredentials));
 
     String universeDomain = settings.getUniverseDomain();
 
@@ -122,7 +152,7 @@ public class BigtableClientContext {
     try {
       if (settings.areInternalMetricsEnabled()) {
         builtinOtel =
-            MetricsImpl.createBuiltinOtel(
+            builtinOtelFactory.create(
                 metricRegistry,
                 clientInfo,
                 credentials,
@@ -165,7 +195,7 @@ public class BigtableClientContext {
                 builder.getProjectId(),
                 builder.getInstanceId(),
                 builder.getAppProfileId(),
-                credentials,
+                dataCredentials,
                 builder.getHeaderProvider().getHeaders());
       }
 
@@ -202,7 +232,7 @@ public class BigtableClientContext {
 
     Shim shim =
         settings.isSessionsEnabled()
-            ? ShimImpl.create(clientInfo, credentials, metrics, backgroundExecutor, settings)
+            ? ShimImpl.create(clientInfo, dataCredentials, metrics, backgroundExecutor, settings)
             : new DisabledShim();
 
     try {
@@ -307,34 +337,21 @@ public class BigtableClientContext {
     }
   }
 
-  private static void patchCredentials(EnhancedBigtableStubSettings.Builder settings)
-      throws IOException {
-    String audience = settings.getJwtAudience();
-
-    URI audienceUri = null;
+  @Nullable
+  private static Credentials patchCredentials(String audience, @Nullable Credentials credentials) {
+    URI audienceUri;
     try {
       audienceUri = new URI(audience);
     } catch (URISyntaxException e) {
       throw new IllegalStateException("invalid JWT audience", e);
     }
 
-    CredentialsProvider credentialsProvider = settings.getCredentialsProvider();
-    if (credentialsProvider == null) {
-      return;
-    }
-
-    Credentials credentials = credentialsProvider.getCredentials();
-    if (credentials == null) {
-      return;
-    }
-
     if (!(credentials instanceof ServiceAccountJwtAccessCredentials)) {
-      return;
+      return credentials;
     }
 
     ServiceAccountJwtAccessCredentials jwtCreds = (ServiceAccountJwtAccessCredentials) credentials;
-    JwtCredentialsWithAudience patchedCreds = new JwtCredentialsWithAudience(jwtCreds, audienceUri);
-    settings.setCredentialsProvider(FixedCredentialsProvider.create(patchedCreds));
+    return new JwtCredentialsWithAudience(jwtCreds, audienceUri);
   }
 
   private static void setupCookieHolder(

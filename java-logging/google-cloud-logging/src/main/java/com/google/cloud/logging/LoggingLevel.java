@@ -31,7 +31,7 @@ import java.util.logging.Level;
  *   <li>CRITICAL
  *   <li>ERROR ({@code WARNING < ERROR < SEVERE})
  *   <li>NOTICE ({@code INFO < NOTICE < WARNING})
- *   <li>DEBUG ({@code ALL < DEBUG < FINES}T
+ *   <li>DEBUG ({@code ALL < DEBUG < FINEST})
  * </ul>
  *
  * <p>Notice that {@code ERROR} is lower than {@link java.util.logging.Level#SEVERE} but higher than
@@ -73,7 +73,7 @@ public final class LoggingLevel extends Level {
   public static final LoggingLevel ALERT = new LoggingLevel("ALERT", 1100, Severity.ALERT);
 
   /**
-   * A levet to be used when one or more systems are unusable. This level is initialized to {@code
+   * A level to be used when one or more systems are unusable. This level is initialized to {@code
    * 1150}.
    */
   public static final LoggingLevel EMERGENCY =

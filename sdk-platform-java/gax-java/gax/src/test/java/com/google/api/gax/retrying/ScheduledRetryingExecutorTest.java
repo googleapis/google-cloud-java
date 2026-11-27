@@ -182,6 +182,10 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
       assertFalse(future.getAttemptResult().isDone());
       assertFalse(future.getAttemptResult().isCancelled());
 
+      // Capture the first attempt's future before submitting so the test deterministically
+      // observes at least one failed intermediate attempt even when RecordingScheduler runs all
+      // retries immediately with zero delay.
+      Future<String> attemptResult = future.getAttemptResult();
       future.setAttemptFuture(executor.submit(future));
 
       CustomException exception;
@@ -189,7 +193,9 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
       do {
         exception = null;
         checks++;
-        Future<String> attemptResult = future.getAttemptResult();
+        if (checks > 1) {
+          attemptResult = future.getAttemptResult();
+        }
         try {
           // testing that the gotten attempt result is non-cancelable
           assertFalse(attemptResult.cancel(false));

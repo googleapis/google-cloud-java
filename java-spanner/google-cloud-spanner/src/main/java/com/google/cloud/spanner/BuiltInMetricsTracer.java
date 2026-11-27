@@ -35,7 +35,8 @@ import javax.annotation.Nullable;
 class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
 
   private final BuiltInMetricsRecorder builtInOpenTelemetryMetricsRecorder;
-  // These are RPC specific attributes and pertain to a specific API Trace
+  // These are RPC specific attributes and pertain to a specific API Trace.
+  // All accesses to this.* and super.* state are guarded by this instance's monitor.
   private final Map<String, String> attributes = new HashMap<>();
   private Float gfeLatency = null;
   private Float afeLatency = null;
@@ -56,12 +57,42 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
     this.currentSpan = currentSpan;
   }
 
+  @Override
+  public synchronized void operationSucceeded() {
+    super.operationSucceeded();
+  }
+
+  @Override
+  public synchronized void operationCancelled() {
+    super.operationCancelled();
+  }
+
+  @Override
+  public synchronized void operationFailed(Throwable error) {
+    super.operationFailed(error);
+  }
+
+  @Override
+  public synchronized void attemptStarted(Object request, int attemptNumber) {
+    this.gfeLatency = null;
+    this.afeLatency = null;
+    this.isDirectPathUsed = false;
+    this.isAfeEnabled = false;
+    super.attemptStarted(request, attemptNumber);
+  }
+
+  @Override
+  @SuppressWarnings("deprecation")
+  public synchronized void attemptStarted(int attemptNumber) {
+    attemptStarted(null, attemptNumber);
+  }
+
   /**
    * Adds an annotation that the attempt succeeded. Successful attempt add "OK" value to the status
    * attribute key.
    */
   @Override
-  public void attemptSucceeded() {
+  public synchronized void attemptSucceeded() {
     try (IScope s = this.traceWrapper.withSpan(this.currentSpan)) {
       super.attemptSucceeded();
       attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
@@ -75,7 +106,7 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
    * to the status attribute key.
    */
   @Override
-  public void attemptCancelled() {
+  public synchronized void attemptCancelled() {
     try (IScope s = this.traceWrapper.withSpan(this.currentSpan)) {
       super.attemptCancelled();
       attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
@@ -93,7 +124,7 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
    *     key.
    */
   @Override
-  public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
+  public synchronized void attemptFailedDuration(Throwable error, java.time.Duration delay) {
     try (IScope s = this.traceWrapper.withSpan(this.currentSpan)) {
       super.attemptFailedDuration(error, delay);
       attributes.put(STATUS_ATTRIBUTE, extractStatus(error));
@@ -110,7 +141,7 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
    * @param error the last error received before retries were exhausted.
    */
   @Override
-  public void attemptFailedRetriesExhausted(Throwable error) {
+  public synchronized void attemptFailedRetriesExhausted(Throwable error) {
     try (IScope s = this.traceWrapper.withSpan(this.currentSpan)) {
       super.attemptFailedRetriesExhausted(error);
       attributes.put(STATUS_ATTRIBUTE, extractStatus(error));
@@ -127,7 +158,7 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
    * @param error the error that caused the final attempt to fail.
    */
   @Override
-  public void attemptPermanentFailure(Throwable error) {
+  public synchronized void attemptPermanentFailure(Throwable error) {
     try (IScope s = this.traceWrapper.withSpan(this.currentSpan)) {
       super.attemptPermanentFailure(error);
       attributes.put(STATUS_ATTRIBUTE, extractStatus(error));
@@ -136,7 +167,7 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
     }
   }
 
-  public void recordServerTimingHeaderMetrics(
+  public synchronized void recordServerTimingHeaderMetrics(
       Float gfeLatency, Float afeLatency, boolean isDirectPathUsed, boolean isAfeEnabled) {
     this.gfeLatency = gfeLatency;
     this.isDirectPathUsed = isDirectPathUsed;
@@ -145,13 +176,13 @@ class BuiltInMetricsTracer extends MetricsTracer implements ApiTracer {
   }
 
   @Override
-  public void addAttributes(Map<String, String> attributes) {
+  public synchronized void addAttributes(Map<String, String> attributes) {
     super.addAttributes(attributes);
     this.attributes.putAll(attributes);
   }
 
   @Override
-  public void addAttributes(String key, String value) {
+  public synchronized void addAttributes(String key, String value) {
     super.addAttributes(key, value);
     this.attributes.put(key, value);
   }

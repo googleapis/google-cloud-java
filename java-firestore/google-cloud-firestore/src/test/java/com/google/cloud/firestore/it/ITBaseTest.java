@@ -44,6 +44,8 @@ public abstract class ITBaseTest {
    */
   private static final long PRIMING_TIMEOUT_MS = 45000;
 
+  protected static final long WRITE_TIMEOUT_SECONDS = 30;
+
   private static final Logger logger = Logger.getLogger(ITBaseTest.class.getName());
 
   protected Firestore firestore;
@@ -116,9 +118,10 @@ public abstract class ITBaseTest {
   @Before
   public void before() throws Exception {
     firestoreOptions = getOptionsBuilder().build();
+    String endpoint = firestoreOptions.getTransportChannelProvider().getEndpoint();
     logger.log(
         Level.INFO,
-        "Integration test against " + firestoreOptions.getTransportChannelProvider().getEndpoint());
+        "Integration test against " + (endpoint != null ? endpoint : firestoreOptions.getHost()));
     firestore = firestoreOptions.getService();
     primeBackend();
   }

@@ -87,14 +87,20 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   private boolean resultSetMetadataRecorded;
 
   BigQueryPreparedStatement(BigQueryConnection connection, String query) throws SQLException {
-    this(connection, query, true);
+    this(connection, query, false, true);
   }
 
-  BigQueryPreparedStatement(BigQueryConnection connection, String query, boolean recordTelemetry)
+  BigQueryPreparedStatement(BigQueryConnection connection, String query, boolean skipDryRun)
+      throws SQLException {
+    this(connection, query, skipDryRun, true);
+  }
+
+  BigQueryPreparedStatement(
+      BigQueryConnection connection, String query, boolean skipDryRun, boolean recordTelemetry)
       throws SQLException {
     super(connection, recordTelemetry);
     this.currentQuery = query;
-    QueryStatistics queryStatistics = describeQueryQuietly();
+    QueryStatistics queryStatistics = skipDryRun ? null : describeQueryQuietly();
     this.parameterCount = resolveParameterCount(query, queryStatistics);
     this.parameterHandler =
         new BigQueryParameterHandler(

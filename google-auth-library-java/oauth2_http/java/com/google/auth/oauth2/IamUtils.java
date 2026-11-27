@@ -49,6 +49,7 @@ import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.MetricsUtils.RequestType;
+import com.google.common.base.Strings;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.io.InputStream;
@@ -84,7 +85,7 @@ class IamUtils {
   /**
    * Returns a signature for the provided bytes.
    *
-   * @param serviceAccountEmail the email address for the service account used for signing
+   * @param signBlobUrl the IAM signBlob endpoint for the service account used for signing
    * @param credentials credentials required for making the IAM call
    * @param transport transport used for building the HTTP request
    * @param toSign bytes to sign
@@ -93,9 +94,8 @@ class IamUtils {
    * @throws ServiceAccountSigner.SigningException if signing fails
    */
   static byte[] sign(
-      String serviceAccountEmail,
+      String signBlobUrl,
       Credentials credentials,
-      String universeDomain,
       HttpTransport transport,
       byte[] toSign,
       Map<String, ?> additionalFields) {
@@ -104,13 +104,7 @@ class IamUtils {
         transport.createRequestFactory(new HttpCredentialsAdapter(credentials));
     String signature;
     try {
-      signature =
-          getSignature(
-              serviceAccountEmail,
-              universeDomain,
-              base64.encode(toSign),
-              additionalFields,
-              factory);
+      signature = getSignature(signBlobUrl, base64.encode(toSign), additionalFields, factory);
     } catch (IOException ex) {
       throw new ServiceAccountSigner.SigningException("Failed to sign the provided bytes", ex);
     }
@@ -118,14 +112,8 @@ class IamUtils {
   }
 
   private static String getSignature(
-      String serviceAccountEmail,
-      String universeDomain,
-      String bytes,
-      Map<String, ?> additionalFields,
-      HttpRequestFactory factory)
+      String signBlobUrl, String bytes, Map<String, ?> additionalFields, HttpRequestFactory factory)
       throws IOException {
-    String signBlobUrl =
-        String.format(IAM_SIGN_BLOB_ENDPOINT_FORMAT, universeDomain, serviceAccountEmail);
     GenericUrl genericUrl = new GenericUrl(signBlobUrl);
 
     GenericData signRequest = new GenericData();
@@ -168,10 +156,7 @@ class IamUtils {
         response, LOGGER_PROVIDER, "Received response for signature to sign the blob");
     int statusCode = response.getStatusCode();
     if (statusCode >= 400 && statusCode < HttpStatusCodes.STATUS_CODE_SERVER_ERROR) {
-      GenericData responseError = response.parseAs(GenericData.class);
-      Map<String, Object> error =
-          OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
-      String errorMessage = OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
+      String errorMessage = parseErrorMessage(response);
       throw new IOException(
           String.format(
               "Error code %s trying to sign provided bytes: %s", statusCode, errorMessage));
@@ -198,9 +183,52 @@ class IamUtils {
   }
 
   /**
+   * Returns the error message from an IAM Credentials 4xx response, or falls back to the HTTP
+   * status message when the body is missing, empty, not JSON, or lacks {@code error.message}.
+   *
+   * <p>For example, {@code HttpURLConnection} (used by {@code NetHttpTransport}) discards the body
+   * of a 401 or 407 response to a request sent in streaming mode (every POST with content) and of
+   * any response with {@code Content-Length: 0}, and proxies can return HTML or other non-IAM
+   * bodies. Falling back preserves the HTTP status code in the caller's {@link IOException} instead
+   * of failing with a {@link NullPointerException}, {@link IllegalArgumentException}, or JSON parse
+   * error.
+   */
+  private static String parseErrorMessage(HttpResponse response) {
+    GenericData responseError;
+    try {
+      if (response.getContent() == null) {
+        return getStatusMessageOrDefault(response);
+      }
+      responseError = response.parseAs(GenericData.class);
+    } catch (IOException | IllegalArgumentException e) {
+      // Empty body ("no JSON input found"), non-JSON body (for example, an HTML error page from a
+      // proxy), or unreadable stream.
+      return getStatusMessageOrDefault(response);
+    }
+    if (responseError != null) {
+      Object error = responseError.get("error");
+      if (error instanceof Map) {
+        Object message = ((Map<?, ?>) error).get("message");
+        if (message instanceof String && !((String) message).isEmpty()) {
+          return (String) message;
+        }
+      }
+    }
+    return getStatusMessageOrDefault(response);
+  }
+
+  private static String getStatusMessageOrDefault(HttpResponse response) {
+    String statusMessage = response.getStatusMessage();
+    return Strings.isNullOrEmpty(statusMessage)
+        ? "(no error details in the response)"
+        : statusMessage;
+  }
+
+  /**
    * Returns an IdToken issued to the serviceAccount with a specified targetAudience
    *
-   * @param serviceAccountEmail the email address for the service account to get an ID Token for
+   * @param idTokenUrl the IAM generateIdToken endpoint for the service account to get an ID Token
+   *     for
    * @param credentials credentials required for making the IAM call
    * @param transport transport used for building the HTTP request
    * @param targetAudience the audience the issued ID token should include
@@ -212,18 +240,14 @@ class IamUtils {
    *     href="https://cloud.google.com/iam/credentials/reference/rest/v1/projects.serviceAccounts/generateIdToken">...</a>
    */
   static IdToken getIdToken(
-      String serviceAccountEmail,
+      String idTokenUrl,
       Credentials credentials,
       HttpTransport transport,
       String targetAudience,
       boolean includeEmail,
       Map<String, ?> additionalFields,
-      CredentialTypeForMetrics credentialTypeForMetrics,
-      String universeDomain)
+      CredentialTypeForMetrics credentialTypeForMetrics)
       throws IOException {
-
-    String idTokenUrl =
-        String.format(IAM_ID_TOKEN_ENDPOINT_FORMAT, universeDomain, serviceAccountEmail);
     GenericUrl genericUrl = new GenericUrl(idTokenUrl);
 
     GenericData idTokenRequest = new GenericData();
@@ -257,10 +281,7 @@ class IamUtils {
     LoggingUtils.logResponse(response, LOGGER_PROVIDER, "Received response for ID token request");
     int statusCode = response.getStatusCode();
     if (statusCode >= 400 && statusCode < HttpStatusCodes.STATUS_CODE_SERVER_ERROR) {
-      GenericData responseError = response.parseAs(GenericData.class);
-      Map<String, Object> error =
-          OAuth2Utils.validateMap(responseError, "error", PARSE_ERROR_MESSAGE);
-      String errorMessage = OAuth2Utils.validateString(error, "message", PARSE_ERROR_MESSAGE);
+      String errorMessage = parseErrorMessage(response);
       throw new IOException(
           String.format("Error code %s trying to getIDToken: %s", statusCode, errorMessage));
     }

@@ -817,6 +817,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
 
     final FieldList resultSchemaFields = resultSchema.getFields();
+    String literalProcedureName = SqlLikePattern.literalOrNull(procedureNamePattern);
+    SqlLikePattern procedureMatcher =
+        (literalProcedureName == null) ? SqlLikePattern.compile(procedureNamePattern) : null;
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
 
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
@@ -826,8 +829,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   Collections.synchronizedList(new ArrayList<>());
               processTargetRoutinesConcurrently(
                   targetDatasets,
-                  procedureNamePattern,
-                  true,
+                  literalProcedureName,
+                  procedureMatcher,
                   true,
                   collectedResults,
                   resultSchemaFields,
@@ -976,8 +979,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return new BigQueryJsonResultSet(resultSchema);
     }
     final FieldList resultSchemaFields = resultSchema.getFields();
+    String literalProcedureName = SqlLikePattern.literalOrNull(procedureNamePattern);
+    SqlLikePattern procedureMatcher =
+        (literalProcedureName == null) ? SqlLikePattern.compile(procedureNamePattern) : null;
+    SqlLikePattern columnNameMatcher = SqlLikePattern.compile(columnNamePattern);
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
-    Pattern columnNameRegex = compileSqlLikePattern(columnNamePattern);
 
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         fetchAndPopulateQueue(
@@ -986,8 +992,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   Collections.synchronizedList(new ArrayList<>());
               processTargetRoutinesConcurrently(
                   targetDatasets,
-                  procedureNamePattern,
-                  true,
+                  literalProcedureName,
+                  procedureMatcher,
                   true,
                   collectedResults,
                   resultSchemaFields,
@@ -995,7 +1001,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     if (!"PROCEDURE".equalsIgnoreCase(routine.getRoutineType())) {
                       return;
                     }
-                    processProcedureArguments(routine, columnNameRegex, results, fields);
+                    processProcedureArguments(routine, columnNameMatcher, results, fields);
                   },
                   RoutineOption.fields(
                       RoutineField.ROUTINE_REFERENCE,
@@ -1072,7 +1078,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   void processProcedureArguments(
       Routine routine,
-      Pattern columnNameRegex,
+      SqlLikePattern columnNameMatcher,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields) {
 
@@ -1121,10 +1127,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
 
       // Filter by columnNamePattern, but not by generated fallback name
-      if (columnNameRegex != null) {
+      if (columnNameMatcher != null) {
         assert argName != null;
         if (!argName.startsWith("arg_")) {
-          if (!columnNameRegex.matcher(argName).matches()) {
+          if (!columnNameMatcher.matches(argName)) {
             continue;
           }
         }
@@ -1316,6 +1322,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     String effectiveCatalog = effectiveIdentifiers.x();
     String effectiveSchemaPattern = effectiveIdentifiers.y();
 
+    String literalTableName = SqlLikePattern.literalOrNull(tableNamePattern);
+    SqlLikePattern tableMatcher =
+        (literalTableName == null) ? SqlLikePattern.compile(tableNamePattern) : null;
     List<DatasetId> targetDatasets = getTargetDatasets(effectiveCatalog, effectiveSchemaPattern);
 
     final Set<String> requestedTypes =
@@ -1337,8 +1346,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               if (!isExactGraphTableName && !onlyGraphTablesRequested) {
                 processTargetTablesConcurrently(
                     targetDatasets,
-                    tableNamePattern,
-                    true,
+                    literalTableName,
+                    tableMatcher,
                     false,
                     false,
                     collectedResults,
@@ -1559,7 +1568,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       validateCatalogIdentifier(project);
       String formattedSql = replaceSqlParameters(getGraphTablesSqlContent(), project, scope);
 
-      try (PreparedStatement statement = this.connection.prepareStatementInternal(formattedSql)) {
+      try (PreparedStatement statement =
+          this.connection.prepareStatementInternal(formattedSql, true)) {
         statement.setString(1, effectiveSchemaPattern == null ? "%" : effectiveSchemaPattern);
         statement.setString(2, effectiveTablePattern);
 
@@ -1708,9 +1718,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     String effectiveCatalog = effectiveIdentifiers.x();
     String effectiveSchemaPattern = effectiveIdentifiers.y();
 
-    List<DatasetId> targetDatasets = getTargetDatasets(effectiveCatalog, effectiveSchemaPattern);
+    String literalTableName = SqlLikePattern.literalOrNull(tableNamePattern);
+    SqlLikePattern tableMatcher =
+        (literalTableName == null) ? SqlLikePattern.compile(tableNamePattern) : null;
+    SqlLikePattern columnNameMatcher = SqlLikePattern.compile(columnNamePattern);
 
-    Pattern columnNameRegex = compileSqlLikePattern(columnNamePattern);
+    List<DatasetId> targetDatasets = getTargetDatasets(effectiveCatalog, effectiveSchemaPattern);
 
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         fetchAndPopulateQueue(
@@ -1724,14 +1737,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               if (!isExactGraphTableName) {
                 processTargetTablesConcurrently(
                     targetDatasets,
-                    tableNamePattern,
-                    true,
+                    literalTableName,
+                    tableMatcher,
                     false,
                     true,
                     collectedResults,
                     resultSchemaFields,
                     (bqTable, results, fields) -> {
-                      processTableColumns(bqTable, columnNameRegex, results, fields);
+                      processTableColumns(bqTable, columnNameMatcher, results, fields);
                     },
                     TableOption.fields(
                         TableField.TABLE_REFERENCE, TableField.TYPE, TableField.SCHEMA));
@@ -1756,7 +1769,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private void processTableColumns(
       Table table,
-      Pattern columnNameRegex,
+      SqlLikePattern columnNameMatcher,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields) {
     TableId tableId = table.getTableId();
@@ -1805,8 +1818,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         }
         Field field = fields.get(i);
         String currentColumnName = field.getName();
-        if (columnNameRegex != null && !columnNameRegex.matcher(currentColumnName).matches())
+        if (columnNameMatcher != null && !columnNameMatcher.matches(currentColumnName)) {
           continue;
+        }
         List<FieldValue> values = createColumnRow(catalogName, schemaName, tableName, field, i + 1);
         FieldValueList rowFvl = FieldValueList.of(values, resultSchemaFields);
         collectedResults.add(rowFvl);
@@ -1855,7 +1869,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
 
       String formattedSql = replaceSqlParameters(getGraphColumnsSqlContent(), project, scope);
-      try (PreparedStatement statement = this.connection.prepareStatementInternal(formattedSql)) {
+      try (PreparedStatement statement =
+          this.connection.prepareStatementInternal(formattedSql, true)) {
         statement.setString(1, effectiveSchemaLike);
         statement.setString(2, effectiveTableLike);
         statement.setString(3, effectiveColumnLike);
@@ -2340,7 +2355,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 processTargetTablesConcurrently(
                     targetDatasets,
                     table,
-                    false,
+                    null,
                     true,
                     true,
                     collectedResults,
@@ -2447,7 +2462,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       validateCatalogIdentifier(project);
       String formattedSql = replaceSqlParameters(getGraphPrimaryKeysSqlContent(), project, scope);
 
-      try (PreparedStatement statement = this.connection.prepareStatementInternal(formattedSql)) {
+      try (PreparedStatement statement =
+          this.connection.prepareStatementInternal(formattedSql, true)) {
         statement.setString(1, table); // exact "<graph>.<element>"
         try (ResultSet rs = statement.executeQuery()) {
           while (rs.next()) {
@@ -2516,7 +2532,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               processTargetTablesConcurrently(
                   targetDatasets,
                   table,
-                  false,
+                  null,
                   true,
                   true,
                   collectedResults,
@@ -2575,7 +2591,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 processTargetTablesConcurrently(
                     targetDatasets,
                     null,
-                    false,
+                    null,
                     true,
                     true,
                     collectedResults,
@@ -2609,17 +2625,24 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     validateCatalogIdentifier(catalog);
     validateSchemaIdentifier(schema);
     String sql = getExportedKeysSqlContent();
-    String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-    PreparedStatement stmt = this.connection.prepareStatementInternal(formattedSql);
+    String formattedSql = replaceSqlParameters(sql, catalog, schema);
+    PreparedStatement stmt = this.connection.prepareStatementInternal(formattedSql, true);
     if (stmt == null) {
       throw new BigQueryJdbcException("Failed to prepare statement for getExportedKeys");
     }
+    boolean succeeded = false;
     try {
       stmt.closeOnCompletion();
-      return stmt.executeQuery();
+      stmt.setString(1, table);
+      ResultSet rs = stmt.executeQuery();
+      succeeded = true;
+      return rs;
     } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getExportedKeys", e);
+    } finally {
+      if (!succeeded) {
+        closeStatementIgnoreException(stmt);
+      }
     }
   }
 
@@ -2660,7 +2683,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               processTargetTablesConcurrently(
                   targetDatasets,
                   foreignTable,
-                  false,
+                  null,
                   true,
                   true,
                   collectedResults,
@@ -3589,11 +3612,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
 
     final FieldList resultSchemaFields = resultSchema.getFields();
-    final Pattern schemaRegex = compileSqlLikePattern(schemaPattern);
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         fetchAndPopulateQueue(
             () -> {
-              List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
+              List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern);
               List<FieldValueList> collectedResults = new ArrayList<>(datasets.size());
               for (Dataset dataset : datasets) {
                 processSchemaInfo(dataset.getDatasetId(), collectedResults, resultSchemaFields);
@@ -3759,6 +3781,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
 
     final FieldList resultSchemaFields = resultSchema.getFields();
+    String literalFunctionName = SqlLikePattern.literalOrNull(functionNamePattern);
+    SqlLikePattern functionMatcher =
+        (literalFunctionName == null) ? SqlLikePattern.compile(functionNamePattern) : null;
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
 
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
@@ -3768,8 +3793,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   Collections.synchronizedList(new ArrayList<>());
               processTargetRoutinesConcurrently(
                   targetDatasets,
-                  functionNamePattern,
-                  true,
+                  literalFunctionName,
+                  functionMatcher,
                   true,
                   collectedResults,
                   resultSchemaFields,
@@ -3901,9 +3926,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
 
     final FieldList resultSchemaFields = resultSchema.getFields();
+    String literalFunctionName = SqlLikePattern.literalOrNull(functionNamePattern);
+    SqlLikePattern functionMatcher =
+        (literalFunctionName == null) ? SqlLikePattern.compile(functionNamePattern) : null;
+    SqlLikePattern columnNameMatcher = SqlLikePattern.compile(columnNamePattern);
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
-
-    Pattern columnNameRegex = compileSqlLikePattern(columnNamePattern);
 
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         fetchAndPopulateQueue(
@@ -3912,8 +3939,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   Collections.synchronizedList(new ArrayList<>());
               processTargetRoutinesConcurrently(
                   targetDatasets,
-                  functionNamePattern,
-                  true,
+                  literalFunctionName,
+                  functionMatcher,
                   true,
                   collectedResults,
                   resultSchemaFields,
@@ -3923,7 +3950,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       return;
                     }
                     processFunctionParametersAndReturnValue(
-                        routine, columnNameRegex, results, fields);
+                        routine, columnNameMatcher, results, fields);
                   },
                   RoutineOption.fields(
                       RoutineField.ROUTINE_REFERENCE,
@@ -4008,7 +4035,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   void processFunctionParametersAndReturnValue(
       Routine routine,
-      Pattern columnNameRegex,
+      SqlLikePattern columnNameMatcher,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields) {
     RoutineId routineId = routine.getRoutineId();
@@ -4030,8 +4057,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         for (int i = 0; i < tableColumns.size(); i++) {
           StandardSQLField tableColumn = tableColumns.get(i);
           String columnName = tableColumn.getName();
-          if (columnNameRegex != null
-              && (columnName == null || !columnNameRegex.matcher(columnName).matches())) {
+          if (columnNameMatcher != null && !columnNameMatcher.matches(columnName)) {
             continue;
           }
           List<FieldValue> rowValues =
@@ -4055,8 +4081,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         RoutineArgument arg = arguments.get(i);
         String argName = arg.getName();
 
-        if (columnNameRegex != null
-            && (argName == null || !columnNameRegex.matcher(argName).matches())) {
+        if (columnNameMatcher != null && !columnNameMatcher.matches(argName)) {
           continue;
         }
 
@@ -4359,11 +4384,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Function<String, T> getSpecificOperation,
       Function<T, String> nameExtractor,
       String pattern,
-      Pattern regex,
+      String literalName,
+      SqlLikePattern matcher,
       boolean throwOn404)
       throws InterruptedException {
 
-    boolean needsList = needsListing(pattern);
+    boolean needsList = (literalName == null);
     List<T> resultList = new ArrayList<>();
 
     try {
@@ -4377,14 +4403,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         LOG.fine("Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
 
       } else {
-        LOG.info("Getting specific %s: '%s'", objectTypeName, pattern);
-        T specificObject = getSpecificOperation.apply(pattern);
+        LOG.info("Getting specific %s: '%s'", objectTypeName, literalName);
+        T specificObject = getSpecificOperation.apply(literalName);
         objects =
             (specificObject == null)
                 ? Collections.<T>emptyList()
                 : Collections.singletonList(specificObject);
         if (specificObject == null) {
-          LOG.info("Specific %s not found: '%s'", objectTypeName, pattern);
+          LOG.info("Specific %s not found: '%s'", objectTypeName, literalName);
         }
       }
 
@@ -4396,9 +4422,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               "Interrupted during " + objectTypeName + " processing loop");
         }
         if (obj != null) {
-          if (wasListing && regex != null) {
+          if (wasListing && matcher != null) {
             String name = nameExtractor.apply(obj);
-            if (name != null && regex.matcher(name).matches()) {
+            if (matcher.matches(name)) {
               resultList.add(obj);
             }
           } else {
@@ -4541,52 +4567,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return fields;
   }
 
-  Pattern compileSqlLikePattern(String sqlLikePattern) {
-    if (sqlLikePattern == null) {
-      return null;
-    }
-    if (sqlLikePattern.isEmpty()) {
-      return Pattern.compile("(?!)");
-    }
-    StringBuilder regex = new StringBuilder(sqlLikePattern.length() * 2);
-    regex.append('^');
-    boolean escaped = false;
-    for (int i = 0; i < sqlLikePattern.length(); i++) {
-      char c = sqlLikePattern.charAt(i);
-      if (!escaped && c == '\\') {
-        escaped = true;
-        continue;
-      } else if (!escaped && c == '%') {
-        regex.append(".*");
-      } else if (!escaped && c == '_') {
-        regex.append('.');
-      } else {
-        if (isRegexMetacharacter(c)) {
-          regex.append('\\');
-        }
-        regex.append(c);
-        escaped = false;
-      }
-    }
-    if (escaped) {
-      regex.append('\\').append('\\');
-    }
-    regex.append('$');
-    return Pattern.compile(regex.toString(), Pattern.CASE_INSENSITIVE);
-  }
-
-  private static boolean isRegexMetacharacter(char c) {
-    return "\\.[]{}()*+?^$|".indexOf(c) != -1;
-  }
-
-  boolean needsListing(String pattern) {
-    return pattern == null || hasWildcards(pattern);
-  }
-
-  boolean hasWildcards(String pattern) {
-    return pattern != null && (pattern.contains("%") || pattern.contains("_"));
-  }
-
   FieldValue createStringFieldValue(String value) {
     return FieldValue.of(FieldValue.Attribute.PRIMITIVE, value);
   }
@@ -4706,7 +4686,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private List<Dataset> fetchDatasetsForProject(
-      String project, String schemaPattern, Pattern schemaRegex, boolean throwOn404)
+      String project,
+      String schemaPattern,
+      String literalSchema,
+      SqlLikePattern schemaMatcher,
+      boolean throwOn404)
       throws SQLException {
     try {
       List<Dataset> datasets =
@@ -4716,7 +4700,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               (name) -> bigquery.getDataset(DatasetId.of(project, name)),
               (ds) -> ds.getDatasetId().getDataset(),
               schemaPattern,
-              schemaRegex,
+              literalSchema,
+              schemaMatcher,
               throwOn404);
       return datasets != null ? datasets : Collections.emptyList();
     } catch (InterruptedException e) {
@@ -4728,8 +4713,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  private List<Dataset> fetchMatchingDatasets(
-      String catalog, String schemaPattern, Pattern schemaRegex) throws SQLException {
+  private List<Dataset> fetchMatchingDatasets(String catalog, String schemaPattern)
+      throws SQLException {
+    String literalSchema = SqlLikePattern.literalOrNull(schemaPattern);
+    SqlLikePattern schemaMatcher =
+        (literalSchema == null) ? SqlLikePattern.compile(schemaPattern) : null;
+
     List<String> projects =
         (catalog != null) ? Collections.singletonList(catalog) : getAccessibleCatalogNames();
 
@@ -4741,7 +4730,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     // Single project path
     if (projects.size() == 1) {
-      return fetchDatasetsForProject(projects.get(0), schemaPattern, schemaRegex, isBroadScan);
+      return fetchDatasetsForProject(
+          projects.get(0), schemaPattern, literalSchema, schemaMatcher, isBroadScan);
     }
 
     // Multi-project path
@@ -4754,7 +4744,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         Callable<Void> task =
             () -> {
               List<Dataset> datasets =
-                  fetchDatasetsForProject(project, schemaPattern, schemaRegex, isBroadScan);
+                  fetchDatasetsForProject(
+                      project, schemaPattern, literalSchema, schemaMatcher, isBroadScan);
               allDatasets.addAll(datasets);
               return null;
             };
@@ -4814,17 +4805,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private List<DatasetId> getTargetDatasets(String catalog, String schemaPattern, boolean isPattern)
       throws SQLException {
-    if (schemaPattern != null && (!isPattern || !hasWildcards(schemaPattern))) {
+    String literalDataset = isPattern ? SqlLikePattern.literalOrNull(schemaPattern) : schemaPattern;
+    if (literalDataset != null) {
       List<String> projects = resolveTargetProjects(catalog);
       List<DatasetId> datasetIds = new ArrayList<>(projects.size());
       for (String project : projects) {
-        datasetIds.add(DatasetId.of(project, schemaPattern));
+        datasetIds.add(DatasetId.of(project, literalDataset));
       }
       return datasetIds;
     }
 
-    Pattern schemaRegex = compileSqlLikePattern(schemaPattern);
-    List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
+    List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern);
     List<DatasetId> datasetIds = new ArrayList<>(datasets.size());
     for (Dataset dataset : datasets) {
       datasetIds.add(dataset.getDatasetId());
@@ -4925,8 +4916,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private void processTargetRoutinesConcurrently(
       List<DatasetId> targetDatasets,
-      String routineNamePattern,
-      boolean isPattern,
+      String literalRoutineName,
+      SqlLikePattern routineMatcher,
       boolean requiresFullRoutine,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
@@ -4934,23 +4925,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       RoutineOption... options)
       throws SQLException {
 
-    boolean hasWildcards = isPattern && hasWildcards(routineNamePattern);
-    Pattern routineRegex = compileSqlLikePattern(routineNamePattern);
-    boolean isLiteralName = routineNamePattern != null && !hasWildcards;
-
     ExecutorService apiExecutor = connection.getMetadataExecutor();
     List<Future<?>> activeFutures = new ArrayList<>();
 
     try {
       List<Callable<Void>> detailTasks = new ArrayList<>();
 
-      if (isLiteralName) {
+      if (literalRoutineName != null) {
         for (DatasetId datasetId : targetDatasets) {
           detailTasks.add(
               () -> {
                 processSingleRoutine(
                     datasetId,
-                    routineNamePattern,
+                    literalRoutineName,
                     null,
                     collectedResults,
                     resultSchemaFields,
@@ -4979,8 +4966,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                       "Interrupted while listing routines.");
                                 }
                                 String routineName = routine.getRoutineId().getRoutine();
-                                if (routineRegex != null
-                                    && !routineRegex.matcher(routineName).matches()) {
+                                if (routineMatcher != null
+                                    && !routineMatcher.matches(routineName)) {
                                   continue;
                                 }
                                 tasks.add(
@@ -5038,8 +5025,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private void processTargetTablesConcurrently(
       List<DatasetId> targetDatasets,
-      String tableNamePattern,
-      boolean isPattern,
+      String literalTableName,
+      SqlLikePattern tableMatcher,
       boolean requireBaseTable,
       boolean requiresFullTable,
       List<FieldValueList> collectedResults,
@@ -5047,10 +5034,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       TableProcessor processor,
       TableOption... options)
       throws SQLException {
-
-    boolean hasWildcards = isPattern && hasWildcards(tableNamePattern);
-    Pattern tableRegex = compileSqlLikePattern(tableNamePattern);
-    boolean isLiteralName = tableNamePattern != null && !hasWildcards;
 
     ExecutorService apiExecutor = connection.getMetadataExecutor();
     List<Future<?>> activeFutures = new ArrayList<>();
@@ -5060,13 +5043,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       List<Callable<Void>> detailTasks = new ArrayList<>();
 
       // For literal names, bypass listTables to avoid unnecessary API calls
-      if (isLiteralName) {
+      if (literalTableName != null) {
         for (DatasetId datasetId : targetDatasets) {
           detailTasks.add(
               () -> {
                 processSingleTable(
                     datasetId,
-                    tableNamePattern,
+                    literalTableName,
                     null,
                     requireBaseTable,
                     collectedResults,
@@ -5103,8 +5086,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                   continue;
                                 }
                                 String tableName = table.getTableId().getTable();
-                                if (tableRegex != null
-                                    && !tableRegex.matcher(tableName).matches()) {
+                                if (tableMatcher != null && !tableMatcher.matches(tableName)) {
                                   continue;
                                 }
                                 // Collect task in memory to be executed in Stage 2 after listing
@@ -5304,8 +5286,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  String replaceSqlParameters(String sql, String... params) throws SQLException {
-    return String.format(sql, (Object[]) params);
+  static String replaceSqlParameters(String sql, String catalog, String scope) {
+    return String.format(sql, catalog, scope);
   }
 
   private void closeStatementIgnoreException(Statement stmt) {

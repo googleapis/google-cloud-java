@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
  * fields. Every table is described by a schema that describes field names, types, and other
  * information.
  *
- * @see <a href="https://cloud.google.com/bigquery/docs/tables">Managing Tables</a>
+ * @see <a href="https://docs.cloud.google.com/bigquery/docs/tables">Managing Tables</a>
  */
 @AutoValue
 public abstract class StandardTableDefinition extends TableDefinition {
@@ -194,7 +194,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the number of bytes considered "long-term storage" for reduced billing purposes.
    *
-   * @see <a href="https://cloud.google.com/bigquery/pricing#long-term-storage">Long Term Storage
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage-pricing">Long Term Storage
    *     Pricing</a>
    */
   @Nullable
@@ -203,7 +203,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the number of time travel physical bytes.
    *
-   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage-pricing">Storage Pricing</a>
    */
   @Nullable
   public abstract Long getNumTimeTravelPhysicalBytes();
@@ -211,7 +211,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the number of total logical bytes.
    *
-   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage-pricing">Storage Pricing</a>
    */
   @Nullable
   public abstract Long getNumTotalLogicalBytes();
@@ -219,7 +219,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the number of active logical bytes.
    *
-   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage-pricing">Storage Pricing</a>
    */
   @Nullable
   public abstract Long getNumActiveLogicalBytes();
@@ -227,7 +227,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the number of long term logical bytes.
    *
-   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage-pricing">Storage Pricing</a>
    */
   @Nullable
   public abstract Long getNumLongTermLogicalBytes();
@@ -235,7 +235,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the number of total physical bytes.
    *
-   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage-pricing">Storage Pricing</a>
    */
   @Nullable
   public abstract Long getNumTotalPhysicalBytes();
@@ -243,7 +243,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the number of active physical bytes.
    *
-   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage-pricing">Storage Pricing</a>
    */
   @Nullable
   public abstract Long getNumActivePhysicalBytes();
@@ -251,7 +251,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the number of long term physical bytes.
    *
-   * @see <a href="https://cloud.google.com/bigquery/pricing#storage">Storage Pricing</a>
+   * @see <a href="https://cloud.google.com/bigquery/pricing#storage-pricing">Storage Pricing</a>
    */
   @Nullable
   public abstract Long getNumLongTermPhysicalBytes();
@@ -264,9 +264,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
    * Returns the geographic location where the table should reside. This value is inherited from the
    * dataset.
    *
-   * @see <a
-   *     href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
-   *     Dataset Location</a>
+   * @see <a href="https://docs.cloud.google.com/bigquery/docs/locations">Dataset Location</a>
    */
   @Nullable
   public abstract String getLocation();

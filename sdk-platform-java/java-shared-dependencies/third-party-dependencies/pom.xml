@@ -162,13 +162,6 @@
         <artifactId>opentelemetry-semconv</artifactId>
         <version>${opentelemetry-semconv.version}</version>
       </dependency>
-      <!-- io.opentelemetry:opentelemetry-semconv is to be removed: https://github.com/googleapis/sdk-platform-java/issues/3598 -->
-      <!-- Does not share the same version as the dep above. Hard-code the version for now -->
-      <dependency>
-        <groupId>io.opentelemetry</groupId>
-        <artifactId>opentelemetry-semconv</artifactId>
-        <version>1.26.0-alpha</version>
-      </dependency>
       <dependency>
         <groupId>com.google.cloud.opentelemetry</groupId>
         <artifactId>exporter-metrics</artifactId>

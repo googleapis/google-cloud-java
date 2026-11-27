@@ -31,6 +31,7 @@
 
 package com.google.auth.oauth2;
 
+import com.google.auth.Credentials;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -130,6 +131,22 @@ public class IdTokenCredentials extends OAuth2Credentials {
 
   public @Nullable IdToken getIdToken() {
     return (IdToken) getAccessToken();
+  }
+
+  /**
+   * Returns the universe domain for this credential, delegating to the underlying {@link
+   * IdTokenProvider} when it is a {@link Credentials} instance, or returning {@link
+   * Credentials#GOOGLE_DEFAULT_UNIVERSE} otherwise.
+   *
+   * @return the universe domain for this credential
+   * @throws IOException if retrieving the universe domain from the underlying provider fails
+   */
+  @Override
+  public String getUniverseDomain() throws IOException {
+    if (this.idTokenProvider instanceof Credentials) {
+      return ((Credentials) this.idTokenProvider).getUniverseDomain();
+    }
+    return super.getUniverseDomain();
   }
 
   @Override

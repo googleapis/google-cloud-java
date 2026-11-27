@@ -27,9 +27,13 @@ import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeFalse;
 
 import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.api.gax.tracing.MethodName;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
@@ -400,6 +404,92 @@ public class OpenTelemetryBuiltInMetricsTracerTest extends AbstractNettyMockServ
     spannerNoHeader.close();
     serverNoHeader.shutdown();
     serverNoHeader.awaitTermination();
+  }
+
+  @Test
+  @SuppressWarnings("deprecation")
+  public void testAttemptStartedResetsServerTimingHeaderMetricsBetweenAttempts() throws Exception {
+    try (InMemoryMetricReader localReader = InMemoryMetricReader.create()) {
+      SdkMeterProviderBuilder meterProvider =
+          SdkMeterProvider.builder().registerMetricReader(localReader);
+      BuiltInMetricsConstant.getAllViews().forEach(meterProvider::registerView);
+      OpenTelemetry openTelemetry =
+          OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
+
+      BuiltInMetricsRecorder recorder =
+          new BuiltInMetricsRecorder(openTelemetry, BuiltInMetricsConstant.METER_NAME);
+      TraceWrapper traceWrapper =
+          new TraceWrapper(
+              Tracing.getTracer(),
+              openTelemetry.getTracer(
+                  MetricRegistryConstants.INSTRUMENTATION_SCOPE,
+                  GaxProperties.getLibraryVersion(getClass())),
+              true);
+      BuiltInMetricsTracer tracer =
+          new BuiltInMetricsTracer(
+              MethodName.of("Spanner", "BatchWrite"),
+              recorder,
+              traceWrapper,
+              traceWrapper.getCurrentSpan());
+
+      ApiException unavailable =
+          ApiExceptionFactory.createException(
+              "transient", null, GrpcStatusCode.of(Status.Code.UNAVAILABLE), /* retryable= */ true);
+
+      // Attempt 0 receives DirectPath + AFE headers and fails transiently.
+      tracer.attemptStarted(new Object(), 0);
+      tracer.recordServerTimingHeaderMetrics(
+          12.0f, 5.0f, /* isDirectPathUsed= */ true, /* isAfeEnabled= */ true);
+      tracer.attemptFailedDuration(unavailable, Duration.ofMillis(10L));
+
+      // Attempt 1 fails before any response headers arrive; reset must clear all 4 fields so
+      // gfe_header_missing_count increments and stale AFE latency / AFE flag are not reused.
+      tracer.attemptStarted(new Object(), 1);
+      tracer.attemptFailedRetriesExhausted(unavailable);
+
+      // Deprecated overload must start super.attemptTimer even when called first on a fresh tracer,
+      // and must reset all 4 fields identically.
+      BuiltInMetricsTracer deprecatedTracer =
+          new BuiltInMetricsTracer(
+              MethodName.of("Spanner", "BatchWrite"),
+              recorder,
+              traceWrapper,
+              traceWrapper.getCurrentSpan());
+      deprecatedTracer.attemptStarted(0);
+      deprecatedTracer.recordServerTimingHeaderMetrics(
+          9.0f, 4.0f, /* isDirectPathUsed= */ true, /* isAfeEnabled= */ true);
+      deprecatedTracer.attemptStarted(1);
+      deprecatedTracer.attemptCancelled();
+      deprecatedTracer.operationCancelled();
+
+      Attributes unavailableAttrs =
+          Attributes.builder()
+              .put(BuiltInMetricsConstant.METHOD_KEY, "Spanner.BatchWrite")
+              .put(BuiltInMetricsConstant.STATUS_KEY, "UNAVAILABLE")
+              .build();
+      Attributes cancelledAttrs =
+          Attributes.builder()
+              .put(BuiltInMetricsConstant.METHOD_KEY, "Spanner.BatchWrite")
+              .put(BuiltInMetricsConstant.STATUS_KEY, "CANCELLED")
+              .build();
+
+      MetricData gfeMissing =
+          getMetricData(localReader, BuiltInMetricsConstant.GFE_CONNECTIVITY_ERROR_NAME);
+      assertEquals(1.0f, getAggregatedValue(gfeMissing, unavailableAttrs), 0.0f);
+      assertEquals(1.0f, getAggregatedValue(gfeMissing, cancelledAttrs), 0.0f);
+
+      MetricData afeLatency = getMetricData(localReader, BuiltInMetricsConstant.AFE_LATENCIES_NAME);
+      long afeCount =
+          afeLatency.getHistogramData().getPoints().stream()
+              .filter(pd -> pd.getAttributes().equals(unavailableAttrs))
+              .mapToLong(pd -> pd.getCount())
+              .sum();
+      assertEquals(1L, afeCount);
+
+      assertFalse(
+          checkIfMetricExists(localReader, BuiltInMetricsConstant.AFE_CONNECTIVITY_ERROR_NAME));
+      assertFalse(checkIfMetricExists(localReader, BuiltInMetricsConstant.GFE_LATENCIES_NAME));
+    }
   }
 
   private MetricData getMetricData(InMemoryMetricReader reader, String metricName) {

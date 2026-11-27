@@ -168,9 +168,18 @@ public class StreamWriter implements AutoCloseable {
 
     abstract int credentialsHashcode();
 
-    public static ConnectionPoolKey create(String location, @Nullable Credentials credentials) {
+    abstract String endpoint();
+
+    abstract String universeDomain();
+
+    /** Creates a connection pool key scoped by location, credentials, endpoint, and universe. */
+    public static ConnectionPoolKey create(
+        String location,
+        @Nullable Credentials credentials,
+        String endpoint,
+        String universeDomain) {
       return new AutoValue_StreamWriter_ConnectionPoolKey(
-          location, credentials != null ? credentials.hashCode() : 0);
+          location, credentials != null ? credentials.hashCode() : 0, endpoint, universeDomain);
     }
   }
 
@@ -348,7 +357,9 @@ public class StreamWriter implements AutoCloseable {
               connectionPoolMap.computeIfAbsent(
                   ConnectionPoolKey.create(
                       location,
-                      credentialsProvider != null ? credentialsProvider.getCredentials() : null),
+                      credentialsProvider != null ? credentialsProvider.getCredentials() : null,
+                      client.getSettings().getEndpoint(),
+                      client.getSettings().getUniverseDomain()),
                   (key) -> {
                     return new ConnectionWorkerPool(
                         builder.maxInflightRequest,
@@ -414,7 +425,20 @@ public class StreamWriter implements AutoCloseable {
   static BigQueryWriteSettings getBigQueryWriteSettings(Builder builder) throws IOException {
     BigQueryWriteSettings.Builder settingsBuilder = null;
     if (builder.client != null) {
-      settingsBuilder = builder.client.getSettings().toBuilder();
+      // Fail fast if setUniverseDomain() conflicts with the provided BigQueryWriteClient to avoid
+      // split-brain routing between metadata calls and streaming connections.
+      BigQueryWriteSettings clientSettings = builder.client.getSettings();
+      String clientUniverseDomain = clientSettings.getUniverseDomain();
+      if (builder.universeDomain != null
+          && clientUniverseDomain != null
+          && !builder.universeDomain.equals(clientUniverseDomain)) {
+        throw new IllegalArgumentException(
+            String.format(
+                "The configured universe domain (%s) does not match the universe domain on the"
+                    + " provided BigQueryWriteClient (%s).",
+                builder.universeDomain, clientUniverseDomain));
+      }
+      settingsBuilder = clientSettings.toBuilder();
     } else {
       settingsBuilder =
           new BigQueryWriteSettings.Builder()
@@ -428,8 +452,9 @@ public class StreamWriter implements AutoCloseable {
               .setCredentialsProvider(
                   BigQueryWriteSettings.defaultCredentialsProviderBuilder().build())
               .setBackgroundExecutorProvider(
-                  BigQueryWriteSettings.defaultExecutorProviderBuilder().build())
-              .setEndpoint(BigQueryWriteSettings.getDefaultEndpoint());
+                  BigQueryWriteSettings.defaultExecutorProviderBuilder().build());
+      // Omit setEndpoint(getDefaultEndpoint()) so GAX expands GOOGLE_CLOUD_UNIVERSE_DOMAIN when
+      // no custom endpoint is explicitly configured.
     }
     if (builder.channelProvider != null) {
       settingsBuilder.setTransportChannelProvider(builder.channelProvider);
@@ -442,6 +467,9 @@ public class StreamWriter implements AutoCloseable {
     }
     if (builder.endpoint != null) {
       settingsBuilder.setEndpoint(builder.endpoint);
+    }
+    if (builder.universeDomain != null) {
+      settingsBuilder.setUniverseDomain(builder.universeDomain);
     }
 
     return settingsBuilder.build();
@@ -496,18 +524,23 @@ public class StreamWriter implements AutoCloseable {
    * ApiFuture<AppendRowsResponse> future = writer.append(rows, 0);
    * ApiFutures.addCallback(future, new ApiFutureCallback<AppendRowsResponse>() {
    *   public void onSuccess(AppendRowsResponse response) {
-   *     if (!response.hasError()) {
-   *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
-   *     } else {
-   *       System.out.println("received an in stream error: " + response.getError().toString());
-   *     }
+   *     System.out.println("written with offset: " + response.getAppendResult().getOffset());
    *   }
    *
    *   public void onFailure(Throwable t) {
+   *     // Server-side in-stream errors and RPC errors are delivered to onFailure.
    *     System.out.println("failed to write: " + t);
    *   }
    * }, MoreExecutors.directExecutor());
    * }</pre>
+   *
+   * <p>Server-side in-stream errors and RPC errors always complete the returned {@link ApiFuture}
+   * exceptionally rather than arriving in {@code onSuccess}. See the <a
+   * href="https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1#google.cloud.bigquery.storage.v1.AppendRowsResponse">AppendRowsResponse
+   * RPC reference</a> for the mutually exclusive {@code append_result} and {@code error} fields,
+   * and <a href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc#error_handling">Storage
+   * Write API error handling</a> for how backend {@code google.rpc.Status} and {@code StorageError}
+   * details are reported.
    *
    * @param rows the rows in serialized format to write to BigQuery.
    * @param offset the offset of the first row. Provide -1 to write at the current end of stream.
@@ -530,18 +563,23 @@ public class StreamWriter implements AutoCloseable {
    * ApiFuture<AppendRowsResponse> future = writer.append(recordBatch, 0);
    * ApiFutures.addCallback(future, new ApiFutureCallback<AppendRowsResponse>() {
    *   public void onSuccess(AppendRowsResponse response) {
-   *     if (!response.hasError()) {
-   *       System.out.println("written with offset: " + response.getAppendResult().getOffset());
-   *     } else {
-   *       System.out.println("received an in stream error: " + response.getError().toString());
-   *     }
+   *     System.out.println("written with offset: " + response.getAppendResult().getOffset());
    *   }
    *
    *   public void onFailure(Throwable t) {
+   *     // Server-side in-stream errors and RPC errors are delivered to onFailure.
    *     System.out.println("failed to write: " + t);
    *   }
    * }, MoreExecutors.directExecutor());
    * }</pre>
+   *
+   * <p>Server-side in-stream errors and RPC errors always complete the returned {@link ApiFuture}
+   * exceptionally rather than arriving in {@code onSuccess}. See the <a
+   * href="https://docs.cloud.google.com/bigquery/docs/reference/storage/rpc/google.cloud.bigquery.storage.v1#google.cloud.bigquery.storage.v1.AppendRowsResponse">AppendRowsResponse
+   * RPC reference</a> for the mutually exclusive {@code append_result} and {@code error} fields,
+   * and <a href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc#error_handling">Storage
+   * Write API error handling</a> for how backend {@code google.rpc.Status} and {@code StorageError}
+   * details are reported.
    *
    * @param recordBatch the ArrowRecordBatch in serialized format to write to BigQuery.
    * @param offset the offset of the first row. Provide -1 to write at the current end of stream.
@@ -775,10 +813,15 @@ public class StreamWriter implements AutoCloseable {
   }
 
   /**
-   * Sets the maximum time a request is allowed to be waiting in request waiting queue. Under very
-   * low chance, it's possible for append request to be waiting indefintely for request callback
-   * when Google networking SDK does not detect the networking breakage. The default timeout is 15
-   * minutes. We are investigating the root cause for callback not triggered by networking SDK.
+   * Sets the maximum time a request is allowed to wait in the request waiting queue. Under rare
+   * conditions, an append request may wait indefinitely for a callback when the underlying network
+   * layer does not detect a broken connection. The default timeout is 5 minutes (lowered from 15
+   * minutes in <a
+   * href="https://github.com/googleapis/java-bigquerystorage/pull/2084">java-bigquerystorage#2084</a>);
+   * when exceeded, the connection closes with {@link
+   * Exceptions.MaximumRequestCallbackWaitTimeExceededException}. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc#connections">Storage Write API
+   * connections</a> for how client connections handle failures and reconnect.
    */
   public static void setMaxRequestCallbackWaitTime(Duration waitTime) {
     ConnectionWorker.MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
@@ -848,6 +891,8 @@ public class StreamWriter implements AutoCloseable {
     private long maxInflightBytes = DEFAULT_MAX_INFLIGHT_BYTES;
 
     private String endpoint = null;
+
+    private String universeDomain = null;
 
     private TransportChannelProvider channelProvider = null;
 
@@ -939,6 +984,12 @@ public class StreamWriter implements AutoCloseable {
     /** Gives the ability to override the gRPC endpoint. */
     public Builder setEndpoint(String endpoint) {
       this.endpoint = Preconditions.checkNotNull(endpoint, "Endpoint is null.");
+      return this;
+    }
+
+    /** Gives the ability to override the universe domain. */
+    public Builder setUniverseDomain(String universeDomain) {
+      this.universeDomain = universeDomain;
       return this;
     }
 

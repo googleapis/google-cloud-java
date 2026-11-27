@@ -393,7 +393,7 @@ public class ITStatementTest extends ITBase {
   }
 
   @Test
-  @Tag("disable_tpc")
+  @Tag("disable_universe_domain")
   public void testTemporaryDatasetLocation() throws SQLException, InterruptedException {
     String location = "europe-west3";
     String randomSuffix = String.valueOf(100 + new Random().nextInt(900));

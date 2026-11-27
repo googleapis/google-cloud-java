@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.connection;
 
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.spanner.DecodeMode;
 import com.google.cloud.spanner.ErrorCode;
@@ -532,8 +533,9 @@ public class SpannerPool {
         builder.disableDynamicChannelPool();
       }
     }
-    if (options.getChannelProvider() != null) {
-      builder.setChannelProvider(options.getChannelProvider());
+    TransportChannelProvider channelProvider = options.getChannelProvider();
+    if (channelProvider != null) {
+      builder.setChannelProvider(channelProvider);
     }
     if (key.grpcKeepAliveTime != null) {
       builder.setGrpcKeepAliveTime(key.grpcKeepAliveTime);

@@ -133,6 +133,7 @@ class EndpointLifecycleManager {
   private final long probeIntervalSeconds;
   private final Duration idleEvictionDuration;
   private final Clock clock;
+  private final boolean enableBackgroundProbing;
   private final String defaultEndpointAddress;
 
   private ScheduledFuture<?> evictionFuture;
@@ -161,10 +162,26 @@ class EndpointLifecycleManager {
       long probeIntervalSeconds,
       Duration idleEvictionDuration,
       Clock clock) {
+    this(
+        endpointCache,
+        probeIntervalSeconds,
+        idleEvictionDuration,
+        clock,
+        /* enableBackgroundProbing= */ true);
+  }
+
+  @VisibleForTesting
+  EndpointLifecycleManager(
+      ChannelEndpointCache endpointCache,
+      long probeIntervalSeconds,
+      Duration idleEvictionDuration,
+      Clock clock,
+      boolean enableBackgroundProbing) {
     this.endpointCache = endpointCache;
     this.probeIntervalSeconds = probeIntervalSeconds;
     this.idleEvictionDuration = idleEvictionDuration;
     this.clock = clock;
+    this.enableBackgroundProbing = enableBackgroundProbing;
     this.defaultEndpointAddress = endpointCache.defaultChannel().getAddress();
     this.activeAddressUpdateExecutor =
         Executors.newSingleThreadExecutor(
@@ -439,6 +456,9 @@ class EndpointLifecycleManager {
 
   /** Starts periodic probing for an endpoint. */
   private void startProbing(String address) {
+    if (!enableBackgroundProbing) {
+      return;
+    }
     EndpointState state = endpoints.get(address);
     if (state == null || isShutdown.get()) {
       return;

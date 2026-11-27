@@ -193,6 +193,14 @@ case ${JOB_TYPE} in
       echo "Not running GraalVM checks -- No changes in relevant modules"
     fi
     ;;
+  graalvm-nightly)
+    # The nightly jobs test a fixed list of modules. See graalvm_nightly_modules in common.sh.
+    generate_graalvm_nightly_modules_list
+    printf "Running nightly GraalVM checks for:\n%s\n" "${module_list}"
+    setup_cloud "$module_list"
+    install_modules "$module_list"
+    run_graalvm_tests "$module_list"
+    ;;
   graalvm-single)
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."

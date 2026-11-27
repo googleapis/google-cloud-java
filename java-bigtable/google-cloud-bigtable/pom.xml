@@ -41,6 +41,7 @@
     <bigtable.directpath-admin-endpoint/>
     <bigtable.internal.client-config-override-use-default>false</bigtable.internal.client-config-override-use-default>
     <bigtable.internal.client-config-override/>
+    <bigtable.expected-protocol/>
 
     <!-- Number of JVMs used to run the integration tests concurrently. The ITs are almost entirely
      RPC bound, so this can be raised well above the core count. Override on the commandline via
@@ -485,7 +486,6 @@
     <profile>
       <id>enable-verbose-grpc-logs</id>
       <properties>
-        <bigtable.enable-grpc-logs>true</bigtable.enable-grpc-logs>
         <java-log-config>src/test/resources/logging-verbose.properties</java-log-config>
       </properties>
       <build>
@@ -527,14 +527,47 @@
 
                   <systemPropertyVariables>
                     <bigtable.env>emulator</bigtable.env>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/emulator-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
                     <include>com.google.cloud.bigtable.**.it.*IT</include>
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-emulator-it.xml</summaryFile>
                   <reportsDirectory>${project.build.directory}/failsafe-reports/emulator-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>bigtable-admin-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>admin-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.admin.v2.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-admin-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/admin-it</reportsDirectory>
                 </configuration>
               </execution>
             </executions>
@@ -564,11 +597,9 @@
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-it</bigtable.grpc-log-dir>
                   </systemPropertyVariables>
                   <includes>
-                    <include>com.google.cloud.bigtable.**.it.*IT</include>
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
                   <reportsDirectory>${project.build.directory}/failsafe-reports/prod-it</reportsDirectory>
@@ -581,10 +612,20 @@
     </profile>
 
     <profile>
+      <id>bigtable-classic-it</id>
+      <properties>
+        <bigtable.internal.client-config-override-use-default>true</bigtable.internal.client-config-override-use-default>
+        <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 0.0 } } }</bigtable.internal.client-config-override>
+        <bigtable.expected-protocol>CLASSIC</bigtable.expected-protocol>
+      </properties>
+    </profile>
+
+    <profile>
       <id>bigtable-session-it</id>
       <properties>
         <bigtable.internal.client-config-override-use-default>true</bigtable.internal.client-config-override-use-default>
         <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 1.0 } } }</bigtable.internal.client-config-override>
+        <bigtable.expected-protocol>SESSION</bigtable.expected-protocol>
       </properties>
     </profile>
 
@@ -608,8 +649,6 @@
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.directpath-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <environmentVariables>
@@ -650,8 +689,6 @@
                     <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/cfe-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_CFE</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <includes>
@@ -689,8 +726,6 @@
                     <bigtable.data-endpoint>${bigtable.directpath-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.directpath-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.directpath-jwt-audience}</bigtable.data-jwt-audience>
-                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/directpath-ipv4only-it</bigtable.grpc-log-dir>
                     <bigtable.connection-mode>REQUIRE_DIRECT_PATH_IPV4</bigtable.connection-mode>
                   </systemPropertyVariables>
                   <environmentVariables>
@@ -795,6 +830,7 @@
             <java.util.logging.config.file>${java-log-config}</java.util.logging.config.file>
             <bigtable.internal.client-config-override-use-default>${bigtable.internal.client-config-override-use-default}</bigtable.internal.client-config-override-use-default>
             <bigtable.internal.client-config-override>${bigtable.internal.client-config-override}</bigtable.internal.client-config-override>
+            <bigtable.expected-protocol>${bigtable.expected-protocol}</bigtable.expected-protocol>
           </systemPropertyVariables>
         </configuration>
       </plugin>
@@ -816,6 +852,51 @@
             <java.util.logging.config.file>src/test/resources/logging.properties</java.util.logging.config.file>
           </systemPropertyVariables>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <!--
+            Cleans up stale test resources (>24h old) in the configured shared Bigtable instance
+            and orphaned test instances in the project via CloudEnv.
+            Invoke with: mvn test-compile exec:java@cleanup-stale-resources ...
+            Required system properties:
+              -Dbigtable.project=<project-id>
+              -Dbigtable.instance=<instance-id>
+              -Dbigtable.table=<table-id>
+            Optional system properties (consistent with Failsafe IT profiles):
+              -Dbigtable.cfe-admin-endpoint=<host:port> (defaults to client default: bigtableadmin.googleapis.com:443)
+              -Dbigtable.cfe-data-endpoint=<host:port>  (defaults to client default: bigtable.googleapis.com:443)
+              -Dbigtable.cfe-jwt-audience=<audience>    (defaults to client default)
+          -->
+          <execution>
+            <id>cleanup-stale-resources</id>
+            <configuration>
+              <mainClass>com.google.cloud.bigtable.test_helpers.env.StaleResourceCleaner</mainClass>
+              <classpathScope>test</classpathScope>
+              <systemProperties>
+                <systemProperty>
+                  <key>java.util.logging.config.file</key>
+                  <value>${java-log-config}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.data-endpoint</key>
+                  <value>${bigtable.cfe-data-endpoint}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.admin-endpoint</key>
+                  <value>${bigtable.cfe-admin-endpoint}</value>
+                </systemProperty>
+                <systemProperty>
+                  <key>bigtable.data-jwt-audience</key>
+                  <value>${bigtable.cfe-jwt-audience}</value>
+                </systemProperty>
+              </systemProperties>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>

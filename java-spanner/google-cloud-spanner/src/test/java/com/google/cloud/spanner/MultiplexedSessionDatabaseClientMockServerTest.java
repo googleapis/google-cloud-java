@@ -25,6 +25,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeFalse;
@@ -42,18 +43,25 @@ import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.Options.RpcPriority;
 import com.google.cloud.spanner.TransactionRunnerImpl.TransactionContextImpl;
 import com.google.cloud.spanner.connection.RandomResultSetGenerator;
+import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Value;
 import com.google.spanner.v1.*;
 import com.google.spanner.v1.RequestOptions.Priority;
 import com.google.spanner.v1.Session;
 import io.grpc.Status;
+import java.lang.reflect.Field;
 import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
@@ -148,6 +156,120 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     assertEquals(1, requests.size());
 
     testSpanner.close();
+  }
+
+  @Test
+  public void testCloseUnblocksWaitingTransaction() throws Exception {
+    mockSpanner.freeze();
+
+    Spanner testSpanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getService();
+    ExecutorService executor = Executors.newFixedThreadPool(2);
+    try {
+      DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+      // Wait until the initial CreateSession request is in flight and frozen on the server.
+      mockSpanner.waitForRequestsToContain(CreateSessionRequest.class, 5000);
+
+      // Start a query on a background thread so it blocks waiting for the session to be created.
+      try (ReadContext readContext = client.singleUse();
+          ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
+        CountDownLatch queryStarted = new CountDownLatch(1);
+        Future<SpannerException> queryFailure =
+            executor.submit(
+                () -> {
+                  queryStarted.countDown();
+                  return assertThrows(SpannerException.class, resultSet::next);
+                });
+        assertTrue(queryStarted.await(5, TimeUnit.SECONDS));
+
+        // Close the client asynchronously so we can verify the blocked transaction fails before
+        // mockSpanner is unfrozen (GapicSpannerRpc.shutdown() otherwise waits up to 20s for the
+        // frozen CreateSession RPC to finish).
+        Future<?> closeFuture = executor.submit(testSpanner::close);
+
+        SpannerException exception = queryFailure.get(5, TimeUnit.SECONDS);
+        assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        assertTrue(exception.getMessage().contains("This client has been closed"));
+
+        mockSpanner.unfreeze();
+        closeFuture.get(5, TimeUnit.SECONDS);
+      }
+    } finally {
+      mockSpanner.unfreeze();
+      if (!testSpanner.isClosed()) {
+        testSpanner.close();
+      }
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(5, TimeUnit.SECONDS));
+    }
+  }
+
+  @Test
+  public void testCloseUnblocksTransactionWaitingOnRetry() throws Exception {
+    // Attempt 1 fails immediately with DEADLINE_EXCEEDED, and freezeAfter(1) atomically freezes
+    // the mock server as soon as the retry CreateSessionRequest (attempt 2) arrives.
+    mockSpanner.setCreateSessionExecutionTime(
+        SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
+    mockSpanner.freezeAfter(1);
+
+    Spanner testSpanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .build()
+            .getService();
+    ExecutorService executor = Executors.newFixedThreadPool(2);
+    try {
+      DatabaseClient client = testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+      // Wait until attempt 1 has failed and attempt 2 has reached the mock server and frozen.
+      Stopwatch watch = Stopwatch.createStarted();
+      while (mockSpanner.countRequestsOfType(CreateSessionRequest.class) < 2) {
+        if (watch.elapsed(TimeUnit.MILLISECONDS) > 5000) {
+          throw new TimeoutException(
+              "Timed out waiting for retry CreateSessionRequest to reach mock server");
+        }
+        Thread.sleep(1L);
+      }
+
+      // Start a query that binds to the pending retry future (attempt 2).
+      try (ReadContext readContext = client.singleUse();
+          ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
+        CountDownLatch queryStarted = new CountDownLatch(1);
+        Future<SpannerException> queryFailure =
+            executor.submit(
+                () -> {
+                  queryStarted.countDown();
+                  return assertThrows(SpannerException.class, resultSet::next);
+                });
+        assertTrue(queryStarted.await(5, TimeUnit.SECONDS));
+
+        Future<?> closeFuture = executor.submit(testSpanner::close);
+
+        // The transaction must immediately fail with FAILED_PRECONDITION (client closed) while
+        // attempt 2 is still frozen.
+        SpannerException exception = queryFailure.get(5, TimeUnit.SECONDS);
+        assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+        assertTrue(exception.getMessage().contains("This client has been closed"));
+
+        mockSpanner.unfreeze();
+        closeFuture.get(5, TimeUnit.SECONDS);
+      }
+    } finally {
+      mockSpanner.unfreeze();
+      if (!testSpanner.isClosed()) {
+        testSpanner.close();
+      }
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(5, TimeUnit.SECONDS));
+    }
   }
 
   @Test
@@ -1752,6 +1874,15 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
             MutationGroup.of(
                 Mutation.newInsertBuilder("FOO3").set("ID").to(3L).set("NAME").to("Bar3").build(),
                 Mutation.newInsertBuilder("FOO4").set("ID").to(4L).set("NAME").to("Bar4").build()));
+    mockSpanner.setBatchWriteResult(
+        ImmutableList.of(
+            BatchWriteResponse.newBuilder()
+                .setStatus(
+                    com.google.rpc.Status.newBuilder()
+                        .setCode(com.google.rpc.Code.OK_VALUE)
+                        .build())
+                .addAllIndexes(ImmutableList.of(0, 1))
+                .build()));
 
     ServerStream<BatchWriteResponse> responseStream = client.batchWriteAtLeastOnce(MUTATION_GROUPS);
     int idx = 0;
@@ -1775,6 +1906,183 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     assertNotNull(client.multiplexedSessionDatabaseClient);
     assertEquals(1L, client.multiplexedSessionDatabaseClient.getNumSessionsAcquired().get());
     assertEquals(1L, client.multiplexedSessionDatabaseClient.getNumSessionsReleased().get());
+  }
+
+  @Test
+  public void testBatchWriteAtLeastOnceDoesNotLeakSingleUseChannelUsage() {
+    DatabaseClientImpl client =
+        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+    ImmutableList<MutationGroup> groups =
+        ImmutableList.of(
+            MutationGroup.of(
+                Mutation.newInsertBuilder("FOO1").set("ID").to(1L).set("NAME").to("Bar1").build()));
+    mockSpanner.setBatchWriteResult(
+        ImmutableList.of(
+            BatchWriteResponse.newBuilder()
+                .setStatus(
+                    com.google.rpc.Status.newBuilder()
+                        .setCode(com.google.rpc.Code.OK_VALUE)
+                        .build())
+                .addIndexes(0)
+                .build()));
+
+    for (int i = 0; i < 3; i++) {
+      ServerStream<BatchWriteResponse> stream = client.batchWriteAtLeastOnce(groups);
+      assertThat(ImmutableList.copyOf(stream)).hasSize(1);
+    }
+
+    assertEquals(0, client.multiplexedSessionDatabaseClient.getChannelUsageCardinality());
+    assertEquals(0, client.multiplexedSessionDatabaseClient.getNumCurrentSingleUseTransactions());
+  }
+
+  @Test
+  public void testBatchWriteAtLeastOnceMergesClientContextAndDefaultExcludeTxnFromChangeStreams()
+      throws Exception {
+    RequestOptions.ClientContext defaultClientContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext(
+                "default_key", Value.newBuilder().setStringValue("default_val").build())
+            .putSecureContext(
+                "shared_key", Value.newBuilder().setStringValue("from_default").build())
+            .build();
+    RequestOptions.ClientContext rpcClientContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext("shared_key", Value.newBuilder().setStringValue("from_rpc").build())
+            .putSecureContext("rpc_key", Value.newBuilder().setStringValue("rpc_val").build())
+            .build();
+
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setDefaultClientContext(defaultClientContext);
+    Field defaultTxOptionsField =
+        SpannerOptions.Builder.class.getDeclaredField("defaultTransactionOptions");
+    defaultTxOptionsField.setAccessible(true);
+    defaultTxOptionsField.set(
+        builder, TransactionOptions.newBuilder().setExcludeTxnFromChangeStreams(true).build());
+
+    mockSpanner.setBatchWriteResult(
+        ImmutableList.of(
+            BatchWriteResponse.newBuilder()
+                .setStatus(
+                    com.google.rpc.Status.newBuilder()
+                        .setCode(com.google.rpc.Code.OK_VALUE)
+                        .build())
+                .addIndexes(0)
+                .build()));
+
+    ImmutableList<MutationGroup> groups =
+        ImmutableList.of(
+            MutationGroup.of(
+                Mutation.newInsertBuilder("FOO1").set("ID").to(1L).set("NAME").to("Bar1").build()));
+
+    try (Spanner ctxSpanner = builder.build().getService()) {
+      DatabaseClient ctxClient = ctxSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      List<BatchWriteResponse> responses =
+          ImmutableList.copyOf(
+              ctxClient.batchWriteAtLeastOnce(groups, Options.clientContext(rpcClientContext)));
+      assertThat(responses).hasSize(1);
+    }
+
+    List<BatchWriteRequest> requests = mockSpanner.getRequestsOfType(BatchWriteRequest.class);
+    assertThat(requests).hasSize(1);
+    BatchWriteRequest request = requests.get(0);
+    assertTrue(request.getExcludeTxnFromChangeStreams());
+    RequestOptions.ClientContext actualContext = request.getRequestOptions().getClientContext();
+    assertEquals(
+        "default_val", actualContext.getSecureContextOrThrow("default_key").getStringValue());
+    assertEquals("from_rpc", actualContext.getSecureContextOrThrow("shared_key").getStringValue());
+    assertEquals("rpc_val", actualContext.getSecureContextOrThrow("rpc_key").getStringValue());
+  }
+
+  @Test
+  public void testWriteAtLeastOnceWithOptionsMergesClientContext() {
+    RequestOptions.ClientContext defaultClientContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext(
+                "default_key", Value.newBuilder().setStringValue("default_val").build())
+            .putSecureContext(
+                "shared_key", Value.newBuilder().setStringValue("from_default").build())
+            .build();
+    RequestOptions.ClientContext rpcClientContext =
+        RequestOptions.ClientContext.newBuilder()
+            .putSecureContext("shared_key", Value.newBuilder().setStringValue("from_rpc").build())
+            .putSecureContext("rpc_key", Value.newBuilder().setStringValue("rpc_val").build())
+            .build();
+
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setDefaultClientContext(defaultClientContext);
+
+    ImmutableList<Mutation> mutations =
+        ImmutableList.of(
+            Mutation.newInsertBuilder("FOO1").set("ID").to(1L).set("NAME").to("Bar1").build());
+
+    try (Spanner ctxSpanner = builder.build().getService()) {
+      DatabaseClient ctxClient = ctxSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      ctxClient.writeAtLeastOnceWithOptions(mutations, Options.clientContext(rpcClientContext));
+    }
+
+    List<CommitRequest> requests = mockSpanner.getRequestsOfType(CommitRequest.class);
+    assertThat(requests).hasSize(1);
+    RequestOptions.ClientContext actualContext =
+        requests.get(0).getRequestOptions().getClientContext();
+    assertEquals(
+        "default_val", actualContext.getSecureContextOrThrow("default_key").getStringValue());
+    assertEquals("from_rpc", actualContext.getSecureContextOrThrow("shared_key").getStringValue());
+    assertEquals("rpc_val", actualContext.getSecureContextOrThrow("rpc_key").getStringValue());
+  }
+
+  @Test
+  public void testBatchWriteAtLeastOnceMaterializesAndRejectsNull() {
+    DatabaseClientImpl client =
+        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+    // Null mutationGroups must throw NullPointerException synchronously without sending an RPC.
+    assertThrows(NullPointerException.class, () -> client.batchWriteAtLeastOnce(null));
+    assertThat(mockSpanner.getRequestsOfType(BatchWriteRequest.class)).isEmpty();
+
+    ImmutableList<MutationGroup> groups =
+        ImmutableList.of(
+            MutationGroup.of(
+                Mutation.newInsertBuilder("FOO1").set("ID").to(1L).set("NAME").to("Bar1").build()));
+
+    // Verify defensive copying for mutable lists and zero-copy pass-through for ImmutableList.
+    assertSame(groups, SessionImpl.materializeMutationGroups(groups));
+    List<MutationGroup> mutableCopy = new ArrayList<>(groups);
+    List<MutationGroup> materialized = SessionImpl.materializeMutationGroups(mutableCopy);
+    mutableCopy.clear();
+    assertEquals(1, materialized.size());
+
+    // Single-use Iterable must be traversed only once.
+    mockSpanner.setBatchWriteResult(
+        ImmutableList.of(
+            BatchWriteResponse.newBuilder()
+                .setStatus(
+                    com.google.rpc.Status.newBuilder()
+                        .setCode(com.google.rpc.Code.OK_VALUE)
+                        .build())
+                .addIndexes(0)
+                .build()));
+    AtomicInteger iteratorCalls = new AtomicInteger();
+    Iterable<MutationGroup> singlePass =
+        () -> {
+          if (iteratorCalls.incrementAndGet() > 1) {
+            throw new IllegalStateException("Single-use Iterable traversed more than once");
+          }
+          return groups.iterator();
+        };
+
+    List<BatchWriteResponse> responses =
+        ImmutableList.copyOf(client.batchWriteAtLeastOnce(singlePass));
+    assertThat(responses).hasSize(1);
+    assertEquals(1, iteratorCalls.get());
   }
 
   @Test

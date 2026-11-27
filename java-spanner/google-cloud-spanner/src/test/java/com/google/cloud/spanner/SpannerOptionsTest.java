@@ -37,6 +37,10 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.auth.ApiKeyCredentials;
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
@@ -53,6 +57,7 @@ import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Strings;
 import com.google.common.util.concurrent.Futures;
 import com.google.spanner.v1.BatchCreateSessionsRequest;
+import com.google.spanner.v1.BatchWriteRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CreateSessionRequest;
@@ -79,7 +84,9 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -90,6 +97,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.Nullable;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -937,6 +945,11 @@ public class SpannerOptionsTest {
             inputCallContext,
             PartitionReadRequest.getDefaultInstance(),
             SpannerGrpc.getPartitionReadMethod()));
+    assertNull(
+        configurator.configure(
+            inputCallContext,
+            BatchWriteRequest.getDefaultInstance(),
+            SpannerGrpc.getBatchWriteMethod()));
   }
 
   @Test
@@ -951,6 +964,8 @@ public class SpannerOptionsTest {
     configurator.withPartitionReadTimeoutDuration(Duration.ofSeconds(6L));
     configurator.withReadTimeoutDuration(Duration.ofSeconds(7L));
     configurator.withRollbackTimeoutDuration(Duration.ofSeconds(8L));
+    configurator.withBatchWriteTimeoutDuration(Duration.ofSeconds(9L));
+    assertEquals(Duration.ofSeconds(9L), configurator.getBatchWriteTimeoutDuration());
 
     ApiCallContext inputCallContext = GrpcCallContext.createDefault();
 
@@ -1056,6 +1071,14 @@ public class SpannerOptionsTest {
                     SpannerGrpc.getPartitionReadMethod())
                 .getTimeoutDuration())
         .isEqualTo(Duration.ofSeconds(6L));
+    ApiCallContext batchWriteCallContext =
+        configurator.configure(
+            inputCallContext,
+            BatchWriteRequest.getDefaultInstance(),
+            SpannerGrpc.getBatchWriteMethod());
+    assertThat(batchWriteCallContext.getTimeoutDuration()).isEqualTo(Duration.ofSeconds(9L));
+    assertThat(batchWriteCallContext.getStreamWaitTimeoutDuration())
+        .isEqualTo(Duration.ofSeconds(9L));
   }
 
   @Test
@@ -1869,5 +1892,808 @@ public class SpannerOptionsTest {
     SpannerOptions fromBuilder = options.toBuilder().build();
     assertEquals(SpannerOptions.InstanceType.OMNI, fromBuilder.getInstanceType());
     assertTrue(fromBuilder.isUsePlainText());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainUpdatesDefaultHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .build();
+    assertEquals("https://spanner.googleapis.com", base.getHost());
+    assertEquals("spanner.googleapis.com:443", base.getEndpoint());
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.universe.example", rebuilt.getHost());
+    assertEquals("spanner.universe.example:443", rebuilt.getEndpoint());
+    assertEquals("universe.example", rebuilt.getSpannerStubSettings().getUniverseDomain());
+    assertEquals("spanner.universe.example:443", rebuilt.getSpannerStubSettings().getEndpoint());
+    assertEquals("universe.example", rebuilt.getInstanceAdminStubSettings().getUniverseDomain());
+    assertEquals(
+        "spanner.universe.example:443", rebuilt.getInstanceAdminStubSettings().getEndpoint());
+    assertEquals("universe.example", rebuilt.getDatabaseAdminStubSettings().getUniverseDomain());
+    assertEquals(
+        "spanner.universe.example:443", rebuilt.getDatabaseAdminStubSettings().getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderChangeUniverseDomainUpdatesDefaultHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .setUniverseDomain("domain1.example")
+            .build();
+    assertEquals("https://spanner.domain1.example", base.getHost());
+    assertEquals("spanner.domain1.example:443", base.getEndpoint());
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("domain2.example").build();
+    assertEquals("domain2.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.domain2.example", rebuilt.getHost());
+    assertEquals("spanner.domain2.example:443", rebuilt.getEndpoint());
+    assertEquals("spanner.domain2.example:443", rebuilt.getSpannerStubSettings().getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainPreservesCustomHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://custom.spanner.example:1234")
+            .build();
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+    assertEquals("https://custom.spanner.example:1234", rebuilt.getHost());
+    assertEquals("custom.spanner.example:1234", rebuilt.getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainPreservesExplicitDefaultHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://spanner.googleapis.com")
+            .build();
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.googleapis.com", rebuilt.getHost());
+    assertEquals("spanner.googleapis.com:443", rebuilt.getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderSetHostAndUniverseDomainOrderIndependent() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .build();
+
+    SpannerOptions hostThenUniverse =
+        base.toBuilder()
+            .setHost("https://custom.example:8443")
+            .setUniverseDomain("universe.example")
+            .build();
+    SpannerOptions universeThenHost =
+        base.toBuilder()
+            .setUniverseDomain("universe.example")
+            .setHost("https://custom.example:8443")
+            .build();
+
+    assertEquals("https://custom.example:8443", hostThenUniverse.getHost());
+    assertEquals("universe.example", hostThenUniverse.getUniverseDomain());
+    assertEquals("https://custom.example:8443", universeThenHost.getHost());
+    assertEquals("universe.example", universeThenHost.getUniverseDomain());
+  }
+
+  @Test
+  public void testToBuilderSetHostNullResetsToUniverseDomainDefaultHost() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://custom.example:1234")
+            .build();
+
+    SpannerOptions rebuilt =
+        base.toBuilder().setHost(null).setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.universe.example", rebuilt.getHost());
+    assertEquals("spanner.universe.example:443", rebuilt.getEndpoint());
+  }
+
+  @Test
+  public void testToBuilderClearEmulatorHostAndSetUniverseDomain() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setEmulatorHost("localhost:9010")
+            .build();
+    assertEquals("http://localhost:9010", base.getHost());
+    assertTrue(base.isEmulatorEnabled());
+
+    SpannerOptions rebuiltEmulator = base.toBuilder().build();
+    assertEquals("http://localhost:9010", rebuiltEmulator.getHost());
+    assertTrue(rebuiltEmulator.isEmulatorEnabled());
+
+    SpannerOptions rebuiltNonEmulator =
+        base.toBuilder().setEmulatorHost(null).setUniverseDomain("universe.example").build();
+    assertEquals("universe.example", rebuiltNonEmulator.getUniverseDomain());
+    assertEquals("https://spanner.universe.example", rebuiltNonEmulator.getHost());
+    assertEquals("spanner.universe.example:443", rebuiltNonEmulator.getEndpoint());
+    assertFalse(rebuiltNonEmulator.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testToBuilderLegacyDeserializedFallbackWithoutConfiguredHost() {
+    // Default host with null configuredHost recomputes host when universe domain changes.
+    SpannerOptions legacyDefault =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .build(/* clearConfiguredHost= */ true);
+    SpannerOptions rebuiltDefault =
+        legacyDefault.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("https://spanner.universe.example", rebuiltDefault.getHost());
+    assertEquals("spanner.universe.example:443", rebuiltDefault.getEndpoint());
+
+    // Custom host with null configuredHost is preserved when universe domain changes.
+    SpannerOptions legacyCustom =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://custom.spanner.example:1234")
+            .build(/* clearConfiguredHost= */ true);
+    SpannerOptions rebuiltCustom =
+        legacyCustom.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("https://custom.spanner.example:1234", rebuiltCustom.getHost());
+    assertEquals("custom.spanner.example:1234", rebuiltCustom.getEndpoint());
+
+    // Emulator host with null configuredHost stays emulator when unchanged and recomputes default
+    // host when emulatorHost is cleared.
+    SpannerOptions legacyEmulator =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setEmulatorHost("localhost:9010")
+            .build(/* clearConfiguredHost= */ true);
+    assertEquals("http://localhost:9010", legacyEmulator.toBuilder().build().getHost());
+    SpannerOptions rebuiltClearedEmulator =
+        legacyEmulator.toBuilder()
+            .setEmulatorHost(null)
+            .setUniverseDomain("universe.example")
+            .build();
+    assertEquals("https://spanner.universe.example", rebuiltClearedEmulator.getHost());
+    assertFalse(rebuiltClearedEmulator.isEmulatorEnabled());
+
+    // OMNI instance with both explicit host and non-null emulatorHost preserves the OMNI host.
+    SpannerOptions legacyOmniWithEmulator =
+        SpannerOptions.newBuilder()
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .setHost("localhost:8080")
+            .usePlainText()
+            .setEmulatorHost("localhost:9010")
+            .build(/* clearConfiguredHost= */ true);
+    SpannerOptions rebuiltOmni =
+        legacyOmniWithEmulator.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("http://localhost:8080", rebuiltOmni.getHost());
+    assertEquals("localhost:8080", rebuiltOmni.getEndpoint());
+    assertEquals(SpannerOptions.InstanceType.OMNI, rebuiltOmni.getInstanceType());
+    assertTrue(rebuiltOmni.isUsePlainText());
+  }
+
+  @Test
+  public void testToBuilderPreservesUniverseDomainWhenUnchanged() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .setUniverseDomain("domain1.example")
+            .build();
+
+    SpannerOptions rebuilt = base.toBuilder().build();
+    assertEquals("domain1.example", rebuilt.getUniverseDomain());
+    assertEquals("https://spanner.domain1.example", rebuilt.getHost());
+    assertEquals("spanner.domain1.example:443", rebuilt.getEndpoint());
+    assertEquals("domain1.example", rebuilt.getSpannerStubSettings().getUniverseDomain());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainPreservesOmniHost() {
+    SpannerOptions plainTextOmni =
+        SpannerOptions.newBuilder()
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .setHost("localhost:8080")
+            .usePlainText()
+            .build();
+    SpannerOptions rebuiltPlainText =
+        plainTextOmni.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("http://localhost:8080", rebuiltPlainText.getHost());
+    assertEquals("localhost:8080", rebuiltPlainText.getEndpoint());
+    assertEquals(SpannerOptions.InstanceType.OMNI, rebuiltPlainText.getInstanceType());
+    assertTrue(rebuiltPlainText.isUsePlainText());
+
+    SpannerOptions tlsOmni =
+        SpannerOptions.newBuilder()
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .setHost("https://omni.example:15000")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    SpannerOptions rebuiltTls = tlsOmni.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("https://omni.example:15000", rebuiltTls.getHost());
+    assertEquals("omni.example:15000", rebuiltTls.getEndpoint());
+    assertEquals(SpannerOptions.InstanceType.OMNI, rebuiltTls.getInstanceType());
+  }
+
+  @Test
+  public void testToBuilderSetUniverseDomainKeepsEmulatorHostWhenNotCleared() {
+    SpannerOptions base =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setEmulatorHost("localhost:9010")
+            .build();
+
+    SpannerOptions rebuilt = base.toBuilder().setUniverseDomain("universe.example").build();
+    assertEquals("http://localhost:9010", rebuilt.getHost());
+    assertEquals("localhost:9010", rebuilt.getEndpoint());
+    assertTrue(rebuilt.isEmulatorEnabled());
+    assertEquals("universe.example", rebuilt.getUniverseDomain());
+  }
+
+  @Test
+  public void testReuseBuilderClearEmulatorHostAndSetUniverseDomain() {
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder().setProjectId("test-project").setEmulatorHost("localhost:9010");
+
+    SpannerOptions emulatorOptions = builder.build();
+    assertEquals("http://localhost:9010", emulatorOptions.getHost());
+    assertTrue(emulatorOptions.isEmulatorEnabled());
+
+    SpannerOptions nonEmulatorOptions =
+        builder.setEmulatorHost(null).setUniverseDomain("universe.example").build();
+    assertEquals("https://spanner.universe.example", nonEmulatorOptions.getHost());
+    assertEquals("spanner.universe.example:443", nonEmulatorOptions.getEndpoint());
+    assertFalse(nonEmulatorOptions.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testUniverseDomain_ValidValues() {
+    SpannerOptions defaultOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .build();
+    assertEquals("https://spanner.googleapis.com", defaultOptions.getHost());
+    assertEquals("spanner.googleapis.com:443", defaultOptions.getEndpoint());
+
+    SpannerOptions emptyUniverseOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setEmulatorHost(null)
+            .setUniverseDomain("")
+            .build();
+    assertEquals("https://spanner.googleapis.com", emptyUniverseOptions.getHost());
+    assertEquals("spanner.googleapis.com:443", emptyUniverseOptions.getEndpoint());
+
+    for (String universeDomain :
+        Arrays.asList("googleapis.com", "abc.goog", "a-1.b-2.example.goog", "ABC.GOOG")) {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setUniverseDomain(universeDomain)
+              .build();
+      assertEquals("https://spanner." + universeDomain, options.getHost());
+      assertEquals("spanner." + universeDomain + ":443", options.getEndpoint());
+    }
+  }
+
+  @Test
+  public void testUniverseDomain_RejectsInvalidAndUrlInjectionValues() {
+    String overlongLabel = Strings.repeat("a", 64) + ".goog";
+    String overlongDomain =
+        Strings.repeat("a", 60)
+            + "."
+            + Strings.repeat("b", 60)
+            + "."
+            + Strings.repeat("c", 60)
+            + "."
+            + Strings.repeat("d", 63);
+    assertEquals(246, overlongDomain.length());
+
+    for (String invalidDomain :
+        Arrays.asList(
+            "ignored@attacker.com:8443",
+            "ignored@attacker.com",
+            "abc.goog:8443",
+            "abc.goog/injected#frag",
+            "abc.goog/injected?foo=bar#frag",
+            "https://attacker.com",
+            "abc.goog\\attacker.com",
+            " abc.goog",
+            "abc.goog ",
+            ".abc.goog",
+            "abc.goog.",
+            "abc..goog",
+            "-abc.goog",
+            "abc-.goog",
+            "abc_def.goog",
+            "[::1]",
+            overlongLabel,
+            overlongDomain)) {
+      IllegalArgumentException defaultHostException =
+          assertThrows(
+              "Expected SpannerOptions with universeDomain=" + invalidDomain + " to be rejected",
+              IllegalArgumentException.class,
+              () ->
+                  SpannerOptions.newBuilder()
+                      .setProjectId("test-project")
+                      .setCredentials(NoCredentials.getInstance())
+                      .setEmulatorHost(null)
+                      .setUniverseDomain(invalidDomain)
+                      .build());
+      assertTrue(
+          defaultHostException.getMessage(),
+          defaultHostException.getMessage().contains("Invalid universe domain"));
+
+      IllegalArgumentException explicitHostException =
+          assertThrows(
+              "Expected SpannerOptions with explicit host and universeDomain="
+                  + invalidDomain
+                  + " to be rejected",
+              IllegalArgumentException.class,
+              () ->
+                  SpannerOptions.newBuilder()
+                      .setProjectId("test-project")
+                      .setCredentials(NoCredentials.getInstance())
+                      .setHost("https://localhost:1234")
+                      .setUniverseDomain(invalidDomain)
+                      .build());
+      assertTrue(
+          explicitHostException.getMessage(),
+          explicitHostException.getMessage().contains("Invalid universe domain"));
+    }
+  }
+
+  @Test
+  public void testUniverseDomainFromEnvironmentVariable() {
+    useUniverseDomainEnvironment("partner.example");
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .build();
+      assertNull(options.getUniverseDomain());
+      assertEquals("https://spanner.partner.example", options.getHost());
+      assertEquals("spanner.partner.example:443", options.getEndpoint());
+      assertEquals("partner.example", options.getSpannerStubSettings().getUniverseDomain());
+      assertEquals("spanner.partner.example:443", options.getSpannerStubSettings().getEndpoint());
+      assertEquals("partner.example", options.getInstanceAdminStubSettings().getUniverseDomain());
+      assertEquals(
+          "spanner.partner.example:443", options.getInstanceAdminStubSettings().getEndpoint());
+      assertEquals("partner.example", options.getDatabaseAdminStubSettings().getUniverseDomain());
+      assertEquals(
+          "spanner.partner.example:443", options.getDatabaseAdminStubSettings().getEndpoint());
+      String hostDomain = options.getHost().substring("https://spanner.".length());
+      assertEquals(hostDomain, options.getSpannerStubSettings().getUniverseDomain());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testExplicitUniverseDomainOverridesEnvironmentVariable() {
+    useUniverseDomainEnvironment("env.example");
+    try {
+      // Control check: confirm the environment value is active when unset.
+      SpannerOptions envDefaultOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .build();
+      assertEquals("https://spanner.env.example", envDefaultOptions.getHost());
+      assertEquals("env.example", envDefaultOptions.getSpannerStubSettings().getUniverseDomain());
+
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setUniverseDomain("explicit.example")
+              .build();
+      assertEquals("explicit.example", options.getUniverseDomain());
+      assertEquals("https://spanner.explicit.example", options.getHost());
+      assertEquals("spanner.explicit.example:443", options.getEndpoint());
+      assertEquals("explicit.example", options.getSpannerStubSettings().getUniverseDomain());
+      assertEquals("spanner.explicit.example:443", options.getSpannerStubSettings().getEndpoint());
+      assertEquals("explicit.example", options.getInstanceAdminStubSettings().getUniverseDomain());
+      assertEquals(
+          "spanner.explicit.example:443", options.getInstanceAdminStubSettings().getEndpoint());
+      assertEquals("explicit.example", options.getDatabaseAdminStubSettings().getUniverseDomain());
+      assertEquals(
+          "spanner.explicit.example:443", options.getDatabaseAdminStubSettings().getEndpoint());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testToBuilderClearUniverseDomainRespectsEnvironment() {
+    useUniverseDomainEnvironment("env.example");
+    try {
+      SpannerOptions initial =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setUniverseDomain("explicit.example")
+              .build();
+      SpannerOptions cleared = initial.toBuilder().setUniverseDomain("").build();
+      assertEquals("", cleared.getUniverseDomain());
+      assertEquals("https://spanner.env.example", cleared.getHost());
+      assertEquals("spanner.env.example:443", cleared.getEndpoint());
+      assertEquals("env.example", cleared.getSpannerStubSettings().getUniverseDomain());
+      assertEquals("spanner.env.example:443", cleared.getSpannerStubSettings().getEndpoint());
+      assertEquals("env.example", cleared.getInstanceAdminStubSettings().getUniverseDomain());
+      assertEquals("spanner.env.example:443", cleared.getInstanceAdminStubSettings().getEndpoint());
+      assertEquals("env.example", cleared.getDatabaseAdminStubSettings().getUniverseDomain());
+      assertEquals("spanner.env.example:443", cleared.getDatabaseAdminStubSettings().getEndpoint());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testToBuilderClearUniverseDomainFallsBackToDefaultWhenEnvUnsetOrEmpty() {
+    for (String envUniverseDomain : new String[] {null, ""}) {
+      useUniverseDomainEnvironment(envUniverseDomain);
+      try {
+        SpannerOptions initial =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(NoCredentials.getInstance())
+                .setEmulatorHost(null)
+                .setUniverseDomain("explicit.example")
+                .build();
+        SpannerOptions cleared = initial.toBuilder().setUniverseDomain("").build();
+        assertEquals("", cleared.getUniverseDomain());
+        assertEquals("googleapis.com", cleared.getResolvedUniverseDomain());
+        assertEquals("https://spanner.googleapis.com", cleared.getHost());
+        assertEquals("spanner.googleapis.com:443", cleared.getEndpoint());
+        assertEquals("googleapis.com", cleared.getSpannerStubSettings().getUniverseDomain());
+        assertEquals("spanner.googleapis.com:443", cleared.getSpannerStubSettings().getEndpoint());
+        assertEquals("googleapis.com", cleared.getInstanceAdminStubSettings().getUniverseDomain());
+        assertEquals(
+            "spanner.googleapis.com:443", cleared.getInstanceAdminStubSettings().getEndpoint());
+        assertEquals("googleapis.com", cleared.getDatabaseAdminStubSettings().getUniverseDomain());
+        assertEquals(
+            "spanner.googleapis.com:443", cleared.getDatabaseAdminStubSettings().getEndpoint());
+      } finally {
+        SpannerOptions.useDefaultEnvironment();
+      }
+    }
+  }
+
+  @Test
+  public void testHasValidUniverseDomainWithEnvironmentAndClearedBuilder() throws IOException {
+    Credentials partnerCredentials = credentialsForUniverseDomain("partner.example");
+    Credentials gduCredentials = credentialsForUniverseDomain("googleapis.com");
+
+    useUniverseDomainEnvironment("partner.example");
+    try {
+      SpannerOptions matchingOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(partnerCredentials)
+              .setEmulatorHost(null)
+              .build();
+      assertTrue(matchingOptions.hasValidUniverseDomain());
+
+      SpannerOptions mismatchedOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(gduCredentials)
+              .setEmulatorHost(null)
+              .build();
+      assertFalse(mismatchedOptions.hasValidUniverseDomain());
+
+      SpannerOptions clearedMatching =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(partnerCredentials)
+              .setEmulatorHost(null)
+              .setUniverseDomain("explicit.example")
+              .build()
+              .toBuilder()
+              .setUniverseDomain("")
+              .build();
+      assertTrue(clearedMatching.hasValidUniverseDomain());
+
+      SpannerOptions clearedMismatched =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(gduCredentials)
+              .setEmulatorHost(null)
+              .setUniverseDomain("explicit.example")
+              .build()
+              .toBuilder()
+              .setUniverseDomain("")
+              .build();
+      assertFalse(clearedMismatched.hasValidUniverseDomain());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+
+    for (String envUniverseDomain : new String[] {null, ""}) {
+      useUniverseDomainEnvironment(envUniverseDomain);
+      try {
+        SpannerOptions clearedGdu =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(gduCredentials)
+                .setEmulatorHost(null)
+                .setUniverseDomain("explicit.example")
+                .build()
+                .toBuilder()
+                .setUniverseDomain("")
+                .build();
+        assertTrue(clearedGdu.hasValidUniverseDomain());
+
+        SpannerOptions clearedPartner =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(partnerCredentials)
+                .setEmulatorHost(null)
+                .setUniverseDomain("explicit.example")
+                .build()
+                .toBuilder()
+                .setUniverseDomain("")
+                .build();
+        assertFalse(clearedPartner.hasValidUniverseDomain());
+      } finally {
+        SpannerOptions.useDefaultEnvironment();
+      }
+    }
+  }
+
+  @Test
+  public void testHasValidUniverseDomainWithApiKeyCredentialsAndEnvironment() throws IOException {
+    useUniverseDomainEnvironment("partner.example");
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(ApiKeyCredentials.create("test-api-key"))
+              .setEmulatorHost(null)
+              .build();
+      assertTrue(options.hasValidUniverseDomain());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  private static Credentials credentialsForUniverseDomain(String universeDomain) {
+    return new GoogleCredentials(new AccessToken("test-token", null)) {
+      @Override
+      public String getUniverseDomain() {
+        return universeDomain;
+      }
+    };
+  }
+
+  @Test
+  public void testEmptyUniverseDomainEnvironmentVariableFallsBackToDefault() {
+    useUniverseDomainEnvironment("");
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .build();
+      assertNull(options.getUniverseDomain());
+      assertEquals("https://spanner.googleapis.com", options.getHost());
+      assertEquals("spanner.googleapis.com:443", options.getEndpoint());
+      assertEquals("googleapis.com", options.getSpannerStubSettings().getUniverseDomain());
+      assertEquals("spanner.googleapis.com:443", options.getSpannerStubSettings().getEndpoint());
+      assertEquals("googleapis.com", options.getInstanceAdminStubSettings().getUniverseDomain());
+      assertEquals(
+          "spanner.googleapis.com:443", options.getInstanceAdminStubSettings().getEndpoint());
+      assertEquals("googleapis.com", options.getDatabaseAdminStubSettings().getUniverseDomain());
+      assertEquals(
+          "spanner.googleapis.com:443", options.getDatabaseAdminStubSettings().getEndpoint());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testResolveUniverseDomainPrecedenceAndValidation() {
+    // Precedence: explicit > environment > googleapis.com.
+    assertEquals("googleapis.com", SpannerOptions.resolveUniverseDomain(null, null));
+    assertEquals("googleapis.com", SpannerOptions.resolveUniverseDomain("", null));
+    assertEquals("googleapis.com", SpannerOptions.resolveUniverseDomain(null, ""));
+    assertEquals("googleapis.com", SpannerOptions.resolveUniverseDomain("", ""));
+    assertEquals("partner.example", SpannerOptions.resolveUniverseDomain(null, "partner.example"));
+    assertEquals("partner.example", SpannerOptions.resolveUniverseDomain("", "partner.example"));
+    assertEquals(
+        "explicit.example",
+        SpannerOptions.resolveUniverseDomain("explicit.example", "env.example"));
+    assertEquals("explicit.example", SpannerOptions.resolveUniverseDomain("explicit.example", ""));
+
+    IllegalArgumentException invalidEnvException =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> SpannerOptions.resolveUniverseDomain(null, "evil.com/path"));
+    assertTrue(invalidEnvException.getMessage().contains("Invalid universe domain"));
+
+    IllegalArgumentException invalidConfiguredException =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> SpannerOptions.resolveUniverseDomain("evil.com/path", "partner.example"));
+    assertTrue(invalidConfiguredException.getMessage().contains("Invalid universe domain"));
+
+    // End-to-end fail-closed validation across default, emulator, and explicit-host builders.
+    useUniverseDomainEnvironment("evil.com/path");
+    try {
+      IllegalArgumentException defaultException =
+          assertThrows(
+              IllegalArgumentException.class,
+              () ->
+                  SpannerOptions.newBuilder()
+                      .setProjectId("test-project")
+                      .setCredentials(NoCredentials.getInstance())
+                      .setEmulatorHost(null)
+                      .build());
+      assertTrue(defaultException.getMessage().contains("Invalid universe domain"));
+
+      IllegalArgumentException emulatorException =
+          assertThrows(
+              IllegalArgumentException.class,
+              () ->
+                  SpannerOptions.newBuilder()
+                      .setProjectId("test-project")
+                      .setEmulatorHost("localhost:9010")
+                      .build());
+      assertTrue(emulatorException.getMessage().contains("Invalid universe domain"));
+
+      IllegalArgumentException explicitHostException =
+          assertThrows(
+              IllegalArgumentException.class,
+              () ->
+                  SpannerOptions.newBuilder()
+                      .setProjectId("test-project")
+                      .setCredentials(NoCredentials.getInstance())
+                      .setHost("https://custom.host")
+                      .build());
+      assertTrue(explicitHostException.getMessage().contains("Invalid universe domain"));
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testCloudMonitoringExporterHonorsResolvedUniverseDomain() throws Exception {
+    for (String[] envAndExpected :
+        new String[][] {{"partner.example", "partner.example"}, {"", "googleapis.com"}}) {
+      String envUniverseDomain = envAndExpected[0];
+      String expected = envAndExpected[1];
+      useUniverseDomainEnvironment(envUniverseDomain);
+      try {
+        SpannerOptions options =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(NoCredentials.getInstance())
+                .setEmulatorHost(null)
+                .build();
+        assertEquals(expected, options.getResolvedUniverseDomain());
+        SpannerCloudMonitoringExporter exporter =
+            SpannerCloudMonitoringExporter.create(
+                () -> "test-project",
+                NoCredentials.getInstance(),
+                null,
+                options.getResolvedUniverseDomain());
+        try {
+          assertEquals(
+              expected, exporter.getMetricServiceClient().getSettings().getUniverseDomain());
+          assertEquals(
+              "monitoring." + expected + ":443",
+              exporter.getMetricServiceClient().getSettings().getEndpoint());
+        } finally {
+          exporter.shutdown();
+        }
+      } finally {
+        SpannerOptions.useDefaultEnvironment();
+      }
+    }
+  }
+
+  @Test
+  public void testBuiltInMetricsProviderReceivesResolvedUniverseDomain() {
+    for (String[] envAndExpected :
+        new String[][] {{"partner.example", "partner.example"}, {"", "googleapis.com"}}) {
+      String envUniverseDomain = envAndExpected[0];
+      String expected = envAndExpected[1];
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public @Nullable String getUniverseDomain() {
+              return envUniverseDomain;
+            }
+
+            @Override
+            public boolean isEnableGRPCBuiltInMetrics() {
+              return true;
+            }
+          });
+      try {
+        // The Cloud Monitoring tracer factory is only created for clients with real credentials.
+        SpannerOptions options =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(GoogleCredentials.create(new AccessToken("test-token", null)))
+                .setEmulatorHost(null)
+                .build();
+        assertNull(options.getUniverseDomain());
+        RecordingBuiltInMetricsProvider provider = new RecordingBuiltInMetricsProvider();
+        options.builtInMetricsProvider = provider;
+
+        options.getBuiltInOpenTelemetry();
+        options.enablegRPCMetrics(
+            InstantiatingGrpcChannelProvider.newBuilder(), /* isEmulatorEnabled= */ false);
+        options.getApiTracerFactory(/* isAdminClient= */ false, /* isEmulatorEnabled= */ false);
+
+        assertEquals(Arrays.asList(expected, expected, expected), provider.universeDomains);
+      } finally {
+        SpannerOptions.useDefaultEnvironment();
+      }
+    }
+  }
+
+  /** Records the universe domain that {@link SpannerOptions} passes to the metrics provider. */
+  private static final class RecordingBuiltInMetricsProvider extends BuiltInMetricsProvider {
+    private final List<String> universeDomains = new ArrayList<>();
+
+    @Override
+    synchronized OpenTelemetry getOrCreateOpenTelemetry(
+        String projectId, Credentials credentials, String monitoringHost, String universeDomain) {
+      universeDomains.add(universeDomain);
+      return OpenTelemetry.noop();
+    }
+
+    @Override
+    void enableGrpcMetrics(
+        InstantiatingGrpcChannelProvider.Builder channelProviderBuilder,
+        String projectId,
+        Credentials credentials,
+        String monitoringHost,
+        String universeDomain) {
+      universeDomains.add(universeDomain);
+    }
+  }
+
+  private static void useUniverseDomainEnvironment(@Nullable String universeDomain) {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public @Nullable String getUniverseDomain() {
+            return universeDomain;
+          }
+        });
   }
 }

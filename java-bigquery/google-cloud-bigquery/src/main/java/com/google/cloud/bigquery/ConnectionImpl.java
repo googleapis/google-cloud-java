@@ -21,6 +21,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.QueryParameter;
@@ -272,29 +273,28 @@ class ConnectionImpl implements Connection {
    *
    * <p>Example of running a query.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *  ConnectionSettings connectionSettings =
-   *        ConnectionSettings.newBuilder()
-   *            .setUseReadAPI(true)
-   *            .build();
-   *   Connection connection = bigquery.createConnection(connectionSettings);
-   *   String selectQuery = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
-   * ListenableFuture<ExecuteSelectResponse> executeSelectFuture = connection.executeSelectAsync(selectQuery);
+   * <pre>{@code
+   * ConnectionSettings connectionSettings =
+   *     ConnectionSettings.newBuilder()
+   *         .setUseReadAPI(true)
+   *         .build();
+   * Connection connection = bigquery.createConnection(connectionSettings);
+   * String selectQuery =
+   *     "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+   * ListenableFuture<ExecuteSelectResponse> executeSelectFuture =
+   *     connection.executeSelectAsync(selectQuery);
    * ExecuteSelectResponse executeSelectRes = executeSelectFuture.get();
    *
-   *  if(!executeSelectRes.getIsSuccessful()){
-   * throw executeSelectRes.getBigQuerySQLException();
+   * if (!executeSelectRes.getIsSuccessful()) {
+   *   throw executeSelectRes.getBigQuerySQLException();
    * }
    *
-   *  BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * BigQueryResult bigQueryResult = executeSelectRes.getResultSet();
    * ResultSet rs = bigQueryResult.getResultSet();
    * while (rs.next()) {
-   * System.out.println(rs.getString(1));
+   *   System.out.println(rs.getString("corpus"));
    * }
-   *
-   * </pre>
+   * }</pre>
    *
    * @param sql a static SQL SELECT statement
    * @return a ListenableFuture that is used to get the data produced by the query
@@ -374,43 +374,40 @@ class ConnectionImpl implements Connection {
    *
    * <p>Example of running a query.
    *
-   * <pre>
-   * {
-   *   &#64;code
-   *  ConnectionSettings connectionSettings =
-   *        ConnectionSettings.newBuilder()
-   *            ..setUseReadAPI(true)
-   *            .build();
-   *   Connection connection = bigquery.createConnection(connectionSettings);
-   *     String selectQuery =
-   *         "SELECT TimestampField, StringField, BooleanField FROM "
-   *             + MY_TABLE
-   *             + " WHERE StringField = @stringParam"
-   *             + " AND IntegerField IN UNNEST(@integerList)";
-   *     QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
-   *     QueryParameterValue intArrayParameter =
-   *         QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
-   *     Parameter stringParam =
-   *         Parameter.newBuilder().setName("stringParam").setValue(stringParameter).build();
-   *     Parameter intArrayParam =
-   *         Parameter.newBuilder().setName("integerList").setValue(intArrayParameter).build();
-   *     List<Parameter> parameters = ImmutableList.of(stringParam, intArrayParam);
+   * <pre>{@code
+   * ConnectionSettings connectionSettings =
+   *     ConnectionSettings.newBuilder()
+   *         .setUseReadAPI(true)
+   *         .build();
+   * Connection connection = bigquery.createConnection(connectionSettings);
+   * String selectQuery =
+   *     "SELECT TimestampField, StringField, BooleanField FROM "
+   *         + MY_TABLE
+   *         + " WHERE StringField = @stringParam"
+   *         + " AND IntegerField IN UNNEST(@integerList)";
+   * QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
+   * QueryParameterValue intArrayParameter =
+   *     QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
+   * Parameter stringParam =
+   *     Parameter.newBuilder().setName("stringParam").setValue(stringParameter).build();
+   * Parameter intArrayParam =
+   *     Parameter.newBuilder().setName("integerList").setValue(intArrayParameter).build();
+   * List<Parameter> parameters = ImmutableList.of(stringParam, intArrayParam);
    *
-   *     ListenableFuture<ExecuteSelectResponse> executeSelectFut =
-   *         connection.executeSelectAsync(selectQuery, parameters);
+   * ListenableFuture<ExecuteSelectResponse> executeSelectFuture =
+   *     connection.executeSelectAsync(selectQuery, parameters);
    * ExecuteSelectResponse executeSelectRes = executeSelectFuture.get();
    *
-   *  if(!executeSelectRes.getIsSuccessful()){
-   * throw executeSelectRes.getBigQuerySQLException();
+   * if (!executeSelectRes.getIsSuccessful()) {
+   *   throw executeSelectRes.getBigQuerySQLException();
    * }
    *
-   *  BigQueryResult bigQueryResult = executeSelectRes.getBigQueryResult();
+   * BigQueryResult bigQueryResult = executeSelectRes.getResultSet();
    * ResultSet rs = bigQueryResult.getResultSet();
    * while (rs.next()) {
-   * System.out.println(rs.getString(1));
+   *   System.out.println(rs.getString("StringField"));
    * }
-   *
-   * </pre>
+   * }</pre>
    *
    * @param sql SQL SELECT query
    * @param parameters named or positional parameters. The set of query parameters must either be
@@ -993,18 +990,37 @@ class ConnectionImpl implements Connection {
     }
   }
 
+  /**
+   * Builds {@link BigQueryReadSettings} for the BigQuery Storage Read API client from {@link
+   * BigQueryOptions}, propagating credentials and universe domain configuration.
+   */
+  @VisibleForTesting
+  BigQueryReadSettings createBigQueryReadSettings() throws IOException {
+    // ServiceOptions leaves credentials null if none were configured and ADC lookup failed.
+    // Use NoCredentialsProvider in that case instead of passing null to FixedCredentialsProvider.
+    BigQueryReadSettings.Builder settingsBuilder =
+        BigQueryReadSettings.newBuilder()
+            .setCredentialsProvider(
+                bigQueryOptions.getCredentials() != null
+                    ? FixedCredentialsProvider.create(bigQueryOptions.getCredentials())
+                    : NoCredentialsProvider.create());
+    // Forward an explicitly configured universe domain so the Read API client resolves
+    // bigquerystorage.<universeDomain>:443 and validates credentials against the same universe.
+    // Leave it unset when null so GAX still checks GOOGLE_CLOUD_UNIVERSE_DOMAIN before defaulting
+    // to googleapis.com.
+    if (bigQueryOptions.getUniverseDomain() != null) {
+      settingsBuilder.setUniverseDomain(bigQueryOptions.getUniverseDomain());
+    }
+    return settingsBuilder.build();
+  }
+
   @VisibleForTesting
   BigQueryResult highThroughPutRead(
       TableId destinationTable, long totalRows, Schema schema, BigQueryResultStats stats) {
 
     try {
       if (bqReadClient == null) { // if the read client isn't already initialized. Not thread safe.
-        BigQueryReadSettings settings =
-            BigQueryReadSettings.newBuilder()
-                .setCredentialsProvider(
-                    FixedCredentialsProvider.create(bigQueryOptions.getCredentials()))
-                .build();
-        bqReadClient = BigQueryReadClient.create(settings);
+        bqReadClient = BigQueryReadClient.create(createBigQueryReadSettings());
       }
       String parent = String.format("projects/%s", destinationTable.getProject());
       String srcTable =

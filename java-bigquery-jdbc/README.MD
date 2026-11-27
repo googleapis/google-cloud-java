@@ -40,6 +40,8 @@ libraryDependencies += "com.google.cloud" % "google-cloud-bigquery-jdbc" % "LATE
 
 See the [Authentication][authentication] section in the base directory's README.
 
+For custom universe domain deployments, configure the target universe domain via the `universeDomain=<domain>` JDBC connection URL property, `DataSource.setUniverseDomain("<domain>")`, or the `GOOGLE_CLOUD_UNIVERSE_DOMAIN` environment variable (`GOOGLE_CLOUD_UNIVERSE_DOMAIN` configures client endpoints only and does not override credentials). Self-describing JSON credentials (Service Account JSON keys, External Account JSON files, and Application Default Credentials) always retain their own embedded `universe_domain`. When inline External Account / Workload Identity Federation (`OAuthType=4` with `BYOID_*` properties) is used without an explicit `BYOID_TokenUri`, the driver derives `https://sts.<universeDomain>/v1/token` when `universeDomain` is explicitly set (otherwise defaulting to `https://sts.googleapis.com/v1/token`).
+
 ## Authorization
 
 The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired BigQuery JDBC APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the BigQuery JDBC API calls.

@@ -317,12 +317,15 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           BigQueryJdbcOAuthUtility.parseOAuthProperties(ds, this.connectionClassName);
       this.isReadOnlyTokenUsed = checkIsReadOnlyTokenUsed(this.authProperties);
       this.catalog = ds.getProjectId();
-      this.universeDomain = ds.getUniverseDomain();
+      this.universeDomain = ds.resolveUniverseDomain();
 
       this.overrideProperties = ds.getOverrideProperties();
-      if (this.universeDomain != null) {
+      // Only record an explicit URL/DataSource universeDomain in overrideProperties for non-JSON
+      // credentials; JSON credentials always keep their own parsed universe_domain.
+      String explicitUniverseDomain = ds.getUniverseDomain();
+      if (explicitUniverseDomain != null) {
         this.overrideProperties.put(
-            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, this.universeDomain);
+            BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, explicitUniverseDomain);
       }
 
       this.reqGoogleDriveScope =
@@ -537,8 +540,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    * anything it executes is reported as user activity in usage telemetry.
    */
   BigQueryPreparedStatement prepareStatementInternal(String sql) throws SQLException {
+    return prepareStatementInternal(sql, false);
+  }
+
+  BigQueryPreparedStatement prepareStatementInternal(String sql, boolean skipDryRun)
+      throws SQLException {
     checkClosed();
-    BigQueryPreparedStatement statement = new BigQueryPreparedStatement(this, sql, false);
+    BigQueryPreparedStatement statement =
+        new BigQueryPreparedStatement(this, sql, skipDryRun, false);
     LOG.fine("Internal Prepared Statement %s created.", statement);
     addOpenStatements(statement);
     return statement;
@@ -595,8 +604,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public PreparedStatement prepareStatement(String sql) throws SQLException {
+    return prepareStatement(sql, false);
+  }
+
+  PreparedStatement prepareStatement(String sql, boolean skipDryRun) throws SQLException {
     checkClosed();
-    PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql);
+    PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql, skipDryRun);
     LOG.fine("Prepared Statement %s created.", currentStatement);
     addOpenStatements(currentStatement);
 
@@ -1392,7 +1405,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               this.gcpTelemetryCredentials,
               effectiveProjectId,
               this.credentials,
-              this.headerProvider);
+              this.headerProvider,
+              this.universeDomain);
     }
 
     if (this.enableGcpLogExporter || hasExternalOtel) {

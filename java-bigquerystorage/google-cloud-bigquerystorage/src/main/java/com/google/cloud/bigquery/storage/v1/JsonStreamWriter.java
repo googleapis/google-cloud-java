@@ -171,10 +171,13 @@ public class JsonStreamWriter implements AutoCloseable {
    * newBuilder that constructs a JsonStreamWriter builder with BigQuery client being initialized by
    * StreamWriter by default.
    *
-   * <p>The table schema passed in will be updated automatically when there is a schema update
-   * event. When used for Writer creation, it should be the latest schema. So when you are trying to
-   * reuse a stream, you should use Builder newBuilder( String streamOrTableName,
-   * BigQueryWriteClient client) instead, so the created Writer will be based on a fresh schema.
+   * <p>Automatic schema updates are disabled when an explicit {@link TableSchema} is passed in; the
+   * caller is responsible for providing the latest schema and recreating the writer if the table
+   * schema changes. To enable automatic schema refresh on schema update events, use {@link
+   * #newBuilder(String, BigQueryWriteClient)} instead. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/write-api-best-practices#handle_schema_updates">Handle
+   * schema updates</a> for how BigQuery detects out-of-band table schema changes and how automatic
+   * writer reconnection works.
    *
    * @param streamOrTableName name of the stream that must follow
    *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+" or table name
@@ -192,10 +195,13 @@ public class JsonStreamWriter implements AutoCloseable {
   /**
    * newBuilder that constructs a JsonStreamWriter builder.
    *
-   * <p>The table schema passed in will be updated automatically when there is a schema update
-   * event. When used for Writer creation, it should be the latest schema. So when you are trying to
-   * reuse a stream, you should use Builder newBuilder( String streamOrTableName,
-   * BigQueryWriteClient client) instead, so the created Writer will be based on a fresh schema.
+   * <p>Automatic schema updates are disabled when an explicit {@link TableSchema} is passed in; the
+   * caller is responsible for providing the latest schema and recreating the writer if the table
+   * schema changes. To enable automatic schema refresh on schema update events, use {@link
+   * #newBuilder(String, BigQueryWriteClient)} instead. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/write-api-best-practices#handle_schema_updates">Handle
+   * schema updates</a> for how BigQuery detects out-of-band table schema changes and how automatic
+   * writer reconnection works.
    *
    * @param streamOrTableName name of the stream that must follow
    *     "projects/[^/]+/datasets/[^/]+/tables/[^/]+/streams/[^/]+"
@@ -226,10 +232,15 @@ public class JsonStreamWriter implements AutoCloseable {
   }
 
   /**
-   * Sets the maximum time a request is allowed to be waiting in request waiting queue. Under very
-   * low chance, it's possible for append request to be waiting indefintely for request callback
-   * when Google networking SDK does not detect the networking breakage. The default timeout is 15
-   * minutes. We are investigating the root cause for callback not triggered by networking SDK.
+   * Sets the maximum time a request is allowed to wait in the request waiting queue. Under rare
+   * conditions, an append request may wait indefinitely for a callback when the underlying network
+   * layer does not detect a broken connection. The default timeout is 5 minutes (lowered from 15
+   * minutes in <a
+   * href="https://github.com/googleapis/java-bigquerystorage/pull/2084">java-bigquerystorage#2084</a>);
+   * when exceeded, the connection closes with {@link
+   * Exceptions.MaximumRequestCallbackWaitTimeExceededException}. See <a
+   * href="https://docs.cloud.google.com/bigquery/docs/write-api-grpc#connections">Storage Write API
+   * connections</a> for how client connections handle failures and reconnect.
    */
   public static void setMaxRequestCallbackWaitTime(Duration waitTime) {
     ConnectionWorker.MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
@@ -324,6 +335,17 @@ public class JsonStreamWriter implements AutoCloseable {
      */
     public Builder setEndpoint(String endpoint) {
       this.schemaAwareStreamWriterBuilder.setEndpoint(endpoint);
+      return this;
+    }
+
+    /**
+     * Setter for the underlying StreamWriter's universe domain.
+     *
+     * @param universeDomain the universe domain to use
+     * @return Builder
+     */
+    public Builder setUniverseDomain(String universeDomain) {
+      this.schemaAwareStreamWriterBuilder.setUniverseDomain(universeDomain);
       return this;
     }
 

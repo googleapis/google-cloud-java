@@ -946,7 +946,7 @@
 
 ### Features
 
-* Adds TPC support ([#2362](https://github.com/googleapis/java-storage/issues/2362)) ([8b636db](https://github.com/googleapis/java-storage/commit/8b636dbe8a16b9b81afbb51b8d0032bcbdbef635))
+* Adds universe domain support ([#2362](https://github.com/googleapis/java-storage/issues/2362)) ([8b636db](https://github.com/googleapis/java-storage/commit/8b636dbe8a16b9b81afbb51b8d0032bcbdbef635))
 
 
 ### Bug Fixes

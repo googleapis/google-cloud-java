@@ -71,7 +71,7 @@ public class SimpleApp {
           && queryJob.getStatus().getExecutionErrors().size() > 0) {
         // TODO(developer): Handle errors here. An error here do not necessarily mean that the job
         // has completed or was unsuccessful.
-        // For more details: https://cloud.google.com/bigquery/troubleshooting-errors
+        // For more details: https://docs.cloud.google.com/bigquery/docs/errors
         throw new RuntimeException("An unhandled error has occurred");
       }
       // [END bigquery_simple_app_query]

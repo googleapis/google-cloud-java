@@ -458,7 +458,9 @@ class ITBigQueryStorageTest {
     assertEquals(1_333, rowCount);
   }
 
-  @Disabled("Flaky test: b/576746567")
+  @Disabled(
+      "Disabled on non-GA v1beta1 to avoid overloading BigQuery Storage CreateReadSession quota"
+          + " across versions; covered on v1 (b/576746567)")
   @Test
   void testColumnSelection() throws IOException {
     TableReference tableReference =
@@ -1088,7 +1090,9 @@ class ITBigQueryStorageTest {
     localClient.close();
   }
 
-  @Disabled("Flaky test: b/575538723")
+  @Disabled(
+      "Disabled on non-GA v1beta1 to avoid overloading BigQuery Storage CreateReadSession quota"
+          + " across versions; covered on v1 (b/575538723)")
   @Test
   void testUniverseDomainWithMatchingDomain() throws IOException {
     // Test a valid domain using the default credentials and Google default universe domain.
@@ -1130,43 +1134,6 @@ class ITBigQueryStorageTest {
     }
 
     assertEquals(164_656, rowCount);
-    localClient.close();
-  }
-
-  void testUniverseDomain() throws IOException {
-    // This test is not yet part presubmit integration test as it requires the apis-tpclp.goog
-    // universe domain credentials.
-    // Test a valid domain using the default credentials and Google default universe domain.
-    BigQueryStorageSettings bigQueryStorageSettings =
-        BigQueryStorageSettings.newBuilder().setUniverseDomain("apis-tpclp.goog").build();
-    BigQueryStorageClient localClient = BigQueryStorageClient.create(bigQueryStorageSettings);
-
-    TableReference tableReference =
-        TableReference.newBuilder()
-            .setProjectId("google-tpc-testing-environment:cloudsdk-test-project")
-            .setDatasetId("tpc_demo_dataset")
-            .setTableId("new_table")
-            .build();
-
-    ReadSession session =
-        localClient.createReadSession(
-            /* tableReference= */ tableReference,
-            /* parent= */ parentProjectId,
-            /* requestedStreams= */ 1);
-
-    StreamPosition readPosition =
-        StreamPosition.newBuilder().setStream(session.getStreams(0)).build();
-
-    ReadRowsRequest readRowsRequest =
-        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
-
-    long rowCount = 0;
-    ServerStream<ReadRowsResponse> stream = localClient.readRowsCallable().call(readRowsRequest);
-    for (ReadRowsResponse response : stream) {
-      rowCount += response.getRowCount();
-    }
-
-    assertEquals(1, rowCount);
     localClient.close();
   }
 

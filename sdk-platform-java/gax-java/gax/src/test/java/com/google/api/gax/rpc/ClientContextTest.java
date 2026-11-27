@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
@@ -1304,6 +1305,115 @@ class ClientContextTest {
 
     FakeCallContext fakeCallContext = (FakeCallContext) context.getDefaultCallContext();
     assertThat(fakeCallContext.getCredentials()).isInstanceOf(ApiKeyCredentials.class);
+  }
+
+  @Test
+  void testSetApiKey_withCustomUniverseDomain_skipsUniverseDomainValidation() throws IOException {
+    FakeStubSettings.Builder builder = new FakeStubSettings.Builder();
+    InterceptingExecutor executor = new InterceptingExecutor(1);
+    FakeTransportChannel transportChannel = FakeTransportChannel.create(new FakeChannel());
+    FakeTransportProvider transportProvider =
+        new FakeTransportProvider(
+            transportChannel,
+            executor,
+            true,
+            ImmutableMap.of(),
+            null,
+            DEFAULT_ENDPOINT,
+            DEFAULT_MTLS_ENDPOINT);
+    builder.setTransportChannelProvider(transportProvider);
+    HeaderProvider headerProvider =
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of());
+    builder.setHeaderProvider(headerProvider);
+    builder.setApiKey("test-api-key");
+    builder.setUniverseDomain("test.com");
+
+    ClientContext context = ClientContext.create(builder.build());
+
+    FakeCallContext fakeCallContext = (FakeCallContext) context.getDefaultCallContext();
+    assertThat(fakeCallContext.getCredentials()).isInstanceOf(ApiKeyCredentials.class);
+    StatusCode statusCode = mock(StatusCode.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(statusCode.getCode()).thenReturn(StatusCode.Code.UNAUTHENTICATED);
+    assertDoesNotThrow(
+        () ->
+            context
+                .getEndpointContext()
+                .validateUniverseDomain(fakeCallContext.getCredentials(), statusCode));
+  }
+
+  @Test
+  void testSetApiKey_withQuotaProjectIdAndCustomUniverseDomain_doesNotWrapCredentials()
+      throws IOException {
+    FakeStubSettings.Builder builder = new FakeStubSettings.Builder();
+    InterceptingExecutor executor = new InterceptingExecutor(1);
+    FakeTransportChannel transportChannel = FakeTransportChannel.create(new FakeChannel());
+    FakeTransportProvider transportProvider =
+        new FakeTransportProvider(
+            transportChannel, executor, true, null, null, DEFAULT_ENDPOINT, DEFAULT_MTLS_ENDPOINT);
+    builder.setTransportChannelProvider(transportProvider);
+    HeaderProvider headerProvider =
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of());
+    builder.setHeaderProvider(headerProvider);
+    builder.setApiKey("test-api-key");
+    builder.setQuotaProjectId("quota-project");
+    builder.setUniverseDomain("test.com");
+
+    ClientContext context = ClientContext.create(builder.build());
+
+    FakeCallContext fakeCallContext = (FakeCallContext) context.getDefaultCallContext();
+    assertThat(context.getCredentials()).isInstanceOf(ApiKeyCredentials.class);
+    assertThat(fakeCallContext.getCredentials()).isInstanceOf(ApiKeyCredentials.class);
+    assertThat(context.getQuotaProjectId()).isEqualTo("quota-project");
+    assertThat(transportChannel.getHeaders()).containsEntry("x-goog-user-project", "quota-project");
+    StatusCode statusCode = mock(StatusCode.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(statusCode.getCode()).thenReturn(StatusCode.Code.UNAUTHENTICATED);
+    assertDoesNotThrow(
+        () ->
+            context
+                .getEndpointContext()
+                .validateUniverseDomain(fakeCallContext.getCredentials(), statusCode));
+  }
+
+  @Test
+  void
+      testSetApiKeyCredentialsProvider_withQuotaProjectIdAndCustomUniverseDomain_doesNotWrapCredentials()
+          throws IOException {
+    FakeStubSettings.Builder builder = new FakeStubSettings.Builder();
+    InterceptingExecutor executor = new InterceptingExecutor(1);
+    FakeTransportChannel transportChannel = FakeTransportChannel.create(new FakeChannel());
+    FakeTransportProvider transportProvider =
+        new FakeTransportProvider(
+            transportChannel,
+            executor,
+            true,
+            ImmutableMap.of(),
+            null,
+            DEFAULT_ENDPOINT,
+            DEFAULT_MTLS_ENDPOINT);
+    builder.setTransportChannelProvider(transportProvider);
+    HeaderProvider headerProvider =
+        mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(headerProvider.getHeaders()).thenReturn(ImmutableMap.of());
+    builder.setHeaderProvider(headerProvider);
+    builder.setCredentialsProvider(
+        FixedCredentialsProvider.create(ApiKeyCredentials.create("test-api-key")));
+    builder.setQuotaProjectId("quota-project");
+    builder.setUniverseDomain("test.com");
+
+    ClientContext context = ClientContext.create(builder.build());
+
+    FakeCallContext fakeCallContext = (FakeCallContext) context.getDefaultCallContext();
+    assertThat(context.getCredentials()).isInstanceOf(ApiKeyCredentials.class);
+    assertThat(fakeCallContext.getCredentials()).isInstanceOf(ApiKeyCredentials.class);
+    StatusCode statusCode = mock(StatusCode.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(statusCode.getCode()).thenReturn(StatusCode.Code.UNAUTHENTICATED);
+    assertDoesNotThrow(
+        () ->
+            context
+                .getEndpointContext()
+                .validateUniverseDomain(fakeCallContext.getCredentials(), statusCode));
   }
 
   // This test case is added to cover a special case with BigTable. BigTable's EnhancedStubSettings
