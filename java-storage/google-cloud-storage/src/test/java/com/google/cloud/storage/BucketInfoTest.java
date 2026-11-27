@@ -37,6 +37,7 @@ import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.BucketInfo.AgeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
 import com.google.cloud.storage.BucketInfo.IamConfiguration;
+import com.google.cloud.storage.BucketInfo.IpFilter;
 import com.google.cloud.storage.BucketInfo.LifecycleRule;
 import com.google.cloud.storage.BucketInfo.LifecycleRule.AbortIncompleteMPUAction;
 import com.google.cloud.storage.BucketInfo.LifecycleRule.DeleteLifecycleAction;
@@ -519,6 +520,19 @@ public class BucketInfoTest {
             .bucketInfo()
             .encode(bi().setLifecycleRules(ImmutableList.of(lifecycleRule)).build());
     assertEquals(lifecycle(lifecycleDeleteAfter10), bucket.getLifecycle());
+  }
+
+  @Test
+  public void testIpFilter_nullNetworkSources_encodeAsJsonNull() throws IOException {
+    IpFilter ipFilter = IpFilter.newBuilder().setMode("Enabled").build();
+
+    Bucket encoded = Conversions.json().bucketInfo().encode(bi().setIpFilter(ipFilter).build());
+    String json = JacksonFactory.getDefaultInstance().toString(encoded);
+    IpFilter decoded = Conversions.json().bucketInfo().decode(encoded).getIpFilter();
+
+    assertThat(json).contains("\"publicNetworkSource\":null");
+    assertThat(json).contains("\"vpcNetworkSources\":null");
+    assertThat(decoded).isEqualTo(ipFilter);
   }
 
   private static Lifecycle lifecycle(Rule... rules) {

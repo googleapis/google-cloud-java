@@ -1168,14 +1168,21 @@ final class JsonConversions {
   private Bucket.IpFilter ipFilterEncode(IpFilter from) {
     Bucket.IpFilter to = new Bucket.IpFilter();
     ifNonNull(from.getMode(), to::setMode);
-    ifNonNull(
-        from.getPublicNetworkSource(),
-        publicNetworkSourceCodec::encode,
-        to::setPublicNetworkSource);
-    ifNonNull(
-        from.getVpcNetworkSources(),
-        toListOf(vpcNetworkSourceCodec::encode),
-        to::setVpcNetworkSources);
+    IpFilter.PublicNetworkSource publicNetworkSource = from.getPublicNetworkSource();
+    if (publicNetworkSource != null) {
+      to.setPublicNetworkSource(publicNetworkSourceCodec.encode(publicNetworkSource));
+    } else {
+      to.setPublicNetworkSource(Data.nullOf(Bucket.IpFilter.PublicNetworkSource.class));
+    }
+    List<IpFilter.VpcNetworkSource> vpcNetworkSources = from.getVpcNetworkSources();
+    if (vpcNetworkSources != null) {
+      to.setVpcNetworkSources(toListOf(vpcNetworkSourceCodec::encode).apply(vpcNetworkSources));
+    } else {
+      // safe: Data.nullOf returns an empty sentinel ArrayList
+      @SuppressWarnings("unchecked")
+      List<VpcNetworkSources> nullVpcNetworkSources = Data.nullOf(ArrayList.class);
+      to.setVpcNetworkSources(nullVpcNetworkSources);
+    }
     ifNonNull(from.getAllowCrossOrgVpcs(), to::setAllowCrossOrgVpcs);
     ifNonNull(from.getAllowAllServiceAgentAccess(), to::setAllowAllServiceAgentAccess);
     return to;
@@ -1184,14 +1191,14 @@ final class JsonConversions {
   private IpFilter ipFilterDecode(Bucket.IpFilter from) {
     IpFilter.Builder to = IpFilter.newBuilder();
     ifNonNull(from.getMode(), to::setMode);
-    ifNonNull(
-        from.getPublicNetworkSource(),
-        publicNetworkSourceCodec::decode,
-        to::setPublicNetworkSource);
-    ifNonNull(
-        from.getVpcNetworkSources(),
-        toListOf(vpcNetworkSourceCodec::decode),
-        to::setVpcNetworkSources);
+    Bucket.IpFilter.PublicNetworkSource publicNetworkSource = from.getPublicNetworkSource();
+    if (publicNetworkSource != null && !Data.isNull(publicNetworkSource)) {
+      to.setPublicNetworkSource(publicNetworkSourceCodec.decode(publicNetworkSource));
+    }
+    List<VpcNetworkSources> vpcNetworkSources = from.getVpcNetworkSources();
+    if (vpcNetworkSources != null && !Data.isNull(vpcNetworkSources)) {
+      to.setVpcNetworkSources(toListOf(vpcNetworkSourceCodec::decode).apply(vpcNetworkSources));
+    }
     ifNonNull(from.getAllowCrossOrgVpcs(), to::setAllowCrossOrgVpcs);
     ifNonNull(from.getAllowAllServiceAgentAccess(), to::setAllowAllServiceAgentAccess);
     return to.build();
