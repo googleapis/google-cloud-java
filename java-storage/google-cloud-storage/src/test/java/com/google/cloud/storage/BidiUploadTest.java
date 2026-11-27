@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.cloud.storage.BidiUploadState.appendableNew;
+import static com.google.cloud.storage.BidiUploadState.appendableTakeover;
 import static com.google.cloud.storage.BidiUploadTestUtils.adaptOnlySend;
 import static com.google.cloud.storage.BidiUploadTestUtils.alwaysErrorBidiStreamingCallable;
 import static com.google.cloud.storage.BidiUploadTestUtils.createSegment;
@@ -69,6 +70,7 @@ import com.google.storage.v2.BidiWriteHandle;
 import com.google.storage.v2.BidiWriteObjectRedirectedError;
 import com.google.storage.v2.BidiWriteObjectRequest;
 import com.google.storage.v2.BidiWriteObjectResponse;
+import com.google.storage.v2.CommonObjectRequestParams;
 import com.google.storage.v2.Object;
 import com.google.storage.v2.ObjectChecksums;
 import com.google.storage.v2.WriteObjectSpec;
@@ -715,6 +717,13 @@ public final class BidiUploadTest {
   }
 
   public static final class AppendableUploadStateTest {
+    private static final CommonObjectRequestParams commonObjectRequestParams =
+        CommonObjectRequestParams.newBuilder()
+            .setEncryptionAlgorithm("AES256")
+            .setEncryptionKeyBytes(ByteString.copyFromUtf8("example-key-bytes"))
+            .setEncryptionKeySha256Bytes(ByteString.copyFromUtf8("example-sha256-bytes"))
+            .build();
+
     private static @NonNull AppendableUploadState getAppendable() {
       AppendableUploadState uploadState =
           appendableNew(
@@ -1111,6 +1120,63 @@ public final class BidiUploadTest {
       assertThat(state.onResponse(response)).isNull();
       assertThat(state.getResultFuture().isDone()).isTrue();
       assertThat(state.getResultFuture().get()).isEqualTo(response);
+    }
+
+    @Test
+    public void appendableNew_includesCommonObjectRequestParamsOnInitialAndReconnect() {
+      BidiWriteObjectRequest initial =
+          appendRequestNew.toBuilder()
+              .setCommonObjectRequestParams(commonObjectRequestParams)
+              .build();
+      AppendableUploadState state =
+          appendableNew(
+              initial,
+              GrpcCallContext::createDefault,
+              50_000,
+              SettableApiFuture.create(),
+              Crc32cValue.zero());
+
+      state.enqueueFirstMessageAndGetGrpcCallContext();
+      List<BidiWriteObjectRequest> initialMessages = BidiUploadTestUtils.sinkToList(state);
+      assertThat(initialMessages).containsExactly(initial);
+
+      assertThat(state.onResponse(resourceFor(appendRequestNew, 0))).isNull();
+      state.pendingRetry();
+      state.retrying();
+      state.enqueueFirstMessageAndGetGrpcCallContext();
+
+      BidiWriteObjectRequest expectedReconnect =
+          BidiWriteObjectRequest.newBuilder()
+              .setStateLookup(true)
+              .setAppendObjectSpec(
+                  AppendObjectSpec.newBuilder()
+                      .setBucket(appendRequestNew.getWriteObjectSpec().getResource().getBucket())
+                      .setObject(appendRequestNew.getWriteObjectSpec().getResource().getName())
+                      .setGeneration(1)
+                      .build())
+              .setCommonObjectRequestParams(commonObjectRequestParams)
+              .build();
+      List<BidiWriteObjectRequest> reconnectMessages = BidiUploadTestUtils.sinkToList(state);
+      assertThat(reconnectMessages).containsExactly(expectedReconnect);
+    }
+
+    @Test
+    public void appendableTakeover_includesCommonObjectRequestParams() {
+      BidiWriteObjectRequest initial =
+          appendRequestTakeover.toBuilder()
+              .setCommonObjectRequestParams(commonObjectRequestParams)
+              .build();
+      AppendableUploadState state =
+          appendableTakeover(
+              initial,
+              GrpcCallContext::createDefault,
+              50_000,
+              SettableApiFuture.create(),
+              Crc32cValue.zero());
+
+      state.enqueueFirstMessageAndGetGrpcCallContext();
+      List<BidiWriteObjectRequest> messages = BidiUploadTestUtils.sinkToList(state);
+      assertThat(messages).containsExactly(initial);
     }
 
     private Range<Integer> range(int min, int maxExclusive) {

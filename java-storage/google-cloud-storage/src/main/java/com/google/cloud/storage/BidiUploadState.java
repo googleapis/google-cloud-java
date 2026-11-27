@@ -961,6 +961,9 @@ abstract class BidiUploadState {
         GrpcCallContext context = baseCallContext.get().withExtraHeaders(xGoogRequestParams);
 
         BidiWriteObjectRequest.Builder b = this.getBuilder();
+        if (initial.hasCommonObjectRequestParams()) {
+          b.setCommonObjectRequestParams(initial.getCommonObjectRequestParams());
+        }
         if (state == State.RETRYING) {
           b.setStateLookup(true);
         }
