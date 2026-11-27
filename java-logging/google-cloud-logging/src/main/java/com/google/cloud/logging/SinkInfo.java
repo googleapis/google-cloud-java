@@ -31,10 +31,11 @@ import java.util.regex.Pattern;
  * export of a set of log entries to a certain destination. A sink consists of a name, unique to the
  * project, a filter for choosing the log entries to export and a destination for the log entries.
  *
- * <p>Sink destination can either be a Google Cloud Storage bucket (see {@link
- * Destination.BucketDestination}, a Google Cloud BigQuery dataset (see {@link
- * Destination.DatasetDestination}) or a Google Cloud Pub/Sub topic (see {@link
- * Destination.TopicDestination}).
+ * <p>Sink destination can be a Google Cloud Storage bucket (see {@link
+ * Destination.BucketDestination}), a Google Cloud BigQuery dataset (see {@link
+ * Destination.DatasetDestination}), a Google Cloud Pub/Sub topic (see {@link
+ * Destination.TopicDestination}), or a Cloud Logging bucket (see {@link
+ * Destination.LoggingBucketDestination}).
  *
  * @see <a href="https://cloud.google.com/logging/docs/api/tasks/exporting-logs#about_sinks">About
  *     Sinks</a>
@@ -231,6 +232,7 @@ public class SinkInfo implements Serializable {
       }
     }
 
+    /** Class for specifying a Cloud Logging bucket as destination for the sink. */
     public static final class LoggingBucketDestination extends Destination {
 
       private static final long serialVersionUID = 4894431968778789038L;
@@ -251,8 +253,8 @@ public class SinkInfo implements Serializable {
       }
 
       /**
-       * Returns the name of the project where the Google Cloud BigQuery dataset resides. If {@code
-       * null}, the default project is used.
+       * Returns the name of the project where the Cloud Logging bucket resides. If {@code null},
+       * the default project is used.
        */
       public String getProject() {
         return project;
@@ -303,16 +305,17 @@ public class SinkInfo implements Serializable {
       }
 
       /**
-       * Creates a {@code DatasetDestination} object given the name of the project and dataset to be
-       * used as sink destination.
+       * Creates a {@code LoggingBucketDestination} object given the project, location, and logging
+       * bucket name to be used as sink destination.
        */
       public static LoggingBucketDestination of(String project, String location, String bucket) {
         return new LoggingBucketDestination(project, location, bucket);
       }
 
       /**
-       * Creates a {@code DatasetDestination} object given the name of the dataset to be used as
-       * sink destination. Dataset is assumed to reside in the default project.
+       * Creates a {@code LoggingBucketDestination} object given the location and logging bucket
+       * name to be used as sink destination. The logging bucket is assumed to reside in the default
+       * project.
        */
       public static LoggingBucketDestination of(String location, String bucket) {
         return new LoggingBucketDestination(null, location, bucket);
@@ -332,7 +335,7 @@ public class SinkInfo implements Serializable {
       }
     }
 
-    /** Class for specifying a Google Cloud BigQuery dataset as destination for the sink. */
+    /** Class for specifying a Google Cloud Pub/Sub topic as destination for the sink. */
     public static final class TopicDestination extends Destination {
 
       private static final long serialVersionUID = -8252473597084887048L;
@@ -404,7 +407,7 @@ public class SinkInfo implements Serializable {
       }
 
       /**
-       * Creates a {@code DatasetDestination} object given the name of the topic to be used as sink
+       * Creates a {@code TopicDestination} object given the name of the topic to be used as sink
        * destination. Topic is assumed to reside in the default project.
        */
       public static TopicDestination of(String topic) {
@@ -507,7 +510,9 @@ public class SinkInfo implements Serializable {
      * sink that exports logs to a Google Cloud Storage bucket. Use a {@link
      * Destination.DatasetDestination} object to create a sink that exports logs to a Google Cloud
      * BigQuery dataset. Use a {@link Destination.TopicDestination} object to create a sink that
-     * exports logs to a Google Cloud Pub/Sub topic.
+     * exports logs to a Google Cloud Pub/Sub topic. Use a {@link
+     * Destination.LoggingBucketDestination} object to create a sink that exports logs to a Cloud
+     * Logging bucket.
      *
      * @see <a href="https://cloud.google.com/logging/docs/api/tasks/exporting-logs#about_sinks">
      *     Exporting Logs</a>
@@ -611,7 +616,8 @@ public class SinkInfo implements Serializable {
    * sinks that export logs to Google Cloud Storage buckets. Returns {@link
    * Destination.DatasetDestination} for sinks that export logs to Google Cloud BigQuery datasets.
    * Returns {@link Destination.TopicDestination} for sinks that export logs to Google Cloud Pub/Sub
-   * topics.
+   * topics. Returns {@link Destination.LoggingBucketDestination} for sinks that export logs to
+   * Cloud Logging buckets.
    *
    * @see <a href="https://cloud.google.com/logging/docs/api/tasks/exporting-logs#about_sinks">
    *     Exporting Logs</a>
@@ -624,7 +630,7 @@ public class SinkInfo implements Serializable {
   /**
    * Returns an advanced logs filter. Only log entries matching that filter are exported. The filter
    * must be consistent with the log entry format specified in {@link #getVersionFormat()},
-   * regardless of the format of the log entry that wa originally written to Cloud Logging. Example
+   * regardless of the format of the log entry that was originally written to Cloud Logging. Example
    * (V2 format): {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
    *
    * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
