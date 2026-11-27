@@ -31,6 +31,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
@@ -86,23 +87,23 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   private boolean resultSetMetadataRecorded;
 
   BigQueryPreparedStatement(BigQueryConnection connection, String query) throws SQLException {
-    super(connection);
+    this(connection, query, true);
+  }
+
+  BigQueryPreparedStatement(BigQueryConnection connection, String query, boolean recordTelemetry)
+      throws SQLException {
+    super(connection, recordTelemetry);
     this.currentQuery = query;
     QueryStatistics queryStatistics = describeQueryQuietly();
     this.parameterCount = resolveParameterCount(query, queryStatistics);
     this.parameterHandler =
-        new BigQueryParameterHandler(this.parameterCount, this.isEnableTimestampPicos());
+        new BigQueryParameterHandler(
+            this.parameterCount, this.isEnableTimestampPicos(), recordTelemetry);
     if (queryStatistics != null) {
       applyInferredParameterTypes(queryStatistics);
       captureInsertMetadata(queryStatistics);
       captureResultSchema(queryStatistics);
     }
-  }
-
-  @Override
-  void markInternal() {
-    super.markInternal();
-    this.parameterHandler.markInternal();
   }
 
   private int resolveParameterCount(String query, QueryStatistics queryStatistics) {
@@ -425,41 +426,45 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
               .setQueryApiType(
                   com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType
                       .QUERY_API_TYPE_WRITE_API);
-      try (BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient()) {
-        LOG.info("Using Write API for bulk INSERT operation.");
+      try {
+        int[] insertArray;
+        try (BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient()) {
+          LOG.info("Using Write API for bulk INSERT operation.");
 
-        long rowCount = bulkInsertWithWriteAPI(writeClient);
-        int[] insertArray = new int[Math.toIntExact(rowCount)];
-        Arrays.fill(insertArray, 1);
-
-        writeApiExecutionBuilder.setStatus(
-            com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
+          long rowCount = bulkInsertWithWriteAPI(writeClient);
+          insertArray = new int[Math.toIntExact(rowCount)];
+          Arrays.fill(insertArray, 1);
+        }
+        writeApiExecutionBuilder.setStatus(Status.STATUS_SUCCESS);
         // Success-only, matching BigQueryStatement.executeBatch; failures are already captured
         // by the StatementExecution status recorded in the finally block.
         recordFeature(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
-
         return insertArray;
-
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setStatus(Status.STATUS_ERROR)
             .setErrorCode(TelemetryManager.extractErrorCode(e));
         throw new BigQueryJdbcException("Interrupted during Write API batch", e);
       } catch (DescriptorValidationException | IOException e) {
         writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setStatus(Status.STATUS_ERROR)
             .setErrorCode(TelemetryManager.extractErrorCode(e));
         throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
-      } catch (SQLException | RuntimeException e) {
-        // bulkInsertWithWriteAPI throws BigQueryJdbcException itself, and the Storage Write API
-        // client throws unchecked ApiException; neither matched the catches above, so these
-        // failures used to be recorded as STATUS_UNSPECIFIED.
+      } catch (SQLException e) {
         writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setStatus(Status.STATUS_ERROR)
             .setErrorCode(TelemetryManager.extractErrorCode(e));
         throw e;
+      } catch (RuntimeException e) {
+        writeApiExecutionBuilder
+            .setStatus(Status.STATUS_ERROR)
+            .setErrorCode(TelemetryManager.extractErrorCode(e));
+        throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
       } finally {
+        if (writeApiExecutionBuilder.getStatus() == Status.STATUS_UNSPECIFIED) {
+          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR);
+        }
         long durationMs = System.currentTimeMillis() - startTime;
         recordExecution(writeApiExecutionBuilder, durationMs);
       }

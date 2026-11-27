@@ -1902,7 +1902,12 @@ public class BigQueryStatementTest {
   @Test
   public void testCancel_recordsStatementCancelFeatureOnce() throws SQLException {
     assertFeatureRecorded(
-        () -> bigQueryStatement.cancel(), DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL, 1);
+        () -> {
+          bigQueryStatement.cancel();
+          bigQueryStatement.cancel();
+        },
+        DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL,
+        1);
   }
 
   @Test
@@ -1910,8 +1915,7 @@ public class BigQueryStatementTest {
     // Statements the driver creates for itself (isValid, metadata queries) must not be reported
     // as user activity: no StatementExecution, no feature usage.
     TableResult tableResultMock = setupMockQueryResults(null, StatementType.SELECT, null);
-    BigQueryStatement internalStatement = new BigQueryStatement(bigQueryConnection);
-    internalStatement.markInternal();
+    BigQueryStatement internalStatement = new BigQueryStatement(bigQueryConnection, false);
     BigQueryStatement internalSpy = Mockito.spy(internalStatement);
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(internalSpy)

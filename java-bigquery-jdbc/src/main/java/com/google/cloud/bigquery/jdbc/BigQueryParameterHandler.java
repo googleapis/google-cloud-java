@@ -45,9 +45,7 @@ class BigQueryParameterHandler {
       new BigQueryJdbcCustomLogger(BigQueryParameterHandler.class.getName());
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
-
-  /** False when the owning statement is driver-internal; see BigQueryStatement#markInternal. */
-  private boolean recordTelemetry = true;
+  private final boolean recordTelemetry;
 
   /**
    * DRIVER_FEATURE_PARAMETER_BINDING is an adoption signal, recorded once per handler (i.e. per
@@ -55,10 +53,6 @@ class BigQueryParameterHandler {
    * which JDBC defines as single-threaded, so a plain field is sufficient.
    */
   private boolean bindingRecorded;
-
-  void markInternal() {
-    this.recordTelemetry = false;
-  }
 
   private void recordBinding() {
     if (this.recordTelemetry && !this.bindingRecorded) {
@@ -122,16 +116,30 @@ class BigQueryParameterHandler {
   }
 
   BigQueryParameterHandler(int parameterCount, boolean enableTimestampPicos) {
-    this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos);
+    this(parameterCount, enableTimestampPicos, true);
+  }
+
+  BigQueryParameterHandler(
+      int parameterCount, boolean enableTimestampPicos, boolean recordTelemetry) {
+    this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos, recordTelemetry);
   }
 
   BigQueryParameterHandler(
       int parameterCount,
       ArrayList<BigQueryJdbcParameter> parametersList,
       boolean enableTimestampPicos) {
+    this(parameterCount, parametersList, enableTimestampPicos, true);
+  }
+
+  BigQueryParameterHandler(
+      int parameterCount,
+      ArrayList<BigQueryJdbcParameter> parametersList,
+      boolean enableTimestampPicos,
+      boolean recordTelemetry) {
     this.parametersArraySize = parameterCount;
     this.parametersList = parametersList;
     this.enableTimestampPicos = enableTimestampPicos;
+    this.recordTelemetry = recordTelemetry;
   }
 
   // Indicates whether the parameter is input, output or both

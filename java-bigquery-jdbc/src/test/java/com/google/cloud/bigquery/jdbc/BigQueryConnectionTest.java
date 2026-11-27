@@ -61,6 +61,8 @@ import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryPayload;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
@@ -1137,21 +1139,16 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   // --- Usage-telemetry attribution: driver-internal calls must not count as user activity ---
 
-  private static final String TELEMETRY_TEST_URL =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-          + "OAuthType=2;ProjectId=MyBigQueryProject;"
-          + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
-          + "OAuthClientSecret=redactedToken;";
-
   @Test
   public void testGetMetaData_concurrentFirstCallsShareOneInstance() throws Exception {
     // getMetaDataInternal() lazily creates the DatabaseMetaData; concurrent first calls must
-    // observe a single instance (the method is synchronized). The once-per-connection telemetry
-    // record is covered by testGetMetaData_recordsOncePerConnection: Mockito static mocks are
-    // thread-scoped, so they cannot be verified across the worker threads used here.
+    // observe a single instance and record DRIVER_FEATURE_METADATA_RETRIEVAL exactly once across
+    // all worker threads.
+    List<TelemetryPayload> captured = Collections.synchronizedList(new ArrayList<>());
+    TelemetryTestUtils.initCapturingPayloads(captured);
     int threads = 8;
     ExecutorService pool = Executors.newFixedThreadPool(threads);
-    try (BigQueryConnection connection = new BigQueryConnection(TELEMETRY_TEST_URL)) {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
       CountDownLatch start = new CountDownLatch(1);
       List<Future<DatabaseMetaData>> results = new ArrayList<>();
       for (int i = 0; i < threads; i++) {
@@ -1168,14 +1165,32 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
         distinct.add(f.get(10, TimeUnit.SECONDS));
       }
       assertEquals(1, distinct.size());
+      TelemetryTestUtils.flush();
+      long metadataFeatureCount =
+          captured.stream()
+              .flatMap(p -> p.getFeatureUsagesList().stream())
+              .filter(e -> e.getDriverFeature() == DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL)
+              .count();
+      assertEquals(1L, metadataFeatureCount);
     } finally {
       pool.shutdownNow();
+      TelemetryTestUtils.reset();
+    }
+  }
+
+  @Test
+  public void testGetMetaData_closedConnection_throwsAndRecordsNothing() throws SQLException {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
+        MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      connection.close();
+      assertThrows(BigQueryJdbcException.class, connection::getMetaData);
+      telemetry.verifyNoInteractions();
     }
   }
 
   @Test
   public void testGetMetaData_recordsOncePerConnection() throws SQLException {
-    try (BigQueryConnection connection = new BigQueryConnection(TELEMETRY_TEST_URL);
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
         MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
       connection.getMetaData();
       connection.getMetaData();
@@ -1189,7 +1204,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testGetMetaDataInternal_recordsNothingAndDoesNotConsumeUserRecord()
       throws SQLException {
-    try (BigQueryConnection connection = new BigQueryConnection(TELEMETRY_TEST_URL);
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
         MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
       connection.getMetaDataInternal();
       telemetry.verifyNoInteractions();
@@ -1204,7 +1219,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testCreateStatementInternal_recordsNoFeatureUsage() throws SQLException {
-    try (BigQueryConnection connection = new BigQueryConnection(TELEMETRY_TEST_URL);
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
         MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
       BigQueryStatement statement = connection.createStatementInternal();
       assertFalse(statement.isRecordingTelemetry());
@@ -1215,7 +1230,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testPrepareStatementInternal_recordsNoFeatureUsageIncludingBindings()
       throws SQLException {
-    try (BigQueryConnection connection = new BigQueryConnection(TELEMETRY_TEST_URL);
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
         MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
       BigQueryPreparedStatement statement = connection.prepareStatementInternal("SELECT ?");
       statement.setString(1, "x");
@@ -1228,7 +1243,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   public void testIsValid_healthCheckRecordsNoTelemetry() throws Exception {
     // Regression guard: isValid() runs "SELECT 1" on an internal statement. Pools call it on
     // every checkout, so counting it as a user statement or SELECT would swamp real usage.
-    try (BigQueryConnection connection = new BigQueryConnection(TELEMETRY_TEST_URL)) {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
       BigQuery mockBigQuery = mock(BigQuery.class);
       connection.bigQuery = mockBigQuery;
       TableResult tableResult = mock(TableResult.class);

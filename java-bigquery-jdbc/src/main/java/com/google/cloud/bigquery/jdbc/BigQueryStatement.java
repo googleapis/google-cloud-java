@@ -91,6 +91,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 
 /**
@@ -166,15 +167,18 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    * queries). Those must not be reported as user activity, neither as feature usage nor as
    * statement executions.
    */
-  private boolean recordTelemetry = true;
+  private final boolean recordTelemetry;
 
-  /** Excludes this statement from usage telemetry. Called once, right after construction. */
-  void markInternal() {
-    this.recordTelemetry = false;
-  }
+  // Statement#cancel() is cross-thread per JDBC 4.3; AtomicBoolean ensures once-per-object
+  // recording.
+  private final AtomicBoolean cancelRecorded = new AtomicBoolean();
 
   boolean isRecordingTelemetry() {
     return this.recordTelemetry;
+  }
+
+  boolean isInternal() {
+    return !this.recordTelemetry;
   }
 
   /** Single choke point for execution records so internal statements never reach the batcher. */
@@ -201,7 +205,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @VisibleForTesting
   public BigQueryStatement(BigQueryConnection connection) throws SQLException {
+    this(connection, true);
+  }
+
+  BigQueryStatement(BigQueryConnection connection, boolean recordTelemetry) throws SQLException {
     this.connection = connection;
+    this.recordTelemetry = recordTelemetry;
     this.connectionId = connection.getConnectionId();
     this.bigQuery = connection.getBigQuery();
     this.querySettings = generateBigQuerySettings();
@@ -498,7 +507,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   public void cancel() throws SQLException {
     LOG.finer("Statement %s cancelled", this);
     cancelInternal();
-    recordFeature(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
+    if (this.cancelRecorded.compareAndSet(false, true)) {
+      recordFeature(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
+    }
   }
 
   /**

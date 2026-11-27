@@ -71,9 +71,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   protected final boolean isNested;
   protected boolean isClosed = false;
   protected boolean wasNull = false;
-  // getMetaData() is commonly called inside row loops; record the adoption signal once per
-  // result set. A ResultSet is single-threaded by JDBC contract, so a plain field suffices.
-  private boolean metadataRetrievalRecorded;
+  // getMetaData() is commonly called inside row loops; cache the immutable wrapper and record
+  // the adoption signal once per result set. ResultSet is single-threaded by JDBC contract.
+  private ResultSetMetaData cachedMetaData;
   private int fetchSize = -1;
   private Job job;
   private SQLWarning warnings;
@@ -261,27 +261,26 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public ResultSetMetaData getMetaData() throws SQLException {
     checkClosed();
-    String connectionId = this.statement != null ? this.statement.connectionId : null;
-    ResultSetMetaData metaData;
-    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
-      if (this.isNested) {
-        metaData = BigQueryResultSetMetadata.of(this.schemaFieldList, this.statement);
-      } else {
-        metaData = BigQueryResultSetMetadata.of(this.schema.getFields(), this.statement);
+    if (this.cachedMetaData == null) {
+      String connectionId = this.statement != null ? this.statement.connectionId : null;
+      ResultSetMetaData metaData;
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
+        if (this.isNested) {
+          metaData = BigQueryResultSetMetadata.of(this.schemaFieldList, this.statement);
+        } else {
+          metaData = BigQueryResultSetMetadata.of(this.schema.getFields(), this.statement);
+        }
       }
-    }
-
-    // Always a user call: no driver code invokes ResultSet.getMetaData(), so this is recorded
-    // regardless of whether the owning statement is internal (e.g. the result set that
-    // DatabaseMetaData.getExportedKeys hands back to the user).
-    if (!this.metadataRetrievalRecorded) {
-      this.metadataRetrievalRecorded = true;
+      this.cachedMetaData =
+          BigQueryJdbcContextProxy.wrap(metaData, ResultSetMetaData.class, connectionId);
+      // Always a user call: no driver code invokes ResultSet.getMetaData(), so this is recorded
+      // regardless of whether the owning statement is internal (e.g. the result set that
+      // DatabaseMetaData.getExportedKeys hands back to the user).
       TelemetryManager.recordFeatureUsage(
           DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
           "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
     }
-
-    return BigQueryJdbcContextProxy.wrap(metaData, ResultSetMetaData.class, connectionId);
+    return this.cachedMetaData;
   }
 
   @Override
@@ -299,7 +298,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Statement getStatement() throws SQLException {
     checkClosed();
-    return this.statement;
+    return this.statement != null && this.statement.isInternal() ? null : this.statement;
   }
 
   @Override

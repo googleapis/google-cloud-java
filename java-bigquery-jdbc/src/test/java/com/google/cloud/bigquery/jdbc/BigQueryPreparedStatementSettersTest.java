@@ -37,6 +37,9 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.QueryJobConfiguration;
@@ -49,7 +52,6 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
-import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.gson.Gson;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
@@ -607,26 +609,28 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testExecuteBatch_writeApiFailure_recordsErrorStatusAndNoBatchFeature()
       throws SQLException {
-    // Write API branch. With no insert metadata on the statement, bulkInsertWithWriteAPI fails
-    // with a NullPointerException from BigQueryJdbcBulkInsertWriter.initialize. That exercises
-    // the RuntimeException arm of the new catch: the failure must be recorded as STATUS_ERROR
-    // (previously it fell through to STATUS_UNSPECIFIED) and must not count as a
-    // BATCH_OPERATIONS feature use.
+    // Write API branch. When bulkInsertWithWriteAPI throws an unchecked ApiException, executeBatch
+    // must wrap it in BigQueryJdbcException (JDBC 4.3), record STATUS_ERROR with the HTTP status
+    // code, and not count as a BATCH_OPERATIONS feature use.
     BigQueryPreparedStatement spy = spy(preparedStatement);
     doReturn(true).when(spy).useWriteAPI();
-    when(connection.getBigQueryWriteClient()).thenReturn(mock(BigQueryWriteClient.class));
+    ApiException apiException =
+        ApiExceptionFactory.createException(
+            "write failed", null, GrpcStatusCode.of(io.grpc.Status.Code.PERMISSION_DENIED), false);
+    when(connection.getBigQueryWriteClient()).thenThrow(apiException);
     spy.setInt(1, 1);
     spy.addBatch();
 
     try (MockedStatic<TelemetryManager> telemetry =
         mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
-      assertThrows(NullPointerException.class, spy::executeBatch);
+      assertThrows(BigQueryJdbcException.class, spy::executeBatch);
       ArgumentCaptor<StatementExecution.Builder> execution =
           ArgumentCaptor.forClass(StatementExecution.Builder.class);
       telemetry.verify(
           () -> TelemetryManager.recordStatementExecution(execution.capture(), anyLong()),
           times(1));
       assertEquals(Status.STATUS_ERROR, execution.getValue().getStatus());
+      assertEquals(403, execution.getValue().getErrorCode());
       assertEquals(QueryApiType.QUERY_API_TYPE_WRITE_API, execution.getValue().getQueryApiType());
       telemetry.verify(
           () -> TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS),
@@ -636,8 +640,8 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testExecuteBatch_internalStatement_recordsNothing() throws SQLException {
-    BigQueryPreparedStatement spy = spy(preparedStatement);
-    spy.markInternal();
+    BigQueryPreparedStatement spy =
+        spy(new BigQueryPreparedStatement(connection, "SELECT ?", false));
     doReturn(null).when(spy).getStandardBatchJobConfiguration(anyString());
     doNothing().when(spy).runQuery(anyString(), any());
     doReturn(-1).when(spy).getUpdateCount();
@@ -678,10 +682,11 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testGetMetaData_internalStatement_recordsNothing() throws SQLException {
-    preparedStatement.resultSchema = Schema.of(Field.of("c", StandardSQLTypeName.INT64));
-    preparedStatement.markInternal();
+    BigQueryPreparedStatement internal =
+        new BigQueryPreparedStatement(connection, "SELECT ?", false);
+    internal.resultSchema = Schema.of(Field.of("c", StandardSQLTypeName.INT64));
     try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
-      assertNotNull(preparedStatement.getMetaData());
+      assertNotNull(internal.getMetaData());
       telemetry.verifyNoInteractions();
     }
   }

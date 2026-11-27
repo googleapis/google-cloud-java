@@ -86,7 +86,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
-import javax.annotation.concurrent.GuardedBy;
 
 /**
  * An implementation of {@link java.sql.Connection} for establishing a connection with BigQuery and
@@ -252,8 +251,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Tracer tracer =
       OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
 
-  @GuardedBy("this")
-  private DatabaseMetaData databaseMetaData;
+  private volatile DatabaseMetaData databaseMetaData;
+  private final Object metaDataLock = new Object();
 
   // A Connection may be used from several threads; compareAndSet keeps the adoption signal at
   // exactly one record per connection without a lock.
@@ -526,8 +525,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    */
   BigQueryStatement createStatementInternal() throws SQLException {
     checkClosed();
-    BigQueryStatement statement = new BigQueryStatement(this);
-    statement.markInternal();
+    BigQueryStatement statement = new BigQueryStatement(this, false);
     LOG.fine("Internal Statement %s created.", statement);
     addOpenStatements(statement);
     return statement;
@@ -540,8 +538,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    */
   BigQueryPreparedStatement prepareStatementInternal(String sql) throws SQLException {
     checkClosed();
-    BigQueryPreparedStatement statement = new BigQueryPreparedStatement(this, sql);
-    statement.markInternal();
+    BigQueryPreparedStatement statement = new BigQueryPreparedStatement(this, sql, false);
     LOG.fine("Internal Prepared Statement %s created.", statement);
     addOpenStatements(statement);
     return statement;
@@ -1068,6 +1065,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public DatabaseMetaData getMetaData() throws SQLException {
+    checkClosed();
     DatabaseMetaData metaData = getMetaDataInternal();
     // Adoption signal, recorded once per connection on the first user call. Tied to this flag
     // rather than to instance creation so the driver's own startup lookup does not consume it.
@@ -1079,16 +1077,19 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   /**
    * Same instance as {@link #getMetaData()} without the usage-telemetry record. Driver-internal.
-   *
-   * <p>Synchronized: a Connection may be shared across threads, and without the lock two threads
-   * could each construct a BigQueryDatabaseMetaData, or one could observe a partially constructed
-   * instance. The lock is uncontended after first use and this is not a hot path.
    */
-  synchronized DatabaseMetaData getMetaDataInternal() {
-    if (databaseMetaData == null) {
-      databaseMetaData = new BigQueryDatabaseMetaData(this);
+  DatabaseMetaData getMetaDataInternal() {
+    DatabaseMetaData result = this.databaseMetaData;
+    if (result == null) {
+      synchronized (this.metaDataLock) {
+        result = this.databaseMetaData;
+        if (result == null) {
+          result = new BigQueryDatabaseMetaData(this);
+          this.databaseMetaData = result;
+        }
+      }
     }
-    return databaseMetaData;
+    return result;
   }
 
   @Override
