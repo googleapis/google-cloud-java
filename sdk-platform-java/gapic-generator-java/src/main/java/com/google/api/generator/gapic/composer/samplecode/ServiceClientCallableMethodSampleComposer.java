@@ -404,14 +404,11 @@ public class ServiceClientCallableMethodSampleComposer {
             .setIsAsynchronous(true)
             .setOverloadDisambiguation("LRO")
             .build();
-    List<Statement> body =
-        Arrays.asList(
-            TryCatchStatement.builder()
-                .setTryResourceExpr(
-                    SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr))
-                .setTryBody(bodyStatements)
-                .setIsSampleCode(true)
-                .build());
+    List<Statement> body = new ArrayList<>();
+    body.add(
+        ExprStatement.withExpr(
+            SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr)));
+    body.addAll(bodyStatements);
     return Sample.builder().setBody(body).setRegionTag(regionTag).build();
   }
 
@@ -526,14 +523,11 @@ public class ServiceClientCallableMethodSampleComposer {
             .setBody(Arrays.asList(lineCommentStatement))
             .build();
     bodyStatements.add(repeatedResponseForStatement);
-    List<Statement> body =
-        Arrays.asList(
-            TryCatchStatement.builder()
-                .setTryResourceExpr(
-                    SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr))
-                .setTryBody(bodyStatements)
-                .setIsSampleCode(true)
-                .build());
+    List<Statement> body = new ArrayList<>();
+    body.add(
+        ExprStatement.withExpr(
+            SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr)));
+    body.addAll(bodyStatements);
 
     RegionTag regionTag =
         RegionTag.builder()
@@ -593,14 +587,11 @@ public class ServiceClientCallableMethodSampleComposer {
       regionTag = unaryOrLroCallable.regionTag();
     }
 
-    List<Statement> body =
-        Arrays.asList(
-            TryCatchStatement.builder()
-                .setTryResourceExpr(
-                    SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr))
-                .setTryBody(bodyStatements)
-                .setIsSampleCode(true)
-                .build());
+    List<Statement> body = new ArrayList<>();
+    body.add(
+        ExprStatement.withExpr(
+            SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr)));
+    body.addAll(bodyStatements);
     return Sample.builder().setBody(body).setRegionTag(regionTag).build();
   }
 
@@ -655,14 +646,11 @@ public class ServiceClientCallableMethodSampleComposer {
       regionTag = streamClient.regionTag();
     }
 
-    List<Statement> body =
-        Arrays.asList(
-            TryCatchStatement.builder()
-                .setTryResourceExpr(
-                    SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr))
-                .setTryBody(bodyStatements)
-                .setIsSampleCode(true)
-                .build());
+    List<Statement> body = new ArrayList<>();
+    body.add(
+        ExprStatement.withExpr(
+            SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr)));
+    body.addAll(bodyStatements);
     return Sample.builder().setBody(body).setRegionTag(regionTag).build();
   }
 
