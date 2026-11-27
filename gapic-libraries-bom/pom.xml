@@ -206,41 +206,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-beyondcorp-appconnections-bom</artifactId>
-        <version>0.101.0</version><!-- {x-version-update:google-cloud-beyondcorp-appconnections:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-beyondcorp-appconnectors-bom</artifactId>
-        <version>0.101.0</version><!-- {x-version-update:google-cloud-beyondcorp-appconnectors:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-beyondcorp-appgateways-bom</artifactId>
-        <version>0.101.0</version><!-- {x-version-update:google-cloud-beyondcorp-appgateways:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-beyondcorp-clientconnectorservices-bom</artifactId>
-        <version>0.101.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientconnectorservices:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-beyondcorp-clientgateways-bom</artifactId>
-        <version>0.101.0</version><!-- {x-version-update:google-cloud-beyondcorp-clientgateways:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-biglake-bom</artifactId>
         <version>0.91.0</version><!-- {x-version-update:google-cloud-biglake:current} -->
         <type>pom</type>
