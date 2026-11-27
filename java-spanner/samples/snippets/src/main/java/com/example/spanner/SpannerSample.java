@@ -79,6 +79,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Example code for using the Cloud Spanner API. This example demonstrates all the common operations
@@ -274,39 +275,58 @@ public class SpannerSample {
   // [END spanner_insert_datatypes_data]
 
   // [START spanner_create_database]
-  static void createDatabase(DatabaseAdminClient dbAdminClient,
-      InstanceName instanceName, String databaseId) {
+  /**
+   * Creates a GoogleSQL-dialect database with interleaved {@code Singers} and {@code Albums}
+   * tables.
+   *
+   * <p>Precondition: {@code instanceName} must reference an existing Spanner instance, and
+   * {@code databaseId} must be 2-30 lowercase characters matching {@code [a-z][a-z0-9_\-]*[a-z0-9]}
+   * and must not already exist.
+   *
+   * @param dbAdminClient the database administration client
+   * @param instanceName the parent Spanner instance resource name
+   * @param databaseId the ID of the database to create
+   * @throws SpannerException if creation fails ({@code ALREADY_EXISTS}: use the existing database
+   *     or choose a new ID; {@code NOT_FOUND}: verify {@code instanceName};
+   *     {@code DEADLINE_EXCEEDED}: poll the operation or retry)
+   */
+  static void createDatabase(
+      DatabaseAdminClient dbAdminClient, InstanceName instanceName, String databaseId) {
     CreateDatabaseRequest createDatabaseRequest =
         CreateDatabaseRequest.newBuilder()
             .setCreateStatement("CREATE DATABASE `" + databaseId + "`")
             .setParent(instanceName.toString())
-            .addAllExtraStatements(Arrays.asList(
-                "CREATE TABLE Singers ("
-                    + "  SingerId   INT64 NOT NULL,"
-                    + "  FirstName  STRING(1024),"
-                    + "  LastName   STRING(1024),"
-                    + "  SingerInfo BYTES(MAX),"
-                    + "  FullName STRING(2048) AS "
-                    + "  (ARRAY_TO_STRING([FirstName, LastName], \" \")) STORED"
-                    + ") PRIMARY KEY (SingerId)",
-                "CREATE TABLE Albums ("
-                    + "  SingerId     INT64 NOT NULL,"
-                    + "  AlbumId      INT64 NOT NULL,"
-                    + "  AlbumTitle   STRING(MAX)"
-                    + ") PRIMARY KEY (SingerId, AlbumId),"
-                    + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE")).build();
+            .addAllExtraStatements(
+                Arrays.asList(
+                    "CREATE TABLE Singers ("
+                        + "  SingerId   INT64 NOT NULL,"
+                        + "  FirstName  STRING(1024),"
+                        + "  LastName   STRING(1024),"
+                        + "  SingerInfo BYTES(MAX),"
+                        + "  FullName STRING(2048) AS "
+                        + "  (ARRAY_TO_STRING([FirstName, LastName], \" \")) STORED"
+                        + ") PRIMARY KEY (SingerId)",
+                    "CREATE TABLE Albums ("
+                        + "  SingerId     INT64 NOT NULL,"
+                        + "  AlbumId      INT64 NOT NULL,"
+                        + "  AlbumTitle   STRING(MAX)"
+                        + ") PRIMARY KEY (SingerId, AlbumId),"
+                        + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"))
+            .build();
     try {
       // Initiate the request which returns an OperationFuture.
       com.google.spanner.admin.database.v1.Database db =
-          dbAdminClient.createDatabaseAsync(createDatabaseRequest).get();
+          dbAdminClient.createDatabaseAsync(createDatabaseRequest).get(5, TimeUnit.MINUTES);
       System.out.println("Created database [" + db.getName() + "]");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
       throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.propagateTimeout(e);
     }
   }
   // [END spanner_create_database]
@@ -363,6 +383,18 @@ public class SpannerSample {
   // [END spanner_insert_data_with_timestamp_column]
 
   // [START spanner_insert_data]
+  /**
+   * Inserts sample {@code Singers} and {@code Albums} rows atomically by using insert mutations.
+   *
+   * <p>Precondition: the {@code Singers} and {@code Albums} tables must exist, and none of the
+   * primary keys in {@code SINGERS} or {@code ALBUMS} may already exist. Parent {@code Singers}
+   * rows are committed in the same batch as interleaved child {@code Albums} rows.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the write fails ({@code ALREADY_EXISTS}: use {@code
+   *     Mutation.newInsertOrUpdateBuilder} to upsert existing keys; {@code NOT_FOUND}: create the
+   *     tables first)
+   */
   static void writeExampleData(DatabaseClient dbClient) {
     List<Mutation> mutations = new ArrayList<>();
     for (Singer singer : SINGERS) {
@@ -417,6 +449,17 @@ public class SpannerSample {
   // [END spanner_delete_data]
 
   // [START spanner_query_data]
+  /**
+   * Queries {@code SingerId}, {@code AlbumId}, and {@code AlbumTitle} from all {@code Albums} rows
+   * in a single-use read-only context.
+   *
+   * <p>Precondition: the {@code Albums} table must exist. Prints {@code NULL} when {@code
+   * AlbumTitle} is SQL {@code NULL}.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the query fails ({@code INVALID_ARGUMENT} or {@code NOT_FOUND}:
+   *     verify that the database and {@code Albums} table exist)
+   */
   static void query(DatabaseClient dbClient) {
     try (ResultSet resultSet =
         dbClient
@@ -424,13 +467,27 @@ public class SpannerSample {
             .executeQuery(Statement.of("SELECT SingerId, AlbumId, AlbumTitle FROM Albums"))) {
       while (resultSet.next()) {
         System.out.printf(
-            "%d %d %s\n", resultSet.getLong(0), resultSet.getLong(1), resultSet.getString(2));
+            "%d %d %s\n",
+            resultSet.getLong("SingerId"),
+            resultSet.getLong("AlbumId"),
+            resultSet.isNull("AlbumTitle") ? "NULL" : resultSet.getString("AlbumTitle"));
       }
     }
   }
   // [END spanner_query_data]
 
   // [START spanner_read_data]
+  /**
+   * Reads {@code SingerId}, {@code AlbumId}, and {@code AlbumTitle} from all {@code Albums} rows
+   * by using the key-value Read API.
+   *
+   * <p>Precondition: the {@code Albums} table must exist. Prints {@code NULL} when {@code
+   * AlbumTitle} is SQL {@code NULL}.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the read fails ({@code NOT_FOUND}: verify that the database and
+   *     {@code Albums} table exist)
+   */
   static void read(DatabaseClient dbClient) {
     try (ResultSet resultSet =
         dbClient
@@ -441,34 +498,62 @@ public class SpannerSample {
                 Arrays.asList("SingerId", "AlbumId", "AlbumTitle"))) {
       while (resultSet.next()) {
         System.out.printf(
-            "%d %d %s\n", resultSet.getLong(0), resultSet.getLong(1), resultSet.getString(2));
+            "%d %d %s\n",
+            resultSet.getLong("SingerId"),
+            resultSet.getLong("AlbumId"),
+            resultSet.isNull("AlbumTitle") ? "NULL" : resultSet.getString("AlbumTitle"));
       }
     }
   }
   // [END spanner_read_data]
 
   // [START spanner_add_column]
+  /**
+   * Adds a nullable {@code MarketingBudget INT64} column to the {@code Albums} table.
+   *
+   * <p>Precondition: the {@code Albums} table must exist and must not already have a {@code
+   * MarketingBudget} column.
+   *
+   * @param adminClient the database administration client
+   * @param databaseName the resource name of the database to alter
+   * @throws SpannerException if the DDL operation fails ({@code FAILED_PRECONDITION} or {@code
+   *     INVALID_ARGUMENT}: verify that {@code Albums} exists and {@code MarketingBudget} does not;
+   *     {@code DEADLINE_EXCEEDED}: poll the operation or retry)
+   */
   static void addMarketingBudget(DatabaseAdminClient adminClient, DatabaseName databaseName) {
     try {
       // Initiate the request which returns an OperationFuture.
-      adminClient.updateDatabaseDdlAsync(
-          databaseName,
-          Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64")).get();
+      adminClient
+          .updateDatabaseDdlAsync(
+              databaseName, Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64"))
+          .get(5, TimeUnit.MINUTES);
       System.out.println("Added MarketingBudget column");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
       throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.propagateTimeout(e);
     }
   }
   // [END spanner_add_column]
 
-  // Before executing this method, a new column MarketingBudget has to be added to the Albums
-  // table by applying the DDL statement "ALTER TABLE Albums ADD COLUMN MarketingBudget INT64".
   // [START spanner_update_data]
+  /**
+   * Updates {@code MarketingBudget} for {@code Albums} keys {@code (1, 1)} and {@code (2, 2)}
+   * atomically by using update mutations.
+   *
+   * <p>Precondition: the {@code MarketingBudget} column (added by {@code addMarketingBudget}) and
+   * rows {@code (1, 1)} and {@code (2, 2)} must already exist in {@code Albums}.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the write fails ({@code NOT_FOUND}: insert the target rows first
+   *     or use {@code Mutation.newInsertOrUpdateBuilder}; {@code FAILED_PRECONDITION} or {@code
+   *     INVALID_ARGUMENT}: add the {@code MarketingBudget} column first)
+   */
   static void update(DatabaseClient dbClient) {
     // Mutation can be used to update/insert/delete a single row in a table. Here we use
     // newUpdateBuilder to create update mutations.
@@ -541,6 +626,17 @@ public class SpannerSample {
   // [END spanner_read_write_transaction]
 
   // [START spanner_query_data_with_new_column]
+  /**
+   * Queries {@code SingerId}, {@code AlbumId}, and nullable {@code MarketingBudget} from all {@code
+   * Albums} rows.
+   *
+   * <p>Precondition: the {@code MarketingBudget} column must exist on {@code Albums} (see {@code
+   * addMarketingBudget}). Prints {@code NULL} when {@code MarketingBudget} is SQL {@code NULL}.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the query fails ({@code INVALID_ARGUMENT}: add the {@code
+   *     MarketingBudget} column first)
+   */
   static void queryMarketingBudget(DatabaseClient dbClient) {
     // Rows without an explicit value for MarketingBudget will have a MarketingBudget equal to
     // null. A try-with-resource block is used to automatically release resources held by
@@ -563,20 +659,36 @@ public class SpannerSample {
   // [END spanner_query_data_with_new_column]
 
   // [START spanner_create_index]
+  /**
+   * Creates the {@code AlbumsByAlbumTitle} secondary index on {@code Albums(AlbumTitle)}.
+   *
+   * <p>Precondition: the {@code Albums} table must exist, and {@code AlbumsByAlbumTitle} must not
+   * already exist. Index backfill on large tables can exceed 5 minutes; adjust the timeout or poll
+   * the returned {@code OperationFuture} for production backfills.
+   *
+   * @param adminClient the database administration client
+   * @param databaseName the resource name of the database to alter
+   * @throws SpannerException if index creation fails ({@code FAILED_PRECONDITION} or {@code
+   *     ALREADY_EXISTS}: verify that {@code Albums} exists and the index does not;
+   *     {@code DEADLINE_EXCEEDED}: poll the operation until backfill completes)
+   */
   static void addIndex(DatabaseAdminClient adminClient, DatabaseName databaseName) {
     try {
       // Initiate the request which returns an OperationFuture.
-      adminClient.updateDatabaseDdlAsync(
-          databaseName,
-          Arrays.asList("CREATE INDEX AlbumsByAlbumTitle ON Albums(AlbumTitle)")).get();
+      adminClient
+          .updateDatabaseDdlAsync(
+              databaseName, Arrays.asList("CREATE INDEX AlbumsByAlbumTitle ON Albums(AlbumTitle)"))
+          .get(5, TimeUnit.MINUTES);
       System.out.println("Added AlbumsByAlbumTitle index");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
       throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.propagateTimeout(e);
     }
   }
   // [END spanner_create_index]
@@ -613,6 +725,17 @@ public class SpannerSample {
   // [END spanner_query_data_with_index]
 
   // [START spanner_read_data_with_index]
+  /**
+   * Reads {@code AlbumId} and {@code AlbumTitle} in {@code AlbumTitle} order by using the {@code
+   * AlbumsByAlbumTitle} secondary index.
+   *
+   * <p>Precondition: the {@code AlbumsByAlbumTitle} index must exist on {@code Albums} (see {@code
+   * addIndex}). Prints {@code NULL} when {@code AlbumTitle} is SQL {@code NULL}.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the read fails ({@code INVALID_ARGUMENT} or {@code NOT_FOUND}:
+   *     create the {@code AlbumsByAlbumTitle} index first)
+   */
   static void readUsingIndex(DatabaseClient dbClient) {
     try (ResultSet resultSet =
         dbClient
@@ -623,36 +746,65 @@ public class SpannerSample {
                 KeySet.all(),
                 Arrays.asList("AlbumId", "AlbumTitle"))) {
       while (resultSet.next()) {
-        System.out.printf("%d %s\n", resultSet.getLong(0), resultSet.getString(1));
+        System.out.printf(
+            "%d %s\n",
+            resultSet.getLong("AlbumId"),
+            resultSet.isNull("AlbumTitle") ? "NULL" : resultSet.getString("AlbumTitle"));
       }
     }
   }
   // [END spanner_read_data_with_index]
 
   // [START spanner_create_storing_index]
+  /**
+   * Creates the {@code AlbumsByAlbumTitle2} secondary index storing {@code MarketingBudget} for
+   * index-only reads.
+   *
+   * <p>Precondition: the {@code Albums} table and {@code MarketingBudget} column must exist, and
+   * {@code AlbumsByAlbumTitle2} must not already exist.
+   *
+   * @param adminClient the database administration client
+   * @param databaseName the resource name of the database to alter
+   * @throws SpannerException if index creation fails ({@code FAILED_PRECONDITION} or {@code
+   *     INVALID_ARGUMENT}: ensure {@code MarketingBudget} exists and the index does not;
+   *     {@code DEADLINE_EXCEEDED}: poll the operation until backfill completes)
+   */
   static void addStoringIndex(DatabaseAdminClient adminClient, DatabaseName databaseName) {
     try {
       // Initiate the request which returns an OperationFuture.
-      adminClient.updateDatabaseDdlAsync(
-          databaseName,
-          Arrays.asList(
-              "CREATE INDEX AlbumsByAlbumTitle2 ON Albums(AlbumTitle) "
-                  + "STORING (MarketingBudget)")).get();
+      adminClient
+          .updateDatabaseDdlAsync(
+              databaseName,
+              Arrays.asList(
+                  "CREATE INDEX AlbumsByAlbumTitle2 ON Albums(AlbumTitle) "
+                      + "STORING (MarketingBudget)"))
+          .get(5, TimeUnit.MINUTES);
       System.out.println("Added AlbumsByAlbumTitle2 index");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
       throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.propagateTimeout(e);
     }
   }
   // [END spanner_create_storing_index]
 
-  // Before running this example, create a storing index AlbumsByAlbumTitle2 by applying the DDL
-  // statement "CREATE INDEX AlbumsByAlbumTitle2 ON Albums(AlbumTitle) STORING (MarketingBudget)".
   // [START spanner_read_data_with_storing_index]
+  /**
+   * Reads {@code AlbumId}, {@code AlbumTitle}, and {@code MarketingBudget} directly from the {@code
+   * AlbumsByAlbumTitle2} storing index without joining the base {@code Albums} table.
+   *
+   * <p>Precondition: the {@code AlbumsByAlbumTitle2} index with {@code STORING (MarketingBudget)}
+   * must exist (see {@code addStoringIndex}).
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the read fails ({@code INVALID_ARGUMENT} or {@code NOT_FOUND}:
+   *     create the {@code AlbumsByAlbumTitle2} storing index first)
+   */
   static void readStoringIndex(DatabaseClient dbClient) {
     // We can read MarketingBudget also from the index since it stores a copy of MarketingBudget.
     try (ResultSet resultSet =
@@ -666,8 +818,8 @@ public class SpannerSample {
       while (resultSet.next()) {
         System.out.printf(
             "%d %s %s\n",
-            resultSet.getLong(0),
-            resultSet.getString(1),
+            resultSet.getLong("AlbumId"),
+            resultSet.isNull("AlbumTitle") ? "NULL" : resultSet.getString("AlbumTitle"),
             resultSet.isNull("MarketingBudget") ? "NULL" : resultSet.getLong("MarketingBudget"));
       }
     }
@@ -675,6 +827,17 @@ public class SpannerSample {
   // [END spanner_read_data_with_storing_index]
 
   // [START spanner_read_only_transaction]
+  /**
+   * Executes a SQL query and a key-value read against {@code Albums} at a single consistent
+   * snapshot timestamp by using a {@link ReadOnlyTransaction}.
+   *
+   * <p>Precondition: the {@code Albums} table must exist. Always close a multi-use {@code
+   * ReadOnlyTransaction} (here via try-with-resources) to return the session to the pool.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if either read fails ({@code NOT_FOUND}: verify that the database and
+   *     {@code Albums} table exist)
+   */
   static void readOnlyTransaction(DatabaseClient dbClient) {
     // ReadOnlyTransaction must be closed by calling close() on it to release resources held by it.
     // We use a try-with-resource block to automatically do so.
@@ -685,16 +848,22 @@ public class SpannerSample {
         while (queryResultSet.next()) {
           System.out.printf(
               "%d %d %s\n",
-              queryResultSet.getLong(0), queryResultSet.getLong(1), queryResultSet.getString(2));
+              queryResultSet.getLong("SingerId"),
+              queryResultSet.getLong("AlbumId"),
+              queryResultSet.isNull("AlbumTitle")
+                  ? "NULL"
+                  : queryResultSet.getString("AlbumTitle"));
         }
       } // queryResultSet.close() is automatically called here
       try (ResultSet readResultSet =
           transaction.read(
-            "Albums", KeySet.all(), Arrays.asList("SingerId", "AlbumId", "AlbumTitle"))) {
+              "Albums", KeySet.all(), Arrays.asList("SingerId", "AlbumId", "AlbumTitle"))) {
         while (readResultSet.next()) {
           System.out.printf(
               "%d %d %s\n",
-              readResultSet.getLong(0), readResultSet.getLong(1), readResultSet.getString(2));
+              readResultSet.getLong("SingerId"),
+              readResultSet.getLong("AlbumId"),
+              readResultSet.isNull("AlbumTitle") ? "NULL" : readResultSet.getString("AlbumTitle"));
         }
       } // readResultSet.close() is automatically called here
     } // transaction.close() is automatically called here
@@ -1103,25 +1272,50 @@ public class SpannerSample {
   // [END spanner_dml_structs]
 
   // [START spanner_dml_getting_started_insert]
+  /**
+   * Inserts four {@code Singers} rows by executing a DML {@code INSERT} statement inside a
+   * read-write transaction.
+   *
+   * <p>Precondition: the {@code Singers} table must exist, and {@code SingerId} values {@code
+   * 12..15} must not already exist. Spanner replays the transaction callable if the transaction
+   * aborts, so keep work inside {@code run(...)} idempotent and free of external side effects.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the transaction fails after retries ({@code ALREADY_EXISTS}: one
+   *     or more {@code SingerId} keys already exist; {@code NOT_FOUND}: create {@code Singers}
+   *     first)
+   */
   static void writeUsingDml(DatabaseClient dbClient) {
     // Insert 4 singer records
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          String sql =
-              "INSERT INTO Singers (SingerId, FirstName, LastName) VALUES "
-                  + "(12, 'Melissa', 'Garcia'), "
-                  + "(13, 'Russell', 'Morales'), "
-                  + "(14, 'Jacqueline', 'Long'), "
-                  + "(15, 'Dylan', 'Shaw')";
-          long rowCount = transaction.executeUpdate(Statement.of(sql));
-          System.out.printf("%d records inserted.\n", rowCount);
-          return null;
-        });
+        .run(
+            transaction -> {
+              String sql =
+                  "INSERT INTO Singers (SingerId, FirstName, LastName) VALUES "
+                      + "(12, 'Melissa', 'Garcia'), "
+                      + "(13, 'Russell', 'Morales'), "
+                      + "(14, 'Jacqueline', 'Long'), "
+                      + "(15, 'Dylan', 'Shaw')";
+              long rowCount = transaction.executeUpdate(Statement.of(sql));
+              System.out.printf("%d records inserted.\n", rowCount);
+              return null;
+            });
   }
   // [END spanner_dml_getting_started_insert]
 
   // [START spanner_query_with_parameter]
+  /**
+   * Queries {@code Singers} rows matching a bound {@code @lastName} SQL parameter in a single-use
+   * read-only context.
+   *
+   * <p>Precondition: the {@code Singers} table must exist. Binding query parameters via {@link
+   * Statement#newBuilder(String)} prevents SQL injection and lets Spanner cache the query plan.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the query fails ({@code INVALID_ARGUMENT} or {@code NOT_FOUND}:
+   *     verify that the {@code Singers} table exists and parameter types match column types)
+   */
   static void queryWithParameter(DatabaseClient dbClient) {
     Statement statement =
         Statement.newBuilder(
@@ -1136,62 +1330,81 @@ public class SpannerSample {
         System.out.printf(
             "%d %s %s\n",
             resultSet.getLong("SingerId"),
-            resultSet.getString("FirstName"),
-            resultSet.getString("LastName"));
+            resultSet.isNull("FirstName") ? "NULL" : resultSet.getString("FirstName"),
+            resultSet.isNull("LastName") ? "NULL" : resultSet.getString("LastName"));
       }
     }
   }
   // [END spanner_query_with_parameter]
 
   // [START spanner_dml_getting_started_update]
+  /**
+   * Transfers {@code 200000} of {@code MarketingBudget} from album {@code (2, 2)} to album {@code
+   * (1, 1)} atomically by using parameterized SQL and DML inside a read-write transaction.
+   *
+   * <p>Precondition: the {@code MarketingBudget} column must exist on {@code Albums}. If album
+   * {@code (2, 2)} has {@code NULL} or less than {@code 200000} budget, no update is applied.
+   * Spanner automatically retries the {@code run(...)} callable on {@code ABORTED}.
+   *
+   * @param dbClient the database client for the target Spanner database
+   * @throws SpannerException if the transaction fails after retries ({@code INVALID_ARGUMENT}: add
+   *     the {@code MarketingBudget} column first)
+   */
   static void writeWithTransactionUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          // Transfer marketing budget from one album to another. We do it in a transaction to
-          // ensure that the transfer is atomic.
-          String sql1 =
-              "SELECT MarketingBudget from Albums WHERE SingerId = 2 and AlbumId = 2";
-          ResultSet resultSet = transaction.executeQuery(Statement.of(sql1));
-          long album2Budget = 0;
-          while (resultSet.next()) {
-            album2Budget = resultSet.getLong("MarketingBudget");
-          }
-          // Transaction will only be committed if this condition still holds at the time of
-          // commit. Otherwise it will be aborted and the callable will be rerun by the
-          // client library.
-          long transfer = 200000;
-          if (album2Budget >= transfer) {
-            String sql2 =
-                "SELECT MarketingBudget from Albums WHERE SingerId = 1 and AlbumId = 1";
-            ResultSet resultSet2 = transaction.executeQuery(Statement.of(sql2));
-            long album1Budget = 0;
-            while (resultSet2.next()) {
-              album1Budget = resultSet2.getLong("MarketingBudget");
-            }
-            album1Budget += transfer;
-            album2Budget -= transfer;
-            Statement updateStatement =
-                Statement.newBuilder(
-                        "UPDATE Albums "
-                            + "SET MarketingBudget = @AlbumBudget "
-                            + "WHERE SingerId = 1 and AlbumId = 1")
-                    .bind("AlbumBudget")
-                    .to(album1Budget)
-                    .build();
-            transaction.executeUpdate(updateStatement);
-            Statement updateStatement2 =
-                Statement.newBuilder(
-                        "UPDATE Albums "
-                            + "SET MarketingBudget = @AlbumBudget "
-                            + "WHERE SingerId = 2 and AlbumId = 2")
-                    .bind("AlbumBudget")
-                    .to(album2Budget)
-                    .build();
-            transaction.executeUpdate(updateStatement2);
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              // Transfer marketing budget from one album to another. We do it in a transaction to
+              // ensure that the transfer is atomic.
+              String sql1 =
+                  "SELECT MarketingBudget from Albums WHERE SingerId = 2 and AlbumId = 2";
+              long album2Budget = 0;
+              try (ResultSet resultSet = transaction.executeQuery(Statement.of(sql1))) {
+                while (resultSet.next()) {
+                  if (!resultSet.isNull("MarketingBudget")) {
+                    album2Budget = resultSet.getLong("MarketingBudget");
+                  }
+                }
+              }
+              // Transaction will only be committed if this condition still holds at the time of
+              // commit. Otherwise it will be aborted and the callable will be rerun by the
+              // client library.
+              long transfer = 200000;
+              if (album2Budget >= transfer) {
+                String sql2 =
+                    "SELECT MarketingBudget from Albums WHERE SingerId = 1 and AlbumId = 1";
+                long album1Budget = 0;
+                try (ResultSet resultSet2 = transaction.executeQuery(Statement.of(sql2))) {
+                  while (resultSet2.next()) {
+                    if (!resultSet2.isNull("MarketingBudget")) {
+                      album1Budget = resultSet2.getLong("MarketingBudget");
+                    }
+                  }
+                }
+                album1Budget += transfer;
+                album2Budget -= transfer;
+                Statement updateStatement =
+                    Statement.newBuilder(
+                            "UPDATE Albums "
+                                + "SET MarketingBudget = @AlbumBudget "
+                                + "WHERE SingerId = 1 and AlbumId = 1")
+                        .bind("AlbumBudget")
+                        .to(album1Budget)
+                        .build();
+                transaction.executeUpdate(updateStatement);
+                Statement updateStatement2 =
+                    Statement.newBuilder(
+                            "UPDATE Albums "
+                                + "SET MarketingBudget = @AlbumBudget "
+                                + "WHERE SingerId = 2 and AlbumId = 2")
+                        .bind("AlbumBudget")
+                        .to(album2Budget)
+                        .build();
+                transaction.executeUpdate(updateStatement2);
+              }
+              return null;
+            });
   }
   // [END spanner_dml_getting_started_update]
 

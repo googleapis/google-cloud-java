@@ -61,6 +61,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Example code for using the Cloud Spanner PostgreSQL interface.
@@ -200,25 +201,43 @@ public class PgSpannerSample {
   }
 
   // [START spanner_postgresql_create_database]
+  /**
+   * Creates an empty PostgreSQL-dialect Spanner database.
+   *
+   * <p>Precondition: the target instance must exist, and {@code databaseId} must not already exist.
+   * PostgreSQL-dialect {@code CreateDatabaseRequest} does not accept {@code extraStatements}; apply
+   * table DDL afterward via {@code updateDatabaseDdlAsync} (see {@code createTableUsingDdl}).
+   *
+   * @param dbAdminClient the database administration client
+   * @param projectId the Google Cloud project ID
+   * @param instanceId the parent Spanner instance ID
+   * @param databaseId the ID of the PostgreSQL-dialect database to create
+   * @throws SpannerException if creation fails ({@code ALREADY_EXISTS}: reuse the database or pick
+   *     a new ID; {@code NOT_FOUND}: verify {@code projectId} and {@code instanceId};
+   *     {@code DEADLINE_EXCEEDED}: poll the operation or retry)
+   */
   static void createPostgreSqlDatabase(
       DatabaseAdminClient dbAdminClient, String projectId, String instanceId, String databaseId) {
     final CreateDatabaseRequest request =
         CreateDatabaseRequest.newBuilder()
             .setCreateStatement("CREATE DATABASE \"" + databaseId + "\"")
             .setParent(InstanceName.of(projectId, instanceId).toString())
-            .setDatabaseDialect(DatabaseDialect.POSTGRESQL).build();
+            .setDatabaseDialect(DatabaseDialect.POSTGRESQL)
+            .build();
 
     try {
       // Initiate the request which returns an OperationFuture.
-      Database db = dbAdminClient.createDatabaseAsync(request).get();
+      Database db = dbAdminClient.createDatabaseAsync(request).get(5, TimeUnit.MINUTES);
       System.out.println("Created database [" + db.getName() + "]");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
       throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.propagateTimeout(e);
     }
   }
   // [END spanner_postgresql_create_database]
@@ -311,20 +330,35 @@ public class PgSpannerSample {
   // [END spanner_postgresql_read_data]
 
   // [START spanner_postgresql_add_column]
+  /**
+   * Adds a nullable {@code MarketingBudget bigint} column to the {@code Albums} table.
+   *
+   * <p>Precondition: the {@code Albums} table must exist and must not already have a {@code
+   * MarketingBudget} column.
+   *
+   * @param adminClient the database administration client
+   * @param databaseName the resource name of the PostgreSQL-dialect database to alter
+   * @throws SpannerException if the DDL operation fails ({@code FAILED_PRECONDITION} or {@code
+   *     INVALID_ARGUMENT}: verify that {@code Albums} exists and {@code MarketingBudget} does not;
+   *     {@code DEADLINE_EXCEEDED}: poll the operation or retry)
+   */
   static void addMarketingBudget(DatabaseAdminClient adminClient, DatabaseName databaseName) {
     try {
       // Initiate the request which returns an OperationFuture.
-      adminClient.updateDatabaseDdlAsync(
-          databaseName,
-          Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget bigint")).get();
+      adminClient
+          .updateDatabaseDdlAsync(
+              databaseName, Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget bigint"))
+          .get(5, TimeUnit.MINUTES);
       System.out.println("Added MarketingBudget column");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
       throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.propagateTimeout(e);
     }
   }
   // [END spanner_postgresql_add_column]
@@ -404,6 +438,18 @@ public class PgSpannerSample {
   // [END spanner_postgresql_read_write_transaction]
 
   // [START spanner_postgresql_query_data_with_new_column]
+  /**
+   * Queries {@code SingerId}, {@code AlbumId}, and nullable {@code MarketingBudget} from all {@code
+   * Albums} rows in a PostgreSQL-dialect database.
+   *
+   * <p>Precondition: the {@code MarketingBudget} column must exist on {@code Albums}. Unquoted
+   * PostgreSQL identifiers fold to lowercase, so double-quoted aliases preserve mixed-case column
+   * names on {@link ResultSet}.
+   *
+   * @param dbClient the database client for the target PostgreSQL-dialect database
+   * @throws SpannerException if the query fails ({@code INVALID_ARGUMENT}: add the {@code
+   *     MarketingBudget} column first)
+   */
   static void queryMarketingBudget(DatabaseClient dbClient) {
     // Rows without an explicit value for MarketingBudget will have a MarketingBudget equal to
     // null. A try-with-resource block is used to automatically release resources held by
@@ -411,9 +457,11 @@ public class PgSpannerSample {
     try (ResultSet resultSet =
         dbClient
             .singleUse()
-            .executeQuery(Statement.of("SELECT singerid as \"SingerId\", "
-                + "albumid as \"AlbumId\", marketingbudget as \"MarketingBudget\" "
-                + "FROM Albums"))) {
+            .executeQuery(
+                Statement.of(
+                    "SELECT singerid as \"SingerId\", "
+                        + "albumid as \"AlbumId\", marketingbudget as \"MarketingBudget\" "
+                        + "FROM Albums"))) {
       while (resultSet.next()) {
         System.out.printf(
             "%d %d %s\n",
@@ -421,8 +469,7 @@ public class PgSpannerSample {
             resultSet.getLong("AlbumId"),
             // We check that the value is non null. ResultSet getters can only be used to retrieve
             // non null values.
-            resultSet.isNull("MarketingBudget") ? "NULL" :
-                resultSet.getLong("MarketingBudget"));
+            resultSet.isNull("MarketingBudget") ? "NULL" : resultSet.getLong("MarketingBudget"));
       }
     }
   }
@@ -465,22 +512,39 @@ public class PgSpannerSample {
   // [END spanner_postgresql_read_data_with_index]
 
   // [START spanner_postgresql_create_storing_index]
+  /**
+   * Creates the {@code AlbumsByAlbumTitle2} secondary index with an {@code INCLUDE
+   * (MarketingBudget)} clause for index-only reads in PostgreSQL dialect.
+   *
+   * <p>Precondition: the {@code Albums} table and {@code MarketingBudget} column must exist, and
+   * {@code AlbumsByAlbumTitle2} must not already exist.
+   *
+   * @param adminClient the database administration client
+   * @param databaseName the resource name of the PostgreSQL-dialect database to alter
+   * @throws SpannerException if index creation fails ({@code FAILED_PRECONDITION} or {@code
+   *     INVALID_ARGUMENT}: ensure {@code MarketingBudget} exists and the index does not;
+   *     {@code DEADLINE_EXCEEDED}: poll the operation until backfill completes)
+   */
   static void addStoringIndex(DatabaseAdminClient adminClient, DatabaseName databaseName) {
     try {
       // Initiate the request which returns an OperationFuture.
-      adminClient.updateDatabaseDdlAsync(
-          databaseName,
-          Arrays.asList(
-              "CREATE INDEX AlbumsByAlbumTitle2 ON Albums(AlbumTitle) "
-                  + "INCLUDE (MarketingBudget)")).get();
+      adminClient
+          .updateDatabaseDdlAsync(
+              databaseName,
+              Arrays.asList(
+                  "CREATE INDEX AlbumsByAlbumTitle2 ON Albums(AlbumTitle) "
+                      + "INCLUDE (MarketingBudget)"))
+          .get(5, TimeUnit.MINUTES);
       System.out.println("Added AlbumsByAlbumTitle2 index");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
       throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.propagateTimeout(e);
     }
   }
   // [END spanner_postgresql_create_storing_index]
@@ -576,6 +640,18 @@ public class PgSpannerSample {
   // [END spanner_postgresql_dml_getting_started_insert]
 
   // [START spanner_postgresql_query_with_parameter]
+  /**
+   * Queries {@code Singers} rows matching a positional PostgreSQL parameter ({@code $1}, bound as
+   * {@code "p1"}) in a single-use read-only context.
+   *
+   * <p>Precondition: the {@code Singers} table must exist. In PostgreSQL dialect, positional
+   * placeholders {@code $1, $2, ...} bind via parameter names {@code "p1", "p2", ...}, and
+   * double-quoted column aliases preserve mixed-case names on {@link ResultSet}.
+   *
+   * @param dbClient the database client for the target PostgreSQL-dialect database
+   * @throws SpannerException if the query fails ({@code INVALID_ARGUMENT} or {@code NOT_FOUND}:
+   *     verify that {@code Singers} exists and {@code "p1"} matches {@code $1})
+   */
   static void queryWithParameter(DatabaseClient dbClient) {
     Statement statement =
         Statement.newBuilder(
@@ -591,98 +667,134 @@ public class PgSpannerSample {
         System.out.printf(
             "%d %s %s\n",
             resultSet.getLong("SingerId"),
-            resultSet.getString("FirstName"),
-            resultSet.getString("LastName"));
+            resultSet.isNull("FirstName") ? "NULL" : resultSet.getString("FirstName"),
+            resultSet.isNull("LastName") ? "NULL" : resultSet.getString("LastName"));
       }
     }
   }
   // [END spanner_postgresql_query_with_parameter]
 
   // [START spanner_postgresql_dml_getting_started_update]
+  /**
+   * Transfers {@code 200000} of {@code MarketingBudget} from album {@code (2, 2)} to album {@code
+   * (1, 1)} atomically by using PostgreSQL-dialect DML inside a read-write transaction.
+   *
+   * <p>Precondition: the {@code MarketingBudget} column must exist on {@code Albums}. If album
+   * {@code (2, 2)} has {@code NULL} or less than {@code 200000} budget, no update is applied.
+   * Spanner automatically retries the {@code run(...)} callable on {@code ABORTED}.
+   *
+   * @param dbClient the database client for the target PostgreSQL-dialect database
+   * @throws SpannerException if the transaction fails after retries ({@code INVALID_ARGUMENT}: add
+   *     the {@code MarketingBudget} column first)
+   */
   static void writeWithTransactionUsingDml(DatabaseClient dbClient) {
     dbClient
         .readWriteTransaction()
-        .run(transaction -> {
-          // Transfer marketing budget from one album to another. We do it in a transaction to
-          // ensure that the transfer is atomic.
-          String sql1 =
-              "SELECT marketingbudget as \"MarketingBudget\" from Albums WHERE "
-                  + "SingerId = 2 and AlbumId = 2";
-          ResultSet resultSet = transaction.executeQuery(Statement.of(sql1));
-          long album2Budget = 0;
-          while (resultSet.next()) {
-            album2Budget = resultSet.getLong("MarketingBudget");
-          }
-          // Transaction will only be committed if this condition still holds at the time of
-          // commit. Otherwise it will be aborted and the callable will be rerun by the
-          // client library.
-          long transfer = 200000;
-          if (album2Budget >= transfer) {
-            String sql2 =
-                "SELECT marketingbudget as \"MarketingBudget\" from Albums WHERE "
-                    + "SingerId = 1 and AlbumId = 1";
-            ResultSet resultSet2 = transaction.executeQuery(Statement.of(sql2));
-            long album1Budget = 0;
-            while (resultSet2.next()) {
-              album1Budget = resultSet2.getLong("MarketingBudget");
-            }
-            album1Budget += transfer;
-            album2Budget -= transfer;
-            Statement updateStatement =
-                Statement.newBuilder(
-                        "UPDATE Albums "
-                            + "SET MarketingBudget = $1 "
-                            + "WHERE SingerId = 1 and AlbumId = 1")
-                    .bind("p1")
-                    .to(album1Budget)
-                    .build();
-            transaction.executeUpdate(updateStatement);
-            Statement updateStatement2 =
-                Statement.newBuilder(
-                        "UPDATE Albums "
-                            + "SET MarketingBudget = $1 "
-                            + "WHERE SingerId = 2 and AlbumId = 2")
-                    .bind("p1")
-                    .to(album2Budget)
-                    .build();
-            transaction.executeUpdate(updateStatement2);
-          }
-          return null;
-        });
+        .run(
+            transaction -> {
+              // Transfer marketing budget from one album to another. We do it in a transaction to
+              // ensure that the transfer is atomic.
+              String sql1 =
+                  "SELECT marketingbudget as \"MarketingBudget\" from Albums WHERE "
+                      + "SingerId = 2 and AlbumId = 2";
+              long album2Budget = 0;
+              try (ResultSet resultSet = transaction.executeQuery(Statement.of(sql1))) {
+                while (resultSet.next()) {
+                  if (!resultSet.isNull("MarketingBudget")) {
+                    album2Budget = resultSet.getLong("MarketingBudget");
+                  }
+                }
+              }
+              // Transaction will only be committed if this condition still holds at the time of
+              // commit. Otherwise it will be aborted and the callable will be rerun by the
+              // client library.
+              long transfer = 200000;
+              if (album2Budget >= transfer) {
+                String sql2 =
+                    "SELECT marketingbudget as \"MarketingBudget\" from Albums WHERE "
+                        + "SingerId = 1 and AlbumId = 1";
+                long album1Budget = 0;
+                try (ResultSet resultSet2 = transaction.executeQuery(Statement.of(sql2))) {
+                  while (resultSet2.next()) {
+                    if (!resultSet2.isNull("MarketingBudget")) {
+                      album1Budget = resultSet2.getLong("MarketingBudget");
+                    }
+                  }
+                }
+                album1Budget += transfer;
+                album2Budget -= transfer;
+                Statement updateStatement =
+                    Statement.newBuilder(
+                            "UPDATE Albums "
+                                + "SET MarketingBudget = $1 "
+                                + "WHERE SingerId = 1 and AlbumId = 1")
+                        .bind("p1")
+                        .to(album1Budget)
+                        .build();
+                transaction.executeUpdate(updateStatement);
+                Statement updateStatement2 =
+                    Statement.newBuilder(
+                            "UPDATE Albums "
+                                + "SET MarketingBudget = $1 "
+                                + "WHERE SingerId = 2 and AlbumId = 2")
+                        .bind("p1")
+                        .to(album2Budget)
+                        .build();
+                transaction.executeUpdate(updateStatement2);
+              }
+              return null;
+            });
   }
   // [END spanner_postgresql_dml_getting_started_update]
 
   // [START spanner_postgresql_create_table_using_ddl]
   // [START spanner_postgresql_create_database]
+  /**
+   * Creates the {@code Singers} and interleaved {@code Albums} tables in an existing
+   * PostgreSQL-dialect database.
+   *
+   * <p>Precondition: {@code databaseName} must exist with {@code DatabaseDialect.POSTGRESQL}, and
+   * neither {@code Singers} nor {@code Albums} may already exist.
+   *
+   * @param dbAdminClient the database administration client
+   * @param databaseName the resource name of the PostgreSQL-dialect database to update
+   * @throws SpannerException if the DDL batch fails ({@code FAILED_PRECONDITION} or {@code
+   *     ALREADY_EXISTS}: tables already exist; {@code NOT_FOUND}: create the database first;
+   *     {@code DEADLINE_EXCEEDED}: poll the operation or retry)
+   */
   static void createTableUsingDdl(DatabaseAdminClient dbAdminClient, DatabaseName databaseName) {
     try {
       // Initiate the request which returns an OperationFuture.
-      dbAdminClient.updateDatabaseDdlAsync(
-          databaseName,
-          Arrays.asList(
-              "CREATE TABLE Singers ("
-                  + "  SingerId   bigint NOT NULL,"
-                  + "  FirstName  character varying(1024),"
-                  + "  LastName   character varying(1024),"
-                  + "  SingerInfo bytea,"
-                  + "  FullName character varying(2048) GENERATED "
-                  + "  ALWAYS AS (FirstName || ' ' || LastName) STORED,"
-                  + "  PRIMARY KEY (SingerId)"
-                  + ")",
-              "CREATE TABLE Albums ("
-                  + "  SingerId     bigint NOT NULL,"
-                  + "  AlbumId      bigint NOT NULL,"
-                  + "  AlbumTitle   character varying(1024),"
-                  + "  PRIMARY KEY (SingerId, AlbumId)"
-                  + ") INTERLEAVE IN PARENT Singers ON DELETE CASCADE")).get();
+      dbAdminClient
+          .updateDatabaseDdlAsync(
+              databaseName,
+              Arrays.asList(
+                  "CREATE TABLE Singers ("
+                      + "  SingerId   bigint NOT NULL,"
+                      + "  FirstName  character varying(1024),"
+                      + "  LastName   character varying(1024),"
+                      + "  SingerInfo bytea,"
+                      + "  FullName character varying(2048) GENERATED "
+                      + "  ALWAYS AS (FirstName || ' ' || LastName) STORED,"
+                      + "  PRIMARY KEY (SingerId)"
+                      + ")",
+                  "CREATE TABLE Albums ("
+                      + "  SingerId     bigint NOT NULL,"
+                      + "  AlbumId      bigint NOT NULL,"
+                      + "  AlbumTitle   character varying(1024),"
+                      + "  PRIMARY KEY (SingerId, AlbumId)"
+                      + ") INTERLEAVE IN PARENT Singers ON DELETE CASCADE"))
+          .get(5, TimeUnit.MINUTES);
       System.out.println("Created Singers & Albums tables in database: [" + databaseName + "]");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw SpannerExceptionFactory.asSpannerException(e);
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
       throw SpannerExceptionFactory.propagateInterrupt(e);
+    } catch (TimeoutException e) {
+      throw SpannerExceptionFactory.propagateTimeout(e);
     }
   }
   // [END spanner_postgresql_create_database]
@@ -1544,17 +1656,26 @@ public class PgSpannerSample {
   }
 
   public static void main(String[] args) {
-    if (args.length != 3) {
+    if (args.length != 3 && args.length != 4) {
       printUsageAndExit();
     }
+    final String command = args[0];
+    final String instanceId = args[1];
+    final String databaseId = args[2];
+    final String backupId = args.length == 4 ? args[3] : null;
+
     // [START spanner_init_client]
+    // String instanceId = "my-instance";
+    // String databaseId = "example-db";
     SpannerOptions options = SpannerOptions.newBuilder().build();
-    Spanner spanner = options.getService();
-    DatabaseAdminClient dbAdminClient = null;
-    try {
+    // Reuse Spanner and DatabaseAdminClient across requests; try-with-resources calls close()
+    // on shutdown to release gRPC channels and session pools.
+    try (Spanner spanner = options.getService();
+        DatabaseAdminClient dbAdminClient = spanner.createDatabaseAdminClient()) {
+      DatabaseId db = DatabaseId.of(options.getProjectId(), instanceId, databaseId);
+      // Obtain DatabaseClient after the database exists so session initialization succeeds.
+      DatabaseClient dbClient = spanner.getDatabaseClient(db);
       // [END spanner_init_client]
-      final String command = args[0];
-      DatabaseId db = DatabaseId.of(options.getProjectId(), args[1], args[2]);
 
       // This will return the default project id based on the environment.
       String clientProject = spanner.getOptions().getProjectId();
@@ -1565,27 +1686,10 @@ public class PgSpannerSample {
                 + clientProject);
         printUsageAndExit();
       }
-      // Generate a backup id for the sample database.
-      String backupId = null;
-      if (args.length == 4) {
-        backupId = args[3];
-      }
-
-      // [START spanner_init_client]
-      DatabaseClient dbClient = spanner.getDatabaseClient(db);
-      dbAdminClient = spanner.createDatabaseAdminClient();
-      // [END spanner_init_client]
 
       // Use client here...
       run(dbClient, dbAdminClient, command, db, backupId);
       // [START spanner_init_client]
-    } finally {
-      if (dbAdminClient != null) {
-        if (!dbAdminClient.isShutdown() || !dbAdminClient.isTerminated()) {
-          dbAdminClient.close();
-        }
-      }
-      spanner.close();
     }
     // [END spanner_init_client]
     System.out.println("Closed client");
