@@ -165,4 +165,62 @@ public class BuiltInMetricsCustomOpenTelemetryTest extends AbstractMockServerTes
     }
     assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
   }
+
+  @Test
+  public void customHostDisablesGcmEndToEndWhileKeepingCustomSink() {
+    String previousJmhEnabled = System.getProperty("jmh.enabled");
+    // Lift the NoCredentials guard (same pattern as BuiltInMetricsBothSinksTest) because gRPC
+    // rejects OAuth2 CallCredentials on a plaintext mock-server channel.
+    System.setProperty("jmh.enabled", "true");
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGRPCBuiltInMetrics() {
+            return true;
+          }
+        });
+    BuiltInMetricsProvider.INSTANCE.reset();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    OpenTelemetrySdk customOpenTelemetry = createOpenTelemetry(metricReader);
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("my-project")
+              .setEmulatorHost(null)
+              .setHost(String.format("http://localhost:%d", getPort()))
+              .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+              .setCredentials(NoCredentials.getInstance())
+              .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
+              .setClientMetricsProvider(
+                  CustomOpenTelemetryMetricsProvider.create(customOpenTelemetry))
+              .build();
+      assertFalse(options.isEnableBuiltInMetrics());
+
+      try (Spanner spanner = options.getService()) {
+        executeSelect1(spanner);
+      }
+
+      // Even with the NoCredentials guard lifted and gRPC built-in metrics enabled, the custom host
+      // must NOT initialize the GCM singleton.
+      assertNull(BuiltInMetricsProvider.INSTANCE.getOpenTelemetry());
+      assertNull(BuiltInMetricsProvider.INSTANCE.getProjectId());
+
+      // Caller-owned CustomOpenTelemetryMetricsProvider still records metrics end-to-end.
+      assertNotNull(
+          getMetric(
+              metricReader,
+              BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME
+                  + "/"
+                  + BuiltInMetricsConstant.OPERATION_COUNT_NAME));
+    } finally {
+      customOpenTelemetry.close();
+      BuiltInMetricsProvider.INSTANCE.reset();
+      SpannerOptions.useDefaultEnvironment();
+      if (previousJmhEnabled == null) {
+        System.clearProperty("jmh.enabled");
+      } else {
+        System.setProperty("jmh.enabled", previousJmhEnabled);
+      }
+    }
+  }
 }

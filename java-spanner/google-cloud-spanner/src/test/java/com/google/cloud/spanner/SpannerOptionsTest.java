@@ -2951,10 +2951,12 @@ public class SpannerOptionsTest {
       assertTrue(warnings.get(0).getMessage().contains("Disabling built-in Cloud Monitoring"));
 
       warnings.clear();
-      SpannerOptions.newBuilder()
-          .setProjectId("test-project")
-          .setEmulatorHost("localhost:9010")
-          .build();
+      SpannerOptions emulatorOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setEmulatorHost("localhost:9010")
+              .build();
+      assertFalse(emulatorOptions.isEnableBuiltInMetrics());
       assertTrue(warnings.isEmpty());
 
       SpannerOptions plainTextCustom =
@@ -2968,6 +2970,72 @@ public class SpannerOptionsTest {
     } finally {
       spannerOptionsLogger.removeHandler(handler);
       spannerOptionsLogger.setLevel(previousLevel);
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testCustomHostEdgeCasesAndToBuilderFromDefaultHost() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      // Additional fail-closed malformed / spoofed host shapes.
+      String[] additionalNonDefaultHosts = {
+        "   ", "https://spanner.googleapis.com@evil.com", "https://spanner.googleapis.com.",
+      };
+      for (String host : additionalNonDefaultHosts) {
+        SpannerOptions options =
+            SpannerOptions.newBuilder()
+                .setProjectId("test-project")
+                .setCredentials(NoCredentials.getInstance())
+                .setEmulatorHost(null)
+                .setHost(host)
+                .build();
+        assertFalse(
+            "Expected built-in metrics disabled for host: " + host,
+            options.isEnableBuiltInMetrics());
+      }
+
+      // Explicit opt-in to googleapis.com keeps built-in metrics enabled on a custom host.
+      SpannerOptions explicitDefaultUniverse =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setUniverseDomain("googleapis.com")
+              .build();
+      assertTrue(explicitDefaultUniverse.isEnableBuiltInMetrics());
+
+      // Reverse toBuilder() transition: default host (enabled) -> custom host (disabled).
+      SpannerOptions defaultOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .build();
+      assertTrue(defaultOptions.isEnableBuiltInMetrics());
+      assertFalse(
+          defaultOptions.toBuilder()
+              .setHost("https://spanner.tpc.example")
+              .build()
+              .isEnableBuiltInMetrics());
+
+      // Clearing monitoringHost via toBuilder() re-disables built-in metrics on a custom host.
+      @SuppressWarnings("deprecation")
+      SpannerOptions withMonitoringHost =
+          SpannerOptions.newBuilder()
+              .setProjectId("tpc-project")
+              .setEmulatorHost(null)
+              .setHost("https://spanner.tpc.example")
+              .setMonitoringHost("monitoring.tpc.example:443")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
+      assertTrue(withMonitoringHost.isEnableBuiltInMetrics());
+      @SuppressWarnings("deprecation")
+      SpannerOptions clearedMonitoringHost =
+          withMonitoringHost.toBuilder().setMonitoringHost(null).build();
+      assertFalse(clearedMonitoringHost.isEnableBuiltInMetrics());
+    } finally {
       SpannerOptions.useDefaultEnvironment();
     }
   }

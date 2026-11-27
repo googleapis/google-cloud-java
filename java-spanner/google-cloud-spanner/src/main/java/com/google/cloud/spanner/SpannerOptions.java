@@ -1119,6 +1119,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         resolved = NoopMetricsProvider.INSTANCE;
       }
       enableBuiltInMetrics = false;
+    } else if (isEmulatorEnabled()) {
+      // The emulator has no Cloud Monitoring sink; report GCM as off so isEnableBuiltInMetrics()
+      // is truthful.
+      enableBuiltInMetrics = false;
     } else if (builder.enableBuiltInMetrics
         && !isDefaultUniverseHost(configuredHost)
         && isBlank(getUniverseDomain())
@@ -1127,7 +1131,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       // Fail closed for custom non-default hosts without an explicit metrics target so default-on
       // Cloud Monitoring export never leaks credentials or telemetry to monitoring.googleapis.com.
       enableBuiltInMetrics = false;
-      if (!builder.usePlainText && !isEmulatorEnabled()) {
+      if (!builder.usePlainText) {
         logger.log(
             Level.WARNING,
             "Disabling built-in Cloud Monitoring metrics because custom host {0} is configured"
@@ -1161,9 +1165,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   /**
-   * Returns whether {@code host} is unset or parses as a valid URL whose hostname belongs to the
-   * default {@code googleapis.com} universe. Scheme-less hosts, malformed URLs, bare {@code
-   * googleapis.com}, and non-{@code googleapis.com} hosts fail closed ({@code false}).
+   * Returns {@code true} if {@code host} is unset (meaning the default endpoint will be used) or is
+   * a valid URL targeting a subdomain of {@code googleapis.com} (for example, {@code
+   * https://spanner.googleapis.com}).
+   *
+   * <p>Returns {@code false} for any custom host, bare {@code googleapis.com}, or URL without a
+   * valid scheme/hostname (for example, {@code spanner.googleapis.com:443}), so built-in Cloud
+   * Monitoring export is safely disabled unless a monitoring target is explicitly configured.
    */
   private static boolean isDefaultUniverseHost(@Nullable String host) {
     if (Strings.isNullOrEmpty(host)) {
@@ -3329,12 +3337,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * Returns true if built-in metrics are exported to the default Cloud Monitoring (GCM)
-   * destination. Always false for {@link InstanceType#OMNI} clients, where the GCM sink is
-   * unavailable, and automatically disabled when a custom non-{@code *.googleapis.com} host
-   * (including a scheme-less host) is configured via {@link Builder#setHost(String)} without an
-   * explicit {@code universeDomain}, {@code GOOGLE_CLOUD_UNIVERSE_DOMAIN}, or {@code
-   * monitoringHost}. This flag does not affect a caller-owned client-metrics destination configured
-   * with {@link Builder#setClientMetricsProvider(MetricsProvider)}.
+   * destination. Always false for {@link InstanceType#OMNI} clients and when the emulator is
+   * enabled, where the GCM sink is unavailable, and automatically disabled when a custom non-{@code
+   * *.googleapis.com} host (including a scheme-less host) is configured via {@link
+   * Builder#setHost(String)} without an explicit {@code universeDomain}, {@code
+   * GOOGLE_CLOUD_UNIVERSE_DOMAIN}, or {@code monitoringHost}. This flag does not affect a
+   * caller-owned client-metrics destination configured with {@link
+   * Builder#setClientMetricsProvider(MetricsProvider)}.
    */
   public boolean isEnableBuiltInMetrics() {
     return enableBuiltInMetrics;

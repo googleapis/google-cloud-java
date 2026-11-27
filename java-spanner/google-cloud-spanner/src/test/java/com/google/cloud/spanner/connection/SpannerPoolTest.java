@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
@@ -31,6 +32,8 @@ import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 
 import com.google.auth.Credentials;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.BatchClient;
 import com.google.cloud.spanner.DatabaseClient;
@@ -1393,6 +1396,34 @@ public class SpannerPoolTest {
       try (Spanner spanner =
           SpannerPool.INSTANCE.createSpanner(SpannerPoolKey.of(defaultHost), defaultHost)) {
         assertTrue(spanner.getOptions().isEnableBuiltInMetrics());
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testEndpointPropertyWithCredentialsDisablesBuiltInMetrics() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGRPCBuiltInMetrics() {
+            return true;
+          }
+        });
+    try {
+      ConnectionOptions endpointPropertyOnly =
+          ConnectionOptions.newBuilder()
+              .setUri(
+                  "cloudspanner:/projects/p/instances/i/databases/d"
+                      + "?endpoint=spanner.tpc.example:443")
+              .setCredentials(GoogleCredentials.create(new AccessToken("test-token", null)))
+              .build();
+      try (Spanner spanner =
+          SpannerPool.INSTANCE.createSpanner(
+              SpannerPoolKey.of(endpointPropertyOnly), endpointPropertyOnly)) {
+        assertFalse(spanner.getOptions().isEnableBuiltInMetrics());
+        assertNull(spanner.getOptions().getBuiltInOpenTelemetry());
       }
     } finally {
       SpannerOptions.useDefaultEnvironment();
