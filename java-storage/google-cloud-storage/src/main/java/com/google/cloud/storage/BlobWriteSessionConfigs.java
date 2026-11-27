@@ -25,6 +25,7 @@ import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.nio.channels.WritableByteChannel;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
@@ -263,7 +264,7 @@ public final class BlobWriteSessionConfigs {
 
   /**
    * Create a new {@link BlobWriteSessionConfig} which will first buffer the content of the object
-   * to a temporary file under {@code java.io.tmpdir}.
+   * to a temporary file in a new, uniquely named directory under {@code java.io.tmpdir}.
    *
    * <p>Once the file on disk is closed, the entire file will then be uploaded to Cloud Storage.
    *
@@ -274,8 +275,10 @@ public final class BlobWriteSessionConfigs {
   @BetaApi
   @TransportCompatibility({Transport.GRPC, Transport.HTTP})
   public static BlobWriteSessionConfig bufferToTempDirThenUpload() throws IOException {
-    return bufferToDiskThenUpload(
-        Paths.get(System.getProperty("java.io.tmpdir"), "google-cloud-storage"));
+    Path dir =
+        Files.createTempDirectory(
+            Paths.get(System.getProperty("java.io.tmpdir")), "google-cloud-storage-");
+    return bufferToDiskThenUpload(dir);
   }
 
   /**
