@@ -81,7 +81,9 @@ class PerConnectionFileHandler extends Handler {
   private final Level level;
   private final Formatter logFormatter;
   private final ConcurrentHashMap<String, ChannelLogWriter> writers = new ConcurrentHashMap<>();
-  private final ChannelLogWriter defaultWriter;
+  private final Object defaultWriterLock = new Object();
+  private ChannelLogWriter defaultWriter;
+  private volatile boolean handlerClosed = false;
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
     this.level = level;
@@ -90,16 +92,13 @@ class PerConnectionFileHandler extends Handler {
     setFormatter(this.logFormatter);
 
     Path initializedDir = null;
-    ChannelLogWriter initializedDefault = null;
     try {
       Path candidate = Paths.get(baseLogPath != null ? baseLogPath : "").toAbsolutePath();
       initializedDir = ensureSecureDirectory(candidate);
-      initializedDefault = createLogWriter(DEFAULT_HANDLER_ID, initializedDir, level);
     } catch (Exception e) {
       reportError("Failed to initialize default log file", e, ErrorManager.OPEN_FAILURE);
     }
     this.baseLogPath = initializedDir;
-    this.defaultWriter = initializedDefault;
   }
 
   private static int resolveProcessUid() {
@@ -398,9 +397,21 @@ class PerConnectionFileHandler extends Handler {
     }
   }
 
+  private ChannelLogWriter getOrCreateDefaultWriter() {
+    synchronized (defaultWriterLock) {
+      if (handlerClosed || baseLogPath == null) {
+        return null;
+      }
+      if (defaultWriter == null) {
+        defaultWriter = createLogWriter(DEFAULT_HANDLER_ID, baseLogPath, level);
+      }
+      return defaultWriter;
+    }
+  }
+
   @Override
   public void publish(LogRecord record) {
-    if (record == null || !isLoggable(record)) {
+    if (handlerClosed || record == null || !isLoggable(record)) {
       return;
     }
 
@@ -411,17 +422,17 @@ class PerConnectionFileHandler extends Handler {
         connectionId = (String) params[0];
       }
     }
-    ChannelLogWriter target = defaultWriter;
+    ChannelLogWriter target = null;
 
     if (connectionId != null && !connectionId.isEmpty() && baseLogPath != null) {
       target =
           writers.computeIfAbsent(connectionId, id -> createLogWriter(id, baseLogPath, this.level));
-      if (target == null) {
-        target = defaultWriter;
-      }
+    }
+    if (target == null) {
+      target = getOrCreateDefaultWriter();
     }
 
-    if (target != null) {
+    if (!handlerClosed && target != null) {
       target.publish(record);
     }
   }
@@ -433,6 +444,7 @@ class PerConnectionFileHandler extends Handler {
 
   @Override
   public void close() throws SecurityException {
+    handlerClosed = true;
     for (ChannelLogWriter writer : writers.values()) {
       try {
         writer.close();
@@ -440,8 +452,11 @@ class PerConnectionFileHandler extends Handler {
       }
     }
     try {
-      if (defaultWriter != null) {
-        defaultWriter.close();
+      synchronized (defaultWriterLock) {
+        if (defaultWriter != null) {
+          defaultWriter.close();
+          defaultWriter = null;
+        }
       }
     } finally {
       writers.clear();

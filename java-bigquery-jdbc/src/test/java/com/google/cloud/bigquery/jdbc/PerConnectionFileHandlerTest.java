@@ -91,7 +91,7 @@ public class PerConnectionFileHandlerTest {
   @Test
   public void testInitialization() throws IOException {
     Path defaultLog = tempDir.resolve("BQ-JDBC-GLOBAL.log");
-    assertTrue(Files.exists(defaultLog));
+    assertFalse(Files.exists(defaultLog));
   }
 
   @Test
@@ -253,6 +253,7 @@ public class PerConnectionFileHandlerTest {
     PerConnectionFileHandler nestedHandler =
         new PerConnectionFileHandler(nestedDir.toString(), Level.INFO);
     try {
+      nestedHandler.publish(new LogRecord(Level.INFO, "global perm check"));
       BigQueryJdbcMdc.registerInstance("BQ-JDBC-perm1234");
       nestedHandler.publish(new LogRecord(Level.INFO, "perm check"));
 
@@ -293,6 +294,7 @@ public class PerConnectionFileHandlerTest {
     PerConnectionFileHandler subHandler =
         new PerConnectionFileHandler(leafDir.toString(), Level.INFO);
     try {
+      subHandler.publish(new LogRecord(Level.INFO, "global init"));
       assertEquals(
           PosixFilePermissions.fromString("rwx------"),
           Files.getPosixFilePermissions(leafDir, LinkOption.NOFOLLOW_LINKS));
@@ -399,6 +401,11 @@ public class PerConnectionFileHandlerTest {
         new PerConnectionFileHandler(contendedDir.toString(), Level.INFO);
     try {
       first.publish(new LogRecord(Level.INFO, "first-owner-msg"));
+      for (int i = 0; i < 5; i++) {
+        PerConnectionFileHandler noGlobalRecords =
+            new PerConnectionFileHandler(contendedDir.toString(), Level.INFO);
+        noGlobalRecords.close();
+      }
       second.publish(new LogRecord(Level.INFO, "second-contender-msg"));
 
       String primaryContent =
