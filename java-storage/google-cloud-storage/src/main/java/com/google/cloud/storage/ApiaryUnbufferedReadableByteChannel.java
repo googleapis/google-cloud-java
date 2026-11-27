@@ -36,6 +36,7 @@ import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
 import com.google.common.hash.HashingInputStream;
@@ -440,9 +441,15 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
     public String toString() {
       return MoreObjects.toStringHelper(this)
           .add("byteRangeSpec", byteRangeSpec)
-          .add("options", options)
+          .add("options", formatOptions(options))
           .add("object", getObjectJson())
           .toString();
+    }
+
+    private static Map<StorageRpc.Option, ?> formatOptions(
+        @NonNull Map<StorageRpc.Option, ?> options) {
+      return Maps.transformEntries(
+          options, (k, v) -> k == StorageRpc.Option.CUSTOMER_SUPPLIED_KEY ? "<omitted>" : v);
     }
 
     private String getObjectJson() {
