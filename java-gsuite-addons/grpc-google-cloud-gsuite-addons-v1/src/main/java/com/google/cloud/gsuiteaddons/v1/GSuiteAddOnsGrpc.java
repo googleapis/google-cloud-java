@@ -21,30 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * A service for managing Google Workspace add-ons deployments.
- * A Google Workspace add-on is a third-party embedded component that can be
- * installed in Google Workspace Applications like Gmail, Calendar, Drive, and
- * the Google Docs, Sheets, and Slides editors. Google Workspace add-ons can
- * display UI cards, receive contextual information from the host application,
- * and perform actions in the host application (See:
- * https://developers.google.com/gsuite/add-ons/overview for more information).
- * A Google Workspace add-on deployment resource specifies metadata about the
- * add-on, including a specification of the entry points in the host application
- * that trigger add-on executions (see:
- * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).
- * Add-on deployments defined via the Google Workspace add-ons API define their
- * entrypoints using HTTPS URLs (See:
- * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
- * A Google Workspace add-on deployment can be installed in developer mode,
- * which allows an add-on developer to test the experience an end-user would see
- * when installing and running the add-on in their G Suite applications.  When
- * running in developer mode, more detailed error messages are exposed in the
- * add-on UI to aid in debugging.
- * A Google Workspace add-on deployment can be published to Google Workspace
- * Marketplace, which allows other Google Workspace users to discover and
- * install the add-on.  See:
- * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview
- * for details.
+ * A service for managing Google Workspace add-ons.
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
@@ -463,6 +440,100 @@ public final class GSuiteAddOnsGrpc {
     return getGetInstallStatusMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest,
+          com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+      getGetChatAppConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetChatAppConfig",
+      requestType = com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest.class,
+      responseType = com.google.cloud.gsuiteaddons.v1.ChatAppConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest,
+          com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+      getGetChatAppConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest,
+            com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+        getGetChatAppConfigMethod;
+    if ((getGetChatAppConfigMethod = GSuiteAddOnsGrpc.getGetChatAppConfigMethod) == null) {
+      synchronized (GSuiteAddOnsGrpc.class) {
+        if ((getGetChatAppConfigMethod = GSuiteAddOnsGrpc.getGetChatAppConfigMethod) == null) {
+          GSuiteAddOnsGrpc.getGetChatAppConfigMethod =
+              getGetChatAppConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest,
+                          com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetChatAppConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gsuiteaddons.v1.ChatAppConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GSuiteAddOnsMethodDescriptorSupplier("GetChatAppConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetChatAppConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest,
+          com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+      getUpdateChatAppConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateChatAppConfig",
+      requestType = com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest.class,
+      responseType = com.google.cloud.gsuiteaddons.v1.ChatAppConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest,
+          com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+      getUpdateChatAppConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest,
+            com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+        getUpdateChatAppConfigMethod;
+    if ((getUpdateChatAppConfigMethod = GSuiteAddOnsGrpc.getUpdateChatAppConfigMethod) == null) {
+      synchronized (GSuiteAddOnsGrpc.class) {
+        if ((getUpdateChatAppConfigMethod = GSuiteAddOnsGrpc.getUpdateChatAppConfigMethod)
+            == null) {
+          GSuiteAddOnsGrpc.getUpdateChatAppConfigMethod =
+              getUpdateChatAppConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest,
+                          com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateChatAppConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gsuiteaddons.v1.ChatAppConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GSuiteAddOnsMethodDescriptorSupplier("UpdateChatAppConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateChatAppConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static GSuiteAddOnsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<GSuiteAddOnsStub> factory =
@@ -521,30 +592,7 @@ public final class GSuiteAddOnsGrpc {
    *
    *
    * <pre>
-   * A service for managing Google Workspace add-ons deployments.
-   * A Google Workspace add-on is a third-party embedded component that can be
-   * installed in Google Workspace Applications like Gmail, Calendar, Drive, and
-   * the Google Docs, Sheets, and Slides editors. Google Workspace add-ons can
-   * display UI cards, receive contextual information from the host application,
-   * and perform actions in the host application (See:
-   * https://developers.google.com/gsuite/add-ons/overview for more information).
-   * A Google Workspace add-on deployment resource specifies metadata about the
-   * add-on, including a specification of the entry points in the host application
-   * that trigger add-on executions (see:
-   * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).
-   * Add-on deployments defined via the Google Workspace add-ons API define their
-   * entrypoints using HTTPS URLs (See:
-   * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
-   * A Google Workspace add-on deployment can be installed in developer mode,
-   * which allows an add-on developer to test the experience an end-user would see
-   * when installing and running the add-on in their G Suite applications.  When
-   * running in developer mode, more detailed error messages are exposed in the
-   * add-on UI to aid in debugging.
-   * A Google Workspace add-on deployment can be published to Google Workspace
-   * Marketplace, which allows other Google Workspace users to discover and
-   * install the add-on.  See:
-   * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview
-   * for details.
+   * A service for managing Google Workspace add-ons.
    * </pre>
    */
   public interface AsyncService {
@@ -681,36 +729,53 @@ public final class GSuiteAddOnsGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetInstallStatusMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on
+     * the project.
+     * </pre>
+     */
+    default void getChatAppConfig(
+        com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetChatAppConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and
+     * `chat.bots.get` IAM permissions on the project.
+     * </pre>
+     */
+    default void updateChatAppConfig(
+        com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateChatAppConfigMethod(), responseObserver);
+    }
   }
 
   /**
    * Base class for the server implementation of the service GSuiteAddOns.
    *
    * <pre>
-   * A service for managing Google Workspace add-ons deployments.
-   * A Google Workspace add-on is a third-party embedded component that can be
-   * installed in Google Workspace Applications like Gmail, Calendar, Drive, and
-   * the Google Docs, Sheets, and Slides editors. Google Workspace add-ons can
-   * display UI cards, receive contextual information from the host application,
-   * and perform actions in the host application (See:
-   * https://developers.google.com/gsuite/add-ons/overview for more information).
-   * A Google Workspace add-on deployment resource specifies metadata about the
-   * add-on, including a specification of the entry points in the host application
-   * that trigger add-on executions (see:
-   * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).
-   * Add-on deployments defined via the Google Workspace add-ons API define their
-   * entrypoints using HTTPS URLs (See:
-   * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
-   * A Google Workspace add-on deployment can be installed in developer mode,
-   * which allows an add-on developer to test the experience an end-user would see
-   * when installing and running the add-on in their G Suite applications.  When
-   * running in developer mode, more detailed error messages are exposed in the
-   * add-on UI to aid in debugging.
-   * A Google Workspace add-on deployment can be published to Google Workspace
-   * Marketplace, which allows other Google Workspace users to discover and
-   * install the add-on.  See:
-   * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview
-   * for details.
+   * A service for managing Google Workspace add-ons.
    * </pre>
    */
   public abstract static class GSuiteAddOnsImplBase
@@ -726,30 +791,7 @@ public final class GSuiteAddOnsGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service GSuiteAddOns.
    *
    * <pre>
-   * A service for managing Google Workspace add-ons deployments.
-   * A Google Workspace add-on is a third-party embedded component that can be
-   * installed in Google Workspace Applications like Gmail, Calendar, Drive, and
-   * the Google Docs, Sheets, and Slides editors. Google Workspace add-ons can
-   * display UI cards, receive contextual information from the host application,
-   * and perform actions in the host application (See:
-   * https://developers.google.com/gsuite/add-ons/overview for more information).
-   * A Google Workspace add-on deployment resource specifies metadata about the
-   * add-on, including a specification of the entry points in the host application
-   * that trigger add-on executions (see:
-   * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).
-   * Add-on deployments defined via the Google Workspace add-ons API define their
-   * entrypoints using HTTPS URLs (See:
-   * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
-   * A Google Workspace add-on deployment can be installed in developer mode,
-   * which allows an add-on developer to test the experience an end-user would see
-   * when installing and running the add-on in their G Suite applications.  When
-   * running in developer mode, more detailed error messages are exposed in the
-   * add-on UI to aid in debugging.
-   * A Google Workspace add-on deployment can be published to Google Workspace
-   * Marketplace, which allows other Google Workspace users to discover and
-   * install the add-on.  See:
-   * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview
-   * for details.
+   * A service for managing Google Workspace add-ons.
    * </pre>
    */
   public static final class GSuiteAddOnsStub
@@ -913,36 +955,57 @@ public final class GSuiteAddOnsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on
+     * the project.
+     * </pre>
+     */
+    public void getChatAppConfig(
+        com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetChatAppConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and
+     * `chat.bots.get` IAM permissions on the project.
+     * </pre>
+     */
+    public void updateChatAppConfig(
+        com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateChatAppConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service GSuiteAddOns.
    *
    * <pre>
-   * A service for managing Google Workspace add-ons deployments.
-   * A Google Workspace add-on is a third-party embedded component that can be
-   * installed in Google Workspace Applications like Gmail, Calendar, Drive, and
-   * the Google Docs, Sheets, and Slides editors. Google Workspace add-ons can
-   * display UI cards, receive contextual information from the host application,
-   * and perform actions in the host application (See:
-   * https://developers.google.com/gsuite/add-ons/overview for more information).
-   * A Google Workspace add-on deployment resource specifies metadata about the
-   * add-on, including a specification of the entry points in the host application
-   * that trigger add-on executions (see:
-   * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).
-   * Add-on deployments defined via the Google Workspace add-ons API define their
-   * entrypoints using HTTPS URLs (See:
-   * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
-   * A Google Workspace add-on deployment can be installed in developer mode,
-   * which allows an add-on developer to test the experience an end-user would see
-   * when installing and running the add-on in their G Suite applications.  When
-   * running in developer mode, more detailed error messages are exposed in the
-   * add-on UI to aid in debugging.
-   * A Google Workspace add-on deployment can be published to Google Workspace
-   * Marketplace, which allows other Google Workspace users to discover and
-   * install the add-on.  See:
-   * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview
-   * for details.
+   * A service for managing Google Workspace add-ons.
    * </pre>
    */
   public static final class GSuiteAddOnsBlockingV2Stub
@@ -1086,36 +1149,51 @@ public final class GSuiteAddOnsGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstallStatusMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on
+     * the project.
+     * </pre>
+     */
+    public com.google.cloud.gsuiteaddons.v1.ChatAppConfig getChatAppConfig(
+        com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetChatAppConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and
+     * `chat.bots.get` IAM permissions on the project.
+     * </pre>
+     */
+    public com.google.cloud.gsuiteaddons.v1.ChatAppConfig updateChatAppConfig(
+        com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateChatAppConfigMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * A stub to allow clients to do limited synchronous rpc calls to service GSuiteAddOns.
    *
    * <pre>
-   * A service for managing Google Workspace add-ons deployments.
-   * A Google Workspace add-on is a third-party embedded component that can be
-   * installed in Google Workspace Applications like Gmail, Calendar, Drive, and
-   * the Google Docs, Sheets, and Slides editors. Google Workspace add-ons can
-   * display UI cards, receive contextual information from the host application,
-   * and perform actions in the host application (See:
-   * https://developers.google.com/gsuite/add-ons/overview for more information).
-   * A Google Workspace add-on deployment resource specifies metadata about the
-   * add-on, including a specification of the entry points in the host application
-   * that trigger add-on executions (see:
-   * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).
-   * Add-on deployments defined via the Google Workspace add-ons API define their
-   * entrypoints using HTTPS URLs (See:
-   * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
-   * A Google Workspace add-on deployment can be installed in developer mode,
-   * which allows an add-on developer to test the experience an end-user would see
-   * when installing and running the add-on in their G Suite applications.  When
-   * running in developer mode, more detailed error messages are exposed in the
-   * add-on UI to aid in debugging.
-   * A Google Workspace add-on deployment can be published to Google Workspace
-   * Marketplace, which allows other Google Workspace users to discover and
-   * install the add-on.  See:
-   * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview
-   * for details.
+   * A service for managing Google Workspace add-ons.
    * </pre>
    */
   public static final class GSuiteAddOnsBlockingStub
@@ -1250,36 +1328,49 @@ public final class GSuiteAddOnsGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetInstallStatusMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on
+     * the project.
+     * </pre>
+     */
+    public com.google.cloud.gsuiteaddons.v1.ChatAppConfig getChatAppConfig(
+        com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChatAppConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and
+     * `chat.bots.get` IAM permissions on the project.
+     * </pre>
+     */
+    public com.google.cloud.gsuiteaddons.v1.ChatAppConfig updateChatAppConfig(
+        com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateChatAppConfigMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * A stub to allow clients to do ListenableFuture-style rpc calls to service GSuiteAddOns.
    *
    * <pre>
-   * A service for managing Google Workspace add-ons deployments.
-   * A Google Workspace add-on is a third-party embedded component that can be
-   * installed in Google Workspace Applications like Gmail, Calendar, Drive, and
-   * the Google Docs, Sheets, and Slides editors. Google Workspace add-ons can
-   * display UI cards, receive contextual information from the host application,
-   * and perform actions in the host application (See:
-   * https://developers.google.com/gsuite/add-ons/overview for more information).
-   * A Google Workspace add-on deployment resource specifies metadata about the
-   * add-on, including a specification of the entry points in the host application
-   * that trigger add-on executions (see:
-   * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).
-   * Add-on deployments defined via the Google Workspace add-ons API define their
-   * entrypoints using HTTPS URLs (See:
-   * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
-   * A Google Workspace add-on deployment can be installed in developer mode,
-   * which allows an add-on developer to test the experience an end-user would see
-   * when installing and running the add-on in their G Suite applications.  When
-   * running in developer mode, more detailed error messages are exposed in the
-   * add-on UI to aid in debugging.
-   * A Google Workspace add-on deployment can be published to Google Workspace
-   * Marketplace, which allows other Google Workspace users to discover and
-   * install the add-on.  See:
-   * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview
-   * for details.
+   * A service for managing Google Workspace add-ons.
    * </pre>
    */
   public static final class GSuiteAddOnsFutureStub
@@ -1420,6 +1511,44 @@ public final class GSuiteAddOnsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetInstallStatusMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.get` and `chat.bots.get` IAM permissions on
+     * the project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+        getChatAppConfig(com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetChatAppConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Chat app configuration of a project. Only Chat apps built as
+     * Google Workspace add-ons are supported. Each Google Cloud project has
+     * exactly one Chat app configuration.
+     * Requires authenticating and authorizing with user credentials and the
+     * `gsuiteaddons.chatAppConfigs.update`, `chat.bots.update` and
+     * `chat.bots.get` IAM permissions on the project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.gsuiteaddons.v1.ChatAppConfig>
+        updateChatAppConfig(com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateChatAppConfigMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_AUTHORIZATION = 0;
@@ -1431,6 +1560,8 @@ public final class GSuiteAddOnsGrpc {
   private static final int METHODID_INSTALL_DEPLOYMENT = 6;
   private static final int METHODID_UNINSTALL_DEPLOYMENT = 7;
   private static final int METHODID_GET_INSTALL_STATUS = 8;
+  private static final int METHODID_GET_CHAT_APP_CONFIG = 9;
+  private static final int METHODID_UPDATE_CHAT_APP_CONFIG = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1499,6 +1630,18 @@ public final class GSuiteAddOnsGrpc {
           serviceImpl.getInstallStatus(
               (com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.InstallStatus>)
+                  responseObserver);
+          break;
+        case METHODID_GET_CHAT_APP_CONFIG:
+          serviceImpl.getChatAppConfig(
+              (com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ChatAppConfig>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CHAT_APP_CONFIG:
+          serviceImpl.updateChatAppConfig(
+              (com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ChatAppConfig>)
                   responseObserver);
           break;
         default:
@@ -1578,6 +1721,20 @@ public final class GSuiteAddOnsGrpc {
                     com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest,
                     com.google.cloud.gsuiteaddons.v1.InstallStatus>(
                     service, METHODID_GET_INSTALL_STATUS)))
+        .addMethod(
+            getGetChatAppConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest,
+                    com.google.cloud.gsuiteaddons.v1.ChatAppConfig>(
+                    service, METHODID_GET_CHAT_APP_CONFIG)))
+        .addMethod(
+            getUpdateChatAppConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest,
+                    com.google.cloud.gsuiteaddons.v1.ChatAppConfig>(
+                    service, METHODID_UPDATE_CHAT_APP_CONFIG)))
         .build();
   }
 
@@ -1638,6 +1795,8 @@ public final class GSuiteAddOnsGrpc {
                       .addMethod(getInstallDeploymentMethod())
                       .addMethod(getUninstallDeploymentMethod())
                       .addMethod(getGetInstallStatusMethod())
+                      .addMethod(getGetChatAppConfigMethod())
+                      .addMethod(getUpdateChatAppConfigMethod())
                       .build();
         }
       }

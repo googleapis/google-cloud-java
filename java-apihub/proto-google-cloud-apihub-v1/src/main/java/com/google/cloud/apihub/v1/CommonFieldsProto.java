@@ -65,6 +65,14 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_Spec_AttributesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_AdditionalSpecContent_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_AdditionalSpecContent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_AdditionalSpecContent_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_AdditionalSpecContent_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apihub_v1_Deployment_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_Deployment_fieldAccessorTable;
@@ -112,6 +120,22 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_apihub_v1_OperationDetails_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_OperationDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_OperationSchema_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_OperationSchema_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_McpTool_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_McpTool_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ToolAnnotations_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ToolAnnotations_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ToolAnnotations_AdditionalHintsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ToolAnnotations_AdditionalHintsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apihub_v1_HttpOperation_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -192,6 +216,10 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apihub_v1_ApiHubInstance_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -325,7 +353,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "*google/cloud/apihub/v1/common_fields.p"
           + "roto\022\026google.cloud.apihub.v1\032\037google/api"
           + "/field_behavior.proto\032\031google/api/resour"
-          + "ce.proto\032\037google/protobuf/timestamp.proto\"\326\n\n"
+          + "ce.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\233\013\n"
           + "\003Api\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
@@ -339,41 +367,43 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\010"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022B\n"
-          + "\013target_user\030\t \001(\0132\'.goog"
-          + "le.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022;\n"
+          + "\013target_user\030\t"
+          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022;\n"
           + "\004team\030\n"
           + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022D\n\r"
-          + "business_unit\030\013"
-          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022E\n"
-          + "\016maturity_level\030\014 \001(\0132\'.go"
-          + "ogle.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022E\n\n"
+          + "business_unit\030\013 \001(\0132\'.goo"
+          + "gle.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022E\n"
+          + "\016maturity_level\030\014"
+          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022E\n\n"
           + "attributes\030\r"
           + " \003(\0132+.google.cloud.apihub.v1.Api.AttributesEntryB\004\342A\001\001\022@\n"
-          + "\tapi_style\030\016"
-          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022@\n"
+          + "\tapi_style\030\016 \001"
+          + "(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022@\n"
           + "\020selected_version\030\017 \001(\tB&\342A\001\001\372A\037\n"
           + "\035apihub.googleapis.com/Version\022G\n"
-          + "\020api_requirements\030\020 \001(\0132\'.google"
-          + ".cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022\031\n"
+          + "\020api_requirements\030\020"
+          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022\031\n"
           + "\013fingerprint\030\021 \001(\tB\004\342A\001\001\022E\n"
-          + "\017source_metadata\030\022"
-          + " \003(\0132&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\022R\n"
-          + "\033api_functional_requirements\030\023"
-          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022Q\n"
+          + "\017source_metadata\030\022 \003(\013"
+          + "2&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\022R\n"
+          + "\033api_functional_requirements\030\023 "
+          + "\001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022Q\n"
           + "\032api_technical_requirements\030\024"
-          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\032Z\n"
+          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022C\n"
+          + "\014service_type\030\025 \001(\0132\'.go"
+          + "ogle.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\032Z\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
-          + "\005value\030\002 \001(\0132\'.google."
-          + "cloud.apihub.v1.AttributeValues:\0028\001:]\352AZ\n"
-          + "\031apihub.googleapis.com/Api\0222projects/{p"
-          + "roject}/locations/{location}/apis/{api}*\004apis2\003api\"\376\010\n"
+          + "\005value\030\002"
+          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001:]\352AZ\n"
+          + "\031apihub.googleapis.c"
+          + "om/Api\0222projects/{project}/locations/{location}/apis/{api}*\004apis2\003api\"\376\010\n"
           + "\007Version\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
           + "\013description\030\003 \001(\tB\004\342A\001\001\022B\n\r"
-          + "documentation\030\004 \001(\013"
-          + "2%.google.cloud.apihub.v1.DocumentationB\004\342A\001\001\0222\n"
+          + "documentation\030\004"
+          + " \001(\0132%.google.cloud.apihub.v1.DocumentationB\004\342A\001\001\0222\n"
           + "\005specs\030\005 \003(\tB#\342A\001\003\372A\034\n"
           + "\032apihub.googleapis.com/Spec\022C\n"
           + "\016api_operations\030\006 \003(\tB+\342A\001\003\372A$\n"
@@ -386,31 +416,31 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\n"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022@\n"
-          + "\tlifecycle\030\013"
-          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022A\n\n"
+          + "\tlifecycle\030\013 \001"
+          + "(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022A\n\n"
           + "compliance\030\014"
           + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022D\n\r"
           + "accreditation\030\r"
           + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022I\n\n"
-          + "attributes\030\016 \003(\0132/.google.clo"
-          + "ud.apihub.v1.Version.AttributesEntryB\004\342A\001\001\022F\n"
+          + "attributes\030\016"
+          + " \003(\0132/.google.cloud.apihub.v1.Version.AttributesEntryB\004\342A\001\001\022F\n"
           + "\023selected_deployment\030\020 \001(\tB)\342A\001\001\372A\"\n"
           + " apihub.googleapis.com/Deployment\022E\n"
-          + "\017source_metadata\030\021"
-          + " \003(\0132&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\032Z\n"
+          + "\017source_metadata\030\021 \003(\0132&"
+          + ".google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\032Z\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
-          + "\005value\030\002 \001(\0132\'.googl"
-          + "e.cloud.apihub.v1.AttributeValues:\0028\001:|\352Ay\n"
-          + "\035apihub.googleapis.com/Version\022Eprojects/{project}/locations/{location}/apis/"
-          + "{api}/versions/{version}*\010versions2\007version\"\375\007\n"
+          + "\005value\030\002"
+          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001:|\352Ay\n"
+          + "\035apihub.googleapis.com/Version\022Eprojects/{project}/locatio"
+          + "ns/{location}/apis/{api}/versions/{version}*\010versions2\007version\"\224\t\n"
           + "\004Spec\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022@\n"
-          + "\tspec_type\030\003 \001(\0132"
-          + "\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\002\022=\n"
-          + "\010contents\030\004"
-          + " \001(\0132$.google.cloud.apihub.v1.SpecContentsB\005\342A\002\001\004\022:\n"
+          + "\tspec_type\030\003"
+          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\002\022=\n"
+          + "\010contents\030\004 "
+          + "\001(\0132$.google.cloud.apihub.v1.SpecContentsB\005\342A\002\001\004\022:\n"
           + "\007details\030\005"
           + " \001(\0132#.google.cloud.apihub.v1.SpecDetailsB\004\342A\001\003\022\030\n\n"
           + "source_uri\030\006 \001(\tB\004\342A\001\001\0225\n"
@@ -424,10 +454,14 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + " \003(\0132,.google.cloud.apihub.v1.Spec.AttributesEntryB\004\342A\001\001\022B\n\r"
           + "documentation\030\013"
           + " \001(\0132%.google.cloud.apihub.v1.DocumentationB\004\342A\001\001\022E\n"
-          + "\014parsing_mode\030\014"
-          + " \001(\0162(.google.cloud.apihub.v1.Spec.ParsingModeB\005\342A\002\001\004\022E\n"
+          + "\014parsing_mode\030\014 \001(\0162(.goog"
+          + "le.cloud.apihub.v1.Spec.ParsingModeB\005\342A\002\001\004\022E\n"
           + "\017source_metadata\030\r"
-          + " \003(\0132&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\032Z\n"
+          + " \003(\0132&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\022U\n"
+          + "\030additional_spec_contents\030\016 \003(\0132-.google.clo"
+          + "ud.apihub.v1.AdditionalSpecContentB\004\342A\001\003\022>\n"
+          + "\013deployments\030\017 \003(\tB)\342A\001\001\372A\"\n"
+          + " apihub.googleapis.com/Deployment\032Z\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002 \001(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001\"D\n"
@@ -435,15 +469,29 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\030PARSING_MODE_UNSPECIFIED\020\000\022\013\n"
           + "\007RELAXED\020\001\022\n\n"
           + "\006STRICT\020\002:\200\001\352A}\n"
-          + "\032apihub.googleapis.com/Spec\022Rprojects/{project}/locations"
-          + "/{location}/apis/{api}/versions/{version}/specs/{spec}*\005specs2\004spec\"\340\010\n\n"
+          + "\032apihub.googleapis.com/Spec\022Rprojects/{project}"
+          + "/locations/{location}/apis/{api}/version"
+          + "s/{version}/specs/{spec}*\005specs2\004spec\"\222\003\n"
+          + "\025AdditionalSpecContent\022H\n"
+          + "\021spec_content_type\030\001"
+          + " \001(\0162\'.google.cloud.apihub.v1.SpecContentTypeB\004\342A\001\002\022A\n\r"
+          + "spec_contents\030\002 \001(\013"
+          + "2$.google.cloud.apihub.v1.SpecContentsB\004\342A\001\001\0225\n"
+          + "\013create_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022O\n"
+          + "\006labels\030\005"
+          + " \003(\01329.google.cloud.apihub.v1.AdditionalSpecContent.LabelsEntryB\004\342A\001\001\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\370\t\n\n"
           + "Deployment\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
-          + "\013description\030\003 \001(\tB\004\342A\001\001\022B\n"
-          + "\r"
-          + "documentation\030\004"
-          + " \001(\0132%.google.cloud.apihub.v1.DocumentationB\004\342A\001\001\022F\n"
+          + "\013description\030\003 \001(\tB\004\342A\001\001\022B\n\r"
+          + "documentation\030\004 \001(\0132%.go"
+          + "ogle.cloud.apihub.v1.DocumentationB\004\342A\001\001\022F\n"
           + "\017deployment_type\030\005"
           + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\002\022\032\n"
           + "\014resource_uri\030\006 \001(\tB\004\342A\001\002\022\027\n"
@@ -453,28 +501,32 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\n"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022:\n"
-          + "\003slo\030\013"
-          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022B\n"
+          + "\003slo\030\013 \001(\0132\'.g"
+          + "oogle.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022B\n"
           + "\013environment\030\014"
           + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022L\n\n"
           + "attributes\030\r"
-          + " \003(\01322.g"
-          + "oogle.cloud.apihub.v1.Deployment.AttributesEntryB\004\342A\001\001\022E\n"
-          + "\017source_metadata\030\016 \003(\0132"
-          + "&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\022E\n"
+          + " \003(\01322.google.cloud.apihub.v1.Deployment.AttributesEntryB\004\342A\001\001\022E\n"
+          + "\017source_metadata\030\016"
+          + " \003(\0132&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\022E\n"
           + "\016management_url\030\017"
           + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022A\n\n"
-          + "source_uri\030\020"
-          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022\034\n"
+          + "source_uri\030\020 \001(\0132\'.google"
+          + ".cloud.apihub.v1.AttributeValuesB\004\342A\001\001\022\034\n"
           + "\016source_project\030\021 \001(\tB\004\342A\001\001\022 \n"
-          + "\022source_environment\030\022 \001(\tB\004\342A\001\001\032Z\n"
+          + "\022source_environment\030\022 \001(\tB\004\342A\001\001\0222\n"
+          + "\005specs\030\023 \003(\tB#\342A\001\003\372A\034\n"
+          + "\032apihub.googleapis.com/Spec\022C\n"
+          + "\016api_operations\030\024 \003(\tB+\342A\001\003\372A$\n"
+          + "\"apihub.googleapis.com/ApiOperation\022\035\n"
+          + "\017source_revision\030\025 \001(\tB\004\342A\001\001\032Z\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002"
           + " \001(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001:\200\001\352A}\n"
-          + " apihub.googleapis.com/Deployment\022@projects/{project}/"
-          + "locations/{location}/deployments/{deployment}*\013deployments2\n"
-          + "deployment\"\235\005\n"
+          + " apihub.googleapis.com/Deployment\022@projects/{pr"
+          + "oject}/locations/{location}/deployments/{deployment}*\013deployments2\n"
+          + "deployment\"\335\005\n"
           + "\014ApiOperation\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\0221\n"
           + "\004spec\030\002 \001(\tB#\342A\001\003\372A\034\n"
@@ -485,16 +537,18 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022N\n\n"
-          + "attributes\030\006 \003(\01324.goog"
-          + "le.cloud.apihub.v1.ApiOperation.AttributesEntryB\004\342A\001\001\022E\n"
-          + "\017source_metadata\030\007 \003(\0132&"
-          + ".google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\032Z\n"
+          + "attributes\030\006 \003(\013"
+          + "24.google.cloud.apihub.v1.ApiOperation.AttributesEntryB\004\342A\001\001\022E\n"
+          + "\017source_metadata\030\007"
+          + " \003(\0132&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\022>\n"
+          + "\013deployments\030\010 \003(\tB)\342A\001\001\372A\"\n"
+          + " apihub.googleapis.com/Deployment\032Z\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
-          + "\005value\030\002"
-          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001:\243\001\352A\237\001\n"
-          + "\"apihub.googleapis.com/ApiOperation\022\\projects/{project}/"
-          + "locations/{location}/apis/{api}/versions/{version}/operations/{operation}*\r"
+          + "\005value\030\002 \001"
+          + "(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001:\243\001\352A\237\001\n"
+          + "\"apihub.googleapis.com/ApiOperation\022\\projects/{project}/locations"
+          + "/{location}/apis/{api}/versions/{version}/operations/{operation}*\r"
           + "apiOperations2\014apiOperation\"\265\005\n\n"
           + "Definition\0226\n"
           + "\006schema\030\004"
@@ -508,31 +562,31 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022L\n\n"
-          + "attributes\030\007 \003(\01322.go"
-          + "ogle.cloud.apihub.v1.Definition.AttributesEntryB\004\342A\001\001\032Z\n"
+          + "attributes\030\007 \003(\01322.google.clou"
+          + "d.apihub.v1.Definition.AttributesEntryB\004\342A\001\001\032Z\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002 \001(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001\"(\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006SCHEMA\020\001:\237\001\352A\233\001\n"
-          + " apihub.googleapis.com/Definition\022^projects/{"
-          + "project}/locations/{location}/apis/{api}"
-          + "/versions/{version}/definitions/{definition}*\013definitions2\n"
+          + " apihub.googleapis.com/Definition\022^projects/{project}/"
+          + "locations/{location}/apis/{api}/versions"
+          + "/{version}/definitions/{definition}*\013definitions2\n"
           + "definitionB\007\n"
           + "\005value\"\324\010\n"
           + "\tAttribute\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
           + "\013description\030\003 \001(\tB\004\342A\001\001\022O\n"
-          + "\017definition_type\030\004 \001(\01620.googl"
-          + "e.cloud.apihub.v1.Attribute.DefinitionTypeB\004\342A\001\003\022<\n"
+          + "\017definition_type\030\004 \001(\01620.google.cloud.a"
+          + "pihub.v1.Attribute.DefinitionTypeB\004\342A\001\003\022<\n"
           + "\005scope\030\005"
           + " \001(\0162\'.google.cloud.apihub.v1.Attribute.ScopeB\004\342A\001\002\022C\n"
-          + "\tdata_type\030\006"
-          + " \001(\0162*.google.cloud.apihub.v1.Attribute.DataTypeB\004\342A\001\002\022L\n"
-          + "\016allowed_values\030\007 "
-          + "\003(\0132..google.cloud.apihub.v1.Attribute.AllowedValueB\004\342A\001\001\022\031\n"
+          + "\tdata_type\030\006 \001(\016"
+          + "2*.google.cloud.apihub.v1.Attribute.DataTypeB\004\342A\001\002\022L\n"
+          + "\016allowed_values\030\007 \003(\0132..goo"
+          + "gle.cloud.apihub.v1.Attribute.AllowedValueB\004\342A\001\001\022\031\n"
           + "\013cardinality\030\010 \001(\005B\004\342A\001\001\022\027\n"
           + "\tmandatory\030\t \001(\010B\004\342A\001\003\0225\n"
           + "\013create_time\030\n"
@@ -565,8 +619,8 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\004JSON\020\002\022\n\n"
           + "\006STRING\020\003\022\007\n"
           + "\003URI\020\004:{\352Ax\n"
-          + "\037apihub.googleapis.com/Attribute\022>projects/{projec"
-          + "t}/locations/{location}/attributes/{attribute}*\n"
+          + "\037apihub.googleapis."
+          + "com/Attribute\022>projects/{project}/locations/{location}/attributes/{attribute}*\n"
           + "attributes2\tattribute\"?\n"
           + "\014SpecContents\022\026\n"
           + "\010contents\030\001 \001(\014B\004\342A\001\002\022\027\n"
@@ -577,27 +631,56 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\013description\030\001 \001(\tB\004\342A\001\003B\t\n"
           + "\007details\"\217\002\n"
           + "\022OpenApiSpecDetails\022G\n"
-          + "\006format\030\001 \001(\01621.google."
-          + "cloud.apihub.v1.OpenApiSpecDetails.FormatB\004\342A\001\003\022\025\n"
+          + "\006format\030\001 \001(\01621.google.cloud.api"
+          + "hub.v1.OpenApiSpecDetails.FormatB\004\342A\001\003\022\025\n"
           + "\007version\030\002 \001(\tB\004\342A\001\003\0222\n"
           + "\005owner\030\003 \001(\0132\035.google.cloud.apihub.v1.OwnerB\004\342A\001\003\"e\n"
           + "\006Format\022\026\n"
           + "\022FORMAT_UNSPECIFIED\020\000\022\025\n"
           + "\021OPEN_API_SPEC_2_0\020\001\022\025\n"
           + "\021OPEN_API_SPEC_3_0\020\002\022\025\n"
-          + "\021OPEN_API_SPEC_3_1\020\003\"\331\001\n"
+          + "\021OPEN_API_SPEC_3_1\020\003\"\216\002\n"
           + "\020OperationDetails\022?\n"
           + "\016http_operation\030\004"
-          + " \001(\0132%.google.cloud.apihub.v1.HttpOperationH\000\022\031\n"
+          + " \001(\0132%.google.cloud.apihub.v1.HttpOperationH\000\0223\n"
+          + "\010mcp_tool\030\005 \001(\0132\037.google.cloud.apihub.v1.McpToolH\000\022\031\n"
           + "\013description\030\001 \001(\tB\004\342A\001\001\022B\n\r"
-          + "documentation\030\002 \001("
-          + "\0132%.google.cloud.apihub.v1.DocumentationB\004\342A\001\001\022\030\n\n"
+          + "documentation\030\002"
+          + " \001(\0132%.google.cloud.apihub.v1.DocumentationB\004\342A\001\001\022\030\n\n"
           + "deprecated\030\003 \001(\010B\004\342A\001\001B\013\n"
-          + "\toperation\"\374\001\n\r"
+          + "\toperation\"J\n"
+          + "\017OperationSchema\022.\n"
+          + "\013json_schema\030\001 \001(\0132\027.google.protobuf.StructH\000B\007\n"
+          + "\005value\"\234\002\n"
+          + "\007McpTool\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\002\022\023\n"
+          + "\005title\030\002 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013description\030\003 \001(\tB\004\342A\001\001\022B\n"
+          + "\013annotations\030\004"
+          + " \001(\0132\'.google.cloud.apihub.v1.ToolAnnotationsB\004\342A\001\001\022C\n"
+          + "\014input_schema\030\005"
+          + " \001(\0132\'.google.cloud.apihub.v1.OperationSchemaB\004\342A\001\001\022D\n\r"
+          + "output_schema\030\006"
+          + " \001(\0132\'.google.cloud.apihub.v1.OperationSchemaB\004\342A\001\001\"\234\003\n"
+          + "\017ToolAnnotations\022\023\n"
+          + "\005title\030\001 \001(\tB\004\342A\001\001\022!\n"
+          + "\016read_only_hint\030\002 \001(\010B\004\342A\001\001H\000\210\001\001\022#\n"
+          + "\020destructive_hint\030\003 \001(\010B\004\342A\001\001H\001\210\001\001\022\"\n"
+          + "\017idempotent_hint\030\004 \001(\010B\004\342A\001\001H\002\210\001\001\022\"\n"
+          + "\017open_world_hint\030\005 \001(\010B\004\342A\001\001H\003\210\001\001\022\\\n"
+          + "\020additional_hints\030\006 \003(\0132<.google.cloud.a"
+          + "pihub.v1.ToolAnnotations.AdditionalHintsEntryB\004\342A\001\001\0326\n"
+          + "\024AdditionalHintsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001B\021\n"
+          + "\017_read_only_hintB\023\n"
+          + "\021_destructive_hintB\022\n"
+          + "\020_idempotent_hintB\022\n"
+          + "\020_open_world_hint\"\374\001\n\r"
           + "HttpOperation\0220\n"
           + "\004path\030\001 \001(\0132\034.google.cloud.apihub.v1.PathB\004\342A\001\001\022B\n"
-          + "\006method\030\002"
-          + " \001(\0162,.google.cloud.apihub.v1.HttpOperation.MethodB\004\342A\001\001\"u\n"
+          + "\006method\030\002 \001(\0162,.google"
+          + ".cloud.apihub.v1.HttpOperation.MethodB\004\342A\001\001\"u\n"
           + "\006Method\022\026\n"
           + "\022METHOD_UNSPECIFIED\020\000\022\007\n"
           + "\003GET\020\001\022\007\n"
@@ -620,41 +703,43 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "Documentation\022\032\n"
           + "\014external_uri\030\001 \001(\tB\004\342A\001\001\"\272\004\n"
           + "\017AttributeValues\022R\n"
-          + "\013enum_values\030\002 \001"
-          + "(\0132;.google.cloud.apihub.v1.AttributeValues.EnumAttributeValuesH\000\022V\n\r"
-          + "string_values\030\003"
-          + " \001(\0132=.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesH\000\022T\n"
-          + "\013json_values\030\004 \001(\0132=.google.cloud.apihub.v1."
-          + "AttributeValues.StringAttributeValuesH\000\022S\n\n"
-          + "uri_values\030\005 \001(\0132=.google.cloud.apihu"
-          + "b.v1.AttributeValues.StringAttributeValuesH\000\022;\n"
+          + "\013enum_values\030\002 \001(\0132;.google.cloud."
+          + "apihub.v1.AttributeValues.EnumAttributeValuesH\000\022V\n\r"
+          + "string_values\030\003 \001(\0132=.google."
+          + "cloud.apihub.v1.AttributeValues.StringAttributeValuesH\000\022T\n"
+          + "\013json_values\030\004 \001(\0132=.g"
+          + "oogle.cloud.apihub.v1.AttributeValues.StringAttributeValuesH\000\022S\n\n"
+          + "uri_values\030\005 \001("
+          + "\0132=.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesH\000\022;\n"
           + "\tattribute\030\001 \001(\tB(\342A\001\003\372A!\n"
           + "\037apihub.googleapis.com/Attribute\032[\n"
           + "\023EnumAttributeValues\022D\n"
-          + "\006values\030\001 \003(\0132..google.cloud."
-          + "apihub.v1.Attribute.AllowedValueB\004\342A\001\002\032-\n"
+          + "\006values\030\001"
+          + " \003(\0132..google.cloud.apihub.v1.Attribute.AllowedValueB\004\342A\001\002\032-\n"
           + "\025StringAttributeValues\022\024\n"
           + "\006values\030\001 \003(\tB\004\342A\001\002B\007\n"
-          + "\005Value\"\304\007\n\n"
+          + "\005Value\"\304\007\n"
+          + "\n"
           + "Dependency\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022J\n"
-          + "\010consumer\030\002 \001(\01321.google.clo"
-          + "ud.apihub.v1.DependencyEntityReferenceB\005\342A\002\005\002\022J\n"
-          + "\010supplier\030\003 \001(\01321.google.cloud.a"
-          + "pihub.v1.DependencyEntityReferenceB\005\342A\002\005\002\022=\n"
-          + "\005state\030\004"
-          + " \001(\0162(.google.cloud.apihub.v1.Dependency.StateB\004\342A\001\003\022\031\n"
+          + "\010consumer\030\002"
+          + " \001(\01321.google.cloud.apihub.v1.DependencyEntityReferenceB\005\342A\002\005\002\022J\n"
+          + "\010supplier\030\003"
+          + " \001(\01321.google.cloud.apihub.v1.DependencyEntityReferenceB\005\342A\002\005\002\022=\n"
+          + "\005state\030\004 \001(\0162("
+          + ".google.cloud.apihub.v1.Dependency.StateB\004\342A\001\003\022\031\n"
           + "\013description\030\005 \001(\tB\004\342A\001\001\022N\n"
-          + "\016discovery_mode\030\006 \001(\01620.go"
-          + "ogle.cloud.apihub.v1.Dependency.DiscoveryModeB\004\342A\001\003\022I\n"
-          + "\014error_detail\030\007 \001(\0132-.goog"
-          + "le.cloud.apihub.v1.DependencyErrorDetailB\004\342A\001\003\0225\n"
+          + "\016discovery_mode\030\006"
+          + " \001(\01620.google.cloud.apihub.v1.Dependency.DiscoveryModeB\004\342A\001\003\022I\n"
+          + "\014error_detail\030\007"
+          + " \001(\0132-.google.cloud.apihub.v1.DependencyErrorDetailB\004\342A\001\003\0225\n"
           + "\013create_time\030\010"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022L\n\n"
           + "attributes\030\n"
-          + " \003(\01322.google.cloud.apihub.v1.Dependency.AttributesEntryB\004\342A\001\001\032Z\n"
+          + " \003(\01322"
+          + ".google.cloud.apihub.v1.Dependency.AttributesEntryB\004\342A\001\001\032Z\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002 \001(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001\";\n"
@@ -665,8 +750,8 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "DiscoveryMode\022\036\n"
           + "\032DISCOVERY_MODE_UNSPECIFIED\020\000\022\n\n"
           + "\006MANUAL\020\001:\202\001\352A\177\n"
-          + " apihub.googleapis.com/Dependency\022Aprojects/{project}/locations/{"
-          + "location}/dependencies/{dependency}*\014dependencies2\n"
+          + " apihub.googleapis.com/Dependency\022Aprojects"
+          + "/{project}/locations/{location}/dependencies/{dependency}*\014dependencies2\n"
           + "dependency\"\216\001\n"
           + "\031DependencyEntityReference\022!\n"
           + "\027operation_resource_name\030\002 \001(\tH\000\022$\n"
@@ -674,8 +759,8 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\014display_name\030\001 \001(\tB\004\342A\001\003B\014\n\n"
           + "identifier\"\347\001\n"
           + "\025DependencyErrorDetail\022H\n"
-          + "\005error\030\001"
-          + " \001(\01623.google.cloud.apihub.v1.DependencyErrorDetail.ErrorB\004\342A\001\001\0224\n\n"
+          + "\005error\030\001 \001(\01623.google.c"
+          + "loud.apihub.v1.DependencyErrorDetail.ErrorB\004\342A\001\001\0224\n\n"
           + "error_time\030\002 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\"N\n"
           + "\005Error\022\025\n"
           + "\021ERROR_UNSPECIFIED\020\000\022\026\n"
@@ -684,10 +769,10 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\014LintResponse\0223\n"
           + "\006issues\030\001"
           + " \003(\0132\035.google.cloud.apihub.v1.IssueB\004\342A\001\001\022H\n"
-          + "\007summary\030\002"
-          + " \003(\01321.google.cloud.apihub.v1.LintResponse.SummaryEntryB\004\342A\001\001\0226\n"
-          + "\005state\030\003 \001(\0162"
-          + "!.google.cloud.apihub.v1.LintStateB\004\342A\001\002\022\024\n"
+          + "\007summary\030\002 \003(\01321.google.c"
+          + "loud.apihub.v1.LintResponse.SummaryEntryB\004\342A\001\001\0226\n"
+          + "\005state\030\003"
+          + " \001(\0162!.google.cloud.apihub.v1.LintStateB\004\342A\001\002\022\024\n"
           + "\006source\030\004 \001(\tB\004\342A\001\002\0224\n"
           + "\006linter\030\005"
           + " \001(\0162\036.google.cloud.apihub.v1.LinterB\004\342A\001\002\0225\n"
@@ -719,27 +804,31 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\004verb\030\004 \001(\tB\004\342A\001\003\022\034\n"
           + "\016status_message\030\005 \001(\tB\004\342A\001\003\022$\n"
           + "\026requested_cancellation\030\006 \001(\010B\004\342A\001\003\022\031\n"
-          + "\013api_version\030\007 \001(\tB\004\342A\001\003\"\336\007\n"
+          + "\013api_version\030\007 \001(\tB\004\342A\001\003\"\202\t\n"
           + "\016ApiHubInstance\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\0225\n"
           + "\013create_time\030\002"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022A\n"
-          + "\005state\030\004"
-          + " \001(\0162,.google.cloud.apihub.v1.ApiHubInstance.StateB\004\342A\001\003\022\033\n\r"
+          + "\005state\030\004 \001(\0162,.google.clou"
+          + "d.apihub.v1.ApiHubInstance.StateB\004\342A\001\003\022\033\n\r"
           + "state_message\030\005 \001(\tB\004\342A\001\003\022C\n"
-          + "\006config\030\006"
-          + " \001(\0132-.google.cloud.apihub.v1.ApiHubInstance.ConfigB\004\342A\001\002\022H\n"
-          + "\006labels\030\007"
-          + " \003(\01322.google.cloud.apihub.v1.ApiHubInstance.LabelsEntryB\004\342A\001\001\022\031\n"
-          + "\013description\030\010 \001(\tB\004\342A\001\001\032\206\002\n"
+          + "\006config\030\006 "
+          + "\001(\0132-.google.cloud.apihub.v1.ApiHubInstance.ConfigB\004\342A\001\002\022H\n"
+          + "\006labels\030\007 \003(\01322.googl"
+          + "e.cloud.apihub.v1.ApiHubInstance.LabelsEntryB\004\342A\001\001\022\031\n"
+          + "\013description\030\010 \001(\tB\004\342A\001\001\032\252\003\n"
           + "\006Config\022\033\n\r"
           + "cmek_key_name\030\001 \001(\tB\004\342A\001\001\022\034\n"
           + "\016disable_search\030\002 \001(\010B\004\342A\001\001\022\035\n"
           + "\017vertex_location\030\003 \001(\tB\004\342A\001\001\022[\n"
-          + "\017encryption_type\030\004 \001(\0162<.google.cloud.api"
-          + "hub.v1.ApiHubInstance.Config.EncryptionTypeB\004\342A\001\001\"E\n"
+          + "\017encryption_type\030\004 "
+          + "\001(\0162<.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionTypeB\004\342A\001\001\022o\n"
+          + "\032agent_registry_sync_config\030\005 \001(\0132E.google.clo"
+          + "ud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfigB\004\342A\001\001\0321\n"
+          + "\027AgentRegistrySyncConfig\022\026\n"
+          + "\010disabled\030\001 \001(\010B\004\342A\001\001\"E\n"
           + "\016EncryptionType\022\037\n"
           + "\033ENCRYPTION_TYPE_UNSPECIFIED\020\000\022\010\n"
           + "\004GMEK\020\001\022\010\n"
@@ -755,16 +844,17 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\010UPDATING\020\004\022\014\n"
           + "\010DELETING\020\005\022\n\n"
           + "\006FAILED\020\006:\227\001\352A\223\001\n"
-          + "$apihub.googleapis.com/ApiHubInstance\022Jprojects/{project}/locations/{loca"
-          + "tion}/apiHubInstances/{api_hub_instance}*\017apiHubInstances2\016apiHubInstance\"\355\004\n"
+          + "$apihub.googleapis.com/ApiHubInstance\022Jprojects"
+          + "/{project}/locations/{location}/apiHubIn"
+          + "stances/{api_hub_instance}*\017apiHubInstances2\016apiHubInstance\"\355\004\n"
           + "\013ExternalApi\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
           + "\013description\030\003 \001(\tB\004\342A\001\001\022\027\n"
           + "\tendpoints\030\004 \003(\tB\004\342A\001\001\022\023\n"
           + "\005paths\030\005 \003(\tB\004\342A\001\001\022B\n\r"
-          + "documentation\030\006 \001(\0132%.goog"
-          + "le.cloud.apihub.v1.DocumentationB\004\342A\001\001\022M\n\n"
+          + "documentation\030\006"
+          + " \001(\0132%.google.cloud.apihub.v1.DocumentationB\004\342A\001\001\022M\n\n"
           + "attributes\030\007"
           + " \003(\01323.google.cloud.apihub.v1.ExternalApi.AttributesEntryB\004\342A\001\001\0225\n"
           + "\013create_time\030\010"
@@ -773,10 +863,11 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\032Z\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
-          + "\005value\030\002 \001(\0132\'.goo"
-          + "gle.cloud.apihub.v1.AttributeValues:\0028\001:\207\001\352A\203\001\n"
-          + "!apihub.googleapis.com/ExternalApi\022Cprojects/{project}/locations/{locatio"
-          + "n}/externalApis/{external_api}*\014externalApis2\013externalApi\"\\\n"
+          + "\005value\030\002"
+          + " \001(\0132\'.google.cloud.apihub.v1.AttributeValues:\0028\001:\207\001\352A\203\001\n"
+          + "!apihub.googleapis.com/ExternalApi\022Cprojects/{p"
+          + "roject}/locations/{location}/externalApi"
+          + "s/{external_api}*\014externalApis2\013externalApi\"\\\n"
           + "\021ConfigValueOption\022\020\n"
           + "\002id\030\001 \001(\tB\004\342A\001\002\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
@@ -785,8 +876,8 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\016secret_version\030\001 \001(\tB\004\342A\001\002\"\371\003\n"
           + "\026ConfigVariableTemplate\022\020\n"
           + "\002id\030\001 \001(\tB\004\342A\001\002\022R\n\n"
-          + "value_type\030\002 \001(\01628.google.cloud.apihub.v"
-          + "1.ConfigVariableTemplate.ValueTypeB\004\342A\001\002\022\031\n"
+          + "value_type\030\002 \001"
+          + "(\01628.google.cloud.apihub.v1.ConfigVariableTemplate.ValueTypeB\004\342A\001\002\022\031\n"
           + "\013description\030\003 \001(\tB\004\342A\001\001\022\036\n"
           + "\020validation_regex\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010required\030\005 \001(\010B\004\342A\001\001\022E\n"
@@ -810,18 +901,19 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "bool_value\030\004 \001(\010B\004\342A\001\001H\000\022<\n"
           + "\014secret_value\030\005"
           + " \001(\0132\036.google.cloud.apihub.v1.SecretB\004\342A\001\001H\000\022E\n\n"
-          + "enum_value\030\006"
-          + " \001(\0132).google.cloud.apihub.v1.ConfigValueOptionB\004\342A\001\001H\000\022]\n"
-          + "\023multi_select_values\030\007"
-          + " \001(\01328.google.cloud.apihub.v1.ConfigVariable.MultiSelectValuesB\004\342A\001\001H\000\022]\n"
-          + "\023multi_string_values\030\010 \001(\01328.google.cloud.apih"
-          + "ub.v1.ConfigVariable.MultiStringValuesB\004\342A\001\001H\000\022W\n"
-          + "\020multi_int_values\030\t \001(\01325.googl"
-          + "e.cloud.apihub.v1.ConfigVariable.MultiIntValuesB\004\342A\001\001H\000\022\021\n"
+          + "enum_value\030\006 \001(\0132).google"
+          + ".cloud.apihub.v1.ConfigValueOptionB\004\342A\001\001H\000\022]\n"
+          + "\023multi_select_values\030\007 \001(\01328.google"
+          + ".cloud.apihub.v1.ConfigVariable.MultiSelectValuesB\004\342A\001\001H\000\022]\n"
+          + "\023multi_string_values\030\010"
+          + " \001(\01328.google.cloud.apihub.v1.ConfigVariable.MultiStringValuesB\004\342A\001\001H\000\022W\n"
+          + "\020mult",
+      "i_int_values\030\t \001(\01325.google.cloud.apihub"
+          + ".v1.ConfigVariable.MultiIntValuesB\004\342A\001\001H\000\022\021\n"
           + "\003key\030\001 \001(\tB\004\342A\001\003\032T\n"
           + "\021MultiSelectValues\022?\n"
-          + "\006values\030\001 \003(\0132).google"
-          + ".cloud.apihub.v1.ConfigValueOptionB\004\342A\001\001\032)\n"
+          + "\006values\030\001"
+          + " \003(\0132).google.cloud.apihub.v1.ConfigValueOptionB\004\342A\001\001\032)\n"
           + "\021MultiStringValues\022\024\n"
           + "\006values\030\001 \003(\tB\004\342A\001\001\032&\n"
           + "\016MultiIntValues\022\024\n"
@@ -831,30 +923,30 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\017service_account\030\001 \001(\tB*\342A\001\002\372A#\n"
           + "!iam.googleapis.com/ServiceAccount\"\326\007\n\n"
           + "AuthConfig\022[\n"
-          + "\035google_service_account_config\030\002"
-          + " \001(\01322.google.cloud.apihub.v1.GoogleServiceAccountConfigH\000\022U\n"
-          + "\024user_password_config\030\003"
-          + " \001(\01325.google.cloud.apihub.v1.AuthConfig.UserPasswordConfigH\000\022I\n"
-          + "\016api_key_config\030\004"
-          + " \001(\0132/.google.cloud.apihub.v1.AuthConfig.ApiKeyConfigH\000\022l\n"
-          + " oauth2_client_credentials_config\030\005 \001(\0132@.google.cloud.a"
-          + "pihub.v1.AuthConfig.Oauth2ClientCredentialsConfigH\000\0229\n"
+          + "\035google_service_account_config\030\002 \001(\01322.google"
+          + ".cloud.apihub.v1.GoogleServiceAccountConfigH\000\022U\n"
+          + "\024user_password_config\030\003 \001(\01325.go"
+          + "ogle.cloud.apihub.v1.AuthConfig.UserPasswordConfigH\000\022I\n"
+          + "\016api_key_config\030\004 \001(\0132/.g"
+          + "oogle.cloud.apihub.v1.AuthConfig.ApiKeyConfigH\000\022l\n"
+          + " oauth2_client_credentials_config\030\005"
+          + " \001(\0132@.google.cloud.apihub.v1.AuthConfig.Oauth2ClientCredentialsConfigH\000\0229\n"
           + "\tauth_type\030\001 \001(\0162"
           + " .google.cloud.apihub.v1.AuthTypeB\004\342A\001\002\032d\n"
           + "\022UserPasswordConfig\022\026\n"
           + "\010username\030\001 \001(\tB\004\342A\001\002\0226\n"
-          + "\010password\030\002"
-          + " \001(\0132\036.google.cloud.apihub.v1.SecretB\004\342A\001\002\032u\n"
+          + "\010password\030\002 \001(\013"
+          + "2\036.google.cloud.apihub.v1.SecretB\004\342A\001\002\032u\n"
           + "\035Oauth2ClientCredentialsConfig\022\027\n"
           + "\tclient_id\030\001 \001(\tB\004\342A\001\002\022;\n\r"
-          + "client_secret\030\002"
-          + " \001(\0132\036.google.cloud.apihub.v1.SecretB\004\342A\001\002\032\270\002\n"
+          + "client_secret\030\002 \001(\0132"
+          + "\036.google.cloud.apihub.v1.SecretB\004\342A\001\002\032\270\002\n"
           + "\014ApiKeyConfig\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\002\0225\n"
           + "\007api_key\030\002"
           + " \001(\0132\036.google.cloud.apihub.v1.SecretB\004\342A\001\002\022h\n"
-          + "\025http_element_location\030\003 \001(\0162C.google.cloud.apihub.v1."
-          + "AuthConfig.ApiKeyConfig.HttpElementLocationB\004\342A\001\002\"s\n"
+          + "\025http_element_location\030\003 \001(\016"
+          + "2C.google.cloud.apihub.v1.AuthConfig.ApiKeyConfig.HttpElementLocationB\004\342A\001\002\"s\n"
           + "\023HttpElementLocation\022%\n"
           + "!HTTP_ELEMENT_LOCATION_UNSPECIFIED\020\000\022\t\n"
           + "\005QUERY\020\001\022\n\n"
@@ -864,10 +956,10 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\006COOKIE\020\005B\010\n"
           + "\006config\"\306\004\n"
           + "\016SourceMetadata\022p\n"
-          + "\035plugin_instance_action_source\030\001 \001(\0132A.goo"
-          + "gle.cloud.apihub.v1.SourceMetadata.PluginInstanceActionSourceB\004\342A\001\003H\000\022L\n"
-          + "\013source_type\030\002"
-          + " \001(\01621.google.cloud.apihub.v1.SourceMetadata.SourceTypeB\004\342A\001\003\022\"\n"
+          + "\035plugin_instance_action_source\030\001 \001(\0132A.google.cloud.apih"
+          + "ub.v1.SourceMetadata.PluginInstanceActionSourceB\004\342A\001\003H\000\022L\n"
+          + "\013source_type\030\002 \001(\01621.g"
+          + "oogle.cloud.apihub.v1.SourceMetadata.SourceTypeB\004\342A\001\003\022\"\n"
           + "\024original_resource_id\030\003 \001(\tB\004\342A\001\003\022G\n"
           + "\035original_resource_create_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022G\n"
@@ -876,16 +968,15 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\032PluginInstanceActionSource\022F\n"
           + "\017plugin_instance\030\001 \001(\tB-\342A\001\003\372A&\n"
           + "$apihub.googleapis.com/PluginInstance\022\027\n"
-          + "\tactio",
-      "n_id\030\002 \001(\tB\004\342A\001\003\"5\n\n"
+          + "\taction_id\030\002 \001(\tB\004\342A\001\003\"5\n\n"
           + "SourceType\022\033\n"
           + "\027SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006PLUGIN\020\001B\010\n"
           + "\006source\"\236\010\n"
           + "\030DiscoveredApiObservation\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022K\n"
-          + "\005style\030\002 \001(\01626.google.cloud"
-          + ".apihub.v1.DiscoveredApiObservation.StyleB\004\342A\001\001\022\030\n\n"
+          + "\005style\030\002"
+          + " \001(\01626.google.cloud.apihub.v1.DiscoveredApiObservation.StyleB\004\342A\001\001\022\030\n\n"
           + "server_ips\030\003 \003(\tB\004\342A\001\001\022\026\n"
           + "\010hostname\030\004 \001(\tB\004\342A\001\001\022B\n"
           + "\030last_event_detected_time\030\005"
@@ -894,8 +985,8 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "!locations.googleapis.com/Location\022!\n"
           + "\023api_operation_count\030\007 \001(\003B\004\342A\001\001\022\024\n"
           + "\006origin\030\010 \001(\tB\004\342A\001\001\022W\n"
-          + "\014source_types\030\t \003(\0162;.goo"
-          + "gle.cloud.apihub.v1.DiscoveredApiObservation.SourceTypeB\004\342A\001\001\022$\n"
+          + "\014source_types\030\t \003(\0162;.google.cloud.apih"
+          + "ub.v1.DiscoveredApiObservation.SourceTypeB\004\342A\001\001\022$\n"
           + "\026known_operations_count\030\n"
           + " \001(\003B\004\342A\001\003\022&\n"
           + "\030unknown_operations_count\030\013 \001(\003B\004\342A\001\003\0225\n"
@@ -903,8 +994,8 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\r"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022E\n"
-          + "\017source_metadata\030\016 \001(\0132&.goo"
-          + "gle.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\"?\n"
+          + "\017source_metadata\030\016"
+          + " \001(\0132&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\"?\n"
           + "\005Style\022\025\n"
           + "\021STYLE_UNSPECIFIED\020\000\022\010\n"
           + "\004REST\020\001\022\010\n"
@@ -914,24 +1005,24 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\027SOURCE_TYPE_UNSPECIFIED\020\000\022\013\n"
           + "\007GCP_XLB\020\001\022\013\n"
           + "\007GCP_ILB\020\002:\311\001\352A\305\001\n"
-          + ".apihub.googleapis.com/DiscoveredApiObservation\022^projects/"
-          + "{project}/locations/{location}/discoveredApiObservations/{discovered_api_observa"
-          + "tion}*\031discoveredApiObservations2\030discoveredApiObservation\"\343\007\n"
+          + ".apihub.googleapis.com/DiscoveredApiObservation\022^projects/{project}/loca"
+          + "tions/{location}/discoveredApiObservations/{discovered_api_observation}*\031discove"
+          + "redApiObservations2\030discoveredApiObservation\"\343\007\n"
           + "\026DiscoveredApiOperation\022L\n"
-          + "\016http_operation\030\002 \001(\0132,.google.c"
-          + "loud.apihub.v1.HttpOperationDetailsB\004\342A\001\001H\000\022\022\n"
+          + "\016http_operation\030\002"
+          + " \001(\0132,.google.cloud.apihub.v1.HttpOperationDetailsB\004\342A\001\001H\000\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\0229\n"
           + "\017first_seen_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\0228\n"
           + "\016last_seen_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\022\023\n"
           + "\005count\030\005 \001(\003B\004\342A\001\001\022[\n"
-          + "\016classification\030\006 \001(\0162=.google.cloud"
-          + ".apihub.v1.DiscoveredApiOperation.ClassificationB\004\342A\001\003\022W\n\r"
-          + "match_results\030\007 \003(\0132:."
-          + "google.cloud.apihub.v1.DiscoveredApiOperation.MatchResultB\004\342A\001\003\022E\n"
-          + "\017source_metadata\030\010"
-          + " \001(\0132&.google.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\0225\n"
+          + "\016classification\030\006 \001(\0162=.google.cloud.apihub.v1.Dis"
+          + "coveredApiOperation.ClassificationB\004\342A\001\003\022W\n\r"
+          + "match_results\030\007 \003(\0132:.google.cloud.a"
+          + "pihub.v1.DiscoveredApiOperation.MatchResultB\004\342A\001\003\022E\n"
+          + "\017source_metadata\030\010 \001(\0132&.goo"
+          + "gle.cloud.apihub.v1.SourceMetadataB\004\342A\001\003\0225\n"
           + "\013create_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\n"
@@ -942,60 +1033,59 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\032CLASSIFICATION_UNSPECIFIED\020\000\022\t\n"
           + "\005KNOWN\020\001\022\013\n"
           + "\007UNKNOWN\020\002:\367\001\352A\363\001\n"
-          + ",apihub.googleapis.com/DiscoveredApiOpe"
-          + "ration\022\221\001projects/{project}/locations/{l"
-          + "ocation}/discoveredApiObservations/{discovered_api_observation}/discoveredApiOpe"
-          + "rations/{discovered_api_operation}*\027disc"
-          + "overedApiOperations2\026discoveredApiOperationB\013\n"
+          + ",apihub.googleapis.com/DiscoveredApiOperation\022\221\001proje"
+          + "cts/{project}/locations/{location}/discoveredApiObservations/{discovered_api_obs"
+          + "ervation}/discoveredApiOperations/{disco"
+          + "vered_api_operation}*\027discoveredApiOperations2\026discoveredApiOperationB\013\n"
           + "\toperation\"\261\014\n"
           + "\024HttpOperationDetails\022C\n"
           + "\016http_operation\030\001"
           + " \001(\0132%.google.cloud.apihub.v1.HttpOperationB\004\342A\001\002\022Q\n"
-          + "\013path_params\030\002"
-          + " \003(\01326.google.cloud.apihub.v1.HttpOperationDetails.PathParamB\004\342A\001\001\022Y\n"
-          + "\014query_params\030\003 \003(\0132=.google.cloud.apihub.v1"
-          + ".HttpOperationDetails.QueryParamsEntryB\004\342A\001\001\022O\n"
-          + "\007request\030\004 \001(\01328.google.cloud.api"
-          + "hub.v1.HttpOperationDetails.HttpRequestB\004\342A\001\001\022Q\n"
-          + "\010response\030\005 \001(\01329.google.cloud.a"
-          + "pihub.v1.HttpOperationDetails.HttpResponseB\004\342A\001\001\032s\n"
+          + "\013path_params\030\002 \003(\01326."
+          + "google.cloud.apihub.v1.HttpOperationDetails.PathParamB\004\342A\001\001\022Y\n"
+          + "\014query_params\030\003 \003("
+          + "\0132=.google.cloud.apihub.v1.HttpOperationDetails.QueryParamsEntryB\004\342A\001\001\022O\n"
+          + "\007request\030\004"
+          + " \001(\01328.google.cloud.apihub.v1.HttpOperationDetails.HttpRequestB\004\342A\001\001\022Q\n"
+          + "\010response\030\005"
+          + " \001(\01329.google.cloud.apihub.v1.HttpOperationDetails.HttpResponseB\004\342A\001\001\032s\n"
           + "\tPathParam\022\026\n"
           + "\010position\030\001 \001(\005B\004\342A\001\001\022N\n"
-          + "\tdata_type\030\002 \001(\01625.google.cloud."
-          + "apihub.v1.HttpOperationDetails.DataTypeB\004\342A\001\001\032\205\001\n\n"
+          + "\tdata_type\030\002"
+          + " \001(\01625.google.cloud.apihub.v1.HttpOperationDetails.DataTypeB\004\342A\001\001\032\205\001\n\n"
           + "QueryParam\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\002\022\023\n"
           + "\005count\030\002 \001(\003B\004\342A\001\001\022N\n"
-          + "\tdata_type\030\003 \001(\016"
-          + "25.google.cloud.apihub.v1.HttpOperationDetails.DataTypeB\004\342A\001\001\032o\n"
+          + "\tdata_type\030\003 \001(\01625.google.clou"
+          + "d.apihub.v1.HttpOperationDetails.DataTypeB\004\342A\001\001\032o\n"
           + "\006Header\022\014\n"
           + "\004name\030\001 \001(\t\022\r\n"
           + "\005count\030\002 \001(\003\022H\n"
-          + "\tdata_type\030\003 \001(\0162"
-          + "5.google.cloud.apihub.v1.HttpOperationDetails.DataType\032\320\001\n"
+          + "\tdata_type\030\003 \001(\01625.google.cloud"
+          + ".apihub.v1.HttpOperationDetails.DataType\032\320\001\n"
           + "\013HttpRequest\022\\\n"
-          + "\007headers\030\001 \003(\0132E.google.cloud.apihub.v1.HttpOpe"
-          + "rationDetails.HttpRequest.HeadersEntryB\004\342A\001\001\032c\n"
+          + "\007headers\030\001 \003(\0132E.goog"
+          + "le.cloud.apihub.v1.HttpOperationDetails.HttpRequest.HeadersEntryB\004\342A\001\001\032c\n"
           + "\014HeadersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022B\n"
-          + "\005value\030\002"
-          + " \001(\01323.google.cloud.apihub.v1.HttpOperationDetails.Header:\0028\001\032\364\002\n"
+          + "\005value\030\002 \001(\01323.goo"
+          + "gle.cloud.apihub.v1.HttpOperationDetails.Header:\0028\001\032\364\002\n"
           + "\014HttpResponse\022]\n"
-          + "\007headers\030\001 \003(\0132F.google.cloud.apihu"
-          + "b.v1.HttpOperationDetails.HttpResponse.HeadersEntryB\004\342A\001\001\022j\n"
-          + "\016response_codes\030\002 \003(\0132L.google.cloud.apihub.v1.HttpOperation"
-          + "Details.HttpResponse.ResponseCodesEntryB\004\342A\001\001\032c\n"
+          + "\007headers\030\001 \003(\0132F.google.cloud.apihub.v1.HttpOpera"
+          + "tionDetails.HttpResponse.HeadersEntryB\004\342A\001\001\022j\n"
+          + "\016response_codes\030\002 \003(\0132L.google.clo"
+          + "ud.apihub.v1.HttpOperationDetails.HttpResponse.ResponseCodesEntryB\004\342A\001\001\032c\n"
           + "\014HeadersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022B\n"
-          + "\005value\030\002"
-          + " \001(\01323.google.cloud.apihub.v1.HttpOperationDetails.Header:\0028\001\0324\n"
+          + "\005value\030\002 \001(\01323.go"
+          + "ogle.cloud.apihub.v1.HttpOperationDetails.Header:\0028\001\0324\n"
           + "\022ResponseCodesEntry\022\013\n"
           + "\003key\030\001 \001(\005\022\r\n"
           + "\005value\030\002 \001(\003:\0028\001\032k\n"
           + "\020QueryParamsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022F\n"
-          + "\005value\030\002"
-          + " \001(\01327.google.cloud.apihub.v1.HttpOperationDetails.QueryParam:\0028\001\"]\n"
+          + "\005value\030\002 \001(\01327.goo"
+          + "gle.cloud.apihub.v1.HttpOperationDetails.QueryParam:\0028\001\"]\n"
           + "\010DataType\022\031\n"
           + "\025DATA_TYPE_UNSPECIFIED\020\000\022\010\n"
           + "\004BOOL\020\001\022\013\n"
@@ -1023,19 +1113,32 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
           + "\026GOOGLE_SERVICE_ACCOUNT\020\002\022\021\n\r"
           + "USER_PASSWORD\020\003\022\013\n"
           + "\007API_KEY\020\004\022\035\n"
-          + "\031OAUTH2_CLIENT_CREDENTIALS\020\005*T\n"
+          + "\031OAUTH2_CLIENT_CREDENTIALS\020\005*L\n\n"
+          + "DataSource\022\033\n"
+          + "\027DATA_SOURCE_UNSPECIFIED\020\000\022\023\n"
+          + "\017PLUGIN_INSTANCE\020\001\022\014\n"
+          + "\010ALL_DATA\020\002*\\\n\n"
+          + "AddonState\022\033\n"
+          + "\027ADDON_STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\014\n"
+          + "\010UPDATING\020\002\022\t\n"
+          + "\005ERROR\020\003\022\014\n"
+          + "\010INACTIVE\020\004*T\n"
           + "\016PluginCategory\022\037\n"
           + "\033PLUGIN_CATEGORY_UNSPECIFIED\020\000\022\017\n"
           + "\013API_GATEWAY\020\001\022\020\n"
-          + "\014API_PRODUCER\020\002B\367\002\n"
-          + "\032com.google.cloud.apihub.v1B\021CommonFieldsProtoP\001Z2cloud.go"
-          + "ogle.com/go/apihub/apiv1/apihubpb;apihub"
-          + "pb\252\002\026Google.Cloud.ApiHub.V1\312\002\026Google\\Clo"
-          + "ud\\ApiHub\\V1\352\002\031Google::Cloud::ApiHub::V1\352Ae\n"
-          + "#aiplatform.googleapis.com/Extension"
-          + "\022>projects/{project}/locations/{location}/extensions/{extension}\352AY\n"
-          + "!iam.googleapis.com/ServiceAccount\0224projects/{projec"
-          + "t}/serviceAccounts/{service_account}b\006proto3"
+          + "\014API_PRODUCER\020\002*i\n"
+          + "\017SpecContentType\022!\n"
+          + "\035SPEC_CONTENT_TYPE_UNSPECIFIED\020\000\022\030\n"
+          + "\024BOOSTED_SPEC_CONTENT\020\001\022\031\n"
+          + "\025GATEWAY_OPEN_API_SPEC\020\002B\367\002\n"
+          + "\032com.google.cloud.apihub.v1B\021CommonFieldsProtoP\001Z2cloud.google.com/go/api"
+          + "hub/apiv1/apihubpb;apihubpb\252\002\026Google.Clo"
+          + "ud.ApiHub.V1\312\002\026Google\\Cloud\\ApiHub\\V1\352\002\031Google::Cloud::ApiHub::V1\352Ae\n"
+          + "#aiplatform.googleapis.com/Extension\022>projects/{pro"
+          + "ject}/locations/{location}/extensions/{extension}\352AY\n"
+          + "!iam.googleapis.com/ServiceAccount\0224projects/{project}/serviceAccou"
+          + "nts/{service_account}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1043,6 +1146,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_apihub_v1_Api_descriptor = getDescriptor().getMessageType(0);
@@ -1070,6 +1174,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "SourceMetadata",
               "ApiFunctionalRequirements",
               "ApiTechnicalRequirements",
+              "ServiceType",
             });
     internal_static_google_cloud_apihub_v1_Api_AttributesEntry_descriptor =
         internal_static_google_cloud_apihub_v1_Api_descriptor.getNestedType(0);
@@ -1127,6 +1232,8 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Documentation",
               "ParsingMode",
               "SourceMetadata",
+              "AdditionalSpecContents",
+              "Deployments",
             });
     internal_static_google_cloud_apihub_v1_Spec_AttributesEntry_descriptor =
         internal_static_google_cloud_apihub_v1_Spec_descriptor.getNestedType(0);
@@ -1136,8 +1243,24 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_apihub_v1_Deployment_descriptor =
+    internal_static_google_cloud_apihub_v1_AdditionalSpecContent_descriptor =
         getDescriptor().getMessageType(3);
+    internal_static_google_cloud_apihub_v1_AdditionalSpecContent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_AdditionalSpecContent_descriptor,
+            new java.lang.String[] {
+              "SpecContentType", "SpecContents", "CreateTime", "UpdateTime", "Labels",
+            });
+    internal_static_google_cloud_apihub_v1_AdditionalSpecContent_LabelsEntry_descriptor =
+        internal_static_google_cloud_apihub_v1_AdditionalSpecContent_descriptor.getNestedType(0);
+    internal_static_google_cloud_apihub_v1_AdditionalSpecContent_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_AdditionalSpecContent_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_apihub_v1_Deployment_descriptor =
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_apihub_v1_Deployment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Deployment_descriptor,
@@ -1160,6 +1283,9 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "SourceUri",
               "SourceProject",
               "SourceEnvironment",
+              "Specs",
+              "ApiOperations",
+              "SourceRevision",
             });
     internal_static_google_cloud_apihub_v1_Deployment_AttributesEntry_descriptor =
         internal_static_google_cloud_apihub_v1_Deployment_descriptor.getNestedType(0);
@@ -1170,12 +1296,19 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_apihub_v1_ApiOperation_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_apihub_v1_ApiOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ApiOperation_descriptor,
             new java.lang.String[] {
-              "Name", "Spec", "Details", "CreateTime", "UpdateTime", "Attributes", "SourceMetadata",
+              "Name",
+              "Spec",
+              "Details",
+              "CreateTime",
+              "UpdateTime",
+              "Attributes",
+              "SourceMetadata",
+              "Deployments",
             });
     internal_static_google_cloud_apihub_v1_ApiOperation_AttributesEntry_descriptor =
         internal_static_google_cloud_apihub_v1_ApiOperation_descriptor.getNestedType(0);
@@ -1186,7 +1319,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_apihub_v1_Definition_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_apihub_v1_Definition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Definition_descriptor,
@@ -1201,7 +1334,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_apihub_v1_Attribute_descriptor = getDescriptor().getMessageType(6);
+    internal_static_google_cloud_apihub_v1_Attribute_descriptor = getDescriptor().getMessageType(7);
     internal_static_google_cloud_apihub_v1_Attribute_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Attribute_descriptor,
@@ -1227,7 +1360,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Id", "DisplayName", "Description", "Immutable",
             });
     internal_static_google_cloud_apihub_v1_SpecContents_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_apihub_v1_SpecContents_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_SpecContents_descriptor,
@@ -1235,7 +1368,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Contents", "MimeType",
             });
     internal_static_google_cloud_apihub_v1_SpecDetails_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_apihub_v1_SpecDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_SpecDetails_descriptor,
@@ -1243,7 +1376,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "OpenApiSpecDetails", "Description", "Details",
             });
     internal_static_google_cloud_apihub_v1_OpenApiSpecDetails_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_apihub_v1_OpenApiSpecDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_OpenApiSpecDetails_descriptor,
@@ -1251,36 +1384,72 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Format", "Version", "Owner",
             });
     internal_static_google_cloud_apihub_v1_OperationDetails_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_apihub_v1_OperationDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_OperationDetails_descriptor,
             new java.lang.String[] {
-              "HttpOperation", "Description", "Documentation", "Deprecated", "Operation",
+              "HttpOperation", "McpTool", "Description", "Documentation", "Deprecated", "Operation",
+            });
+    internal_static_google_cloud_apihub_v1_OperationSchema_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_cloud_apihub_v1_OperationSchema_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_OperationSchema_descriptor,
+            new java.lang.String[] {
+              "JsonSchema", "Value",
+            });
+    internal_static_google_cloud_apihub_v1_McpTool_descriptor = getDescriptor().getMessageType(13);
+    internal_static_google_cloud_apihub_v1_McpTool_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_McpTool_descriptor,
+            new java.lang.String[] {
+              "Name", "Title", "Description", "Annotations", "InputSchema", "OutputSchema",
+            });
+    internal_static_google_cloud_apihub_v1_ToolAnnotations_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_cloud_apihub_v1_ToolAnnotations_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ToolAnnotations_descriptor,
+            new java.lang.String[] {
+              "Title",
+              "ReadOnlyHint",
+              "DestructiveHint",
+              "IdempotentHint",
+              "OpenWorldHint",
+              "AdditionalHints",
+            });
+    internal_static_google_cloud_apihub_v1_ToolAnnotations_AdditionalHintsEntry_descriptor =
+        internal_static_google_cloud_apihub_v1_ToolAnnotations_descriptor.getNestedType(0);
+    internal_static_google_cloud_apihub_v1_ToolAnnotations_AdditionalHintsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ToolAnnotations_AdditionalHintsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_apihub_v1_HttpOperation_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_apihub_v1_HttpOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_HttpOperation_descriptor,
             new java.lang.String[] {
               "Path", "Method",
             });
-    internal_static_google_cloud_apihub_v1_Path_descriptor = getDescriptor().getMessageType(12);
+    internal_static_google_cloud_apihub_v1_Path_descriptor = getDescriptor().getMessageType(16);
     internal_static_google_cloud_apihub_v1_Path_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Path_descriptor,
             new java.lang.String[] {
               "Path", "Description",
             });
-    internal_static_google_cloud_apihub_v1_Schema_descriptor = getDescriptor().getMessageType(13);
+    internal_static_google_cloud_apihub_v1_Schema_descriptor = getDescriptor().getMessageType(17);
     internal_static_google_cloud_apihub_v1_Schema_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Schema_descriptor,
             new java.lang.String[] {
               "DisplayName", "RawValue",
             });
-    internal_static_google_cloud_apihub_v1_Owner_descriptor = getDescriptor().getMessageType(14);
+    internal_static_google_cloud_apihub_v1_Owner_descriptor = getDescriptor().getMessageType(18);
     internal_static_google_cloud_apihub_v1_Owner_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Owner_descriptor,
@@ -1288,7 +1457,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "DisplayName", "Email",
             });
     internal_static_google_cloud_apihub_v1_Documentation_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_apihub_v1_Documentation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Documentation_descriptor,
@@ -1296,7 +1465,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "ExternalUri",
             });
     internal_static_google_cloud_apihub_v1_AttributeValues_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_apihub_v1_AttributeValues_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_AttributeValues_descriptor,
@@ -1320,7 +1489,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Values",
             });
     internal_static_google_cloud_apihub_v1_Dependency_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_apihub_v1_Dependency_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Dependency_descriptor,
@@ -1345,7 +1514,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_apihub_v1_DependencyEntityReference_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_apihub_v1_DependencyEntityReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DependencyEntityReference_descriptor,
@@ -1353,7 +1522,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "OperationResourceName", "ExternalApiResourceName", "DisplayName", "Identifier",
             });
     internal_static_google_cloud_apihub_v1_DependencyErrorDetail_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_apihub_v1_DependencyErrorDetail_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DependencyErrorDetail_descriptor,
@@ -1361,7 +1530,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Error", "ErrorTime",
             });
     internal_static_google_cloud_apihub_v1_LintResponse_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_apihub_v1_LintResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_LintResponse_descriptor,
@@ -1376,21 +1545,21 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Severity", "Count",
             });
-    internal_static_google_cloud_apihub_v1_Issue_descriptor = getDescriptor().getMessageType(21);
+    internal_static_google_cloud_apihub_v1_Issue_descriptor = getDescriptor().getMessageType(25);
     internal_static_google_cloud_apihub_v1_Issue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Issue_descriptor,
             new java.lang.String[] {
               "Code", "Path", "Message", "Severity", "Range",
             });
-    internal_static_google_cloud_apihub_v1_Range_descriptor = getDescriptor().getMessageType(22);
+    internal_static_google_cloud_apihub_v1_Range_descriptor = getDescriptor().getMessageType(26);
     internal_static_google_cloud_apihub_v1_Range_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Range_descriptor,
             new java.lang.String[] {
               "Start", "End",
             });
-    internal_static_google_cloud_apihub_v1_Point_descriptor = getDescriptor().getMessageType(23);
+    internal_static_google_cloud_apihub_v1_Point_descriptor = getDescriptor().getMessageType(27);
     internal_static_google_cloud_apihub_v1_Point_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Point_descriptor,
@@ -1398,7 +1567,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Line", "Character",
             });
     internal_static_google_cloud_apihub_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_apihub_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_OperationMetadata_descriptor,
@@ -1412,7 +1581,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "ApiVersion",
             });
     internal_static_google_cloud_apihub_v1_ApiHubInstance_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_apihub_v1_ApiHubInstance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ApiHubInstance_descriptor,
@@ -1432,7 +1601,19 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_descriptor,
             new java.lang.String[] {
-              "CmekKeyName", "DisableSearch", "VertexLocation", "EncryptionType",
+              "CmekKeyName",
+              "DisableSearch",
+              "VertexLocation",
+              "EncryptionType",
+              "AgentRegistrySyncConfig",
+            });
+    internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_descriptor =
+        internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_descriptor.getNestedType(0);
+    internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_descriptor,
+            new java.lang.String[] {
+              "Disabled",
             });
     internal_static_google_cloud_apihub_v1_ApiHubInstance_LabelsEntry_descriptor =
         internal_static_google_cloud_apihub_v1_ApiHubInstance_descriptor.getNestedType(1);
@@ -1443,7 +1624,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_apihub_v1_ExternalApi_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_apihub_v1_ExternalApi_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ExternalApi_descriptor,
@@ -1467,14 +1648,14 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_apihub_v1_ConfigValueOption_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(31);
     internal_static_google_cloud_apihub_v1_ConfigValueOption_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ConfigValueOption_descriptor,
             new java.lang.String[] {
               "Id", "DisplayName", "Description",
             });
-    internal_static_google_cloud_apihub_v1_Secret_descriptor = getDescriptor().getMessageType(28);
+    internal_static_google_cloud_apihub_v1_Secret_descriptor = getDescriptor().getMessageType(32);
     internal_static_google_cloud_apihub_v1_Secret_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Secret_descriptor,
@@ -1482,7 +1663,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "SecretVersion",
             });
     internal_static_google_cloud_apihub_v1_ConfigVariableTemplate_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(33);
     internal_static_google_cloud_apihub_v1_ConfigVariableTemplate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ConfigVariableTemplate_descriptor,
@@ -1496,7 +1677,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "MultiSelectOptions",
             });
     internal_static_google_cloud_apihub_v1_ConfigVariable_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(34);
     internal_static_google_cloud_apihub_v1_ConfigVariable_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ConfigVariable_descriptor,
@@ -1537,7 +1718,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Values",
             });
     internal_static_google_cloud_apihub_v1_GoogleServiceAccountConfig_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_apihub_v1_GoogleServiceAccountConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_GoogleServiceAccountConfig_descriptor,
@@ -1545,7 +1726,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "ServiceAccount",
             });
     internal_static_google_cloud_apihub_v1_AuthConfig_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_apihub_v1_AuthConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_AuthConfig_descriptor,
@@ -1582,7 +1763,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Name", "ApiKey", "HttpElementLocation",
             });
     internal_static_google_cloud_apihub_v1_SourceMetadata_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_apihub_v1_SourceMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_SourceMetadata_descriptor,
@@ -1603,7 +1784,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "PluginInstance", "ActionId",
             });
     internal_static_google_cloud_apihub_v1_DiscoveredApiObservation_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(38);
     internal_static_google_cloud_apihub_v1_DiscoveredApiObservation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DiscoveredApiObservation_descriptor,
@@ -1624,7 +1805,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "SourceMetadata",
             });
     internal_static_google_cloud_apihub_v1_DiscoveredApiOperation_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(39);
     internal_static_google_cloud_apihub_v1_DiscoveredApiOperation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DiscoveredApiOperation_descriptor,
@@ -1650,7 +1831,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_HttpOperationDetails_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(40);
     internal_static_google_cloud_apihub_v1_HttpOperationDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_HttpOperationDetails_descriptor,
@@ -1735,6 +1916,7 @@ public final class CommonFieldsProto extends com.google.protobuf.GeneratedFile {
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

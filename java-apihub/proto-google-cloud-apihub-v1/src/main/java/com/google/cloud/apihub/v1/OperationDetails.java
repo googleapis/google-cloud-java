@@ -81,6 +81,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     HTTP_OPERATION(4),
+    MCP_TOOL(5),
     OPERATION_NOT_SET(0);
     private final int value;
 
@@ -102,6 +103,8 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 4:
           return HTTP_OPERATION;
+        case 5:
+          return MCP_TOOL;
         case 0:
           return OPERATION_NOT_SET;
         default:
@@ -170,6 +173,60 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.apihub.v1.HttpOperation) operation_;
     }
     return com.google.cloud.apihub.v1.HttpOperation.getDefaultInstance();
+  }
+
+  public static final int MCP_TOOL_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * The MCP Tool Operation.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+   *
+   * @return Whether the mcpTool field is set.
+   */
+  @java.lang.Override
+  public boolean hasMcpTool() {
+    return operationCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The MCP Tool Operation.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+   *
+   * @return The mcpTool.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.McpTool getMcpTool() {
+    if (operationCase_ == 5) {
+      return (com.google.cloud.apihub.v1.McpTool) operation_;
+    }
+    return com.google.cloud.apihub.v1.McpTool.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The MCP Tool Operation.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.McpToolOrBuilder getMcpToolOrBuilder() {
+    if (operationCase_ == 5) {
+      return (com.google.cloud.apihub.v1.McpTool) operation_;
+    }
+    return com.google.cloud.apihub.v1.McpTool.getDefaultInstance();
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
@@ -337,6 +394,9 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     if (operationCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.apihub.v1.HttpOperation) operation_);
     }
+    if (operationCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.apihub.v1.McpTool) operation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -359,6 +419,11 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.apihub.v1.HttpOperation) operation_);
+    }
+    if (operationCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.apihub.v1.McpTool) operation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -387,6 +452,9 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       case 4:
         if (!getHttpOperation().equals(other.getHttpOperation())) return false;
         break;
+      case 5:
+        if (!getMcpTool().equals(other.getMcpTool())) return false;
+        break;
       case 0:
       default:
     }
@@ -413,6 +481,10 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       case 4:
         hash = (37 * hash) + HTTP_OPERATION_FIELD_NUMBER;
         hash = (53 * hash) + getHttpOperation().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + MCP_TOOL_FIELD_NUMBER;
+        hash = (53 * hash) + getMcpTool().hashCode();
         break;
       case 0:
       default:
@@ -569,6 +641,9 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       if (httpOperationBuilder_ != null) {
         httpOperationBuilder_.clear();
       }
+      if (mcpToolBuilder_ != null) {
+        mcpToolBuilder_.clear();
+      }
       description_ = "";
       documentation_ = null;
       if (documentationBuilder_ != null) {
@@ -615,16 +690,16 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.apihub.v1.OperationDetails result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.documentation_ =
             documentationBuilder_ == null ? documentation_ : documentationBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.deprecated_ = deprecated_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -635,6 +710,9 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       result.operation_ = this.operation_;
       if (operationCase_ == 4 && httpOperationBuilder_ != null) {
         result.operation_ = httpOperationBuilder_.build();
+      }
+      if (operationCase_ == 5 && mcpToolBuilder_ != null) {
+        result.operation_ = mcpToolBuilder_.build();
       }
     }
 
@@ -652,7 +730,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.apihub.v1.OperationDetails.getDefaultInstance()) return this;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDocumentation()) {
@@ -665,6 +743,11 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         case HTTP_OPERATION:
           {
             mergeHttpOperation(other.getHttpOperation());
+            break;
+          }
+        case MCP_TOOL:
+          {
+            mergeMcpTool(other.getMcpTool());
             break;
           }
         case OPERATION_NOT_SET:
@@ -701,20 +784,20 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetDocumentationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 24:
               {
                 deprecated_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
             case 34:
@@ -724,6 +807,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
                 operationCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(internalGetMcpToolFieldBuilder().getBuilder(), extensionRegistry);
+                operationCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -975,6 +1064,221 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       return httpOperationBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.apihub.v1.McpTool,
+            com.google.cloud.apihub.v1.McpTool.Builder,
+            com.google.cloud.apihub.v1.McpToolOrBuilder>
+        mcpToolBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     *
+     * @return Whether the mcpTool field is set.
+     */
+    @java.lang.Override
+    public boolean hasMcpTool() {
+      return operationCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     *
+     * @return The mcpTool.
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.McpTool getMcpTool() {
+      if (mcpToolBuilder_ == null) {
+        if (operationCase_ == 5) {
+          return (com.google.cloud.apihub.v1.McpTool) operation_;
+        }
+        return com.google.cloud.apihub.v1.McpTool.getDefaultInstance();
+      } else {
+        if (operationCase_ == 5) {
+          return mcpToolBuilder_.getMessage();
+        }
+        return com.google.cloud.apihub.v1.McpTool.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     */
+    public Builder setMcpTool(com.google.cloud.apihub.v1.McpTool value) {
+      if (mcpToolBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operation_ = value;
+        onChanged();
+      } else {
+        mcpToolBuilder_.setMessage(value);
+      }
+      operationCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     */
+    public Builder setMcpTool(com.google.cloud.apihub.v1.McpTool.Builder builderForValue) {
+      if (mcpToolBuilder_ == null) {
+        operation_ = builderForValue.build();
+        onChanged();
+      } else {
+        mcpToolBuilder_.setMessage(builderForValue.build());
+      }
+      operationCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     */
+    public Builder mergeMcpTool(com.google.cloud.apihub.v1.McpTool value) {
+      if (mcpToolBuilder_ == null) {
+        if (operationCase_ == 5
+            && operation_ != com.google.cloud.apihub.v1.McpTool.getDefaultInstance()) {
+          operation_ =
+              com.google.cloud.apihub.v1.McpTool.newBuilder(
+                      (com.google.cloud.apihub.v1.McpTool) operation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          operation_ = value;
+        }
+        onChanged();
+      } else {
+        if (operationCase_ == 5) {
+          mcpToolBuilder_.mergeFrom(value);
+        } else {
+          mcpToolBuilder_.setMessage(value);
+        }
+      }
+      operationCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     */
+    public Builder clearMcpTool() {
+      if (mcpToolBuilder_ == null) {
+        if (operationCase_ == 5) {
+          operationCase_ = 0;
+          operation_ = null;
+          onChanged();
+        }
+      } else {
+        if (operationCase_ == 5) {
+          operationCase_ = 0;
+          operation_ = null;
+        }
+        mcpToolBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     */
+    public com.google.cloud.apihub.v1.McpTool.Builder getMcpToolBuilder() {
+      return internalGetMcpToolFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.McpToolOrBuilder getMcpToolOrBuilder() {
+      if ((operationCase_ == 5) && (mcpToolBuilder_ != null)) {
+        return mcpToolBuilder_.getMessageOrBuilder();
+      } else {
+        if (operationCase_ == 5) {
+          return (com.google.cloud.apihub.v1.McpTool) operation_;
+        }
+        return com.google.cloud.apihub.v1.McpTool.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MCP Tool Operation.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.McpTool mcp_tool = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.apihub.v1.McpTool,
+            com.google.cloud.apihub.v1.McpTool.Builder,
+            com.google.cloud.apihub.v1.McpToolOrBuilder>
+        internalGetMcpToolFieldBuilder() {
+      if (mcpToolBuilder_ == null) {
+        if (!(operationCase_ == 5)) {
+          operation_ = com.google.cloud.apihub.v1.McpTool.getDefaultInstance();
+        }
+        mcpToolBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.apihub.v1.McpTool,
+                com.google.cloud.apihub.v1.McpTool.Builder,
+                com.google.cloud.apihub.v1.McpToolOrBuilder>(
+                (com.google.cloud.apihub.v1.McpTool) operation_, getParentForChildren(), isClean());
+        operation_ = null;
+      }
+      operationCase_ = 5;
+      onChanged();
+      return mcpToolBuilder_;
+    }
+
     private java.lang.Object description_ = "";
 
     /**
@@ -1046,7 +1350,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1066,7 +1370,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1091,7 +1395,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1118,7 +1422,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      * @return Whether the documentation field is set.
      */
     public boolean hasDocumentation() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1166,7 +1470,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       } else {
         documentationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1190,7 +1494,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
       } else {
         documentationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1209,7 +1513,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDocumentation(com.google.cloud.apihub.v1.Documentation value) {
       if (documentationBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && documentation_ != null
             && documentation_ != com.google.cloud.apihub.v1.Documentation.getDefaultInstance()) {
           getDocumentationBuilder().mergeFrom(value);
@@ -1220,7 +1524,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
         documentationBuilder_.mergeFrom(value);
       }
       if (documentation_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1239,7 +1543,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDocumentation() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       documentation_ = null;
       if (documentationBuilder_ != null) {
         documentationBuilder_.dispose();
@@ -1262,7 +1566,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.apihub.v1.Documentation.Builder getDocumentationBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetDocumentationFieldBuilder().getBuilder();
     }
@@ -1353,7 +1657,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
     public Builder setDeprecated(boolean value) {
 
       deprecated_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1371,7 +1675,7 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDeprecated() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       deprecated_ = false;
       onChanged();
       return this;

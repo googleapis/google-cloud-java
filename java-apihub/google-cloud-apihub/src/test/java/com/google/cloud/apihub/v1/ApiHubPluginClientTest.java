@@ -37,6 +37,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -742,6 +743,7 @@ public class ApiHubPluginClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProjectId("sourceProjectId-213936071")
+            .putAllSourceEnvironmentsConfig(new HashMap<String, SourceEnvironment>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -806,6 +808,7 @@ public class ApiHubPluginClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProjectId("sourceProjectId-213936071")
+            .putAllSourceEnvironmentsConfig(new HashMap<String, SourceEnvironment>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -974,6 +977,7 @@ public class ApiHubPluginClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProjectId("sourceProjectId-213936071")
+            .putAllSourceEnvironmentsConfig(new HashMap<String, SourceEnvironment>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1030,6 +1034,7 @@ public class ApiHubPluginClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProjectId("sourceProjectId-213936071")
+            .putAllSourceEnvironmentsConfig(new HashMap<String, SourceEnvironment>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1394,6 +1399,7 @@ public class ApiHubPluginClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProjectId("sourceProjectId-213936071")
+            .putAllSourceEnvironmentsConfig(new HashMap<String, SourceEnvironment>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1410,6 +1416,7 @@ public class ApiHubPluginClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setSourceProjectId("sourceProjectId-213936071")
+            .putAllSourceEnvironmentsConfig(new HashMap<String, SourceEnvironment>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1452,6 +1459,7 @@ public class ApiHubPluginClientTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setSourceProjectId("sourceProjectId-213936071")
+              .putAllSourceEnvironmentsConfig(new HashMap<String, SourceEnvironment>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updatePluginInstance(pluginInstance, updateMask);
@@ -1552,6 +1560,120 @@ public class ApiHubPluginClientTest {
       client.deletePluginInstanceAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void managePluginInstanceSourceDataTest() throws Exception {
+    ManagePluginInstanceSourceDataResponse expectedResponse =
+        ManagePluginInstanceSourceDataResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    PluginInstanceName name =
+        PluginInstanceName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]", "[INSTANCE]");
+    ManagePluginInstanceSourceDataRequest.DataType dataType =
+        ManagePluginInstanceSourceDataRequest.DataType.forNumber(0);
+    ManagePluginInstanceSourceDataRequest.Action action =
+        ManagePluginInstanceSourceDataRequest.Action.forNumber(0);
+    String relativePath = "relativePath-70808303";
+    ByteString data = ByteString.EMPTY;
+
+    ManagePluginInstanceSourceDataResponse actualResponse =
+        client.managePluginInstanceSourceData(name, dataType, action, relativePath, data);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void managePluginInstanceSourceDataExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PluginInstanceName name =
+          PluginInstanceName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]", "[INSTANCE]");
+      ManagePluginInstanceSourceDataRequest.DataType dataType =
+          ManagePluginInstanceSourceDataRequest.DataType.forNumber(0);
+      ManagePluginInstanceSourceDataRequest.Action action =
+          ManagePluginInstanceSourceDataRequest.Action.forNumber(0);
+      String relativePath = "relativePath-70808303";
+      ByteString data = ByteString.EMPTY;
+      client.managePluginInstanceSourceData(name, dataType, action, relativePath, data);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void managePluginInstanceSourceDataTest2() throws Exception {
+    ManagePluginInstanceSourceDataResponse expectedResponse =
+        ManagePluginInstanceSourceDataResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-528/locations/location-528/plugins/plugin-528/instances/instance-528";
+    ManagePluginInstanceSourceDataRequest.DataType dataType =
+        ManagePluginInstanceSourceDataRequest.DataType.forNumber(0);
+    ManagePluginInstanceSourceDataRequest.Action action =
+        ManagePluginInstanceSourceDataRequest.Action.forNumber(0);
+    String relativePath = "relativePath-70808303";
+    ByteString data = ByteString.EMPTY;
+
+    ManagePluginInstanceSourceDataResponse actualResponse =
+        client.managePluginInstanceSourceData(name, dataType, action, relativePath, data);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void managePluginInstanceSourceDataExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-528/locations/location-528/plugins/plugin-528/instances/instance-528";
+      ManagePluginInstanceSourceDataRequest.DataType dataType =
+          ManagePluginInstanceSourceDataRequest.DataType.forNumber(0);
+      ManagePluginInstanceSourceDataRequest.Action action =
+          ManagePluginInstanceSourceDataRequest.Action.forNumber(0);
+      String relativePath = "relativePath-70808303";
+      ByteString data = ByteString.EMPTY;
+      client.managePluginInstanceSourceData(name, dataType, action, relativePath, data);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

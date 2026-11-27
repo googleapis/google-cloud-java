@@ -152,7 +152,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Display name of the external API. Max length is 63 characters
+   * Required. Display name of the external API. Max length is 500 characters
    * (Unicode Code Points).
    * </pre>
    *
@@ -177,7 +177,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Display name of the external API. Max length is 63 characters
+   * Required. Display name of the external API. Max length is 500 characters
    * (Unicode Code Points).
    * </pre>
    *
@@ -207,7 +207,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Description of the external API. Max length is 2000 characters
+   * Optional. Description of the external API. Max length is 500000 characters
    * (Unicode Code Points).
    * </pre>
    *
@@ -232,7 +232,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Description of the external API. Max length is 2000 characters
+   * Optional. Description of the external API. Max length is 500000 characters
    * (Unicode Code Points).
    * </pre>
    *
@@ -1417,7 +1417,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Display name of the external API. Max length is 63 characters
+     * Required. Display name of the external API. Max length is 500 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1441,7 +1441,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Display name of the external API. Max length is 63 characters
+     * Required. Display name of the external API. Max length is 500 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1465,7 +1465,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Display name of the external API. Max length is 63 characters
+     * Required. Display name of the external API. Max length is 500 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1488,7 +1488,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Display name of the external API. Max length is 63 characters
+     * Required. Display name of the external API. Max length is 500 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1507,7 +1507,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Display name of the external API. Max length is 63 characters
+     * Required. Display name of the external API. Max length is 500 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1533,7 +1533,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the external API. Max length is 2000 characters
+     * Optional. Description of the external API. Max length is 500000 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1557,7 +1557,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the external API. Max length is 2000 characters
+     * Optional. Description of the external API. Max length is 500000 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1581,7 +1581,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the external API. Max length is 2000 characters
+     * Optional. Description of the external API. Max length is 500000 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1604,7 +1604,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the external API. Max length is 2000 characters
+     * Optional. Description of the external API. Max length is 500000 characters
      * (Unicode Code Points).
      * </pre>
      *
@@ -1623,7 +1623,7 @@ public final class ExternalApi extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the external API. Max length is 2000 characters
+     * Optional. Description of the external API. Max length is 500000 characters
      * (Unicode Code Points).
      * </pre>
      *

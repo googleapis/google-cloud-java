@@ -29,6 +29,7 @@ import com.google.cloud.apihub.v1.GetApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceResponse;
 import com.google.cloud.apihub.v1.OperationMetadata;
+import com.google.cloud.apihub.v1.UpdateApiHubInstanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -75,6 +76,16 @@ public abstract class ProvisioningStub implements BackgroundResource {
 
   public UnaryCallable<GetApiHubInstanceRequest, ApiHubInstance> getApiHubInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: getApiHubInstanceCallable()");
+  }
+
+  public OperationCallable<UpdateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
+      updateApiHubInstanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateApiHubInstanceOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateApiHubInstanceRequest, Operation> updateApiHubInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateApiHubInstanceCallable()");
   }
 
   public UnaryCallable<LookupApiHubInstanceRequest, LookupApiHubInstanceResponse>

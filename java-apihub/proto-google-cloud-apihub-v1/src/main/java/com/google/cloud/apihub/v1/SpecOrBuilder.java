@@ -624,4 +624,141 @@ public interface SpecOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.apihub.v1.AdditionalSpecContent> getAdditionalSpecContentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.AdditionalSpecContent getAdditionalSpecContents(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getAdditionalSpecContentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder>
+      getAdditionalSpecContentsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder getAdditionalSpecContentsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this spec.
+   * Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the deployments.
+   */
+  java.util.List<java.lang.String> getDeploymentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this spec.
+   * Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of deployments.
+   */
+  int getDeploymentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this spec.
+   * Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The deployments at the given index.
+   */
+  java.lang.String getDeployments(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this spec.
+   * Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the deployments at the given index.
+   */
+  com.google.protobuf.ByteString getDeploymentsBytes(int index);
 }

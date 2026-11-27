@@ -20,7 +20,7 @@ package com.google.devicesandservices.health.v4.samples;
 import com.google.api.core.ApiFuture;
 import com.google.devicesandservices.health.v4.CivilTimeInterval;
 import com.google.devicesandservices.health.v4.DailyRollUpDataPointsRequest;
-import com.google.devicesandservices.health.v4.DailyRollUpDataPointsResponse;
+import com.google.devicesandservices.health.v4.DailyRollupDataPoint;
 import com.google.devicesandservices.health.v4.DataPointsServiceClient;
 import com.google.devicesandservices.health.v4.DataTypeName;
 
@@ -46,10 +46,12 @@ public class AsyncDailyRollUpDataPoints {
               .setPageToken("pageToken873572522")
               .setDataSourceFamily("dataSourceFamily586548265")
               .build();
-      ApiFuture<DailyRollUpDataPointsResponse> future =
-          dataPointsServiceClient.dailyRollUpDataPointsCallable().futureCall(request);
+      ApiFuture<DailyRollupDataPoint> future =
+          dataPointsServiceClient.dailyRollUpDataPointsPagedCallable().futureCall(request);
       // Do something.
-      DailyRollUpDataPointsResponse response = future.get();
+      for (DailyRollupDataPoint element : future.get().iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }

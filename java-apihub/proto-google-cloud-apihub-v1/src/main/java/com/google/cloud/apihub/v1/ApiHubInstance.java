@@ -461,6 +461,54 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
      * @return The encryptionType.
      */
     com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType getEncryptionType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for syncing MCP data in the API Hub instance
+     * to the Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentRegistrySyncConfig field is set.
+     */
+    boolean hasAgentRegistrySyncConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for syncing MCP data in the API Hub instance
+     * to the Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentRegistrySyncConfig.
+     */
+    com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+        getAgentRegistrySyncConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for syncing MCP data in the API Hub instance
+     * to the Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfigOrBuilder
+        getAgentRegistrySyncConfigOrBuilder();
   }
 
   /**
@@ -687,6 +735,541 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(enum_scope:google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType)
     }
 
+    public interface AgentRegistrySyncConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the MCP data sync to the Agent Registry will be
+       * disabled. The default value is false.
+       * </pre>
+       *
+       * <code>bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The disabled.
+       */
+      boolean getDisabled();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for Agent Registry sync.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig}
+     */
+    public static final class AgentRegistrySyncConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig)
+        AgentRegistrySyncConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "AgentRegistrySyncConfig");
+      }
+
+      // Use AgentRegistrySyncConfig.newBuilder() to construct.
+      private AgentRegistrySyncConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AgentRegistrySyncConfig() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.apihub.v1.CommonFieldsProto
+            .internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.apihub.v1.CommonFieldsProto
+            .internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.class,
+                com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.Builder
+                    .class);
+      }
+
+      public static final int DISABLED_FIELD_NUMBER = 1;
+      private boolean disabled_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the MCP data sync to the Agent Registry will be
+       * disabled. The default value is false.
+       * </pre>
+       *
+       * <code>bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The disabled.
+       */
+      @java.lang.Override
+      public boolean getDisabled() {
+        return disabled_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (disabled_ != false) {
+          output.writeBool(1, disabled_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (disabled_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disabled_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig other =
+            (com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig) obj;
+
+        if (getDisabled() != other.getDisabled()) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The configuration for Agent Registry sync.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig)
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.apihub.v1.CommonFieldsProto
+              .internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.apihub.v1.CommonFieldsProto
+              .internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.class,
+                  com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          disabled_ = false;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.apihub.v1.CommonFieldsProto
+              .internal_static_google_cloud_apihub_v1_ApiHubInstance_Config_AgentRegistrySyncConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig build() {
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+            buildPartial() {
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig result =
+              new com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.disabled_ = disabled_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig) {
+            return mergeFrom(
+                (com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig other) {
+          if (other
+              == com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+                  .getDefaultInstance()) return this;
+          if (other.getDisabled() != false) {
+            setDisabled(other.getDisabled());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    disabled_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean disabled_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the MCP data sync to the Agent Registry will be
+         * disabled. The default value is false.
+         * </pre>
+         *
+         * <code>bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The disabled.
+         */
+        @java.lang.Override
+        public boolean getDisabled() {
+          return disabled_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the MCP data sync to the Agent Registry will be
+         * disabled. The default value is false.
+         * </pre>
+         *
+         * <code>bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The disabled to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDisabled(boolean value) {
+
+          disabled_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the MCP data sync to the Agent Registry will be
+         * disabled. The default value is false.
+         * </pre>
+         *
+         * <code>bool disabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDisabled() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          disabled_ = false;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig)
+      private static final com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig();
+      }
+
+      public static com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AgentRegistrySyncConfig> PARSER =
+          new com.google.protobuf.AbstractParser<AgentRegistrySyncConfig>() {
+            @java.lang.Override
+            public AgentRegistrySyncConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AgentRegistrySyncConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AgentRegistrySyncConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
     public static final int CMEK_KEY_NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -871,6 +1454,73 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
           : result;
     }
 
+    public static final int AGENT_REGISTRY_SYNC_CONFIG_FIELD_NUMBER = 5;
+    private com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+        agentRegistrySyncConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for syncing MCP data in the API Hub instance
+     * to the Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentRegistrySyncConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasAgentRegistrySyncConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for syncing MCP data in the API Hub instance
+     * to the Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentRegistrySyncConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+        getAgentRegistrySyncConfig() {
+      return agentRegistrySyncConfig_ == null
+          ? com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+              .getDefaultInstance()
+          : agentRegistrySyncConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for syncing MCP data in the API Hub instance
+     * to the Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfigOrBuilder
+        getAgentRegistrySyncConfigOrBuilder() {
+      return agentRegistrySyncConfig_ == null
+          ? com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+              .getDefaultInstance()
+          : agentRegistrySyncConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -900,6 +1550,9 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         output.writeEnum(4, encryptionType_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getAgentRegistrySyncConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -924,6 +1577,11 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, encryptionType_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, getAgentRegistrySyncConfig());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -944,6 +1602,10 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
       if (getDisableSearch() != other.getDisableSearch()) return false;
       if (!getVertexLocation().equals(other.getVertexLocation())) return false;
       if (encryptionType_ != other.encryptionType_) return false;
+      if (hasAgentRegistrySyncConfig() != other.hasAgentRegistrySyncConfig()) return false;
+      if (hasAgentRegistrySyncConfig()) {
+        if (!getAgentRegistrySyncConfig().equals(other.getAgentRegistrySyncConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -963,6 +1625,10 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getVertexLocation().hashCode();
       hash = (37 * hash) + ENCRYPTION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + encryptionType_;
+      if (hasAgentRegistrySyncConfig()) {
+        hash = (37 * hash) + AGENT_REGISTRY_SYNC_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentRegistrySyncConfig().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1093,10 +1759,19 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.apihub.v1.ApiHubInstance.Config.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetAgentRegistrySyncConfigFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1107,6 +1782,11 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
         disableSearch_ = false;
         vertexLocation_ = "";
         encryptionType_ = 0;
+        agentRegistrySyncConfig_ = null;
+        if (agentRegistrySyncConfigBuilder_ != null) {
+          agentRegistrySyncConfigBuilder_.dispose();
+          agentRegistrySyncConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -1155,6 +1835,15 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.encryptionType_ = encryptionType_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.agentRegistrySyncConfig_ =
+              agentRegistrySyncConfigBuilder_ == null
+                  ? agentRegistrySyncConfig_
+                  : agentRegistrySyncConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1185,6 +1874,9 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
         }
         if (other.encryptionType_ != 0) {
           setEncryptionTypeValue(other.getEncryptionTypeValue());
+        }
+        if (other.hasAgentRegistrySyncConfig()) {
+          mergeAgentRegistrySyncConfig(other.getAgentRegistrySyncConfig());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1236,6 +1928,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 32
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetAgentRegistrySyncConfigFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1678,6 +2378,240 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessage
         encryptionType_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          agentRegistrySyncConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig,
+              com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.Builder,
+              com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfigOrBuilder>
+          agentRegistrySyncConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the agentRegistrySyncConfig field is set.
+       */
+      public boolean hasAgentRegistrySyncConfig() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The agentRegistrySyncConfig.
+       */
+      public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+          getAgentRegistrySyncConfig() {
+        if (agentRegistrySyncConfigBuilder_ == null) {
+          return agentRegistrySyncConfig_ == null
+              ? com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+                  .getDefaultInstance()
+              : agentRegistrySyncConfig_;
+        } else {
+          return agentRegistrySyncConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAgentRegistrySyncConfig(
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig value) {
+        if (agentRegistrySyncConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          agentRegistrySyncConfig_ = value;
+        } else {
+          agentRegistrySyncConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAgentRegistrySyncConfig(
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.Builder
+              builderForValue) {
+        if (agentRegistrySyncConfigBuilder_ == null) {
+          agentRegistrySyncConfig_ = builderForValue.build();
+        } else {
+          agentRegistrySyncConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAgentRegistrySyncConfig(
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig value) {
+        if (agentRegistrySyncConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && agentRegistrySyncConfig_ != null
+              && agentRegistrySyncConfig_
+                  != com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+                      .getDefaultInstance()) {
+            getAgentRegistrySyncConfigBuilder().mergeFrom(value);
+          } else {
+            agentRegistrySyncConfig_ = value;
+          }
+        } else {
+          agentRegistrySyncConfigBuilder_.mergeFrom(value);
+        }
+        if (agentRegistrySyncConfig_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAgentRegistrySyncConfig() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        agentRegistrySyncConfig_ = null;
+        if (agentRegistrySyncConfigBuilder_ != null) {
+          agentRegistrySyncConfigBuilder_.dispose();
+          agentRegistrySyncConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.Builder
+          getAgentRegistrySyncConfigBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return internalGetAgentRegistrySyncConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfigOrBuilder
+          getAgentRegistrySyncConfigOrBuilder() {
+        if (agentRegistrySyncConfigBuilder_ != null) {
+          return agentRegistrySyncConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return agentRegistrySyncConfig_ == null
+              ? com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig
+                  .getDefaultInstance()
+              : agentRegistrySyncConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The configuration for syncing MCP data in the API Hub instance
+       * to the Agent Registry.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig agent_registry_sync_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig,
+              com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.Builder,
+              com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfigOrBuilder>
+          internalGetAgentRegistrySyncConfigFieldBuilder() {
+        if (agentRegistrySyncConfigBuilder_ == null) {
+          agentRegistrySyncConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig,
+                  com.google.cloud.apihub.v1.ApiHubInstance.Config.AgentRegistrySyncConfig.Builder,
+                  com.google.cloud.apihub.v1.ApiHubInstance.Config
+                      .AgentRegistrySyncConfigOrBuilder>(
+                  getAgentRegistrySyncConfig(), getParentForChildren(), isClean());
+          agentRegistrySyncConfig_ = null;
+        }
+        return agentRegistrySyncConfigBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.ApiHubInstance.Config)

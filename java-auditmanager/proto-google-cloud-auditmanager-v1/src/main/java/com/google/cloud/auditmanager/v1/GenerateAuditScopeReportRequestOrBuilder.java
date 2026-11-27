@@ -77,7 +77,7 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=432
    * @return The complianceStandard.
    */
   @java.lang.Deprecated
@@ -98,7 +98,7 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=421
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=432
    * @return The bytes for complianceStandard.
    */
   @java.lang.Deprecated

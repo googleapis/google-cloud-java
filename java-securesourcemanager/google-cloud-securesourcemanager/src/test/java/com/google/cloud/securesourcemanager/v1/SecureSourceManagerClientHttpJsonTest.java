@@ -1158,6 +1158,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1210,6 +1211,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1264,6 +1266,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1325,6 +1328,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1386,6 +1390,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1406,6 +1411,7 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1446,6 +1452,7 @@ public class SecureSourceManagerClientHttpJsonTest {
               .setUid("uid115792")
               .setPushOption(Hook.PushOption.newBuilder().build())
               .setSensitiveQueryString("sensitiveQueryString-690213245")
+              .setServiceAccountAuth(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateHookAsync(hook, updateMask).get();

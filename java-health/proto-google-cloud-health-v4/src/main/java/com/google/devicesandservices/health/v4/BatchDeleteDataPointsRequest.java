@@ -81,10 +81,17 @@ public final class BatchDeleteDataPointsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Optional. Parent (data type) for the Data Point collection
-   * Format: `users/me/dataTypes/{data_type}`, e.g.:
+   *
+   * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
    *
    * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
    * - `users/me/dataTypes/-`
+   * - `users/1234567890/dataTypes/-`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
    *
    * For a list of the supported data types see the
    * [DataPoint
@@ -122,10 +129,17 @@ public final class BatchDeleteDataPointsRequest extends com.google.protobuf.Gene
    *
    * <pre>
    * Optional. Parent (data type) for the Data Point collection
-   * Format: `users/me/dataTypes/{data_type}`, e.g.:
+   *
+   * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
    *
    * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
    * - `users/me/dataTypes/-`
+   * - `users/1234567890/dataTypes/-`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
    *
    * For a list of the supported data types see the
    * [DataPoint
@@ -602,10 +616,17 @@ public final class BatchDeleteDataPointsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. Parent (data type) for the Data Point collection
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/-`
+     * - `users/1234567890/dataTypes/-`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the
      * [DataPoint
@@ -642,10 +663,17 @@ public final class BatchDeleteDataPointsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. Parent (data type) for the Data Point collection
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/-`
+     * - `users/1234567890/dataTypes/-`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the
      * [DataPoint
@@ -682,10 +710,17 @@ public final class BatchDeleteDataPointsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. Parent (data type) for the Data Point collection
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/-`
+     * - `users/1234567890/dataTypes/-`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the
      * [DataPoint
@@ -721,10 +756,17 @@ public final class BatchDeleteDataPointsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. Parent (data type) for the Data Point collection
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/-`
+     * - `users/1234567890/dataTypes/-`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the
      * [DataPoint
@@ -756,10 +798,17 @@ public final class BatchDeleteDataPointsRequest extends com.google.protobuf.Gene
      *
      * <pre>
      * Optional. Parent (data type) for the Data Point collection
-     * Format: `users/me/dataTypes/{data_type}`, e.g.:
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/-`
+     * - `users/1234567890/dataTypes/-`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the
      * [DataPoint

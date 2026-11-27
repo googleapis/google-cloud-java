@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkconnectivity.v1;
 
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGatewayAdvertisedRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGroupsPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubSpokesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
@@ -323,6 +324,62 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
   public OperationCallSettings<UpdateGroupRequest, Group, OperationMetadata>
       updateGroupOperationSettings() {
     return ((HubServiceStubSettings) getStubSettings()).updateGroupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGatewayAdvertisedRoute. */
+  public UnaryCallSettings<CreateGatewayAdvertisedRouteRequest, Operation>
+      createGatewayAdvertisedRouteSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).createGatewayAdvertisedRouteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createGatewayAdvertisedRoute. */
+  public OperationCallSettings<
+          CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      createGatewayAdvertisedRouteOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings())
+        .createGatewayAdvertisedRouteOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGatewayAdvertisedRoute. */
+  public UnaryCallSettings<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+      getGatewayAdvertisedRouteSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).getGatewayAdvertisedRouteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGatewayAdvertisedRoutes. */
+  public PagedCallSettings<
+          ListGatewayAdvertisedRoutesRequest,
+          ListGatewayAdvertisedRoutesResponse,
+          ListGatewayAdvertisedRoutesPagedResponse>
+      listGatewayAdvertisedRoutesSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).listGatewayAdvertisedRoutesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewayAdvertisedRoute. */
+  public UnaryCallSettings<UpdateGatewayAdvertisedRouteRequest, Operation>
+      updateGatewayAdvertisedRouteSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).updateGatewayAdvertisedRouteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGatewayAdvertisedRoute. */
+  public OperationCallSettings<
+          UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+      updateGatewayAdvertisedRouteOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings())
+        .updateGatewayAdvertisedRouteOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewayAdvertisedRoute. */
+  public UnaryCallSettings<DeleteGatewayAdvertisedRouteRequest, Operation>
+      deleteGatewayAdvertisedRouteSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).deleteGatewayAdvertisedRouteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteGatewayAdvertisedRoute. */
+  public OperationCallSettings<DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+      deleteGatewayAdvertisedRouteOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings())
+        .deleteGatewayAdvertisedRouteOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -642,6 +699,60 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     public OperationCallSettings.Builder<UpdateGroupRequest, Group, OperationMetadata>
         updateGroupOperationSettings() {
       return getStubSettingsBuilder().updateGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewayAdvertisedRoute. */
+    public UnaryCallSettings.Builder<CreateGatewayAdvertisedRouteRequest, Operation>
+        createGatewayAdvertisedRouteSettings() {
+      return getStubSettingsBuilder().createGatewayAdvertisedRouteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createGatewayAdvertisedRoute. */
+    public OperationCallSettings.Builder<
+            CreateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+        createGatewayAdvertisedRouteOperationSettings() {
+      return getStubSettingsBuilder().createGatewayAdvertisedRouteOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGatewayAdvertisedRoute. */
+    public UnaryCallSettings.Builder<GetGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute>
+        getGatewayAdvertisedRouteSettings() {
+      return getStubSettingsBuilder().getGatewayAdvertisedRouteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGatewayAdvertisedRoutes. */
+    public PagedCallSettings.Builder<
+            ListGatewayAdvertisedRoutesRequest,
+            ListGatewayAdvertisedRoutesResponse,
+            ListGatewayAdvertisedRoutesPagedResponse>
+        listGatewayAdvertisedRoutesSettings() {
+      return getStubSettingsBuilder().listGatewayAdvertisedRoutesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewayAdvertisedRoute. */
+    public UnaryCallSettings.Builder<UpdateGatewayAdvertisedRouteRequest, Operation>
+        updateGatewayAdvertisedRouteSettings() {
+      return getStubSettingsBuilder().updateGatewayAdvertisedRouteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGatewayAdvertisedRoute. */
+    public OperationCallSettings.Builder<
+            UpdateGatewayAdvertisedRouteRequest, GatewayAdvertisedRoute, OperationMetadata>
+        updateGatewayAdvertisedRouteOperationSettings() {
+      return getStubSettingsBuilder().updateGatewayAdvertisedRouteOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewayAdvertisedRoute. */
+    public UnaryCallSettings.Builder<DeleteGatewayAdvertisedRouteRequest, Operation>
+        deleteGatewayAdvertisedRouteSettings() {
+      return getStubSettingsBuilder().deleteGatewayAdvertisedRouteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteGatewayAdvertisedRoute. */
+    public OperationCallSettings.Builder<
+            DeleteGatewayAdvertisedRouteRequest, Empty, OperationMetadata>
+        deleteGatewayAdvertisedRouteOperationSettings() {
+      return getStubSettingsBuilder().deleteGatewayAdvertisedRouteOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

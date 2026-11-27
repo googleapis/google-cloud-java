@@ -130,18 +130,27 @@ public class HealthProfileServiceStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/googlehealth.activity_and_fitness.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.activity_and_fitness.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.ecg.readonly")
           .add(
               "https://www.googleapis.com/auth/googlehealth.health_metrics_and_measurements.readonly")
+          .add(
+              "https://www.googleapis.com/auth/googlehealth.health_metrics_and_measurements.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.irn.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.location.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.logged_symptoms.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.logged_symptoms.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.mindfulness.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.mindfulness.writeonly")
+          .add("https://www.googleapis.com/auth/googlehealth.nutrition.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.profile.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.profile.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.reproductive_health.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.reproductive_health.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.settings.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.settings.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.sleep.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.sleep.writeonly")
           .build();
 
   private final UnaryCallSettings<GetProfileRequest, Profile> getProfileSettings;

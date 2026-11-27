@@ -58,7 +58,7 @@ public interface PluginOrBuilder
    *
    *
    * <pre>
-   * Required. The display name of the plugin. Max length is 50 characters
+   * Required. The display name of the plugin. Max length is 500 characters
    * (Unicode code points).
    * </pre>
    *
@@ -72,7 +72,7 @@ public interface PluginOrBuilder
    *
    *
    * <pre>
-   * Required. The display name of the plugin. Max length is 50 characters
+   * Required. The display name of the plugin. Max length is 500 characters
    * (Unicode code points).
    * </pre>
    *
@@ -153,7 +153,7 @@ public interface PluginOrBuilder
    *
    *
    * <pre>
-   * Optional. The plugin description. Max length is 2000 characters (Unicode
+   * Optional. The plugin description. Max length is 500000 characters (Unicode
    * code points).
    * </pre>
    *
@@ -167,7 +167,7 @@ public interface PluginOrBuilder
    *
    *
    * <pre>
-   * Optional. The plugin description. Max length is 2000 characters (Unicode
+   * Optional. The plugin description. Max length is 500000 characters (Unicode
    * code points).
    * </pre>
    *

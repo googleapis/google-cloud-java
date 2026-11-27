@@ -16,6 +16,7 @@
 
 package com.google.devicesandservices.health.v4.stub;
 
+import static com.google.devicesandservices.health.v4.DataPointsServiceClient.DailyRollUpDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4.DataPointsServiceClient.ListDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4.DataPointsServiceClient.ReconcileDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4.DataPointsServiceClient.RollUpDataPointsPagedResponse;
@@ -141,6 +142,8 @@ public class HttpJsonDataPointsServiceStub extends DataPointsServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListDataPointsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "dataSourceFamily", request.getDataSourceFamily());
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
@@ -464,6 +467,8 @@ public class HttpJsonDataPointsServiceStub extends DataPointsServiceStub {
       rollUpDataPointsPagedCallable;
   private final UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
       dailyRollUpDataPointsCallable;
+  private final UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsPagedResponse>
+      dailyRollUpDataPointsPagedCallable;
   private final UnaryCallable<ExportExerciseTcxRequest, ExportExerciseTcxResponse>
       exportExerciseTcxCallable;
 
@@ -686,6 +691,11 @@ public class HttpJsonDataPointsServiceStub extends DataPointsServiceStub {
             dailyRollUpDataPointsTransportSettings,
             settings.dailyRollUpDataPointsSettings(),
             clientContext);
+    this.dailyRollUpDataPointsPagedCallable =
+        callableFactory.createPagedCallable(
+            dailyRollUpDataPointsTransportSettings,
+            settings.dailyRollUpDataPointsSettings(),
+            clientContext);
     this.exportExerciseTcxCallable =
         callableFactory.createUnaryCallable(
             exportExerciseTcxTransportSettings,
@@ -795,6 +805,12 @@ public class HttpJsonDataPointsServiceStub extends DataPointsServiceStub {
   public UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
       dailyRollUpDataPointsCallable() {
     return dailyRollUpDataPointsCallable;
+  }
+
+  @Override
+  public UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsPagedResponse>
+      dailyRollUpDataPointsPagedCallable() {
+    return dailyRollUpDataPointsPagedCallable;
   }
 
   @Override

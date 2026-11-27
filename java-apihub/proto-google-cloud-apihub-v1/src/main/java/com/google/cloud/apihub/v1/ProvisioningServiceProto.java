@@ -60,6 +60,10 @@ public final class ProvisioningServiceProto extends com.google.protobuf.Generate
       internal_static_google_cloud_apihub_v1_LookupApiHubInstanceResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_LookupApiHubInstanceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_UpdateApiHubInstanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_UpdateApiHubInstanceRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -76,51 +80,65 @@ public final class ProvisioningServiceProto extends com.google.protobuf.Generate
           + "oto\032\031google/api/resource.proto\032*google/c"
           + "loud/apihub/v1/common_fields.proto\032#goog"
           + "le/longrunning/operations.proto\032\033google/"
-          + "protobuf/empty.proto\"\304\001\n\033CreateApiHubIns"
-          + "tanceRequest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!l"
-          + "ocations.googleapis.com/Location\022!\n\023api_"
-          + "hub_instance_id\030\002 \001(\tB\004\342A\001\001\022F\n\020api_hub_i"
-          + "nstance\030\003 \001(\0132&.google.cloud.apihub.v1.A"
-          + "piHubInstanceB\004\342A\001\002\"Z\n\033DeleteApiHubInsta"
-          + "nceRequest\022;\n\004name\030\001 \001(\tB-\342A\001\002\372A&\n$apihu"
-          + "b.googleapis.com/ApiHubInstance\"W\n\030GetAp"
-          + "iHubInstanceRequest\022;\n\004name\030\001 \001(\tB-\342A\001\002\372"
-          + "A&\n$apihub.googleapis.com/ApiHubInstance"
-          + "\"\\\n\033LookupApiHubInstanceRequest\022=\n\006paren"
-          + "t\030\001 \001(\tB-\342A\001\002\372A&\022$apihub.googleapis.com/"
-          + "ApiHubInstance\"`\n\034LookupApiHubInstanceRe"
-          + "sponse\022@\n\020api_hub_instance\030\001 \001(\0132&.googl"
-          + "e.cloud.apihub.v1.ApiHubInstance2\315\007\n\014Pro"
-          + "visioning\022\216\002\n\024CreateApiHubInstance\0223.goo"
-          + "gle.cloud.apihub.v1.CreateApiHubInstance"
-          + "Request\032\035.google.longrunning.Operation\"\241"
-          + "\001\312A#\n\016ApiHubInstance\022\021OperationMetadata\332"
-          + "A+parent,api_hub_instance,api_hub_instan"
-          + "ce_id\202\323\344\223\002G\"3/v1/{parent=projects/*/loca"
-          + "tions/*}/apiHubInstances:\020api_hub_instan"
-          + "ce\022\333\001\n\024DeleteApiHubInstance\0223.google.clo"
-          + "ud.apihub.v1.DeleteApiHubInstanceRequest"
-          + "\032\035.google.longrunning.Operation\"o\312A*\n\025go"
-          + "ogle.protobuf.Empty\022\021OperationMetadata\332A"
-          + "\004name\202\323\344\223\0025*3/v1/{name=projects/*/locati"
-          + "ons/*/apiHubInstances/*}\022\261\001\n\021GetApiHubIn"
-          + "stance\0220.google.cloud.apihub.v1.GetApiHu"
-          + "bInstanceRequest\032&.google.cloud.apihub.v"
-          + "1.ApiHubInstance\"B\332A\004name\202\323\344\223\0025\0223/v1/{na"
-          + "me=projects/*/locations/*/apiHubInstance"
-          + "s/*}\022\316\001\n\024LookupApiHubInstance\0223.google.c"
-          + "loud.apihub.v1.LookupApiHubInstanceReque"
-          + "st\0324.google.cloud.apihub.v1.LookupApiHub"
-          + "InstanceResponse\"K\332A\006parent\202\323\344\223\002<\022:/v1/{"
-          + "parent=projects/*/locations/*}/apiHubIns"
-          + "tances:lookup\032I\312A\025apihub.googleapis.com\322"
-          + "A.https://www.googleapis.com/auth/cloud-"
-          + "platformB\272\001\n\032com.google.cloud.apihub.v1B"
-          + "\030ProvisioningServiceProtoP\001Z2cloud.googl"
-          + "e.com/go/apihub/apiv1/apihubpb;apihubpb\252"
-          + "\002\026Google.Cloud.ApiHub.V1\312\002\026Google\\Cloud\\"
-          + "ApiHub\\V1\352\002\031Google::Cloud::ApiHub::V1b\006p"
-          + "roto3"
+          + "protobuf/empty.proto\032 google/protobuf/fi"
+          + "eld_mask.proto\"\304\001\n\033CreateApiHubInstanceR"
+          + "equest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!locatio"
+          + "ns.googleapis.com/Location\022!\n\023api_hub_in"
+          + "stance_id\030\002 \001(\tB\004\342A\001\001\022F\n\020api_hub_instanc"
+          + "e\030\003 \001(\0132&.google.cloud.apihub.v1.ApiHubI"
+          + "nstanceB\004\342A\001\002\"Z\n\033DeleteApiHubInstanceReq"
+          + "uest\022;\n\004name\030\001 \001(\tB-\342A\001\002\372A&\n$apihub.goog"
+          + "leapis.com/ApiHubInstance\"W\n\030GetApiHubIn"
+          + "stanceRequest\022;\n\004name\030\001 \001(\tB-\342A\001\002\372A&\n$ap"
+          + "ihub.googleapis.com/ApiHubInstance\"\\\n\033Lo"
+          + "okupApiHubInstanceRequest\022=\n\006parent\030\001 \001("
+          + "\tB-\342A\001\002\372A&\022$apihub.googleapis.com/ApiHub"
+          + "Instance\"`\n\034LookupApiHubInstanceResponse"
+          + "\022@\n\020api_hub_instance\030\001 \001(\0132&.google.clou"
+          + "d.apihub.v1.ApiHubInstance\"\234\001\n\033UpdateApi"
+          + "HubInstanceRequest\022F\n\020api_hub_instance\030\001"
+          + " \001(\0132&.google.cloud.apihub.v1.ApiHubInst"
+          + "anceB\004\342A\001\002\0225\n\013update_mask\030\002 \001(\0132\032.google"
+          + ".protobuf.FieldMaskB\004\342A\001\0022\303\n\n\014Provisioni"
+          + "ng\022\216\002\n\024CreateApiHubInstance\0223.google.clo"
+          + "ud.apihub.v1.CreateApiHubInstanceRequest"
+          + "\032\035.google.longrunning.Operation\"\241\001\312A#\n\016A"
+          + "piHubInstance\022\021OperationMetadata\332A+paren"
+          + "t,api_hub_instance,api_hub_instance_id\202\323"
+          + "\344\223\002G\"3/v1/{parent=projects/*/locations/*"
+          + "}/apiHubInstances:\020api_hub_instance\022\333\001\n\024"
+          + "DeleteApiHubInstance\0223.google.cloud.apih"
+          + "ub.v1.DeleteApiHubInstanceRequest\032\035.goog"
+          + "le.longrunning.Operation\"o\312A*\n\025google.pr"
+          + "otobuf.Empty\022\021OperationMetadata\332A\004name\202\323"
+          + "\344\223\0025*3/v1/{name=projects/*/locations/*/a"
+          + "piHubInstances/*}\022\261\001\n\021GetApiHubInstance\022"
+          + "0.google.cloud.apihub.v1.GetApiHubInstan"
+          + "ceRequest\032&.google.cloud.apihub.v1.ApiHu"
+          + "bInstance\"B\332A\004name\202\323\344\223\0025\0223/v1/{name=proj"
+          + "ects/*/locations/*/apiHubInstances/*}\022\220\002"
+          + "\n\024UpdateApiHubInstance\0223.google.cloud.ap"
+          + "ihub.v1.UpdateApiHubInstanceRequest\032\035.go"
+          + "ogle.longrunning.Operation\"\243\001\312A#\n\016ApiHub"
+          + "Instance\022\021OperationMetadata\332A\034api_hub_in"
+          + "stance,update_mask\202\323\344\223\002X2D/v1/{api_hub_i"
+          + "nstance.name=projects/*/locations/*/apiH"
+          + "ubInstances/*}:\020api_hub_instance\022\316\001\n\024Loo"
+          + "kupApiHubInstance\0223.google.cloud.apihub."
+          + "v1.LookupApiHubInstanceRequest\0324.google."
+          + "cloud.apihub.v1.LookupApiHubInstanceResp"
+          + "onse\"K\332A\006parent\202\323\344\223\002<\022:/v1/{parent=proje"
+          + "cts/*/locations/*}/apiHubInstances:looku"
+          + "p\032\253\001\312A\025apihub.googleapis.com\322A\217\001https://"
+          + "www.googleapis.com/auth/apihub.readonly,"
+          + "https://www.googleapis.com/auth/apihub.r"
+          + "eadwrite,https://www.googleapis.com/auth"
+          + "/cloud-platformB\272\001\n\032com.google.cloud.api"
+          + "hub.v1B\030ProvisioningServiceProtoP\001Z2clou"
+          + "d.google.com/go/apihub/apiv1/apihubpb;ap"
+          + "ihubpb\252\002\026Google.Cloud.ApiHub.V1\312\002\026Google"
+          + "\\Cloud\\ApiHub\\V1\352\002\031Google::Cloud::ApiHub"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -133,6 +151,7 @@ public final class ProvisioningServiceProto extends com.google.protobuf.Generate
               com.google.cloud.apihub.v1.CommonFieldsProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_cloud_apihub_v1_CreateApiHubInstanceRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -174,6 +193,14 @@ public final class ProvisioningServiceProto extends com.google.protobuf.Generate
             new java.lang.String[] {
               "ApiHubInstance",
             });
+    internal_static_google_cloud_apihub_v1_UpdateApiHubInstanceRequest_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_apihub_v1_UpdateApiHubInstanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_UpdateApiHubInstanceRequest_descriptor,
+            new java.lang.String[] {
+              "ApiHubInstance", "UpdateMask",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
@@ -182,6 +209,7 @@ public final class ProvisioningServiceProto extends com.google.protobuf.Generate
     com.google.cloud.apihub.v1.CommonFieldsProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

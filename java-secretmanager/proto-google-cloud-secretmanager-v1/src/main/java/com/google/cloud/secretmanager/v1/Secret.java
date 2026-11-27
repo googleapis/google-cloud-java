@@ -61,6 +61,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     topics_ = java.util.Collections.emptyList();
     etag_ = "";
     secretType_ = 0;
+    state_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -94,6 +95,177 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.secretmanager.v1.Secret.class,
             com.google.cloud.secretmanager.v1.Secret.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents the current state of the Secret.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.secretmanager.v1.Secret.State}
+   */
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Secret is in active state, usage is allowed.
+     * </pre>
+     *
+     * <code>STATE_ACTIVE = 1;</code>
+     */
+    STATE_ACTIVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Secret is being restored from a backup. Operations on the secret and its
+     * versions are restricted.
+     * </pre>
+     *
+     * <code>STATE_RESTORING = 2;</code>
+     */
+    STATE_RESTORING(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "State");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Not specified.
+     * </pre>
+     *
+     * <code>STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret is in active state, usage is allowed.
+     * </pre>
+     *
+     * <code>STATE_ACTIVE = 1;</code>
+     */
+    public static final int STATE_ACTIVE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Secret is being restored from a backup. Operations on the secret and its
+     * versions are restricted.
+     * </pre>
+     *
+     * <code>STATE_RESTORING = 2;</code>
+     */
+    public static final int STATE_RESTORING_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static State valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static State forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return STATE_ACTIVE;
+        case 2:
+          return STATE_RESTORING;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.secretmanager.v1.Secret.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final State[] VALUES = values();
+
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private State(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.secretmanager.v1.Secret.State)
   }
 
   /**
@@ -316,7 +488,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.secretmanager.v1.Secret.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.secretmanager.v1.Secret.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final SecretType[] VALUES = values();
@@ -1771,6 +1943,47 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         : policyMember_;
   }
 
+  public static final int STATE_FIELD_NUMBER = 19;
+  private int state_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the Secret.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current state of the Secret.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.Secret.State getState() {
+    com.google.cloud.secretmanager.v1.Secret.State result =
+        com.google.cloud.secretmanager.v1.Secret.State.forNumber(state_);
+    return result == null ? com.google.cloud.secretmanager.v1.Secret.State.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1830,6 +2043,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(18, getPolicyMember());
+    }
+    if (state_ != com.google.cloud.secretmanager.v1.Secret.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(19, state_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1924,6 +2140,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getPolicyMember());
     }
+    if (state_ != com.google.cloud.secretmanager.v1.Secret.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, state_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1972,6 +2191,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
     if (hasPolicyMember()) {
       if (!getPolicyMember().equals(other.getPolicyMember())) return false;
     }
+    if (state_ != other.state_) return false;
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 6:
@@ -2044,6 +2264,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + POLICY_MEMBER_FIELD_NUMBER;
       hash = (53 * hash) + getPolicyMember().hashCode();
     }
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     switch (expirationCase_) {
       case 6:
         hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
@@ -2300,6 +2522,7 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         policyMemberBuilder_.dispose();
         policyMemberBuilder_ = null;
       }
+      state_ = 0;
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -2410,6 +2633,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
             policyMemberBuilder_ == null ? policyMember_ : policyMemberBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.state_ = state_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2501,6 +2727,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPolicyMember()) {
         mergePolicyMember(other.getPolicyMember());
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
       }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
@@ -2676,6 +2905,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00008000;
                 break;
               } // case 146
+            case 152:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6409,6 +6644,111 @@ public final class Secret extends com.google.protobuf.GeneratedMessage
         policyMember_ = null;
       }
       return policyMemberBuilder_;
+    }
+
+    private int state_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the Secret.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the Secret.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the Secret.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.secretmanager.v1.Secret.State getState() {
+      com.google.cloud.secretmanager.v1.Secret.State result =
+          com.google.cloud.secretmanager.v1.Secret.State.forNumber(state_);
+      return result == null ? com.google.cloud.secretmanager.v1.Secret.State.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the Secret.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.secretmanager.v1.Secret.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00010000;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the Secret.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Secret.State state = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      state_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.Secret)

@@ -89,7 +89,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * <pre>
      * Default value. Use a custom service account if the `service_account`
      * field is set, otherwise use the default Vertex AI Reasoning Engine
-     * Service Agent in the project. Same behavior as SERVICE_ACCOUNT.
+     * Service Agent in the project. Same behavior as `SERVICE_ACCOUNT`.
+     *
+     * WARNING: The default service agent is shared across all Reasoning
+     * Engines in the project that do not specify an isolated identity or
+     * custom service account; see `identity_type` for security guidance.
      * </pre>
      *
      * <code>IDENTITY_TYPE_UNSPECIFIED = 0;</code>
@@ -102,6 +106,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Use a custom service account if the `service_account` field is set,
      * otherwise use the default Vertex AI Reasoning Engine Service Agent in the
      * project.
+     *
+     * WARNING: The default service agent is shared across all Reasoning
+     * Engines in the project that do not specify an isolated identity or
+     * custom service account; see `identity_type` for security guidance.
      * </pre>
      *
      * <code>SERVICE_ACCOUNT = 2;</code>
@@ -112,6 +120,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Use Agent Identity. The `service_account` field must not be set.
+     * Restrict `aiplatform.reasoningEngines.update` permissions on the engine
+     * because any principal permitted to update it can run code as its
+     * identity.
      * </pre>
      *
      * <code>AGENT_IDENTITY = 3;</code>
@@ -136,7 +147,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * <pre>
      * Default value. Use a custom service account if the `service_account`
      * field is set, otherwise use the default Vertex AI Reasoning Engine
-     * Service Agent in the project. Same behavior as SERVICE_ACCOUNT.
+     * Service Agent in the project. Same behavior as `SERVICE_ACCOUNT`.
+     *
+     * WARNING: The default service agent is shared across all Reasoning
+     * Engines in the project that do not specify an isolated identity or
+     * custom service account; see `identity_type` for security guidance.
      * </pre>
      *
      * <code>IDENTITY_TYPE_UNSPECIFIED = 0;</code>
@@ -150,6 +165,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Use a custom service account if the `service_account` field is set,
      * otherwise use the default Vertex AI Reasoning Engine Service Agent in the
      * project.
+     *
+     * WARNING: The default service agent is shared across all Reasoning
+     * Engines in the project that do not specify an isolated identity or
+     * custom service account; see `identity_type` for security guidance.
      * </pre>
      *
      * <code>SERVICE_ACCOUNT = 2;</code>
@@ -161,6 +180,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Use Agent Identity. The `service_account` field must not be set.
+     * Restrict `aiplatform.reasoningEngines.update` permissions on the engine
+     * because any principal permitted to update it can run code as its
+     * identity.
      * </pre>
      *
      * <code>AGENT_IDENTITY = 3;</code>
@@ -1621,11 +1643,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -1638,11 +1682,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -1655,11 +1721,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -1672,11 +1760,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -1690,11 +1800,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -2119,11 +2251,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -2139,11 +2293,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -2160,11 +2336,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -2180,11 +2378,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -2200,11 +2420,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Environment variables where the value is a secret in Cloud
-     * Secret Manager.
-     * To use this feature, add 'Secret Manager Secret Accessor' role
-     * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-     * Service Agent.
+     * Optional. Environment variables where the value is a secret in Secret
+     * Manager. Secrets must be global secrets in the same project as the
+     * Reasoning Engine.
+     *
+     * At startup (and during deployment validation for service-account-based
+     * deployments), the Reasoning Engine accesses the referenced secrets using
+     * its configured runtime identity. Grant the Secret Manager Secret Accessor
+     * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+     * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+     * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+     * the Reasoning Engine first without `secret_env`, grant access to its
+     * provisioned agent identity (prepend `principal://` to the
+     * `effective_identity` value returned by the SDK/CLI, e.g.,
+     * `principal://agents.global...`), and then update the Reasoning Engine to
+     * add `secret_env`.
+     *
+     * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+     * Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+     * That service agent is shared across all Reasoning Engines in the project
+     * that do not specify an isolated identity or custom service account, so
+     * any principal with permission to deploy or update agents in the project
+     * can access secrets granted to it (including without `secret_env`, by
+     * calling Secret Manager directly from agent code). Note also that any
+     * principal with `aiplatform.reasoningEngines.update` permission on an
+     * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+     * update permissions accordingly.
      * </pre>
      *
      * <code>
@@ -3634,11 +3876,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3657,11 +3921,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3680,11 +3966,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3703,11 +4011,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3733,11 +4063,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3760,11 +4112,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3789,11 +4163,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3819,11 +4215,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3846,11 +4264,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3873,11 +4313,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3900,11 +4362,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3926,11 +4410,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3952,11 +4458,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3972,11 +4500,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -3996,11 +4546,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -4020,11 +4592,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -4040,11 +4634,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -4062,11 +4678,33 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
        *
        *
        * <pre>
-       * Optional. Environment variables where the value is a secret in Cloud
-       * Secret Manager.
-       * To use this feature, add 'Secret Manager Secret Accessor' role
-       * (roles/secretmanager.secretAccessor) to AI Platform Reasoning Engine
-       * Service Agent.
+       * Optional. Environment variables where the value is a secret in Secret
+       * Manager. Secrets must be global secrets in the same project as the
+       * Reasoning Engine.
+       *
+       * At startup (and during deployment validation for service-account-based
+       * deployments), the Reasoning Engine accesses the referenced secrets using
+       * its configured runtime identity. Grant the Secret Manager Secret Accessor
+       * role (`roles/secretmanager.secretAccessor`) on the specific secret to an
+       * isolated per-agent identity (`identity_type = AGENT_IDENTITY`) or a
+       * dedicated custom `service_account`. When using `AGENT_IDENTITY`, create
+       * the Reasoning Engine first without `secret_env`, grant access to its
+       * provisioned agent identity (prepend `principal://` to the
+       * `effective_identity` value returned by the SDK/CLI, e.g.,
+       * `principal://agents.global...`), and then update the Reasoning Engine to
+       * add `secret_env`.
+       *
+       * WARNING: Avoid granting secret access to the default Vertex AI Reasoning
+       * Engine Service Agent
+       * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`).
+       * That service agent is shared across all Reasoning Engines in the project
+       * that do not specify an isolated identity or custom service account, so
+       * any principal with permission to deploy or update agents in the project
+       * can access secrets granted to it (including without `secret_env`, by
+       * calling Secret Manager directly from agent code). Note also that any
+       * principal with `aiplatform.reasoningEngines.update` permission on an
+       * `AGENT_IDENTITY` engine can run code as that agent's identity; restrict
+       * update permissions accordingly.
        * </pre>
        *
        * <code>
@@ -15315,8 +15953,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    * Optional. The service account that the Reasoning Engine artifact runs as.
    * It should have "roles/storage.objectViewer" for reading the user project's
    * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-   * will be used.
+   * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+   * Vertex AI Reasoning Engine Service Agent in the project will be used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). For sensitive resources such as Secret
+   * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+   * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+   * custom `service_account`.
    * </pre>
    *
    * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -15335,8 +15984,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    * Optional. The service account that the Reasoning Engine artifact runs as.
    * It should have "roles/storage.objectViewer" for reading the user project's
    * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-   * will be used.
+   * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+   * Vertex AI Reasoning Engine Service Agent in the project will be used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). For sensitive resources such as Secret
+   * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+   * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+   * custom `service_account`.
    * </pre>
    *
    * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -15363,8 +16023,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    * Optional. The service account that the Reasoning Engine artifact runs as.
    * It should have "roles/storage.objectViewer" for reading the user project's
    * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-   * will be used.
+   * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+   * Vertex AI Reasoning Engine Service Agent in the project will be used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). For sensitive resources such as Secret
+   * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+   * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+   * custom `service_account`.
    * </pre>
    *
    * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -15681,6 +16352,17 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    * specified, the `service_account` field will be used if set, otherwise the
    * default Vertex AI Reasoning Engine Service Agent in the project will be
    * used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+   * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+   * dedicated custom `service_account` when granting access to sensitive
+   * resources such as Secret Manager secrets.
    * </pre>
    *
    * <code>
@@ -15702,6 +16384,17 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    * specified, the `service_account` field will be used if set, otherwise the
    * default Vertex AI Reasoning Engine Service Agent in the project will be
    * used.
+   *
+   * WARNING: The default Vertex AI Reasoning Engine Service Agent
+   * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+   * is shared across all Reasoning Engines in the project that do not specify
+   * an isolated identity or custom service account. Any permissions or secrets
+   * granted to it can be accessed by any principal permitted to deploy or
+   * update agents in the project (even without using `secret_env`, by calling
+   * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+   * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+   * dedicated custom `service_account` when granting access to sensitive
+   * resources such as Secret Manager secrets.
    * </pre>
    *
    * <code>
@@ -16955,8 +17648,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Optional. The service account that the Reasoning Engine artifact runs as.
      * It should have "roles/storage.objectViewer" for reading the user project's
      * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-     * will be used.
+     * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+     * Vertex AI Reasoning Engine Service Agent in the project will be used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). For sensitive resources such as Secret
+     * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+     * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+     * custom `service_account`.
      * </pre>
      *
      * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -16974,8 +17678,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Optional. The service account that the Reasoning Engine artifact runs as.
      * It should have "roles/storage.objectViewer" for reading the user project's
      * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-     * will be used.
+     * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+     * Vertex AI Reasoning Engine Service Agent in the project will be used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). For sensitive resources such as Secret
+     * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+     * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+     * custom `service_account`.
      * </pre>
      *
      * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -17001,8 +17716,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Optional. The service account that the Reasoning Engine artifact runs as.
      * It should have "roles/storage.objectViewer" for reading the user project's
      * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-     * will be used.
+     * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+     * Vertex AI Reasoning Engine Service Agent in the project will be used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). For sensitive resources such as Secret
+     * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+     * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+     * custom `service_account`.
      * </pre>
      *
      * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -17028,8 +17754,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Optional. The service account that the Reasoning Engine artifact runs as.
      * It should have "roles/storage.objectViewer" for reading the user project's
      * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-     * will be used.
+     * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+     * Vertex AI Reasoning Engine Service Agent in the project will be used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). For sensitive resources such as Secret
+     * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+     * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+     * custom `service_account`.
      * </pre>
      *
      * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -17054,8 +17791,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Optional. The service account that the Reasoning Engine artifact runs as.
      * It should have "roles/storage.objectViewer" for reading the user project's
      * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-     * will be used.
+     * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+     * Vertex AI Reasoning Engine Service Agent in the project will be used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). For sensitive resources such as Secret
+     * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+     * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+     * custom `service_account`.
      * </pre>
      *
      * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -17076,8 +17824,19 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * Optional. The service account that the Reasoning Engine artifact runs as.
      * It should have "roles/storage.objectViewer" for reading the user project's
      * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
-     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
-     * will be used.
+     * not specified and `identity_type` is not `AGENT_IDENTITY`, the default
+     * Vertex AI Reasoning Engine Service Agent in the project will be used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). For sensitive resources such as Secret
+     * Manager secrets, use `identity_type = AGENT_IDENTITY` (restricting
+     * `aiplatform.reasoningEngines.update` access to that engine) or a dedicated
+     * custom `service_account`.
      * </pre>
      *
      * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -18134,6 +18893,17 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * specified, the `service_account` field will be used if set, otherwise the
      * default Vertex AI Reasoning Engine Service Agent in the project will be
      * used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+     * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+     * dedicated custom `service_account` when granting access to sensitive
+     * resources such as Secret Manager secrets.
      * </pre>
      *
      * <code>
@@ -18155,6 +18925,17 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * specified, the `service_account` field will be used if set, otherwise the
      * default Vertex AI Reasoning Engine Service Agent in the project will be
      * used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+     * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+     * dedicated custom `service_account` when granting access to sensitive
+     * resources such as Secret Manager secrets.
      * </pre>
      *
      * <code>
@@ -18179,6 +18960,17 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * specified, the `service_account` field will be used if set, otherwise the
      * default Vertex AI Reasoning Engine Service Agent in the project will be
      * used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+     * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+     * dedicated custom `service_account` when granting access to sensitive
+     * resources such as Secret Manager secrets.
      * </pre>
      *
      * <code>
@@ -18205,6 +18997,17 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * specified, the `service_account` field will be used if set, otherwise the
      * default Vertex AI Reasoning Engine Service Agent in the project will be
      * used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+     * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+     * dedicated custom `service_account` when granting access to sensitive
+     * resources such as Secret Manager secrets.
      * </pre>
      *
      * <code>
@@ -18233,6 +19036,17 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * specified, the `service_account` field will be used if set, otherwise the
      * default Vertex AI Reasoning Engine Service Agent in the project will be
      * used.
+     *
+     * WARNING: The default Vertex AI Reasoning Engine Service Agent
+     * (`service-{project_number}&#64;gcp-sa-aiplatform-re.iam.gserviceaccount.com`)
+     * is shared across all Reasoning Engines in the project that do not specify
+     * an isolated identity or custom service account. Any permissions or secrets
+     * granted to it can be accessed by any principal permitted to deploy or
+     * update agents in the project (even without using `secret_env`, by calling
+     * APIs directly from agent code). Prefer `AGENT_IDENTITY` (and restrict
+     * `aiplatform.reasoningEngines.update` permissions on the engine) or a
+     * dedicated custom `service_account` when granting access to sensitive
+     * resources such as Secret Manager secrets.
      * </pre>
      *
      * <code>

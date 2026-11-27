@@ -24,23 +24,30 @@ import static com.google.cloud.apihub.v1.ApiHubClient.ListExternalApisPagedRespo
 import static com.google.cloud.apihub.v1.ApiHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.ListSpecsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.ListVersionsPagedResponse;
+import static com.google.cloud.apihub.v1.ApiHubClient.RetrieveApiViewsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.SearchResourcesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.Api;
 import com.google.cloud.apihub.v1.ApiOperation;
 import com.google.cloud.apihub.v1.Attribute;
+import com.google.cloud.apihub.v1.ConfigureAndDeployServerRequest;
+import com.google.cloud.apihub.v1.ConfigureAndDeployServerResponse;
 import com.google.cloud.apihub.v1.CreateApiOperationRequest;
 import com.google.cloud.apihub.v1.CreateApiRequest;
 import com.google.cloud.apihub.v1.CreateAttributeRequest;
@@ -58,6 +65,8 @@ import com.google.cloud.apihub.v1.DeleteSpecRequest;
 import com.google.cloud.apihub.v1.DeleteVersionRequest;
 import com.google.cloud.apihub.v1.Deployment;
 import com.google.cloud.apihub.v1.ExternalApi;
+import com.google.cloud.apihub.v1.FetchAdditionalSpecContentRequest;
+import com.google.cloud.apihub.v1.FetchAdditionalSpecContentResponse;
 import com.google.cloud.apihub.v1.GetApiOperationRequest;
 import com.google.cloud.apihub.v1.GetApiRequest;
 import com.google.cloud.apihub.v1.GetAttributeRequest;
@@ -81,6 +90,9 @@ import com.google.cloud.apihub.v1.ListSpecsRequest;
 import com.google.cloud.apihub.v1.ListSpecsResponse;
 import com.google.cloud.apihub.v1.ListVersionsRequest;
 import com.google.cloud.apihub.v1.ListVersionsResponse;
+import com.google.cloud.apihub.v1.OperationMetadata;
+import com.google.cloud.apihub.v1.RetrieveApiViewsRequest;
+import com.google.cloud.apihub.v1.RetrieveApiViewsResponse;
 import com.google.cloud.apihub.v1.SearchResourcesRequest;
 import com.google.cloud.apihub.v1.SearchResourcesResponse;
 import com.google.cloud.apihub.v1.Spec;
@@ -97,6 +109,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -117,7 +131,11 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonApiHubStub extends ApiHubStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(OperationMetadata.getDescriptor())
+          .add(ConfigureAndDeployServerResponse.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<CreateApiRequest, Api> createApiMethodDescriptor =
       ApiMethodDescriptor.<CreateApiRequest, Api>newBuilder()
@@ -574,6 +592,44 @@ public class HttpJsonApiHubStub extends ApiHubStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<SpecContents>newBuilder()
                       .setDefaultInstance(SpecContents.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+      fetchAdditionalSpecContentMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>newBuilder()
+              .setFullMethodName("google.cloud.apihub.v1.ApiHub/FetchAdditionalSpecContent")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchAdditionalSpecContentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/apis/*/versions/*/specs/*}:fetchAdditionalSpecContent",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchAdditionalSpecContentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchAdditionalSpecContentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "specContentType", request.getSpecContentTypeValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchAdditionalSpecContentResponse>newBuilder()
+                      .setDefaultInstance(FetchAdditionalSpecContentResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1486,6 +1542,84 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RetrieveApiViewsRequest, RetrieveApiViewsResponse>
+      retrieveApiViewsMethodDescriptor =
+          ApiMethodDescriptor.<RetrieveApiViewsRequest, RetrieveApiViewsResponse>newBuilder()
+              .setFullMethodName("google.cloud.apihub.v1.ApiHub/RetrieveApiViews")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RetrieveApiViewsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}:retrieveApiViews",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RetrieveApiViewsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RetrieveApiViewsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RetrieveApiViewsResponse>newBuilder()
+                      .setDefaultInstance(RetrieveApiViewsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ConfigureAndDeployServerRequest, Operation>
+      configureAndDeployServerMethodDescriptor =
+          ApiMethodDescriptor.<ConfigureAndDeployServerRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.apihub.v1.ApiHub/ConfigureAndDeployServer")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ConfigureAndDeployServerRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/servers:configureAndDeployServer",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ConfigureAndDeployServerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ConfigureAndDeployServerRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ConfigureAndDeployServerRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1570,6 +1704,8 @@ public class HttpJsonApiHubStub extends ApiHubStub {
   private final UnaryCallable<CreateSpecRequest, Spec> createSpecCallable;
   private final UnaryCallable<GetSpecRequest, Spec> getSpecCallable;
   private final UnaryCallable<GetSpecContentsRequest, SpecContents> getSpecContentsCallable;
+  private final UnaryCallable<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+      fetchAdditionalSpecContentCallable;
   private final UnaryCallable<ListSpecsRequest, ListSpecsResponse> listSpecsCallable;
   private final UnaryCallable<ListSpecsRequest, ListSpecsPagedResponse> listSpecsPagedCallable;
   private final UnaryCallable<UpdateSpecRequest, Spec> updateSpecCallable;
@@ -1610,12 +1746,22 @@ public class HttpJsonApiHubStub extends ApiHubStub {
       listExternalApisCallable;
   private final UnaryCallable<ListExternalApisRequest, ListExternalApisPagedResponse>
       listExternalApisPagedCallable;
+  private final UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsResponse>
+      retrieveApiViewsCallable;
+  private final UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsPagedResponse>
+      retrieveApiViewsPagedCallable;
+  private final UnaryCallable<ConfigureAndDeployServerRequest, Operation>
+      configureAndDeployServerCallable;
+  private final OperationCallable<
+          ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonApiHubStub create(ApiHubStubSettings settings) throws IOException {
@@ -1653,6 +1799,33 @@ public class HttpJsonApiHubStub extends ApiHubStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateApiRequest, Api> createApiTransportSettings =
         HttpJsonCallSettings.<CreateApiRequest, Api>newBuilder()
@@ -1808,6 +1981,20 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+        fetchAdditionalSpecContentTransportSettings =
+            HttpJsonCallSettings
+                .<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>newBuilder()
+                .setMethodDescriptor(fetchAdditionalSpecContentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ListSpecsRequest, ListSpecsResponse> listSpecsTransportSettings =
         HttpJsonCallSettings.<ListSpecsRequest, ListSpecsResponse>newBuilder()
             .setMethodDescriptor(listSpecsMethodDescriptor)
@@ -2113,6 +2300,32 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<RetrieveApiViewsRequest, RetrieveApiViewsResponse>
+        retrieveApiViewsTransportSettings =
+            HttpJsonCallSettings.<RetrieveApiViewsRequest, RetrieveApiViewsResponse>newBuilder()
+                .setMethodDescriptor(retrieveApiViewsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ConfigureAndDeployServerRequest, Operation>
+        configureAndDeployServerTransportSettings =
+            HttpJsonCallSettings.<ConfigureAndDeployServerRequest, Operation>newBuilder()
+                .setMethodDescriptor(configureAndDeployServerMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2182,6 +2395,11 @@ public class HttpJsonApiHubStub extends ApiHubStub {
     this.getSpecContentsCallable =
         callableFactory.createUnaryCallable(
             getSpecContentsTransportSettings, settings.getSpecContentsSettings(), clientContext);
+    this.fetchAdditionalSpecContentCallable =
+        callableFactory.createUnaryCallable(
+            fetchAdditionalSpecContentTransportSettings,
+            settings.fetchAdditionalSpecContentSettings(),
+            clientContext);
     this.listSpecsCallable =
         callableFactory.createUnaryCallable(
             listSpecsTransportSettings, settings.listSpecsSettings(), clientContext);
@@ -2291,6 +2509,23 @@ public class HttpJsonApiHubStub extends ApiHubStub {
     this.listExternalApisPagedCallable =
         callableFactory.createPagedCallable(
             listExternalApisTransportSettings, settings.listExternalApisSettings(), clientContext);
+    this.retrieveApiViewsCallable =
+        callableFactory.createUnaryCallable(
+            retrieveApiViewsTransportSettings, settings.retrieveApiViewsSettings(), clientContext);
+    this.retrieveApiViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            retrieveApiViewsTransportSettings, settings.retrieveApiViewsSettings(), clientContext);
+    this.configureAndDeployServerCallable =
+        callableFactory.createUnaryCallable(
+            configureAndDeployServerTransportSettings,
+            settings.configureAndDeployServerSettings(),
+            clientContext);
+    this.configureAndDeployServerOperationCallable =
+        callableFactory.createOperationCallable(
+            configureAndDeployServerTransportSettings,
+            settings.configureAndDeployServerOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2321,6 +2556,7 @@ public class HttpJsonApiHubStub extends ApiHubStub {
     methodDescriptors.add(createSpecMethodDescriptor);
     methodDescriptors.add(getSpecMethodDescriptor);
     methodDescriptors.add(getSpecContentsMethodDescriptor);
+    methodDescriptors.add(fetchAdditionalSpecContentMethodDescriptor);
     methodDescriptors.add(listSpecsMethodDescriptor);
     methodDescriptors.add(updateSpecMethodDescriptor);
     methodDescriptors.add(deleteSpecMethodDescriptor);
@@ -2346,9 +2582,15 @@ public class HttpJsonApiHubStub extends ApiHubStub {
     methodDescriptors.add(updateExternalApiMethodDescriptor);
     methodDescriptors.add(deleteExternalApiMethodDescriptor);
     methodDescriptors.add(listExternalApisMethodDescriptor);
+    methodDescriptors.add(retrieveApiViewsMethodDescriptor);
+    methodDescriptors.add(configureAndDeployServerMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -2424,6 +2666,12 @@ public class HttpJsonApiHubStub extends ApiHubStub {
   @Override
   public UnaryCallable<GetSpecContentsRequest, SpecContents> getSpecContentsCallable() {
     return getSpecContentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+      fetchAdditionalSpecContentCallable() {
+    return fetchAdditionalSpecContentCallable;
   }
 
   @Override
@@ -2586,6 +2834,31 @@ public class HttpJsonApiHubStub extends ApiHubStub {
   public UnaryCallable<ListExternalApisRequest, ListExternalApisPagedResponse>
       listExternalApisPagedCallable() {
     return listExternalApisPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsResponse>
+      retrieveApiViewsCallable() {
+    return retrieveApiViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsPagedResponse>
+      retrieveApiViewsPagedCallable() {
+    return retrieveApiViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ConfigureAndDeployServerRequest, Operation>
+      configureAndDeployServerCallable() {
+    return configureAndDeployServerCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerOperationCallable() {
+    return configureAndDeployServerOperationCallable;
   }
 
   @Override

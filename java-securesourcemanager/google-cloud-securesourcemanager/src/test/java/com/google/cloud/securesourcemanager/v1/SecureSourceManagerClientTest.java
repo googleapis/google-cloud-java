@@ -1063,6 +1063,7 @@ public class SecureSourceManagerClientTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     mockSecureSourceManager.addResponse(expectedResponse);
 
@@ -1109,6 +1110,7 @@ public class SecureSourceManagerClientTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     mockSecureSourceManager.addResponse(expectedResponse);
 
@@ -1155,6 +1157,7 @@ public class SecureSourceManagerClientTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1215,6 +1218,7 @@ public class SecureSourceManagerClientTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1275,6 +1279,7 @@ public class SecureSourceManagerClientTest {
             .setUid("uid115792")
             .setPushOption(Hook.PushOption.newBuilder().build())
             .setSensitiveQueryString("sensitiveQueryString-690213245")
+            .setServiceAccountAuth(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
