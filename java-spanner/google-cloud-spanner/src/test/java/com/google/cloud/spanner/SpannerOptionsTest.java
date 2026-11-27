@@ -1583,6 +1583,7 @@ public class SpannerOptionsTest {
       SpannerOptions options =
           SpannerOptions.newBuilder()
               .setProjectId("some-project")
+              .setEmulatorHost(null)
               .setCredentials(NoCredentials.getInstance())
               .setClientMetricsProvider(provider)
               .build();
