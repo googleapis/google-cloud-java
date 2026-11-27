@@ -969,7 +969,10 @@ public final class StorageArbitraries {
         "ARCHIVE",
         "MULTI_REGIONAL",
         "REGIONAL",
-        "DURABLE_REDUCED_AVAILABILITY");
+        "DURABLE_REDUCED_AVAILABILITY",
+        "STANDARD_ENTERPRISE",
+        "LR_STANDARD_ENTERPRISE",
+        "STANDARD_FLEXBACKUP_ENTERPRISE");
   }
 
   private static ByteString md5ToByteString(BigInteger md5) {
