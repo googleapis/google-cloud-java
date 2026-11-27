@@ -31,10 +31,18 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.LongSupplier;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
@@ -53,8 +61,16 @@ public class GcpFallbackChannel extends ManagedChannel {
   private final GcpFallbackState fallbackState;
   private final boolean ownsFallbackState;
   private final GcpFallbackOpenTelemetry openTelemetry;
+  private LongSupplier nanoTimeSupplier = System::nanoTime;
 
-  private final ScheduledExecutorService execService;
+  private volatile boolean channelInFallback = false;
+  private long channelFallbackEpoch = 0;
+  private long primaryProbeSuccesses = 0;
+  private long firstPrimaryProbeSuccessNanos = 0;
+  private String lastPrimaryProbeFailureReason = "";
+  private final Set<Runnable> stateChangeCallbacks = new HashSet<>();
+  private volatile boolean isShutdown = false;
+
   private volatile ScheduledFuture<?> primaryProbeFuture = null;
   private volatile ScheduledFuture<?> fallbackProbeFuture = null;
 
@@ -138,7 +154,7 @@ public class GcpFallbackChannel extends ManagedChannel {
       this.fallbackChannel = null;
     }
 
-    this.execService = fallbackState.getOrCreateExecutorService(options, execService);
+    fallbackState.getOrCreateExecutorService(options, execService);
     init();
   }
 
@@ -160,7 +176,7 @@ public class GcpFallbackChannel extends ManagedChannel {
           execService != null ? new GcpFallbackState(execService) : new GcpFallbackState();
       this.ownsFallbackState = true;
     }
-    this.execService = fallbackState.getOrCreateExecutorService(options, execService);
+    fallbackState.getOrCreateExecutorService(options, execService);
     if (options.getGcpOpenTelemetry() != null) {
       this.openTelemetry = options.getGcpOpenTelemetry();
     } else {
@@ -180,7 +196,7 @@ public class GcpFallbackChannel extends ManagedChannel {
   }
 
   public boolean isInFallbackMode() {
-    return (fallbackState.isInFallbackMode() && fallbackChannel != null) || primaryChannel == null;
+    return (channelInFallback && fallbackChannel != null) || primaryChannel == null;
   }
 
   @VisibleForTesting
@@ -188,33 +204,187 @@ public class GcpFallbackChannel extends ManagedChannel {
     return fallbackState;
   }
 
-  private void init() {
-    if (this.fallbackChannel != null && this.primaryChannel != null) {
-      fallbackState.setFallbackAvailable(true);
+  @VisibleForTesting
+  synchronized long getPrimaryProbeSuccesses() {
+    return primaryProbeSuccesses;
+  }
+
+  @VisibleForTesting
+  synchronized void setNanoTimeSupplier(LongSupplier nanoTimeSupplier) {
+    this.nanoTimeSupplier = checkNotNull(nanoTimeSupplier);
+  }
+
+  private synchronized void registerStateChangeCallback(Runnable callback) {
+    if (!isShutdown) {
+      stateChangeCallbacks.add(callback);
     }
+  }
+
+  private synchronized void unregisterStateChangeCallback(Runnable callback) {
+    stateChangeCallbacks.remove(callback);
+  }
+
+  private List<Runnable> snapshotAndClearCallbacks() {
+    List<Runnable> callbacks = new ArrayList<>(stateChangeCallbacks);
+    stateChangeCallbacks.clear();
+    return callbacks;
+  }
+
+  static void runStateChangeCallbacks(@Nullable List<Runnable> callbacks) {
+    if (callbacks == null) {
+      return;
+    }
+    for (Runnable callback : callbacks) {
+      try {
+        callback.run();
+      } catch (Throwable e) {
+        logger.log(Level.WARNING, "State change callback failed unexpectedly", e);
+      }
+    }
+  }
+
+  /**
+   * Transitions this channel into fallback mode for the given {@code epoch} and returns any pending
+   * state-change callbacks to be invoked by the caller outside locks. Returns {@code null} if this
+   * channel did not transition (already in fallback mode, shut down, or has no fallback channel).
+   */
+  @Nullable
+  List<Runnable> markFallbackMode(long epoch) {
+    if (fallbackChannel == null) {
+      return null;
+    }
+    synchronized (this) {
+      if (isShutdown) {
+        return null;
+      }
+      channelFallbackEpoch = epoch;
+      primaryProbeSuccesses = 0;
+      firstPrimaryProbeSuccessNanos = 0;
+      lastPrimaryProbeFailureReason = "";
+      if (channelInFallback) {
+        return null;
+      }
+      channelInFallback = true;
+      return snapshotAndClearCallbacks();
+    }
+  }
+
+  @VisibleForTesting
+  void recordPrimaryProbeResult(boolean success) {
+    long currentEpoch;
+    long probeStartNanos;
+    synchronized (this) {
+      currentEpoch = channelFallbackEpoch;
+      probeStartNanos = nanoTimeSupplier.getAsLong();
+    }
+    recordPrimaryProbeResult(success, /* failureReason= */ null, currentEpoch, probeStartNanos);
+  }
+
+  /**
+   * Records the result of a primary probe that started in fallback episode {@code probeEpoch}. A
+   * result is ignored if a newer pool-wide fallback episode began while the probe was in flight.
+   */
+  private void recordPrimaryProbeResult(
+      boolean success, @Nullable String failureReason, long probeEpoch, long probeStartNanos) {
+    if (!options.isEnableRecovery() || fallbackChannel == null || primaryDelegateChannel == null) {
+      return;
+    }
+    boolean recovered = false;
+    long recoveredEpoch = 0;
+    List<Runnable> callbacks = null;
+    String failureReasonToLog = null;
+    synchronized (this) {
+      if (isShutdown || !channelInFallback) {
+        return;
+      }
+      if (probeEpoch != channelFallbackEpoch) {
+        return;
+      }
+      if (!success) {
+        primaryProbeSuccesses = 0;
+        firstPrimaryProbeSuccessNanos = 0;
+        if (failureReason != null && !failureReason.equals(lastPrimaryProbeFailureReason)) {
+          lastPrimaryProbeFailureReason = failureReason;
+          failureReasonToLog = failureReason;
+        }
+      } else {
+        lastPrimaryProbeFailureReason = "";
+        primaryProbeSuccesses++;
+        if (primaryProbeSuccesses == 1) {
+          firstPrimaryProbeSuccessNanos = probeStartNanos;
+        }
+
+        Duration minDuration = options.getMinPrimaryProbeSuccessDuration();
+        boolean durationSatisfied =
+            minDuration == null
+                || minDuration.toNanos() <= 0
+                || (probeStartNanos - firstPrimaryProbeSuccessNanos) >= minDuration.toNanos();
+
+        if (primaryProbeSuccesses >= options.getMinPrimaryProbeSuccessCount()
+            && durationSatisfied) {
+          primaryProbeSuccesses = 0;
+          firstPrimaryProbeSuccessNanos = 0;
+          channelInFallback = false;
+          recoveredEpoch = channelFallbackEpoch;
+          callbacks = snapshotAndClearCallbacks();
+          recovered = true;
+        }
+      }
+    }
+    if (failureReasonToLog != null) {
+      logger.log(
+          Level.WARNING,
+          "Primary channel recovery probe failed ({0}); staying on fallback channel",
+          failureReasonToLog);
+    }
+    if (recovered) {
+      boolean poolRecovered = fallbackState.onChannelRecovered(this, recoveredEpoch);
+      runStateChangeCallbacks(callbacks);
+      if (poolRecovered) {
+        openTelemetry
+            .getModule()
+            .reportFallback(options.getFallbackChannelName(), options.getPrimaryChannelName());
+      }
+    }
+  }
+
+  @VisibleForTesting
+  static long jitteredInitialDelayMillis(long intervalMillis) {
+    if (intervalMillis < 2) {
+      return intervalMillis;
+    }
+    long half = intervalMillis / 2;
+    long range = intervalMillis - half;
+    return half + ThreadLocalRandom.current().nextLong(range + 1);
+  }
+
+  private void init() {
     if (options.getPrimaryProbingFunction() != null) {
+      long intervalMillis = options.getPrimaryProbingInterval().toMillis();
       this.primaryProbeFuture =
-          fallbackState.scheduleTask(
+          fallbackState.scheduleProbeTask(
               this::probePrimary,
-              options.getPrimaryProbingInterval().toMillis(),
-              options.getPrimaryProbingInterval().toMillis(),
+              jitteredInitialDelayMillis(intervalMillis),
+              intervalMillis,
               MILLISECONDS);
     }
 
     if (options.getFallbackProbingFunction() != null) {
+      long intervalMillis = options.getFallbackProbingInterval().toMillis();
       this.fallbackProbeFuture =
-          fallbackState.scheduleTask(
-              this::probeFallback,
-              options.getFallbackProbingInterval().toMillis(),
-              options.getFallbackProbingInterval().toMillis(),
-              MILLISECONDS);
+          fallbackState.scheduleProbeTask(
+              this::probeFallback, intervalMillis, intervalMillis, MILLISECONDS);
     }
 
     fallbackState.startPeriodicEvaluation(options);
+    // Must stay last in init() so all fields are initialized before fallbackState publishes this.
+    if (this.fallbackChannel != null && this.primaryChannel != null) {
+      fallbackState.registerChannel(this);
+    }
   }
 
   private void processPrimaryStatusCode(Status.Code statusCode) {
-    if (!isInFallbackMode()) {
+    if (!isShutdown && !isInFallbackMode()) {
       if (options.getErroneousStates().contains(statusCode)) {
         fallbackState.getPrimaryFailures().increment();
       } else {
@@ -233,11 +403,21 @@ public class GcpFallbackChannel extends ManagedChannel {
     openTelemetry.getModule().reportStatus(options.getFallbackChannelName(), statusCode);
   }
 
+  private static String exceptionReason(Exception e) {
+    String simpleName = e.getClass().getSimpleName();
+    return simpleName.isEmpty() ? e.getClass().getName() : simpleName;
+  }
+
   private void probePrimary() {
-    if (!isInFallbackMode()) {
-      return;
+    long probeEpoch;
+    long probeStartNanos;
+    synchronized (this) {
+      if (isShutdown || !isInFallbackMode()) {
+        return;
+      }
+      probeEpoch = channelFallbackEpoch;
+      probeStartNanos = nanoTimeSupplier.getAsLong();
     }
-    long probeGeneration = fallbackState.getGeneration();
     String result = "";
     if (primaryDelegateChannel == null) {
       result = INIT_FAILURE_REASON;
@@ -245,17 +425,18 @@ public class GcpFallbackChannel extends ManagedChannel {
       try {
         result = options.getPrimaryProbingFunction().apply(primaryDelegateChannel);
       } catch (Exception e) {
-        result = e.getClass().getSimpleName();
+        result = exceptionReason(e);
       }
     }
-    if (fallbackChannel != null && primaryDelegateChannel != null) {
-      fallbackState.recordPrimaryProbeResult("".equals(result), probeGeneration, options);
-    }
+    recordPrimaryProbeResult("".equals(result), result, probeEpoch, probeStartNanos);
     // Report metric based on result.
     openTelemetry.getModule().reportProbeResult(options.getPrimaryChannelName(), result);
   }
 
   private void probeFallback() {
+    if (isShutdown) {
+      return;
+    }
     String result = "";
     if (fallbackDelegateChannel == null) {
       result = INIT_FAILURE_REASON;
@@ -263,7 +444,7 @@ public class GcpFallbackChannel extends ManagedChannel {
       try {
         result = options.getFallbackProbingFunction().apply(fallbackDelegateChannel);
       } catch (Exception e) {
-        result = e.getClass().getSimpleName();
+        result = exceptionReason(e);
       }
     }
     // Report metric based on result.
@@ -319,9 +500,9 @@ public class GcpFallbackChannel extends ManagedChannel {
         };
     if (delegate != null) {
       if (source != ConnectivityState.SHUTDOWN) {
-        fallbackState.registerStateChangeCallback(once);
+        registerStateChangeCallback(once);
         if (isInFallbackMode() != initialFallbackMode) {
-          fallbackState.unregisterStateChangeCallback(once);
+          unregisterStateChangeCallback(once);
           once.run();
           return;
         }
@@ -329,7 +510,7 @@ public class GcpFallbackChannel extends ManagedChannel {
       delegate.notifyWhenStateChanged(
           source,
           () -> {
-            fallbackState.unregisterStateChangeCallback(once);
+            unregisterStateChangeCallback(once);
             once.run();
           });
     } else if (source != ConnectivityState.SHUTDOWN) {
@@ -339,12 +520,17 @@ public class GcpFallbackChannel extends ManagedChannel {
 
   @Override
   public ManagedChannel shutdown() {
+    synchronized (this) {
+      isShutdown = true;
+      stateChangeCallbacks.clear();
+    }
     if (primaryProbeFuture != null) {
       primaryProbeFuture.cancel(false);
     }
     if (fallbackProbeFuture != null) {
       fallbackProbeFuture.cancel(false);
     }
+    fallbackState.unregisterChannel(this);
     if (primaryDelegateChannel != null) {
       primaryDelegateChannel.shutdown();
     }
@@ -359,12 +545,17 @@ public class GcpFallbackChannel extends ManagedChannel {
 
   @Override
   public ManagedChannel shutdownNow() {
+    synchronized (this) {
+      isShutdown = true;
+      stateChangeCallbacks.clear();
+    }
     if (primaryProbeFuture != null) {
       primaryProbeFuture.cancel(true);
     }
     if (fallbackProbeFuture != null) {
       fallbackProbeFuture.cancel(true);
     }
+    fallbackState.unregisterChannel(this);
     if (primaryDelegateChannel != null) {
       primaryDelegateChannel.shutdownNow();
     }
@@ -387,8 +578,8 @@ public class GcpFallbackChannel extends ManagedChannel {
       return false;
     }
 
-    if (ownsFallbackState && fallbackState.ownsExecutor() && execService != null) {
-      return execService.isShutdown();
+    if (ownsFallbackState) {
+      return fallbackState.areOwnedExecutorsShutdown();
     }
     return true;
   }
@@ -403,8 +594,8 @@ public class GcpFallbackChannel extends ManagedChannel {
       return false;
     }
 
-    if (ownsFallbackState && fallbackState.ownsExecutor() && execService != null) {
-      return execService.isTerminated();
+    if (ownsFallbackState) {
+      return fallbackState.areOwnedExecutorsTerminated();
     }
     return true;
   }
@@ -428,8 +619,8 @@ public class GcpFallbackChannel extends ManagedChannel {
       awaitTimeNanos = endTimeNanos - System.nanoTime();
     }
 
-    if (ownsFallbackState && fallbackState.ownsExecutor() && execService != null) {
-      return execService.awaitTermination(awaitTimeNanos, NANOSECONDS);
+    if (ownsFallbackState) {
+      return fallbackState.awaitOwnedExecutorsTermination(awaitTimeNanos);
     }
     return true;
   }

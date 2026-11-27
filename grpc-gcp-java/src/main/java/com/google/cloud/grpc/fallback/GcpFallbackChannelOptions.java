@@ -222,8 +222,8 @@ public class GcpFallbackChannelOptions {
     }
 
     /**
-     * Sets the minimum number of successful primary probes before the pool exits fallback mode. All
-     * channels contribute to this threshold.
+     * Sets the minimum number of consecutive successful primary probes on a channel before that
+     * channel exits fallback mode.
      */
     public Builder setMinPrimaryProbeSuccessCount(int minPrimaryProbeSuccessCount) {
       this.minPrimaryProbeSuccessCount = minPrimaryProbeSuccessCount;
