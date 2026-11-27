@@ -36,6 +36,7 @@ import com.google.cloud.storage.Retrying.Retrier;
 import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
 import com.google.cloud.storage.spi.v1.AuditingHttpTransport;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -414,5 +415,24 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
     } finally {
       logger.removeHandler(handler);
     }
+  }
+
+  @Test
+  public void apiaryReadRequestToStringFormatsOptions() {
+    StorageObject object =
+        new StorageObject().setBucket("example-bucket").setName("example-object");
+    Map<StorageRpc.Option, Object> options =
+        ImmutableMap.of(
+            StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, "example-option-value",
+            StorageRpc.Option.USER_PROJECT, "example-project");
+    ApiaryReadRequest request = new ApiaryReadRequest(object, options, ByteRangeSpec.nullRange());
+
+    String formatted = request.toString();
+
+    assertThat(formatted).doesNotContain("example-option-value");
+    assertThat(formatted)
+        .contains("options={CUSTOMER_SUPPLIED_KEY=<omitted>, USER_PROJECT=example-project}");
+    assertThat(request.getOptions())
+        .containsEntry(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, "example-option-value");
   }
 }
