@@ -24,6 +24,7 @@ import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.StorageException;
 import com.google.common.io.ByteStreams;
 import java.nio.channels.FileChannel;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.Callable;
@@ -62,7 +63,8 @@ final class DirectDownloadCallable implements Callable<DownloadResult> {
                 destPath,
                 StandardOpenOption.WRITE,
                 StandardOpenOption.CREATE,
-                StandardOpenOption.TRUNCATE_EXISTING)) {
+                StandardOpenOption.TRUNCATE_EXISTING,
+                LinkOption.NOFOLLOW_LINKS)) {
       rc.setChunkSize(0);
       bytesCopied = ByteStreams.copy(rc, wc);
       if (originalBlob.getSize() != null) {
