@@ -55,12 +55,10 @@ public class BuiltInMetricsBothSinksTest extends AbstractMockServerTest {
     // created even though the client uses NoCredentials against the mock server.
     previousJmhEnabled = System.getProperty("jmh.enabled");
     System.setProperty("jmh.enabled", "true");
-    BuiltInMetricsProvider.INSTANCE.reset();
   }
 
   @After
   public void restore() {
-    BuiltInMetricsProvider.INSTANCE.reset();
     if (previousJmhEnabled == null) {
       System.clearProperty("jmh.enabled");
     } else {
@@ -84,16 +82,18 @@ public class BuiltInMetricsBothSinksTest extends AbstractMockServerTest {
     return OpenTelemetrySdk.builder().setMeterProvider(meterProviderBuilder.build()).build();
   }
 
-  private Spanner createSpanner(OpenTelemetry customSink) {
-    return SpannerOptions.newBuilder()
-        .setProjectId("my-project")
-        .setHost(String.format("http://localhost:%d", getPort()))
-        .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-        .setCredentials(NoCredentials.getInstance())
-        .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
-        .setClientMetricsProvider(CustomOpenTelemetryMetricsProvider.create(customSink))
-        .build()
-        .getService();
+  private Spanner createSpanner(OpenTelemetry gcmSink, OpenTelemetry customSink) {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("my-project")
+            .setHost(String.format("http://localhost:%d", getPort()))
+            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+            .setCredentials(NoCredentials.getInstance())
+            .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
+            .setClientMetricsProvider(CustomOpenTelemetryMetricsProvider.create(customSink))
+            .build();
+    options.builtInMetricsProvider.setOpenTelemetry(gcmSink);
+    return options.getService();
   }
 
   private static void executeSelect1(Spanner spanner) {
@@ -122,25 +122,30 @@ public class BuiltInMetricsBothSinksTest extends AbstractMockServerTest {
   public void bothSinksRecordAppLayerMetricsInTheirOwnNamespaces() {
     InMemoryMetricReader gcmReader = InMemoryMetricReader.create();
     InMemoryMetricReader customReader = InMemoryMetricReader.create();
-    BuiltInMetricsProvider.INSTANCE.setOpenTelemetry(gcmOpenTelemetry(gcmReader));
+    OpenTelemetrySdk gcmOtel = gcmOpenTelemetry(gcmReader);
+    OpenTelemetrySdk customOtel = customOpenTelemetry(customReader);
+    try {
+      try (Spanner spanner = createSpanner(gcmOtel, customOtel)) {
+        executeSelect1(spanner);
+      }
 
-    try (Spanner spanner = createSpanner(customOpenTelemetry(customReader))) {
-      executeSelect1(spanner);
-    }
+      // Both sinks recorded the operation, each in its own namespace.
+      assertThat(operationCount(gcmReader, BuiltInMetricsConstant.METER_NAME)).isGreaterThan(0L);
+      assertThat(operationCount(customReader, BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME))
+          .isGreaterThan(0L);
 
-    // Both sinks recorded the operation, each in its own namespace.
-    assertThat(operationCount(gcmReader, BuiltInMetricsConstant.METER_NAME)).isGreaterThan(0L);
-    assertThat(operationCount(customReader, BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME))
-        .isGreaterThan(0L);
-
-    // No cross-contamination: the reserved names never land on the custom sink, and the custom
-    // names never land on the GCM sink.
-    for (MetricData metric : customReader.collectAllMetrics()) {
-      assertThat(metric.getName()).doesNotContain("spanner.googleapis.com");
-    }
-    for (MetricData metric : gcmReader.collectAllMetrics()) {
-      assertThat(metric.getName())
-          .doesNotContain(BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME + "/");
+      // No cross-contamination: the reserved names never land on the custom sink, and the custom
+      // names never land on the GCM sink.
+      for (MetricData metric : customReader.collectAllMetrics()) {
+        assertThat(metric.getName()).doesNotContain("spanner.googleapis.com");
+      }
+      for (MetricData metric : gcmReader.collectAllMetrics()) {
+        assertThat(metric.getName())
+            .doesNotContain(BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME + "/");
+      }
+    } finally {
+      gcmOtel.close();
+      customOtel.close();
     }
   }
 }

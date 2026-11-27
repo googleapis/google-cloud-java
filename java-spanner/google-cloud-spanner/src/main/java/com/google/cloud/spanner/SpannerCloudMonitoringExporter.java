@@ -30,6 +30,7 @@ import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
@@ -46,6 +47,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -74,9 +76,11 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
   private final Set<String> spannerExportFailureLoggedProjects = ConcurrentHashMap.newKeySet();
   private final MetricServiceClient client;
   private final Supplier<String> fallbackProjectIdSupplier;
+  private final Map<String, String> clientAttributes;
 
   static SpannerCloudMonitoringExporter create(
       Supplier<String> fallbackProjectIdSupplier,
+      Map<String, String> clientAttributes,
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
       String universeDomain)
@@ -115,19 +119,30 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     settingsBuilder.createServiceTimeSeriesSettings().setSimpleTimeoutNoRetriesDuration(timeout);
 
     return new SpannerCloudMonitoringExporter(
-        fallbackProjectIdSupplier, MetricServiceClient.create(settingsBuilder.build()));
+        fallbackProjectIdSupplier,
+        clientAttributes,
+        MetricServiceClient.create(settingsBuilder.build()));
   }
 
   @VisibleForTesting
   SpannerCloudMonitoringExporter(MetricServiceClient client) {
-    this(() -> null, client);
+    this(() -> null, Collections.emptyMap(), client);
   }
 
   @VisibleForTesting
   SpannerCloudMonitoringExporter(
       Supplier<String> fallbackProjectIdSupplier, MetricServiceClient client) {
+    this(fallbackProjectIdSupplier, Collections.emptyMap(), client);
+  }
+
+  @VisibleForTesting
+  SpannerCloudMonitoringExporter(
+      Supplier<String> fallbackProjectIdSupplier,
+      Map<String, String> clientAttributes,
+      MetricServiceClient client) {
     this.client = client;
     this.fallbackProjectIdSupplier = fallbackProjectIdSupplier;
+    this.clientAttributes = ImmutableMap.copyOf(clientAttributes);
   }
 
   @Override
@@ -156,7 +171,7 @@ class SpannerCloudMonitoringExporter implements MetricExporter {
     try {
       spannerTimeSeries =
           SpannerCloudMonitoringExporterUtils.convertToSpannerTimeSeries(
-              collection, fallbackProjectIdSupplier.get());
+              collection, fallbackProjectIdSupplier.get(), this.clientAttributes);
     } catch (Throwable e) {
       logger.log(
           Level.WARNING,

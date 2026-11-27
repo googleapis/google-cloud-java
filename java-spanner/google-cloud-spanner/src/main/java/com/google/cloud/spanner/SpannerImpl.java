@@ -354,6 +354,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   void close(long timeout, TimeUnit unit) {
+    final long deadlineNanos =
+        timeout == Long.MAX_VALUE ? 0L : System.nanoTime() + unit.toNanos(Math.max(0L, timeout));
     List<ListenableFuture<Void>> closureFutures;
     synchronized (this) {
       checkClosed();
@@ -382,6 +384,16 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         }
       } catch (RuntimeException e) {
         logger.log(Level.WARNING, "Failed to close channels", e);
+      }
+      try {
+        if (timeout == Long.MAX_VALUE) {
+          getOptions().closeBuiltInMetrics();
+        } else {
+          long remainingNanos = Math.max(0L, deadlineNanos - System.nanoTime());
+          getOptions().closeBuiltInMetrics(remainingNanos, TimeUnit.NANOSECONDS);
+        }
+      } catch (RuntimeException e) {
+        logger.log(Level.WARNING, "Failed to close built-in metrics", e);
       }
     }
   }

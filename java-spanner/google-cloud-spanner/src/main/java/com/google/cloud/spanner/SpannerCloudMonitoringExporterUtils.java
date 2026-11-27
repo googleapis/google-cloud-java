@@ -65,6 +65,7 @@ import io.opentelemetry.sdk.metrics.data.SumData;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -79,7 +80,9 @@ class SpannerCloudMonitoringExporterUtils {
   private SpannerCloudMonitoringExporterUtils() {}
 
   static List<TimeSeries> convertToSpannerTimeSeries(
-      Collection<MetricData> collection, String fallbackProjectId) {
+      Collection<MetricData> collection,
+      String fallbackProjectId,
+      Map<String, String> clientAttributes) {
     List<TimeSeries> allTimeSeries = new ArrayList<>();
 
     for (MetricData metricData : collection) {
@@ -109,7 +112,11 @@ class SpannerCloudMonitoringExporterUtils {
           .map(
               pointData ->
                   convertPointToSpannerTimeSeries(
-                      metricData, pointData, baseMonitoredResource, fallbackProjectId))
+                      metricData,
+                      pointData,
+                      baseMonitoredResource,
+                      fallbackProjectId,
+                      clientAttributes))
           .filter(Objects::nonNull)
           .forEach(allTimeSeries::add);
     }
@@ -121,7 +128,8 @@ class SpannerCloudMonitoringExporterUtils {
       MetricData metricData,
       PointData pointData,
       MonitoredResource baseMonitoredResource,
-      String fallbackProjectId) {
+      String fallbackProjectId,
+      Map<String, String> clientAttributes) {
     MetricKind metricKind = convertMetricKind(metricData);
     TimeSeries.Builder builder =
         TimeSeries.newBuilder()
@@ -154,7 +162,7 @@ class SpannerCloudMonitoringExporterUtils {
     }
 
     // Add common labels like "client_name" and "client_uid" for all the exported metrics.
-    metricBuilder.putAllLabels(BuiltInMetricsProvider.INSTANCE.createClientAttributes());
+    metricBuilder.putAllLabels(clientAttributes);
 
     builder.setResource(monitoredResourceBuilder.build());
     builder.setMetric(metricBuilder.build());

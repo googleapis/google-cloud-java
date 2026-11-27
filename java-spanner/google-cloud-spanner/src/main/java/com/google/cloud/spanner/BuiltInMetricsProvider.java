@@ -40,8 +40,10 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.contrib.gcp.resource.GCPResourceProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.common.CompletableResultCode;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.export.MetricExporter;
 import io.opentelemetry.sdk.resources.Resource;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -57,109 +59,246 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
+/**
+ * Per-client provider for built-in Cloud Monitoring metrics. Each {@link SpannerOptions} owns a
+ * dedicated instance so credentials, monitoring endpoints, universe domains, fallback project IDs,
+ * and {@code client_uid} values remain isolated across clients in the same JVM.
+ */
 class BuiltInMetricsProvider {
-
-  static BuiltInMetricsProvider INSTANCE = new BuiltInMetricsProvider();
 
   private static final Logger logger = Logger.getLogger(BuiltInMetricsProvider.class.getName());
 
-  private static String taskId;
+  static final long DEFAULT_SHUTDOWN_TIMEOUT_SECONDS = 10L;
+
+  private static final Object PID_AND_HOST_LOCK = new Object();
+  private static volatile String cachedPidAndHost;
 
   private static String location;
 
   private static final String default_location = "global";
 
+  private final Object lock = new Object();
   private OpenTelemetry openTelemetry;
-  private String projectId;
+  private boolean ownsOpenTelemetry;
+  // Held in an AtomicReference so PeriodicMetricReader export threads read the fallback project
+  // lock-free during periodic and final-flush exports, and close() can detach a new reference
+  // without clearing the closing exporter's view.
+  private volatile AtomicReference<String> fallbackProjectId = new AtomicReference<>();
   private boolean mismatchedProjectIdLogged;
   private Thread shutdownHook;
+  private String clientUid;
 
   // Package-private and non-final so tests can record the arguments passed by SpannerOptions.
   @VisibleForTesting
   BuiltInMetricsProvider() {}
 
-  synchronized OpenTelemetry getOrCreateOpenTelemetry(
+  /**
+   * Returns the Cloud Monitoring {@link OpenTelemetry} instance for this client, lazily creating
+   * and registering a JVM shutdown hook for it on the first call. Returns {@code null} if exporter
+   * creation fails with an {@link IOException}.
+   */
+  @Nullable
+  OpenTelemetry getOrCreateOpenTelemetry(
       String projectId,
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
       String universeDomain) {
-    try {
-      if (this.openTelemetry == null) {
-        SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
-        BuiltInMetricsView.registerBuiltinMetrics(
-            SpannerCloudMonitoringExporter.create(
-                this::getProjectId, credentials, monitoringHost, universeDomain),
-            sdkMeterProviderBuilder);
-        sdkMeterProviderBuilder.setResource(Resource.create(createResourceAttributes(projectId)));
-        SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
-        this.openTelemetry = OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
-        this.shutdownHook = new Thread(sdkMeterProvider::close);
-        Runtime.getRuntime().addShutdownHook(this.shutdownHook);
+    synchronized (lock) {
+      try {
+        if (this.openTelemetry == null) {
+          AtomicReference<String> projectRef = this.fallbackProjectId;
+          String uid = currentClientUid();
+          SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
+          BuiltInMetricsView.registerBuiltinMetrics(
+              createExporter(
+                  projectRef::get,
+                  createClientAttributes(uid),
+                  credentials,
+                  monitoringHost,
+                  universeDomain),
+              sdkMeterProviderBuilder);
+          sdkMeterProviderBuilder.setResource(
+              Resource.create(createResourceAttributes(projectId, uid)));
+          SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
+          this.openTelemetry =
+              OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
+          this.ownsOpenTelemetry = true;
+          Thread hook = new Thread(sdkMeterProvider::close);
+          try {
+            Runtime.getRuntime().addShutdownHook(hook);
+            this.shutdownHook = hook;
+          } catch (IllegalStateException ignored) {
+            // The JVM is already shutting down; skip registering a shutdown hook.
+            this.shutdownHook = null;
+          }
+        }
+        return this.openTelemetry;
+      } catch (IOException ex) {
+        logger.log(
+            Level.WARNING,
+            "Unable to get OpenTelemetry object for client side metrics, will skip exporting client"
+                + " side metrics",
+            ex);
+        return null;
       }
-      return this.openTelemetry;
-    } catch (IOException ex) {
-      logger.log(
-          Level.WARNING,
-          "Unable to get OpenTelemetry object for client side metrics, will skip exporting client"
-              + " side metrics",
-          ex);
-      return null;
     }
   }
 
-  synchronized void setProjectIdIfAbsent(String projectId) {
-    if (this.projectId == null) {
-      this.projectId = projectId;
-    } else if (!this.projectId.equals(projectId) && !mismatchedProjectIdLogged) {
-      mismatchedProjectIdLogged = true;
-      logger.log(
-          Level.WARNING,
-          "Built-in metrics fallback project is already initialized to project {0}. Non-Spanner"
-              + " metrics without project information will be exported using that project instead"
-              + " of project {1}.",
-          new Object[] {this.projectId, projectId});
+  /**
+   * Creates the {@link MetricExporter} backing this provider. Package-private and overridable in
+   * tests to inspect exporter settings or inject deterministic test doubles.
+   */
+  @VisibleForTesting
+  MetricExporter createExporter(
+      Supplier<String> fallbackProjectIdSupplier,
+      Map<String, String> clientAttributes,
+      @Nullable Credentials credentials,
+      @Nullable String monitoringHost,
+      String universeDomain)
+      throws IOException {
+    return SpannerCloudMonitoringExporter.create(
+        fallbackProjectIdSupplier, clientAttributes, credentials, monitoringHost, universeDomain);
+  }
+
+  /** Sets the fallback project ID for non-Spanner gRPC metrics if not yet initialized. */
+  void setProjectIdIfAbsent(String projectId) {
+    synchronized (lock) {
+      String current = this.fallbackProjectId.get();
+      if (current == null) {
+        this.fallbackProjectId.set(projectId);
+      } else if (!current.equals(projectId) && !mismatchedProjectIdLogged) {
+        mismatchedProjectIdLogged = true;
+        logger.log(
+            Level.WARNING,
+            "Built-in metrics fallback project is already initialized to project {0}. Non-Spanner"
+                + " metrics without project information will be exported using that project instead"
+                + " of project {1}.",
+            new Object[] {current, projectId});
+      }
     }
   }
 
   @Nullable
-  synchronized OpenTelemetry getOpenTelemetry() {
-    return this.openTelemetry;
+  OpenTelemetry getOpenTelemetry() {
+    synchronized (lock) {
+      return this.openTelemetry;
+    }
   }
 
   /**
    * Injects the Cloud Monitoring OpenTelemetry so that {@link #getOrCreateOpenTelemetry} returns it
    * instead of building one backed by the live Cloud Monitoring exporter. Used to observe the
-   * reserved-namespace sink in-memory in tests.
+   * reserved-namespace sink in-memory in tests. Injected instances are owned by the caller and are
+   * not shut down by {@link #close()}.
    */
   @VisibleForTesting
-  synchronized void setOpenTelemetry(OpenTelemetry openTelemetry) {
-    this.openTelemetry = openTelemetry;
+  void setOpenTelemetry(OpenTelemetry openTelemetry) {
+    synchronized (lock) {
+      this.openTelemetry = openTelemetry;
+      this.ownsOpenTelemetry = false;
+    }
   }
 
-  synchronized String getProjectId() {
-    return this.projectId;
+  /** Returns the current fallback project ID lock-free for export threads. */
+  String getProjectId() {
+    return this.fallbackProjectId.get();
+  }
+
+  /**
+   * Closes the provider-owned {@link OpenTelemetrySdk} with the default bounded shutdown timeout
+   * and rotates state so subsequent reuse of the owning {@link SpannerOptions} starts cleanly.
+   */
+  void close() {
+    close(DEFAULT_SHUTDOWN_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+  }
+
+  /**
+   * Closes the provider-owned {@link OpenTelemetrySdk}, waiting at most {@code timeout} for the
+   * final flush. When {@code timeout <= 0}, shutdown is initiated asynchronously without blocking.
+   */
+  void close(long timeout, TimeUnit unit) {
+    closeInternal(/* closeInjected= */ false, timeout, unit);
   }
 
   @VisibleForTesting
-  synchronized void reset() {
-    if (this.openTelemetry instanceof OpenTelemetrySdk) {
-      ((OpenTelemetrySdk) this.openTelemetry).getSdkMeterProvider().close();
+  boolean hasShutdownHook() {
+    synchronized (lock) {
+      return this.shutdownHook != null;
     }
-    if (this.shutdownHook != null) {
+  }
+
+  @VisibleForTesting
+  void reset() {
+    closeInternal(/* closeInjected= */ true, DEFAULT_SHUTDOWN_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+  }
+
+  private void closeInternal(boolean closeInjected, long timeout, TimeUnit unit) {
+    final OpenTelemetry toClose;
+    final Thread hookToRemove;
+    synchronized (lock) {
+      toClose = (closeInjected || this.ownsOpenTelemetry) ? this.openTelemetry : null;
+      hookToRemove = this.shutdownHook;
+      this.openTelemetry = null;
+      this.ownsOpenTelemetry = false;
+      this.shutdownHook = null;
+      // Clear fallbackProjectId and clientUid so a subsequent reopen starts cleanly with a new
+      // lazy client_uid while any in-flight final flush keeps reading the previous AtomicReference.
+      this.fallbackProjectId = new AtomicReference<>();
+      this.mismatchedProjectIdLogged = false;
+      this.clientUid = null;
+    }
+    if (hookToRemove != null) {
       try {
-        Runtime.getRuntime().removeShutdownHook(this.shutdownHook);
+        Runtime.getRuntime().removeShutdownHook(hookToRemove);
       } catch (IllegalStateException ignored) {
         // The JVM is already shutting down.
       }
     }
-    this.openTelemetry = null;
-    this.projectId = null;
-    this.mismatchedProjectIdLogged = false;
-    this.shutdownHook = null;
+    if (toClose instanceof OpenTelemetrySdk) {
+      shutdownMeterProvider(((OpenTelemetrySdk) toClose).getSdkMeterProvider(), timeout, unit);
+    }
+  }
+
+  /**
+   * Shuts down {@code meterProvider} on a daemon thread so caller timeouts are strictly honored
+   * even though {@code PeriodicMetricReader#shutdown()} synchronously blocks up to 5 seconds per
+   * internal phase while waiting on a final export.
+   */
+  private static void shutdownMeterProvider(
+      SdkMeterProvider meterProvider, long timeout, TimeUnit unit) {
+    CountDownLatch completed = new CountDownLatch(1);
+    Thread shutdownThread =
+        new Thread(
+            () -> {
+              try {
+                CompletableResultCode shutdownResult = meterProvider.shutdown();
+                if (timeout > 0) {
+                  shutdownResult.join(timeout, unit);
+                }
+              } catch (RuntimeException e) {
+                logger.log(Level.WARNING, "Failed to shut down built-in metrics provider", e);
+              } finally {
+                completed.countDown();
+              }
+            },
+            "spanner-builtin-metrics-shutdown");
+    shutdownThread.setDaemon(true);
+    shutdownThread.start();
+    if (timeout > 0) {
+      try {
+        completed.await(timeout, unit);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+      }
+    }
   }
 
   // TODO: Remove when
@@ -198,19 +337,24 @@ class BuiltInMetricsProvider {
       @Nullable Credentials credentials,
       @Nullable String monitoringHost,
       String universeDomain) {
-    enableGrpcMetrics(
-        channelProviderBuilder,
-        this.getOrCreateOpenTelemetry(projectId, credentials, monitoringHost, universeDomain));
+    OpenTelemetry otel =
+        this.getOrCreateOpenTelemetry(projectId, credentials, monitoringHost, universeDomain);
+    if (otel == null) {
+      return;
+    }
+    enableGrpcMetrics(channelProviderBuilder, otel);
   }
 
   /**
-   * Wires gRPC-layer metrics into the channel builder using the given OpenTelemetry instance
-   * instead of the process-wide Cloud Monitoring one. Used for {@link
-   * CustomOpenTelemetryMetricsProvider}; does not touch any state of this singleton.
+   * Wires gRPC-layer metrics into the channel builder using the given OpenTelemetry instance. Does
+   * nothing if {@code openTelemetry} is {@code null}.
    */
   void enableGrpcMetrics(
       InstantiatingGrpcChannelProvider.Builder channelProviderBuilder,
-      OpenTelemetry openTelemetry) {
+      @Nullable OpenTelemetry openTelemetry) {
+    if (openTelemetry == null) {
+      return;
+    }
     GrpcOpenTelemetry grpcOpenTelemetry =
         GrpcOpenTelemetry.newBuilder()
             .sdk(openTelemetry)
@@ -234,11 +378,15 @@ class BuiltInMetricsProvider {
   }
 
   Attributes createResourceAttributes(String projectId) {
+    return createResourceAttributes(projectId, currentClientUid());
+  }
+
+  private Attributes createResourceAttributes(String projectId, String uid) {
     AttributesBuilder attributesBuilder =
         Attributes.builder()
             .put(PROJECT_ID_KEY.getKey(), projectId)
             .put(INSTANCE_CONFIG_ID_KEY.getKey(), "unknown")
-            .put(CLIENT_HASH_KEY.getKey(), generateClientHash(getDefaultTaskValue()))
+            .put(CLIENT_HASH_KEY.getKey(), generateClientHash(uid))
             .put(INSTANCE_ID_KEY.getKey(), "unknown")
             .put(LOCATION_ID_KEY.getKey(), detectClientLocation());
 
@@ -246,10 +394,24 @@ class BuiltInMetricsProvider {
   }
 
   Map<String, String> createClientAttributes() {
+    return createClientAttributes(currentClientUid());
+  }
+
+  /** Lazily initializes and returns the per-provider {@code client_uid} on first metrics use. */
+  private String currentClientUid() {
+    synchronized (lock) {
+      if (this.clientUid == null) {
+        this.clientUid = createTaskValue();
+      }
+      return this.clientUid;
+    }
+  }
+
+  private Map<String, String> createClientAttributes(String uid) {
     Map<String, String> clientAttributes = new HashMap<>();
     clientAttributes.put(
         CLIENT_NAME_KEY.getKey(), "spanner-java/" + GaxProperties.getLibraryVersion(getClass()));
-    clientAttributes.put(CLIENT_UID_KEY.getKey(), getDefaultTaskValue());
+    clientAttributes.put(CLIENT_UID_KEY.getKey(), uid);
     return clientAttributes;
   }
 
@@ -301,28 +463,32 @@ class BuiltInMetricsProvider {
   }
 
   /**
-   * Generates a unique identifier for the Client_uid metric field. The identifier is composed of a
-   * UUID, the process ID (PID), and the hostname.
-   *
-   * <p>For Java 9 and later, the PID is obtained using the ProcessHandle API. For Java 8, the PID
-   * is extracted from ManagementFactory.getRuntimeMXBean().getName().
-   *
-   * @return A unique identifier string in the format UUID@PID@hostname
+   * Generates a unique identifier for the {@code client_uid} metric field in the format {@code
+   * UUID@PID@hostname}, caching the PID and hostname once per JVM.
    */
-  private static String getDefaultTaskValue() {
-    if (taskId == null) {
-      String identifier = UUID.randomUUID().toString();
-      String pid = getProcessId();
+  private static String createTaskValue() {
+    return UUID.randomUUID() + "@" + getPidAndHost();
+  }
 
-      try {
-        String hostname = InetAddress.getLocalHost().getHostName();
-        taskId = identifier + "@" + pid + "@" + hostname;
-      } catch (UnknownHostException e) {
-        logger.log(Level.INFO, "Unable to get the hostname.", e);
-        taskId = identifier + "@" + pid + "@localhost";
-      }
+  private static String getPidAndHost() {
+    String pidAndHost = cachedPidAndHost;
+    if (pidAndHost != null) {
+      return pidAndHost;
     }
-    return taskId;
+    synchronized (PID_AND_HOST_LOCK) {
+      if (cachedPidAndHost == null) {
+        String pid = getProcessId();
+        String hostname;
+        try {
+          hostname = InetAddress.getLocalHost().getHostName();
+        } catch (UnknownHostException e) {
+          logger.log(Level.INFO, "Unable to get the hostname.", e);
+          hostname = "localhost";
+        }
+        cachedPidAndHost = pid + "@" + hostname;
+      }
+      return cachedPidAndHost;
+    }
   }
 
   private static String getProcessId() {

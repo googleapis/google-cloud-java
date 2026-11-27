@@ -22,6 +22,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
@@ -3286,6 +3287,43 @@ public class GapicSpannerRpcTest {
 
     } finally {
       rpc.shutdown();
+    }
+  }
+
+  @Test
+  public void testShutdownOneOfTwoRpcsDoesNotCloseOptionsBuiltInMetrics() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setHost("http://localhost:1")
+            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+            .setCredentials(STATIC_CREDENTIALS)
+            .setEmulatorHost(null)
+            .build();
+    GapicSpannerRpc rpc1 = new GapicSpannerRpc(options);
+    GapicSpannerRpc rpc2 = new GapicSpannerRpc(options);
+    try {
+      OpenTelemetry beforeShutdown = options.getBuiltInOpenTelemetry();
+      assertNotNull(beforeShutdown);
+
+      rpc2.shutdown();
+
+      assertSame(beforeShutdown, options.getBuiltInOpenTelemetry());
+
+      rpc1.shutdown();
+      options.getService().close();
+
+      OpenTelemetry afterSpannerClose = options.getBuiltInOpenTelemetry();
+      assertNotNull(afterSpannerClose);
+      assertNotSame(beforeShutdown, afterSpannerClose);
+    } finally {
+      if (!rpc1.isClosed()) {
+        rpc1.shutdown();
+      }
+      if (!rpc2.isClosed()) {
+        rpc2.shutdown();
+      }
+      options.getService().close();
     }
   }
 
