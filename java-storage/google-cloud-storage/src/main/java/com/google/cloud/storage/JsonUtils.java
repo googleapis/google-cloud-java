@@ -83,6 +83,11 @@ final class JsonUtils {
    */
   static <T extends GenericJson> T getOutputJsonWithSelectedFields(
       T src, Set<NamedField> fieldsForOutput) {
+    return getOutputJsonWithSelectedFields(src, fieldsForOutput, true);
+  }
+
+  static <T extends GenericJson> T getOutputJsonWithSelectedFields(
+      T src, Set<NamedField> fieldsForOutput, boolean parseArrays) {
     Set<String> fieldPaths =
         fieldsForOutput.stream()
             .map(NamedField::getApiaryName)
@@ -99,7 +104,7 @@ final class JsonUtils {
       // 5. deserialize the json string to the apiary model class.
       String string = jop.getJsonFactory().toPrettyString(src);
       JsonObject jsonObject = gson.fromJson(string, JsonObject.class);
-      JsonObject ret = getOutputJson(jsonObject, fieldPaths);
+      JsonObject ret = getOutputJson(jsonObject, fieldPaths, parseArrays);
       String json = gson.toJson(ret);
       Class<? extends GenericJson> aClass = src.getClass();
       //noinspection unchecked
@@ -120,6 +125,11 @@ final class JsonUtils {
    */
   @VisibleForTesting
   static @NonNull JsonObject getOutputJson(JsonObject inputJson, Set<String> fieldsInOutput) {
+    return getOutputJson(inputJson, fieldsInOutput, true);
+  }
+
+  private static @NonNull JsonObject getOutputJson(
+      JsonObject inputJson, Set<String> fieldsInOutput, boolean parseArrays) {
 
     Map<String, String> l = flatten(inputJson);
 
@@ -141,7 +151,7 @@ final class JsonUtils {
         flat.put(fieldToRetain, null);
       }
     }
-    return treeify(flat);
+    return treeify(flat, parseArrays);
   }
 
   /**
@@ -173,6 +183,11 @@ final class JsonUtils {
    */
   @VisibleForTesting
   static JsonObject treeify(Map<String, String> m) {
+    return treeify(m, true);
+  }
+
+  @VisibleForTesting
+  static JsonObject treeify(Map<String, String> m, boolean parseArrays) {
     JsonObject o = new JsonObject();
     for (Entry<String, String> e : m.entrySet()) {
       String key = e.getKey();
@@ -187,7 +202,7 @@ final class JsonUtils {
         {
           String split = splits[i];
           Matcher matcher = array_part.matcher(split);
-          if (matcher.matches()) {
+          if (parseArrays && matcher.matches()) {
             name = matcher.group(1);
             String idxString = matcher.group(2);
             idx = Integer.parseInt(idxString);

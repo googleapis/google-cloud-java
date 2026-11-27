@@ -237,6 +237,74 @@ public final class JsonUtilsTest {
   }
 
   @Example
+  public void treeify_withoutArrays_largeIndexIsLiteralKey() {
+    JsonObject metadata = new JsonObject();
+    metadata.addProperty("x[2147483646]", "v");
+    JsonObject o = new JsonObject();
+    o.add("metadata", metadata);
+
+    JsonObject treeify = JsonUtils.treeify(ImmutableMap.of("metadata.x[2147483646]", "v"), false);
+    assertThat(treeify).isEqualTo(o);
+  }
+
+  @Example
+  public void treeify_withoutArrays_smallIndexIsLiteralKey() {
+    JsonObject metadata = new JsonObject();
+    metadata.addProperty("tags[2]", "v");
+    JsonObject o = new JsonObject();
+    o.add("metadata", metadata);
+
+    JsonObject treeify = JsonUtils.treeify(ImmutableMap.of("metadata.tags[2]", "v"), false);
+    assertThat(treeify).isEqualTo(o);
+  }
+
+  @Example
+  public void treeify_withoutArrays_indexOutOfIntRangeIsLiteralKey() {
+    JsonObject metadata = new JsonObject();
+    metadata.addProperty("x[99999999999]", "v");
+    JsonObject o = new JsonObject();
+    o.add("metadata", metadata);
+
+    JsonObject treeify = JsonUtils.treeify(ImmutableMap.of("metadata.x[99999999999]", "v"), false);
+    assertThat(treeify).isEqualTo(o);
+  }
+
+  @Example
+  public void getOutputJson_WithSelectedFields_withoutArrays_metadataKeyWithIndex()
+      throws IOException {
+    StorageObject src =
+        new StorageObject()
+            .setBucket("some-bucket")
+            .setName("some-name")
+            .setMetadata(ImmutableMap.of("owner", "alice", "x[2147483646]", "v"));
+    StorageObject expected = new StorageObject().setMetadata(ImmutableMap.of("x[2147483646]", "v"));
+
+    NamedField field = nested(literal("metadata"), literal("x[2147483646]"));
+    StorageObject dst =
+        JsonUtils.getOutputJsonWithSelectedFields(src, ImmutableSet.of(field), false);
+
+    assertThat(dst).isEqualTo(expected);
+  }
+
+  @Example
+  public void getOutputJson_WithSelectedFields_withoutArrays_contextKeyWithIndex()
+      throws IOException {
+    StorageObject src =
+        new StorageObject()
+            .setBucket("some-bucket")
+            .setName("some-name")
+            .setContexts(c(hashMapOf("k[2147483646]", "v")));
+    StorageObject expected = new StorageObject().setContexts(c(hashMapOf("k[2147483646]", "v")));
+
+    NamedField field =
+        nested(nested(literal("contexts"), literal("custom")), literal("k[2147483646]"));
+    StorageObject dst =
+        JsonUtils.getOutputJsonWithSelectedFields(src, ImmutableSet.of(field), false);
+
+    assertThat(dst).isEqualTo(expected);
+  }
+
+  @Example
   public void treeify_flatten_roundtrip() {
     ImmutableMap<String, String> m =
         ImmutableMap.of(
