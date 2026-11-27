@@ -20,6 +20,7 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.StorageException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 
 final class TransferManagerUtils {
@@ -27,28 +28,49 @@ final class TransferManagerUtils {
   private TransferManagerUtils() {}
 
   static Path createAndValidateDestPath(ParallelDownloadConfig config, BlobInfo originalBlob) {
-    Path targetDirectory = config.getDownloadDirectory();
+    Path targetDirectory = config.getDownloadDirectory().toAbsolutePath().normalize();
     Path newPath =
         targetDirectory
             .resolve(originalBlob.getName().replaceFirst(config.getStripPrefix(), ""))
             .normalize();
 
-    // Security check: Verify the resolved path is inside the target directory
-    // This catches ".." sequences that attempt to "escape" the folder.
-    if (!newPath.startsWith(targetDirectory)) {
+    // Verify the resolved path stays within the configured download directory.
+    if (!newPath.startsWith(targetDirectory) || newPath.equals(targetDirectory)) {
       return null;
     }
-    // Check to make sure the parent directories exist
-    if (Files.exists(newPath.getParent())) {
-      return newPath;
-    } else {
-      // Make parent directories if they do not exist
-      try {
-        Files.createDirectories(newPath.getParent());
-        return newPath;
-      } catch (IOException e) {
-        throw new StorageException(e);
+
+    try {
+      Path realTargetDir = Files.exists(targetDirectory) ? targetDirectory.toRealPath() : null;
+      // Each relative component below the download directory must not be a symlink or resolve
+      // outside the canonical download directory.
+      Path current = targetDirectory;
+      for (Path part : targetDirectory.relativize(newPath)) {
+        current = current.resolve(part);
+        if (Files.isSymbolicLink(current)) {
+          return null;
+        }
+        if (realTargetDir != null
+            && Files.exists(current, LinkOption.NOFOLLOW_LINKS)
+            && !current.toRealPath().startsWith(realTargetDir)) {
+          return null;
+        }
       }
+
+      Path parent = newPath.getParent();
+      // Check existence (following links) so a symlinked download directory is accepted on JDK 8.
+      if (!Files.exists(parent)) {
+        Files.createDirectories(parent);
+      }
+      if (realTargetDir == null) {
+        realTargetDir = targetDirectory.toRealPath();
+      }
+      // The canonical parent must remain under the canonical download directory.
+      if (!parent.toRealPath().startsWith(realTargetDir)) {
+        return null;
+      }
+      return newPath;
+    } catch (IOException e) {
+      throw new StorageException(e);
     }
   }
 }

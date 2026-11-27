@@ -23,6 +23,7 @@ import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.StorageException;
 import com.google.common.io.ByteStreams;
 import java.nio.channels.FileChannel;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.Callable;
@@ -60,7 +61,11 @@ final class ChunkedDownloadCallable implements Callable<DownloadSegment> {
     long bytesCopied = -1L;
     try (ReadChannel rc = storage.reader(originalBlob.getBlobId(), opts);
         FileChannel wc =
-            FileChannel.open(destPath, StandardOpenOption.WRITE, StandardOpenOption.CREATE)) {
+            FileChannel.open(
+                destPath,
+                StandardOpenOption.WRITE,
+                StandardOpenOption.CREATE,
+                LinkOption.NOFOLLOW_LINKS)) {
       rc.setChunkSize(0);
       rc.seek(startPosition);
       rc.limit(endPosition);
