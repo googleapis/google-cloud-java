@@ -52,7 +52,6 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
-import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
@@ -63,6 +62,7 @@ import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
@@ -91,6 +91,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadFactory;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 
 /**
@@ -145,8 +146,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   final BigQuerySettings querySettings;
 
   private BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue;
-
-  private BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue;
 
   // Variables Required for the ReferenceQueue implementation
   static ReferenceQueue<BigQueryArrowResultSet> referenceQueueArrowRs = new ReferenceQueue<>();
@@ -233,6 +232,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
     querySettings.setWriteAPIAppendRowCount(this.connection.getWriteAPIAppendRowCount());
     querySettings.setEnableTimestampPicos(this.connection.isEnableTimestampPicos());
+    querySettings.setEnableQueryResultsArrowFormat(
+        this.connection.isEnableQueryResultsArrowFormat());
 
     return querySettings.build();
   }
@@ -546,7 +547,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       tmp.close();
     }
     this.batchQueries.clear();
-    this.arrowBatchWrapperBlockingQueue = null;
     this.bigQueryFieldValueListWrapperBlockingQueue = null;
     this.currentUpdateCount = -1;
     this.currentJobIdIndex = -1;
@@ -920,10 +920,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finer("++enter++");
 
     // set the resultset
-    long totalRows = getEffectiveTotalRows(results);
     JobId currentJobId = results.getJobId();
     TableId destinationTable = getDestinationTable(currentJobId);
-    Schema schema = results.getSchema();
     Future<?> populateBufferWorker = null;
     try {
       String parent = String.format("projects/%s", destinationTable.getProject());
@@ -950,43 +948,89 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               .setMaxStreamCount(1);
 
       ReadSession readSession = getReadSession(builder.build());
-      this.arrowBatchWrapperBlockingQueue = new LinkedBlockingDeque<>(getArrowBufferSize());
+      BlockingQueue<BigQueryArrowBatchWrapper> queue =
+          new LinkedBlockingDeque<>(getArrowBufferSize());
       // deserialize and populate the buffer async, so that the client isn't blocked
       populateBufferWorker =
-          populateArrowBufferedQueue(
-              readSession, this.arrowBatchWrapperBlockingQueue, getBigQueryReadClient());
+          populateArrowBufferedQueue(readSession, queue, getBigQueryReadClient());
 
-      BigQueryArrowResultSet arrowResultSet =
-          BigQueryArrowResultSet.of(
-              schema,
-              getArrowSchema(readSession),
-              totalRows,
-              this,
-              this.arrowBatchWrapperBlockingQueue,
-              populateBufferWorker,
-              this.bigQuery,
-              job);
-      arrowResultSetFinalizers.add(
-          new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(
-              arrowResultSet, referenceQueueArrowRs, populateBufferWorker));
-      arrowResultSet.setJobId(currentJobId);
-      arrowResultSet.setQueryId(results.getQueryId());
-      if (job == null && currentJobId == null) {
-        arrowResultSet.setQueryStatistics(results.extractQueryStatistics());
-      }
-      return arrowResultSet;
+      return newArrowResultSet(
+          results, job, getArrowSchema(readSession), queue, populateBufferWorker);
 
     } catch (Exception | OutOfMemoryError ex) {
       if (populateBufferWorker != null) {
         populateBufferWorker.cancel(true);
       }
-      if (ex instanceof OutOfMemoryError || ex instanceof RejectedExecutionException) {
-        throw new BigQueryJdbcException(
-            "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
-            ex);
-      }
-      throw new BigQueryJdbcException(ex.getMessage(), ex);
+      throw arrowResultSetException(ex);
     }
+  }
+
+  /**
+   * Reads a query job's results from its {@code _default} stream, starting at row 0. No read
+   * session is created and the job is not looked up. The first page in {@code results} is not
+   * returned: it supplies the column types and the row count. The Arrow schema arrives in the
+   * stream's first message.
+   */
+  private ResultSet processJobStreamResultSet(TableResult results, Job job) throws SQLException {
+    LOG.finer("++enter++");
+    Future<?> populateBufferWorker = null;
+    try {
+      BlockingQueue<BigQueryArrowBatchWrapper> queue =
+          new LinkedBlockingDeque<>(getArrowBufferSize());
+      populateBufferWorker =
+          populateArrowBufferedQueueFromJobStream(
+              results.getJobId(), 0, queue, getBigQueryReadClient());
+
+      return newArrowResultSet(results, job, null, queue, populateBufferWorker);
+    } catch (Exception | OutOfMemoryError ex) {
+      if (populateBufferWorker != null) {
+        populateBufferWorker.cancel(true);
+      }
+      throw arrowResultSetException(ex);
+    }
+  }
+
+  /**
+   * Builds the result set over {@code queue}, which {@code reader} fills. Without an {@code
+   * arrowSchema}, the result set takes it from the first message in the queue.
+   */
+  private BigQueryArrowResultSet newArrowResultSet(
+      TableResult results,
+      Job job,
+      ArrowSchema arrowSchema,
+      BlockingQueue<BigQueryArrowBatchWrapper> queue,
+      Future<?> reader)
+      throws SQLException {
+    JobId currentJobId = results.getJobId();
+    BigQueryArrowResultSet arrowResultSet =
+        BigQueryArrowResultSet.of(
+            results.getSchema(),
+            arrowSchema,
+            getEffectiveTotalRows(results),
+            this,
+            queue,
+            reader,
+            this.bigQuery,
+            job);
+    arrowResultSetFinalizers.add(
+        new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(
+            arrowResultSet, referenceQueueArrowRs, reader));
+    arrowResultSet.setJobId(currentJobId);
+    arrowResultSet.setQueryId(results.getQueryId());
+    if (job == null && currentJobId == null) {
+      arrowResultSet.setQueryStatistics(results.extractQueryStatistics());
+    }
+    return arrowResultSet;
+  }
+
+  /** The exception a statement throws when it can't set up an Arrow result set. */
+  private static BigQueryJdbcException arrowResultSetException(Throwable ex) {
+    if (ex instanceof OutOfMemoryError || ex instanceof RejectedExecutionException) {
+      return new BigQueryJdbcException(
+          "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
+          ex);
+    }
+    return new BigQueryJdbcException(ex);
   }
 
   private TableReadOptions buildTableReadOptions() {
@@ -1002,10 +1046,87 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         .build();
   }
 
+  /**
+   * Arrow options for a job stream. They are sent with every request instead of left to the
+   * stream's defaults, because they change the schema the stream returns: all requests for one
+   * result must use the same values. Compression stays unset, which means none.
+   */
+  @VisibleForTesting
+  ArrowSerializationOptions buildArrowSerializationOptions() {
+    return ArrowSerializationOptions.newBuilder()
+        .setPicosTimestampPrecision(
+            isEnableTimestampPicos()
+                ? ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_PICOS
+                : ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_MICROS)
+        .build();
+  }
+
+  /**
+   * Name of the stream that carries a query job's results. The API does not return it, so it is
+   * built from the job reference. The location must be the job's own: the stream does not exist in
+   * any other location.
+   */
+  @VisibleForTesting
+  static String jobStreamName(JobId jobId) throws BigQueryJdbcException {
+    if (!isCompleteJobReference(jobId)) {
+      throw new BigQueryJdbcException(
+          "A job stream needs the job's project, location and job ID, got: " + jobId);
+    }
+    return String.format(
+        "projects/%s/locations/%s/jobs/%s/streams/_default",
+        jobId.getProject(), jobId.getLocation(), jobId.getJob());
+  }
+
+  /** A job stream can be named only from a reference that has a project, location and job ID. */
+  private static boolean isCompleteJobReference(JobId jobId) {
+    return jobId != null
+        && !Strings.isNullOrEmpty(jobId.getProject())
+        && !Strings.isNullOrEmpty(jobId.getLocation())
+        && !Strings.isNullOrEmpty(jobId.getJob());
+  }
+
   /** Asynchronously reads results and populates an arrow record queue */
   @InternalApi
   Future<?> populateArrowBufferedQueue(
       ReadSession readSession,
+      BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue,
+      BigQueryReadClient bqReadClient) {
+    // Use the first stream to perform reading. The session already carries the read options:
+    // ReadRows accepts Arrow options for job streams only.
+    return readRowsIntoArrowQueue(
+        () ->
+            ReadRowsRequest.newBuilder().setReadStream(readSession.getStreams(0).getName()).build(),
+        arrowBatchWrapperBlockingQueue,
+        bqReadClient);
+  }
+
+  /**
+   * Asynchronously reads a query job's results from its {@code _default} stream, starting at row
+   * {@code startOffset}, and populates an arrow record queue. No read session is created.
+   */
+  @InternalApi
+  Future<?> populateArrowBufferedQueueFromJobStream(
+      JobId jobId,
+      long startOffset,
+      BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue,
+      BigQueryReadClient bqReadClient)
+      throws BigQueryJdbcException {
+    ReadRowsRequest firstRequest =
+        ReadRowsRequest.newBuilder()
+            .setReadStream(jobStreamName(jobId))
+            .setOffset(startOffset)
+            .setArrowSerializationOptions(buildArrowSerializationOptions())
+            .build();
+    return readRowsIntoArrowQueue(() -> firstRequest, arrowBatchWrapperBlockingQueue, bqReadClient);
+  }
+
+  /**
+   * Reads one stream into the queue. Every attempt sends the first request moved forward by the
+   * rows already read, so a resumed request keeps the stream name and the Arrow options. The first
+   * request is resolved on the worker, where a failure reaches the queue as an error.
+   */
+  private Future<?> readRowsIntoArrowQueue(
+      Supplier<ReadRowsRequest> firstRequestSupplier,
       BlockingQueue<BigQueryArrowBatchWrapper> arrowBatchWrapperBlockingQueue,
       BigQueryReadClient bqReadClient) {
     LOG.finer("++enter++");
@@ -1019,17 +1140,15 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                   long rowsRead = 0;
                   int retryCount = 0;
                   try {
-                    // Use the first stream to perform reading.
-                    String streamName = readSession.getStreams(0).getName();
+                    ReadRowsRequest firstRequest = firstRequestSupplier.get();
 
                     while (true) {
                       ServerStream<ReadRowsResponse> stream = null;
                       boolean streamCompleted = false;
                       try {
                         ReadRowsRequest readRowsRequest =
-                            ReadRowsRequest.newBuilder()
-                                .setReadStream(streamName)
-                                .setOffset(rowsRead)
+                            firstRequest.toBuilder()
+                                .setOffset(firstRequest.getOffset() + rowsRead)
                                 .build();
 
                         // Process each block of rows as they arrive and decode using our simple row
@@ -1041,9 +1160,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                                 "Arrow stream reading was interrupted or shut down before completion.");
                           }
 
-                          ArrowRecordBatch currentBatch = response.getArrowRecordBatch();
+                          // Queue every response as-is; the result set decides what to use.
                           arrowBatchWrapperBlockingQueue.put(
-                              BigQueryArrowBatchWrapper.of(currentBatch));
+                              BigQueryArrowBatchWrapper.of(
+                                  response.hasArrowRecordBatch()
+                                      ? response.getArrowRecordBatch()
+                                      : null,
+                                  response.hasArrowSchema() ? response.getArrowSchema() : null,
+                                  response.getRowCount()));
                           rowsRead += response.getRowCount();
                         }
                         if (isWorkerShuttingDown()) {
@@ -1054,7 +1178,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                         break;
                       } catch (ApiException e) {
                         if (e.getStatusCode().getCode() == StatusCode.Code.NOT_FOUND) {
-                          LOG.warning("Read session expired or not found: %s", e.getMessage());
+                          LOG.warning("Read stream expired or not found: %s", e.getMessage());
                           enqueueError(arrowBatchWrapperBlockingQueue, e);
                           break;
                         }
@@ -1072,7 +1196,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                         LOG.warning(
                             "Connection interrupted during arrow stream read, retrying. attempt: %d",
                             retryCount);
-                        Thread.sleep(RETRY_DELAY_MS);
+                        Thread.sleep(getArrowRetryDelayMs());
                       } finally {
                         if (stream != null && !streamCompleted) {
                           stream.cancel();
@@ -1134,11 +1258,18 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.fine("Processing query response. Query: %s", query);
 
     ResultSet resultSet = null;
-    if (jobId != null && useReadAPI(results)) {
+    if (isJobStreamAllowed()) {
+      // The job stream or JSON. A read session is never used where the job stream is allowed.
+      if (useJobStream(results)) {
+        LOG.info("Using the job stream to read the data.");
+        this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_READ_API);
+        resultSet = processJobStreamResultSet(results, job);
+      }
+    } else if (jobId != null && useReadAPI(results)) {
       try {
         LOG.info("Using ReadAPI to read the data.");
-        resultSet = processArrowResultSet(results, job);
         this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_READ_API);
+        resultSet = processArrowResultSet(results, job);
       } catch (SQLException e) {
         if (!isPermissionDeniedException(e)) {
           throw e;
@@ -1173,6 +1304,49 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       t = t.getCause();
     }
     return false;
+  }
+
+  /**
+   * True when a result may be read from its job's stream: {@code EnableQueryResultsArrowFormat} is
+   * on and the user set no destination table. A job with a user-set destination table has no
+   * stream, so it keeps the High-Throughput API rules.
+   */
+  private boolean isJobStreamAllowed() {
+    return querySettings.isEnableQueryResultsArrowFormat() && !isLargeResultsEnabled();
+  }
+
+  /**
+   * Whether a SELECT result is read from the query job's stream. The result must have more pages,
+   * and return at least {@code HighThroughputMinTableSize} rows and more rows than its first page
+   * holds. Rows are counted after {@link #setMaxRows(int)}. Any other result is read as JSON,
+   * starting with the page already fetched.
+   */
+  @VisibleForTesting
+  boolean useJobStream(TableResult results) {
+    if (!isJobStreamAllowed()) {
+      return false;
+    }
+    long rows = getEffectiveTotalRows(results);
+    Long rowsInPage = results.getRowsInPage();
+    int threshold = querySettings.getHighThroughputMinTableSize();
+    LOG.fine(
+        "Job stream rule. More pages: %s, rows to return: %d, rows in the first page: %s,"
+            + " threshold: %d.",
+        results.hasNextPage(), rows, rowsInPage, threshold);
+    if (!results.hasNextPage() || rows < threshold) {
+      return false;
+    }
+    if (rowsInPage != null && rows <= rowsInPage) {
+      // setMaxRows stops within the first page, and that page is already here.
+      return false;
+    }
+    if (!isCompleteJobReference(results.getJobId())) {
+      LOG.warning(
+          "Reading the results as JSON: the job reference %s can't name a job stream.",
+          results.getJobId());
+      return false;
+    }
+    return true;
   }
 
   // The read Ratio should be met
@@ -1565,6 +1739,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   int getArrowBufferSize() {
     return DEFAULT_ARROW_BUFFER_SIZE;
+  }
+
+  /** Wait between two attempts to read an Arrow stream. */
+  @VisibleForTesting
+  long getArrowRetryDelayMs() {
+    return RETRY_DELAY_MS;
   }
 
   /** Returns the destinationTable from jobId by calling `jobs.get` API */
@@ -2007,7 +2187,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void enqueueEndOfStream(BlockingQueue<BigQueryArrowBatchWrapper> queue) {
-    enqueueMarker(queue, BigQueryArrowBatchWrapper.of(null, true));
+    enqueueMarker(queue, BigQueryArrowBatchWrapper.ofEndOfStream());
   }
 
   private void enqueueBufferError(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable e) {

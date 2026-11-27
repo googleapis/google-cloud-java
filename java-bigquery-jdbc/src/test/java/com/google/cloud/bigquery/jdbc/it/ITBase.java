@@ -443,9 +443,17 @@ public class ITBase extends BigQueryJdbcBaseTest {
         new ByteArrayInputStream(authJson.toString().getBytes(StandardCharsets.UTF_8)));
   }
 
-  /** Asserts that the result set was served by the Storage Read (High-Throughput) API. */
+  /**
+   * Asserts that the result set was read in Arrow from the Storage Read API: a read session or a
+   * job stream.
+   */
   protected static void assertArrowResultSet(ResultSet resultSet) {
     assertTrue(resultSet.getClass().getName().contains("BigQueryArrowResultSet"));
+  }
+
+  /** Asserts that the result set was read as JSON, not from the Storage Read API. */
+  protected static void assertJsonResultSet(ResultSet resultSet) {
+    assertTrue(resultSet.getClass().getName().contains("BigQueryJsonResultSet"));
   }
 
   protected int resultSetRowCount(ResultSet resultSet) throws SQLException {

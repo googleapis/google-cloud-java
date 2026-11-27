@@ -37,6 +37,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedExc
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import com.google.cloud.bigquery.jdbc.BigQueryDriver;
+import com.google.cloud.bigquery.jdbc.BigQueryResultSet;
 import com.google.cloud.bigquery.jdbc.DataSource;
 import com.google.cloud.bigquery.jdbc.OpenTelemetryJulHandler;
 import com.google.common.collect.ImmutableMap;
@@ -84,6 +85,11 @@ public class ITBigQueryJDBCTest extends ITBase {
   private static final String BASE_QUERY =
       "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
           + " trip_distance asc LIMIT %s";
+
+  /** Rows 1..N in order; use with {@code String.format(ORDERED_ARRAY_QUERY, n)}. */
+  private static final String ORDERED_ARRAY_QUERY =
+      "SELECT n FROM UNNEST(GENERATE_ARRAY(1, %s)) AS n ORDER BY n;";
+
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static String DATASET;
@@ -282,6 +288,128 @@ public class ITBigQueryJDBCTest extends ITBase {
       assertEquals(expectedCnt, resultSetRowCount(jsonResultSet));
     }
     connection.close();
+  }
+
+  /**
+   * Properties that read a result of 1,000 rows or more from the query job's stream. The
+   * High-Throughput API is off, so an Arrow result set can only come from the job stream. The query
+   * cache is off, so every run reads a job that ran the query.
+   */
+  private static Properties jobStreamProperties() {
+    Properties properties = new Properties();
+    properties.setProperty("EnableQueryResultsArrowFormat", "1");
+    properties.setProperty("EnableHighThroughputAPI", "0");
+    properties.setProperty("HighThroughputMinTableSize", "1000");
+    properties.setProperty("MaxResults", "300");
+    properties.setProperty("UseQueryCache", "0");
+    return properties;
+  }
+
+  /** Asserts that the result set returns 1, 2, ... {@code expectedCnt} in that order, then ends. */
+  private static void assertRowsInOrder(ResultSet resultSet, int expectedCnt) throws SQLException {
+    for (int expected = 1; expected <= expectedCnt; expected++) {
+      assertTrue(resultSet.next(), "The result ended before row " + expected);
+      assertEquals(expected, resultSet.getInt(1));
+    }
+    assertFalse(resultSet.next());
+  }
+
+  @Test
+  @Tag("disable_tpc")
+  public void testJobStreamPathLarge() throws SQLException {
+    int expectedCnt = 5000;
+    try (Connection connection =
+            DriverManager.getConnection(connection_uri, jobStreamProperties());
+        Statement statement = connection.createStatement();
+        ResultSet resultSet =
+            statement.executeQuery(String.format(ORDERED_ARRAY_QUERY, expectedCnt))) {
+      assertArrowResultSet(resultSet);
+      assertRowsInOrder(resultSet, expectedCnt);
+    }
+  }
+
+  @Test
+  @Tag("disable_tpc")
+  public void testJobStreamPathWithMaxRows() throws SQLException {
+    // 2,000 rows are more than the threshold and more than the first page, so the result is
+    // streamed. The stream holds 5,000 rows and the result set stops at 2,000.
+    int maxRows = 2000;
+    try (Connection connection =
+            DriverManager.getConnection(connection_uri, jobStreamProperties());
+        Statement statement = connection.createStatement()) {
+      statement.setMaxRows(maxRows);
+      try (ResultSet resultSet = statement.executeQuery(String.format(ORDERED_ARRAY_QUERY, 5000))) {
+        assertArrowResultSet(resultSet);
+        assertRowsInOrder(resultSet, maxRows);
+      }
+    }
+  }
+
+  @Test
+  @Tag("disable_tpc")
+  public void testJobStreamReadsCachedResult() throws SQLException {
+    // The second run of a query takes its result from the query cache. That job's stream must
+    // return the rows too. No other test sends this text, so none shares its cache entry.
+    int expectedCnt = 3000;
+    String query = String.format(ORDERED_ARRAY_QUERY, expectedCnt);
+    Properties properties = jobStreamProperties();
+    properties.setProperty("UseQueryCache", "1");
+    try (Connection connection = DriverManager.getConnection(connection_uri, properties);
+        Statement statement = connection.createStatement()) {
+      try (ResultSet first = statement.executeQuery(query)) {
+        assertArrowResultSet(first);
+        assertRowsInOrder(first, expectedCnt);
+      }
+
+      try (ResultSet cached = statement.executeQuery(query)) {
+        assertEquals(
+            Boolean.TRUE,
+            cached.unwrap(BigQueryResultSet.class).getQueryStatistics().getCacheHit(),
+            "The second run was not served from the query cache, so no cached result was read");
+        assertArrowResultSet(cached);
+        assertRowsInOrder(cached, expectedCnt);
+      }
+    }
+  }
+
+  @Test
+  @Tag("disable_tpc")
+  public void testJobStreamSmallResultUsesJson() throws SQLException {
+    // 500 rows span two pages of 300, but are fewer than the 1,000 a job stream needs.
+    int expectedCnt = 500;
+    try (Connection connection =
+            DriverManager.getConnection(connection_uri, jobStreamProperties());
+        Statement statement = connection.createStatement();
+        ResultSet resultSet =
+            statement.executeQuery(String.format(GENERATE_ARRAY_QUERY, expectedCnt))) {
+      assertJsonResultSet(resultSet);
+      assertEquals(expectedCnt, resultSetRowCount(resultSet));
+    }
+  }
+
+  @Test
+  @Tag("disable_tpc")
+  public void testJobStreamScriptChildJobs() throws SQLException {
+    String script =
+        String.format(GENERATE_ARRAY_QUERY, 10) + String.format(GENERATE_ARRAY_QUERY, 5000);
+    try (Connection connection =
+            DriverManager.getConnection(connection_uri, jobStreamProperties());
+        Statement statement = connection.createStatement()) {
+      assertTrue(statement.execute(script));
+      try (ResultSet small = statement.getResultSet()) {
+        assertJsonResultSet(small);
+        assertEquals(10, resultSetRowCount(small));
+      }
+
+      // Each child job of a script has its own stream.
+      assertTrue(statement.getMoreResults());
+      try (ResultSet large = statement.getResultSet()) {
+        assertArrowResultSet(large);
+        assertEquals(5000, resultSetRowCount(large));
+      }
+
+      assertFalse(statement.getMoreResults());
+    }
   }
 
   @Test
