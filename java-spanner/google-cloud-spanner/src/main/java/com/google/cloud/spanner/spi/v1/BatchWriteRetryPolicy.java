@@ -45,8 +45,8 @@ import java.util.function.DoubleSupplier;
 import org.jspecify.annotations.Nullable;
 
 /**
- * Pure retryability, backoff, {@link RetryInfo} extraction, and timeout budgeting policy for {@code
- * BatchWrite} stream resumption.
+ * Pure retryability, backoff, {@link RetryInfo} extraction, and timeout budgeting policy for {@link
+ * BatchWriteResumingServerStreamingCallable}.
  */
 final class BatchWriteRetryPolicy {
 
