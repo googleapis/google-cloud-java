@@ -109,7 +109,7 @@ The driver supports multiple OAuth 2.0 and identity workflows specified via the 
 | **`0`** | **Service Account Key File (P12)** | `OAuthPvtKeyPath`, `OAuthServiceAcctEmail` | `OAuthP12Password` | Path to `.p12` key file. Requires explicit `OAuthServiceAcctEmail` as `.p12` files do not contain email metadata. `OAuthP12Password` defaults to `notasecret`. |
 | **`0`** | **Service Account Key String (JSON)** | `OAuthPvtKey` | `OAuthServiceAcctEmail` | Raw JSON key file string content in URL. Service account email and private key are automatically extracted from the JSON string. |
 | **`0`** | **Service Account Key String (PKCS#8 / P12 Bytes)** | `OAuthPvtKey`, `OAuthServiceAcctEmail` | `OAuthP12Password` | Raw PKCS#8 or P12 bytes key string content in URL. Requires explicit `OAuthServiceAcctEmail`. |
-| **`1`** | **User Account (Interactive 3-Legged OAuth)** | None (for built-in client app) | `OAuthClientId`, `OAuthClientSecret` | Launches local browser tab for interactive user login on desktop. Built-in client ID/secret used if omitted. |
+| **`1`** | **User Account (Interactive 3-Legged OAuth)** | None (for built-in client app) | `OAuthClientId`, `OAuthClientSecret` | Launches local browser tab for interactive user login on desktop. Built-in client ID/secret used if omitted. Custom `OAuthClientId` values must be configured as a **Desktop app** OAuth 2.0 client. |
 | **`2`** | **Pre-generated Access Token** | `OAuthAccessToken` | `OAuthAccessTokenReadonly` | Uses short-lived bearer token directly. `OAuthAccessTokenReadonly` defaults to `false`. |
 | **`2`** | **Pre-generated Refresh Token** | `OAuthRefreshToken`, `OAuthClientId`, `OAuthClientSecret` | None | Uses refresh token with client credentials to automatically mint access tokens. |
 | **`3`** | **Application Default Credentials (ADC)** | None | None | Uses GCP standard credential resolution (`GOOGLE_APPLICATION_CREDENTIALS` env var or `gcloud` CLI context). |
@@ -160,7 +160,7 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `OAuthAccessToken` | `null` | Pre-generated OAuth 2.0 access token string. |
 | `OAuthAccessTokenReadonly` | `false` | Indicates whether the pre-generated access token has read-only scope. |
 | `OAuthRefreshToken` | `null` | Pre-generated refresh token to automatically mint access tokens. |
-| `OAuthClientId` | *Google Client ID* | OAuth 2.0 Client ID for user authentication or refresh token flows. |
+| `OAuthClientId` | *Google Client ID* | OAuth 2.0 Client ID for user authentication or refresh token flows. For `OAuthType=1`, custom client IDs must be configured as a **Desktop app** OAuth 2.0 client so dynamic loopback redirect URIs (`http://127.0.0.1:<port>` or `http://[::1]:<port>`) are accepted. |
 | `OAuthClientSecret` | *Google Secret* | OAuth 2.0 Client Secret for user authentication or refresh token flows. |
 | `ServiceAccountImpersonationEmail` | `null` | Target Service Account email to impersonate for query job execution. |
 | `ServiceAccountImpersonationChain` | `null` | Comma-separated list of service account emails representing the impersonation chain. |
