@@ -2665,14 +2665,238 @@ public class SpannerOptionsTest {
     }
   }
 
-  /** Records the universe domain that {@link SpannerOptions} passes to the metrics provider. */
+  @Test
+  public void testEnableGrpcMetricsSkipsCloudMonitoringWithNoCredentials() {
+    useGrpcBuiltInMetricsEnabledEnvironment();
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .build();
+      RecordingBuiltInMetricsProvider provider = new RecordingBuiltInMetricsProvider();
+      options.builtInMetricsProvider = provider;
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
+          InstantiatingGrpcChannelProvider.newBuilder();
+
+      options.enablegRPCMetrics(channelProviderBuilder, /* isEmulatorEnabled= */ false);
+
+      assertTrue(provider.credentials.isEmpty());
+      assertNull(channelProviderBuilder.getChannelConfigurator());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testEnableGrpcMetricsSkipsCloudMonitoringWithUsePlainText() {
+    useGrpcBuiltInMetricsEnabledEnvironment();
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setHost("http://localhost:1234")
+              .usePlainText()
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .build();
+      RecordingBuiltInMetricsProvider provider = new RecordingBuiltInMetricsProvider();
+      options.builtInMetricsProvider = provider;
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
+          InstantiatingGrpcChannelProvider.newBuilder();
+
+      options.enablegRPCMetrics(channelProviderBuilder, /* isEmulatorEnabled= */ false);
+
+      assertTrue(provider.credentials.isEmpty());
+      assertNull(channelProviderBuilder.getChannelConfigurator());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testEnableGrpcMetricsKeepsCustomSinkWithNoCredentials() {
+    useGrpcBuiltInMetricsEnabledEnvironment();
+    OpenTelemetrySdk customOpenTelemetry =
+        OpenTelemetrySdk.builder()
+            .setMeterProvider(
+                SdkMeterProvider.builder()
+                    .registerMetricReader(InMemoryMetricReader.create())
+                    .build())
+            .build();
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .setClientMetricsProvider(
+                  CustomOpenTelemetryMetricsProvider.create(customOpenTelemetry))
+              .build();
+      RecordingBuiltInMetricsProvider provider = new RecordingBuiltInMetricsProvider();
+      options.builtInMetricsProvider = provider;
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
+          InstantiatingGrpcChannelProvider.newBuilder();
+
+      options.enablegRPCMetrics(channelProviderBuilder, /* isEmulatorEnabled= */ false);
+
+      assertTrue(provider.credentials.isEmpty());
+      assertEquals(Collections.singletonList(customOpenTelemetry), provider.customOpenTelemetries);
+      assertNotNull(channelProviderBuilder.getChannelConfigurator());
+    } finally {
+      customOpenTelemetry.close();
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testNoCredentialsFirstDoesNotLockSingletonForLaterAuthenticatedClient() {
+    useGrpcBuiltInMetricsEnabledEnvironment();
+    try {
+      RecordingBuiltInMetricsProvider sharedProvider = new RecordingBuiltInMetricsProvider();
+      SpannerOptions noCredOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("unauth-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .build();
+      noCredOptions.builtInMetricsProvider = sharedProvider;
+
+      GoogleCredentials googleCredentials =
+          GoogleCredentials.create(new AccessToken("test-token", null));
+      SpannerOptions authOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("auth-project")
+              .setCredentials(googleCredentials)
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .build();
+      authOptions.builtInMetricsProvider = sharedProvider;
+
+      noCredOptions.enablegRPCMetrics(
+          InstantiatingGrpcChannelProvider.newBuilder(), /* isEmulatorEnabled= */ false);
+      assertNull(noCredOptions.getBuiltInOpenTelemetry());
+
+      authOptions.enablegRPCMetrics(
+          InstantiatingGrpcChannelProvider.newBuilder(), /* isEmulatorEnabled= */ false);
+      assertNotNull(authOptions.getBuiltInOpenTelemetry());
+
+      assertEquals(Arrays.asList(googleCredentials, googleCredentials), sharedProvider.credentials);
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testEnableGrpcMetricsRespectsJmhOverrideWithNoCredentials() {
+    useGrpcBuiltInMetricsEnabledEnvironment();
+    String previousJmhEnabled = System.getProperty("jmh.enabled");
+    System.setProperty("jmh.enabled", "true");
+    try {
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .build();
+      RecordingBuiltInMetricsProvider provider = new RecordingBuiltInMetricsProvider();
+      options.builtInMetricsProvider = provider;
+
+      options.enablegRPCMetrics(
+          InstantiatingGrpcChannelProvider.newBuilder(), /* isEmulatorEnabled= */ false);
+      assertNotNull(options.getBuiltInOpenTelemetry());
+
+      assertEquals(
+          Arrays.asList(NoCredentials.getInstance(), NoCredentials.getInstance()),
+          provider.credentials);
+    } finally {
+      if (previousJmhEnabled == null) {
+        System.clearProperty("jmh.enabled");
+      } else {
+        System.setProperty("jmh.enabled", previousJmhEnabled);
+      }
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testGetBuiltInOpenTelemetryReturnsNullWithoutCredentialsOrWhenDisabled() {
+    useGrpcBuiltInMetricsEnabledEnvironment();
+    try {
+      RecordingBuiltInMetricsProvider provider = new RecordingBuiltInMetricsProvider();
+
+      SpannerOptions noCredOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(true)
+              .build();
+      noCredOptions.builtInMetricsProvider = provider;
+      assertNull(noCredOptions.getBuiltInOpenTelemetry());
+
+      SpannerOptions disabledOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(GoogleCredentials.create(new AccessToken("test-token", null)))
+              .setEmulatorHost(null)
+              .setBuiltInMetricsEnabled(false)
+              .build();
+      disabledOptions.builtInMetricsProvider = provider;
+      assertNull(disabledOptions.getBuiltInOpenTelemetry());
+
+      SpannerOptions nullCredOptions =
+          new TestSpannerOptions(
+              SpannerOptions.newBuilder()
+                  .setProjectId("test-project")
+                  .setCredentials(GoogleCredentials.create(new AccessToken("test-token", null)))
+                  .setEmulatorHost(null)
+                  .setBuiltInMetricsEnabled(true)) {
+            @Override
+            public Credentials getCredentials() {
+              return null;
+            }
+          };
+      nullCredOptions.builtInMetricsProvider = provider;
+      assertNull(nullCredOptions.getBuiltInOpenTelemetry());
+      nullCredOptions.enablegRPCMetrics(
+          InstantiatingGrpcChannelProvider.newBuilder(), /* isEmulatorEnabled= */ false);
+
+      assertTrue(provider.credentials.isEmpty());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  private static void useGrpcBuiltInMetricsEnabledEnvironment() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGRPCBuiltInMetrics() {
+            return true;
+          }
+        });
+  }
+
+  /**
+   * Records the universe domain, credentials, and custom OpenTelemetry instances that {@link
+   * SpannerOptions} passes to the metrics provider.
+   */
   private static final class RecordingBuiltInMetricsProvider extends BuiltInMetricsProvider {
     private final List<String> universeDomains = new ArrayList<>();
+    private final List<Credentials> credentials = new ArrayList<>();
+    private final List<OpenTelemetry> customOpenTelemetries = new ArrayList<>();
 
     @Override
     synchronized OpenTelemetry getOrCreateOpenTelemetry(
         String projectId, Credentials credentials, String monitoringHost, String universeDomain) {
       universeDomains.add(universeDomain);
+      this.credentials.add(credentials);
       return OpenTelemetry.noop();
     }
 
@@ -2684,6 +2908,15 @@ public class SpannerOptionsTest {
         String monitoringHost,
         String universeDomain) {
       universeDomains.add(universeDomain);
+      this.credentials.add(credentials);
+    }
+
+    @Override
+    void enableGrpcMetrics(
+        InstantiatingGrpcChannelProvider.Builder channelProviderBuilder,
+        OpenTelemetry openTelemetry) {
+      customOpenTelemetries.add(openTelemetry);
+      super.enableGrpcMetrics(channelProviderBuilder, openTelemetry);
     }
   }
 
