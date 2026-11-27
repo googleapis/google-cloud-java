@@ -840,6 +840,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       request.setUnsuccessfulResponseHandler(null);
     }
     request.setParser(parser);
+    OAuth2Utils.setDefaultRetrySettings(request);
     MetricsUtils.setMetricsHeader(
         request,
         MetricsUtils.getGoogleCredentialsMetricsHeader(

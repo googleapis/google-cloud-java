@@ -31,7 +31,9 @@
 
 package com.google.auth.oauth2;
 
+import com.google.api.client.http.HttpBackOffIOExceptionHandler;
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -39,6 +41,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.PemReader;
 import com.google.api.client.util.PemReader.Section;
 import com.google.api.core.InternalApi;
@@ -130,6 +133,17 @@ public class OAuth2Utils {
   static final double RETRY_RANDOMIZATION_FACTOR = 0.1;
   static final double RETRY_MULTIPLIER = 2;
   static final int DEFAULT_NUMBER_OF_RETRIES = 3;
+
+  static void setDefaultRetrySettings(HttpRequest request) {
+    request.setNumberOfRetries(DEFAULT_NUMBER_OF_RETRIES);
+    ExponentialBackOff backoff =
+        new ExponentialBackOff.Builder()
+            .setInitialIntervalMillis(INITIAL_RETRY_INTERVAL_MILLIS)
+            .setRandomizationFactor(RETRY_RANDOMIZATION_FACTOR)
+            .setMultiplier(RETRY_MULTIPLIER)
+            .build();
+    request.setIOExceptionHandler(new HttpBackOffIOExceptionHandler(backoff));
+  }
 
   // Includes expected server errors from Google token endpoint
   // Other 5xx codes are either not used or retries are unlikely to succeed
