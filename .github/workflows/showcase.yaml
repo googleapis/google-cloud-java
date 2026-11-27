@@ -138,15 +138,11 @@ jobs:
         env:
           BUILD_SUBDIR: sdk-platform-java
           JOB_TYPE: install
-      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
-        with:
-          go-version: 'stable'
-      - name: Install Librarian and tools
-        run: |
-          V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
-          echo "Installing librarian version $V"
-          go install github.com/googleapis/librarian/cmd/librarian@$V
-          librarian install
+      # Version of librarian is pulled from librarian.yaml,
+      # action is pinned to commit SHA to satisfy blanket security policy.
+      - uses: googleapis/librarian@c54791693e09a76a7403f3dc81c7c97782908b3d # v0.53.0
+      - name: Install Librarian tools
+        run: librarian install
       - name: Setup Java 17 for Golden Tests
         uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:

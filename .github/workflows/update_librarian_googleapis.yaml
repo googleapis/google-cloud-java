@@ -26,15 +26,11 @@ on:
 jobs:
   update-librarian-googleapis:
     runs-on: ubuntu-24.04
-    defaults:
-      run:
-        working-directory: google-cloud-java
     steps:
     - name: Checkout google-cloud-java
       uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       with:
         repository: googleapis/google-cloud-java
-        path: google-cloud-java
         fetch-depth: 0
         persist-credentials: false
     - name: Close Existing PR and Branch
@@ -67,29 +63,19 @@ jobs:
             }
           fi
         fi
-    - name: Set up Go
-      uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
-      with:
-        go-version: '>=1.20.2'
-    - name: Get librarian version
-      id: librarian
-      run: |
-        version=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
-        echo "version=${version}" >> $GITHUB_OUTPUT
+    # Version of librarian is pulled from librarian.yaml,
+    # action is pinned to commit SHA to satisfy blanket security policy.
+    - uses: googleapis/librarian@c54791693e09a76a7403f3dc81c7c97782908b3d # v0.53.0
     - name: Run librarian update & tidy
       run: |
-        go run "github.com/googleapis/librarian/cmd/librarian@${STEPS_LIBRARIAN_OUTPUTS_VERSION}" update sources.googleapis
-        go run "github.com/googleapis/librarian/cmd/librarian@${STEPS_LIBRARIAN_OUTPUTS_VERSION}" tidy
-      env:
-        STEPS_LIBRARIAN_OUTPUTS_VERSION: ${{ steps.librarian.outputs.version }}
+        librarian update sources.googleapis
+        librarian tidy
     - name: Get latest commit
       id: commit
       run: |
-        new_commit=$(go run "github.com/googleapis/librarian/cmd/librarian@${STEPS_LIBRARIAN_OUTPUTS_VERSION}" config get sources.googleapis.commit)
+        new_commit=$(librarian config get sources.googleapis.commit)
         echo "new_commit=${new_commit}" >> $GITHUB_OUTPUT
         echo "short_commit=${new_commit:0:7}" >> $GITHUB_OUTPUT
-      env:
-        STEPS_LIBRARIAN_OUTPUTS_VERSION: ${{ steps.librarian.outputs.version }}
 
     - name: Detect Changes To Librarian.yaml
       id: detect_librarian
@@ -119,16 +105,11 @@ jobs:
     - name: Run librarian install
       if: steps.detect_librarian.outputs.has_changes == 'true'
       run: |
-        go run "github.com/googleapis/librarian/cmd/librarian@${STEPS_LIBRARIAN_OUTPUTS_VERSION}" install
+        librarian install
         echo "$HOME/.cache/librarian/bin/java_tools/bin" >> $GITHUB_PATH
-      env:
-        STEPS_LIBRARIAN_OUTPUTS_VERSION: ${{ steps.librarian.outputs.version }}
     - name: Generate Libraries
       if: steps.detect_librarian.outputs.has_changes == 'true'
-      run: |
-        go run "github.com/googleapis/librarian/cmd/librarian@${STEPS_LIBRARIAN_OUTPUTS_VERSION}" generate --all
-      env:
-        STEPS_LIBRARIAN_OUTPUTS_VERSION: ${{ steps.librarian.outputs.version }}
+      run: librarian generate --all
     - name: Commit and Create PR
       if: steps.detect_librarian.outputs.has_changes == 'true'
       env:
