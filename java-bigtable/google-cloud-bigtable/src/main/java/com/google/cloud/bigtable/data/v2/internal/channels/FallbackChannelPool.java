@@ -31,13 +31,16 @@ import java.time.Duration;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 public class FallbackChannelPool implements ChannelPool {
   private volatile FallbackConfiguration config;
+  // Written under synchronized (this) in close(); volatile for lock-free reads in
+  // newStream callbacks.
+  private volatile boolean closed = false;
   private final ChannelPool primary;
   private final ChannelPool secondary;
   private final PoolFallbackListener poolFallbackListener;
@@ -75,7 +78,7 @@ public class FallbackChannelPool implements ChannelPool {
 
   @Override
   public void updateConfig(ChannelPoolConfiguration newConfig) {
-    if (!newConfig.hasDirectAccessWithFallback()) {
+    if (closed || !newConfig.hasDirectAccessWithFallback()) {
       return;
     }
 
@@ -98,6 +101,9 @@ public class FallbackChannelPool implements ChannelPool {
     boolean triggerCallback = false;
     FallbackConfiguration localConfig;
     synchronized (this) {
+      if (closed) {
+        return;
+      }
       config =
           config.toBuilder()
               .setEnabled(newConfig.isEnabled())
@@ -120,9 +126,16 @@ public class FallbackChannelPool implements ChannelPool {
   }
 
   @Override
-  public synchronized void close() {
-    if (checkTask != null) {
-      checkTask.cancel(false);
+  public void close() {
+    synchronized (this) {
+      if (closed) {
+        return;
+      }
+      closed = true;
+      if (checkTask != null) {
+        checkTask.cancel(false);
+        checkTask = null;
+      }
     }
     primary.close();
     secondary.close();
@@ -135,7 +148,7 @@ public class FallbackChannelPool implements ChannelPool {
     final SessionStream stream = current.newStream(desc, callOptions);
 
     return new ForwardingSessionStream(stream) {
-      private volatile boolean ignoreError;
+      private final AtomicBoolean outcomeRecorded = new AtomicBoolean(false);
 
       @Override
       public void start(Listener responseListener, Metadata headers) {
@@ -144,12 +157,11 @@ public class FallbackChannelPool implements ChannelPool {
               new SessionStream.ForwardingListener(responseListener) {
                 @Override
                 public void onBeforeSessionStart(PeerInfo peerInfo) {
-                  if (current == primary) {
+                  if (current == primary && !closed && outcomeRecorded.compareAndSet(false, true)) {
                     // Count successful session establishment as success.
-                    successCount.incrementAndGet();
                     // peerInfo received successfully, session is established,
                     // this is a successful start, thus ignoring any following errors.
-                    ignoreError = true;
+                    successCount.incrementAndGet();
                   }
                   super.onBeforeSessionStart(peerInfo);
                 }
@@ -162,7 +174,7 @@ public class FallbackChannelPool implements ChannelPool {
                     return;
                   }
 
-                  if (!status.isOk() && !ignoreError) {
+                  if (!closed && !status.isOk() && outcomeRecorded.compareAndSet(false, true)) {
                     failureCount.incrementAndGet();
                   }
                   super.onClose(status, trailers);
@@ -170,24 +182,20 @@ public class FallbackChannelPool implements ChannelPool {
               },
               headers);
         } catch (Exception e) {
-          if (current == primary) {
+          if (current == primary && !closed && outcomeRecorded.compareAndSet(false, true)) {
             // Any exception on newStream start is a failure.
             failureCount.incrementAndGet();
           }
           throw e;
         }
       }
-
-      @Override
-      public void forceClose(@Nullable String message, @Nullable Throwable cause) {
-        // Force closing the session, thus ignoring the error caused by that.
-        ignoreError = true;
-        super.forceClose(message, cause);
-      }
     };
   }
 
   private synchronized void scheduleCheckRates() {
+    if (closed) {
+      return;
+    }
     checkTask =
         exec.schedule(
             this::checkRatesAndReschedule,
@@ -204,19 +212,26 @@ public class FallbackChannelPool implements ChannelPool {
     int successes = successCount.getAndSet(0);
     int failures = failureCount.getAndSet(0);
     int total = successes + failures;
-    FallbackConfiguration localConfig = config;
+    FallbackConfiguration localConfig;
+    boolean triggerCallback = false;
 
-    if (!localConfig.isEnabled()) {
-      return;
+    synchronized (this) {
+      if (closed) {
+        return;
+      }
+      localConfig = config;
+      if (localConfig.isEnabled()
+          && total > 0
+          && ((double) failures) / total >= localConfig.getErrorRate()) {
+        triggerCallback = currentPool.compareAndSet(primary, secondary);
+      }
     }
 
-    if (total > 0 && ((double) failures) / total >= localConfig.getErrorRate()) {
-      if (currentPool.compareAndSet(primary, secondary)) {
-        poolFallbackListener.onFallback(
-            localConfig.getPrimaryName(),
-            localConfig.getFallbackName(),
-            ChannelFallbackReason.ERROR_RATE);
-      }
+    if (triggerCallback) {
+      poolFallbackListener.onFallback(
+          localConfig.getPrimaryName(),
+          localConfig.getFallbackName(),
+          ChannelFallbackReason.ERROR_RATE);
     }
   }
 }
