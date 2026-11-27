@@ -310,8 +310,9 @@ public final class GrpcStorageOptions extends StorageOptions
             .setCredentialsProvider(credentialsProvider)
             .setClock(getClock());
 
-    if (this.getUniverseDomain() != null) {
-      builder.setUniverseDomain(this.getUniverseDomain());
+    String configuredUniverseDomain = getConfiguredUniverseDomain();
+    if (configuredUniverseDomain != null) {
+      builder.setUniverseDomain(configuredUniverseDomain);
     }
 
     // this MUST come after credentials, service options set value has higher priority than creds
@@ -352,7 +353,7 @@ public final class GrpcStorageOptions extends StorageOptions
               ChannelConfigurator.lift(channelProviderBuilder.getChannelConfigurator()),
               endpoint,
               this.getProjectId(),
-              this.getUniverseDomain(),
+              configuredUniverseDomain,
               !grpcClientMetricsManuallyEnabled);
       channelProviderBuilder.setChannelConfigurator(channelConfigurator);
     }
@@ -428,6 +429,11 @@ public final class GrpcStorageOptions extends StorageOptions
   }
 
   @Override
+  boolean usesDefaultHost() {
+    return getHost().equals("https://storage." + getResolvedUniverseDomain());
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(
         retryAlgorithmManager,
@@ -473,7 +479,7 @@ public final class GrpcStorageOptions extends StorageOptions
    * @since 2.14.0
    */
   public static GrpcStorageOptions.Builder newBuilder() {
-    return new GrpcStorageOptions.Builder().setHost(DEFAULT_HOST);
+    return new GrpcStorageOptions.Builder();
   }
 
   /**
@@ -852,10 +858,14 @@ public final class GrpcStorageOptions extends StorageOptions
      */
     @Override
     public GrpcStorageOptions build() {
+      String universeDomain =
+          MoreObjects.firstNonNull(
+              resolveBuilderUniverseDomain(), Credentials.GOOGLE_DEFAULT_UNIVERSE);
       GrpcStorageOptions options = new GrpcStorageOptions(this, defaults());
-      // TODO: Remove when https://github.com/googleapis/sdk-platform-java/issues/2911 is resolved
-      if (options.getUniverseDomain() != null) {
-        this.setHost("https://storage." + options.getUniverseDomain());
+      // Use the storage host for the resolved universe domain unless setHost() set a custom host;
+      // the former default host literal counts as unset.
+      if (!isHostManuallySet() || DEFAULT_HOST.equals(options.getHost())) {
+        setResolvedHostInternal("https://storage." + universeDomain);
         return new GrpcStorageOptions(this, defaults());
       }
       return options;
