@@ -37,6 +37,7 @@ import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
@@ -70,6 +71,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.ServiceLoader;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -87,6 +89,8 @@ public abstract class ServiceOptions<
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
+  private static final ThreadLocal<Function<String, String>> TEST_ENV_RESOLVER =
+      new ThreadLocal<>();
 
   private static final RetrySettings DEFAULT_RETRY_SETTINGS =
       getDefaultRetrySettingsBuilder().build();
@@ -858,19 +862,15 @@ public abstract class ServiceOptions<
    * Returns the resolved host for the Service to connect to Google Cloud
    *
    * <p>The resolved host will be in `https://{serviceName}.{resolvedUniverseDomain}` format. The
-   * resolvedUniverseDomain will be set to `googleapis.com` if universeDomain is null. The format is
-   * similar to the DEFAULT_HOST value in java-core.
+   * resolvedUniverseDomain will be resolved from the explicit configuration, the environment
+   * variable, or default to `googleapis.com`. The format is similar to the DEFAULT_HOST value in
+   * java-core.
    *
    * @see <a
    *     href="https://github.com/googleapis/google-cloud-java/blob/e50b96b70826f173e6d23278fea96c2af9b6e817/sdk-platform-java/java-core/google-cloud-core/src/main/java/com/google/cloud/ServiceOptions.java#L86">DEFAULT_HOST</a>
    */
   @InternalApi
   public String getResolvedHost(String serviceName) {
-    if (universeDomain != null && universeDomain.isEmpty()) {
-      throw new IllegalArgumentException("The universe domain cannot be empty");
-    }
-    String resolvedUniverseDomain =
-        universeDomain != null ? universeDomain : Credentials.GOOGLE_DEFAULT_UNIVERSE;
     // The host value set to DEFAULT_HOST if the user didn't configure a host. If the
     // user set a host the library uses that value, otherwise, construct the host for the user.
     // The DEFAULT_HOST value is not a valid host for handwritten libraries and should be
@@ -878,7 +878,7 @@ public abstract class ServiceOptions<
     if (!DEFAULT_HOST.equals(host)) {
       return host;
     }
-    return "https://" + serviceName + "." + resolvedUniverseDomain;
+    return "https://" + serviceName + "." + resolveUniverseDomain();
   }
 
   /**
@@ -887,7 +887,8 @@ public abstract class ServiceOptions<
    * used as the rootUrl.
    *
    * <p>The resolved host will be in `https://{serviceName}.{resolvedUniverseDomain}/` format. The
-   * resolvedUniverseDomain will be set to `googleapis.com` if universeDomain is null.
+   * resolvedUniverseDomain will be resolved from the explicit configuration, the environment
+   * variable, or default to `googleapis.com`.
    *
    * <p>The host value is set to DEFAULT_HOST if the user didn't configure a host. Returns the host
    * value the user set, otherwise constructs the host for the user.
@@ -900,9 +901,7 @@ public abstract class ServiceOptions<
     if (!DEFAULT_HOST.equals(host)) {
       return host;
     }
-    String resolvedUniverseDomain =
-        universeDomain != null ? universeDomain : Credentials.GOOGLE_DEFAULT_UNIVERSE;
-    return "https://" + serviceName + "." + resolvedUniverseDomain + "/";
+    return "https://" + serviceName + "." + resolveUniverseDomain() + "/";
   }
 
   /**
@@ -921,11 +920,49 @@ public abstract class ServiceOptions<
     if (credentials instanceof ApiKeyCredentials) {
       return true;
     }
-    String resolvedUniverseDomain =
-        universeDomain != null ? universeDomain : Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    String resolvedUniverseDomain = resolveUniverseDomain();
     // Fall back to GDU when credentials are null to match EndpointContext and HttpTransportOptions.
     String credentialsUniverseDomain =
         credentials != null ? credentials.getUniverseDomain() : Credentials.GOOGLE_DEFAULT_UNIVERSE;
     return resolvedUniverseDomain.equals(credentialsUniverseDomain);
+  }
+
+  /**
+   * Returns the universe domain resolved from explicit configuration, the environment variable, or
+   * the default {@code googleapis.com}.
+   */
+  @InternalApi
+  public final String getResolvedUniverseDomainForService() {
+    return resolveUniverseDomain();
+  }
+
+  /**
+   * Overrides environment variable resolution on the current thread for testing. Pass {@code null}
+   * in a teardown hook to clear the thread-local override.
+   */
+  @InternalApi("Visible for testing")
+  public static void setEnvResolverForTesting(Function<String, String> testEnv) {
+    if (testEnv == null) {
+      TEST_ENV_RESOLVER.remove();
+    } else {
+      TEST_ENV_RESOLVER.set(testEnv);
+    }
+  }
+
+  private String resolveUniverseDomain() {
+    Function<String, String> resolver = TEST_ENV_RESOLVER.get();
+    String resolved =
+        universeDomain != null
+            ? universeDomain
+            : (resolver != null
+                ? resolver.apply(EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN)
+                : System.getenv(EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN));
+    if (resolved == null) {
+      return Credentials.GOOGLE_DEFAULT_UNIVERSE;
+    }
+    if (resolved.isEmpty()) {
+      throw new IllegalArgumentException("The universe domain cannot be empty");
+    }
+    return resolved;
   }
 }

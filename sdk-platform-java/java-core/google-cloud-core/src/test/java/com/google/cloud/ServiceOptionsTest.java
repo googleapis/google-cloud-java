@@ -37,6 +37,7 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.core.ApiClock;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.gax.rpc.EndpointContext;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -52,6 +53,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 class ServiceOptionsTest {
@@ -338,6 +340,11 @@ class ServiceOptionsTest {
     }
   }
 
+  @AfterEach
+  void tearDown() {
+    ServiceOptions.setEnvResolverForTesting(null);
+  }
+
   @Test
   public void testBuilder() {
     assertSame(credentials, OPTIONS.getCredentials());
@@ -521,9 +528,13 @@ class ServiceOptionsTest {
   void testGetResolvedEndpoint_emptyUniverseDomain() {
     TestServiceOptions options =
         TestServiceOptions.newBuilder().setUniverseDomain("").setProjectId("project-id").build();
-    IllegalArgumentException exception =
+    IllegalArgumentException hostException =
         assertThrows(IllegalArgumentException.class, () -> options.getResolvedHost("service"));
-    assertThat(exception.getMessage()).isEqualTo("The universe domain cannot be empty");
+    assertThat(hostException.getMessage()).isEqualTo("The universe domain cannot be empty");
+    IllegalArgumentException apiaryHostException =
+        assertThrows(
+            IllegalArgumentException.class, () -> options.getResolvedApiaryHost("service"));
+    assertThat(apiaryHostException.getMessage()).isEqualTo("The universe domain cannot be empty");
   }
 
   @Test
@@ -574,6 +585,73 @@ class ServiceOptionsTest {
             .setProjectId("project-id")
             .build();
     assertThat(options.getResolvedApiaryHost("service")).isEqualTo("https://service.random.com/");
+  }
+
+  @Test
+  void testGetResolvedHosts_universeDomainFromEnvironment() {
+    ServiceOptions.setEnvResolverForTesting(
+        key -> EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN.equals(key) ? "example.com" : null);
+
+    TestServiceOptions envOnlyOptions =
+        TestServiceOptions.newBuilder().setProjectId("project-id").build();
+    assertThat(envOnlyOptions.getResolvedUniverseDomainForService()).isEqualTo("example.com");
+    assertThat(envOnlyOptions.getResolvedApiaryHost("storage"))
+        .isEqualTo("https://storage.example.com/");
+    assertThat(envOnlyOptions.getResolvedHost("storage")).isEqualTo("https://storage.example.com");
+    assertThat(envOnlyOptions.getUniverseDomain()).isNull();
+
+    TestServiceOptions explicitUniverseOptions =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setUniverseDomain("explicit.example.com")
+            .build();
+    assertThat(explicitUniverseOptions.getResolvedApiaryHost("storage"))
+        .isEqualTo("https://storage.explicit.example.com/");
+    assertThat(explicitUniverseOptions.getResolvedHost("storage"))
+        .isEqualTo("https://storage.explicit.example.com");
+
+    TestServiceOptions explicitHostOptions =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setHost("https://custom.example.com/")
+            .build();
+    assertThat(explicitHostOptions.getResolvedApiaryHost("storage"))
+        .isEqualTo("https://custom.example.com/");
+    assertThat(explicitHostOptions.getResolvedHost("storage"))
+        .isEqualTo("https://custom.example.com/");
+
+    ServiceOptions.setEnvResolverForTesting(
+        key -> EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN.equals(key) ? "" : null);
+    TestServiceOptions emptyEnvOptions =
+        TestServiceOptions.newBuilder().setProjectId("project-id").build();
+    IllegalArgumentException hostException =
+        assertThrows(
+            IllegalArgumentException.class, () -> emptyEnvOptions.getResolvedHost("storage"));
+    assertThat(hostException.getMessage()).isEqualTo("The universe domain cannot be empty");
+    IllegalArgumentException apiaryHostException =
+        assertThrows(
+            IllegalArgumentException.class, () -> emptyEnvOptions.getResolvedApiaryHost("storage"));
+    assertThat(apiaryHostException.getMessage()).isEqualTo("The universe domain cannot be empty");
+  }
+
+  @Test
+  void testIsValidUniverseDomain_universeDomainFromEnvironment() throws IOException {
+    ServiceOptions.setEnvResolverForTesting(
+        key -> EndpointContext.GOOGLE_CLOUD_UNIVERSE_DOMAIN.equals(key) ? "random.com" : null);
+
+    TestServiceOptions matchingOptions =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setCredentials(credentialsNotInGDU)
+            .build();
+    assertThat(matchingOptions.hasValidUniverseDomain()).isTrue();
+
+    TestServiceOptions mismatchedOptions =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setCredentials(credentials)
+            .build();
+    assertThat(mismatchedOptions.hasValidUniverseDomain()).isFalse();
   }
 
   // No User Configuration = GDU, Default Credentials = GDU

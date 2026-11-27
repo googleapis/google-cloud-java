@@ -31,6 +31,7 @@ import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.cloud.BaseService;
 import com.google.cloud.BatchResult;
@@ -1215,7 +1216,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             slashlessBucketNameFromBlobInfo(blobInfo) + "." + getBaseStorageHostName(optionMap));
       } else if (optionMap.containsKey(SignUrlOption.Option.HOST_NAME)
           || optionMap.containsKey(SignUrlOption.Option.BUCKET_BOUND_HOST_NAME)
-          || getOptions().getUniverseDomain() != null) {
+          || !Credentials.GOOGLE_DEFAULT_UNIVERSE.equals(
+              getOptions().getResolvedUniverseDomainForService())) {
         extHeadersBuilder.put("host", getBaseStorageHostName(optionMap));
       }
     }
