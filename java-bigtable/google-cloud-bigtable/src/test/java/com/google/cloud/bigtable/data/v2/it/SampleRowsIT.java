@@ -80,37 +80,40 @@ public class SampleRowsIT {
         .that(testEnvRule.env())
         .isNotInstanceOf(EmulatorEnv.class);
     AuthorizedView testAuthorizedView = createPreSplitTableAndAuthorizedView();
+    try {
+      BigtableDataClient client = testEnvRule.env().getDataClient();
 
-    BigtableDataClient client = testEnvRule.env().getDataClient();
+      ApiFuture<List<KeyOffset>> future =
+          client.sampleRowKeysAsync(
+              AuthorizedViewId.of(testAuthorizedView.getTableId(), testAuthorizedView.getId()));
 
-    ApiFuture<List<KeyOffset>> future =
-        client.sampleRowKeysAsync(
-            AuthorizedViewId.of(testAuthorizedView.getTableId(), testAuthorizedView.getId()));
+      List<KeyOffset> results = future.get(1, TimeUnit.MINUTES);
 
-    List<KeyOffset> results = future.get(1, TimeUnit.MINUTES);
+      List<ByteString> resultKeys = new ArrayList<>();
+      for (KeyOffset keyOffset : results) {
+        resultKeys.add(keyOffset.getKey());
+      }
 
-    List<ByteString> resultKeys = new ArrayList<>();
-    for (KeyOffset keyOffset : results) {
-      resultKeys.add(keyOffset.getKey());
+      assertThat(resultKeys)
+          .containsExactly(
+              ByteString.copyFromUtf8("food"),
+              ByteString.copyFromUtf8("fool"),
+              ByteString.copyFromUtf8("fop"));
+    } finally {
+      try {
+        testEnvRule
+            .env()
+            .getTableAdminClient()
+            .deleteAuthorizedView(testAuthorizedView.getTableId(), testAuthorizedView.getId());
+      } finally {
+        testEnvRule.env().getTableAdminClient().deleteTable(testAuthorizedView.getTableId());
+      }
     }
-
-    assertThat(resultKeys)
-        .containsExactly(
-            ByteString.copyFromUtf8("food"),
-            ByteString.copyFromUtf8("fool"),
-            ByteString.copyFromUtf8("fop"));
-
-    testEnvRule
-        .env()
-        .getTableAdminClient()
-        .deleteAuthorizedView(testAuthorizedView.getTableId(), testAuthorizedView.getId());
-
-    testEnvRule.env().getTableAdminClient().deleteTable(testAuthorizedView.getTableId());
   }
 
   private static AuthorizedView createPreSplitTableAndAuthorizedView() {
     String tableId = PrefixGenerator.newPrefix("SampleRowsIT#AuthorizedView");
-    String authorizedViewId = UUID.randomUUID().toString();
+    String authorizedViewId = PrefixGenerator.newPrefix("SampleRowsIT#AuthorizedView");
 
     testEnvRule
         .env()

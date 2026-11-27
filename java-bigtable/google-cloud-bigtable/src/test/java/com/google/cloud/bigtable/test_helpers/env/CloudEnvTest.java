@@ -41,6 +41,9 @@ import com.google.cloud.bigtable.data.v2.internal.compat.DisabledShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
+import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
+import com.google.cloud.bigtable.data.v2.models.MaterializedViewId;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.AbstractTestEnv.ExpectedProtocol;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
@@ -73,6 +76,18 @@ class CloudEnvTest {
   @Test
   void emulatorEnv_sessionsDisabled() {
     assertThat(EmulatorEnv.createBundled().isSessionsEnabled()).isFalse();
+  }
+
+  @Test
+  void sharedResourceIds_matchSetupScriptConventions() {
+    EmulatorEnv env = EmulatorEnv.createBundled();
+    assertThat(env.getTableId()).isEqualTo(TableId.of("default-table"));
+    assertThat(env.getFamilyId()).isEqualTo("cf");
+    assertThat(env.getHistoryFamilyId()).isEqualTo("cf_history");
+    assertThat(env.getAuthorizedViewId())
+        .isEqualTo(AuthorizedViewId.of("default-table", "test-authorized-view"));
+    assertThat(env.getMaterializedViewId()).isEqualTo(MaterializedViewId.of("default-table-mv"));
+    assertThat(env.getSchemaBundleId()).isEqualTo("test-schema-bundle");
   }
 
   @Test
