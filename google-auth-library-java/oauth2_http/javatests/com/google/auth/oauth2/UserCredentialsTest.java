@@ -71,8 +71,8 @@ import org.junit.jupiter.api.Test;
 class UserCredentialsTest extends BaseSerializationTest {
 
   static final String CLIENT_SECRET = "jakuaL9YyieakhECKL2SwZcu";
-  static final String CLIENT_ID = "ya29.1.AADtN_UtlxN3PuGAxrN2XQnZTVRvDyVWnYq4I6dws";
-  static final String REFRESH_TOKEN = "1/Tl6awhpFjkMkSJoj1xsli0H2eL5YsMgU_NKPY2TyGWY";
+  static final String CLIENT_ID = "test-client-id";
+  static final String REFRESH_TOKEN = "test-refresh-token";
   private static final String ACCESS_TOKEN = "1/MkSJoj1xsli0AccessToken_NKPY2";
   private static final String QUOTA_PROJECT = "sample-quota-project-id";
   private static final Collection<String> SCOPES = Collections.singletonList("dummy.scope");
@@ -881,6 +881,134 @@ class UserCredentialsTest extends BaseSerializationTest {
 
     UserCredentials otherCredentials = credentials.toBuilder().build();
     assertEquals(credentials, otherCredentials);
+  }
+
+  @Test
+  void refreshAccessToken_nonDefaultUniverse_throwsIOException() {
+    MockTokenServerTransportFactory transportFactory = createMockTokenTransportFactory(null);
+    URI[] tokenUris = {
+      null,
+      URI.create("https://oauth2.example.com/token"),
+      URI.create("https://accounts.google.com/o/oauth2/token"),
+      URI.create("/token"),
+      URI.create("mailto:user@example.com")
+    };
+
+    for (URI tokenUri : tokenUris) {
+      UserCredentials credentials =
+          createUniverseUserCredentials(transportFactory, tokenUri, "example.com");
+      IOException error = assertThrows(IOException.class, credentials::refreshAccessToken);
+      assertTrue(error.getMessage().contains("example.com"));
+    }
+
+    UserCredentials defaultUriCredentials =
+        createUniverseUserCredentials(transportFactory, null, "example.com");
+    assertThrows(IOException.class, defaultUriCredentials::refresh);
+    assertThrows(IOException.class, defaultUriCredentials::refreshIfExpired);
+
+    GoogleCredentials fromToBuilder =
+        createUniverseUserCredentials(transportFactory, null, null).toBuilder()
+            .setUniverseDomain("example.com")
+            .build();
+    assertThrows(IOException.class, fromToBuilder::refreshAccessToken);
+
+    assertEquals(0, transportFactory.transport.buildRequestCount);
+    assertNull(transportFactory.transport.getRequest());
+  }
+
+  @Test
+  void idTokenWithAudience_nonDefaultUniverse_throwsIOException() {
+    MockTokenServerTransportFactory transportFactory = createMockTokenTransportFactory(null);
+    UserCredentials credentials =
+        createUniverseUserCredentials(transportFactory, null, "example.com");
+
+    assertThrows(
+        IOException.class,
+        () -> credentials.idTokenWithAudience("https://target.example.com", null));
+    assertEquals(0, transportFactory.transport.buildRequestCount);
+    assertNull(transportFactory.transport.getRequest());
+  }
+
+  @Test
+  void refreshAccessToken_defaultUniverseWithDefaultOrCustomTokenUri_succeeds() throws IOException {
+    URI[] tokenUris = {null, URI.create("https://oauth2.example.com/token")};
+
+    for (URI tokenUri : tokenUris) {
+      MockTokenServerTransportFactory transportFactory = createMockTokenTransportFactory(tokenUri);
+      UserCredentials credentials = createUniverseUserCredentials(transportFactory, tokenUri, null);
+
+      AccessToken token = credentials.refreshAccessToken();
+
+      URI expectedUri = tokenUri != null ? tokenUri : OAuth2Utils.TOKEN_SERVER_URI;
+      assertEquals(ACCESS_TOKEN, token.getTokenValue());
+      assertEquals(expectedUri.toString(), transportFactory.transport.getRequest().getUrl());
+    }
+  }
+
+  @Test
+  void fromJson_nonDefaultUniverse_throwsIOException() {
+    String[] tokenUrls = {
+      null, OAuth2Utils.TOKEN_SERVER_URI.toString(), "https://oauth2.example.com/token"
+    };
+
+    for (String tokenUrl : tokenUrls) {
+      MockTokenServerTransportFactory transportFactory = createMockTokenTransportFactory(null);
+      GenericJson json = writeUserJson(CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN, null, tokenUrl);
+      json.put("universe_domain", "example.com");
+
+      IOException error =
+          assertThrows(IOException.class, () -> UserCredentials.fromJson(json, transportFactory));
+      assertTrue(error.getMessage().contains("example.com"));
+      assertEquals(0, transportFactory.transport.buildRequestCount);
+      assertNull(transportFactory.transport.getRequest());
+    }
+  }
+
+  @Test
+  void fromJson_defaultOrBlankUniverse_succeeds() throws IOException {
+    String[] universeDomains = {null, "", "   ", "googleapis.com"};
+
+    for (String universeDomain : universeDomains) {
+      MockTokenServerTransportFactory transportFactory = createMockTokenTransportFactory(null);
+      GenericJson json = writeUserJson(CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN, null, null);
+      if (universeDomain != null) {
+        json.put("universe_domain", universeDomain);
+      }
+
+      UserCredentials credentials = UserCredentials.fromJson(json, transportFactory);
+      assertEquals("googleapis.com", credentials.getUniverseDomain());
+      assertEquals(ACCESS_TOKEN, credentials.refreshAccessToken().getTokenValue());
+      assertEquals(
+          OAuth2Utils.TOKEN_SERVER_URI.toString(),
+          transportFactory.transport.getRequest().getUrl());
+    }
+  }
+
+  private static MockTokenServerTransportFactory createMockTokenTransportFactory(URI tokenUri) {
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    if (tokenUri != null) {
+      transportFactory.transport.setTokenServerUri(tokenUri);
+    }
+    transportFactory.transport.addClient(CLIENT_ID, CLIENT_SECRET);
+    transportFactory.transport.addRefreshToken(REFRESH_TOKEN, ACCESS_TOKEN);
+    return transportFactory;
+  }
+
+  private static UserCredentials createUniverseUserCredentials(
+      MockTokenServerTransportFactory transportFactory, URI tokenUri, String universeDomain) {
+    UserCredentials.Builder builder =
+        UserCredentials.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setHttpTransportFactory(transportFactory);
+    if (tokenUri != null) {
+      builder.setTokenServerUri(tokenUri);
+    }
+    if (universeDomain != null) {
+      builder.setUniverseDomain(universeDomain);
+    }
+    return builder.build();
   }
 
   static GenericJson writeUserJson(
