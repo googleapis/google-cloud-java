@@ -26,7 +26,6 @@ import com.google.cloud.spanner.XGoogSpannerRequestId.RequestIdCreator;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.ChannelPrimeSessionSource;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -39,6 +38,7 @@ import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
 import io.grpc.ClientInterceptors;
+import io.grpc.Deadline;
 import io.grpc.ForwardingClientCall.SimpleForwardingClientCall;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
@@ -49,9 +49,7 @@ import java.net.URLEncoder;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 
 /**
@@ -105,6 +103,7 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
    */
   static final int REQUEST_ID_CHANNEL = 0;
 
+  private final SessionSourceRegistry sessionRegistry;
   private final SpannerMetadataProvider metadataProvider;
   private final String projectName;
   private final RequestIdCreator requestIdCreator;
@@ -112,16 +111,8 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
   private final Duration rpcDeadline;
 
   /**
-   * Registered sources. Reference identity keeps overlapping client instances independent, and
-   * writers synchronize because the identity scan and mutation must be atomic.
-   */
-  private final CopyOnWriteArrayList<ChannelPrimeSessionSource> primeSessionSources =
-      new CopyOnWriteArrayList<>();
-
-  /** Index from which the next priming attempt starts searching for an available source. */
-  private final AtomicInteger nextSourceIndex = new AtomicInteger();
-
-  /**
+   * @param sessionRegistry the registry of the live multiplexed sessions of the owning rpc, which
+   *     priming draws a session from
    * @param metadataProvider provides the fixed headers and the resource-prefix header of a normal
    *     Spanner call
    * @param projectName the project resource name that serves as the default resource-prefix value
@@ -132,11 +123,13 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
    * @param rpcDeadline the deadline of a single priming RPC
    */
   DynamicChannelPoolPrimer(
+      SessionSourceRegistry sessionRegistry,
       SpannerMetadataProvider metadataProvider,
       String projectName,
       RequestIdCreator requestIdCreator,
       @Nullable CallCredentialsProvider callCredentialsProvider,
       Duration rpcDeadline) {
+    this.sessionRegistry = Preconditions.checkNotNull(sessionRegistry);
     this.metadataProvider = Preconditions.checkNotNull(metadataProvider);
     this.projectName = Preconditions.checkNotNull(projectName);
     this.requestIdCreator = Preconditions.checkNotNull(requestIdCreator);
@@ -177,58 +170,25 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
     return rpcDeadline;
   }
 
-  /** Registers a session source by reference identity. Repeated registration is a no-op. */
+  @VisibleForTesting
   void registerPrimeSessionSource(ChannelPrimeSessionSource source) {
-    Preconditions.checkNotNull(source);
-    synchronized (primeSessionSources) {
-      for (ChannelPrimeSessionSource existing : primeSessionSources) {
-        if (existing == source) {
-          return;
-        }
-      }
-      primeSessionSources.add(source);
-    }
+    sessionRegistry.register(source);
   }
 
-  /** Deregisters a session source. Repeated deregistration is a no-op. */
+  @VisibleForTesting
   void unregisterPrimeSessionSource(ChannelPrimeSessionSource source) {
-    Preconditions.checkNotNull(source);
-    synchronized (primeSessionSources) {
-      for (int i = 0; i < primeSessionSources.size(); i++) {
-        if (primeSessionSources.get(i) == source) {
-          primeSessionSources.remove(i);
-          return;
-        }
-      }
-    }
+    sessionRegistry.unregister(source);
   }
 
-  /** Returns a snapshot of registered sources in registration order. */
   @VisibleForTesting
   List<ChannelPrimeSessionSource> getPrimeSessionSources() {
-    return ImmutableList.copyOf(primeSessionSources);
+    return sessionRegistry.getSources();
   }
 
-  /** Returns a currently available session name without blocking, rotating the starting source. */
   @VisibleForTesting
   @Nullable
   String getPrimeSessionName() {
-    // The primer neither classifies failures nor evicts sessions; a source stops offering its
-    // session only when its owning client closes or becomes invalid.
-    List<ChannelPrimeSessionSource> sources = ImmutableList.copyOf(primeSessionSources);
-    int size = sources.size();
-    if (size == 0) {
-      return null;
-    }
-    int start = Math.floorMod(nextSourceIndex.getAndIncrement(), size);
-    for (int offset = 0; offset < size; offset++) {
-      ChannelPrimeSessionSource source = sources.get((start + offset) % size);
-      String sessionName = source.getChannelPrimeSessionName();
-      if (sessionName != null) {
-        return sessionName;
-      }
-    }
-    return null;
+    return sessionRegistry.nextSessionName();
   }
 
   /**
@@ -237,7 +197,7 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
   @Override
   public ListenableFuture<Void> prime(ManagedChannel channel) {
     try {
-      String sessionName = getPrimeSessionName();
+      String sessionName = sessionRegistry.nextSessionName();
       if (sessionName == null) {
         // The primer cannot gate the pool's scale-up decision, so the attempt fails fast. The
         // pool's retry with backoff and its close-on-failure behaviour handle the unavailable
@@ -260,19 +220,13 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
     // ExecuteStreamingSql must never be used here: its configured default deadline is one hour,
     // which would let a hung priming call outlive the pool's prime timeout by far. The unary
     // ExecuteSql method therefore uses an explicit short deadline.
-    CallOptions callOptions =
-        CallOptions.DEFAULT.withDeadlineAfter(rpcDeadline.toNanos(), TimeUnit.NANOSECONDS);
-    if (callCredentialsProvider != null) {
-      CallCredentials callCredentials = callCredentialsProvider.getCallCredentials();
-      if (callCredentials != null) {
-        callOptions = callOptions.withCallCredentials(callCredentials);
-      }
-    }
-    Channel channelWithHeaders =
-        ClientInterceptors.intercept(
-            channel, new AttachHeadersInterceptor(newHeaders(sessionName)));
     ClientCall<ExecuteSqlRequest, ResultSet> call =
-        channelWithHeaders.newCall(SpannerGrpc.getExecuteSqlMethod(), callOptions);
+        newClientCall(
+            channel,
+            SpannerGrpc.getExecuteSqlMethod(),
+            newHeaders(sessionName),
+            Deadline.after(rpcDeadline.toNanos(), TimeUnit.NANOSECONDS),
+            callCredentialsProvider);
     // Cancelling the future returned by futureUnaryCall cancels the underlying ClientCall, and
     // cancelling the derived future cancels its input. A channel that is shut down under the
     // running call fails the call with UNAVAILABLE or CANCELLED, which fails this future.
@@ -280,6 +234,23 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
         ClientCalls.futureUnaryCall(call, request),
         resultSet -> null,
         MoreExecutors.directExecutor());
+  }
+
+  static <ReqT, RespT> ClientCall<ReqT, RespT> newClientCall(
+      Channel channel,
+      MethodDescriptor<ReqT, RespT> method,
+      Metadata headers,
+      Deadline deadline,
+      @Nullable CallCredentialsProvider callCredentialsProvider) {
+    CallOptions callOptions = CallOptions.DEFAULT.withDeadline(deadline);
+    if (callCredentialsProvider != null) {
+      CallCredentials callCredentials = callCredentialsProvider.getCallCredentials();
+      if (callCredentials != null) {
+        callOptions = callOptions.withCallCredentials(callCredentials);
+      }
+    }
+    return ClientInterceptors.intercept(channel, new AttachHeadersInterceptor(headers))
+        .newCall(method, callOptions);
   }
 
   /**
@@ -292,6 +263,15 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
    */
   @VisibleForTesting
   Metadata newHeaders(String sessionName) {
+    return newCallHeaders(metadataProvider, projectName, requestIdCreator, sessionName, "session=");
+  }
+
+  static Metadata newCallHeaders(
+      SpannerMetadataProvider metadataProvider,
+      String projectName,
+      RequestIdCreator requestIdCreator,
+      String sessionName,
+      String requestParamsPrefix) {
     Metadata headers = new Metadata();
     // The session name starts with the database name, which the metadata provider extracts as the
     // value of the resource-prefix header, exactly as for normal calls that pass the session name
@@ -304,7 +284,8 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
       }
     }
     headers.put(
-        SpannerMetadataProvider.REQUEST_PARAMS_HEADER_KEY, "session=" + urlEncode(sessionName));
+        SpannerMetadataProvider.REQUEST_PARAMS_HEADER_KEY,
+        requestParamsPrefix + urlEncode(sessionName));
     // The pool invokes prime() once per attempt, so every attempt gets a fresh request id with
     // attempt number 1. The header is written directly and the request id is deliberately not set
     // as a call option: the RequestIdInterceptor on the delegate channel only acts on the call

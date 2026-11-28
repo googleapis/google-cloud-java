@@ -220,7 +220,12 @@ public class DynamicChannelPoolPrimerTest {
             ImmutableMap.of("x-goog-api-client", "test-client", "user-agent", "test-agent"),
             RESOURCE_HEADER_KEY);
     return new DynamicChannelPoolPrimer(
-        metadataProvider, PROJECT_NAME, requestIdCreator, callCredentialsProvider, rpcDeadline);
+        new SessionSourceRegistry(),
+        metadataProvider,
+        PROJECT_NAME,
+        requestIdCreator,
+        callCredentialsProvider,
+        rpcDeadline);
   }
 
   private DynamicChannelPoolPrimer newPrimer() {

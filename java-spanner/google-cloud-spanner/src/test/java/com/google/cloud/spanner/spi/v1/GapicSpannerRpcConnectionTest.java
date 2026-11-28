@@ -142,4 +142,50 @@ public class GapicSpannerRpcConnectionTest {
       SpannerOptions.useDefaultEnvironment();
     }
   }
+
+  @Test
+  public void testDirectPathFallbackRecoveryCreatesExactlyTwentyFourPhysicalSockets() {
+    // 3 pools x 8 per-channel fallback slots: only the 24 DirectPath channels connect at startup
+    // while the 24 CloudPath channels stay IDLE.
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGcpFallbackRecovery() {
+            return true;
+          }
+        });
+    GapicSpannerRpc rpc = null;
+    try {
+      SpannerOptions options = createDirectPathFallbackOptions().build();
+      assumeTrue(
+          "GCP fallback must be enabled for this DirectPath fallback test",
+          options.isEnableGcpFallback());
+
+      activeNetworkConnections.set(0);
+      rpc = new GapicSpannerRpc(options);
+
+      Stopwatch watch = Stopwatch.createStarted();
+      while (activeNetworkConnections.get() < 24 && watch.elapsed(TimeUnit.MILLISECONDS) < 5000L) {
+        try {
+          Thread.sleep(1L);
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          break;
+        }
+      }
+
+      try {
+        Thread.sleep(50L);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+      }
+
+      assertEquals(24, activeNetworkConnections.get());
+    } finally {
+      if (rpc != null) {
+        rpc.shutdown();
+      }
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
 }
