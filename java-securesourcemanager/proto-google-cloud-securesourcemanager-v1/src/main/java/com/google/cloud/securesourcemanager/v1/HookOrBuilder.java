@@ -351,4 +351,18 @@ public interface HookOrBuilder
    * @return The bytes for sensitiveQueryString.
    */
   com.google.protobuf.ByteString getSensitiveQueryStringBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if the hook uses the Repository Service Account to
+   * generate an OIDC ID Token for webhook authentication.
+   * </pre>
+   *
+   * <code>bool service_account_auth = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccountAuth.
+   */
+  boolean getServiceAccountAuth();
 }

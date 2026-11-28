@@ -46,10 +46,12 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.gsuiteaddons.v1.Authorization;
+import com.google.cloud.gsuiteaddons.v1.ChatAppConfig;
 import com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.Deployment;
 import com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest;
+import com.google.cloud.gsuiteaddons.v1.GetChatAppConfigRequest;
 import com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest;
 import com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest;
@@ -58,6 +60,7 @@ import com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest;
 import com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse;
 import com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest;
 import com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest;
+import com.google.cloud.gsuiteaddons.v1.UpdateChatAppConfigRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -126,7 +129,10 @@ import org.jspecify.annotations.Nullable;
 public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
+          .build();
 
   private final UnaryCallSettings<GetAuthorizationRequest, Authorization> getAuthorizationSettings;
   private final UnaryCallSettings<CreateDeploymentRequest, Deployment> createDeploymentSettings;
@@ -139,6 +145,9 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
   private final UnaryCallSettings<InstallDeploymentRequest, Empty> installDeploymentSettings;
   private final UnaryCallSettings<UninstallDeploymentRequest, Empty> uninstallDeploymentSettings;
   private final UnaryCallSettings<GetInstallStatusRequest, InstallStatus> getInstallStatusSettings;
+  private final UnaryCallSettings<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigSettings;
+  private final UnaryCallSettings<UpdateChatAppConfigRequest, ChatAppConfig>
+      updateChatAppConfigSettings;
 
   private static final PagedListDescriptor<
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment>
@@ -239,6 +248,17 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
   /** Returns the object with the settings used for calls to getInstallStatus. */
   public UnaryCallSettings<GetInstallStatusRequest, InstallStatus> getInstallStatusSettings() {
     return getInstallStatusSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getChatAppConfig. */
+  public UnaryCallSettings<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigSettings() {
+    return getChatAppConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateChatAppConfig. */
+  public UnaryCallSettings<UpdateChatAppConfigRequest, ChatAppConfig>
+      updateChatAppConfigSettings() {
+    return updateChatAppConfigSettings;
   }
 
   public GSuiteAddOnsStub createStub() throws IOException {
@@ -361,6 +381,8 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
     installDeploymentSettings = settingsBuilder.installDeploymentSettings().build();
     uninstallDeploymentSettings = settingsBuilder.uninstallDeploymentSettings().build();
     getInstallStatusSettings = settingsBuilder.getInstallStatusSettings().build();
+    getChatAppConfigSettings = settingsBuilder.getChatAppConfigSettings().build();
+    updateChatAppConfigSettings = settingsBuilder.updateChatAppConfigSettings().build();
   }
 
   @Override
@@ -393,6 +415,10 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
         uninstallDeploymentSettings;
     private final UnaryCallSettings.Builder<GetInstallStatusRequest, InstallStatus>
         getInstallStatusSettings;
+    private final UnaryCallSettings.Builder<GetChatAppConfigRequest, ChatAppConfig>
+        getChatAppConfigSettings;
+    private final UnaryCallSettings.Builder<UpdateChatAppConfigRequest, ChatAppConfig>
+        updateChatAppConfigSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -462,6 +488,8 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
       installDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       uninstallDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getInstallStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getChatAppConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateChatAppConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -473,7 +501,9 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
               deleteDeploymentSettings,
               installDeploymentSettings,
               uninstallDeploymentSettings,
-              getInstallStatusSettings);
+              getInstallStatusSettings,
+              getChatAppConfigSettings,
+              updateChatAppConfigSettings);
       initDefaults(this);
     }
 
@@ -489,6 +519,8 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
       installDeploymentSettings = settings.installDeploymentSettings.toBuilder();
       uninstallDeploymentSettings = settings.uninstallDeploymentSettings.toBuilder();
       getInstallStatusSettings = settings.getInstallStatusSettings.toBuilder();
+      getChatAppConfigSettings = settings.getChatAppConfigSettings.toBuilder();
+      updateChatAppConfigSettings = settings.updateChatAppConfigSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -500,7 +532,9 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
               deleteDeploymentSettings,
               installDeploymentSettings,
               uninstallDeploymentSettings,
-              getInstallStatusSettings);
+              getInstallStatusSettings,
+              getChatAppConfigSettings,
+              updateChatAppConfigSettings);
     }
 
     private static Builder createDefault() {
@@ -573,6 +607,16 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .getChatAppConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateChatAppConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -641,6 +685,18 @@ public class GSuiteAddOnsStubSettings extends StubSettings<GSuiteAddOnsStubSetti
     public UnaryCallSettings.Builder<GetInstallStatusRequest, InstallStatus>
         getInstallStatusSettings() {
       return getInstallStatusSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getChatAppConfig. */
+    public UnaryCallSettings.Builder<GetChatAppConfigRequest, ChatAppConfig>
+        getChatAppConfigSettings() {
+      return getChatAppConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateChatAppConfig. */
+    public UnaryCallSettings.Builder<UpdateChatAppConfigRequest, ChatAppConfig>
+        updateChatAppConfigSettings() {
+      return updateChatAppConfigSettings;
     }
 
     @Override

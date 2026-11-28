@@ -19,6 +19,28 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AgentAnomalyDetectionServiceClient =======================
+ *
+ * <p>Service Description: A service for managing Agent Anomaly Detection for monitored agents.
+ *
+ * <p>Sample for AgentAnomalyDetectionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AgentAnomalyDetectionServiceClient agentAnomalyDetectionServiceClient =
+ *     AgentAnomalyDetectionServiceClient.create()) {
+ *   AgentAnomalyDetectionScopeName name =
+ *       AgentAnomalyDetectionScopeName.of(
+ *           "[PROJECT]", "[LOCATION]", "[AGENT_ANOMALY_DETECTION_SCOPE]");
+ *   AgentAnomalyDetectionScope response =
+ *       agentAnomalyDetectionServiceClient.getAgentAnomalyDetectionScope(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= DataFoundryServiceClient =======================
  *
  * <p>Service Description: Service for generating and preparing datasets for Gen AI evaluation.

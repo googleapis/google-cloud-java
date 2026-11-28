@@ -53,6 +53,7 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
 
   private SpecMetadata() {
     originalId_ = "";
+    deploymentResourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -299,6 +300,98 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
         : originalUpdateTime_;
   }
 
+  public static final int DEPLOYMENT_RESOURCE_URIS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList deploymentResourceUris_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The gateway-side URIs of deployments that serve this spec. If
+   * provided, the API Hub service creates links between this spec and the
+   * deployments identified by these URIs. URIs that don't match any known
+   * deployment are ignored; a subsequent ingestion cycle that includes the
+   * missing deployment will re-establish the link. The maximum number of URIs
+   * allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the deploymentResourceUris.
+   */
+  public com.google.protobuf.ProtocolStringList getDeploymentResourceUrisList() {
+    return deploymentResourceUris_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The gateway-side URIs of deployments that serve this spec. If
+   * provided, the API Hub service creates links between this spec and the
+   * deployments identified by these URIs. URIs that don't match any known
+   * deployment are ignored; a subsequent ingestion cycle that includes the
+   * missing deployment will re-establish the link. The maximum number of URIs
+   * allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of deploymentResourceUris.
+   */
+  public int getDeploymentResourceUrisCount() {
+    return deploymentResourceUris_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The gateway-side URIs of deployments that serve this spec. If
+   * provided, the API Hub service creates links between this spec and the
+   * deployments identified by these URIs. URIs that don't match any known
+   * deployment are ignored; a subsequent ingestion cycle that includes the
+   * missing deployment will re-establish the link. The maximum number of URIs
+   * allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The deploymentResourceUris at the given index.
+   */
+  public java.lang.String getDeploymentResourceUris(int index) {
+    return deploymentResourceUris_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The gateway-side URIs of deployments that serve this spec. If
+   * provided, the API Hub service creates links between this spec and the
+   * deployments identified by these URIs. URIs that don't match any known
+   * deployment are ignored; a subsequent ingestion cycle that includes the
+   * missing deployment will re-establish the link. The maximum number of URIs
+   * allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the deploymentResourceUris at the given index.
+   */
+  public com.google.protobuf.ByteString getDeploymentResourceUrisBytes(int index) {
+    return deploymentResourceUris_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -325,6 +418,10 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getOriginalUpdateTime());
     }
+    for (int i = 0; i < deploymentResourceUris_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 5, deploymentResourceUris_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -345,6 +442,14 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getOriginalUpdateTime());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < deploymentResourceUris_.size(); i++) {
+        dataSize += computeStringSizeNoTag(deploymentResourceUris_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDeploymentResourceUrisList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -374,6 +479,8 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
     if (hasOriginalUpdateTime()) {
       if (!getOriginalUpdateTime().equals(other.getOriginalUpdateTime())) return false;
     }
+    if (!getDeploymentResourceUrisList().equals(other.getDeploymentResourceUrisList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -398,6 +505,10 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
     if (hasOriginalUpdateTime()) {
       hash = (37 * hash) + ORIGINAL_UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getOriginalUpdateTime().hashCode();
+    }
+    if (getDeploymentResourceUrisCount() > 0) {
+      hash = (37 * hash) + DEPLOYMENT_RESOURCE_URIS_FIELD_NUMBER;
+      hash = (53 * hash) + getDeploymentResourceUrisList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -566,6 +677,7 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
         originalUpdateTimeBuilder_.dispose();
         originalUpdateTimeBuilder_ = null;
       }
+      deploymentResourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -624,6 +736,10 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
                 : originalUpdateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        deploymentResourceUris_.makeImmutable();
+        result.deploymentResourceUris_ = deploymentResourceUris_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -652,6 +768,16 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasOriginalUpdateTime()) {
         mergeOriginalUpdateTime(other.getOriginalUpdateTime());
+      }
+      if (!other.deploymentResourceUris_.isEmpty()) {
+        if (deploymentResourceUris_.isEmpty()) {
+          deploymentResourceUris_ = other.deploymentResourceUris_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureDeploymentResourceUrisIsMutable();
+          deploymentResourceUris_.addAll(other.deploymentResourceUris_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -705,6 +831,13 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDeploymentResourceUrisIsMutable();
+                deploymentResourceUris_.add(s);
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1470,6 +1603,244 @@ public final class SpecMetadata extends com.google.protobuf.GeneratedMessage
         originalUpdateTime_ = null;
       }
       return originalUpdateTimeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList deploymentResourceUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDeploymentResourceUrisIsMutable() {
+      if (!deploymentResourceUris_.isModifiable()) {
+        deploymentResourceUris_ =
+            new com.google.protobuf.LazyStringArrayList(deploymentResourceUris_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the deploymentResourceUris.
+     */
+    public com.google.protobuf.ProtocolStringList getDeploymentResourceUrisList() {
+      deploymentResourceUris_.makeImmutable();
+      return deploymentResourceUris_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of deploymentResourceUris.
+     */
+    public int getDeploymentResourceUrisCount() {
+      return deploymentResourceUris_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The deploymentResourceUris at the given index.
+     */
+    public java.lang.String getDeploymentResourceUris(int index) {
+      return deploymentResourceUris_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the deploymentResourceUris at the given index.
+     */
+    public com.google.protobuf.ByteString getDeploymentResourceUrisBytes(int index) {
+      return deploymentResourceUris_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The deploymentResourceUris to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentResourceUris(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDeploymentResourceUrisIsMutable();
+      deploymentResourceUris_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The deploymentResourceUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDeploymentResourceUris(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDeploymentResourceUrisIsMutable();
+      deploymentResourceUris_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The deploymentResourceUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDeploymentResourceUris(java.lang.Iterable<java.lang.String> values) {
+      ensureDeploymentResourceUrisIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deploymentResourceUris_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeploymentResourceUris() {
+      deploymentResourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The gateway-side URIs of deployments that serve this spec. If
+     * provided, the API Hub service creates links between this spec and the
+     * deployments identified by these URIs. URIs that don't match any known
+     * deployment are ignored; a subsequent ingestion cycle that includes the
+     * missing deployment will re-establish the link. The maximum number of URIs
+     * allowed is 100.
+     * </pre>
+     *
+     * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the deploymentResourceUris to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDeploymentResourceUrisBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDeploymentResourceUrisIsMutable();
+      deploymentResourceUris_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.SpecMetadata)

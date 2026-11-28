@@ -74,6 +74,8 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 4:
         return internalGetAdditionalConfig();
+      case 12:
+        return internalGetSourceEnvironmentsConfig();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -447,7 +449,7 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The display name for this plugin instance. Max length is 255
+   * Required. The display name for this plugin instance. Max length is 500
    * characters.
    * </pre>
    *
@@ -472,7 +474,7 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The display name for this plugin instance. Max length is 255
+   * Required. The display name for this plugin instance. Max length is 500
    * characters.
    * </pre>
    *
@@ -999,9 +1001,9 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The source project id of the plugin instance. This will be the id
-   * of runtime project in case of gcp based plugins and org id in case of non
-   * gcp based plugins. This field will be a required field for Google provided
-   * on-ramp plugins.
+   * of runtime project in case of Google Cloud based plugins and org id in case
+   * of non-Google Cloud based plugins. This field will be a required field for
+   * Google provided on-ramp plugins.
    * </pre>
    *
    * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1026,9 +1028,9 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The source project id of the plugin instance. This will be the id
-   * of runtime project in case of gcp based plugins and org id in case of non
-   * gcp based plugins. This field will be a required field for Google provided
-   * on-ramp plugins.
+   * of runtime project in case of Google Cloud based plugins and org id in case
+   * of non-Google Cloud based plugins. This field will be a required field for
+   * Google provided on-ramp plugins.
    * </pre>
    *
    * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1046,6 +1048,143 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SOURCE_ENVIRONMENTS_CONFIG_FIELD_NUMBER = 12;
+
+  private static final class SourceEnvironmentsConfigDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>newDefaultInstance(
+                    com.google.cloud.apihub.v1.PluginServiceProto
+                        .internal_static_google_cloud_apihub_v1_PluginInstance_SourceEnvironmentsConfigEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.cloud.apihub.v1.SourceEnvironment.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+      sourceEnvironmentsConfig_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+      internalGetSourceEnvironmentsConfig() {
+    if (sourceEnvironmentsConfig_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SourceEnvironmentsConfigDefaultEntryHolder.defaultEntry);
+    }
+    return sourceEnvironmentsConfig_;
+  }
+
+  public int getSourceEnvironmentsConfigCount() {
+    return internalGetSourceEnvironmentsConfig().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsSourceEnvironmentsConfig(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetSourceEnvironmentsConfig().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getSourceEnvironmentsConfigMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+      getSourceEnvironmentsConfig() {
+    return getSourceEnvironmentsConfigMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+      getSourceEnvironmentsConfigMap() {
+    return internalGetSourceEnvironmentsConfig().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.apihub.v1.SourceEnvironment
+      getSourceEnvironmentsConfigOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.apihub.v1.SourceEnvironment defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment> map =
+        internalGetSourceEnvironmentsConfig().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source environment's config present in the gateway instance
+   * linked to the plugin instance. The key is the `source_environment` name
+   * from the SourceEnvironment message.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceEnvironment getSourceEnvironmentsConfigOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment> map =
+        internalGetSourceEnvironmentsConfig().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1091,6 +1230,11 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceProjectId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, sourceProjectId_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetSourceEnvironmentsConfig(),
+        SourceEnvironmentsConfigDefaultEntryHolder.defaultEntry,
+        12);
     getUnknownFields().writeTo(output);
   }
 
@@ -1138,6 +1282,18 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sourceProjectId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, sourceProjectId_);
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment> entry :
+        internalGetSourceEnvironmentsConfig().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+          sourceEnvironmentsConfig__ =
+              SourceEnvironmentsConfigDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, sourceEnvironmentsConfig__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1173,6 +1329,8 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getSourceProjectId().equals(other.getSourceProjectId())) return false;
+    if (!internalGetSourceEnvironmentsConfig().equals(other.internalGetSourceEnvironmentsConfig()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1214,6 +1372,10 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + SOURCE_PROJECT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getSourceProjectId().hashCode();
+    if (!internalGetSourceEnvironmentsConfig().getMap().isEmpty()) {
+      hash = (37 * hash) + SOURCE_ENVIRONMENTS_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSourceEnvironmentsConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1341,6 +1503,8 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 4:
           return internalGetAdditionalConfig();
+        case 12:
+          return internalGetSourceEnvironmentsConfig();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1352,6 +1516,8 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 4:
           return internalGetMutableAdditionalConfig();
+        case 12:
+          return internalGetMutableSourceEnvironmentsConfig();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1418,6 +1584,7 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_ = null;
       }
       sourceProjectId_ = "";
+      internalGetMutableSourceEnvironmentsConfig().clear();
       return this;
     }
 
@@ -1499,6 +1666,11 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.sourceProjectId_ = sourceProjectId_;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.sourceEnvironmentsConfig_ =
+            internalGetSourceEnvironmentsConfig()
+                .build(SourceEnvironmentsConfigDefaultEntryHolder.defaultEntry);
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1575,6 +1747,9 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000200;
         onChanged();
       }
+      internalGetMutableSourceEnvironmentsConfig()
+          .mergeFrom(other.internalGetSourceEnvironmentsConfig());
+      bitField0_ |= 0x00000400;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1680,6 +1855,22 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+                    sourceEnvironmentsConfig__ =
+                        input.readMessage(
+                            SourceEnvironmentsConfigDefaultEntryHolder.defaultEntry
+                                .getParserForType(),
+                            extensionRegistry);
+                internalGetMutableSourceEnvironmentsConfig()
+                    .ensureBuilderMap()
+                    .put(
+                        sourceEnvironmentsConfig__.getKey(), sourceEnvironmentsConfig__.getValue());
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1826,7 +2017,7 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for this plugin instance. Max length is 255
+     * Required. The display name for this plugin instance. Max length is 500
      * characters.
      * </pre>
      *
@@ -1850,7 +2041,7 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for this plugin instance. Max length is 255
+     * Required. The display name for this plugin instance. Max length is 500
      * characters.
      * </pre>
      *
@@ -1874,7 +2065,7 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for this plugin instance. Max length is 255
+     * Required. The display name for this plugin instance. Max length is 500
      * characters.
      * </pre>
      *
@@ -1897,7 +2088,7 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for this plugin instance. Max length is 255
+     * Required. The display name for this plugin instance. Max length is 500
      * characters.
      * </pre>
      *
@@ -1916,7 +2107,7 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The display name for this plugin instance. Max length is 255
+     * Required. The display name for this plugin instance. Max length is 500
      * characters.
      * </pre>
      *
@@ -3524,9 +3715,9 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The source project id of the plugin instance. This will be the id
-     * of runtime project in case of gcp based plugins and org id in case of non
-     * gcp based plugins. This field will be a required field for Google provided
-     * on-ramp plugins.
+     * of runtime project in case of Google Cloud based plugins and org id in case
+     * of non-Google Cloud based plugins. This field will be a required field for
+     * Google provided on-ramp plugins.
      * </pre>
      *
      * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3550,9 +3741,9 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The source project id of the plugin instance. This will be the id
-     * of runtime project in case of gcp based plugins and org id in case of non
-     * gcp based plugins. This field will be a required field for Google provided
-     * on-ramp plugins.
+     * of runtime project in case of Google Cloud based plugins and org id in case
+     * of non-Google Cloud based plugins. This field will be a required field for
+     * Google provided on-ramp plugins.
      * </pre>
      *
      * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3576,9 +3767,9 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The source project id of the plugin instance. This will be the id
-     * of runtime project in case of gcp based plugins and org id in case of non
-     * gcp based plugins. This field will be a required field for Google provided
-     * on-ramp plugins.
+     * of runtime project in case of Google Cloud based plugins and org id in case
+     * of non-Google Cloud based plugins. This field will be a required field for
+     * Google provided on-ramp plugins.
      * </pre>
      *
      * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3601,9 +3792,9 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The source project id of the plugin instance. This will be the id
-     * of runtime project in case of gcp based plugins and org id in case of non
-     * gcp based plugins. This field will be a required field for Google provided
-     * on-ramp plugins.
+     * of runtime project in case of Google Cloud based plugins and org id in case
+     * of non-Google Cloud based plugins. This field will be a required field for
+     * Google provided on-ramp plugins.
      * </pre>
      *
      * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3622,9 +3813,9 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The source project id of the plugin instance. This will be the id
-     * of runtime project in case of gcp based plugins and org id in case of non
-     * gcp based plugins. This field will be a required field for Google provided
-     * on-ramp plugins.
+     * of runtime project in case of Google Cloud based plugins and org id in case
+     * of non-Google Cloud based plugins. This field will be a required field for
+     * Google provided on-ramp plugins.
      * </pre>
      *
      * <code>string source_project_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3641,6 +3832,290 @@ public final class PluginInstance extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000200;
       onChanged();
       return this;
+    }
+
+    private static final class SourceEnvironmentsConfigConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder,
+            com.google.cloud.apihub.v1.SourceEnvironment> {
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.SourceEnvironment build(
+          com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder val) {
+        if (val instanceof com.google.cloud.apihub.v1.SourceEnvironment) {
+          return (com.google.cloud.apihub.v1.SourceEnvironment) val;
+        }
+        return ((com.google.cloud.apihub.v1.SourceEnvironment.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+          defaultEntry() {
+        return SourceEnvironmentsConfigDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final SourceEnvironmentsConfigConverter sourceEnvironmentsConfigConverter =
+        new SourceEnvironmentsConfigConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder,
+            com.google.cloud.apihub.v1.SourceEnvironment,
+            com.google.cloud.apihub.v1.SourceEnvironment.Builder>
+        sourceEnvironmentsConfig_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder,
+            com.google.cloud.apihub.v1.SourceEnvironment,
+            com.google.cloud.apihub.v1.SourceEnvironment.Builder>
+        internalGetSourceEnvironmentsConfig() {
+      if (sourceEnvironmentsConfig_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(sourceEnvironmentsConfigConverter);
+      }
+      return sourceEnvironmentsConfig_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder,
+            com.google.cloud.apihub.v1.SourceEnvironment,
+            com.google.cloud.apihub.v1.SourceEnvironment.Builder>
+        internalGetMutableSourceEnvironmentsConfig() {
+      if (sourceEnvironmentsConfig_ == null) {
+        sourceEnvironmentsConfig_ =
+            new com.google.protobuf.MapFieldBuilder<>(sourceEnvironmentsConfigConverter);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return sourceEnvironmentsConfig_;
+    }
+
+    public int getSourceEnvironmentsConfigCount() {
+      return internalGetSourceEnvironmentsConfig().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source environment's config present in the gateway instance
+     * linked to the plugin instance. The key is the `source_environment` name
+     * from the SourceEnvironment message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsSourceEnvironmentsConfig(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetSourceEnvironmentsConfig().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getSourceEnvironmentsConfigMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+        getSourceEnvironmentsConfig() {
+      return getSourceEnvironmentsConfigMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source environment's config present in the gateway instance
+     * linked to the plugin instance. The key is the `source_environment` name
+     * from the SourceEnvironment message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+        getSourceEnvironmentsConfigMap() {
+      return internalGetSourceEnvironmentsConfig().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source environment's config present in the gateway instance
+     * linked to the plugin instance. The key is the `source_environment` name
+     * from the SourceEnvironment message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.apihub.v1.SourceEnvironment
+        getSourceEnvironmentsConfigOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.apihub.v1.SourceEnvironment defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder> map =
+          internalGetMutableSourceEnvironmentsConfig().ensureBuilderMap();
+      return map.containsKey(key)
+          ? sourceEnvironmentsConfigConverter.build(map.get(key))
+          : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source environment's config present in the gateway instance
+     * linked to the plugin instance. The key is the `source_environment` name
+     * from the SourceEnvironment message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.SourceEnvironment getSourceEnvironmentsConfigOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder> map =
+          internalGetMutableSourceEnvironmentsConfig().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return sourceEnvironmentsConfigConverter.build(map.get(key));
+    }
+
+    public Builder clearSourceEnvironmentsConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      internalGetMutableSourceEnvironmentsConfig().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source environment's config present in the gateway instance
+     * linked to the plugin instance. The key is the `source_environment` name
+     * from the SourceEnvironment message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeSourceEnvironmentsConfig(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableSourceEnvironmentsConfig().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment>
+        getMutableSourceEnvironmentsConfig() {
+      bitField0_ |= 0x00000400;
+      return internalGetMutableSourceEnvironmentsConfig().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source environment's config present in the gateway instance
+     * linked to the plugin instance. The key is the `source_environment` name
+     * from the SourceEnvironment message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putSourceEnvironmentsConfig(
+        java.lang.String key, com.google.cloud.apihub.v1.SourceEnvironment value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableSourceEnvironmentsConfig().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source environment's config present in the gateway instance
+     * linked to the plugin instance. The key is the `source_environment` name
+     * from the SourceEnvironment message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllSourceEnvironmentsConfig(
+        java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironment> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableSourceEnvironmentsConfig().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000400;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source environment's config present in the gateway instance
+     * linked to the plugin instance. The key is the `source_environment` name
+     * from the SourceEnvironment message.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apihub.v1.SourceEnvironment&gt; source_environments_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceEnvironment.Builder
+        putSourceEnvironmentsConfigBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder>
+          builderMap = internalGetMutableSourceEnvironmentsConfig().ensureBuilderMap();
+      com.google.cloud.apihub.v1.SourceEnvironmentOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.apihub.v1.SourceEnvironment.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.apihub.v1.SourceEnvironment) {
+        entry = ((com.google.cloud.apihub.v1.SourceEnvironment) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.apihub.v1.SourceEnvironment.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.PluginInstance)

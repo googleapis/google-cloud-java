@@ -30,11 +30,12 @@ public interface CreateAuditScheduleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Project or folder that this audit schedule is for, in one of the
-   * following formats:
+   * Required. Project, folder, or organization that this audit schedule is for,
+   * in one of the following formats:
    *
    * * `projects/{project}/locations/{location}`
    * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -49,11 +50,12 @@ public interface CreateAuditScheduleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Project or folder that this audit schedule is for, in one of the
-   * following formats:
+   * Required. Project, folder, or organization that this audit schedule is for,
+   * in one of the following formats:
    *
    * * `projects/{project}/locations/{location}`
    * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>

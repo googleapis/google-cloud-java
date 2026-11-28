@@ -299,13 +299,15 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.cloud.networkconnectivity.v1.RoutingVPC> getRoutingVpcsList();
 
@@ -313,13 +315,15 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.networkconnectivity.v1.RoutingVPC getRoutingVpcs(int index);
 
@@ -327,13 +331,15 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getRoutingVpcsCount();
 
@@ -341,13 +347,15 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder>
       getRoutingVpcsOrBuilderList();
@@ -356,13 +364,15 @@ public interface HubOrBuilder
    *
    *
    * <pre>
-   * The VPC networks associated with this hub's spokes.
+   * Output only. The VPC networks associated with this hub's spokes.
    *
    * This field is read-only. Network Connectivity Center automatically
    * populates it based on the set of spokes attached to the hub.
    * </pre>
    *
-   * <code>repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10;</code>
+   * <code>
+   * repeated .google.cloud.networkconnectivity.v1.RoutingVPC routing_vpcs = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.cloud.networkconnectivity.v1.RoutingVPCOrBuilder getRoutingVpcsOrBuilder(int index);
 
@@ -598,4 +608,51 @@ public interface HubOrBuilder
    * @return The exportPsc.
    */
   boolean getExportPsc();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the exportPscConfig field is set.
+   */
+  boolean hasExportPscConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The exportPscConfig.
+   */
+  com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfig getExportPscConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for more granular control of Private Service Connect
+   * transitivity.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1.Hub.ExportPscConfig export_psc_config = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.networkconnectivity.v1.Hub.ExportPscConfigOrBuilder
+      getExportPscConfigOrBuilder();
 }

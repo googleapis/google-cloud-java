@@ -56,6 +56,7 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
   private ProvisionProjectRequest() {
     name_ = "";
     dataUseTermsVersion_ = "";
+    provisionIntent_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,6 +72,181 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.class,
             com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Which experience the caller is provisioning.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent}
+   */
+  public enum ProvisionIntent implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>PROVISION_INTENT_UNSPECIFIED = 0;</code>
+     */
+    PROVISION_INTENT_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The caller is provisioning for the new Gemini Enterprise experience.
+     * </pre>
+     *
+     * <code>PROVISION_INTENT_SOBI = 1;</code>
+     */
+    PROVISION_INTENT_SOBI(1),
+    /**
+     *
+     *
+     * <pre>
+     * The caller is provisioning for the classic Gemini Enterprise
+     * experience.
+     * </pre>
+     *
+     * <code>PROVISION_INTENT_LEGACY = 2;</code>
+     */
+    PROVISION_INTENT_LEGACY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ProvisionIntent");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>PROVISION_INTENT_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROVISION_INTENT_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The caller is provisioning for the new Gemini Enterprise experience.
+     * </pre>
+     *
+     * <code>PROVISION_INTENT_SOBI = 1;</code>
+     */
+    public static final int PROVISION_INTENT_SOBI_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The caller is provisioning for the classic Gemini Enterprise
+     * experience.
+     * </pre>
+     *
+     * <code>PROVISION_INTENT_LEGACY = 2;</code>
+     */
+    public static final int PROVISION_INTENT_LEGACY_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProvisionIntent valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProvisionIntent forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROVISION_INTENT_UNSPECIFIED;
+        case 1:
+          return PROVISION_INTENT_SOBI;
+        case 2:
+          return PROVISION_INTENT_LEGACY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProvisionIntent> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProvisionIntent>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ProvisionIntent>() {
+              public ProvisionIntent findValueByNumber(int number) {
+                return ProvisionIntent.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final ProvisionIntent[] VALUES = values();
+
+    public static ProvisionIntent valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProvisionIntent(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent)
   }
 
   public interface SaasParamsOrBuilder
@@ -922,6 +1098,148 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
         : saasParams_;
   }
 
+  public static final int PROVISION_INTENT_FIELD_NUMBER = 5;
+  private int provisionIntent_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caller states whether the provisioning is for the new or the
+   * classic Gemini Enterprise experience.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for provisionIntent.
+   */
+  @java.lang.Override
+  public int getProvisionIntentValue() {
+    return provisionIntent_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The caller states whether the provisioning is for the new or the
+   * classic Gemini Enterprise experience.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The provisionIntent.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent
+      getProvisionIntent() {
+    com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent result =
+        com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent.forNumber(
+            provisionIntent_);
+    return result == null
+        ? com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int IDP_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.discoveryengine.v1.IdpConfig idpConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity provider for this location. When provided, the
+   * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+   * set from it as part of provisioning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the idpConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdpConfig() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity provider for this location. When provided, the
+   * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+   * set from it as part of provisioning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The idpConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.IdpConfig getIdpConfig() {
+    return idpConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.IdpConfig.getDefaultInstance()
+        : idpConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The identity provider for this location. When provided, the
+   * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+   * set from it as part of provisioning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.IdpConfigOrBuilder getIdpConfigOrBuilder() {
+    return idpConfig_ == null
+        ? com.google.cloud.discoveryengine.v1.IdpConfig.getDefaultInstance()
+        : idpConfig_;
+  }
+
+  public static final int PRE_PROVISION_MODE_FIELD_NUMBER = 8;
+  private boolean preProvisionMode_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Runs only the common project-level pre-provisioning steps
+   * (service agents, agent identity pools, project-scoped extension bindings,
+   * App Hub registry, Sobi agent default identity, and Sobi default Model Armor
+   * template) without reading or writing the Customer, Collection, or UserStore
+   * tables, CapabilityConfig, tenant project, default engine, or trial licenses
+   * when `true`.
+   *
+   * Assumes no customer exists yet. Customer-level or non-SOBI fields
+   * (`accept_data_use_terms`, `data_use_terms_version`, `saas_params`,
+   * `idp_config`, and `PROVISION_INTENT_LEGACY`) are rejected with
+   * `INVALID_ARGUMENT`, and the returned completed `Operation` has an empty
+   * response.
+   * </pre>
+   *
+   * <code>bool pre_provision_mode = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The preProvisionMode.
+   */
+  @java.lang.Override
+  public boolean getPreProvisionMode() {
+    return preProvisionMode_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -948,6 +1266,18 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getSaasParams());
     }
+    if (provisionIntent_
+        != com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent
+            .PROVISION_INTENT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, provisionIntent_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getIdpConfig());
+    }
+    if (preProvisionMode_ != false) {
+      output.writeBool(8, preProvisionMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -968,6 +1298,18 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSaasParams());
+    }
+    if (provisionIntent_
+        != com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent
+            .PROVISION_INTENT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, provisionIntent_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getIdpConfig());
+    }
+    if (preProvisionMode_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, preProvisionMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -992,6 +1334,12 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     if (hasSaasParams()) {
       if (!getSaasParams().equals(other.getSaasParams())) return false;
     }
+    if (provisionIntent_ != other.provisionIntent_) return false;
+    if (hasIdpConfig() != other.hasIdpConfig()) return false;
+    if (hasIdpConfig()) {
+      if (!getIdpConfig().equals(other.getIdpConfig())) return false;
+    }
+    if (getPreProvisionMode() != other.getPreProvisionMode()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1013,6 +1361,14 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
       hash = (37 * hash) + SAAS_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getSaasParams().hashCode();
     }
+    hash = (37 * hash) + PROVISION_INTENT_FIELD_NUMBER;
+    hash = (53 * hash) + provisionIntent_;
+    if (hasIdpConfig()) {
+      hash = (37 * hash) + IDP_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getIdpConfig().hashCode();
+    }
+    hash = (37 * hash) + PRE_PROVISION_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreProvisionMode());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1158,6 +1514,7 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetSaasParamsFieldBuilder();
+        internalGetIdpConfigFieldBuilder();
       }
     }
 
@@ -1173,6 +1530,13 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
         saasParamsBuilder_.dispose();
         saasParamsBuilder_ = null;
       }
+      provisionIntent_ = 0;
+      idpConfig_ = null;
+      if (idpConfigBuilder_ != null) {
+        idpConfigBuilder_.dispose();
+        idpConfigBuilder_ = null;
+      }
+      preProvisionMode_ = false;
       return this;
     }
 
@@ -1223,6 +1587,16 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
         result.saasParams_ = saasParamsBuilder_ == null ? saasParams_ : saasParamsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.provisionIntent_ = provisionIntent_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.idpConfig_ = idpConfigBuilder_ == null ? idpConfig_ : idpConfigBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.preProvisionMode_ = preProvisionMode_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1254,6 +1628,15 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
       }
       if (other.hasSaasParams()) {
         mergeSaasParams(other.getSaasParams());
+      }
+      if (other.provisionIntent_ != 0) {
+        setProvisionIntentValue(other.getProvisionIntentValue());
+      }
+      if (other.hasIdpConfig()) {
+        mergeIdpConfig(other.getIdpConfig());
+      }
+      if (other.getPreProvisionMode() != false) {
+        setPreProvisionMode(other.getPreProvisionMode());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1306,6 +1689,25 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                provisionIntent_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 50:
+              {
+                input.readMessage(
+                    internalGetIdpConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 64:
+              {
+                preProvisionMode_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1869,6 +2271,441 @@ public final class ProvisionProjectRequest extends com.google.protobuf.Generated
         saasParams_ = null;
       }
       return saasParamsBuilder_;
+    }
+
+    private int provisionIntent_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caller states whether the provisioning is for the new or the
+     * classic Gemini Enterprise experience.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for provisionIntent.
+     */
+    @java.lang.Override
+    public int getProvisionIntentValue() {
+      return provisionIntent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caller states whether the provisioning is for the new or the
+     * classic Gemini Enterprise experience.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for provisionIntent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisionIntentValue(int value) {
+      provisionIntent_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caller states whether the provisioning is for the new or the
+     * classic Gemini Enterprise experience.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The provisionIntent.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent
+        getProvisionIntent() {
+      com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent result =
+          com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent.forNumber(
+              provisionIntent_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caller states whether the provisioning is for the new or the
+     * classic Gemini Enterprise experience.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The provisionIntent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvisionIntent(
+        com.google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      provisionIntent_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The caller states whether the provisioning is for the new or the
+     * classic Gemini Enterprise experience.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.ProvisionProjectRequest.ProvisionIntent provision_intent = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProvisionIntent() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      provisionIntent_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1.IdpConfig idpConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.IdpConfig,
+            com.google.cloud.discoveryengine.v1.IdpConfig.Builder,
+            com.google.cloud.discoveryengine.v1.IdpConfigOrBuilder>
+        idpConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the idpConfig field is set.
+     */
+    public boolean hasIdpConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The idpConfig.
+     */
+    public com.google.cloud.discoveryengine.v1.IdpConfig getIdpConfig() {
+      if (idpConfigBuilder_ == null) {
+        return idpConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.IdpConfig.getDefaultInstance()
+            : idpConfig_;
+      } else {
+        return idpConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIdpConfig(com.google.cloud.discoveryengine.v1.IdpConfig value) {
+      if (idpConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        idpConfig_ = value;
+      } else {
+        idpConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIdpConfig(
+        com.google.cloud.discoveryengine.v1.IdpConfig.Builder builderForValue) {
+      if (idpConfigBuilder_ == null) {
+        idpConfig_ = builderForValue.build();
+      } else {
+        idpConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIdpConfig(com.google.cloud.discoveryengine.v1.IdpConfig value) {
+      if (idpConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && idpConfig_ != null
+            && idpConfig_ != com.google.cloud.discoveryengine.v1.IdpConfig.getDefaultInstance()) {
+          getIdpConfigBuilder().mergeFrom(value);
+        } else {
+          idpConfig_ = value;
+        }
+      } else {
+        idpConfigBuilder_.mergeFrom(value);
+      }
+      if (idpConfig_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIdpConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      idpConfig_ = null;
+      if (idpConfigBuilder_ != null) {
+        idpConfigBuilder_.dispose();
+        idpConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.IdpConfig.Builder getIdpConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetIdpConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.IdpConfigOrBuilder getIdpConfigOrBuilder() {
+      if (idpConfigBuilder_ != null) {
+        return idpConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return idpConfig_ == null
+            ? com.google.cloud.discoveryengine.v1.IdpConfig.getDefaultInstance()
+            : idpConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The identity provider for this location. When provided, the
+     * location's [AclConfig][google.cloud.discoveryengine.v1.AclConfig] is
+     * set from it as part of provisioning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.IdpConfig idp_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.IdpConfig,
+            com.google.cloud.discoveryengine.v1.IdpConfig.Builder,
+            com.google.cloud.discoveryengine.v1.IdpConfigOrBuilder>
+        internalGetIdpConfigFieldBuilder() {
+      if (idpConfigBuilder_ == null) {
+        idpConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.IdpConfig,
+                com.google.cloud.discoveryengine.v1.IdpConfig.Builder,
+                com.google.cloud.discoveryengine.v1.IdpConfigOrBuilder>(
+                getIdpConfig(), getParentForChildren(), isClean());
+        idpConfig_ = null;
+      }
+      return idpConfigBuilder_;
+    }
+
+    private boolean preProvisionMode_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Runs only the common project-level pre-provisioning steps
+     * (service agents, agent identity pools, project-scoped extension bindings,
+     * App Hub registry, Sobi agent default identity, and Sobi default Model Armor
+     * template) without reading or writing the Customer, Collection, or UserStore
+     * tables, CapabilityConfig, tenant project, default engine, or trial licenses
+     * when `true`.
+     *
+     * Assumes no customer exists yet. Customer-level or non-SOBI fields
+     * (`accept_data_use_terms`, `data_use_terms_version`, `saas_params`,
+     * `idp_config`, and `PROVISION_INTENT_LEGACY`) are rejected with
+     * `INVALID_ARGUMENT`, and the returned completed `Operation` has an empty
+     * response.
+     * </pre>
+     *
+     * <code>bool pre_provision_mode = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The preProvisionMode.
+     */
+    @java.lang.Override
+    public boolean getPreProvisionMode() {
+      return preProvisionMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Runs only the common project-level pre-provisioning steps
+     * (service agents, agent identity pools, project-scoped extension bindings,
+     * App Hub registry, Sobi agent default identity, and Sobi default Model Armor
+     * template) without reading or writing the Customer, Collection, or UserStore
+     * tables, CapabilityConfig, tenant project, default engine, or trial licenses
+     * when `true`.
+     *
+     * Assumes no customer exists yet. Customer-level or non-SOBI fields
+     * (`accept_data_use_terms`, `data_use_terms_version`, `saas_params`,
+     * `idp_config`, and `PROVISION_INTENT_LEGACY`) are rejected with
+     * `INVALID_ARGUMENT`, and the returned completed `Operation` has an empty
+     * response.
+     * </pre>
+     *
+     * <code>bool pre_provision_mode = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The preProvisionMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreProvisionMode(boolean value) {
+
+      preProvisionMode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Runs only the common project-level pre-provisioning steps
+     * (service agents, agent identity pools, project-scoped extension bindings,
+     * App Hub registry, Sobi agent default identity, and Sobi default Model Armor
+     * template) without reading or writing the Customer, Collection, or UserStore
+     * tables, CapabilityConfig, tenant project, default engine, or trial licenses
+     * when `true`.
+     *
+     * Assumes no customer exists yet. Customer-level or non-SOBI fields
+     * (`accept_data_use_terms`, `data_use_terms_version`, `saas_params`,
+     * `idp_config`, and `PROVISION_INTENT_LEGACY`) are rejected with
+     * `INVALID_ARGUMENT`, and the returned completed `Operation` has an empty
+     * response.
+     * </pre>
+     *
+     * <code>bool pre_provision_mode = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreProvisionMode() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      preProvisionMode_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.ProvisionProjectRequest)

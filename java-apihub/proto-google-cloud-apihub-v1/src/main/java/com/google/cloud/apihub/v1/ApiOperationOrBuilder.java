@@ -384,4 +384,82 @@ public interface ApiOperationOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this API operation. For
+   * operations parsed from a spec, `UpdateApiOperation` returns
+   * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+   * `Spec.deployments` instead. Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the deployments.
+   */
+  java.util.List<java.lang.String> getDeploymentsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this API operation. For
+   * operations parsed from a spec, `UpdateApiOperation` returns
+   * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+   * `Spec.deployments` instead. Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of deployments.
+   */
+  int getDeploymentsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this API operation. For
+   * operations parsed from a spec, `UpdateApiOperation` returns
+   * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+   * `Spec.deployments` instead. Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The deployments at the given index.
+   */
+  java.lang.String getDeployments(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this API operation. For
+   * operations parsed from a spec, `UpdateApiOperation` returns
+   * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+   * `Spec.deployments` instead. Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the deployments at the given index.
+   */
+  com.google.protobuf.ByteString getDeploymentsBytes(int index);
 }

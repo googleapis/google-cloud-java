@@ -72,6 +72,7 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
             com.google.spanner.executor.v1.UpdateCloudDatabaseAction.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTANCE_ID_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -238,8 +239,7 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Updated value of enable_drop_protection, this is the only field that has
-   * supported to be updated.
+   * Updated value of enable_drop_protection.
    * </pre>
    *
    * <code>bool enable_drop_protection = 4;</code>
@@ -249,6 +249,60 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
   @java.lang.Override
   public boolean getEnableDropProtection() {
     return enableDropProtection_;
+  }
+
+  public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 5;
+  private com.google.spanner.admin.database.v1.EncryptionConfig encryptionConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional encryption config for key changes.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional encryption config for key changes.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+   *
+   * @return The encryptionConfig.
+   */
+  @java.lang.Override
+  public com.google.spanner.admin.database.v1.EncryptionConfig getEncryptionConfig() {
+    return encryptionConfig_ == null
+        ? com.google.spanner.admin.database.v1.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional encryption config for key changes.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.spanner.admin.database.v1.EncryptionConfigOrBuilder
+      getEncryptionConfigOrBuilder() {
+    return encryptionConfig_ == null
+        ? com.google.spanner.admin.database.v1.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -277,6 +331,9 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
     if (enableDropProtection_ != false) {
       output.writeBool(4, enableDropProtection_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getEncryptionConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -298,6 +355,9 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
     if (enableDropProtection_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableDropProtection_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEncryptionConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -318,6 +378,10 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getDatabaseName().equals(other.getDatabaseName())) return false;
     if (getEnableDropProtection() != other.getEnableDropProtection()) return false;
+    if (hasEncryptionConfig() != other.hasEncryptionConfig()) return false;
+    if (hasEncryptionConfig()) {
+      if (!getEncryptionConfig().equals(other.getEncryptionConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,6 +401,10 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
     hash = (53 * hash) + getDatabaseName().hashCode();
     hash = (37 * hash) + ENABLE_DROP_PROTECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDropProtection());
+    if (hasEncryptionConfig()) {
+      hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -468,10 +536,19 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.spanner.executor.v1.UpdateCloudDatabaseAction.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetEncryptionConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -482,6 +559,11 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
       projectId_ = "";
       databaseName_ = "";
       enableDropProtection_ = false;
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
+        encryptionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -530,6 +612,13 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.enableDropProtection_ = enableDropProtection_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.encryptionConfig_ =
+            encryptionConfigBuilder_ == null ? encryptionConfig_ : encryptionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -562,6 +651,9 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
       }
       if (other.getEnableDropProtection() != false) {
         setEnableDropProtection(other.getEnableDropProtection());
+      }
+      if (other.hasEncryptionConfig()) {
+        mergeEncryptionConfig(other.getEncryptionConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -613,6 +705,13 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 42:
+              {
+                input.readMessage(
+                    internalGetEncryptionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -971,8 +1070,7 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Updated value of enable_drop_protection, this is the only field that has
-     * supported to be updated.
+     * Updated value of enable_drop_protection.
      * </pre>
      *
      * <code>bool enable_drop_protection = 4;</code>
@@ -988,8 +1086,7 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Updated value of enable_drop_protection, this is the only field that has
-     * supported to be updated.
+     * Updated value of enable_drop_protection.
      * </pre>
      *
      * <code>bool enable_drop_protection = 4;</code>
@@ -1009,8 +1106,7 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Updated value of enable_drop_protection, this is the only field that has
-     * supported to be updated.
+     * Updated value of enable_drop_protection.
      * </pre>
      *
      * <code>bool enable_drop_protection = 4;</code>
@@ -1022,6 +1118,206 @@ public final class UpdateCloudDatabaseAction extends com.google.protobuf.Generat
       enableDropProtection_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.spanner.admin.database.v1.EncryptionConfig encryptionConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.spanner.admin.database.v1.EncryptionConfig,
+            com.google.spanner.admin.database.v1.EncryptionConfig.Builder,
+            com.google.spanner.admin.database.v1.EncryptionConfigOrBuilder>
+        encryptionConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     *
+     * @return Whether the encryptionConfig field is set.
+     */
+    public boolean hasEncryptionConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     *
+     * @return The encryptionConfig.
+     */
+    public com.google.spanner.admin.database.v1.EncryptionConfig getEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        return encryptionConfig_ == null
+            ? com.google.spanner.admin.database.v1.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      } else {
+        return encryptionConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.spanner.admin.database.v1.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionConfig_ = value;
+      } else {
+        encryptionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.spanner.admin.database.v1.EncryptionConfig.Builder builderForValue) {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = builderForValue.build();
+      } else {
+        encryptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     */
+    public Builder mergeEncryptionConfig(
+        com.google.spanner.admin.database.v1.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && encryptionConfig_ != null
+            && encryptionConfig_
+                != com.google.spanner.admin.database.v1.EncryptionConfig.getDefaultInstance()) {
+          getEncryptionConfigBuilder().mergeFrom(value);
+        } else {
+          encryptionConfig_ = value;
+        }
+      } else {
+        encryptionConfigBuilder_.mergeFrom(value);
+      }
+      if (encryptionConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     */
+    public Builder clearEncryptionConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      encryptionConfig_ = null;
+      if (encryptionConfigBuilder_ != null) {
+        encryptionConfigBuilder_.dispose();
+        encryptionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     */
+    public com.google.spanner.admin.database.v1.EncryptionConfig.Builder
+        getEncryptionConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetEncryptionConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     */
+    public com.google.spanner.admin.database.v1.EncryptionConfigOrBuilder
+        getEncryptionConfigOrBuilder() {
+      if (encryptionConfigBuilder_ != null) {
+        return encryptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionConfig_ == null
+            ? com.google.spanner.admin.database.v1.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional encryption config for key changes.
+     * </pre>
+     *
+     * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.spanner.admin.database.v1.EncryptionConfig,
+            com.google.spanner.admin.database.v1.EncryptionConfig.Builder,
+            com.google.spanner.admin.database.v1.EncryptionConfigOrBuilder>
+        internalGetEncryptionConfigFieldBuilder() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.spanner.admin.database.v1.EncryptionConfig,
+                com.google.spanner.admin.database.v1.EncryptionConfig.Builder,
+                com.google.spanner.admin.database.v1.EncryptionConfigOrBuilder>(
+                getEncryptionConfig(), getParentForChildren(), isClean());
+        encryptionConfig_ = null;
+      }
+      return encryptionConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.spanner.executor.v1.UpdateCloudDatabaseAction)

@@ -108,8 +108,7 @@ public interface UpdateCloudDatabaseActionOrBuilder
    *
    *
    * <pre>
-   * Updated value of enable_drop_protection, this is the only field that has
-   * supported to be updated.
+   * Updated value of enable_drop_protection.
    * </pre>
    *
    * <code>bool enable_drop_protection = 4;</code>
@@ -117,4 +116,41 @@ public interface UpdateCloudDatabaseActionOrBuilder
    * @return The enableDropProtection.
    */
   boolean getEnableDropProtection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional encryption config for key changes.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+   *
+   * @return Whether the encryptionConfig field is set.
+   */
+  boolean hasEncryptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional encryption config for key changes.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+   *
+   * @return The encryptionConfig.
+   */
+  com.google.spanner.admin.database.v1.EncryptionConfig getEncryptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional encryption config for key changes.
+   * </pre>
+   *
+   * <code>.google.spanner.admin.database.v1.EncryptionConfig encryption_config = 5;</code>
+   */
+  com.google.spanner.admin.database.v1.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
 }

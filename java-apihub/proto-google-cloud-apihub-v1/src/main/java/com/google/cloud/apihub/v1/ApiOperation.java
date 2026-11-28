@@ -63,6 +63,7 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
     name_ = "";
     spec_ = "";
     sourceMetadata_ = java.util.Collections.emptyList();
+    deployments_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -614,6 +615,98 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
     return sourceMetadata_.get(index);
   }
 
+  public static final int DEPLOYMENTS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList deployments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this API operation. For
+   * operations parsed from a spec, `UpdateApiOperation` returns
+   * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+   * `Spec.deployments` instead. Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the deployments.
+   */
+  public com.google.protobuf.ProtocolStringList getDeploymentsList() {
+    return deployments_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this API operation. For
+   * operations parsed from a spec, `UpdateApiOperation` returns
+   * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+   * `Spec.deployments` instead. Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of deployments.
+   */
+  public int getDeploymentsCount() {
+    return deployments_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this API operation. For
+   * operations parsed from a spec, `UpdateApiOperation` returns
+   * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+   * `Spec.deployments` instead. Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The deployments at the given index.
+   */
+  public java.lang.String getDeployments(int index) {
+    return deployments_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this API operation. For
+   * operations parsed from a spec, `UpdateApiOperation` returns
+   * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+   * `Spec.deployments` instead. Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the deployments at the given index.
+   */
+  public com.google.protobuf.ByteString getDeploymentsBytes(int index) {
+    return deployments_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -647,6 +740,9 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
         output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 6);
     for (int i = 0; i < sourceMetadata_.size(); i++) {
       output.writeMessage(7, sourceMetadata_.get(i));
+    }
+    for (int i = 0; i < deployments_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, deployments_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -686,6 +782,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < sourceMetadata_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, sourceMetadata_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < deployments_.size(); i++) {
+        dataSize += computeStringSizeNoTag(deployments_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDeploymentsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -717,6 +821,7 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
     }
     if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
     if (!getSourceMetadataList().equals(other.getSourceMetadataList())) return false;
+    if (!getDeploymentsList().equals(other.getDeploymentsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -751,6 +856,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
     if (getSourceMetadataCount() > 0) {
       hash = (37 * hash) + SOURCE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getSourceMetadataList().hashCode();
+    }
+    if (getDeploymentsCount() > 0) {
+      hash = (37 * hash) + DEPLOYMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDeploymentsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -959,6 +1068,7 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
         sourceMetadataBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      deployments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1031,6 +1141,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
         result.attributes_ =
             internalGetAttributes().build(AttributesDefaultEntryHolder.defaultEntry);
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        deployments_.makeImmutable();
+        result.deployments_ = deployments_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1093,6 +1207,16 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
             sourceMetadataBuilder_.addAllMessages(other.sourceMetadata_);
           }
         }
+      }
+      if (!other.deployments_.isEmpty()) {
+        if (deployments_.isEmpty()) {
+          deployments_ = other.deployments_;
+          bitField0_ |= 0x00000080;
+        } else {
+          ensureDeploymentsIsMutable();
+          deployments_.addAll(other.deployments_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1179,6 +1303,13 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 58
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDeploymentsIsMutable();
+                deployments_.add(s);
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2833,6 +2964,243 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessage
         sourceMetadata_ = null;
       }
       return sourceMetadataBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList deployments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDeploymentsIsMutable() {
+      if (!deployments_.isModifiable()) {
+        deployments_ = new com.google.protobuf.LazyStringArrayList(deployments_);
+      }
+      bitField0_ |= 0x00000080;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the deployments.
+     */
+    public com.google.protobuf.ProtocolStringList getDeploymentsList() {
+      deployments_.makeImmutable();
+      return deployments_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of deployments.
+     */
+    public int getDeploymentsCount() {
+      return deployments_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The deployments at the given index.
+     */
+    public java.lang.String getDeployments(int index) {
+      return deployments_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the deployments at the given index.
+     */
+    public com.google.protobuf.ByteString getDeploymentsBytes(int index) {
+      return deployments_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The deployments to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployments(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDeploymentsIsMutable();
+      deployments_.set(index, value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The deployments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDeployments(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDeploymentsIsMutable();
+      deployments_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The deployments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDeployments(java.lang.Iterable<java.lang.String> values) {
+      ensureDeploymentsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deployments_);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeployments() {
+      deployments_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this API operation. For
+     * operations parsed from a spec, `UpdateApiOperation` returns
+     * `FAILED_PRECONDITION`; link the parent spec to the deployment via
+     * `Spec.deployments` instead. Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the deployments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDeploymentsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDeploymentsIsMutable();
+      deployments_.add(value);
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.ApiOperation)

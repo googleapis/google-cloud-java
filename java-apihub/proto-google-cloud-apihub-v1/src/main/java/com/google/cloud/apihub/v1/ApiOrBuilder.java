@@ -793,7 +793,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api requirement doc associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -814,7 +814,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api requirement doc associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -835,7 +835,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api requirement doc associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -853,7 +853,9 @@ public interface ApiOrBuilder
    *
    *
    * <pre>
-   * Optional. Fingerprint of the API resource.
+   * Optional. Fingerprint of the API resource. This must be unique for each API
+   * resource. It can neither be unset nor be updated to an existing fingerprint
+   * of another API resource.
    * </pre>
    *
    * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -866,7 +868,9 @@ public interface ApiOrBuilder
    *
    *
    * <pre>
-   * Optional. Fingerprint of the API resource.
+   * Optional. Fingerprint of the API resource. This must be unique for each API
+   * resource. It can neither be unset nor be updated to an existing fingerprint
+   * of another API resource.
    * </pre>
    *
    * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -951,7 +955,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api functional requirements associated with the API resource.
-   * Carinality is 1 for this attribute.
+   * Cardinality is 1 for this attribute.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -972,7 +976,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api functional requirements associated with the API resource.
-   * Carinality is 1 for this attribute.
+   * Cardinality is 1 for this attribute.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -993,7 +997,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api functional requirements associated with the API resource.
-   * Carinality is 1 for this attribute.
+   * Cardinality is 1 for this attribute.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1012,7 +1016,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api technical requirements associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1033,7 +1037,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api technical requirements associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1054,7 +1058,7 @@ public interface ApiOrBuilder
    *
    * <pre>
    * Optional. The api technical requirements associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1067,4 +1071,62 @@ public interface ApiOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.AttributeValuesOrBuilder getApiTechnicalRequirementsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the service.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-service-type`
+   * attribute.
+   * The cardinality of this attribute is 1. All values should be from the list
+   * of allowed values defined for the attribute.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serviceType field is set.
+   */
+  boolean hasServiceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the service.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-service-type`
+   * attribute.
+   * The cardinality of this attribute is 1. All values should be from the list
+   * of allowed values defined for the attribute.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceType.
+   */
+  com.google.cloud.apihub.v1.AttributeValues getServiceType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the service.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-service-type`
+   * attribute.
+   * The cardinality of this attribute is 1. All values should be from the list
+   * of allowed values defined for the attribute.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.AttributeValuesOrBuilder getServiceTypeOrBuilder();
 }

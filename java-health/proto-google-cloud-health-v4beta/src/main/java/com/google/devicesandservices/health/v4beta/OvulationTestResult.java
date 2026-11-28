@@ -91,6 +91,16 @@ public enum OvulationTestResult implements com.google.protobuf.ProtocolMessageEn
    * <code>INDETERMINATE = 5;</code>
    */
   INDETERMINATE(5),
+  /**
+   *
+   *
+   * <pre>
+   * Ovulation day the user identified by their own method, not a test kit.
+   * </pre>
+   *
+   * <code>OWN_METHOD = 6;</code>
+   */
+  OWN_METHOD(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -170,6 +180,17 @@ public enum OvulationTestResult implements com.google.protobuf.ProtocolMessageEn
    */
   public static final int INDETERMINATE_VALUE = 5;
 
+  /**
+   *
+   *
+   * <pre>
+   * Ovulation day the user identified by their own method, not a test kit.
+   * </pre>
+   *
+   * <code>OWN_METHOD = 6;</code>
+   */
+  public static final int OWN_METHOD_VALUE = 6;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -206,6 +227,8 @@ public enum OvulationTestResult implements com.google.protobuf.ProtocolMessageEn
         return POSITIVE;
       case 5:
         return INDETERMINATE;
+      case 6:
+        return OWN_METHOD;
       default:
         return null;
     }

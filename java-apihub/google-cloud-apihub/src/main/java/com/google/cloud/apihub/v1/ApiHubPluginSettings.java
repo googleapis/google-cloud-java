@@ -245,6 +245,13 @@ public class ApiHubPluginSettings extends ClientSettings<ApiHubPluginSettings> {
     return ((ApiHubPluginStubSettings) getStubSettings()).deletePluginInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to managePluginInstanceSourceData. */
+  public UnaryCallSettings<
+          ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+      managePluginInstanceSourceDataSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).managePluginInstanceSourceDataSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -480,6 +487,13 @@ public class ApiHubPluginSettings extends ClientSettings<ApiHubPluginSettings> {
     public OperationCallSettings.Builder<DeletePluginInstanceRequest, Empty, OperationMetadata>
         deletePluginInstanceOperationSettings() {
       return getStubSettingsBuilder().deletePluginInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to managePluginInstanceSourceData. */
+    public UnaryCallSettings.Builder<
+            ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+        managePluginInstanceSourceDataSettings() {
+      return getStubSettingsBuilder().managePluginInstanceSourceDataSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

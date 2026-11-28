@@ -111,6 +111,26 @@ public enum GatewayType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OTHERS = 7;</code>
    */
   OTHERS(7),
+  /**
+   *
+   *
+   * <pre>
+   * The gateway type is AWS API Gateway.
+   * </pre>
+   *
+   * <code>AWS_API_GATEWAY = 8;</code>
+   */
+  AWS_API_GATEWAY(8),
+  /**
+   *
+   *
+   * <pre>
+   * The gateway type is Azure API Management.
+   * </pre>
+   *
+   * <code>AZURE_API_MANAGEMENT = 9;</code>
+   */
+  AZURE_API_MANAGEMENT(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -212,6 +232,28 @@ public enum GatewayType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int OTHERS_VALUE = 7;
 
+  /**
+   *
+   *
+   * <pre>
+   * The gateway type is AWS API Gateway.
+   * </pre>
+   *
+   * <code>AWS_API_GATEWAY = 8;</code>
+   */
+  public static final int AWS_API_GATEWAY_VALUE = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * The gateway type is Azure API Management.
+   * </pre>
+   *
+   * <code>AZURE_API_MANAGEMENT = 9;</code>
+   */
+  public static final int AZURE_API_MANAGEMENT_VALUE = 9;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -252,6 +294,10 @@ public enum GatewayType implements com.google.protobuf.ProtocolMessageEnum {
         return API_DISCOVERY;
       case 7:
         return OTHERS;
+      case 8:
+        return AWS_API_GATEWAY;
+      case 9:
+        return AZURE_API_MANAGEMENT;
       default:
         return null;
     }

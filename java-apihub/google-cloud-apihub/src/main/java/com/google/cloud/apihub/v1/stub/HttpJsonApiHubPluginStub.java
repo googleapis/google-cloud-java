@@ -54,6 +54,8 @@ import com.google.cloud.apihub.v1.ListPluginInstancesRequest;
 import com.google.cloud.apihub.v1.ListPluginInstancesResponse;
 import com.google.cloud.apihub.v1.ListPluginsRequest;
 import com.google.cloud.apihub.v1.ListPluginsResponse;
+import com.google.cloud.apihub.v1.ManagePluginInstanceSourceDataRequest;
+import com.google.cloud.apihub.v1.ManagePluginInstanceSourceDataResponse;
 import com.google.cloud.apihub.v1.OperationMetadata;
 import com.google.cloud.apihub.v1.Plugin;
 import com.google.cloud.apihub.v1.PluginInstance;
@@ -624,6 +626,48 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+      managePluginInstanceSourceDataMethodDescriptor =
+          ApiMethodDescriptor
+              .<ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.apihub.v1.ApiHubPlugin/ManagePluginInstanceSourceData")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ManagePluginInstanceSourceDataRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/plugins/*/instances/*}:manageSourceData",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ManagePluginInstanceSourceDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ManagePluginInstanceSourceDataRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ManagePluginInstanceSourceDataResponse>newBuilder()
+                      .setDefaultInstance(
+                          ManagePluginInstanceSourceDataResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -734,6 +778,9 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
   private final UnaryCallable<DeletePluginInstanceRequest, Operation> deletePluginInstanceCallable;
   private final OperationCallable<DeletePluginInstanceRequest, Empty, OperationMetadata>
       deletePluginInstanceOperationCallable;
+  private final UnaryCallable<
+          ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+      managePluginInstanceSourceDataCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -987,6 +1034,22 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<
+            ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+        managePluginInstanceSourceDataTransportSettings =
+            HttpJsonCallSettings
+                .<ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+                    newBuilder()
+                .setMethodDescriptor(managePluginInstanceSourceDataMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1113,6 +1176,11 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
             settings.deletePluginInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.managePluginInstanceSourceDataCallable =
+        callableFactory.createUnaryCallable(
+            managePluginInstanceSourceDataTransportSettings,
+            settings.managePluginInstanceSourceDataSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1144,6 +1212,7 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
     methodDescriptors.add(disablePluginInstanceActionMethodDescriptor);
     methodDescriptors.add(updatePluginInstanceMethodDescriptor);
     methodDescriptors.add(deletePluginInstanceMethodDescriptor);
+    methodDescriptors.add(managePluginInstanceSourceDataMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1279,6 +1348,13 @@ public class HttpJsonApiHubPluginStub extends ApiHubPluginStub {
   public OperationCallable<DeletePluginInstanceRequest, Empty, OperationMetadata>
       deletePluginInstanceOperationCallable() {
     return deletePluginInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+      managePluginInstanceSourceDataCallable() {
+    return managePluginInstanceSourceDataCallable;
   }
 
   @Override

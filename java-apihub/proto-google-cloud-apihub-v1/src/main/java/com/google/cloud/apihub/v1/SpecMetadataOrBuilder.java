@@ -182,4 +182,82 @@ public interface SpecMetadataOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getOriginalUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The gateway-side URIs of deployments that serve this spec. If
+   * provided, the API Hub service creates links between this spec and the
+   * deployments identified by these URIs. URIs that don't match any known
+   * deployment are ignored; a subsequent ingestion cycle that includes the
+   * missing deployment will re-establish the link. The maximum number of URIs
+   * allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the deploymentResourceUris.
+   */
+  java.util.List<java.lang.String> getDeploymentResourceUrisList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The gateway-side URIs of deployments that serve this spec. If
+   * provided, the API Hub service creates links between this spec and the
+   * deployments identified by these URIs. URIs that don't match any known
+   * deployment are ignored; a subsequent ingestion cycle that includes the
+   * missing deployment will re-establish the link. The maximum number of URIs
+   * allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of deploymentResourceUris.
+   */
+  int getDeploymentResourceUrisCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The gateway-side URIs of deployments that serve this spec. If
+   * provided, the API Hub service creates links between this spec and the
+   * deployments identified by these URIs. URIs that don't match any known
+   * deployment are ignored; a subsequent ingestion cycle that includes the
+   * missing deployment will re-establish the link. The maximum number of URIs
+   * allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The deploymentResourceUris at the given index.
+   */
+  java.lang.String getDeploymentResourceUris(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The gateway-side URIs of deployments that serve this spec. If
+   * provided, the API Hub service creates links between this spec and the
+   * deployments identified by these URIs. URIs that don't match any known
+   * deployment are ignored; a subsequent ingestion cycle that includes the
+   * missing deployment will re-establish the link. The maximum number of URIs
+   * allowed is 100.
+   * </pre>
+   *
+   * <code>repeated string deployment_resource_uris = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the deploymentResourceUris at the given index.
+   */
+  com.google.protobuf.ByteString getDeploymentResourceUrisBytes(int index);
 }

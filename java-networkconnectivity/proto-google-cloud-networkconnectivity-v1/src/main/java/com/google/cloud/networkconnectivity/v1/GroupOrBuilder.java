@@ -349,7 +349,9 @@ public interface GroupOrBuilder
    * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
    * </pre>
    *
-   * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The routeTable.
    */
@@ -364,7 +366,9 @@ public interface GroupOrBuilder
    * `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
    * </pre>
    *
-   * <code>string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string route_table = 9 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for routeTable.
    */

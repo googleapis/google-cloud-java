@@ -129,9 +129,8 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    *
    *
    * <pre>
-   * Optional. IP ranges allowed to be included during import from hub (does not
-   * control transit connectivity). The only allowed value for now is
-   * "ALL_IPV4_RANGES".
+   * Optional. Hub routes fully encompassed by include import ranges are
+   * included during import from hub.
    * </pre>
    *
    * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -145,9 +144,8 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    *
    *
    * <pre>
-   * Optional. IP ranges allowed to be included during import from hub (does not
-   * control transit connectivity). The only allowed value for now is
-   * "ALL_IPV4_RANGES".
+   * Optional. Hub routes fully encompassed by include import ranges are
+   * included during import from hub.
    * </pre>
    *
    * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -161,9 +159,8 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    *
    *
    * <pre>
-   * Optional. IP ranges allowed to be included during import from hub (does not
-   * control transit connectivity). The only allowed value for now is
-   * "ALL_IPV4_RANGES".
+   * Optional. Hub routes fully encompassed by include import ranges are
+   * included during import from hub.
    * </pre>
    *
    * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -178,9 +175,8 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    *
    *
    * <pre>
-   * Optional. IP ranges allowed to be included during import from hub (does not
-   * control transit connectivity). The only allowed value for now is
-   * "ALL_IPV4_RANGES".
+   * Optional. Hub routes fully encompassed by include import ranges are
+   * included during import from hub.
    * </pre>
    *
    * <code>repeated string include_import_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -190,4 +186,454 @@ public interface LinkedInterconnectAttachmentsOrBuilder
    * @return The bytes of the includeImportRanges at the given index.
    */
   com.google.protobuf.ByteString getIncludeImportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed include import IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_import_ranges = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the proposedIncludeImportRanges.
+   */
+  java.util.List<java.lang.String> getProposedIncludeImportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed include import IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_import_ranges = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of proposedIncludeImportRanges.
+   */
+  int getProposedIncludeImportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed include import IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_import_ranges = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedIncludeImportRanges at the given index.
+   */
+  java.lang.String getProposedIncludeImportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed include import IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_import_ranges = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedIncludeImportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getProposedIncludeImportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the excludeImportRanges.
+   */
+  java.util.List<java.lang.String> getExcludeImportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of excludeImportRanges.
+   */
+  int getExcludeImportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeImportRanges at the given index.
+   */
+  java.lang.String getExcludeImportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeImportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getExcludeImportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude import IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_import_ranges = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the proposedExcludeImportRanges.
+   */
+  java.util.List<java.lang.String> getProposedExcludeImportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude import IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_import_ranges = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of proposedExcludeImportRanges.
+   */
+  int getProposedExcludeImportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude import IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_import_ranges = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedExcludeImportRanges at the given index.
+   */
+  java.lang.String getProposedExcludeImportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude import IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_import_ranges = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedExcludeImportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getProposedExcludeImportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the includeExportRanges.
+   */
+  java.util.List<java.lang.String> getIncludeExportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of includeExportRanges.
+   */
+  int getIncludeExportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeExportRanges at the given index.
+   */
+  java.lang.String getIncludeExportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getIncludeExportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the proposedIncludeExportRanges.
+   */
+  java.util.List<java.lang.String> getProposedIncludeExportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of proposedIncludeExportRanges.
+   */
+  int getProposedIncludeExportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedIncludeExportRanges at the given index.
+   */
+  java.lang.String getProposedIncludeExportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedIncludeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getProposedIncludeExportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the excludeExportRanges.
+   */
+  java.util.List<java.lang.String> getExcludeExportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of excludeExportRanges.
+   */
+  int getExcludeExportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeExportRanges at the given index.
+   */
+  java.lang.String getExcludeExportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getExcludeExportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the proposedExcludeExportRanges.
+   */
+  java.util.List<java.lang.String> getProposedExcludeExportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of proposedExcludeExportRanges.
+   */
+  int getProposedExcludeExportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedExcludeExportRanges at the given index.
+   */
+  java.lang.String getProposedExcludeExportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administrator's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedExcludeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getProposedExcludeExportRangesBytes(int index);
 }

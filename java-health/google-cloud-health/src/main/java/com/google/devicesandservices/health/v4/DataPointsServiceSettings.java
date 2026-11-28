@@ -16,6 +16,7 @@
 
 package com.google.devicesandservices.health.v4;
 
+import static com.google.devicesandservices.health.v4.DataPointsServiceClient.DailyRollUpDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4.DataPointsServiceClient.ListDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4.DataPointsServiceClient.ReconcileDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4.DataPointsServiceClient.RollUpDataPointsPagedResponse;
@@ -186,7 +187,10 @@ public class DataPointsServiceSettings extends ClientSettings<DataPointsServiceS
   }
 
   /** Returns the object with the settings used for calls to dailyRollUpDataPoints. */
-  public UnaryCallSettings<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
+  public PagedCallSettings<
+          DailyRollUpDataPointsRequest,
+          DailyRollUpDataPointsResponse,
+          DailyRollUpDataPointsPagedResponse>
       dailyRollUpDataPointsSettings() {
     return ((DataPointsServiceStubSettings) getStubSettings()).dailyRollUpDataPointsSettings();
   }
@@ -377,7 +381,10 @@ public class DataPointsServiceSettings extends ClientSettings<DataPointsServiceS
     }
 
     /** Returns the builder for the settings used for calls to dailyRollUpDataPoints. */
-    public UnaryCallSettings.Builder<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
+    public PagedCallSettings.Builder<
+            DailyRollUpDataPointsRequest,
+            DailyRollUpDataPointsResponse,
+            DailyRollUpDataPointsPagedResponse>
         dailyRollUpDataPointsSettings() {
       return getStubSettingsBuilder().dailyRollUpDataPointsSettings();
     }

@@ -102,7 +102,7 @@ public final class HostProjectRegistrationServiceProto extends com.google.protob
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003:\304\001\352A\300\001\n"
           + "-apihub.googleapis.com/HostProjectRegistration\022\\projects/{proje"
           + "ct}/locations/{location}/hostProjectRegistrations/{host_project_registration}*\030h"
-          + "ostProjectRegistrations2\027hostProjectRegistration2\341\006\n"
+          + "ostProjectRegistrations2\027hostProjectRegistration2\304\007\n"
           + "\036HostProjectRegistrationService\022\260\002\n"
           + "\035CreateHostProjectRegistration\022<.google.cloud.apihub.v1.CreateHostProject"
           + "RegistrationRequest\032/.google.cloud.apihu"
@@ -118,11 +118,14 @@ public final class HostProjectRegistrationServiceProto extends com.google.protob
           + "RegistrationsRequest\032<.google.cloud.apihub.v1.ListHostProjectRegistrationsRespon"
           + "se\"M\332A\006parent\202\323\344\223\002>\022</v1/{parent=project"
           + "s/*/locations/*}/hostProjectRegistration"
-          + "s\032I\312A\025apihub.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\305\001\n"
-          + "\032com.google.cloud.apihub.v1B#HostProjectRegistrationServiceProtoP\001Z2cloud.google"
-          + ".com/go/apihub/apiv1/apihubpb;apihubpb\252\002"
-          + "\026Google.Cloud.ApiHub.V1\312\002\026Google\\Cloud\\A"
-          + "piHub\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto3"
+          + "s\032\253\001\312A\025apihub.googleapis.com\322A\217\001https://"
+          + "www.googleapis.com/auth/apihub.readonly,https://www.googleapis.com/auth/apihub.r"
+          + "eadwrite,https://www.googleapis.com/auth/cloud-platformB\305\001\n"
+          + "\032com.google.cloud.apihub.v1B#HostProjectRegistrationServicePr"
+          + "otoP\001Z2cloud.google.com/go/apihub/apiv1/"
+          + "apihubpb;apihubpb\252\002\026Google.Cloud.ApiHub."
+          + "V1\312\002\026Google\\Cloud\\ApiHub\\V1\352\002\031Google::Cl"
+          + "oud::ApiHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

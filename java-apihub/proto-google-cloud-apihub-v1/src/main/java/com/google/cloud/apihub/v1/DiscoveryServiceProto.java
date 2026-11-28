@@ -102,7 +102,7 @@ public final class DiscoveryServiceProto extends com.google.protobuf.GeneratedFi
           + ".apihub.googleapis.com/DiscoveredApiObservation\"g\n"
           + " GetDiscoveredApiOperationRequest\022C\n"
           + "\004name\030\001 \001(\tB5\342A\001\002\372A.\n"
-          + ",apihub.googleapis.com/DiscoveredApiOperation2\232\010\n"
+          + ",apihub.googleapis.com/DiscoveredApiOperation2\375\010\n"
           + "\017ApiHubDiscovery\022\354\001\n"
           + "\035ListDiscoveredApiObservations\022<.google.cloud.apihub.v1.ListDis"
           + "coveredApiObservationsRequest\032=.google.cloud.apihub.v1.ListDiscoveredApiObservat"
@@ -121,12 +121,13 @@ public final class DiscoveryServiceProto extends com.google.protobuf.GeneratedFi
           + "ApiOperationRequest\032..google.cloud.apihu"
           + "b.v1.DiscoveredApiOperation\"f\332A\004name\202\323\344\223"
           + "\002Y\022W/v1/{name=projects/*/locations/*/discoveredApiObservations/*/discoveredApiOp"
-          + "erations/*}\032I\312A\025apihub.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-platformB\267\001\n"
-          + "\032com.google.cloud.apihub.v1B\025DiscoveryServiceProtoP\001Z2cloud.google.com"
-          + "/go/apihub/apiv1/apihubpb;apihubpb\252\002\026Goo"
-          + "gle.Cloud.ApiHub.V1\312\002\026Google\\Cloud\\ApiHu"
-          + "b\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto3"
+          + "erations/*}\032\253\001\312A\025apihub.googleapis.com\322A"
+          + "\217\001https://www.googleapis.com/auth/apihub.readonly,https://www.googleapis.com/aut"
+          + "h/apihub.readwrite,https://www.googleapis.com/auth/cloud-platformB\267\001\n"
+          + "\032com.google.cloud.apihub.v1B\025DiscoveryServiceProtoP"
+          + "\001Z2cloud.google.com/go/apihub/apiv1/apih"
+          + "ubpb;apihubpb\252\002\026Google.Cloud.ApiHub.V1\312\002"
+          + "\026Google\\Cloud\\ApiHub\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

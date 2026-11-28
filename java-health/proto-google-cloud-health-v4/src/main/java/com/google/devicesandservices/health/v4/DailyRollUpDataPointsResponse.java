@@ -53,6 +53,7 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
 
   private DailyRollUpDataPointsResponse() {
     rollupDataPoints_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -161,6 +162,61 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
     return rollupDataPoints_.get(index);
   }
 
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextPageToken_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -178,6 +234,9 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
     for (int i = 0; i < rollupDataPoints_.size(); i++) {
       output.writeMessage(1, rollupDataPoints_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nextPageToken_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, nextPageToken_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -189,6 +248,9 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
     size = 0;
     for (int i = 0; i < rollupDataPoints_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, rollupDataPoints_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(nextPageToken_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, nextPageToken_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -207,6 +269,7 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
         (com.google.devicesandservices.health.v4.DailyRollUpDataPointsResponse) obj;
 
     if (!getRollupDataPointsList().equals(other.getRollupDataPointsList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -222,6 +285,8 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
       hash = (37 * hash) + ROLLUP_DATA_POINTS_FIELD_NUMBER;
       hash = (53 * hash) + getRollupDataPointsList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -372,6 +437,7 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
         rollupDataPointsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      nextPageToken_ = "";
       return this;
     }
 
@@ -425,6 +491,9 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
     private void buildPartial0(
         com.google.devicesandservices.health.v4.DailyRollUpDataPointsResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.nextPageToken_ = nextPageToken_;
+      }
     }
 
     @java.lang.Override
@@ -470,6 +539,11 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
           }
         }
       }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -510,6 +584,12 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                nextPageToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -951,6 +1031,122 @@ public final class DailyRollUpDataPointsResponse extends com.google.protobuf.Gen
         rollupDataPoints_ = null;
       }
       return rollupDataPointsBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nextPageToken_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.devicesandservices.health.v4.DailyRollUpDataPointsResponse)

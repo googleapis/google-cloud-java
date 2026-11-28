@@ -1111,6 +1111,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateOdbDnsZone</td>
+ *      <td><p> Updates the `labels` of a single ODB DNS Zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateOdbDnsZoneAsync(UpdateOdbDnsZoneRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateOdbDnsZoneAsync(OdbDnsZone odbDnsZone, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateOdbDnsZoneOperationCallable()
+ *           <li><p> updateOdbDnsZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteOdbDnsZone</td>
  *      <td><p> Deletes a single ODB DNS Zone.</td>
  *      <td>
@@ -10885,6 +10904,140 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable() {
     return stub.createOdbDnsZoneCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   OdbDnsZone response =
+   *       oracleDatabaseClient.updateOdbDnsZoneAsync(odbDnsZone, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param odbDnsZone Required. The resource being updated. Note only labels can be updated. The
+   *     provided labels will completely replace the existing labels. Any existing label keys that
+   *     are not included in the update request will be deleted. Not providing labels and
+   *     update_mask will not update the labels. To clear all labels, specify `labels` in the
+   *     `update_mask` and omit or leave the `labels` field empty in the update request.
+   * @param updateMask Optional. A mask specifying which fields in the OdbDnsZone should be updated.
+   *     A field specified in the mask is updated. If a mask isn't provided, the service treats this
+   *     as an implied field mask equivalent to all fields that are populated (have a non-empty
+   *     value). To clear or unset a field, the field must be explicitly specified in the
+   *     `update_mask`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbDnsZone, OperationMetadata> updateOdbDnsZoneAsync(
+      OdbDnsZone odbDnsZone, FieldMask updateMask) {
+    UpdateOdbDnsZoneRequest request =
+        UpdateOdbDnsZoneRequest.newBuilder()
+            .setOdbDnsZone(odbDnsZone)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbDnsZoneRequest request =
+   *       UpdateOdbDnsZoneRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OdbDnsZone response = oracleDatabaseClient.updateOdbDnsZoneAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbDnsZone, OperationMetadata> updateOdbDnsZoneAsync(
+      UpdateOdbDnsZoneRequest request) {
+    return updateOdbDnsZoneOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbDnsZoneRequest request =
+   *       UpdateOdbDnsZoneRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<OdbDnsZone, OperationMetadata> future =
+   *       oracleDatabaseClient.updateOdbDnsZoneOperationCallable().futureCall(request);
+   *   // Do something.
+   *   OdbDnsZone response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      updateOdbDnsZoneOperationCallable() {
+    return stub.updateOdbDnsZoneOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the `labels` of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   UpdateOdbDnsZoneRequest request =
+   *       UpdateOdbDnsZoneRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.updateOdbDnsZoneCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateOdbDnsZoneRequest, Operation> updateOdbDnsZoneCallable() {
+    return stub.updateOdbDnsZoneCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

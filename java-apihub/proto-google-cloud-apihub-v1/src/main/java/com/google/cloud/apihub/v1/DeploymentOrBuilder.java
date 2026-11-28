@@ -874,7 +874,7 @@ public interface DeploymentOrBuilder
    *
    * <pre>
    * Optional. The project to which the deployment belongs.
-   * For GCP gateways, this will refer to the project identifier.
+   * For Google Cloud gateways, this will refer to the project identifier.
    * For others like Edge/OPDK, this will refer to the org identifier.
    * </pre>
    *
@@ -889,7 +889,7 @@ public interface DeploymentOrBuilder
    *
    * <pre>
    * Optional. The project to which the deployment belongs.
-   * For GCP gateways, this will refer to the project identifier.
+   * For Google Cloud gateways, this will refer to the project identifier.
    * For others like Edge/OPDK, this will refer to the org identifier.
    * </pre>
    *
@@ -926,4 +926,168 @@ public interface DeploymentOrBuilder
    * @return The bytes for sourceEnvironment.
    */
   com.google.protobuf.ByteString getSourceEnvironmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specs linked directly to this deployment.
+   * Note: a deployment could serve multiple specs (e.g., across different
+   * revisions of the same underlying gateway configuration).
+   * </pre>
+   *
+   * <code>
+   * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the specs.
+   */
+  java.util.List<java.lang.String> getSpecsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specs linked directly to this deployment.
+   * Note: a deployment could serve multiple specs (e.g., across different
+   * revisions of the same underlying gateway configuration).
+   * </pre>
+   *
+   * <code>
+   * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of specs.
+   */
+  int getSpecsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specs linked directly to this deployment.
+   * Note: a deployment could serve multiple specs (e.g., across different
+   * revisions of the same underlying gateway configuration).
+   * </pre>
+   *
+   * <code>
+   * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The specs at the given index.
+   */
+  java.lang.String getSpecs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The specs linked directly to this deployment.
+   * Note: a deployment could serve multiple specs (e.g., across different
+   * revisions of the same underlying gateway configuration).
+   * </pre>
+   *
+   * <code>
+   * repeated string specs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the specs at the given index.
+   */
+  com.google.protobuf.ByteString getSpecsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The API operations linked directly to this deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the apiOperations.
+   */
+  java.util.List<java.lang.String> getApiOperationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The API operations linked directly to this deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of apiOperations.
+   */
+  int getApiOperationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The API operations linked directly to this deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The apiOperations at the given index.
+   */
+  java.lang.String getApiOperations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The API operations linked directly to this deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated string api_operations = 20 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the apiOperations at the given index.
+   */
+  com.google.protobuf.ByteString getApiOperationsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A revision identifier for the underlying gateway configuration
+   * that this deployment serves. For Apigee gateway variants, this is typically
+   * the proxy revision number populated automatically when the deployment is
+   * discovered.
+   * </pre>
+   *
+   * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceRevision.
+   */
+  java.lang.String getSourceRevision();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A revision identifier for the underlying gateway configuration
+   * that this deployment serves. For Apigee gateway variants, this is typically
+   * the proxy revision number populated automatically when the deployment is
+   * discovered.
+   * </pre>
+   *
+   * <code>string source_revision = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceRevision.
+   */
+  com.google.protobuf.ByteString getSourceRevisionBytes();
 }

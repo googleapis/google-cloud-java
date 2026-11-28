@@ -1400,6 +1400,26 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SERVICE_ACCOUNT_AUTH_FIELD_NUMBER = 11;
+  private boolean serviceAccountAuth_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if the hook uses the Repository Service Account to
+   * generate an OIDC ID Token for webhook authentication.
+   * </pre>
+   *
+   * <code>bool service_account_auth = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccountAuth.
+   */
+  @java.lang.Override
+  public boolean getServiceAccountAuth() {
+    return serviceAccountAuth_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1446,6 +1466,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sensitiveQueryString_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, sensitiveQueryString_);
     }
+    if (serviceAccountAuth_ != false) {
+      output.writeBool(11, serviceAccountAuth_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1491,6 +1514,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sensitiveQueryString_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, sensitiveQueryString_);
     }
+    if (serviceAccountAuth_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, serviceAccountAuth_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1525,6 +1551,7 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
       if (!getPushOption().equals(other.getPushOption())) return false;
     }
     if (!getSensitiveQueryString().equals(other.getSensitiveQueryString())) return false;
+    if (getServiceAccountAuth() != other.getServiceAccountAuth()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1562,6 +1589,8 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + SENSITIVE_QUERY_STRING_FIELD_NUMBER;
     hash = (53 * hash) + getSensitiveQueryString().hashCode();
+    hash = (37 * hash) + SERVICE_ACCOUNT_AUTH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getServiceAccountAuth());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1734,6 +1763,7 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
         pushOptionBuilder_ = null;
       }
       sensitiveQueryString_ = "";
+      serviceAccountAuth_ = false;
       return this;
     }
 
@@ -1802,6 +1832,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.sensitiveQueryString_ = sensitiveQueryString_;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.serviceAccountAuth_ = serviceAccountAuth_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1859,6 +1892,9 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
         sensitiveQueryString_ = other.sensitiveQueryString_;
         bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.getServiceAccountAuth() != false) {
+        setServiceAccountAuth(other.getServiceAccountAuth());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1955,6 +1991,12 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 88:
+              {
+                serviceAccountAuth_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3392,6 +3434,65 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       sensitiveQueryString_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private boolean serviceAccountAuth_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if the hook uses the Repository Service Account to
+     * generate an OIDC ID Token for webhook authentication.
+     * </pre>
+     *
+     * <code>bool service_account_auth = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccountAuth.
+     */
+    @java.lang.Override
+    public boolean getServiceAccountAuth() {
+      return serviceAccountAuth_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if the hook uses the Repository Service Account to
+     * generate an OIDC ID Token for webhook authentication.
+     * </pre>
+     *
+     * <code>bool service_account_auth = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The serviceAccountAuth to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountAuth(boolean value) {
+
+      serviceAccountAuth_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if the hook uses the Repository Service Account to
+     * generate an OIDC ID Token for webhook authentication.
+     * </pre>
+     *
+     * <code>bool service_account_auth = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccountAuth() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      serviceAccountAuth_ = false;
       onChanged();
       return this;
     }

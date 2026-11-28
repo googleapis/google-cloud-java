@@ -189,7 +189,7 @@ public interface AuditReportOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=913
    * @return The complianceStandard.
    */
   @java.lang.Deprecated
@@ -209,7 +209,7 @@ public interface AuditReportOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=913
    * @return The bytes for complianceStandard.
    */
   @java.lang.Deprecated
@@ -524,4 +524,86 @@ public interface AuditReportOrBuilder
    */
   com.google.cloud.auditmanager.v1.CloudControlParameterStates
       getCloudControlParameterStatesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional formats in which the audit report was requested to
+   * be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the reportExportFormats.
+   */
+  java.util.List<com.google.cloud.auditmanager.v1.ReportExportFormat> getReportExportFormatsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional formats in which the audit report was requested to
+   * be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of reportExportFormats.
+   */
+  int getReportExportFormatsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional formats in which the audit report was requested to
+   * be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reportExportFormats at the given index.
+   */
+  com.google.cloud.auditmanager.v1.ReportExportFormat getReportExportFormats(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional formats in which the audit report was requested to
+   * be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for reportExportFormats.
+   */
+  java.util.List<java.lang.Integer> getReportExportFormatsValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional formats in which the audit report was requested to
+   * be exported.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of reportExportFormats at the given index.
+   */
+  int getReportExportFormatsValue(int index);
 }

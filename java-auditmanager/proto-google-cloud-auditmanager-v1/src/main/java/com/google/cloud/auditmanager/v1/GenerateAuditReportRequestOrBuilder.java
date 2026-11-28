@@ -121,7 +121,7 @@ public interface GenerateAuditReportRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
    * @return The complianceStandard.
    */
   @java.lang.Deprecated
@@ -141,7 +141,7 @@ public interface GenerateAuditReportRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=486
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=497
    * @return The bytes for complianceStandard.
    */
   @java.lang.Deprecated
@@ -320,6 +320,88 @@ public interface GenerateAuditReportRequestOrBuilder
    * @return The validateOnly.
    */
   boolean getValidateOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the reportExportFormats.
+   */
+  java.util.List<com.google.cloud.auditmanager.v1.ReportExportFormat> getReportExportFormatsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of reportExportFormats.
+   */
+  int getReportExportFormatsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reportExportFormats at the given index.
+   */
+  com.google.cloud.auditmanager.v1.ReportExportFormat getReportExportFormats(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for reportExportFormats.
+   */
+  java.util.List<java.lang.Integer> getReportExportFormatsValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Formats in which to export the audit report, in addition to the
+   * ODF report. Each format can be listed only once.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.auditmanager.v1.ReportExportFormat report_export_formats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of reportExportFormats at the given index.
+   */
+  int getReportExportFormatsValue(int index);
 
   com.google.cloud.auditmanager.v1.GenerateAuditReportRequest.DestinationCase getDestinationCase();
 }

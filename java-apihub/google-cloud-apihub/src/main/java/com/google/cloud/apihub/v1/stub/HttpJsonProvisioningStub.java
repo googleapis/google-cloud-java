@@ -41,6 +41,7 @@ import com.google.cloud.apihub.v1.GetApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceResponse;
 import com.google.cloud.apihub.v1.OperationMetadata;
+import com.google.cloud.apihub.v1.UpdateApiHubInstanceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -187,6 +188,50 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateApiHubInstanceRequest, Operation>
+      updateApiHubInstanceMethodDescriptor =
+          ApiMethodDescriptor.<UpdateApiHubInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.apihub.v1.Provisioning/UpdateApiHubInstance")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateApiHubInstanceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{apiHubInstance.name=projects/*/locations/*/apiHubInstances/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateApiHubInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "apiHubInstance.name",
+                                request.getApiHubInstance().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateApiHubInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("apiHubInstance", request.getApiHubInstance(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateApiHubInstanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<
           LookupApiHubInstanceRequest, LookupApiHubInstanceResponse>
       lookupApiHubInstanceMethodDescriptor =
@@ -298,6 +343,9 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
   private final OperationCallable<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
       deleteApiHubInstanceOperationCallable;
   private final UnaryCallable<GetApiHubInstanceRequest, ApiHubInstance> getApiHubInstanceCallable;
+  private final UnaryCallable<UpdateApiHubInstanceRequest, Operation> updateApiHubInstanceCallable;
+  private final OperationCallable<UpdateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
+      updateApiHubInstanceOperationCallable;
   private final UnaryCallable<LookupApiHubInstanceRequest, LookupApiHubInstanceResponse>
       lookupApiHubInstanceCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -414,6 +462,20 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<UpdateApiHubInstanceRequest, Operation>
+        updateApiHubInstanceTransportSettings =
+            HttpJsonCallSettings.<UpdateApiHubInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateApiHubInstanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "api_hub_instance.name",
+                          String.valueOf(request.getApiHubInstance().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<LookupApiHubInstanceRequest, LookupApiHubInstanceResponse>
         lookupApiHubInstanceTransportSettings =
             HttpJsonCallSettings
@@ -479,6 +541,17 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
             getApiHubInstanceTransportSettings,
             settings.getApiHubInstanceSettings(),
             clientContext);
+    this.updateApiHubInstanceCallable =
+        callableFactory.createUnaryCallable(
+            updateApiHubInstanceTransportSettings,
+            settings.updateApiHubInstanceSettings(),
+            clientContext);
+    this.updateApiHubInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            updateApiHubInstanceTransportSettings,
+            settings.updateApiHubInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.lookupApiHubInstanceCallable =
         callableFactory.createUnaryCallable(
             lookupApiHubInstanceTransportSettings,
@@ -504,6 +577,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
     methodDescriptors.add(createApiHubInstanceMethodDescriptor);
     methodDescriptors.add(deleteApiHubInstanceMethodDescriptor);
     methodDescriptors.add(getApiHubInstanceMethodDescriptor);
+    methodDescriptors.add(updateApiHubInstanceMethodDescriptor);
     methodDescriptors.add(lookupApiHubInstanceMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
@@ -539,6 +613,17 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
   @Override
   public UnaryCallable<GetApiHubInstanceRequest, ApiHubInstance> getApiHubInstanceCallable() {
     return getApiHubInstanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateApiHubInstanceRequest, Operation> updateApiHubInstanceCallable() {
+    return updateApiHubInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
+      updateApiHubInstanceOperationCallable() {
+    return updateApiHubInstanceOperationCallable;
   }
 
   @Override

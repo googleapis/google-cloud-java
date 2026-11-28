@@ -76,7 +76,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateHostProjectRegistration</td>
- *      <td><p> Create a host project registration. A Google cloud project can be registered as a host project if it is not attached as a runtime project to another host project. A project can be registered as a host project only once. Subsequent register calls for the same project will fail.</td>
+ *      <td><p> Create a host project registration. A Google cloud project can be registered as a host project if it is not attached as a runtime project to another host project. A project can have only one host project registration at a time. Subsequent register calls for the same project will fail until the existing registration is deleted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -134,7 +134,9 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -263,8 +265,9 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a host project registration. A Google cloud project can be registered as a host project
-   * if it is not attached as a runtime project to another host project. A project can be registered
-   * as a host project only once. Subsequent register calls for the same project will fail.
+   * if it is not attached as a runtime project to another host project. A project can have only one
+   * host project registration at a time. Subsequent register calls for the same project will fail
+   * until the existing registration is deleted.
    *
    * <p>Sample code:
    *
@@ -311,8 +314,9 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a host project registration. A Google cloud project can be registered as a host project
-   * if it is not attached as a runtime project to another host project. A project can be registered
-   * as a host project only once. Subsequent register calls for the same project will fail.
+   * if it is not attached as a runtime project to another host project. A project can have only one
+   * host project registration at a time. Subsequent register calls for the same project will fail
+   * until the existing registration is deleted.
    *
    * <p>Sample code:
    *
@@ -359,8 +363,9 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a host project registration. A Google cloud project can be registered as a host project
-   * if it is not attached as a runtime project to another host project. A project can be registered
-   * as a host project only once. Subsequent register calls for the same project will fail.
+   * if it is not attached as a runtime project to another host project. A project can have only one
+   * host project registration at a time. Subsequent register calls for the same project will fail
+   * until the existing registration is deleted.
    *
    * <p>Sample code:
    *
@@ -394,8 +399,9 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a host project registration. A Google cloud project can be registered as a host project
-   * if it is not attached as a runtime project to another host project. A project can be registered
-   * as a host project only once. Subsequent register calls for the same project will fail.
+   * if it is not attached as a runtime project to another host project. A project can have only one
+   * host project registration at a time. Subsequent register calls for the same project will fail
+   * until the existing registration is deleted.
    *
    * <p>Sample code:
    *
@@ -756,6 +762,18 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -791,6 +809,18 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -825,6 +855,18 @@ public class HostProjectRegistrationServiceClient implements BackgroundResource 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

@@ -79,7 +79,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateAuditSchedule</td>
- *      <td><p> Creates a new audit schedule in a given project and location.</td>
+ *      <td><p> Creates a new audit schedule in a given location for an organization, folder, or project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -136,7 +136,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListAuditSchedules</td>
- *      <td><p> Lists audit schedules in a given project and location.</td>
+ *      <td><p> Lists audit schedules in a given location for an organization, folder, or project.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -476,7 +476,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new audit schedule in a given project and location.
+   * Creates a new audit schedule in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -496,11 +496,12 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Project or folder that this audit schedule is for, in one of the
-   *     following formats:
+   * @param parent Required. Project, folder, or organization that this audit schedule is for, in
+   *     one of the following formats:
    *     <ul>
    *       <li>`projects/{project}/locations/{location}`
    *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
    *     </ul>
    *
    * @param auditSchedule Required. Audit schedule to create.
@@ -523,7 +524,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new audit schedule in a given project and location.
+   * Creates a new audit schedule in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -542,11 +543,12 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Project or folder that this audit schedule is for, in one of the
-   *     following formats:
+   * @param parent Required. Project, folder, or organization that this audit schedule is for, in
+   *     one of the following formats:
    *     <ul>
    *       <li>`projects/{project}/locations/{location}`
    *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
    *     </ul>
    *
    * @param auditSchedule Required. Audit schedule to create.
@@ -567,7 +569,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new audit schedule in a given project and location.
+   * Creates a new audit schedule in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -586,11 +588,12 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Project or folder that this audit schedule is for, in one of the
-   *     following formats:
+   * @param parent Required. Project, folder, or organization that this audit schedule is for, in
+   *     one of the following formats:
    *     <ul>
    *       <li>`projects/{project}/locations/{location}`
    *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
    *     </ul>
    *
    * @param auditSchedule Required. Audit schedule to create.
@@ -611,7 +614,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new audit schedule in a given project and location.
+   * Creates a new audit schedule in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -642,7 +645,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new audit schedule in a given project and location.
+   * Creates a new audit schedule in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -900,7 +903,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit schedules in a given project and location.
+   * Lists audit schedules in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -939,7 +942,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit schedules in a given project and location.
+   * Lists audit schedules in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -976,7 +979,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit schedules in a given project and location.
+   * Lists audit schedules in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -1011,7 +1014,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit schedules in a given project and location.
+   * Lists audit schedules in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -1044,7 +1047,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit schedules in a given project and location.
+   * Lists audit schedules in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -1077,7 +1080,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit schedules in a given project and location.
+   * Lists audit schedules in a given location for an organization, folder, or project.
    *
    * <p>Sample code:
    *
@@ -1441,6 +1444,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setComplianceFramework("complianceFramework-1808314333")
    *           .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
    *           .setValidateOnly(true)
+   *           .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
    *           .build();
    *   AuditReport response = auditManagerClient.generateAuditReportAsync(request).get();
    * }
@@ -1475,6 +1479,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setComplianceFramework("complianceFramework-1808314333")
    *           .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
    *           .setValidateOnly(true)
+   *           .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
    *           .build();
    *   OperationFuture<AuditReport, OperationMetadata> future =
    *       auditManagerClient.generateAuditReportOperationCallable().futureCall(request);
@@ -1509,6 +1514,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setComplianceFramework("complianceFramework-1808314333")
    *           .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
    *           .setValidateOnly(true)
+   *           .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       auditManagerClient.generateAuditReportCallable().futureCall(request);

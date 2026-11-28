@@ -298,8 +298,8 @@ public interface DiscoveredApiObservationOrBuilder
    *
    *
    * <pre>
-   * Optional. For an observation pushed from a gcp resource, this would be the
-   * gcp project id.
+   * Optional. For an observation pushed from a Google Cloud resource, this
+   * would be the Google Cloud project id.
    * </pre>
    *
    * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -312,8 +312,8 @@ public interface DiscoveredApiObservationOrBuilder
    *
    *
    * <pre>
-   * Optional. For an observation pushed from a gcp resource, this would be the
-   * gcp project id.
+   * Optional. For an observation pushed from a Google Cloud resource, this
+   * would be the Google Cloud project id.
    * </pre>
    *
    * <code>string origin = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

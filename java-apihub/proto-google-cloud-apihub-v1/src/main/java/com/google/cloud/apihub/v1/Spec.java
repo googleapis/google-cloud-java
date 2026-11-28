@@ -59,6 +59,8 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
     sourceUri_ = "";
     parsingMode_ = 0;
     sourceMetadata_ = java.util.Collections.emptyList();
+    additionalSpecContents_ = java.util.Collections.emptyList();
+    deployments_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1130,6 +1132,178 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
     return sourceMetadata_.get(index);
   }
 
+  public static final int ADDITIONAL_SPEC_CONTENTS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.apihub.v1.AdditionalSpecContent> additionalSpecContents_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.apihub.v1.AdditionalSpecContent>
+      getAdditionalSpecContentsList() {
+    return additionalSpecContents_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder>
+      getAdditionalSpecContentsOrBuilderList() {
+    return additionalSpecContents_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAdditionalSpecContentsCount() {
+    return additionalSpecContents_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AdditionalSpecContent getAdditionalSpecContents(int index) {
+    return additionalSpecContents_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional spec contents for the spec.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder
+      getAdditionalSpecContentsOrBuilder(int index) {
+    return additionalSpecContents_.get(index);
+  }
+
+  public static final int DEPLOYMENTS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList deployments_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this spec.
+   * Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the deployments.
+   */
+  public com.google.protobuf.ProtocolStringList getDeploymentsList() {
+    return deployments_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this spec.
+   * Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of deployments.
+   */
+  public int getDeploymentsCount() {
+    return deployments_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this spec.
+   * Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The deployments at the given index.
+   */
+  public java.lang.String getDeployments(int index) {
+    return deployments_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deployments linked directly to this spec.
+   * Format is
+   * `projects/{project}/locations/{location}/deployments/{deployment}`
+   * </pre>
+   *
+   * <code>
+   * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the deployments at the given index.
+   */
+  public com.google.protobuf.ByteString getDeploymentsBytes(int index) {
+    return deployments_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1182,6 +1356,12 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < sourceMetadata_.size(); i++) {
       output.writeMessage(13, sourceMetadata_.get(i));
+    }
+    for (int i = 0; i < additionalSpecContents_.size(); i++) {
+      output.writeMessage(14, additionalSpecContents_.get(i));
+    }
+    for (int i = 0; i < deployments_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, deployments_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1240,6 +1420,19 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < sourceMetadata_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, sourceMetadata_.get(i));
     }
+    for (int i = 0; i < additionalSpecContents_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, additionalSpecContents_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < deployments_.size(); i++) {
+        dataSize += computeStringSizeNoTag(deployments_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDeploymentsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1289,6 +1482,9 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
     }
     if (parsingMode_ != other.parsingMode_) return false;
     if (!getSourceMetadataList().equals(other.getSourceMetadataList())) return false;
+    if (!getAdditionalSpecContentsList().equals(other.getAdditionalSpecContentsList()))
+      return false;
+    if (!getDeploymentsList().equals(other.getDeploymentsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1343,6 +1539,14 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
     if (getSourceMetadataCount() > 0) {
       hash = (37 * hash) + SOURCE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getSourceMetadataList().hashCode();
+    }
+    if (getAdditionalSpecContentsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_SPEC_CONTENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalSpecContentsList().hashCode();
+    }
+    if (getDeploymentsCount() > 0) {
+      hash = (37 * hash) + DEPLOYMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDeploymentsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1515,6 +1719,7 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
         internalGetLintResponseFieldBuilder();
         internalGetDocumentationFieldBuilder();
         internalGetSourceMetadataFieldBuilder();
+        internalGetAdditionalSpecContentsFieldBuilder();
       }
     }
 
@@ -1569,6 +1774,14 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
         sourceMetadataBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00001000);
+      if (additionalSpecContentsBuilder_ == null) {
+        additionalSpecContents_ = java.util.Collections.emptyList();
+      } else {
+        additionalSpecContents_ = null;
+        additionalSpecContentsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00002000);
+      deployments_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1612,6 +1825,15 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
         result.sourceMetadata_ = sourceMetadata_;
       } else {
         result.sourceMetadata_ = sourceMetadataBuilder_.build();
+      }
+      if (additionalSpecContentsBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          additionalSpecContents_ = java.util.Collections.unmodifiableList(additionalSpecContents_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.additionalSpecContents_ = additionalSpecContents_;
+      } else {
+        result.additionalSpecContents_ = additionalSpecContentsBuilder_.build();
       }
     }
 
@@ -1663,6 +1885,10 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.parsingMode_ = parsingMode_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        deployments_.makeImmutable();
+        result.deployments_ = deployments_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1746,6 +1972,43 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
             sourceMetadataBuilder_.addAllMessages(other.sourceMetadata_);
           }
         }
+      }
+      if (additionalSpecContentsBuilder_ == null) {
+        if (!other.additionalSpecContents_.isEmpty()) {
+          if (additionalSpecContents_.isEmpty()) {
+            additionalSpecContents_ = other.additionalSpecContents_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureAdditionalSpecContentsIsMutable();
+            additionalSpecContents_.addAll(other.additionalSpecContents_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.additionalSpecContents_.isEmpty()) {
+          if (additionalSpecContentsBuilder_.isEmpty()) {
+            additionalSpecContentsBuilder_.dispose();
+            additionalSpecContentsBuilder_ = null;
+            additionalSpecContents_ = other.additionalSpecContents_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            additionalSpecContentsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAdditionalSpecContentsFieldBuilder()
+                    : null;
+          } else {
+            additionalSpecContentsBuilder_.addAllMessages(other.additionalSpecContents_);
+          }
+        }
+      }
+      if (!other.deployments_.isEmpty()) {
+        if (deployments_.isEmpty()) {
+          deployments_ = other.deployments_;
+          bitField0_ |= 0x00004000;
+        } else {
+          ensureDeploymentsIsMutable();
+          deployments_.addAll(other.deployments_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1872,6 +2135,27 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 106
+            case 114:
+              {
+                com.google.cloud.apihub.v1.AdditionalSpecContent m =
+                    input.readMessage(
+                        com.google.cloud.apihub.v1.AdditionalSpecContent.parser(),
+                        extensionRegistry);
+                if (additionalSpecContentsBuilder_ == null) {
+                  ensureAdditionalSpecContentsIsMutable();
+                  additionalSpecContents_.add(m);
+                } else {
+                  additionalSpecContentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+            case 122:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDeploymentsIsMutable();
+                deployments_.add(s);
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4627,6 +4911,641 @@ public final class Spec extends com.google.protobuf.GeneratedMessage
         sourceMetadata_ = null;
       }
       return sourceMetadataBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.apihub.v1.AdditionalSpecContent>
+        additionalSpecContents_ = java.util.Collections.emptyList();
+
+    private void ensureAdditionalSpecContentsIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        additionalSpecContents_ =
+            new java.util.ArrayList<com.google.cloud.apihub.v1.AdditionalSpecContent>(
+                additionalSpecContents_);
+        bitField0_ |= 0x00002000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.apihub.v1.AdditionalSpecContent,
+            com.google.cloud.apihub.v1.AdditionalSpecContent.Builder,
+            com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder>
+        additionalSpecContentsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.AdditionalSpecContent>
+        getAdditionalSpecContentsList() {
+      if (additionalSpecContentsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(additionalSpecContents_);
+      } else {
+        return additionalSpecContentsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getAdditionalSpecContentsCount() {
+      if (additionalSpecContentsBuilder_ == null) {
+        return additionalSpecContents_.size();
+      } else {
+        return additionalSpecContentsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AdditionalSpecContent getAdditionalSpecContents(int index) {
+      if (additionalSpecContentsBuilder_ == null) {
+        return additionalSpecContents_.get(index);
+      } else {
+        return additionalSpecContentsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdditionalSpecContents(
+        int index, com.google.cloud.apihub.v1.AdditionalSpecContent value) {
+      if (additionalSpecContentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalSpecContentsIsMutable();
+        additionalSpecContents_.set(index, value);
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdditionalSpecContents(
+        int index, com.google.cloud.apihub.v1.AdditionalSpecContent.Builder builderForValue) {
+      if (additionalSpecContentsBuilder_ == null) {
+        ensureAdditionalSpecContentsIsMutable();
+        additionalSpecContents_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAdditionalSpecContents(
+        com.google.cloud.apihub.v1.AdditionalSpecContent value) {
+      if (additionalSpecContentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalSpecContentsIsMutable();
+        additionalSpecContents_.add(value);
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAdditionalSpecContents(
+        int index, com.google.cloud.apihub.v1.AdditionalSpecContent value) {
+      if (additionalSpecContentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalSpecContentsIsMutable();
+        additionalSpecContents_.add(index, value);
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAdditionalSpecContents(
+        com.google.cloud.apihub.v1.AdditionalSpecContent.Builder builderForValue) {
+      if (additionalSpecContentsBuilder_ == null) {
+        ensureAdditionalSpecContentsIsMutable();
+        additionalSpecContents_.add(builderForValue.build());
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAdditionalSpecContents(
+        int index, com.google.cloud.apihub.v1.AdditionalSpecContent.Builder builderForValue) {
+      if (additionalSpecContentsBuilder_ == null) {
+        ensureAdditionalSpecContentsIsMutable();
+        additionalSpecContents_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllAdditionalSpecContents(
+        java.lang.Iterable<? extends com.google.cloud.apihub.v1.AdditionalSpecContent> values) {
+      if (additionalSpecContentsBuilder_ == null) {
+        ensureAdditionalSpecContentsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalSpecContents_);
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAdditionalSpecContents() {
+      if (additionalSpecContentsBuilder_ == null) {
+        additionalSpecContents_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeAdditionalSpecContents(int index) {
+      if (additionalSpecContentsBuilder_ == null) {
+        ensureAdditionalSpecContentsIsMutable();
+        additionalSpecContents_.remove(index);
+        onChanged();
+      } else {
+        additionalSpecContentsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AdditionalSpecContent.Builder
+        getAdditionalSpecContentsBuilder(int index) {
+      return internalGetAdditionalSpecContentsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder
+        getAdditionalSpecContentsOrBuilder(int index) {
+      if (additionalSpecContentsBuilder_ == null) {
+        return additionalSpecContents_.get(index);
+      } else {
+        return additionalSpecContentsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder>
+        getAdditionalSpecContentsOrBuilderList() {
+      if (additionalSpecContentsBuilder_ != null) {
+        return additionalSpecContentsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(additionalSpecContents_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AdditionalSpecContent.Builder
+        addAdditionalSpecContentsBuilder() {
+      return internalGetAdditionalSpecContentsFieldBuilder()
+          .addBuilder(com.google.cloud.apihub.v1.AdditionalSpecContent.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AdditionalSpecContent.Builder
+        addAdditionalSpecContentsBuilder(int index) {
+      return internalGetAdditionalSpecContentsFieldBuilder()
+          .addBuilder(index, com.google.cloud.apihub.v1.AdditionalSpecContent.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional spec contents for the spec.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.AdditionalSpecContent additional_spec_contents = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.AdditionalSpecContent.Builder>
+        getAdditionalSpecContentsBuilderList() {
+      return internalGetAdditionalSpecContentsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.apihub.v1.AdditionalSpecContent,
+            com.google.cloud.apihub.v1.AdditionalSpecContent.Builder,
+            com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder>
+        internalGetAdditionalSpecContentsFieldBuilder() {
+      if (additionalSpecContentsBuilder_ == null) {
+        additionalSpecContentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.apihub.v1.AdditionalSpecContent,
+                com.google.cloud.apihub.v1.AdditionalSpecContent.Builder,
+                com.google.cloud.apihub.v1.AdditionalSpecContentOrBuilder>(
+                additionalSpecContents_,
+                ((bitField0_ & 0x00002000) != 0),
+                getParentForChildren(),
+                isClean());
+        additionalSpecContents_ = null;
+      }
+      return additionalSpecContentsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList deployments_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDeploymentsIsMutable() {
+      if (!deployments_.isModifiable()) {
+        deployments_ = new com.google.protobuf.LazyStringArrayList(deployments_);
+      }
+      bitField0_ |= 0x00004000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the deployments.
+     */
+    public com.google.protobuf.ProtocolStringList getDeploymentsList() {
+      deployments_.makeImmutable();
+      return deployments_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of deployments.
+     */
+    public int getDeploymentsCount() {
+      return deployments_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The deployments at the given index.
+     */
+    public java.lang.String getDeployments(int index) {
+      return deployments_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the deployments at the given index.
+     */
+    public com.google.protobuf.ByteString getDeploymentsBytes(int index) {
+      return deployments_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The deployments to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployments(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDeploymentsIsMutable();
+      deployments_.set(index, value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The deployments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDeployments(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDeploymentsIsMutable();
+      deployments_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The deployments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDeployments(java.lang.Iterable<java.lang.String> values) {
+      ensureDeploymentsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deployments_);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeployments() {
+      deployments_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deployments linked directly to this spec.
+     * Format is
+     * `projects/{project}/locations/{location}/deployments/{deployment}`
+     * </pre>
+     *
+     * <code>
+     * repeated string deployments = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the deployments to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDeploymentsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDeploymentsIsMutable();
+      deployments_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.Spec)

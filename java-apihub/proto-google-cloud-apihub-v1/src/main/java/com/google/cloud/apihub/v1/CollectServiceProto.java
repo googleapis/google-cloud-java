@@ -116,13 +116,14 @@ public final class CollectServiceProto extends com.google.protobuf.GeneratedFile
           + "\001\022\031\n\013original_id\030\005 \001(\tB\004\342A\001\001\022>\n\024original"
           + "_create_time\030\006 \001(\0132\032.google.protobuf.Tim"
           + "estampB\004\342A\001\001\022>\n\024original_update_time\030\007 \001"
-          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\002\"\333\001\n"
+          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\002\"\203\002\n"
           + "\014SpecMetadata\0220\n\004spec\030\001 \001(\0132\034.google.clo"
           + "ud.apihub.v1.SpecB\004\342A\001\002\022\031\n\013original_id\030\002"
           + " \001(\tB\004\342A\001\001\022>\n\024original_create_time\030\003 \001(\013"
           + "2\032.google.protobuf.TimestampB\004\342A\001\001\022>\n\024or"
           + "iginal_update_time\030\004 \001(\0132\032.google.protob"
-          + "uf.TimestampB\004\342A\001\002\"\355\001\n\022DeploymentMetadat"
+          + "uf.TimestampB\004\342A\001\002\022&\n\030deployment_resourc"
+          + "e_uris\030\005 \003(\tB\004\342A\001\001\"\355\001\n\022DeploymentMetadat"
           + "a\022<\n\ndeployment\030\001 \001(\0132\".google.cloud.api"
           + "hub.v1.DeploymentB\004\342A\001\002\022\031\n\013original_id\030\002"
           + " \001(\tB\004\342A\001\001\022>\n\024original_create_time\030\003 \001(\013"
@@ -131,21 +132,22 @@ public final class CollectServiceProto extends com.google.protobuf.GeneratedFile
           + "uf.TimestampB\004\342A\001\002\"\030\n\026CollectApiDataResp"
           + "onse*i\n\016CollectionType\022\037\n\033COLLECTION_TYP"
           + "E_UNSPECIFIED\020\000\022\032\n\026COLLECTION_TYPE_UPSER"
-          + "T\020\001\022\032\n\026COLLECTION_TYPE_DELETE\020\0022\317\002\n\rApiH"
+          + "T\020\001\022\032\n\026COLLECTION_TYPE_DELETE\020\0022\200\003\n\rApiH"
           + "ubCollect\022\362\001\n\016CollectApiData\022-.google.cl"
           + "oud.apihub.v1.CollectApiDataRequest\032\035.go"
           + "ogle.longrunning.Operation\"\221\001\312A+\n\026Collec"
           + "tApiDataResponse\022\021OperationMetadata\332A!lo"
           + "cation,collection_type,api_data\202\323\344\223\0029\"4/"
           + "v1/{location=projects/*/locations/*}:col"
-          + "lectApiData:\001*\032I\312A\025apihub.googleapis.com"
-          + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\265\001\n\032com.google.cloud.apihub.v1"
-          + "B\023CollectServiceProtoP\001Z2cloud.google.co"
-          + "m/go/apihub/apiv1/apihubpb;apihubpb\252\002\026Go"
-          + "ogle.Cloud.ApiHub.V1\312\002\026Google\\Cloud\\ApiH"
-          + "ub\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto"
-          + "3"
+          + "lectApiData:\001*\032z\312A\025apihub.googleapis.com"
+          + "\322A_https://www.googleapis.com/auth/apihu"
+          + "b.readwrite,https://www.googleapis.com/a"
+          + "uth/cloud-platformB\265\001\n\032com.google.cloud."
+          + "apihub.v1B\023CollectServiceProtoP\001Z2cloud."
+          + "google.com/go/apihub/apiv1/apihubpb;apih"
+          + "ubpb\252\002\026Google.Cloud.ApiHub.V1\312\002\026Google\\C"
+          + "loud\\ApiHub\\V1\352\002\031Google::Cloud::ApiHub::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -209,7 +211,11 @@ public final class CollectServiceProto extends com.google.protobuf.GeneratedFile
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_SpecMetadata_descriptor,
             new java.lang.String[] {
-              "Spec", "OriginalId", "OriginalCreateTime", "OriginalUpdateTime",
+              "Spec",
+              "OriginalId",
+              "OriginalCreateTime",
+              "OriginalUpdateTime",
+              "DeploymentResourceUris",
             });
     internal_static_google_cloud_apihub_v1_DeploymentMetadata_descriptor =
         getDescriptor().getMessageType(6);

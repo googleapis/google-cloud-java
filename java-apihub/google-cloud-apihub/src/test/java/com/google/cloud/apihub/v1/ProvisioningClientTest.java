@@ -36,6 +36,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
@@ -404,6 +405,85 @@ public class ProvisioningClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateApiHubInstanceTest() throws Exception {
+    ApiHubInstance expectedResponse =
+        ApiHubInstance.newBuilder()
+            .setName(
+                ApiHubInstanceName.of("[PROJECT]", "[LOCATION]", "[API_HUB_INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setStateMessage("stateMessage1128185398")
+            .setConfig(ApiHubInstance.Config.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateApiHubInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ApiHubInstance apiHubInstance =
+        ApiHubInstance.newBuilder()
+            .setName(
+                ApiHubInstanceName.of("[PROJECT]", "[LOCATION]", "[API_HUB_INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setStateMessage("stateMessage1128185398")
+            .setConfig(ApiHubInstance.Config.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ApiHubInstance actualResponse =
+        client.updateApiHubInstanceAsync(apiHubInstance, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateApiHubInstanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ApiHubInstance apiHubInstance =
+          ApiHubInstance.newBuilder()
+              .setName(
+                  ApiHubInstanceName.of("[PROJECT]", "[LOCATION]", "[API_HUB_INSTANCE]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setStateMessage("stateMessage1128185398")
+              .setConfig(ApiHubInstance.Config.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setDescription("description-1724546052")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateApiHubInstanceAsync(apiHubInstance, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 
