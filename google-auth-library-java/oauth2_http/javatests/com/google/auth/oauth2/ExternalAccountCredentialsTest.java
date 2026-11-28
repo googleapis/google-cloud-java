@@ -42,8 +42,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.GenericJson;
+import com.google.api.client.json.Json;
 import com.google.api.client.json.JsonParser;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.Clock;
 import com.google.api.client.util.SecurityUtils;
 import com.google.auth.TestUtils;
@@ -59,6 +65,7 @@ import java.io.SequenceInputStream;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.security.KeyStore;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -632,6 +639,229 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
             .build();
 
     assertEquals("https://sts.testdomain.org/v1/token", credentials.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_setUniverseDomain_updatesDefaultTokenUrl() {
+    HashMap<String, Object> credentialSource = new HashMap<>();
+    credentialSource.put("file", "file");
+
+    IdentityPoolCredentials gduCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience(
+                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setCredentialSource(new TestCredentialSource(credentialSource))
+            .build();
+
+    assertEquals(STS_URL, gduCredentials.getTokenUrl());
+    assertEquals(GOOGLE_DEFAULT_UNIVERSE, gduCredentials.getUniverseDomain());
+
+    // Retargeting a GDU credential must replace its defaulted sts.googleapis.com URL.
+    IdentityPoolCredentials customUniverseCredentials =
+        gduCredentials.toBuilder().setUniverseDomain("testdomain.org").build();
+
+    assertEquals("testdomain.org", customUniverseCredentials.getUniverseDomain());
+    assertEquals("https://sts.testdomain.org/v1/token", customUniverseCredentials.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_setUniverseDomain_chained_updatesDefaultTokenUrl() {
+    HashMap<String, Object> credentialSource = new HashMap<>();
+    credentialSource.put("file", "file");
+
+    IdentityPoolCredentials firstUniverseCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience(
+                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setCredentialSource(new TestCredentialSource(credentialSource))
+            .setUniverseDomain("testdomain.org")
+            .build();
+
+    assertEquals("https://sts.testdomain.org/v1/token", firstUniverseCredentials.getTokenUrl());
+
+    // Chained retargeting must also recompute because the credential still uses its universe
+    // default.
+    IdentityPoolCredentials secondUniverseCredentials =
+        firstUniverseCredentials.toBuilder().setUniverseDomain("other-universe.org").build();
+
+    assertEquals("other-universe.org", secondUniverseCredentials.getUniverseDomain());
+    assertEquals(
+        "https://sts.other-universe.org/v1/token", secondUniverseCredentials.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_setUniverseDomain_updatesDefaultTokenUrlForAws() {
+    Map<String, Object> awsSourceMap = new HashMap<>();
+    awsSourceMap.put("environment_id", "aws1");
+    awsSourceMap.put(
+        "regional_cred_verification_url",
+        "https://sts.{region}.amazonaws.com?Action=GetCallerIdentity&Version=2011-06-15");
+    AwsCredentials awsCredentials =
+        AwsCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setCredentialSource(new AwsCredentialSource(awsSourceMap))
+            .build();
+    AwsCredentials rebuiltAws =
+        awsCredentials.toBuilder().setUniverseDomain("testdomain.org").build();
+    assertEquals("https://sts.testdomain.org/v1/token", rebuiltAws.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_setUniverseDomain_updatesDefaultTokenUrlForPluggableAuth() {
+    Map<String, Object> executableMap = new HashMap<>();
+    executableMap.put("command", "/bin/echo token");
+    Map<String, Object> pluggableSourceMap = new HashMap<>();
+    pluggableSourceMap.put("executable", executableMap);
+    PluggableAuthCredentials pluggableCredentials =
+        PluggableAuthCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setCredentialSource(new PluggableAuthCredentialSource(pluggableSourceMap))
+            .build();
+    PluggableAuthCredentials rebuiltPluggable =
+        pluggableCredentials.toBuilder().setUniverseDomain("testdomain.org").build();
+    assertEquals("https://sts.testdomain.org/v1/token", rebuiltPluggable.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_fromGduJson_setUniverseDomain_updatesTokenUrl() throws IOException {
+    // Standard gcloud credential files include token_url=https://sts.googleapis.com/v1/token;
+    // switching universe domain via toBuilder() must still recompute it.
+    GenericJson gduJson = buildJsonIdentityPoolCredential();
+    assertEquals(STS_URL, gduJson.get("token_url"));
+
+    ExternalAccountCredentials gduCredentials =
+        ExternalAccountCredentials.fromJson(gduJson, transportFactory);
+    ExternalAccountCredentials customUniverseCredentials =
+        (ExternalAccountCredentials)
+            gduCredentials.toBuilder().setUniverseDomain("testdomain.org").build();
+
+    assertEquals("testdomain.org", customUniverseCredentials.getUniverseDomain());
+    assertEquals("https://sts.testdomain.org/v1/token", customUniverseCredentials.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_setUniverseDomain_preservesInheritedCustomTokenUrl() {
+    HashMap<String, Object> credentialSource = new HashMap<>();
+    credentialSource.put("file", "file");
+
+    // Inherited custom URLs (e.g. mTLS STS) must take precedence over universe domain changes.
+    IdentityPoolCredentials customUrlCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience(
+                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl(STS_MTLS_URL)
+            .setCredentialSource(new TestCredentialSource(credentialSource))
+            .build();
+
+    IdentityPoolCredentials rebuiltWithInheritedCustomUrl =
+        customUrlCredentials.toBuilder().setUniverseDomain("testdomain.org").build();
+    assertEquals("testdomain.org", rebuiltWithInheritedCustomUrl.getUniverseDomain());
+    assertEquals(STS_MTLS_URL, rebuiltWithInheritedCustomUrl.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_setTokenUrlBeforeSetUniverseDomain_preservesCustomTokenUrl() {
+    HashMap<String, Object> credentialSource = new HashMap<>();
+    credentialSource.put("file", "file");
+
+    IdentityPoolCredentials gduCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience(
+                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setCredentialSource(new TestCredentialSource(credentialSource))
+            .build();
+
+    String customUrl = "https://sts.custom.example.com/v1/token";
+    IdentityPoolCredentials rebuilt =
+        gduCredentials.toBuilder()
+            .setTokenUrl(customUrl)
+            .setUniverseDomain("testdomain.org")
+            .build();
+    assertEquals("testdomain.org", rebuilt.getUniverseDomain());
+    assertEquals(customUrl, rebuilt.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_setTokenUrlAfterSetUniverseDomain_preservesCustomTokenUrl() {
+    HashMap<String, Object> credentialSource = new HashMap<>();
+    credentialSource.put("file", "file");
+
+    IdentityPoolCredentials gduCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setAudience(
+                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setCredentialSource(new TestCredentialSource(credentialSource))
+            .build();
+
+    String customUrl = "https://sts.custom.example.com/v1/token";
+    IdentityPoolCredentials rebuilt =
+        gduCredentials.toBuilder()
+            .setUniverseDomain("testdomain.org")
+            .setTokenUrl(customUrl)
+            .build();
+    assertEquals("testdomain.org", rebuilt.getUniverseDomain());
+    assertEquals(customUrl, rebuilt.getTokenUrl());
+  }
+
+  @Test
+  void toBuilder_setUniverseDomain_exchangesTokenAgainstUpdatedStsUrl() throws IOException {
+    // End-to-end check that STS requests are actually sent to the recomputed universe URL.
+    List<String> requestedUrls = new ArrayList<>();
+    HttpTransportFactory recordingTransportFactory =
+        () ->
+            new MockHttpTransport() {
+              @Override
+              public LowLevelHttpRequest buildRequest(String method, String url) {
+                requestedUrls.add(url);
+                return new MockLowLevelHttpRequest(url) {
+                  @Override
+                  public LowLevelHttpResponse execute() {
+                    return new MockLowLevelHttpResponse()
+                        .setContentType(Json.MEDIA_TYPE)
+                        .setContent(
+                            "{\"access_token\":\"customUniverseAccessToken\","
+                                + "\"issued_token_type\":"
+                                + "\"urn:ietf:params:oauth:token-type:access_token\","
+                                + "\"token_type\":\"Bearer\",\"expires_in\":3600}");
+                  }
+                };
+              }
+            };
+
+    TestExternalAccountCredentials gduCredentials =
+        (TestExternalAccountCredentials)
+            TestExternalAccountCredentials.newBuilder()
+                .setHttpTransportFactory(recordingTransportFactory)
+                .setAudience("audience")
+                .setSubjectTokenType("subjectTokenType")
+                .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
+                .build();
+
+    TestExternalAccountCredentials customUniverseCredentials =
+        (TestExternalAccountCredentials)
+            gduCredentials.toBuilder().setUniverseDomain("testdomain.org").build();
+
+    StsTokenExchangeRequest stsRequest =
+        StsTokenExchangeRequest.newBuilder("subjectToken", "subjectTokenType").build();
+    AccessToken accessToken =
+        customUniverseCredentials.exchangeExternalCredentialForAccessToken(stsRequest);
+
+    assertEquals("customUniverseAccessToken", accessToken.getTokenValue());
+    assertEquals(Arrays.asList("https://sts.testdomain.org/v1/token"), requestedUrls);
   }
 
   @Test

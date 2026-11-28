@@ -242,8 +242,10 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.clientId = builder.clientId;
     this.clientSecret = builder.clientSecret;
 
+    // Precedence: an explicit or non-default custom tokenUrl always takes priority. Otherwise, when
+    // builder.tokenUrl is null, compute the default STS URL from the final universe domain.
     if (builder.tokenUrl == null) {
-      this.tokenUrl = DEFAULT_TOKEN_URL.replace("{UNIVERSE_DOMAIN}", this.getUniverseDomain());
+      this.tokenUrl = defaultTokenUrlForUniverse(this.getUniverseDomain());
     } else {
       this.tokenUrl = builder.tokenUrl;
     }
@@ -790,6 +792,11 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     }
   }
 
+  /** Returns the standard STS token exchange URL for {@code universeDomain}. */
+  private static String defaultTokenUrlForUniverse(String universeDomain) {
+    return DEFAULT_TOKEN_URL.replace("{UNIVERSE_DOMAIN}", universeDomain);
+  }
+
   /** Base builder for external account credentials. */
   public abstract static class Builder extends GoogleCredentials.Builder {
 
@@ -825,7 +832,16 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       this.transportFactory = credentials.transportFactory;
       this.audience = credentials.audience;
       this.subjectTokenType = credentials.subjectTokenType;
-      this.tokenUrl = credentials.tokenUrl;
+      // Built credentials always have tokenUrl populated, either with a custom override or with the
+      // default STS URL for credentials.getUniverseDomain() (from builder defaults or gcloud JSON).
+      // Clear tokenUrl to null when it equals that universe default so the configured
+      // universeDomain
+      // on toBuilder() can recompute it. Any non-default tokenUrl (e.g. mTLS STS or proxy) stays
+      // non-null and keeps priority over universeDomain, as do explicit setTokenUrl() calls.
+      this.tokenUrl =
+          defaultTokenUrlForUniverse(credentials.getUniverseDomain()).equals(credentials.tokenUrl)
+              ? null
+              : credentials.tokenUrl;
       this.tokenInfoUrl = credentials.tokenInfoUrl;
       this.serviceAccountImpersonationUrl = credentials.serviceAccountImpersonationUrl;
       this.targetServiceAccountEmail = credentials.targetServiceAccountEmail;
@@ -892,7 +908,8 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     }
 
     /**
-     * Sets the Security Token Service token exchange endpoint.
+     * Sets the Security Token Service token exchange endpoint. When set, this custom URL takes
+     * precedence over the default URL derived from {@code universeDomain}.
      *
      * @param tokenUrl the Security Token Service token exchange url to set
      * @return this {@code Builder} object
