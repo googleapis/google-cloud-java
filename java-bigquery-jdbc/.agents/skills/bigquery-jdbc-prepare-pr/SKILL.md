@@ -97,17 +97,15 @@ below). How to start a reviewer, depending on your harness:
 
 | Harness | How to start a different-model reviewer |
 | --- | --- |
-| Jetski / Antigravity | `invoke_subagent` with a `Model` other than your own, on a read-only type such as `research`. Give it the path of the prompt file, or the prompt itself if it is short. |
-| Claude Code | Gemini CLI from the shell: `gemini -p "Review as instructed on stdin." < "$PROMPT_FILE"`. If it isn't installed, use a Task subagent pinned to a different Claude model. |
-| Gemini CLI | Claude Code from the shell: `claude -p "Review as instructed on stdin." < "$PROMPT_FILE"`. If it isn't installed, use a subagent on a different Gemini model. |
+| Antigravity (IDE / App) | `invoke_subagent` with a `Model` other than your own, on a read-only type such as `research`. Give it the path of the prompt file, or the prompt itself if it is short. |
+| Antigravity CLI (`agy`) or terminal-based agents | Antigravity CLI from the shell: `agy --sandbox --model "<model>" -p "Review as instructed on stdin. Do not modify any files." < "$PROMPT_FILE"` (`--sandbox` isolates shell execution; run `agy models` to list available model slugs and pick one different from your own). If `agy` isn't installed, use a read-only subagent in your harness pinned to a different model. |
 
 - Pass the prompt on stdin as shown, not as a command-line argument. Linux
   limits a single argument to 128 KiB, and a large diff plus this template
   exceeds that.
-- The two shell commands send the diff to another company's service. Don't use
-  them for a security fix that isn't public yet, or where the user or team has
-  restricted external services. Use the same-vendor fallback in that row
-  instead.
+- Choose a model and service permitted by your repository or organization policy;
+  do not send unpublished or restricted changes to disallowed third-party models
+  or external services.
 - If you can't get a different model at all, stop and tell the user. Don't
   quietly use your own model to review your own work. If you can't tell which
   model you are running on, say that in the final report.
