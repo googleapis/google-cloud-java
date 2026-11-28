@@ -267,10 +267,10 @@ final class ObjectReadSessionStream
       try (ResponseContentLifecycleHandle<BidiReadObjectResponse> handle =
           callable.getResponseContentLifecycleManager().get(response)) {
         if (response.hasMetadata()) {
-          state.setMetadata(response.getMetadata());
+          state.setMetadata(GrpcUtils.copyOf(response.getMetadata()));
         }
         if (response.hasReadHandle()) {
-          state.setBidiReadHandle(response.getReadHandle());
+          state.setBidiReadHandle(GrpcUtils.copyOf(response.getReadHandle()));
         }
         List<ObjectRangeData> rangeData = response.getObjectDataRangesList();
         if (rangeData.isEmpty()) {
