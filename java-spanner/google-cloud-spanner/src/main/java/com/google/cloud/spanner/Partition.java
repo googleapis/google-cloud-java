@@ -17,8 +17,10 @@
 package com.google.cloud.spanner;
 
 import com.google.protobuf.ByteString;
+import com.google.spanner.v1.ExecuteSqlRequest;
 import java.io.Serializable;
 import java.util.Objects;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Defines the segments of data to be read in a batch read/query context. They can be serialized and
@@ -34,6 +36,7 @@ public class Partition implements Serializable {
   private final String index;
   private final Options readOptions;
   private final Statement statement;
+  private final ExecuteSqlRequest executeSqlRequest;
   private final Options queryOptions;
   private final PartitionOptions partitionOptions;
 
@@ -45,7 +48,24 @@ public class Partition implements Serializable {
     this.partitionToken = partitionToken;
     this.partitionOptions = partitionOptions;
     this.statement = statement;
+    this.executeSqlRequest = null;
     this.queryOptions = queryOption;
+    this.table = null;
+    this.keys = null;
+    this.columns = null;
+    this.index = null;
+    this.readOptions = null;
+  }
+
+  private Partition(
+      ByteString partitionToken,
+      PartitionOptions partitionOptions,
+      ExecuteSqlRequest executeSqlRequest) {
+    this.partitionToken = partitionToken;
+    this.partitionOptions = partitionOptions;
+    this.statement = null;
+    this.executeSqlRequest = executeSqlRequest;
+    this.queryOptions = null;
     this.table = null;
     this.keys = null;
     this.columns = null;
@@ -69,6 +89,7 @@ public class Partition implements Serializable {
     this.columns = columns;
     this.readOptions = readOptions;
     this.statement = null;
+    this.executeSqlRequest = null;
     this.queryOptions = null;
   }
 
@@ -90,6 +111,13 @@ public class Partition implements Serializable {
       Statement statement,
       Options queryOption) {
     return new Partition(partitionToken, partitionOptions, statement, queryOption);
+  }
+
+  static Partition createQueryPartition(
+      ByteString partitionToken,
+      PartitionOptions partitionOptions,
+      ExecuteSqlRequest executeSqlRequest) {
+    return new Partition(partitionToken, partitionOptions, executeSqlRequest);
   }
 
   public ByteString getPartitionToken() {
@@ -116,11 +144,15 @@ public class Partition implements Serializable {
     return readOptions;
   }
 
-  Statement getStatement() {
+  @Nullable Statement getStatement() {
     return statement;
   }
 
-  Options getQueryOptions() {
+  @Nullable ExecuteSqlRequest getExecuteSqlRequest() {
+    return executeSqlRequest;
+  }
+
+  @Nullable Options getQueryOptions() {
     return queryOptions;
   }
 
@@ -154,6 +186,9 @@ public class Partition implements Serializable {
     if (statement != null) {
       b.append("statement: ").append(statement).append(' ');
     }
+    if (executeSqlRequest != null) {
+      b.append("executeSqlRequest: ").append(executeSqlRequest).append(' ');
+    }
     if (queryOptions != null) {
       b.append("queryOptions: ").append(queryOptions).append(' ');
     }
@@ -178,6 +213,7 @@ public class Partition implements Serializable {
         && Objects.equals(getIndex(), that.getIndex())
         && Objects.equals(getReadOptions(), that.getReadOptions())
         && Objects.equals(getStatement(), that.getStatement())
+        && Objects.equals(getExecuteSqlRequest(), that.getExecuteSqlRequest())
         && Objects.equals(getQueryOptions(), that.getQueryOptions());
   }
 
@@ -192,6 +228,7 @@ public class Partition implements Serializable {
         getIndex(),
         getReadOptions(),
         getStatement(),
+        getExecuteSqlRequest(),
         getQueryOptions());
   }
 }
