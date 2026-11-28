@@ -26,7 +26,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.api.client.util.BackOff;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.retrying.RetrySettings;
@@ -72,6 +71,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.DoubleSupplier;
 import java.util.function.LongSupplier;
 import org.jspecify.annotations.Nullable;
 import org.junit.After;
@@ -119,18 +119,6 @@ public class ResumableStreamIteratorTest {
             .build();
     trailers.put(key, retryInfo);
     return code.getGrpcStatus().asRuntimeException(trailers);
-  }
-
-  private static BackOff fixedBackOff(long delayMillis) {
-    return new BackOff() {
-      @Override
-      public void reset() {}
-
-      @Override
-      public long nextBackOffMillis() {
-        return delayMillis;
-      }
-    };
   }
 
   static class RetryableException extends SpannerException {
@@ -192,6 +180,7 @@ public class ResumableStreamIteratorTest {
   Starter starter = Mockito.mock(Starter.class);
   ResumableStreamIterator resumableStreamIterator;
   private LongSupplier nanoTime = System::nanoTime;
+  private DoubleSupplier jitterRandom = () -> 1.0;
 
   @Before
   public void setUp() {
@@ -259,6 +248,11 @@ public class ResumableStreamIteratorTest {
           @Override
           long nanoTime() {
             return nanoTime.getAsLong();
+          }
+
+          @Override
+          double nextJitterRandom() {
+            return jitterRandom.getAsDouble();
           }
 
           @Override
@@ -574,7 +568,7 @@ public class ResumableStreamIteratorTest {
     nanoTime = () -> 0L;
     assertEquals(1L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
     nanoTime = () -> TimeUnit.MILLISECONDS.toNanos(elapsedMillis);
-    return resumableStreamIterator.totalTimeoutExceeded(delayMillis);
+    return resumableStreamIterator.totalTimeoutExceeded(java.time.Duration.ofMillis(delayMillis));
   }
 
   @Test
@@ -809,7 +803,7 @@ public class ResumableStreamIteratorTest {
   }
 
   @Test
-  public void nonPositiveRetryInfo_floorsZeroBackoffToOneMsAndMapsBackOffStopToEffectiveMax() {
+  public void nonPositiveRetryInfo_floorsMinimumBackoffToOneMs() {
     SpannerException zeroDelayException =
         new RetryableException(
             errorCodeParameter, "zero delay", statusWithRetryInfo(errorCodeParameter, 0L, 0));
@@ -819,27 +813,10 @@ public class ResumableStreamIteratorTest {
             "absent delay",
             errorCodeParameter.getGrpcStatus().asRuntimeException());
 
-    ResumableStreamIterator zeroBackoffIterator =
-        new FixedBackOffTestIterator(RetrySettings.newBuilder().build(), 0L);
-    assertEquals(1L, zeroBackoffIterator.checkRetryBudgetAndGetDelay(zeroDelayException));
-    assertEquals(1L, zeroBackoffIterator.checkRetryBudgetAndGetDelay(absentDelayException));
-
-    ResumableStreamIterator stopBackoffUnsetMaxIterator =
-        new FixedBackOffTestIterator(RetrySettings.newBuilder().build(), BackOff.STOP);
-    assertEquals(
-        32_000L, stopBackoffUnsetMaxIterator.checkRetryBudgetAndGetDelay(zeroDelayException));
-    assertEquals(
-        32_000L, stopBackoffUnsetMaxIterator.checkRetryBudgetAndGetDelay(absentDelayException));
-
-    RetrySettings customMaxSettings =
-        RetrySettings.newBuilder()
-            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(10L))
-            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(250L))
-            .build();
-    ResumableStreamIterator stopBackoffCustomMaxIterator =
-        new FixedBackOffTestIterator(customMaxSettings, BackOff.STOP);
-    assertEquals(
-        250L, stopBackoffCustomMaxIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+    initWithLimitAndRetrySettings(Integer.MAX_VALUE, RetrySettings.newBuilder().build());
+    jitterRandom = () -> 0.0;
+    assertEquals(1L, resumableStreamIterator.checkRetryBudgetAndGetDelay(zeroDelayException));
+    assertEquals(1L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
 
     initWithLimitAndRetrySettings(
         Integer.MAX_VALUE,
@@ -854,7 +831,7 @@ public class ResumableStreamIteratorTest {
   }
 
   @Test
-  public void effectiveMaxRetryDelayAndNewBackOff_handleSubMillisecondAndOverflowingDurations() {
+  public void effectiveMaxRetryDelayAndBackoff_handleSubMillisecondAndOverflowingDurations() {
     SpannerException twoHundredMsException =
         new RetryableException(
             errorCodeParameter,
@@ -883,7 +860,7 @@ public class ResumableStreamIteratorTest {
     assertEquals(200L, resumableStreamIterator.checkRetryBudgetAndGetDelay(twoHundredMsException));
     long backoffDelay = resumableStreamIterator.checkRetryBudgetAndGetDelay(zeroDelayException);
     assertThat(backoffDelay).isAtLeast(5L);
-    assertThat(backoffDelay).isAtMost(15L);
+    assertThat(backoffDelay).isAtMost(10L);
 
     RetrySettings overflowInitialAndMaxSettings =
         RetrySettings.newBuilder()
@@ -896,7 +873,7 @@ public class ResumableStreamIteratorTest {
   }
 
   @Test
-  public void newBackOff_unsetMaxRetryDelayUsesDefaultCeilingForClientBackoff() {
+  public void unsetMaxRetryDelayUsesDefaultCeilingForClientBackoff() {
     initWithLimitAndRetrySettings(
         Integer.MAX_VALUE, RetrySettings.newBuilder().setRetryDelayMultiplier(10.0).build());
     SpannerException absentDelayException =
@@ -908,11 +885,90 @@ public class ResumableStreamIteratorTest {
     for (int i = 0; i < 6; i++) {
       long delayMillis = resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException);
       assertThat(delayMillis).isAtLeast(1L);
-      assertThat(delayMillis).isAtMost(48_000L);
+      assertThat(delayMillis).isAtMost(32_000L);
       maxObserved = Math.max(maxObserved, delayMillis);
     }
-    // Intervals 1, 10, 100, 1000, 10000, 32000 (+/-50% jitter): the 32s ceiling is reached.
+    // Intervals 1, 10, 100, 1000, 10000, 32000 ([0.5x, 1.0x] jitter): the 32s ceiling is reached.
     assertThat(maxObserved).isAtLeast(16_000L);
+  }
+
+  @Test
+  public void corruptRetryInfoTrailerFallsBackToBackoff() {
+    Metadata badTrailers = new Metadata();
+    badTrailers.put(
+        Metadata.Key.of("google.rpc.retryinfo-bin", Metadata.BINARY_BYTE_MARSHALLER),
+        new byte[] {(byte) 0xFF, (byte) 0xFF, (byte) 0xFF});
+    StatusRuntimeException corruptError =
+        Status.UNAVAILABLE.withDescription("corrupt").asRuntimeException(badTrailers);
+    SpannerException spannerException = SpannerExceptionFactory.newSpannerException(corruptError);
+    jitterRandom = () -> 1.0;
+    long delayMillis = resumableStreamIterator.checkRetryBudgetAndGetDelay(spannerException);
+    assertThat(delayMillis).isAtLeast(5L);
+    assertThat(delayMillis).isAtMost(10L);
+  }
+
+  @Test
+  public void totalTimeoutHandlesSubMillisecondAndOverflow() {
+    // Positive sub-millisecond totalTimeout must be enforced rather than truncated to 0
+    // (unlimited).
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setTotalTimeoutDuration(java.time.Duration.ofNanos(500_000L))
+            .build());
+    SpannerException exception = new RetryableException(errorCodeParameter, "failed by test");
+    nanoTime = () -> 0L;
+    assertThat(
+            assertThrows(
+                SpannerException.class,
+                () -> resumableStreamIterator.checkRetryBudgetAndGetDelay(exception)))
+        .isSameInstanceAs(exception);
+
+    // Maximum buildable totalTimeoutDuration must not overflow.
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setTotalTimeoutDuration(java.time.Duration.ofMillis(Long.MAX_VALUE))
+            .build());
+    nanoTime = () -> 0L;
+    assertEquals(1L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
+  }
+
+  @Test
+  public void backoffRespectsDeterministicJitterBoundsAndFloor() {
+    SpannerException absentDelayException =
+        new RetryableException(
+            errorCodeParameter,
+            "absent delay",
+            errorCodeParameter.getGrpcStatus().asRuntimeException());
+
+    // [0.5x, 1.0x] jitter: 0.0 -> 50ms, 1.0 -> 100ms, capped strictly at 250ms maxRetryDelay.
+    RetrySettings bounded =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(100L))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(250L))
+            .build();
+    initWithLimitAndRetrySettings(Integer.MAX_VALUE, bounded);
+    jitterRandom = () -> 0.0;
+    assertEquals(50L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+    jitterRandom = () -> 1.0;
+    assertEquals(200L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+    assertEquals(250L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+
+    // Unset initialRetryDelay and maxRetryDelay: floored at 1ms on attempt 1, capped at 32s.
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE, RetrySettings.newBuilder().setRetryDelayMultiplier(10.0).build());
+    jitterRandom = () -> 0.0;
+    assertEquals(1L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+    jitterRandom = () -> 1.0;
+    assertEquals(10L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+    assertEquals(100L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+    assertEquals(1_000L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+    assertEquals(
+        10_000L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
+    assertEquals(
+        32_000L, resumableStreamIterator.checkRetryBudgetAndGetDelay(absentDelayException));
   }
 
   @Test(timeout = 60000L)
@@ -3312,30 +3368,6 @@ public class ResumableStreamIteratorTest {
           retrySettings,
           SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
           NoopRequestIdCreator.INSTANCE);
-    }
-  }
-
-  private static final class FixedBackOffTestIterator extends TestResumableStreamIterator {
-    private final long delayMillis;
-
-    FixedBackOffTestIterator(RetrySettings retrySettings, long delayMillis) {
-      super(
-          new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
-          retrySettings);
-      this.delayMillis = delayMillis;
-    }
-
-    @Override
-    BackOff newBackOff() {
-      return fixedBackOff(delayMillis);
-    }
-
-    @Override
-    CloseableIterator<PartialResultSet> startStream(
-        @Nullable ByteString resumeToken,
-        @Nullable StreamMessageListener streamMessageListener,
-        XGoogSpannerRequestId requestId) {
-      throw new AssertionError("unexpected startStream");
     }
   }
 

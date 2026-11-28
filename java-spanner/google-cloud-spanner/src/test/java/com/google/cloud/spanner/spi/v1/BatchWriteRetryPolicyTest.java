@@ -30,10 +30,12 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
+import com.google.cloud.spanner.StreamingRetryHelper;
 import com.google.cloud.spanner.spi.v1.BatchWriteRetryPolicy.Action;
 import com.google.cloud.spanner.spi.v1.BatchWriteRetryPolicy.RetryDecision;
 import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
 import io.grpc.Context;
@@ -150,13 +152,13 @@ public class BatchWriteRetryPolicyTest {
         new BatchWriteRetryPolicy(defaultSettings(), DEFAULT_CODES, clock, () -> 1.0);
 
     Throwable err = apiException(Status.Code.UNAVAILABLE, "transient");
-    assertEquals(50L, minJitter.computeNextRetryDelayMillis(err, 1));
-    assertEquals(100L, maxJitter.computeNextRetryDelayMillis(err, 1));
-    assertEquals(100L, minJitter.computeNextRetryDelayMillis(err, 2));
-    assertEquals(200L, maxJitter.computeNextRetryDelayMillis(err, 2));
+    assertEquals(Duration.ofMillis(50), minJitter.computeNextRetryDelay(err, 1));
+    assertEquals(Duration.ofMillis(100), maxJitter.computeNextRetryDelay(err, 1));
+    assertEquals(Duration.ofMillis(100), minJitter.computeNextRetryDelay(err, 2));
+    assertEquals(Duration.ofMillis(200), maxJitter.computeNextRetryDelay(err, 2));
     // Attempt 10 would exceed 10s cap -> capped at 10_000ms * factor
-    assertEquals(5_000L, minJitter.computeNextRetryDelayMillis(err, 10));
-    assertEquals(10_000L, maxJitter.computeNextRetryDelayMillis(err, 10));
+    assertEquals(Duration.ofSeconds(5), minJitter.computeNextRetryDelay(err, 10));
+    assertEquals(Duration.ofSeconds(10), maxJitter.computeNextRetryDelay(err, 10));
   }
 
   @Test
@@ -171,7 +173,7 @@ public class BatchWriteRetryPolicyTest {
     StatusRuntimeException withRetryInfo =
         Status.UNAVAILABLE.withDescription("retry later").asRuntimeException(trailers);
 
-    assertEquals(345L, policy.computeNextRetryDelayMillis(withRetryInfo, 1));
+    assertEquals(Duration.ofMillis(345), policy.computeNextRetryDelay(withRetryInfo, 1));
 
     // RetryInfo provided via ApiException.getErrorDetails() overrides exponential backoff.
     RetryInfo detailsRetryInfo =
@@ -195,16 +197,16 @@ public class BatchWriteRetryPolicyTest {
     StatusRuntimeException withBadTrailer =
         Status.UNAVAILABLE.withDescription("corrupt trailer").asRuntimeException(badTrailers);
 
-    assertEquals(100L, policy.computeNextRetryDelayMillis(withBadTrailer, 1));
+    assertEquals(Duration.ofMillis(100), policy.computeNextRetryDelay(withBadTrailer, 1));
 
-    // Negative RetryInfo duration must explicitly return -1L and fall back to exponential backoff.
+    // Negative RetryInfo duration must fall back to exponential backoff.
     Metadata negativeTrailers = new Metadata();
     negativeTrailers.put(
         key, RetryInfo.newBuilder().setRetryDelay(Durations.fromMillis(-500)).build());
     StatusRuntimeException withNegativeRetryInfo =
         Status.UNAVAILABLE.withDescription("negative delay").asRuntimeException(negativeTrailers);
-    assertEquals(-1L, BatchWriteRetryPolicy.extractRetryDelayMillis(withNegativeRetryInfo));
-    assertEquals(100L, policy.computeNextRetryDelayMillis(withNegativeRetryInfo, 1));
+    assertNull(StreamingRetryHelper.extractServerRetryDelay(withNegativeRetryInfo));
+    assertEquals(Duration.ofMillis(100), policy.computeNextRetryDelay(withNegativeRetryInfo, 1));
 
     // Mutating caller-supplied retryableCodes after construction must not affect the policy.
     Set<Code> mutableCodes = EnumSet.of(Code.UNAVAILABLE);
@@ -383,7 +385,174 @@ public class BatchWriteRetryPolicyTest {
         new BatchWriteRetryPolicy(zeroDelaySettings, DEFAULT_CODES, clock, () -> 1.0);
     Throwable unavailable = apiException(Status.Code.UNAVAILABLE, "transient");
     assertEquals(Duration.ZERO, policy.computeNextRetryDelay(unavailable, 1));
-    assertEquals(0L, policy.computeNextRetryDelayMillis(unavailable, 1));
+  }
+
+  @Test
+  public void retryInfoExceedingMaxRetryDelayIsClamped() {
+    FakeClock clock = new FakeClock();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(defaultSettings(), DEFAULT_CODES, clock, () -> 1.0);
+    Metadata trailers = new Metadata();
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    trailers.put(
+        key,
+        RetryInfo.newBuilder()
+            .setRetryDelay(Durations.fromSeconds(TimeUnit.HOURS.toSeconds(3L)))
+            .build());
+    StatusRuntimeException threeHourError =
+        Status.UNAVAILABLE.withDescription("slow down").asRuntimeException(trailers);
+
+    assertEquals(Duration.ofSeconds(10), policy.computeNextRetryDelay(threeHourError, 1));
+    RetryDecision decision =
+        policy.evaluate(threeHourError, 1, clock.nanoTime(), Context.ROOT, null);
+    assertEquals(Action.RETRY, decision.action);
+    assertEquals(Duration.ofSeconds(10), decision.delay);
+  }
+
+  @Test
+  public void retryInfoWithUnsetMaxRetryDelayIsClampedToDefaultCap() {
+    FakeClock clock = new FakeClock();
+    RetrySettings unsetMaxSettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(Duration.ZERO)
+            .setMaxRetryDelayDuration(Duration.ZERO)
+            .setMaxAttempts(5)
+            .build();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(unsetMaxSettings, DEFAULT_CODES, clock, () -> 1.0);
+    Metadata trailers = new Metadata();
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+    trailers.put(
+        key,
+        RetryInfo.newBuilder()
+            .setRetryDelay(Durations.fromSeconds(TimeUnit.HOURS.toSeconds(3L)))
+            .build());
+    StatusRuntimeException threeHourError =
+        Status.UNAVAILABLE.withDescription("slow down").asRuntimeException(trailers);
+
+    assertEquals(Duration.ofSeconds(32), policy.computeNextRetryDelay(threeHourError, 1));
+  }
+
+  @Test
+  public void zeroAndSubMillisecondRetryInfoFallBackToBackoff() {
+    FakeClock clock = new FakeClock();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(defaultSettings(), DEFAULT_CODES, clock, () -> 1.0);
+    Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+
+    Metadata zeroTrailers = new Metadata();
+    zeroTrailers.put(key, RetryInfo.newBuilder().setRetryDelay(Durations.ZERO).build());
+    StatusRuntimeException zeroError =
+        Status.UNAVAILABLE.withDescription("zero delay").asRuntimeException(zeroTrailers);
+    assertNull(StreamingRetryHelper.extractServerRetryDelay(zeroError));
+    assertEquals(Duration.ofMillis(100), policy.computeNextRetryDelay(zeroError, 1));
+
+    Metadata subMsTrailers = new Metadata();
+    subMsTrailers.put(
+        key,
+        RetryInfo.newBuilder()
+            .setRetryDelay(com.google.protobuf.Duration.newBuilder().setNanos(500_000).build())
+            .build());
+    StatusRuntimeException subMsError =
+        Status.UNAVAILABLE.withDescription("sub-ms delay").asRuntimeException(subMsTrailers);
+    assertNull(StreamingRetryHelper.extractServerRetryDelay(subMsError));
+    assertEquals(Duration.ofMillis(100), policy.computeNextRetryDelay(subMsError, 1));
+  }
+
+  @Test
+  public void unsetInitialAndMaxRetryDelayPreservesZeroBackoff() {
+    FakeClock clock = new FakeClock();
+    RetrySettings unsetSettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(Duration.ZERO)
+            .setRetryDelayMultiplier(10.0)
+            .setMaxRetryDelayDuration(Duration.ZERO)
+            .setMaxAttempts(10)
+            .build();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(unsetSettings, DEFAULT_CODES, clock, () -> 1.0);
+    Throwable unavailable = apiException(Status.Code.UNAVAILABLE, "transient");
+
+    assertEquals(Duration.ZERO, policy.computeNextRetryDelay(unavailable, 1));
+    assertEquals(Duration.ZERO, policy.computeNextRetryDelay(unavailable, 5));
+  }
+
+  @Test
+  public void extractsRetryInfoFromGrpcStatusDetailsAndSurvivesCorruptAny() {
+    FakeClock clock = new FakeClock();
+    BatchWriteRetryPolicy policy =
+        new BatchWriteRetryPolicy(defaultSettings(), DEFAULT_CODES, clock, () -> 1.0);
+    Metadata.Key<byte[]> detailsKey =
+        Metadata.Key.of("grpc-status-details-bin", Metadata.BINARY_BYTE_MARSHALLER);
+    Metadata.Key<RetryInfo> retryInfoKey = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+
+    // Valid grpc-status-details-bin on a wrapped cause chain.
+    com.google.rpc.Status validStatus =
+        com.google.rpc.Status.newBuilder()
+            .setCode(com.google.rpc.Code.UNAVAILABLE_VALUE)
+            .addDetails(
+                Any.pack(RetryInfo.newBuilder().setRetryDelay(Durations.fromMillis(450L)).build()))
+            .build();
+    Metadata validDetails = new Metadata();
+    validDetails.put(detailsKey, validStatus.toByteArray());
+    Throwable wrappedStatus =
+        new RuntimeException("outer", Status.UNAVAILABLE.asRuntimeException(validDetails));
+    assertEquals(Duration.ofMillis(450), policy.computeNextRetryDelay(wrappedStatus, 1));
+
+    // Corrupt Any RetryInfo inside grpc-status-details-bin falls back to backoff.
+    Any corruptRetryInfoAny =
+        Any.newBuilder()
+            .setTypeUrl("type.googleapis.com/google.rpc.RetryInfo")
+            .setValue(ByteString.copyFrom(new byte[] {(byte) 0xFF, (byte) 0xFF, (byte) 0xFF}))
+            .build();
+    com.google.rpc.Status corruptStatus =
+        com.google.rpc.Status.newBuilder()
+            .setCode(com.google.rpc.Code.UNAVAILABLE_VALUE)
+            .addDetails(corruptRetryInfoAny)
+            .build();
+    Metadata corruptDetails = new Metadata();
+    corruptDetails.put(detailsKey, corruptStatus.toByteArray());
+    StatusRuntimeException corruptAnyError =
+        Status.UNAVAILABLE.withDescription("corrupt any").asRuntimeException(corruptDetails);
+    assertEquals(Duration.ofMillis(100), policy.computeNextRetryDelay(corruptAnyError, 1));
+
+    // Corrupt ErrorDetails falls through to a valid google.rpc.retryinfo-bin trailer.
+    Metadata mixedTrailers = new Metadata();
+    mixedTrailers.put(detailsKey, corruptStatus.toByteArray());
+    mixedTrailers.put(
+        retryInfoKey, RetryInfo.newBuilder().setRetryDelay(Durations.fromMillis(450L)).build());
+    StatusRuntimeException mixedError =
+        Status.UNAVAILABLE.withDescription("mixed").asRuntimeException(mixedTrailers);
+    assertEquals(Duration.ofMillis(450), policy.computeNextRetryDelay(mixedError, 1));
+  }
+
+  @Test
+  public void computeAttemptRpcTimeoutHandlesOverflowAndSubMillisecond() {
+    FakeClock clock = new FakeClock();
+    RetrySettings overflowSettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(Long.MAX_VALUE))
+            .setRpcTimeoutMultiplier(2.0)
+            .setMaxRpcTimeoutDuration(Duration.ofSeconds(Long.MAX_VALUE))
+            .setTotalTimeoutDuration(Duration.ofMillis(Long.MAX_VALUE))
+            .build();
+    BatchWriteRetryPolicy overflowPolicy =
+        new BatchWriteRetryPolicy(overflowSettings, DEFAULT_CODES, clock, () -> 1.0);
+    Duration overflowTimeout = overflowPolicy.computeAttemptRpcTimeout(1, null, clock.nanoTime());
+    assertNotNull(overflowTimeout);
+    assertTrue(overflowTimeout.toMillis() >= 1L);
+
+    RetrySettings subMsSettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeoutDuration(Duration.ofNanos(500_000L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeoutDuration(Duration.ofNanos(500_000L))
+            .setTotalTimeoutDuration(Duration.ofNanos(500_000L))
+            .build();
+    BatchWriteRetryPolicy subMsPolicy =
+        new BatchWriteRetryPolicy(subMsSettings, DEFAULT_CODES, clock, () -> 1.0);
+    assertEquals(
+        Duration.ofMillis(1L), subMsPolicy.computeAttemptRpcTimeout(0, null, clock.nanoTime()));
   }
 
   @Test

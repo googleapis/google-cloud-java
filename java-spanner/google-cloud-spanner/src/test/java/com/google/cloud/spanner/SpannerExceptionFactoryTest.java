@@ -276,4 +276,45 @@ public class SpannerExceptionFactoryTest {
     assertThat(e.isRetryable()).isTrue();
     assertThat(e.getRetryDelayInMillis()).isEqualTo(1001);
   }
+
+  @Test
+  public void resourceExhaustedWithCorruptRetryInfoDoesNotThrow() {
+    Status status =
+        Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value())
+            .withDescription("Memory pushback");
+    Metadata badRetryInfoTrailers = new Metadata();
+    badRetryInfoTrailers.put(
+        Metadata.Key.of("google.rpc.retryinfo-bin", Metadata.BINARY_BYTE_MARSHALLER),
+        new byte[] {(byte) 0xFF, (byte) 0xFF, (byte) 0xFF});
+    SpannerException corruptTrailerEx =
+        SpannerExceptionFactory.newSpannerException(
+            new StatusRuntimeException(status, badRetryInfoTrailers));
+    assertThat(corruptTrailerEx.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
+    assertThat(corruptTrailerEx.isRetryable()).isFalse();
+    assertThat(corruptTrailerEx.getRetryDelayInMillis()).isEqualTo(-1L);
+
+    Metadata corruptAnyTrailers = new Metadata();
+    com.google.protobuf.Any corruptAny =
+        com.google.protobuf.Any.newBuilder()
+            .setTypeUrl("type.googleapis.com/google.rpc.RetryInfo")
+            .setValue(
+                com.google.protobuf.ByteString.copyFrom(
+                    new byte[] {(byte) 0xFF, (byte) 0xFF, (byte) 0xFF}))
+            .build();
+    com.google.rpc.Status rpcStatus =
+        com.google.rpc.Status.newBuilder()
+            .setCode(com.google.rpc.Code.RESOURCE_EXHAUSTED_VALUE)
+            .setMessage("Memory pushback")
+            .addDetails(corruptAny)
+            .build();
+    corruptAnyTrailers.put(
+        Metadata.Key.of("grpc-status-details-bin", Metadata.BINARY_BYTE_MARSHALLER),
+        rpcStatus.toByteArray());
+    SpannerException corruptAnyEx =
+        SpannerExceptionFactory.newSpannerException(
+            new StatusRuntimeException(status, corruptAnyTrailers));
+    assertThat(corruptAnyEx.getErrorCode()).isEqualTo(ErrorCode.RESOURCE_EXHAUSTED);
+    assertThat(corruptAnyEx.isRetryable()).isFalse();
+    assertThat(corruptAnyEx.getRetryDelayInMillis()).isEqualTo(-1L);
+  }
 }
