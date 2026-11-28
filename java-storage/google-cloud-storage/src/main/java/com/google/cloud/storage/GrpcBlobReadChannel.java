@@ -26,6 +26,7 @@ import com.google.storage.v2.Object;
 import com.google.storage.v2.ReadObjectRequest;
 import com.google.storage.v2.ReadObjectResponse;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.jspecify.annotations.Nullable;
 
 final class GrpcBlobReadChannel extends BaseStorageReadChannel<Object> {
 
@@ -41,7 +42,18 @@ final class GrpcBlobReadChannel extends BaseStorageReadChannel<Object> {
       ResultRetryAlgorithm<?> resultRetryAlgorithm,
       ReadObjectRequest request,
       boolean autoGzipDecompression) {
-    super(Conversions.grpc().blobInfo());
+    this(read, retrier, resultRetryAlgorithm, request, autoGzipDecompression, null, null);
+  }
+
+  GrpcBlobReadChannel(
+      ZeroCopyServerStreamingCallable<ReadObjectRequest, ReadObjectResponse> read,
+      Retrier retrier,
+      ResultRetryAlgorithm<?> resultRetryAlgorithm,
+      ReadObjectRequest request,
+      boolean autoGzipDecompression,
+      @Nullable StorageMetricsContext metricsContext,
+      @Nullable StorageClientMetrics storageClientMetrics) {
+    super(Conversions.grpc().blobInfo(), metricsContext, storageClientMetrics);
     this.read = read;
     this.retrier = retrier;
     this.resultRetryAlgorithm = resultRetryAlgorithm;
@@ -61,7 +73,8 @@ final class GrpcBlobReadChannel extends BaseStorageReadChannel<Object> {
           ReadableByteChannelSessionBuilder b =
               ResumableMedia.gapic()
                   .read()
-                  .byteChannel(read, retrier, resultRetryAlgorithm)
+                  .byteChannel(
+                      read, retrier.withMetricsContext(getMetricsContext()), resultRetryAlgorithm)
                   .setHasher(Hasher.readHasher())
                   .setAutoGzipDecompression(autoGzipDecompression);
           BufferHandle bufferHandle = getBufferHandle();
