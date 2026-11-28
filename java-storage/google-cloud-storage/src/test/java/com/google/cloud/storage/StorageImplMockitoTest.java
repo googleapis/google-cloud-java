@@ -29,6 +29,7 @@ import static org.mockito.Mockito.mock;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.spi.StorageRpcFactory;
@@ -39,7 +40,10 @@ import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
+import java.net.URL;
+import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.Key;
@@ -54,6 +58,7 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import javax.crypto.spec.SecretKeySpec;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -1072,5 +1077,79 @@ public class StorageImplMockitoTest {
 
     Map<StorageRpc.Option, Object> capturedOptions = optionsCaptor.getValue();
     assertEquals(true, capturedOptions.get(StorageRpc.Option.DELETE_SOURCE_OBJECTS));
+  }
+
+  @Test
+  public void signUrlV4_withoutOptions_signsHostOnly() throws Exception {
+    initializeService();
+    URL url = signV4();
+
+    assertEquals("host", queryParam(url, "X-Goog-SignedHeaders"));
+  }
+
+  @Test
+  public void signUrlV4_withContentType_includesContentTypeHeader() throws Exception {
+    initializeService();
+    URL url = signV4(Storage.SignUrlOption.withContentType());
+
+    assertEquals("content-type;host", queryParam(url, "X-Goog-SignedHeaders"));
+  }
+
+  @Test
+  public void signUrlV4_withMd5_includesContentMd5Header() throws Exception {
+    initializeService();
+    URL url = signV4(Storage.SignUrlOption.withMd5());
+
+    assertEquals("content-md5;host", queryParam(url, "X-Goog-SignedHeaders"));
+  }
+
+  @Test
+  public void signUrlV4_withContentTypeAndMd5_includesBothHeaders() throws Exception {
+    initializeService();
+    URL url = signV4(Storage.SignUrlOption.withContentType(), Storage.SignUrlOption.withMd5());
+
+    assertEquals("content-md5;content-type;host", queryParam(url, "X-Goog-SignedHeaders"));
+  }
+
+  @Test
+  public void signUrlV4_withExtHeaderContentType_usesProvidedValue() throws Exception {
+    initializeService();
+    Storage.SignUrlOption extHeaders =
+        Storage.SignUrlOption.withExtHeaders(ImmutableMap.of("Content-Type", "text/plain"));
+
+    URL both = signV4(Storage.SignUrlOption.withContentType(), extHeaders);
+    URL extOnly = signV4(extHeaders);
+
+    assertEquals("content-type;host", queryParam(both, "X-Goog-SignedHeaders"));
+    assertEquals(queryParam(extOnly, "X-Goog-Signature"), queryParam(both, "X-Goog-Signature"));
+  }
+
+  private URL signV4(Storage.SignUrlOption... options) {
+    BlobInfo blobInfo =
+        BlobInfo.newBuilder(BUCKET_NAME1, BLOB_NAME1)
+            .setContentType("image/png")
+            .setMd5(CONTENT_MD5)
+            .build();
+    ServiceAccountCredentials signer =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail("test@projectId.iam.gserviceaccount.com")
+            .setPrivateKey(privateKey)
+            .build();
+    Storage.SignUrlOption[] all = new Storage.SignUrlOption[options.length + 3];
+    all[0] = Storage.SignUrlOption.withV4Signature();
+    all[1] = Storage.SignUrlOption.httpMethod(HttpMethod.PUT);
+    all[2] = Storage.SignUrlOption.signWith(signer);
+    System.arraycopy(options, 0, all, 3, options.length);
+    return storage.signUrl(blobInfo, 15, TimeUnit.MINUTES, all);
+  }
+
+  private static String queryParam(URL url, String name) throws UnsupportedEncodingException {
+    for (String kv : url.getQuery().split("&")) {
+      int i = kv.indexOf('=');
+      if (kv.substring(0, i).equals(name)) {
+        return URLDecoder.decode(kv.substring(i + 1), "UTF-8");
+      }
+    }
+    return null;
   }
 }
