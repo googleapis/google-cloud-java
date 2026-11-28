@@ -34,23 +34,31 @@ import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 
 /**
  * A composite implementation of {@link ApiTracer} that delegates all tracing events to a list of
  * underlying tracers.
  *
- * <p>Completion and failure callbacks execute asynchronously on background worker threads where no
- * trace span is active on thread-local storage. Wrapping those callbacks in {@code try (Scope
- * ignored = inScope())} briefly activates the current span on the callback thread before any child
- * tracer ends it, allowing sibling tracers (such as logging and metrics) to correlate error logs
- * and metric exemplars with the active span before the scope closes on the same thread.
+ * <p>Attempt and operation completion callbacks often run on a different thread than the one that
+ * started the attempt, where no span is current. They are dispatched inside {@link #inScope()} so
+ * that sibling tracers (such as logging and metrics) observe the span activated by a tracing child
+ * before that child ends it. Entering and exiting that scope is best-effort: these callbacks are
+ * invoked from GAX's retry and future-completion machinery, where an exception would skip the
+ * remaining callbacks or prevent the RPC future from completing.
  *
  * <p>For internal use only.
  */
 @NullMarked
 @InternalApi
 class CompositeTracer extends BaseApiTracer {
+  private static final Logger LOGGER = Logger.getLogger(CompositeTracer.class.getName());
+  private static final AtomicBoolean SCOPE_FAILURE_WARNED = new AtomicBoolean();
+  private static final Scope NOOP_CALLBACK_SCOPE = () -> {};
+
   private final List<ApiTracer> children;
 
   public CompositeTracer(List<ApiTracer> children) {
@@ -104,9 +112,43 @@ class CompositeTracer extends BaseApiTracer {
     };
   }
 
+  /**
+   * Best-effort {@link #inScope()} for completion callbacks.
+   *
+   * <p>Completion callbacks are invoked from {@code BasicRetryingFuture.handleAttempt} and from
+   * future listeners. If entering or closing the scope threw there, the remaining callbacks would
+   * be skipped and, on the attempt path, the RPC future would never complete. Failures are logged
+   * and the callbacks are dispatched without the scope instead.
+   */
+  private Scope enterCallbackScope() {
+    final Scope scope;
+    try {
+      scope = inScope();
+    } catch (RuntimeException e) {
+      logScopeFailure("Failed to enter tracer scope; dispatching callbacks without it", e);
+      return NOOP_CALLBACK_SCOPE;
+    }
+    return () -> {
+      try {
+        scope.close();
+      } catch (RuntimeException e) {
+        logScopeFailure("Failed to close tracer scope", e);
+      }
+    };
+  }
+
+  /**
+   * Logs a best-effort scope failure at {@link Level#WARNING} once, and at {@link Level#FINE}
+   * thereafter to avoid log flooding.
+   */
+  private static void logScopeFailure(String message, RuntimeException e) {
+    Level level = SCOPE_FAILURE_WARNED.compareAndSet(false, true) ? Level.WARNING : Level.FINE;
+    LOGGER.log(level, message, e);
+  }
+
   @Override
   public void operationSucceeded() {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).operationSucceeded();
       }
@@ -115,7 +157,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void operationCancelled() {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).operationCancelled();
       }
@@ -124,7 +166,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void operationFailed(Throwable error) {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).operationFailed(error);
       }
@@ -155,7 +197,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptSucceeded() {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).attemptSucceeded();
       }
@@ -164,7 +206,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptCancelled() {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).attemptCancelled();
       }
@@ -173,7 +215,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).attemptFailed(error, delay);
       }
@@ -182,7 +224,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).attemptFailedDuration(error, delay);
       }
@@ -191,7 +233,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).attemptFailedRetriesExhausted(error);
       }
@@ -200,7 +242,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    try (Scope ignored = inScope()) {
+    try (Scope ignored = enterCallbackScope()) {
       for (int i = children.size() - 1; i >= 0; i--) {
         children.get(i).attemptPermanentFailure(error);
       }
