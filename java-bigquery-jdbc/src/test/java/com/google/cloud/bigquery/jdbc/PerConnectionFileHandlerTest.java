@@ -91,7 +91,7 @@ public class PerConnectionFileHandlerTest {
   @Test
   public void testInitialization() throws IOException {
     Path defaultLog = tempDir.resolve("BQ-JDBC-GLOBAL.log");
-    assertTrue(Files.exists(defaultLog));
+    assertFalse(Files.exists(defaultLog));
   }
 
   @Test
@@ -253,6 +253,7 @@ public class PerConnectionFileHandlerTest {
     PerConnectionFileHandler nestedHandler =
         new PerConnectionFileHandler(nestedDir.toString(), Level.INFO);
     try {
+      nestedHandler.publish(new LogRecord(Level.INFO, "global perm check"));
       BigQueryJdbcMdc.registerInstance("BQ-JDBC-perm1234");
       nestedHandler.publish(new LogRecord(Level.INFO, "perm check"));
 
@@ -293,6 +294,7 @@ public class PerConnectionFileHandlerTest {
     PerConnectionFileHandler subHandler =
         new PerConnectionFileHandler(leafDir.toString(), Level.INFO);
     try {
+      subHandler.publish(new LogRecord(Level.INFO, "global init"));
       assertEquals(
           PosixFilePermissions.fromString("rwx------"),
           Files.getPosixFilePermissions(leafDir, LinkOption.NOFOLLOW_LINKS));
@@ -354,6 +356,11 @@ public class PerConnectionFileHandlerTest {
       symlinkGlobalHandler.publish(new LogRecord(Level.INFO, "must not clobber victim"));
       assertEquals(
           "TOP-SECRET", new String(Files.readAllBytes(victimFile), StandardCharsets.UTF_8));
+      try (Stream<Path> stream = Files.list(symlinkGlobalDir)) {
+        assertTrue(
+            stream.anyMatch(p -> p.getFileName().toString().startsWith("BQ-JDBC-GLOBAL-")),
+            "Handler should fall back to unique global log when primary is a symlink");
+      }
     } finally {
       symlinkGlobalHandler.close();
     }
@@ -383,5 +390,113 @@ public class PerConnectionFileHandlerTest {
     } finally {
       pctHandler.close();
     }
+  }
+
+  @Test
+  public void testConcurrentGlobalHandlerContentionFallsBackToUniqueGlobalLog() throws IOException {
+    Path contendedDir = tempDir.resolve("contended-global");
+    PerConnectionFileHandler first =
+        new PerConnectionFileHandler(contendedDir.toString(), Level.INFO);
+    PerConnectionFileHandler second =
+        new PerConnectionFileHandler(contendedDir.toString(), Level.INFO);
+    try {
+      first.publish(new LogRecord(Level.INFO, "first-owner-msg"));
+      for (int i = 0; i < 5; i++) {
+        PerConnectionFileHandler noGlobalRecords =
+            new PerConnectionFileHandler(contendedDir.toString(), Level.INFO);
+        noGlobalRecords.close();
+      }
+      second.publish(new LogRecord(Level.INFO, "second-contender-msg"));
+
+      String primaryContent =
+          new String(
+              Files.readAllBytes(contendedDir.resolve("BQ-JDBC-GLOBAL.log")),
+              StandardCharsets.UTF_8);
+      assertTrue(primaryContent.contains("first-owner-msg"));
+      assertFalse(primaryContent.contains("second-contender-msg"));
+
+      try (Stream<Path> stream = Files.list(contendedDir)) {
+        List<Path> fallbacks =
+            stream
+                .filter(p -> p.getFileName().toString().startsWith("BQ-JDBC-GLOBAL-"))
+                .collect(Collectors.toList());
+        assertEquals(1, fallbacks.size());
+        String fallbackContent =
+            new String(Files.readAllBytes(fallbacks.get(0)), StandardCharsets.UTF_8);
+        assertTrue(fallbackContent.contains("second-contender-msg"));
+      }
+    } finally {
+      second.close();
+      first.close();
+    }
+  }
+
+  @Test
+  public void testForeignOwnedGlobalLogFallsBackAndHardLinkIsRejected() throws IOException {
+    assumeTrue(isPosix(), "POSIX links and ownership required");
+    Path dir = tempDir.resolve("foreign-uid-dir");
+    Files.createDirectory(
+        dir, PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString("rwx------")));
+    Path primaryGlobal = dir.resolve("BQ-JDBC-GLOBAL.log");
+    Files.write(primaryGlobal, "FOREIGN-DATA".getBytes(StandardCharsets.UTF_8));
+
+    PerConnectionFileHandler.overrideUidForTesting = 999_999_999;
+    try {
+      // Directory itself is also checked against effective UID; when foreign-owned, directory is
+      // rejected cleanly without clobbering primaryGlobal.
+      PerConnectionFileHandler rejectedDirHandler =
+          new PerConnectionFileHandler(dir.toString(), Level.INFO);
+      rejectedDirHandler.setErrorManager(silentErrorManager());
+      try {
+        rejectedDirHandler.publish(new LogRecord(Level.INFO, "should not write"));
+        assertEquals(
+            "FOREIGN-DATA", new String(Files.readAllBytes(primaryGlobal), StandardCharsets.UTF_8));
+      } finally {
+        rejectedDirHandler.close();
+      }
+    } finally {
+      PerConnectionFileHandler.overrideUidForTesting = null;
+    }
+
+    // Hard-linked global file (nlink == 2) must not be written to in-place; falls back cleanly.
+    Path hardLinkDir = tempDir.resolve("hardlink-dir");
+    Files.createDirectory(hardLinkDir);
+    Path target = tempDir.resolve("hardlink-target.txt");
+    Files.write(target, "ORIGINAL".getBytes(StandardCharsets.UTF_8));
+    Files.createLink(hardLinkDir.resolve("BQ-JDBC-GLOBAL.log"), target);
+
+    PerConnectionFileHandler hardLinkHandler =
+        new PerConnectionFileHandler(hardLinkDir.toString(), Level.INFO);
+    try {
+      hardLinkHandler.publish(new LogRecord(Level.INFO, "isolated-from-hardlink"));
+      assertEquals("ORIGINAL", new String(Files.readAllBytes(target), StandardCharsets.UTF_8));
+      try (Stream<Path> stream = Files.list(hardLinkDir)) {
+        assertTrue(stream.anyMatch(p -> p.getFileName().toString().startsWith("BQ-JDBC-GLOBAL-")));
+      }
+    } finally {
+      hardLinkHandler.close();
+    }
+  }
+
+  @Test
+  public void testInterruptedPublishPreservesInterruptFlagAndKeepsChannelAlive()
+      throws IOException {
+    BigQueryJdbcMdc.registerInstance("BQ-JDBC-intr1234");
+    Thread.currentThread().interrupt();
+    try {
+      handler.publish(new LogRecord(Level.INFO, "message while interrupted"));
+      assertTrue(
+          Thread.currentThread().isInterrupted(),
+          "Caller thread interrupt status must be preserved");
+    } finally {
+      Thread.interrupted(); // clear interrupt flag for subsequent assertions
+    }
+
+    handler.publish(new LogRecord(Level.INFO, "message after interrupt"));
+    Optional<Path> connLog = findLogFile("-intr.log");
+    assertTrue(connLog.isPresent());
+    String content = new String(Files.readAllBytes(connLog.get()), StandardCharsets.UTF_8);
+    assertTrue(content.contains("message while interrupted"));
+    assertTrue(content.contains("message after interrupt"));
   }
 }
