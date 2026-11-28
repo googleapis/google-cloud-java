@@ -13,7 +13,8 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.17.0</version>
+    <version>1.27.0</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <relativePath>../java-shared-config/java-shared-config/pom.xml</relativePath>
   </parent>
 
   <properties>
@@ -106,6 +107,7 @@
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
                 <buildArg>--verbose</buildArg>
+                <buildArg>-J-Xmx8g</buildArg>
               </buildArgs>
             </configuration>
           </plugin>

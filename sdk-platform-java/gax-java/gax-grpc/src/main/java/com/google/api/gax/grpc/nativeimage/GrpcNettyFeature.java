@@ -30,11 +30,15 @@
 
 package com.google.api.gax.grpc.nativeimage;
 
+import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassForJni;
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassForReflection;
+import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassHierarchyForJni;
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassHierarchyForReflection;
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerForReflectiveInstantiation;
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerForUnsafeFieldAccess;
 
+import java.lang.reflect.Method;
+import org.graalvm.nativeimage.Platform;
 import org.graalvm.nativeimage.hosted.Feature;
 import org.jspecify.annotations.NullMarked;
 
@@ -50,6 +54,21 @@ final class GrpcNettyFeature implements Feature {
 
   private static final String NETTY_SHADED_PACKAGE =
       "io.grpc.netty.shaded.io.netty.util.internal.shaded.";
+
+  private static final String TCNATIVE_PACKAGE = "io.grpc.netty.shaded.io.netty.internal.tcnative.";
+
+  private static final String[] TCNATIVE_CALLBACK_TYPES = {
+    TCNATIVE_PACKAGE + "AsyncSSLPrivateKeyMethod",
+    TCNATIVE_PACKAGE + "CertificateCallback",
+    TCNATIVE_PACKAGE + "CertificateCompressionAlgo",
+    TCNATIVE_PACKAGE + "CertificateRequestedCallback",
+    TCNATIVE_PACKAGE + "CertificateVerifier",
+    TCNATIVE_PACKAGE + "KeyLogCallback",
+    TCNATIVE_PACKAGE + "ResultCallback",
+    TCNATIVE_PACKAGE + "SSLPrivateKeyMethod",
+    TCNATIVE_PACKAGE + "SSLSessionCache",
+    TCNATIVE_PACKAGE + "SniHostNameMatcher",
+  };
 
   @Override
   public void beforeAnalysis(BeforeAnalysisAccess access) {
@@ -123,19 +142,16 @@ final class GrpcNettyFeature implements Feature {
           "io.grpc.netty.shaded.io.netty.channel.epoll.NativeDatagramPacketArray$NativeDatagramPacket");
 
       // tcnative
-      registerClassForReflection(
-          access, "io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateCallback");
-      registerClassForReflection(
-          access, "io.grpc.netty.shaded.io.netty.internal.tcnative.CertificateCallbackTask");
-      registerClassForReflection(
-          access, "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLContext");
-      registerClassForReflection(
-          access, "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodDecryptTask");
-      registerClassForReflection(
-          access, "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodSignTask");
-      registerClassForReflection(
-          access, "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLPrivateKeyMethodTask");
-      registerClassForReflection(access, "io.grpc.netty.shaded.io.netty.internal.tcnative.SSLTask");
+      registerClassForReflection(access, TCNATIVE_PACKAGE + "CertificateCallback");
+      registerClassForReflection(access, TCNATIVE_PACKAGE + "CertificateCallbackTask");
+      registerClassForReflection(access, TCNATIVE_PACKAGE + "SSLContext");
+      registerClassForReflection(access, TCNATIVE_PACKAGE + "SSLPrivateKeyMethodDecryptTask");
+      registerClassForReflection(access, TCNATIVE_PACKAGE + "SSLPrivateKeyMethodSignTask");
+      registerClassForReflection(access, TCNATIVE_PACKAGE + "SSLPrivateKeyMethodTask");
+      registerClassForReflection(access, TCNATIVE_PACKAGE + "SSLTask");
+
+      loadTcnativeJniClasses(access);
+      loadGrpcNettyNativeLibraryResources(nettyShadedClass);
 
       // Unsafe field accesses
       registerForUnsafeFieldAccess(
@@ -192,6 +208,116 @@ final class GrpcNettyFeature implements Feature {
           NETTY_SHADED_PACKAGE
               + "org.jctools.queues.unpadded.BaseMpscLinkedUnpaddedArrayQueueConsumerFields",
           "consumerIndex");
+    }
+  }
+
+  private static void loadTcnativeJniClasses(BeforeAnalysisAccess access) {
+    if (access.findClassByName(TCNATIVE_PACKAGE + "Library") == null) {
+      return;
+    }
+    registerClassForJni(access, TCNATIVE_PACKAGE + "AsyncSSLPrivateKeyMethod");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "AsyncSSLPrivateKeyMethodAdapter");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "AsyncTask");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "Buffer");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "CertificateCallback");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "CertificateCallbackTask");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "CertificateCompressionAlgo");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "CertificateRequestedCallback");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "CertificateVerifier");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "CertificateVerifierTask");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "KeyLogCallback");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "Library");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "NativeStaticallyReferencedJniMethods");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "ResultCallback");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SSL");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SSLContext");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SSLCredential");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SSLPrivateKeyMethod");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SSLPrivateKeyMethodDecryptTask");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SSLPrivateKeyMethodSignTask");
+    registerClassHierarchyForJni(access, TCNATIVE_PACKAGE + "SSLPrivateKeyMethodTask");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SSLSession");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SSLSessionCache");
+    registerClassHierarchyForJni(access, TCNATIVE_PACKAGE + "SSLTask");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SessionTicketKey");
+    registerClassForJni(access, TCNATIVE_PACKAGE + "SniHostNameMatcher");
+
+    for (String callbackType : TCNATIVE_CALLBACK_TYPES) {
+      registerSubtypesForJni(access, callbackType);
+    }
+
+    registerClassForJni(access, "java.lang.Exception");
+    registerClassForJni(access, "java.lang.IllegalArgumentException");
+    registerClassForJni(access, "java.lang.NullPointerException");
+    registerClassForJni(access, "java.lang.OutOfMemoryError");
+    registerClassForJni(access, "java.lang.String");
+    registerClassForJni(access, "java.lang.UnsupportedOperationException");
+    registerClassForJni(access, "java.nio.ByteBuffer");
+    registerClassForJni(byte[].class);
+    registerClassForJni(byte[][].class);
+    registerClassForJni(String[].class);
+  }
+
+  private static void registerSubtypesForJni(BeforeAnalysisAccess access, String baseClassName) {
+    Class<?> baseClass = access.findClassByName(baseClassName);
+    if (baseClass != null) {
+      access.registerSubtypeReachabilityHandler(
+          (duringAccess, subtype) -> {
+            for (Class<?> current = subtype;
+                current != null && current != Object.class;
+                current = current.getSuperclass()) {
+              registerClassForJni(current);
+            }
+          },
+          baseClass);
+    }
+  }
+
+  private static void loadGrpcNettyNativeLibraryResources(Class<?> nettyShadedClass) {
+    if (Platform.includedIn(Platform.LINUX_AMD64.class)) {
+      registerNativeLibraryResource(
+          nettyShadedClass,
+          "META-INF/native/libio_grpc_netty_shaded_netty_tcnative_linux_x86_64.so");
+      registerNativeLibraryResource(
+          nettyShadedClass,
+          "META-INF/native/libio_grpc_netty_shaded_netty_transport_native_epoll_x86_64.so");
+    } else if (Platform.includedIn(Platform.LINUX_AARCH64.class)) {
+      registerNativeLibraryResource(
+          nettyShadedClass,
+          "META-INF/native/libio_grpc_netty_shaded_netty_tcnative_linux_aarch_64.so");
+      registerNativeLibraryResource(
+          nettyShadedClass,
+          "META-INF/native/libio_grpc_netty_shaded_netty_transport_native_epoll_aarch_64.so");
+    } else if (Platform.includedIn(Platform.DARWIN_AMD64.class)) {
+      registerNativeLibraryResource(
+          nettyShadedClass,
+          "META-INF/native/libio_grpc_netty_shaded_netty_tcnative_osx_x86_64.jnilib");
+    } else if (Platform.includedIn(Platform.DARWIN_AARCH64.class)) {
+      registerNativeLibraryResource(
+          nettyShadedClass,
+          "META-INF/native/libio_grpc_netty_shaded_netty_tcnative_osx_aarch_64.jnilib");
+    } else if (Platform.includedIn(Platform.WINDOWS_AMD64.class)) {
+      registerNativeLibraryResource(
+          nettyShadedClass,
+          "META-INF/native/io_grpc_netty_shaded_netty_tcnative_windows_x86_64.dll");
+    }
+  }
+
+  private static void registerNativeLibraryResource(Class<?> ownerClass, String resourcePath) {
+    ClassLoader classLoader = ownerClass.getClassLoader();
+    if (classLoader == null || classLoader.getResource(resourcePath) == null) {
+      return;
+    }
+    // Use reflection to keep gax-grpc compatible with Java 8 compilation (--release 8).
+    try {
+      Class<?> moduleClass = Class.forName("java.lang.Module");
+      Object module = Class.class.getMethod("getModule").invoke(ownerClass);
+      Class<?> resourceAccess =
+          Class.forName("org.graalvm.nativeimage.hosted.RuntimeResourceAccess");
+      Method addResource = resourceAccess.getMethod("addResource", moduleClass, String.class);
+      addResource.invoke(null, module, resourcePath);
+    } catch (ReflectiveOperationException e) {
+      throw new IllegalStateException("Failed to register native resource " + resourcePath, e);
     }
   }
 
