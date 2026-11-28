@@ -74,7 +74,11 @@ public final class BigQueryJdbcResultSetLogger {
     if (connectionId == null || connectionId.isEmpty()) {
       return getLogger(clazz, (ConnectionLogContext) null);
     }
-    return getLogger(clazz, new ConnectionLogContext(connectionId, ConnectionLogContext.ALL_VALUE));
+    ConnectionLogContext context = BigQueryJdbcRootLogger.getConnectionContext(connectionId);
+    if (context == null) {
+      context = ConnectionLogContext.unregistered(connectionId);
+    }
+    return getLogger(clazz, context);
   }
 
   static BigQueryJdbcResultSetLogger getLogger(
@@ -99,6 +103,15 @@ public final class BigQueryJdbcResultSetLogger {
   }
 
   public boolean isLoggable(Level level) {
+    if (level == null || level == Level.OFF) {
+      return false;
+    }
+    if (delegate.getLevel() != null) {
+      return delegate.isLoggable(level);
+    }
+    if (connectionContext != null && connectionContext.hasExplicitLevel()) {
+      return connectionContext.isLoggable(level);
+    }
     return delegate.isLoggable(level);
   }
 
@@ -137,7 +150,7 @@ public final class BigQueryJdbcResultSetLogger {
    * BigQueryJdbcCustomLogger.BigQueryJdbcLogRecord} to infer them lazily.
    */
   public void log(LogRecord record) {
-    if (record == null) {
+    if (record == null || !isLoggable(record.getLevel())) {
       return;
     }
     if (connectionContext != null) {
@@ -150,12 +163,16 @@ public final class BigQueryJdbcResultSetLogger {
         System.arraycopy(existingParams, 0, newParams, 1, existingParams.length);
         record.setParameters(newParams);
       }
+      try (BigQueryJdbcMdc.MdcCloseable ignored = BigQueryJdbcMdc.withContext(connectionContext)) {
+        delegate.log(record);
+      }
+      return;
     }
     delegate.log(record);
   }
 
   private void logTrace(Level level, String methodName, String msg) {
-    if (!delegate.isLoggable(level)) {
+    if (!isLoggable(level)) {
       return;
     }
     LogRecord record = new LogRecord(level, msg);
@@ -165,7 +182,7 @@ public final class BigQueryJdbcResultSetLogger {
   }
 
   private void logTrace(Level level, String methodName, Supplier<String> msgSupplier) {
-    if (!delegate.isLoggable(level)) {
+    if (!isLoggable(level)) {
       return;
     }
     logTrace(level, methodName, msgSupplier.get());
@@ -173,7 +190,7 @@ public final class BigQueryJdbcResultSetLogger {
 
   /** Cold path: builds a record whose caller is inferred lazily by the formatter. */
   private void logWithCaller(Level level, Throwable thrown, String msg) {
-    if (!delegate.isLoggable(level)) {
+    if (!isLoggable(level)) {
       return;
     }
     LogRecord record = new BigQueryJdbcCustomLogger.BigQueryJdbcLogRecord(level, msg);

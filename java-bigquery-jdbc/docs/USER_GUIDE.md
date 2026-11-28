@@ -700,7 +700,7 @@ Logging can also be configured globally across all driver connections using envi
 #### Log File Naming & Format
 
 Log files are generated inside the specified `LogPath` directory with per-connection log isolation:
-- **Global log file**: `BQ-JDBC-GLOBAL.log` (or `BQ-JDBC-GLOBAL-<timestamp>-<rand>.log` when another process or handler already holds the global log lock, or when `BQ-JDBC-GLOBAL.log` is owned by a different OS user).
+- **Global log file**: `BQ-JDBC-GLOBAL.log` (or `BQ-JDBC-GLOBAL-<timestamp>-<rand>.log` on lock/ownership contention), used for pre-connection driver events (such as URL parsing warnings and connection-setup failures before a connection ID exists) and fallback records when a per-connection file cannot be opened; all connection-scoped logs go to the per-connection file.
 - **Per-connection log file**: `BQ-JDBC-<yyyyMMddHHmmss>-<shortId>.log` (with a numeric collision suffix if needed).
 - **File permissions**: Created directories and log files enforce owner-only permissions (`0700` on directories, `0600` on files) on POSIX filesystems and reject symbolic links.
 - **Size cap & rotation**: Each active log file is capped at `1 GiB` by default (configurable via `-Dcom.google.cloud.bigquery.jdbc.maxLogFileBytes=<bytes>`) and rotates onto a single `.1.log` backup file (falling back to in-place truncation if rotation is blocked).

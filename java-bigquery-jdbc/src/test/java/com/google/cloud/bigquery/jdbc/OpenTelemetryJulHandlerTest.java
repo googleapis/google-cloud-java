@@ -61,6 +61,9 @@ public class OpenTelemetryJulHandlerTest {
     BigQueryJdbcOpenTelemetry.unregisterConnection("test-uuid");
     BigQueryJdbcOpenTelemetry.unregisterConnection("wrong-uuid");
     BigQueryJdbcOpenTelemetry.unregisterConnection("gcp-uuid");
+    BigQueryJdbcOpenTelemetry.unregisterConnection("severe-only-uuid");
+    BigQueryJdbcMdc.clear();
+    BigQueryJdbcRootLogger.resetForTest();
     logger.setLevel(originalLevel);
   }
 
@@ -181,5 +184,27 @@ public class OpenTelemetryJulHandlerTest {
     assertEquals("Direct param0 ok", logs.get(3).getBody().asString());
     assertEquals("Broken {0", logs.get(4).getBody().asString());
     assertTrue(logs.get(5).getBody().asString().isEmpty());
+  }
+
+  @Test
+  public void testPerConnectionLogLevelFilteringWhenSiblingConnectionIsVerbose() {
+    BigQueryJdbcRootLogger.registerConnection("verbose-sibling", "6", null);
+    BigQueryJdbcRootLogger.registerConnection("severe-only-uuid", "1", null);
+    BigQueryJdbcOpenTelemetry.registerConnection(
+        "severe-only-uuid", otelTesting.getOpenTelemetry(), null, false);
+
+    Baggage baggage =
+        Baggage.builder()
+            .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, "severe-only-uuid")
+            .build();
+    try (Scope scope = baggage.makeCurrent();
+        BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance("severe-only-uuid")) {
+      logger.info("info-should-be-filtered");
+      logger.severe("severe-should-export");
+    }
+
+    List<LogRecordData> logs = otelTesting.getLogRecords();
+    assertEquals(1, logs.size());
+    assertEquals("severe-should-export", logs.get(0).getBody().asString());
   }
 }

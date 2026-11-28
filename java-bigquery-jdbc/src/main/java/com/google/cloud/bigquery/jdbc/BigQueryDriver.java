@@ -190,34 +190,41 @@ public class BigQueryDriver implements Driver {
         }
 
         // Logging starts from here.
-        DataSource ds;
-        try {
-          ds = DataSource.fromUrl(connectionUri);
-        } catch (BigQueryJdbcRuntimeException e) {
-          LOG.log(Level.SEVERE, "Failed to parse connection URL", e);
-          throw new BigQueryJdbcException("Failed to parse connection URL", e);
+        BigQueryConnection connection;
+        try (BigQueryJdbcMdc.MdcCloseable preConnect =
+            BigQueryJdbcRootLogger.openPreConnectScope(logLevel, logPath)) {
+          DataSource ds;
+          try {
+            ds = DataSource.fromUrl(connectionUri);
+          } catch (BigQueryJdbcRuntimeException e) {
+            LOG.log(Level.SEVERE, "Failed to parse connection URL", e);
+            throw new BigQueryJdbcException("Failed to parse connection URL", e);
+          }
+          authType = TelemetryManager.toAuthenticationType(ds.getOAuthType());
+          if (customOpenTelemetryObj instanceof OpenTelemetry) {
+            ds.setCustomOpenTelemetry((OpenTelemetry) customOpenTelemetryObj);
+          }
+          connection = new BigQueryConnection(connectionUri, ds);
         }
-        authType = TelemetryManager.toAuthenticationType(ds.getOAuthType());
-        if (customOpenTelemetryObj instanceof OpenTelemetry) {
-          ds.setCustomOpenTelemetry((OpenTelemetry) customOpenTelemetryObj);
+        try (BigQueryJdbcMdc.MdcCloseable mdc =
+            BigQueryJdbcMdc.registerInstance(connection.getConnectionId())) {
+          DatabaseMetaData metaData = connection.getMetaDataInternal();
+          LOG.info(
+              "Driver info : { {Database Product Name : %s}, "
+                  + "{Database Product Version : %s}, "
+                  + "{Driver Name : %s}, "
+                  + "{Driver Version : %s}, "
+                  + "{LogLevel : %s}, "
+                  + "{LogPath : %s}, "
+                  + "{Driver Instance : %s} }",
+              metaData.getDatabaseProductName(),
+              metaData.getDatabaseProductVersion(),
+              metaData.getDriverName(),
+              metaData.getDriverVersion(),
+              logLevel,
+              logPath,
+              this.toString());
         }
-        BigQueryConnection connection = new BigQueryConnection(connectionUri, ds);
-        DatabaseMetaData metaData = connection.getMetaDataInternal();
-        LOG.info(
-            "Driver info : { {Database Product Name : %s}, "
-                + "{Database Product Version : %s}, "
-                + "{Driver Name : %s}, "
-                + "{Driver Version : %s}, "
-                + "{LogLevel : %s}, "
-                + "{LogPath : %s}, "
-                + "{Driver Instance : %s} }",
-            metaData.getDatabaseProductName(),
-            metaData.getDatabaseProductVersion(),
-            metaData.getDriverName(),
-            metaData.getDriverVersion(),
-            logLevel,
-            logPath,
-            this.toString());
 
         Connection wrapped = BigQueryJdbcContextProxy.wrap(connection, Connection.class);
 

@@ -32,6 +32,21 @@ public class BigQueryJdbcCustomLogger extends Logger {
     this(name, null);
   }
 
+  @Override
+  public boolean isLoggable(Level level) {
+    if (level == null || level == Level.OFF) {
+      return false;
+    }
+    if (this.getLevel() != null) {
+      return super.isLoggable(level);
+    }
+    ConnectionLogContext context = BigQueryJdbcMdc.getConnectionContext();
+    if (context != null && context.hasExplicitLevel()) {
+      return context.isLoggable(level);
+    }
+    return super.isLoggable(level);
+  }
+
   private void logWithCaller(Level level, Supplier<String> msgSupplier) {
     logWithCaller(level, null, msgSupplier);
   }
