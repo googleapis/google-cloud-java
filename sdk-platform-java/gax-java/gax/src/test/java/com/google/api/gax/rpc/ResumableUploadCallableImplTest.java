@@ -48,6 +48,8 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.ForwardingApiFuture;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.core.FakeApiClock;
+import com.google.api.gax.core.RecordingScheduler;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.QueryStatusRequest;
@@ -71,11 +73,14 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.jspecify.annotations.Nullable;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.stubbing.Answer;
 
 @ExtendWith(MockitoExtension.class)
 class ResumableUploadCallableImplTest {
@@ -1542,6 +1547,214 @@ class ResumableUploadCallableImplTest {
     assertThat(ex.getCause().getMessage()).contains(sessionUrl);
     assertThat(ex.getCause().getMessage()).contains("effective chunk size: 8");
     assertThat(shortStream.closed).isTrue();
+  }
+
+  @Nested
+  class StallControlTest {
+    private FakeApiClock clock;
+    private RecordingScheduler scheduler;
+    private ResumableUploadCallableImpl<String, String> stallCallable;
+
+    @BeforeEach
+    void setUpStall() {
+      clock = new FakeApiClock(0L);
+      scheduler = RecordingScheduler.create(clock);
+      stallCallable = createStallCallable(scheduler, defaultStallOptions());
+    }
+
+    @AfterEach
+    void tearDownStall() {
+      scheduler.shutdownNow();
+    }
+
+    @Test
+    void testSlowNonFinalChunksStall() {
+      stubStartSession("https://upload.url/stall-non-final");
+      when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+          .thenAnswer(
+              respondsAfter(5, ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+          .thenAnswer(
+              respondsAfter(15, ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)));
+
+      ExecutionException stalled =
+          assertThrows(
+              ExecutionException.class,
+              () ->
+                  stallCallable
+                      .futureCall("resource-path", payloadOf("0123456789abcdefghij"), null)
+                      .get());
+      assertThat(stalled.getCause()).isInstanceOf(DeadlineExceededException.class);
+      assertThat(stalled.getCause().getMessage()).contains("Resumable upload stalled");
+    }
+
+    @Test
+    void testSlowFinalChunkSucceeds() throws Exception {
+      stubStartSession("https://upload.url/stall-final-slow");
+      when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+          .thenAnswer(
+              respondsAfter(5, ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+          .thenAnswer(
+              respondsAfter(
+                  30, ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "final-ok")));
+
+      // 12-byte payload with chunkSize=8 makes chunk 2 (4 bytes) the genuine final chunk.
+      assertThat(stallCallable.futureCall("resource-path", payloadOf("0123456789ab"), null).get())
+          .isEqualTo("final-ok");
+      // Confirms setUpGlobalTimeout() did not schedule the 15-minute DEFAULT_GLOBAL_TIMEOUT.
+      assertThat(scheduler.getIterationsCount()).isEqualTo(0);
+    }
+
+    @Test
+    void testRecoveryCreditsPartialProgressAndStallsWhenTooSlow() {
+      stubStartSession("https://upload.url/stall-recovery");
+      // Rate = 8 bytes / 5s (expected = 5s per 8-byte chunk). Chunk 1 (6s) incurs 1s lag and sets
+      // stallStartedAt=6s. Chunk 2 gets a 14s deadline (5s - 1s + 10s, until t=20s) and fails with
+      // 400 at t=12s; queryStatus (deadline ~7s) responds in 5s (t=17s..18s) with 4 committed
+      // bytes, exceeding stallStartedAt + 10s (t=16s) when crediting partial recovery progress.
+      ResumableUploadOptions rateOptions =
+          defaultStallOptions().toBuilder()
+              .setTransferStallMinimumRate(8.0 / (5.0 * 1024 * 1024))
+              .build();
+      ResumableUploadCallableImpl<String, String> callable =
+          createStallCallable(scheduler, rateOptions);
+      when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+          .thenAnswer(
+              respondsAfter(6, ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+          .thenAnswer(failsAfter(6, createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+      when(mockQueryCallable.futureCall(any(), any()))
+          .thenAnswer(
+              respondsAfter(5, createQueryResponse(12L, null, ResumableUploadStatus.ACTIVE)));
+
+      ExecutionException ex =
+          assertThrows(
+              ExecutionException.class,
+              () ->
+                  callable
+                      .futureCall("resource-path", payloadOf("0123456789abcdefghij"), null)
+                      .get());
+      assertThat(ex.getCause()).isInstanceOf(DeadlineExceededException.class);
+      assertThat(ex.getCause().getMessage()).contains("Resumable upload stalled");
+      verify(mockQueryCallable, times(1)).futureCall(any(), any());
+    }
+
+    @Test
+    void testResumeCallDoesNotTreatPreExistingOffsetAsStallLag() throws Exception {
+      // At t=100s, resuming with 8 pre-existing bytes keeps lag=0s so chunk 1 gets a fresh 10s
+      // deadline (allowing a 2s 503 attempt to retry and succeed instead of clamping the deadline
+      // to 1s).
+      clock.incrementNanoTime(TimeUnit.SECONDS.toNanos(100));
+      String sessionUrl = "https://upload.url/stall-resume";
+      when(mockQueryCallable.futureCall(eq(QueryStatusRequest.create(sessionUrl)), any()))
+          .thenReturn(
+              ApiFutures.immediateFuture(
+                  createQueryResponse(8L, null, ResumableUploadStatus.ACTIVE)));
+      when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+          .thenAnswer(failsAfter(2, createApiException(503, StatusCode.Code.UNAVAILABLE)))
+          .thenAnswer(
+              respondsAfter(
+                  2, ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "resumed-ok")));
+
+      assertThat(stallCallable.resumeCall(sessionUrl, payloadOf("0123456789ab"), null).get())
+          .isEqualTo("resumed-ok");
+    }
+
+    @Test
+    void testExhaustedTransientRetriesReportStalled() {
+      stubStartSession("https://upload.url/stall-503");
+      ApiException unavailable503 = createApiException(503, StatusCode.Code.UNAVAILABLE);
+      // Each 503 takes 6s against a 10s stallTimeout: attempt 1 (6s + <=1s backoff) fits in 10s,
+      // and attempt 2 (12s) exceeds the 10s chunk deadline (2 attempts vs 5 under default
+      // settings).
+      when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+          .thenAnswer(failsAfter(6, unavailable503));
+
+      ExecutionException stalled =
+          assertThrows(
+              ExecutionException.class,
+              () -> stallCallable.futureCall("resource-path", payloadOf("hello"), null).get());
+      assertThat(stalled.getCause()).isInstanceOf(DeadlineExceededException.class);
+      assertThat(stalled.getCause().getMessage()).contains("Resumable upload stalled");
+      assertThat(stalled.getCause().getCause()).isSameInstanceAs(unavailable503);
+      verify(mockChunkCallable, times(2)).futureCall(any(), any());
+    }
+
+    @Test
+    void testGlobalTimeoutPrecedenceReportsTimedOut() {
+      stubStartSession("https://upload.url/stall-global-precedence");
+      // Mock executor prevents RecordingScheduler from firing the global timeout timer immediately.
+      ScheduledExecutorService mockExecutor = mock(ScheduledExecutorService.class);
+      when(mockExecutor.schedule(any(Runnable.class), anyLong(), any()))
+          .thenReturn(mock(ScheduledFuture.class));
+      when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+          .thenAnswer(failsAfter(4, createApiException(503, StatusCode.Code.UNAVAILABLE)));
+
+      ResumableUploadOptions tightGlobal =
+          defaultStallOptions().toBuilder().setGlobalTimeout(Duration.ofSeconds(4)).build();
+      ExecutionException timedOut =
+          assertThrows(
+              ExecutionException.class,
+              () ->
+                  createStallCallable(mockExecutor, tightGlobal)
+                      .futureCall("resource-path", payloadOf("hello"), null)
+                      .get());
+      assertThat(timedOut.getCause()).isInstanceOf(DeadlineExceededException.class);
+      assertThat(timedOut.getCause().getMessage()).contains("Resumable upload timed out");
+    }
+
+    @Test
+    void testRecoveryMaxAttemptsExhaustedSurfacesOriginalErrorBeyondTwoMinutes() {
+      stubStartSession("https://upload.url/stall-recovery-max-attempts");
+      // Each chunk attempt takes 40s (4 recovery rounds span > 160s, exceeding the default 2m
+      // RETRY_SETTINGS totalTimeoutDuration) while remaining within a 600s stallTimeout.
+      when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+          .thenAnswer(failsAfter(40, createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+      when(mockQueryCallable.futureCall(any(), any()))
+          .thenReturn(
+              ApiFutures.immediateFuture(
+                  createQueryResponse(0L, null, ResumableUploadStatus.ACTIVE)));
+
+      ResumableUploadOptions generousStallOptions =
+          defaultStallOptions().toBuilder()
+              .setTransferStallTimeout(Duration.ofSeconds(600))
+              .build();
+      ResumableUploadCallableImpl<String, String> generousCallable =
+          createStallCallable(scheduler, generousStallOptions);
+
+      ExecutionException ex =
+          assertThrows(
+              ExecutionException.class,
+              () -> generousCallable.futureCall("resource-path", payloadOf("hello"), null).get());
+      assertThat(ex.getCause()).isInstanceOf(InvalidArgumentException.class);
+      verify(mockQueryCallable, times(4)).futureCall(any(), any());
+      verify(mockChunkCallable, times(5)).futureCall(any(), any());
+    }
+
+    private ResumableUploadCallableImpl<String, String> createStallCallable(
+        ScheduledExecutorService executor, ResumableUploadOptions options) {
+      ClientContext ctx = clientContext.toBuilder().setClock(clock).setExecutor(executor).build();
+      return new ResumableUploadCallableImpl<>(mockClient, options, ctx);
+    }
+
+    private ResumableUploadOptions defaultStallOptions() {
+      return defaultSettings.toBuilder()
+          .setTransferStallMinimumRate(1.0)
+          .setTransferStallTimeout(Duration.ofSeconds(10))
+          .build();
+    }
+
+    private <T> Answer<ApiFuture<T>> respondsAfter(long seconds, T response) {
+      return inv -> {
+        clock.incrementNanoTime(TimeUnit.SECONDS.toNanos(seconds));
+        return ApiFutures.immediateFuture(response);
+      };
+    }
+
+    private <T> Answer<ApiFuture<T>> failsAfter(long seconds, ApiException error) {
+      return inv -> {
+        clock.incrementNanoTime(TimeUnit.SECONDS.toNanos(seconds));
+        return ApiFutures.immediateFailedFuture(error);
+      };
+    }
   }
 
   private static class HttpStatusStatusCode implements StatusCode {
