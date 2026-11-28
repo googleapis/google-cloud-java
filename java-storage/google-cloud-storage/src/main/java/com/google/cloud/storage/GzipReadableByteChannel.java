@@ -58,7 +58,14 @@ final class GzipReadableByteChannel implements UnbufferedReadableByteChannel {
       //   this will have minimal overhead as the messages coming from gcs are inherently windowed
       //   if the object size is between 2 and 2MiB the remaining bytes will be held in the channel
       //   for later read.
-      source.read(wrap);
+      int firstRead;
+      do {
+        firstRead = source.read(wrap);
+      } while (firstRead == 0);
+      if (firstRead == -1) {
+        retEOF = true;
+        return -1;
+      }
       try {
         // Step 2: wait for the object metadata, this is populated in the first message from GCS
         String contentEncoding = this.contentEncoding.get();
