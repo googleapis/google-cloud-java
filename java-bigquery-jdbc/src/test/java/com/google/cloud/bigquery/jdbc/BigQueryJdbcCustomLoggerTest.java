@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -29,17 +30,32 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.common.io.ByteStreams;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.ConsoleHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.junit.jupiter.api.AfterEach;
@@ -215,6 +231,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals("Hello finest trace message", record.getMessage());
     } finally {
       rsLogger.delegate().removeHandler(rsHandler);
+      rsLogger.delegate().setLevel(null);
     }
   }
 
@@ -250,6 +267,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals("Fine msg", r3.getMessage());
     } finally {
       rsLogger.delegate().removeHandler(rsHandler);
+      rsLogger.delegate().setLevel(null);
     }
   }
 
@@ -287,6 +305,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals("Lazy finest RS message", record.getMessage());
     } finally {
       rsLogger.delegate().removeHandler(rsHandler);
+      rsLogger.delegate().setLevel(null);
     }
   }
 
@@ -325,6 +344,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals("Lazy finest RS trace message", record.getMessage());
     } finally {
       rsLogger.delegate().removeHandler(rsHandler);
+      rsLogger.delegate().setLevel(null);
     }
   }
 
@@ -376,6 +396,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals("job-999", params[1]);
     } finally {
       rsLogger.delegate().removeHandler(rsHandler);
+      rsLogger.delegate().setLevel(null);
     }
   }
 
@@ -735,6 +756,345 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
         childrenBefore,
         childLoggerCount(rootLogger),
         "Connection-scoped result-set loggers must not register child loggers on the driver root");
+  }
+
+  @Test
+  public void testGate1ShortCircuitsDisabledAndHigherThresholdConnectionsWhileFinestIsActive(
+      @TempDir Path tempDir) throws Exception {
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    rootLogger.removeHandler(this.handler);
+    logger.removeHandler(testHandler);
+    logger.setLevel(null);
+
+    String finestConn = "conn-gate1-finest";
+    String infoConn = "conn-gate1-info";
+    String offConn = "conn-gate1-off";
+
+    try {
+      BigQueryJdbcRootLogger.registerConnection(
+          finestConn, "7", tempDir.resolve("finest").toString());
+      BigQueryJdbcRootLogger.registerConnection(infoConn, "3", tempDir.resolve("info").toString());
+      BigQueryJdbcRootLogger.registerConnection(offConn, "0", null);
+
+      assertFalse(BigQueryJdbcRootLogger.hasExternalHandler());
+      assertEquals(Level.FINEST, rootLogger.getLevel());
+      assertFalse(logger.isLoggable(null));
+
+      AtomicInteger supplierEvaluations = new AtomicInteger();
+      BigQueryJdbcResultSetLogger globalRsLogger =
+          BigQueryJdbcResultSetLogger.getLogger(BigQueryResultSetMetadata.class);
+
+      // 1. CustomLogger + Global ResultSetLogger + MDC path
+      try (BigQueryJdbcMdc.MdcCloseable offMdc = BigQueryJdbcMdc.registerInstance(offConn)) {
+        assertFalse(logger.isLoggable(Level.SEVERE));
+        assertFalse(globalRsLogger.isLoggable(Level.FINEST));
+        logger.fine(
+            () -> {
+              supplierEvaluations.incrementAndGet();
+              return "Should not evaluate on OFF connection";
+            });
+        globalRsLogger.finestTrace(
+            "getColumnCount",
+            () -> {
+              supplierEvaluations.incrementAndGet();
+              return "Should not evaluate on global RS facade under OFF MDC";
+            });
+      }
+      try (BigQueryJdbcMdc.MdcCloseable infoMdc = BigQueryJdbcMdc.registerInstance(infoConn)) {
+        assertFalse(logger.isLoggable(Level.FINE));
+        assertFalse(globalRsLogger.isLoggable(Level.FINE));
+        assertTrue(logger.isLoggable(Level.INFO));
+        assertTrue(globalRsLogger.isLoggable(Level.INFO));
+        logger.fine(
+            () -> {
+              supplierEvaluations.incrementAndGet();
+              return "Should not evaluate FINE on INFO connection";
+            });
+      }
+      assertEquals(0, supplierEvaluations.get());
+
+      // 2. Connection-scoped ResultSetLogger + child Struct/Array loggers
+      BigQueryJdbcResultSetLogger offRsLogger =
+          BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, offConn);
+      BigQueryJdbcResultSetLogger offStructLogger = offRsLogger.getArrowStructLogger();
+      BigQueryJdbcResultSetLogger infoRsLogger =
+          BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, infoConn);
+      BigQueryJdbcResultSetLogger finestRsLogger =
+          BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, finestConn);
+
+      assertFalse(offRsLogger.isLoggable(null));
+      assertFalse(offRsLogger.isLoggable(Level.FINEST));
+      assertFalse(offStructLogger.isLoggable(Level.FINEST));
+      assertFalse(infoRsLogger.isLoggable(Level.FINEST));
+      assertTrue(infoRsLogger.isLoggable(Level.INFO));
+      assertTrue(finestRsLogger.isLoggable(Level.FINEST));
+
+      offRsLogger.finestTrace(
+          "getInt",
+          () -> {
+            supplierEvaluations.incrementAndGet();
+            return "Skipped on OFF RS";
+          });
+      offStructLogger.finest(
+          () -> {
+            supplierEvaluations.incrementAndGet();
+            return "Skipped on OFF Struct";
+          });
+      infoRsLogger.finestTrace(
+          "getString",
+          () -> {
+            supplierEvaluations.incrementAndGet();
+            return "Skipped on INFO RS";
+          });
+      assertEquals(0, supplierEvaluations.get());
+
+      // 3. Closing FINEST connection flips context to OFF_VALUE so retained ResultSet logger drops
+      // WARNING/SEVERE at Gate 1 even while infoConn keeps rootLogger at Level.INFO
+      BigQueryJdbcRootLogger.closeConnectionHandler(finestConn);
+      assertEquals(Level.INFO, rootLogger.getLevel());
+      assertEquals(null, finestRsLogger.delegate().getLevel());
+      assertFalse(finestRsLogger.isLoggable(Level.SEVERE));
+      assertFalse(finestRsLogger.isLoggable(Level.WARNING));
+      finestRsLogger.warning("Post-close warning %s", "skipped");
+      assertEquals(0, supplierEvaluations.get());
+    } finally {
+      BigQueryJdbcRootLogger.resetForTest();
+      restoreTestHandlers(rootLogger);
+    }
+  }
+
+  @Test
+  public void testGate1NestedMdcIsolationWritesToResultSetLogAndRestoresMdc(@TempDir Path tempDir)
+      throws Exception {
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    rootLogger.removeHandler(this.handler);
+    logger.removeHandler(testHandler);
+    logger.setLevel(null);
+
+    String finestConn = "conn-nested-finest";
+    String offConn = "conn-nested-off";
+    Path finestDir = tempDir.resolve("finest");
+    Path offDir = tempDir.resolve("off");
+
+    try {
+      BigQueryJdbcRootLogger.registerConnection(finestConn, "7", finestDir.toString());
+      BigQueryJdbcRootLogger.registerConnection(offConn, "0", offDir.toString());
+
+      BigQueryJdbcResultSetLogger finestRsLogger =
+          BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, finestConn);
+      BigQueryJdbcResultSetLogger offRsLogger =
+          BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, offConn);
+
+      // FINEST ResultSet nested inside an OFF MDC writes to finestDir and restores MDC
+      try (BigQueryJdbcMdc.MdcCloseable offMdc = BigQueryJdbcMdc.registerInstance(offConn)) {
+        finestRsLogger.finestTrace("getInt", () -> "Nested FINEST RS marker");
+        assertEquals(offConn, BigQueryJdbcMdc.getConnectionId());
+      }
+
+      // OFF ResultSet nested inside a FINEST MDC skips warning formatting and manual records
+      try (BigQueryJdbcMdc.MdcCloseable finestMdc = BigQueryJdbcMdc.registerInstance(finestConn)) {
+        offRsLogger.warning("Should not appear in finest log %s", "ever");
+        offRsLogger.log(new LogRecord(Level.SEVERE, "Manual OFF record skipped"));
+        offRsLogger.log(null);
+        assertEquals(finestConn, BigQueryJdbcMdc.getConnectionId());
+      }
+
+      BigQueryJdbcRootLogger.closeConnectionHandler(finestConn);
+      assertFalse(Files.exists(offDir));
+
+      List<Path> finestFiles = new ArrayList<>();
+      try (Stream<Path> s = Files.list(finestDir)) {
+        s.filter(p -> !p.getFileName().toString().startsWith("BQ-JDBC-GLOBAL"))
+            .forEach(finestFiles::add);
+      }
+      assertEquals(1, finestFiles.size());
+      String content = new String(Files.readAllBytes(finestFiles.get(0)), StandardCharsets.UTF_8);
+      assertTrue(content.contains("Nested FINEST RS marker"));
+      assertTrue(content.contains("[" + finestConn + "]"));
+      assertFalse(content.contains("Should not appear in finest log"));
+      assertFalse(content.contains("Manual OFF record skipped"));
+    } finally {
+      BigQueryJdbcRootLogger.resetForTest();
+      restoreTestHandlers(rootLogger);
+    }
+  }
+
+  @Test
+  public void testGate1ExternalHandlersParentDelegationAndProxyContextCaching(@TempDir Path tempDir)
+      throws Exception {
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    rootLogger.removeHandler(this.handler);
+    logger.removeHandler(testHandler);
+    logger.setLevel(null);
+
+    String finestConn = "conn-branch-finest";
+    String offConn = "conn-branch-off";
+    String unregisteredConn = "conn-branch-unregistered";
+
+    try {
+      BigQueryJdbcRootLogger.registerConnection(
+          finestConn, "7", tempDir.resolve("finest").toString());
+      BigQueryJdbcRootLogger.registerConnection(offConn, "0", null);
+      BigQueryJdbcResultSetLogger offRsLogger =
+          BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, offConn);
+
+      // 1. Unattributed (ctx == null) and unregistered connections defer to rootLogger
+      BigQueryJdbcMdc.clear();
+      assertTrue(logger.isLoggable(Level.FINEST));
+      try (BigQueryJdbcMdc.MdcCloseable unregisteredMdc =
+          BigQueryJdbcMdc.registerInstance(unregisteredConn)) {
+        assertTrue(logger.isLoggable(Level.FINEST));
+      }
+
+      // 2. Child logger with its own handler bypasses per-connection OFF filter
+      logger.addHandler(testHandler);
+      try (BigQueryJdbcMdc.MdcCloseable offMdc = BigQueryJdbcMdc.registerInstance(offConn)) {
+        assertTrue(logger.isLoggable(Level.FINE));
+      }
+      logger.removeHandler(testHandler);
+      try (BigQueryJdbcMdc.MdcCloseable offMdc = BigQueryJdbcMdc.registerInstance(offConn)) {
+        assertFalse(logger.isLoggable(Level.FINE));
+      }
+
+      // 3. BigQueryJdbcContextProxy caches ConnectionLogContext and propagates it on invoke
+      BigQueryStatement mockOffStmt = mock(BigQueryStatement.class);
+      Statement wrappedOffStmt =
+          BigQueryJdbcContextProxy.wrap(mockOffStmt, Statement.class, offConn);
+      wrappedOffStmt.getMaxRows();
+      assertFalse(Files.exists(tempDir.resolve("off")));
+
+      // 4. Async MdcThreadPoolExecutor submit() and execute() propagate ConnectionLogContext
+      ExecutorService pool = BigQueryJdbcMdc.newFixedThreadPool("gate1-test", 1);
+      try {
+        Future<Boolean> offCallable;
+        CountDownLatch offExecDone = new CountDownLatch(1);
+        AtomicBoolean offExecLoggable = new AtomicBoolean(true);
+        try (BigQueryJdbcMdc.MdcCloseable offMdc = BigQueryJdbcMdc.registerInstance(offConn)) {
+          offCallable = pool.submit(() -> logger.isLoggable(Level.FINE));
+          pool.execute(
+              () -> {
+                offExecLoggable.set(logger.isLoggable(Level.FINE));
+                offExecDone.countDown();
+              });
+        }
+        assertFalse(offCallable.get());
+        assertTrue(offExecDone.await(5, TimeUnit.SECONDS));
+        assertFalse(offExecLoggable.get());
+
+        Future<Boolean> finestCallable;
+        try (BigQueryJdbcMdc.MdcCloseable finestMdc =
+            BigQueryJdbcMdc.registerInstance(finestConn)) {
+          finestCallable = pool.submit(() -> logger.isLoggable(Level.FINEST));
+        }
+        assertTrue(finestCallable.get());
+      } finally {
+        pool.shutdownNow();
+      }
+
+      // 5. Enabling useParentHandlers on rootLogger treats parent delegation as an external sink
+      rootLogger.setUseParentHandlers(true);
+      assertTrue(BigQueryJdbcRootLogger.hasExternalHandler());
+      assertTrue(offRsLogger.isLoggable(Level.FINEST));
+      rootLogger.setUseParentHandlers(false);
+      assertFalse(BigQueryJdbcRootLogger.hasExternalHandler());
+      assertFalse(offRsLogger.isLoggable(Level.FINEST));
+
+      // 6. Direct verification of scanForExternalHandler on a plain non-RootDriverLogger Logger
+      Logger plainLogger = new Logger("test.plain.bigquery", null) {};
+      plainLogger.setUseParentHandlers(false);
+      plainLogger.addHandler(new OpenTelemetryJulHandler());
+      assertFalse(BigQueryJdbcRootLogger.scanForExternalHandler(plainLogger));
+      TestHandler plainExternal = new TestHandler();
+      plainLogger.addHandler(plainExternal);
+      assertTrue(BigQueryJdbcRootLogger.scanForExternalHandler(plainLogger));
+      plainLogger.removeHandler(plainExternal);
+      assertFalse(BigQueryJdbcRootLogger.scanForExternalHandler(plainLogger));
+      plainLogger.setUseParentHandlers(true);
+      assertTrue(BigQueryJdbcRootLogger.scanForExternalHandler(plainLogger));
+
+      // 7. Re-attaching an external JUL handler on rootLogger restores visibility
+      rootLogger.addHandler(this.handler);
+      rootLogger.setLevel(Level.ALL);
+      assertTrue(BigQueryJdbcRootLogger.hasExternalHandler());
+      assertTrue(offRsLogger.isLoggable(Level.FINEST));
+    } finally {
+      BigQueryJdbcRootLogger.resetForTest();
+      restoreTestHandlers(rootLogger);
+    }
+  }
+
+  @Test
+  public void testIsolatedClassLoaderDoesNotRegisterDuplicateOrExternalHandlers() throws Exception {
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    rootLogger.removeHandler(this.handler);
+    try {
+      int handlersBefore = rootLogger.getHandlers().length;
+      ClassLoader isolatedLoader = new IsolatedJdbcClassLoader(getClass().getClassLoader());
+      Class.forName(BigQueryJdbcRootLogger.class.getName(), true, isolatedLoader);
+
+      assertEquals(handlersBefore, rootLogger.getHandlers().length);
+      assertFalse(BigQueryJdbcRootLogger.hasExternalHandler());
+
+      Handler crossLoaderOtelHandler =
+          (Handler)
+              Class.forName(OpenTelemetryJulHandler.class.getName(), true, isolatedLoader)
+                  .getDeclaredConstructor()
+                  .newInstance();
+      Logger plainLogger = new Logger("test.crossloader.bigquery", null) {};
+      plainLogger.setUseParentHandlers(false);
+      plainLogger.addHandler(crossLoaderOtelHandler);
+      assertFalse(BigQueryJdbcRootLogger.scanForExternalHandler(plainLogger));
+
+      ConsoleHandler userConsoleHandler = new ConsoleHandler();
+      plainLogger.addHandler(userConsoleHandler);
+      assertTrue(BigQueryJdbcRootLogger.scanForExternalHandler(plainLogger));
+      plainLogger.removeHandler(userConsoleHandler);
+    } finally {
+      restoreTestHandlers(rootLogger);
+    }
+  }
+
+  private static final class IsolatedJdbcClassLoader extends ClassLoader {
+    IsolatedJdbcClassLoader(ClassLoader parent) {
+      super(parent);
+    }
+
+    @Override
+    protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+      if (!name.startsWith("com.google.cloud.bigquery.jdbc.")) {
+        return super.loadClass(name, resolve);
+      }
+      synchronized (getClassLoadingLock(name)) {
+        Class<?> loaded = findLoadedClass(name);
+        if (loaded == null) {
+          try (InputStream in =
+              getParent().getResourceAsStream(name.replace('.', '/') + ".class")) {
+            if (in == null) {
+              throw new ClassNotFoundException(name);
+            }
+            byte[] bytes = ByteStreams.toByteArray(in);
+            loaded = defineClass(name, bytes, 0, bytes.length);
+          } catch (IOException e) {
+            throw new ClassNotFoundException(name, e);
+          }
+        }
+        if (resolve) {
+          resolveClass(loaded);
+        }
+        return loaded;
+      }
+    }
+  }
+
+  private void restoreTestHandlers(Logger rootLogger) {
+    if (!Arrays.asList(rootLogger.getHandlers()).contains(this.handler)) {
+      rootLogger.addHandler(this.handler);
+    }
+    if (!Arrays.asList(logger.getHandlers()).contains(testHandler)) {
+      logger.addHandler(testHandler);
+    }
+    logger.setLevel(Level.ALL);
+    rootLogger.setLevel(Level.ALL);
   }
 
   /**

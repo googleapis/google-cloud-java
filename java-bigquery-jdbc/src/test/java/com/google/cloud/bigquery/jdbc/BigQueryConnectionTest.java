@@ -600,7 +600,9 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       String url =
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
               + "OAuthType=2;ProjectId=MyTestProjectId;"
-              + "OAuthAccessToken=secretAccessToken;Location=US;";
+              + "OAuthAccessToken=secretAccessToken;"
+              + "ProxyHost=proxy.example.com;ProxyPort=8080;ProxyUid=secretProxyUid;ProxyPwd=secretProxyPwd;"
+              + "Location=US;";
       try (BigQueryConnection connection = new BigQueryConnection(url)) {
         // Just trigger the constructor
       }
@@ -616,7 +618,16 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertTrue(logMessage.contains("ProjectId=MyTestProjectId"));
       assertTrue(logMessage.contains("Location=US"));
       assertTrue(logMessage.contains("OAuthAccessToken=*****"));
+      assertTrue(logMessage.contains("ProxyUid=*****"));
+      assertTrue(logMessage.contains("ProxyPwd=*****"));
       assertFalse(logMessage.contains("secretAccessToken"));
+      assertFalse(logMessage.contains("secretProxyUid"));
+      assertFalse(logMessage.contains("secretProxyPwd"));
+      assertEquals(
+          "*****",
+          BigQueryConnection.maskPropertyValue(
+              BigQueryJdbcUrlUtility.BYOID_CREDENTIAL_SOURCE_PROPERTY_NAME,
+              "{\"headers\":{\"Authorization\":\"Bearer secretByoid\"}}"));
     } finally {
       rootLogger.setLevel(originalLevel);
     }

@@ -704,6 +704,7 @@ Log files are generated inside the specified `LogPath` directory with per-connec
 - **Per-connection log file**: `BQ-JDBC-<yyyyMMddHHmmss>-<shortId>.log` (with a numeric collision suffix if needed).
 - **File permissions**: Created directories and log files enforce owner-only permissions (`0700` on directories, `0600` on files) on POSIX filesystems and reject symbolic links.
 - **Size cap & rotation**: Each active log file is capped at `1 GiB` by default (configurable via `-Dcom.google.cloud.bigquery.jdbc.maxLogFileBytes=<bytes>`) and rotates onto a single `.1.log` backup file (falling back to in-place truncation if rotation is blocked).
+- **URL `LogPath` restriction**: Set `-Dcom.google.cloud.bigquery.jdbc.allowUrlLogPath=false` to ignore `LogPath` values supplied via JDBC URLs or connection `Properties` and restrict file logging to `BIGQUERY_JDBC_LOG_PATH`.
 
 **Standard Log Record Format**:
 ```text

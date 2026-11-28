@@ -24,6 +24,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.management.ManagementFactory;
+import java.lang.ref.PhantomReference;
+import java.lang.ref.Reference;
+import java.lang.ref.ReferenceQueue;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -33,28 +36,37 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
+import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 /** This class is used to log messages from the BigQuery JDBC Driver. */
 class BigQueryJdbcRootLogger {
 
+  private static final boolean isTest = Boolean.getBoolean("JDBC_TESTS");
+  private static volatile boolean externalHandlerAttached = false;
+
   /**
    * Note: Each connection will have its own file handler with the level and logPath specified in
    * the connection properties. But the logs will be driver logs and not connection specific.
    */
-  private static final Logger logger = Logger.getLogger("com.google.cloud.bigquery");
+  private static final Logger logger = createRootLogger();
 
   private static final Logger storageLogger = Logger.getLogger("com.google.cloud.bigquery.storage");
-  private static final boolean isTest = Boolean.getBoolean("JDBC_TESTS");
 
-  private static final Object HANDLER_LOCK = new Object();
+  private static final long CLEANER_IDLE_KEEPALIVE_MS = 60_000L;
+  private static final ReentrantLock HANDLER_LOCK = new ReentrantLock();
   private static final ConcurrentHashMap<String, ConnectionLogConfig> activeConnections =
       new ConcurrentHashMap<>();
   private static final Map<String, ManagedFileHandler> handlersByPath = new HashMap<>();
+  private static final ReferenceQueue<BigQueryConnection> CLEANUP_QUEUE = new ReferenceQueue<>();
+  private static Thread cleanerThread = null;
+  private static int trackedConnectionCount = 0;
   private static int activePreConnectScopes = 0;
   private static Level externalRootLevel = null;
   private static Level lastManagedRootLevel = logger.getLevel();
@@ -88,12 +100,98 @@ class BigQueryJdbcRootLogger {
   static {
     logger.setUseParentHandlers(false);
     storageLogger.setUseParentHandlers(true);
-    if (isTest) {
-      ConsoleHandler consoleHandler = new ConsoleHandler();
+    if (isTest && !hasDriverConsoleHandler(logger)) {
+      ConsoleHandler consoleHandler = new TestConsoleHandler();
       consoleHandler.setLevel(Level.SEVERE);
       consoleHandler.setFormatter(getFormatter());
       logger.addHandler(consoleHandler);
     }
+    externalHandlerAttached = scanForExternalHandler(logger);
+  }
+
+  private static Logger createRootLogger() {
+    LogManager manager = LogManager.getLogManager();
+    Logger existing = manager.getLogger("com.google.cloud.bigquery");
+    if (existing != null) {
+      return existing;
+    }
+    RootDriverLogger customRoot = new RootDriverLogger("com.google.cloud.bigquery");
+    if (manager.addLogger(customRoot)) {
+      return customRoot;
+    }
+    return Logger.getLogger("com.google.cloud.bigquery");
+  }
+
+  private static final class RootDriverLogger extends Logger {
+    RootDriverLogger(String name) {
+      super(name, null);
+      super.setUseParentHandlers(false);
+    }
+
+    @Override
+    public synchronized void addHandler(Handler handler) throws SecurityException {
+      super.addHandler(handler);
+      externalHandlerAttached = scanForExternalHandler(this);
+    }
+
+    @Override
+    public synchronized void removeHandler(Handler handler) throws SecurityException {
+      super.removeHandler(handler);
+      externalHandlerAttached = scanForExternalHandler(this);
+    }
+
+    @Override
+    public synchronized void setUseParentHandlers(boolean useParentHandlers) {
+      super.setUseParentHandlers(useParentHandlers);
+      externalHandlerAttached = scanForExternalHandler(this);
+    }
+  }
+
+  private static final class TestConsoleHandler extends ConsoleHandler {}
+
+  private static boolean hasDriverConsoleHandler(Logger target) {
+    String expectedName = TestConsoleHandler.class.getName();
+    for (Handler h : target.getHandlers()) {
+      if (h instanceof TestConsoleHandler
+          || (h != null && expectedName.equals(h.getClass().getName()))) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private static boolean isDriverOwnedHandler(Handler handler) {
+    if (handler == null) {
+      return false;
+    }
+    if (handler instanceof PerConnectionFileHandler
+        || handler instanceof OpenTelemetryJulHandler
+        || handler instanceof TestConsoleHandler) {
+      return true;
+    }
+    String className = handler.getClass().getName();
+    return className.equals(PerConnectionFileHandler.class.getName())
+        || className.equals(OpenTelemetryJulHandler.class.getName())
+        || className.equals(TestConsoleHandler.class.getName());
+  }
+
+  static boolean scanForExternalHandler(Logger target) {
+    if (target.getUseParentHandlers()) {
+      return true;
+    }
+    for (Handler h : target.getHandlers()) {
+      if (!isDriverOwnedHandler(h)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  static boolean hasExternalHandler() {
+    if (logger instanceof RootDriverLogger) {
+      return externalHandlerAttached;
+    }
+    return scanForExternalHandler(logger);
   }
 
   public static Formatter getFormatter() {
@@ -181,10 +279,29 @@ class BigQueryJdbcRootLogger {
     return config != null ? config.context : null;
   }
 
+  static ConnectionLogContext resolveContext(String connectionId) {
+    if (connectionId == null || connectionId.isEmpty()) {
+      return null;
+    }
+    ConnectionLogConfig config = activeConnections.get(connectionId);
+    return config != null ? config.context : ConnectionLogContext.unregistered(connectionId);
+  }
+
+  static boolean isConnectionActive(String connectionId) {
+    return connectionId != null && activeConnections.containsKey(connectionId);
+  }
+
+  static int activeConnectionCount() {
+    return activeConnections.size();
+  }
+
   public static void setLevel(Level level, String logPath) throws IOException {
-    synchronized (HANDLER_LOCK) {
-      externalRootLevel = null;
+    HANDLER_LOCK.lock();
+    try {
+      captureExternalRootLevelLocked();
       updateEffectiveRootLevelLocked();
+    } finally {
+      HANDLER_LOCK.unlock();
     }
   }
 
@@ -192,7 +309,9 @@ class BigQueryJdbcRootLogger {
     Level effectiveLevel = level != null ? level : Level.OFF;
     ManagedFileHandler tempHandler = null;
     boolean countedScope = false;
-    synchronized (HANDLER_LOCK) {
+    HANDLER_LOCK.lock();
+    try {
+      captureExternalRootLevelLocked();
       if (effectiveLevel != Level.OFF) {
         activePreConnectScopes++;
         countedScope = true;
@@ -200,11 +319,13 @@ class BigQueryJdbcRootLogger {
           try {
             tempHandler = acquireHandlerLocked(logPath);
           } catch (Exception ex) {
-            logger.warning("Log File warning : " + ex);
+            logger.log(Level.WARNING, "Log File warning", ex);
           }
         }
       }
       updateEffectiveRootLevelLocked();
+    } finally {
+      HANDLER_LOCK.unlock();
     }
     Path preConnectDir = tempHandler != null ? tempHandler.handler.getBaseLogPath() : null;
     BigQueryJdbcMdc.MdcCloseable mdcScope =
@@ -217,12 +338,16 @@ class BigQueryJdbcRootLogger {
         mdcScope.close();
       } finally {
         if (decrementScope || acquired != null) {
-          synchronized (HANDLER_LOCK) {
+          HANDLER_LOCK.lock();
+          try {
+            captureExternalRootLevelLocked();
             if (decrementScope && activePreConnectScopes > 0) {
               activePreConnectScopes--;
             }
             releaseHandlerLocked(acquired);
             updateEffectiveRootLevelLocked();
+          } finally {
+            HANDLER_LOCK.unlock();
           }
         }
       }
@@ -233,8 +358,10 @@ class BigQueryJdbcRootLogger {
     if (connectionId == null || connectionId.isEmpty()) {
       return;
     }
-    synchronized (HANDLER_LOCK) {
+    HANDLER_LOCK.lock();
+    try {
       captureExternalRootLevelLocked();
+      drainCleanupQueueLocked();
       Level connLevel =
           rawLogLevel != null
               ? BigQueryJdbcUrlUtility.parseLogLevel(rawLogLevel)
@@ -248,7 +375,7 @@ class BigQueryJdbcRootLogger {
           managed = acquireHandlerLocked(logPath);
           managed.handler.registerConnection(connectionId, connLevel);
         } catch (Exception ex) {
-          logger.warning("Log File warning : " + ex);
+          logger.log(Level.WARNING, "Log File warning", ex);
         }
       }
       ConnectionLogConfig previous =
@@ -258,11 +385,126 @@ class BigQueryJdbcRootLogger {
                   new ConnectionLogContext(connectionId, connLevel.intValue()),
                   connLevel,
                   managed));
-      if (previous != null && previous.managedHandler != null) {
-        previous.managedHandler.handler.closeHandler(connectionId);
-        releaseHandlerLocked(previous.managedHandler);
+      if (previous != null) {
+        closeConfigLocked(connectionId, previous);
       }
       updateEffectiveRootLevelLocked();
+    } finally {
+      HANDLER_LOCK.unlock();
+    }
+  }
+
+  static void trackConnectionLifecycle(BigQueryConnection connection, String connectionId) {
+    if (connection == null || connectionId == null) {
+      return;
+    }
+    HANDLER_LOCK.lock();
+    try {
+      boolean reaped = drainCleanupQueueLocked();
+      ConnectionLogConfig config = activeConnections.get(connectionId);
+      if (config != null) {
+        detachCleanableLocked(config);
+        config.cleanable = new ConnectionCleanable(connection, connectionId, CLEANUP_QUEUE);
+        trackedConnectionCount++;
+        ensureCleanerRunningLocked();
+      }
+      if (reaped) {
+        updateEffectiveRootLevelLocked();
+      }
+    } finally {
+      HANDLER_LOCK.unlock();
+    }
+  }
+
+  private static void ensureCleanerRunningLocked() {
+    if (cleanerThread != null) {
+      return;
+    }
+    try {
+      Thread cleaner =
+          new Thread(
+              BigQueryJdbcRootLogger::runConnectionCleanerLoop,
+              "BigQuery-JDBC-Connection-Log-Cleaner");
+      cleaner.setDaemon(true);
+      cleaner.setContextClassLoader(BigQueryJdbcRootLogger.class.getClassLoader());
+      cleaner.start();
+      cleanerThread = cleaner;
+    } catch (OutOfMemoryError | SecurityException ignored) {
+      // Best-effort daemon: drainCleanupQueueLocked() still reclaims queued refs on future calls.
+    }
+  }
+
+  private static boolean drainCleanupQueueLocked() {
+    boolean reapedAny = false;
+    Reference<? extends BigQueryConnection> ref;
+    while ((ref = CLEANUP_QUEUE.poll()) != null) {
+      if (ref instanceof ConnectionCleanable && reapSingleLocked((ConnectionCleanable) ref)) {
+        reapedAny = true;
+      }
+    }
+    return reapedAny;
+  }
+
+  private static boolean reapSingleLocked(ConnectionCleanable ref) {
+    ref.clear();
+    ConnectionLogConfig current = activeConnections.get(ref.connectionId);
+    if (current == null || current.cleanable != ref) {
+      return false;
+    }
+    captureExternalRootLevelLocked();
+    activeConnections.remove(ref.connectionId);
+    closeConfigLocked(ref.connectionId, current);
+    return true;
+  }
+
+  private static void runConnectionCleanerLoop() {
+    BigQueryJdbcMdc.clear();
+    while (true) {
+      try {
+        boolean waitIndefinitely;
+        HANDLER_LOCK.lock();
+        try {
+          if (drainCleanupQueueLocked()) {
+            updateEffectiveRootLevelLocked();
+          }
+          waitIndefinitely = trackedConnectionCount > 0;
+          Thread.interrupted();
+        } finally {
+          HANDLER_LOCK.unlock();
+        }
+
+        Reference<? extends BigQueryConnection> ref =
+            waitIndefinitely
+                ? CLEANUP_QUEUE.remove()
+                : CLEANUP_QUEUE.remove(CLEANER_IDLE_KEEPALIVE_MS);
+
+        HANDLER_LOCK.lock();
+        try {
+          boolean reaped =
+              (ref instanceof ConnectionCleanable) && reapSingleLocked((ConnectionCleanable) ref);
+          try {
+            if (drainCleanupQueueLocked()) {
+              reaped = true;
+            }
+          } finally {
+            if (reaped) {
+              updateEffectiveRootLevelLocked();
+            }
+          }
+          if (ref == null && trackedConnectionCount == 0 && CLEANUP_QUEUE.poll() == null) {
+            if (cleanerThread == Thread.currentThread()) {
+              cleanerThread = null;
+            }
+            return;
+          }
+        } finally {
+          HANDLER_LOCK.unlock();
+        }
+      } catch (InterruptedException ignored) {
+        // Woken when trackedConnectionCount reaches 0 to switch to the idle keep-alive window.
+      } catch (Throwable ignored) {
+        // Survive OOM or unexpected errors while cleaner is active.
+      }
     }
   }
 
@@ -270,22 +512,28 @@ class BigQueryJdbcRootLogger {
     if (connectionId == null) {
       return;
     }
-    synchronized (HANDLER_LOCK) {
+    HANDLER_LOCK.lock();
+    try {
       captureExternalRootLevelLocked();
+      drainCleanupQueueLocked();
       ConnectionLogConfig removed = activeConnections.remove(connectionId);
-      if (removed != null && removed.managedHandler != null) {
-        try {
-          removed.managedHandler.handler.closeHandler(connectionId);
-        } finally {
-          releaseHandlerLocked(removed.managedHandler);
-        }
+      if (removed != null) {
+        closeConfigLocked(connectionId, removed);
       }
       updateEffectiveRootLevelLocked();
+    } finally {
+      HANDLER_LOCK.unlock();
     }
   }
 
   static void resetForTest() {
-    synchronized (HANDLER_LOCK) {
+    HANDLER_LOCK.lock();
+    try {
+      for (ConnectionLogConfig cfg : activeConnections.values()) {
+        detachCleanableLocked(cfg);
+        cfg.context.setLevelValue(ConnectionLogContext.OFF_VALUE);
+      }
+      trackedConnectionCount = 0;
       activeConnections.clear();
       for (ManagedFileHandler managed : handlersByPath.values()) {
         try {
@@ -299,15 +547,60 @@ class BigQueryJdbcRootLogger {
       activePreConnectScopes = 0;
       externalRootLevel = null;
       lastManagedRootLevel = Level.OFF;
+      logger.setUseParentHandlers(false);
       logger.setLevel(Level.OFF);
+      externalHandlerAttached = scanForExternalHandler(logger);
+    } finally {
+      HANDLER_LOCK.unlock();
+    }
+  }
+
+  private static void detachCleanableLocked(ConnectionLogConfig config) {
+    if (config.cleanable != null) {
+      config.cleanable.clear();
+      config.cleanable = null;
+      if (trackedConnectionCount > 0) {
+        trackedConnectionCount--;
+      }
+      if (trackedConnectionCount == 0
+          && cleanerThread != null
+          && cleanerThread != Thread.currentThread()) {
+        cleanerThread.interrupt();
+      }
+    }
+  }
+
+  private static void closeConfigLocked(String connectionId, ConnectionLogConfig config) {
+    detachCleanableLocked(config);
+    config.context.setLevelValue(ConnectionLogContext.OFF_VALUE);
+    if (config.managedHandler != null) {
+      try {
+        config.managedHandler.handler.closeHandler(connectionId);
+      } finally {
+        releaseHandlerLocked(config.managedHandler);
+      }
     }
   }
 
   private static void captureExternalRootLevelLocked() {
+    if (!hasExternalHandler()) {
+      externalRootLevel = null;
+      return;
+    }
     Level current = logger.getLevel();
     if (current != lastManagedRootLevel) {
       externalRootLevel = current;
     }
+  }
+
+  private static Level resolveInheritedLevel(Logger target) {
+    for (Logger parent = target.getParent(); parent != null; parent = parent.getParent()) {
+      Level parentLevel = parent.getLevel();
+      if (parentLevel != null) {
+        return parentLevel;
+      }
+    }
+    return Level.INFO;
   }
 
   private static void updateEffectiveRootLevelLocked() {
@@ -323,6 +616,14 @@ class BigQueryJdbcRootLogger {
       if (connVal < minVal) {
         minVal = connVal;
         effective = cfg.level;
+      }
+    }
+    if (externalRootLevel == null && hasExternalHandler()) {
+      Level inherited = resolveInheritedLevel(logger);
+      if (minVal >= inherited.intValue()) {
+        lastManagedRootLevel = null;
+        logger.setLevel(null);
+        return;
       }
     }
     if (effective == null) {
@@ -353,7 +654,6 @@ class BigQueryJdbcRootLogger {
           new PerConnectionFileHandler(
               pathArg, Level.ALL, PerConnectionFileHandler.resolveMaxLogFileBytes(), true);
       logger.addHandler(created);
-      logger.setUseParentHandlers(false);
       managed = new ManagedFileHandler(key, created);
       handlersByPath.put(key, managed);
     }
@@ -392,12 +692,25 @@ class BigQueryJdbcRootLogger {
     final ConnectionLogContext context;
     final Level level;
     final ManagedFileHandler managedHandler;
+    ConnectionCleanable cleanable;
 
     ConnectionLogConfig(
         ConnectionLogContext context, Level level, ManagedFileHandler managedHandler) {
       this.context = context;
       this.level = level;
       this.managedHandler = managedHandler;
+    }
+  }
+
+  private static final class ConnectionCleanable extends PhantomReference<BigQueryConnection> {
+    final String connectionId;
+
+    ConnectionCleanable(
+        BigQueryConnection referent,
+        String connectionId,
+        ReferenceQueue<? super BigQueryConnection> queue) {
+      super(referent, queue);
+      this.connectionId = connectionId;
     }
   }
 }

@@ -150,6 +150,7 @@ public class BigQueryDriver implements Driver {
 
         Level logLevel;
         String logPath;
+        boolean ignoredUrlLogPath;
         try {
           // LogLevel
           String logLevelStr =
@@ -161,14 +162,11 @@ public class BigQueryDriver implements Driver {
           logLevel = BigQueryJdbcUrlUtility.parseLogLevel(logLevelStr);
 
           // LogPath
-          logPath =
+          String urlLogPath =
               BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
                   connectionUri, BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME);
-          if (logPath == null) {
-            logPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
-          }
+          String envLogPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
 
-          // Fallback to default path only if not specified and not in Cloud-Only mode
           String enableGcpLogExporterStr =
               BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
                   connectionUri, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
@@ -179,9 +177,10 @@ public class BigQueryDriver implements Driver {
                     enableGcpLogExporterStr,
                     BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
           }
-          if (logPath == null && !enableGcpLogExporter) {
-            logPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
-          }
+          ignoredUrlLogPath = !BigQueryJdbcUrlUtility.isUrlLogPathAllowed() && urlLogPath != null;
+          logPath =
+              BigQueryJdbcUrlUtility.resolveEffectiveLogPath(
+                  urlLogPath, envLogPath, !enableGcpLogExporter);
 
           BigQueryJdbcRootLogger.setLevel(logLevel, logPath);
         } catch (RuntimeException e) {
@@ -193,6 +192,12 @@ public class BigQueryDriver implements Driver {
         BigQueryConnection connection;
         try (BigQueryJdbcMdc.MdcCloseable preConnect =
             BigQueryJdbcRootLogger.openPreConnectScope(logLevel, logPath)) {
+          if (ignoredUrlLogPath) {
+            LOG.warning(
+                "Ignoring URL/Properties %s because system property %s is false.",
+                BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME,
+                BigQueryJdbcUrlUtility.ALLOW_URL_LOG_PATH_SYSTEM_PROPERTY);
+          }
           DataSource ds;
           try {
             ds = DataSource.fromUrl(connectionUri);

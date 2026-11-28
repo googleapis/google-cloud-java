@@ -74,11 +74,7 @@ public final class BigQueryJdbcResultSetLogger {
     if (connectionId == null || connectionId.isEmpty()) {
       return getLogger(clazz, (ConnectionLogContext) null);
     }
-    ConnectionLogContext context = BigQueryJdbcRootLogger.getConnectionContext(connectionId);
-    if (context == null) {
-      context = ConnectionLogContext.unregistered(connectionId);
-    }
-    return getLogger(clazz, context);
+    return getLogger(clazz, BigQueryJdbcRootLogger.resolveContext(connectionId));
   }
 
   static BigQueryJdbcResultSetLogger getLogger(
@@ -103,16 +99,12 @@ public final class BigQueryJdbcResultSetLogger {
   }
 
   public boolean isLoggable(Level level) {
-    if (level == null || level == Level.OFF) {
+    if (!delegate.isSuperLoggable(level)) {
       return false;
     }
-    if (delegate.getLevel() != null) {
-      return delegate.isLoggable(level);
-    }
-    if (connectionContext != null && connectionContext.hasExplicitLevel()) {
-      return connectionContext.isLoggable(level);
-    }
-    return delegate.isLoggable(level);
+    ConnectionLogContext ctx =
+        connectionContext != null ? connectionContext : BigQueryJdbcMdc.getConnectionContext();
+    return delegate.isLoggableAfterSuper(level, ctx);
   }
 
   public BigQueryJdbcResultSetLogger getArrowStructLogger() {
@@ -163,10 +155,13 @@ public final class BigQueryJdbcResultSetLogger {
         System.arraycopy(existingParams, 0, newParams, 1, existingParams.length);
         record.setParameters(newParams);
       }
-      try (BigQueryJdbcMdc.MdcCloseable ignored = BigQueryJdbcMdc.withContext(connectionContext)) {
-        delegate.log(record);
+      if (BigQueryJdbcMdc.getConnectionContext() != connectionContext) {
+        try (BigQueryJdbcMdc.MdcCloseable ignored =
+            BigQueryJdbcMdc.withContext(connectionContext)) {
+          delegate.log(record);
+        }
+        return;
       }
-      return;
     }
     delegate.log(record);
   }
@@ -185,7 +180,10 @@ public final class BigQueryJdbcResultSetLogger {
     if (!isLoggable(level)) {
       return;
     }
-    logTrace(level, methodName, msgSupplier.get());
+    LogRecord record = new LogRecord(level, msgSupplier.get());
+    record.setSourceClassName(targetClassName);
+    record.setSourceMethodName(methodName);
+    log(record);
   }
 
   /** Cold path: builds a record whose caller is inferred lazily by the formatter. */
@@ -258,7 +256,7 @@ public final class BigQueryJdbcResultSetLogger {
   }
 
   public void warning(String format, Object... args) {
-    if (!delegate.isLoggable(Level.WARNING)) {
+    if (!isLoggable(Level.WARNING)) {
       return;
     }
     String message = (args == null || args.length == 0) ? format : String.format(format, args);
