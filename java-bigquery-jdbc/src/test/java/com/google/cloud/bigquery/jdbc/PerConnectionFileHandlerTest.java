@@ -499,4 +499,165 @@ public class PerConnectionFileHandlerTest {
     assertTrue(content.contains("message while interrupted"));
     assertTrue(content.contains("message after interrupt"));
   }
+
+  private static Optional<Path> findLogFileInDir(Path dir, String suffix) throws IOException {
+    try (Stream<Path> stream = Files.list(dir)) {
+      return stream
+          .filter(
+              p ->
+                  p.getFileName().toString().startsWith("BQ-JDBC-")
+                      && p.getFileName().toString().endsWith(suffix))
+          .findFirst();
+    }
+  }
+
+  @Test
+  public void testOneGibDefaultAndBackupFileRotation() throws IOException {
+    assertEquals(1024L * 1024L * 1024L, PerConnectionFileHandler.DEFAULT_MAX_LOG_FILE_BYTES);
+    String prop = PerConnectionFileHandler.MAX_LOG_FILE_BYTES_SYSTEM_PROPERTY;
+    String prev = System.getProperty(prop);
+    try {
+      System.setProperty(prop, "3000000000");
+      assertEquals(3_000_000_000L, PerConnectionFileHandler.resolveMaxLogFileBytes());
+      System.setProperty(prop, "-5");
+      assertEquals(
+          PerConnectionFileHandler.DEFAULT_MAX_LOG_FILE_BYTES,
+          PerConnectionFileHandler.resolveMaxLogFileBytes());
+    } finally {
+      if (prev == null) {
+        System.clearProperty(prop);
+      } else {
+        System.setProperty(prop, prev);
+      }
+    }
+
+    Path boundedDir = tempDir.resolve("bounded");
+    long maxBytes = 1024L;
+    PerConnectionFileHandler defaultMaxHandler =
+        new PerConnectionFileHandler(tempDir.resolve("def_max").toString(), Level.INFO, 0L);
+    defaultMaxHandler.close();
+
+    PerConnectionFileHandler boundedHandler =
+        new PerConnectionFileHandler(boundedDir.toString(), Level.FINEST, maxBytes);
+    try {
+      for (int i = 0; i < 40; i++) {
+        boundedHandler.publish(
+            new LogRecord(Level.INFO, "Padding log line to exceed 1 KiB limit #" + i));
+      }
+      BigQueryJdbcMdc.registerInstance("BQ-JDBC-rotc1234");
+      for (int i = 0; i < 15; i++) {
+        boundedHandler.publish(new LogRecord(Level.INFO, "Per-conn rotation line #" + i));
+      }
+      BigQueryJdbcMdc.clear();
+      boundedHandler.publish(new LogRecord(Level.FINEST, "Tail global record"));
+    } finally {
+      boundedHandler.close();
+    }
+
+    Path boundedGlobal = boundedDir.resolve("BQ-JDBC-GLOBAL.log");
+    Path boundedBackup = boundedDir.resolve("BQ-JDBC-GLOBAL.1.log");
+    assertTrue(Files.size(boundedGlobal) > 0 && Files.size(boundedGlobal) <= maxBytes);
+    assertTrue(Files.size(boundedBackup) > 0 && Files.size(boundedBackup) <= maxBytes);
+    assertFalse(Files.exists(boundedDir.resolve("BQ-JDBC-GLOBAL.2.log")));
+    assertTrue(findLogFileInDir(boundedDir, "-rotc.log").isPresent());
+    assertTrue(findLogFileInDir(boundedDir, "-rotc.1.log").isPresent());
+
+    if (isPosix()) {
+      Set<PosixFilePermission> expected0600 = PosixFilePermissions.fromString("rw-------");
+      assertEquals(
+          expected0600, Files.getPosixFilePermissions(boundedBackup, LinkOption.NOFOLLOW_LINKS));
+      assertEquals(
+          expected0600, Files.getPosixFilePermissions(boundedGlobal, LinkOption.NOFOLLOW_LINKS));
+      assertEquals(
+          expected0600,
+          Files.getPosixFilePermissions(
+              findLogFileInDir(boundedDir, "-rotc.1.log").get(), LinkOption.NOFOLLOW_LINKS));
+
+      // Symlink at .1.log is deleted safely without modifying target; foreign UID falls back
+      Path symDir = tempDir.resolve("sym_rot");
+      Files.createDirectories(symDir);
+      Path untouchedTarget = tempDir.resolve("untouched.txt");
+      Files.write(untouchedTarget, "safe".getBytes(StandardCharsets.UTF_8));
+      Files.createSymbolicLink(symDir.resolve("BQ-JDBC-GLOBAL.1.log"), untouchedTarget);
+      PerConnectionFileHandler symRotHandler =
+          new PerConnectionFileHandler(symDir.toString(), Level.INFO, maxBytes);
+      symRotHandler.setErrorManager(silentErrorManager());
+      try {
+        for (int i = 0; i < 12; i++) {
+          symRotHandler.publish(new LogRecord(Level.INFO, "Symlink backup rotation line #" + i));
+        }
+        assertEquals(
+            "safe", new String(Files.readAllBytes(untouchedTarget), StandardCharsets.UTF_8));
+        assertFalse(Files.isSymbolicLink(symDir.resolve("BQ-JDBC-GLOBAL.1.log")));
+
+        PerConnectionFileHandler.overrideUidForTesting = 888_888_888;
+        try {
+          for (int i = 0; i < 12; i++) {
+            symRotHandler.publish(new LogRecord(Level.INFO, "Foreign backup fallback line #" + i));
+          }
+        } finally {
+          PerConnectionFileHandler.overrideUidForTesting = null;
+        }
+        assertTrue(
+            new String(
+                    Files.readAllBytes(symDir.resolve("BQ-JDBC-GLOBAL.log")),
+                    StandardCharsets.UTF_8)
+                .contains("fallback line #11"));
+      } finally {
+        symRotHandler.close();
+      }
+    }
+
+    // Non-regular directory blocking .1.log falls back gracefully to in-place truncation
+    Path fallbackDir = tempDir.resolve("fallback_rot");
+    Files.createDirectories(fallbackDir.resolve("BQ-JDBC-GLOBAL.1.log"));
+    PerConnectionFileHandler fallbackHandler =
+        new PerConnectionFileHandler(fallbackDir.toString(), Level.INFO, maxBytes);
+    fallbackHandler.setErrorManager(silentErrorManager());
+    try {
+      for (int i = 0; i < 20; i++) {
+        fallbackHandler.publish(
+            new LogRecord(Level.INFO, "Fallback line exceeding 1 KiB cap #" + i));
+      }
+    } finally {
+      fallbackHandler.close();
+    }
+    Path fallbackGlobal = fallbackDir.resolve("BQ-JDBC-GLOBAL.log");
+    assertTrue(Files.size(fallbackGlobal) > 0 && Files.size(fallbackGlobal) <= maxBytes);
+    assertTrue(
+        new String(Files.readAllBytes(fallbackGlobal), StandardCharsets.UTF_8).contains("cap #19"));
+  }
+
+  @Test
+  public void testClosedWriterOnRotationFailureEvictsAndRecovers() throws IOException {
+    Path recoverDir = tempDir.resolve("recover_rot");
+    PerConnectionFileHandler recoverHandler =
+        new PerConnectionFileHandler(recoverDir.toString(), Level.INFO, 512L);
+    recoverHandler.setErrorManager(silentErrorManager());
+    try {
+      BigQueryJdbcMdc.registerInstance("BQ-JDBC-rcvr1234");
+      recoverHandler.publish(new LogRecord(Level.INFO, "initial-record"));
+      Optional<Path> firstFile = findLogFileInDir(recoverDir, "-rcvr.log");
+      assertTrue(firstFile.isPresent());
+
+      Files.delete(firstFile.get());
+      Files.delete(recoverDir);
+
+      for (int i = 0; i < 10; i++) {
+        recoverHandler.publish(
+            new LogRecord(Level.INFO, "Trigger rotation while directory is missing #" + i));
+      }
+
+      Files.createDirectories(recoverDir);
+      recoverHandler.publish(new LogRecord(Level.INFO, "recovered-after-dir-restored"));
+
+      Optional<Path> reopenedFile = findLogFileInDir(recoverDir, "-rcvr.log");
+      assertTrue(reopenedFile.isPresent());
+      assertTrue(
+          new String(Files.readAllBytes(reopenedFile.get()), StandardCharsets.UTF_8)
+              .contains("recovered-after-dir-restored"));
+    } finally {
+      recoverHandler.close();
+    }
+  }
 }
