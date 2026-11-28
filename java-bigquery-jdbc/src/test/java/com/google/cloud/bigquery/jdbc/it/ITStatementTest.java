@@ -229,9 +229,15 @@ public class ITStatementTest extends ITBase {
   public void testScript() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
-    String longQuery = String.format(GENERATE_ARRAY_QUERY, 500000);
-    String longerQuery = String.format(GENERATE_ARRAY_QUERY, 700000);
-    String longerQuery2 = String.format(GENERATE_ARRAY_QUERY, 900000);
+    // Each child result must exceed the Read API activation point (>= HighThroughputMinTableSize
+    // rows, default 10,000, and > HighThroughputActivationRatio pages, default 2, at the default
+    // MaxResults page size of 10,000), so >= 30,000 rows per child takes the Arrow path. Keep the
+    // counts modest: the presubmit suite runs all IT classes in one JVM and Arrow buffers are
+    // off-heap, so multi-million-row scripts have pushed the build container past its memory
+    // limit (exit 137).
+    String longQuery = String.format(GENERATE_ARRAY_QUERY, 30000);
+    String longerQuery = String.format(GENERATE_ARRAY_QUERY, 40000);
+    String longerQuery2 = String.format(GENERATE_ARRAY_QUERY, 50000);
 
     try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl, withReadApi);
         Statement statement = connection.createStatement()) {
@@ -239,17 +245,17 @@ public class ITStatementTest extends ITBase {
 
       ResultSet arrowResultSet = statement.getResultSet();
       assertArrowResultSet(arrowResultSet);
-      assertEquals(500000, resultSetRowCount(arrowResultSet));
+      assertEquals(30000, resultSetRowCount(arrowResultSet));
 
       assertTrue(statement.getMoreResults());
       arrowResultSet = statement.getResultSet();
       assertArrowResultSet(arrowResultSet);
-      assertEquals(700000, resultSetRowCount(arrowResultSet));
+      assertEquals(40000, resultSetRowCount(arrowResultSet));
 
       assertTrue(statement.getMoreResults());
       arrowResultSet = statement.getResultSet();
       assertArrowResultSet(arrowResultSet);
-      assertEquals(900000, resultSetRowCount(arrowResultSet));
+      assertEquals(50000, resultSetRowCount(arrowResultSet));
 
       assertFalse(statement.getMoreResults());
     }

@@ -31,6 +31,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
@@ -82,15 +83,28 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   Schema resultSchema = null; // Feeds getMetaData().
   Schema insertSchema = null; // Feeds the Storage Write API.
   private TableName insertTableName = null;
+  // Per-object adoption signal for getMetaData(); see BigQueryParameterHandler#bindingRecorded.
+  private boolean resultSetMetadataRecorded;
+
+  BigQueryPreparedStatement(BigQueryConnection connection, String query) throws SQLException {
+    this(connection, query, false, true);
+  }
 
   BigQueryPreparedStatement(BigQueryConnection connection, String query, boolean skipDryRun)
       throws SQLException {
-    super(connection);
+    this(connection, query, skipDryRun, true);
+  }
+
+  BigQueryPreparedStatement(
+      BigQueryConnection connection, String query, boolean skipDryRun, boolean recordTelemetry)
+      throws SQLException {
+    super(connection, recordTelemetry);
     this.currentQuery = query;
     QueryStatistics queryStatistics = skipDryRun ? null : describeQueryQuietly();
     this.parameterCount = resolveParameterCount(query, queryStatistics);
     this.parameterHandler =
-        new BigQueryParameterHandler(this.parameterCount, this.isEnableTimestampPicos());
+        new BigQueryParameterHandler(
+            this.parameterCount, this.isEnableTimestampPicos(), recordTelemetry);
     if (queryStatistics != null) {
       applyInferredParameterTypes(queryStatistics);
       captureInsertMetadata(queryStatistics);
@@ -418,33 +432,47 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
               .setQueryApiType(
                   com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType
                       .QUERY_API_TYPE_WRITE_API);
-      try (BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient()) {
-        LOG.info("Using Write API for bulk INSERT operation.");
+      try {
+        int[] insertArray;
+        try (BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient()) {
+          LOG.info("Using Write API for bulk INSERT operation.");
 
-        long rowCount = bulkInsertWithWriteAPI(writeClient);
-        int[] insertArray = new int[Math.toIntExact(rowCount)];
-        Arrays.fill(insertArray, 1);
-
-        writeApiExecutionBuilder.setStatus(
-            com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
-
+          long rowCount = bulkInsertWithWriteAPI(writeClient);
+          insertArray = new int[Math.toIntExact(rowCount)];
+          Arrays.fill(insertArray, 1);
+        }
+        writeApiExecutionBuilder.setStatus(Status.STATUS_SUCCESS);
+        // Success-only, matching BigQueryStatement.executeBatch; failures are already captured
+        // by the StatementExecution status recorded in the finally block.
+        recordFeature(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
         return insertArray;
-
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setStatus(Status.STATUS_ERROR)
             .setErrorCode(TelemetryManager.extractErrorCode(e));
         throw new BigQueryJdbcException("Interrupted during Write API batch", e);
       } catch (DescriptorValidationException | IOException e) {
         writeApiExecutionBuilder
-            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setStatus(Status.STATUS_ERROR)
+            .setErrorCode(TelemetryManager.extractErrorCode(e));
+        throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
+      } catch (SQLException e) {
+        writeApiExecutionBuilder
+            .setStatus(Status.STATUS_ERROR)
+            .setErrorCode(TelemetryManager.extractErrorCode(e));
+        throw e;
+      } catch (RuntimeException e) {
+        writeApiExecutionBuilder
+            .setStatus(Status.STATUS_ERROR)
             .setErrorCode(TelemetryManager.extractErrorCode(e));
         throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
       } finally {
+        if (writeApiExecutionBuilder.getStatus() == Status.STATUS_UNSPECIFIED) {
+          writeApiExecutionBuilder.setStatus(Status.STATUS_ERROR).setErrorCode(1000);
+        }
         long durationMs = System.currentTimeMillis() - startTime;
-        TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
-        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
+        recordExecution(writeApiExecutionBuilder, durationMs);
       }
 
     } else {
@@ -470,11 +498,10 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
           getMoreResults();
           i++;
         }
+        recordFeature(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
         return result;
       } catch (SQLException e) {
         throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
-      } finally {
-        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
     }
   }
@@ -629,9 +656,12 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       return null;
     }
 
-    TelemetryManager.recordFeatureUsage(
-        DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
-        "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+    if (!this.resultSetMetadataRecorded && isRecordingTelemetry()) {
+      this.resultSetMetadataRecorded = true;
+      TelemetryManager.recordFeatureUsage(
+          DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+          "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+    }
 
     return BigQueryResultSetMetadata.of(this.resultSchema.getFields(), this);
   }

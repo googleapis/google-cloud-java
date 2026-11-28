@@ -25,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
@@ -55,13 +56,20 @@ import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.DataFormatOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.JobStatus;
 import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
+import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.FeatureUsage;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryPayload;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.jdbc.utils.URIBuilder;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
@@ -80,6 +88,7 @@ import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -89,10 +98,13 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -1302,6 +1314,135 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
     String payloadJson =
         new String(Base64.getUrlDecoder().decode(parts[1]), StandardCharsets.UTF_8);
     return JsonParser.parseString(payloadJson).getAsJsonObject();
+  }
+
+  // --- Usage-telemetry attribution: driver-internal calls must not count as user activity ---
+
+  @Test
+  public void testGetMetaData_concurrentFirstCallsShareOneInstance() throws Exception {
+    // getMetaDataInternal() lazily creates the DatabaseMetaData; concurrent first calls must
+    // observe a single instance and record DRIVER_FEATURE_METADATA_RETRIEVAL exactly once across
+    // all worker threads.
+    List<TelemetryPayload> captured = Collections.synchronizedList(new ArrayList<>());
+    TelemetryTestUtils.initCapturingPayloads(captured);
+    int threads = 8;
+    ExecutorService pool = Executors.newFixedThreadPool(threads);
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      CountDownLatch start = new CountDownLatch(1);
+      List<Future<DatabaseMetaData>> results = new ArrayList<>();
+      for (int i = 0; i < threads; i++) {
+        results.add(
+            pool.submit(
+                () -> {
+                  start.await();
+                  return connection.getMetaData();
+                }));
+      }
+      start.countDown();
+      Set<DatabaseMetaData> distinct = Collections.newSetFromMap(new IdentityHashMap<>());
+      for (Future<DatabaseMetaData> f : results) {
+        distinct.add(f.get(10, TimeUnit.SECONDS));
+      }
+      assertEquals(1, distinct.size());
+      TelemetryTestUtils.flush();
+      long metadataFeatureCount =
+          captured.stream()
+              .flatMap(p -> p.getFeatureUsagesList().stream())
+              .filter(e -> e.getDriverFeature() == DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL)
+              .mapToLong(FeatureUsage::getCount)
+              .sum();
+      assertEquals(1L, metadataFeatureCount);
+    } finally {
+      pool.shutdownNow();
+      TelemetryTestUtils.reset();
+    }
+  }
+
+  @Test
+  public void testGetMetaData_closedConnection_throwsAndRecordsNothing() throws SQLException {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
+        MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      connection.close();
+      assertThrows(BigQueryJdbcException.class, connection::getMetaData);
+      telemetry.verifyNoInteractions();
+    }
+  }
+
+  @Test
+  public void testGetMetaData_recordsOncePerConnection() throws SQLException {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
+        MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      connection.getMetaData();
+      connection.getMetaData();
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL),
+          times(1));
+    }
+  }
+
+  @Test
+  public void testGetMetaDataInternal_recordsNothingAndDoesNotConsumeUserRecord()
+      throws SQLException {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
+        MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      connection.getMetaDataInternal();
+      telemetry.verifyNoInteractions();
+      // The first *user* call still records, even though the instance already exists.
+      connection.getMetaData();
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL),
+          times(1));
+    }
+  }
+
+  @Test
+  public void testCreateStatementInternal_recordsNoFeatureUsage() throws SQLException {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
+        MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      BigQueryStatement statement = connection.createStatementInternal();
+      assertFalse(statement.isRecordingTelemetry());
+      telemetry.verifyNoInteractions();
+    }
+  }
+
+  @Test
+  public void testPrepareStatementInternal_recordsNoFeatureUsageIncludingBindings()
+      throws SQLException {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL);
+        MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      BigQueryPreparedStatement statement = connection.prepareStatementInternal("SELECT ?");
+      statement.setString(1, "x");
+      assertFalse(statement.isRecordingTelemetry());
+      telemetry.verifyNoInteractions();
+    }
+  }
+
+  @Test
+  public void testIsValid_healthCheckRecordsNoTelemetry() throws Exception {
+    // Regression guard: isValid() runs "SELECT 1" on an internal statement. Pools call it on
+    // every checkout, so counting it as a user statement or SELECT would swamp real usage.
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      connection.bigQuery = mockBigQuery;
+      TableResult tableResult = mock(TableResult.class);
+      when(tableResult.getSchema()).thenReturn(Schema.of());
+      when(tableResult.getStatementType()).thenReturn(StatementType.SELECT);
+      when(mockBigQuery.queryWithTimeout(any(QueryJobConfiguration.class), any(), any()))
+          .thenReturn(tableResult);
+
+      // CALLS_REAL_METHODS keeps TelemetryManager's pure helpers working; the record* calls
+      // are no-ops without an initialized instance but are still counted by verify.
+      try (MockedStatic<TelemetryManager> telemetry =
+          mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
+        connection.isValid(1);
+        telemetry.verify(() -> TelemetryManager.recordFeatureUsage(any()), never());
+        telemetry.verify(() -> TelemetryManager.recordFeatureUsage(any(), any()), never());
+        telemetry.verify(
+            () -> TelemetryManager.recordStatementExecution(any(), anyLong()), never());
+      }
+    }
   }
 
   private static URIBuilder sessionEnabledUri() {

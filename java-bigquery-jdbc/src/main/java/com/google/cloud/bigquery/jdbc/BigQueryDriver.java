@@ -202,7 +202,7 @@ public class BigQueryDriver implements Driver {
           ds.setCustomOpenTelemetry((OpenTelemetry) customOpenTelemetryObj);
         }
         BigQueryConnection connection = new BigQueryConnection(connectionUri, ds);
-        DatabaseMetaData metaData = connection.getMetaData();
+        DatabaseMetaData metaData = connection.getMetaDataInternal();
         LOG.info(
             "Driver info : { {Database Product Name : %s}, "
                 + "{Database Product Version : %s}, "

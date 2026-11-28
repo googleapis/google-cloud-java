@@ -87,6 +87,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 
@@ -256,7 +257,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private Context otelContext;
   Tracer tracer =
       OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
-  DatabaseMetaData databaseMetaData;
+
+  private volatile DatabaseMetaData databaseMetaData;
+  private final Object metaDataLock = new Object();
+
+  // A Connection may be used from several threads; compareAndSet keeps the adoption signal at
+  // exactly one record per connection without a lock.
+  private final AtomicBoolean metadataRetrievalRecorded = new AtomicBoolean();
   Boolean reqGoogleDriveScope;
   private final Properties clientInfo = new Properties();
   private boolean isReadOnlyTokenUsed = false;
@@ -521,6 +528,38 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     TelemetryManager.recordFeatureUsage(
         DriverFeature.DRIVER_FEATURE_CUSTOM, "DRIVER_FEATURE_REGULAR_STATEMENT");
     return currentStatement;
+  }
+
+  /**
+   * Creates a {@code Statement} for the driver's own use (for example the {@code isValid}
+   * health-check query). Identical to {@link #createStatement()} except that neither the statement
+   * nor anything it executes is reported as user activity in usage telemetry.
+   */
+  BigQueryStatement createStatementInternal() throws SQLException {
+    checkClosed();
+    BigQueryStatement statement = new BigQueryStatement(this, false);
+    LOG.fine("Internal Statement %s created.", statement);
+    addOpenStatements(statement);
+    return statement;
+  }
+
+  /**
+   * Creates a {@code PreparedStatement} for the driver's own metadata queries. Identical to {@link
+   * #prepareStatement(String)} except that neither the statement, its parameter bindings, nor
+   * anything it executes is reported as user activity in usage telemetry.
+   */
+  BigQueryPreparedStatement prepareStatementInternal(String sql) throws SQLException {
+    return prepareStatementInternal(sql, false);
+  }
+
+  BigQueryPreparedStatement prepareStatementInternal(String sql, boolean skipDryRun)
+      throws SQLException {
+    checkClosed();
+    BigQueryPreparedStatement statement =
+        new BigQueryPreparedStatement(this, sql, skipDryRun, false);
+    LOG.fine("Internal Prepared Statement %s created.", statement);
+    addOpenStatements(statement);
+    return statement;
   }
 
   /**
@@ -899,7 +938,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       throw new BigQueryJdbcException("timeout must be >= 0");
     }
     if (!isClosed()) {
-      try (Statement statement = createStatement();
+      // Internal statement: a pool health-check must not count as user statements or SELECTs.
+      try (Statement statement = createStatementInternal();
           ResultSet rs = statement.executeQuery("SELECT 1")) {
         LOG.finer("Running validation query");
         if (rs.next()) {
@@ -1183,13 +1223,31 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public DatabaseMetaData getMetaData() throws SQLException {
-    if (databaseMetaData == null) {
-      databaseMetaData = new BigQueryDatabaseMetaData(this);
+    checkClosed();
+    DatabaseMetaData metaData = getMetaDataInternal();
+    // Adoption signal, recorded once per connection on the first user call. Tied to this flag
+    // rather than to instance creation so the driver's own startup lookup does not consume it.
+    if (this.metadataRetrievalRecorded.compareAndSet(false, true)) {
+      TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL);
     }
+    return metaData;
+  }
 
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL);
-
-    return databaseMetaData;
+  /**
+   * Same instance as {@link #getMetaData()} without the usage-telemetry record. Driver-internal.
+   */
+  DatabaseMetaData getMetaDataInternal() {
+    DatabaseMetaData result = this.databaseMetaData;
+    if (result == null) {
+      synchronized (this.metaDataLock) {
+        result = this.databaseMetaData;
+        if (result == null) {
+          result = new BigQueryDatabaseMetaData(this);
+          this.databaseMetaData = result;
+        }
+      }
+    }
+    return result;
   }
 
   @Override

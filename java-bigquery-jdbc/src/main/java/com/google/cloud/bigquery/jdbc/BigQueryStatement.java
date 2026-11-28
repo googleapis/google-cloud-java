@@ -92,6 +92,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 
 /**
@@ -164,6 +165,39 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   protected StatementExecution.Builder currentExecutionBuilder = StatementExecution.newBuilder();
 
+  /**
+   * False for statements the driver creates for its own purposes (connection validation, metadata
+   * queries). Those must not be reported as user activity, neither as feature usage nor as
+   * statement executions.
+   */
+  private final boolean recordTelemetry;
+
+  // Statement#cancel() is cross-thread per JDBC 4.3; AtomicBoolean ensures once-per-object
+  // recording.
+  private final AtomicBoolean cancelRecorded = new AtomicBoolean();
+
+  boolean isRecordingTelemetry() {
+    return this.recordTelemetry;
+  }
+
+  boolean isInternal() {
+    return !this.recordTelemetry;
+  }
+
+  /** Single choke point for execution records so internal statements never reach the batcher. */
+  protected void recordExecution(StatementExecution.Builder builder, long durationMs) {
+    if (this.recordTelemetry) {
+      TelemetryManager.recordStatementExecution(builder, durationMs);
+    }
+  }
+
+  /** Records {@code feature} unless this statement is internal. */
+  protected void recordFeature(DriverFeature feature) {
+    if (this.recordTelemetry) {
+      TelemetryManager.recordFeatureUsage(feature);
+    }
+  }
+
   static {
     BigQueryDaemonPollingTask.startGcDaemonTask(
         referenceQueueArrowRs,
@@ -174,7 +208,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @VisibleForTesting
   public BigQueryStatement(BigQueryConnection connection) throws SQLException {
+    this(connection, true);
+  }
+
+  BigQueryStatement(BigQueryConnection connection, boolean recordTelemetry) throws SQLException {
     this.connection = connection;
+    this.recordTelemetry = recordTelemetry;
     this.connectionId = connection.getConnectionId();
     this.bigQuery = connection.getBigQuery();
     this.querySettings = generateBigQuerySettings();
@@ -473,7 +512,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   public void cancel() throws SQLException {
     LOG.finer("Statement %s cancelled", this);
     cancelInternal();
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
+    if (this.cancelRecorded.compareAndSet(false, true)) {
+      recordFeature(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
+    }
   }
 
   /**
@@ -721,7 +762,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             .setErrorCode(errorCode);
       }
 
-      TelemetryManager.recordStatementExecution(this.currentExecutionBuilder, durationMs);
+      recordExecution(this.currentExecutionBuilder, durationMs);
     }
   }
 
@@ -1833,7 +1874,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     clearBatch();
 
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
+    recordFeature(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
 
     return result;
   }

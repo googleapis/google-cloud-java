@@ -22,9 +22,10 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.CALLS_REAL_METHODS;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
-import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.never;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.AuthenticationType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
@@ -241,15 +242,16 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testConnect_recordsMetadataRetrievalOnce() throws SQLException {
-    // connect() logs four DatabaseMetaData values; it must fetch the object once, not four times.
+  public void testConnect_doesNotRecordMetadataRetrieval() throws SQLException {
+    // connect() reads DatabaseMetaData for its startup log line. That is driver-internal and
+    // must not be attributed to the user as DRIVER_FEATURE_METADATA_RETRIEVAL.
     try (MockedStatic<TelemetryManager> telemetry =
-        mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
-      bigQueryDriver.connect(VALID_TOKEN_URL, new Properties());
+            mockStatic(TelemetryManager.class, CALLS_REAL_METHODS);
+        Connection ignored = bigQueryDriver.connect(VALID_TOKEN_URL, new Properties())) {
       telemetry.verify(
           () ->
               TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL),
-          times(1));
+          never());
     }
   }
 
@@ -261,7 +263,7 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
     try (MockedStatic<TelemetryManager> telemetry =
         mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
       Assertions.assertThrows(
-          Exception.class,
+          BigQueryJdbcRuntimeException.class,
           () ->
               bigQueryDriver.connect(
                   "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
@@ -281,7 +283,9 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
     // BigQueryJdbcRootLogger.setLevel is the only IOException source on the connect path. JDBC
     // requires connect() to throw for an accepted URL that fails, not return null.
     try (MockedStatic<BigQueryJdbcRootLogger> rootLogger =
-        mockStatic(BigQueryJdbcRootLogger.class)) {
+            mockStatic(BigQueryJdbcRootLogger.class);
+        MockedStatic<TelemetryManager> telemetry =
+            mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
       rootLogger
           .when(() -> BigQueryJdbcRootLogger.setLevel(any(), any()))
           .thenThrow(new IOException("simulated log path failure"));
@@ -290,6 +294,13 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
               BigQueryJdbcException.class,
               () -> bigQueryDriver.connect(VALID_TOKEN_URL, new Properties()));
       assertThat(thrown.getCause()).isInstanceOf(IOException.class);
+      // The failure happens before the URL's auth type is resolved, hence UNSPECIFIED.
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordConnectionAttempt(
+                  eq(Status.STATUS_ERROR),
+                  anyInt(),
+                  eq(AuthenticationType.AUTHENTICATION_TYPE_UNSPECIFIED)));
     }
   }
 }

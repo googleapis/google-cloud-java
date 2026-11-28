@@ -16,9 +16,34 @@
 
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.List;
+
 /** Test-only access to {@link TelemetryManager}'s package-private lifecycle state. */
 public final class TelemetryTestUtils {
   private TelemetryTestUtils() {}
+
+  /** Initializes {@link TelemetryManager} with a mock transport that appends payloads. */
+  public static void initCapturingPayloads(List<TelemetryPayload> captured) {
+    TelemetryConfiguration config = TelemetryConfiguration.builder().setEnabled(true).build();
+    ClearcutTransport transport = mock(ClearcutTransport.class);
+    when(transport.send(any()))
+        .thenAnswer(
+            invocation -> {
+              captured.add(invocation.getArgument(0));
+              return new TransportResult(true, -1);
+            });
+    TelemetryManager.resetGlobalDisableForTest();
+    TelemetryManager.init(config, transport);
+  }
+
+  /** Flushes and closes the shared instance so captured payloads are delivered. */
+  public static void flush() {
+    TelemetryManager.closeInstance();
+  }
 
   /** Closes the shared instance and clears the global opt-out kill switch. */
   public static void reset() {

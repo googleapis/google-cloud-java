@@ -45,7 +45,6 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -3534,18 +3533,56 @@ public class BigQueryDatabaseMetaDataTest {
     }
   }
 
+  @Test
+  public void testGraphMetadataQueries_useInternalPreparedStatements() throws SQLException {
+    // The PROPERTY_GRAPHS lookups behind getTables, getColumns and getPrimaryKeys are
+    // driver-internal and must not be reported as user PREPARED_STATEMENT / PARAMETER_BINDING /
+    // SELECT telemetry: they must go through prepareStatementInternal, never prepareStatement.
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
+    ResultSet emptyRs = mock(ResultSet.class);
+    when(emptyRs.next()).thenReturn(false);
+    when(mockStmt.executeQuery()).thenReturn(emptyRs);
+    when(bigQueryConnection.prepareStatementInternal(anyString(), eq(true))).thenReturn(mockStmt);
+
+    List<FieldValueList> rows = new ArrayList<>();
+    dbMetadata.appendGraphTableRows(
+        "test-project",
+        "dataset_p",
+        "Graph.%",
+        Collections.singleton("GRAPH TABLE"),
+        rows,
+        dbMetadata.defineGetTablesSchema().getFields());
+    dbMetadata.appendGraphColumnRows(
+        "test-project",
+        "dataset_p",
+        "Graph.Node",
+        "%",
+        rows,
+        dbMetadata.defineGetColumnsSchema().getFields());
+    try (ResultSet rs = dbMetadata.getPrimaryKeys("test-project", "dataset_p", "Graph.Node")) {
+      assertFalse(rs.next());
+    }
+
+    verify(bigQueryConnection, times(3)).prepareStatementInternal(anyString(), eq(true));
+    verify(bigQueryConnection, never()).prepareStatement(anyString());
+    verify(bigQueryConnection, never()).prepareStatement(anyString(), anyBoolean());
+  }
+
   private void assertExportedKeysPreparedQuery(String catalog, String schema, String table)
       throws SQLException {
-    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
     ResultSet mockRs = mock(ResultSet.class);
-    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatementInternal(anyString(), eq(true))).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenReturn(mockRs);
 
     ResultSet rs = dbMetadata.getExportedKeys(catalog, schema, table);
     assertSame(mockRs, rs);
 
     ArgumentCaptor<String> sqlCaptor = ArgumentCaptor.forClass(String.class);
-    verify(bigQueryConnection).prepareStatement(sqlCaptor.capture(), eq(true));
+    verify(bigQueryConnection).prepareStatementInternal(sqlCaptor.capture(), eq(true));
+    verify(bigQueryConnection, never()).prepareStatement(anyString());
+    verify(bigQueryConnection, never()).prepareStatement(anyString(), anyBoolean());
     String preparedSql = sqlCaptor.getValue();
     assertThat(preparedSql)
         .contains(String.format("`%s.%s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE`", catalog, schema));
@@ -3586,9 +3623,9 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetPrimaryKeys_graphTableSkipsPreparedStatementDryRun() throws SQLException {
     when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
-    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
     ResultSet mockRs = mock(ResultSet.class);
-    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatementInternal(anyString(), eq(true))).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenReturn(mockRs);
     when(mockRs.next()).thenReturn(false);
 
@@ -3596,15 +3633,15 @@ public class BigQueryDatabaseMetaDataTest {
         dbMetadata.getPrimaryKeys("test-project", "dataset_p", "RetailGraph.Product")) {
       assertFalse(rs.next());
     }
-    verify(bigQueryConnection).prepareStatement(anyString(), eq(true));
+    verify(bigQueryConnection).prepareStatementInternal(anyString(), eq(true));
     verify(mockStmt).setString(1, "RetailGraph.Product");
   }
 
   @Test
   public void testGetExportedKeys_closesStatementWhenBindingFails() throws SQLException {
-    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
     SQLException bindFailure = new SQLException("parameter failure");
-    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatementInternal(anyString(), eq(true))).thenReturn(mockStmt);
     doThrow(bindFailure).when(mockStmt).setString(1, "ref_table");
 
     BigQueryJdbcException ex =
@@ -3618,9 +3655,9 @@ public class BigQueryDatabaseMetaDataTest {
 
   @Test
   public void testGetExportedKeys_closesStatementWhenExecutionFails() throws SQLException {
-    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
     SQLException execFailure = new SQLException("query failure");
-    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatementInternal(anyString(), eq(true))).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenThrow(execFailure);
 
     BigQueryJdbcException ex =
@@ -3633,9 +3670,9 @@ public class BigQueryDatabaseMetaDataTest {
 
   @Test
   public void testGetExportedKeys_closesStatementOnUncheckedException() throws SQLException {
-    PreparedStatement mockStmt = mock(PreparedStatement.class);
+    BigQueryPreparedStatement mockStmt = mock(BigQueryPreparedStatement.class);
     IllegalStateException unexpected = new IllegalStateException("unexpected state");
-    when(bigQueryConnection.prepareStatement(anyString(), eq(true))).thenReturn(mockStmt);
+    when(bigQueryConnection.prepareStatementInternal(anyString(), eq(true))).thenReturn(mockStmt);
     when(mockStmt.executeQuery()).thenThrow(unexpected);
 
     IllegalStateException ex =
@@ -3664,6 +3701,7 @@ public class BigQueryDatabaseMetaDataTest {
           () -> dbMetadata.getExportedKeys("test-project", invalidSchema, "ref_table"));
     }
 
+    verify(bigQueryConnection, never()).prepareStatementInternal(anyString(), anyBoolean());
     verify(bigQueryConnection, never()).prepareStatement(anyString(), anyBoolean());
   }
 

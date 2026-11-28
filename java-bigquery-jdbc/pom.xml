@@ -33,6 +33,9 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquery-jdbc</site.installationModule>
     <skipShade>false</skipShade>
+    <!-- Default for @{argLine} in the failsafe configuration below, so a plain build resolves it
+         to nothing while jacoco:prepare-agent (make full-coverage) can still inject its agent. -->
+    <argLine></argLine>
   </properties>
 
   <build>
@@ -65,6 +68,15 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <configuration>
+          <forkCount>1</forkCount>
+          <!--
+          The presubmit suite runs every IT class in one forked JVM and Arrow result sets allocate
+          off-heap. Without bounds, a memory overrun kills the build container (exit 137) with no
+          test attributed. Capping heap and direct memory turns that into an OutOfMemoryError on
+          the offending test so JUnit can attribute it cleanly. Applies on every JDK, including
+          the java11 CI image where the [17,) profile is off.
+          -->
+          <argLine>@{argLine} -Xmx1536m -XX:MaxDirectMemorySize=1g</argLine>
           <systemPropertyVariables>
             <JDBC_TESTS>true</JDBC_TESTS>
             <!-- Test-only: keeps integration runs from emitting driver usage telemetry. -->
@@ -513,14 +525,15 @@
               so BigQueryJdbcCustomLoggerTest can read the JDK-internal child-logger list and
               assert that driver objects do not leak logger registrations.
               -->
-              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED --add-opens=java.logging/java.util.logging=ALL-UNNAMED</argLine>
+              <argLine>@{argLine} --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED --add-opens=java.logging/java.util.logging=ALL-UNNAMED</argLine>
             </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
-              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
+              <!-- Profile argLine replaces the base one; repeat the memory bounds from above. -->
+              <argLine>@{argLine} -Xmx1536m -XX:MaxDirectMemorySize=1g --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
             </configuration>
           </plugin>
         </plugins>

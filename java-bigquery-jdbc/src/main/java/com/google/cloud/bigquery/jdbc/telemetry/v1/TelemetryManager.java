@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
@@ -281,6 +282,15 @@ public final class TelemetryManager implements AutoCloseable {
         int code = ((SQLException) t).getErrorCode();
         if (code != 0) {
           return code;
+        }
+      }
+      if (t instanceof ApiException) {
+        ApiException apiEx = (ApiException) t;
+        if (apiEx.getStatusCode() != null && apiEx.getStatusCode().getCode() != null) {
+          int code = apiEx.getStatusCode().getCode().getHttpStatusCode();
+          if (code != 0) {
+            return code;
+          }
         }
       }
       t = t.getCause();

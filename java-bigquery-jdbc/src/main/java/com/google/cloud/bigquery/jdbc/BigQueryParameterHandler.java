@@ -45,6 +45,22 @@ class BigQueryParameterHandler {
       new BigQueryJdbcCustomLogger(BigQueryParameterHandler.class.getName());
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
+  private final boolean recordTelemetry;
+
+  /**
+   * DRIVER_FEATURE_PARAMETER_BINDING is an adoption signal, recorded once per handler (i.e. per
+   * prepared statement) rather than once per setX call. Handlers are confined to one statement,
+   * which JDBC defines as single-threaded, so a plain field is sufficient.
+   */
+  private boolean bindingRecorded;
+
+  private void recordBinding() {
+    if (this.recordTelemetry && !this.bindingRecorded) {
+      this.bindingRecorded = true;
+      TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+    }
+  }
+
   final ArrayList<BigQueryJdbcParameter> parametersList;
   // TIMESTAMP is rendered in UTC with a trailing 'Z': the instant is preserved, the output does not
   // depend on the JVM zone, and QueryParameterValue's validator accepts 'Z' but rejects "-05:00".
@@ -100,16 +116,30 @@ class BigQueryParameterHandler {
   }
 
   BigQueryParameterHandler(int parameterCount, boolean enableTimestampPicos) {
-    this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos);
+    this(parameterCount, enableTimestampPicos, true);
+  }
+
+  BigQueryParameterHandler(
+      int parameterCount, boolean enableTimestampPicos, boolean recordTelemetry) {
+    this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos, recordTelemetry);
   }
 
   BigQueryParameterHandler(
       int parameterCount,
       ArrayList<BigQueryJdbcParameter> parametersList,
       boolean enableTimestampPicos) {
+    this(parameterCount, parametersList, enableTimestampPicos, true);
+  }
+
+  BigQueryParameterHandler(
+      int parameterCount,
+      ArrayList<BigQueryJdbcParameter> parametersList,
+      boolean enableTimestampPicos,
+      boolean recordTelemetry) {
     this.parametersArraySize = parameterCount;
     this.parametersList = parametersList;
     this.enableTimestampPicos = enableTimestampPicos;
+    this.recordTelemetry = recordTelemetry;
   }
 
   // Indicates whether the parameter is input, output or both
@@ -271,7 +301,7 @@ class BigQueryParameterHandler {
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
 
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+    recordBinding();
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
@@ -289,7 +319,7 @@ class BigQueryParameterHandler {
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
 
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+    recordBinding();
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
@@ -385,7 +415,7 @@ class BigQueryParameterHandler {
       parametersList.add(parameter);
     }
 
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+    recordBinding();
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
@@ -411,7 +441,7 @@ class BigQueryParameterHandler {
     parameter.setParamType(paramType);
     parameter.setScale(scale);
 
-    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+    recordBinding();
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
