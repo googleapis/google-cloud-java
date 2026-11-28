@@ -22,9 +22,12 @@ import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.Payload.JsonPayload;
+import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Severity;
 import com.google.common.collect.ImmutableMap;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public class WriteLogEntry {
@@ -35,23 +38,44 @@ public class WriteLogEntry {
 
     // Instantiates a client
     try (Logging logging = LoggingOptions.getDefaultInstance().getService()) {
-      Map<String, String> payload =
-          ImmutableMap.of(
-              "name", "King Arthur", "quest", "Find the Holy Grail", "favorite_color", "Blue");
-      LogEntry entry =
-          LogEntry.newBuilder(JsonPayload.of(payload))
-              .setSeverity(Severity.INFO)
-              .setLogName(logName)
-              .setResource(MonitoredResource.newBuilder("global").build())
-              .build();
+      List<LogEntry> entries = createLogEntries(logName);
 
-      // Writes the log entry asynchronously
-      logging.write(Collections.singleton(entry));
+      // Writes one text log entry.
+      logging.write(Collections.singleton(entries.get(0)));
+
+      // Writes a batch of text and structured log entries.
+      logging.write(entries);
 
       // Optional - flush any pending log entries just before Logging is closed
       logging.flush();
     }
     System.out.printf("Wrote to %s\n", logName);
+  }
+
+  static List<LogEntry> createLogEntries(String logName) {
+    MonitoredResource resource = MonitoredResource.newBuilder("global").build();
+    Map<String, String> labels = ImmutableMap.of("sample", "write-log-entry");
+
+    LogEntry textEntry =
+        LogEntry.newBuilder(StringPayload.of("Text log entry written from Java."))
+            .setSeverity(Severity.INFO)
+            .setLogName(logName)
+            .setResource(resource)
+            .setLabels(labels)
+            .build();
+
+    Map<String, Object> jsonPayload =
+        ImmutableMap.of(
+            "message", "Structured log entry written from Java.", "component", "sample");
+    LogEntry structEntry =
+        LogEntry.newBuilder(JsonPayload.of(jsonPayload))
+            .setSeverity(Severity.WARNING)
+            .setLogName(logName)
+            .setResource(resource)
+            .setLabels(labels)
+            .build();
+
+    return Arrays.asList(textEntry, structEntry);
   }
 }
 // [END logging_write_log_entry]
