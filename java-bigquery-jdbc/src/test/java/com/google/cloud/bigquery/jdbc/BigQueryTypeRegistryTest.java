@@ -19,8 +19,20 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.storage.v1.BQTableSchemaToProtoDescriptor;
+import com.google.cloud.bigquery.storage.v1.CivilTimeEncoder;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
+import com.google.cloud.bigquery.storage.v1.TableSchema;
+import com.google.gson.JsonObject;
+import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.DynamicMessage;
+import com.google.protobuf.Int64Value;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -34,7 +46,9 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.TimeZone;
 import java.util.stream.Stream;
 import org.apache.arrow.vector.PeriodDuration;
@@ -323,6 +337,124 @@ public class BigQueryTypeRegistryTest {
               BigQueryTypeRegistry.convert(raw, StandardSQLTypeName.DATETIME, Time.class, utc)
                   .getTime())
           .isEqualTo(Duration.ofHours(2).plusMinutes(30).toMillis());
+    }
+  }
+
+  private static BigQueryJdbcParameter param(int idx, Object val, StandardSQLTypeName sqlType) {
+    BigQueryJdbcParameter p = new BigQueryJdbcParameter();
+    p.setIndex(idx);
+    p.setValue(val);
+    p.bindType(val != null ? val.getClass() : Object.class, sqlType);
+    return p;
+  }
+
+  private static boolean cellOk(Field field, Object val, StandardSQLTypeName sqlType) {
+    return BigQueryTypeRegistry.isCompatibleWithWriteApi(field, param(1, val, sqlType));
+  }
+
+  @Test
+  public void testWriteApiPredicatesBoundsProtoSymmetryAndNegativePaths() throws Exception {
+    assertThat(BigQueryTypeRegistry.isSupportedWriteApiField(null)).isFalse();
+    for (StandardSQLTypeName type : StandardSQLTypeName.values()) {
+      if (type != StandardSQLTypeName.ARRAY && type != StandardSQLTypeName.STRUCT) {
+        assertThat(BigQueryTypeRegistry.isSupportedWriteApiField(Field.of("c", type)))
+            .isEqualTo(type != StandardSQLTypeName.RANGE);
+      }
+    }
+    Field rep =
+        Field.newBuilder("a", StandardSQLTypeName.STRING).setMode(Field.Mode.REPEATED).build();
+    Field rec = Field.of("r", StandardSQLTypeName.STRUCT, Field.of("s", StandardSQLTypeName.INT64));
+    assertThat(BigQueryTypeRegistry.isSupportedWriteApiField(rep)).isFalse();
+    assertThat(BigQueryTypeRegistry.isSupportedWriteApiField(rec)).isFalse();
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.INT64, BigInteger.ONE))
+        .isFalse();
+    java.util.Date utilDate = new java.util.Date(1000L);
+    assertThat(BigQueryTypeRegistry.isSupportedJavaValue(StandardSQLTypeName.TIMESTAMP, utilDate))
+        .isFalse();
+    Field reqStr =
+        Field.newBuilder("r", StandardSQLTypeName.STRING).setMode(Field.Mode.REQUIRED).build();
+    Field num52 =
+        Field.newBuilder("n52", StandardSQLTypeName.NUMERIC).setPrecision(5L).setScale(2L).build();
+    Field bnum = Field.of("bn", StandardSQLTypeName.BIGNUMERIC);
+    BigDecimal bnMin =
+        new BigDecimal(
+            "-578960446186580977117854925043439539266.34992332820282019728792003956564819968");
+    BigDecimal extremeNegScale = BigDecimal.valueOf(1L, Integer.MIN_VALUE);
+    assertThat(cellOk(reqStr, null, StandardSQLTypeName.STRING)).isFalse();
+    assertThat(cellOk(num52, new BigDecimal("999.9900"), StandardSQLTypeName.NUMERIC)).isTrue();
+    assertThat(cellOk(num52, new BigDecimal("12.345"), StandardSQLTypeName.NUMERIC)).isFalse();
+    assertThat(cellOk(bnum, bnMin, StandardSQLTypeName.BIGNUMERIC)).isTrue();
+    assertThat(cellOk(bnum, extremeNegScale, StandardSQLTypeName.BIGNUMERIC)).isFalse();
+    LocalDate dateVal = LocalDate.of(1582, 10, 10);
+    LocalTime ltVal = LocalTime.of(9, 8, 7, 123_456_789);
+    LocalDateTime ldtVal = LocalDateTime.of(2025, 3, 9, 2, 30, 5, 654_321_987);
+    LocalDateTime expLdt = LocalDateTime.of(2025, 3, 9, 2, 30, 5, 654_321_000);
+    Instant subMicro = Instant.parse("1969-12-31T23:59:59.999999900Z");
+    Instant expSub = Instant.parse("1969-12-31T23:59:59.999999Z");
+    Timestamp ts12Val = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
+    Instant expTs12 = Instant.parse("2024-01-01T12:34:56.123456Z");
+    Object[][] spec = {
+      {"c_null", StandardSQLTypeName.STRING, null, null},
+      {"col-é", StandardSQLTypeName.STRING, "héllo", "héllo"},
+      {"c_bytes", StandardSQLTypeName.BYTES, new byte[] {-1, 7}, new byte[] {-1, 7}},
+      {"c_bool", StandardSQLTypeName.BOOL, true, true},
+      {"c_int", StandardSQLTypeName.INT64, (short) 42, 42L},
+      {"c_flt", StandardSQLTypeName.FLOAT64, 0.5f, 0.5d},
+      {"c_num", StandardSQLTypeName.NUMERIC, new BigDecimal("12.300"), new BigDecimal("12.3")},
+      {"c_bnum", StandardSQLTypeName.BIGNUMERIC, 90L, BigDecimal.valueOf(90L)},
+      {"c_date", StandardSQLTypeName.DATE, dateVal, dateVal},
+      {"c_time", StandardSQLTypeName.TIME, ltVal, LocalTime.of(9, 8, 7, 123_456_000)},
+      {"c_dt", StandardSQLTypeName.DATETIME, ldtVal, expLdt},
+      {"c_ts6", StandardSQLTypeName.TIMESTAMP, subMicro, expSub},
+      {"c_ts12", StandardSQLTypeName.TIMESTAMP, ts12Val, expTs12},
+      {"c_json", StandardSQLTypeName.JSON, new JsonObject(), "{}"},
+      {"c_geo", StandardSQLTypeName.GEOGRAPHY, "POINT(1 2)", "POINT(1 2)"},
+      {"c_iv", StandardSQLTypeName.INTERVAL, "1-0 0 0:0:0", "1-0 0 0:0:0"}
+    };
+    List<Field> fields = new ArrayList<>();
+    TableSchema.Builder schemaBuilder = TableSchema.newBuilder();
+    List<BigQueryJdbcParameter> params = new ArrayList<>();
+    for (int i = 0; i < spec.length; i++) {
+      String colName = (String) spec[i][0];
+      StandardSQLTypeName bqType = (StandardSQLTypeName) spec[i][1];
+      TableFieldSchema.Type protoType =
+          bqType == StandardSQLTypeName.FLOAT64
+              ? TableFieldSchema.Type.DOUBLE
+              : TableFieldSchema.Type.valueOf(bqType.name());
+      fields.add(Field.of(colName, bqType));
+      TableFieldSchema.Builder fb =
+          TableFieldSchema.newBuilder().setName(colName).setType(protoType);
+      fb.setMode(i == 3 ? TableFieldSchema.Mode.REQUIRED : TableFieldSchema.Mode.NULLABLE);
+      if ("c_ts12".equals(colName)) {
+        fb.setTimestampPrecision(Int64Value.of(12L));
+      }
+      schemaBuilder.addFields(fb.build());
+      params.add(param(i + 1, spec[i][2], bqType));
+    }
+    Descriptor desc =
+        BQTableSchemaToProtoDescriptor.convertBQTableSchemaToProtoDescriptor(schemaBuilder.build());
+    BigQueryTypeRegistry.ResolvedWriteColumn[] cols =
+        BigQueryTypeRegistry.resolveWriteApiColumns(desc, FieldList.of(fields));
+    DynamicMessage msg =
+        DynamicMessage.parseFrom(desc, BigQueryTypeRegistry.encodeWriteApiRow(desc, cols, params));
+    assertThat(msg.hasField(cols[0].fieldDescriptor)).isFalse();
+    for (int i = 1; i < spec.length; i++) {
+      Object raw = msg.getField(cols[i].fieldDescriptor);
+      Object actual =
+          i == 9
+              ? CivilTimeEncoder.decodePacked64TimeMicrosLocalTime((Long) raw)
+              : BigQueryTypeRegistry.convert(
+                  raw, cols[i].typeDescriptor.getBqType(), spec[i][3].getClass(), null);
+      assertThat(actual).isEqualTo(spec[i][3]);
+    }
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> BigQueryTypeRegistry.resolveWriteApiColumns(desc, FieldList.of(reqStr)));
+    for (int badIdx : new int[] {6, 3}) {
+      params.get(badIdx).setValue(badIdx == 6 ? 1.5d : null);
+      assertThrows(
+          BigQueryJdbcException.class,
+          () -> BigQueryTypeRegistry.encodeWriteApiRow(desc, cols, params));
     }
   }
 }
