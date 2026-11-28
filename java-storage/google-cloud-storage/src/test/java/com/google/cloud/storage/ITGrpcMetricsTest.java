@@ -18,6 +18,10 @@ package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.cloud.storage.it.runner.StorageITRunner;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.SingleBackend;
@@ -33,19 +37,18 @@ public class ITGrpcMetricsTest {
   @Test
   public void testGrpcMetrics() {
     GrpcStorageOptions grpcStorageOptions = StorageOptions.grpc().build();
-    assertThat(
-            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
-                "storage.googleapis.com:443", "storage.googleapis.com"))
-        .isEqualTo("monitoring.googleapis.com:443");
+    MetricServiceSettings metricServiceSettings =
+        OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+            "storage.googleapis.com:443",
+            grpcStorageOptions.getUniverseDomain(),
+            grpcStorageOptions.getCredentials());
+    assertThat(metricServiceSettings.getEndpoint()).isEqualTo("monitoring.googleapis.com:443");
 
     GCPResourceProvider resourceProvider = new GCPResourceProvider();
     Attributes detectedAttributes = resourceProvider.getAttributes();
     SdkMeterProvider provider =
         OpenTelemetryBootstrappingUtils.createMeterProvider(
-            "monitoring.googleapis.com:443",
-            grpcStorageOptions.getProjectId(),
-            detectedAttributes,
-            false);
+            metricServiceSettings, grpcStorageOptions.getProjectId(), detectedAttributes, false);
 
     /*
      * SDKMeterProvider doesn't expose the relevant fields we want to test, but they are present in
@@ -79,25 +82,32 @@ public class ITGrpcMetricsTest {
 
   @Test
   public void testGrpcMetrics_universeDomain() {
-    assertThat("monitoring.my-universe-domain.com:443")
-        .isEqualTo(
-            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
-                "storage.my-universe-domain.com:443", "my-universe-domain.com"));
+    assertThat(
+            metricServiceEndpoint("storage.my-universe-domain.com:443", "my-universe-domain.com"))
+        .isEqualTo("monitoring.my-universe-domain.com:443");
   }
 
   @Test
   public void testGrpcMetrics_private() {
-    assertThat("private.googleapis.com:443")
-        .isEqualTo(
-            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
-                "private.googleapis.com:443", null));
+    assertThat(metricServiceEndpoint("private.googleapis.com:443", null))
+        .isEqualTo("private.googleapis.com:443");
   }
 
   @Test
   public void testGrpcMetrics_restricted() {
-    assertThat("restricted.googleapis.com:443")
-        .isEqualTo(
-            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
-                "restricted.googleapis.com:443", null));
+    assertThat(metricServiceEndpoint("restricted.googleapis.com:443", null))
+        .isEqualTo("restricted.googleapis.com:443");
+  }
+
+  private static String metricServiceEndpoint(String storageEndpoint, String universeDomain) {
+    Credentials credentials =
+        GoogleCredentials.newBuilder()
+            .setAccessToken(new AccessToken("token", null))
+            .setUniverseDomain(
+                universeDomain != null ? universeDomain : Credentials.GOOGLE_DEFAULT_UNIVERSE)
+            .build();
+    return OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+            storageEndpoint, universeDomain, null, credentials)
+        .getEndpoint();
   }
 }

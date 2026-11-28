@@ -353,6 +353,7 @@ public final class GrpcStorageOptions extends StorageOptions
               endpoint,
               this.getProjectId(),
               this.getUniverseDomain(),
+              this.getCredentials(),
               !grpcClientMetricsManuallyEnabled);
       channelProviderBuilder.setChannelConfigurator(channelConfigurator);
     }

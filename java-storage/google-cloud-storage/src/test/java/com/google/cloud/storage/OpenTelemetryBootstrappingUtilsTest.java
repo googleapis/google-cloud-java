@@ -21,17 +21,35 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assume.assumeFalse;
 import static org.mockito.Mockito.mock;
 
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.auth.ApiKeyCredentials;
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.GdchCredentials;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.oauth2.OAuth2Credentials;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import java.io.IOException;
+import java.net.URI;
+import java.security.PrivateKey;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Test;
 
 public final class OpenTelemetryBootstrappingUtilsTest {
+
+  private static final Credentials CREDENTIALS = credentials("googleapis.com");
+  private static final Credentials MY_UNIVERSE_CREDENTIALS = credentials("my-universe.com");
+  private static final MetricServiceSettings METRIC_SERVICE_SETTINGS =
+      OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+          "storage.googleapis.com:443", "googleapis.com", null, CREDENTIALS);
 
   @Test
   public void noErrorIfNotRunningOnGcp() {
@@ -41,10 +59,10 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
     String endpoint = "storage.googleapis.com:443";
     String projectId = null;
-    String universeDomain = null;
+    String universeDomain = "googleapis.com";
     ChannelConfigurator actual =
         OpenTelemetryBootstrappingUtils.enableGrpcMetrics(
-            cc, endpoint, projectId, universeDomain, true);
+            cc, endpoint, projectId, universeDomain, CREDENTIALS, true);
 
     assertThat(actual).isSameInstanceAs(cc);
   }
@@ -129,7 +147,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
     try (SdkMeterProvider grpcProvider =
         OpenTelemetryBootstrappingUtils.createClientMeterProvider(
-            "monitoring.googleapis.com:443",
+            METRIC_SERVICE_SETTINGS,
             "test-project",
             detectedAttributes,
             Duration.ofSeconds(60),
@@ -142,7 +160,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
     try (SdkMeterProvider jsonProvider =
         OpenTelemetryBootstrappingUtils.createClientMeterProvider(
-            "monitoring.googleapis.com:443",
+            METRIC_SERVICE_SETTINGS,
             "test-project",
             detectedAttributes,
             Duration.ofSeconds(60),
@@ -157,7 +175,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
         NullPointerException.class,
         () ->
             OpenTelemetryBootstrappingUtils.createClientMeterProvider(
-                "monitoring.googleapis.com:443",
+                METRIC_SERVICE_SETTINGS,
                 "test-project",
                 detectedAttributes,
                 Duration.ofSeconds(60),
@@ -166,7 +184,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
     try (SdkMeterProvider legacyProvider =
         OpenTelemetryBootstrappingUtils.createMeterProvider(
-            "monitoring.googleapis.com:443", "test-project", detectedAttributes, true)) {
+            METRIC_SERVICE_SETTINGS, "test-project", detectedAttributes, true)) {
       assertThat(legacyProvider.toString()).contains("api=\"grpc\"");
       assertThat(legacyProvider.toString())
           .contains("gcp.resource_type=\"storage.googleapis.com/Client\"");
@@ -180,7 +198,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
     try (SdkMeterProvider provider =
         OpenTelemetryBootstrappingUtils.createClientMeterProvider(
-            "monitoring.googleapis.com:443",
+            METRIC_SERVICE_SETTINGS,
             "test-project",
             customInstanceId,
             detectedAttributes,
@@ -202,7 +220,7 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
     try (SdkMeterProvider provider =
         OpenTelemetryBootstrappingUtils.createClientMeterProvider(
-            "monitoring.googleapis.com:443",
+            METRIC_SERVICE_SETTINGS,
             "test-project",
             "test-instance",
             detectedAttributes,
@@ -233,6 +251,14 @@ public final class OpenTelemetryBootstrappingUtilsTest {
     assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("http://[::1]:8080"))
         .isEqualTo("::1");
     assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("[::1]")).isEqualTo("::1");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.extractServerAddress(
+                "https://storage.googleapis.com?query"))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.extractServerAddress(
+                "https://storage.googleapis.com#fragment"))
+        .isEqualTo("storage.googleapis.com");
     assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("http://host:invalid"))
         .isNull();
     assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress(null)).isNull();
@@ -240,42 +266,178 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   }
 
   @Test
-  public void formatStorageEndpoint_formatsVariousHostFormats() {
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint(null))
-        .isEqualTo("storage.googleapis.com:443");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("   "))
-        .isEqualTo("storage.googleapis.com:443");
-    assertThat(
-            OpenTelemetryBootstrappingUtils.formatStorageEndpoint("https://storage.googleapis.com"))
-        .isEqualTo("storage.googleapis.com:443");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://localhost:8080/"))
-        .isEqualTo("localhost:8080");
-    assertThat(
-            OpenTelemetryBootstrappingUtils.formatStorageEndpoint(
-                "google-c2p:///storage.googleapis.com"))
-        .isEqualTo("storage.googleapis.com:443");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://[::1]:8080"))
-        .isEqualTo("[::1]:8080");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("[::1]"))
-        .isEqualTo("[::1]:443");
-    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://host:invalid"))
-        .isEqualTo("storage.googleapis.com:443");
+  public void metricServiceEndpoint_keepsPortOfStorageEndpoint() {
+    assertThat(metricServiceEndpoint("storage.googleapis.com:443", "googleapis.com", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(metricServiceEndpoint("[::1]:8080", "googleapis.com", null))
+        .isEqualTo("monitoring.googleapis.com:8080");
+    assertThat(metricServiceEndpoint("storage.my-universe.com:8443", "my-universe.com", null))
+        .isEqualTo("monitoring.my-universe.com:8443");
   }
 
   @Test
-  public void getCloudMonitoringEndpoint_extractsPortFromIpv4AndIpv6Endpoints() {
+  public void metricServiceEndpoint_configuredUniverseDomain_anyStorageHost() {
+    for (String storageEndpoint :
+        new String[] {
+          "https://storage.my-universe.com",
+          "storage.us-east1.rep.my-universe.com:443",
+          "storage.internal.example.com:443",
+          "storage.googleapis.com:443",
+          "private.googleapis.com:443"
+        }) {
+      assertThat(metricServiceEndpoint(storageEndpoint, "my-universe.com", null))
+          .isEqualTo("monitoring.my-universe.com:443");
+      assertThat(metricServiceEndpoint(storageEndpoint, null, "my-universe.com"))
+          .isEqualTo("monitoring.my-universe.com:443");
+    }
+  }
+
+  @Test
+  public void metricServiceEndpoint_privateGoogleAccess() {
+    assertThat(metricServiceEndpoint("private.googleapis.com:443", null, null))
+        .isEqualTo("private.googleapis.com:443");
+    assertThat(metricServiceEndpoint("restricted.googleapis.com:443", null, null))
+        .isEqualTo("restricted.googleapis.com:443");
+    assertThat(metricServiceEndpoint("private.my-universe.com:443", "my-universe.com", null))
+        .isEqualTo("private.my-universe.com:443");
+    assertThat(metricServiceEndpoint("restricted.my-universe.com:443", null, "my-universe.com"))
+        .isEqualTo("restricted.my-universe.com:443");
+  }
+
+  @Test
+  public void metricServiceEndpoint_noUniverseDomain_googleapisStorageHost() {
+    for (String storageEndpoint :
+        new String[] {
+          "storage.googleapis.com:443",
+          "google-c2p:///storage.googleapis.com",
+          "Storage.US-East1.rep.GoogleAPIs.com:443"
+        }) {
+      assertThat(metricServiceEndpoint(storageEndpoint, null, null))
+          .isEqualTo("monitoring.googleapis.com:443");
+      assertThat(metricServiceEndpoint(storageEndpoint, "", ""))
+          .isEqualTo("monitoring.googleapis.com:443");
+    }
+  }
+
+  @Test
+  public void noMetrics_noUniverseDomain_otherStorageHost() {
+    for (String storageEndpoint :
+        new String[] {
+          "storage.my-universe.com:443",
+          "storage.googleapis.com.example.com:443",
+          "storagegoogleapis.com:443",
+          "localhost:9000",
+          "[::1]:8080",
+          "http://host:invalid",
+          "   ",
+          null
+        }) {
+      assertThat(metricServiceEndpoint(storageEndpoint, null, null)).isNull();
+    }
+  }
+
+  @Test
+  public void createMetricServiceSettings_universeDomainOnClientWinsOverEnvironment() {
+    MetricServiceSettings settings =
+        OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+            "storage.googleapis.com:443",
+            "client-universe.com",
+            "env-universe.com",
+            credentials("client-universe.com"));
+
+    assertThat(settings.getUniverseDomain()).isEqualTo("client-universe.com");
+    assertThat(settings.getEndpoint()).isEqualTo("monitoring.client-universe.com:443");
+  }
+
+  @Test
+  public void createMetricServiceSettings_usesClientCredentialsAndUniverseDomain()
+      throws IOException {
+    MetricServiceSettings settings =
+        OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+            "storage.us-east1.rep.my-universe.com:443",
+            null,
+            "my-universe.com",
+            MY_UNIVERSE_CREDENTIALS);
+
+    assertThat(settings.getEndpoint()).isEqualTo("monitoring.my-universe.com:443");
+    assertThat(settings.getUniverseDomain()).isEqualTo("my-universe.com");
+    assertThat(settings.getCredentialsProvider().getCredentials())
+        .isSameInstanceAs(MY_UNIVERSE_CREDENTIALS);
+  }
+
+  @Test
+  public void noMetrics_credentialsOfAnotherUniverseDomain() {
     assertThat(
-            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
-                "storage.googleapis.com:443", "googleapis.com"))
-        .isEqualTo("monitoring.googleapis.com:443");
+            OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+                "storage.googleapis.com:443", null, null, MY_UNIVERSE_CREDENTIALS))
+        .isNull();
     assertThat(
-            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
-                "[::1]:8080", "googleapis.com"))
-        .isEqualTo("monitoring.googleapis.com:8080");
+            OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+                "storage.my-universe.com:443", "my-universe.com", null, CREDENTIALS))
+        .isNull();
+  }
+
+  @Test
+  public void noMetrics_universeDomainOfCredentialsUnavailable() {
+    AtomicBoolean universeDomainRequested = new AtomicBoolean(false);
+    Credentials credentials =
+        new GoogleCredentials() {
+          @Override
+          public String getUniverseDomain() throws IOException {
+            universeDomainRequested.set(true);
+            throw new IOException("metadata server unavailable");
+          }
+        };
+
     assertThat(
-            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
-                "storage.my-universe.com:8443", "my-universe.com"))
-        .isEqualTo("monitoring.my-universe.com:8443");
+            OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+                "storage.googleapis.com:443", null, null, credentials))
+        .isNull();
+    assertThat(universeDomainRequested.get()).isTrue();
+  }
+
+  @Test
+  public void createMetricServiceSettings_credentialsSubclassWithoutAccessToken() {
+    Credentials credentials = new GoogleCredentials() {};
+
+    assertThat(
+            OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+                "storage.googleapis.com:443", null, null, credentials))
+        .isNotNull();
+  }
+
+  @Test
+  public void noMetrics_credentialsNotUsableWithCloudMonitoring() {
+    for (Credentials credentials :
+        new Credentials[] {
+          null,
+          NoCredentials.getInstance(),
+          ApiKeyCredentials.create("key"),
+          gdchCredentials(),
+          OAuth2Credentials.create(null),
+          GoogleCredentials.create(null)
+        }) {
+      assertThat(
+              OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+                  "storage.googleapis.com:443", "googleapis.com", null, credentials))
+          .isNull();
+
+      ChannelConfigurator cc = b -> b;
+      assertThat(
+              OpenTelemetryBootstrappingUtils.enableGrpcMetrics(
+                  cc, "storage.googleapis.com:443", "project", "googleapis.com", credentials, true))
+          .isSameInstanceAs(cc);
+
+      assertThat(
+              OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
+                  "https://storage.googleapis.com",
+                  "project",
+                  "googleapis.com",
+                  credentials,
+                  Duration.ofSeconds(60),
+                  "json"))
+          .isNull();
+    }
   }
 
   @Test
@@ -285,9 +447,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
 
     try (SdkMeterProvider provider =
         OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
-            "https://storage.googleapis.com",
+            METRIC_SERVICE_SETTINGS,
             "configured-project",
-            "googleapis.com",
             Duration.ofSeconds(60),
             "json",
             detectedWithProject)) {
@@ -302,9 +463,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   public void createDefaultClientMeterProvider_fallsBackToConfiguredProjectId() {
     try (SdkMeterProvider fallbackProvider =
         OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
-            "https://storage.googleapis.com",
+            METRIC_SERVICE_SETTINGS,
             "configured-project",
-            "googleapis.com",
             Duration.ofSeconds(60),
             "grpc",
             Attributes.empty())) {
@@ -318,12 +478,38 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   public void createDefaultClientMeterProvider_returnsNullWhenProjectIdCannotBeDetermined() {
     SdkMeterProvider nullProvider =
         OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
-            "https://storage.googleapis.com",
-            null,
-            "googleapis.com",
-            Duration.ofSeconds(60),
-            "json",
-            Attributes.empty());
+            METRIC_SERVICE_SETTINGS, null, Duration.ofSeconds(60), "json", Attributes.empty());
     assertThat(nullProvider).isNull();
+  }
+
+  private static String metricServiceEndpoint(
+      String storageEndpoint, String universeDomain, String envUniverseDomain) {
+    boolean myUniverse =
+        "my-universe.com".equals(universeDomain) || "my-universe.com".equals(envUniverseDomain);
+    MetricServiceSettings settings =
+        OpenTelemetryBootstrappingUtils.createMetricServiceSettings(
+            storageEndpoint,
+            universeDomain,
+            envUniverseDomain,
+            myUniverse ? MY_UNIVERSE_CREDENTIALS : CREDENTIALS);
+    return settings != null ? settings.getEndpoint() : null;
+  }
+
+  private static Credentials credentials(String universeDomain) {
+    return GoogleCredentials.newBuilder()
+        .setAccessToken(new AccessToken("token", null))
+        .setUniverseDomain(universeDomain)
+        .build();
+  }
+
+  private static GdchCredentials gdchCredentials() {
+    return GdchCredentials.newBuilder()
+        .setProjectId("project")
+        .setPrivateKeyId("key-id")
+        .setPrivateKey(mock(PrivateKey.class))
+        .setServiceIdentityName("service-identity")
+        .setTokenServerUri(URI.create("https://localhost/token"))
+        .setHttpTransportFactory(NetHttpTransport::new)
+        .build();
   }
 }
