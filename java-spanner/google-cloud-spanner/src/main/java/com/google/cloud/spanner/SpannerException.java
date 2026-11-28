@@ -23,10 +23,8 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.ResourceInfo;
-import com.google.rpc.RetryInfo;
 import io.grpc.Metadata;
 import io.grpc.Status;
-import io.grpc.protobuf.ProtoUtils;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -52,8 +50,6 @@ public class SpannerException extends BaseGrpcServiceException {
   }
 
   private static final long serialVersionUID = 20150916L;
-  private static final Metadata.Key<RetryInfo> KEY_RETRY_INFO =
-      ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
   private static final String PG_ERR_CODE_KEY = "pg_sqlerrcode";
 
   private final ErrorCode code;
@@ -145,23 +141,9 @@ public class SpannerException extends BaseGrpcServiceException {
   }
 
   static long extractRetryDelay(Throwable cause, @Nullable ApiException apiException) {
-    ErrorDetails details = SpannerExceptionFactory.extractErrorDetails(cause, apiException);
-    if (details != null && details.getRetryInfo() != null) {
-      RetryInfo retryInfo = details.getRetryInfo();
-      if (retryInfo.hasRetryDelay()) {
-        return Durations.toMillis(retryInfo.getRetryDelay());
-      }
-    }
-    if (cause != null) {
-      Metadata trailers = Status.trailersFromThrowable(cause);
-      if (trailers != null && trailers.containsKey(KEY_RETRY_INFO)) {
-        RetryInfo retryInfo = trailers.get(KEY_RETRY_INFO);
-        if (retryInfo != null && retryInfo.hasRetryDelay()) {
-          return Durations.toMillis(retryInfo.getRetryDelay());
-        }
-      }
-    }
-    return -1L;
+    com.google.protobuf.Duration delay =
+        StreamingRetryHelper.extractRawServerRetryDelay(cause, apiException);
+    return delay != null ? Durations.toMillis(delay) : -1L;
   }
 
   @Nullable

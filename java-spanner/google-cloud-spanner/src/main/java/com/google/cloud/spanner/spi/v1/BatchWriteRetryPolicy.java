@@ -21,22 +21,18 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
-import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.cloud.spanner.IsRetryableInternalError;
+import com.google.cloud.spanner.StreamingRetryHelper;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
-import com.google.protobuf.util.Durations;
-import com.google.rpc.RetryInfo;
 import io.grpc.Context;
 import io.grpc.Deadline;
-import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
-import io.grpc.protobuf.ProtoUtils;
 import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -45,13 +41,10 @@ import java.util.function.DoubleSupplier;
 import org.jspecify.annotations.Nullable;
 
 /**
- * Pure retryability, backoff, {@link RetryInfo} extraction, and timeout budgeting policy for {@code
+ * Pure retryability, backoff, {@code RetryInfo} extraction, and timeout budgeting policy for {@code
  * BatchWrite} stream resumption.
  */
 final class BatchWriteRetryPolicy {
-
-  private static final Metadata.Key<RetryInfo> KEY_RETRY_INFO =
-      ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
 
   private final RetrySettings retrySettings;
   private final ImmutableSet<Code> retryableCodes;
@@ -126,8 +119,7 @@ final class BatchWriteRetryPolicy {
     }
 
     // maxAttempts == 1 disables retries; maxAttempts == 0 means unlimited (GAX convention).
-    int maxAttempts = retrySettings.getMaxAttempts();
-    if (maxAttempts > 0 && completedAttempts >= maxAttempts) {
+    if (StreamingRetryHelper.isMaxAttemptsExhausted(retrySettings, completedAttempts)) {
       return RetryDecision.retriesExhausted(error);
     }
 
@@ -154,20 +146,16 @@ final class BatchWriteRetryPolicy {
       @Nullable Throwable cause) {
     Duration effectiveDelay =
         additionalDelay != null && !additionalDelay.isNegative() ? additionalDelay : Duration.ZERO;
-    Duration totalTimeout = retrySettings.getTotalTimeoutDuration();
-    if (isPositive(totalTimeout)) {
-      Duration elapsed = Duration.ofNanos(Math.max(0L, clock.nanoTime() - operationStartNanos));
-      if (elapsed.compareTo(totalTimeout) >= 0
-          || totalTimeout.minus(elapsed).compareTo(effectiveDelay) <= 0) {
-        return ApiExceptionFactory.createException(
-            "BatchWrite total timeout exceeded while retrying",
-            cause,
-            GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-            /* retryable= */ false);
-      }
+    if (StreamingRetryHelper.isTotalTimeoutExceeded(
+        retrySettings, clock.nanoTime() - operationStartNanos, effectiveDelay)) {
+      return ApiExceptionFactory.createException(
+          "BatchWrite total timeout exceeded while retrying",
+          cause,
+          GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
+          /* retryable= */ false);
     }
 
-    long additionalDelayNanos = toSaturatedNanos(effectiveDelay);
+    long additionalDelayNanos = StreamingRetryHelper.toSaturatedNanos(effectiveDelay);
     Deadline contextDeadline = grpcContext.getDeadline();
     if (contextDeadline != null
         && contextDeadline.timeRemaining(TimeUnit.NANOSECONDS) <= additionalDelayNanos) {
@@ -197,10 +185,12 @@ final class BatchWriteRetryPolicy {
 
     if (effectiveRpcTimeout == null && isPositive(configuredRpcTimeout)) {
       double multiplier = Math.max(1.0, retrySettings.getRpcTimeoutMultiplier());
-      double scaledMillis =
-          configuredRpcTimeout.toMillis() * Math.pow(multiplier, zeroBasedAttemptNumber);
-      Duration maxRpcTimeout = retrySettings.getMaxRpcTimeoutDuration();
-      long maxMillis = isPositive(maxRpcTimeout) ? maxRpcTimeout.toMillis() : Long.MAX_VALUE;
+      long initialRpcMillis =
+          StreamingRetryHelper.saturatedDurationMillis(configuredRpcTimeout, 0L, Long.MAX_VALUE);
+      double scaledMillis = initialRpcMillis * Math.pow(multiplier, zeroBasedAttemptNumber);
+      long maxMillis =
+          StreamingRetryHelper.saturatedDurationMillis(
+              retrySettings.getMaxRpcTimeoutDuration(), Long.MAX_VALUE, Long.MAX_VALUE);
       effectiveRpcTimeout = Duration.ofMillis((long) Math.min(scaledMillis, maxMillis));
     }
 
@@ -208,7 +198,9 @@ final class BatchWriteRetryPolicy {
     if (isPositive(totalTimeout)) {
       long elapsedMillis =
           TimeUnit.NANOSECONDS.toMillis(Math.max(0L, clock.nanoTime() - operationStartNanos));
-      long remainingMillis = Math.max(1L, totalTimeout.toMillis() - elapsedMillis);
+      long totalTimeoutMillis =
+          StreamingRetryHelper.saturatedDurationMillis(totalTimeout, 0L, Long.MAX_VALUE);
+      long remainingMillis = Math.max(1L, totalTimeoutMillis - elapsedMillis);
       Duration remainingDuration = Duration.ofMillis(remainingMillis);
       if (effectiveRpcTimeout == null || remainingDuration.compareTo(effectiveRpcTimeout) < 0) {
         return remainingDuration;
@@ -237,31 +229,8 @@ final class BatchWriteRetryPolicy {
   }
 
   Duration computeNextRetryDelay(Throwable error, int completedAttempts) {
-    Duration serverRetryDelay = extractRetryDelay(error);
-    if (serverRetryDelay != null) {
-      return serverRetryDelay;
-    }
-    Duration initialDelay = retrySettings.getInitialRetryDelayDuration();
-    if (!isPositive(initialDelay)) {
-      return Duration.ZERO;
-    }
-    Duration maxDelay = retrySettings.getMaxRetryDelayDuration();
-    Duration effectiveMaxDelay =
-        maxDelay != null && maxDelay.compareTo(initialDelay) >= 0 ? maxDelay : initialDelay;
-
-    double initialNanos = toNanosDouble(initialDelay);
-    double maxNanos = toNanosDouble(effectiveMaxDelay);
-    double multiplier = Math.max(1.0, retrySettings.getRetryDelayMultiplier());
-
-    double unclamped = initialNanos * Math.pow(multiplier, Math.max(0, completedAttempts - 1));
-    double capped = Math.min(maxNanos, unclamped);
-    // Full-band jitter in [0.5 * capped, 1.0 * capped] so delay never exceeds maxRetryDelay.
-    double jitterFactor = 0.5 + (0.5 * jitterRandom.getAsDouble());
-    return fromNanosDouble(capped * jitterFactor);
-  }
-
-  long computeNextRetryDelayMillis(Throwable error, int completedAttempts) {
-    return computeNextRetryDelay(error, completedAttempts).toMillis();
+    return StreamingRetryHelper.computeRetryDelay(
+        retrySettings, error, completedAttempts, jitterRandom, Duration.ZERO);
   }
 
   static @Nullable Code extractStatusCode(Throwable error) {
@@ -278,76 +247,8 @@ final class BatchWriteRetryPolicy {
     return null;
   }
 
-  static @Nullable Duration extractRetryDelay(@Nullable Throwable error) {
-    if (error instanceof ApiException) {
-      try {
-        ErrorDetails details = ((ApiException) error).getErrorDetails();
-        if (details != null) {
-          Duration delay = toNonNegativeDuration(details.getRetryInfo());
-          if (delay != null) {
-            return delay;
-          }
-        }
-      } catch (IllegalArgumentException | ArithmeticException ignored) {
-        // Fall through to trailers / exponential backoff if RetryInfo is malformed.
-      }
-    }
-    if (error != null) {
-      try {
-        Metadata trailers = Status.trailersFromThrowable(error);
-        if (trailers != null) {
-          Duration delay = toNonNegativeDuration(trailers.get(KEY_RETRY_INFO));
-          if (delay != null) {
-            return delay;
-          }
-        }
-      } catch (IllegalArgumentException | ArithmeticException ignored) {
-        // Fall back to exponential backoff if RetryInfo trailer is corrupted or out of range.
-      }
-    }
-    return null;
-  }
-
-  static long extractRetryDelayMillis(@Nullable Throwable error) {
-    Duration delay = extractRetryDelay(error);
-    return delay != null ? delay.toMillis() : -1L;
-  }
-
-  private static @Nullable Duration toNonNegativeDuration(@Nullable RetryInfo retryInfo) {
-    if (retryInfo != null && retryInfo.hasRetryDelay()) {
-      com.google.protobuf.Duration protoDelay = retryInfo.getRetryDelay();
-      Durations.checkValid(protoDelay);
-      if (protoDelay.getSeconds() >= 0L && protoDelay.getNanos() >= 0) {
-        return Duration.ofSeconds(protoDelay.getSeconds(), protoDelay.getNanos());
-      }
-    }
-    return null;
-  }
-
   private static boolean isPositive(@Nullable Duration duration) {
     return duration != null && !duration.isZero() && !duration.isNegative();
-  }
-
-  private static double toNanosDouble(Duration duration) {
-    return (duration.getSeconds() * 1_000_000_000.0) + duration.getNano();
-  }
-
-  private static Duration fromNanosDouble(double nanos) {
-    if (nanos <= 0.0) {
-      return Duration.ZERO;
-    }
-    if (nanos >= (double) Long.MAX_VALUE) {
-      return Duration.ofNanos(Long.MAX_VALUE);
-    }
-    return Duration.ofNanos((long) nanos);
-  }
-
-  private static long toSaturatedNanos(Duration duration) {
-    try {
-      return duration.toNanos();
-    } catch (ArithmeticException e) {
-      return duration.isNegative() ? Long.MIN_VALUE : Long.MAX_VALUE;
-    }
   }
 
   static ApiException createContextCancellationException(Context ctx) {
