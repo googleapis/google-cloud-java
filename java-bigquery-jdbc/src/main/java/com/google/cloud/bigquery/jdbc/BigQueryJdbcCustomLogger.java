@@ -116,6 +116,7 @@ public class BigQueryJdbcCustomLogger extends Logger {
           || className.equals("com.google.cloud.bigquery.jdbc.BigQueryJdbcResultSetLogger")
           || className.startsWith("com.google.cloud.bigquery.jdbc.BigQueryJdbcRootLogger")
           || className.equals("com.google.cloud.bigquery.jdbc.PerConnectionFileHandler")
+          || className.startsWith("com.google.cloud.bigquery.jdbc.PerConnectionFileHandler$")
           || className.equals(BigQueryJdbcLogRecord.class.getName());
     }
   }
