@@ -208,7 +208,6 @@ import java.util.logging.Logger;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.threeten.extra.PeriodDuration;
@@ -3594,11 +3593,13 @@ class ITBigQueryTest {
     assertNotNull(statistics.getQueryPlan());
   }
 
-  @Disabled("Flaky test: b/574587826")
   @Test
   void testQueryStatistics() throws InterruptedException {
-    // Use CURRENT_TIMESTAMP to avoid potential caching.
-    String query = "SELECT CURRENT_TIMESTAMP() AS ts";
+    // Run a lightweight, self-contained 0-byte compute query with caching disabled so BigQuery
+    // executes real slot work. A scalar-only query such as SELECT CURRENT_TIMESTAMP() can finish
+    // in under 1 ms of slot time on BigQuery's short-query path and legitimately report 0
+    // totalSlotMs.
+    String query = "SELECT SUM(x) AS total FROM UNNEST(GENERATE_ARRAY(1, 1000000)) AS x";
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setDefaultDataset(DatasetId.of(DATASET))
