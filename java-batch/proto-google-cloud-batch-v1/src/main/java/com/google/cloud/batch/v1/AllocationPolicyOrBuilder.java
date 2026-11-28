@@ -467,4 +467,55 @@ public interface AllocationPolicyOrBuilder
    * @return The bytes of the tags at the given index.
    */
   com.google.protobuf.ByteString getTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instance flexibility policy for the job. This configuration
+   * overrides the `instances` configuration. Only allowed in job level. Not
+   * allowed in task group level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the instanceFlexibilityPolicy field is set.
+   */
+  boolean hasInstanceFlexibilityPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instance flexibility policy for the job. This configuration
+   * overrides the `instances` configuration. Only allowed in job level. Not
+   * allowed in task group level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The instanceFlexibilityPolicy.
+   */
+  com.google.cloud.batch.v1.AllocationPolicy.InstanceFlexibilityPolicy
+      getInstanceFlexibilityPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instance flexibility policy for the job. This configuration
+   * overrides the `instances` configuration. Only allowed in job level. Not
+   * allowed in task group level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.batch.v1.AllocationPolicy.InstanceFlexibilityPolicy instance_flexibility_policy = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.batch.v1.AllocationPolicy.InstanceFlexibilityPolicyOrBuilder
+      getInstanceFlexibilityPolicyOrBuilder();
 }

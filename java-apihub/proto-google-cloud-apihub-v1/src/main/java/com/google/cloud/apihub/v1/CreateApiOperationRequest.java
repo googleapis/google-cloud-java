@@ -154,7 +154,7 @@ public final class CreateApiOperationRequest extends com.google.protobuf.Generat
    * This value should be 4-500 characters, overall resource name which
    * will be of format
    * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-   * its length is limited to 700 characters, and valid characters are
+   * its length is limited to 1000 characters, and valid characters are
    * /[a-z][A-Z][0-9]-_/.
    * </pre>
    *
@@ -190,7 +190,7 @@ public final class CreateApiOperationRequest extends com.google.protobuf.Generat
    * This value should be 4-500 characters, overall resource name which
    * will be of format
    * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-   * its length is limited to 700 characters, and valid characters are
+   * its length is limited to 1000 characters, and valid characters are
    * /[a-z][A-Z][0-9]-_/.
    * </pre>
    *
@@ -798,7 +798,7 @@ public final class CreateApiOperationRequest extends com.google.protobuf.Generat
      * This value should be 4-500 characters, overall resource name which
      * will be of format
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-     * its length is limited to 700 characters, and valid characters are
+     * its length is limited to 1000 characters, and valid characters are
      * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
@@ -833,7 +833,7 @@ public final class CreateApiOperationRequest extends com.google.protobuf.Generat
      * This value should be 4-500 characters, overall resource name which
      * will be of format
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-     * its length is limited to 700 characters, and valid characters are
+     * its length is limited to 1000 characters, and valid characters are
      * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
@@ -868,7 +868,7 @@ public final class CreateApiOperationRequest extends com.google.protobuf.Generat
      * This value should be 4-500 characters, overall resource name which
      * will be of format
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-     * its length is limited to 700 characters, and valid characters are
+     * its length is limited to 1000 characters, and valid characters are
      * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
@@ -902,7 +902,7 @@ public final class CreateApiOperationRequest extends com.google.protobuf.Generat
      * This value should be 4-500 characters, overall resource name which
      * will be of format
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-     * its length is limited to 700 characters, and valid characters are
+     * its length is limited to 1000 characters, and valid characters are
      * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
@@ -932,7 +932,7 @@ public final class CreateApiOperationRequest extends com.google.protobuf.Generat
      * This value should be 4-500 characters, overall resource name which
      * will be of format
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
-     * its length is limited to 700 characters, and valid characters are
+     * its length is limited to 1000 characters, and valid characters are
      * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *

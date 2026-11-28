@@ -938,6 +938,52 @@ public interface ClusterConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Config for scheduling the resources to be allocated when
+   * available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schedulingConfig field is set.
+   */
+  boolean hasSchedulingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for scheduling the resources to be allocated when
+   * available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schedulingConfig.
+   */
+  com.google.cloud.dataproc.v1.SchedulingConfig getSchedulingConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for scheduling the resources to be allocated when
+   * available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.SchedulingConfig scheduling_config = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.SchedulingConfigOrBuilder getSchedulingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The High Obtainability (HO) config settings for the cluster's
    * master instances.
    *
@@ -1197,4 +1243,6 @@ public interface ClusterConfigOrBuilder
    */
   com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder
       getSecondaryWorkerFlexibleConfigOrBuilder();
+
+  com.google.cloud.dataproc.v1.ClusterConfig.ProvisioningConfigCase getProvisioningConfigCase();
 }

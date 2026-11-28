@@ -35,6 +35,7 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -353,8 +354,29 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ManagePluginInstanceSourceData</td>
+ *      <td><p> Manages data for a given plugin instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> managePluginInstanceSourceData(ManagePluginInstanceSourceDataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> managePluginInstanceSourceData(PluginInstanceName name, ManagePluginInstanceSourceDataRequest.DataType dataType, ManagePluginInstanceSourceDataRequest.Action action, String relativePath, ByteString data)
+ *           <li><p> managePluginInstanceSourceData(String name, ManagePluginInstanceSourceDataRequest.DataType dataType, ManagePluginInstanceSourceDataRequest.Action action, String relativePath, ByteString data)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> managePluginInstanceSourceDataCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2559,7 +2581,191 @@ public class ApiHubPluginClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Manages data for a given plugin instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubPluginClient apiHubPluginClient = ApiHubPluginClient.create()) {
+   *   PluginInstanceName name =
+   *       PluginInstanceName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]", "[INSTANCE]");
+   *   ManagePluginInstanceSourceDataRequest.DataType dataType =
+   *       ManagePluginInstanceSourceDataRequest.DataType.forNumber(0);
+   *   ManagePluginInstanceSourceDataRequest.Action action =
+   *       ManagePluginInstanceSourceDataRequest.Action.forNumber(0);
+   *   String relativePath = "relativePath-70808303";
+   *   ByteString data = ByteString.EMPTY;
+   *   ManagePluginInstanceSourceDataResponse response =
+   *       apiHubPluginClient.managePluginInstanceSourceData(
+   *           name, dataType, action, relativePath, data);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the plugin instance for which data needs to be managed.
+   *     Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
+   * @param dataType Required. Type of data to be managed.
+   * @param action Required. Action to be performed.
+   * @param relativePath Required. Relative path of data being managed for a given plugin instance.
+   * @param data Required. Data to be managed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ManagePluginInstanceSourceDataResponse managePluginInstanceSourceData(
+      @Nullable PluginInstanceName name,
+      ManagePluginInstanceSourceDataRequest.DataType dataType,
+      ManagePluginInstanceSourceDataRequest.Action action,
+      String relativePath,
+      ByteString data) {
+    ManagePluginInstanceSourceDataRequest request =
+        ManagePluginInstanceSourceDataRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setDataType(dataType)
+            .setAction(action)
+            .setRelativePath(relativePath)
+            .setData(data)
+            .build();
+    return managePluginInstanceSourceData(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Manages data for a given plugin instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubPluginClient apiHubPluginClient = ApiHubPluginClient.create()) {
+   *   String name =
+   *       PluginInstanceName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]", "[INSTANCE]").toString();
+   *   ManagePluginInstanceSourceDataRequest.DataType dataType =
+   *       ManagePluginInstanceSourceDataRequest.DataType.forNumber(0);
+   *   ManagePluginInstanceSourceDataRequest.Action action =
+   *       ManagePluginInstanceSourceDataRequest.Action.forNumber(0);
+   *   String relativePath = "relativePath-70808303";
+   *   ByteString data = ByteString.EMPTY;
+   *   ManagePluginInstanceSourceDataResponse response =
+   *       apiHubPluginClient.managePluginInstanceSourceData(
+   *           name, dataType, action, relativePath, data);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the plugin instance for which data needs to be managed.
+   *     Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
+   * @param dataType Required. Type of data to be managed.
+   * @param action Required. Action to be performed.
+   * @param relativePath Required. Relative path of data being managed for a given plugin instance.
+   * @param data Required. Data to be managed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ManagePluginInstanceSourceDataResponse managePluginInstanceSourceData(
+      String name,
+      ManagePluginInstanceSourceDataRequest.DataType dataType,
+      ManagePluginInstanceSourceDataRequest.Action action,
+      String relativePath,
+      ByteString data) {
+    ManagePluginInstanceSourceDataRequest request =
+        ManagePluginInstanceSourceDataRequest.newBuilder()
+            .setName(name)
+            .setDataType(dataType)
+            .setAction(action)
+            .setRelativePath(relativePath)
+            .setData(data)
+            .build();
+    return managePluginInstanceSourceData(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Manages data for a given plugin instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubPluginClient apiHubPluginClient = ApiHubPluginClient.create()) {
+   *   ManagePluginInstanceSourceDataRequest request =
+   *       ManagePluginInstanceSourceDataRequest.newBuilder()
+   *           .setName(
+   *               PluginInstanceName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]", "[INSTANCE]")
+   *                   .toString())
+   *           .setRelativePath("relativePath-70808303")
+   *           .setData(ByteString.EMPTY)
+   *           .build();
+   *   ManagePluginInstanceSourceDataResponse response =
+   *       apiHubPluginClient.managePluginInstanceSourceData(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ManagePluginInstanceSourceDataResponse managePluginInstanceSourceData(
+      ManagePluginInstanceSourceDataRequest request) {
+    return managePluginInstanceSourceDataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Manages data for a given plugin instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubPluginClient apiHubPluginClient = ApiHubPluginClient.create()) {
+   *   ManagePluginInstanceSourceDataRequest request =
+   *       ManagePluginInstanceSourceDataRequest.newBuilder()
+   *           .setName(
+   *               PluginInstanceName.of("[PROJECT]", "[LOCATION]", "[PLUGIN]", "[INSTANCE]")
+   *                   .toString())
+   *           .setRelativePath("relativePath-70808303")
+   *           .setData(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<ManagePluginInstanceSourceDataResponse> future =
+   *       apiHubPluginClient.managePluginInstanceSourceDataCallable().futureCall(request);
+   *   // Do something.
+   *   ManagePluginInstanceSourceDataResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+      managePluginInstanceSourceDataCallable() {
+    return stub.managePluginInstanceSourceDataCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2594,6 +2800,18 @@ public class ApiHubPluginClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2627,6 +2845,18 @@ public class ApiHubPluginClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

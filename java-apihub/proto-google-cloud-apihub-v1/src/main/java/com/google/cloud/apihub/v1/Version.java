@@ -590,10 +590,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The deployments linked to this API version.
-   * Note: A particular API version could be deployed to multiple deployments
-   * (for dev deployment, UAT deployment, etc)
-   * Format is
+   * Optional. The deployments linked directly to this API version. Only
+   * directly-linked deployments are returned; deployments linked to this
+   * version's specs or operations are not included. Note: A particular API
+   * version could be deployed to multiple deployments (for dev deployment, UAT
+   * deployment, etc) Format is
    * `projects/{project}/locations/{location}/deployments/{deployment}`
    * </pre>
    *
@@ -611,10 +612,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The deployments linked to this API version.
-   * Note: A particular API version could be deployed to multiple deployments
-   * (for dev deployment, UAT deployment, etc)
-   * Format is
+   * Optional. The deployments linked directly to this API version. Only
+   * directly-linked deployments are returned; deployments linked to this
+   * version's specs or operations are not included. Note: A particular API
+   * version could be deployed to multiple deployments (for dev deployment, UAT
+   * deployment, etc) Format is
    * `projects/{project}/locations/{location}/deployments/{deployment}`
    * </pre>
    *
@@ -632,10 +634,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The deployments linked to this API version.
-   * Note: A particular API version could be deployed to multiple deployments
-   * (for dev deployment, UAT deployment, etc)
-   * Format is
+   * Optional. The deployments linked directly to this API version. Only
+   * directly-linked deployments are returned; deployments linked to this
+   * version's specs or operations are not included. Note: A particular API
+   * version could be deployed to multiple deployments (for dev deployment, UAT
+   * deployment, etc) Format is
    * `projects/{project}/locations/{location}/deployments/{deployment}`
    * </pre>
    *
@@ -654,10 +657,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The deployments linked to this API version.
-   * Note: A particular API version could be deployed to multiple deployments
-   * (for dev deployment, UAT deployment, etc)
-   * Format is
+   * Optional. The deployments linked directly to this API version. Only
+   * directly-linked deployments are returned; deployments linked to this
+   * version's specs or operations are not included. Note: A particular API
+   * version could be deployed to multiple deployments (for dev deployment, UAT
+   * deployment, etc) Format is
    * `projects/{project}/locations/{location}/deployments/{deployment}`
    * </pre>
    *
@@ -3447,10 +3451,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
@@ -3469,10 +3474,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
@@ -3490,10 +3496,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
@@ -3512,10 +3519,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
@@ -3534,10 +3542,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
@@ -3564,10 +3573,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
@@ -3593,10 +3603,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
@@ -3619,10 +3630,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
@@ -3644,10 +3656,11 @@ public final class Version extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The deployments linked to this API version.
-     * Note: A particular API version could be deployed to multiple deployments
-     * (for dev deployment, UAT deployment, etc)
-     * Format is
+     * Optional. The deployments linked directly to this API version. Only
+     * directly-linked deployments are returned; deployments linked to this
+     * version's specs or operations are not included. Note: A particular API
+     * version could be deployed to multiple deployments (for dev deployment, UAT
+     * deployment, etc) Format is
      * `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *

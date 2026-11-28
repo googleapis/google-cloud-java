@@ -116,6 +116,7 @@ public class AuditManagerClientTest {
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
             .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     mockAuditManager.addResponse(expectedResponse);
 
@@ -177,6 +178,7 @@ public class AuditManagerClientTest {
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
             .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     mockAuditManager.addResponse(expectedResponse);
 
@@ -236,6 +238,7 @@ public class AuditManagerClientTest {
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
             .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     mockAuditManager.addResponse(expectedResponse);
 
@@ -295,6 +298,7 @@ public class AuditManagerClientTest {
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
             .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     mockAuditManager.addResponse(expectedResponse);
 
@@ -350,6 +354,7 @@ public class AuditManagerClientTest {
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
             .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     mockAuditManager.addResponse(expectedResponse);
 
@@ -406,6 +411,7 @@ public class AuditManagerClientTest {
             .setLastTriggerTime(Timestamp.newBuilder().build())
             .setErrorMessage("errorMessage1203236063")
             .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     mockAuditManager.addResponse(expectedResponse);
 
@@ -679,6 +685,7 @@ public class AuditManagerClientTest {
             .setComplianceFramework("complianceFramework-1808314333")
             .setScopeId("scopeId1923941007")
             .putAllCloudControlParameterStates(new HashMap<String, CloudControlParameterStates>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -884,6 +891,7 @@ public class AuditManagerClientTest {
             .setComplianceFramework("complianceFramework-1808314333")
             .setScopeId("scopeId1923941007")
             .putAllCloudControlParameterStates(new HashMap<String, CloudControlParameterStates>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     mockAuditManager.addResponse(expectedResponse);
 
@@ -938,6 +946,7 @@ public class AuditManagerClientTest {
             .setComplianceFramework("complianceFramework-1808314333")
             .setScopeId("scopeId1923941007")
             .putAllCloudControlParameterStates(new HashMap<String, CloudControlParameterStates>())
+            .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
             .build();
     mockAuditManager.addResponse(expectedResponse);
 

@@ -65,6 +65,8 @@ import com.google.cloud.apihub.v1.ListPluginInstancesRequest;
 import com.google.cloud.apihub.v1.ListPluginInstancesResponse;
 import com.google.cloud.apihub.v1.ListPluginsRequest;
 import com.google.cloud.apihub.v1.ListPluginsResponse;
+import com.google.cloud.apihub.v1.ManagePluginInstanceSourceDataRequest;
+import com.google.cloud.apihub.v1.ManagePluginInstanceSourceDataResponse;
 import com.google.cloud.apihub.v1.OperationMetadata;
 import com.google.cloud.apihub.v1.Plugin;
 import com.google.cloud.apihub.v1.PluginInstance;
@@ -168,7 +170,11 @@ import org.jspecify.annotations.Nullable;
 public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/apihub.readonly")
+          .add("https://www.googleapis.com/auth/apihub.readwrite")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<GetPluginRequest, Plugin> getPluginSettings;
   private final UnaryCallSettings<EnablePluginRequest, Plugin> enablePluginSettings;
@@ -214,6 +220,9 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
       deletePluginInstanceSettings;
   private final OperationCallSettings<DeletePluginInstanceRequest, Empty, OperationMetadata>
       deletePluginInstanceOperationSettings;
+  private final UnaryCallSettings<
+          ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+      managePluginInstanceSourceDataSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -500,6 +509,13 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
     return deletePluginInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to managePluginInstanceSourceData. */
+  public UnaryCallSettings<
+          ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+      managePluginInstanceSourceDataSettings() {
+    return managePluginInstanceSourceDataSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -621,6 +637,8 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
     deletePluginInstanceSettings = settingsBuilder.deletePluginInstanceSettings().build();
     deletePluginInstanceOperationSettings =
         settingsBuilder.deletePluginInstanceOperationSettings().build();
+    managePluginInstanceSourceDataSettings =
+        settingsBuilder.managePluginInstanceSourceDataSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -687,6 +705,9 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
     private final OperationCallSettings.Builder<
             DeletePluginInstanceRequest, Empty, OperationMetadata>
         deletePluginInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<
+            ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+        managePluginInstanceSourceDataSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -763,6 +784,7 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
       updatePluginInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deletePluginInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deletePluginInstanceOperationSettings = OperationCallSettings.newBuilder();
+      managePluginInstanceSourceDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -782,6 +804,7 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
               disablePluginInstanceActionSettings,
               updatePluginInstanceSettings,
               deletePluginInstanceSettings,
+              managePluginInstanceSourceDataSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -817,6 +840,8 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
       deletePluginInstanceSettings = settings.deletePluginInstanceSettings.toBuilder();
       deletePluginInstanceOperationSettings =
           settings.deletePluginInstanceOperationSettings.toBuilder();
+      managePluginInstanceSourceDataSettings =
+          settings.managePluginInstanceSourceDataSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -836,6 +861,7 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
               disablePluginInstanceActionSettings,
               updatePluginInstanceSettings,
               deletePluginInstanceSettings,
+              managePluginInstanceSourceDataSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -922,6 +948,11 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
           .deletePluginInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .managePluginInstanceSourceDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .listLocationsSettings()
@@ -1228,6 +1259,13 @@ public class ApiHubPluginStubSettings extends StubSettings<ApiHubPluginStubSetti
     public OperationCallSettings.Builder<DeletePluginInstanceRequest, Empty, OperationMetadata>
         deletePluginInstanceOperationSettings() {
       return deletePluginInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to managePluginInstanceSourceData. */
+    public UnaryCallSettings.Builder<
+            ManagePluginInstanceSourceDataRequest, ManagePluginInstanceSourceDataResponse>
+        managePluginInstanceSourceDataSettings() {
+      return managePluginInstanceSourceDataSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

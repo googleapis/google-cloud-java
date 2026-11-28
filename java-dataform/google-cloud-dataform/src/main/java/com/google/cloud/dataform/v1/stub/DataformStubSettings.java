@@ -85,6 +85,7 @@ import com.google.cloud.dataform.v1.CreateRepositoryRequest;
 import com.google.cloud.dataform.v1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1.CreateWorkflowInvocationRequest;
+import com.google.cloud.dataform.v1.CreateWorkspaceMetadata;
 import com.google.cloud.dataform.v1.CreateWorkspaceRequest;
 import com.google.cloud.dataform.v1.DeleteFolderRequest;
 import com.google.cloud.dataform.v1.DeleteFolderTreeMetadata;
@@ -364,6 +365,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       listWorkspacesSettings;
   private final UnaryCallSettings<GetWorkspaceRequest, Workspace> getWorkspaceSettings;
   private final UnaryCallSettings<CreateWorkspaceRequest, Workspace> createWorkspaceSettings;
+  private final UnaryCallSettings<CreateWorkspaceRequest, Operation>
+      createWorkspaceLongRunningSettings;
+  private final OperationCallSettings<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationSettings;
   private final UnaryCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceSettings;
   private final UnaryCallSettings<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
       installNpmPackagesSettings;
@@ -1780,6 +1785,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return createWorkspaceSettings;
   }
 
+  /** Returns the object with the settings used for calls to createWorkspaceLongRunning. */
+  public UnaryCallSettings<CreateWorkspaceRequest, Operation> createWorkspaceLongRunningSettings() {
+    return createWorkspaceLongRunningSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createWorkspaceLongRunning. */
+  public OperationCallSettings<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+      createWorkspaceLongRunningOperationSettings() {
+    return createWorkspaceLongRunningOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteWorkspace. */
   public UnaryCallSettings<DeleteWorkspaceRequest, Empty> deleteWorkspaceSettings() {
     return deleteWorkspaceSettings;
@@ -2207,6 +2223,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     listWorkspacesSettings = settingsBuilder.listWorkspacesSettings().build();
     getWorkspaceSettings = settingsBuilder.getWorkspaceSettings().build();
     createWorkspaceSettings = settingsBuilder.createWorkspaceSettings().build();
+    createWorkspaceLongRunningSettings =
+        settingsBuilder.createWorkspaceLongRunningSettings().build();
+    createWorkspaceLongRunningOperationSettings =
+        settingsBuilder.createWorkspaceLongRunningOperationSettings().build();
     deleteWorkspaceSettings = settingsBuilder.deleteWorkspaceSettings().build();
     installNpmPackagesSettings = settingsBuilder.installNpmPackagesSettings().build();
     pullGitCommitsSettings = settingsBuilder.pullGitCommitsSettings().build();
@@ -2355,6 +2375,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     private final UnaryCallSettings.Builder<GetWorkspaceRequest, Workspace> getWorkspaceSettings;
     private final UnaryCallSettings.Builder<CreateWorkspaceRequest, Workspace>
         createWorkspaceSettings;
+    private final UnaryCallSettings.Builder<CreateWorkspaceRequest, Operation>
+        createWorkspaceLongRunningSettings;
+    private final OperationCallSettings.Builder<
+            CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+        createWorkspaceLongRunningOperationSettings;
     private final UnaryCallSettings.Builder<DeleteWorkspaceRequest, Empty> deleteWorkspaceSettings;
     private final UnaryCallSettings.Builder<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
         installNpmPackagesSettings;
@@ -2532,6 +2557,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       listWorkspacesSettings = PagedCallSettings.newBuilder(LIST_WORKSPACES_PAGE_STR_FACT);
       getWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createWorkspaceLongRunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createWorkspaceLongRunningOperationSettings = OperationCallSettings.newBuilder();
       deleteWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       installNpmPackagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pullGitCommitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2618,6 +2645,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               listWorkspacesSettings,
               getWorkspaceSettings,
               createWorkspaceSettings,
+              createWorkspaceLongRunningSettings,
               deleteWorkspaceSettings,
               installNpmPackagesSettings,
               pullGitCommitsSettings,
@@ -2707,6 +2735,9 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       listWorkspacesSettings = settings.listWorkspacesSettings.toBuilder();
       getWorkspaceSettings = settings.getWorkspaceSettings.toBuilder();
       createWorkspaceSettings = settings.createWorkspaceSettings.toBuilder();
+      createWorkspaceLongRunningSettings = settings.createWorkspaceLongRunningSettings.toBuilder();
+      createWorkspaceLongRunningOperationSettings =
+          settings.createWorkspaceLongRunningOperationSettings.toBuilder();
       deleteWorkspaceSettings = settings.deleteWorkspaceSettings.toBuilder();
       installNpmPackagesSettings = settings.installNpmPackagesSettings.toBuilder();
       pullGitCommitsSettings = settings.pullGitCommitsSettings.toBuilder();
@@ -2791,6 +2822,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               listWorkspacesSettings,
               getWorkspaceSettings,
               createWorkspaceSettings,
+              createWorkspaceLongRunningSettings,
               deleteWorkspaceSettings,
               installNpmPackagesSettings,
               pullGitCommitsSettings,
@@ -3011,6 +3043,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .createWorkspaceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createWorkspaceLongRunningSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -3340,6 +3377,30 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
                       .build()));
 
       builder
+          .createWorkspaceLongRunningOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateWorkspaceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Workspace.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateWorkspaceMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .createCompilationResultLongRunningOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -3595,6 +3656,18 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to createWorkspace. */
     public UnaryCallSettings.Builder<CreateWorkspaceRequest, Workspace> createWorkspaceSettings() {
       return createWorkspaceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkspaceLongRunning. */
+    public UnaryCallSettings.Builder<CreateWorkspaceRequest, Operation>
+        createWorkspaceLongRunningSettings() {
+      return createWorkspaceLongRunningSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createWorkspaceLongRunning. */
+    public OperationCallSettings.Builder<CreateWorkspaceRequest, Workspace, CreateWorkspaceMetadata>
+        createWorkspaceLongRunningOperationSettings() {
+      return createWorkspaceLongRunningOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteWorkspace. */

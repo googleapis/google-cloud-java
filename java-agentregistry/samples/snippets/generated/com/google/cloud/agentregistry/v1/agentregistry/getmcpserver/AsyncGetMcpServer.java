@@ -38,7 +38,10 @@ public class AsyncGetMcpServer {
     try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
       GetMcpServerRequest request =
           GetMcpServerRequest.newBuilder()
-              .setName(McpServerName.of("[PROJECT]", "[LOCATION]", "[MCP_SERVER]").toString())
+              .setName(
+                  McpServerName.ofProjectLocationMcpServerName(
+                          "[PROJECT]", "[LOCATION]", "[MCP_SERVER]")
+                      .toString())
               .build();
       ApiFuture<McpServer> future = agentRegistryClient.getMcpServerCallable().futureCall(request);
       // Do something.

@@ -23,6 +23,8 @@ import com.google.cloud.auditmanager.v1.AuditReport;
 import com.google.cloud.auditmanager.v1.GenerateAuditReportRequest;
 import com.google.cloud.auditmanager.v1.OperationMetadata;
 import com.google.cloud.auditmanager.v1.ParameterOverrides;
+import com.google.cloud.auditmanager.v1.ReportExportFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AsyncGenerateAuditReportLRO {
@@ -45,6 +47,7 @@ public class AsyncGenerateAuditReportLRO {
               .setComplianceFramework("complianceFramework-1808314333")
               .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
               .setValidateOnly(true)
+              .addAllReportExportFormats(new ArrayList<ReportExportFormat>())
               .build();
       OperationFuture<AuditReport, OperationMetadata> future =
           auditManagerClient.generateAuditReportOperationCallable().futureCall(request);

@@ -30,10 +30,9 @@ public interface LookupApiHubInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. There will always be only one Api Hub instance for a GCP project
-   * across all locations.
-   * The parent resource for the Api Hub instance resource.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. There will always be only one Api Hub instance for a Google Cloud
+   * project across all locations. The parent resource for the Api Hub instance
+   * resource. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -48,10 +47,9 @@ public interface LookupApiHubInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. There will always be only one Api Hub instance for a GCP project
-   * across all locations.
-   * The parent resource for the Api Hub instance resource.
-   * Format: `projects/{project}/locations/{location}`
+   * Required. There will always be only one Api Hub instance for a Google Cloud
+   * project across all locations. The parent resource for the Api Hub instance
+   * resource. Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>

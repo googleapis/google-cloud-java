@@ -18,6 +18,7 @@ package com.google.cloud.discoveryengine.v1.samples;
 
 // [START discoveryengine_v1_generated_ProjectService_ProvisionProject_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.discoveryengine.v1.IdpConfig;
 import com.google.cloud.discoveryengine.v1.Project;
 import com.google.cloud.discoveryengine.v1.ProjectName;
 import com.google.cloud.discoveryengine.v1.ProjectServiceClient;
@@ -43,6 +44,8 @@ public class AsyncProvisionProjectLRO {
               .setAcceptDataUseTerms(true)
               .setDataUseTermsVersion("dataUseTermsVersion-1913570450")
               .setSaasParams(ProvisionProjectRequest.SaasParams.newBuilder().build())
+              .setIdpConfig(IdpConfig.newBuilder().build())
+              .setPreProvisionMode(true)
               .build();
       OperationFuture<Project, ProvisionProjectMetadata> future =
           projectServiceClient.provisionProjectOperationCallable().futureCall(request);

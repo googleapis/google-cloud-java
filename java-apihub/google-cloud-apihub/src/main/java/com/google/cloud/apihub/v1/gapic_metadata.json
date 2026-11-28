@@ -5,11 +5,38 @@
   "protoPackage": "google.cloud.apihub.v1",
   "libraryPackage": "com.google.cloud.apihub.v1",
   "services": {
+    "ApiHubAddon": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubAddonClient",
+          "rpcs": {
+            "GetAddon": {
+              "methods": ["getAddon", "getAddon", "getAddon", "getAddonCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAddons": {
+              "methods": ["listAddons", "listAddons", "listAddons", "listAddonsPagedCallable", "listAddonsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ManageAddonConfig": {
+              "methods": ["manageAddonConfigAsync", "manageAddonConfigAsync", "manageAddonConfigAsync", "manageAddonConfigOperationCallable", "manageAddonConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "ApiHub": {
       "clients": {
         "grpc": {
           "libraryClient": "ApiHubClient",
           "rpcs": {
+            "ConfigureAndDeployServer": {
+              "methods": ["configureAndDeployServerAsync", "configureAndDeployServerAsync", "configureAndDeployServerAsync", "configureAndDeployServerOperationCallable", "configureAndDeployServerCallable"]
+            },
             "CreateApi": {
               "methods": ["createApi", "createApi", "createApi", "createApiCallable"]
             },
@@ -51,6 +78,9 @@
             },
             "DeleteVersion": {
               "methods": ["deleteVersion", "deleteVersion", "deleteVersion", "deleteVersionCallable"]
+            },
+            "FetchAdditionalSpecContent": {
+              "methods": ["fetchAdditionalSpecContent", "fetchAdditionalSpecContent", "fetchAdditionalSpecContent", "fetchAdditionalSpecContentCallable"]
             },
             "GetApi": {
               "methods": ["getApi", "getApi", "getApi", "getApiCallable"]
@@ -105,6 +135,9 @@
             },
             "ListVersions": {
               "methods": ["listVersions", "listVersions", "listVersions", "listVersionsPagedCallable", "listVersionsCallable"]
+            },
+            "RetrieveApiViews": {
+              "methods": ["retrieveApiViews", "retrieveApiViews", "retrieveApiViews", "retrieveApiViewsPagedCallable", "retrieveApiViewsCallable"]
             },
             "SearchResources": {
               "methods": ["searchResources", "searchResources", "searchResources", "searchResourcesPagedCallable", "searchResourcesCallable"]
@@ -340,6 +373,9 @@
             "ListPlugins": {
               "methods": ["listPlugins", "listPlugins", "listPlugins", "listPluginsPagedCallable", "listPluginsCallable"]
             },
+            "ManagePluginInstanceSourceData": {
+              "methods": ["managePluginInstanceSourceData", "managePluginInstanceSourceData", "managePluginInstanceSourceData", "managePluginInstanceSourceDataCallable"]
+            },
             "UpdatePluginInstance": {
               "methods": ["updatePluginInstance", "updatePluginInstance", "updatePluginInstanceCallable"]
             }
@@ -369,6 +405,9 @@
             },
             "LookupApiHubInstance": {
               "methods": ["lookupApiHubInstance", "lookupApiHubInstance", "lookupApiHubInstance", "lookupApiHubInstanceCallable"]
+            },
+            "UpdateApiHubInstance": {
+              "methods": ["updateApiHubInstanceAsync", "updateApiHubInstanceAsync", "updateApiHubInstanceOperationCallable", "updateApiHubInstanceCallable"]
             }
           }
         }

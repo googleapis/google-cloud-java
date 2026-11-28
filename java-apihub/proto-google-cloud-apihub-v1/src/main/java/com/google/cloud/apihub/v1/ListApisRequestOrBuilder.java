@@ -140,6 +140,12 @@ public interface ListApisRequestOrBuilder
    * provided the parent is
    * `projects/test-project-id/locations/test-location-id`.
    *
+   * Another supported filter function is `plugins(source_metadata)`. This
+   * function filters for resources that are associated with a specific plugin.
+   * For example, `plugins(source_metadata) :
+   * "projects/test-project-id/locations/test-location-id/plugins/test-plugin-id"`
+   * will return resources sourced from the given plugin.
+   *
    * Expressions are combined with either `AND` logic operator or `OR` logical
    * operator but not both of them together i.e. only one of the `AND` or `OR`
    * operator can be used throughout the filter string and both the operators
@@ -263,6 +269,12 @@ public interface ListApisRequestOrBuilder
    * `name = &#92;"projects/test-project-id/locations/test-location-id/apis/api-1&#92;"`
    * provided the parent is
    * `projects/test-project-id/locations/test-location-id`.
+   *
+   * Another supported filter function is `plugins(source_metadata)`. This
+   * function filters for resources that are associated with a specific plugin.
+   * For example, `plugins(source_metadata) :
+   * "projects/test-project-id/locations/test-location-id/plugins/test-plugin-id"`
+   * will return resources sourced from the given plugin.
    *
    * Expressions are combined with either `AND` logic operator or `OR` logical
    * operator but not both of them together i.e. only one of the `AND` or `OR`

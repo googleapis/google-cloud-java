@@ -1553,7 +1553,7 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The service account used to publish data. Note, the service
-   * account will only be accepted for non GCP plugins like OPDK.
+   * account will only be accepted for non-Google Cloud plugins like OPDK.
    * </pre>
    *
    * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1578,7 +1578,7 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. The service account used to publish data. Note, the service
-   * account will only be accepted for non GCP plugins like OPDK.
+   * account will only be accepted for non-Google Cloud plugins like OPDK.
    * </pre>
    *
    * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1606,8 +1606,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output only. The configuration of resources created for a given plugin
-   * instance action. Note these will be returned only in case of Non-GCP
-   * plugins like OPDK.
+   * instance action. Note these will be returned only in case of non-Google
+   * Cloud plugins like OPDK.
    * </pre>
    *
    * <code>
@@ -1626,8 +1626,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output only. The configuration of resources created for a given plugin
-   * instance action. Note these will be returned only in case of Non-GCP
-   * plugins like OPDK.
+   * instance action. Note these will be returned only in case of non-Google
+   * Cloud plugins like OPDK.
    * </pre>
    *
    * <code>
@@ -1648,8 +1648,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Output only. The configuration of resources created for a given plugin
-   * instance action. Note these will be returned only in case of Non-GCP
-   * plugins like OPDK.
+   * instance action. Note these will be returned only in case of non-Google
+   * Cloud plugins like OPDK.
    * </pre>
    *
    * <code>
@@ -3160,7 +3160,7 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The service account used to publish data. Note, the service
-     * account will only be accepted for non GCP plugins like OPDK.
+     * account will only be accepted for non-Google Cloud plugins like OPDK.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3184,7 +3184,7 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The service account used to publish data. Note, the service
-     * account will only be accepted for non GCP plugins like OPDK.
+     * account will only be accepted for non-Google Cloud plugins like OPDK.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3208,7 +3208,7 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The service account used to publish data. Note, the service
-     * account will only be accepted for non GCP plugins like OPDK.
+     * account will only be accepted for non-Google Cloud plugins like OPDK.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3231,7 +3231,7 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The service account used to publish data. Note, the service
-     * account will only be accepted for non GCP plugins like OPDK.
+     * account will only be accepted for non-Google Cloud plugins like OPDK.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3250,7 +3250,7 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. The service account used to publish data. Note, the service
-     * account will only be accepted for non GCP plugins like OPDK.
+     * account will only be accepted for non-Google Cloud plugins like OPDK.
      * </pre>
      *
      * <code>string service_account = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3281,8 +3281,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>
@@ -3300,8 +3300,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>
@@ -3325,8 +3325,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>
@@ -3353,8 +3353,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>
@@ -3378,8 +3378,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>
@@ -3413,8 +3413,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>
@@ -3437,8 +3437,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>
@@ -3457,8 +3457,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>
@@ -3481,8 +3481,8 @@ public final class PluginInstanceAction extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Output only. The configuration of resources created for a given plugin
-     * instance action. Note these will be returned only in case of Non-GCP
-     * plugins like OPDK.
+     * instance action. Note these will be returned only in case of non-Google
+     * Cloud plugins like OPDK.
      * </pre>
      *
      * <code>

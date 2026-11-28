@@ -138,6 +138,17 @@ public class GSuiteAddOnsSettings extends ClientSettings<GSuiteAddOnsSettings> {
     return ((GSuiteAddOnsStubSettings) getStubSettings()).getInstallStatusSettings();
   }
 
+  /** Returns the object with the settings used for calls to getChatAppConfig. */
+  public UnaryCallSettings<GetChatAppConfigRequest, ChatAppConfig> getChatAppConfigSettings() {
+    return ((GSuiteAddOnsStubSettings) getStubSettings()).getChatAppConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateChatAppConfig. */
+  public UnaryCallSettings<UpdateChatAppConfigRequest, ChatAppConfig>
+      updateChatAppConfigSettings() {
+    return ((GSuiteAddOnsStubSettings) getStubSettings()).updateChatAppConfigSettings();
+  }
+
   public static final GSuiteAddOnsSettings create(GSuiteAddOnsStubSettings stub)
       throws IOException {
     return new GSuiteAddOnsSettings.Builder(stub.toBuilder()).build();
@@ -300,6 +311,18 @@ public class GSuiteAddOnsSettings extends ClientSettings<GSuiteAddOnsSettings> {
     public UnaryCallSettings.Builder<GetInstallStatusRequest, InstallStatus>
         getInstallStatusSettings() {
       return getStubSettingsBuilder().getInstallStatusSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getChatAppConfig. */
+    public UnaryCallSettings.Builder<GetChatAppConfigRequest, ChatAppConfig>
+        getChatAppConfigSettings() {
+      return getStubSettingsBuilder().getChatAppConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateChatAppConfig. */
+    public UnaryCallSettings.Builder<UpdateChatAppConfigRequest, ChatAppConfig>
+        updateChatAppConfigSettings() {
+      return getStubSettingsBuilder().updateChatAppConfigSettings();
     }
 
     @Override

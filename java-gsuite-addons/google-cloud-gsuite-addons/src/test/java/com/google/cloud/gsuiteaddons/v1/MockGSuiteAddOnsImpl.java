@@ -247,4 +247,46 @@ public class MockGSuiteAddOnsImpl extends GSuiteAddOnsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getChatAppConfig(
+      GetChatAppConfigRequest request, StreamObserver<ChatAppConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChatAppConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ChatAppConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetChatAppConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChatAppConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateChatAppConfig(
+      UpdateChatAppConfigRequest request, StreamObserver<ChatAppConfig> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ChatAppConfig) {
+      requests.add(request);
+      responseObserver.onNext(((ChatAppConfig) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateChatAppConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ChatAppConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

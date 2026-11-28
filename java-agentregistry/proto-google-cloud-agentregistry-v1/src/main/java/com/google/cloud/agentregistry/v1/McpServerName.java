@@ -17,6 +17,7 @@
 package com.google.cloud.agentregistry.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -35,22 +36,39 @@ public class McpServerName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_MCP_SERVER =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/mcpServers/{mcp_server}");
+  private static final PathTemplate PROJECT_LOCATION_AI_APPLICATION_MCP_SERVER =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/aiApplications/{ai_application}/mcpServers/{mcp_server}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String mcpServer;
+  private final String aiApplication;
 
   @Deprecated
   protected McpServerName() {
     project = null;
     location = null;
     mcpServer = null;
+    aiApplication = null;
   }
 
   private McpServerName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     mcpServer = Preconditions.checkNotNull(builder.getMcpServer());
+    aiApplication = null;
+    pathTemplate = PROJECT_LOCATION_MCP_SERVER;
+  }
+
+  private McpServerName(ProjectLocationAiApplicationMcpServerBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    aiApplication = Preconditions.checkNotNull(builder.getAiApplication());
+    mcpServer = Preconditions.checkNotNull(builder.getMcpServer());
+    pathTemplate = PROJECT_LOCATION_AI_APPLICATION_MCP_SERVER;
   }
 
   public String getProject() {
@@ -65,8 +83,21 @@ public class McpServerName implements ResourceName {
     return mcpServer;
   }
 
+  public String getAiApplication() {
+    return aiApplication;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationMcpServerBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationAiApplicationMcpServerBuilder
+      newProjectLocationAiApplicationMcpServerBuilder() {
+    return new ProjectLocationAiApplicationMcpServerBuilder();
   }
 
   public Builder toBuilder() {
@@ -75,6 +106,21 @@ public class McpServerName implements ResourceName {
 
   public static McpServerName of(String project, String location, String mcpServer) {
     return newBuilder().setProject(project).setLocation(location).setMcpServer(mcpServer).build();
+  }
+
+  public static McpServerName ofProjectLocationMcpServerName(
+      String project, String location, String mcpServer) {
+    return newBuilder().setProject(project).setLocation(location).setMcpServer(mcpServer).build();
+  }
+
+  public static McpServerName ofProjectLocationAiApplicationMcpServerName(
+      String project, String location, String aiApplication, String mcpServer) {
+    return newProjectLocationAiApplicationMcpServerBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAiApplication(aiApplication)
+        .setMcpServer(mcpServer)
+        .build();
   }
 
   public static String format(String project, String location, String mcpServer) {
@@ -86,14 +132,45 @@ public class McpServerName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationMcpServerName(
+      String project, String location, String mcpServer) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setMcpServer(mcpServer)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationAiApplicationMcpServerName(
+      String project, String location, String aiApplication, String mcpServer) {
+    return newProjectLocationAiApplicationMcpServerBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setAiApplication(aiApplication)
+        .setMcpServer(mcpServer)
+        .build()
+        .toString();
+  }
+
   public static @Nullable McpServerName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_MCP_SERVER.validatedMatch(
-            formattedString, "McpServerName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("mcp_server"));
+    if (PROJECT_LOCATION_MCP_SERVER.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_MCP_SERVER.match(formattedString);
+      return ofProjectLocationMcpServerName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("mcp_server"));
+    } else if (PROJECT_LOCATION_AI_APPLICATION_MCP_SERVER.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_AI_APPLICATION_MCP_SERVER.match(formattedString);
+      return ofProjectLocationAiApplicationMcpServerName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("ai_application"),
+          matchMap.get("mcp_server"));
+    }
+    throw new ValidationException("McpServerName.parse: formattedString not in valid format");
   }
 
   public static List<McpServerName> parseList(List<String> formattedStrings) {
@@ -117,7 +194,8 @@ public class McpServerName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_MCP_SERVER.matches(formattedString);
+    return PROJECT_LOCATION_MCP_SERVER.matches(formattedString)
+        || PROJECT_LOCATION_AI_APPLICATION_MCP_SERVER.matches(formattedString);
   }
 
   @Override
@@ -135,6 +213,9 @@ public class McpServerName implements ResourceName {
           if (mcpServer != null) {
             fieldMapBuilder.put("mcp_server", mcpServer);
           }
+          if (aiApplication != null) {
+            fieldMapBuilder.put("ai_application", aiApplication);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -148,8 +229,7 @@ public class McpServerName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_MCP_SERVER.instantiate(
-        "project", project, "location", location, "mcp_server", mcpServer);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -161,7 +241,8 @@ public class McpServerName implements ResourceName {
       McpServerName that = ((McpServerName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.mcpServer, that.mcpServer);
+          && Objects.equals(this.mcpServer, that.mcpServer)
+          && Objects.equals(this.aiApplication, that.aiApplication);
     }
     return false;
   }
@@ -170,11 +251,15 @@ public class McpServerName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
     h ^= Objects.hashCode(mcpServer);
+    h *= 1000003;
+    h ^= Objects.hashCode(aiApplication);
     return h;
   }
 
@@ -214,9 +299,66 @@ public class McpServerName implements ResourceName {
     }
 
     private Builder(McpServerName mcpServerName) {
+      Preconditions.checkArgument(
+          Objects.equals(mcpServerName.pathTemplate, PROJECT_LOCATION_MCP_SERVER),
+          "toBuilder is only supported when McpServerName has the pattern of"
+              + " projects/{project}/locations/{location}/mcpServers/{mcp_server}");
       this.project = mcpServerName.project;
       this.location = mcpServerName.location;
       this.mcpServer = mcpServerName.mcpServer;
+    }
+
+    public McpServerName build() {
+      return new McpServerName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/aiApplications/{ai_application}/mcpServers/{mcp_server}.
+   */
+  public static class ProjectLocationAiApplicationMcpServerBuilder {
+    private String project;
+    private String location;
+    private String aiApplication;
+    private String mcpServer;
+
+    protected ProjectLocationAiApplicationMcpServerBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getAiApplication() {
+      return aiApplication;
+    }
+
+    public String getMcpServer() {
+      return mcpServer;
+    }
+
+    public ProjectLocationAiApplicationMcpServerBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationMcpServerBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationMcpServerBuilder setAiApplication(String aiApplication) {
+      this.aiApplication = aiApplication;
+      return this;
+    }
+
+    public ProjectLocationAiApplicationMcpServerBuilder setMcpServer(String mcpServer) {
+      this.mcpServer = mcpServer;
+      return this;
     }
 
     public McpServerName build() {

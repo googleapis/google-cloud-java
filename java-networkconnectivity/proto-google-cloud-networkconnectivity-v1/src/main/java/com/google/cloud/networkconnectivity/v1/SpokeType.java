@@ -86,6 +86,16 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Spokes that are NCC gateways.
+   * </pre>
+   *
+   * <code>GATEWAY = 5;</code>
+   */
+  GATEWAY(5),
+  /**
+   *
+   *
+   * <pre>
    * Spokes that are backed by a producer VPC network.
    * </pre>
    *
@@ -164,6 +174,17 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Spokes that are NCC gateways.
+   * </pre>
+   *
+   * <code>GATEWAY = 5;</code>
+   */
+  public static final int GATEWAY_VALUE = 5;
+
+  /**
+   *
+   *
+   * <pre>
    * Spokes that are backed by a producer VPC network.
    * </pre>
    *
@@ -205,6 +226,8 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
         return ROUTER_APPLIANCE;
       case 4:
         return VPC_NETWORK;
+      case 5:
+        return GATEWAY;
       case 7:
         return PRODUCER_VPC_NETWORK;
       default:
@@ -236,7 +259,7 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final SpokeType[] VALUES = values();

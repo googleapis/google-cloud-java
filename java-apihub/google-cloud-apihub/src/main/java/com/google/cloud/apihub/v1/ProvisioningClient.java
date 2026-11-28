@@ -36,6 +36,7 @@ import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -96,7 +97,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteApiHubInstance</td>
- *      <td><p> Deletes the API hub instance.</td>
+ *      <td><p> Deletes the API hub instance. Deleting the API hub instance will also result in the removal of all associated runtime project attachments and the host project registration.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -134,8 +135,33 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateApiHubInstance</td>
+ *      <td><p> Update an Api Hub instance. The following fields in the [ApiHubInstance][google.cloud.apihub.v1.ApiHubInstance] can be updated:
+ * <ul>
+ * <li>  [disable_search][ApiHubInstance.config.disable_search]
+ * <li>  [vertex_location][ApiHubInstance.config.vertex_location]
+ * <li>  [agent_registry_sync_config][ApiHubInstance.config.agent_registry_sync_config]
+ * </ul>
+ * <p>  The [update_mask][google.cloud.apihub.v1.UpdateApiHubInstanceRequest.update_mask] should be used to specify the fields being updated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateApiHubInstanceAsync(UpdateApiHubInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateApiHubInstanceAsync(ApiHubInstance apiHubInstance, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateApiHubInstanceOperationCallable()
+ *           <li><p> updateApiHubInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> LookupApiHubInstance</td>
- *      <td><p> Looks up an Api Hub instance in a given GCP project. There will always be only one Api Hub instance for a GCP project across all locations.</td>
+ *      <td><p> Looks up an Api Hub instance in a given Google Cloud project. There will always be only one Api Hub instance for a Google Cloud project across all locations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -154,7 +180,9 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -464,7 +492,8 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the API hub instance.
+   * Deletes the API hub instance. Deleting the API hub instance will also result in the removal of
+   * all associated runtime project attachments and the host project registration.
    *
    * <p>Sample code:
    *
@@ -496,7 +525,8 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the API hub instance.
+   * Deletes the API hub instance. Deleting the API hub instance will also result in the removal of
+   * all associated runtime project attachments and the host project registration.
    *
    * <p>Sample code:
    *
@@ -525,7 +555,8 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the API hub instance.
+   * Deletes the API hub instance. Deleting the API hub instance will also result in the removal of
+   * all associated runtime project attachments and the host project registration.
    *
    * <p>Sample code:
    *
@@ -555,7 +586,8 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the API hub instance.
+   * Deletes the API hub instance. Deleting the API hub instance will also result in the removal of
+   * all associated runtime project attachments and the host project registration.
    *
    * <p>Sample code:
    *
@@ -585,7 +617,8 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes the API hub instance.
+   * Deletes the API hub instance. Deleting the API hub instance will also result in the removal of
+   * all associated runtime project attachments and the host project registration.
    *
    * <p>Sample code:
    *
@@ -732,8 +765,174 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up an Api Hub instance in a given GCP project. There will always be only one Api Hub
-   * instance for a GCP project across all locations.
+   * Update an Api Hub instance. The following fields in the
+   * [ApiHubInstance][google.cloud.apihub.v1.ApiHubInstance] can be updated:
+   *
+   * <ul>
+   *   <li>[disable_search][ApiHubInstance.config.disable_search]
+   *   <li>[vertex_location][ApiHubInstance.config.vertex_location]
+   *   <li>[agent_registry_sync_config][ApiHubInstance.config.agent_registry_sync_config]
+   * </ul>
+   *
+   * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiHubInstanceRequest.update_mask] should be
+   * used to specify the fields being updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   ApiHubInstance apiHubInstance = ApiHubInstance.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ApiHubInstance response =
+   *       provisioningClient.updateApiHubInstanceAsync(apiHubInstance, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param apiHubInstance Required. The ApiHub instance to update.
+   *     <p>The ApiHub instance's `name` field is used to identify the ApiHub instance to update.
+   *     Format: `projects/{project}/locations/{location}/apiHubInstances/{apiHubInstance}`.
+   * @param updateMask Required. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ApiHubInstance, OperationMetadata> updateApiHubInstanceAsync(
+      ApiHubInstance apiHubInstance, FieldMask updateMask) {
+    UpdateApiHubInstanceRequest request =
+        UpdateApiHubInstanceRequest.newBuilder()
+            .setApiHubInstance(apiHubInstance)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateApiHubInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an Api Hub instance. The following fields in the
+   * [ApiHubInstance][google.cloud.apihub.v1.ApiHubInstance] can be updated:
+   *
+   * <ul>
+   *   <li>[disable_search][ApiHubInstance.config.disable_search]
+   *   <li>[vertex_location][ApiHubInstance.config.vertex_location]
+   *   <li>[agent_registry_sync_config][ApiHubInstance.config.agent_registry_sync_config]
+   * </ul>
+   *
+   * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiHubInstanceRequest.update_mask] should be
+   * used to specify the fields being updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   UpdateApiHubInstanceRequest request =
+   *       UpdateApiHubInstanceRequest.newBuilder()
+   *           .setApiHubInstance(ApiHubInstance.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiHubInstance response = provisioningClient.updateApiHubInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ApiHubInstance, OperationMetadata> updateApiHubInstanceAsync(
+      UpdateApiHubInstanceRequest request) {
+    return updateApiHubInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an Api Hub instance. The following fields in the
+   * [ApiHubInstance][google.cloud.apihub.v1.ApiHubInstance] can be updated:
+   *
+   * <ul>
+   *   <li>[disable_search][ApiHubInstance.config.disable_search]
+   *   <li>[vertex_location][ApiHubInstance.config.vertex_location]
+   *   <li>[agent_registry_sync_config][ApiHubInstance.config.agent_registry_sync_config]
+   * </ul>
+   *
+   * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiHubInstanceRequest.update_mask] should be
+   * used to specify the fields being updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   UpdateApiHubInstanceRequest request =
+   *       UpdateApiHubInstanceRequest.newBuilder()
+   *           .setApiHubInstance(ApiHubInstance.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ApiHubInstance, OperationMetadata> future =
+   *       provisioningClient.updateApiHubInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ApiHubInstance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
+      updateApiHubInstanceOperationCallable() {
+    return stub.updateApiHubInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an Api Hub instance. The following fields in the
+   * [ApiHubInstance][google.cloud.apihub.v1.ApiHubInstance] can be updated:
+   *
+   * <ul>
+   *   <li>[disable_search][ApiHubInstance.config.disable_search]
+   *   <li>[vertex_location][ApiHubInstance.config.vertex_location]
+   *   <li>[agent_registry_sync_config][ApiHubInstance.config.agent_registry_sync_config]
+   * </ul>
+   *
+   * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiHubInstanceRequest.update_mask] should be
+   * used to specify the fields being updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   UpdateApiHubInstanceRequest request =
+   *       UpdateApiHubInstanceRequest.newBuilder()
+   *           .setApiHubInstance(ApiHubInstance.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       provisioningClient.updateApiHubInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateApiHubInstanceRequest, Operation>
+      updateApiHubInstanceCallable() {
+    return stub.updateApiHubInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up an Api Hub instance in a given Google Cloud project. There will always be only one Api
+   * Hub instance for a Google Cloud project across all locations.
    *
    * <p>Sample code:
    *
@@ -749,9 +948,9 @@ public class ProvisioningClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. There will always be only one Api Hub instance for a GCP project across
-   *     all locations. The parent resource for the Api Hub instance resource. Format:
-   *     `projects/{project}/locations/{location}`
+   * @param parent Required. There will always be only one Api Hub instance for a Google Cloud
+   *     project across all locations. The parent resource for the Api Hub instance resource.
+   *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupApiHubInstanceResponse lookupApiHubInstance(@Nullable LocationName parent) {
@@ -764,8 +963,8 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up an Api Hub instance in a given GCP project. There will always be only one Api Hub
-   * instance for a GCP project across all locations.
+   * Looks up an Api Hub instance in a given Google Cloud project. There will always be only one Api
+   * Hub instance for a Google Cloud project across all locations.
    *
    * <p>Sample code:
    *
@@ -781,9 +980,9 @@ public class ProvisioningClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. There will always be only one Api Hub instance for a GCP project across
-   *     all locations. The parent resource for the Api Hub instance resource. Format:
-   *     `projects/{project}/locations/{location}`
+   * @param parent Required. There will always be only one Api Hub instance for a Google Cloud
+   *     project across all locations. The parent resource for the Api Hub instance resource.
+   *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupApiHubInstanceResponse lookupApiHubInstance(String parent) {
@@ -794,8 +993,8 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up an Api Hub instance in a given GCP project. There will always be only one Api Hub
-   * instance for a GCP project across all locations.
+   * Looks up an Api Hub instance in a given Google Cloud project. There will always be only one Api
+   * Hub instance for a Google Cloud project across all locations.
    *
    * <p>Sample code:
    *
@@ -824,8 +1023,8 @@ public class ProvisioningClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Looks up an Api Hub instance in a given GCP project. There will always be only one Api Hub
-   * instance for a GCP project across all locations.
+   * Looks up an Api Hub instance in a given Google Cloud project. There will always be only one Api
+   * Hub instance for a Google Cloud project across all locations.
    *
    * <p>Sample code:
    *
@@ -855,6 +1054,18 @@ public class ProvisioningClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -889,6 +1100,18 @@ public class ProvisioningClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -922,6 +1145,18 @@ public class ProvisioningClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

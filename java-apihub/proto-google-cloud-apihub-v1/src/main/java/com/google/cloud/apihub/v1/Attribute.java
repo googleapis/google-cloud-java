@@ -813,8 +813,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
      * will be used. In this case, the service will handle conflict resolution
      * by adding a system generated suffix in case of duplicates.
      *
-     * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * This value should be 3-500 characters, and valid characters
+     * are /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -835,8 +835,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
      * will be used. In this case, the service will handle conflict resolution
      * by adding a system generated suffix in case of duplicates.
      *
-     * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * This value should be 3-500 characters, and valid characters
+     * are /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -981,8 +981,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
      * will be used. In this case, the service will handle conflict resolution
      * by adding a system generated suffix in case of duplicates.
      *
-     * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * This value should be 3-500 characters, and valid characters
+     * are /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1014,8 +1014,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
      * will be used. In this case, the service will handle conflict resolution
      * by adding a system generated suffix in case of duplicates.
      *
-     * This value should be 4-63 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * This value should be 3-500 characters, and valid characters
+     * are /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1556,8 +1556,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
        * will be used. In this case, the service will handle conflict resolution
        * by adding a system generated suffix in case of duplicates.
        *
-       * This value should be 4-63 characters, and valid characters
-       * are /[a-z][0-9]-/.
+       * This value should be 3-500 characters, and valid characters
+       * are /[a-z][A-Z][0-9]-_/.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1588,8 +1588,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
        * will be used. In this case, the service will handle conflict resolution
        * by adding a system generated suffix in case of duplicates.
        *
-       * This value should be 4-63 characters, and valid characters
-       * are /[a-z][0-9]-/.
+       * This value should be 3-500 characters, and valid characters
+       * are /[a-z][A-Z][0-9]-_/.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1620,8 +1620,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
        * will be used. In this case, the service will handle conflict resolution
        * by adding a system generated suffix in case of duplicates.
        *
-       * This value should be 4-63 characters, and valid characters
-       * are /[a-z][0-9]-/.
+       * This value should be 3-500 characters, and valid characters
+       * are /[a-z][A-Z][0-9]-_/.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1651,8 +1651,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
        * will be used. In this case, the service will handle conflict resolution
        * by adding a system generated suffix in case of duplicates.
        *
-       * This value should be 4-63 characters, and valid characters
-       * are /[a-z][0-9]-/.
+       * This value should be 3-500 characters, and valid characters
+       * are /[a-z][A-Z][0-9]-_/.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1678,8 +1678,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessage
        * will be used. In this case, the service will handle conflict resolution
        * by adding a system generated suffix in case of duplicates.
        *
-       * This value should be 4-63 characters, and valid characters
-       * are /[a-z][0-9]-/.
+       * This value should be 3-500 characters, and valid characters
+       * are /[a-z][A-Z][0-9]-_/.
        * </pre>
        *
        * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>

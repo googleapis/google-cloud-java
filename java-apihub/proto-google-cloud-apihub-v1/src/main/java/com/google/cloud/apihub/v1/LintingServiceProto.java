@@ -106,7 +106,7 @@ public final class LintingServiceProto extends com.google.protobuf.GeneratedFile
           + " \001(\0132*.google.cloud.apihub.v1.StyleGuideContentsB\005\342A\002\002\004:\204\001\352A\200\001\n"
           + " apihub.googleapis.com/StyleGuide\022Cprojects/{"
           + "project}/locations/{location}/plugins/{plugin}/styleGuide*\013styleGuides2\n"
-          + "styleGuide2\312\006\n"
+          + "styleGuide2\255\007\n"
           + "\016LintingService\022\250\001\n\r"
           + "GetStyleGuide\022,.google.cloud.apihub.v1.GetStyleGuideRe"
           + "quest\032\".google.cloud.apihub.v1.StyleGuid"
@@ -123,12 +123,13 @@ public final class LintingServiceProto extends com.google.protobuf.GeneratedFile
           + "\010LintSpec\022\'.google.cloud.apihub.v1.LintSpecRequest\032\026.google"
           + ".protobuf.Empty\"K\202\323\344\223\002E\"@/v1/{name=proje"
           + "cts/*/locations/*/apis/*/versions/*/spec"
-          + "s/*}:lint:\001*\032I\312A\025apihub.googleapis.com\322A"
-          + ".https://www.googleapis.com/auth/cloud-platformB\265\001\n"
-          + "\032com.google.cloud.apihub.v1B\023LintingServiceProtoP\001Z2cloud.google.com/"
-          + "go/apihub/apiv1/apihubpb;apihubpb\252\002\026Goog"
-          + "le.Cloud.ApiHub.V1\312\002\026Google\\Cloud\\ApiHub"
-          + "\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto3"
+          + "s/*}:lint:\001*\032\253\001\312A\025apihub.googleapis.com\322"
+          + "A\217\001https://www.googleapis.com/auth/apihub.readonly,https://www.googleapis.com/au"
+          + "th/apihub.readwrite,https://www.googleapis.com/auth/cloud-platformB\265\001\n"
+          + "\032com.google.cloud.apihub.v1B\023LintingServiceProtoP\001"
+          + "Z2cloud.google.com/go/apihub/apiv1/apihu"
+          + "bpb;apihubpb\252\002\026Google.Cloud.ApiHub.V1\312\002\026"
+          + "Google\\Cloud\\ApiHub\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

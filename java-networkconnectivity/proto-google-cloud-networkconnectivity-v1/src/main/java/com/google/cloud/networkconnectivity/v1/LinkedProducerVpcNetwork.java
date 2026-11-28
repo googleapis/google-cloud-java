@@ -453,12 +453,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The proposed include export IP ranges waiting for hub
-   * administration's approval.
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return A list containing the proposedIncludeExportRanges.
@@ -471,12 +471,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The proposed include export IP ranges waiting for hub
-   * administration's approval.
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The count of proposedIncludeExportRanges.
@@ -489,12 +489,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The proposed include export IP ranges waiting for hub
-   * administration's approval.
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the element to return.
@@ -508,12 +508,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. The proposed include export IP ranges waiting for hub
-   * administration's approval.
+   * Output only. The proposed include export IP ranges waiting for hub
+   * administrator's approval.
    * </pre>
    *
    * <code>
-   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @param index The index of the value to return.
@@ -534,7 +534,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. The proposed exclude export IP ranges waiting for hub
-   * administration's approval.
+   * administrator's approval.
    * </pre>
    *
    * <code>
@@ -552,7 +552,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. The proposed exclude export IP ranges waiting for hub
-   * administration's approval.
+   * administrator's approval.
    * </pre>
    *
    * <code>
@@ -570,7 +570,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. The proposed exclude export IP ranges waiting for hub
-   * administration's approval.
+   * administrator's approval.
    * </pre>
    *
    * <code>
@@ -589,7 +589,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
    *
    * <pre>
    * Output only. The proposed exclude export IP ranges waiting for hub
-   * administration's approval.
+   * administrator's approval.
    * </pre>
    *
    * <code>
@@ -2026,12 +2026,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return A list containing the proposedIncludeExportRanges.
@@ -2045,12 +2045,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The count of proposedIncludeExportRanges.
@@ -2063,12 +2063,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index of the element to return.
@@ -2082,12 +2082,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index of the value to return.
@@ -2101,12 +2101,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param index The index to set the value at.
@@ -2128,12 +2128,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The proposedIncludeExportRanges to add.
@@ -2154,12 +2154,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param values The proposedIncludeExportRanges to add.
@@ -2177,12 +2177,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -2199,12 +2199,12 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. The proposed include export IP ranges waiting for hub
-     * administration's approval.
+     * Output only. The proposed include export IP ranges waiting for hub
+     * administrator's approval.
      * </pre>
      *
      * <code>
-     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated string proposed_include_export_ranges = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The bytes of the proposedIncludeExportRanges to add.
@@ -2238,7 +2238,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>
@@ -2257,7 +2257,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>
@@ -2275,7 +2275,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>
@@ -2294,7 +2294,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>
@@ -2313,7 +2313,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>
@@ -2340,7 +2340,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>
@@ -2366,7 +2366,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>
@@ -2389,7 +2389,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>
@@ -2411,7 +2411,7 @@ public final class LinkedProducerVpcNetwork extends com.google.protobuf.Generate
      *
      * <pre>
      * Output only. The proposed exclude export IP ranges waiting for hub
-     * administration's approval.
+     * administrator's approval.
      * </pre>
      *
      * <code>

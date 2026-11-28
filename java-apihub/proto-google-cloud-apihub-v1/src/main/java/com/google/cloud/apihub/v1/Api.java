@@ -1156,7 +1156,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api requirement doc associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1180,7 +1180,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api requirement doc associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1206,7 +1206,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api requirement doc associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1234,7 +1234,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Fingerprint of the API resource.
+   * Optional. Fingerprint of the API resource. This must be unique for each API
+   * resource. It can neither be unset nor be updated to an existing fingerprint
+   * of another API resource.
    * </pre>
    *
    * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1258,7 +1260,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Fingerprint of the API resource.
+   * Optional. Fingerprint of the API resource. This must be unique for each API
+   * resource. It can neither be unset nor be updated to an existing fingerprint
+   * of another API resource.
    * </pre>
    *
    * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1377,7 +1381,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api functional requirements associated with the API resource.
-   * Carinality is 1 for this attribute.
+   * Cardinality is 1 for this attribute.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1401,7 +1405,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api functional requirements associated with the API resource.
-   * Carinality is 1 for this attribute.
+   * Cardinality is 1 for this attribute.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1427,7 +1431,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api functional requirements associated with the API resource.
-   * Carinality is 1 for this attribute.
+   * Cardinality is 1 for this attribute.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1455,7 +1459,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api technical requirements associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1479,7 +1483,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api technical requirements associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1505,7 +1509,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The api technical requirements associated with the API resource.
-   * Carinality is 1 for this attribute. This maps to the following system
+   * Cardinality is 1 for this attribute. This maps to the following system
    * defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
    * attribute. The value of the attribute should be a proper URI, and in case
@@ -1523,6 +1527,80 @@ public final class Api extends com.google.protobuf.GeneratedMessage
     return apiTechnicalRequirements_ == null
         ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
         : apiTechnicalRequirements_;
+  }
+
+  public static final int SERVICE_TYPE_FIELD_NUMBER = 21;
+  private com.google.cloud.apihub.v1.AttributeValues serviceType_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the service.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-service-type`
+   * attribute.
+   * The cardinality of this attribute is 1. All values should be from the list
+   * of allowed values defined for the attribute.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the serviceType field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceType() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the service.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-service-type`
+   * attribute.
+   * The cardinality of this attribute is 1. All values should be from the list
+   * of allowed values defined for the attribute.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The serviceType.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValues getServiceType() {
+    return serviceType_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : serviceType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the service.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-service-type`
+   * attribute.
+   * The cardinality of this attribute is 1. All values should be from the list
+   * of allowed values defined for the attribute.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getServiceTypeOrBuilder() {
+    return serviceType_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : serviceType_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1597,6 +1675,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(20, getApiTechnicalRequirements());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(21, getServiceType());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1684,6 +1765,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, getApiTechnicalRequirements());
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getServiceType());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1755,6 +1839,10 @@ public final class Api extends com.google.protobuf.GeneratedMessage
     if (hasApiTechnicalRequirements() != other.hasApiTechnicalRequirements()) return false;
     if (hasApiTechnicalRequirements()) {
       if (!getApiTechnicalRequirements().equals(other.getApiTechnicalRequirements())) return false;
+    }
+    if (hasServiceType() != other.hasServiceType()) return false;
+    if (hasServiceType()) {
+      if (!getServiceType().equals(other.getServiceType())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1836,6 +1924,10 @@ public final class Api extends com.google.protobuf.GeneratedMessage
     if (hasApiTechnicalRequirements()) {
       hash = (37 * hash) + API_TECHNICAL_REQUIREMENTS_FIELD_NUMBER;
       hash = (53 * hash) + getApiTechnicalRequirements().hashCode();
+    }
+    if (hasServiceType()) {
+      hash = (37 * hash) + SERVICE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceType().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2011,6 +2103,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
         internalGetSourceMetadataFieldBuilder();
         internalGetApiFunctionalRequirementsFieldBuilder();
         internalGetApiTechnicalRequirementsFieldBuilder();
+        internalGetServiceTypeFieldBuilder();
       }
     }
 
@@ -2091,6 +2184,11 @@ public final class Api extends com.google.protobuf.GeneratedMessage
       if (apiTechnicalRequirementsBuilder_ != null) {
         apiTechnicalRequirementsBuilder_.dispose();
         apiTechnicalRequirementsBuilder_ = null;
+      }
+      serviceType_ = null;
+      if (serviceTypeBuilder_ != null) {
+        serviceTypeBuilder_.dispose();
+        serviceTypeBuilder_ = null;
       }
       return this;
     }
@@ -2222,6 +2320,11 @@ public final class Api extends com.google.protobuf.GeneratedMessage
                 : apiTechnicalRequirementsBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.serviceType_ =
+            serviceTypeBuilder_ == null ? serviceType_ : serviceTypeBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2336,6 +2439,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasApiTechnicalRequirements()) {
         mergeApiTechnicalRequirements(other.getApiTechnicalRequirements());
+      }
+      if (other.hasServiceType()) {
+        mergeServiceType(other.getServiceType());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2511,6 +2617,13 @@ public final class Api extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00080000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    internalGetServiceTypeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5754,7 +5867,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -5777,7 +5890,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -5806,7 +5919,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -5837,7 +5950,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -5866,7 +5979,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -5903,7 +6016,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -5931,7 +6044,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -5954,7 +6067,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -5981,7 +6094,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api requirement doc associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6016,7 +6129,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Fingerprint of the API resource.
+     * Optional. Fingerprint of the API resource. This must be unique for each API
+     * resource. It can neither be unset nor be updated to an existing fingerprint
+     * of another API resource.
      * </pre>
      *
      * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6039,7 +6154,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Fingerprint of the API resource.
+     * Optional. Fingerprint of the API resource. This must be unique for each API
+     * resource. It can neither be unset nor be updated to an existing fingerprint
+     * of another API resource.
      * </pre>
      *
      * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6062,7 +6179,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Fingerprint of the API resource.
+     * Optional. Fingerprint of the API resource. This must be unique for each API
+     * resource. It can neither be unset nor be updated to an existing fingerprint
+     * of another API resource.
      * </pre>
      *
      * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6084,7 +6203,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Fingerprint of the API resource.
+     * Optional. Fingerprint of the API resource. This must be unique for each API
+     * resource. It can neither be unset nor be updated to an existing fingerprint
+     * of another API resource.
      * </pre>
      *
      * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6102,7 +6223,9 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Fingerprint of the API resource.
+     * Optional. Fingerprint of the API resource. This must be unique for each API
+     * resource. It can neither be unset nor be updated to an existing fingerprint
+     * of another API resource.
      * </pre>
      *
      * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6559,7 +6682,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6582,7 +6705,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6611,7 +6734,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6642,7 +6765,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6671,7 +6794,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6709,7 +6832,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6737,7 +6860,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6761,7 +6884,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6789,7 +6912,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api functional requirements associated with the API resource.
-     * Carinality is 1 for this attribute.
+     * Cardinality is 1 for this attribute.
      * This maps to the following system defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6830,7 +6953,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6853,7 +6976,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6882,7 +7005,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6913,7 +7036,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6942,7 +7065,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -6979,7 +7102,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -7007,7 +7130,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -7030,7 +7153,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -7058,7 +7181,7 @@ public final class Api extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The api technical requirements associated with the API resource.
-     * Carinality is 1 for this attribute. This maps to the following system
+     * Cardinality is 1 for this attribute. This maps to the following system
      * defined attribute:
      * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
      * attribute. The value of the attribute should be a proper URI, and in case
@@ -7085,6 +7208,264 @@ public final class Api extends com.google.protobuf.GeneratedMessage
         apiTechnicalRequirements_ = null;
       }
       return apiTechnicalRequirementsBuilder_;
+    }
+
+    private com.google.cloud.apihub.v1.AttributeValues serviceType_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        serviceTypeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the serviceType field is set.
+     */
+    public boolean hasServiceType() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The serviceType.
+     */
+    public com.google.cloud.apihub.v1.AttributeValues getServiceType() {
+      if (serviceTypeBuilder_ == null) {
+        return serviceType_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : serviceType_;
+      } else {
+        return serviceTypeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setServiceType(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (serviceTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceType_ = value;
+      } else {
+        serviceTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setServiceType(
+        com.google.cloud.apihub.v1.AttributeValues.Builder builderForValue) {
+      if (serviceTypeBuilder_ == null) {
+        serviceType_ = builderForValue.build();
+      } else {
+        serviceTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeServiceType(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (serviceTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && serviceType_ != null
+            && serviceType_ != com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()) {
+          getServiceTypeBuilder().mergeFrom(value);
+        } else {
+          serviceType_ = value;
+        }
+      } else {
+        serviceTypeBuilder_.mergeFrom(value);
+      }
+      if (serviceType_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearServiceType() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      serviceType_ = null;
+      if (serviceTypeBuilder_ != null) {
+        serviceTypeBuilder_.dispose();
+        serviceTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValues.Builder getServiceTypeBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return internalGetServiceTypeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getServiceTypeOrBuilder() {
+      if (serviceTypeBuilder_ != null) {
+        return serviceTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return serviceType_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : serviceType_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the service.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-service-type`
+     * attribute.
+     * The cardinality of this attribute is 1. All values should be from the list
+     * of allowed values defined for the attribute.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues service_type = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        internalGetServiceTypeFieldBuilder() {
+      if (serviceTypeBuilder_ == null) {
+        serviceTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.apihub.v1.AttributeValues,
+                com.google.cloud.apihub.v1.AttributeValues.Builder,
+                com.google.cloud.apihub.v1.AttributeValuesOrBuilder>(
+                getServiceType(), getParentForChildren(), isClean());
+        serviceType_ = null;
+      }
+      return serviceTypeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.apihub.v1.Api)

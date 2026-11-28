@@ -24,6 +24,7 @@ import static com.google.cloud.apihub.v1.ApiHubClient.ListExternalApisPagedRespo
 import static com.google.cloud.apihub.v1.ApiHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.ListSpecsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.ListVersionsPagedResponse;
+import static com.google.cloud.apihub.v1.ApiHubClient.RetrieveApiViewsPagedResponse;
 import static com.google.cloud.apihub.v1.ApiHubClient.SearchResourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -35,11 +36,15 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -51,7 +56,10 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.Api;
 import com.google.cloud.apihub.v1.ApiOperation;
+import com.google.cloud.apihub.v1.ApiView;
 import com.google.cloud.apihub.v1.Attribute;
+import com.google.cloud.apihub.v1.ConfigureAndDeployServerRequest;
+import com.google.cloud.apihub.v1.ConfigureAndDeployServerResponse;
 import com.google.cloud.apihub.v1.CreateApiOperationRequest;
 import com.google.cloud.apihub.v1.CreateApiRequest;
 import com.google.cloud.apihub.v1.CreateAttributeRequest;
@@ -69,6 +77,8 @@ import com.google.cloud.apihub.v1.DeleteSpecRequest;
 import com.google.cloud.apihub.v1.DeleteVersionRequest;
 import com.google.cloud.apihub.v1.Deployment;
 import com.google.cloud.apihub.v1.ExternalApi;
+import com.google.cloud.apihub.v1.FetchAdditionalSpecContentRequest;
+import com.google.cloud.apihub.v1.FetchAdditionalSpecContentResponse;
 import com.google.cloud.apihub.v1.GetApiOperationRequest;
 import com.google.cloud.apihub.v1.GetApiRequest;
 import com.google.cloud.apihub.v1.GetAttributeRequest;
@@ -92,6 +102,9 @@ import com.google.cloud.apihub.v1.ListSpecsRequest;
 import com.google.cloud.apihub.v1.ListSpecsResponse;
 import com.google.cloud.apihub.v1.ListVersionsRequest;
 import com.google.cloud.apihub.v1.ListVersionsResponse;
+import com.google.cloud.apihub.v1.OperationMetadata;
+import com.google.cloud.apihub.v1.RetrieveApiViewsRequest;
+import com.google.cloud.apihub.v1.RetrieveApiViewsResponse;
 import com.google.cloud.apihub.v1.SearchResourcesRequest;
 import com.google.cloud.apihub.v1.SearchResourcesResponse;
 import com.google.cloud.apihub.v1.SearchResult;
@@ -113,6 +126,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
@@ -169,6 +183,31 @@ import org.jspecify.annotations.Nullable;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for configureAndDeployServer:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ApiHubStubSettings.Builder apiHubSettingsBuilder = ApiHubStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * apiHubSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @NullMarked
 @Generated("by gapic-generator-java")
@@ -176,7 +215,11 @@ import org.jspecify.annotations.Nullable;
 public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/apihub.readonly")
+          .add("https://www.googleapis.com/auth/apihub.readwrite")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<CreateApiRequest, Api> createApiSettings;
   private final UnaryCallSettings<GetApiRequest, Api> getApiSettings;
@@ -194,6 +237,9 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
   private final UnaryCallSettings<CreateSpecRequest, Spec> createSpecSettings;
   private final UnaryCallSettings<GetSpecRequest, Spec> getSpecSettings;
   private final UnaryCallSettings<GetSpecContentsRequest, SpecContents> getSpecContentsSettings;
+  private final UnaryCallSettings<
+          FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+      fetchAdditionalSpecContentSettings;
   private final PagedCallSettings<ListSpecsRequest, ListSpecsResponse, ListSpecsPagedResponse>
       listSpecsSettings;
   private final UnaryCallSettings<UpdateSpecRequest, Spec> updateSpecSettings;
@@ -232,6 +278,14 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
   private final PagedCallSettings<
           ListExternalApisRequest, ListExternalApisResponse, ListExternalApisPagedResponse>
       listExternalApisSettings;
+  private final PagedCallSettings<
+          RetrieveApiViewsRequest, RetrieveApiViewsResponse, RetrieveApiViewsPagedResponse>
+      retrieveApiViewsSettings;
+  private final UnaryCallSettings<ConfigureAndDeployServerRequest, Operation>
+      configureAndDeployServerSettings;
+  private final OperationCallSettings<
+          ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -524,6 +578,43 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          RetrieveApiViewsRequest, RetrieveApiViewsResponse, ApiView>
+      RETRIEVE_API_VIEWS_PAGE_STR_DESC =
+          new PagedListDescriptor<RetrieveApiViewsRequest, RetrieveApiViewsResponse, ApiView>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public RetrieveApiViewsRequest injectToken(
+                RetrieveApiViewsRequest payload, String token) {
+              return RetrieveApiViewsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public RetrieveApiViewsRequest injectPageSize(
+                RetrieveApiViewsRequest payload, int pageSize) {
+              return RetrieveApiViewsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(RetrieveApiViewsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(RetrieveApiViewsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ApiView> extractResources(RetrieveApiViewsResponse payload) {
+              return payload.getApiViewsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -702,6 +793,23 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          RetrieveApiViewsRequest, RetrieveApiViewsResponse, RetrieveApiViewsPagedResponse>
+      RETRIEVE_API_VIEWS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              RetrieveApiViewsRequest, RetrieveApiViewsResponse, RetrieveApiViewsPagedResponse>() {
+            @Override
+            public ApiFuture<RetrieveApiViewsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<RetrieveApiViewsRequest, RetrieveApiViewsResponse> callable,
+                RetrieveApiViewsRequest request,
+                ApiCallContext context,
+                ApiFuture<RetrieveApiViewsResponse> futureResponse) {
+              PageContext<RetrieveApiViewsRequest, RetrieveApiViewsResponse, ApiView> pageContext =
+                  PageContext.create(callable, RETRIEVE_API_VIEWS_PAGE_STR_DESC, request, context);
+              return RetrieveApiViewsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -783,6 +891,12 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
   /** Returns the object with the settings used for calls to getSpecContents. */
   public UnaryCallSettings<GetSpecContentsRequest, SpecContents> getSpecContentsSettings() {
     return getSpecContentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchAdditionalSpecContent. */
+  public UnaryCallSettings<FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+      fetchAdditionalSpecContentSettings() {
+    return fetchAdditionalSpecContentSettings;
   }
 
   /** Returns the object with the settings used for calls to listSpecs. */
@@ -921,6 +1035,26 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     return listExternalApisSettings;
   }
 
+  /** Returns the object with the settings used for calls to retrieveApiViews. */
+  public PagedCallSettings<
+          RetrieveApiViewsRequest, RetrieveApiViewsResponse, RetrieveApiViewsPagedResponse>
+      retrieveApiViewsSettings() {
+    return retrieveApiViewsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to configureAndDeployServer. */
+  public UnaryCallSettings<ConfigureAndDeployServerRequest, Operation>
+      configureAndDeployServerSettings() {
+    return configureAndDeployServerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to configureAndDeployServer. */
+  public OperationCallSettings<
+          ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+      configureAndDeployServerOperationSettings() {
+    return configureAndDeployServerOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1026,6 +1160,8 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     createSpecSettings = settingsBuilder.createSpecSettings().build();
     getSpecSettings = settingsBuilder.getSpecSettings().build();
     getSpecContentsSettings = settingsBuilder.getSpecContentsSettings().build();
+    fetchAdditionalSpecContentSettings =
+        settingsBuilder.fetchAdditionalSpecContentSettings().build();
     listSpecsSettings = settingsBuilder.listSpecsSettings().build();
     updateSpecSettings = settingsBuilder.updateSpecSettings().build();
     deleteSpecSettings = settingsBuilder.deleteSpecSettings().build();
@@ -1051,6 +1187,10 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     updateExternalApiSettings = settingsBuilder.updateExternalApiSettings().build();
     deleteExternalApiSettings = settingsBuilder.deleteExternalApiSettings().build();
     listExternalApisSettings = settingsBuilder.listExternalApisSettings().build();
+    retrieveApiViewsSettings = settingsBuilder.retrieveApiViewsSettings().build();
+    configureAndDeployServerSettings = settingsBuilder.configureAndDeployServerSettings().build();
+    configureAndDeployServerOperationSettings =
+        settingsBuilder.configureAndDeployServerOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1085,6 +1225,9 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     private final UnaryCallSettings.Builder<GetSpecRequest, Spec> getSpecSettings;
     private final UnaryCallSettings.Builder<GetSpecContentsRequest, SpecContents>
         getSpecContentsSettings;
+    private final UnaryCallSettings.Builder<
+            FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+        fetchAdditionalSpecContentSettings;
     private final PagedCallSettings.Builder<
             ListSpecsRequest, ListSpecsResponse, ListSpecsPagedResponse>
         listSpecsSettings;
@@ -1135,6 +1278,14 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     private final PagedCallSettings.Builder<
             ListExternalApisRequest, ListExternalApisResponse, ListExternalApisPagedResponse>
         listExternalApisSettings;
+    private final PagedCallSettings.Builder<
+            RetrieveApiViewsRequest, RetrieveApiViewsResponse, RetrieveApiViewsPagedResponse>
+        retrieveApiViewsSettings;
+    private final UnaryCallSettings.Builder<ConfigureAndDeployServerRequest, Operation>
+        configureAndDeployServerSettings;
+    private final OperationCallSettings.Builder<
+            ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+        configureAndDeployServerOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1213,6 +1364,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       createSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSpecContentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchAdditionalSpecContentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpecsSettings = PagedCallSettings.newBuilder(LIST_SPECS_PAGE_STR_FACT);
       updateSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1238,6 +1390,9 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       updateExternalApiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteExternalApiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listExternalApisSettings = PagedCallSettings.newBuilder(LIST_EXTERNAL_APIS_PAGE_STR_FACT);
+      retrieveApiViewsSettings = PagedCallSettings.newBuilder(RETRIEVE_API_VIEWS_PAGE_STR_FACT);
+      configureAndDeployServerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      configureAndDeployServerOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1256,6 +1411,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
               createSpecSettings,
               getSpecSettings,
               getSpecContentsSettings,
+              fetchAdditionalSpecContentSettings,
               listSpecsSettings,
               updateSpecSettings,
               deleteSpecSettings,
@@ -1281,6 +1437,8 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
               updateExternalApiSettings,
               deleteExternalApiSettings,
               listExternalApisSettings,
+              retrieveApiViewsSettings,
+              configureAndDeployServerSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1302,6 +1460,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       createSpecSettings = settings.createSpecSettings.toBuilder();
       getSpecSettings = settings.getSpecSettings.toBuilder();
       getSpecContentsSettings = settings.getSpecContentsSettings.toBuilder();
+      fetchAdditionalSpecContentSettings = settings.fetchAdditionalSpecContentSettings.toBuilder();
       listSpecsSettings = settings.listSpecsSettings.toBuilder();
       updateSpecSettings = settings.updateSpecSettings.toBuilder();
       deleteSpecSettings = settings.deleteSpecSettings.toBuilder();
@@ -1327,6 +1486,10 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       updateExternalApiSettings = settings.updateExternalApiSettings.toBuilder();
       deleteExternalApiSettings = settings.deleteExternalApiSettings.toBuilder();
       listExternalApisSettings = settings.listExternalApisSettings.toBuilder();
+      retrieveApiViewsSettings = settings.retrieveApiViewsSettings.toBuilder();
+      configureAndDeployServerSettings = settings.configureAndDeployServerSettings.toBuilder();
+      configureAndDeployServerOperationSettings =
+          settings.configureAndDeployServerOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1345,6 +1508,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
               createSpecSettings,
               getSpecSettings,
               getSpecContentsSettings,
+              fetchAdditionalSpecContentSettings,
               listSpecsSettings,
               updateSpecSettings,
               deleteSpecSettings,
@@ -1370,6 +1534,8 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
               updateExternalApiSettings,
               deleteExternalApiSettings,
               listExternalApisSettings,
+              retrieveApiViewsSettings,
+              configureAndDeployServerSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1449,6 +1615,11 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
       builder
           .getSpecContentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .fetchAdditionalSpecContentSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1578,6 +1749,16 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .retrieveApiViewsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .configureAndDeployServerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1586,6 +1767,31 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
           .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .configureAndDeployServerOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ConfigureAndDeployServerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ConfigureAndDeployServerResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -1672,6 +1878,13 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     public UnaryCallSettings.Builder<GetSpecContentsRequest, SpecContents>
         getSpecContentsSettings() {
       return getSpecContentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchAdditionalSpecContent. */
+    public UnaryCallSettings.Builder<
+            FetchAdditionalSpecContentRequest, FetchAdditionalSpecContentResponse>
+        fetchAdditionalSpecContentSettings() {
+      return fetchAdditionalSpecContentSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSpecs. */
@@ -1816,6 +2029,26 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
             ListExternalApisRequest, ListExternalApisResponse, ListExternalApisPagedResponse>
         listExternalApisSettings() {
       return listExternalApisSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveApiViews. */
+    public PagedCallSettings.Builder<
+            RetrieveApiViewsRequest, RetrieveApiViewsResponse, RetrieveApiViewsPagedResponse>
+        retrieveApiViewsSettings() {
+      return retrieveApiViewsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to configureAndDeployServer. */
+    public UnaryCallSettings.Builder<ConfigureAndDeployServerRequest, Operation>
+        configureAndDeployServerSettings() {
+      return configureAndDeployServerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to configureAndDeployServer. */
+    public OperationCallSettings.Builder<
+            ConfigureAndDeployServerRequest, ConfigureAndDeployServerResponse, OperationMetadata>
+        configureAndDeployServerOperationSettings() {
+      return configureAndDeployServerOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

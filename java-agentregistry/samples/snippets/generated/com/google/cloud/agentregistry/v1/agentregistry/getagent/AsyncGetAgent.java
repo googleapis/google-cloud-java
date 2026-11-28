@@ -38,7 +38,9 @@ public class AsyncGetAgent {
     try (AgentRegistryClient agentRegistryClient = AgentRegistryClient.create()) {
       GetAgentRequest request =
           GetAgentRequest.newBuilder()
-              .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setName(
+                  AgentName.ofProjectLocationAgentName("[PROJECT]", "[LOCATION]", "[AGENT]")
+                      .toString())
               .build();
       ApiFuture<Agent> future = agentRegistryClient.getAgentCallable().futureCall(request);
       // Do something.

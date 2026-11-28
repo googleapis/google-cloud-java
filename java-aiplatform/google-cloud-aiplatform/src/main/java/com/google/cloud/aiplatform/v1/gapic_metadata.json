@@ -5,6 +5,72 @@
   "protoPackage": "google.cloud.aiplatform.v1",
   "libraryPackage": "com.google.cloud.aiplatform.v1",
   "services": {
+    "AgentAnomalyDetectionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AgentAnomalyDetectionServiceClient",
+          "rpcs": {
+            "AggregateAnalyzedSessions": {
+              "methods": ["aggregateAnalyzedSessions", "aggregateAnalyzedSessions", "aggregateAnalyzedSessions", "aggregateAnalyzedSessionsPagedCallable", "aggregateAnalyzedSessionsCallable"]
+            },
+            "ClearTrainingData": {
+              "methods": ["clearTrainingDataAsync", "clearTrainingDataAsync", "clearTrainingDataAsync", "clearTrainingDataOperationCallable", "clearTrainingDataCallable"]
+            },
+            "CreateAgentAnomalyDetectionScope": {
+              "methods": ["createAgentAnomalyDetectionScopeAsync", "createAgentAnomalyDetectionScopeAsync", "createAgentAnomalyDetectionScopeAsync", "createAgentAnomalyDetectionScopeOperationCallable", "createAgentAnomalyDetectionScopeCallable"]
+            },
+            "DeleteAgentAnomalyDetectionScope": {
+              "methods": ["deleteAgentAnomalyDetectionScopeAsync", "deleteAgentAnomalyDetectionScopeAsync", "deleteAgentAnomalyDetectionScopeAsync", "deleteAgentAnomalyDetectionScopeOperationCallable", "deleteAgentAnomalyDetectionScopeCallable"]
+            },
+            "DisableMonitoredAgent": {
+              "methods": ["disableMonitoredAgentAsync", "disableMonitoredAgentAsync", "disableMonitoredAgentAsync", "disableMonitoredAgentOperationCallable", "disableMonitoredAgentCallable"]
+            },
+            "EnableMonitoredAgent": {
+              "methods": ["enableMonitoredAgentAsync", "enableMonitoredAgentAsync", "enableMonitoredAgentAsync", "enableMonitoredAgentOperationCallable", "enableMonitoredAgentCallable"]
+            },
+            "GetAgentAnomalyDetectionScope": {
+              "methods": ["getAgentAnomalyDetectionScope", "getAgentAnomalyDetectionScope", "getAgentAnomalyDetectionScope", "getAgentAnomalyDetectionScopeCallable"]
+            },
+            "GetAnalyzedInvocation": {
+              "methods": ["getAnalyzedInvocation", "getAnalyzedInvocation", "getAnalyzedInvocation", "getAnalyzedInvocationCallable"]
+            },
+            "GetAnalyzedSession": {
+              "methods": ["getAnalyzedSession", "getAnalyzedSession", "getAnalyzedSession", "getAnalyzedSessionCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMonitoredAgent": {
+              "methods": ["getMonitoredAgent", "getMonitoredAgent", "getMonitoredAgent", "getMonitoredAgentCallable"]
+            },
+            "ListAgentAnomalyDetectionScopes": {
+              "methods": ["listAgentAnomalyDetectionScopes", "listAgentAnomalyDetectionScopes", "listAgentAnomalyDetectionScopes", "listAgentAnomalyDetectionScopesPagedCallable", "listAgentAnomalyDetectionScopesCallable"]
+            },
+            "ListAnalyzedInvocations": {
+              "methods": ["listAnalyzedInvocations", "listAnalyzedInvocations", "listAnalyzedInvocations", "listAnalyzedInvocationsPagedCallable", "listAnalyzedInvocationsCallable"]
+            },
+            "ListAnalyzedSessions": {
+              "methods": ["listAnalyzedSessions", "listAnalyzedSessions", "listAnalyzedSessions", "listAnalyzedSessionsPagedCallable", "listAnalyzedSessionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMonitoredAgents": {
+              "methods": ["listMonitoredAgents", "listMonitoredAgents", "listMonitoredAgents", "listMonitoredAgentsPagedCallable", "listMonitoredAgentsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            }
+          }
+        }
+      }
+    },
     "DataFoundryService": {
       "clients": {
         "grpc": {

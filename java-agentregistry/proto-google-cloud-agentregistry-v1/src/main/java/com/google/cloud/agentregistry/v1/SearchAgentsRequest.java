@@ -168,7 +168,7 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
    *
    * Examples:
    *
-   * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:reasoningEngines:1234"`
+   * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:aiplatform:reasoningEngines:1234"`
    * to find the agent with the specified agent ID.
    * * `name:important` to find agents whose name contains `important` as a
    * word.
@@ -228,7 +228,7 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
    *
    * Examples:
    *
-   * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:reasoningEngines:1234"`
+   * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:aiplatform:reasoningEngines:1234"`
    * to find the agent with the specified agent ID.
    * * `name:important` to find agents whose name contains `important` as a
    * word.
@@ -879,7 +879,7 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * Examples:
      *
-     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:reasoningEngines:1234"`
+     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:aiplatform:reasoningEngines:1234"`
      * to find the agent with the specified agent ID.
      * * `name:important` to find agents whose name contains `important` as a
      * word.
@@ -938,7 +938,7 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * Examples:
      *
-     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:reasoningEngines:1234"`
+     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:aiplatform:reasoningEngines:1234"`
      * to find the agent with the specified agent ID.
      * * `name:important` to find agents whose name contains `important` as a
      * word.
@@ -997,7 +997,7 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * Examples:
      *
-     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:reasoningEngines:1234"`
+     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:aiplatform:reasoningEngines:1234"`
      * to find the agent with the specified agent ID.
      * * `name:important` to find agents whose name contains `important` as a
      * word.
@@ -1055,7 +1055,7 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * Examples:
      *
-     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:reasoningEngines:1234"`
+     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:aiplatform:reasoningEngines:1234"`
      * to find the agent with the specified agent ID.
      * * `name:important` to find agents whose name contains `important` as a
      * word.
@@ -1109,7 +1109,7 @@ public final class SearchAgentsRequest extends com.google.protobuf.GeneratedMess
      *
      * Examples:
      *
-     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:reasoningEngines:1234"`
+     * * `agentId="urn:agent:projects-123:projects:123:locations:us-central1:aiplatform:reasoningEngines:1234"`
      * to find the agent with the specified agent ID.
      * * `name:important` to find agents whose name contains `important` as a
      * word.
